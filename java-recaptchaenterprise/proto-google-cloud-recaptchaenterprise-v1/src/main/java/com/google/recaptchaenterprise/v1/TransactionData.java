@@ -23,7 +23,6 @@ package com.google.recaptchaenterprise.v1;
  *
  * <pre>
  * Transaction data associated with a payment protected by reCAPTCHA Enterprise.
- * All fields are optional.
  * </pre>
  *
  * Protobuf type {@code google.cloud.recaptchaenterprise.v1.TransactionData}
@@ -78,10 +77,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The recipient name, potentially including information such as "care of".
+     * Optional. The recipient name, potentially including information such as
+     * "care of".
      * </pre>
      *
-     * <code>string recipient = 1;</code>
+     * <code>string recipient = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The recipient.
      */
@@ -90,10 +90,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The recipient name, potentially including information such as "care of".
+     * Optional. The recipient name, potentially including information such as
+     * "care of".
      * </pre>
      *
-     * <code>string recipient = 1;</code>
+     * <code>string recipient = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for recipient.
      */
@@ -103,12 +104,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The first lines of the address. The first line generally contains the
-     * street name and number, and further lines may include information such as
-     * an apartment number.
+     * Optional. The first lines of the address. The first line generally
+     * contains the street name and number, and further lines may include
+     * information such as an apartment number.
      * </pre>
      *
-     * <code>repeated string address = 2;</code>
+     * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the address.
      */
@@ -117,12 +118,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The first lines of the address. The first line generally contains the
-     * street name and number, and further lines may include information such as
-     * an apartment number.
+     * Optional. The first lines of the address. The first line generally
+     * contains the street name and number, and further lines may include
+     * information such as an apartment number.
      * </pre>
      *
-     * <code>repeated string address = 2;</code>
+     * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of address.
      */
@@ -131,12 +132,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The first lines of the address. The first line generally contains the
-     * street name and number, and further lines may include information such as
-     * an apartment number.
+     * Optional. The first lines of the address. The first line generally
+     * contains the street name and number, and further lines may include
+     * information such as an apartment number.
      * </pre>
      *
-     * <code>repeated string address = 2;</code>
+     * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The address at the given index.
@@ -146,12 +147,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The first lines of the address. The first line generally contains the
-     * street name and number, and further lines may include information such as
-     * an apartment number.
+     * Optional. The first lines of the address. The first line generally
+     * contains the street name and number, and further lines may include
+     * information such as an apartment number.
      * </pre>
      *
-     * <code>repeated string address = 2;</code>
+     * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the address at the given index.
@@ -162,10 +163,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The town/city of the address.
+     * Optional. The town/city of the address.
      * </pre>
      *
-     * <code>string locality = 3;</code>
+     * <code>string locality = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The locality.
      */
@@ -174,10 +175,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The town/city of the address.
+     * Optional. The town/city of the address.
      * </pre>
      *
-     * <code>string locality = 3;</code>
+     * <code>string locality = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for locality.
      */
@@ -187,10 +188,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The state, province, or otherwise administrative area of the address.
+     * Optional. The state, province, or otherwise administrative area of the
+     * address.
      * </pre>
      *
-     * <code>string administrative_area = 4;</code>
+     * <code>string administrative_area = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The administrativeArea.
      */
@@ -199,10 +201,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The state, province, or otherwise administrative area of the address.
+     * Optional. The state, province, or otherwise administrative area of the
+     * address.
      * </pre>
      *
-     * <code>string administrative_area = 4;</code>
+     * <code>string administrative_area = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for administrativeArea.
      */
@@ -212,10 +215,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The CLDR country/region of the address.
+     * Optional. The CLDR country/region of the address.
      * </pre>
      *
-     * <code>string region_code = 5;</code>
+     * <code>string region_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The regionCode.
      */
@@ -224,10 +227,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The CLDR country/region of the address.
+     * Optional. The CLDR country/region of the address.
      * </pre>
      *
-     * <code>string region_code = 5;</code>
+     * <code>string region_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for regionCode.
      */
@@ -237,10 +240,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The postal or ZIP code of the address.
+     * Optional. The postal or ZIP code of the address.
      * </pre>
      *
-     * <code>string postal_code = 6;</code>
+     * <code>string postal_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The postalCode.
      */
@@ -249,10 +252,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The postal or ZIP code of the address.
+     * Optional. The postal or ZIP code of the address.
      * </pre>
      *
-     * <code>string postal_code = 6;</code>
+     * <code>string postal_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for postalCode.
      */
@@ -315,10 +318,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The recipient name, potentially including information such as "care of".
+     * Optional. The recipient name, potentially including information such as
+     * "care of".
      * </pre>
      *
-     * <code>string recipient = 1;</code>
+     * <code>string recipient = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The recipient.
      */
@@ -338,10 +342,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The recipient name, potentially including information such as "care of".
+     * Optional. The recipient name, potentially including information such as
+     * "care of".
      * </pre>
      *
-     * <code>string recipient = 1;</code>
+     * <code>string recipient = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for recipient.
      */
@@ -367,12 +372,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The first lines of the address. The first line generally contains the
-     * street name and number, and further lines may include information such as
-     * an apartment number.
+     * Optional. The first lines of the address. The first line generally
+     * contains the street name and number, and further lines may include
+     * information such as an apartment number.
      * </pre>
      *
-     * <code>repeated string address = 2;</code>
+     * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the address.
      */
@@ -383,12 +388,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The first lines of the address. The first line generally contains the
-     * street name and number, and further lines may include information such as
-     * an apartment number.
+     * Optional. The first lines of the address. The first line generally
+     * contains the street name and number, and further lines may include
+     * information such as an apartment number.
      * </pre>
      *
-     * <code>repeated string address = 2;</code>
+     * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of address.
      */
@@ -399,12 +404,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The first lines of the address. The first line generally contains the
-     * street name and number, and further lines may include information such as
-     * an apartment number.
+     * Optional. The first lines of the address. The first line generally
+     * contains the street name and number, and further lines may include
+     * information such as an apartment number.
      * </pre>
      *
-     * <code>repeated string address = 2;</code>
+     * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The address at the given index.
@@ -416,12 +421,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The first lines of the address. The first line generally contains the
-     * street name and number, and further lines may include information such as
-     * an apartment number.
+     * Optional. The first lines of the address. The first line generally
+     * contains the street name and number, and further lines may include
+     * information such as an apartment number.
      * </pre>
      *
-     * <code>repeated string address = 2;</code>
+     * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the address at the given index.
@@ -438,10 +443,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The town/city of the address.
+     * Optional. The town/city of the address.
      * </pre>
      *
-     * <code>string locality = 3;</code>
+     * <code>string locality = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The locality.
      */
@@ -461,10 +466,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The town/city of the address.
+     * Optional. The town/city of the address.
      * </pre>
      *
-     * <code>string locality = 3;</code>
+     * <code>string locality = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for locality.
      */
@@ -489,10 +494,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The state, province, or otherwise administrative area of the address.
+     * Optional. The state, province, or otherwise administrative area of the
+     * address.
      * </pre>
      *
-     * <code>string administrative_area = 4;</code>
+     * <code>string administrative_area = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The administrativeArea.
      */
@@ -512,10 +518,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The state, province, or otherwise administrative area of the address.
+     * Optional. The state, province, or otherwise administrative area of the
+     * address.
      * </pre>
      *
-     * <code>string administrative_area = 4;</code>
+     * <code>string administrative_area = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for administrativeArea.
      */
@@ -540,10 +547,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The CLDR country/region of the address.
+     * Optional. The CLDR country/region of the address.
      * </pre>
      *
-     * <code>string region_code = 5;</code>
+     * <code>string region_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The regionCode.
      */
@@ -563,10 +570,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The CLDR country/region of the address.
+     * Optional. The CLDR country/region of the address.
      * </pre>
      *
-     * <code>string region_code = 5;</code>
+     * <code>string region_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for regionCode.
      */
@@ -591,10 +598,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The postal or ZIP code of the address.
+     * Optional. The postal or ZIP code of the address.
      * </pre>
      *
-     * <code>string postal_code = 6;</code>
+     * <code>string postal_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The postalCode.
      */
@@ -614,10 +621,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The postal or ZIP code of the address.
+     * Optional. The postal or ZIP code of the address.
      * </pre>
      *
-     * <code>string postal_code = 6;</code>
+     * <code>string postal_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for postalCode.
      */
@@ -1120,10 +1127,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The recipient name, potentially including information such as "care of".
+       * Optional. The recipient name, potentially including information such as
+       * "care of".
        * </pre>
        *
-       * <code>string recipient = 1;</code>
+       * <code>string recipient = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The recipient.
        */
@@ -1142,10 +1150,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The recipient name, potentially including information such as "care of".
+       * Optional. The recipient name, potentially including information such as
+       * "care of".
        * </pre>
        *
-       * <code>string recipient = 1;</code>
+       * <code>string recipient = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for recipient.
        */
@@ -1164,10 +1173,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The recipient name, potentially including information such as "care of".
+       * Optional. The recipient name, potentially including information such as
+       * "care of".
        * </pre>
        *
-       * <code>string recipient = 1;</code>
+       * <code>string recipient = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The recipient to set.
        * @return This builder for chaining.
@@ -1185,10 +1195,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The recipient name, potentially including information such as "care of".
+       * Optional. The recipient name, potentially including information such as
+       * "care of".
        * </pre>
        *
-       * <code>string recipient = 1;</code>
+       * <code>string recipient = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1202,10 +1213,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The recipient name, potentially including information such as "care of".
+       * Optional. The recipient name, potentially including information such as
+       * "care of".
        * </pre>
        *
-       * <code>string recipient = 1;</code>
+       * <code>string recipient = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for recipient to set.
        * @return This builder for chaining.
@@ -1234,12 +1246,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The first lines of the address. The first line generally contains the
-       * street name and number, and further lines may include information such as
-       * an apartment number.
+       * Optional. The first lines of the address. The first line generally
+       * contains the street name and number, and further lines may include
+       * information such as an apartment number.
        * </pre>
        *
-       * <code>repeated string address = 2;</code>
+       * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return A list containing the address.
        */
@@ -1251,12 +1263,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The first lines of the address. The first line generally contains the
-       * street name and number, and further lines may include information such as
-       * an apartment number.
+       * Optional. The first lines of the address. The first line generally
+       * contains the street name and number, and further lines may include
+       * information such as an apartment number.
        * </pre>
        *
-       * <code>repeated string address = 2;</code>
+       * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The count of address.
        */
@@ -1267,12 +1279,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The first lines of the address. The first line generally contains the
-       * street name and number, and further lines may include information such as
-       * an apartment number.
+       * Optional. The first lines of the address. The first line generally
+       * contains the street name and number, and further lines may include
+       * information such as an apartment number.
        * </pre>
        *
-       * <code>repeated string address = 2;</code>
+       * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the element to return.
        * @return The address at the given index.
@@ -1284,12 +1296,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The first lines of the address. The first line generally contains the
-       * street name and number, and further lines may include information such as
-       * an apartment number.
+       * Optional. The first lines of the address. The first line generally
+       * contains the street name and number, and further lines may include
+       * information such as an apartment number.
        * </pre>
        *
-       * <code>repeated string address = 2;</code>
+       * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the address at the given index.
@@ -1301,12 +1313,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The first lines of the address. The first line generally contains the
-       * street name and number, and further lines may include information such as
-       * an apartment number.
+       * Optional. The first lines of the address. The first line generally
+       * contains the street name and number, and further lines may include
+       * information such as an apartment number.
        * </pre>
        *
-       * <code>repeated string address = 2;</code>
+       * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index to set the value at.
        * @param value The address to set.
@@ -1326,12 +1338,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The first lines of the address. The first line generally contains the
-       * street name and number, and further lines may include information such as
-       * an apartment number.
+       * Optional. The first lines of the address. The first line generally
+       * contains the street name and number, and further lines may include
+       * information such as an apartment number.
        * </pre>
        *
-       * <code>repeated string address = 2;</code>
+       * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The address to add.
        * @return This builder for chaining.
@@ -1350,12 +1362,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The first lines of the address. The first line generally contains the
-       * street name and number, and further lines may include information such as
-       * an apartment number.
+       * Optional. The first lines of the address. The first line generally
+       * contains the street name and number, and further lines may include
+       * information such as an apartment number.
        * </pre>
        *
-       * <code>repeated string address = 2;</code>
+       * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param values The address to add.
        * @return This builder for chaining.
@@ -1371,12 +1383,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The first lines of the address. The first line generally contains the
-       * street name and number, and further lines may include information such as
-       * an apartment number.
+       * Optional. The first lines of the address. The first line generally
+       * contains the street name and number, and further lines may include
+       * information such as an apartment number.
        * </pre>
        *
-       * <code>repeated string address = 2;</code>
+       * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1391,12 +1403,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The first lines of the address. The first line generally contains the
-       * street name and number, and further lines may include information such as
-       * an apartment number.
+       * Optional. The first lines of the address. The first line generally
+       * contains the street name and number, and further lines may include
+       * information such as an apartment number.
        * </pre>
        *
-       * <code>repeated string address = 2;</code>
+       * <code>repeated string address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes of the address to add.
        * @return This builder for chaining.
@@ -1418,10 +1430,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The town/city of the address.
+       * Optional. The town/city of the address.
        * </pre>
        *
-       * <code>string locality = 3;</code>
+       * <code>string locality = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The locality.
        */
@@ -1440,10 +1452,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The town/city of the address.
+       * Optional. The town/city of the address.
        * </pre>
        *
-       * <code>string locality = 3;</code>
+       * <code>string locality = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for locality.
        */
@@ -1462,10 +1474,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The town/city of the address.
+       * Optional. The town/city of the address.
        * </pre>
        *
-       * <code>string locality = 3;</code>
+       * <code>string locality = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The locality to set.
        * @return This builder for chaining.
@@ -1483,10 +1495,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The town/city of the address.
+       * Optional. The town/city of the address.
        * </pre>
        *
-       * <code>string locality = 3;</code>
+       * <code>string locality = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1500,10 +1512,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The town/city of the address.
+       * Optional. The town/city of the address.
        * </pre>
        *
-       * <code>string locality = 3;</code>
+       * <code>string locality = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for locality to set.
        * @return This builder for chaining.
@@ -1524,10 +1536,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The state, province, or otherwise administrative area of the address.
+       * Optional. The state, province, or otherwise administrative area of the
+       * address.
        * </pre>
        *
-       * <code>string administrative_area = 4;</code>
+       * <code>string administrative_area = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The administrativeArea.
        */
@@ -1546,10 +1559,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The state, province, or otherwise administrative area of the address.
+       * Optional. The state, province, or otherwise administrative area of the
+       * address.
        * </pre>
        *
-       * <code>string administrative_area = 4;</code>
+       * <code>string administrative_area = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for administrativeArea.
        */
@@ -1568,10 +1582,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The state, province, or otherwise administrative area of the address.
+       * Optional. The state, province, or otherwise administrative area of the
+       * address.
        * </pre>
        *
-       * <code>string administrative_area = 4;</code>
+       * <code>string administrative_area = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The administrativeArea to set.
        * @return This builder for chaining.
@@ -1589,10 +1604,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The state, province, or otherwise administrative area of the address.
+       * Optional. The state, province, or otherwise administrative area of the
+       * address.
        * </pre>
        *
-       * <code>string administrative_area = 4;</code>
+       * <code>string administrative_area = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1606,10 +1622,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The state, province, or otherwise administrative area of the address.
+       * Optional. The state, province, or otherwise administrative area of the
+       * address.
        * </pre>
        *
-       * <code>string administrative_area = 4;</code>
+       * <code>string administrative_area = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for administrativeArea to set.
        * @return This builder for chaining.
@@ -1630,10 +1647,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The CLDR country/region of the address.
+       * Optional. The CLDR country/region of the address.
        * </pre>
        *
-       * <code>string region_code = 5;</code>
+       * <code>string region_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The regionCode.
        */
@@ -1652,10 +1669,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The CLDR country/region of the address.
+       * Optional. The CLDR country/region of the address.
        * </pre>
        *
-       * <code>string region_code = 5;</code>
+       * <code>string region_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for regionCode.
        */
@@ -1674,10 +1691,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The CLDR country/region of the address.
+       * Optional. The CLDR country/region of the address.
        * </pre>
        *
-       * <code>string region_code = 5;</code>
+       * <code>string region_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The regionCode to set.
        * @return This builder for chaining.
@@ -1695,10 +1712,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The CLDR country/region of the address.
+       * Optional. The CLDR country/region of the address.
        * </pre>
        *
-       * <code>string region_code = 5;</code>
+       * <code>string region_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1712,10 +1729,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The CLDR country/region of the address.
+       * Optional. The CLDR country/region of the address.
        * </pre>
        *
-       * <code>string region_code = 5;</code>
+       * <code>string region_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for regionCode to set.
        * @return This builder for chaining.
@@ -1736,10 +1753,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The postal or ZIP code of the address.
+       * Optional. The postal or ZIP code of the address.
        * </pre>
        *
-       * <code>string postal_code = 6;</code>
+       * <code>string postal_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The postalCode.
        */
@@ -1758,10 +1775,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The postal or ZIP code of the address.
+       * Optional. The postal or ZIP code of the address.
        * </pre>
        *
-       * <code>string postal_code = 6;</code>
+       * <code>string postal_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for postalCode.
        */
@@ -1780,10 +1797,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The postal or ZIP code of the address.
+       * Optional. The postal or ZIP code of the address.
        * </pre>
        *
-       * <code>string postal_code = 6;</code>
+       * <code>string postal_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The postalCode to set.
        * @return This builder for chaining.
@@ -1801,10 +1818,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The postal or ZIP code of the address.
+       * Optional. The postal or ZIP code of the address.
        * </pre>
        *
-       * <code>string postal_code = 6;</code>
+       * <code>string postal_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1818,10 +1835,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The postal or ZIP code of the address.
+       * Optional. The postal or ZIP code of the address.
        * </pre>
        *
-       * <code>string postal_code = 6;</code>
+       * <code>string postal_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for postalCode to set.
        * @return This builder for chaining.
@@ -1910,12 +1927,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Unique account identifier for this user. If using account defender,
-     * this should match the hashed_account_id field. Otherwise, a unique and
-     * persistent identifier for this account.
+     * Optional. Unique account identifier for this user. If using account
+     * defender, this should match the hashed_account_id field. Otherwise, a
+     * unique and persistent identifier for this account.
      * </pre>
      *
-     * <code>string account_id = 6;</code>
+     * <code>string account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The accountId.
      */
@@ -1924,12 +1941,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Unique account identifier for this user. If using account defender,
-     * this should match the hashed_account_id field. Otherwise, a unique and
-     * persistent identifier for this account.
+     * Optional. Unique account identifier for this user. If using account
+     * defender, this should match the hashed_account_id field. Otherwise, a
+     * unique and persistent identifier for this account.
      * </pre>
      *
-     * <code>string account_id = 6;</code>
+     * <code>string account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for accountId.
      */
@@ -1939,10 +1956,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The epoch milliseconds of the user's account creation.
+     * Optional. The epoch milliseconds of the user's account creation.
      * </pre>
      *
-     * <code>int64 creation_ms = 1;</code>
+     * <code>int64 creation_ms = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The creationMs.
      */
@@ -1952,10 +1969,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The email address of the user.
+     * Optional. The email address of the user.
      * </pre>
      *
-     * <code>string email = 2;</code>
+     * <code>string email = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The email.
      */
@@ -1964,10 +1981,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The email address of the user.
+     * Optional. The email address of the user.
      * </pre>
      *
-     * <code>string email = 2;</code>
+     * <code>string email = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for email.
      */
@@ -1977,11 +1994,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether the email has been verified to be accessible by the user (OTP or
-     * similar).
+     * Optional. Whether the email has been verified to be accessible by the
+     * user (OTP or similar).
      * </pre>
      *
-     * <code>bool email_verified = 3;</code>
+     * <code>bool email_verified = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The emailVerified.
      */
@@ -1991,10 +2008,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The phone number of the user, with country code.
+     * Optional. The phone number of the user, with country code.
      * </pre>
      *
-     * <code>string phone_number = 4;</code>
+     * <code>string phone_number = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The phoneNumber.
      */
@@ -2003,10 +2020,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The phone number of the user, with country code.
+     * Optional. The phone number of the user, with country code.
      * </pre>
      *
-     * <code>string phone_number = 4;</code>
+     * <code>string phone_number = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for phoneNumber.
      */
@@ -2016,11 +2033,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether the phone number has been verified to be accessible by the user
-     * (OTP or similar).
+     * Optional. Whether the phone number has been verified to be accessible by
+     * the user (OTP or similar).
      * </pre>
      *
-     * <code>bool phone_verified = 5;</code>
+     * <code>bool phone_verified = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The phoneVerified.
      */
@@ -2080,12 +2097,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Unique account identifier for this user. If using account defender,
-     * this should match the hashed_account_id field. Otherwise, a unique and
-     * persistent identifier for this account.
+     * Optional. Unique account identifier for this user. If using account
+     * defender, this should match the hashed_account_id field. Otherwise, a
+     * unique and persistent identifier for this account.
      * </pre>
      *
-     * <code>string account_id = 6;</code>
+     * <code>string account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The accountId.
      */
@@ -2105,12 +2122,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Unique account identifier for this user. If using account defender,
-     * this should match the hashed_account_id field. Otherwise, a unique and
-     * persistent identifier for this account.
+     * Optional. Unique account identifier for this user. If using account
+     * defender, this should match the hashed_account_id field. Otherwise, a
+     * unique and persistent identifier for this account.
      * </pre>
      *
-     * <code>string account_id = 6;</code>
+     * <code>string account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for accountId.
      */
@@ -2133,10 +2150,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The epoch milliseconds of the user's account creation.
+     * Optional. The epoch milliseconds of the user's account creation.
      * </pre>
      *
-     * <code>int64 creation_ms = 1;</code>
+     * <code>int64 creation_ms = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The creationMs.
      */
@@ -2153,10 +2170,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The email address of the user.
+     * Optional. The email address of the user.
      * </pre>
      *
-     * <code>string email = 2;</code>
+     * <code>string email = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The email.
      */
@@ -2176,10 +2193,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The email address of the user.
+     * Optional. The email address of the user.
      * </pre>
      *
-     * <code>string email = 2;</code>
+     * <code>string email = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for email.
      */
@@ -2202,11 +2219,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether the email has been verified to be accessible by the user (OTP or
-     * similar).
+     * Optional. Whether the email has been verified to be accessible by the
+     * user (OTP or similar).
      * </pre>
      *
-     * <code>bool email_verified = 3;</code>
+     * <code>bool email_verified = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The emailVerified.
      */
@@ -2223,10 +2240,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The phone number of the user, with country code.
+     * Optional. The phone number of the user, with country code.
      * </pre>
      *
-     * <code>string phone_number = 4;</code>
+     * <code>string phone_number = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The phoneNumber.
      */
@@ -2246,10 +2263,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The phone number of the user, with country code.
+     * Optional. The phone number of the user, with country code.
      * </pre>
      *
-     * <code>string phone_number = 4;</code>
+     * <code>string phone_number = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for phoneNumber.
      */
@@ -2272,11 +2289,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether the phone number has been verified to be accessible by the user
-     * (OTP or similar).
+     * Optional. Whether the phone number has been verified to be accessible by
+     * the user (OTP or similar).
      * </pre>
      *
-     * <code>bool phone_verified = 5;</code>
+     * <code>bool phone_verified = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The phoneVerified.
      */
@@ -2751,12 +2768,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Unique account identifier for this user. If using account defender,
-       * this should match the hashed_account_id field. Otherwise, a unique and
-       * persistent identifier for this account.
+       * Optional. Unique account identifier for this user. If using account
+       * defender, this should match the hashed_account_id field. Otherwise, a
+       * unique and persistent identifier for this account.
        * </pre>
        *
-       * <code>string account_id = 6;</code>
+       * <code>string account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The accountId.
        */
@@ -2775,12 +2792,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Unique account identifier for this user. If using account defender,
-       * this should match the hashed_account_id field. Otherwise, a unique and
-       * persistent identifier for this account.
+       * Optional. Unique account identifier for this user. If using account
+       * defender, this should match the hashed_account_id field. Otherwise, a
+       * unique and persistent identifier for this account.
        * </pre>
        *
-       * <code>string account_id = 6;</code>
+       * <code>string account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for accountId.
        */
@@ -2799,12 +2816,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Unique account identifier for this user. If using account defender,
-       * this should match the hashed_account_id field. Otherwise, a unique and
-       * persistent identifier for this account.
+       * Optional. Unique account identifier for this user. If using account
+       * defender, this should match the hashed_account_id field. Otherwise, a
+       * unique and persistent identifier for this account.
        * </pre>
        *
-       * <code>string account_id = 6;</code>
+       * <code>string account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The accountId to set.
        * @return This builder for chaining.
@@ -2822,12 +2839,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Unique account identifier for this user. If using account defender,
-       * this should match the hashed_account_id field. Otherwise, a unique and
-       * persistent identifier for this account.
+       * Optional. Unique account identifier for this user. If using account
+       * defender, this should match the hashed_account_id field. Otherwise, a
+       * unique and persistent identifier for this account.
        * </pre>
        *
-       * <code>string account_id = 6;</code>
+       * <code>string account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -2841,12 +2858,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Unique account identifier for this user. If using account defender,
-       * this should match the hashed_account_id field. Otherwise, a unique and
-       * persistent identifier for this account.
+       * Optional. Unique account identifier for this user. If using account
+       * defender, this should match the hashed_account_id field. Otherwise, a
+       * unique and persistent identifier for this account.
        * </pre>
        *
-       * <code>string account_id = 6;</code>
+       * <code>string account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for accountId to set.
        * @return This builder for chaining.
@@ -2867,10 +2884,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The epoch milliseconds of the user's account creation.
+       * Optional. The epoch milliseconds of the user's account creation.
        * </pre>
        *
-       * <code>int64 creation_ms = 1;</code>
+       * <code>int64 creation_ms = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The creationMs.
        */
@@ -2882,10 +2899,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The epoch milliseconds of the user's account creation.
+       * Optional. The epoch milliseconds of the user's account creation.
        * </pre>
        *
-       * <code>int64 creation_ms = 1;</code>
+       * <code>int64 creation_ms = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The creationMs to set.
        * @return This builder for chaining.
@@ -2901,10 +2918,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The epoch milliseconds of the user's account creation.
+       * Optional. The epoch milliseconds of the user's account creation.
        * </pre>
        *
-       * <code>int64 creation_ms = 1;</code>
+       * <code>int64 creation_ms = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -2920,10 +2937,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The email address of the user.
+       * Optional. The email address of the user.
        * </pre>
        *
-       * <code>string email = 2;</code>
+       * <code>string email = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The email.
        */
@@ -2942,10 +2959,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The email address of the user.
+       * Optional. The email address of the user.
        * </pre>
        *
-       * <code>string email = 2;</code>
+       * <code>string email = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for email.
        */
@@ -2964,10 +2981,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The email address of the user.
+       * Optional. The email address of the user.
        * </pre>
        *
-       * <code>string email = 2;</code>
+       * <code>string email = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The email to set.
        * @return This builder for chaining.
@@ -2985,10 +3002,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The email address of the user.
+       * Optional. The email address of the user.
        * </pre>
        *
-       * <code>string email = 2;</code>
+       * <code>string email = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -3002,10 +3019,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The email address of the user.
+       * Optional. The email address of the user.
        * </pre>
        *
-       * <code>string email = 2;</code>
+       * <code>string email = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for email to set.
        * @return This builder for chaining.
@@ -3026,11 +3043,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether the email has been verified to be accessible by the user (OTP or
-       * similar).
+       * Optional. Whether the email has been verified to be accessible by the
+       * user (OTP or similar).
        * </pre>
        *
-       * <code>bool email_verified = 3;</code>
+       * <code>bool email_verified = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The emailVerified.
        */
@@ -3042,11 +3059,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether the email has been verified to be accessible by the user (OTP or
-       * similar).
+       * Optional. Whether the email has been verified to be accessible by the
+       * user (OTP or similar).
        * </pre>
        *
-       * <code>bool email_verified = 3;</code>
+       * <code>bool email_verified = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The emailVerified to set.
        * @return This builder for chaining.
@@ -3062,11 +3079,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether the email has been verified to be accessible by the user (OTP or
-       * similar).
+       * Optional. Whether the email has been verified to be accessible by the
+       * user (OTP or similar).
        * </pre>
        *
-       * <code>bool email_verified = 3;</code>
+       * <code>bool email_verified = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -3082,10 +3099,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The phone number of the user, with country code.
+       * Optional. The phone number of the user, with country code.
        * </pre>
        *
-       * <code>string phone_number = 4;</code>
+       * <code>string phone_number = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The phoneNumber.
        */
@@ -3104,10 +3121,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The phone number of the user, with country code.
+       * Optional. The phone number of the user, with country code.
        * </pre>
        *
-       * <code>string phone_number = 4;</code>
+       * <code>string phone_number = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for phoneNumber.
        */
@@ -3126,10 +3143,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The phone number of the user, with country code.
+       * Optional. The phone number of the user, with country code.
        * </pre>
        *
-       * <code>string phone_number = 4;</code>
+       * <code>string phone_number = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The phoneNumber to set.
        * @return This builder for chaining.
@@ -3147,10 +3164,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The phone number of the user, with country code.
+       * Optional. The phone number of the user, with country code.
        * </pre>
        *
-       * <code>string phone_number = 4;</code>
+       * <code>string phone_number = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -3164,10 +3181,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The phone number of the user, with country code.
+       * Optional. The phone number of the user, with country code.
        * </pre>
        *
-       * <code>string phone_number = 4;</code>
+       * <code>string phone_number = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for phoneNumber to set.
        * @return This builder for chaining.
@@ -3188,11 +3205,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether the phone number has been verified to be accessible by the user
-       * (OTP or similar).
+       * Optional. Whether the phone number has been verified to be accessible by
+       * the user (OTP or similar).
        * </pre>
        *
-       * <code>bool phone_verified = 5;</code>
+       * <code>bool phone_verified = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The phoneVerified.
        */
@@ -3204,11 +3221,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether the phone number has been verified to be accessible by the user
-       * (OTP or similar).
+       * Optional. Whether the phone number has been verified to be accessible by
+       * the user (OTP or similar).
        * </pre>
        *
-       * <code>bool phone_verified = 5;</code>
+       * <code>bool phone_verified = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The phoneVerified to set.
        * @return This builder for chaining.
@@ -3224,11 +3241,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Whether the phone number has been verified to be accessible by the user
-       * (OTP or similar).
+       * Optional. Whether the phone number has been verified to be accessible by
+       * the user (OTP or similar).
        * </pre>
        *
-       * <code>bool phone_verified = 5;</code>
+       * <code>bool phone_verified = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -3312,10 +3329,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The full name of the item.
+     * Optional. The full name of the item.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -3324,10 +3341,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The full name of the item.
+     * Optional. The full name of the item.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -3337,11 +3354,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value per item that the user is paying, in the transaction currency,
-     * after discounts.
+     * Optional. The value per item that the user is paying, in the transaction
+     * currency, after discounts.
      * </pre>
      *
-     * <code>double value = 2;</code>
+     * <code>double value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The value.
      */
@@ -3351,10 +3368,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The quantity of this item that is being purchased.
+     * Optional. The quantity of this item that is being purchased.
      * </pre>
      *
-     * <code>int64 quantity = 3;</code>
+     * <code>int64 quantity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The quantity.
      */
@@ -3364,11 +3381,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * When a merchant is specified, its corresponding account_id. Necessary to
-     * populate marketplace-style transactions.
+     * Optional. When a merchant is specified, its corresponding account_id.
+     * Necessary to populate marketplace-style transactions.
      * </pre>
      *
-     * <code>string merchant_account_id = 4;</code>
+     * <code>string merchant_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The merchantAccountId.
      */
@@ -3377,11 +3394,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * When a merchant is specified, its corresponding account_id. Necessary to
-     * populate marketplace-style transactions.
+     * Optional. When a merchant is specified, its corresponding account_id.
+     * Necessary to populate marketplace-style transactions.
      * </pre>
      *
-     * <code>string merchant_account_id = 4;</code>
+     * <code>string merchant_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for merchantAccountId.
      */
@@ -3440,10 +3457,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The full name of the item.
+     * Optional. The full name of the item.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -3463,10 +3480,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The full name of the item.
+     * Optional. The full name of the item.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -3489,11 +3506,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value per item that the user is paying, in the transaction currency,
-     * after discounts.
+     * Optional. The value per item that the user is paying, in the transaction
+     * currency, after discounts.
      * </pre>
      *
-     * <code>double value = 2;</code>
+     * <code>double value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The value.
      */
@@ -3508,10 +3525,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The quantity of this item that is being purchased.
+     * Optional. The quantity of this item that is being purchased.
      * </pre>
      *
-     * <code>int64 quantity = 3;</code>
+     * <code>int64 quantity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The quantity.
      */
@@ -3528,11 +3545,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * When a merchant is specified, its corresponding account_id. Necessary to
-     * populate marketplace-style transactions.
+     * Optional. When a merchant is specified, its corresponding account_id.
+     * Necessary to populate marketplace-style transactions.
      * </pre>
      *
-     * <code>string merchant_account_id = 4;</code>
+     * <code>string merchant_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The merchantAccountId.
      */
@@ -3552,11 +3569,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * When a merchant is specified, its corresponding account_id. Necessary to
-     * populate marketplace-style transactions.
+     * Optional. When a merchant is specified, its corresponding account_id.
+     * Necessary to populate marketplace-style transactions.
      * </pre>
      *
-     * <code>string merchant_account_id = 4;</code>
+     * <code>string merchant_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for merchantAccountId.
      */
@@ -3997,10 +4014,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The full name of the item.
+       * Optional. The full name of the item.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The name.
        */
@@ -4019,10 +4036,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The full name of the item.
+       * Optional. The full name of the item.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for name.
        */
@@ -4041,10 +4058,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The full name of the item.
+       * Optional. The full name of the item.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The name to set.
        * @return This builder for chaining.
@@ -4062,10 +4079,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The full name of the item.
+       * Optional. The full name of the item.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -4079,10 +4096,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The full name of the item.
+       * Optional. The full name of the item.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for name to set.
        * @return This builder for chaining.
@@ -4103,11 +4120,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The value per item that the user is paying, in the transaction currency,
-       * after discounts.
+       * Optional. The value per item that the user is paying, in the transaction
+       * currency, after discounts.
        * </pre>
        *
-       * <code>double value = 2;</code>
+       * <code>double value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The value.
        */
@@ -4119,11 +4136,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The value per item that the user is paying, in the transaction currency,
-       * after discounts.
+       * Optional. The value per item that the user is paying, in the transaction
+       * currency, after discounts.
        * </pre>
        *
-       * <code>double value = 2;</code>
+       * <code>double value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The value to set.
        * @return This builder for chaining.
@@ -4139,11 +4156,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The value per item that the user is paying, in the transaction currency,
-       * after discounts.
+       * Optional. The value per item that the user is paying, in the transaction
+       * currency, after discounts.
        * </pre>
        *
-       * <code>double value = 2;</code>
+       * <code>double value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -4159,10 +4176,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The quantity of this item that is being purchased.
+       * Optional. The quantity of this item that is being purchased.
        * </pre>
        *
-       * <code>int64 quantity = 3;</code>
+       * <code>int64 quantity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The quantity.
        */
@@ -4174,10 +4191,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The quantity of this item that is being purchased.
+       * Optional. The quantity of this item that is being purchased.
        * </pre>
        *
-       * <code>int64 quantity = 3;</code>
+       * <code>int64 quantity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The quantity to set.
        * @return This builder for chaining.
@@ -4193,10 +4210,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The quantity of this item that is being purchased.
+       * Optional. The quantity of this item that is being purchased.
        * </pre>
        *
-       * <code>int64 quantity = 3;</code>
+       * <code>int64 quantity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -4212,11 +4229,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * When a merchant is specified, its corresponding account_id. Necessary to
-       * populate marketplace-style transactions.
+       * Optional. When a merchant is specified, its corresponding account_id.
+       * Necessary to populate marketplace-style transactions.
        * </pre>
        *
-       * <code>string merchant_account_id = 4;</code>
+       * <code>string merchant_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The merchantAccountId.
        */
@@ -4235,11 +4252,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * When a merchant is specified, its corresponding account_id. Necessary to
-       * populate marketplace-style transactions.
+       * Optional. When a merchant is specified, its corresponding account_id.
+       * Necessary to populate marketplace-style transactions.
        * </pre>
        *
-       * <code>string merchant_account_id = 4;</code>
+       * <code>string merchant_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for merchantAccountId.
        */
@@ -4258,11 +4275,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * When a merchant is specified, its corresponding account_id. Necessary to
-       * populate marketplace-style transactions.
+       * Optional. When a merchant is specified, its corresponding account_id.
+       * Necessary to populate marketplace-style transactions.
        * </pre>
        *
-       * <code>string merchant_account_id = 4;</code>
+       * <code>string merchant_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The merchantAccountId to set.
        * @return This builder for chaining.
@@ -4280,11 +4297,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * When a merchant is specified, its corresponding account_id. Necessary to
-       * populate marketplace-style transactions.
+       * Optional. When a merchant is specified, its corresponding account_id.
+       * Necessary to populate marketplace-style transactions.
        * </pre>
        *
-       * <code>string merchant_account_id = 4;</code>
+       * <code>string merchant_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -4298,11 +4315,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * When a merchant is specified, its corresponding account_id. Necessary to
-       * populate marketplace-style transactions.
+       * Optional. When a merchant is specified, its corresponding account_id.
+       * Necessary to populate marketplace-style transactions.
        * </pre>
        *
-       * <code>string merchant_account_id = 4;</code>
+       * <code>string merchant_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for merchantAccountId to set.
        * @return This builder for chaining.
@@ -4391,10 +4408,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the gateway service (for example, stripe, square, paypal).
+     * Optional. Name of the gateway service (for example, stripe, square,
+     * paypal).
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -4403,10 +4421,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the gateway service (for example, stripe, square, paypal).
+     * Optional. Name of the gateway service (for example, stripe, square,
+     * paypal).
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -4416,10 +4435,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Gateway response code describing the state of the transaction.
+     * Optional. Gateway response code describing the state of the transaction.
      * </pre>
      *
-     * <code>string gateway_response_code = 2;</code>
+     * <code>string gateway_response_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The gatewayResponseCode.
      */
@@ -4428,10 +4447,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Gateway response code describing the state of the transaction.
+     * Optional. Gateway response code describing the state of the transaction.
      * </pre>
      *
-     * <code>string gateway_response_code = 2;</code>
+     * <code>string gateway_response_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for gatewayResponseCode.
      */
@@ -4441,11 +4460,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * AVS response code from the gateway
+     * Optional. AVS response code from the gateway
      * (available only when reCAPTCHA Enterprise is called after authorization).
      * </pre>
      *
-     * <code>string avs_response_code = 3;</code>
+     * <code>string avs_response_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The avsResponseCode.
      */
@@ -4454,11 +4473,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * AVS response code from the gateway
+     * Optional. AVS response code from the gateway
      * (available only when reCAPTCHA Enterprise is called after authorization).
      * </pre>
      *
-     * <code>string avs_response_code = 3;</code>
+     * <code>string avs_response_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for avsResponseCode.
      */
@@ -4468,11 +4487,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * CVV response code from the gateway
+     * Optional. CVV response code from the gateway
      * (available only when reCAPTCHA Enterprise is called after authorization).
      * </pre>
      *
-     * <code>string cvv_response_code = 4;</code>
+     * <code>string cvv_response_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The cvvResponseCode.
      */
@@ -4481,11 +4500,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * CVV response code from the gateway
+     * Optional. CVV response code from the gateway
      * (available only when reCAPTCHA Enterprise is called after authorization).
      * </pre>
      *
-     * <code>string cvv_response_code = 4;</code>
+     * <code>string cvv_response_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for cvvResponseCode.
      */
@@ -4546,10 +4565,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the gateway service (for example, stripe, square, paypal).
+     * Optional. Name of the gateway service (for example, stripe, square,
+     * paypal).
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -4569,10 +4589,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the gateway service (for example, stripe, square, paypal).
+     * Optional. Name of the gateway service (for example, stripe, square,
+     * paypal).
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -4597,10 +4618,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Gateway response code describing the state of the transaction.
+     * Optional. Gateway response code describing the state of the transaction.
      * </pre>
      *
-     * <code>string gateway_response_code = 2;</code>
+     * <code>string gateway_response_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The gatewayResponseCode.
      */
@@ -4620,10 +4641,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Gateway response code describing the state of the transaction.
+     * Optional. Gateway response code describing the state of the transaction.
      * </pre>
      *
-     * <code>string gateway_response_code = 2;</code>
+     * <code>string gateway_response_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for gatewayResponseCode.
      */
@@ -4648,11 +4669,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * AVS response code from the gateway
+     * Optional. AVS response code from the gateway
      * (available only when reCAPTCHA Enterprise is called after authorization).
      * </pre>
      *
-     * <code>string avs_response_code = 3;</code>
+     * <code>string avs_response_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The avsResponseCode.
      */
@@ -4672,11 +4693,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * AVS response code from the gateway
+     * Optional. AVS response code from the gateway
      * (available only when reCAPTCHA Enterprise is called after authorization).
      * </pre>
      *
-     * <code>string avs_response_code = 3;</code>
+     * <code>string avs_response_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for avsResponseCode.
      */
@@ -4701,11 +4722,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * CVV response code from the gateway
+     * Optional. CVV response code from the gateway
      * (available only when reCAPTCHA Enterprise is called after authorization).
      * </pre>
      *
-     * <code>string cvv_response_code = 4;</code>
+     * <code>string cvv_response_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The cvvResponseCode.
      */
@@ -4725,11 +4746,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * CVV response code from the gateway
+     * Optional. CVV response code from the gateway
      * (available only when reCAPTCHA Enterprise is called after authorization).
      * </pre>
      *
-     * <code>string cvv_response_code = 4;</code>
+     * <code>string cvv_response_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for cvvResponseCode.
      */
@@ -5174,10 +5195,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Name of the gateway service (for example, stripe, square, paypal).
+       * Optional. Name of the gateway service (for example, stripe, square,
+       * paypal).
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The name.
        */
@@ -5196,10 +5218,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Name of the gateway service (for example, stripe, square, paypal).
+       * Optional. Name of the gateway service (for example, stripe, square,
+       * paypal).
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for name.
        */
@@ -5218,10 +5241,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Name of the gateway service (for example, stripe, square, paypal).
+       * Optional. Name of the gateway service (for example, stripe, square,
+       * paypal).
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The name to set.
        * @return This builder for chaining.
@@ -5239,10 +5263,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Name of the gateway service (for example, stripe, square, paypal).
+       * Optional. Name of the gateway service (for example, stripe, square,
+       * paypal).
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -5256,10 +5281,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Name of the gateway service (for example, stripe, square, paypal).
+       * Optional. Name of the gateway service (for example, stripe, square,
+       * paypal).
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for name to set.
        * @return This builder for chaining.
@@ -5280,10 +5306,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Gateway response code describing the state of the transaction.
+       * Optional. Gateway response code describing the state of the transaction.
        * </pre>
        *
-       * <code>string gateway_response_code = 2;</code>
+       * <code>string gateway_response_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The gatewayResponseCode.
        */
@@ -5302,10 +5328,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Gateway response code describing the state of the transaction.
+       * Optional. Gateway response code describing the state of the transaction.
        * </pre>
        *
-       * <code>string gateway_response_code = 2;</code>
+       * <code>string gateway_response_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for gatewayResponseCode.
        */
@@ -5324,10 +5350,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Gateway response code describing the state of the transaction.
+       * Optional. Gateway response code describing the state of the transaction.
        * </pre>
        *
-       * <code>string gateway_response_code = 2;</code>
+       * <code>string gateway_response_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The gatewayResponseCode to set.
        * @return This builder for chaining.
@@ -5345,10 +5371,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Gateway response code describing the state of the transaction.
+       * Optional. Gateway response code describing the state of the transaction.
        * </pre>
        *
-       * <code>string gateway_response_code = 2;</code>
+       * <code>string gateway_response_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -5362,10 +5388,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Gateway response code describing the state of the transaction.
+       * Optional. Gateway response code describing the state of the transaction.
        * </pre>
        *
-       * <code>string gateway_response_code = 2;</code>
+       * <code>string gateway_response_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for gatewayResponseCode to set.
        * @return This builder for chaining.
@@ -5386,11 +5412,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * AVS response code from the gateway
+       * Optional. AVS response code from the gateway
        * (available only when reCAPTCHA Enterprise is called after authorization).
        * </pre>
        *
-       * <code>string avs_response_code = 3;</code>
+       * <code>string avs_response_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The avsResponseCode.
        */
@@ -5409,11 +5435,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * AVS response code from the gateway
+       * Optional. AVS response code from the gateway
        * (available only when reCAPTCHA Enterprise is called after authorization).
        * </pre>
        *
-       * <code>string avs_response_code = 3;</code>
+       * <code>string avs_response_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for avsResponseCode.
        */
@@ -5432,11 +5458,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * AVS response code from the gateway
+       * Optional. AVS response code from the gateway
        * (available only when reCAPTCHA Enterprise is called after authorization).
        * </pre>
        *
-       * <code>string avs_response_code = 3;</code>
+       * <code>string avs_response_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The avsResponseCode to set.
        * @return This builder for chaining.
@@ -5454,11 +5480,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * AVS response code from the gateway
+       * Optional. AVS response code from the gateway
        * (available only when reCAPTCHA Enterprise is called after authorization).
        * </pre>
        *
-       * <code>string avs_response_code = 3;</code>
+       * <code>string avs_response_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -5472,11 +5498,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * AVS response code from the gateway
+       * Optional. AVS response code from the gateway
        * (available only when reCAPTCHA Enterprise is called after authorization).
        * </pre>
        *
-       * <code>string avs_response_code = 3;</code>
+       * <code>string avs_response_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for avsResponseCode to set.
        * @return This builder for chaining.
@@ -5497,11 +5523,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * CVV response code from the gateway
+       * Optional. CVV response code from the gateway
        * (available only when reCAPTCHA Enterprise is called after authorization).
        * </pre>
        *
-       * <code>string cvv_response_code = 4;</code>
+       * <code>string cvv_response_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The cvvResponseCode.
        */
@@ -5520,11 +5546,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * CVV response code from the gateway
+       * Optional. CVV response code from the gateway
        * (available only when reCAPTCHA Enterprise is called after authorization).
        * </pre>
        *
-       * <code>string cvv_response_code = 4;</code>
+       * <code>string cvv_response_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for cvvResponseCode.
        */
@@ -5543,11 +5569,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * CVV response code from the gateway
+       * Optional. CVV response code from the gateway
        * (available only when reCAPTCHA Enterprise is called after authorization).
        * </pre>
        *
-       * <code>string cvv_response_code = 4;</code>
+       * <code>string cvv_response_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The cvvResponseCode to set.
        * @return This builder for chaining.
@@ -5565,11 +5591,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * CVV response code from the gateway
+       * Optional. CVV response code from the gateway
        * (available only when reCAPTCHA Enterprise is called after authorization).
        * </pre>
        *
-       * <code>string cvv_response_code = 4;</code>
+       * <code>string cvv_response_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -5583,11 +5609,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * CVV response code from the gateway
+       * Optional. CVV response code from the gateway
        * (available only when reCAPTCHA Enterprise is called after authorization).
        * </pre>
        *
-       * <code>string cvv_response_code = 4;</code>
+       * <code>string cvv_response_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for cvvResponseCode to set.
        * @return This builder for chaining.
@@ -5754,7 +5780,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The payment method for the transaction. The allowed values are:
+   * Optional. The payment method for the transaction. The allowed values are:
    *
    * * credit-card
    * * debit-card
@@ -5765,7 +5791,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    * custom-crypto)
    * </pre>
    *
-   * <code>string payment_method = 1;</code>
+   * <code>string payment_method = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The paymentMethod.
    */
@@ -5785,7 +5811,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The payment method for the transaction. The allowed values are:
+   * Optional. The payment method for the transaction. The allowed values are:
    *
    * * credit-card
    * * debit-card
@@ -5796,7 +5822,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    * custom-crypto)
    * </pre>
    *
-   * <code>string payment_method = 1;</code>
+   * <code>string payment_method = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for paymentMethod.
    */
@@ -5821,11 +5847,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The Bank Identification Number - generally the first 6 or 8 digits of the
-   * card.
+   * Optional. The Bank Identification Number - generally the first 6 or 8
+   * digits of the card.
    * </pre>
    *
-   * <code>string card_bin = 2;</code>
+   * <code>string card_bin = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The cardBin.
    */
@@ -5845,11 +5871,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The Bank Identification Number - generally the first 6 or 8 digits of the
-   * card.
+   * Optional. The Bank Identification Number - generally the first 6 or 8
+   * digits of the card.
    * </pre>
    *
-   * <code>string card_bin = 2;</code>
+   * <code>string card_bin = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for cardBin.
    */
@@ -5874,10 +5900,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The last four digits of the card.
+   * Optional. The last four digits of the card.
    * </pre>
    *
-   * <code>string card_last_four = 3;</code>
+   * <code>string card_last_four = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The cardLastFour.
    */
@@ -5897,10 +5923,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The last four digits of the card.
+   * Optional. The last four digits of the card.
    * </pre>
    *
-   * <code>string card_last_four = 3;</code>
+   * <code>string card_last_four = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for cardLastFour.
    */
@@ -5925,10 +5951,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The currency code in ISO-4217 format.
+   * Optional. The currency code in ISO-4217 format.
    * </pre>
    *
-   * <code>string currency_code = 4;</code>
+   * <code>string currency_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The currencyCode.
    */
@@ -5948,10 +5974,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The currency code in ISO-4217 format.
+   * Optional. The currency code in ISO-4217 format.
    * </pre>
    *
-   * <code>string currency_code = 4;</code>
+   * <code>string currency_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for currencyCode.
    */
@@ -5974,10 +6000,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The decimal value of the transaction in the specified currency.
+   * Optional. The decimal value of the transaction in the specified currency.
    * </pre>
    *
-   * <code>double value = 5;</code>
+   * <code>double value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The value.
    */
@@ -5992,10 +6018,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The value of shipping in the specified currency. 0 for free or no shipping.
+   * Optional. The value of shipping in the specified currency. 0 for free or no
+   * shipping.
    * </pre>
    *
-   * <code>double shipping_value = 12;</code>
+   * <code>double shipping_value = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The shippingValue.
    */
@@ -6010,10 +6037,13 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Destination address if this transaction involves shipping a physical item.
+   * Optional. Destination address if this transaction involves shipping a
+   * physical item.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the shippingAddress field is set.
    */
@@ -6025,10 +6055,13 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Destination address if this transaction involves shipping a physical item.
+   * Optional. Destination address if this transaction involves shipping a
+   * physical item.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The shippingAddress.
    */
@@ -6042,10 +6075,13 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Destination address if this transaction involves shipping a physical item.
+   * Optional. Destination address if this transaction involves shipping a
+   * physical item.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.TransactionData.AddressOrBuilder
@@ -6061,10 +6097,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Address associated with the payment method when applicable.
+   * Optional. Address associated with the payment method when applicable.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the billingAddress field is set.
    */
@@ -6076,10 +6114,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Address associated with the payment method when applicable.
+   * Optional. Address associated with the payment method when applicable.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The billingAddress.
    */
@@ -6093,10 +6133,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Address associated with the payment method when applicable.
+   * Optional. Address associated with the payment method when applicable.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.TransactionData.AddressOrBuilder
@@ -6112,10 +6154,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Information about the user paying/initiating the transaction.
+   * Optional. Information about the user paying/initiating the transaction.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the user field is set.
    */
@@ -6127,10 +6171,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Information about the user paying/initiating the transaction.
+   * Optional. Information about the user paying/initiating the transaction.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The user.
    */
@@ -6144,10 +6190,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Information about the user paying/initiating the transaction.
+   * Optional. Information about the user paying/initiating the transaction.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.TransactionData.UserOrBuilder getUserOrBuilder() {
@@ -6164,10 +6212,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Information about the user or users fulfilling the transaction.
+   * Optional. Information about the user or users fulfilling the transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.recaptchaenterprise.v1.TransactionData.User> getMerchantsList() {
@@ -6177,10 +6227,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Information about the user or users fulfilling the transaction.
+   * Optional. Information about the user or users fulfilling the transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.recaptchaenterprise.v1.TransactionData.UserOrBuilder>
@@ -6191,10 +6243,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Information about the user or users fulfilling the transaction.
+   * Optional. Information about the user or users fulfilling the transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getMerchantsCount() {
@@ -6204,10 +6258,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Information about the user or users fulfilling the transaction.
+   * Optional. Information about the user or users fulfilling the transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.TransactionData.User getMerchants(int index) {
@@ -6217,10 +6273,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Information about the user or users fulfilling the transaction.
+   * Optional. Information about the user or users fulfilling the transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.TransactionData.UserOrBuilder getMerchantsOrBuilder(
@@ -6236,10 +6294,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Items purchased in this transaction.
+   * Optional. Items purchased in this transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.recaptchaenterprise.v1.TransactionData.Item> getItemsList() {
@@ -6249,10 +6309,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Items purchased in this transaction.
+   * Optional. Items purchased in this transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.recaptchaenterprise.v1.TransactionData.ItemOrBuilder>
@@ -6263,10 +6325,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Items purchased in this transaction.
+   * Optional. Items purchased in this transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getItemsCount() {
@@ -6276,10 +6340,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Items purchased in this transaction.
+   * Optional. Items purchased in this transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.TransactionData.Item getItems(int index) {
@@ -6289,10 +6355,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Items purchased in this transaction.
+   * Optional. Items purchased in this transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.TransactionData.ItemOrBuilder getItemsOrBuilder(
@@ -6306,10 +6374,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Information about the payment gateway's response to the transaction.
+   * Optional. Information about the payment gateway's response to the
+   * transaction.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10;
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the gatewayInfo field is set.
@@ -6322,10 +6392,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Information about the payment gateway's response to the transaction.
+   * Optional. Information about the payment gateway's response to the
+   * transaction.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10;
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The gatewayInfo.
@@ -6340,10 +6412,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Information about the payment gateway's response to the transaction.
+   * Optional. Information about the payment gateway's response to the
+   * transaction.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10;
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -6662,7 +6736,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Transaction data associated with a payment protected by reCAPTCHA Enterprise.
-   * All fields are optional.
    * </pre>
    *
    * Protobuf type {@code google.cloud.recaptchaenterprise.v1.TransactionData}
@@ -7263,7 +7336,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The payment method for the transaction. The allowed values are:
+     * Optional. The payment method for the transaction. The allowed values are:
      *
      * * credit-card
      * * debit-card
@@ -7274,7 +7347,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * custom-crypto)
      * </pre>
      *
-     * <code>string payment_method = 1;</code>
+     * <code>string payment_method = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The paymentMethod.
      */
@@ -7293,7 +7366,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The payment method for the transaction. The allowed values are:
+     * Optional. The payment method for the transaction. The allowed values are:
      *
      * * credit-card
      * * debit-card
@@ -7304,7 +7377,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * custom-crypto)
      * </pre>
      *
-     * <code>string payment_method = 1;</code>
+     * <code>string payment_method = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for paymentMethod.
      */
@@ -7323,7 +7396,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The payment method for the transaction. The allowed values are:
+     * Optional. The payment method for the transaction. The allowed values are:
      *
      * * credit-card
      * * debit-card
@@ -7334,7 +7407,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * custom-crypto)
      * </pre>
      *
-     * <code>string payment_method = 1;</code>
+     * <code>string payment_method = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The paymentMethod to set.
      * @return This builder for chaining.
@@ -7352,7 +7425,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The payment method for the transaction. The allowed values are:
+     * Optional. The payment method for the transaction. The allowed values are:
      *
      * * credit-card
      * * debit-card
@@ -7363,7 +7436,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * custom-crypto)
      * </pre>
      *
-     * <code>string payment_method = 1;</code>
+     * <code>string payment_method = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -7377,7 +7450,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The payment method for the transaction. The allowed values are:
+     * Optional. The payment method for the transaction. The allowed values are:
      *
      * * credit-card
      * * debit-card
@@ -7388,7 +7461,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * custom-crypto)
      * </pre>
      *
-     * <code>string payment_method = 1;</code>
+     * <code>string payment_method = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for paymentMethod to set.
      * @return This builder for chaining.
@@ -7409,11 +7482,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The Bank Identification Number - generally the first 6 or 8 digits of the
-     * card.
+     * Optional. The Bank Identification Number - generally the first 6 or 8
+     * digits of the card.
      * </pre>
      *
-     * <code>string card_bin = 2;</code>
+     * <code>string card_bin = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The cardBin.
      */
@@ -7432,11 +7505,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The Bank Identification Number - generally the first 6 or 8 digits of the
-     * card.
+     * Optional. The Bank Identification Number - generally the first 6 or 8
+     * digits of the card.
      * </pre>
      *
-     * <code>string card_bin = 2;</code>
+     * <code>string card_bin = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for cardBin.
      */
@@ -7455,11 +7528,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The Bank Identification Number - generally the first 6 or 8 digits of the
-     * card.
+     * Optional. The Bank Identification Number - generally the first 6 or 8
+     * digits of the card.
      * </pre>
      *
-     * <code>string card_bin = 2;</code>
+     * <code>string card_bin = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The cardBin to set.
      * @return This builder for chaining.
@@ -7477,11 +7550,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The Bank Identification Number - generally the first 6 or 8 digits of the
-     * card.
+     * Optional. The Bank Identification Number - generally the first 6 or 8
+     * digits of the card.
      * </pre>
      *
-     * <code>string card_bin = 2;</code>
+     * <code>string card_bin = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -7495,11 +7568,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The Bank Identification Number - generally the first 6 or 8 digits of the
-     * card.
+     * Optional. The Bank Identification Number - generally the first 6 or 8
+     * digits of the card.
      * </pre>
      *
-     * <code>string card_bin = 2;</code>
+     * <code>string card_bin = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for cardBin to set.
      * @return This builder for chaining.
@@ -7520,10 +7593,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The last four digits of the card.
+     * Optional. The last four digits of the card.
      * </pre>
      *
-     * <code>string card_last_four = 3;</code>
+     * <code>string card_last_four = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The cardLastFour.
      */
@@ -7542,10 +7615,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The last four digits of the card.
+     * Optional. The last four digits of the card.
      * </pre>
      *
-     * <code>string card_last_four = 3;</code>
+     * <code>string card_last_four = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for cardLastFour.
      */
@@ -7564,10 +7637,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The last four digits of the card.
+     * Optional. The last four digits of the card.
      * </pre>
      *
-     * <code>string card_last_four = 3;</code>
+     * <code>string card_last_four = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The cardLastFour to set.
      * @return This builder for chaining.
@@ -7585,10 +7658,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The last four digits of the card.
+     * Optional. The last four digits of the card.
      * </pre>
      *
-     * <code>string card_last_four = 3;</code>
+     * <code>string card_last_four = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -7602,10 +7675,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The last four digits of the card.
+     * Optional. The last four digits of the card.
      * </pre>
      *
-     * <code>string card_last_four = 3;</code>
+     * <code>string card_last_four = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for cardLastFour to set.
      * @return This builder for chaining.
@@ -7626,10 +7699,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The currency code in ISO-4217 format.
+     * Optional. The currency code in ISO-4217 format.
      * </pre>
      *
-     * <code>string currency_code = 4;</code>
+     * <code>string currency_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The currencyCode.
      */
@@ -7648,10 +7721,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The currency code in ISO-4217 format.
+     * Optional. The currency code in ISO-4217 format.
      * </pre>
      *
-     * <code>string currency_code = 4;</code>
+     * <code>string currency_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for currencyCode.
      */
@@ -7670,10 +7743,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The currency code in ISO-4217 format.
+     * Optional. The currency code in ISO-4217 format.
      * </pre>
      *
-     * <code>string currency_code = 4;</code>
+     * <code>string currency_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The currencyCode to set.
      * @return This builder for chaining.
@@ -7691,10 +7764,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The currency code in ISO-4217 format.
+     * Optional. The currency code in ISO-4217 format.
      * </pre>
      *
-     * <code>string currency_code = 4;</code>
+     * <code>string currency_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -7708,10 +7781,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The currency code in ISO-4217 format.
+     * Optional. The currency code in ISO-4217 format.
      * </pre>
      *
-     * <code>string currency_code = 4;</code>
+     * <code>string currency_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for currencyCode to set.
      * @return This builder for chaining.
@@ -7732,10 +7805,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The decimal value of the transaction in the specified currency.
+     * Optional. The decimal value of the transaction in the specified currency.
      * </pre>
      *
-     * <code>double value = 5;</code>
+     * <code>double value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The value.
      */
@@ -7747,10 +7820,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The decimal value of the transaction in the specified currency.
+     * Optional. The decimal value of the transaction in the specified currency.
      * </pre>
      *
-     * <code>double value = 5;</code>
+     * <code>double value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The value to set.
      * @return This builder for chaining.
@@ -7766,10 +7839,10 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The decimal value of the transaction in the specified currency.
+     * Optional. The decimal value of the transaction in the specified currency.
      * </pre>
      *
-     * <code>double value = 5;</code>
+     * <code>double value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -7785,10 +7858,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value of shipping in the specified currency. 0 for free or no shipping.
+     * Optional. The value of shipping in the specified currency. 0 for free or no
+     * shipping.
      * </pre>
      *
-     * <code>double shipping_value = 12;</code>
+     * <code>double shipping_value = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The shippingValue.
      */
@@ -7800,10 +7874,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value of shipping in the specified currency. 0 for free or no shipping.
+     * Optional. The value of shipping in the specified currency. 0 for free or no
+     * shipping.
      * </pre>
      *
-     * <code>double shipping_value = 12;</code>
+     * <code>double shipping_value = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The shippingValue to set.
      * @return This builder for chaining.
@@ -7819,10 +7894,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value of shipping in the specified currency. 0 for free or no shipping.
+     * Optional. The value of shipping in the specified currency. 0 for free or no
+     * shipping.
      * </pre>
      *
-     * <code>double shipping_value = 12;</code>
+     * <code>double shipping_value = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -7843,10 +7919,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Destination address if this transaction involves shipping a physical item.
+     * Optional. Destination address if this transaction involves shipping a
+     * physical item.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the shippingAddress field is set.
@@ -7858,10 +7936,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Destination address if this transaction involves shipping a physical item.
+     * Optional. Destination address if this transaction involves shipping a
+     * physical item.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The shippingAddress.
@@ -7879,10 +7959,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Destination address if this transaction involves shipping a physical item.
+     * Optional. Destination address if this transaction involves shipping a
+     * physical item.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setShippingAddress(
@@ -7903,10 +7985,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Destination address if this transaction involves shipping a physical item.
+     * Optional. Destination address if this transaction involves shipping a
+     * physical item.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setShippingAddress(
@@ -7924,10 +8008,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Destination address if this transaction involves shipping a physical item.
+     * Optional. Destination address if this transaction involves shipping a
+     * physical item.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeShippingAddress(
@@ -7952,10 +8038,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Destination address if this transaction involves shipping a physical item.
+     * Optional. Destination address if this transaction involves shipping a
+     * physical item.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearShippingAddress() {
@@ -7972,10 +8060,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Destination address if this transaction involves shipping a physical item.
+     * Optional. Destination address if this transaction involves shipping a
+     * physical item.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.Address.Builder
@@ -7988,10 +8078,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Destination address if this transaction involves shipping a physical item.
+     * Optional. Destination address if this transaction involves shipping a
+     * physical item.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.AddressOrBuilder
@@ -8008,10 +8100,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Destination address if this transaction involves shipping a physical item.
+     * Optional. Destination address if this transaction involves shipping a
+     * physical item.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -8041,10 +8135,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Address associated with the payment method when applicable.
+     * Optional. Address associated with the payment method when applicable.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the billingAddress field is set.
@@ -8056,10 +8151,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Address associated with the payment method when applicable.
+     * Optional. Address associated with the payment method when applicable.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The billingAddress.
@@ -8077,10 +8173,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Address associated with the payment method when applicable.
+     * Optional. Address associated with the payment method when applicable.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setBillingAddress(
@@ -8101,10 +8198,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Address associated with the payment method when applicable.
+     * Optional. Address associated with the payment method when applicable.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setBillingAddress(
@@ -8122,10 +8220,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Address associated with the payment method when applicable.
+     * Optional. Address associated with the payment method when applicable.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeBillingAddress(
@@ -8150,10 +8249,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Address associated with the payment method when applicable.
+     * Optional. Address associated with the payment method when applicable.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearBillingAddress() {
@@ -8170,10 +8270,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Address associated with the payment method when applicable.
+     * Optional. Address associated with the payment method when applicable.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.Address.Builder
@@ -8186,10 +8287,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Address associated with the payment method when applicable.
+     * Optional. Address associated with the payment method when applicable.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.AddressOrBuilder
@@ -8206,10 +8308,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Address associated with the payment method when applicable.
+     * Optional. Address associated with the payment method when applicable.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -8239,10 +8342,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user paying/initiating the transaction.
+     * Optional. Information about the user paying/initiating the transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the user field is set.
      */
@@ -8253,10 +8358,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user paying/initiating the transaction.
+     * Optional. Information about the user paying/initiating the transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The user.
      */
@@ -8273,10 +8380,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user paying/initiating the transaction.
+     * Optional. Information about the user paying/initiating the transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUser(com.google.recaptchaenterprise.v1.TransactionData.User value) {
       if (userBuilder_ == null) {
@@ -8295,10 +8404,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user paying/initiating the transaction.
+     * Optional. Information about the user paying/initiating the transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUser(
         com.google.recaptchaenterprise.v1.TransactionData.User.Builder builderForValue) {
@@ -8315,10 +8426,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user paying/initiating the transaction.
+     * Optional. Information about the user paying/initiating the transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUser(com.google.recaptchaenterprise.v1.TransactionData.User value) {
       if (userBuilder_ == null) {
@@ -8341,10 +8454,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user paying/initiating the transaction.
+     * Optional. Information about the user paying/initiating the transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUser() {
       bitField0_ = (bitField0_ & ~0x00000200);
@@ -8360,10 +8475,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user paying/initiating the transaction.
+     * Optional. Information about the user paying/initiating the transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.User.Builder getUserBuilder() {
       bitField0_ |= 0x00000200;
@@ -8374,10 +8491,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user paying/initiating the transaction.
+     * Optional. Information about the user paying/initiating the transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.UserOrBuilder getUserOrBuilder() {
       if (userBuilder_ != null) {
@@ -8392,10 +8511,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user paying/initiating the transaction.
+     * Optional. Information about the user paying/initiating the transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.recaptchaenterprise.v1.TransactionData.User,
@@ -8436,10 +8557,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.recaptchaenterprise.v1.TransactionData.User>
@@ -8454,10 +8576,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getMerchantsCount() {
@@ -8471,10 +8594,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.User getMerchants(int index) {
@@ -8488,10 +8612,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setMerchants(
@@ -8512,10 +8637,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setMerchants(
@@ -8533,10 +8659,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addMerchants(com.google.recaptchaenterprise.v1.TransactionData.User value) {
@@ -8556,10 +8683,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addMerchants(
@@ -8580,10 +8708,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addMerchants(
@@ -8601,10 +8730,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addMerchants(
@@ -8622,10 +8752,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllMerchants(
@@ -8644,10 +8775,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearMerchants() {
@@ -8664,10 +8796,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeMerchants(int index) {
@@ -8684,10 +8817,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.User.Builder getMerchantsBuilder(
@@ -8698,10 +8832,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.UserOrBuilder getMerchantsOrBuilder(
@@ -8716,10 +8851,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<? extends com.google.recaptchaenterprise.v1.TransactionData.UserOrBuilder>
@@ -8734,10 +8870,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.User.Builder addMerchantsBuilder() {
@@ -8748,10 +8885,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.User.Builder addMerchantsBuilder(
@@ -8764,10 +8902,11 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the user or users fulfilling the transaction.
+     * Optional. Information about the user or users fulfilling the transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.recaptchaenterprise.v1.TransactionData.User.Builder>
@@ -8813,10 +8952,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.recaptchaenterprise.v1.TransactionData.Item> getItemsList() {
       if (itemsBuilder_ == null) {
@@ -8829,10 +8970,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getItemsCount() {
       if (itemsBuilder_ == null) {
@@ -8845,10 +8988,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.Item getItems(int index) {
       if (itemsBuilder_ == null) {
@@ -8861,10 +9006,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setItems(
         int index, com.google.recaptchaenterprise.v1.TransactionData.Item value) {
@@ -8884,10 +9031,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setItems(
         int index, com.google.recaptchaenterprise.v1.TransactionData.Item.Builder builderForValue) {
@@ -8904,10 +9053,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addItems(com.google.recaptchaenterprise.v1.TransactionData.Item value) {
       if (itemsBuilder_ == null) {
@@ -8926,10 +9077,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addItems(
         int index, com.google.recaptchaenterprise.v1.TransactionData.Item value) {
@@ -8949,10 +9102,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addItems(
         com.google.recaptchaenterprise.v1.TransactionData.Item.Builder builderForValue) {
@@ -8969,10 +9124,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addItems(
         int index, com.google.recaptchaenterprise.v1.TransactionData.Item.Builder builderForValue) {
@@ -8989,10 +9146,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllItems(
         java.lang.Iterable<? extends com.google.recaptchaenterprise.v1.TransactionData.Item>
@@ -9010,10 +9169,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearItems() {
       if (itemsBuilder_ == null) {
@@ -9029,10 +9190,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeItems(int index) {
       if (itemsBuilder_ == null) {
@@ -9048,10 +9211,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.Item.Builder getItemsBuilder(
         int index) {
@@ -9061,10 +9226,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.ItemOrBuilder getItemsOrBuilder(
         int index) {
@@ -9078,10 +9245,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.recaptchaenterprise.v1.TransactionData.ItemOrBuilder>
         getItemsOrBuilderList() {
@@ -9095,10 +9264,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.Item.Builder addItemsBuilder() {
       return getItemsFieldBuilder()
@@ -9108,10 +9279,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.Item.Builder addItemsBuilder(
         int index) {
@@ -9123,10 +9296,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Items purchased in this transaction.
+     * Optional. Items purchased in this transaction.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.recaptchaenterprise.v1.TransactionData.Item.Builder>
         getItemsBuilderList() {
@@ -9160,10 +9335,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the payment gateway's response to the transaction.
+     * Optional. Information about the payment gateway's response to the
+     * transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the gatewayInfo field is set.
@@ -9175,10 +9352,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the payment gateway's response to the transaction.
+     * Optional. Information about the payment gateway's response to the
+     * transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The gatewayInfo.
@@ -9196,10 +9375,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the payment gateway's response to the transaction.
+     * Optional. Information about the payment gateway's response to the
+     * transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setGatewayInfo(
@@ -9220,10 +9401,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the payment gateway's response to the transaction.
+     * Optional. Information about the payment gateway's response to the
+     * transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setGatewayInfo(
@@ -9241,10 +9424,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the payment gateway's response to the transaction.
+     * Optional. Information about the payment gateway's response to the
+     * transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeGatewayInfo(
@@ -9270,10 +9455,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the payment gateway's response to the transaction.
+     * Optional. Information about the payment gateway's response to the
+     * transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearGatewayInfo() {
@@ -9290,10 +9477,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the payment gateway's response to the transaction.
+     * Optional. Information about the payment gateway's response to the
+     * transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.GatewayInfo.Builder
@@ -9306,10 +9495,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the payment gateway's response to the transaction.
+     * Optional. Information about the payment gateway's response to the
+     * transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.GatewayInfoOrBuilder
@@ -9326,10 +9517,12 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Information about the payment gateway's response to the transaction.
+     * Optional. Information about the payment gateway's response to the
+     * transaction.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -233,7 +233,7 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional JA3 fingerprint for SSL clients.
+   * Optional. JA3 fingerprint for SSL clients.
    * </pre>
    *
    * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -245,7 +245,7 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional JA3 fingerprint for SSL clients.
+   * Optional. JA3 fingerprint for SSL clients.
    * </pre>
    *
    * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>

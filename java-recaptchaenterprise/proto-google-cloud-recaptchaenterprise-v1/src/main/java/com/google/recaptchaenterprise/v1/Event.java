@@ -455,7 +455,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Optional JA3 fingerprint for SSL clients.
+   * Optional. JA3 fingerprint for SSL clients.
    * </pre>
    *
    * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -478,7 +478,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Optional JA3 fingerprint for SSL clients.
+   * Optional. JA3 fingerprint for SSL clients.
    * </pre>
    *
    * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2133,7 +2133,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional JA3 fingerprint for SSL clients.
+     * Optional. JA3 fingerprint for SSL clients.
      * </pre>
      *
      * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2155,7 +2155,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional JA3 fingerprint for SSL clients.
+     * Optional. JA3 fingerprint for SSL clients.
      * </pre>
      *
      * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2177,7 +2177,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional JA3 fingerprint for SSL clients.
+     * Optional. JA3 fingerprint for SSL clients.
      * </pre>
      *
      * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2198,7 +2198,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional JA3 fingerprint for SSL clients.
+     * Optional. JA3 fingerprint for SSL clients.
      * </pre>
      *
      * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2215,7 +2215,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional JA3 fingerprint for SSL clients.
+     * Optional. JA3 fingerprint for SSL clients.
      * </pre>
      *
      * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
