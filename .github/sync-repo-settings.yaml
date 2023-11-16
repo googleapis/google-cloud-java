@@ -118,8 +118,7 @@ branchProtectionRules:
     requiresCodeOwnerReviews: true
     requiresStrictStatusChecks: false
     requiredStatusCheckContexts:
-      - dependencies (8)
-      - dependencies (11)
+      - dependencies (17)
       - lint
       - clirr
       - units (8)
@@ -129,6 +128,7 @@ branchProtectionRules:
       - OwlBot Post Processor
       - 'Kokoro - Test: Java GraalVM Native Image'
       - 'Kokoro - Test: Java 17 GraalVM Native Image'
+      - javadoc
   - pattern: 2.15.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
