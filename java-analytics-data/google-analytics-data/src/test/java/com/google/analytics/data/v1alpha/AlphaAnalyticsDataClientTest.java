@@ -161,11 +161,14 @@ public class AlphaAnalyticsDataClientTest {
   public void createAudienceListTest() throws Exception {
     AudienceList expectedResponse =
         AudienceList.newBuilder()
-            .setName(AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]").toString())
+            .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
             .setAudience("audience975628804")
             .setAudienceDisplayName("audienceDisplayName1537141193")
             .addAllDimensions(new ArrayList<AudienceDimension>())
             .setBeginCreatingTime(Timestamp.newBuilder().build())
+            .setCreationQuotaTokensCharged(1232901266)
+            .setRowCount(1340416618)
+            .setErrorMessage("errorMessage1203236063")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -175,7 +178,7 @@ public class AlphaAnalyticsDataClientTest {
             .build();
     mockAlphaAnalyticsData.addResponse(resultOperation);
 
-    PropertyName parent = PropertyName.of("[PROPERTYID]");
+    PropertyName parent = PropertyName.of("[PROPERTY]");
     AudienceList audienceList = AudienceList.newBuilder().build();
 
     AudienceList actualResponse = client.createAudienceListAsync(parent, audienceList).get();
@@ -199,7 +202,7 @@ public class AlphaAnalyticsDataClientTest {
     mockAlphaAnalyticsData.addException(exception);
 
     try {
-      PropertyName parent = PropertyName.of("[PROPERTYID]");
+      PropertyName parent = PropertyName.of("[PROPERTY]");
       AudienceList audienceList = AudienceList.newBuilder().build();
       client.createAudienceListAsync(parent, audienceList).get();
       Assert.fail("No exception raised");
@@ -214,11 +217,14 @@ public class AlphaAnalyticsDataClientTest {
   public void createAudienceListTest2() throws Exception {
     AudienceList expectedResponse =
         AudienceList.newBuilder()
-            .setName(AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]").toString())
+            .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
             .setAudience("audience975628804")
             .setAudienceDisplayName("audienceDisplayName1537141193")
             .addAllDimensions(new ArrayList<AudienceDimension>())
             .setBeginCreatingTime(Timestamp.newBuilder().build())
+            .setCreationQuotaTokensCharged(1232901266)
+            .setRowCount(1340416618)
+            .setErrorMessage("errorMessage1203236063")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -304,18 +310,105 @@ public class AlphaAnalyticsDataClientTest {
   }
 
   @Test
+  public void sheetExportAudienceListTest() throws Exception {
+    SheetExportAudienceListResponse expectedResponse =
+        SheetExportAudienceListResponse.newBuilder()
+            .setSpreadsheetUri("spreadsheetUri1336397312")
+            .setSpreadsheetId("spreadsheetId1844224519")
+            .setRowCount(1340416618)
+            .setAudienceList(AudienceList.newBuilder().build())
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
+
+    SheetExportAudienceListResponse actualResponse = client.sheetExportAudienceList(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SheetExportAudienceListRequest actualRequest =
+        ((SheetExportAudienceListRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void sheetExportAudienceListExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
+      client.sheetExportAudienceList(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void sheetExportAudienceListTest2() throws Exception {
+    SheetExportAudienceListResponse expectedResponse =
+        SheetExportAudienceListResponse.newBuilder()
+            .setSpreadsheetUri("spreadsheetUri1336397312")
+            .setSpreadsheetId("spreadsheetId1844224519")
+            .setRowCount(1340416618)
+            .setAudienceList(AudienceList.newBuilder().build())
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SheetExportAudienceListResponse actualResponse = client.sheetExportAudienceList(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SheetExportAudienceListRequest actualRequest =
+        ((SheetExportAudienceListRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void sheetExportAudienceListExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.sheetExportAudienceList(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getAudienceListTest() throws Exception {
     AudienceList expectedResponse =
         AudienceList.newBuilder()
-            .setName(AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]").toString())
+            .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
             .setAudience("audience975628804")
             .setAudienceDisplayName("audienceDisplayName1537141193")
             .addAllDimensions(new ArrayList<AudienceDimension>())
             .setBeginCreatingTime(Timestamp.newBuilder().build())
+            .setCreationQuotaTokensCharged(1232901266)
+            .setRowCount(1340416618)
+            .setErrorMessage("errorMessage1203236063")
             .build();
     mockAlphaAnalyticsData.addResponse(expectedResponse);
 
-    AudienceListName name = AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]");
+    AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
 
     AudienceList actualResponse = client.getAudienceList(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -337,7 +430,7 @@ public class AlphaAnalyticsDataClientTest {
     mockAlphaAnalyticsData.addException(exception);
 
     try {
-      AudienceListName name = AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]");
+      AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
       client.getAudienceList(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -349,11 +442,14 @@ public class AlphaAnalyticsDataClientTest {
   public void getAudienceListTest2() throws Exception {
     AudienceList expectedResponse =
         AudienceList.newBuilder()
-            .setName(AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]").toString())
+            .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
             .setAudience("audience975628804")
             .setAudienceDisplayName("audienceDisplayName1537141193")
             .addAllDimensions(new ArrayList<AudienceDimension>())
             .setBeginCreatingTime(Timestamp.newBuilder().build())
+            .setCreationQuotaTokensCharged(1232901266)
+            .setRowCount(1340416618)
+            .setErrorMessage("errorMessage1203236063")
             .build();
     mockAlphaAnalyticsData.addResponse(expectedResponse);
 
@@ -397,7 +493,7 @@ public class AlphaAnalyticsDataClientTest {
             .build();
     mockAlphaAnalyticsData.addResponse(expectedResponse);
 
-    PropertyName parent = PropertyName.of("[PROPERTYID]");
+    PropertyName parent = PropertyName.of("[PROPERTY]");
 
     ListAudienceListsPagedResponse pagedListResponse = client.listAudienceLists(parent);
 
@@ -423,7 +519,7 @@ public class AlphaAnalyticsDataClientTest {
     mockAlphaAnalyticsData.addException(exception);
 
     try {
-      PropertyName parent = PropertyName.of("[PROPERTYID]");
+      PropertyName parent = PropertyName.of("[PROPERTY]");
       client.listAudienceLists(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

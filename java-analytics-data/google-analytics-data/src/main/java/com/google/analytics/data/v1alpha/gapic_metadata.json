@@ -24,6 +24,9 @@
             },
             "RunFunnelReport": {
               "methods": ["runFunnelReport", "runFunnelReportCallable"]
+            },
+            "SheetExportAudienceList": {
+              "methods": ["sheetExportAudienceList", "sheetExportAudienceList", "sheetExportAudienceList", "sheetExportAudienceListCallable"]
             }
           }
         }

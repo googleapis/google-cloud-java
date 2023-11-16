@@ -71,12 +71,12 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The API name of the dimension. See the [API
+   * Optional. The API name of the dimension. See the [API
    * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-api-schema#dimensions)
    * for the list of dimension names.
    * </pre>
    *
-   * <code>string dimension_name = 1;</code>
+   * <code>string dimension_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The dimensionName.
    */
@@ -96,12 +96,12 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The API name of the dimension. See the [API
+   * Optional. The API name of the dimension. See the [API
    * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-api-schema#dimensions)
    * for the list of dimension names.
    * </pre>
    *
-   * <code>string dimension_name = 1;</code>
+   * <code>string dimension_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for dimensionName.
    */
@@ -466,12 +466,12 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The API name of the dimension. See the [API
+     * Optional. The API name of the dimension. See the [API
      * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-api-schema#dimensions)
      * for the list of dimension names.
      * </pre>
      *
-     * <code>string dimension_name = 1;</code>
+     * <code>string dimension_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The dimensionName.
      */
@@ -490,12 +490,12 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The API name of the dimension. See the [API
+     * Optional. The API name of the dimension. See the [API
      * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-api-schema#dimensions)
      * for the list of dimension names.
      * </pre>
      *
-     * <code>string dimension_name = 1;</code>
+     * <code>string dimension_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for dimensionName.
      */
@@ -514,12 +514,12 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The API name of the dimension. See the [API
+     * Optional. The API name of the dimension. See the [API
      * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-api-schema#dimensions)
      * for the list of dimension names.
      * </pre>
      *
-     * <code>string dimension_name = 1;</code>
+     * <code>string dimension_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The dimensionName to set.
      * @return This builder for chaining.
@@ -537,12 +537,12 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The API name of the dimension. See the [API
+     * Optional. The API name of the dimension. See the [API
      * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-api-schema#dimensions)
      * for the list of dimension names.
      * </pre>
      *
-     * <code>string dimension_name = 1;</code>
+     * <code>string dimension_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -556,12 +556,12 @@ public final class AudienceDimension extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The API name of the dimension. See the [API
+     * Optional. The API name of the dimension. See the [API
      * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-api-schema#dimensions)
      * for the list of dimension names.
      * </pre>
      *
-     * <code>string dimension_name = 1;</code>
+     * <code>string dimension_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for dimensionName to set.
      * @return This builder for chaining.

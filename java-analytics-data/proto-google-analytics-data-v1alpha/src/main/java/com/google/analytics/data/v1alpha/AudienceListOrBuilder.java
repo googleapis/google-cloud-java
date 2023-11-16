@@ -27,13 +27,15 @@ public interface AudienceListOrBuilder
    *
    *
    * <pre>
-   * Output only. The audience list resource name assigned during creation. This
-   * resource name identifies this `AudienceList`.
+   * Output only. Identifier. The audience list resource name assigned during
+   * creation. This resource name identifies this `AudienceList`.
    *
-   * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+   * Format: `properties/{property}/audienceLists/{audience_list}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The name.
    */
@@ -42,13 +44,15 @@ public interface AudienceListOrBuilder
    *
    *
    * <pre>
-   * Output only. The audience list resource name assigned during creation. This
-   * resource name identifies this `AudienceList`.
+   * Output only. Identifier. The audience list resource name assigned during
+   * creation. This resource name identifies this `AudienceList`.
    *
-   * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+   * Format: `properties/{property}/audienceLists/{audience_list}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -62,7 +66,7 @@ public interface AudienceListOrBuilder
    * audience being listed and is shared between the Analytics Data &amp; Admin
    * APIs.
    *
-   * Format: `properties/{propertyId}/audiences/{audienceId}`
+   * Format: `properties/{property}/audiences/{audience}`
    * </pre>
    *
    * <code>string audience = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -78,7 +82,7 @@ public interface AudienceListOrBuilder
    * audience being listed and is shared between the Analytics Data &amp; Admin
    * APIs.
    *
-   * Format: `properties/{propertyId}/audiences/{audienceId}`
+   * Format: `properties/{property}/audiences/{audience}`
    * </pre>
    *
    * <code>string audience = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -262,4 +266,86 @@ public interface AudienceListOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getBeginCreatingTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The total quota tokens charged during creation of the
+   * AudienceList. Because this token count is based on activity from the
+   * `CREATING` state, this tokens charged will be fixed once an AudienceList
+   * enters the `ACTIVE` or `FAILED` states.
+   * </pre>
+   *
+   * <code>int32 creation_quota_tokens_charged = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The creationQuotaTokensCharged.
+   */
+  int getCreationQuotaTokensCharged();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The total number of rows in the AudienceList result.
+   * </pre>
+   *
+   * <code>optional int32 row_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the rowCount field is set.
+   */
+  boolean hasRowCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The total number of rows in the AudienceList result.
+   * </pre>
+   *
+   * <code>optional int32 row_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The rowCount.
+   */
+  int getRowCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error message is populated when an audience list fails during
+   * creation. A common reason for such a failure is quota exhaustion.
+   * </pre>
+   *
+   * <code>optional string error_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the errorMessage field is set.
+   */
+  boolean hasErrorMessage();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error message is populated when an audience list fails during
+   * creation. A common reason for such a failure is quota exhaustion.
+   * </pre>
+   *
+   * <code>optional string error_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The errorMessage.
+   */
+  java.lang.String getErrorMessage();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error message is populated when an audience list fails during
+   * creation. A common reason for such a failure is quota exhaustion.
+   * </pre>
+   *
+   * <code>optional string error_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for errorMessage.
+   */
+  com.google.protobuf.ByteString getErrorMessageBytes();
 }

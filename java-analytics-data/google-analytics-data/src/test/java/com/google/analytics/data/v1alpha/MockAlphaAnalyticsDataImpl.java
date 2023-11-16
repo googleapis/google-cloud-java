@@ -124,6 +124,28 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
   }
 
   @Override
+  public void sheetExportAudienceList(
+      SheetExportAudienceListRequest request,
+      StreamObserver<SheetExportAudienceListResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SheetExportAudienceListResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SheetExportAudienceListResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SheetExportAudienceList, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SheetExportAudienceListResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getAudienceList(
       GetAudienceListRequest request, StreamObserver<AudienceList> responseObserver) {
     Object response = responses.poll();

@@ -37,7 +37,7 @@ public class SyncGetAudienceList {
     try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
       GetAudienceListRequest request =
           GetAudienceListRequest.newBuilder()
-              .setName(AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]").toString())
+              .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
               .build();
       AudienceList response = alphaAnalyticsDataClient.getAudienceList(request);
     }

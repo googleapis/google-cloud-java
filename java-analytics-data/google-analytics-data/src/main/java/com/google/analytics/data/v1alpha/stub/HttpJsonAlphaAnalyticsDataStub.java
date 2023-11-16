@@ -28,6 +28,8 @@ import com.google.analytics.data.v1alpha.QueryAudienceListRequest;
 import com.google.analytics.data.v1alpha.QueryAudienceListResponse;
 import com.google.analytics.data.v1alpha.RunFunnelReportRequest;
 import com.google.analytics.data.v1alpha.RunFunnelReportResponse;
+import com.google.analytics.data.v1alpha.SheetExportAudienceListRequest;
+import com.google.analytics.data.v1alpha.SheetExportAudienceListResponse;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -185,6 +187,46 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+      sheetExportAudienceListMethodDescriptor =
+          ApiMethodDescriptor
+              .<SheetExportAudienceListRequest, SheetExportAudienceListResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.data.v1alpha.AlphaAnalyticsData/SheetExportAudienceList")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SheetExportAudienceListRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/audienceLists/*}:exportSheet",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SheetExportAudienceListRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SheetExportAudienceListRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SheetExportAudienceListResponse>newBuilder()
+                      .setDefaultInstance(SheetExportAudienceListResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetAudienceListRequest, AudienceList>
       getAudienceListMethodDescriptor =
           ApiMethodDescriptor.<GetAudienceListRequest, AudienceList>newBuilder()
@@ -263,6 +305,8 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
       createAudienceListOperationCallable;
   private final UnaryCallable<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListCallable;
+  private final UnaryCallable<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+      sheetExportAudienceListCallable;
   private final UnaryCallable<GetAudienceListRequest, AudienceList> getAudienceListCallable;
   private final UnaryCallable<ListAudienceListsRequest, ListAudienceListsResponse>
       listAudienceListsCallable;
@@ -351,6 +395,19 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+        sheetExportAudienceListTransportSettings =
+            HttpJsonCallSettings
+                .<SheetExportAudienceListRequest, SheetExportAudienceListResponse>newBuilder()
+                .setMethodDescriptor(sheetExportAudienceListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GetAudienceListRequest, AudienceList> getAudienceListTransportSettings =
         HttpJsonCallSettings.<GetAudienceListRequest, AudienceList>newBuilder()
             .setMethodDescriptor(getAudienceListMethodDescriptor)
@@ -394,6 +451,11 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
             queryAudienceListTransportSettings,
             settings.queryAudienceListSettings(),
             clientContext);
+    this.sheetExportAudienceListCallable =
+        callableFactory.createUnaryCallable(
+            sheetExportAudienceListTransportSettings,
+            settings.sheetExportAudienceListSettings(),
+            clientContext);
     this.getAudienceListCallable =
         callableFactory.createUnaryCallable(
             getAudienceListTransportSettings, settings.getAudienceListSettings(), clientContext);
@@ -418,6 +480,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
     methodDescriptors.add(runFunnelReportMethodDescriptor);
     methodDescriptors.add(createAudienceListMethodDescriptor);
     methodDescriptors.add(queryAudienceListMethodDescriptor);
+    methodDescriptors.add(sheetExportAudienceListMethodDescriptor);
     methodDescriptors.add(getAudienceListMethodDescriptor);
     methodDescriptors.add(listAudienceListsMethodDescriptor);
     return methodDescriptors;
@@ -447,6 +510,12 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   public UnaryCallable<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListCallable() {
     return queryAudienceListCallable;
+  }
+
+  @Override
+  public UnaryCallable<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+      sheetExportAudienceListCallable() {
+    return sheetExportAudienceListCallable;
   }
 
   @Override

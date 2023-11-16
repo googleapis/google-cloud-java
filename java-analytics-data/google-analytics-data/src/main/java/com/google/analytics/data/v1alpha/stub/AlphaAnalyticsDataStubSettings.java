@@ -28,6 +28,8 @@ import com.google.analytics.data.v1alpha.QueryAudienceListRequest;
 import com.google.analytics.data.v1alpha.QueryAudienceListResponse;
 import com.google.analytics.data.v1alpha.RunFunnelReportRequest;
 import com.google.analytics.data.v1alpha.RunFunnelReportResponse;
+import com.google.analytics.data.v1alpha.SheetExportAudienceListRequest;
+import com.google.analytics.data.v1alpha.SheetExportAudienceListResponse;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
@@ -113,6 +115,9 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/analytics")
           .add("https://www.googleapis.com/auth/analytics.readonly")
+          .add("https://www.googleapis.com/auth/drive")
+          .add("https://www.googleapis.com/auth/drive.file")
+          .add("https://www.googleapis.com/auth/spreadsheets")
           .build();
 
   private final UnaryCallSettings<RunFunnelReportRequest, RunFunnelReportResponse>
@@ -122,6 +127,8 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       createAudienceListOperationSettings;
   private final UnaryCallSettings<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListSettings;
+  private final UnaryCallSettings<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+      sheetExportAudienceListSettings;
   private final UnaryCallSettings<GetAudienceListRequest, AudienceList> getAudienceListSettings;
   private final PagedCallSettings<
           ListAudienceListsRequest, ListAudienceListsResponse, ListAudienceListsPagedResponse>
@@ -209,6 +216,12 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
   public UnaryCallSettings<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListSettings() {
     return queryAudienceListSettings;
+  }
+
+  /** Returns the object with the settings used for calls to sheetExportAudienceList. */
+  public UnaryCallSettings<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+      sheetExportAudienceListSettings() {
+    return sheetExportAudienceListSettings;
   }
 
   /** Returns the object with the settings used for calls to getAudienceList. */
@@ -334,6 +347,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     createAudienceListOperationSettings =
         settingsBuilder.createAudienceListOperationSettings().build();
     queryAudienceListSettings = settingsBuilder.queryAudienceListSettings().build();
+    sheetExportAudienceListSettings = settingsBuilder.sheetExportAudienceListSettings().build();
     getAudienceListSettings = settingsBuilder.getAudienceListSettings().build();
     listAudienceListsSettings = settingsBuilder.listAudienceListsSettings().build();
   }
@@ -351,6 +365,9 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
         createAudienceListOperationSettings;
     private final UnaryCallSettings.Builder<QueryAudienceListRequest, QueryAudienceListResponse>
         queryAudienceListSettings;
+    private final UnaryCallSettings.Builder<
+            SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+        sheetExportAudienceListSettings;
     private final UnaryCallSettings.Builder<GetAudienceListRequest, AudienceList>
         getAudienceListSettings;
     private final PagedCallSettings.Builder<
@@ -408,6 +425,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       createAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAudienceListOperationSettings = OperationCallSettings.newBuilder();
       queryAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      sheetExportAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAudienceListsSettings = PagedCallSettings.newBuilder(LIST_AUDIENCE_LISTS_PAGE_STR_FACT);
 
@@ -416,6 +434,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
               runFunnelReportSettings,
               createAudienceListSettings,
               queryAudienceListSettings,
+              sheetExportAudienceListSettings,
               getAudienceListSettings,
               listAudienceListsSettings);
       initDefaults(this);
@@ -429,6 +448,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       createAudienceListOperationSettings =
           settings.createAudienceListOperationSettings.toBuilder();
       queryAudienceListSettings = settings.queryAudienceListSettings.toBuilder();
+      sheetExportAudienceListSettings = settings.sheetExportAudienceListSettings.toBuilder();
       getAudienceListSettings = settings.getAudienceListSettings.toBuilder();
       listAudienceListsSettings = settings.listAudienceListsSettings.toBuilder();
 
@@ -437,6 +457,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
               runFunnelReportSettings,
               createAudienceListSettings,
               queryAudienceListSettings,
+              sheetExportAudienceListSettings,
               getAudienceListSettings,
               listAudienceListsSettings);
     }
@@ -480,6 +501,11 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
 
       builder
           .queryAudienceListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .sheetExportAudienceListSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -560,6 +586,13 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     public UnaryCallSettings.Builder<QueryAudienceListRequest, QueryAudienceListResponse>
         queryAudienceListSettings() {
       return queryAudienceListSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to sheetExportAudienceList. */
+    public UnaryCallSettings.Builder<
+            SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+        sheetExportAudienceListSettings() {
+      return sheetExportAudienceListSettings;
     }
 
     /** Returns the builder for the settings used for calls to getAudienceList. */

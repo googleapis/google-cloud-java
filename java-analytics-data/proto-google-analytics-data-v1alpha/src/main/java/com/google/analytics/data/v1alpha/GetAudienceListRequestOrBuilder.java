@@ -28,7 +28,7 @@ public interface GetAudienceListRequestOrBuilder
    *
    * <pre>
    * Required. The audience list resource name.
-   * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+   * Format: `properties/{property}/audienceLists/{audience_list}`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface GetAudienceListRequestOrBuilder
    *
    * <pre>
    * Required. The audience list resource name.
-   * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+   * Format: `properties/{property}/audienceLists/{audience_list}`
    * </pre>
    *
    * <code>

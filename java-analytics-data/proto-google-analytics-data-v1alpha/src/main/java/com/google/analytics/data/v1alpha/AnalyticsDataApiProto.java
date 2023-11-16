@@ -60,6 +60,14 @@ public final class AnalyticsDataApiProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_data_v1alpha_QueryAudienceListResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_data_v1alpha_SheetExportAudienceListRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_data_v1alpha_SheetExportAudienceListRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_data_v1alpha_SheetExportAudienceListResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_analytics_data_v1alpha_SheetExportAudienceListResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_analytics_data_v1alpha_AudienceRow_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_data_v1alpha_AudienceRow_fieldAccessorTable;
@@ -98,103 +106,129 @@ public final class AnalyticsDataApiProto {
           + "o\032\037google/protobuf/timestamp.proto\"Z\n\026Ge"
           + "tAudienceListRequest\022@\n\004name\030\001 \001(\tB2\342A\001\002"
           + "\372A+\n)analyticsdata.googleapis.com/Audien"
-          + "ceList\"\205\001\n\030ListAudienceListsRequest\022B\n\006p"
+          + "ceList\"\221\001\n\030ListAudienceListsRequest\022B\n\006p"
           + "arent\030\001 \001(\tB2\342A\001\002\372A+\022)analyticsdata.goog"
-          + "leapis.com/AudienceList\022\021\n\tpage_size\030\002 \001"
-          + "(\005\022\022\n\npage_token\030\003 \001(\t\"\222\001\n\031ListAudienceL"
-          + "istsResponse\022C\n\016audience_lists\030\001 \003(\0132+.g"
-          + "oogle.analytics.data.v1alpha.AudienceLis"
-          + "t\022\034\n\017next_page_token\030\002 \001(\tH\000\210\001\001B\022\n\020_next"
-          + "_page_token\"\251\001\n\031CreateAudienceListReques"
-          + "t\022B\n\006parent\030\001 \001(\tB2\342A\001\002\372A+\022)analyticsdat"
-          + "a.googleapis.com/AudienceList\022H\n\raudienc"
-          + "e_list\030\002 \001(\0132+.google.analytics.data.v1a"
-          + "lpha.AudienceListB\004\342A\001\002\"\214\004\n\014AudienceList"
-          + "\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\022\026\n\010audience\030\002 \001(\tB\004"
-          + "\342A\001\002\022#\n\025audience_display_name\030\003 \001(\tB\004\342A\001"
-          + "\003\022J\n\ndimensions\030\004 \003(\01320.google.analytics"
-          + ".data.v1alpha.AudienceDimensionB\004\342A\001\002\022K\n"
-          + "\005state\030\005 \001(\01621.google.analytics.data.v1a"
-          + "lpha.AudienceList.StateB\004\342A\001\003H\000\210\001\001\022B\n\023be"
-          + "gin_creating_time\030\006 \001(\0132\032.google.protobu"
-          + "f.TimestampB\004\342A\001\003H\001\210\001\001\"D\n\005State\022\025\n\021STATE"
-          + "_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\n\n\006ACTIVE\020\002"
-          + "\022\n\n\006FAILED\020\003:f\352Ac\n)analyticsdata.googlea"
-          + "pis.com/AudienceList\0226properties/{proper"
-          + "tyId}/audienceLists/{audienceListId}B\010\n\006"
-          + "_stateB\026\n\024_begin_creating_time\"\026\n\024Audien"
-          + "ceListMetadata\"G\n\030QueryAudienceListReque"
-          + "st\022\014\n\004name\030\001 \001(\t\022\016\n\006offset\030\002 \001(\003\022\r\n\005limi"
-          + "t\030\003 \001(\003\"\337\001\n\031QueryAudienceListResponse\022G\n"
-          + "\raudience_list\030\001 \001(\0132+.google.analytics."
-          + "data.v1alpha.AudienceListH\000\210\001\001\022A\n\raudien"
-          + "ce_rows\030\002 \003(\0132*.google.analytics.data.v1"
-          + "alpha.AudienceRow\022\026\n\trow_count\030\003 \001(\005H\001\210\001"
-          + "\001B\020\n\016_audience_listB\014\n\n_row_count\"^\n\013Aud"
-          + "ienceRow\022O\n\020dimension_values\030\001 \003(\01325.goo"
+          + "leapis.com/AudienceList\022\027\n\tpage_size\030\002 \001"
+          + "(\005B\004\342A\001\001\022\030\n\npage_token\030\003 \001(\tB\004\342A\001\001\"\222\001\n\031L"
+          + "istAudienceListsResponse\022C\n\016audience_lis"
+          + "ts\030\001 \003(\0132+.google.analytics.data.v1alpha"
+          + ".AudienceList\022\034\n\017next_page_token\030\002 \001(\tH\000"
+          + "\210\001\001B\022\n\020_next_page_token\"\251\001\n\031CreateAudien"
+          + "ceListRequest\022B\n\006parent\030\001 \001(\tB2\342A\001\002\372A+\022)"
+          + "analyticsdata.googleapis.com/AudienceLis"
+          + "t\022H\n\raudience_list\030\002 \001(\0132+.google.analyt"
+          + "ics.data.v1alpha.AudienceListB\004\342A\001\002\"\265\005\n\014"
+          + "AudienceList\022\023\n\004name\030\001 \001(\tB\005\342A\002\010\003\022\026\n\010aud"
+          + "ience\030\002 \001(\tB\004\342A\001\002\022#\n\025audience_display_na"
+          + "me\030\003 \001(\tB\004\342A\001\003\022J\n\ndimensions\030\004 \003(\01320.goo"
           + "gle.analytics.data.v1alpha.AudienceDimen"
-          + "sionValue\"+\n\021AudienceDimension\022\026\n\016dimens"
-          + "ion_name\030\001 \001(\t\"6\n\026AudienceDimensionValue"
-          + "\022\017\n\005value\030\001 \001(\tH\000B\013\n\tone_value\"\313\005\n\026RunFu"
-          + "nnelReportRequest\022\020\n\010property\030\001 \001(\t\022=\n\013d"
-          + "ate_ranges\030\002 \003(\0132(.google.analytics.data"
-          + ".v1alpha.DateRange\0225\n\006funnel\030\003 \001(\0132%.goo"
-          + "gle.analytics.data.v1alpha.Funnel\022H\n\020fun"
-          + "nel_breakdown\030\004 \001(\0132..google.analytics.d"
-          + "ata.v1alpha.FunnelBreakdown\022K\n\022funnel_ne"
-          + "xt_action\030\005 \001(\0132/.google.analytics.data."
-          + "v1alpha.FunnelNextAction\022p\n\031funnel_visua"
-          + "lization_type\030\006 \001(\0162M.google.analytics.d"
-          + "ata.v1alpha.RunFunnelReportRequest.Funne"
-          + "lVisualizationType\0228\n\010segments\030\007 \003(\0132&.g"
-          + "oogle.analytics.data.v1alpha.Segment\022\r\n\005"
-          + "limit\030\t \001(\003\022I\n\020dimension_filter\030\n \001(\0132/."
-          + "google.analytics.data.v1alpha.FilterExpr"
-          + "ession\022\035\n\025return_property_quota\030\014 \001(\010\"m\n"
-          + "\027FunnelVisualizationType\022)\n%FUNNEL_VISUA"
-          + "LIZATION_TYPE_UNSPECIFIED\020\000\022\023\n\017STANDARD_"
-          + "FUNNEL\020\001\022\022\n\016TRENDED_FUNNEL\020\002\"\201\002\n\027RunFunn"
-          + "elReportResponse\022D\n\014funnel_table\030\001 \001(\0132."
-          + ".google.analytics.data.v1alpha.FunnelSub"
-          + "Report\022L\n\024funnel_visualization\030\002 \001(\0132..g"
-          + "oogle.analytics.data.v1alpha.FunnelSubRe"
-          + "port\022D\n\016property_quota\030\003 \001(\0132,.google.an"
-          + "alytics.data.v1alpha.PropertyQuota\022\014\n\004ki"
-          + "nd\030\004 \001(\t2\224\t\n\022AlphaAnalyticsData\022\275\001\n\017RunF"
-          + "unnelReport\0225.google.analytics.data.v1al"
-          + "pha.RunFunnelReportRequest\0326.google.anal"
-          + "ytics.data.v1alpha.RunFunnelReportRespon"
-          + "se\";\202\323\344\223\0025\"0/v1alpha/{property=propertie"
-          + "s/*}:runFunnelReport:\001*\022\361\001\n\022CreateAudien"
-          + "ceList\0228.google.analytics.data.v1alpha.C"
-          + "reateAudienceListRequest\032\035.google.longru"
-          + "nning.Operation\"\201\001\312A$\n\014AudienceList\022\024Aud"
-          + "ienceListMetadata\332A\024parent,audience_list"
-          + "\202\323\344\223\002=\",/v1alpha/{parent=properties/*}/a"
-          + "udienceLists:\raudience_list\022\314\001\n\021QueryAud"
-          + "ienceList\0227.google.analytics.data.v1alph"
-          + "a.QueryAudienceListRequest\0328.google.anal"
-          + "ytics.data.v1alpha.QueryAudienceListResp"
-          + "onse\"D\332A\004name\202\323\344\223\0027\"2/v1alpha/{name=prop"
-          + "erties/*/audienceLists/*}:query:\001*\022\262\001\n\017G"
-          + "etAudienceList\0225.google.analytics.data.v"
-          + "1alpha.GetAudienceListRequest\032+.google.a"
-          + "nalytics.data.v1alpha.AudienceList\";\332A\004n"
-          + "ame\202\323\344\223\002.\022,/v1alpha/{name=properties/*/a"
-          + "udienceLists/*}\022\305\001\n\021ListAudienceLists\0227."
+          + "sionB\004\342A\001\002\022K\n\005state\030\005 \001(\01621.google.analy"
+          + "tics.data.v1alpha.AudienceList.StateB\004\342A"
+          + "\001\003H\000\210\001\001\022B\n\023begin_creating_time\030\006 \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\004\342A\001\003H\001\210\001\001\022+\n\035c"
+          + "reation_quota_tokens_charged\030\007 \001(\005B\004\342A\001\003"
+          + "\022\034\n\trow_count\030\010 \001(\005B\004\342A\001\003H\002\210\001\001\022 \n\rerror_"
+          + "message\030\t \001(\tB\004\342A\001\003H\003\210\001\001\"D\n\005State\022\025\n\021STA"
+          + "TE_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\n\n\006ACTIVE"
+          + "\020\002\022\n\n\006FAILED\020\003:\200\001\352A}\n)analyticsdata.goog"
+          + "leapis.com/AudienceList\0223properties/{pro"
+          + "perty}/audienceLists/{audience_list}*\rau"
+          + "dienceLists2\014audienceListB\010\n\006_stateB\026\n\024_"
+          + "begin_creating_timeB\014\n\n_row_countB\020\n\016_er"
+          + "ror_message\"\026\n\024AudienceListMetadata\"Y\n\030Q"
+          + "ueryAudienceListRequest\022\022\n\004name\030\001 \001(\tB\004\342"
+          + "A\001\002\022\024\n\006offset\030\002 \001(\003B\004\342A\001\001\022\023\n\005limit\030\003 \001(\003"
+          + "B\004\342A\001\001\"\337\001\n\031QueryAudienceListResponse\022G\n\r"
+          + "audience_list\030\001 \001(\0132+.google.analytics.d"
+          + "ata.v1alpha.AudienceListH\000\210\001\001\022A\n\raudienc"
+          + "e_rows\030\002 \003(\0132*.google.analytics.data.v1a"
+          + "lpha.AudienceRow\022\026\n\trow_count\030\003 \001(\005H\001\210\001\001"
+          + "B\020\n\016_audience_listB\014\n\n_row_count\"\215\001\n\036She"
+          + "etExportAudienceListRequest\022@\n\004name\030\001 \001("
+          + "\tB2\342A\001\002\372A+\n)analyticsdata.googleapis.com"
+          + "/AudienceList\022\024\n\006offset\030\002 \001(\003B\004\342A\001\001\022\023\n\005l"
+          + "imit\030\003 \001(\003B\004\342A\001\001\"\204\002\n\037SheetExportAudience"
+          + "ListResponse\022\034\n\017spreadsheet_uri\030\001 \001(\tH\000\210"
+          + "\001\001\022\033\n\016spreadsheet_id\030\002 \001(\tH\001\210\001\001\022\026\n\trow_c"
+          + "ount\030\003 \001(\005H\002\210\001\001\022G\n\raudience_list\030\004 \001(\0132+"
+          + ".google.analytics.data.v1alpha.AudienceL"
+          + "istH\003\210\001\001B\022\n\020_spreadsheet_uriB\021\n\017_spreads"
+          + "heet_idB\014\n\n_row_countB\020\n\016_audience_list\""
+          + "^\n\013AudienceRow\022O\n\020dimension_values\030\001 \003(\013"
+          + "25.google.analytics.data.v1alpha.Audienc"
+          + "eDimensionValue\"1\n\021AudienceDimension\022\034\n\016"
+          + "dimension_name\030\001 \001(\tB\004\342A\001\001\"6\n\026AudienceDi"
+          + "mensionValue\022\017\n\005value\030\001 \001(\tH\000B\013\n\tone_val"
+          + "ue\"\207\006\n\026RunFunnelReportRequest\022\026\n\010propert"
+          + "y\030\001 \001(\tB\004\342A\001\001\022C\n\013date_ranges\030\002 \003(\0132(.goo"
+          + "gle.analytics.data.v1alpha.DateRangeB\004\342A"
+          + "\001\001\022;\n\006funnel\030\003 \001(\0132%.google.analytics.da"
+          + "ta.v1alpha.FunnelB\004\342A\001\001\022N\n\020funnel_breakd"
+          + "own\030\004 \001(\0132..google.analytics.data.v1alph"
+          + "a.FunnelBreakdownB\004\342A\001\001\022Q\n\022funnel_next_a"
+          + "ction\030\005 \001(\0132/.google.analytics.data.v1al"
+          + "pha.FunnelNextActionB\004\342A\001\001\022v\n\031funnel_vis"
+          + "ualization_type\030\006 \001(\0162M.google.analytics"
+          + ".data.v1alpha.RunFunnelReportRequest.Fun"
+          + "nelVisualizationTypeB\004\342A\001\001\022>\n\010segments\030\007"
+          + " \003(\0132&.google.analytics.data.v1alpha.Seg"
+          + "mentB\004\342A\001\001\022\023\n\005limit\030\t \001(\003B\004\342A\001\001\022O\n\020dimen"
+          + "sion_filter\030\n \001(\0132/.google.analytics.dat"
+          + "a.v1alpha.FilterExpressionB\004\342A\001\001\022#\n\025retu"
+          + "rn_property_quota\030\014 \001(\010B\004\342A\001\001\"m\n\027FunnelV"
+          + "isualizationType\022)\n%FUNNEL_VISUALIZATION"
+          + "_TYPE_UNSPECIFIED\020\000\022\023\n\017STANDARD_FUNNEL\020\001"
+          + "\022\022\n\016TRENDED_FUNNEL\020\002\"\201\002\n\027RunFunnelReport"
+          + "Response\022D\n\014funnel_table\030\001 \001(\0132..google."
+          + "analytics.data.v1alpha.FunnelSubReport\022L"
+          + "\n\024funnel_visualization\030\002 \001(\0132..google.an"
+          + "alytics.data.v1alpha.FunnelSubReport\022D\n\016"
+          + "property_quota\030\003 \001(\0132,.google.analytics."
+          + "data.v1alpha.PropertyQuota\022\014\n\004kind\030\004 \001(\t"
+          + "2\373\013\n\022AlphaAnalyticsData\022\275\001\n\017RunFunnelRep"
+          + "ort\0225.google.analytics.data.v1alpha.RunF"
+          + "unnelReportRequest\0326.google.analytics.da"
+          + "ta.v1alpha.RunFunnelReportResponse\";\202\323\344\223"
+          + "\0025\"0/v1alpha/{property=properties/*}:run"
+          + "FunnelReport:\001*\022\361\001\n\022CreateAudienceList\0228"
+          + ".google.analytics.data.v1alpha.CreateAud"
+          + "ienceListRequest\032\035.google.longrunning.Op"
+          + "eration\"\201\001\312A$\n\014AudienceList\022\024AudienceLis"
+          + "tMetadata\332A\024parent,audience_list\202\323\344\223\002=\","
+          + "/v1alpha/{parent=properties/*}/audienceL"
+          + "ists:\raudience_list\022\314\001\n\021QueryAudienceLis"
+          + "t\0227.google.analytics.data.v1alpha.QueryA"
+          + "udienceListRequest\0328.google.analytics.da"
+          + "ta.v1alpha.QueryAudienceListResponse\"D\332A"
+          + "\004name\202\323\344\223\0027\"2/v1alpha/{name=properties/*"
+          + "/audienceLists/*}:query:\001*\022\344\001\n\027SheetExpo"
+          + "rtAudienceList\022=.google.analytics.data.v"
+          + "1alpha.SheetExportAudienceListRequest\032>."
+          + "google.analytics.data.v1alpha.SheetExpor"
+          + "tAudienceListResponse\"J\332A\004name\202\323\344\223\002=\"8/v"
+          + "1alpha/{name=properties/*/audienceLists/"
+          + "*}:exportSheet:\001*\022\262\001\n\017GetAudienceList\0225."
+          + "google.analytics.data.v1alpha.GetAudienc"
+          + "eListRequest\032+.google.analytics.data.v1a"
+          + "lpha.AudienceList\";\332A\004name\202\323\344\223\002.\022,/v1alp"
+          + "ha/{name=properties/*/audienceLists/*}\022\305"
+          + "\001\n\021ListAudienceLists\0227.google.analytics."
+          + "data.v1alpha.ListAudienceListsRequest\0328."
           + "google.analytics.data.v1alpha.ListAudien"
-          + "ceListsRequest\0328.google.analytics.data.v"
-          + "1alpha.ListAudienceListsResponse\"=\332A\006par"
-          + "ent\202\323\344\223\002.\022,/v1alpha/{parent=properties/*"
-          + "}/audienceLists\032~\312A\034analyticsdata.google"
-          + "apis.com\322A\\https://www.googleapis.com/au"
-          + "th/analytics,https://www.googleapis.com/"
-          + "auth/analytics.readonlyB\303\001\n!com.google.a"
-          + "nalytics.data.v1alphaB\025AnalyticsDataApiP"
-          + "rotoP\001ZAgoogle.golang.org/genproto/googl"
-          + "eapis/analytics/data/v1alpha;data\352AA\n&an"
-          + "alyticsadmin.googleapis.com/Property\022\027pr"
-          + "operties/{propertyId}b\006proto3"
+          + "ceListsResponse\"=\332A\006parent\202\323\344\223\002.\022,/v1alp"
+          + "ha/{parent=properties/*}/audienceLists\032\375"
+          + "\001\312A\034analyticsdata.googleapis.com\322A\332\001http"
+          + "s://www.googleapis.com/auth/analytics,ht"
+          + "tps://www.googleapis.com/auth/analytics."
+          + "readonly,https://www.googleapis.com/auth"
+          + "/drive,https://www.googleapis.com/auth/d"
+          + "rive.file,https://www.googleapis.com/aut"
+          + "h/spreadsheetsB\301\001\n!com.google.analytics."
+          + "data.v1alphaB\025AnalyticsDataApiProtoP\001ZAg"
+          + "oogle.golang.org/genproto/googleapis/ana"
+          + "lytics/data/v1alpha;data\352A?\n&analyticsad"
+          + "min.googleapis.com/Property\022\025properties/"
+          + "{property}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -252,8 +286,13 @@ public final class AnalyticsDataApiProto {
               "Dimensions",
               "State",
               "BeginCreatingTime",
+              "CreationQuotaTokensCharged",
+              "RowCount",
+              "ErrorMessage",
               "State",
               "BeginCreatingTime",
+              "RowCount",
+              "ErrorMessage",
             });
     internal_static_google_analytics_data_v1alpha_AudienceListMetadata_descriptor =
         getDescriptor().getMessageTypes().get(5);
@@ -277,8 +316,31 @@ public final class AnalyticsDataApiProto {
             new java.lang.String[] {
               "AudienceList", "AudienceRows", "RowCount", "AudienceList", "RowCount",
             });
-    internal_static_google_analytics_data_v1alpha_AudienceRow_descriptor =
+    internal_static_google_analytics_data_v1alpha_SheetExportAudienceListRequest_descriptor =
         getDescriptor().getMessageTypes().get(8);
+    internal_static_google_analytics_data_v1alpha_SheetExportAudienceListRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_data_v1alpha_SheetExportAudienceListRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Offset", "Limit",
+            });
+    internal_static_google_analytics_data_v1alpha_SheetExportAudienceListResponse_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_analytics_data_v1alpha_SheetExportAudienceListResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_analytics_data_v1alpha_SheetExportAudienceListResponse_descriptor,
+            new java.lang.String[] {
+              "SpreadsheetUri",
+              "SpreadsheetId",
+              "RowCount",
+              "AudienceList",
+              "SpreadsheetUri",
+              "SpreadsheetId",
+              "RowCount",
+              "AudienceList",
+            });
+    internal_static_google_analytics_data_v1alpha_AudienceRow_descriptor =
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_analytics_data_v1alpha_AudienceRow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_AudienceRow_descriptor,
@@ -286,7 +348,7 @@ public final class AnalyticsDataApiProto {
               "DimensionValues",
             });
     internal_static_google_analytics_data_v1alpha_AudienceDimension_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_analytics_data_v1alpha_AudienceDimension_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_AudienceDimension_descriptor,
@@ -294,7 +356,7 @@ public final class AnalyticsDataApiProto {
               "DimensionName",
             });
     internal_static_google_analytics_data_v1alpha_AudienceDimensionValue_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_analytics_data_v1alpha_AudienceDimensionValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_AudienceDimensionValue_descriptor,
@@ -302,7 +364,7 @@ public final class AnalyticsDataApiProto {
               "Value", "OneValue",
             });
     internal_static_google_analytics_data_v1alpha_RunFunnelReportRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_analytics_data_v1alpha_RunFunnelReportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_RunFunnelReportRequest_descriptor,
@@ -319,7 +381,7 @@ public final class AnalyticsDataApiProto {
               "ReturnPropertyQuota",
             });
     internal_static_google_analytics_data_v1alpha_RunFunnelReportResponse_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_analytics_data_v1alpha_RunFunnelReportResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_RunFunnelReportResponse_descriptor,

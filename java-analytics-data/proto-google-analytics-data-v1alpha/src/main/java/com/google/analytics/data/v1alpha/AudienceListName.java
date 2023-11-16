@@ -29,30 +29,29 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
 public class AudienceListName implements ResourceName {
-  private static final PathTemplate PROPERTYID_AUDIENCELISTID =
-      PathTemplate.createWithoutUrlEncoding(
-          "properties/{propertyId}/audienceLists/{audienceListId}");
+  private static final PathTemplate PROPERTY_AUDIENCE_LIST =
+      PathTemplate.createWithoutUrlEncoding("properties/{property}/audienceLists/{audience_list}");
   private volatile Map<String, String> fieldValuesMap;
-  private final String propertyId;
-  private final String audienceListId;
+  private final String property;
+  private final String audienceList;
 
   @Deprecated
   protected AudienceListName() {
-    propertyId = null;
-    audienceListId = null;
+    property = null;
+    audienceList = null;
   }
 
   private AudienceListName(Builder builder) {
-    propertyId = Preconditions.checkNotNull(builder.getPropertyId());
-    audienceListId = Preconditions.checkNotNull(builder.getAudienceListId());
+    property = Preconditions.checkNotNull(builder.getProperty());
+    audienceList = Preconditions.checkNotNull(builder.getAudienceList());
   }
 
-  public String getPropertyId() {
-    return propertyId;
+  public String getProperty() {
+    return property;
   }
 
-  public String getAudienceListId() {
-    return audienceListId;
+  public String getAudienceList() {
+    return audienceList;
   }
 
   public static Builder newBuilder() {
@@ -63,16 +62,12 @@ public class AudienceListName implements ResourceName {
     return new Builder(this);
   }
 
-  public static AudienceListName of(String propertyId, String audienceListId) {
-    return newBuilder().setPropertyId(propertyId).setAudienceListId(audienceListId).build();
+  public static AudienceListName of(String property, String audienceList) {
+    return newBuilder().setProperty(property).setAudienceList(audienceList).build();
   }
 
-  public static String format(String propertyId, String audienceListId) {
-    return newBuilder()
-        .setPropertyId(propertyId)
-        .setAudienceListId(audienceListId)
-        .build()
-        .toString();
+  public static String format(String property, String audienceList) {
+    return newBuilder().setProperty(property).setAudienceList(audienceList).build().toString();
   }
 
   public static AudienceListName parse(String formattedString) {
@@ -80,9 +75,9 @@ public class AudienceListName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PROPERTYID_AUDIENCELISTID.validatedMatch(
+        PROPERTY_AUDIENCE_LIST.validatedMatch(
             formattedString, "AudienceListName.parse: formattedString not in valid format");
-    return of(matchMap.get("propertyId"), matchMap.get("audienceListId"));
+    return of(matchMap.get("property"), matchMap.get("audience_list"));
   }
 
   public static List<AudienceListName> parseList(List<String> formattedStrings) {
@@ -106,7 +101,7 @@ public class AudienceListName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROPERTYID_AUDIENCELISTID.matches(formattedString);
+    return PROPERTY_AUDIENCE_LIST.matches(formattedString);
   }
 
   @Override
@@ -115,11 +110,11 @@ public class AudienceListName implements ResourceName {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          if (propertyId != null) {
-            fieldMapBuilder.put("propertyId", propertyId);
+          if (property != null) {
+            fieldMapBuilder.put("property", property);
           }
-          if (audienceListId != null) {
-            fieldMapBuilder.put("audienceListId", audienceListId);
+          if (audienceList != null) {
+            fieldMapBuilder.put("audience_list", audienceList);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -134,8 +129,7 @@ public class AudienceListName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROPERTYID_AUDIENCELISTID.instantiate(
-        "propertyId", propertyId, "audienceListId", audienceListId);
+    return PROPERTY_AUDIENCE_LIST.instantiate("property", property, "audience_list", audienceList);
   }
 
   @Override
@@ -145,8 +139,8 @@ public class AudienceListName implements ResourceName {
     }
     if (o != null && getClass() == o.getClass()) {
       AudienceListName that = ((AudienceListName) o);
-      return Objects.equals(this.propertyId, that.propertyId)
-          && Objects.equals(this.audienceListId, that.audienceListId);
+      return Objects.equals(this.property, that.property)
+          && Objects.equals(this.audienceList, that.audienceList);
     }
     return false;
   }
@@ -155,40 +149,40 @@ public class AudienceListName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
-    h ^= Objects.hashCode(propertyId);
+    h ^= Objects.hashCode(property);
     h *= 1000003;
-    h ^= Objects.hashCode(audienceListId);
+    h ^= Objects.hashCode(audienceList);
     return h;
   }
 
-  /** Builder for properties/{propertyId}/audienceLists/{audienceListId}. */
+  /** Builder for properties/{property}/audienceLists/{audience_list}. */
   public static class Builder {
-    private String propertyId;
-    private String audienceListId;
+    private String property;
+    private String audienceList;
 
     protected Builder() {}
 
-    public String getPropertyId() {
-      return propertyId;
+    public String getProperty() {
+      return property;
     }
 
-    public String getAudienceListId() {
-      return audienceListId;
+    public String getAudienceList() {
+      return audienceList;
     }
 
-    public Builder setPropertyId(String propertyId) {
-      this.propertyId = propertyId;
+    public Builder setProperty(String property) {
+      this.property = property;
       return this;
     }
 
-    public Builder setAudienceListId(String audienceListId) {
-      this.audienceListId = audienceListId;
+    public Builder setAudienceList(String audienceList) {
+      this.audienceList = audienceList;
       return this;
     }
 
     private Builder(AudienceListName audienceListName) {
-      this.propertyId = audienceListName.propertyId;
-      this.audienceListId = audienceListName.audienceListId;
+      this.property = audienceListName.property;
+      this.audienceList = audienceListName.audienceList;
     }
 
     public AudienceListName build() {

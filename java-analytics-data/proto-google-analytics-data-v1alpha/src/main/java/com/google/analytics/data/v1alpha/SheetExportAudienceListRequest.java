@@ -22,44 +22,45 @@ package com.google.analytics.data.v1alpha;
  *
  *
  * <pre>
- * A request to retrieve configuration metadata about a specific audience list.
+ * A request to export users in an audience list to a Google Sheet.
  * </pre>
  *
- * Protobuf type {@code google.analytics.data.v1alpha.GetAudienceListRequest}
+ * Protobuf type {@code google.analytics.data.v1alpha.SheetExportAudienceListRequest}
  */
-public final class GetAudienceListRequest extends com.google.protobuf.GeneratedMessageV3
+public final class SheetExportAudienceListRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.GetAudienceListRequest)
-    GetAudienceListRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.SheetExportAudienceListRequest)
+    SheetExportAudienceListRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetAudienceListRequest.newBuilder() to construct.
-  private GetAudienceListRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SheetExportAudienceListRequest.newBuilder() to construct.
+  private SheetExportAudienceListRequest(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetAudienceListRequest() {
+  private SheetExportAudienceListRequest() {
     name_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new GetAudienceListRequest();
+    return new SheetExportAudienceListRequest();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.AnalyticsDataApiProto
-        .internal_static_google_analytics_data_v1alpha_GetAudienceListRequest_descriptor;
+        .internal_static_google_analytics_data_v1alpha_SheetExportAudienceListRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.analytics.data.v1alpha.AnalyticsDataApiProto
-        .internal_static_google_analytics_data_v1alpha_GetAudienceListRequest_fieldAccessorTable
+        .internal_static_google_analytics_data_v1alpha_SheetExportAudienceListRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.analytics.data.v1alpha.GetAudienceListRequest.class,
-            com.google.analytics.data.v1alpha.GetAudienceListRequest.Builder.class);
+            com.google.analytics.data.v1alpha.SheetExportAudienceListRequest.class,
+            com.google.analytics.data.v1alpha.SheetExportAudienceListRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -70,7 +71,7 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The audience list resource name.
+   * Required. The name of the audience list to retrieve users from.
    * Format: `properties/{property}/audienceLists/{audience_list}`
    * </pre>
    *
@@ -96,7 +97,7 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The audience list resource name.
+   * Required. The name of the audience list to retrieve users from.
    * Format: `properties/{property}/audienceLists/{audience_list}`
    * </pre>
    *
@@ -119,6 +120,59 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int OFFSET_FIELD_NUMBER = 2;
+  private long offset_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The row count of the start row. The first row is counted as row
+   * 0.
+   *
+   * When paging, the first request does not specify offset; or equivalently,
+   * sets offset to 0; the first request returns the first `limit` of rows. The
+   * second request sets offset to the `limit` of the first request; the second
+   * request returns the second `limit` of rows.
+   *
+   * To learn more about this pagination parameter, see
+   * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+   * </pre>
+   *
+   * <code>int64 offset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The offset.
+   */
+  @java.lang.Override
+  public long getOffset() {
+    return offset_;
+  }
+
+  public static final int LIMIT_FIELD_NUMBER = 3;
+  private long limit_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The number of rows to return. If unspecified, 10,000 rows are
+   * returned. The API returns a maximum of 250,000 rows per request, no matter
+   * how many you ask for. `limit` must be positive.
+   *
+   * The API can also return fewer rows than the requested `limit`, if there
+   * aren't as many dimension values as the `limit`.
+   *
+   * To learn more about this pagination parameter, see
+   * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+   * </pre>
+   *
+   * <code>int64 limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The limit.
+   */
+  @java.lang.Override
+  public long getLimit() {
+    return limit_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -136,6 +190,12 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (offset_ != 0L) {
+      output.writeInt64(2, offset_);
+    }
+    if (limit_ != 0L) {
+      output.writeInt64(3, limit_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -148,6 +208,12 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
+    if (offset_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, offset_);
+    }
+    if (limit_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, limit_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -158,13 +224,15 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.analytics.data.v1alpha.GetAudienceListRequest)) {
+    if (!(obj instanceof com.google.analytics.data.v1alpha.SheetExportAudienceListRequest)) {
       return super.equals(obj);
     }
-    com.google.analytics.data.v1alpha.GetAudienceListRequest other =
-        (com.google.analytics.data.v1alpha.GetAudienceListRequest) obj;
+    com.google.analytics.data.v1alpha.SheetExportAudienceListRequest other =
+        (com.google.analytics.data.v1alpha.SheetExportAudienceListRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getOffset() != other.getOffset()) return false;
+    if (getLimit() != other.getLimit()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -178,76 +246,80 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getOffset());
+    hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getLimit());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.analytics.data.v1alpha.GetAudienceListRequest parseFrom(
+  public static com.google.analytics.data.v1alpha.SheetExportAudienceListRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.analytics.data.v1alpha.GetAudienceListRequest parseFrom(
+  public static com.google.analytics.data.v1alpha.SheetExportAudienceListRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.analytics.data.v1alpha.GetAudienceListRequest parseFrom(
+  public static com.google.analytics.data.v1alpha.SheetExportAudienceListRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.analytics.data.v1alpha.GetAudienceListRequest parseFrom(
+  public static com.google.analytics.data.v1alpha.SheetExportAudienceListRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.analytics.data.v1alpha.GetAudienceListRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.analytics.data.v1alpha.SheetExportAudienceListRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.analytics.data.v1alpha.GetAudienceListRequest parseFrom(
+  public static com.google.analytics.data.v1alpha.SheetExportAudienceListRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.analytics.data.v1alpha.GetAudienceListRequest parseFrom(
+  public static com.google.analytics.data.v1alpha.SheetExportAudienceListRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.analytics.data.v1alpha.GetAudienceListRequest parseFrom(
+  public static com.google.analytics.data.v1alpha.SheetExportAudienceListRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.analytics.data.v1alpha.GetAudienceListRequest parseDelimitedFrom(
+  public static com.google.analytics.data.v1alpha.SheetExportAudienceListRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.analytics.data.v1alpha.GetAudienceListRequest parseDelimitedFrom(
+  public static com.google.analytics.data.v1alpha.SheetExportAudienceListRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.analytics.data.v1alpha.GetAudienceListRequest parseFrom(
+  public static com.google.analytics.data.v1alpha.SheetExportAudienceListRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.analytics.data.v1alpha.GetAudienceListRequest parseFrom(
+  public static com.google.analytics.data.v1alpha.SheetExportAudienceListRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -265,7 +337,7 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
   }
 
   public static Builder newBuilder(
-      com.google.analytics.data.v1alpha.GetAudienceListRequest prototype) {
+      com.google.analytics.data.v1alpha.SheetExportAudienceListRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -283,31 +355,31 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A request to retrieve configuration metadata about a specific audience list.
+   * A request to export users in an audience list to a Google Sheet.
    * </pre>
    *
-   * Protobuf type {@code google.analytics.data.v1alpha.GetAudienceListRequest}
+   * Protobuf type {@code google.analytics.data.v1alpha.SheetExportAudienceListRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.analytics.data.v1alpha.GetAudienceListRequest)
-      com.google.analytics.data.v1alpha.GetAudienceListRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.analytics.data.v1alpha.SheetExportAudienceListRequest)
+      com.google.analytics.data.v1alpha.SheetExportAudienceListRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.analytics.data.v1alpha.AnalyticsDataApiProto
-          .internal_static_google_analytics_data_v1alpha_GetAudienceListRequest_descriptor;
+          .internal_static_google_analytics_data_v1alpha_SheetExportAudienceListRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.analytics.data.v1alpha.AnalyticsDataApiProto
-          .internal_static_google_analytics_data_v1alpha_GetAudienceListRequest_fieldAccessorTable
+          .internal_static_google_analytics_data_v1alpha_SheetExportAudienceListRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.analytics.data.v1alpha.GetAudienceListRequest.class,
-              com.google.analytics.data.v1alpha.GetAudienceListRequest.Builder.class);
+              com.google.analytics.data.v1alpha.SheetExportAudienceListRequest.class,
+              com.google.analytics.data.v1alpha.SheetExportAudienceListRequest.Builder.class);
     }
 
-    // Construct using com.google.analytics.data.v1alpha.GetAudienceListRequest.newBuilder()
+    // Construct using com.google.analytics.data.v1alpha.SheetExportAudienceListRequest.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -319,23 +391,26 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      offset_ = 0L;
+      limit_ = 0L;
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.analytics.data.v1alpha.AnalyticsDataApiProto
-          .internal_static_google_analytics_data_v1alpha_GetAudienceListRequest_descriptor;
+          .internal_static_google_analytics_data_v1alpha_SheetExportAudienceListRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.analytics.data.v1alpha.GetAudienceListRequest getDefaultInstanceForType() {
-      return com.google.analytics.data.v1alpha.GetAudienceListRequest.getDefaultInstance();
+    public com.google.analytics.data.v1alpha.SheetExportAudienceListRequest
+        getDefaultInstanceForType() {
+      return com.google.analytics.data.v1alpha.SheetExportAudienceListRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.analytics.data.v1alpha.GetAudienceListRequest build() {
-      com.google.analytics.data.v1alpha.GetAudienceListRequest result = buildPartial();
+    public com.google.analytics.data.v1alpha.SheetExportAudienceListRequest build() {
+      com.google.analytics.data.v1alpha.SheetExportAudienceListRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -343,9 +418,9 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
     }
 
     @java.lang.Override
-    public com.google.analytics.data.v1alpha.GetAudienceListRequest buildPartial() {
-      com.google.analytics.data.v1alpha.GetAudienceListRequest result =
-          new com.google.analytics.data.v1alpha.GetAudienceListRequest(this);
+    public com.google.analytics.data.v1alpha.SheetExportAudienceListRequest buildPartial() {
+      com.google.analytics.data.v1alpha.SheetExportAudienceListRequest result =
+          new com.google.analytics.data.v1alpha.SheetExportAudienceListRequest(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -353,10 +428,17 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
       return result;
     }
 
-    private void buildPartial0(com.google.analytics.data.v1alpha.GetAudienceListRequest result) {
+    private void buildPartial0(
+        com.google.analytics.data.v1alpha.SheetExportAudienceListRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.offset_ = offset_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.limit_ = limit_;
       }
     }
 
@@ -395,21 +477,29 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.analytics.data.v1alpha.GetAudienceListRequest) {
-        return mergeFrom((com.google.analytics.data.v1alpha.GetAudienceListRequest) other);
+      if (other instanceof com.google.analytics.data.v1alpha.SheetExportAudienceListRequest) {
+        return mergeFrom((com.google.analytics.data.v1alpha.SheetExportAudienceListRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.analytics.data.v1alpha.GetAudienceListRequest other) {
-      if (other == com.google.analytics.data.v1alpha.GetAudienceListRequest.getDefaultInstance())
+    public Builder mergeFrom(
+        com.google.analytics.data.v1alpha.SheetExportAudienceListRequest other) {
+      if (other
+          == com.google.analytics.data.v1alpha.SheetExportAudienceListRequest.getDefaultInstance())
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.getOffset() != 0L) {
+        setOffset(other.getOffset());
+      }
+      if (other.getLimit() != 0L) {
+        setLimit(other.getLimit());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -443,6 +533,18 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                offset_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+            case 24:
+              {
+                limit_ = input.readInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -467,7 +569,7 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The audience list resource name.
+     * Required. The name of the audience list to retrieve users from.
      * Format: `properties/{property}/audienceLists/{audience_list}`
      * </pre>
      *
@@ -492,7 +594,7 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The audience list resource name.
+     * Required. The name of the audience list to retrieve users from.
      * Format: `properties/{property}/audienceLists/{audience_list}`
      * </pre>
      *
@@ -517,7 +619,7 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The audience list resource name.
+     * Required. The name of the audience list to retrieve users from.
      * Format: `properties/{property}/audienceLists/{audience_list}`
      * </pre>
      *
@@ -541,7 +643,7 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The audience list resource name.
+     * Required. The name of the audience list to retrieve users from.
      * Format: `properties/{property}/audienceLists/{audience_list}`
      * </pre>
      *
@@ -561,7 +663,7 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The audience list resource name.
+     * Required. The name of the audience list to retrieve users from.
      * Format: `properties/{property}/audienceLists/{audience_list}`
      * </pre>
      *
@@ -583,6 +685,163 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private long offset_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The row count of the start row. The first row is counted as row
+     * 0.
+     *
+     * When paging, the first request does not specify offset; or equivalently,
+     * sets offset to 0; the first request returns the first `limit` of rows. The
+     * second request sets offset to the `limit` of the first request; the second
+     * request returns the second `limit` of rows.
+     *
+     * To learn more about this pagination parameter, see
+     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+     * </pre>
+     *
+     * <code>int64 offset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The offset.
+     */
+    @java.lang.Override
+    public long getOffset() {
+      return offset_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The row count of the start row. The first row is counted as row
+     * 0.
+     *
+     * When paging, the first request does not specify offset; or equivalently,
+     * sets offset to 0; the first request returns the first `limit` of rows. The
+     * second request sets offset to the `limit` of the first request; the second
+     * request returns the second `limit` of rows.
+     *
+     * To learn more about this pagination parameter, see
+     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+     * </pre>
+     *
+     * <code>int64 offset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The offset to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOffset(long value) {
+
+      offset_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The row count of the start row. The first row is counted as row
+     * 0.
+     *
+     * When paging, the first request does not specify offset; or equivalently,
+     * sets offset to 0; the first request returns the first `limit` of rows. The
+     * second request sets offset to the `limit` of the first request; the second
+     * request returns the second `limit` of rows.
+     *
+     * To learn more about this pagination parameter, see
+     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+     * </pre>
+     *
+     * <code>int64 offset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOffset() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      offset_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long limit_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of rows to return. If unspecified, 10,000 rows are
+     * returned. The API returns a maximum of 250,000 rows per request, no matter
+     * how many you ask for. `limit` must be positive.
+     *
+     * The API can also return fewer rows than the requested `limit`, if there
+     * aren't as many dimension values as the `limit`.
+     *
+     * To learn more about this pagination parameter, see
+     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+     * </pre>
+     *
+     * <code>int64 limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The limit.
+     */
+    @java.lang.Override
+    public long getLimit() {
+      return limit_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of rows to return. If unspecified, 10,000 rows are
+     * returned. The API returns a maximum of 250,000 rows per request, no matter
+     * how many you ask for. `limit` must be positive.
+     *
+     * The API can also return fewer rows than the requested `limit`, if there
+     * aren't as many dimension values as the `limit`.
+     *
+     * To learn more about this pagination parameter, see
+     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+     * </pre>
+     *
+     * <code>int64 limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The limit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLimit(long value) {
+
+      limit_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of rows to return. If unspecified, 10,000 rows are
+     * returned. The API returns a maximum of 250,000 rows per request, no matter
+     * how many you ask for. `limit` must be positive.
+     *
+     * The API can also return fewer rows than the requested `limit`, if there
+     * aren't as many dimension values as the `limit`.
+     *
+     * To learn more about this pagination parameter, see
+     * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
+     * </pre>
+     *
+     * <code>int64 limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLimit() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      limit_ = 0L;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -594,24 +853,26 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.analytics.data.v1alpha.GetAudienceListRequest)
+    // @@protoc_insertion_point(builder_scope:google.analytics.data.v1alpha.SheetExportAudienceListRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.analytics.data.v1alpha.GetAudienceListRequest)
-  private static final com.google.analytics.data.v1alpha.GetAudienceListRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.analytics.data.v1alpha.SheetExportAudienceListRequest)
+  private static final com.google.analytics.data.v1alpha.SheetExportAudienceListRequest
+      DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.analytics.data.v1alpha.GetAudienceListRequest();
+    DEFAULT_INSTANCE = new com.google.analytics.data.v1alpha.SheetExportAudienceListRequest();
   }
 
-  public static com.google.analytics.data.v1alpha.GetAudienceListRequest getDefaultInstance() {
+  public static com.google.analytics.data.v1alpha.SheetExportAudienceListRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetAudienceListRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetAudienceListRequest>() {
+  private static final com.google.protobuf.Parser<SheetExportAudienceListRequest> PARSER =
+      new com.google.protobuf.AbstractParser<SheetExportAudienceListRequest>() {
         @java.lang.Override
-        public GetAudienceListRequest parsePartialFrom(
+        public SheetExportAudienceListRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -630,17 +891,18 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
         }
       };
 
-  public static com.google.protobuf.Parser<GetAudienceListRequest> parser() {
+  public static com.google.protobuf.Parser<SheetExportAudienceListRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetAudienceListRequest> getParserForType() {
+  public com.google.protobuf.Parser<SheetExportAudienceListRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.analytics.data.v1alpha.GetAudienceListRequest getDefaultInstanceForType() {
+  public com.google.analytics.data.v1alpha.SheetExportAudienceListRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

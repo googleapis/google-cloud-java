@@ -39,7 +39,7 @@ public class AsyncCreateAudienceList {
     try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
       CreateAudienceListRequest request =
           CreateAudienceListRequest.newBuilder()
-              .setParent(PropertyName.of("[PROPERTYID]").toString())
+              .setParent(PropertyName.of("[PROPERTY]").toString())
               .setAudienceList(AudienceList.newBuilder().build())
               .build();
       ApiFuture<Operation> future =

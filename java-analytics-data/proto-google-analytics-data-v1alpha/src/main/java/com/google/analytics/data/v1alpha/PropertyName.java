@@ -29,22 +29,22 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
 public class PropertyName implements ResourceName {
-  private static final PathTemplate PROPERTY_ID =
-      PathTemplate.createWithoutUrlEncoding("properties/{propertyId}");
+  private static final PathTemplate PROPERTY =
+      PathTemplate.createWithoutUrlEncoding("properties/{property}");
   private volatile Map<String, String> fieldValuesMap;
-  private final String propertyId;
+  private final String property;
 
   @Deprecated
   protected PropertyName() {
-    propertyId = null;
+    property = null;
   }
 
   private PropertyName(Builder builder) {
-    propertyId = Preconditions.checkNotNull(builder.getPropertyId());
+    property = Preconditions.checkNotNull(builder.getProperty());
   }
 
-  public String getPropertyId() {
-    return propertyId;
+  public String getProperty() {
+    return property;
   }
 
   public static Builder newBuilder() {
@@ -55,12 +55,12 @@ public class PropertyName implements ResourceName {
     return new Builder(this);
   }
 
-  public static PropertyName of(String propertyId) {
-    return newBuilder().setPropertyId(propertyId).build();
+  public static PropertyName of(String property) {
+    return newBuilder().setProperty(property).build();
   }
 
-  public static String format(String propertyId) {
-    return newBuilder().setPropertyId(propertyId).build().toString();
+  public static String format(String property) {
+    return newBuilder().setProperty(property).build().toString();
   }
 
   public static PropertyName parse(String formattedString) {
@@ -68,9 +68,9 @@ public class PropertyName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PROPERTY_ID.validatedMatch(
+        PROPERTY.validatedMatch(
             formattedString, "PropertyName.parse: formattedString not in valid format");
-    return of(matchMap.get("propertyId"));
+    return of(matchMap.get("property"));
   }
 
   public static List<PropertyName> parseList(List<String> formattedStrings) {
@@ -94,7 +94,7 @@ public class PropertyName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROPERTY_ID.matches(formattedString);
+    return PROPERTY.matches(formattedString);
   }
 
   @Override
@@ -103,8 +103,8 @@ public class PropertyName implements ResourceName {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          if (propertyId != null) {
-            fieldMapBuilder.put("propertyId", propertyId);
+          if (property != null) {
+            fieldMapBuilder.put("property", property);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -119,7 +119,7 @@ public class PropertyName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROPERTY_ID.instantiate("propertyId", propertyId);
+    return PROPERTY.instantiate("property", property);
   }
 
   @Override
@@ -129,7 +129,7 @@ public class PropertyName implements ResourceName {
     }
     if (o != null && getClass() == o.getClass()) {
       PropertyName that = ((PropertyName) o);
-      return Objects.equals(this.propertyId, that.propertyId);
+      return Objects.equals(this.property, that.property);
     }
     return false;
   }
@@ -138,27 +138,27 @@ public class PropertyName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
-    h ^= Objects.hashCode(propertyId);
+    h ^= Objects.hashCode(property);
     return h;
   }
 
-  /** Builder for properties/{propertyId}. */
+  /** Builder for properties/{property}. */
   public static class Builder {
-    private String propertyId;
+    private String property;
 
     protected Builder() {}
 
-    public String getPropertyId() {
-      return propertyId;
+    public String getProperty() {
+      return property;
     }
 
-    public Builder setPropertyId(String propertyId) {
-      this.propertyId = propertyId;
+    public Builder setProperty(String property) {
+      this.property = property;
       return this;
     }
 
     private Builder(PropertyName propertyName) {
-      this.propertyId = propertyName.propertyId;
+      this.property = propertyName.property;
     }
 
     public PropertyName build() {

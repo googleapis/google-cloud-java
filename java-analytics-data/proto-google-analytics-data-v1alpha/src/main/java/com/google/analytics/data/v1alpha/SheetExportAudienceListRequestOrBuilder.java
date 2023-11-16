@@ -18,9 +18,9 @@
 
 package com.google.analytics.data.v1alpha;
 
-public interface QueryAudienceListRequestOrBuilder
+public interface SheetExportAudienceListRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.analytics.data.v1alpha.QueryAudienceListRequest)
+    // @@protoc_insertion_point(interface_extends:google.analytics.data.v1alpha.SheetExportAudienceListRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -31,7 +31,9 @@ public interface QueryAudienceListRequestOrBuilder
    * Format: `properties/{property}/audienceLists/{audience_list}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -44,7 +46,9 @@ public interface QueryAudienceListRequestOrBuilder
    * Format: `properties/{property}/audienceLists/{audience_list}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
