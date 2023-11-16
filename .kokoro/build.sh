@@ -118,12 +118,14 @@ clirr)
 retry_quota)
     mvn -B ${INTEGRATION_TEST_ARGS} \
       -Dtest=ITBigQueryWriteQuotaRetryTest \
+      -Dsurefire.failIfNoSpecifiedTests=false \
       test
     RETURN_CODE=$?
     ;;
 retry_non_quota)
     mvn -B ${INTEGRATION_TEST_ARGS} \
       -Dtest=ITBigQueryWriteNonQuotaRetryTest \
+      -Dsurefire.failIfNoSpecifiedTests=false \
       test
     RETURN_CODE=$?
     ;;
