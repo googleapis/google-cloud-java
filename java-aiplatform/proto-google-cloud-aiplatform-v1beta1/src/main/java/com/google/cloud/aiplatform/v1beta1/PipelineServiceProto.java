@@ -72,6 +72,14 @@ public final class PipelineServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DeletePipelineJobRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_BatchDeletePipelineJobsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_BatchDeletePipelineJobsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_BatchDeletePipelineJobsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_BatchDeletePipelineJobsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_CancelPipelineJobRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_CancelPipelineJobRequest_fieldAccessorTable;
@@ -133,73 +141,86 @@ public final class PipelineServiceProto {
           + "ipelineJob\022\027\n\017next_page_token\030\002 \001(\t\"X\n\030D"
           + "eletePipelineJobRequest\022<\n\004name\030\001 \001(\tB.\342"
           + "A\001\002\372A\'\n%aiplatform.googleapis.com/Pipeli"
-          + "neJob\"X\n\030CancelPipelineJobRequest\022<\n\004nam"
-          + "e\030\001 \001(\tB.\342A\001\002\372A\'\n%aiplatform.googleapis."
-          + "com/PipelineJob2\376\021\n\017PipelineService\022\375\001\n\026"
-          + "CreateTrainingPipeline\022>.google.cloud.ai"
-          + "platform.v1beta1.CreateTrainingPipelineR"
-          + "equest\0321.google.cloud.aiplatform.v1beta1"
-          + ".TrainingPipeline\"p\332A\030parent,training_pi"
-          + "peline\202\323\344\223\002O\":/v1beta1/{parent=projects/"
-          + "*/locations/*}/trainingPipelines:\021traini"
-          + "ng_pipeline\022\320\001\n\023GetTrainingPipeline\022;.go"
-          + "ogle.cloud.aiplatform.v1beta1.GetTrainin"
-          + "gPipelineRequest\0321.google.cloud.aiplatfo"
-          + "rm.v1beta1.TrainingPipeline\"I\332A\004name\202\323\344\223"
-          + "\002<\022:/v1beta1/{name=projects/*/locations/"
-          + "*/trainingPipelines/*}\022\343\001\n\025ListTrainingP"
-          + "ipelines\022=.google.cloud.aiplatform.v1bet"
-          + "a1.ListTrainingPipelinesRequest\032>.google"
-          + ".cloud.aiplatform.v1beta1.ListTrainingPi"
-          + "pelinesResponse\"K\332A\006parent\202\323\344\223\002<\022:/v1bet"
-          + "a1/{parent=projects/*/locations/*}/train"
-          + "ingPipelines\022\365\001\n\026DeleteTrainingPipeline\022"
-          + ">.google.cloud.aiplatform.v1beta1.Delete"
-          + "TrainingPipelineRequest\032\035.google.longrun"
-          + "ning.Operation\"|\312A0\n\025google.protobuf.Emp"
-          + "ty\022\027DeleteOperationMetadata\332A\004name\202\323\344\223\002<"
-          + "*:/v1beta1/{name=projects/*/locations/*/"
-          + "trainingPipelines/*}\022\305\001\n\026CancelTrainingP"
-          + "ipeline\022>.google.cloud.aiplatform.v1beta"
-          + "1.CancelTrainingPipelineRequest\032\026.google"
-          + ".protobuf.Empty\"S\332A\004name\202\323\344\223\002F\"A/v1beta1"
-          + "/{name=projects/*/locations/*/trainingPi"
-          + "pelines/*}:cancel:\001*\022\357\001\n\021CreatePipelineJ"
-          + "ob\0229.google.cloud.aiplatform.v1beta1.Cre"
-          + "atePipelineJobRequest\032,.google.cloud.aip"
-          + "latform.v1beta1.PipelineJob\"q\332A#parent,p"
-          + "ipeline_job,pipeline_job_id\202\323\344\223\002E\"5/v1be"
-          + "ta1/{parent=projects/*/locations/*}/pipe"
-          + "lineJobs:\014pipeline_job\022\274\001\n\016GetPipelineJo"
-          + "b\0226.google.cloud.aiplatform.v1beta1.GetP"
-          + "ipelineJobRequest\032,.google.cloud.aiplatf"
-          + "orm.v1beta1.PipelineJob\"D\332A\004name\202\323\344\223\0027\0225"
-          + "/v1beta1/{name=projects/*/locations/*/pi"
-          + "pelineJobs/*}\022\317\001\n\020ListPipelineJobs\0228.goo"
-          + "gle.cloud.aiplatform.v1beta1.ListPipelin"
-          + "eJobsRequest\0329.google.cloud.aiplatform.v"
-          + "1beta1.ListPipelineJobsResponse\"F\332A\006pare"
-          + "nt\202\323\344\223\0027\0225/v1beta1/{parent=projects/*/lo"
-          + "cations/*}/pipelineJobs\022\346\001\n\021DeletePipeli"
-          + "neJob\0229.google.cloud.aiplatform.v1beta1."
-          + "DeletePipelineJobRequest\032\035.google.longru"
-          + "nning.Operation\"w\312A0\n\025google.protobuf.Em"
-          + "pty\022\027DeleteOperationMetadata\332A\004name\202\323\344\223\002"
-          + "7*5/v1beta1/{name=projects/*/locations/*"
-          + "/pipelineJobs/*}\022\266\001\n\021CancelPipelineJob\0229"
-          + ".google.cloud.aiplatform.v1beta1.CancelP"
-          + "ipelineJobRequest\032\026.google.protobuf.Empt"
-          + "y\"N\332A\004name\202\323\344\223\002A\"</v1beta1/{name=project"
-          + "s/*/locations/*/pipelineJobs/*}:cancel:\001"
-          + "*\032M\312A\031aiplatform.googleapis.com\322A.https:"
-          + "//www.googleapis.com/auth/cloud-platform"
-          + "B\353\001\n#com.google.cloud.aiplatform.v1beta1"
-          + "B\024PipelineServiceProtoP\001ZCcloud.google.c"
-          + "om/go/aiplatform/apiv1beta1/aiplatformpb"
-          + ";aiplatformpb\252\002\037Google.Cloud.AIPlatform."
-          + "V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta"
-          + "1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006"
-          + "proto3"
+          + "neJob\"\237\001\n\036BatchDeletePipelineJobsRequest"
+          + "\022>\n\006parent\030\001 \001(\tB.\342A\001\002\372A\'\022%aiplatform.go"
+          + "ogleapis.com/PipelineJob\022=\n\005names\030\002 \003(\tB"
+          + ".\342A\001\002\372A\'\n%aiplatform.googleapis.com/Pipe"
+          + "lineJob\"f\n\037BatchDeletePipelineJobsRespon"
+          + "se\022C\n\rpipeline_jobs\030\001 \003(\0132,.google.cloud"
+          + ".aiplatform.v1beta1.PipelineJob\"X\n\030Cance"
+          + "lPipelineJobRequest\022<\n\004name\030\001 \001(\tB.\342A\001\002\372"
+          + "A\'\n%aiplatform.googleapis.com/PipelineJo"
+          + "b2\225\024\n\017PipelineService\022\375\001\n\026CreateTraining"
+          + "Pipeline\022>.google.cloud.aiplatform.v1bet"
+          + "a1.CreateTrainingPipelineRequest\0321.googl"
+          + "e.cloud.aiplatform.v1beta1.TrainingPipel"
+          + "ine\"p\332A\030parent,training_pipeline\202\323\344\223\002O\":"
+          + "/v1beta1/{parent=projects/*/locations/*}"
+          + "/trainingPipelines:\021training_pipeline\022\320\001"
+          + "\n\023GetTrainingPipeline\022;.google.cloud.aip"
+          + "latform.v1beta1.GetTrainingPipelineReque"
+          + "st\0321.google.cloud.aiplatform.v1beta1.Tra"
+          + "iningPipeline\"I\332A\004name\202\323\344\223\002<\022:/v1beta1/{"
+          + "name=projects/*/locations/*/trainingPipe"
+          + "lines/*}\022\343\001\n\025ListTrainingPipelines\022=.goo"
+          + "gle.cloud.aiplatform.v1beta1.ListTrainin"
+          + "gPipelinesRequest\032>.google.cloud.aiplatf"
+          + "orm.v1beta1.ListTrainingPipelinesRespons"
+          + "e\"K\332A\006parent\202\323\344\223\002<\022:/v1beta1/{parent=pro"
+          + "jects/*/locations/*}/trainingPipelines\022\365"
+          + "\001\n\026DeleteTrainingPipeline\022>.google.cloud"
+          + ".aiplatform.v1beta1.DeleteTrainingPipeli"
+          + "neRequest\032\035.google.longrunning.Operation"
+          + "\"|\312A0\n\025google.protobuf.Empty\022\027DeleteOper"
+          + "ationMetadata\332A\004name\202\323\344\223\002<*:/v1beta1/{na"
+          + "me=projects/*/locations/*/trainingPipeli"
+          + "nes/*}\022\305\001\n\026CancelTrainingPipeline\022>.goog"
+          + "le.cloud.aiplatform.v1beta1.CancelTraini"
+          + "ngPipelineRequest\032\026.google.protobuf.Empt"
+          + "y\"S\332A\004name\202\323\344\223\002F\"A/v1beta1/{name=project"
+          + "s/*/locations/*/trainingPipelines/*}:can"
+          + "cel:\001*\022\357\001\n\021CreatePipelineJob\0229.google.cl"
+          + "oud.aiplatform.v1beta1.CreatePipelineJob"
+          + "Request\032,.google.cloud.aiplatform.v1beta"
+          + "1.PipelineJob\"q\332A#parent,pipeline_job,pi"
+          + "peline_job_id\202\323\344\223\002E\"5/v1beta1/{parent=pr"
+          + "ojects/*/locations/*}/pipelineJobs:\014pipe"
+          + "line_job\022\274\001\n\016GetPipelineJob\0226.google.clo"
+          + "ud.aiplatform.v1beta1.GetPipelineJobRequ"
+          + "est\032,.google.cloud.aiplatform.v1beta1.Pi"
+          + "pelineJob\"D\332A\004name\202\323\344\223\0027\0225/v1beta1/{name"
+          + "=projects/*/locations/*/pipelineJobs/*}\022"
+          + "\317\001\n\020ListPipelineJobs\0228.google.cloud.aipl"
+          + "atform.v1beta1.ListPipelineJobsRequest\0329"
+          + ".google.cloud.aiplatform.v1beta1.ListPip"
+          + "elineJobsResponse\"F\332A\006parent\202\323\344\223\0027\0225/v1b"
+          + "eta1/{parent=projects/*/locations/*}/pip"
+          + "elineJobs\022\346\001\n\021DeletePipelineJob\0229.google"
+          + ".cloud.aiplatform.v1beta1.DeletePipeline"
+          + "JobRequest\032\035.google.longrunning.Operatio"
+          + "n\"w\312A0\n\025google.protobuf.Empty\022\027DeleteOpe"
+          + "rationMetadata\332A\004name\202\323\344\223\0027*5/v1beta1/{n"
+          + "ame=projects/*/locations/*/pipelineJobs/"
+          + "*}\022\224\002\n\027BatchDeletePipelineJobs\022?.google."
+          + "cloud.aiplatform.v1beta1.BatchDeletePipe"
+          + "lineJobsRequest\032\035.google.longrunning.Ope"
+          + "ration\"\230\001\312A:\n\037BatchDeletePipelineJobsRes"
+          + "ponse\022\027DeleteOperationMetadata\332A\014parent,"
+          + "names\202\323\344\223\002F\"A/v1beta1/{parent=projects/*"
+          + "/locations/*}/pipelineJobs:batchDelete:\001"
+          + "*\022\266\001\n\021CancelPipelineJob\0229.google.cloud.a"
+          + "iplatform.v1beta1.CancelPipelineJobReque"
+          + "st\032\026.google.protobuf.Empty\"N\332A\004name\202\323\344\223\002"
+          + "A\"</v1beta1/{name=projects/*/locations/*"
+          + "/pipelineJobs/*}:cancel:\001*\032M\312A\031aiplatfor"
+          + "m.googleapis.com\322A.https://www.googleapi"
+          + "s.com/auth/cloud-platformB\353\001\n#com.google"
+          + ".cloud.aiplatform.v1beta1B\024PipelineServi"
+          + "ceProtoP\001ZCcloud.google.com/go/aiplatfor"
+          + "m/apiv1beta1/aiplatformpb;aiplatformpb\252\002"
+          + "\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Googl"
+          + "e\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Clo"
+          + "ud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -304,8 +325,24 @@ public final class PipelineServiceProto {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_CancelPipelineJobRequest_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_BatchDeletePipelineJobsRequest_descriptor =
         getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_aiplatform_v1beta1_BatchDeletePipelineJobsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_BatchDeletePipelineJobsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_BatchDeletePipelineJobsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_aiplatform_v1beta1_BatchDeletePipelineJobsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_BatchDeletePipelineJobsResponse_descriptor,
+            new java.lang.String[] {
+              "PipelineJobs",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_CancelPipelineJobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_aiplatform_v1beta1_CancelPipelineJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CancelPipelineJobRequest_descriptor,

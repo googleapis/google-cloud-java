@@ -31,6 +31,7 @@ public interface UpdateFeatureRequestOrBuilder
    * updated.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>
@@ -48,6 +49,7 @@ public interface UpdateFeatureRequestOrBuilder
    * updated.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>
@@ -65,6 +67,7 @@ public interface UpdateFeatureRequestOrBuilder
    * updated.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>
@@ -89,7 +92,7 @@ public interface UpdateFeatureRequestOrBuilder
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring`
+   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -113,7 +116,7 @@ public interface UpdateFeatureRequestOrBuilder
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring`
+   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -137,7 +140,7 @@ public interface UpdateFeatureRequestOrBuilder
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring`
+   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

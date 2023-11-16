@@ -40,6 +40,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
   private MachineSpec() {
     machineType_ = "";
     acceleratorType_ = 0;
+    tpuTopology_ = "";
   }
 
   @java.lang.Override
@@ -199,6 +200,59 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     return acceleratorCount_;
   }
 
+  public static final int TPU_TOPOLOGY_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tpuTopology_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The topology of the TPUs. Corresponds to the TPU topologies
+   * available from GKE. (Example: tpu_topology: "2x2x1").
+   * </pre>
+   *
+   * <code>string tpu_topology = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The tpuTopology.
+   */
+  @java.lang.Override
+  public java.lang.String getTpuTopology() {
+    java.lang.Object ref = tpuTopology_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tpuTopology_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The topology of the TPUs. Corresponds to the TPU topologies
+   * available from GKE. (Example: tpu_topology: "2x2x1").
+   * </pre>
+   *
+   * <code>string tpu_topology = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The bytes for tpuTopology.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTpuTopologyBytes() {
+    java.lang.Object ref = tpuTopology_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      tpuTopology_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -224,6 +278,9 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     if (acceleratorCount_ != 0) {
       output.writeInt32(3, acceleratorCount_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tpuTopology_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tpuTopology_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -244,6 +301,9 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     if (acceleratorCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, acceleratorCount_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tpuTopology_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tpuTopology_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -263,6 +323,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     if (!getMachineType().equals(other.getMachineType())) return false;
     if (acceleratorType_ != other.acceleratorType_) return false;
     if (getAcceleratorCount() != other.getAcceleratorCount()) return false;
+    if (!getTpuTopology().equals(other.getTpuTopology())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -280,6 +341,8 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + acceleratorType_;
     hash = (37 * hash) + ACCELERATOR_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getAcceleratorCount();
+    hash = (37 * hash) + TPU_TOPOLOGY_FIELD_NUMBER;
+    hash = (53 * hash) + getTpuTopology().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -422,6 +485,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       machineType_ = "";
       acceleratorType_ = 0;
       acceleratorCount_ = 0;
+      tpuTopology_ = "";
       return this;
     }
 
@@ -466,6 +530,9 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.acceleratorCount_ = acceleratorCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.tpuTopology_ = tpuTopology_;
       }
     }
 
@@ -525,6 +592,11 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       if (other.getAcceleratorCount() != 0) {
         setAcceleratorCount(other.getAcceleratorCount());
       }
+      if (!other.getTpuTopology().isEmpty()) {
+        tpuTopology_ = other.tpuTopology_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -569,6 +641,12 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 34:
+              {
+                tpuTopology_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -913,6 +991,117 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAcceleratorCount() {
       bitField0_ = (bitField0_ & ~0x00000004);
       acceleratorCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object tpuTopology_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The topology of the TPUs. Corresponds to the TPU topologies
+     * available from GKE. (Example: tpu_topology: "2x2x1").
+     * </pre>
+     *
+     * <code>string tpu_topology = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The tpuTopology.
+     */
+    public java.lang.String getTpuTopology() {
+      java.lang.Object ref = tpuTopology_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tpuTopology_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The topology of the TPUs. Corresponds to the TPU topologies
+     * available from GKE. (Example: tpu_topology: "2x2x1").
+     * </pre>
+     *
+     * <code>string tpu_topology = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for tpuTopology.
+     */
+    public com.google.protobuf.ByteString getTpuTopologyBytes() {
+      java.lang.Object ref = tpuTopology_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tpuTopology_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The topology of the TPUs. Corresponds to the TPU topologies
+     * available from GKE. (Example: tpu_topology: "2x2x1").
+     * </pre>
+     *
+     * <code>string tpu_topology = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The tpuTopology to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTpuTopology(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      tpuTopology_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The topology of the TPUs. Corresponds to the TPU topologies
+     * available from GKE. (Example: tpu_topology: "2x2x1").
+     * </pre>
+     *
+     * <code>string tpu_topology = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTpuTopology() {
+      tpuTopology_ = getDefaultInstance().getTpuTopology();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The topology of the TPUs. Corresponds to the TPU topologies
+     * available from GKE. (Example: tpu_topology: "2x2x1").
+     * </pre>
+     *
+     * <code>string tpu_topology = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The bytes for tpuTopology to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTpuTopologyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      tpuTopology_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

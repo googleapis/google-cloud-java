@@ -1835,7 +1835,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optimized storage type to replace lightning
+   * Optimized storage type
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized}
@@ -2030,7 +2030,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optimized storage type to replace lightning
+     * Optimized storage type
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized}

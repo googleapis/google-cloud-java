@@ -14,34 +14,32 @@
  * limitations under the License.
  */
 
-package com.google.cloud.aiplatform.v1beta1.samples;
+package com.google.cloud.aiplatform.v1.samples;
 
-// [START aiplatform_v1beta1_generated_FeatureOnlineStoreService_FetchFeatureValues_StringString_sync]
-import com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreServiceClient;
-import com.google.cloud.aiplatform.v1beta1.FeatureViewName;
-import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse;
+// [START aiplatform_v1_generated_FeatureOnlineStoreAdminService_SyncFeatureView_Featureviewname_sync]
+import com.google.cloud.aiplatform.v1.FeatureOnlineStoreAdminServiceClient;
+import com.google.cloud.aiplatform.v1.FeatureViewName;
+import com.google.cloud.aiplatform.v1.SyncFeatureViewResponse;
 
-public class SyncFetchFeatureValuesStringString {
+public class SyncSyncFeatureViewFeatureviewname {
 
   public static void main(String[] args) throws Exception {
-    syncFetchFeatureValuesStringString();
+    syncSyncFeatureViewFeatureviewname();
   }
 
-  public static void syncFetchFeatureValuesStringString() throws Exception {
+  public static void syncSyncFeatureViewFeatureviewname() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (FeatureOnlineStoreServiceClient featureOnlineStoreServiceClient =
-        FeatureOnlineStoreServiceClient.create()) {
-      String featureView =
-          FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
-              .toString();
-      String id = "id3355";
-      FetchFeatureValuesResponse response =
-          featureOnlineStoreServiceClient.fetchFeatureValues(featureView, id);
+    try (FeatureOnlineStoreAdminServiceClient featureOnlineStoreAdminServiceClient =
+        FeatureOnlineStoreAdminServiceClient.create()) {
+      FeatureViewName featureView =
+          FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]");
+      SyncFeatureViewResponse response =
+          featureOnlineStoreAdminServiceClient.syncFeatureView(featureView);
     }
   }
 }
-// [END aiplatform_v1beta1_generated_FeatureOnlineStoreService_FetchFeatureValues_StringString_sync]
+// [END aiplatform_v1_generated_FeatureOnlineStoreAdminService_SyncFeatureView_Featureviewname_sync]

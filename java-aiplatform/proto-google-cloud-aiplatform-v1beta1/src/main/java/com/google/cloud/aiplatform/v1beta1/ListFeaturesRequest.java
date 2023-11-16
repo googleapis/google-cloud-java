@@ -77,8 +77,9 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The resource name of the Location to list Features.
-   * Format:
+   * Format for entity_type as parent:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * Format for feature_group as parent:
    * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
@@ -105,8 +106,9 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The resource name of the Location to list Features.
-   * Format:
+   * Format for entity_type as parent:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * Format for feature_group as parent:
    * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
@@ -249,10 +251,14 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * A page token, received from a previous
    * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+   * call or
+   * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures]
    * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to
    * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+   * or or
+   * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures]
    * must match the call that provided the page token.
    * </pre>
    *
@@ -278,10 +284,14 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * A page token, received from a previous
    * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+   * call or
+   * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures]
    * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to
    * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+   * or or
+   * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures]
    * must match the call that provided the page token.
    * </pre>
    *
@@ -419,6 +429,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
+   * Only applicable for Vertex AI Feature Store (Legacy).
    * If set, return the most recent
    * [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count]
    * of stats for each Feature in response. Valid value is [0, 10]. If number of
@@ -935,8 +946,9 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the Location to list Features.
-     * Format:
+     * Format for entity_type as parent:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * Format for feature_group as parent:
      * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
@@ -962,8 +974,9 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the Location to list Features.
-     * Format:
+     * Format for entity_type as parent:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * Format for feature_group as parent:
      * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
@@ -989,8 +1002,9 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the Location to list Features.
-     * Format:
+     * Format for entity_type as parent:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * Format for feature_group as parent:
      * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
@@ -1015,8 +1029,9 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the Location to list Features.
-     * Format:
+     * Format for entity_type as parent:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * Format for feature_group as parent:
      * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
@@ -1037,8 +1052,9 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The resource name of the Location to list Features.
-     * Format:
+     * Format for entity_type as parent:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * Format for feature_group as parent:
      * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
@@ -1330,10 +1346,14 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous
      * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * call or
+     * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures]
      * call. Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to
      * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * or or
+     * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures]
      * must match the call that provided the page token.
      * </pre>
      *
@@ -1358,10 +1378,14 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous
      * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * call or
+     * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures]
      * call. Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to
      * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * or or
+     * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures]
      * must match the call that provided the page token.
      * </pre>
      *
@@ -1386,10 +1410,14 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous
      * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * call or
+     * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures]
      * call. Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to
      * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * or or
+     * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures]
      * must match the call that provided the page token.
      * </pre>
      *
@@ -1413,10 +1441,14 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous
      * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * call or
+     * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures]
      * call. Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to
      * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * or or
+     * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures]
      * must match the call that provided the page token.
      * </pre>
      *
@@ -1436,10 +1468,14 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * A page token, received from a previous
      * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * call or
+     * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures]
      * call. Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to
      * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * or or
+     * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures]
      * must match the call that provided the page token.
      * </pre>
      *
@@ -1784,6 +1820,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Only applicable for Vertex AI Feature Store (Legacy).
      * If set, return the most recent
      * [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count]
      * of stats for each Feature in response. Valid value is [0, 10]. If number of
@@ -1804,6 +1841,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Only applicable for Vertex AI Feature Store (Legacy).
      * If set, return the most recent
      * [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count]
      * of stats for each Feature in response. Valid value is [0, 10]. If number of
@@ -1828,6 +1866,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Only applicable for Vertex AI Feature Store (Legacy).
      * If set, return the most recent
      * [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count]
      * of stats for each Feature in response. Valid value is [0, 10]. If number of

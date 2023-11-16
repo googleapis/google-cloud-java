@@ -41,6 +41,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
 
   private FetchFeatureValuesRequest() {
     featureView_ = "";
+    dataFormat_ = 0;
     format_ = 0;
   }
 
@@ -74,6 +75,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
    *
    * Protobuf enum {@code google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format}
    */
+  @java.lang.Deprecated
   public enum Format implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
@@ -233,6 +235,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    @java.lang.Deprecated
     ID(3),
     ENTITYID_NOT_SET(0);
     private final int value;
@@ -279,10 +282,13 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
    * fetch feature values for.
    * </pre>
    *
-   * <code>string id = 3;</code>
+   * <code>string id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=104
    * @return Whether the id field is set.
    */
+  @java.lang.Deprecated
   public boolean hasId() {
     return entityIdCase_ == 3;
   }
@@ -294,10 +300,13 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
    * fetch feature values for.
    * </pre>
    *
-   * <code>string id = 3;</code>
+   * <code>string id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=104
    * @return The id.
    */
+  @java.lang.Deprecated
   public java.lang.String getId() {
     java.lang.Object ref = "";
     if (entityIdCase_ == 3) {
@@ -322,10 +331,13 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
    * fetch feature values for.
    * </pre>
    *
-   * <code>string id = 3;</code>
+   * <code>string id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=104
    * @return The bytes for id.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = "";
     if (entityIdCase_ == 3) {
@@ -400,6 +412,107 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
     }
   }
 
+  public static final int DATA_KEY_FIELD_NUMBER = 6;
+  private com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey dataKey_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The request key to fetch feature values for.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataKey() {
+    return dataKey_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The request key to fetch feature values for.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataKey.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey getDataKey() {
+    return dataKey_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance()
+        : dataKey_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The request key to fetch feature values for.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder getDataKeyOrBuilder() {
+    return dataKey_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance()
+        : dataKey_;
+  }
+
+  public static final int DATA_FORMAT_FIELD_NUMBER = 7;
+  private int dataFormat_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Response data format. If not set,
+   * [FeatureViewDataFormat.KEY_VALUE][google.cloud.aiplatform.v1beta1.FeatureViewDataFormat.KEY_VALUE]
+   * will be used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewDataFormat data_format = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dataFormat.
+   */
+  @java.lang.Override
+  public int getDataFormatValue() {
+    return dataFormat_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Response data format. If not set,
+   * [FeatureViewDataFormat.KEY_VALUE][google.cloud.aiplatform.v1beta1.FeatureViewDataFormat.KEY_VALUE]
+   * will be used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewDataFormat data_format = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataFormat.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureViewDataFormat getDataFormat() {
+    com.google.cloud.aiplatform.v1beta1.FeatureViewDataFormat result =
+        com.google.cloud.aiplatform.v1beta1.FeatureViewDataFormat.forNumber(dataFormat_);
+    return result == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataFormat.UNRECOGNIZED
+        : result;
+  }
+
   public static final int FORMAT_FIELD_NUMBER = 5;
   private int format_ = 0;
   /**
@@ -407,13 +520,20 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Specify response data format. If not set, KeyValue format will be used.
+   * Deprecated. Use
+   * [FetchFeatureValuesRequest.data_format][google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.data_format].
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=128
    * @return The enum numeric value on the wire for format.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getFormatValue() {
     return format_;
   }
@@ -422,13 +542,20 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Specify response data format. If not set, KeyValue format will be used.
+   * Deprecated. Use
+   * [FetchFeatureValuesRequest.data_format][google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.data_format].
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=128
    * @return The format.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format getFormat() {
     com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format result =
         com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format.forNumber(format_);
@@ -462,6 +589,15 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
             .getNumber()) {
       output.writeEnum(5, format_);
     }
+    if (dataKey_ != null) {
+      output.writeMessage(6, getDataKey());
+    }
+    if (dataFormat_
+        != com.google.cloud.aiplatform.v1beta1.FeatureViewDataFormat
+            .FEATURE_VIEW_DATA_FORMAT_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(7, dataFormat_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -482,6 +618,15 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, format_);
     }
+    if (dataKey_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDataKey());
+    }
+    if (dataFormat_
+        != com.google.cloud.aiplatform.v1beta1.FeatureViewDataFormat
+            .FEATURE_VIEW_DATA_FORMAT_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, dataFormat_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -499,6 +644,11 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
         (com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest) obj;
 
     if (!getFeatureView().equals(other.getFeatureView())) return false;
+    if (hasDataKey() != other.hasDataKey()) return false;
+    if (hasDataKey()) {
+      if (!getDataKey().equals(other.getDataKey())) return false;
+    }
+    if (dataFormat_ != other.dataFormat_) return false;
     if (format_ != other.format_) return false;
     if (!getEntityIdCase().equals(other.getEntityIdCase())) return false;
     switch (entityIdCase_) {
@@ -521,6 +671,12 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + FEATURE_VIEW_FIELD_NUMBER;
     hash = (53 * hash) + getFeatureView().hashCode();
+    if (hasDataKey()) {
+      hash = (37 * hash) + DATA_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getDataKey().hashCode();
+    }
+    hash = (37 * hash) + DATA_FORMAT_FIELD_NUMBER;
+    hash = (53 * hash) + dataFormat_;
     hash = (37 * hash) + FORMAT_FIELD_NUMBER;
     hash = (53 * hash) + format_;
     switch (entityIdCase_) {
@@ -674,6 +830,12 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       super.clear();
       bitField0_ = 0;
       featureView_ = "";
+      dataKey_ = null;
+      if (dataKeyBuilder_ != null) {
+        dataKeyBuilder_.dispose();
+        dataKeyBuilder_ = null;
+      }
+      dataFormat_ = 0;
       format_ = 0;
       entityIdCase_ = 0;
       entityId_ = null;
@@ -720,6 +882,12 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
         result.featureView_ = featureView_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dataKey_ = dataKeyBuilder_ == null ? dataKey_ : dataKeyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dataFormat_ = dataFormat_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.format_ = format_;
       }
     }
@@ -782,6 +950,12 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasDataKey()) {
+        mergeDataKey(other.getDataKey());
+      }
+      if (other.dataFormat_ != 0) {
+        setDataFormatValue(other.getDataFormatValue());
+      }
       if (other.format_ != 0) {
         setFormatValue(other.getFormatValue());
       }
@@ -840,9 +1014,21 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
             case 40:
               {
                 format_ = input.readEnum();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 50:
+              {
+                input.readMessage(getDataKeyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 50
+            case 56:
+              {
+                dataFormat_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -884,11 +1070,14 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * fetch feature values for.
      * </pre>
      *
-     * <code>string id = 3;</code>
+     * <code>string id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=104
      * @return Whether the id field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasId() {
       return entityIdCase_ == 3;
     }
@@ -900,11 +1089,14 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * fetch feature values for.
      * </pre>
      *
-     * <code>string id = 3;</code>
+     * <code>string id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=104
      * @return The id.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public java.lang.String getId() {
       java.lang.Object ref = "";
       if (entityIdCase_ == 3) {
@@ -929,11 +1121,14 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * fetch feature values for.
      * </pre>
      *
-     * <code>string id = 3;</code>
+     * <code>string id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=104
      * @return The bytes for id.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = "";
       if (entityIdCase_ == 3) {
@@ -958,11 +1153,14 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * fetch feature values for.
      * </pre>
      *
-     * <code>string id = 3;</code>
+     * <code>string id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=104
      * @param value The id to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setId(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -980,10 +1178,13 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * fetch feature values for.
      * </pre>
      *
-     * <code>string id = 3;</code>
+     * <code>string id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=104
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearId() {
       if (entityIdCase_ == 3) {
         entityIdCase_ = 0;
@@ -1000,11 +1201,14 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * fetch feature values for.
      * </pre>
      *
-     * <code>string id = 3;</code>
+     * <code>string id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=104
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1137,36 +1341,70 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
       return this;
     }
 
-    private int format_ = 0;
+    private com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey dataKey_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey,
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder>
+        dataKeyBuilder_;
     /**
      *
      *
      * <pre>
-     * Specify response data format. If not set, KeyValue format will be used.
+     * Optional. The request key to fetch feature values for.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
-     * @return The enum numeric value on the wire for format.
+     * @return Whether the dataKey field is set.
      */
-    @java.lang.Override
-    public int getFormatValue() {
-      return format_;
+    public boolean hasDataKey() {
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Specify response data format. If not set, KeyValue format will be used.
+     * Optional. The request key to fetch feature values for.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
-     * @param value The enum numeric value on the wire for format to set.
-     * @return This builder for chaining.
+     * @return The dataKey.
      */
-    public Builder setFormatValue(int value) {
-      format_ = value;
+    public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey getDataKey() {
+      if (dataKeyBuilder_ == null) {
+        return dataKey_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance()
+            : dataKey_;
+      } else {
+        return dataKeyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The request key to fetch feature values for.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataKey(com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey value) {
+      if (dataKeyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataKey_ = value;
+      } else {
+        dataKeyBuilder_.setMessage(value);
+      }
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
@@ -1175,14 +1413,316 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specify response data format. If not set, KeyValue format will be used.
+     * Optional. The request key to fetch feature values for.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataKey(
+        com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder builderForValue) {
+      if (dataKeyBuilder_ == null) {
+        dataKey_ = builderForValue.build();
+      } else {
+        dataKeyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
      *
+     *
+     * <pre>
+     * Optional. The request key to fetch feature values for.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDataKey(com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey value) {
+      if (dataKeyBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && dataKey_ != null
+            && dataKey_
+                != com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance()) {
+          getDataKeyBuilder().mergeFrom(value);
+        } else {
+          dataKey_ = value;
+        }
+      } else {
+        dataKeyBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The request key to fetch feature values for.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDataKey() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      dataKey_ = null;
+      if (dataKeyBuilder_ != null) {
+        dataKeyBuilder_.dispose();
+        dataKeyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The request key to fetch feature values for.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder getDataKeyBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getDataKeyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The request key to fetch feature values for.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder getDataKeyOrBuilder() {
+      if (dataKeyBuilder_ != null) {
+        return dataKeyBuilder_.getMessageOrBuilder();
+      } else {
+        return dataKey_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance()
+            : dataKey_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The request key to fetch feature values for.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey,
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder>
+        getDataKeyFieldBuilder() {
+      if (dataKeyBuilder_ == null) {
+        dataKeyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey,
+                com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder,
+                com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder>(
+                getDataKey(), getParentForChildren(), isClean());
+        dataKey_ = null;
+      }
+      return dataKeyBuilder_;
+    }
+
+    private int dataFormat_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Response data format. If not set,
+     * [FeatureViewDataFormat.KEY_VALUE][google.cloud.aiplatform.v1beta1.FeatureViewDataFormat.KEY_VALUE]
+     * will be used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewDataFormat data_format = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for dataFormat.
+     */
+    @java.lang.Override
+    public int getDataFormatValue() {
+      return dataFormat_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Response data format. If not set,
+     * [FeatureViewDataFormat.KEY_VALUE][google.cloud.aiplatform.v1beta1.FeatureViewDataFormat.KEY_VALUE]
+     * will be used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewDataFormat data_format = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for dataFormat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataFormatValue(int value) {
+      dataFormat_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Response data format. If not set,
+     * [FeatureViewDataFormat.KEY_VALUE][google.cloud.aiplatform.v1beta1.FeatureViewDataFormat.KEY_VALUE]
+     * will be used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewDataFormat data_format = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dataFormat.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureViewDataFormat getDataFormat() {
+      com.google.cloud.aiplatform.v1beta1.FeatureViewDataFormat result =
+          com.google.cloud.aiplatform.v1beta1.FeatureViewDataFormat.forNumber(dataFormat_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataFormat.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Response data format. If not set,
+     * [FeatureViewDataFormat.KEY_VALUE][google.cloud.aiplatform.v1beta1.FeatureViewDataFormat.KEY_VALUE]
+     * will be used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewDataFormat data_format = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The dataFormat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataFormat(com.google.cloud.aiplatform.v1beta1.FeatureViewDataFormat value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      dataFormat_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Response data format. If not set,
+     * [FeatureViewDataFormat.KEY_VALUE][google.cloud.aiplatform.v1beta1.FeatureViewDataFormat.KEY_VALUE]
+     * will be used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewDataFormat data_format = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDataFormat() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      dataFormat_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int format_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Specify response data format. If not set, KeyValue format will be used.
+     * Deprecated. Use
+     * [FetchFeatureValuesRequest.data_format][google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.data_format].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5 [deprecated = true];
+     * </code>
+     *
+     * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated.
+     *     See google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=128
+     * @return The enum numeric value on the wire for format.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public int getFormatValue() {
+      return format_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify response data format. If not set, KeyValue format will be used.
+     * Deprecated. Use
+     * [FetchFeatureValuesRequest.data_format][google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.data_format].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5 [deprecated = true];
+     * </code>
+     *
+     * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated.
+     *     See google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=128
+     * @param value The enum numeric value on the wire for format to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder setFormatValue(int value) {
+      format_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify response data format. If not set, KeyValue format will be used.
+     * Deprecated. Use
+     * [FetchFeatureValuesRequest.data_format][google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.data_format].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5 [deprecated = true];
+     * </code>
+     *
+     * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated.
+     *     See google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=128
      * @return The format.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format getFormat() {
       com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format result =
           com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format.forNumber(format_);
@@ -1195,19 +1735,26 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Specify response data format. If not set, KeyValue format will be used.
+     * Deprecated. Use
+     * [FetchFeatureValuesRequest.data_format][google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.data_format].
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated.
+     *     See google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=128
      * @param value The format to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setFormat(
         com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       format_ = value.getNumber();
       onChanged();
       return this;
@@ -1217,14 +1764,21 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Specify response data format. If not set, KeyValue format will be used.
+     * Deprecated. Use
+     * [FetchFeatureValuesRequest.data_format][google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.data_format].
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated.
+     *     See google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=128
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearFormat() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       format_ = 0;
       onChanged();
       return this;

@@ -149,7 +149,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring`
+   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -176,7 +176,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring`
+   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -203,7 +203,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring`
+   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -856,7 +856,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -882,7 +882,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -914,7 +914,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -948,7 +948,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -979,7 +979,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1016,7 +1016,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1047,7 +1047,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1073,7 +1073,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1103,7 +1103,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

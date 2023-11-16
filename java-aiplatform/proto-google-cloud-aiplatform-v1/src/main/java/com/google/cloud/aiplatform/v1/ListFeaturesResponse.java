@@ -24,6 +24,8 @@ package com.google.cloud.aiplatform.v1;
  * <pre>
  * Response message for
  * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1.FeaturestoreService.ListFeatures].
+ * Response message for
+ * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatures].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListFeaturesResponse}
@@ -368,6 +370,8 @@ public final class ListFeaturesResponse extends com.google.protobuf.GeneratedMes
    * <pre>
    * Response message for
    * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1.FeaturestoreService.ListFeatures].
+   * Response message for
+   * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatures].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListFeaturesResponse}

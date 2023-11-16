@@ -1375,7 +1375,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * This field stores the results of the explanations run in parallel with
-   * the default explanation strategy/method.
+   * The default explanation strategy/method.
    * </pre>
    *
    * <code>
@@ -1403,7 +1403,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * This field stores the results of the explanations run in parallel with
-   * the default explanation strategy/method.
+   * The default explanation strategy/method.
    * </pre>
    *
    * <code>
@@ -1422,7 +1422,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * This field stores the results of the explanations run in parallel with
-   * the default explanation strategy/method.
+   * The default explanation strategy/method.
    * </pre>
    *
    * <code>
@@ -1449,7 +1449,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * This field stores the results of the explanations run in parallel with
-   * the default explanation strategy/method.
+   * The default explanation strategy/method.
    * </pre>
    *
    * <code>
@@ -2643,7 +2643,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * This field stores the results of the explanations run in parallel with
-     * the default explanation strategy/method.
+     * The default explanation strategy/method.
      * </pre>
      *
      * <code>
@@ -2671,7 +2671,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * This field stores the results of the explanations run in parallel with
-     * the default explanation strategy/method.
+     * The default explanation strategy/method.
      * </pre>
      *
      * <code>
@@ -2690,7 +2690,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * This field stores the results of the explanations run in parallel with
-     * the default explanation strategy/method.
+     * The default explanation strategy/method.
      * </pre>
      *
      * <code>
@@ -2718,7 +2718,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * This field stores the results of the explanations run in parallel with
-     * the default explanation strategy/method.
+     * The default explanation strategy/method.
      * </pre>
      *
      * <code>
@@ -2751,7 +2751,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * This field stores the results of the explanations run in parallel with
-     * the default explanation strategy/method.
+     * The default explanation strategy/method.
      * </pre>
      *
      * <code>
@@ -2779,7 +2779,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * This field stores the results of the explanations run in parallel with
-     * the default explanation strategy/method.
+     * The default explanation strategy/method.
      * </pre>
      *
      * <code>
@@ -2804,7 +2804,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * This field stores the results of the explanations run in parallel with
-     * the default explanation strategy/method.
+     * The default explanation strategy/method.
      * </pre>
      *
      * <code>

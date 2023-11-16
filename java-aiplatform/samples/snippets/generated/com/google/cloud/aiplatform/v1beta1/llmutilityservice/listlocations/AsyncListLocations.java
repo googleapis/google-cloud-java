@@ -16,31 +16,39 @@
 
 package com.google.cloud.aiplatform.v1beta1.samples;
 
-// [START aiplatform_v1beta1_generated_FeatureOnlineStoreService_FetchFeatureValues_FeatureviewnameString_sync]
-import com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreServiceClient;
-import com.google.cloud.aiplatform.v1beta1.FeatureViewName;
-import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse;
+// [START aiplatform_v1beta1_generated_LlmUtilityService_ListLocations_async]
+import com.google.api.core.ApiFuture;
+import com.google.cloud.aiplatform.v1beta1.LlmUtilityServiceClient;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.Location;
 
-public class SyncFetchFeatureValuesFeatureviewnameString {
+public class AsyncListLocations {
 
   public static void main(String[] args) throws Exception {
-    syncFetchFeatureValuesFeatureviewnameString();
+    asyncListLocations();
   }
 
-  public static void syncFetchFeatureValuesFeatureviewnameString() throws Exception {
+  public static void asyncListLocations() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (FeatureOnlineStoreServiceClient featureOnlineStoreServiceClient =
-        FeatureOnlineStoreServiceClient.create()) {
-      FeatureViewName featureView =
-          FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]");
-      String id = "id3355";
-      FetchFeatureValuesResponse response =
-          featureOnlineStoreServiceClient.fetchFeatureValues(featureView, id);
+    try (LlmUtilityServiceClient llmUtilityServiceClient = LlmUtilityServiceClient.create()) {
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("name3373707")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      ApiFuture<Location> future =
+          llmUtilityServiceClient.listLocationsPagedCallable().futureCall(request);
+      // Do something.
+      for (Location element : future.get().iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }
-// [END aiplatform_v1beta1_generated_FeatureOnlineStoreService_FetchFeatureValues_FeatureviewnameString_sync]
+// [END aiplatform_v1beta1_generated_LlmUtilityService_ListLocations_async]

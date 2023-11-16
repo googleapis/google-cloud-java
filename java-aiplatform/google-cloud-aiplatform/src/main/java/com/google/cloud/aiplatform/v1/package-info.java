@@ -56,6 +56,67 @@
  * }
  * }</pre>
  *
+ * <p>======================= FeatureOnlineStoreAdminServiceClient =======================
+ *
+ * <p>Service Description: The service that handles CRUD and List for resources for
+ * FeatureOnlineStore.
+ *
+ * <p>Sample for FeatureOnlineStoreAdminServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FeatureOnlineStoreAdminServiceClient featureOnlineStoreAdminServiceClient =
+ *     FeatureOnlineStoreAdminServiceClient.create()) {
+ *   FeatureOnlineStoreName name =
+ *       FeatureOnlineStoreName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]");
+ *   FeatureOnlineStore response =
+ *       featureOnlineStoreAdminServiceClient.getFeatureOnlineStore(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= FeatureOnlineStoreServiceClient =======================
+ *
+ * <p>Sample for FeatureOnlineStoreServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FeatureOnlineStoreServiceClient featureOnlineStoreServiceClient =
+ *     FeatureOnlineStoreServiceClient.create()) {
+ *   FeatureViewName featureView =
+ *       FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]");
+ *   FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
+ *   FetchFeatureValuesResponse response =
+ *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, dataKey);
+ * }
+ * }</pre>
+ *
+ * <p>======================= FeatureRegistryServiceClient =======================
+ *
+ * <p>Service Description: The service that handles CRUD and List for resources for FeatureRegistry.
+ *
+ * <p>Sample for FeatureRegistryServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FeatureRegistryServiceClient featureRegistryServiceClient =
+ *     FeatureRegistryServiceClient.create()) {
+ *   FeatureGroupName name = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+ *   FeatureGroup response = featureRegistryServiceClient.getFeatureGroup(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= FeaturestoreOnlineServingServiceClient =======================
  *
  * <p>Service Description: A service for serving online feature values.
@@ -148,6 +209,26 @@
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   CustomJob customJob = CustomJob.newBuilder().build();
  *   CustomJob response = jobServiceClient.createCustomJob(parent, customJob);
+ * }
+ * }</pre>
+ *
+ * <p>======================= LlmUtilityServiceClient =======================
+ *
+ * <p>Service Description: Service for LLM related utility functions.
+ *
+ * <p>Sample for LlmUtilityServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (LlmUtilityServiceClient llmUtilityServiceClient = LlmUtilityServiceClient.create()) {
+ *   EndpointName endpoint =
+ *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+ *   List<Value> instances = new ArrayList<>();
+ *   CountTokensResponse response = llmUtilityServiceClient.countTokens(endpoint, instances);
  * }
  * }</pre>
  *

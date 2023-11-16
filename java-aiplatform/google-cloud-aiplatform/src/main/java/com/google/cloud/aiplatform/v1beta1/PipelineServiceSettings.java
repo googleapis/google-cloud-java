@@ -156,6 +156,20 @@ public class PipelineServiceSettings extends ClientSettings<PipelineServiceSetti
     return ((PipelineServiceStubSettings) getStubSettings()).deletePipelineJobOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchDeletePipelineJobs. */
+  public UnaryCallSettings<BatchDeletePipelineJobsRequest, Operation>
+      batchDeletePipelineJobsSettings() {
+    return ((PipelineServiceStubSettings) getStubSettings()).batchDeletePipelineJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeletePipelineJobs. */
+  public OperationCallSettings<
+          BatchDeletePipelineJobsRequest, BatchDeletePipelineJobsResponse, DeleteOperationMetadata>
+      batchDeletePipelineJobsOperationSettings() {
+    return ((PipelineServiceStubSettings) getStubSettings())
+        .batchDeletePipelineJobsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to cancelPipelineJob. */
   public UnaryCallSettings<CancelPipelineJobRequest, Empty> cancelPipelineJobSettings() {
     return ((PipelineServiceStubSettings) getStubSettings()).cancelPipelineJobSettings();
@@ -353,6 +367,21 @@ public class PipelineServiceSettings extends ClientSettings<PipelineServiceSetti
     public OperationCallSettings.Builder<DeletePipelineJobRequest, Empty, DeleteOperationMetadata>
         deletePipelineJobOperationSettings() {
       return getStubSettingsBuilder().deletePipelineJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeletePipelineJobs. */
+    public UnaryCallSettings.Builder<BatchDeletePipelineJobsRequest, Operation>
+        batchDeletePipelineJobsSettings() {
+      return getStubSettingsBuilder().batchDeletePipelineJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeletePipelineJobs. */
+    public OperationCallSettings.Builder<
+            BatchDeletePipelineJobsRequest,
+            BatchDeletePipelineJobsResponse,
+            DeleteOperationMetadata>
+        batchDeletePipelineJobsOperationSettings() {
+      return getStubSettingsBuilder().batchDeletePipelineJobsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to cancelPipelineJob. */

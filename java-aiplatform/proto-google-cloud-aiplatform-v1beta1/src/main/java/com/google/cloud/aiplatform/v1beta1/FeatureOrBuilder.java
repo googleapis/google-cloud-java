@@ -30,6 +30,7 @@ public interface FeatureOrBuilder
    * Immutable. Name of the Feature.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    *
    * The last part feature is assigned by the client. The feature can be up to
    * 64 characters long and can consist only of ASCII Latin letters A-Z and a-z,
@@ -49,6 +50,7 @@ public interface FeatureOrBuilder
    * Immutable. Name of the Feature.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    *
    * The last part feature is assigned by the client. The feature can be up to
    * 64 characters long and can consist only of ASCII Latin letters A-Z and a-z,
@@ -91,7 +93,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Immutable. Type of Feature value.
+   * Immutable. Only applicable for Vertex AI Feature Store (Legacy).
+   * Type of Feature value.
    * </pre>
    *
    * <code>
@@ -105,7 +108,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Immutable. Type of Feature value.
+   * Immutable. Only applicable for Vertex AI Feature Store (Legacy).
+   * Type of Feature value.
    * </pre>
    *
    * <code>
@@ -120,7 +124,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when this EntityType was created.
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * Timestamp when this EntityType was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -133,7 +138,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when this EntityType was created.
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * Timestamp when this EntityType was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -146,7 +152,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when this EntityType was created.
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * Timestamp when this EntityType was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -158,7 +165,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when this EntityType was most recently updated.
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * Timestamp when this EntityType was most recently updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -171,7 +179,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when this EntityType was most recently updated.
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * Timestamp when this EntityType was most recently updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -184,7 +193,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when this EntityType was most recently updated.
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * Timestamp when this EntityType was most recently updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -331,9 +341,11 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Deprecated: The custom monitoring configuration for this Feature,
-   * if not set, use the monitoring_config defined for the EntityType this
-   * Feature belongs to. Only Features with type
+   * Optional. Only applicable for Vertex AI Feature Store (Legacy).
+   * Deprecated: The custom monitoring configuration for this Feature, if not
+   * set, use the monitoring_config defined for the EntityType this Feature
+   * belongs to.
+   * Only Features with type
    * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
    * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
    *
@@ -350,7 +362,7 @@ public interface FeatureOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature.proto;l=161
+   *     google/cloud/aiplatform/v1beta1/feature.proto;l=167
    * @return Whether the monitoringConfig field is set.
    */
   @java.lang.Deprecated
@@ -359,9 +371,11 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Deprecated: The custom monitoring configuration for this Feature,
-   * if not set, use the monitoring_config defined for the EntityType this
-   * Feature belongs to. Only Features with type
+   * Optional. Only applicable for Vertex AI Feature Store (Legacy).
+   * Deprecated: The custom monitoring configuration for this Feature, if not
+   * set, use the monitoring_config defined for the EntityType this Feature
+   * belongs to.
+   * Only Features with type
    * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
    * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
    *
@@ -378,7 +392,7 @@ public interface FeatureOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature.proto;l=161
+   *     google/cloud/aiplatform/v1beta1/feature.proto;l=167
    * @return The monitoringConfig.
    */
   @java.lang.Deprecated
@@ -387,9 +401,11 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. Deprecated: The custom monitoring configuration for this Feature,
-   * if not set, use the monitoring_config defined for the EntityType this
-   * Feature belongs to. Only Features with type
+   * Optional. Only applicable for Vertex AI Feature Store (Legacy).
+   * Deprecated: The custom monitoring configuration for this Feature, if not
+   * set, use the monitoring_config defined for the EntityType this Feature
+   * belongs to.
+   * Only Features with type
    * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
    * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
    *
@@ -413,8 +429,10 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. If not set, use the monitoring_config defined for the EntityType
-   * this Feature belongs to. Only Features with type
+   * Optional. Only applicable for Vertex AI Feature Store (Legacy).
+   * If not set, use the monitoring_config defined for the EntityType this
+   * Feature belongs to.
+   * Only Features with type
    * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
    * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
    *
@@ -432,7 +450,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of historical
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * A list of historical
    * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by
    * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
@@ -448,7 +467,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of historical
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * A list of historical
    * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by
    * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
@@ -464,7 +484,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of historical
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * A list of historical
    * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by
    * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
@@ -480,7 +501,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of historical
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * A list of historical
    * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by
    * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
@@ -497,7 +519,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of historical
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * A list of historical
    * [SnapshotAnalysis][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by
    * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
@@ -515,8 +538,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -529,8 +552,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -543,8 +566,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -556,8 +579,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -571,8 +594,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
+   * The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -581,4 +604,33 @@ public interface FeatureOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomalyOrBuilder
       getMonitoringStatsAnomaliesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Only applicable for Vertex AI Feature Store.
+   * The name of the BigQuery Table/View columnn hosting data for this version.
+   * If no value is provided, will use feature_id.
+   * </pre>
+   *
+   * <code>string version_column_name = 106;</code>
+   *
+   * @return The versionColumnName.
+   */
+  java.lang.String getVersionColumnName();
+  /**
+   *
+   *
+   * <pre>
+   * Only applicable for Vertex AI Feature Store.
+   * The name of the BigQuery Table/View columnn hosting data for this version.
+   * If no value is provided, will use feature_id.
+   * </pre>
+   *
+   * <code>string version_column_name = 106;</code>
+   *
+   * @return The bytes for versionColumnName.
+   */
+  com.google.protobuf.ByteString getVersionColumnNameBytes();
 }
