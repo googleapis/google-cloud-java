@@ -277,8 +277,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * * `X-CloudScheduler`: This header will be set to true.
    * * `X-CloudScheduler-JobName`: This header will contain the job name.
    * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
-   * the unix-cron format, this header will contain the job schedule time in
-   * RFC3339 UTC "Zulu" format.
+   * the unix-cron format, this header will contain the job schedule as an
+   * offset of UTC parsed according to RFC3339.
    *
    * If the job has an
    * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
@@ -335,8 +335,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * * `X-CloudScheduler`: This header will be set to true.
    * * `X-CloudScheduler-JobName`: This header will contain the job name.
    * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
-   * the unix-cron format, this header will contain the job schedule time in
-   * RFC3339 UTC "Zulu" format.
+   * the unix-cron format, this header will contain the job schedule as an
+   * offset of UTC parsed according to RFC3339.
    *
    * If the job has an
    * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
@@ -384,8 +384,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * * `X-CloudScheduler`: This header will be set to true.
    * * `X-CloudScheduler-JobName`: This header will contain the job name.
    * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
-   * the unix-cron format, this header will contain the job schedule time in
-   * RFC3339 UTC "Zulu" format.
+   * the unix-cron format, this header will contain the job schedule as an
+   * offset of UTC parsed according to RFC3339.
    *
    * If the job has an
    * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
@@ -440,8 +440,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    * * `X-CloudScheduler`: This header will be set to true.
    * * `X-CloudScheduler-JobName`: This header will contain the job name.
    * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
-   * the unix-cron format, this header will contain the job schedule time in
-   * RFC3339 UTC "Zulu" format.
+   * the unix-cron format, this header will contain the job schedule as an
+   * offset of UTC parsed according to RFC3339.
    *
    * If the job has an
    * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
@@ -1445,8 +1445,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * * `X-CloudScheduler`: This header will be set to true.
      * * `X-CloudScheduler-JobName`: This header will contain the job name.
      * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
-     * the unix-cron format, this header will contain the job schedule time in
-     * RFC3339 UTC "Zulu" format.
+     * the unix-cron format, this header will contain the job schedule as an
+     * offset of UTC parsed according to RFC3339.
      *
      * If the job has an
      * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
@@ -1503,8 +1503,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * * `X-CloudScheduler`: This header will be set to true.
      * * `X-CloudScheduler-JobName`: This header will contain the job name.
      * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
-     * the unix-cron format, this header will contain the job schedule time in
-     * RFC3339 UTC "Zulu" format.
+     * the unix-cron format, this header will contain the job schedule as an
+     * offset of UTC parsed according to RFC3339.
      *
      * If the job has an
      * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
@@ -1552,8 +1552,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * * `X-CloudScheduler`: This header will be set to true.
      * * `X-CloudScheduler-JobName`: This header will contain the job name.
      * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
-     * the unix-cron format, this header will contain the job schedule time in
-     * RFC3339 UTC "Zulu" format.
+     * the unix-cron format, this header will contain the job schedule as an
+     * offset of UTC parsed according to RFC3339.
      *
      * If the job has an
      * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
@@ -1608,8 +1608,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * * `X-CloudScheduler`: This header will be set to true.
      * * `X-CloudScheduler-JobName`: This header will contain the job name.
      * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
-     * the unix-cron format, this header will contain the job schedule time in
-     * RFC3339 UTC "Zulu" format.
+     * the unix-cron format, this header will contain the job schedule as an
+     * offset of UTC parsed according to RFC3339.
      *
      * If the job has an
      * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
@@ -1670,8 +1670,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * * `X-CloudScheduler`: This header will be set to true.
      * * `X-CloudScheduler-JobName`: This header will contain the job name.
      * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
-     * the unix-cron format, this header will contain the job schedule time in
-     * RFC3339 UTC "Zulu" format.
+     * the unix-cron format, this header will contain the job schedule as an
+     * offset of UTC parsed according to RFC3339.
      *
      * If the job has an
      * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
@@ -1728,8 +1728,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * * `X-CloudScheduler`: This header will be set to true.
      * * `X-CloudScheduler-JobName`: This header will contain the job name.
      * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
-     * the unix-cron format, this header will contain the job schedule time in
-     * RFC3339 UTC "Zulu" format.
+     * the unix-cron format, this header will contain the job schedule as an
+     * offset of UTC parsed according to RFC3339.
      *
      * If the job has an
      * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
@@ -1784,8 +1784,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      * * `X-CloudScheduler`: This header will be set to true.
      * * `X-CloudScheduler-JobName`: This header will contain the job name.
      * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
-     * the unix-cron format, this header will contain the job schedule time in
-     * RFC3339 UTC "Zulu" format.
+     * the unix-cron format, this header will contain the job schedule as an
+     * offset of UTC parsed according to RFC3339.
      *
      * If the job has an
      * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
