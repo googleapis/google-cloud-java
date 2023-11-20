@@ -62,4 +62,5 @@
     <module>proto-google-cloud-telcoautomation-v1alpha1</module>
     <module>google-cloud-telcoautomation-bom</module>
   </modules>
-</project>
+
+  </project>
