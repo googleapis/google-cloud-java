@@ -162,6 +162,7 @@
     <module>java-storage-transfer</module>
     <module>java-talent</module>
     <module>java-tasks</module>
+    <module>java-telcoautomation</module>
     <module>java-texttospeech</module>
     <module>java-tpu</module>
     <module>java-trace</module>

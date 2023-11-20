@@ -121,7 +121,6 @@
 * **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.5.8 ([#9941](https://github.com/googleapis/google-cloud-java/issues/9941)) ([f818d26](https://github.com/googleapis/google-cloud-java/commit/f818d26968e1f19d302da1f1ea0145b2cc496ce0))
 * **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.17.0 ([#9942](https://github.com/googleapis/google-cloud-java/issues/9942)) ([2cc7888](https://github.com/googleapis/google-cloud-java/commit/2cc78885d76ae5e7dfc4cc9f3034c25fa22c6cc1))
 * remove IoT integration tests ([#9944](https://github.com/googleapis/google-cloud-java/issues/9944)) ([237c070](https://github.com/googleapis/google-cloud-java/commit/237c070a9d0a3ecf6a25387648a4d5dd81d705c2))
-* telcoautomation documentation links ([#9938](https://github.com/googleapis/google-cloud-java/issues/9938)) ([54262fd](https://github.com/googleapis/google-cloud-java/commit/54262fd530705e063bc2a0b85f9e6c6d8e5d74e7))
 
 ## [1.21.0](https://github.com/googleapis/google-cloud-java/compare/v1.20.0...v1.21.0) (2023-09-28)
 

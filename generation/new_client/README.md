@@ -170,6 +170,20 @@ The value must starts with "https://".
 
 Example: `https://cloud.google.com/alloydb/docs`
 
+### REST Docs
+
+The corresponding value in the Cloud Drop page is `documentation_uri`.
+The value must starts with "https://".
+
+Example: `https://cloud.google.com/alloydb/docs`
+
+### RPC Docs
+
+The corresponding value in the Cloud Drop page is `documentation_uri`.
+The value must starts with "https://".
+
+Example: `https://cloud.google.com/alloydb/docs`
+
 ### API description
 
 The corresponding value in the Cloud Drop page is `documentation.summary` or `documentation.overview`.
