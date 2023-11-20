@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-set -e
+set -ex
 
 function save_to_temp_then_file() {
     TEMP_FILE="$(echo mktemp)"
@@ -27,8 +27,22 @@ MONO_REPO_NAME="google-cloud-java"
 WORKSPACE_DIR="/workspace"
 PATH_TO_CONTAINER_VARS="$WORKSPACE_DIR/interContainerVars.json"
 
+# workaround for local development (docker run -v
+# path_to_monorepo:/workspace/google-cloud-java)
+git config --global --add safe.directory /workspace/google-cloud-java
+
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer \
+| bash
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+source ~/.bashrc
+pyenv install 3.9.13
+
 cd $WORKSPACE_DIR/$MONO_REPO_NAME
 git checkout owlbot-bootstrapper-experiment
+pyenv local 3.9.13
 cd "$WORKSPACE_DIR/$MONO_REPO_NAME"
 
 python -m pip install -r generation/new_client/requirements.txt
