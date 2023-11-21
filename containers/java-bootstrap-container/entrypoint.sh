@@ -31,15 +31,6 @@ PATH_TO_CONTAINER_VARS="$WORKSPACE_DIR/interContainerVars.json"
 # path_to_monorepo:/workspace/google-cloud-java)
 git config --global --add safe.directory /workspace/google-cloud-java
 
-curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer \
-| bash
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-source ~/.bashrc
-pyenv install 3.9.13
-
 cd $WORKSPACE_DIR/$MONO_REPO_NAME
 git checkout owlbot-bootstrapper-experiment
 pyenv local 3.9.13
