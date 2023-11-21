@@ -29,6 +29,8 @@ java.common_templates(
         ".kokoro/nightly/retry_quota.cfg",
         ".kokoro/nightly/samples.cfg",
         ".kokoro/presubmit/samples.cfg",
+        ".kokoro/presubmit/graalvm-native-17.cfg",
+        ".kokoro/presubmit/graalvm-native.cfg",
         ".kokoro/dependencies.sh",
         ".github/workflows/approve-readme.yaml",
         ".github/workflows/auto-release.yaml",
