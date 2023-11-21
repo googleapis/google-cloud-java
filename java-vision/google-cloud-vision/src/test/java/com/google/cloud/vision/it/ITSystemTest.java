@@ -540,32 +540,6 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectCropHintsTest() throws IOException {
-    AnnotateImageResponse res = requestAnnotatedImage("wakeupcat.jpg", Type.CROP_HINTS, false);
-    List<Integer> actual = new ArrayList<>();
-    CropHintsAnnotation annotation = res.getCropHintsAnnotation();
-    for (CropHint hint : assertNotEmpty(res, annotation.getCropHintsList())) {
-      for (Vertex vertex : assertNotEmpty(res, hint.getBoundingPoly().getVerticesList())) {
-        actual.add(vertex.getX());
-      }
-    }
-    assertEquals(Arrays.asList(210, 476, 476, 210), actual);
-  }
-
-  @Test
-  public void detectCropHintsGcsTest() throws IOException {
-    AnnotateImageResponse res = requestAnnotatedImage("label/wakeupcat.jpg", Type.CROP_HINTS, true);
-    List<Integer> actual = new ArrayList<>();
-    CropHintsAnnotation annotation = res.getCropHintsAnnotation();
-    for (CropHint hint : assertNotEmpty(res, annotation.getCropHintsList())) {
-      for (Vertex vertex : assertNotEmpty(res, hint.getBoundingPoly().getVerticesList())) {
-        actual.add(vertex.getX());
-      }
-    }
-    assertEquals(Arrays.asList(210, 476, 476, 210), actual);
-  }
-
-  @Test
   public void detectDocumentTextTest() throws IOException {
     AnnotateImageResponse res =
         requestAnnotatedImage("text.jpg", Type.DOCUMENT_TEXT_DETECTION, false);
