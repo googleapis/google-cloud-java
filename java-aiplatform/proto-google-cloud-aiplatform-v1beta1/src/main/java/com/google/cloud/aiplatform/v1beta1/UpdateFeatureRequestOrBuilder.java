@@ -92,7 +92,7 @@ public interface UpdateFeatureRequestOrBuilder
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring`
+   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -116,7 +116,7 @@ public interface UpdateFeatureRequestOrBuilder
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring`
+   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -140,7 +140,7 @@ public interface UpdateFeatureRequestOrBuilder
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring`
+   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

@@ -1206,6 +1206,196 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int DEPLOYMENT_TIMEOUT_FIELD_NUMBER = 10;
+  private com.google.protobuf.Duration deploymentTimeout_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Deployment timeout.
+   * Limit for deployment timeout is 2 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the deploymentTimeout field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeploymentTimeout() {
+    return deploymentTimeout_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Deployment timeout.
+   * Limit for deployment timeout is 2 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The deploymentTimeout.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getDeploymentTimeout() {
+    return deploymentTimeout_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : deploymentTimeout_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Deployment timeout.
+   * Limit for deployment timeout is 2 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getDeploymentTimeoutOrBuilder() {
+    return deploymentTimeout_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : deploymentTimeout_;
+  }
+
+  public static final int SHARED_MEMORY_SIZE_MB_FIELD_NUMBER = 11;
+  private long sharedMemorySizeMb_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The amount of the VM memory to reserve as the shared memory for
+   * the model in megabytes.
+   * </pre>
+   *
+   * <code>int64 shared_memory_size_mb = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The sharedMemorySizeMb.
+   */
+  @java.lang.Override
+  public long getSharedMemorySizeMb() {
+    return sharedMemorySizeMb_;
+  }
+
+  public static final int STARTUP_PROBE_FIELD_NUMBER = 12;
+  private com.google.cloud.aiplatform.v1beta1.Probe startupProbe_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes startup probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the startupProbe field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartupProbe() {
+    return startupProbe_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes startup probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The startupProbe.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Probe getStartupProbe() {
+    return startupProbe_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()
+        : startupProbe_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes startup probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ProbeOrBuilder getStartupProbeOrBuilder() {
+    return startupProbe_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()
+        : startupProbe_;
+  }
+
+  public static final int HEALTH_PROBE_FIELD_NUMBER = 13;
+  private com.google.cloud.aiplatform.v1beta1.Probe healthProbe_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes readiness probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the healthProbe field is set.
+   */
+  @java.lang.Override
+  public boolean hasHealthProbe() {
+    return healthProbe_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes readiness probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The healthProbe.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Probe getHealthProbe() {
+    return healthProbe_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()
+        : healthProbe_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes readiness probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ProbeOrBuilder getHealthProbeOrBuilder() {
+    return healthProbe_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()
+        : healthProbe_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1240,6 +1430,18 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(healthRoute_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, healthRoute_);
+    }
+    if (deploymentTimeout_ != null) {
+      output.writeMessage(10, getDeploymentTimeout());
+    }
+    if (sharedMemorySizeMb_ != 0L) {
+      output.writeInt64(11, sharedMemorySizeMb_);
+    }
+    if (startupProbe_ != null) {
+      output.writeMessage(12, getStartupProbe());
+    }
+    if (healthProbe_ != null) {
+      output.writeMessage(13, getHealthProbe());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1281,6 +1483,18 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(healthRoute_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, healthRoute_);
     }
+    if (deploymentTimeout_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getDeploymentTimeout());
+    }
+    if (sharedMemorySizeMb_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(11, sharedMemorySizeMb_);
+    }
+    if (startupProbe_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getStartupProbe());
+    }
+    if (healthProbe_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getHealthProbe());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1304,6 +1518,19 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     if (!getPortsList().equals(other.getPortsList())) return false;
     if (!getPredictRoute().equals(other.getPredictRoute())) return false;
     if (!getHealthRoute().equals(other.getHealthRoute())) return false;
+    if (hasDeploymentTimeout() != other.hasDeploymentTimeout()) return false;
+    if (hasDeploymentTimeout()) {
+      if (!getDeploymentTimeout().equals(other.getDeploymentTimeout())) return false;
+    }
+    if (getSharedMemorySizeMb() != other.getSharedMemorySizeMb()) return false;
+    if (hasStartupProbe() != other.hasStartupProbe()) return false;
+    if (hasStartupProbe()) {
+      if (!getStartupProbe().equals(other.getStartupProbe())) return false;
+    }
+    if (hasHealthProbe() != other.hasHealthProbe()) return false;
+    if (hasHealthProbe()) {
+      if (!getHealthProbe().equals(other.getHealthProbe())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1337,6 +1564,20 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getPredictRoute().hashCode();
     hash = (37 * hash) + HEALTH_ROUTE_FIELD_NUMBER;
     hash = (53 * hash) + getHealthRoute().hashCode();
+    if (hasDeploymentTimeout()) {
+      hash = (37 * hash) + DEPLOYMENT_TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getDeploymentTimeout().hashCode();
+    }
+    hash = (37 * hash) + SHARED_MEMORY_SIZE_MB_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSharedMemorySizeMb());
+    if (hasStartupProbe()) {
+      hash = (37 * hash) + STARTUP_PROBE_FIELD_NUMBER;
+      hash = (53 * hash) + getStartupProbe().hashCode();
+    }
+    if (hasHealthProbe()) {
+      hash = (37 * hash) + HEALTH_PROBE_FIELD_NUMBER;
+      hash = (53 * hash) + getHealthProbe().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1498,6 +1739,22 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       bitField0_ = (bitField0_ & ~0x00000010);
       predictRoute_ = "";
       healthRoute_ = "";
+      deploymentTimeout_ = null;
+      if (deploymentTimeoutBuilder_ != null) {
+        deploymentTimeoutBuilder_.dispose();
+        deploymentTimeoutBuilder_ = null;
+      }
+      sharedMemorySizeMb_ = 0L;
+      startupProbe_ = null;
+      if (startupProbeBuilder_ != null) {
+        startupProbeBuilder_.dispose();
+        startupProbeBuilder_ = null;
+      }
+      healthProbe_ = null;
+      if (healthProbeBuilder_ != null) {
+        healthProbeBuilder_.dispose();
+        healthProbeBuilder_ = null;
+      }
       return this;
     }
 
@@ -1573,6 +1830,23 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.healthRoute_ = healthRoute_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.deploymentTimeout_ =
+            deploymentTimeoutBuilder_ == null
+                ? deploymentTimeout_
+                : deploymentTimeoutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.sharedMemorySizeMb_ = sharedMemorySizeMb_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.startupProbe_ =
+            startupProbeBuilder_ == null ? startupProbe_ : startupProbeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.healthProbe_ =
+            healthProbeBuilder_ == null ? healthProbe_ : healthProbeBuilder_.build();
       }
     }
 
@@ -1711,6 +1985,18 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (other.hasDeploymentTimeout()) {
+        mergeDeploymentTimeout(other.getDeploymentTimeout());
+      }
+      if (other.getSharedMemorySizeMb() != 0L) {
+        setSharedMemorySizeMb(other.getSharedMemorySizeMb());
+      }
+      if (other.hasStartupProbe()) {
+        mergeStartupProbe(other.getStartupProbe());
+      }
+      if (other.hasHealthProbe()) {
+        mergeHealthProbe(other.getHealthProbe());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1795,6 +2081,31 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 82:
+              {
+                input.readMessage(
+                    getDeploymentTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 82
+            case 88:
+              {
+                sharedMemorySizeMb_ = input.readInt64();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 88
+            case 98:
+              {
+                input.readMessage(getStartupProbeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getHealthProbeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5174,6 +5485,676 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000040;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Duration deploymentTimeout_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        deploymentTimeoutBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Deployment timeout.
+     * Limit for deployment timeout is 2 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the deploymentTimeout field is set.
+     */
+    public boolean hasDeploymentTimeout() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Deployment timeout.
+     * Limit for deployment timeout is 2 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The deploymentTimeout.
+     */
+    public com.google.protobuf.Duration getDeploymentTimeout() {
+      if (deploymentTimeoutBuilder_ == null) {
+        return deploymentTimeout_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : deploymentTimeout_;
+      } else {
+        return deploymentTimeoutBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Deployment timeout.
+     * Limit for deployment timeout is 2 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setDeploymentTimeout(com.google.protobuf.Duration value) {
+      if (deploymentTimeoutBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deploymentTimeout_ = value;
+      } else {
+        deploymentTimeoutBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Deployment timeout.
+     * Limit for deployment timeout is 2 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setDeploymentTimeout(com.google.protobuf.Duration.Builder builderForValue) {
+      if (deploymentTimeoutBuilder_ == null) {
+        deploymentTimeout_ = builderForValue.build();
+      } else {
+        deploymentTimeoutBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Deployment timeout.
+     * Limit for deployment timeout is 2 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeDeploymentTimeout(com.google.protobuf.Duration value) {
+      if (deploymentTimeoutBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && deploymentTimeout_ != null
+            && deploymentTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getDeploymentTimeoutBuilder().mergeFrom(value);
+        } else {
+          deploymentTimeout_ = value;
+        }
+      } else {
+        deploymentTimeoutBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Deployment timeout.
+     * Limit for deployment timeout is 2 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearDeploymentTimeout() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      deploymentTimeout_ = null;
+      if (deploymentTimeoutBuilder_ != null) {
+        deploymentTimeoutBuilder_.dispose();
+        deploymentTimeoutBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Deployment timeout.
+     * Limit for deployment timeout is 2 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getDeploymentTimeoutBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getDeploymentTimeoutFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Deployment timeout.
+     * Limit for deployment timeout is 2 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getDeploymentTimeoutOrBuilder() {
+      if (deploymentTimeoutBuilder_ != null) {
+        return deploymentTimeoutBuilder_.getMessageOrBuilder();
+      } else {
+        return deploymentTimeout_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : deploymentTimeout_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Deployment timeout.
+     * Limit for deployment timeout is 2 hours.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getDeploymentTimeoutFieldBuilder() {
+      if (deploymentTimeoutBuilder_ == null) {
+        deploymentTimeoutBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getDeploymentTimeout(), getParentForChildren(), isClean());
+        deploymentTimeout_ = null;
+      }
+      return deploymentTimeoutBuilder_;
+    }
+
+    private long sharedMemorySizeMb_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The amount of the VM memory to reserve as the shared memory for
+     * the model in megabytes.
+     * </pre>
+     *
+     * <code>int64 shared_memory_size_mb = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The sharedMemorySizeMb.
+     */
+    @java.lang.Override
+    public long getSharedMemorySizeMb() {
+      return sharedMemorySizeMb_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The amount of the VM memory to reserve as the shared memory for
+     * the model in megabytes.
+     * </pre>
+     *
+     * <code>int64 shared_memory_size_mb = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The sharedMemorySizeMb to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSharedMemorySizeMb(long value) {
+
+      sharedMemorySizeMb_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The amount of the VM memory to reserve as the shared memory for
+     * the model in megabytes.
+     * </pre>
+     *
+     * <code>int64 shared_memory_size_mb = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSharedMemorySizeMb() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      sharedMemorySizeMb_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.Probe startupProbe_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Probe,
+            com.google.cloud.aiplatform.v1beta1.Probe.Builder,
+            com.google.cloud.aiplatform.v1beta1.ProbeOrBuilder>
+        startupProbeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes startup probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the startupProbe field is set.
+     */
+    public boolean hasStartupProbe() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes startup probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The startupProbe.
+     */
+    public com.google.cloud.aiplatform.v1beta1.Probe getStartupProbe() {
+      if (startupProbeBuilder_ == null) {
+        return startupProbe_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()
+            : startupProbe_;
+      } else {
+        return startupProbeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes startup probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setStartupProbe(com.google.cloud.aiplatform.v1beta1.Probe value) {
+      if (startupProbeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        startupProbe_ = value;
+      } else {
+        startupProbeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes startup probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setStartupProbe(
+        com.google.cloud.aiplatform.v1beta1.Probe.Builder builderForValue) {
+      if (startupProbeBuilder_ == null) {
+        startupProbe_ = builderForValue.build();
+      } else {
+        startupProbeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes startup probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeStartupProbe(com.google.cloud.aiplatform.v1beta1.Probe value) {
+      if (startupProbeBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && startupProbe_ != null
+            && startupProbe_ != com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()) {
+          getStartupProbeBuilder().mergeFrom(value);
+        } else {
+          startupProbe_ = value;
+        }
+      } else {
+        startupProbeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes startup probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearStartupProbe() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      startupProbe_ = null;
+      if (startupProbeBuilder_ != null) {
+        startupProbeBuilder_.dispose();
+        startupProbeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes startup probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Probe.Builder getStartupProbeBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getStartupProbeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes startup probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ProbeOrBuilder getStartupProbeOrBuilder() {
+      if (startupProbeBuilder_ != null) {
+        return startupProbeBuilder_.getMessageOrBuilder();
+      } else {
+        return startupProbe_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()
+            : startupProbe_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes startup probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Probe,
+            com.google.cloud.aiplatform.v1beta1.Probe.Builder,
+            com.google.cloud.aiplatform.v1beta1.ProbeOrBuilder>
+        getStartupProbeFieldBuilder() {
+      if (startupProbeBuilder_ == null) {
+        startupProbeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Probe,
+                com.google.cloud.aiplatform.v1beta1.Probe.Builder,
+                com.google.cloud.aiplatform.v1beta1.ProbeOrBuilder>(
+                getStartupProbe(), getParentForChildren(), isClean());
+        startupProbe_ = null;
+      }
+      return startupProbeBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.Probe healthProbe_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Probe,
+            com.google.cloud.aiplatform.v1beta1.Probe.Builder,
+            com.google.cloud.aiplatform.v1beta1.ProbeOrBuilder>
+        healthProbeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes readiness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the healthProbe field is set.
+     */
+    public boolean hasHealthProbe() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes readiness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The healthProbe.
+     */
+    public com.google.cloud.aiplatform.v1beta1.Probe getHealthProbe() {
+      if (healthProbeBuilder_ == null) {
+        return healthProbe_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()
+            : healthProbe_;
+      } else {
+        return healthProbeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes readiness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setHealthProbe(com.google.cloud.aiplatform.v1beta1.Probe value) {
+      if (healthProbeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        healthProbe_ = value;
+      } else {
+        healthProbeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes readiness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setHealthProbe(
+        com.google.cloud.aiplatform.v1beta1.Probe.Builder builderForValue) {
+      if (healthProbeBuilder_ == null) {
+        healthProbe_ = builderForValue.build();
+      } else {
+        healthProbeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes readiness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeHealthProbe(com.google.cloud.aiplatform.v1beta1.Probe value) {
+      if (healthProbeBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && healthProbe_ != null
+            && healthProbe_ != com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()) {
+          getHealthProbeBuilder().mergeFrom(value);
+        } else {
+          healthProbe_ = value;
+        }
+      } else {
+        healthProbeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes readiness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearHealthProbe() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      healthProbe_ = null;
+      if (healthProbeBuilder_ != null) {
+        healthProbeBuilder_.dispose();
+        healthProbeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes readiness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Probe.Builder getHealthProbeBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getHealthProbeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes readiness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ProbeOrBuilder getHealthProbeOrBuilder() {
+      if (healthProbeBuilder_ != null) {
+        return healthProbeBuilder_.getMessageOrBuilder();
+      } else {
+        return healthProbe_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()
+            : healthProbe_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes readiness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Probe,
+            com.google.cloud.aiplatform.v1beta1.Probe.Builder,
+            com.google.cloud.aiplatform.v1beta1.ProbeOrBuilder>
+        getHealthProbeFieldBuilder() {
+      if (healthProbeBuilder_ == null) {
+        healthProbeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Probe,
+                com.google.cloud.aiplatform.v1beta1.Probe.Builder,
+                com.google.cloud.aiplatform.v1beta1.ProbeOrBuilder>(
+                getHealthProbe(), getParentForChildren(), isClean());
+        healthProbe_ = null;
+      }
+      return healthProbeBuilder_;
     }
 
     @java.lang.Override

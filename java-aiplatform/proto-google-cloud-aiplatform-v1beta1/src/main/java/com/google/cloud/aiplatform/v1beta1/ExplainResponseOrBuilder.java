@@ -105,7 +105,7 @@ public interface ExplainResponseOrBuilder
    *
    * <pre>
    * This field stores the results of the explanations run in parallel with
-   * the default explanation strategy/method.
+   * The default explanation strategy/method.
    * </pre>
    *
    * <code>
@@ -118,7 +118,7 @@ public interface ExplainResponseOrBuilder
    *
    * <pre>
    * This field stores the results of the explanations run in parallel with
-   * the default explanation strategy/method.
+   * The default explanation strategy/method.
    * </pre>
    *
    * <code>
@@ -137,7 +137,7 @@ public interface ExplainResponseOrBuilder
    *
    * <pre>
    * This field stores the results of the explanations run in parallel with
-   * the default explanation strategy/method.
+   * The default explanation strategy/method.
    * </pre>
    *
    * <code>
@@ -153,7 +153,7 @@ public interface ExplainResponseOrBuilder
    *
    * <pre>
    * This field stores the results of the explanations run in parallel with
-   * the default explanation strategy/method.
+   * The default explanation strategy/method.
    * </pre>
    *
    * <code>
@@ -171,7 +171,7 @@ public interface ExplainResponseOrBuilder
    *
    * <pre>
    * This field stores the results of the explanations run in parallel with
-   * the default explanation strategy/method.
+   * The default explanation strategy/method.
    * </pre>
    *
    * <code>

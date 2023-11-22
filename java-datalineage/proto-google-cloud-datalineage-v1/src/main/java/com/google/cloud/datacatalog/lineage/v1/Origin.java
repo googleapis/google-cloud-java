@@ -133,6 +133,16 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * <code>LOOKER_STUDIO = 5;</code>
      */
     LOOKER_STUDIO(5),
+    /**
+     *
+     *
+     * <pre>
+     * Dataproc
+     * </pre>
+     *
+     * <code>DATAPROC = 6;</code>
+     */
+    DATAPROC(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -196,6 +206,16 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      * <code>LOOKER_STUDIO = 5;</code>
      */
     public static final int LOOKER_STUDIO_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Dataproc
+     * </pre>
+     *
+     * <code>DATAPROC = 6;</code>
+     */
+    public static final int DATAPROC_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -233,6 +253,8 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
           return COMPOSER;
         case 5:
           return LOOKER_STUDIO;
+        case 6:
+          return DATAPROC;
         default:
           return null;
       }
@@ -293,6 +315,10 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Type of the source.
+   *
+   * Use of a source_type other than `CUSTOM` for process creation
+   * or updating is highly discouraged, and may be restricted in the future
+   * without notice.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -308,6 +334,10 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Type of the source.
+   *
+   * Use of a source_type other than `CUSTOM` for process creation
+   * or updating is highly discouraged, and may be restricted in the future
+   * without notice.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -763,6 +793,10 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Type of the source.
+     *
+     * Use of a source_type other than `CUSTOM` for process creation
+     * or updating is highly discouraged, and may be restricted in the future
+     * without notice.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -778,6 +812,10 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Type of the source.
+     *
+     * Use of a source_type other than `CUSTOM` for process creation
+     * or updating is highly discouraged, and may be restricted in the future
+     * without notice.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -796,6 +834,10 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Type of the source.
+     *
+     * Use of a source_type other than `CUSTOM` for process creation
+     * or updating is highly discouraged, and may be restricted in the future
+     * without notice.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -815,6 +857,10 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Type of the source.
+     *
+     * Use of a source_type other than `CUSTOM` for process creation
+     * or updating is highly discouraged, and may be restricted in the future
+     * without notice.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -836,6 +882,10 @@ public final class Origin extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Type of the source.
+     *
+     * Use of a source_type other than `CUSTOM` for process creation
+     * or updating is highly discouraged, and may be restricted in the future
+     * without notice.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>

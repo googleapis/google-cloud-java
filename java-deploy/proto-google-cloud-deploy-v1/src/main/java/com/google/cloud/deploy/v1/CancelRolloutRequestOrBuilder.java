@@ -28,8 +28,7 @@ public interface CancelRolloutRequestOrBuilder
    *
    * <pre>
    * Required. Name of the Rollout. Format is
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/{rollout}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * </pre>
    *
    * <code>
@@ -44,8 +43,7 @@ public interface CancelRolloutRequestOrBuilder
    *
    * <pre>
    * Required. Name of the Rollout. Format is
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/{rollout}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * </pre>
    *
    * <code>

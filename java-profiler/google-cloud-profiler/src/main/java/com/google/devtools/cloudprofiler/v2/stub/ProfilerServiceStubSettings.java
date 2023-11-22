@@ -239,9 +239,9 @@ public class ProfilerServiceStubSettings extends StubSettings<ProfilerServiceStu
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
           "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -257,7 +257,7 @@ public class ProfilerServiceStubSettings extends StubSettings<ProfilerServiceStu
               .setMaxRpcTimeout(Duration.ofMillis(3610000L))
               .setTotalTimeout(Duration.ofMillis(3610000L))
               .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("no_retry_2_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(30000L))
@@ -265,7 +265,7 @@ public class ProfilerServiceStubSettings extends StubSettings<ProfilerServiceStu
               .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("no_retry_2_params", settings);
+      definitions.put("no_retry_3_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -327,18 +327,18 @@ public class ProfilerServiceStubSettings extends StubSettings<ProfilerServiceStu
     private static Builder initDefaults(Builder builder) {
       builder
           .createProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .createOfflineProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
 
       builder
           .updateProfileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
 
       return builder;
     }

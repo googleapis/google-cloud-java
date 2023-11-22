@@ -727,6 +727,18 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * The render operation did not complete successfully because the
+       * verification stanza required for verify was not found on the skaffold
+       * configuration.
+       * </pre>
+       *
+       * <code>VERIFICATION_CONFIG_NOT_FOUND = 4;</code>
+       */
+      VERIFICATION_CONFIG_NOT_FOUND(4),
+      /**
+       *
+       *
+       * <pre>
        * The render operation did not complete successfully because the custom
        * action required for predeploy or postdeploy was not found in the
        * skaffold configuration. See failure_message for additional details.
@@ -786,6 +798,18 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * The render operation did not complete successfully because the
+       * verification stanza required for verify was not found on the skaffold
+       * configuration.
+       * </pre>
+       *
+       * <code>VERIFICATION_CONFIG_NOT_FOUND = 4;</code>
+       */
+      public static final int VERIFICATION_CONFIG_NOT_FOUND_VALUE = 4;
+      /**
+       *
+       *
+       * <pre>
        * The render operation did not complete successfully because the custom
        * action required for predeploy or postdeploy was not found in the
        * skaffold configuration. See failure_message for additional details.
@@ -827,6 +851,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
             return EXECUTION_FAILED;
           case 3:
             return CLOUD_BUILD_REQUEST_FAILED;
+          case 4:
+            return VERIFICATION_CONFIG_NOT_FOUND;
           case 5:
             return CUSTOM_ACTION_NOT_FOUND;
           default:
@@ -5370,9 +5396,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the `Release`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Release`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5395,9 +5420,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the `Release`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Release`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7899,9 +7923,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Release`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Release`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7923,9 +7946,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Release`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Release`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7947,9 +7969,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Release`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Release`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7970,9 +7991,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Release`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Release`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7989,9 +8009,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Release`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Release`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

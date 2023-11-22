@@ -34,7 +34,7 @@ public class SyncCreateAudienceListPropertynameAudiencelist {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-      PropertyName parent = PropertyName.of("[PROPERTYID]");
+      PropertyName parent = PropertyName.of("[PROPERTY]");
       AudienceList audienceList = AudienceList.newBuilder().build();
       AudienceList response =
           alphaAnalyticsDataClient.createAudienceListAsync(parent, audienceList).get();

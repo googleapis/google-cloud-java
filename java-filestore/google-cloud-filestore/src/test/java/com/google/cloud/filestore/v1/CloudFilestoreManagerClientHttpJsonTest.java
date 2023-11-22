@@ -199,6 +199,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
@@ -253,6 +254,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
@@ -307,6 +309,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
@@ -370,6 +373,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
@@ -433,6 +437,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
@@ -455,6 +460,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
@@ -497,6 +503,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
               .addAllNetworks(new ArrayList<NetworkConfig>())
               .setEtag("etag3123477")
               .setSatisfiesPzs(BoolValue.newBuilder().build())
+              .setSatisfiesPzi(true)
               .setKmsKeyName("kmsKeyName412586233")
               .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
               .build();
@@ -520,6 +527,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
@@ -569,6 +577,74 @@ public class CloudFilestoreManagerClientHttpJsonTest {
               .setFileShare("fileShare-1327728701")
               .build();
       client.restoreInstanceAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void revertInstanceTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setDescription("description-1724546052")
+            .setStatusMessage("statusMessage-958704715")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .addAllFileShares(new ArrayList<FileShareConfig>())
+            .addAllNetworks(new ArrayList<NetworkConfig>())
+            .setEtag("etag3123477")
+            .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setKmsKeyName("kmsKeyName412586233")
+            .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("revertInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RevertInstanceRequest request =
+        RevertInstanceRequest.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setTargetSnapshotId("targetSnapshotId-2099459472")
+            .build();
+
+    Instance actualResponse = client.revertInstanceAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void revertInstanceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RevertInstanceRequest request =
+          RevertInstanceRequest.newBuilder()
+              .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .setTargetSnapshotId("targetSnapshotId-2099459472")
+              .build();
+      client.revertInstanceAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -1258,6 +1334,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKey("kmsKey-1127483058")
             .build();
     mockService.addResponse(expectedResponse);
@@ -1312,6 +1389,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKey("kmsKey-1127483058")
             .build();
     mockService.addResponse(expectedResponse);
@@ -1366,6 +1444,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKey("kmsKey-1127483058")
             .build();
     Operation resultOperation =
@@ -1429,6 +1508,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKey("kmsKey-1127483058")
             .build();
     Operation resultOperation =
@@ -1582,6 +1662,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKey("kmsKey-1127483058")
             .build();
     Operation resultOperation =
@@ -1604,6 +1685,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKey("kmsKey-1127483058")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1647,6 +1729,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
               .setSourceFileShare("sourceFileShare-646832664")
               .setDownloadBytes(971924980)
               .setSatisfiesPzs(BoolValue.newBuilder().build())
+              .setSatisfiesPzi(true)
               .setKmsKey("kmsKey-1127483058")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();

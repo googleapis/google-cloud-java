@@ -28,6 +28,8 @@ import com.google.analytics.data.v1alpha.QueryAudienceListRequest;
 import com.google.analytics.data.v1alpha.QueryAudienceListResponse;
 import com.google.analytics.data.v1alpha.RunFunnelReportRequest;
 import com.google.analytics.data.v1alpha.RunFunnelReportResponse;
+import com.google.analytics.data.v1alpha.SheetExportAudienceListRequest;
+import com.google.analytics.data.v1alpha.SheetExportAudienceListResponse;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -71,6 +73,11 @@ public abstract class AlphaAnalyticsDataStub implements BackgroundResource {
   public UnaryCallable<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListCallable() {
     throw new UnsupportedOperationException("Not implemented: queryAudienceListCallable()");
+  }
+
+  public UnaryCallable<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+      sheetExportAudienceListCallable() {
+    throw new UnsupportedOperationException("Not implemented: sheetExportAudienceListCallable()");
   }
 
   public UnaryCallable<GetAudienceListRequest, AudienceList> getAudienceListCallable() {

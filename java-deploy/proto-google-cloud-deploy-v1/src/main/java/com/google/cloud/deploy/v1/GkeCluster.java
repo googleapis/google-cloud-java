@@ -71,7 +71,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Information specifying a GKE Cluster. Format is
-   * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}.
+   * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
    * </pre>
    *
    * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -95,7 +95,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Information specifying a GKE Cluster. Format is
-   * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}.
+   * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
    * </pre>
    *
    * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -507,7 +507,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information specifying a GKE Cluster. Format is
-     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}.
+     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
      * </pre>
      *
      * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -530,7 +530,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information specifying a GKE Cluster. Format is
-     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}.
+     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
      * </pre>
      *
      * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -553,7 +553,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information specifying a GKE Cluster. Format is
-     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}.
+     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
      * </pre>
      *
      * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -575,7 +575,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information specifying a GKE Cluster. Format is
-     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}.
+     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
      * </pre>
      *
      * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -593,7 +593,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Information specifying a GKE Cluster. Format is
-     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}.
+     * `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
      * </pre>
      *
      * <code>string cluster = 1 [(.google.api.resource_reference) = { ... }</code>

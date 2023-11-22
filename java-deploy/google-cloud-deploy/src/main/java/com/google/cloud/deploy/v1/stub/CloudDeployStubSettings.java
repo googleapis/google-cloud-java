@@ -16,6 +16,8 @@
 
 package com.google.cloud.deploy.v1.stub;
 
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
@@ -58,16 +60,24 @@ import com.google.cloud.deploy.v1.AdvanceRolloutRequest;
 import com.google.cloud.deploy.v1.AdvanceRolloutResponse;
 import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
+import com.google.cloud.deploy.v1.Automation;
+import com.google.cloud.deploy.v1.AutomationRun;
+import com.google.cloud.deploy.v1.CancelAutomationRunRequest;
+import com.google.cloud.deploy.v1.CancelAutomationRunResponse;
 import com.google.cloud.deploy.v1.CancelRolloutRequest;
 import com.google.cloud.deploy.v1.CancelRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
+import com.google.cloud.deploy.v1.CreateAutomationRequest;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.CreateTargetRequest;
+import com.google.cloud.deploy.v1.DeleteAutomationRequest;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
+import com.google.cloud.deploy.v1.GetAutomationRequest;
+import com.google.cloud.deploy.v1.GetAutomationRunRequest;
 import com.google.cloud.deploy.v1.GetConfigRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.GetJobRunRequest;
@@ -77,6 +87,10 @@ import com.google.cloud.deploy.v1.GetTargetRequest;
 import com.google.cloud.deploy.v1.IgnoreJobRequest;
 import com.google.cloud.deploy.v1.IgnoreJobResponse;
 import com.google.cloud.deploy.v1.JobRun;
+import com.google.cloud.deploy.v1.ListAutomationRunsRequest;
+import com.google.cloud.deploy.v1.ListAutomationRunsResponse;
+import com.google.cloud.deploy.v1.ListAutomationsRequest;
+import com.google.cloud.deploy.v1.ListAutomationsResponse;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
 import com.google.cloud.deploy.v1.ListJobRunsRequest;
@@ -91,10 +105,13 @@ import com.google.cloud.deploy.v1.OperationMetadata;
 import com.google.cloud.deploy.v1.Release;
 import com.google.cloud.deploy.v1.RetryJobRequest;
 import com.google.cloud.deploy.v1.RetryJobResponse;
+import com.google.cloud.deploy.v1.RollbackTargetRequest;
+import com.google.cloud.deploy.v1.RollbackTargetResponse;
 import com.google.cloud.deploy.v1.Rollout;
 import com.google.cloud.deploy.v1.Target;
 import com.google.cloud.deploy.v1.TerminateJobRunRequest;
 import com.google.cloud.deploy.v1.TerminateJobRunResponse;
+import com.google.cloud.deploy.v1.UpdateAutomationRequest;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -183,6 +200,8 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       deleteDeliveryPipelineOperationSettings;
   private final PagedCallSettings<ListTargetsRequest, ListTargetsResponse, ListTargetsPagedResponse>
       listTargetsSettings;
+  private final UnaryCallSettings<RollbackTargetRequest, RollbackTargetResponse>
+      rollbackTargetSettings;
   private final UnaryCallSettings<GetTargetRequest, Target> getTargetSettings;
   private final UnaryCallSettings<CreateTargetRequest, Operation> createTargetSettings;
   private final OperationCallSettings<CreateTargetRequest, Target, OperationMetadata>
@@ -223,6 +242,25 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
   private final UnaryCallSettings<TerminateJobRunRequest, TerminateJobRunResponse>
       terminateJobRunSettings;
   private final UnaryCallSettings<GetConfigRequest, Config> getConfigSettings;
+  private final UnaryCallSettings<CreateAutomationRequest, Operation> createAutomationSettings;
+  private final OperationCallSettings<CreateAutomationRequest, Automation, OperationMetadata>
+      createAutomationOperationSettings;
+  private final UnaryCallSettings<UpdateAutomationRequest, Operation> updateAutomationSettings;
+  private final OperationCallSettings<UpdateAutomationRequest, Automation, OperationMetadata>
+      updateAutomationOperationSettings;
+  private final UnaryCallSettings<DeleteAutomationRequest, Operation> deleteAutomationSettings;
+  private final OperationCallSettings<DeleteAutomationRequest, Empty, OperationMetadata>
+      deleteAutomationOperationSettings;
+  private final UnaryCallSettings<GetAutomationRequest, Automation> getAutomationSettings;
+  private final PagedCallSettings<
+          ListAutomationsRequest, ListAutomationsResponse, ListAutomationsPagedResponse>
+      listAutomationsSettings;
+  private final UnaryCallSettings<GetAutomationRunRequest, AutomationRun> getAutomationRunSettings;
+  private final PagedCallSettings<
+          ListAutomationRunsRequest, ListAutomationRunsResponse, ListAutomationRunsPagedResponse>
+      listAutomationRunsSettings;
+  private final UnaryCallSettings<CancelAutomationRunRequest, CancelAutomationRunResponse>
+      cancelAutomationRunSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -417,6 +455,85 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
             }
           };
 
+  private static final PagedListDescriptor<
+          ListAutomationsRequest, ListAutomationsResponse, Automation>
+      LIST_AUTOMATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAutomationsRequest, ListAutomationsResponse, Automation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAutomationsRequest injectToken(
+                ListAutomationsRequest payload, String token) {
+              return ListAutomationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAutomationsRequest injectPageSize(
+                ListAutomationsRequest payload, int pageSize) {
+              return ListAutomationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAutomationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAutomationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Automation> extractResources(ListAutomationsResponse payload) {
+              return payload.getAutomationsList() == null
+                  ? ImmutableList.<Automation>of()
+                  : payload.getAutomationsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAutomationRunsRequest, ListAutomationRunsResponse, AutomationRun>
+      LIST_AUTOMATION_RUNS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAutomationRunsRequest, ListAutomationRunsResponse, AutomationRun>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAutomationRunsRequest injectToken(
+                ListAutomationRunsRequest payload, String token) {
+              return ListAutomationRunsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAutomationRunsRequest injectPageSize(
+                ListAutomationRunsRequest payload, int pageSize) {
+              return ListAutomationRunsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAutomationRunsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAutomationRunsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AutomationRun> extractResources(ListAutomationRunsResponse payload) {
+              return payload.getAutomationRunsList() == null
+                  ? ImmutableList.<AutomationRun>of()
+                  : payload.getAutomationRunsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -546,6 +663,44 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           };
 
   private static final PagedListResponseFactory<
+          ListAutomationsRequest, ListAutomationsResponse, ListAutomationsPagedResponse>
+      LIST_AUTOMATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAutomationsRequest, ListAutomationsResponse, ListAutomationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAutomationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAutomationsRequest, ListAutomationsResponse> callable,
+                ListAutomationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAutomationsResponse> futureResponse) {
+              PageContext<ListAutomationsRequest, ListAutomationsResponse, Automation> pageContext =
+                  PageContext.create(callable, LIST_AUTOMATIONS_PAGE_STR_DESC, request, context);
+              return ListAutomationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAutomationRunsRequest, ListAutomationRunsResponse, ListAutomationRunsPagedResponse>
+      LIST_AUTOMATION_RUNS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAutomationRunsRequest,
+              ListAutomationRunsResponse,
+              ListAutomationRunsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAutomationRunsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAutomationRunsRequest, ListAutomationRunsResponse> callable,
+                ListAutomationRunsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAutomationRunsResponse> futureResponse) {
+              PageContext<ListAutomationRunsRequest, ListAutomationRunsResponse, AutomationRun>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_AUTOMATION_RUNS_PAGE_STR_DESC, request, context);
+              return ListAutomationRunsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -617,6 +772,11 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
   public PagedCallSettings<ListTargetsRequest, ListTargetsResponse, ListTargetsPagedResponse>
       listTargetsSettings() {
     return listTargetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rollbackTarget. */
+  public UnaryCallSettings<RollbackTargetRequest, RollbackTargetResponse> rollbackTargetSettings() {
+    return rollbackTargetSettings;
   }
 
   /** Returns the object with the settings used for calls to getTarget. */
@@ -751,6 +911,69 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
   /** Returns the object with the settings used for calls to getConfig. */
   public UnaryCallSettings<GetConfigRequest, Config> getConfigSettings() {
     return getConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAutomation. */
+  public UnaryCallSettings<CreateAutomationRequest, Operation> createAutomationSettings() {
+    return createAutomationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAutomation. */
+  public OperationCallSettings<CreateAutomationRequest, Automation, OperationMetadata>
+      createAutomationOperationSettings() {
+    return createAutomationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAutomation. */
+  public UnaryCallSettings<UpdateAutomationRequest, Operation> updateAutomationSettings() {
+    return updateAutomationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAutomation. */
+  public OperationCallSettings<UpdateAutomationRequest, Automation, OperationMetadata>
+      updateAutomationOperationSettings() {
+    return updateAutomationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAutomation. */
+  public UnaryCallSettings<DeleteAutomationRequest, Operation> deleteAutomationSettings() {
+    return deleteAutomationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAutomation. */
+  public OperationCallSettings<DeleteAutomationRequest, Empty, OperationMetadata>
+      deleteAutomationOperationSettings() {
+    return deleteAutomationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAutomation. */
+  public UnaryCallSettings<GetAutomationRequest, Automation> getAutomationSettings() {
+    return getAutomationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAutomations. */
+  public PagedCallSettings<
+          ListAutomationsRequest, ListAutomationsResponse, ListAutomationsPagedResponse>
+      listAutomationsSettings() {
+    return listAutomationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAutomationRun. */
+  public UnaryCallSettings<GetAutomationRunRequest, AutomationRun> getAutomationRunSettings() {
+    return getAutomationRunSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAutomationRuns. */
+  public PagedCallSettings<
+          ListAutomationRunsRequest, ListAutomationRunsResponse, ListAutomationRunsPagedResponse>
+      listAutomationRunsSettings() {
+    return listAutomationRunsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelAutomationRun. */
+  public UnaryCallSettings<CancelAutomationRunRequest, CancelAutomationRunResponse>
+      cancelAutomationRunSettings() {
+    return cancelAutomationRunSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -898,6 +1121,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     deleteDeliveryPipelineOperationSettings =
         settingsBuilder.deleteDeliveryPipelineOperationSettings().build();
     listTargetsSettings = settingsBuilder.listTargetsSettings().build();
+    rollbackTargetSettings = settingsBuilder.rollbackTargetSettings().build();
     getTargetSettings = settingsBuilder.getTargetSettings().build();
     createTargetSettings = settingsBuilder.createTargetSettings().build();
     createTargetOperationSettings = settingsBuilder.createTargetOperationSettings().build();
@@ -923,6 +1147,17 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     getJobRunSettings = settingsBuilder.getJobRunSettings().build();
     terminateJobRunSettings = settingsBuilder.terminateJobRunSettings().build();
     getConfigSettings = settingsBuilder.getConfigSettings().build();
+    createAutomationSettings = settingsBuilder.createAutomationSettings().build();
+    createAutomationOperationSettings = settingsBuilder.createAutomationOperationSettings().build();
+    updateAutomationSettings = settingsBuilder.updateAutomationSettings().build();
+    updateAutomationOperationSettings = settingsBuilder.updateAutomationOperationSettings().build();
+    deleteAutomationSettings = settingsBuilder.deleteAutomationSettings().build();
+    deleteAutomationOperationSettings = settingsBuilder.deleteAutomationOperationSettings().build();
+    getAutomationSettings = settingsBuilder.getAutomationSettings().build();
+    listAutomationsSettings = settingsBuilder.listAutomationsSettings().build();
+    getAutomationRunSettings = settingsBuilder.getAutomationRunSettings().build();
+    listAutomationRunsSettings = settingsBuilder.listAutomationRunsSettings().build();
+    cancelAutomationRunSettings = settingsBuilder.cancelAutomationRunSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -958,6 +1193,8 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     private final PagedCallSettings.Builder<
             ListTargetsRequest, ListTargetsResponse, ListTargetsPagedResponse>
         listTargetsSettings;
+    private final UnaryCallSettings.Builder<RollbackTargetRequest, RollbackTargetResponse>
+        rollbackTargetSettings;
     private final UnaryCallSettings.Builder<GetTargetRequest, Target> getTargetSettings;
     private final UnaryCallSettings.Builder<CreateTargetRequest, Operation> createTargetSettings;
     private final OperationCallSettings.Builder<CreateTargetRequest, Target, OperationMetadata>
@@ -999,6 +1236,31 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     private final UnaryCallSettings.Builder<TerminateJobRunRequest, TerminateJobRunResponse>
         terminateJobRunSettings;
     private final UnaryCallSettings.Builder<GetConfigRequest, Config> getConfigSettings;
+    private final UnaryCallSettings.Builder<CreateAutomationRequest, Operation>
+        createAutomationSettings;
+    private final OperationCallSettings.Builder<
+            CreateAutomationRequest, Automation, OperationMetadata>
+        createAutomationOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateAutomationRequest, Operation>
+        updateAutomationSettings;
+    private final OperationCallSettings.Builder<
+            UpdateAutomationRequest, Automation, OperationMetadata>
+        updateAutomationOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteAutomationRequest, Operation>
+        deleteAutomationSettings;
+    private final OperationCallSettings.Builder<DeleteAutomationRequest, Empty, OperationMetadata>
+        deleteAutomationOperationSettings;
+    private final UnaryCallSettings.Builder<GetAutomationRequest, Automation> getAutomationSettings;
+    private final PagedCallSettings.Builder<
+            ListAutomationsRequest, ListAutomationsResponse, ListAutomationsPagedResponse>
+        listAutomationsSettings;
+    private final UnaryCallSettings.Builder<GetAutomationRunRequest, AutomationRun>
+        getAutomationRunSettings;
+    private final PagedCallSettings.Builder<
+            ListAutomationRunsRequest, ListAutomationRunsResponse, ListAutomationRunsPagedResponse>
+        listAutomationRunsSettings;
+    private final UnaryCallSettings.Builder<CancelAutomationRunRequest, CancelAutomationRunResponse>
+        cancelAutomationRunSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1068,6 +1330,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       deleteDeliveryPipelineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteDeliveryPipelineOperationSettings = OperationCallSettings.newBuilder();
       listTargetsSettings = PagedCallSettings.newBuilder(LIST_TARGETS_PAGE_STR_FACT);
+      rollbackTargetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getTargetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createTargetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createTargetOperationSettings = OperationCallSettings.newBuilder();
@@ -1093,6 +1356,17 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       getJobRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       terminateJobRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAutomationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAutomationOperationSettings = OperationCallSettings.newBuilder();
+      updateAutomationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAutomationOperationSettings = OperationCallSettings.newBuilder();
+      deleteAutomationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAutomationOperationSettings = OperationCallSettings.newBuilder();
+      getAutomationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAutomationsSettings = PagedCallSettings.newBuilder(LIST_AUTOMATIONS_PAGE_STR_FACT);
+      getAutomationRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAutomationRunsSettings = PagedCallSettings.newBuilder(LIST_AUTOMATION_RUNS_PAGE_STR_FACT);
+      cancelAutomationRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1107,6 +1381,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               updateDeliveryPipelineSettings,
               deleteDeliveryPipelineSettings,
               listTargetsSettings,
+              rollbackTargetSettings,
               getTargetSettings,
               createTargetSettings,
               updateTargetSettings,
@@ -1127,6 +1402,14 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               getJobRunSettings,
               terminateJobRunSettings,
               getConfigSettings,
+              createAutomationSettings,
+              updateAutomationSettings,
+              deleteAutomationSettings,
+              getAutomationSettings,
+              listAutomationsSettings,
+              getAutomationRunSettings,
+              listAutomationRunsSettings,
+              cancelAutomationRunSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1150,6 +1433,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       deleteDeliveryPipelineOperationSettings =
           settings.deleteDeliveryPipelineOperationSettings.toBuilder();
       listTargetsSettings = settings.listTargetsSettings.toBuilder();
+      rollbackTargetSettings = settings.rollbackTargetSettings.toBuilder();
       getTargetSettings = settings.getTargetSettings.toBuilder();
       createTargetSettings = settings.createTargetSettings.toBuilder();
       createTargetOperationSettings = settings.createTargetOperationSettings.toBuilder();
@@ -1175,6 +1459,17 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       getJobRunSettings = settings.getJobRunSettings.toBuilder();
       terminateJobRunSettings = settings.terminateJobRunSettings.toBuilder();
       getConfigSettings = settings.getConfigSettings.toBuilder();
+      createAutomationSettings = settings.createAutomationSettings.toBuilder();
+      createAutomationOperationSettings = settings.createAutomationOperationSettings.toBuilder();
+      updateAutomationSettings = settings.updateAutomationSettings.toBuilder();
+      updateAutomationOperationSettings = settings.updateAutomationOperationSettings.toBuilder();
+      deleteAutomationSettings = settings.deleteAutomationSettings.toBuilder();
+      deleteAutomationOperationSettings = settings.deleteAutomationOperationSettings.toBuilder();
+      getAutomationSettings = settings.getAutomationSettings.toBuilder();
+      listAutomationsSettings = settings.listAutomationsSettings.toBuilder();
+      getAutomationRunSettings = settings.getAutomationRunSettings.toBuilder();
+      listAutomationRunsSettings = settings.listAutomationRunsSettings.toBuilder();
+      cancelAutomationRunSettings = settings.cancelAutomationRunSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1189,6 +1484,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               updateDeliveryPipelineSettings,
               deleteDeliveryPipelineSettings,
               listTargetsSettings,
+              rollbackTargetSettings,
               getTargetSettings,
               createTargetSettings,
               updateTargetSettings,
@@ -1209,6 +1505,14 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               getJobRunSettings,
               terminateJobRunSettings,
               getConfigSettings,
+              createAutomationSettings,
+              updateAutomationSettings,
+              deleteAutomationSettings,
+              getAutomationSettings,
+              listAutomationsSettings,
+              getAutomationRunSettings,
+              listAutomationRunsSettings,
+              cancelAutomationRunSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1272,6 +1576,11 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .listTargetsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .rollbackTargetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getTargetSettings()
@@ -1372,6 +1681,46 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .getConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createAutomationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateAutomationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteAutomationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getAutomationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listAutomationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAutomationRunSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listAutomationRunsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .cancelAutomationRunSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listLocationsSettings()
@@ -1590,6 +1939,78 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .createAutomationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateAutomationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Automation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateAutomationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateAutomationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Automation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteAutomationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteAutomationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1672,6 +2093,12 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
             ListTargetsRequest, ListTargetsResponse, ListTargetsPagedResponse>
         listTargetsSettings() {
       return listTargetsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rollbackTarget. */
+    public UnaryCallSettings.Builder<RollbackTargetRequest, RollbackTargetResponse>
+        rollbackTargetSettings() {
+      return rollbackTargetSettings;
     }
 
     /** Returns the builder for the settings used for calls to getTarget. */
@@ -1823,6 +2250,79 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     /** Returns the builder for the settings used for calls to getConfig. */
     public UnaryCallSettings.Builder<GetConfigRequest, Config> getConfigSettings() {
       return getConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAutomation. */
+    public UnaryCallSettings.Builder<CreateAutomationRequest, Operation>
+        createAutomationSettings() {
+      return createAutomationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAutomation. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateAutomationRequest, Automation, OperationMetadata>
+        createAutomationOperationSettings() {
+      return createAutomationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutomation. */
+    public UnaryCallSettings.Builder<UpdateAutomationRequest, Operation>
+        updateAutomationSettings() {
+      return updateAutomationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutomation. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateAutomationRequest, Automation, OperationMetadata>
+        updateAutomationOperationSettings() {
+      return updateAutomationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAutomation. */
+    public UnaryCallSettings.Builder<DeleteAutomationRequest, Operation>
+        deleteAutomationSettings() {
+      return deleteAutomationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAutomation. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteAutomationRequest, Empty, OperationMetadata>
+        deleteAutomationOperationSettings() {
+      return deleteAutomationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAutomation. */
+    public UnaryCallSettings.Builder<GetAutomationRequest, Automation> getAutomationSettings() {
+      return getAutomationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAutomations. */
+    public PagedCallSettings.Builder<
+            ListAutomationsRequest, ListAutomationsResponse, ListAutomationsPagedResponse>
+        listAutomationsSettings() {
+      return listAutomationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAutomationRun. */
+    public UnaryCallSettings.Builder<GetAutomationRunRequest, AutomationRun>
+        getAutomationRunSettings() {
+      return getAutomationRunSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAutomationRuns. */
+    public PagedCallSettings.Builder<
+            ListAutomationRunsRequest, ListAutomationRunsResponse, ListAutomationRunsPagedResponse>
+        listAutomationRunsSettings() {
+      return listAutomationRunsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelAutomationRun. */
+    public UnaryCallSettings.Builder<CancelAutomationRunRequest, CancelAutomationRunResponse>
+        cancelAutomationRunSettings() {
+      return cancelAutomationRunSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

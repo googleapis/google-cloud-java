@@ -221,8 +221,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The attributes of the process. Can be anything, for example,
-   * "author". Up to 100 attributes are allowed.
+   * Optional. The attributes of the process. Should only be used for the
+   * purpose of non-semantic management (classifying, describing or labeling the
+   * process).
+   *
+   * Up to 100 attributes are allowed.
    * </pre>
    *
    * <code>
@@ -246,8 +249,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The attributes of the process. Can be anything, for example,
-   * "author". Up to 100 attributes are allowed.
+   * Optional. The attributes of the process. Should only be used for the
+   * purpose of non-semantic management (classifying, describing or labeling the
+   * process).
+   *
+   * Up to 100 attributes are allowed.
    * </pre>
    *
    * <code>
@@ -262,8 +268,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The attributes of the process. Can be anything, for example,
-   * "author". Up to 100 attributes are allowed.
+   * Optional. The attributes of the process. Should only be used for the
+   * purpose of non-semantic management (classifying, describing or labeling the
+   * process).
+   *
+   * Up to 100 attributes are allowed.
    * </pre>
    *
    * <code>
@@ -286,8 +295,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The attributes of the process. Can be anything, for example,
-   * "author". Up to 100 attributes are allowed.
+   * Optional. The attributes of the process. Should only be used for the
+   * purpose of non-semantic management (classifying, describing or labeling the
+   * process).
+   *
+   * Up to 100 attributes are allowed.
    * </pre>
    *
    * <code>
@@ -1091,8 +1103,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The attributes of the process. Can be anything, for example,
-     * "author". Up to 100 attributes are allowed.
+     * Optional. The attributes of the process. Should only be used for the
+     * purpose of non-semantic management (classifying, describing or labeling the
+     * process).
+     *
+     * Up to 100 attributes are allowed.
      * </pre>
      *
      * <code>
@@ -1116,8 +1131,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The attributes of the process. Can be anything, for example,
-     * "author". Up to 100 attributes are allowed.
+     * Optional. The attributes of the process. Should only be used for the
+     * purpose of non-semantic management (classifying, describing or labeling the
+     * process).
+     *
+     * Up to 100 attributes are allowed.
      * </pre>
      *
      * <code>
@@ -1132,8 +1150,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The attributes of the process. Can be anything, for example,
-     * "author". Up to 100 attributes are allowed.
+     * Optional. The attributes of the process. Should only be used for the
+     * purpose of non-semantic management (classifying, describing or labeling the
+     * process).
+     *
+     * Up to 100 attributes are allowed.
      * </pre>
      *
      * <code>
@@ -1156,8 +1177,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The attributes of the process. Can be anything, for example,
-     * "author". Up to 100 attributes are allowed.
+     * Optional. The attributes of the process. Should only be used for the
+     * purpose of non-semantic management (classifying, describing or labeling the
+     * process).
+     *
+     * Up to 100 attributes are allowed.
      * </pre>
      *
      * <code>
@@ -1186,8 +1210,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The attributes of the process. Can be anything, for example,
-     * "author". Up to 100 attributes are allowed.
+     * Optional. The attributes of the process. Should only be used for the
+     * purpose of non-semantic management (classifying, describing or labeling the
+     * process).
+     *
+     * Up to 100 attributes are allowed.
      * </pre>
      *
      * <code>
@@ -1211,8 +1238,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The attributes of the process. Can be anything, for example,
-     * "author". Up to 100 attributes are allowed.
+     * Optional. The attributes of the process. Should only be used for the
+     * purpose of non-semantic management (classifying, describing or labeling the
+     * process).
+     *
+     * Up to 100 attributes are allowed.
      * </pre>
      *
      * <code>
@@ -1234,8 +1264,11 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The attributes of the process. Can be anything, for example,
-     * "author". Up to 100 attributes are allowed.
+     * Optional. The attributes of the process. Should only be used for the
+     * purpose of non-semantic management (classifying, describing or labeling the
+     * process).
+     *
+     * Up to 100 attributes are allowed.
      * </pre>
      *
      * <code>

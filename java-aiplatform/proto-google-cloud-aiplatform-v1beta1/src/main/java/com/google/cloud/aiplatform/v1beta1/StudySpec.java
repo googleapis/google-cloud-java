@@ -19592,6 +19592,3089 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface StudyStoppingConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, a Study enters STOPPING_ASAP whenever it would normally enters
+     * STOPPING state.
+     *
+     * The bottom line is: set to true if you want to interrupt on-going
+     * evaluations of Trials as soon as the study stopping condition is met.
+     * (Please see Study.State documentation for the source of truth).
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue should_stop_asap = 1;</code>
+     *
+     * @return Whether the shouldStopAsap field is set.
+     */
+    boolean hasShouldStopAsap();
+    /**
+     *
+     *
+     * <pre>
+     * If true, a Study enters STOPPING_ASAP whenever it would normally enters
+     * STOPPING state.
+     *
+     * The bottom line is: set to true if you want to interrupt on-going
+     * evaluations of Trials as soon as the study stopping condition is met.
+     * (Please see Study.State documentation for the source of truth).
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue should_stop_asap = 1;</code>
+     *
+     * @return The shouldStopAsap.
+     */
+    com.google.protobuf.BoolValue getShouldStopAsap();
+    /**
+     *
+     *
+     * <pre>
+     * If true, a Study enters STOPPING_ASAP whenever it would normally enters
+     * STOPPING state.
+     *
+     * The bottom line is: set to true if you want to interrupt on-going
+     * evaluations of Trials as soon as the study stopping condition is met.
+     * (Please see Study.State documentation for the source of truth).
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue should_stop_asap = 1;</code>
+     */
+    com.google.protobuf.BoolValueOrBuilder getShouldStopAsapOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Each "stopping rule" in this proto specifies an "if" condition. Before
+     * Vizier would generate a new suggestion, it first checks each specified
+     * stopping rule, from top to bottom in this list.
+     * Note that the first few rules (e.g. minimum_runtime_constraint,
+     * min_num_trials) will prevent other stopping rules from being evaluated
+     * until they are met. For example, setting `min_num_trials=5` and
+     * `always_stop_after= 1 hour` means that the Study will ONLY stop after it
+     * has 5 COMPLETED trials, even if more than an hour has passed since its
+     * creation. It follows the first applicable rule (whose "if" condition is
+     * satisfied) to make a stopping decision. If none of the specified rules
+     * are applicable, then Vizier decides that the study should not stop.
+     * If Vizier decides that the study should stop, the study enters
+     * STOPPING state (or STOPPING_ASAP if should_stop_asap = true).
+     * IMPORTANT: The automatic study state transition happens precisely as
+     * described above; that is, deleting trials or updating StudyConfig NEVER
+     * automatically moves the study state back to ACTIVE. If you want to
+     * _resume_ a Study that was stopped, 1) change the stopping conditions if
+     * necessary, 2) activate the study, and then 3) ask for suggestions.
+     * If the specified time or duration has not passed, do not stop the
+     * study.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimum_runtime_constraint = 2;
+     * </code>
+     *
+     * @return Whether the minimumRuntimeConstraint field is set.
+     */
+    boolean hasMinimumRuntimeConstraint();
+    /**
+     *
+     *
+     * <pre>
+     * Each "stopping rule" in this proto specifies an "if" condition. Before
+     * Vizier would generate a new suggestion, it first checks each specified
+     * stopping rule, from top to bottom in this list.
+     * Note that the first few rules (e.g. minimum_runtime_constraint,
+     * min_num_trials) will prevent other stopping rules from being evaluated
+     * until they are met. For example, setting `min_num_trials=5` and
+     * `always_stop_after= 1 hour` means that the Study will ONLY stop after it
+     * has 5 COMPLETED trials, even if more than an hour has passed since its
+     * creation. It follows the first applicable rule (whose "if" condition is
+     * satisfied) to make a stopping decision. If none of the specified rules
+     * are applicable, then Vizier decides that the study should not stop.
+     * If Vizier decides that the study should stop, the study enters
+     * STOPPING state (or STOPPING_ASAP if should_stop_asap = true).
+     * IMPORTANT: The automatic study state transition happens precisely as
+     * described above; that is, deleting trials or updating StudyConfig NEVER
+     * automatically moves the study state back to ACTIVE. If you want to
+     * _resume_ a Study that was stopped, 1) change the stopping conditions if
+     * necessary, 2) activate the study, and then 3) ask for suggestions.
+     * If the specified time or duration has not passed, do not stop the
+     * study.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimum_runtime_constraint = 2;
+     * </code>
+     *
+     * @return The minimumRuntimeConstraint.
+     */
+    com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint getMinimumRuntimeConstraint();
+    /**
+     *
+     *
+     * <pre>
+     * Each "stopping rule" in this proto specifies an "if" condition. Before
+     * Vizier would generate a new suggestion, it first checks each specified
+     * stopping rule, from top to bottom in this list.
+     * Note that the first few rules (e.g. minimum_runtime_constraint,
+     * min_num_trials) will prevent other stopping rules from being evaluated
+     * until they are met. For example, setting `min_num_trials=5` and
+     * `always_stop_after= 1 hour` means that the Study will ONLY stop after it
+     * has 5 COMPLETED trials, even if more than an hour has passed since its
+     * creation. It follows the first applicable rule (whose "if" condition is
+     * satisfied) to make a stopping decision. If none of the specified rules
+     * are applicable, then Vizier decides that the study should not stop.
+     * If Vizier decides that the study should stop, the study enters
+     * STOPPING state (or STOPPING_ASAP if should_stop_asap = true).
+     * IMPORTANT: The automatic study state transition happens precisely as
+     * described above; that is, deleting trials or updating StudyConfig NEVER
+     * automatically moves the study state back to ACTIVE. If you want to
+     * _resume_ a Study that was stopped, 1) change the stopping conditions if
+     * necessary, 2) activate the study, and then 3) ask for suggestions.
+     * If the specified time or duration has not passed, do not stop the
+     * study.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimum_runtime_constraint = 2;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.StudyTimeConstraintOrBuilder
+        getMinimumRuntimeConstraintOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * If the specified time or duration has passed, stop the study.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximum_runtime_constraint = 3;
+     * </code>
+     *
+     * @return Whether the maximumRuntimeConstraint field is set.
+     */
+    boolean hasMaximumRuntimeConstraint();
+    /**
+     *
+     *
+     * <pre>
+     * If the specified time or duration has passed, stop the study.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximum_runtime_constraint = 3;
+     * </code>
+     *
+     * @return The maximumRuntimeConstraint.
+     */
+    com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint getMaximumRuntimeConstraint();
+    /**
+     *
+     *
+     * <pre>
+     * If the specified time or duration has passed, stop the study.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximum_runtime_constraint = 3;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.StudyTimeConstraintOrBuilder
+        getMaximumRuntimeConstraintOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * If there are fewer than this many COMPLETED trials, do not stop the
+     * study.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value min_num_trials = 4;</code>
+     *
+     * @return Whether the minNumTrials field is set.
+     */
+    boolean hasMinNumTrials();
+    /**
+     *
+     *
+     * <pre>
+     * If there are fewer than this many COMPLETED trials, do not stop the
+     * study.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value min_num_trials = 4;</code>
+     *
+     * @return The minNumTrials.
+     */
+    com.google.protobuf.Int32Value getMinNumTrials();
+    /**
+     *
+     *
+     * <pre>
+     * If there are fewer than this many COMPLETED trials, do not stop the
+     * study.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value min_num_trials = 4;</code>
+     */
+    com.google.protobuf.Int32ValueOrBuilder getMinNumTrialsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * If there are more than this many trials, stop the study.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value max_num_trials = 5;</code>
+     *
+     * @return Whether the maxNumTrials field is set.
+     */
+    boolean hasMaxNumTrials();
+    /**
+     *
+     *
+     * <pre>
+     * If there are more than this many trials, stop the study.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value max_num_trials = 5;</code>
+     *
+     * @return The maxNumTrials.
+     */
+    com.google.protobuf.Int32Value getMaxNumTrials();
+    /**
+     *
+     *
+     * <pre>
+     * If there are more than this many trials, stop the study.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value max_num_trials = 5;</code>
+     */
+    com.google.protobuf.Int32ValueOrBuilder getMaxNumTrialsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * If the objective value has not improved for this many consecutive
+     * trials, stop the study.
+     *
+     * WARNING: Effective only for single-objective studies.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value max_num_trials_no_progress = 6;</code>
+     *
+     * @return Whether the maxNumTrialsNoProgress field is set.
+     */
+    boolean hasMaxNumTrialsNoProgress();
+    /**
+     *
+     *
+     * <pre>
+     * If the objective value has not improved for this many consecutive
+     * trials, stop the study.
+     *
+     * WARNING: Effective only for single-objective studies.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value max_num_trials_no_progress = 6;</code>
+     *
+     * @return The maxNumTrialsNoProgress.
+     */
+    com.google.protobuf.Int32Value getMaxNumTrialsNoProgress();
+    /**
+     *
+     *
+     * <pre>
+     * If the objective value has not improved for this many consecutive
+     * trials, stop the study.
+     *
+     * WARNING: Effective only for single-objective studies.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value max_num_trials_no_progress = 6;</code>
+     */
+    com.google.protobuf.Int32ValueOrBuilder getMaxNumTrialsNoProgressOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * If the objective value has not improved for this much time, stop the
+     * study.
+     *
+     * WARNING: Effective only for single-objective studies.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_duration_no_progress = 7;</code>
+     *
+     * @return Whether the maxDurationNoProgress field is set.
+     */
+    boolean hasMaxDurationNoProgress();
+    /**
+     *
+     *
+     * <pre>
+     * If the objective value has not improved for this much time, stop the
+     * study.
+     *
+     * WARNING: Effective only for single-objective studies.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_duration_no_progress = 7;</code>
+     *
+     * @return The maxDurationNoProgress.
+     */
+    com.google.protobuf.Duration getMaxDurationNoProgress();
+    /**
+     *
+     *
+     * <pre>
+     * If the objective value has not improved for this much time, stop the
+     * study.
+     *
+     * WARNING: Effective only for single-objective studies.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_duration_no_progress = 7;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getMaxDurationNoProgressOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration (stopping conditions) for automated stopping of a Study.
+   * Conditions include trial budgets, time budgets, and convergence detection.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig}
+   */
+  public static final class StudyStoppingConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig)
+      StudyStoppingConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use StudyStoppingConfig.newBuilder() to construct.
+    private StudyStoppingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private StudyStoppingConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new StudyStoppingConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.StudyProto
+          .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_StudyStoppingConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.StudyProto
+          .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_StudyStoppingConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig.class,
+              com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig.Builder.class);
+    }
+
+    public static final int SHOULD_STOP_ASAP_FIELD_NUMBER = 1;
+    private com.google.protobuf.BoolValue shouldStopAsap_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, a Study enters STOPPING_ASAP whenever it would normally enters
+     * STOPPING state.
+     *
+     * The bottom line is: set to true if you want to interrupt on-going
+     * evaluations of Trials as soon as the study stopping condition is met.
+     * (Please see Study.State documentation for the source of truth).
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue should_stop_asap = 1;</code>
+     *
+     * @return Whether the shouldStopAsap field is set.
+     */
+    @java.lang.Override
+    public boolean hasShouldStopAsap() {
+      return shouldStopAsap_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, a Study enters STOPPING_ASAP whenever it would normally enters
+     * STOPPING state.
+     *
+     * The bottom line is: set to true if you want to interrupt on-going
+     * evaluations of Trials as soon as the study stopping condition is met.
+     * (Please see Study.State documentation for the source of truth).
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue should_stop_asap = 1;</code>
+     *
+     * @return The shouldStopAsap.
+     */
+    @java.lang.Override
+    public com.google.protobuf.BoolValue getShouldStopAsap() {
+      return shouldStopAsap_ == null
+          ? com.google.protobuf.BoolValue.getDefaultInstance()
+          : shouldStopAsap_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, a Study enters STOPPING_ASAP whenever it would normally enters
+     * STOPPING state.
+     *
+     * The bottom line is: set to true if you want to interrupt on-going
+     * evaluations of Trials as soon as the study stopping condition is met.
+     * (Please see Study.State documentation for the source of truth).
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue should_stop_asap = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.BoolValueOrBuilder getShouldStopAsapOrBuilder() {
+      return shouldStopAsap_ == null
+          ? com.google.protobuf.BoolValue.getDefaultInstance()
+          : shouldStopAsap_;
+    }
+
+    public static final int MINIMUM_RUNTIME_CONSTRAINT_FIELD_NUMBER = 2;
+    private com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimumRuntimeConstraint_;
+    /**
+     *
+     *
+     * <pre>
+     * Each "stopping rule" in this proto specifies an "if" condition. Before
+     * Vizier would generate a new suggestion, it first checks each specified
+     * stopping rule, from top to bottom in this list.
+     * Note that the first few rules (e.g. minimum_runtime_constraint,
+     * min_num_trials) will prevent other stopping rules from being evaluated
+     * until they are met. For example, setting `min_num_trials=5` and
+     * `always_stop_after= 1 hour` means that the Study will ONLY stop after it
+     * has 5 COMPLETED trials, even if more than an hour has passed since its
+     * creation. It follows the first applicable rule (whose "if" condition is
+     * satisfied) to make a stopping decision. If none of the specified rules
+     * are applicable, then Vizier decides that the study should not stop.
+     * If Vizier decides that the study should stop, the study enters
+     * STOPPING state (or STOPPING_ASAP if should_stop_asap = true).
+     * IMPORTANT: The automatic study state transition happens precisely as
+     * described above; that is, deleting trials or updating StudyConfig NEVER
+     * automatically moves the study state back to ACTIVE. If you want to
+     * _resume_ a Study that was stopped, 1) change the stopping conditions if
+     * necessary, 2) activate the study, and then 3) ask for suggestions.
+     * If the specified time or duration has not passed, do not stop the
+     * study.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimum_runtime_constraint = 2;
+     * </code>
+     *
+     * @return Whether the minimumRuntimeConstraint field is set.
+     */
+    @java.lang.Override
+    public boolean hasMinimumRuntimeConstraint() {
+      return minimumRuntimeConstraint_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Each "stopping rule" in this proto specifies an "if" condition. Before
+     * Vizier would generate a new suggestion, it first checks each specified
+     * stopping rule, from top to bottom in this list.
+     * Note that the first few rules (e.g. minimum_runtime_constraint,
+     * min_num_trials) will prevent other stopping rules from being evaluated
+     * until they are met. For example, setting `min_num_trials=5` and
+     * `always_stop_after= 1 hour` means that the Study will ONLY stop after it
+     * has 5 COMPLETED trials, even if more than an hour has passed since its
+     * creation. It follows the first applicable rule (whose "if" condition is
+     * satisfied) to make a stopping decision. If none of the specified rules
+     * are applicable, then Vizier decides that the study should not stop.
+     * If Vizier decides that the study should stop, the study enters
+     * STOPPING state (or STOPPING_ASAP if should_stop_asap = true).
+     * IMPORTANT: The automatic study state transition happens precisely as
+     * described above; that is, deleting trials or updating StudyConfig NEVER
+     * automatically moves the study state back to ACTIVE. If you want to
+     * _resume_ a Study that was stopped, 1) change the stopping conditions if
+     * necessary, 2) activate the study, and then 3) ask for suggestions.
+     * If the specified time or duration has not passed, do not stop the
+     * study.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimum_runtime_constraint = 2;
+     * </code>
+     *
+     * @return The minimumRuntimeConstraint.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint getMinimumRuntimeConstraint() {
+      return minimumRuntimeConstraint_ == null
+          ? com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.getDefaultInstance()
+          : minimumRuntimeConstraint_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Each "stopping rule" in this proto specifies an "if" condition. Before
+     * Vizier would generate a new suggestion, it first checks each specified
+     * stopping rule, from top to bottom in this list.
+     * Note that the first few rules (e.g. minimum_runtime_constraint,
+     * min_num_trials) will prevent other stopping rules from being evaluated
+     * until they are met. For example, setting `min_num_trials=5` and
+     * `always_stop_after= 1 hour` means that the Study will ONLY stop after it
+     * has 5 COMPLETED trials, even if more than an hour has passed since its
+     * creation. It follows the first applicable rule (whose "if" condition is
+     * satisfied) to make a stopping decision. If none of the specified rules
+     * are applicable, then Vizier decides that the study should not stop.
+     * If Vizier decides that the study should stop, the study enters
+     * STOPPING state (or STOPPING_ASAP if should_stop_asap = true).
+     * IMPORTANT: The automatic study state transition happens precisely as
+     * described above; that is, deleting trials or updating StudyConfig NEVER
+     * automatically moves the study state back to ACTIVE. If you want to
+     * _resume_ a Study that was stopped, 1) change the stopping conditions if
+     * necessary, 2) activate the study, and then 3) ask for suggestions.
+     * If the specified time or duration has not passed, do not stop the
+     * study.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimum_runtime_constraint = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.StudyTimeConstraintOrBuilder
+        getMinimumRuntimeConstraintOrBuilder() {
+      return minimumRuntimeConstraint_ == null
+          ? com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.getDefaultInstance()
+          : minimumRuntimeConstraint_;
+    }
+
+    public static final int MAXIMUM_RUNTIME_CONSTRAINT_FIELD_NUMBER = 3;
+    private com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximumRuntimeConstraint_;
+    /**
+     *
+     *
+     * <pre>
+     * If the specified time or duration has passed, stop the study.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximum_runtime_constraint = 3;
+     * </code>
+     *
+     * @return Whether the maximumRuntimeConstraint field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaximumRuntimeConstraint() {
+      return maximumRuntimeConstraint_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the specified time or duration has passed, stop the study.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximum_runtime_constraint = 3;
+     * </code>
+     *
+     * @return The maximumRuntimeConstraint.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint getMaximumRuntimeConstraint() {
+      return maximumRuntimeConstraint_ == null
+          ? com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.getDefaultInstance()
+          : maximumRuntimeConstraint_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the specified time or duration has passed, stop the study.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximum_runtime_constraint = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.StudyTimeConstraintOrBuilder
+        getMaximumRuntimeConstraintOrBuilder() {
+      return maximumRuntimeConstraint_ == null
+          ? com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.getDefaultInstance()
+          : maximumRuntimeConstraint_;
+    }
+
+    public static final int MIN_NUM_TRIALS_FIELD_NUMBER = 4;
+    private com.google.protobuf.Int32Value minNumTrials_;
+    /**
+     *
+     *
+     * <pre>
+     * If there are fewer than this many COMPLETED trials, do not stop the
+     * study.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value min_num_trials = 4;</code>
+     *
+     * @return Whether the minNumTrials field is set.
+     */
+    @java.lang.Override
+    public boolean hasMinNumTrials() {
+      return minNumTrials_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If there are fewer than this many COMPLETED trials, do not stop the
+     * study.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value min_num_trials = 4;</code>
+     *
+     * @return The minNumTrials.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Int32Value getMinNumTrials() {
+      return minNumTrials_ == null
+          ? com.google.protobuf.Int32Value.getDefaultInstance()
+          : minNumTrials_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If there are fewer than this many COMPLETED trials, do not stop the
+     * study.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value min_num_trials = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.Int32ValueOrBuilder getMinNumTrialsOrBuilder() {
+      return minNumTrials_ == null
+          ? com.google.protobuf.Int32Value.getDefaultInstance()
+          : minNumTrials_;
+    }
+
+    public static final int MAX_NUM_TRIALS_FIELD_NUMBER = 5;
+    private com.google.protobuf.Int32Value maxNumTrials_;
+    /**
+     *
+     *
+     * <pre>
+     * If there are more than this many trials, stop the study.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value max_num_trials = 5;</code>
+     *
+     * @return Whether the maxNumTrials field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxNumTrials() {
+      return maxNumTrials_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If there are more than this many trials, stop the study.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value max_num_trials = 5;</code>
+     *
+     * @return The maxNumTrials.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Int32Value getMaxNumTrials() {
+      return maxNumTrials_ == null
+          ? com.google.protobuf.Int32Value.getDefaultInstance()
+          : maxNumTrials_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If there are more than this many trials, stop the study.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value max_num_trials = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.Int32ValueOrBuilder getMaxNumTrialsOrBuilder() {
+      return maxNumTrials_ == null
+          ? com.google.protobuf.Int32Value.getDefaultInstance()
+          : maxNumTrials_;
+    }
+
+    public static final int MAX_NUM_TRIALS_NO_PROGRESS_FIELD_NUMBER = 6;
+    private com.google.protobuf.Int32Value maxNumTrialsNoProgress_;
+    /**
+     *
+     *
+     * <pre>
+     * If the objective value has not improved for this many consecutive
+     * trials, stop the study.
+     *
+     * WARNING: Effective only for single-objective studies.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value max_num_trials_no_progress = 6;</code>
+     *
+     * @return Whether the maxNumTrialsNoProgress field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxNumTrialsNoProgress() {
+      return maxNumTrialsNoProgress_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the objective value has not improved for this many consecutive
+     * trials, stop the study.
+     *
+     * WARNING: Effective only for single-objective studies.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value max_num_trials_no_progress = 6;</code>
+     *
+     * @return The maxNumTrialsNoProgress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Int32Value getMaxNumTrialsNoProgress() {
+      return maxNumTrialsNoProgress_ == null
+          ? com.google.protobuf.Int32Value.getDefaultInstance()
+          : maxNumTrialsNoProgress_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the objective value has not improved for this many consecutive
+     * trials, stop the study.
+     *
+     * WARNING: Effective only for single-objective studies.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value max_num_trials_no_progress = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.Int32ValueOrBuilder getMaxNumTrialsNoProgressOrBuilder() {
+      return maxNumTrialsNoProgress_ == null
+          ? com.google.protobuf.Int32Value.getDefaultInstance()
+          : maxNumTrialsNoProgress_;
+    }
+
+    public static final int MAX_DURATION_NO_PROGRESS_FIELD_NUMBER = 7;
+    private com.google.protobuf.Duration maxDurationNoProgress_;
+    /**
+     *
+     *
+     * <pre>
+     * If the objective value has not improved for this much time, stop the
+     * study.
+     *
+     * WARNING: Effective only for single-objective studies.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_duration_no_progress = 7;</code>
+     *
+     * @return Whether the maxDurationNoProgress field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxDurationNoProgress() {
+      return maxDurationNoProgress_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the objective value has not improved for this much time, stop the
+     * study.
+     *
+     * WARNING: Effective only for single-objective studies.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_duration_no_progress = 7;</code>
+     *
+     * @return The maxDurationNoProgress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getMaxDurationNoProgress() {
+      return maxDurationNoProgress_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : maxDurationNoProgress_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the objective value has not improved for this much time, stop the
+     * study.
+     *
+     * WARNING: Effective only for single-objective studies.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration max_duration_no_progress = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getMaxDurationNoProgressOrBuilder() {
+      return maxDurationNoProgress_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : maxDurationNoProgress_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (shouldStopAsap_ != null) {
+        output.writeMessage(1, getShouldStopAsap());
+      }
+      if (minimumRuntimeConstraint_ != null) {
+        output.writeMessage(2, getMinimumRuntimeConstraint());
+      }
+      if (maximumRuntimeConstraint_ != null) {
+        output.writeMessage(3, getMaximumRuntimeConstraint());
+      }
+      if (minNumTrials_ != null) {
+        output.writeMessage(4, getMinNumTrials());
+      }
+      if (maxNumTrials_ != null) {
+        output.writeMessage(5, getMaxNumTrials());
+      }
+      if (maxNumTrialsNoProgress_ != null) {
+        output.writeMessage(6, getMaxNumTrialsNoProgress());
+      }
+      if (maxDurationNoProgress_ != null) {
+        output.writeMessage(7, getMaxDurationNoProgress());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (shouldStopAsap_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getShouldStopAsap());
+      }
+      if (minimumRuntimeConstraint_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2, getMinimumRuntimeConstraint());
+      }
+      if (maximumRuntimeConstraint_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, getMaximumRuntimeConstraint());
+      }
+      if (minNumTrials_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getMinNumTrials());
+      }
+      if (maxNumTrials_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getMaxNumTrials());
+      }
+      if (maxNumTrialsNoProgress_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6, getMaxNumTrialsNoProgress());
+      }
+      if (maxDurationNoProgress_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(7, getMaxDurationNoProgress());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig other =
+          (com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig) obj;
+
+      if (hasShouldStopAsap() != other.hasShouldStopAsap()) return false;
+      if (hasShouldStopAsap()) {
+        if (!getShouldStopAsap().equals(other.getShouldStopAsap())) return false;
+      }
+      if (hasMinimumRuntimeConstraint() != other.hasMinimumRuntimeConstraint()) return false;
+      if (hasMinimumRuntimeConstraint()) {
+        if (!getMinimumRuntimeConstraint().equals(other.getMinimumRuntimeConstraint()))
+          return false;
+      }
+      if (hasMaximumRuntimeConstraint() != other.hasMaximumRuntimeConstraint()) return false;
+      if (hasMaximumRuntimeConstraint()) {
+        if (!getMaximumRuntimeConstraint().equals(other.getMaximumRuntimeConstraint()))
+          return false;
+      }
+      if (hasMinNumTrials() != other.hasMinNumTrials()) return false;
+      if (hasMinNumTrials()) {
+        if (!getMinNumTrials().equals(other.getMinNumTrials())) return false;
+      }
+      if (hasMaxNumTrials() != other.hasMaxNumTrials()) return false;
+      if (hasMaxNumTrials()) {
+        if (!getMaxNumTrials().equals(other.getMaxNumTrials())) return false;
+      }
+      if (hasMaxNumTrialsNoProgress() != other.hasMaxNumTrialsNoProgress()) return false;
+      if (hasMaxNumTrialsNoProgress()) {
+        if (!getMaxNumTrialsNoProgress().equals(other.getMaxNumTrialsNoProgress())) return false;
+      }
+      if (hasMaxDurationNoProgress() != other.hasMaxDurationNoProgress()) return false;
+      if (hasMaxDurationNoProgress()) {
+        if (!getMaxDurationNoProgress().equals(other.getMaxDurationNoProgress())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasShouldStopAsap()) {
+        hash = (37 * hash) + SHOULD_STOP_ASAP_FIELD_NUMBER;
+        hash = (53 * hash) + getShouldStopAsap().hashCode();
+      }
+      if (hasMinimumRuntimeConstraint()) {
+        hash = (37 * hash) + MINIMUM_RUNTIME_CONSTRAINT_FIELD_NUMBER;
+        hash = (53 * hash) + getMinimumRuntimeConstraint().hashCode();
+      }
+      if (hasMaximumRuntimeConstraint()) {
+        hash = (37 * hash) + MAXIMUM_RUNTIME_CONSTRAINT_FIELD_NUMBER;
+        hash = (53 * hash) + getMaximumRuntimeConstraint().hashCode();
+      }
+      if (hasMinNumTrials()) {
+        hash = (37 * hash) + MIN_NUM_TRIALS_FIELD_NUMBER;
+        hash = (53 * hash) + getMinNumTrials().hashCode();
+      }
+      if (hasMaxNumTrials()) {
+        hash = (37 * hash) + MAX_NUM_TRIALS_FIELD_NUMBER;
+        hash = (53 * hash) + getMaxNumTrials().hashCode();
+      }
+      if (hasMaxNumTrialsNoProgress()) {
+        hash = (37 * hash) + MAX_NUM_TRIALS_NO_PROGRESS_FIELD_NUMBER;
+        hash = (53 * hash) + getMaxNumTrialsNoProgress().hashCode();
+      }
+      if (hasMaxDurationNoProgress()) {
+        hash = (37 * hash) + MAX_DURATION_NO_PROGRESS_FIELD_NUMBER;
+        hash = (53 * hash) + getMaxDurationNoProgress().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration (stopping conditions) for automated stopping of a Study.
+     * Conditions include trial budgets, time budgets, and convergence detection.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig)
+        com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_StudyStoppingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_StudyStoppingConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig.class,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        shouldStopAsap_ = null;
+        if (shouldStopAsapBuilder_ != null) {
+          shouldStopAsapBuilder_.dispose();
+          shouldStopAsapBuilder_ = null;
+        }
+        minimumRuntimeConstraint_ = null;
+        if (minimumRuntimeConstraintBuilder_ != null) {
+          minimumRuntimeConstraintBuilder_.dispose();
+          minimumRuntimeConstraintBuilder_ = null;
+        }
+        maximumRuntimeConstraint_ = null;
+        if (maximumRuntimeConstraintBuilder_ != null) {
+          maximumRuntimeConstraintBuilder_.dispose();
+          maximumRuntimeConstraintBuilder_ = null;
+        }
+        minNumTrials_ = null;
+        if (minNumTrialsBuilder_ != null) {
+          minNumTrialsBuilder_.dispose();
+          minNumTrialsBuilder_ = null;
+        }
+        maxNumTrials_ = null;
+        if (maxNumTrialsBuilder_ != null) {
+          maxNumTrialsBuilder_.dispose();
+          maxNumTrialsBuilder_ = null;
+        }
+        maxNumTrialsNoProgress_ = null;
+        if (maxNumTrialsNoProgressBuilder_ != null) {
+          maxNumTrialsNoProgressBuilder_.dispose();
+          maxNumTrialsNoProgressBuilder_ = null;
+        }
+        maxDurationNoProgress_ = null;
+        if (maxDurationNoProgressBuilder_ != null) {
+          maxDurationNoProgressBuilder_.dispose();
+          maxDurationNoProgressBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_StudyStoppingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig build() {
+        com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig result =
+            new com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.shouldStopAsap_ =
+              shouldStopAsapBuilder_ == null ? shouldStopAsap_ : shouldStopAsapBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.minimumRuntimeConstraint_ =
+              minimumRuntimeConstraintBuilder_ == null
+                  ? minimumRuntimeConstraint_
+                  : minimumRuntimeConstraintBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.maximumRuntimeConstraint_ =
+              maximumRuntimeConstraintBuilder_ == null
+                  ? maximumRuntimeConstraint_
+                  : maximumRuntimeConstraintBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.minNumTrials_ =
+              minNumTrialsBuilder_ == null ? minNumTrials_ : minNumTrialsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.maxNumTrials_ =
+              maxNumTrialsBuilder_ == null ? maxNumTrials_ : maxNumTrialsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.maxNumTrialsNoProgress_ =
+              maxNumTrialsNoProgressBuilder_ == null
+                  ? maxNumTrialsNoProgress_
+                  : maxNumTrialsNoProgressBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.maxDurationNoProgress_ =
+              maxDurationNoProgressBuilder_ == null
+                  ? maxDurationNoProgress_
+                  : maxDurationNoProgressBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig
+                .getDefaultInstance()) return this;
+        if (other.hasShouldStopAsap()) {
+          mergeShouldStopAsap(other.getShouldStopAsap());
+        }
+        if (other.hasMinimumRuntimeConstraint()) {
+          mergeMinimumRuntimeConstraint(other.getMinimumRuntimeConstraint());
+        }
+        if (other.hasMaximumRuntimeConstraint()) {
+          mergeMaximumRuntimeConstraint(other.getMaximumRuntimeConstraint());
+        }
+        if (other.hasMinNumTrials()) {
+          mergeMinNumTrials(other.getMinNumTrials());
+        }
+        if (other.hasMaxNumTrials()) {
+          mergeMaxNumTrials(other.getMaxNumTrials());
+        }
+        if (other.hasMaxNumTrialsNoProgress()) {
+          mergeMaxNumTrialsNoProgress(other.getMaxNumTrialsNoProgress());
+        }
+        if (other.hasMaxDurationNoProgress()) {
+          mergeMaxDurationNoProgress(other.getMaxDurationNoProgress());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getShouldStopAsapFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getMinimumRuntimeConstraintFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getMaximumRuntimeConstraintFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getMinNumTrialsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  input.readMessage(getMaxNumTrialsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getMaxNumTrialsNoProgressFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      getMaxDurationNoProgressFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 58
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.BoolValue shouldStopAsap_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue,
+              com.google.protobuf.BoolValue.Builder,
+              com.google.protobuf.BoolValueOrBuilder>
+          shouldStopAsapBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * If true, a Study enters STOPPING_ASAP whenever it would normally enters
+       * STOPPING state.
+       *
+       * The bottom line is: set to true if you want to interrupt on-going
+       * evaluations of Trials as soon as the study stopping condition is met.
+       * (Please see Study.State documentation for the source of truth).
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue should_stop_asap = 1;</code>
+       *
+       * @return Whether the shouldStopAsap field is set.
+       */
+      public boolean hasShouldStopAsap() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If true, a Study enters STOPPING_ASAP whenever it would normally enters
+       * STOPPING state.
+       *
+       * The bottom line is: set to true if you want to interrupt on-going
+       * evaluations of Trials as soon as the study stopping condition is met.
+       * (Please see Study.State documentation for the source of truth).
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue should_stop_asap = 1;</code>
+       *
+       * @return The shouldStopAsap.
+       */
+      public com.google.protobuf.BoolValue getShouldStopAsap() {
+        if (shouldStopAsapBuilder_ == null) {
+          return shouldStopAsap_ == null
+              ? com.google.protobuf.BoolValue.getDefaultInstance()
+              : shouldStopAsap_;
+        } else {
+          return shouldStopAsapBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If true, a Study enters STOPPING_ASAP whenever it would normally enters
+       * STOPPING state.
+       *
+       * The bottom line is: set to true if you want to interrupt on-going
+       * evaluations of Trials as soon as the study stopping condition is met.
+       * (Please see Study.State documentation for the source of truth).
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue should_stop_asap = 1;</code>
+       */
+      public Builder setShouldStopAsap(com.google.protobuf.BoolValue value) {
+        if (shouldStopAsapBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          shouldStopAsap_ = value;
+        } else {
+          shouldStopAsapBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If true, a Study enters STOPPING_ASAP whenever it would normally enters
+       * STOPPING state.
+       *
+       * The bottom line is: set to true if you want to interrupt on-going
+       * evaluations of Trials as soon as the study stopping condition is met.
+       * (Please see Study.State documentation for the source of truth).
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue should_stop_asap = 1;</code>
+       */
+      public Builder setShouldStopAsap(com.google.protobuf.BoolValue.Builder builderForValue) {
+        if (shouldStopAsapBuilder_ == null) {
+          shouldStopAsap_ = builderForValue.build();
+        } else {
+          shouldStopAsapBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If true, a Study enters STOPPING_ASAP whenever it would normally enters
+       * STOPPING state.
+       *
+       * The bottom line is: set to true if you want to interrupt on-going
+       * evaluations of Trials as soon as the study stopping condition is met.
+       * (Please see Study.State documentation for the source of truth).
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue should_stop_asap = 1;</code>
+       */
+      public Builder mergeShouldStopAsap(com.google.protobuf.BoolValue value) {
+        if (shouldStopAsapBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && shouldStopAsap_ != null
+              && shouldStopAsap_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+            getShouldStopAsapBuilder().mergeFrom(value);
+          } else {
+            shouldStopAsap_ = value;
+          }
+        } else {
+          shouldStopAsapBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If true, a Study enters STOPPING_ASAP whenever it would normally enters
+       * STOPPING state.
+       *
+       * The bottom line is: set to true if you want to interrupt on-going
+       * evaluations of Trials as soon as the study stopping condition is met.
+       * (Please see Study.State documentation for the source of truth).
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue should_stop_asap = 1;</code>
+       */
+      public Builder clearShouldStopAsap() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        shouldStopAsap_ = null;
+        if (shouldStopAsapBuilder_ != null) {
+          shouldStopAsapBuilder_.dispose();
+          shouldStopAsapBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If true, a Study enters STOPPING_ASAP whenever it would normally enters
+       * STOPPING state.
+       *
+       * The bottom line is: set to true if you want to interrupt on-going
+       * evaluations of Trials as soon as the study stopping condition is met.
+       * (Please see Study.State documentation for the source of truth).
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue should_stop_asap = 1;</code>
+       */
+      public com.google.protobuf.BoolValue.Builder getShouldStopAsapBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getShouldStopAsapFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If true, a Study enters STOPPING_ASAP whenever it would normally enters
+       * STOPPING state.
+       *
+       * The bottom line is: set to true if you want to interrupt on-going
+       * evaluations of Trials as soon as the study stopping condition is met.
+       * (Please see Study.State documentation for the source of truth).
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue should_stop_asap = 1;</code>
+       */
+      public com.google.protobuf.BoolValueOrBuilder getShouldStopAsapOrBuilder() {
+        if (shouldStopAsapBuilder_ != null) {
+          return shouldStopAsapBuilder_.getMessageOrBuilder();
+        } else {
+          return shouldStopAsap_ == null
+              ? com.google.protobuf.BoolValue.getDefaultInstance()
+              : shouldStopAsap_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If true, a Study enters STOPPING_ASAP whenever it would normally enters
+       * STOPPING state.
+       *
+       * The bottom line is: set to true if you want to interrupt on-going
+       * evaluations of Trials as soon as the study stopping condition is met.
+       * (Please see Study.State documentation for the source of truth).
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue should_stop_asap = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue,
+              com.google.protobuf.BoolValue.Builder,
+              com.google.protobuf.BoolValueOrBuilder>
+          getShouldStopAsapFieldBuilder() {
+        if (shouldStopAsapBuilder_ == null) {
+          shouldStopAsapBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.BoolValue,
+                  com.google.protobuf.BoolValue.Builder,
+                  com.google.protobuf.BoolValueOrBuilder>(
+                  getShouldStopAsap(), getParentForChildren(), isClean());
+          shouldStopAsap_ = null;
+        }
+        return shouldStopAsapBuilder_;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimumRuntimeConstraint_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint,
+              com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.Builder,
+              com.google.cloud.aiplatform.v1beta1.StudyTimeConstraintOrBuilder>
+          minimumRuntimeConstraintBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Each "stopping rule" in this proto specifies an "if" condition. Before
+       * Vizier would generate a new suggestion, it first checks each specified
+       * stopping rule, from top to bottom in this list.
+       * Note that the first few rules (e.g. minimum_runtime_constraint,
+       * min_num_trials) will prevent other stopping rules from being evaluated
+       * until they are met. For example, setting `min_num_trials=5` and
+       * `always_stop_after= 1 hour` means that the Study will ONLY stop after it
+       * has 5 COMPLETED trials, even if more than an hour has passed since its
+       * creation. It follows the first applicable rule (whose "if" condition is
+       * satisfied) to make a stopping decision. If none of the specified rules
+       * are applicable, then Vizier decides that the study should not stop.
+       * If Vizier decides that the study should stop, the study enters
+       * STOPPING state (or STOPPING_ASAP if should_stop_asap = true).
+       * IMPORTANT: The automatic study state transition happens precisely as
+       * described above; that is, deleting trials or updating StudyConfig NEVER
+       * automatically moves the study state back to ACTIVE. If you want to
+       * _resume_ a Study that was stopped, 1) change the stopping conditions if
+       * necessary, 2) activate the study, and then 3) ask for suggestions.
+       * If the specified time or duration has not passed, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimum_runtime_constraint = 2;
+       * </code>
+       *
+       * @return Whether the minimumRuntimeConstraint field is set.
+       */
+      public boolean hasMinimumRuntimeConstraint() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each "stopping rule" in this proto specifies an "if" condition. Before
+       * Vizier would generate a new suggestion, it first checks each specified
+       * stopping rule, from top to bottom in this list.
+       * Note that the first few rules (e.g. minimum_runtime_constraint,
+       * min_num_trials) will prevent other stopping rules from being evaluated
+       * until they are met. For example, setting `min_num_trials=5` and
+       * `always_stop_after= 1 hour` means that the Study will ONLY stop after it
+       * has 5 COMPLETED trials, even if more than an hour has passed since its
+       * creation. It follows the first applicable rule (whose "if" condition is
+       * satisfied) to make a stopping decision. If none of the specified rules
+       * are applicable, then Vizier decides that the study should not stop.
+       * If Vizier decides that the study should stop, the study enters
+       * STOPPING state (or STOPPING_ASAP if should_stop_asap = true).
+       * IMPORTANT: The automatic study state transition happens precisely as
+       * described above; that is, deleting trials or updating StudyConfig NEVER
+       * automatically moves the study state back to ACTIVE. If you want to
+       * _resume_ a Study that was stopped, 1) change the stopping conditions if
+       * necessary, 2) activate the study, and then 3) ask for suggestions.
+       * If the specified time or duration has not passed, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimum_runtime_constraint = 2;
+       * </code>
+       *
+       * @return The minimumRuntimeConstraint.
+       */
+      public com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint getMinimumRuntimeConstraint() {
+        if (minimumRuntimeConstraintBuilder_ == null) {
+          return minimumRuntimeConstraint_ == null
+              ? com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.getDefaultInstance()
+              : minimumRuntimeConstraint_;
+        } else {
+          return minimumRuntimeConstraintBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each "stopping rule" in this proto specifies an "if" condition. Before
+       * Vizier would generate a new suggestion, it first checks each specified
+       * stopping rule, from top to bottom in this list.
+       * Note that the first few rules (e.g. minimum_runtime_constraint,
+       * min_num_trials) will prevent other stopping rules from being evaluated
+       * until they are met. For example, setting `min_num_trials=5` and
+       * `always_stop_after= 1 hour` means that the Study will ONLY stop after it
+       * has 5 COMPLETED trials, even if more than an hour has passed since its
+       * creation. It follows the first applicable rule (whose "if" condition is
+       * satisfied) to make a stopping decision. If none of the specified rules
+       * are applicable, then Vizier decides that the study should not stop.
+       * If Vizier decides that the study should stop, the study enters
+       * STOPPING state (or STOPPING_ASAP if should_stop_asap = true).
+       * IMPORTANT: The automatic study state transition happens precisely as
+       * described above; that is, deleting trials or updating StudyConfig NEVER
+       * automatically moves the study state back to ACTIVE. If you want to
+       * _resume_ a Study that was stopped, 1) change the stopping conditions if
+       * necessary, 2) activate the study, and then 3) ask for suggestions.
+       * If the specified time or duration has not passed, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimum_runtime_constraint = 2;
+       * </code>
+       */
+      public Builder setMinimumRuntimeConstraint(
+          com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint value) {
+        if (minimumRuntimeConstraintBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          minimumRuntimeConstraint_ = value;
+        } else {
+          minimumRuntimeConstraintBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each "stopping rule" in this proto specifies an "if" condition. Before
+       * Vizier would generate a new suggestion, it first checks each specified
+       * stopping rule, from top to bottom in this list.
+       * Note that the first few rules (e.g. minimum_runtime_constraint,
+       * min_num_trials) will prevent other stopping rules from being evaluated
+       * until they are met. For example, setting `min_num_trials=5` and
+       * `always_stop_after= 1 hour` means that the Study will ONLY stop after it
+       * has 5 COMPLETED trials, even if more than an hour has passed since its
+       * creation. It follows the first applicable rule (whose "if" condition is
+       * satisfied) to make a stopping decision. If none of the specified rules
+       * are applicable, then Vizier decides that the study should not stop.
+       * If Vizier decides that the study should stop, the study enters
+       * STOPPING state (or STOPPING_ASAP if should_stop_asap = true).
+       * IMPORTANT: The automatic study state transition happens precisely as
+       * described above; that is, deleting trials or updating StudyConfig NEVER
+       * automatically moves the study state back to ACTIVE. If you want to
+       * _resume_ a Study that was stopped, 1) change the stopping conditions if
+       * necessary, 2) activate the study, and then 3) ask for suggestions.
+       * If the specified time or duration has not passed, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimum_runtime_constraint = 2;
+       * </code>
+       */
+      public Builder setMinimumRuntimeConstraint(
+          com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.Builder builderForValue) {
+        if (minimumRuntimeConstraintBuilder_ == null) {
+          minimumRuntimeConstraint_ = builderForValue.build();
+        } else {
+          minimumRuntimeConstraintBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each "stopping rule" in this proto specifies an "if" condition. Before
+       * Vizier would generate a new suggestion, it first checks each specified
+       * stopping rule, from top to bottom in this list.
+       * Note that the first few rules (e.g. minimum_runtime_constraint,
+       * min_num_trials) will prevent other stopping rules from being evaluated
+       * until they are met. For example, setting `min_num_trials=5` and
+       * `always_stop_after= 1 hour` means that the Study will ONLY stop after it
+       * has 5 COMPLETED trials, even if more than an hour has passed since its
+       * creation. It follows the first applicable rule (whose "if" condition is
+       * satisfied) to make a stopping decision. If none of the specified rules
+       * are applicable, then Vizier decides that the study should not stop.
+       * If Vizier decides that the study should stop, the study enters
+       * STOPPING state (or STOPPING_ASAP if should_stop_asap = true).
+       * IMPORTANT: The automatic study state transition happens precisely as
+       * described above; that is, deleting trials or updating StudyConfig NEVER
+       * automatically moves the study state back to ACTIVE. If you want to
+       * _resume_ a Study that was stopped, 1) change the stopping conditions if
+       * necessary, 2) activate the study, and then 3) ask for suggestions.
+       * If the specified time or duration has not passed, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimum_runtime_constraint = 2;
+       * </code>
+       */
+      public Builder mergeMinimumRuntimeConstraint(
+          com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint value) {
+        if (minimumRuntimeConstraintBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && minimumRuntimeConstraint_ != null
+              && minimumRuntimeConstraint_
+                  != com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.getDefaultInstance()) {
+            getMinimumRuntimeConstraintBuilder().mergeFrom(value);
+          } else {
+            minimumRuntimeConstraint_ = value;
+          }
+        } else {
+          minimumRuntimeConstraintBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each "stopping rule" in this proto specifies an "if" condition. Before
+       * Vizier would generate a new suggestion, it first checks each specified
+       * stopping rule, from top to bottom in this list.
+       * Note that the first few rules (e.g. minimum_runtime_constraint,
+       * min_num_trials) will prevent other stopping rules from being evaluated
+       * until they are met. For example, setting `min_num_trials=5` and
+       * `always_stop_after= 1 hour` means that the Study will ONLY stop after it
+       * has 5 COMPLETED trials, even if more than an hour has passed since its
+       * creation. It follows the first applicable rule (whose "if" condition is
+       * satisfied) to make a stopping decision. If none of the specified rules
+       * are applicable, then Vizier decides that the study should not stop.
+       * If Vizier decides that the study should stop, the study enters
+       * STOPPING state (or STOPPING_ASAP if should_stop_asap = true).
+       * IMPORTANT: The automatic study state transition happens precisely as
+       * described above; that is, deleting trials or updating StudyConfig NEVER
+       * automatically moves the study state back to ACTIVE. If you want to
+       * _resume_ a Study that was stopped, 1) change the stopping conditions if
+       * necessary, 2) activate the study, and then 3) ask for suggestions.
+       * If the specified time or duration has not passed, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimum_runtime_constraint = 2;
+       * </code>
+       */
+      public Builder clearMinimumRuntimeConstraint() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        minimumRuntimeConstraint_ = null;
+        if (minimumRuntimeConstraintBuilder_ != null) {
+          minimumRuntimeConstraintBuilder_.dispose();
+          minimumRuntimeConstraintBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each "stopping rule" in this proto specifies an "if" condition. Before
+       * Vizier would generate a new suggestion, it first checks each specified
+       * stopping rule, from top to bottom in this list.
+       * Note that the first few rules (e.g. minimum_runtime_constraint,
+       * min_num_trials) will prevent other stopping rules from being evaluated
+       * until they are met. For example, setting `min_num_trials=5` and
+       * `always_stop_after= 1 hour` means that the Study will ONLY stop after it
+       * has 5 COMPLETED trials, even if more than an hour has passed since its
+       * creation. It follows the first applicable rule (whose "if" condition is
+       * satisfied) to make a stopping decision. If none of the specified rules
+       * are applicable, then Vizier decides that the study should not stop.
+       * If Vizier decides that the study should stop, the study enters
+       * STOPPING state (or STOPPING_ASAP if should_stop_asap = true).
+       * IMPORTANT: The automatic study state transition happens precisely as
+       * described above; that is, deleting trials or updating StudyConfig NEVER
+       * automatically moves the study state back to ACTIVE. If you want to
+       * _resume_ a Study that was stopped, 1) change the stopping conditions if
+       * necessary, 2) activate the study, and then 3) ask for suggestions.
+       * If the specified time or duration has not passed, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimum_runtime_constraint = 2;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.Builder
+          getMinimumRuntimeConstraintBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getMinimumRuntimeConstraintFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each "stopping rule" in this proto specifies an "if" condition. Before
+       * Vizier would generate a new suggestion, it first checks each specified
+       * stopping rule, from top to bottom in this list.
+       * Note that the first few rules (e.g. minimum_runtime_constraint,
+       * min_num_trials) will prevent other stopping rules from being evaluated
+       * until they are met. For example, setting `min_num_trials=5` and
+       * `always_stop_after= 1 hour` means that the Study will ONLY stop after it
+       * has 5 COMPLETED trials, even if more than an hour has passed since its
+       * creation. It follows the first applicable rule (whose "if" condition is
+       * satisfied) to make a stopping decision. If none of the specified rules
+       * are applicable, then Vizier decides that the study should not stop.
+       * If Vizier decides that the study should stop, the study enters
+       * STOPPING state (or STOPPING_ASAP if should_stop_asap = true).
+       * IMPORTANT: The automatic study state transition happens precisely as
+       * described above; that is, deleting trials or updating StudyConfig NEVER
+       * automatically moves the study state back to ACTIVE. If you want to
+       * _resume_ a Study that was stopped, 1) change the stopping conditions if
+       * necessary, 2) activate the study, and then 3) ask for suggestions.
+       * If the specified time or duration has not passed, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimum_runtime_constraint = 2;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.StudyTimeConstraintOrBuilder
+          getMinimumRuntimeConstraintOrBuilder() {
+        if (minimumRuntimeConstraintBuilder_ != null) {
+          return minimumRuntimeConstraintBuilder_.getMessageOrBuilder();
+        } else {
+          return minimumRuntimeConstraint_ == null
+              ? com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.getDefaultInstance()
+              : minimumRuntimeConstraint_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Each "stopping rule" in this proto specifies an "if" condition. Before
+       * Vizier would generate a new suggestion, it first checks each specified
+       * stopping rule, from top to bottom in this list.
+       * Note that the first few rules (e.g. minimum_runtime_constraint,
+       * min_num_trials) will prevent other stopping rules from being evaluated
+       * until they are met. For example, setting `min_num_trials=5` and
+       * `always_stop_after= 1 hour` means that the Study will ONLY stop after it
+       * has 5 COMPLETED trials, even if more than an hour has passed since its
+       * creation. It follows the first applicable rule (whose "if" condition is
+       * satisfied) to make a stopping decision. If none of the specified rules
+       * are applicable, then Vizier decides that the study should not stop.
+       * If Vizier decides that the study should stop, the study enters
+       * STOPPING state (or STOPPING_ASAP if should_stop_asap = true).
+       * IMPORTANT: The automatic study state transition happens precisely as
+       * described above; that is, deleting trials or updating StudyConfig NEVER
+       * automatically moves the study state back to ACTIVE. If you want to
+       * _resume_ a Study that was stopped, 1) change the stopping conditions if
+       * necessary, 2) activate the study, and then 3) ask for suggestions.
+       * If the specified time or duration has not passed, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint minimum_runtime_constraint = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint,
+              com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.Builder,
+              com.google.cloud.aiplatform.v1beta1.StudyTimeConstraintOrBuilder>
+          getMinimumRuntimeConstraintFieldBuilder() {
+        if (minimumRuntimeConstraintBuilder_ == null) {
+          minimumRuntimeConstraintBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint,
+                  com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.Builder,
+                  com.google.cloud.aiplatform.v1beta1.StudyTimeConstraintOrBuilder>(
+                  getMinimumRuntimeConstraint(), getParentForChildren(), isClean());
+          minimumRuntimeConstraint_ = null;
+        }
+        return minimumRuntimeConstraintBuilder_;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximumRuntimeConstraint_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint,
+              com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.Builder,
+              com.google.cloud.aiplatform.v1beta1.StudyTimeConstraintOrBuilder>
+          maximumRuntimeConstraintBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * If the specified time or duration has passed, stop the study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximum_runtime_constraint = 3;
+       * </code>
+       *
+       * @return Whether the maximumRuntimeConstraint field is set.
+       */
+      public boolean hasMaximumRuntimeConstraint() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the specified time or duration has passed, stop the study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximum_runtime_constraint = 3;
+       * </code>
+       *
+       * @return The maximumRuntimeConstraint.
+       */
+      public com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint getMaximumRuntimeConstraint() {
+        if (maximumRuntimeConstraintBuilder_ == null) {
+          return maximumRuntimeConstraint_ == null
+              ? com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.getDefaultInstance()
+              : maximumRuntimeConstraint_;
+        } else {
+          return maximumRuntimeConstraintBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the specified time or duration has passed, stop the study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximum_runtime_constraint = 3;
+       * </code>
+       */
+      public Builder setMaximumRuntimeConstraint(
+          com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint value) {
+        if (maximumRuntimeConstraintBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          maximumRuntimeConstraint_ = value;
+        } else {
+          maximumRuntimeConstraintBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the specified time or duration has passed, stop the study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximum_runtime_constraint = 3;
+       * </code>
+       */
+      public Builder setMaximumRuntimeConstraint(
+          com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.Builder builderForValue) {
+        if (maximumRuntimeConstraintBuilder_ == null) {
+          maximumRuntimeConstraint_ = builderForValue.build();
+        } else {
+          maximumRuntimeConstraintBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the specified time or duration has passed, stop the study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximum_runtime_constraint = 3;
+       * </code>
+       */
+      public Builder mergeMaximumRuntimeConstraint(
+          com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint value) {
+        if (maximumRuntimeConstraintBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && maximumRuntimeConstraint_ != null
+              && maximumRuntimeConstraint_
+                  != com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.getDefaultInstance()) {
+            getMaximumRuntimeConstraintBuilder().mergeFrom(value);
+          } else {
+            maximumRuntimeConstraint_ = value;
+          }
+        } else {
+          maximumRuntimeConstraintBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the specified time or duration has passed, stop the study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximum_runtime_constraint = 3;
+       * </code>
+       */
+      public Builder clearMaximumRuntimeConstraint() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        maximumRuntimeConstraint_ = null;
+        if (maximumRuntimeConstraintBuilder_ != null) {
+          maximumRuntimeConstraintBuilder_.dispose();
+          maximumRuntimeConstraintBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the specified time or duration has passed, stop the study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximum_runtime_constraint = 3;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.Builder
+          getMaximumRuntimeConstraintBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getMaximumRuntimeConstraintFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the specified time or duration has passed, stop the study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximum_runtime_constraint = 3;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.StudyTimeConstraintOrBuilder
+          getMaximumRuntimeConstraintOrBuilder() {
+        if (maximumRuntimeConstraintBuilder_ != null) {
+          return maximumRuntimeConstraintBuilder_.getMessageOrBuilder();
+        } else {
+          return maximumRuntimeConstraint_ == null
+              ? com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.getDefaultInstance()
+              : maximumRuntimeConstraint_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the specified time or duration has passed, stop the study.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.StudyTimeConstraint maximum_runtime_constraint = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint,
+              com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.Builder,
+              com.google.cloud.aiplatform.v1beta1.StudyTimeConstraintOrBuilder>
+          getMaximumRuntimeConstraintFieldBuilder() {
+        if (maximumRuntimeConstraintBuilder_ == null) {
+          maximumRuntimeConstraintBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint,
+                  com.google.cloud.aiplatform.v1beta1.StudyTimeConstraint.Builder,
+                  com.google.cloud.aiplatform.v1beta1.StudyTimeConstraintOrBuilder>(
+                  getMaximumRuntimeConstraint(), getParentForChildren(), isClean());
+          maximumRuntimeConstraint_ = null;
+        }
+        return maximumRuntimeConstraintBuilder_;
+      }
+
+      private com.google.protobuf.Int32Value minNumTrials_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Int32Value,
+              com.google.protobuf.Int32Value.Builder,
+              com.google.protobuf.Int32ValueOrBuilder>
+          minNumTrialsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * If there are fewer than this many COMPLETED trials, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value min_num_trials = 4;</code>
+       *
+       * @return Whether the minNumTrials field is set.
+       */
+      public boolean hasMinNumTrials() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are fewer than this many COMPLETED trials, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value min_num_trials = 4;</code>
+       *
+       * @return The minNumTrials.
+       */
+      public com.google.protobuf.Int32Value getMinNumTrials() {
+        if (minNumTrialsBuilder_ == null) {
+          return minNumTrials_ == null
+              ? com.google.protobuf.Int32Value.getDefaultInstance()
+              : minNumTrials_;
+        } else {
+          return minNumTrialsBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are fewer than this many COMPLETED trials, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value min_num_trials = 4;</code>
+       */
+      public Builder setMinNumTrials(com.google.protobuf.Int32Value value) {
+        if (minNumTrialsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          minNumTrials_ = value;
+        } else {
+          minNumTrialsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are fewer than this many COMPLETED trials, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value min_num_trials = 4;</code>
+       */
+      public Builder setMinNumTrials(com.google.protobuf.Int32Value.Builder builderForValue) {
+        if (minNumTrialsBuilder_ == null) {
+          minNumTrials_ = builderForValue.build();
+        } else {
+          minNumTrialsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are fewer than this many COMPLETED trials, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value min_num_trials = 4;</code>
+       */
+      public Builder mergeMinNumTrials(com.google.protobuf.Int32Value value) {
+        if (minNumTrialsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && minNumTrials_ != null
+              && minNumTrials_ != com.google.protobuf.Int32Value.getDefaultInstance()) {
+            getMinNumTrialsBuilder().mergeFrom(value);
+          } else {
+            minNumTrials_ = value;
+          }
+        } else {
+          minNumTrialsBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are fewer than this many COMPLETED trials, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value min_num_trials = 4;</code>
+       */
+      public Builder clearMinNumTrials() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        minNumTrials_ = null;
+        if (minNumTrialsBuilder_ != null) {
+          minNumTrialsBuilder_.dispose();
+          minNumTrialsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are fewer than this many COMPLETED trials, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value min_num_trials = 4;</code>
+       */
+      public com.google.protobuf.Int32Value.Builder getMinNumTrialsBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getMinNumTrialsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are fewer than this many COMPLETED trials, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value min_num_trials = 4;</code>
+       */
+      public com.google.protobuf.Int32ValueOrBuilder getMinNumTrialsOrBuilder() {
+        if (minNumTrialsBuilder_ != null) {
+          return minNumTrialsBuilder_.getMessageOrBuilder();
+        } else {
+          return minNumTrials_ == null
+              ? com.google.protobuf.Int32Value.getDefaultInstance()
+              : minNumTrials_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are fewer than this many COMPLETED trials, do not stop the
+       * study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value min_num_trials = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Int32Value,
+              com.google.protobuf.Int32Value.Builder,
+              com.google.protobuf.Int32ValueOrBuilder>
+          getMinNumTrialsFieldBuilder() {
+        if (minNumTrialsBuilder_ == null) {
+          minNumTrialsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Int32Value,
+                  com.google.protobuf.Int32Value.Builder,
+                  com.google.protobuf.Int32ValueOrBuilder>(
+                  getMinNumTrials(), getParentForChildren(), isClean());
+          minNumTrials_ = null;
+        }
+        return minNumTrialsBuilder_;
+      }
+
+      private com.google.protobuf.Int32Value maxNumTrials_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Int32Value,
+              com.google.protobuf.Int32Value.Builder,
+              com.google.protobuf.Int32ValueOrBuilder>
+          maxNumTrialsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * If there are more than this many trials, stop the study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials = 5;</code>
+       *
+       * @return Whether the maxNumTrials field is set.
+       */
+      public boolean hasMaxNumTrials() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are more than this many trials, stop the study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials = 5;</code>
+       *
+       * @return The maxNumTrials.
+       */
+      public com.google.protobuf.Int32Value getMaxNumTrials() {
+        if (maxNumTrialsBuilder_ == null) {
+          return maxNumTrials_ == null
+              ? com.google.protobuf.Int32Value.getDefaultInstance()
+              : maxNumTrials_;
+        } else {
+          return maxNumTrialsBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are more than this many trials, stop the study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials = 5;</code>
+       */
+      public Builder setMaxNumTrials(com.google.protobuf.Int32Value value) {
+        if (maxNumTrialsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          maxNumTrials_ = value;
+        } else {
+          maxNumTrialsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are more than this many trials, stop the study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials = 5;</code>
+       */
+      public Builder setMaxNumTrials(com.google.protobuf.Int32Value.Builder builderForValue) {
+        if (maxNumTrialsBuilder_ == null) {
+          maxNumTrials_ = builderForValue.build();
+        } else {
+          maxNumTrialsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are more than this many trials, stop the study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials = 5;</code>
+       */
+      public Builder mergeMaxNumTrials(com.google.protobuf.Int32Value value) {
+        if (maxNumTrialsBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && maxNumTrials_ != null
+              && maxNumTrials_ != com.google.protobuf.Int32Value.getDefaultInstance()) {
+            getMaxNumTrialsBuilder().mergeFrom(value);
+          } else {
+            maxNumTrials_ = value;
+          }
+        } else {
+          maxNumTrialsBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are more than this many trials, stop the study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials = 5;</code>
+       */
+      public Builder clearMaxNumTrials() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        maxNumTrials_ = null;
+        if (maxNumTrialsBuilder_ != null) {
+          maxNumTrialsBuilder_.dispose();
+          maxNumTrialsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are more than this many trials, stop the study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials = 5;</code>
+       */
+      public com.google.protobuf.Int32Value.Builder getMaxNumTrialsBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getMaxNumTrialsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are more than this many trials, stop the study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials = 5;</code>
+       */
+      public com.google.protobuf.Int32ValueOrBuilder getMaxNumTrialsOrBuilder() {
+        if (maxNumTrialsBuilder_ != null) {
+          return maxNumTrialsBuilder_.getMessageOrBuilder();
+        } else {
+          return maxNumTrials_ == null
+              ? com.google.protobuf.Int32Value.getDefaultInstance()
+              : maxNumTrials_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If there are more than this many trials, stop the study.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Int32Value,
+              com.google.protobuf.Int32Value.Builder,
+              com.google.protobuf.Int32ValueOrBuilder>
+          getMaxNumTrialsFieldBuilder() {
+        if (maxNumTrialsBuilder_ == null) {
+          maxNumTrialsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Int32Value,
+                  com.google.protobuf.Int32Value.Builder,
+                  com.google.protobuf.Int32ValueOrBuilder>(
+                  getMaxNumTrials(), getParentForChildren(), isClean());
+          maxNumTrials_ = null;
+        }
+        return maxNumTrialsBuilder_;
+      }
+
+      private com.google.protobuf.Int32Value maxNumTrialsNoProgress_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Int32Value,
+              com.google.protobuf.Int32Value.Builder,
+              com.google.protobuf.Int32ValueOrBuilder>
+          maxNumTrialsNoProgressBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this many consecutive
+       * trials, stop the study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials_no_progress = 6;</code>
+       *
+       * @return Whether the maxNumTrialsNoProgress field is set.
+       */
+      public boolean hasMaxNumTrialsNoProgress() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this many consecutive
+       * trials, stop the study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials_no_progress = 6;</code>
+       *
+       * @return The maxNumTrialsNoProgress.
+       */
+      public com.google.protobuf.Int32Value getMaxNumTrialsNoProgress() {
+        if (maxNumTrialsNoProgressBuilder_ == null) {
+          return maxNumTrialsNoProgress_ == null
+              ? com.google.protobuf.Int32Value.getDefaultInstance()
+              : maxNumTrialsNoProgress_;
+        } else {
+          return maxNumTrialsNoProgressBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this many consecutive
+       * trials, stop the study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials_no_progress = 6;</code>
+       */
+      public Builder setMaxNumTrialsNoProgress(com.google.protobuf.Int32Value value) {
+        if (maxNumTrialsNoProgressBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          maxNumTrialsNoProgress_ = value;
+        } else {
+          maxNumTrialsNoProgressBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this many consecutive
+       * trials, stop the study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials_no_progress = 6;</code>
+       */
+      public Builder setMaxNumTrialsNoProgress(
+          com.google.protobuf.Int32Value.Builder builderForValue) {
+        if (maxNumTrialsNoProgressBuilder_ == null) {
+          maxNumTrialsNoProgress_ = builderForValue.build();
+        } else {
+          maxNumTrialsNoProgressBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this many consecutive
+       * trials, stop the study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials_no_progress = 6;</code>
+       */
+      public Builder mergeMaxNumTrialsNoProgress(com.google.protobuf.Int32Value value) {
+        if (maxNumTrialsNoProgressBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && maxNumTrialsNoProgress_ != null
+              && maxNumTrialsNoProgress_ != com.google.protobuf.Int32Value.getDefaultInstance()) {
+            getMaxNumTrialsNoProgressBuilder().mergeFrom(value);
+          } else {
+            maxNumTrialsNoProgress_ = value;
+          }
+        } else {
+          maxNumTrialsNoProgressBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this many consecutive
+       * trials, stop the study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials_no_progress = 6;</code>
+       */
+      public Builder clearMaxNumTrialsNoProgress() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        maxNumTrialsNoProgress_ = null;
+        if (maxNumTrialsNoProgressBuilder_ != null) {
+          maxNumTrialsNoProgressBuilder_.dispose();
+          maxNumTrialsNoProgressBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this many consecutive
+       * trials, stop the study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials_no_progress = 6;</code>
+       */
+      public com.google.protobuf.Int32Value.Builder getMaxNumTrialsNoProgressBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getMaxNumTrialsNoProgressFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this many consecutive
+       * trials, stop the study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials_no_progress = 6;</code>
+       */
+      public com.google.protobuf.Int32ValueOrBuilder getMaxNumTrialsNoProgressOrBuilder() {
+        if (maxNumTrialsNoProgressBuilder_ != null) {
+          return maxNumTrialsNoProgressBuilder_.getMessageOrBuilder();
+        } else {
+          return maxNumTrialsNoProgress_ == null
+              ? com.google.protobuf.Int32Value.getDefaultInstance()
+              : maxNumTrialsNoProgress_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this many consecutive
+       * trials, stop the study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Int32Value max_num_trials_no_progress = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Int32Value,
+              com.google.protobuf.Int32Value.Builder,
+              com.google.protobuf.Int32ValueOrBuilder>
+          getMaxNumTrialsNoProgressFieldBuilder() {
+        if (maxNumTrialsNoProgressBuilder_ == null) {
+          maxNumTrialsNoProgressBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Int32Value,
+                  com.google.protobuf.Int32Value.Builder,
+                  com.google.protobuf.Int32ValueOrBuilder>(
+                  getMaxNumTrialsNoProgress(), getParentForChildren(), isClean());
+          maxNumTrialsNoProgress_ = null;
+        }
+        return maxNumTrialsNoProgressBuilder_;
+      }
+
+      private com.google.protobuf.Duration maxDurationNoProgress_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          maxDurationNoProgressBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this much time, stop the
+       * study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_duration_no_progress = 7;</code>
+       *
+       * @return Whether the maxDurationNoProgress field is set.
+       */
+      public boolean hasMaxDurationNoProgress() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this much time, stop the
+       * study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_duration_no_progress = 7;</code>
+       *
+       * @return The maxDurationNoProgress.
+       */
+      public com.google.protobuf.Duration getMaxDurationNoProgress() {
+        if (maxDurationNoProgressBuilder_ == null) {
+          return maxDurationNoProgress_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : maxDurationNoProgress_;
+        } else {
+          return maxDurationNoProgressBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this much time, stop the
+       * study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_duration_no_progress = 7;</code>
+       */
+      public Builder setMaxDurationNoProgress(com.google.protobuf.Duration value) {
+        if (maxDurationNoProgressBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          maxDurationNoProgress_ = value;
+        } else {
+          maxDurationNoProgressBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this much time, stop the
+       * study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_duration_no_progress = 7;</code>
+       */
+      public Builder setMaxDurationNoProgress(
+          com.google.protobuf.Duration.Builder builderForValue) {
+        if (maxDurationNoProgressBuilder_ == null) {
+          maxDurationNoProgress_ = builderForValue.build();
+        } else {
+          maxDurationNoProgressBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this much time, stop the
+       * study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_duration_no_progress = 7;</code>
+       */
+      public Builder mergeMaxDurationNoProgress(com.google.protobuf.Duration value) {
+        if (maxDurationNoProgressBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)
+              && maxDurationNoProgress_ != null
+              && maxDurationNoProgress_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getMaxDurationNoProgressBuilder().mergeFrom(value);
+          } else {
+            maxDurationNoProgress_ = value;
+          }
+        } else {
+          maxDurationNoProgressBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this much time, stop the
+       * study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_duration_no_progress = 7;</code>
+       */
+      public Builder clearMaxDurationNoProgress() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        maxDurationNoProgress_ = null;
+        if (maxDurationNoProgressBuilder_ != null) {
+          maxDurationNoProgressBuilder_.dispose();
+          maxDurationNoProgressBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this much time, stop the
+       * study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_duration_no_progress = 7;</code>
+       */
+      public com.google.protobuf.Duration.Builder getMaxDurationNoProgressBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getMaxDurationNoProgressFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this much time, stop the
+       * study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_duration_no_progress = 7;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getMaxDurationNoProgressOrBuilder() {
+        if (maxDurationNoProgressBuilder_ != null) {
+          return maxDurationNoProgressBuilder_.getMessageOrBuilder();
+        } else {
+          return maxDurationNoProgress_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : maxDurationNoProgress_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If the objective value has not improved for this much time, stop the
+       * study.
+       *
+       * WARNING: Effective only for single-objective studies.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration max_duration_no_progress = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getMaxDurationNoProgressFieldBuilder() {
+        if (maxDurationNoProgressBuilder_ == null) {
+          maxDurationNoProgressBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getMaxDurationNoProgress(), getParentForChildren(), isClean());
+          maxDurationNoProgress_ = null;
+        }
+        return maxDurationNoProgressBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StudyStoppingConfig> PARSER =
+        new com.google.protobuf.AbstractParser<StudyStoppingConfig>() {
+          @java.lang.Override
+          public StudyStoppingConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<StudyStoppingConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StudyStoppingConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   private int automatedStoppingSpecCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -19788,7 +22871,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=625
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=693
    * @return Whether the convexStopConfig field is set.
    */
   @java.lang.Override
@@ -19809,7 +22892,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=625
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=693
    * @return The convexStopConfig.
    */
   @java.lang.Override
@@ -20256,6 +23339,67 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         : transferLearningConfig_;
   }
 
+  public static final int STUDY_STOPPING_CONFIG_FIELD_NUMBER = 11;
+  private com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig studyStoppingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Conditions for automated stopping of a Study. Enable automated stopping by
+   * configuring at least one condition.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+   * </code>
+   *
+   * @return Whether the studyStoppingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasStudyStoppingConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Conditions for automated stopping of a Study. Enable automated stopping by
+   * configuring at least one condition.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+   * </code>
+   *
+   * @return The studyStoppingConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig
+      getStudyStoppingConfig() {
+    return studyStoppingConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig.getDefaultInstance()
+        : studyStoppingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Conditions for automated stopping of a Study. Enable automated stopping by
+   * configuring at least one condition.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfigOrBuilder
+      getStudyStoppingConfigOrBuilder() {
+    return studyStoppingConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig.getDefaultInstance()
+        : studyStoppingConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -20318,6 +23462,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (transferLearningConfig_ != null) {
       output.writeMessage(10, getTransferLearningConfig());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(11, getStudyStoppingConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -20383,6 +23530,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(10, getTransferLearningConfig());
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, getStudyStoppingConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -20407,6 +23558,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     if (hasTransferLearningConfig() != other.hasTransferLearningConfig()) return false;
     if (hasTransferLearningConfig()) {
       if (!getTransferLearningConfig().equals(other.getTransferLearningConfig())) return false;
+    }
+    if (hasStudyStoppingConfig() != other.hasStudyStoppingConfig()) return false;
+    if (hasStudyStoppingConfig()) {
+      if (!getStudyStoppingConfig().equals(other.getStudyStoppingConfig())) return false;
     }
     if (!getAutomatedStoppingSpecCase().equals(other.getAutomatedStoppingSpecCase())) return false;
     switch (automatedStoppingSpecCase_) {
@@ -20455,6 +23610,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     if (hasTransferLearningConfig()) {
       hash = (37 * hash) + TRANSFER_LEARNING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getTransferLearningConfig().hashCode();
+    }
+    if (hasStudyStoppingConfig()) {
+      hash = (37 * hash) + STUDY_STOPPING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getStudyStoppingConfig().hashCode();
     }
     switch (automatedStoppingSpecCase_) {
       case 4:
@@ -20605,10 +23764,22 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.StudySpec.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getMetricsFieldBuilder();
+        getParametersFieldBuilder();
+        getTransferLearningConfigFieldBuilder();
+        getStudyStoppingConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -20648,6 +23819,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (transferLearningConfigBuilder_ != null) {
         transferLearningConfigBuilder_.dispose();
         transferLearningConfigBuilder_ = null;
+      }
+      studyStoppingConfig_ = null;
+      if (studyStoppingConfigBuilder_ != null) {
+        studyStoppingConfigBuilder_.dispose();
+        studyStoppingConfigBuilder_ = null;
       }
       automatedStoppingSpecCase_ = 0;
       automatedStoppingSpec_ = null;
@@ -20725,6 +23901,15 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 ? transferLearningConfig_
                 : transferLearningConfigBuilder_.build();
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.studyStoppingConfig_ =
+            studyStoppingConfigBuilder_ == null
+                ? studyStoppingConfig_
+                : studyStoppingConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.StudySpec result) {
@@ -20854,6 +24039,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasTransferLearningConfig()) {
         mergeTransferLearningConfig(other.getTransferLearningConfig());
+      }
+      if (other.hasStudyStoppingConfig()) {
+        mergeStudyStoppingConfig(other.getStudyStoppingConfig());
       }
       switch (other.getAutomatedStoppingSpecCase()) {
         case DECAY_CURVE_STOPPING_SPEC:
@@ -20988,6 +24176,13 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    getStudyStoppingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -21531,7 +24726,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/study.proto;l=625
+     *     google/cloud/aiplatform/v1beta1/study.proto;l=693
      * @return Whether the convexStopConfig field is set.
      */
     @java.lang.Override
@@ -21552,7 +24747,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/study.proto;l=625
+     *     google/cloud/aiplatform/v1beta1/study.proto;l=693
      * @return The convexStopConfig.
      */
     @java.lang.Override
@@ -23345,6 +26540,224 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         transferLearningConfig_ = null;
       }
       return transferLearningConfigBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig studyStoppingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig,
+            com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfigOrBuilder>
+        studyStoppingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Conditions for automated stopping of a Study. Enable automated stopping by
+     * configuring at least one condition.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+     * </code>
+     *
+     * @return Whether the studyStoppingConfig field is set.
+     */
+    public boolean hasStudyStoppingConfig() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Conditions for automated stopping of a Study. Enable automated stopping by
+     * configuring at least one condition.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+     * </code>
+     *
+     * @return The studyStoppingConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig
+        getStudyStoppingConfig() {
+      if (studyStoppingConfigBuilder_ == null) {
+        return studyStoppingConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig.getDefaultInstance()
+            : studyStoppingConfig_;
+      } else {
+        return studyStoppingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Conditions for automated stopping of a Study. Enable automated stopping by
+     * configuring at least one condition.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+     * </code>
+     */
+    public Builder setStudyStoppingConfig(
+        com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig value) {
+      if (studyStoppingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        studyStoppingConfig_ = value;
+      } else {
+        studyStoppingConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Conditions for automated stopping of a Study. Enable automated stopping by
+     * configuring at least one condition.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+     * </code>
+     */
+    public Builder setStudyStoppingConfig(
+        com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig.Builder builderForValue) {
+      if (studyStoppingConfigBuilder_ == null) {
+        studyStoppingConfig_ = builderForValue.build();
+      } else {
+        studyStoppingConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Conditions for automated stopping of a Study. Enable automated stopping by
+     * configuring at least one condition.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+     * </code>
+     */
+    public Builder mergeStudyStoppingConfig(
+        com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig value) {
+      if (studyStoppingConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && studyStoppingConfig_ != null
+            && studyStoppingConfig_
+                != com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig
+                    .getDefaultInstance()) {
+          getStudyStoppingConfigBuilder().mergeFrom(value);
+        } else {
+          studyStoppingConfig_ = value;
+        }
+      } else {
+        studyStoppingConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Conditions for automated stopping of a Study. Enable automated stopping by
+     * configuring at least one condition.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+     * </code>
+     */
+    public Builder clearStudyStoppingConfig() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      studyStoppingConfig_ = null;
+      if (studyStoppingConfigBuilder_ != null) {
+        studyStoppingConfigBuilder_.dispose();
+        studyStoppingConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Conditions for automated stopping of a Study. Enable automated stopping by
+     * configuring at least one condition.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig.Builder
+        getStudyStoppingConfigBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getStudyStoppingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Conditions for automated stopping of a Study. Enable automated stopping by
+     * configuring at least one condition.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfigOrBuilder
+        getStudyStoppingConfigOrBuilder() {
+      if (studyStoppingConfigBuilder_ != null) {
+        return studyStoppingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return studyStoppingConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig.getDefaultInstance()
+            : studyStoppingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Conditions for automated stopping of a Study. Enable automated stopping by
+     * configuring at least one condition.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig,
+            com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfigOrBuilder>
+        getStudyStoppingConfigFieldBuilder() {
+      if (studyStoppingConfigBuilder_ == null) {
+        studyStoppingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfigOrBuilder>(
+                getStudyStoppingConfig(), getParentForChildren(), isClean());
+        studyStoppingConfig_ = null;
+      }
+      return studyStoppingConfigBuilder_;
     }
 
     @java.lang.Override

@@ -121,10 +121,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The event being assessed.
+   * Optional. The event being assessed.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.Event event = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the event field is set.
    */
@@ -136,10 +138,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The event being assessed.
+   * Optional. The event being assessed.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.Event event = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The event.
    */
@@ -151,10 +155,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The event being assessed.
+   * Optional. The event being assessed.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.Event event = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.EventOrBuilder getEventOrBuilder() {
@@ -279,11 +285,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Account verification information for identity verification. The assessment
-   * event must include a token and site key to use this feature.
+   * Optional. Account verification information for identity verification. The
+   * assessment event must include a token and site key to use this feature.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the accountVerification field is set.
@@ -296,11 +303,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Account verification information for identity verification. The assessment
-   * event must include a token and site key to use this feature.
+   * Optional. Account verification information for identity verification. The
+   * assessment event must include a token and site key to use this feature.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The accountVerification.
@@ -315,11 +323,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Account verification information for identity verification. The assessment
-   * event must include a token and site key to use this feature.
+   * Optional. Account verification information for identity verification. The
+   * assessment event must include a token and site key to use this feature.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -336,12 +345,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned by account defender when a hashed_account_id is
-   * provided.
+   * Output only. Assessment returned by account defender when a
+   * hashed_account_id is provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the accountDefenderAssessment field is set.
@@ -354,12 +363,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned by account defender when a hashed_account_id is
-   * provided.
+   * Output only. Assessment returned by account defender when a
+   * hashed_account_id is provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The accountDefenderAssessment.
@@ -375,12 +384,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned by account defender when a hashed_account_id is
-   * provided.
+   * Output only. Assessment returned by account defender when a
+   * hashed_account_id is provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -398,12 +407,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The private password leak verification field contains the parameters that
-   * are used to to check for leaks privately without sharing user credentials.
+   * Optional. The private password leak verification field contains the
+   * parameters that are used to to check for leaks privately without sharing
+   * user credentials.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the privatePasswordLeakVerification field is set.
@@ -416,12 +426,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The private password leak verification field contains the parameters that
-   * are used to to check for leaks privately without sharing user credentials.
+   * Optional. The private password leak verification field contains the
+   * parameters that are used to to check for leaks privately without sharing
+   * user credentials.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The privatePasswordLeakVerification.
@@ -437,12 +448,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The private password leak verification field contains the parameters that
-   * are used to to check for leaks privately without sharing user credentials.
+   * Optional. The private password leak verification field contains the
+   * parameters that are used to to check for leaks privately without sharing
+   * user credentials.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -459,12 +471,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned when firewall policies belonging to the project are
-   * evaluated using the field firewall_policy_evaluation.
+   * Output only. Assessment returned when firewall policies belonging to the
+   * project are evaluated using the field firewall_policy_evaluation.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the firewallPolicyAssessment field is set.
@@ -477,12 +489,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned when firewall policies belonging to the project are
-   * evaluated using the field firewall_policy_evaluation.
+   * Output only. Assessment returned when firewall policies belonging to the
+   * project are evaluated using the field firewall_policy_evaluation.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The firewallPolicyAssessment.
@@ -497,12 +509,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned when firewall policies belonging to the project are
-   * evaluated using the field firewall_policy_evaluation.
+   * Output only. Assessment returned when firewall policies belonging to the
+   * project are evaluated using the field firewall_policy_evaluation.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -519,11 +531,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned by Fraud Prevention when TransactionData is provided.
+   * Output only. Assessment returned by Fraud Prevention when TransactionData
+   * is provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the fraudPreventionAssessment field is set.
@@ -536,11 +549,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned by Fraud Prevention when TransactionData is provided.
+   * Output only. Assessment returned by Fraud Prevention when TransactionData
+   * is provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The fraudPreventionAssessment.
@@ -556,11 +570,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned by Fraud Prevention when TransactionData is provided.
+   * Output only. Assessment returned by Fraud Prevention when TransactionData
+   * is provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -1407,10 +1422,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The event being assessed.
+     * Optional. The event being assessed.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.Event event = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the event field is set.
      */
@@ -1421,10 +1438,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The event being assessed.
+     * Optional. The event being assessed.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.Event event = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The event.
      */
@@ -1441,10 +1460,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The event being assessed.
+     * Optional. The event being assessed.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.Event event = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setEvent(com.google.recaptchaenterprise.v1.Event value) {
       if (eventBuilder_ == null) {
@@ -1463,10 +1484,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The event being assessed.
+     * Optional. The event being assessed.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.Event event = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setEvent(com.google.recaptchaenterprise.v1.Event.Builder builderForValue) {
       if (eventBuilder_ == null) {
@@ -1482,10 +1505,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The event being assessed.
+     * Optional. The event being assessed.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.Event event = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeEvent(com.google.recaptchaenterprise.v1.Event value) {
       if (eventBuilder_ == null) {
@@ -1507,10 +1532,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The event being assessed.
+     * Optional. The event being assessed.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.Event event = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearEvent() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1526,10 +1553,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The event being assessed.
+     * Optional. The event being assessed.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.Event event = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.Event.Builder getEventBuilder() {
       bitField0_ |= 0x00000002;
@@ -1540,10 +1569,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The event being assessed.
+     * Optional. The event being assessed.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.Event event = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.EventOrBuilder getEventOrBuilder() {
       if (eventBuilder_ != null) {
@@ -1558,10 +1589,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The event being assessed.
+     * Optional. The event being assessed.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.Event event = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.recaptchaenterprise.v1.Event,
@@ -1997,11 +2030,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Account verification information for identity verification. The assessment
-     * event must include a token and site key to use this feature.
+     * Optional. Account verification information for identity verification. The
+     * assessment event must include a token and site key to use this feature.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the accountVerification field is set.
@@ -2013,11 +2047,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Account verification information for identity verification. The assessment
-     * event must include a token and site key to use this feature.
+     * Optional. Account verification information for identity verification. The
+     * assessment event must include a token and site key to use this feature.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The accountVerification.
@@ -2035,11 +2070,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Account verification information for identity verification. The assessment
-     * event must include a token and site key to use this feature.
+     * Optional. Account verification information for identity verification. The
+     * assessment event must include a token and site key to use this feature.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setAccountVerification(
@@ -2060,11 +2096,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Account verification information for identity verification. The assessment
-     * event must include a token and site key to use this feature.
+     * Optional. Account verification information for identity verification. The
+     * assessment event must include a token and site key to use this feature.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setAccountVerification(
@@ -2082,11 +2119,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Account verification information for identity verification. The assessment
-     * event must include a token and site key to use this feature.
+     * Optional. Account verification information for identity verification. The
+     * assessment event must include a token and site key to use this feature.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeAccountVerification(
@@ -2111,11 +2149,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Account verification information for identity verification. The assessment
-     * event must include a token and site key to use this feature.
+     * Optional. Account verification information for identity verification. The
+     * assessment event must include a token and site key to use this feature.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearAccountVerification() {
@@ -2132,11 +2171,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Account verification information for identity verification. The assessment
-     * event must include a token and site key to use this feature.
+     * Optional. Account verification information for identity verification. The
+     * assessment event must include a token and site key to use this feature.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.AccountVerificationInfo.Builder
@@ -2149,11 +2189,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Account verification information for identity verification. The assessment
-     * event must include a token and site key to use this feature.
+     * Optional. Account verification information for identity verification. The
+     * assessment event must include a token and site key to use this feature.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.AccountVerificationInfoOrBuilder
@@ -2170,11 +2211,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Account verification information for identity verification. The assessment
-     * event must include a token and site key to use this feature.
+     * Optional. Account verification information for identity verification. The
+     * assessment event must include a token and site key to use this feature.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2204,12 +2246,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by account defender when a hashed_account_id is
-     * provided.
+     * Output only. Assessment returned by account defender when a
+     * hashed_account_id is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the accountDefenderAssessment field is set.
@@ -2221,12 +2263,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by account defender when a hashed_account_id is
-     * provided.
+     * Output only. Assessment returned by account defender when a
+     * hashed_account_id is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The accountDefenderAssessment.
@@ -2245,12 +2287,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by account defender when a hashed_account_id is
-     * provided.
+     * Output only. Assessment returned by account defender when a
+     * hashed_account_id is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setAccountDefenderAssessment(
@@ -2271,12 +2313,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by account defender when a hashed_account_id is
-     * provided.
+     * Output only. Assessment returned by account defender when a
+     * hashed_account_id is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setAccountDefenderAssessment(
@@ -2294,12 +2336,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by account defender when a hashed_account_id is
-     * provided.
+     * Output only. Assessment returned by account defender when a
+     * hashed_account_id is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeAccountDefenderAssessment(
@@ -2325,12 +2367,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by account defender when a hashed_account_id is
-     * provided.
+     * Output only. Assessment returned by account defender when a
+     * hashed_account_id is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearAccountDefenderAssessment() {
@@ -2347,12 +2389,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by account defender when a hashed_account_id is
-     * provided.
+     * Output only. Assessment returned by account defender when a
+     * hashed_account_id is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.Builder
@@ -2365,12 +2407,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by account defender when a hashed_account_id is
-     * provided.
+     * Output only. Assessment returned by account defender when a
+     * hashed_account_id is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.AccountDefenderAssessmentOrBuilder
@@ -2387,12 +2429,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by account defender when a hashed_account_id is
-     * provided.
+     * Output only. Assessment returned by account defender when a
+     * hashed_account_id is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2423,12 +2465,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private password leak verification field contains the parameters that
-     * are used to to check for leaks privately without sharing user credentials.
+     * Optional. The private password leak verification field contains the
+     * parameters that are used to to check for leaks privately without sharing
+     * user credentials.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the privatePasswordLeakVerification field is set.
@@ -2440,12 +2483,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private password leak verification field contains the parameters that
-     * are used to to check for leaks privately without sharing user credentials.
+     * Optional. The private password leak verification field contains the
+     * parameters that are used to to check for leaks privately without sharing
+     * user credentials.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The privatePasswordLeakVerification.
@@ -2464,12 +2508,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private password leak verification field contains the parameters that
-     * are used to to check for leaks privately without sharing user credentials.
+     * Optional. The private password leak verification field contains the
+     * parameters that are used to to check for leaks privately without sharing
+     * user credentials.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPrivatePasswordLeakVerification(
@@ -2490,12 +2535,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private password leak verification field contains the parameters that
-     * are used to to check for leaks privately without sharing user credentials.
+     * Optional. The private password leak verification field contains the
+     * parameters that are used to to check for leaks privately without sharing
+     * user credentials.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPrivatePasswordLeakVerification(
@@ -2513,12 +2559,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private password leak verification field contains the parameters that
-     * are used to to check for leaks privately without sharing user credentials.
+     * Optional. The private password leak verification field contains the
+     * parameters that are used to to check for leaks privately without sharing
+     * user credentials.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergePrivatePasswordLeakVerification(
@@ -2544,12 +2591,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private password leak verification field contains the parameters that
-     * are used to to check for leaks privately without sharing user credentials.
+     * Optional. The private password leak verification field contains the
+     * parameters that are used to to check for leaks privately without sharing
+     * user credentials.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearPrivatePasswordLeakVerification() {
@@ -2566,12 +2614,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private password leak verification field contains the parameters that
-     * are used to to check for leaks privately without sharing user credentials.
+     * Optional. The private password leak verification field contains the
+     * parameters that are used to to check for leaks privately without sharing
+     * user credentials.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.Builder
@@ -2584,12 +2633,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private password leak verification field contains the parameters that
-     * are used to to check for leaks privately without sharing user credentials.
+     * Optional. The private password leak verification field contains the
+     * parameters that are used to to check for leaks privately without sharing
+     * user credentials.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerificationOrBuilder
@@ -2606,12 +2656,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private password leak verification field contains the parameters that
-     * are used to to check for leaks privately without sharing user credentials.
+     * Optional. The private password leak verification field contains the
+     * parameters that are used to to check for leaks privately without sharing
+     * user credentials.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2641,12 +2692,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned when firewall policies belonging to the project are
-     * evaluated using the field firewall_policy_evaluation.
+     * Output only. Assessment returned when firewall policies belonging to the
+     * project are evaluated using the field firewall_policy_evaluation.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the firewallPolicyAssessment field is set.
@@ -2658,12 +2709,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned when firewall policies belonging to the project are
-     * evaluated using the field firewall_policy_evaluation.
+     * Output only. Assessment returned when firewall policies belonging to the
+     * project are evaluated using the field firewall_policy_evaluation.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The firewallPolicyAssessment.
@@ -2682,12 +2733,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned when firewall policies belonging to the project are
-     * evaluated using the field firewall_policy_evaluation.
+     * Output only. Assessment returned when firewall policies belonging to the
+     * project are evaluated using the field firewall_policy_evaluation.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setFirewallPolicyAssessment(
@@ -2708,12 +2759,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned when firewall policies belonging to the project are
-     * evaluated using the field firewall_policy_evaluation.
+     * Output only. Assessment returned when firewall policies belonging to the
+     * project are evaluated using the field firewall_policy_evaluation.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setFirewallPolicyAssessment(
@@ -2731,12 +2782,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned when firewall policies belonging to the project are
-     * evaluated using the field firewall_policy_evaluation.
+     * Output only. Assessment returned when firewall policies belonging to the
+     * project are evaluated using the field firewall_policy_evaluation.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeFirewallPolicyAssessment(
@@ -2762,12 +2813,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned when firewall policies belonging to the project are
-     * evaluated using the field firewall_policy_evaluation.
+     * Output only. Assessment returned when firewall policies belonging to the
+     * project are evaluated using the field firewall_policy_evaluation.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearFirewallPolicyAssessment() {
@@ -2784,12 +2835,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned when firewall policies belonging to the project are
-     * evaluated using the field firewall_policy_evaluation.
+     * Output only. Assessment returned when firewall policies belonging to the
+     * project are evaluated using the field firewall_policy_evaluation.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.FirewallPolicyAssessment.Builder
@@ -2802,12 +2853,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned when firewall policies belonging to the project are
-     * evaluated using the field firewall_policy_evaluation.
+     * Output only. Assessment returned when firewall policies belonging to the
+     * project are evaluated using the field firewall_policy_evaluation.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.FirewallPolicyAssessmentOrBuilder
@@ -2824,12 +2875,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned when firewall policies belonging to the project are
-     * evaluated using the field firewall_policy_evaluation.
+     * Output only. Assessment returned when firewall policies belonging to the
+     * project are evaluated using the field firewall_policy_evaluation.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2859,11 +2910,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * Output only. Assessment returned by Fraud Prevention when TransactionData
+     * is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the fraudPreventionAssessment field is set.
@@ -2875,11 +2927,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * Output only. Assessment returned by Fraud Prevention when TransactionData
+     * is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The fraudPreventionAssessment.
@@ -2898,11 +2951,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * Output only. Assessment returned by Fraud Prevention when TransactionData
+     * is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setFraudPreventionAssessment(
@@ -2923,11 +2977,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * Output only. Assessment returned by Fraud Prevention when TransactionData
+     * is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setFraudPreventionAssessment(
@@ -2945,11 +3000,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * Output only. Assessment returned by Fraud Prevention when TransactionData
+     * is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeFraudPreventionAssessment(
@@ -2975,11 +3031,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * Output only. Assessment returned by Fraud Prevention when TransactionData
+     * is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearFraudPreventionAssessment() {
@@ -2996,11 +3053,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * Output only. Assessment returned by Fraud Prevention when TransactionData
+     * is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.Builder
@@ -3013,11 +3071,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * Output only. Assessment returned by Fraud Prevention when TransactionData
+     * is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.FraudPreventionAssessmentOrBuilder
@@ -3034,11 +3093,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Fraud Prevention when TransactionData is provided.
+     * Output only. Assessment returned by Fraud Prevention when TransactionData
+     * is provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

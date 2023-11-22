@@ -73,8 +73,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required.
-   * projects/{project_id}/locations/{location_id}/instances/{instance_id}. The
-   * resource name of the instance, in the format
+   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+   * The resource name of the instance, in the format
    * </pre>
    *
    * <code>
@@ -100,8 +100,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required.
-   * projects/{project_id}/locations/{location_id}/instances/{instance_id}. The
-   * resource name of the instance, in the format
+   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+   * The resource name of the instance, in the format
    * </pre>
    *
    * <code>
@@ -133,7 +133,7 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The snapshot resource ID, in the format 'my-snapshot', where the
    * specified ID is the {snapshot_id} of the fully qualified name like
-   * projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}
+   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
    * </pre>
    *
    * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -158,7 +158,7 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The snapshot resource ID, in the format 'my-snapshot', where the
    * specified ID is the {snapshot_id} of the fully qualified name like
-   * projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}
+   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
    * </pre>
    *
    * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -552,8 +552,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required.
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}. The
-     * resource name of the instance, in the format
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+     * The resource name of the instance, in the format
      * </pre>
      *
      * <code>
@@ -578,8 +578,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required.
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}. The
-     * resource name of the instance, in the format
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+     * The resource name of the instance, in the format
      * </pre>
      *
      * <code>
@@ -604,8 +604,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required.
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}. The
-     * resource name of the instance, in the format
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+     * The resource name of the instance, in the format
      * </pre>
      *
      * <code>
@@ -629,8 +629,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required.
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}. The
-     * resource name of the instance, in the format
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+     * The resource name of the instance, in the format
      * </pre>
      *
      * <code>
@@ -650,8 +650,8 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required.
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}. The
-     * resource name of the instance, in the format
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
+     * The resource name of the instance, in the format
      * </pre>
      *
      * <code>
@@ -679,7 +679,7 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The snapshot resource ID, in the format 'my-snapshot', where the
      * specified ID is the {snapshot_id} of the fully qualified name like
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
      * </pre>
      *
      * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -703,7 +703,7 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The snapshot resource ID, in the format 'my-snapshot', where the
      * specified ID is the {snapshot_id} of the fully qualified name like
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
      * </pre>
      *
      * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -727,7 +727,7 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The snapshot resource ID, in the format 'my-snapshot', where the
      * specified ID is the {snapshot_id} of the fully qualified name like
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
      * </pre>
      *
      * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -750,7 +750,7 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The snapshot resource ID, in the format 'my-snapshot', where the
      * specified ID is the {snapshot_id} of the fully qualified name like
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
      * </pre>
      *
      * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -769,7 +769,7 @@ public final class RevertInstanceRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The snapshot resource ID, in the format 'my-snapshot', where the
      * specified ID is the {snapshot_id} of the fully qualified name like
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`
      * </pre>
      *
      * <code>string target_snapshot_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

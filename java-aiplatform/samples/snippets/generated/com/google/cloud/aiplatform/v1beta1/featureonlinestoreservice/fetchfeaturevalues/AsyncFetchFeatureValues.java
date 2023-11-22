@@ -19,6 +19,8 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 // [START aiplatform_v1beta1_generated_FeatureOnlineStoreService_FetchFeatureValues_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreServiceClient;
+import com.google.cloud.aiplatform.v1beta1.FeatureViewDataFormat;
+import com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey;
 import com.google.cloud.aiplatform.v1beta1.FeatureViewName;
 import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse;
@@ -43,6 +45,8 @@ public class AsyncFetchFeatureValues {
                   FeatureViewName.of(
                           "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
                       .toString())
+              .setDataKey(FeatureViewDataKey.newBuilder().build())
+              .setDataFormat(FeatureViewDataFormat.forNumber(0))
               .build();
       ApiFuture<FetchFeatureValuesResponse> future =
           featureOnlineStoreServiceClient.fetchFeatureValuesCallable().futureCall(request);

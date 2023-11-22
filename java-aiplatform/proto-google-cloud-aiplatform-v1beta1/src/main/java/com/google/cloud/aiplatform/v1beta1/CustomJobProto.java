@@ -102,7 +102,7 @@ public final class CustomJobProto {
           + "isEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:"
           + "i\352Af\n#aiplatform.googleapis.com/CustomJo"
           + "b\022?projects/{project}/locations/{locatio"
-          + "n}/customJobs/{custom_job}\"\317\005\n\rCustomJob"
+          + "n}/customJobs/{custom_job}\"\367\005\n\rCustomJob"
           + "Spec\022U\n\026persistent_resource_id\030\016 \001(\tB5\342A"
           + "\001\001\372A.\n,aiplatform.googleapis.com/Persist"
           + "entResource\022P\n\021worker_pool_specs\030\001 \003(\0132/"
@@ -113,7 +113,8 @@ public final class CustomJobProto {
           + "B\'\342A\001\001\372A \n\036compute.googleapis.com/Networ"
           + "k\022 \n\022reserved_ip_ranges\030\r \003(\tB\004\342A\001\001\022N\n\025b"
           + "ase_output_directory\030\006 \001(\0132/.google.clou"
-          + "d.aiplatform.v1beta1.GcsDestination\022C\n\013t"
+          + "d.aiplatform.v1beta1.GcsDestination\022&\n\036p"
+          + "rotected_artifact_location_id\030\023 \001(\t\022C\n\013t"
           + "ensorboard\030\007 \001(\tB.\342A\001\001\372A\'\n%aiplatform.go"
           + "ogleapis.com/Tensorboard\022\037\n\021enable_web_a"
           + "ccess\030\n \001(\010B\004\342A\001\001\022%\n\027enable_dashboard_ac"
@@ -217,6 +218,7 @@ public final class CustomJobProto {
               "Network",
               "ReservedIpRanges",
               "BaseOutputDirectory",
+              "ProtectedArtifactLocationId",
               "Tensorboard",
               "EnableWebAccess",
               "EnableDashboardAccess",

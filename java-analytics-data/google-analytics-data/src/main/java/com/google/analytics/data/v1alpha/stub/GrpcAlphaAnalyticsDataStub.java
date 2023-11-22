@@ -28,6 +28,8 @@ import com.google.analytics.data.v1alpha.QueryAudienceListRequest;
 import com.google.analytics.data.v1alpha.QueryAudienceListResponse;
 import com.google.analytics.data.v1alpha.RunFunnelReportRequest;
 import com.google.analytics.data.v1alpha.RunFunnelReportResponse;
+import com.google.analytics.data.v1alpha.SheetExportAudienceListRequest;
+import com.google.analytics.data.v1alpha.SheetExportAudienceListResponse;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -88,6 +90,20 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(QueryAudienceListResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+      sheetExportAudienceListMethodDescriptor =
+          MethodDescriptor
+              .<SheetExportAudienceListRequest, SheetExportAudienceListResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.data.v1alpha.AlphaAnalyticsData/SheetExportAudienceList")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SheetExportAudienceListRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SheetExportAudienceListResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetAudienceListRequest, AudienceList>
       getAudienceListMethodDescriptor =
           MethodDescriptor.<GetAudienceListRequest, AudienceList>newBuilder()
@@ -117,6 +133,8 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
       createAudienceListOperationCallable;
   private final UnaryCallable<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListCallable;
+  private final UnaryCallable<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+      sheetExportAudienceListCallable;
   private final UnaryCallable<GetAudienceListRequest, AudienceList> getAudienceListCallable;
   private final UnaryCallable<ListAudienceListsRequest, ListAudienceListsResponse>
       listAudienceListsCallable;
@@ -199,6 +217,18 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+        sheetExportAudienceListTransportSettings =
+            GrpcCallSettings
+                .<SheetExportAudienceListRequest, SheetExportAudienceListResponse>newBuilder()
+                .setMethodDescriptor(sheetExportAudienceListMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<GetAudienceListRequest, AudienceList> getAudienceListTransportSettings =
         GrpcCallSettings.<GetAudienceListRequest, AudienceList>newBuilder()
             .setMethodDescriptor(getAudienceListMethodDescriptor)
@@ -239,6 +269,11 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
         callableFactory.createUnaryCallable(
             queryAudienceListTransportSettings,
             settings.queryAudienceListSettings(),
+            clientContext);
+    this.sheetExportAudienceListCallable =
+        callableFactory.createUnaryCallable(
+            sheetExportAudienceListTransportSettings,
+            settings.sheetExportAudienceListSettings(),
             clientContext);
     this.getAudienceListCallable =
         callableFactory.createUnaryCallable(
@@ -282,6 +317,12 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   public UnaryCallable<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListCallable() {
     return queryAudienceListCallable;
+  }
+
+  @Override
+  public UnaryCallable<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+      sheetExportAudienceListCallable() {
+    return sheetExportAudienceListCallable;
   }
 
   @Override

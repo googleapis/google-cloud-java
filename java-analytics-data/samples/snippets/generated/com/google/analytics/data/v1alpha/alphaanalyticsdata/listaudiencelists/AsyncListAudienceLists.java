@@ -38,7 +38,7 @@ public class AsyncListAudienceLists {
     try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
       ListAudienceListsRequest request =
           ListAudienceListsRequest.newBuilder()
-              .setParent(PropertyName.of("[PROPERTYID]").toString())
+              .setParent(PropertyName.of("[PROPERTY]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();

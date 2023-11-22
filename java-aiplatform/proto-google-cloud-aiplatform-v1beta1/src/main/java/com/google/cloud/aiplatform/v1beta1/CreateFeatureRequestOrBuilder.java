@@ -24,6 +24,16 @@ public interface CreateFeatureRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Required. The resource name of the EntityType or FeatureGroup to create a
+   * Feature. Format for entity_type as parent:
+   * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * Format for feature_group as parent:
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * </pre>
+   *
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -32,6 +42,16 @@ public interface CreateFeatureRequestOrBuilder
    */
   java.lang.String getParent();
   /**
+   *
+   *
+   * <pre>
+   * Required. The resource name of the EntityType or FeatureGroup to create a
+   * Feature. Format for entity_type as parent:
+   * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * Format for feature_group as parent:
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * </pre>
+   *
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>

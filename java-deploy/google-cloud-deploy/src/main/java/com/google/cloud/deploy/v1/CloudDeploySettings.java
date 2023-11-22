@@ -16,6 +16,8 @@
 
 package com.google.cloud.deploy.v1;
 
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
@@ -146,6 +148,11 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
   public PagedCallSettings<ListTargetsRequest, ListTargetsResponse, ListTargetsPagedResponse>
       listTargetsSettings() {
     return ((CloudDeployStubSettings) getStubSettings()).listTargetsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rollbackTarget. */
+  public UnaryCallSettings<RollbackTargetRequest, RollbackTargetResponse> rollbackTargetSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).rollbackTargetSettings();
   }
 
   /** Returns the object with the settings used for calls to getTarget. */
@@ -280,6 +287,69 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
   /** Returns the object with the settings used for calls to getConfig. */
   public UnaryCallSettings<GetConfigRequest, Config> getConfigSettings() {
     return ((CloudDeployStubSettings) getStubSettings()).getConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAutomation. */
+  public UnaryCallSettings<CreateAutomationRequest, Operation> createAutomationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).createAutomationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAutomation. */
+  public OperationCallSettings<CreateAutomationRequest, Automation, OperationMetadata>
+      createAutomationOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).createAutomationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAutomation. */
+  public UnaryCallSettings<UpdateAutomationRequest, Operation> updateAutomationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).updateAutomationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAutomation. */
+  public OperationCallSettings<UpdateAutomationRequest, Automation, OperationMetadata>
+      updateAutomationOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).updateAutomationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAutomation. */
+  public UnaryCallSettings<DeleteAutomationRequest, Operation> deleteAutomationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).deleteAutomationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAutomation. */
+  public OperationCallSettings<DeleteAutomationRequest, Empty, OperationMetadata>
+      deleteAutomationOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).deleteAutomationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAutomation. */
+  public UnaryCallSettings<GetAutomationRequest, Automation> getAutomationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).getAutomationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAutomations. */
+  public PagedCallSettings<
+          ListAutomationsRequest, ListAutomationsResponse, ListAutomationsPagedResponse>
+      listAutomationsSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).listAutomationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAutomationRun. */
+  public UnaryCallSettings<GetAutomationRunRequest, AutomationRun> getAutomationRunSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).getAutomationRunSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAutomationRuns. */
+  public PagedCallSettings<
+          ListAutomationRunsRequest, ListAutomationRunsResponse, ListAutomationRunsPagedResponse>
+      listAutomationRunsSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).listAutomationRunsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelAutomationRun. */
+  public UnaryCallSettings<CancelAutomationRunRequest, CancelAutomationRunResponse>
+      cancelAutomationRunSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).cancelAutomationRunSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -483,6 +553,12 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
       return getStubSettingsBuilder().listTargetsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to rollbackTarget. */
+    public UnaryCallSettings.Builder<RollbackTargetRequest, RollbackTargetResponse>
+        rollbackTargetSettings() {
+      return getStubSettingsBuilder().rollbackTargetSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getTarget. */
     public UnaryCallSettings.Builder<GetTargetRequest, Target> getTargetSettings() {
       return getStubSettingsBuilder().getTargetSettings();
@@ -622,6 +698,73 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
     /** Returns the builder for the settings used for calls to getConfig. */
     public UnaryCallSettings.Builder<GetConfigRequest, Config> getConfigSettings() {
       return getStubSettingsBuilder().getConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAutomation. */
+    public UnaryCallSettings.Builder<CreateAutomationRequest, Operation>
+        createAutomationSettings() {
+      return getStubSettingsBuilder().createAutomationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAutomation. */
+    public OperationCallSettings.Builder<CreateAutomationRequest, Automation, OperationMetadata>
+        createAutomationOperationSettings() {
+      return getStubSettingsBuilder().createAutomationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutomation. */
+    public UnaryCallSettings.Builder<UpdateAutomationRequest, Operation>
+        updateAutomationSettings() {
+      return getStubSettingsBuilder().updateAutomationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutomation. */
+    public OperationCallSettings.Builder<UpdateAutomationRequest, Automation, OperationMetadata>
+        updateAutomationOperationSettings() {
+      return getStubSettingsBuilder().updateAutomationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAutomation. */
+    public UnaryCallSettings.Builder<DeleteAutomationRequest, Operation>
+        deleteAutomationSettings() {
+      return getStubSettingsBuilder().deleteAutomationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAutomation. */
+    public OperationCallSettings.Builder<DeleteAutomationRequest, Empty, OperationMetadata>
+        deleteAutomationOperationSettings() {
+      return getStubSettingsBuilder().deleteAutomationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAutomation. */
+    public UnaryCallSettings.Builder<GetAutomationRequest, Automation> getAutomationSettings() {
+      return getStubSettingsBuilder().getAutomationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAutomations. */
+    public PagedCallSettings.Builder<
+            ListAutomationsRequest, ListAutomationsResponse, ListAutomationsPagedResponse>
+        listAutomationsSettings() {
+      return getStubSettingsBuilder().listAutomationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAutomationRun. */
+    public UnaryCallSettings.Builder<GetAutomationRunRequest, AutomationRun>
+        getAutomationRunSettings() {
+      return getStubSettingsBuilder().getAutomationRunSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAutomationRuns. */
+    public PagedCallSettings.Builder<
+            ListAutomationRunsRequest, ListAutomationRunsResponse, ListAutomationRunsPagedResponse>
+        listAutomationRunsSettings() {
+      return getStubSettingsBuilder().listAutomationRunsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelAutomationRun. */
+    public UnaryCallSettings.Builder<CancelAutomationRunRequest, CancelAutomationRunResponse>
+        cancelAutomationRunSettings() {
+      return getStubSettingsBuilder().cancelAutomationRunSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

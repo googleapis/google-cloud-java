@@ -41,6 +41,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     datapointId_ = "";
     featureVector_ = emptyFloatList();
     restricts_ = java.util.Collections.emptyList();
+    numericRestricts_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -1364,6 +1365,1649 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface NumericRestrictionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents 64 bit integer.
+     * </pre>
+     *
+     * <code>int64 value_int = 2;</code>
+     *
+     * @return Whether the valueInt field is set.
+     */
+    boolean hasValueInt();
+    /**
+     *
+     *
+     * <pre>
+     * Represents 64 bit integer.
+     * </pre>
+     *
+     * <code>int64 value_int = 2;</code>
+     *
+     * @return The valueInt.
+     */
+    long getValueInt();
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents 32 bit float.
+     * </pre>
+     *
+     * <code>float value_float = 3;</code>
+     *
+     * @return Whether the valueFloat field is set.
+     */
+    boolean hasValueFloat();
+    /**
+     *
+     *
+     * <pre>
+     * Represents 32 bit float.
+     * </pre>
+     *
+     * <code>float value_float = 3;</code>
+     *
+     * @return The valueFloat.
+     */
+    float getValueFloat();
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents 64 bit float.
+     * </pre>
+     *
+     * <code>double value_double = 4;</code>
+     *
+     * @return Whether the valueDouble field is set.
+     */
+    boolean hasValueDouble();
+    /**
+     *
+     *
+     * <pre>
+     * Represents 64 bit float.
+     * </pre>
+     *
+     * <code>double value_double = 4;</code>
+     *
+     * @return The valueDouble.
+     */
+    double getValueDouble();
+
+    /**
+     *
+     *
+     * <pre>
+     * The namespace of this restriction. e.g.: cost.
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     *
+     * @return The namespace.
+     */
+    java.lang.String getNamespace();
+    /**
+     *
+     *
+     * <pre>
+     * The namespace of this restriction. e.g.: cost.
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     *
+     * @return The bytes for namespace.
+     */
+    com.google.protobuf.ByteString getNamespaceBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * This MUST be specified for queries and must NOT be specified for
+     * datapoints.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator op = 5;</code>
+     *
+     * @return The enum numeric value on the wire for op.
+     */
+    int getOpValue();
+    /**
+     *
+     *
+     * <pre>
+     * This MUST be specified for queries and must NOT be specified for
+     * datapoints.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator op = 5;</code>
+     *
+     * @return The op.
+     */
+    com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator getOp();
+
+    com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.ValueCase getValueCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field allows restricts to be based on numeric comparisons rather
+   * than categorical tokens.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction}
+   */
+  public static final class NumericRestriction extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction)
+      NumericRestrictionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use NumericRestriction.newBuilder() to construct.
+    private NumericRestriction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private NumericRestriction() {
+      namespace_ = "";
+      op_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new NumericRestriction();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.IndexProto
+          .internal_static_google_cloud_aiplatform_v1_IndexDatapoint_NumericRestriction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.IndexProto
+          .internal_static_google_cloud_aiplatform_v1_IndexDatapoint_NumericRestriction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.class,
+              com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Which comparison operator to use.  Should be specified for queries only;
+     * specifying this for a datapoint is an error.
+     *
+     * Datapoints for which Operator is true relative to the query's Value
+     * field will be allowlisted.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator}
+     */
+    public enum Operator implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value of the enum.
+       * </pre>
+       *
+       * <code>OPERATOR_UNSPECIFIED = 0;</code>
+       */
+      OPERATOR_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Datapoints are eligible iff their value is &lt; the query's.
+       * </pre>
+       *
+       * <code>LESS = 1;</code>
+       */
+      LESS(1),
+      /**
+       *
+       *
+       * <pre>
+       * Datapoints are eligible iff their value is &lt;= the query's.
+       * </pre>
+       *
+       * <code>LESS_EQUAL = 2;</code>
+       */
+      LESS_EQUAL(2),
+      /**
+       *
+       *
+       * <pre>
+       * Datapoints are eligible iff their value is == the query's.
+       * </pre>
+       *
+       * <code>EQUAL = 3;</code>
+       */
+      EQUAL(3),
+      /**
+       *
+       *
+       * <pre>
+       * Datapoints are eligible iff their value is &gt;= the query's.
+       * </pre>
+       *
+       * <code>GREATER_EQUAL = 4;</code>
+       */
+      GREATER_EQUAL(4),
+      /**
+       *
+       *
+       * <pre>
+       * Datapoints are eligible iff their value is &gt; the query's.
+       * </pre>
+       *
+       * <code>GREATER = 5;</code>
+       */
+      GREATER(5),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value of the enum.
+       * </pre>
+       *
+       * <code>OPERATOR_UNSPECIFIED = 0;</code>
+       */
+      public static final int OPERATOR_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Datapoints are eligible iff their value is &lt; the query's.
+       * </pre>
+       *
+       * <code>LESS = 1;</code>
+       */
+      public static final int LESS_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Datapoints are eligible iff their value is &lt;= the query's.
+       * </pre>
+       *
+       * <code>LESS_EQUAL = 2;</code>
+       */
+      public static final int LESS_EQUAL_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Datapoints are eligible iff their value is == the query's.
+       * </pre>
+       *
+       * <code>EQUAL = 3;</code>
+       */
+      public static final int EQUAL_VALUE = 3;
+      /**
+       *
+       *
+       * <pre>
+       * Datapoints are eligible iff their value is &gt;= the query's.
+       * </pre>
+       *
+       * <code>GREATER_EQUAL = 4;</code>
+       */
+      public static final int GREATER_EQUAL_VALUE = 4;
+      /**
+       *
+       *
+       * <pre>
+       * Datapoints are eligible iff their value is &gt; the query's.
+       * </pre>
+       *
+       * <code>GREATER = 5;</code>
+       */
+      public static final int GREATER_VALUE = 5;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Operator valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Operator forNumber(int value) {
+        switch (value) {
+          case 0:
+            return OPERATOR_UNSPECIFIED;
+          case 1:
+            return LESS;
+          case 2:
+            return LESS_EQUAL;
+          case 3:
+            return EQUAL;
+          case 4:
+            return GREATER_EQUAL;
+          case 5:
+            return GREATER;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Operator> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Operator> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Operator>() {
+            public Operator findValueByNumber(int number) {
+              return Operator.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Operator[] VALUES = values();
+
+      public static Operator valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Operator(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator)
+    }
+
+    private int valueCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object value_;
+
+    public enum ValueCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      VALUE_INT(2),
+      VALUE_FLOAT(3),
+      VALUE_DOUBLE(4),
+      VALUE_NOT_SET(0);
+      private final int value;
+
+      private ValueCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ValueCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ValueCase forNumber(int value) {
+        switch (value) {
+          case 2:
+            return VALUE_INT;
+          case 3:
+            return VALUE_FLOAT;
+          case 4:
+            return VALUE_DOUBLE;
+          case 0:
+            return VALUE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ValueCase getValueCase() {
+      return ValueCase.forNumber(valueCase_);
+    }
+
+    public static final int VALUE_INT_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Represents 64 bit integer.
+     * </pre>
+     *
+     * <code>int64 value_int = 2;</code>
+     *
+     * @return Whether the valueInt field is set.
+     */
+    @java.lang.Override
+    public boolean hasValueInt() {
+      return valueCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents 64 bit integer.
+     * </pre>
+     *
+     * <code>int64 value_int = 2;</code>
+     *
+     * @return The valueInt.
+     */
+    @java.lang.Override
+    public long getValueInt() {
+      if (valueCase_ == 2) {
+        return (java.lang.Long) value_;
+      }
+      return 0L;
+    }
+
+    public static final int VALUE_FLOAT_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Represents 32 bit float.
+     * </pre>
+     *
+     * <code>float value_float = 3;</code>
+     *
+     * @return Whether the valueFloat field is set.
+     */
+    @java.lang.Override
+    public boolean hasValueFloat() {
+      return valueCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents 32 bit float.
+     * </pre>
+     *
+     * <code>float value_float = 3;</code>
+     *
+     * @return The valueFloat.
+     */
+    @java.lang.Override
+    public float getValueFloat() {
+      if (valueCase_ == 3) {
+        return (java.lang.Float) value_;
+      }
+      return 0F;
+    }
+
+    public static final int VALUE_DOUBLE_FIELD_NUMBER = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Represents 64 bit float.
+     * </pre>
+     *
+     * <code>double value_double = 4;</code>
+     *
+     * @return Whether the valueDouble field is set.
+     */
+    @java.lang.Override
+    public boolean hasValueDouble() {
+      return valueCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents 64 bit float.
+     * </pre>
+     *
+     * <code>double value_double = 4;</code>
+     *
+     * @return The valueDouble.
+     */
+    @java.lang.Override
+    public double getValueDouble() {
+      if (valueCase_ == 4) {
+        return (java.lang.Double) value_;
+      }
+      return 0D;
+    }
+
+    public static final int NAMESPACE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object namespace_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The namespace of this restriction. e.g.: cost.
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     *
+     * @return The namespace.
+     */
+    @java.lang.Override
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The namespace of this restriction. e.g.: cost.
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     *
+     * @return The bytes for namespace.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OP_FIELD_NUMBER = 5;
+    private int op_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * This MUST be specified for queries and must NOT be specified for
+     * datapoints.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator op = 5;</code>
+     *
+     * @return The enum numeric value on the wire for op.
+     */
+    @java.lang.Override
+    public int getOpValue() {
+      return op_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This MUST be specified for queries and must NOT be specified for
+     * datapoints.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator op = 5;</code>
+     *
+     * @return The op.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator getOp() {
+      com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator result =
+          com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator.forNumber(op_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespace_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namespace_);
+      }
+      if (valueCase_ == 2) {
+        output.writeInt64(2, (long) ((java.lang.Long) value_));
+      }
+      if (valueCase_ == 3) {
+        output.writeFloat(3, (float) ((java.lang.Float) value_));
+      }
+      if (valueCase_ == 4) {
+        output.writeDouble(4, (double) ((java.lang.Double) value_));
+      }
+      if (op_
+          != com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator
+              .OPERATOR_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(5, op_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespace_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, namespace_);
+      }
+      if (valueCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt64Size(
+                2, (long) ((java.lang.Long) value_));
+      }
+      if (valueCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeFloatSize(
+                3, (float) ((java.lang.Float) value_));
+      }
+      if (valueCase_ == 4) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeDoubleSize(
+                4, (double) ((java.lang.Double) value_));
+      }
+      if (op_
+          != com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator
+              .OPERATOR_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, op_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction other =
+          (com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction) obj;
+
+      if (!getNamespace().equals(other.getNamespace())) return false;
+      if (op_ != other.op_) return false;
+      if (!getValueCase().equals(other.getValueCase())) return false;
+      switch (valueCase_) {
+        case 2:
+          if (getValueInt() != other.getValueInt()) return false;
+          break;
+        case 3:
+          if (java.lang.Float.floatToIntBits(getValueFloat())
+              != java.lang.Float.floatToIntBits(other.getValueFloat())) return false;
+          break;
+        case 4:
+          if (java.lang.Double.doubleToLongBits(getValueDouble())
+              != java.lang.Double.doubleToLongBits(other.getValueDouble())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespace().hashCode();
+      hash = (37 * hash) + OP_FIELD_NUMBER;
+      hash = (53 * hash) + op_;
+      switch (valueCase_) {
+        case 2:
+          hash = (37 * hash) + VALUE_INT_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getValueInt());
+          break;
+        case 3:
+          hash = (37 * hash) + VALUE_FLOAT_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(getValueFloat());
+          break;
+        case 4:
+          hash = (37 * hash) + VALUE_DOUBLE_FIELD_NUMBER;
+          hash =
+              (53 * hash)
+                  + com.google.protobuf.Internal.hashLong(
+                      java.lang.Double.doubleToLongBits(getValueDouble()));
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field allows restricts to be based on numeric comparisons rather
+     * than categorical tokens.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction)
+        com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestrictionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.IndexProto
+            .internal_static_google_cloud_aiplatform_v1_IndexDatapoint_NumericRestriction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.IndexProto
+            .internal_static_google_cloud_aiplatform_v1_IndexDatapoint_NumericRestriction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.class,
+                com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        namespace_ = "";
+        op_ = 0;
+        valueCase_ = 0;
+        value_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.IndexProto
+            .internal_static_google_cloud_aiplatform_v1_IndexDatapoint_NumericRestriction_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction build() {
+        com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction buildPartial() {
+        com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction result =
+            new com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.namespace_ = namespace_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.op_ = op_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction result) {
+        result.valueCase_ = valueCase_;
+        result.value_ = this.value_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction other) {
+        if (other
+            == com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction
+                .getDefaultInstance()) return this;
+        if (!other.getNamespace().isEmpty()) {
+          namespace_ = other.namespace_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.op_ != 0) {
+          setOpValue(other.getOpValue());
+        }
+        switch (other.getValueCase()) {
+          case VALUE_INT:
+            {
+              setValueInt(other.getValueInt());
+              break;
+            }
+          case VALUE_FLOAT:
+            {
+              setValueFloat(other.getValueFloat());
+              break;
+            }
+          case VALUE_DOUBLE:
+            {
+              setValueDouble(other.getValueDouble());
+              break;
+            }
+          case VALUE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  namespace_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  value_ = input.readInt64();
+                  valueCase_ = 2;
+                  break;
+                } // case 16
+              case 29:
+                {
+                  value_ = input.readFloat();
+                  valueCase_ = 3;
+                  break;
+                } // case 29
+              case 33:
+                {
+                  value_ = input.readDouble();
+                  valueCase_ = 4;
+                  break;
+                } // case 33
+              case 40:
+                {
+                  op_ = input.readEnum();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int valueCase_ = 0;
+      private java.lang.Object value_;
+
+      public ValueCase getValueCase() {
+        return ValueCase.forNumber(valueCase_);
+      }
+
+      public Builder clearValue() {
+        valueCase_ = 0;
+        value_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Represents 64 bit integer.
+       * </pre>
+       *
+       * <code>int64 value_int = 2;</code>
+       *
+       * @return Whether the valueInt field is set.
+       */
+      public boolean hasValueInt() {
+        return valueCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents 64 bit integer.
+       * </pre>
+       *
+       * <code>int64 value_int = 2;</code>
+       *
+       * @return The valueInt.
+       */
+      public long getValueInt() {
+        if (valueCase_ == 2) {
+          return (java.lang.Long) value_;
+        }
+        return 0L;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents 64 bit integer.
+       * </pre>
+       *
+       * <code>int64 value_int = 2;</code>
+       *
+       * @param value The valueInt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValueInt(long value) {
+
+        valueCase_ = 2;
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents 64 bit integer.
+       * </pre>
+       *
+       * <code>int64 value_int = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValueInt() {
+        if (valueCase_ == 2) {
+          valueCase_ = 0;
+          value_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Represents 32 bit float.
+       * </pre>
+       *
+       * <code>float value_float = 3;</code>
+       *
+       * @return Whether the valueFloat field is set.
+       */
+      public boolean hasValueFloat() {
+        return valueCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents 32 bit float.
+       * </pre>
+       *
+       * <code>float value_float = 3;</code>
+       *
+       * @return The valueFloat.
+       */
+      public float getValueFloat() {
+        if (valueCase_ == 3) {
+          return (java.lang.Float) value_;
+        }
+        return 0F;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents 32 bit float.
+       * </pre>
+       *
+       * <code>float value_float = 3;</code>
+       *
+       * @param value The valueFloat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValueFloat(float value) {
+
+        valueCase_ = 3;
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents 32 bit float.
+       * </pre>
+       *
+       * <code>float value_float = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValueFloat() {
+        if (valueCase_ == 3) {
+          valueCase_ = 0;
+          value_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Represents 64 bit float.
+       * </pre>
+       *
+       * <code>double value_double = 4;</code>
+       *
+       * @return Whether the valueDouble field is set.
+       */
+      public boolean hasValueDouble() {
+        return valueCase_ == 4;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents 64 bit float.
+       * </pre>
+       *
+       * <code>double value_double = 4;</code>
+       *
+       * @return The valueDouble.
+       */
+      public double getValueDouble() {
+        if (valueCase_ == 4) {
+          return (java.lang.Double) value_;
+        }
+        return 0D;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents 64 bit float.
+       * </pre>
+       *
+       * <code>double value_double = 4;</code>
+       *
+       * @param value The valueDouble to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValueDouble(double value) {
+
+        valueCase_ = 4;
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents 64 bit float.
+       * </pre>
+       *
+       * <code>double value_double = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValueDouble() {
+        if (valueCase_ == 4) {
+          valueCase_ = 0;
+          value_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      private java.lang.Object namespace_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The namespace of this restriction. e.g.: cost.
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       *
+       * @return The namespace.
+       */
+      public java.lang.String getNamespace() {
+        java.lang.Object ref = namespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The namespace of this restriction. e.g.: cost.
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       *
+       * @return The bytes for namespace.
+       */
+      public com.google.protobuf.ByteString getNamespaceBytes() {
+        java.lang.Object ref = namespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          namespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The namespace of this restriction. e.g.: cost.
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       *
+       * @param value The namespace to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNamespace(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        namespace_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The namespace of this restriction. e.g.: cost.
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNamespace() {
+        namespace_ = getDefaultInstance().getNamespace();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The namespace of this restriction. e.g.: cost.
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       *
+       * @param value The bytes for namespace to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNamespaceBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        namespace_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private int op_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * This MUST be specified for queries and must NOT be specified for
+       * datapoints.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator op = 5;</code>
+       *
+       * @return The enum numeric value on the wire for op.
+       */
+      @java.lang.Override
+      public int getOpValue() {
+        return op_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This MUST be specified for queries and must NOT be specified for
+       * datapoints.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator op = 5;</code>
+       *
+       * @param value The enum numeric value on the wire for op to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOpValue(int value) {
+        op_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This MUST be specified for queries and must NOT be specified for
+       * datapoints.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator op = 5;</code>
+       *
+       * @return The op.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator getOp() {
+        com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator result =
+            com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator.forNumber(
+                op_);
+        return result == null
+            ? com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This MUST be specified for queries and must NOT be specified for
+       * datapoints.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator op = 5;</code>
+       *
+       * @param value The op to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOp(
+          com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
+        op_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This MUST be specified for queries and must NOT be specified for
+       * datapoints.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Operator op = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOp() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        op_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction)
+    private static final com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction();
+    }
+
+    public static com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NumericRestriction> PARSER =
+        new com.google.protobuf.AbstractParser<NumericRestriction>() {
+          @java.lang.Override
+          public NumericRestriction parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<NumericRestriction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NumericRestriction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface CrowdingTagOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag)
@@ -2250,6 +3894,102 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     return restricts_.get(index);
   }
 
+  public static final int NUMERIC_RESTRICTS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction>
+      numericRestricts_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Restrict of the datapoint, used to perform "restricted
+   * searches" where boolean rule are used to filter the subset of the database
+   * eligible for matching. This uses numeric comparisons.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction>
+      getNumericRestrictsList() {
+    return numericRestricts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Restrict of the datapoint, used to perform "restricted
+   * searches" where boolean rule are used to filter the subset of the database
+   * eligible for matching. This uses numeric comparisons.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestrictionOrBuilder>
+      getNumericRestrictsOrBuilderList() {
+    return numericRestricts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Restrict of the datapoint, used to perform "restricted
+   * searches" where boolean rule are used to filter the subset of the database
+   * eligible for matching. This uses numeric comparisons.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getNumericRestrictsCount() {
+    return numericRestricts_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Restrict of the datapoint, used to perform "restricted
+   * searches" where boolean rule are used to filter the subset of the database
+   * eligible for matching. This uses numeric comparisons.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction getNumericRestricts(
+      int index) {
+    return numericRestricts_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Restrict of the datapoint, used to perform "restricted
+   * searches" where boolean rule are used to filter the subset of the database
+   * eligible for matching. This uses numeric comparisons.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestrictionOrBuilder
+      getNumericRestrictsOrBuilder(int index) {
+    return numericRestricts_.get(index);
+  }
+
   public static final int CROWDING_TAG_FIELD_NUMBER = 5;
   private com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag crowdingTag_;
   /**
@@ -2341,6 +4081,9 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     if (crowdingTag_ != null) {
       output.writeMessage(5, getCrowdingTag());
     }
+    for (int i = 0; i < numericRestricts_.size(); i++) {
+      output.writeMessage(6, numericRestricts_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2369,6 +4112,9 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     if (crowdingTag_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCrowdingTag());
     }
+    for (int i = 0; i < numericRestricts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, numericRestricts_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2388,6 +4134,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     if (!getDatapointId().equals(other.getDatapointId())) return false;
     if (!getFeatureVectorList().equals(other.getFeatureVectorList())) return false;
     if (!getRestrictsList().equals(other.getRestrictsList())) return false;
+    if (!getNumericRestrictsList().equals(other.getNumericRestrictsList())) return false;
     if (hasCrowdingTag() != other.hasCrowdingTag()) return false;
     if (hasCrowdingTag()) {
       if (!getCrowdingTag().equals(other.getCrowdingTag())) return false;
@@ -2412,6 +4159,10 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     if (getRestrictsCount() > 0) {
       hash = (37 * hash) + RESTRICTS_FIELD_NUMBER;
       hash = (53 * hash) + getRestrictsList().hashCode();
+    }
+    if (getNumericRestrictsCount() > 0) {
+      hash = (37 * hash) + NUMERIC_RESTRICTS_FIELD_NUMBER;
+      hash = (53 * hash) + getNumericRestrictsList().hashCode();
     }
     if (hasCrowdingTag()) {
       hash = (37 * hash) + CROWDING_TAG_FIELD_NUMBER;
@@ -2565,6 +4316,13 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         restrictsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
+      if (numericRestrictsBuilder_ == null) {
+        numericRestricts_ = java.util.Collections.emptyList();
+      } else {
+        numericRestricts_ = null;
+        numericRestrictsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
       crowdingTag_ = null;
       if (crowdingTagBuilder_ != null) {
         crowdingTagBuilder_.dispose();
@@ -2620,6 +4378,15 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.restricts_ = restrictsBuilder_.build();
       }
+      if (numericRestrictsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          numericRestricts_ = java.util.Collections.unmodifiableList(numericRestricts_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.numericRestricts_ = numericRestricts_;
+      } else {
+        result.numericRestricts_ = numericRestrictsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1.IndexDatapoint result) {
@@ -2627,7 +4394,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.datapointId_ = datapointId_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.crowdingTag_ =
             crowdingTagBuilder_ == null ? crowdingTag_ : crowdingTagBuilder_.build();
       }
@@ -2720,6 +4487,33 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (numericRestrictsBuilder_ == null) {
+        if (!other.numericRestricts_.isEmpty()) {
+          if (numericRestricts_.isEmpty()) {
+            numericRestricts_ = other.numericRestricts_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureNumericRestrictsIsMutable();
+            numericRestricts_.addAll(other.numericRestricts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.numericRestricts_.isEmpty()) {
+          if (numericRestrictsBuilder_.isEmpty()) {
+            numericRestrictsBuilder_.dispose();
+            numericRestrictsBuilder_ = null;
+            numericRestricts_ = other.numericRestricts_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            numericRestrictsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getNumericRestrictsFieldBuilder()
+                    : null;
+          } else {
+            numericRestrictsBuilder_.addAllMessages(other.numericRestricts_);
+          }
+        }
+      }
       if (other.hasCrowdingTag()) {
         mergeCrowdingTag(other.getCrowdingTag());
       }
@@ -2790,9 +4584,23 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getCrowdingTagFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.parser(),
+                        extensionRegistry);
+                if (numericRestrictsBuilder_ == null) {
+                  ensureNumericRestrictsIsMutable();
+                  numericRestricts_.add(m);
+                } else {
+                  numericRestrictsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3508,6 +5316,453 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       return restrictsBuilder_;
     }
 
+    private java.util.List<com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction>
+        numericRestricts_ = java.util.Collections.emptyList();
+
+    private void ensureNumericRestrictsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        numericRestricts_ =
+            new java.util.ArrayList<
+                com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction>(
+                numericRestricts_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction,
+            com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Builder,
+            com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestrictionOrBuilder>
+        numericRestrictsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction>
+        getNumericRestrictsList() {
+      if (numericRestrictsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(numericRestricts_);
+      } else {
+        return numericRestrictsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getNumericRestrictsCount() {
+      if (numericRestrictsBuilder_ == null) {
+        return numericRestricts_.size();
+      } else {
+        return numericRestrictsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction getNumericRestricts(
+        int index) {
+      if (numericRestrictsBuilder_ == null) {
+        return numericRestricts_.get(index);
+      } else {
+        return numericRestrictsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNumericRestricts(
+        int index, com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction value) {
+      if (numericRestrictsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNumericRestrictsIsMutable();
+        numericRestricts_.set(index, value);
+        onChanged();
+      } else {
+        numericRestrictsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNumericRestricts(
+        int index,
+        com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Builder builderForValue) {
+      if (numericRestrictsBuilder_ == null) {
+        ensureNumericRestrictsIsMutable();
+        numericRestricts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        numericRestrictsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNumericRestricts(
+        com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction value) {
+      if (numericRestrictsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNumericRestrictsIsMutable();
+        numericRestricts_.add(value);
+        onChanged();
+      } else {
+        numericRestrictsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNumericRestricts(
+        int index, com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction value) {
+      if (numericRestrictsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNumericRestrictsIsMutable();
+        numericRestricts_.add(index, value);
+        onChanged();
+      } else {
+        numericRestrictsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNumericRestricts(
+        com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Builder builderForValue) {
+      if (numericRestrictsBuilder_ == null) {
+        ensureNumericRestrictsIsMutable();
+        numericRestricts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        numericRestrictsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNumericRestricts(
+        int index,
+        com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Builder builderForValue) {
+      if (numericRestrictsBuilder_ == null) {
+        ensureNumericRestrictsIsMutable();
+        numericRestricts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        numericRestrictsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllNumericRestricts(
+        java.lang.Iterable<
+                ? extends com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction>
+            values) {
+      if (numericRestrictsBuilder_ == null) {
+        ensureNumericRestrictsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, numericRestricts_);
+        onChanged();
+      } else {
+        numericRestrictsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNumericRestricts() {
+      if (numericRestrictsBuilder_ == null) {
+        numericRestricts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        numericRestrictsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeNumericRestricts(int index) {
+      if (numericRestrictsBuilder_ == null) {
+        ensureNumericRestrictsIsMutable();
+        numericRestricts_.remove(index);
+        onChanged();
+      } else {
+        numericRestrictsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Builder
+        getNumericRestrictsBuilder(int index) {
+      return getNumericRestrictsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestrictionOrBuilder
+        getNumericRestrictsOrBuilder(int index) {
+      if (numericRestrictsBuilder_ == null) {
+        return numericRestricts_.get(index);
+      } else {
+        return numericRestrictsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestrictionOrBuilder>
+        getNumericRestrictsOrBuilderList() {
+      if (numericRestrictsBuilder_ != null) {
+        return numericRestrictsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(numericRestricts_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Builder
+        addNumericRestrictsBuilder() {
+      return getNumericRestrictsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Builder
+        addNumericRestrictsBuilder(int index) {
+      return getNumericRestrictsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Restrict of the datapoint, used to perform "restricted
+     * searches" where boolean rule are used to filter the subset of the database
+     * eligible for matching. This uses numeric comparisons.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Builder>
+        getNumericRestrictsBuilderList() {
+      return getNumericRestrictsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction,
+            com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Builder,
+            com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestrictionOrBuilder>
+        getNumericRestrictsFieldBuilder() {
+      if (numericRestrictsBuilder_ == null) {
+        numericRestrictsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction,
+                com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction.Builder,
+                com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestrictionOrBuilder>(
+                numericRestricts_,
+                ((bitField0_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        numericRestricts_ = null;
+      }
+      return numericRestrictsBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag crowdingTag_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag,
@@ -3529,7 +5784,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the crowdingTag field is set.
      */
     public boolean hasCrowdingTag() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3575,7 +5830,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         crowdingTagBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3598,7 +5853,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         crowdingTagBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3617,7 +5872,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCrowdingTag(
         com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag value) {
       if (crowdingTagBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && crowdingTag_ != null
             && crowdingTag_
                 != com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag.getDefaultInstance()) {
@@ -3628,7 +5883,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         crowdingTagBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3645,7 +5900,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCrowdingTag() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       crowdingTag_ = null;
       if (crowdingTagBuilder_ != null) {
         crowdingTagBuilder_.dispose();
@@ -3668,7 +5923,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag.Builder
         getCrowdingTagBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCrowdingTagFieldBuilder().getBuilder();
     }

@@ -27,11 +27,11 @@ public interface FirewallPolicyAssessmentOrBuilder
    *
    *
    * <pre>
-   * If the processing of a policy config fails, an error will be populated
-   * and the firewall_policy will be left empty.
+   * Output only. If the processing of a policy config fails, an error will be
+   * populated and the firewall_policy will be left empty.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 5;</code>
+   * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the error field is set.
    */
@@ -40,11 +40,11 @@ public interface FirewallPolicyAssessmentOrBuilder
    *
    *
    * <pre>
-   * If the processing of a policy config fails, an error will be populated
-   * and the firewall_policy will be left empty.
+   * Output only. If the processing of a policy config fails, an error will be
+   * populated and the firewall_policy will be left empty.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 5;</code>
+   * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The error.
    */
@@ -53,11 +53,11 @@ public interface FirewallPolicyAssessmentOrBuilder
    *
    *
    * <pre>
-   * If the processing of a policy config fails, an error will be populated
-   * and the firewall_policy will be left empty.
+   * Output only. If the processing of a policy config fails, an error will be
+   * populated and the firewall_policy will be left empty.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 5;</code>
+   * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
 

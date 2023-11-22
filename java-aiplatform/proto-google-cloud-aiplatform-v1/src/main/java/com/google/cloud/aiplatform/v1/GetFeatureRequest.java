@@ -24,6 +24,8 @@ package com.google.cloud.aiplatform.v1;
  * <pre>
  * Request message for
  * [FeaturestoreService.GetFeature][google.cloud.aiplatform.v1.FeaturestoreService.GetFeature].
+ * Request message for
+ * [FeatureRegistryService.GetFeature][google.cloud.aiplatform.v1.FeatureRegistryService.GetFeature].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.GetFeatureRequest}
@@ -72,8 +74,10 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The name of the Feature resource.
-   * Format:
+   * Format for entity_type as parent:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * Format for feature_group as parent:
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
    * <code>
@@ -99,8 +103,10 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The name of the Feature resource.
-   * Format:
+   * Format for entity_type as parent:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * Format for feature_group as parent:
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
    * <code>
@@ -287,6 +293,8 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Request message for
    * [FeaturestoreService.GetFeature][google.cloud.aiplatform.v1.FeaturestoreService.GetFeature].
+   * Request message for
+   * [FeatureRegistryService.GetFeature][google.cloud.aiplatform.v1.FeatureRegistryService.GetFeature].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.GetFeatureRequest}
@@ -471,8 +479,10 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the Feature resource.
-     * Format:
+     * Format for entity_type as parent:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * Format for feature_group as parent:
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -497,8 +507,10 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the Feature resource.
-     * Format:
+     * Format for entity_type as parent:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * Format for feature_group as parent:
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -523,8 +535,10 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the Feature resource.
-     * Format:
+     * Format for entity_type as parent:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * Format for feature_group as parent:
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -548,8 +562,10 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the Feature resource.
-     * Format:
+     * Format for entity_type as parent:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * Format for feature_group as parent:
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -569,8 +585,10 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the Feature resource.
-     * Format:
+     * Format for entity_type as parent:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * Format for feature_group as parent:
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>

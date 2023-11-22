@@ -986,4 +986,144 @@ public interface ModelContainerSpecOrBuilder
    * @return The bytes for healthRoute.
    */
   com.google.protobuf.ByteString getHealthRouteBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Deployment timeout.
+   * Limit for deployment timeout is 2 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the deploymentTimeout field is set.
+   */
+  boolean hasDeploymentTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Deployment timeout.
+   * Limit for deployment timeout is 2 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The deploymentTimeout.
+   */
+  com.google.protobuf.Duration getDeploymentTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Deployment timeout.
+   * Limit for deployment timeout is 2 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getDeploymentTimeoutOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The amount of the VM memory to reserve as the shared memory for
+   * the model in megabytes.
+   * </pre>
+   *
+   * <code>int64 shared_memory_size_mb = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The sharedMemorySizeMb.
+   */
+  long getSharedMemorySizeMb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes startup probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the startupProbe field is set.
+   */
+  boolean hasStartupProbe();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes startup probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The startupProbe.
+   */
+  com.google.cloud.aiplatform.v1.Probe getStartupProbe();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes startup probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ProbeOrBuilder getStartupProbeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes readiness probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the healthProbe field is set.
+   */
+  boolean hasHealthProbe();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes readiness probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The healthProbe.
+   */
+  com.google.cloud.aiplatform.v1.Probe getHealthProbe();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes readiness probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ProbeOrBuilder getHealthProbeOrBuilder();
 }

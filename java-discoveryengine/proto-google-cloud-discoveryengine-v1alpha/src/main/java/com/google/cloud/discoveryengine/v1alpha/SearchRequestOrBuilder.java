@@ -28,6 +28,8 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Search serving config, such as
+   * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_serving_config`,
+   * or
    * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/servingConfigs/default_serving_config`.
    * This field is used to identify the serving configuration name, set
    * of models used to make the search.
@@ -45,6 +47,8 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Search serving config, such as
+   * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_serving_config`,
+   * or
    * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/servingConfigs/default_serving_config`.
    * This field is used to identify the serving configuration name, set
    * of models used to make the search.
@@ -238,6 +242,16 @@ public interface SearchRequestOrBuilder
    * expression is case-sensitive.
    *
    * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+   *
+   * Filtering in Vertex AI Search is done by mapping the LHS filter key to a
+   * key property defined in the Vertex AI Search backend -- this mapping is
+   * defined by the customer in their schema. For example a media customer might
+   * have a field 'name' in their schema. In this case the filter would look
+   * like this: filter --&gt; name:'ANY("king kong")'
+   *
+   * For more information about filtering including syntax and filter
+   * operators, see
+   * [Filter](https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata)
    * </pre>
    *
    * <code>string filter = 7;</code>
@@ -254,6 +268,16 @@ public interface SearchRequestOrBuilder
    * expression is case-sensitive.
    *
    * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+   *
+   * Filtering in Vertex AI Search is done by mapping the LHS filter key to a
+   * key property defined in the Vertex AI Search backend -- this mapping is
+   * defined by the customer in their schema. For example a media customer might
+   * have a field 'name' in their schema. In this case the filter would look
+   * like this: filter --&gt; name:'ANY("king kong")'
+   *
+   * For more information about filtering including syntax and filter
+   * operators, see
+   * [Filter](https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata)
    * </pre>
    *
    * <code>string filter = 7;</code>
@@ -269,7 +293,8 @@ public interface SearchRequestOrBuilder
    * The order in which documents are returned. Documents can be ordered by
    * a field in an [Document][google.cloud.discoveryengine.v1alpha.Document]
    * object. Leave it unset if ordered by relevance. `order_by` expression is
-   * case-sensitive.
+   * case-sensitive. For more information on ordering, see
+   * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
    *
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
@@ -286,7 +311,8 @@ public interface SearchRequestOrBuilder
    * The order in which documents are returned. Documents can be ordered by
    * a field in an [Document][google.cloud.discoveryengine.v1alpha.Document]
    * object. Leave it unset if ordered by relevance. `order_by` expression is
-   * case-sensitive.
+   * case-sensitive. For more information on ordering, see
+   * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
    *
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
@@ -421,6 +447,8 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Boost specification to boost certain documents.
+   * For more information on boosting, see
+   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -433,6 +461,8 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Boost specification to boost certain documents.
+   * For more information on boosting, see
+   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -445,6 +475,8 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Boost specification to boost certain documents.
+   * For more information on boosting, see
+   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -461,9 +493,17 @@ public interface SearchRequestOrBuilder
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
+   *    Example:
+   *    user_country_code: "au"
+   *
+   *    For available codes see [Country
+   *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+   *
    * * `search_type`: double. Default empty. Enables non-webpage searching
-   *   depending on the value. The only valid non-default value is 1,
-   *   which enables image searching.
+   *    depending on the value. The only valid non-default value is 1,
+   *    which enables image searching.
+   *    Example:
+   *    search_type: 1
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -479,9 +519,17 @@ public interface SearchRequestOrBuilder
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
+   *    Example:
+   *    user_country_code: "au"
+   *
+   *    For available codes see [Country
+   *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+   *
    * * `search_type`: double. Default empty. Enables non-webpage searching
-   *   depending on the value. The only valid non-default value is 1,
-   *   which enables image searching.
+   *    depending on the value. The only valid non-default value is 1,
+   *    which enables image searching.
+   *    Example:
+   *    search_type: 1
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -500,9 +548,17 @@ public interface SearchRequestOrBuilder
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
+   *    Example:
+   *    user_country_code: "au"
+   *
+   *    For available codes see [Country
+   *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+   *
    * * `search_type`: double. Default empty. Enables non-webpage searching
-   *   depending on the value. The only valid non-default value is 1,
-   *   which enables image searching.
+   *    depending on the value. The only valid non-default value is 1,
+   *    which enables image searching.
+   *    Example:
+   *    search_type: 1
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -518,9 +574,17 @@ public interface SearchRequestOrBuilder
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
+   *    Example:
+   *    user_country_code: "au"
+   *
+   *    For available codes see [Country
+   *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+   *
    * * `search_type`: double. Default empty. Enables non-webpage searching
-   *   depending on the value. The only valid non-default value is 1,
-   *   which enables image searching.
+   *    depending on the value. The only valid non-default value is 1,
+   *    which enables image searching.
+   *    Example:
+   *    search_type: 1
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -540,9 +604,17 @@ public interface SearchRequestOrBuilder
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
+   *    Example:
+   *    user_country_code: "au"
+   *
+   *    For available codes see [Country
+   *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+   *
    * * `search_type`: double. Default empty. Enables non-webpage searching
-   *   depending on the value. The only valid non-default value is 1,
-   *   which enables image searching.
+   *    depending on the value. The only valid non-default value is 1,
+   *    which enables image searching.
+   *    Example:
+   *    search_type: 1
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>

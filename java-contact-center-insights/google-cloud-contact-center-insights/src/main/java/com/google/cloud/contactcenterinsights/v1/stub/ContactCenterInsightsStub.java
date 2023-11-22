@@ -28,6 +28,9 @@ import com.google.cloud.contactcenterinsights.v1.Analysis;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsResponse;
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata;
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest;
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateStatsRequest;
@@ -186,6 +189,20 @@ public abstract class ContactCenterInsightsStub implements BackgroundResource {
   public UnaryCallable<BulkAnalyzeConversationsRequest, Operation>
       bulkAnalyzeConversationsCallable() {
     throw new UnsupportedOperationException("Not implemented: bulkAnalyzeConversationsCallable()");
+  }
+
+  public OperationCallable<
+          BulkDeleteConversationsRequest,
+          BulkDeleteConversationsResponse,
+          BulkDeleteConversationsMetadata>
+      bulkDeleteConversationsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: bulkDeleteConversationsOperationCallable()");
+  }
+
+  public UnaryCallable<BulkDeleteConversationsRequest, Operation>
+      bulkDeleteConversationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: bulkDeleteConversationsCallable()");
   }
 
   public OperationCallable<

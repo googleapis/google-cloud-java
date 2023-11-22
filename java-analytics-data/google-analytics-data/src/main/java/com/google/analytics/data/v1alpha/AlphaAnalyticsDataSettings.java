@@ -103,6 +103,12 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
     return ((AlphaAnalyticsDataStubSettings) getStubSettings()).queryAudienceListSettings();
   }
 
+  /** Returns the object with the settings used for calls to sheetExportAudienceList. */
+  public UnaryCallSettings<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+      sheetExportAudienceListSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).sheetExportAudienceListSettings();
+  }
+
   /** Returns the object with the settings used for calls to getAudienceList. */
   public UnaryCallSettings<GetAudienceListRequest, AudienceList> getAudienceListSettings() {
     return ((AlphaAnalyticsDataStubSettings) getStubSettings()).getAudienceListSettings();
@@ -253,6 +259,13 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
     public UnaryCallSettings.Builder<QueryAudienceListRequest, QueryAudienceListResponse>
         queryAudienceListSettings() {
       return getStubSettingsBuilder().queryAudienceListSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to sheetExportAudienceList. */
+    public UnaryCallSettings.Builder<
+            SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+        sheetExportAudienceListSettings() {
+      return getStubSettingsBuilder().sheetExportAudienceListSettings();
     }
 
     /** Returns the builder for the settings used for calls to getAudienceList. */

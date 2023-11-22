@@ -193,6 +193,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .setMaxCapacityGb(220559397)
@@ -247,6 +248,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .setMaxCapacityGb(220559397)
@@ -301,6 +303,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .setMaxCapacityGb(220559397)
@@ -369,6 +372,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .setMaxCapacityGb(220559397)
@@ -437,6 +441,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .setMaxCapacityGb(220559397)
@@ -502,6 +507,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .setMaxCapacityGb(220559397)
@@ -575,6 +581,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .setMaxCapacityGb(220559397)
@@ -1245,6 +1252,7 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
@@ -1293,6 +1301,7 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
@@ -1341,6 +1350,7 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .build();
     Operation resultOperation =
@@ -1403,6 +1413,7 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .build();
     Operation resultOperation =
@@ -1549,6 +1560,7 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .build();
     Operation resultOperation =

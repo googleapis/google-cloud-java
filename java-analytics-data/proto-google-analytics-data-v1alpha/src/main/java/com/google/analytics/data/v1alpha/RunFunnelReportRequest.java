@@ -241,9 +241,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A Google Analytics GA4 property identifier whose events are tracked.
-   * Specified in the URL path and not the body. To learn more, see [where to
-   * find your Property
+   * Optional. A Google Analytics GA4 property identifier whose events are
+   * tracked. Specified in the URL path and not the body. To learn more, see
+   * [where to find your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.
@@ -251,7 +251,7 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * Example: properties/1234
    * </pre>
    *
-   * <code>string property = 1;</code>
+   * <code>string property = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The property.
    */
@@ -271,9 +271,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A Google Analytics GA4 property identifier whose events are tracked.
-   * Specified in the URL path and not the body. To learn more, see [where to
-   * find your Property
+   * Optional. A Google Analytics GA4 property identifier whose events are
+   * tracked. Specified in the URL path and not the body. To learn more, see
+   * [where to find your Property
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.
@@ -281,7 +281,7 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * Example: properties/1234
    * </pre>
    *
-   * <code>string property = 1;</code>
+   * <code>string property = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for property.
    */
@@ -306,13 +306,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Date ranges of data to read. If multiple date ranges are requested, each
-   * response row will contain a zero based date range index. If two date
-   * ranges overlap, the event data for the overlapping days is included in the
-   * response rows for both date ranges.
+   * Optional. Date ranges of data to read. If multiple date ranges are
+   * requested, each response row will contain a zero based date range index. If
+   * two date ranges overlap, the event data for the overlapping days is
+   * included in the response rows for both date ranges.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+   * <code>
+   * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.analytics.data.v1alpha.DateRange> getDateRangesList() {
@@ -322,13 +324,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Date ranges of data to read. If multiple date ranges are requested, each
-   * response row will contain a zero based date range index. If two date
-   * ranges overlap, the event data for the overlapping days is included in the
-   * response rows for both date ranges.
+   * Optional. Date ranges of data to read. If multiple date ranges are
+   * requested, each response row will contain a zero based date range index. If
+   * two date ranges overlap, the event data for the overlapping days is
+   * included in the response rows for both date ranges.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+   * <code>
+   * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.analytics.data.v1alpha.DateRangeOrBuilder>
@@ -339,13 +343,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Date ranges of data to read. If multiple date ranges are requested, each
-   * response row will contain a zero based date range index. If two date
-   * ranges overlap, the event data for the overlapping days is included in the
-   * response rows for both date ranges.
+   * Optional. Date ranges of data to read. If multiple date ranges are
+   * requested, each response row will contain a zero based date range index. If
+   * two date ranges overlap, the event data for the overlapping days is
+   * included in the response rows for both date ranges.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+   * <code>
+   * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getDateRangesCount() {
@@ -355,13 +361,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Date ranges of data to read. If multiple date ranges are requested, each
-   * response row will contain a zero based date range index. If two date
-   * ranges overlap, the event data for the overlapping days is included in the
-   * response rows for both date ranges.
+   * Optional. Date ranges of data to read. If multiple date ranges are
+   * requested, each response row will contain a zero based date range index. If
+   * two date ranges overlap, the event data for the overlapping days is
+   * included in the response rows for both date ranges.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+   * <code>
+   * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.analytics.data.v1alpha.DateRange getDateRanges(int index) {
@@ -371,13 +379,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Date ranges of data to read. If multiple date ranges are requested, each
-   * response row will contain a zero based date range index. If two date
-   * ranges overlap, the event data for the overlapping days is included in the
-   * response rows for both date ranges.
+   * Optional. Date ranges of data to read. If multiple date ranges are
+   * requested, each response row will contain a zero based date range index. If
+   * two date ranges overlap, the event data for the overlapping days is
+   * included in the response rows for both date ranges.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+   * <code>
+   * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.analytics.data.v1alpha.DateRangeOrBuilder getDateRangesOrBuilder(int index) {
@@ -390,11 +400,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The configuration of this request's funnel. This funnel configuration is
-   * required.
+   * Optional. The configuration of this request's funnel. This funnel
+   * configuration is required.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.Funnel funnel = 3;</code>
+   * <code>
+   * .google.analytics.data.v1alpha.Funnel funnel = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the funnel field is set.
    */
@@ -406,11 +418,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The configuration of this request's funnel. This funnel configuration is
-   * required.
+   * Optional. The configuration of this request's funnel. This funnel
+   * configuration is required.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.Funnel funnel = 3;</code>
+   * <code>
+   * .google.analytics.data.v1alpha.Funnel funnel = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The funnel.
    */
@@ -424,11 +438,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The configuration of this request's funnel. This funnel configuration is
-   * required.
+   * Optional. The configuration of this request's funnel. This funnel
+   * configuration is required.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.Funnel funnel = 3;</code>
+   * <code>
+   * .google.analytics.data.v1alpha.Funnel funnel = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.analytics.data.v1alpha.FunnelOrBuilder getFunnelOrBuilder() {
@@ -443,14 +459,16 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * If specified, this breakdown adds a dimension to the funnel table sub
-   * report response. This breakdown dimension expands each funnel step to the
-   * unique values of the breakdown dimension. For example, a breakdown by the
-   * `deviceCategory` dimension will create rows for `mobile`, `tablet`,
+   * Optional. If specified, this breakdown adds a dimension to the funnel table
+   * sub report response. This breakdown dimension expands each funnel step to
+   * the unique values of the breakdown dimension. For example, a breakdown by
+   * the `deviceCategory` dimension will create rows for `mobile`, `tablet`,
    * `desktop`, and the total.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4;</code>
+   * <code>
+   * .google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the funnelBreakdown field is set.
    */
@@ -462,14 +480,16 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * If specified, this breakdown adds a dimension to the funnel table sub
-   * report response. This breakdown dimension expands each funnel step to the
-   * unique values of the breakdown dimension. For example, a breakdown by the
-   * `deviceCategory` dimension will create rows for `mobile`, `tablet`,
+   * Optional. If specified, this breakdown adds a dimension to the funnel table
+   * sub report response. This breakdown dimension expands each funnel step to
+   * the unique values of the breakdown dimension. For example, a breakdown by
+   * the `deviceCategory` dimension will create rows for `mobile`, `tablet`,
    * `desktop`, and the total.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4;</code>
+   * <code>
+   * .google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The funnelBreakdown.
    */
@@ -483,14 +503,16 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * If specified, this breakdown adds a dimension to the funnel table sub
-   * report response. This breakdown dimension expands each funnel step to the
-   * unique values of the breakdown dimension. For example, a breakdown by the
-   * `deviceCategory` dimension will create rows for `mobile`, `tablet`,
+   * Optional. If specified, this breakdown adds a dimension to the funnel table
+   * sub report response. This breakdown dimension expands each funnel step to
+   * the unique values of the breakdown dimension. For example, a breakdown by
+   * the `deviceCategory` dimension will create rows for `mobile`, `tablet`,
    * `desktop`, and the total.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4;</code>
+   * <code>
+   * .google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.analytics.data.v1alpha.FunnelBreakdownOrBuilder getFunnelBreakdownOrBuilder() {
@@ -505,17 +527,19 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * If specified, next action adds a dimension to the funnel visualization sub
-   * report response. This next action dimension expands each funnel step to the
-   * unique values of the next action. For example a next action of the
-   * `eventName` dimension will create rows for several events (for example
-   * `session_start` &amp; `click`) and the total.
+   * Optional. If specified, next action adds a dimension to the funnel
+   * visualization sub report response. This next action dimension expands each
+   * funnel step to the unique values of the next action. For example a next
+   * action of the `eventName` dimension will create rows for several events
+   * (for example `session_start` &amp; `click`) and the total.
    *
    * Next action only supports `eventName` and most Page / Screen dimensions
    * like `pageTitle` and `pagePath`.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5;</code>
+   * <code>
+   * .google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the funnelNextAction field is set.
    */
@@ -527,17 +551,19 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * If specified, next action adds a dimension to the funnel visualization sub
-   * report response. This next action dimension expands each funnel step to the
-   * unique values of the next action. For example a next action of the
-   * `eventName` dimension will create rows for several events (for example
-   * `session_start` &amp; `click`) and the total.
+   * Optional. If specified, next action adds a dimension to the funnel
+   * visualization sub report response. This next action dimension expands each
+   * funnel step to the unique values of the next action. For example a next
+   * action of the `eventName` dimension will create rows for several events
+   * (for example `session_start` &amp; `click`) and the total.
    *
    * Next action only supports `eventName` and most Page / Screen dimensions
    * like `pageTitle` and `pagePath`.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5;</code>
+   * <code>
+   * .google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The funnelNextAction.
    */
@@ -551,17 +577,19 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * If specified, next action adds a dimension to the funnel visualization sub
-   * report response. This next action dimension expands each funnel step to the
-   * unique values of the next action. For example a next action of the
-   * `eventName` dimension will create rows for several events (for example
-   * `session_start` &amp; `click`) and the total.
+   * Optional. If specified, next action adds a dimension to the funnel
+   * visualization sub report response. This next action dimension expands each
+   * funnel step to the unique values of the next action. For example a next
+   * action of the `eventName` dimension will create rows for several events
+   * (for example `session_start` &amp; `click`) and the total.
    *
    * Next action only supports `eventName` and most Page / Screen dimensions
    * like `pageTitle` and `pagePath`.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5;</code>
+   * <code>
+   * .google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.analytics.data.v1alpha.FunnelNextActionOrBuilder
@@ -577,13 +605,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The funnel visualization type controls the dimensions present in the funnel
-   * visualization sub report response. If not specified, `STANDARD_FUNNEL` is
-   * used.
+   * Optional. The funnel visualization type controls the dimensions present in
+   * the funnel visualization sub report response. If not specified,
+   * `STANDARD_FUNNEL` is used.
    * </pre>
    *
    * <code>
-   * .google.analytics.data.v1alpha.RunFunnelReportRequest.FunnelVisualizationType funnel_visualization_type = 6;
+   * .google.analytics.data.v1alpha.RunFunnelReportRequest.FunnelVisualizationType funnel_visualization_type = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for funnelVisualizationType.
@@ -596,13 +624,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The funnel visualization type controls the dimensions present in the funnel
-   * visualization sub report response. If not specified, `STANDARD_FUNNEL` is
-   * used.
+   * Optional. The funnel visualization type controls the dimensions present in
+   * the funnel visualization sub report response. If not specified,
+   * `STANDARD_FUNNEL` is used.
    * </pre>
    *
    * <code>
-   * .google.analytics.data.v1alpha.RunFunnelReportRequest.FunnelVisualizationType funnel_visualization_type = 6;
+   * .google.analytics.data.v1alpha.RunFunnelReportRequest.FunnelVisualizationType funnel_visualization_type = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The funnelVisualizationType.
@@ -627,8 +655,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The configurations of segments. Segments are subsets of a property's data.
-   * In a funnel report with segments, the funnel is evaluated in each segment.
+   * Optional. The configurations of segments. Segments are subsets of a
+   * property's data. In a funnel report with segments, the funnel is evaluated
+   * in each segment.
    *
    * Each segment specified in this request
    * produces a separate row in the response; in the response, each segment
@@ -637,7 +666,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * The segments parameter is optional. Requests are limited to 4 segments.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+   * <code>
+   * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.analytics.data.v1alpha.Segment> getSegmentsList() {
@@ -647,8 +678,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The configurations of segments. Segments are subsets of a property's data.
-   * In a funnel report with segments, the funnel is evaluated in each segment.
+   * Optional. The configurations of segments. Segments are subsets of a
+   * property's data. In a funnel report with segments, the funnel is evaluated
+   * in each segment.
    *
    * Each segment specified in this request
    * produces a separate row in the response; in the response, each segment
@@ -657,7 +689,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * The segments parameter is optional. Requests are limited to 4 segments.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+   * <code>
+   * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.analytics.data.v1alpha.SegmentOrBuilder>
@@ -668,8 +702,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The configurations of segments. Segments are subsets of a property's data.
-   * In a funnel report with segments, the funnel is evaluated in each segment.
+   * Optional. The configurations of segments. Segments are subsets of a
+   * property's data. In a funnel report with segments, the funnel is evaluated
+   * in each segment.
    *
    * Each segment specified in this request
    * produces a separate row in the response; in the response, each segment
@@ -678,7 +713,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * The segments parameter is optional. Requests are limited to 4 segments.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+   * <code>
+   * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getSegmentsCount() {
@@ -688,8 +725,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The configurations of segments. Segments are subsets of a property's data.
-   * In a funnel report with segments, the funnel is evaluated in each segment.
+   * Optional. The configurations of segments. Segments are subsets of a
+   * property's data. In a funnel report with segments, the funnel is evaluated
+   * in each segment.
    *
    * Each segment specified in this request
    * produces a separate row in the response; in the response, each segment
@@ -698,7 +736,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * The segments parameter is optional. Requests are limited to 4 segments.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+   * <code>
+   * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.analytics.data.v1alpha.Segment getSegments(int index) {
@@ -708,8 +748,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The configurations of segments. Segments are subsets of a property's data.
-   * In a funnel report with segments, the funnel is evaluated in each segment.
+   * Optional. The configurations of segments. Segments are subsets of a
+   * property's data. In a funnel report with segments, the funnel is evaluated
+   * in each segment.
    *
    * Each segment specified in this request
    * produces a separate row in the response; in the response, each segment
@@ -718,7 +759,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    * The segments parameter is optional. Requests are limited to 4 segments.
    * </pre>
    *
-   * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+   * <code>
+   * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.analytics.data.v1alpha.SegmentOrBuilder getSegmentsOrBuilder(int index) {
@@ -731,15 +774,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The number of rows to return. If unspecified, 10,000 rows are returned. The
-   * API returns a maximum of 250,000 rows per request, no matter how many you
-   * ask for. `limit` must be positive.
+   * Optional. The number of rows to return. If unspecified, 10,000 rows are
+   * returned. The API returns a maximum of 250,000 rows per request, no matter
+   * how many you ask for. `limit` must be positive.
    *
    * The API can also return fewer rows than the requested `limit`, if there
    * aren't as many dimension values as the `limit`.
    * </pre>
    *
-   * <code>int64 limit = 9;</code>
+   * <code>int64 limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The limit.
    */
@@ -754,13 +797,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Dimension filters allow you to ask for only specific dimension values in
-   * the report. To learn more, see [Creating a Report: Dimension
+   * Optional. Dimension filters allow you to ask for only specific dimension
+   * values in the report. To learn more, see [Creating a Report: Dimension
    * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
    * for examples. Metrics cannot be used in this filter.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 10;</code>
+   * <code>
+   * .google.analytics.data.v1alpha.FilterExpression dimension_filter = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the dimensionFilter field is set.
    */
@@ -772,13 +817,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Dimension filters allow you to ask for only specific dimension values in
-   * the report. To learn more, see [Creating a Report: Dimension
+   * Optional. Dimension filters allow you to ask for only specific dimension
+   * values in the report. To learn more, see [Creating a Report: Dimension
    * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
    * for examples. Metrics cannot be used in this filter.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 10;</code>
+   * <code>
+   * .google.analytics.data.v1alpha.FilterExpression dimension_filter = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The dimensionFilter.
    */
@@ -792,13 +839,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Dimension filters allow you to ask for only specific dimension values in
-   * the report. To learn more, see [Creating a Report: Dimension
+   * Optional. Dimension filters allow you to ask for only specific dimension
+   * values in the report. To learn more, see [Creating a Report: Dimension
    * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
    * for examples. Metrics cannot be used in this filter.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 10;</code>
+   * <code>
+   * .google.analytics.data.v1alpha.FilterExpression dimension_filter = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.analytics.data.v1alpha.FilterExpressionOrBuilder getDimensionFilterOrBuilder() {
@@ -813,11 +862,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Toggles whether to return the current state of this Analytics Property's
-   * quota. Quota is returned in [PropertyQuota](#PropertyQuota).
+   * Optional. Toggles whether to return the current state of this Analytics
+   * Property's quota. Quota is returned in [PropertyQuota](#PropertyQuota).
    * </pre>
    *
-   * <code>bool return_property_quota = 12;</code>
+   * <code>bool return_property_quota = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The returnPropertyQuota.
    */
@@ -1513,9 +1562,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A Google Analytics GA4 property identifier whose events are tracked.
-     * Specified in the URL path and not the body. To learn more, see [where to
-     * find your Property
+     * Optional. A Google Analytics GA4 property identifier whose events are
+     * tracked. Specified in the URL path and not the body. To learn more, see
+     * [where to find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
@@ -1523,7 +1572,7 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * Example: properties/1234
      * </pre>
      *
-     * <code>string property = 1;</code>
+     * <code>string property = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The property.
      */
@@ -1542,9 +1591,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A Google Analytics GA4 property identifier whose events are tracked.
-     * Specified in the URL path and not the body. To learn more, see [where to
-     * find your Property
+     * Optional. A Google Analytics GA4 property identifier whose events are
+     * tracked. Specified in the URL path and not the body. To learn more, see
+     * [where to find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
@@ -1552,7 +1601,7 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * Example: properties/1234
      * </pre>
      *
-     * <code>string property = 1;</code>
+     * <code>string property = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for property.
      */
@@ -1571,9 +1620,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A Google Analytics GA4 property identifier whose events are tracked.
-     * Specified in the URL path and not the body. To learn more, see [where to
-     * find your Property
+     * Optional. A Google Analytics GA4 property identifier whose events are
+     * tracked. Specified in the URL path and not the body. To learn more, see
+     * [where to find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
@@ -1581,7 +1630,7 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * Example: properties/1234
      * </pre>
      *
-     * <code>string property = 1;</code>
+     * <code>string property = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The property to set.
      * @return This builder for chaining.
@@ -1599,9 +1648,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A Google Analytics GA4 property identifier whose events are tracked.
-     * Specified in the URL path and not the body. To learn more, see [where to
-     * find your Property
+     * Optional. A Google Analytics GA4 property identifier whose events are
+     * tracked. Specified in the URL path and not the body. To learn more, see
+     * [where to find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
@@ -1609,7 +1658,7 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * Example: properties/1234
      * </pre>
      *
-     * <code>string property = 1;</code>
+     * <code>string property = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1623,9 +1672,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A Google Analytics GA4 property identifier whose events are tracked.
-     * Specified in the URL path and not the body. To learn more, see [where to
-     * find your Property
+     * Optional. A Google Analytics GA4 property identifier whose events are
+     * tracked. Specified in the URL path and not the body. To learn more, see
+     * [where to find your Property
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
@@ -1633,7 +1682,7 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * Example: properties/1234
      * </pre>
      *
-     * <code>string property = 1;</code>
+     * <code>string property = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for property to set.
      * @return This builder for chaining.
@@ -1670,13 +1719,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.analytics.data.v1alpha.DateRange> getDateRangesList() {
       if (dateRangesBuilder_ == null) {
@@ -1689,13 +1740,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getDateRangesCount() {
       if (dateRangesBuilder_ == null) {
@@ -1708,13 +1761,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.DateRange getDateRanges(int index) {
       if (dateRangesBuilder_ == null) {
@@ -1727,13 +1782,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setDateRanges(int index, com.google.analytics.data.v1alpha.DateRange value) {
       if (dateRangesBuilder_ == null) {
@@ -1752,13 +1809,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setDateRanges(
         int index, com.google.analytics.data.v1alpha.DateRange.Builder builderForValue) {
@@ -1775,13 +1834,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addDateRanges(com.google.analytics.data.v1alpha.DateRange value) {
       if (dateRangesBuilder_ == null) {
@@ -1800,13 +1861,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addDateRanges(int index, com.google.analytics.data.v1alpha.DateRange value) {
       if (dateRangesBuilder_ == null) {
@@ -1825,13 +1888,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addDateRanges(
         com.google.analytics.data.v1alpha.DateRange.Builder builderForValue) {
@@ -1848,13 +1913,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addDateRanges(
         int index, com.google.analytics.data.v1alpha.DateRange.Builder builderForValue) {
@@ -1871,13 +1938,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllDateRanges(
         java.lang.Iterable<? extends com.google.analytics.data.v1alpha.DateRange> values) {
@@ -1894,13 +1963,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearDateRanges() {
       if (dateRangesBuilder_ == null) {
@@ -1916,13 +1987,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeDateRanges(int index) {
       if (dateRangesBuilder_ == null) {
@@ -1938,13 +2011,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.DateRange.Builder getDateRangesBuilder(int index) {
       return getDateRangesFieldBuilder().getBuilder(index);
@@ -1953,13 +2028,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.DateRangeOrBuilder getDateRangesOrBuilder(int index) {
       if (dateRangesBuilder_ == null) {
@@ -1972,13 +2049,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.analytics.data.v1alpha.DateRangeOrBuilder>
         getDateRangesOrBuilderList() {
@@ -1992,13 +2071,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.DateRange.Builder addDateRangesBuilder() {
       return getDateRangesFieldBuilder()
@@ -2008,13 +2089,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.DateRange.Builder addDateRangesBuilder(int index) {
       return getDateRangesFieldBuilder()
@@ -2024,13 +2107,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Date ranges of data to read. If multiple date ranges are requested, each
-     * response row will contain a zero based date range index. If two date
-     * ranges overlap, the event data for the overlapping days is included in the
-     * response rows for both date ranges.
+     * Optional. Date ranges of data to read. If multiple date ranges are
+     * requested, each response row will contain a zero based date range index. If
+     * two date ranges overlap, the event data for the overlapping days is
+     * included in the response rows for both date ranges.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.DateRange date_ranges = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.analytics.data.v1alpha.DateRange.Builder>
         getDateRangesBuilderList() {
@@ -2064,11 +2149,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configuration of this request's funnel. This funnel configuration is
-     * required.
+     * Optional. The configuration of this request's funnel. This funnel
+     * configuration is required.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.Funnel funnel = 3;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.Funnel funnel = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the funnel field is set.
      */
@@ -2079,11 +2166,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configuration of this request's funnel. This funnel configuration is
-     * required.
+     * Optional. The configuration of this request's funnel. This funnel
+     * configuration is required.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.Funnel funnel = 3;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.Funnel funnel = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The funnel.
      */
@@ -2100,11 +2189,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configuration of this request's funnel. This funnel configuration is
-     * required.
+     * Optional. The configuration of this request's funnel. This funnel
+     * configuration is required.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.Funnel funnel = 3;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.Funnel funnel = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setFunnel(com.google.analytics.data.v1alpha.Funnel value) {
       if (funnelBuilder_ == null) {
@@ -2123,11 +2214,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configuration of this request's funnel. This funnel configuration is
-     * required.
+     * Optional. The configuration of this request's funnel. This funnel
+     * configuration is required.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.Funnel funnel = 3;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.Funnel funnel = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setFunnel(com.google.analytics.data.v1alpha.Funnel.Builder builderForValue) {
       if (funnelBuilder_ == null) {
@@ -2143,11 +2236,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configuration of this request's funnel. This funnel configuration is
-     * required.
+     * Optional. The configuration of this request's funnel. This funnel
+     * configuration is required.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.Funnel funnel = 3;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.Funnel funnel = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeFunnel(com.google.analytics.data.v1alpha.Funnel value) {
       if (funnelBuilder_ == null) {
@@ -2169,11 +2264,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configuration of this request's funnel. This funnel configuration is
-     * required.
+     * Optional. The configuration of this request's funnel. This funnel
+     * configuration is required.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.Funnel funnel = 3;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.Funnel funnel = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearFunnel() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -2189,11 +2286,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configuration of this request's funnel. This funnel configuration is
-     * required.
+     * Optional. The configuration of this request's funnel. This funnel
+     * configuration is required.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.Funnel funnel = 3;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.Funnel funnel = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.Funnel.Builder getFunnelBuilder() {
       bitField0_ |= 0x00000004;
@@ -2204,11 +2303,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configuration of this request's funnel. This funnel configuration is
-     * required.
+     * Optional. The configuration of this request's funnel. This funnel
+     * configuration is required.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.Funnel funnel = 3;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.Funnel funnel = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.FunnelOrBuilder getFunnelOrBuilder() {
       if (funnelBuilder_ != null) {
@@ -2223,11 +2324,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configuration of this request's funnel. This funnel configuration is
-     * required.
+     * Optional. The configuration of this request's funnel. This funnel
+     * configuration is required.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.Funnel funnel = 3;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.Funnel funnel = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.data.v1alpha.Funnel,
@@ -2256,14 +2359,16 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, this breakdown adds a dimension to the funnel table sub
-     * report response. This breakdown dimension expands each funnel step to the
-     * unique values of the breakdown dimension. For example, a breakdown by the
-     * `deviceCategory` dimension will create rows for `mobile`, `tablet`,
+     * Optional. If specified, this breakdown adds a dimension to the funnel table
+     * sub report response. This breakdown dimension expands each funnel step to
+     * the unique values of the breakdown dimension. For example, a breakdown by
+     * the `deviceCategory` dimension will create rows for `mobile`, `tablet`,
      * `desktop`, and the total.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the funnelBreakdown field is set.
      */
@@ -2274,14 +2379,16 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, this breakdown adds a dimension to the funnel table sub
-     * report response. This breakdown dimension expands each funnel step to the
-     * unique values of the breakdown dimension. For example, a breakdown by the
-     * `deviceCategory` dimension will create rows for `mobile`, `tablet`,
+     * Optional. If specified, this breakdown adds a dimension to the funnel table
+     * sub report response. This breakdown dimension expands each funnel step to
+     * the unique values of the breakdown dimension. For example, a breakdown by
+     * the `deviceCategory` dimension will create rows for `mobile`, `tablet`,
      * `desktop`, and the total.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The funnelBreakdown.
      */
@@ -2298,14 +2405,16 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, this breakdown adds a dimension to the funnel table sub
-     * report response. This breakdown dimension expands each funnel step to the
-     * unique values of the breakdown dimension. For example, a breakdown by the
-     * `deviceCategory` dimension will create rows for `mobile`, `tablet`,
+     * Optional. If specified, this breakdown adds a dimension to the funnel table
+     * sub report response. This breakdown dimension expands each funnel step to
+     * the unique values of the breakdown dimension. For example, a breakdown by
+     * the `deviceCategory` dimension will create rows for `mobile`, `tablet`,
      * `desktop`, and the total.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setFunnelBreakdown(com.google.analytics.data.v1alpha.FunnelBreakdown value) {
       if (funnelBreakdownBuilder_ == null) {
@@ -2324,14 +2433,16 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, this breakdown adds a dimension to the funnel table sub
-     * report response. This breakdown dimension expands each funnel step to the
-     * unique values of the breakdown dimension. For example, a breakdown by the
-     * `deviceCategory` dimension will create rows for `mobile`, `tablet`,
+     * Optional. If specified, this breakdown adds a dimension to the funnel table
+     * sub report response. This breakdown dimension expands each funnel step to
+     * the unique values of the breakdown dimension. For example, a breakdown by
+     * the `deviceCategory` dimension will create rows for `mobile`, `tablet`,
      * `desktop`, and the total.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setFunnelBreakdown(
         com.google.analytics.data.v1alpha.FunnelBreakdown.Builder builderForValue) {
@@ -2348,14 +2459,16 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, this breakdown adds a dimension to the funnel table sub
-     * report response. This breakdown dimension expands each funnel step to the
-     * unique values of the breakdown dimension. For example, a breakdown by the
-     * `deviceCategory` dimension will create rows for `mobile`, `tablet`,
+     * Optional. If specified, this breakdown adds a dimension to the funnel table
+     * sub report response. This breakdown dimension expands each funnel step to
+     * the unique values of the breakdown dimension. For example, a breakdown by
+     * the `deviceCategory` dimension will create rows for `mobile`, `tablet`,
      * `desktop`, and the total.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeFunnelBreakdown(com.google.analytics.data.v1alpha.FunnelBreakdown value) {
       if (funnelBreakdownBuilder_ == null) {
@@ -2378,14 +2491,16 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, this breakdown adds a dimension to the funnel table sub
-     * report response. This breakdown dimension expands each funnel step to the
-     * unique values of the breakdown dimension. For example, a breakdown by the
-     * `deviceCategory` dimension will create rows for `mobile`, `tablet`,
+     * Optional. If specified, this breakdown adds a dimension to the funnel table
+     * sub report response. This breakdown dimension expands each funnel step to
+     * the unique values of the breakdown dimension. For example, a breakdown by
+     * the `deviceCategory` dimension will create rows for `mobile`, `tablet`,
      * `desktop`, and the total.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearFunnelBreakdown() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -2401,14 +2516,16 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, this breakdown adds a dimension to the funnel table sub
-     * report response. This breakdown dimension expands each funnel step to the
-     * unique values of the breakdown dimension. For example, a breakdown by the
-     * `deviceCategory` dimension will create rows for `mobile`, `tablet`,
+     * Optional. If specified, this breakdown adds a dimension to the funnel table
+     * sub report response. This breakdown dimension expands each funnel step to
+     * the unique values of the breakdown dimension. For example, a breakdown by
+     * the `deviceCategory` dimension will create rows for `mobile`, `tablet`,
      * `desktop`, and the total.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.FunnelBreakdown.Builder getFunnelBreakdownBuilder() {
       bitField0_ |= 0x00000008;
@@ -2419,14 +2536,16 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, this breakdown adds a dimension to the funnel table sub
-     * report response. This breakdown dimension expands each funnel step to the
-     * unique values of the breakdown dimension. For example, a breakdown by the
-     * `deviceCategory` dimension will create rows for `mobile`, `tablet`,
+     * Optional. If specified, this breakdown adds a dimension to the funnel table
+     * sub report response. This breakdown dimension expands each funnel step to
+     * the unique values of the breakdown dimension. For example, a breakdown by
+     * the `deviceCategory` dimension will create rows for `mobile`, `tablet`,
      * `desktop`, and the total.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.FunnelBreakdownOrBuilder
         getFunnelBreakdownOrBuilder() {
@@ -2442,14 +2561,16 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, this breakdown adds a dimension to the funnel table sub
-     * report response. This breakdown dimension expands each funnel step to the
-     * unique values of the breakdown dimension. For example, a breakdown by the
-     * `deviceCategory` dimension will create rows for `mobile`, `tablet`,
+     * Optional. If specified, this breakdown adds a dimension to the funnel table
+     * sub report response. This breakdown dimension expands each funnel step to
+     * the unique values of the breakdown dimension. For example, a breakdown by
+     * the `deviceCategory` dimension will create rows for `mobile`, `tablet`,
      * `desktop`, and the total.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelBreakdown funnel_breakdown = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.data.v1alpha.FunnelBreakdown,
@@ -2478,17 +2599,19 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, next action adds a dimension to the funnel visualization sub
-     * report response. This next action dimension expands each funnel step to the
-     * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (for example
-     * `session_start` &amp; `click`) and the total.
+     * Optional. If specified, next action adds a dimension to the funnel
+     * visualization sub report response. This next action dimension expands each
+     * funnel step to the unique values of the next action. For example a next
+     * action of the `eventName` dimension will create rows for several events
+     * (for example `session_start` &amp; `click`) and the total.
      *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the funnelNextAction field is set.
      */
@@ -2499,17 +2622,19 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, next action adds a dimension to the funnel visualization sub
-     * report response. This next action dimension expands each funnel step to the
-     * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (for example
-     * `session_start` &amp; `click`) and the total.
+     * Optional. If specified, next action adds a dimension to the funnel
+     * visualization sub report response. This next action dimension expands each
+     * funnel step to the unique values of the next action. For example a next
+     * action of the `eventName` dimension will create rows for several events
+     * (for example `session_start` &amp; `click`) and the total.
      *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The funnelNextAction.
      */
@@ -2526,17 +2651,19 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, next action adds a dimension to the funnel visualization sub
-     * report response. This next action dimension expands each funnel step to the
-     * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (for example
-     * `session_start` &amp; `click`) and the total.
+     * Optional. If specified, next action adds a dimension to the funnel
+     * visualization sub report response. This next action dimension expands each
+     * funnel step to the unique values of the next action. For example a next
+     * action of the `eventName` dimension will create rows for several events
+     * (for example `session_start` &amp; `click`) and the total.
      *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setFunnelNextAction(com.google.analytics.data.v1alpha.FunnelNextAction value) {
       if (funnelNextActionBuilder_ == null) {
@@ -2555,17 +2682,19 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, next action adds a dimension to the funnel visualization sub
-     * report response. This next action dimension expands each funnel step to the
-     * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (for example
-     * `session_start` &amp; `click`) and the total.
+     * Optional. If specified, next action adds a dimension to the funnel
+     * visualization sub report response. This next action dimension expands each
+     * funnel step to the unique values of the next action. For example a next
+     * action of the `eventName` dimension will create rows for several events
+     * (for example `session_start` &amp; `click`) and the total.
      *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setFunnelNextAction(
         com.google.analytics.data.v1alpha.FunnelNextAction.Builder builderForValue) {
@@ -2582,17 +2711,19 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, next action adds a dimension to the funnel visualization sub
-     * report response. This next action dimension expands each funnel step to the
-     * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (for example
-     * `session_start` &amp; `click`) and the total.
+     * Optional. If specified, next action adds a dimension to the funnel
+     * visualization sub report response. This next action dimension expands each
+     * funnel step to the unique values of the next action. For example a next
+     * action of the `eventName` dimension will create rows for several events
+     * (for example `session_start` &amp; `click`) and the total.
      *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeFunnelNextAction(com.google.analytics.data.v1alpha.FunnelNextAction value) {
       if (funnelNextActionBuilder_ == null) {
@@ -2615,17 +2746,19 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, next action adds a dimension to the funnel visualization sub
-     * report response. This next action dimension expands each funnel step to the
-     * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (for example
-     * `session_start` &amp; `click`) and the total.
+     * Optional. If specified, next action adds a dimension to the funnel
+     * visualization sub report response. This next action dimension expands each
+     * funnel step to the unique values of the next action. For example a next
+     * action of the `eventName` dimension will create rows for several events
+     * (for example `session_start` &amp; `click`) and the total.
      *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearFunnelNextAction() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -2641,17 +2774,19 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, next action adds a dimension to the funnel visualization sub
-     * report response. This next action dimension expands each funnel step to the
-     * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (for example
-     * `session_start` &amp; `click`) and the total.
+     * Optional. If specified, next action adds a dimension to the funnel
+     * visualization sub report response. This next action dimension expands each
+     * funnel step to the unique values of the next action. For example a next
+     * action of the `eventName` dimension will create rows for several events
+     * (for example `session_start` &amp; `click`) and the total.
      *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.FunnelNextAction.Builder getFunnelNextActionBuilder() {
       bitField0_ |= 0x00000010;
@@ -2662,17 +2797,19 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, next action adds a dimension to the funnel visualization sub
-     * report response. This next action dimension expands each funnel step to the
-     * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (for example
-     * `session_start` &amp; `click`) and the total.
+     * Optional. If specified, next action adds a dimension to the funnel
+     * visualization sub report response. This next action dimension expands each
+     * funnel step to the unique values of the next action. For example a next
+     * action of the `eventName` dimension will create rows for several events
+     * (for example `session_start` &amp; `click`) and the total.
      *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.FunnelNextActionOrBuilder
         getFunnelNextActionOrBuilder() {
@@ -2688,17 +2825,19 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If specified, next action adds a dimension to the funnel visualization sub
-     * report response. This next action dimension expands each funnel step to the
-     * unique values of the next action. For example a next action of the
-     * `eventName` dimension will create rows for several events (for example
-     * `session_start` &amp; `click`) and the total.
+     * Optional. If specified, next action adds a dimension to the funnel
+     * visualization sub report response. This next action dimension expands each
+     * funnel step to the unique values of the next action. For example a next
+     * action of the `eventName` dimension will create rows for several events
+     * (for example `session_start` &amp; `click`) and the total.
      *
      * Next action only supports `eventName` and most Page / Screen dimensions
      * like `pageTitle` and `pagePath`.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FunnelNextAction funnel_next_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.data.v1alpha.FunnelNextAction,
@@ -2722,13 +2861,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The funnel visualization type controls the dimensions present in the funnel
-     * visualization sub report response. If not specified, `STANDARD_FUNNEL` is
-     * used.
+     * Optional. The funnel visualization type controls the dimensions present in
+     * the funnel visualization sub report response. If not specified,
+     * `STANDARD_FUNNEL` is used.
      * </pre>
      *
      * <code>
-     * .google.analytics.data.v1alpha.RunFunnelReportRequest.FunnelVisualizationType funnel_visualization_type = 6;
+     * .google.analytics.data.v1alpha.RunFunnelReportRequest.FunnelVisualizationType funnel_visualization_type = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for funnelVisualizationType.
@@ -2741,13 +2880,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The funnel visualization type controls the dimensions present in the funnel
-     * visualization sub report response. If not specified, `STANDARD_FUNNEL` is
-     * used.
+     * Optional. The funnel visualization type controls the dimensions present in
+     * the funnel visualization sub report response. If not specified,
+     * `STANDARD_FUNNEL` is used.
      * </pre>
      *
      * <code>
-     * .google.analytics.data.v1alpha.RunFunnelReportRequest.FunnelVisualizationType funnel_visualization_type = 6;
+     * .google.analytics.data.v1alpha.RunFunnelReportRequest.FunnelVisualizationType funnel_visualization_type = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for funnelVisualizationType to set.
@@ -2763,13 +2902,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The funnel visualization type controls the dimensions present in the funnel
-     * visualization sub report response. If not specified, `STANDARD_FUNNEL` is
-     * used.
+     * Optional. The funnel visualization type controls the dimensions present in
+     * the funnel visualization sub report response. If not specified,
+     * `STANDARD_FUNNEL` is used.
      * </pre>
      *
      * <code>
-     * .google.analytics.data.v1alpha.RunFunnelReportRequest.FunnelVisualizationType funnel_visualization_type = 6;
+     * .google.analytics.data.v1alpha.RunFunnelReportRequest.FunnelVisualizationType funnel_visualization_type = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The funnelVisualizationType.
@@ -2789,13 +2928,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The funnel visualization type controls the dimensions present in the funnel
-     * visualization sub report response. If not specified, `STANDARD_FUNNEL` is
-     * used.
+     * Optional. The funnel visualization type controls the dimensions present in
+     * the funnel visualization sub report response. If not specified,
+     * `STANDARD_FUNNEL` is used.
      * </pre>
      *
      * <code>
-     * .google.analytics.data.v1alpha.RunFunnelReportRequest.FunnelVisualizationType funnel_visualization_type = 6;
+     * .google.analytics.data.v1alpha.RunFunnelReportRequest.FunnelVisualizationType funnel_visualization_type = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The funnelVisualizationType to set.
@@ -2815,13 +2954,13 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The funnel visualization type controls the dimensions present in the funnel
-     * visualization sub report response. If not specified, `STANDARD_FUNNEL` is
-     * used.
+     * Optional. The funnel visualization type controls the dimensions present in
+     * the funnel visualization sub report response. If not specified,
+     * `STANDARD_FUNNEL` is used.
      * </pre>
      *
      * <code>
-     * .google.analytics.data.v1alpha.RunFunnelReportRequest.FunnelVisualizationType funnel_visualization_type = 6;
+     * .google.analytics.data.v1alpha.RunFunnelReportRequest.FunnelVisualizationType funnel_visualization_type = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -2853,8 +2992,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -2863,7 +3003,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.analytics.data.v1alpha.Segment> getSegmentsList() {
       if (segmentsBuilder_ == null) {
@@ -2876,8 +3018,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -2886,7 +3029,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getSegmentsCount() {
       if (segmentsBuilder_ == null) {
@@ -2899,8 +3044,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -2909,7 +3055,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.Segment getSegments(int index) {
       if (segmentsBuilder_ == null) {
@@ -2922,8 +3070,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -2932,7 +3081,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSegments(int index, com.google.analytics.data.v1alpha.Segment value) {
       if (segmentsBuilder_ == null) {
@@ -2951,8 +3102,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -2961,7 +3113,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSegments(
         int index, com.google.analytics.data.v1alpha.Segment.Builder builderForValue) {
@@ -2978,8 +3132,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -2988,7 +3143,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSegments(com.google.analytics.data.v1alpha.Segment value) {
       if (segmentsBuilder_ == null) {
@@ -3007,8 +3164,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -3017,7 +3175,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSegments(int index, com.google.analytics.data.v1alpha.Segment value) {
       if (segmentsBuilder_ == null) {
@@ -3036,8 +3196,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -3046,7 +3207,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSegments(com.google.analytics.data.v1alpha.Segment.Builder builderForValue) {
       if (segmentsBuilder_ == null) {
@@ -3062,8 +3225,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -3072,7 +3236,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addSegments(
         int index, com.google.analytics.data.v1alpha.Segment.Builder builderForValue) {
@@ -3089,8 +3255,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -3099,7 +3266,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllSegments(
         java.lang.Iterable<? extends com.google.analytics.data.v1alpha.Segment> values) {
@@ -3116,8 +3285,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -3126,7 +3296,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSegments() {
       if (segmentsBuilder_ == null) {
@@ -3142,8 +3314,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -3152,7 +3325,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeSegments(int index) {
       if (segmentsBuilder_ == null) {
@@ -3168,8 +3343,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -3178,7 +3354,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.Segment.Builder getSegmentsBuilder(int index) {
       return getSegmentsFieldBuilder().getBuilder(index);
@@ -3187,8 +3365,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -3197,7 +3376,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.SegmentOrBuilder getSegmentsOrBuilder(int index) {
       if (segmentsBuilder_ == null) {
@@ -3210,8 +3391,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -3220,7 +3402,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.analytics.data.v1alpha.SegmentOrBuilder>
         getSegmentsOrBuilderList() {
@@ -3234,8 +3418,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -3244,7 +3429,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.Segment.Builder addSegmentsBuilder() {
       return getSegmentsFieldBuilder()
@@ -3254,8 +3441,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -3264,7 +3452,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.Segment.Builder addSegmentsBuilder(int index) {
       return getSegmentsFieldBuilder()
@@ -3274,8 +3464,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The configurations of segments. Segments are subsets of a property's data.
-     * In a funnel report with segments, the funnel is evaluated in each segment.
+     * Optional. The configurations of segments. Segments are subsets of a
+     * property's data. In a funnel report with segments, the funnel is evaluated
+     * in each segment.
      *
      * Each segment specified in this request
      * produces a separate row in the response; in the response, each segment
@@ -3284,7 +3475,9 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      * The segments parameter is optional. Requests are limited to 4 segments.
      * </pre>
      *
-     * <code>repeated .google.analytics.data.v1alpha.Segment segments = 7;</code>
+     * <code>
+     * repeated .google.analytics.data.v1alpha.Segment segments = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.analytics.data.v1alpha.Segment.Builder>
         getSegmentsBuilderList() {
@@ -3313,15 +3506,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The number of rows to return. If unspecified, 10,000 rows are returned. The
-     * API returns a maximum of 250,000 rows per request, no matter how many you
-     * ask for. `limit` must be positive.
+     * Optional. The number of rows to return. If unspecified, 10,000 rows are
+     * returned. The API returns a maximum of 250,000 rows per request, no matter
+     * how many you ask for. `limit` must be positive.
      *
      * The API can also return fewer rows than the requested `limit`, if there
      * aren't as many dimension values as the `limit`.
      * </pre>
      *
-     * <code>int64 limit = 9;</code>
+     * <code>int64 limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The limit.
      */
@@ -3333,15 +3526,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The number of rows to return. If unspecified, 10,000 rows are returned. The
-     * API returns a maximum of 250,000 rows per request, no matter how many you
-     * ask for. `limit` must be positive.
+     * Optional. The number of rows to return. If unspecified, 10,000 rows are
+     * returned. The API returns a maximum of 250,000 rows per request, no matter
+     * how many you ask for. `limit` must be positive.
      *
      * The API can also return fewer rows than the requested `limit`, if there
      * aren't as many dimension values as the `limit`.
      * </pre>
      *
-     * <code>int64 limit = 9;</code>
+     * <code>int64 limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The limit to set.
      * @return This builder for chaining.
@@ -3357,15 +3550,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The number of rows to return. If unspecified, 10,000 rows are returned. The
-     * API returns a maximum of 250,000 rows per request, no matter how many you
-     * ask for. `limit` must be positive.
+     * Optional. The number of rows to return. If unspecified, 10,000 rows are
+     * returned. The API returns a maximum of 250,000 rows per request, no matter
+     * how many you ask for. `limit` must be positive.
      *
      * The API can also return fewer rows than the requested `limit`, if there
      * aren't as many dimension values as the `limit`.
      * </pre>
      *
-     * <code>int64 limit = 9;</code>
+     * <code>int64 limit = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3386,13 +3579,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Dimension filters allow you to ask for only specific dimension values in
-     * the report. To learn more, see [Creating a Report: Dimension
+     * Optional. Dimension filters allow you to ask for only specific dimension
+     * values in the report. To learn more, see [Creating a Report: Dimension
      * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
      * for examples. Metrics cannot be used in this filter.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 10;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FilterExpression dimension_filter = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the dimensionFilter field is set.
      */
@@ -3403,13 +3598,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Dimension filters allow you to ask for only specific dimension values in
-     * the report. To learn more, see [Creating a Report: Dimension
+     * Optional. Dimension filters allow you to ask for only specific dimension
+     * values in the report. To learn more, see [Creating a Report: Dimension
      * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
      * for examples. Metrics cannot be used in this filter.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 10;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FilterExpression dimension_filter = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The dimensionFilter.
      */
@@ -3426,13 +3623,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Dimension filters allow you to ask for only specific dimension values in
-     * the report. To learn more, see [Creating a Report: Dimension
+     * Optional. Dimension filters allow you to ask for only specific dimension
+     * values in the report. To learn more, see [Creating a Report: Dimension
      * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
      * for examples. Metrics cannot be used in this filter.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 10;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FilterExpression dimension_filter = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setDimensionFilter(com.google.analytics.data.v1alpha.FilterExpression value) {
       if (dimensionFilterBuilder_ == null) {
@@ -3451,13 +3650,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Dimension filters allow you to ask for only specific dimension values in
-     * the report. To learn more, see [Creating a Report: Dimension
+     * Optional. Dimension filters allow you to ask for only specific dimension
+     * values in the report. To learn more, see [Creating a Report: Dimension
      * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
      * for examples. Metrics cannot be used in this filter.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 10;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FilterExpression dimension_filter = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setDimensionFilter(
         com.google.analytics.data.v1alpha.FilterExpression.Builder builderForValue) {
@@ -3474,13 +3675,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Dimension filters allow you to ask for only specific dimension values in
-     * the report. To learn more, see [Creating a Report: Dimension
+     * Optional. Dimension filters allow you to ask for only specific dimension
+     * values in the report. To learn more, see [Creating a Report: Dimension
      * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
      * for examples. Metrics cannot be used in this filter.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 10;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FilterExpression dimension_filter = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeDimensionFilter(com.google.analytics.data.v1alpha.FilterExpression value) {
       if (dimensionFilterBuilder_ == null) {
@@ -3503,13 +3706,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Dimension filters allow you to ask for only specific dimension values in
-     * the report. To learn more, see [Creating a Report: Dimension
+     * Optional. Dimension filters allow you to ask for only specific dimension
+     * values in the report. To learn more, see [Creating a Report: Dimension
      * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
      * for examples. Metrics cannot be used in this filter.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 10;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FilterExpression dimension_filter = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearDimensionFilter() {
       bitField0_ = (bitField0_ & ~0x00000100);
@@ -3525,13 +3730,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Dimension filters allow you to ask for only specific dimension values in
-     * the report. To learn more, see [Creating a Report: Dimension
+     * Optional. Dimension filters allow you to ask for only specific dimension
+     * values in the report. To learn more, see [Creating a Report: Dimension
      * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
      * for examples. Metrics cannot be used in this filter.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 10;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FilterExpression dimension_filter = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.FilterExpression.Builder getDimensionFilterBuilder() {
       bitField0_ |= 0x00000100;
@@ -3542,13 +3749,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Dimension filters allow you to ask for only specific dimension values in
-     * the report. To learn more, see [Creating a Report: Dimension
+     * Optional. Dimension filters allow you to ask for only specific dimension
+     * values in the report. To learn more, see [Creating a Report: Dimension
      * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
      * for examples. Metrics cannot be used in this filter.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 10;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FilterExpression dimension_filter = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.analytics.data.v1alpha.FilterExpressionOrBuilder
         getDimensionFilterOrBuilder() {
@@ -3564,13 +3773,15 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Dimension filters allow you to ask for only specific dimension values in
-     * the report. To learn more, see [Creating a Report: Dimension
+     * Optional. Dimension filters allow you to ask for only specific dimension
+     * values in the report. To learn more, see [Creating a Report: Dimension
      * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
      * for examples. Metrics cannot be used in this filter.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FilterExpression dimension_filter = 10;</code>
+     * <code>
+     * .google.analytics.data.v1alpha.FilterExpression dimension_filter = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.data.v1alpha.FilterExpression,
@@ -3594,11 +3805,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Toggles whether to return the current state of this Analytics Property's
-     * quota. Quota is returned in [PropertyQuota](#PropertyQuota).
+     * Optional. Toggles whether to return the current state of this Analytics
+     * Property's quota. Quota is returned in [PropertyQuota](#PropertyQuota).
      * </pre>
      *
-     * <code>bool return_property_quota = 12;</code>
+     * <code>bool return_property_quota = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The returnPropertyQuota.
      */
@@ -3610,11 +3821,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Toggles whether to return the current state of this Analytics Property's
-     * quota. Quota is returned in [PropertyQuota](#PropertyQuota).
+     * Optional. Toggles whether to return the current state of this Analytics
+     * Property's quota. Quota is returned in [PropertyQuota](#PropertyQuota).
      * </pre>
      *
-     * <code>bool return_property_quota = 12;</code>
+     * <code>bool return_property_quota = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The returnPropertyQuota to set.
      * @return This builder for chaining.
@@ -3630,11 +3841,11 @@ public final class RunFunnelReportRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Toggles whether to return the current state of this Analytics Property's
-     * quota. Quota is returned in [PropertyQuota](#PropertyQuota).
+     * Optional. Toggles whether to return the current state of this Analytics
+     * Property's quota. Quota is returned in [PropertyQuota](#PropertyQuota).
      * </pre>
      *
-     * <code>bool return_property_quota = 12;</code>
+     * <code>bool return_property_quota = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

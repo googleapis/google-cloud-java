@@ -121,13 +121,13 @@ public final class ProfilerProto {
           + "com\322A\212\001https://www.googleapis.com/auth/c"
           + "loud-platform,https://www.googleapis.com"
           + "/auth/monitoring,https://www.googleapis."
-          + "com/auth/monitoring.writeB\332\001\n$com.google"
+          + "com/auth/monitoring.writeB\324\001\n$com.google"
           + ".devtools.cloudprofiler.v2B\rProfilerProt"
-          + "oP\001ZMgoogle.golang.org/genproto/googleap"
-          + "is/devtools/cloudprofiler/v2;cloudprofil"
-          + "er\252\002\030Google.Cloud.Profiler.V2\312\002\030Google\\C"
-          + "loud\\Profiler\\V2\352\002\033Google::Cloud::Profil"
-          + "er::V2b\006proto3"
+          + "oP\001ZGcloud.google.com/go/cloudprofiler/a"
+          + "piv2/cloudprofilerpb;cloudprofilerpb\252\002\030G"
+          + "oogle.Cloud.Profiler.V2\312\002\030Google\\Cloud\\P"
+          + "rofiler\\V2\352\002\033Google::Cloud::Profiler::V2"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

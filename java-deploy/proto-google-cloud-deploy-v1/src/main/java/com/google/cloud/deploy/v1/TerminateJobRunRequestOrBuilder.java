@@ -28,8 +28,7 @@ public interface TerminateJobRunRequestOrBuilder
    *
    * <pre>
    * Required. Name of the `JobRun`. Format must be
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}`.
    * </pre>
    *
    * <code>
@@ -44,8 +43,7 @@ public interface TerminateJobRunRequestOrBuilder
    *
    * <pre>
    * Required. Name of the `JobRun`. Format must be
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}`.
    * </pre>
    *
    * <code>

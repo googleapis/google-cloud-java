@@ -44,6 +44,30 @@
         }
       }
     },
+    "DataStoreService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataStoreServiceClient",
+          "rpcs": {
+            "CreateDataStore": {
+              "methods": ["createDataStoreAsync", "createDataStoreAsync", "createDataStoreAsync", "createDataStoreOperationCallable", "createDataStoreCallable"]
+            },
+            "DeleteDataStore": {
+              "methods": ["deleteDataStoreAsync", "deleteDataStoreAsync", "deleteDataStoreAsync", "deleteDataStoreOperationCallable", "deleteDataStoreCallable"]
+            },
+            "GetDataStore": {
+              "methods": ["getDataStore", "getDataStore", "getDataStore", "getDataStoreCallable"]
+            },
+            "ListDataStores": {
+              "methods": ["listDataStores", "listDataStores", "listDataStores", "listDataStoresPagedCallable", "listDataStoresCallable"]
+            },
+            "UpdateDataStore": {
+              "methods": ["updateDataStore", "updateDataStore", "updateDataStoreCallable"]
+            }
+          }
+        }
+      }
+    },
     "DocumentService": {
       "clients": {
         "grpc": {
@@ -69,6 +93,39 @@
             },
             "UpdateDocument": {
               "methods": ["updateDocument", "updateDocumentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "EngineService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EngineServiceClient",
+          "rpcs": {
+            "CreateEngine": {
+              "methods": ["createEngineAsync", "createEngineAsync", "createEngineAsync", "createEngineOperationCallable", "createEngineCallable"]
+            },
+            "DeleteEngine": {
+              "methods": ["deleteEngineAsync", "deleteEngineAsync", "deleteEngineAsync", "deleteEngineOperationCallable", "deleteEngineCallable"]
+            },
+            "GetEngine": {
+              "methods": ["getEngine", "getEngine", "getEngine", "getEngineCallable"]
+            },
+            "ListEngines": {
+              "methods": ["listEngines", "listEngines", "listEngines", "listEnginesPagedCallable", "listEnginesCallable"]
+            },
+            "PauseEngine": {
+              "methods": ["pauseEngine", "pauseEngine", "pauseEngine", "pauseEngineCallable"]
+            },
+            "ResumeEngine": {
+              "methods": ["resumeEngine", "resumeEngine", "resumeEngine", "resumeEngineCallable"]
+            },
+            "TuneEngine": {
+              "methods": ["tuneEngineAsync", "tuneEngineAsync", "tuneEngineAsync", "tuneEngineOperationCallable", "tuneEngineCallable"]
+            },
+            "UpdateEngine": {
+              "methods": ["updateEngine", "updateEngine", "updateEngineCallable"]
             }
           }
         }

@@ -41,6 +41,9 @@ public interface DataQualityResultOrBuilder
    *
    * <pre>
    * A list of results at the dimension level.
+   *
+   * A dimension will have a corresponding `DataQualityDimensionResult` if and
+   * only if there is at least one rule with the 'dimension' field set to it.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -51,6 +54,9 @@ public interface DataQualityResultOrBuilder
    *
    * <pre>
    * A list of results at the dimension level.
+   *
+   * A dimension will have a corresponding `DataQualityDimensionResult` if and
+   * only if there is at least one rule with the 'dimension' field set to it.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -61,6 +67,9 @@ public interface DataQualityResultOrBuilder
    *
    * <pre>
    * A list of results at the dimension level.
+   *
+   * A dimension will have a corresponding `DataQualityDimensionResult` if and
+   * only if there is at least one rule with the 'dimension' field set to it.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -71,6 +80,9 @@ public interface DataQualityResultOrBuilder
    *
    * <pre>
    * A list of results at the dimension level.
+   *
+   * A dimension will have a corresponding `DataQualityDimensionResult` if and
+   * only if there is at least one rule with the 'dimension' field set to it.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -82,6 +94,9 @@ public interface DataQualityResultOrBuilder
    *
    * <pre>
    * A list of results at the dimension level.
+   *
+   * A dimension will have a corresponding `DataQualityDimensionResult` if and
+   * only if there is at least one rule with the 'dimension' field set to it.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>

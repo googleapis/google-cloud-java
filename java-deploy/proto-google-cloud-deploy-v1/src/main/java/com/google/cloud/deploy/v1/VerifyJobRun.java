@@ -113,7 +113,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The verify build did not complete within the alloted time.
+     * The verify job run did not complete within the alloted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
@@ -180,7 +180,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The verify build did not complete within the alloted time.
+     * The verify job run did not complete within the alloted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
@@ -307,7 +307,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The resource name of the Cloud Build `Build` object that is
    * used to verify. Format is
-   * projects/{project}/locations/{location}/builds/{build}.
+   * `projects/{project}/locations/{location}/builds/{build}`.
    * </pre>
    *
    * <code>
@@ -334,7 +334,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The resource name of the Cloud Build `Build` object that is
    * used to verify. Format is
-   * projects/{project}/locations/{location}/builds/{build}.
+   * `projects/{project}/locations/{location}/builds/{build}`.
    * </pre>
    *
    * <code>
@@ -1001,7 +1001,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to verify. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -1027,7 +1027,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to verify. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -1053,7 +1053,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to verify. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -1078,7 +1078,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to verify. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -1099,7 +1099,7 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to verify. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>

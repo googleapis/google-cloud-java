@@ -202,10 +202,10 @@ public final class QueryAudienceListResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The total number of rows in the query result. `rowCount` is independent of
-   * the number of rows returned in the response, the `limit` request
-   * parameter, and the `offset` request parameter. For example if a query
-   * returns 175 rows and includes `limit` of 50 in the API request, the
+   * The total number of rows in the AudienceList result. `rowCount` is
+   * independent of the number of rows returned in the response, the `limit`
+   * request parameter, and the `offset` request parameter. For example if a
+   * query returns 175 rows and includes `limit` of 50 in the API request, the
    * response will contain `rowCount` of 175 but only 50 rows.
    *
    * To learn more about this pagination parameter, see
@@ -224,10 +224,10 @@ public final class QueryAudienceListResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The total number of rows in the query result. `rowCount` is independent of
-   * the number of rows returned in the response, the `limit` request
-   * parameter, and the `offset` request parameter. For example if a query
-   * returns 175 rows and includes `limit` of 50 in the API request, the
+   * The total number of rows in the AudienceList result. `rowCount` is
+   * independent of the number of rows returned in the response, the `limit`
+   * request parameter, and the `offset` request parameter. For example if a
+   * query returns 175 rows and includes `limit` of 50 in the API request, the
    * response will contain `rowCount` of 175 but only 50 rows.
    *
    * To learn more about this pagination parameter, see
@@ -1285,10 +1285,10 @@ public final class QueryAudienceListResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The total number of rows in the query result. `rowCount` is independent of
-     * the number of rows returned in the response, the `limit` request
-     * parameter, and the `offset` request parameter. For example if a query
-     * returns 175 rows and includes `limit` of 50 in the API request, the
+     * The total number of rows in the AudienceList result. `rowCount` is
+     * independent of the number of rows returned in the response, the `limit`
+     * request parameter, and the `offset` request parameter. For example if a
+     * query returns 175 rows and includes `limit` of 50 in the API request, the
      * response will contain `rowCount` of 175 but only 50 rows.
      *
      * To learn more about this pagination parameter, see
@@ -1307,10 +1307,10 @@ public final class QueryAudienceListResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The total number of rows in the query result. `rowCount` is independent of
-     * the number of rows returned in the response, the `limit` request
-     * parameter, and the `offset` request parameter. For example if a query
-     * returns 175 rows and includes `limit` of 50 in the API request, the
+     * The total number of rows in the AudienceList result. `rowCount` is
+     * independent of the number of rows returned in the response, the `limit`
+     * request parameter, and the `offset` request parameter. For example if a
+     * query returns 175 rows and includes `limit` of 50 in the API request, the
      * response will contain `rowCount` of 175 but only 50 rows.
      *
      * To learn more about this pagination parameter, see
@@ -1329,10 +1329,10 @@ public final class QueryAudienceListResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The total number of rows in the query result. `rowCount` is independent of
-     * the number of rows returned in the response, the `limit` request
-     * parameter, and the `offset` request parameter. For example if a query
-     * returns 175 rows and includes `limit` of 50 in the API request, the
+     * The total number of rows in the AudienceList result. `rowCount` is
+     * independent of the number of rows returned in the response, the `limit`
+     * request parameter, and the `offset` request parameter. For example if a
+     * query returns 175 rows and includes `limit` of 50 in the API request, the
      * response will contain `rowCount` of 175 but only 50 rows.
      *
      * To learn more about this pagination parameter, see
@@ -1355,10 +1355,10 @@ public final class QueryAudienceListResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The total number of rows in the query result. `rowCount` is independent of
-     * the number of rows returned in the response, the `limit` request
-     * parameter, and the `offset` request parameter. For example if a query
-     * returns 175 rows and includes `limit` of 50 in the API request, the
+     * The total number of rows in the AudienceList result. `rowCount` is
+     * independent of the number of rows returned in the response, the `limit`
+     * request parameter, and the `offset` request parameter. For example if a
+     * query returns 175 rows and includes `limit` of 50 in the API request, the
      * response will contain `rowCount` of 175 but only 50 rows.
      *
      * To learn more about this pagination parameter, see

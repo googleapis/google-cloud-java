@@ -23,6 +23,8 @@ import com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsResponse;
 import com.google.cloud.contactcenterinsights.v1.LocationName;
+import com.google.cloud.contactcenterinsights.v1.RedactionConfig;
+import com.google.cloud.contactcenterinsights.v1.SpeechConfig;
 
 public class AsyncIngestConversationsLRO {
 
@@ -43,6 +45,8 @@ public class AsyncIngestConversationsLRO {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setConversationConfig(
                   IngestConversationsRequest.ConversationConfig.newBuilder().build())
+              .setRedactionConfig(RedactionConfig.newBuilder().build())
+              .setSpeechConfig(SpeechConfig.newBuilder().build())
               .build();
       OperationFuture<IngestConversationsResponse, IngestConversationsMetadata> future =
           contactCenterInsightsClient.ingestConversationsOperationCallable().futureCall(request);

@@ -27,11 +27,11 @@ public interface TestingOptionsOrBuilder
    *
    *
    * <pre>
-   * All assessments for this Key will return this score. Must be between 0
-   * (likely not legitimate) and 1 (likely legitimate) inclusive.
+   * Optional. All assessments for this Key will return this score. Must be
+   * between 0 (likely not legitimate) and 1 (likely legitimate) inclusive.
    * </pre>
    *
-   * <code>float testing_score = 1;</code>
+   * <code>float testing_score = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The testingScore.
    */
@@ -41,13 +41,13 @@ public interface TestingOptionsOrBuilder
    *
    *
    * <pre>
-   * For challenge-based keys only (CHECKBOX, INVISIBLE), all challenge requests
-   * for this site will return nocaptcha if NOCAPTCHA, or an unsolvable
-   * challenge if CHALLENGE.
+   * Optional. For challenge-based keys only (CHECKBOX, INVISIBLE), all
+   * challenge requests for this site will return nocaptcha if NOCAPTCHA, or an
+   * unsolvable challenge if CHALLENGE.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.TestingOptions.TestingChallenge testing_challenge = 2;
+   * .google.cloud.recaptchaenterprise.v1.TestingOptions.TestingChallenge testing_challenge = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for testingChallenge.
@@ -57,13 +57,13 @@ public interface TestingOptionsOrBuilder
    *
    *
    * <pre>
-   * For challenge-based keys only (CHECKBOX, INVISIBLE), all challenge requests
-   * for this site will return nocaptcha if NOCAPTCHA, or an unsolvable
-   * challenge if CHALLENGE.
+   * Optional. For challenge-based keys only (CHECKBOX, INVISIBLE), all
+   * challenge requests for this site will return nocaptcha if NOCAPTCHA, or an
+   * unsolvable challenge if CHALLENGE.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.TestingOptions.TestingChallenge testing_challenge = 2;
+   * .google.cloud.recaptchaenterprise.v1.TestingOptions.TestingChallenge testing_challenge = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The testingChallenge.

@@ -49,6 +49,9 @@
             "ListRuns": {
               "methods": ["listRuns", "listRuns", "listRuns", "listRunsPagedCallable", "listRunsCallable"]
             },
+            "ProcessOpenLineageRunEvent": {
+              "methods": ["processOpenLineageRunEvent", "processOpenLineageRunEvent", "processOpenLineageRunEventCallable"]
+            },
             "SearchLinks": {
               "methods": ["searchLinks", "searchLinksPagedCallable", "searchLinksCallable"]
             },

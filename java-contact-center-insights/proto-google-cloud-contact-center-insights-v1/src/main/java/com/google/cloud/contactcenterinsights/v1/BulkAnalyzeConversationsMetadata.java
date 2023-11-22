@@ -38,7 +38,9 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
     super(builder);
   }
 
-  private BulkAnalyzeConversationsMetadata() {}
+  private BulkAnalyzeConversationsMetadata() {
+    partialErrors_ = java.util.Collections.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -265,6 +267,91 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
     return totalRequestedAnalysesCount_;
   }
 
+  public static final int PARTIAL_ERRORS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.rpc.Status> partialErrors_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Partial errors during bulk analyze operation that might cause
+   * the operation output to be incomplete.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.rpc.Status> getPartialErrorsList() {
+    return partialErrors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Partial errors during bulk analyze operation that might cause
+   * the operation output to be incomplete.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList() {
+    return partialErrors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Partial errors during bulk analyze operation that might cause
+   * the operation output to be incomplete.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPartialErrorsCount() {
+    return partialErrors_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Partial errors during bulk analyze operation that might cause
+   * the operation output to be incomplete.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.rpc.Status getPartialErrors(int index) {
+    return partialErrors_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Partial errors during bulk analyze operation that might cause
+   * the operation output to be incomplete.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.rpc.StatusOrBuilder getPartialErrorsOrBuilder(int index) {
+    return partialErrors_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -297,6 +384,9 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
     if (totalRequestedAnalysesCount_ != 0) {
       output.writeInt32(6, totalRequestedAnalysesCount_);
     }
+    for (int i = 0; i < partialErrors_.size(); i++) {
+      output.writeMessage(7, partialErrors_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -324,6 +414,9 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
     if (totalRequestedAnalysesCount_ != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(6, totalRequestedAnalysesCount_);
+    }
+    for (int i = 0; i < partialErrors_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, partialErrors_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -357,6 +450,7 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
     if (getCompletedAnalysesCount() != other.getCompletedAnalysesCount()) return false;
     if (getFailedAnalysesCount() != other.getFailedAnalysesCount()) return false;
     if (getTotalRequestedAnalysesCount() != other.getTotalRequestedAnalysesCount()) return false;
+    if (!getPartialErrorsList().equals(other.getPartialErrorsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -386,6 +480,10 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
     hash = (53 * hash) + getFailedAnalysesCount();
     hash = (37 * hash) + TOTAL_REQUESTED_ANALYSES_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getTotalRequestedAnalysesCount();
+    if (getPartialErrorsCount() > 0) {
+      hash = (37 * hash) + PARTIAL_ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getPartialErrorsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -552,6 +650,13 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
       completedAnalysesCount_ = 0;
       failedAnalysesCount_ = 0;
       totalRequestedAnalysesCount_ = 0;
+      if (partialErrorsBuilder_ == null) {
+        partialErrors_ = java.util.Collections.emptyList();
+      } else {
+        partialErrors_ = null;
+        partialErrorsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -583,11 +688,25 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
         buildPartial() {
       com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata result =
           new com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata result) {
+      if (partialErrorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          partialErrors_ = java.util.Collections.unmodifiableList(partialErrors_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.partialErrors_ = partialErrors_;
+      } else {
+        result.partialErrors_ = partialErrorsBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -681,6 +800,33 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
       if (other.getTotalRequestedAnalysesCount() != 0) {
         setTotalRequestedAnalysesCount(other.getTotalRequestedAnalysesCount());
       }
+      if (partialErrorsBuilder_ == null) {
+        if (!other.partialErrors_.isEmpty()) {
+          if (partialErrors_.isEmpty()) {
+            partialErrors_ = other.partialErrors_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensurePartialErrorsIsMutable();
+            partialErrors_.addAll(other.partialErrors_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.partialErrors_.isEmpty()) {
+          if (partialErrorsBuilder_.isEmpty()) {
+            partialErrorsBuilder_.dispose();
+            partialErrorsBuilder_ = null;
+            partialErrors_ = other.partialErrors_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            partialErrorsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPartialErrorsFieldBuilder()
+                    : null;
+          } else {
+            partialErrorsBuilder_.addAllMessages(other.partialErrors_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -743,6 +889,18 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 58:
+              {
+                com.google.rpc.Status m =
+                    input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+                if (partialErrorsBuilder_ == null) {
+                  ensurePartialErrorsIsMutable();
+                  partialErrors_.add(m);
+                } else {
+                  partialErrorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1486,6 +1644,403 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
       totalRequestedAnalysesCount_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.rpc.Status> partialErrors_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePartialErrorsIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        partialErrors_ = new java.util.ArrayList<com.google.rpc.Status>(partialErrors_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        partialErrorsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.rpc.Status> getPartialErrorsList() {
+      if (partialErrorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(partialErrors_);
+      } else {
+        return partialErrorsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getPartialErrorsCount() {
+      if (partialErrorsBuilder_ == null) {
+        return partialErrors_.size();
+      } else {
+        return partialErrorsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.Status getPartialErrors(int index) {
+      if (partialErrorsBuilder_ == null) {
+        return partialErrors_.get(index);
+      } else {
+        return partialErrorsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPartialErrors(int index, com.google.rpc.Status value) {
+      if (partialErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePartialErrorsIsMutable();
+        partialErrors_.set(index, value);
+        onChanged();
+      } else {
+        partialErrorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPartialErrors(int index, com.google.rpc.Status.Builder builderForValue) {
+      if (partialErrorsBuilder_ == null) {
+        ensurePartialErrorsIsMutable();
+        partialErrors_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        partialErrorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPartialErrors(com.google.rpc.Status value) {
+      if (partialErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePartialErrorsIsMutable();
+        partialErrors_.add(value);
+        onChanged();
+      } else {
+        partialErrorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPartialErrors(int index, com.google.rpc.Status value) {
+      if (partialErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePartialErrorsIsMutable();
+        partialErrors_.add(index, value);
+        onChanged();
+      } else {
+        partialErrorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPartialErrors(com.google.rpc.Status.Builder builderForValue) {
+      if (partialErrorsBuilder_ == null) {
+        ensurePartialErrorsIsMutable();
+        partialErrors_.add(builderForValue.build());
+        onChanged();
+      } else {
+        partialErrorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPartialErrors(int index, com.google.rpc.Status.Builder builderForValue) {
+      if (partialErrorsBuilder_ == null) {
+        ensurePartialErrorsIsMutable();
+        partialErrors_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        partialErrorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllPartialErrors(java.lang.Iterable<? extends com.google.rpc.Status> values) {
+      if (partialErrorsBuilder_ == null) {
+        ensurePartialErrorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, partialErrors_);
+        onChanged();
+      } else {
+        partialErrorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPartialErrors() {
+      if (partialErrorsBuilder_ == null) {
+        partialErrors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        partialErrorsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removePartialErrors(int index) {
+      if (partialErrorsBuilder_ == null) {
+        ensurePartialErrorsIsMutable();
+        partialErrors_.remove(index);
+        onChanged();
+      } else {
+        partialErrorsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.Status.Builder getPartialErrorsBuilder(int index) {
+      return getPartialErrorsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.StatusOrBuilder getPartialErrorsOrBuilder(int index) {
+      if (partialErrorsBuilder_ == null) {
+        return partialErrors_.get(index);
+      } else {
+        return partialErrorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.rpc.StatusOrBuilder>
+        getPartialErrorsOrBuilderList() {
+      if (partialErrorsBuilder_ != null) {
+        return partialErrorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(partialErrors_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.Status.Builder addPartialErrorsBuilder() {
+      return getPartialErrorsFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.Status.Builder addPartialErrorsBuilder(int index) {
+      return getPartialErrorsFieldBuilder()
+          .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during bulk analyze operation that might cause
+     * the operation output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.rpc.Status.Builder> getPartialErrorsBuilderList() {
+      return getPartialErrorsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        getPartialErrorsFieldBuilder() {
+      if (partialErrorsBuilder_ == null) {
+        partialErrorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(
+                partialErrors_,
+                ((bitField0_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        partialErrors_ = null;
+      }
+      return partialErrorsBuilder_;
     }
 
     @java.lang.Override

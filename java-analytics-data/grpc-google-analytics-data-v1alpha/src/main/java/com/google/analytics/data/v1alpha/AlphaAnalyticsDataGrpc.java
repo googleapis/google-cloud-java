@@ -180,6 +180,57 @@ public final class AlphaAnalyticsDataGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.SheetExportAudienceListRequest,
+          com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>
+      getSheetExportAudienceListMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SheetExportAudienceList",
+      requestType = com.google.analytics.data.v1alpha.SheetExportAudienceListRequest.class,
+      responseType = com.google.analytics.data.v1alpha.SheetExportAudienceListResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.SheetExportAudienceListRequest,
+          com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>
+      getSheetExportAudienceListMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.SheetExportAudienceListRequest,
+            com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>
+        getSheetExportAudienceListMethod;
+    if ((getSheetExportAudienceListMethod = AlphaAnalyticsDataGrpc.getSheetExportAudienceListMethod)
+        == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getSheetExportAudienceListMethod =
+                AlphaAnalyticsDataGrpc.getSheetExportAudienceListMethod)
+            == null) {
+          AlphaAnalyticsDataGrpc.getSheetExportAudienceListMethod =
+              getSheetExportAudienceListMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.SheetExportAudienceListRequest,
+                          com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SheetExportAudienceList"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.SheetExportAudienceListRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.SheetExportAudienceListResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier("SheetExportAudienceList"))
+                      .build();
+        }
+      }
+    }
+    return getSheetExportAudienceListMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.data.v1alpha.GetAudienceListRequest,
           com.google.analytics.data.v1alpha.AudienceList>
       getGetAudienceListMethod;
@@ -360,6 +411,9 @@ public final class AlphaAnalyticsDataGrpc {
      * request to form an audience list. To list the users in an audience list,
      * first create the audience list through this method and then send the
      * audience resource name to the `QueryAudienceList` method.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
      * An audience list is a snapshot of the users currently in the audience at
      * the time of audience list creation. Creating audience lists for one
      * audience on different days will return different results as users enter and
@@ -368,6 +422,11 @@ public final class AlphaAnalyticsDataGrpc {
      * that are important to your business. To learn more, see
      * https://support.google.com/analytics/answer/9267572. Audience lists contain
      * the users in each audience.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     default void createAudienceList(
@@ -384,10 +443,19 @@ public final class AlphaAnalyticsDataGrpc {
      * Retrieves an audience list of users. After creating an audience, the users
      * are not immediately available for listing. First, a request to
      * `CreateAudienceList` is necessary to create an audience list of users, and
-     * then second, this method is used to retrieve the users in the audience.
+     * then second, this method is used to retrieve the users in the audience
+     * list.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
      * Audiences in Google Analytics 4 allow you to segment your users in the ways
      * that are important to your business. To learn more, see
      * https://support.google.com/analytics/answer/9267572.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     default void queryAudienceList(
@@ -402,8 +470,47 @@ public final class AlphaAnalyticsDataGrpc {
      *
      *
      * <pre>
+     * Exports an audience list of users to a Google Sheet. After creating an
+     * audience, the users are not immediately available for listing. First, a
+     * request to `CreateAudienceList` is necessary to create an audience list of
+     * users, and then second, this method is used to export those users in the
+     * audience list to a Google Sheet.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    default void sheetExportAudienceList(
+        com.google.analytics.data.v1alpha.SheetExportAudienceListRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSheetExportAudienceListMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets configuration metadata about a specific audience list. This method
      * can be used to understand an audience list after it has been created.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     default void getAudienceList(
@@ -422,6 +529,14 @@ public final class AlphaAnalyticsDataGrpc {
      * find and reuse existing audience lists rather than creating unnecessary new
      * audience lists. The same audience can have multiple audience lists that
      * represent the list of users that were in an audience on different days.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     default void listAudienceLists(
@@ -507,6 +622,9 @@ public final class AlphaAnalyticsDataGrpc {
      * request to form an audience list. To list the users in an audience list,
      * first create the audience list through this method and then send the
      * audience resource name to the `QueryAudienceList` method.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
      * An audience list is a snapshot of the users currently in the audience at
      * the time of audience list creation. Creating audience lists for one
      * audience on different days will return different results as users enter and
@@ -515,6 +633,11 @@ public final class AlphaAnalyticsDataGrpc {
      * that are important to your business. To learn more, see
      * https://support.google.com/analytics/answer/9267572. Audience lists contain
      * the users in each audience.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     public void createAudienceList(
@@ -533,10 +656,19 @@ public final class AlphaAnalyticsDataGrpc {
      * Retrieves an audience list of users. After creating an audience, the users
      * are not immediately available for listing. First, a request to
      * `CreateAudienceList` is necessary to create an audience list of users, and
-     * then second, this method is used to retrieve the users in the audience.
+     * then second, this method is used to retrieve the users in the audience
+     * list.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
      * Audiences in Google Analytics 4 allow you to segment your users in the ways
      * that are important to your business. To learn more, see
      * https://support.google.com/analytics/answer/9267572.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     public void queryAudienceList(
@@ -553,8 +685,49 @@ public final class AlphaAnalyticsDataGrpc {
      *
      *
      * <pre>
+     * Exports an audience list of users to a Google Sheet. After creating an
+     * audience, the users are not immediately available for listing. First, a
+     * request to `CreateAudienceList` is necessary to create an audience list of
+     * users, and then second, this method is used to export those users in the
+     * audience list to a Google Sheet.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public void sheetExportAudienceList(
+        com.google.analytics.data.v1alpha.SheetExportAudienceListRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSheetExportAudienceListMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets configuration metadata about a specific audience list. This method
      * can be used to understand an audience list after it has been created.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     public void getAudienceList(
@@ -575,6 +748,14 @@ public final class AlphaAnalyticsDataGrpc {
      * find and reuse existing audience lists rather than creating unnecessary new
      * audience lists. The same audience can have multiple audience lists that
      * represent the list of users that were in an audience on different days.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     public void listAudienceLists(
@@ -643,6 +824,9 @@ public final class AlphaAnalyticsDataGrpc {
      * request to form an audience list. To list the users in an audience list,
      * first create the audience list through this method and then send the
      * audience resource name to the `QueryAudienceList` method.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
      * An audience list is a snapshot of the users currently in the audience at
      * the time of audience list creation. Creating audience lists for one
      * audience on different days will return different results as users enter and
@@ -651,6 +835,11 @@ public final class AlphaAnalyticsDataGrpc {
      * that are important to your business. To learn more, see
      * https://support.google.com/analytics/answer/9267572. Audience lists contain
      * the users in each audience.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     public com.google.longrunning.Operation createAudienceList(
@@ -666,10 +855,19 @@ public final class AlphaAnalyticsDataGrpc {
      * Retrieves an audience list of users. After creating an audience, the users
      * are not immediately available for listing. First, a request to
      * `CreateAudienceList` is necessary to create an audience list of users, and
-     * then second, this method is used to retrieve the users in the audience.
+     * then second, this method is used to retrieve the users in the audience
+     * list.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
      * Audiences in Google Analytics 4 allow you to segment your users in the ways
      * that are important to your business. To learn more, see
      * https://support.google.com/analytics/answer/9267572.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     public com.google.analytics.data.v1alpha.QueryAudienceListResponse queryAudienceList(
@@ -682,8 +880,45 @@ public final class AlphaAnalyticsDataGrpc {
      *
      *
      * <pre>
+     * Exports an audience list of users to a Google Sheet. After creating an
+     * audience, the users are not immediately available for listing. First, a
+     * request to `CreateAudienceList` is necessary to create an audience list of
+     * users, and then second, this method is used to export those users in the
+     * audience list to a Google Sheet.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.SheetExportAudienceListResponse
+        sheetExportAudienceList(
+            com.google.analytics.data.v1alpha.SheetExportAudienceListRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSheetExportAudienceListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets configuration metadata about a specific audience list. This method
      * can be used to understand an audience list after it has been created.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     public com.google.analytics.data.v1alpha.AudienceList getAudienceList(
@@ -700,6 +935,14 @@ public final class AlphaAnalyticsDataGrpc {
      * find and reuse existing audience lists rather than creating unnecessary new
      * audience lists. The same audience can have multiple audience lists that
      * represent the list of users that were in an audience on different days.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     public com.google.analytics.data.v1alpha.ListAudienceListsResponse listAudienceLists(
@@ -764,6 +1007,9 @@ public final class AlphaAnalyticsDataGrpc {
      * request to form an audience list. To list the users in an audience list,
      * first create the audience list through this method and then send the
      * audience resource name to the `QueryAudienceList` method.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
      * An audience list is a snapshot of the users currently in the audience at
      * the time of audience list creation. Creating audience lists for one
      * audience on different days will return different results as users enter and
@@ -772,6 +1018,11 @@ public final class AlphaAnalyticsDataGrpc {
      * that are important to your business. To learn more, see
      * https://support.google.com/analytics/answer/9267572. Audience lists contain
      * the users in each audience.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -787,10 +1038,19 @@ public final class AlphaAnalyticsDataGrpc {
      * Retrieves an audience list of users. After creating an audience, the users
      * are not immediately available for listing. First, a request to
      * `CreateAudienceList` is necessary to create an audience list of users, and
-     * then second, this method is used to retrieve the users in the audience.
+     * then second, this method is used to retrieve the users in the audience
+     * list.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
      * Audiences in Google Analytics 4 allow you to segment your users in the ways
      * that are important to your business. To learn more, see
      * https://support.google.com/analytics/answer/9267572.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -804,8 +1064,46 @@ public final class AlphaAnalyticsDataGrpc {
      *
      *
      * <pre>
+     * Exports an audience list of users to a Google Sheet. After creating an
+     * audience, the users are not immediately available for listing. First, a
+     * request to `CreateAudienceList` is necessary to create an audience list of
+     * users, and then second, this method is used to export those users in the
+     * audience list to a Google Sheet.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>
+        sheetExportAudienceList(
+            com.google.analytics.data.v1alpha.SheetExportAudienceListRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSheetExportAudienceListMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets configuration metadata about a specific audience list. This method
      * can be used to understand an audience list after it has been created.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -823,6 +1121,14 @@ public final class AlphaAnalyticsDataGrpc {
      * find and reuse existing audience lists rather than creating unnecessary new
      * audience lists. The same audience can have multiple audience lists that
      * represent the list of users that were in an audience on different days.
+     * See [Creating an Audience
+     * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Lists with examples.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -836,8 +1142,9 @@ public final class AlphaAnalyticsDataGrpc {
   private static final int METHODID_RUN_FUNNEL_REPORT = 0;
   private static final int METHODID_CREATE_AUDIENCE_LIST = 1;
   private static final int METHODID_QUERY_AUDIENCE_LIST = 2;
-  private static final int METHODID_GET_AUDIENCE_LIST = 3;
-  private static final int METHODID_LIST_AUDIENCE_LISTS = 4;
+  private static final int METHODID_SHEET_EXPORT_AUDIENCE_LIST = 3;
+  private static final int METHODID_GET_AUDIENCE_LIST = 4;
+  private static final int METHODID_LIST_AUDIENCE_LISTS = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -873,6 +1180,13 @@ public final class AlphaAnalyticsDataGrpc {
               (com.google.analytics.data.v1alpha.QueryAudienceListRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.data.v1alpha.QueryAudienceListResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SHEET_EXPORT_AUDIENCE_LIST:
+          serviceImpl.sheetExportAudienceList(
+              (com.google.analytics.data.v1alpha.SheetExportAudienceListRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>)
                   responseObserver);
           break;
         case METHODID_GET_AUDIENCE_LIST:
@@ -926,6 +1240,13 @@ public final class AlphaAnalyticsDataGrpc {
                     com.google.analytics.data.v1alpha.QueryAudienceListRequest,
                     com.google.analytics.data.v1alpha.QueryAudienceListResponse>(
                     service, METHODID_QUERY_AUDIENCE_LIST)))
+        .addMethod(
+            getSheetExportAudienceListMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.SheetExportAudienceListRequest,
+                    com.google.analytics.data.v1alpha.SheetExportAudienceListResponse>(
+                    service, METHODID_SHEET_EXPORT_AUDIENCE_LIST)))
         .addMethod(
             getGetAudienceListMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -994,6 +1315,7 @@ public final class AlphaAnalyticsDataGrpc {
                       .addMethod(getRunFunnelReportMethod())
                       .addMethod(getCreateAudienceListMethod())
                       .addMethod(getQueryAudienceListMethod())
+                      .addMethod(getSheetExportAudienceListMethod())
                       .addMethod(getGetAudienceListMethod())
                       .addMethod(getListAudienceListsMethod())
                       .build();

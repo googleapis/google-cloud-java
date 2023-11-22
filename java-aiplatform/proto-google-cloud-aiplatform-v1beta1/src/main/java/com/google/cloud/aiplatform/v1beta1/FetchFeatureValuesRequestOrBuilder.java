@@ -31,10 +31,13 @@ public interface FetchFeatureValuesRequestOrBuilder
    * fetch feature values for.
    * </pre>
    *
-   * <code>string id = 3;</code>
+   * <code>string id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=104
    * @return Whether the id field is set.
    */
+  @java.lang.Deprecated
   boolean hasId();
   /**
    *
@@ -44,10 +47,13 @@ public interface FetchFeatureValuesRequestOrBuilder
    * fetch feature values for.
    * </pre>
    *
-   * <code>string id = 3;</code>
+   * <code>string id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=104
    * @return The id.
    */
+  @java.lang.Deprecated
   java.lang.String getId();
   /**
    *
@@ -57,10 +63,13 @@ public interface FetchFeatureValuesRequestOrBuilder
    * fetch feature values for.
    * </pre>
    *
-   * <code>string id = 3;</code>
+   * <code>string id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=104
    * @return The bytes for id.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getIdBytes();
 
   /**
@@ -98,25 +107,113 @@ public interface FetchFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Specify response data format. If not set, KeyValue format will be used.
+   * Optional. The request key to fetch feature values for.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @return Whether the dataKey field is set.
+   */
+  boolean hasDataKey();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The request key to fetch feature values for.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataKey.
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey getDataKey();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The request key to fetch feature values for.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder getDataKeyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Response data format. If not set,
+   * [FeatureViewDataFormat.KEY_VALUE][google.cloud.aiplatform.v1beta1.FeatureViewDataFormat.KEY_VALUE]
+   * will be used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewDataFormat data_format = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dataFormat.
+   */
+  int getDataFormatValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Response data format. If not set,
+   * [FeatureViewDataFormat.KEY_VALUE][google.cloud.aiplatform.v1beta1.FeatureViewDataFormat.KEY_VALUE]
+   * will be used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewDataFormat data_format = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataFormat.
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureViewDataFormat getDataFormat();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specify response data format. If not set, KeyValue format will be used.
+   * Deprecated. Use
+   * [FetchFeatureValuesRequest.data_format][google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.data_format].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5 [deprecated = true];
+   * </code>
+   *
+   * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=128
    * @return The enum numeric value on the wire for format.
    */
+  @java.lang.Deprecated
   int getFormatValue();
   /**
    *
    *
    * <pre>
    * Specify response data format. If not set, KeyValue format will be used.
+   * Deprecated. Use
+   * [FetchFeatureValuesRequest.data_format][google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.data_format].
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format format = 5 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=128
    * @return The format.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.Format getFormat();
 
   com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.EntityIdCase getEntityIdCase();

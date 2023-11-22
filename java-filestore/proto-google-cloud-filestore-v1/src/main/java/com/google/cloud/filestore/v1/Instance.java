@@ -197,6 +197,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>RESUMING = 10;</code>
      */
     RESUMING(10),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is reverting to a snapshot.
+     * </pre>
+     *
+     * <code>REVERTING = 12;</code>
+     */
+    REVERTING(12),
     UNRECOGNIZED(-1),
     ;
 
@@ -305,6 +315,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>RESUMING = 10;</code>
      */
     public static final int RESUMING_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * The instance is reverting to a snapshot.
+     * </pre>
+     *
+     * <code>REVERTING = 12;</code>
+     */
+    public static final int REVERTING_VALUE = 12;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -350,6 +370,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return SUSPENDING;
         case 10:
           return RESUMING;
+        case 12:
+          return REVERTING;
         default:
           return null;
       }
@@ -489,6 +511,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>ENTERPRISE = 6;</code>
      */
     ENTERPRISE(6),
+    /**
+     *
+     *
+     * <pre>
+     * ZONAL instances offer expanded capacity and performance scaling
+     * capabilities.
+     * </pre>
+     *
+     * <code>ZONAL = 7;</code>
+     */
+    ZONAL(7),
+    /**
+     *
+     *
+     * <pre>
+     * REGIONAL instances offer the features and availability needed for
+     * mission-critical workloads.
+     * </pre>
+     *
+     * <code>REGIONAL = 8;</code>
+     */
+    REGIONAL(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -568,6 +612,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>ENTERPRISE = 6;</code>
      */
     public static final int ENTERPRISE_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * ZONAL instances offer expanded capacity and performance scaling
+     * capabilities.
+     * </pre>
+     *
+     * <code>ZONAL = 7;</code>
+     */
+    public static final int ZONAL_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * REGIONAL instances offer the features and availability needed for
+     * mission-critical workloads.
+     * </pre>
+     *
+     * <code>REGIONAL = 8;</code>
+     */
+    public static final int REGIONAL_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -607,6 +673,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return HIGH_SCALE_SSD;
         case 6:
           return ENTERPRISE;
+        case 7:
+          return ZONAL;
+        case 8:
+          return REGIONAL;
         default:
           return null;
       }
@@ -1438,6 +1508,24 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         : satisfiesPzs_;
   }
 
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 18;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 14;
 
   @SuppressWarnings("serial")
@@ -1663,6 +1751,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < suspensionReasons_.size(); i++) {
       output.writeEnumNoTag(suspensionReasons_.get(i));
     }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(18, satisfiesPzi_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1728,6 +1819,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       suspensionReasonsMemoizedSerializedSize = dataSize;
     }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1760,6 +1854,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasSatisfiesPzs()) {
       if (!getSatisfiesPzs().equals(other.getSatisfiesPzs())) return false;
     }
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
     if (!suspensionReasons_.equals(other.suspensionReasons_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1805,6 +1900,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
       hash = (53 * hash) + getSatisfiesPzs().hashCode();
     }
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getKmsKeyName().hashCode();
     if (getSuspensionReasonsCount() > 0) {
@@ -2001,9 +2098,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         satisfiesPzsBuilder_.dispose();
         satisfiesPzsBuilder_ = null;
       }
+      satisfiesPzi_ = false;
       kmsKeyName_ = "";
       suspensionReasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -2058,9 +2156,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.networks_ = networksBuilder_.build();
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         suspensionReasons_ = java.util.Collections.unmodifiableList(suspensionReasons_);
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
       }
       result.suspensionReasons_ = suspensionReasons_;
     }
@@ -2097,6 +2195,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             satisfiesPzsBuilder_ == null ? satisfiesPzs_ : satisfiesPzsBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.kmsKeyName_ = kmsKeyName_;
       }
     }
@@ -2234,15 +2335,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSatisfiesPzs()) {
         mergeSatisfiesPzs(other.getSatisfiesPzs());
       }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.suspensionReasons_.isEmpty()) {
         if (suspensionReasons_.isEmpty()) {
           suspensionReasons_ = other.suspensionReasons_;
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         } else {
           ensureSuspensionReasonsIsMutable();
           suspensionReasons_.addAll(other.suspensionReasons_);
@@ -2364,7 +2468,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case 114:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 114
             case 120:
@@ -2386,6 +2490,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 input.popLimit(oldLimit);
                 break;
               } // case 122
+            case 144:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 144
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4332,6 +4442,59 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return satisfiesPzsBuilder_;
     }
 
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object kmsKeyName_ = "";
     /**
      *
@@ -4394,7 +4557,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       kmsKeyName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4411,7 +4574,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKmsKeyName() {
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4433,7 +4596,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       kmsKeyName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4442,9 +4605,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSuspensionReasonsIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         suspensionReasons_ = new java.util.ArrayList<java.lang.Integer>(suspensionReasons_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
     /**
@@ -4594,7 +4757,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSuspensionReasons() {
       suspensionReasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }

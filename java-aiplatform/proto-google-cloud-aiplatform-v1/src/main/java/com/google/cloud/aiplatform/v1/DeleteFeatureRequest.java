@@ -24,6 +24,8 @@ package com.google.cloud.aiplatform.v1;
  * <pre>
  * Request message for
  * [FeaturestoreService.DeleteFeature][google.cloud.aiplatform.v1.FeaturestoreService.DeleteFeature].
+ * Request message for
+ * [FeatureRegistryService.DeleteFeature][google.cloud.aiplatform.v1.FeatureRegistryService.DeleteFeature].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeleteFeatureRequest}
@@ -74,6 +76,7 @@ public final class DeleteFeatureRequest extends com.google.protobuf.GeneratedMes
    * Required. The name of the Features to be deleted.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>
@@ -101,6 +104,7 @@ public final class DeleteFeatureRequest extends com.google.protobuf.GeneratedMes
    * Required. The name of the Features to be deleted.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>
@@ -287,6 +291,8 @@ public final class DeleteFeatureRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Request message for
    * [FeaturestoreService.DeleteFeature][google.cloud.aiplatform.v1.FeaturestoreService.DeleteFeature].
+   * Request message for
+   * [FeatureRegistryService.DeleteFeature][google.cloud.aiplatform.v1.FeatureRegistryService.DeleteFeature].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeleteFeatureRequest}
@@ -473,6 +479,7 @@ public final class DeleteFeatureRequest extends com.google.protobuf.GeneratedMes
      * Required. The name of the Features to be deleted.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -499,6 +506,7 @@ public final class DeleteFeatureRequest extends com.google.protobuf.GeneratedMes
      * Required. The name of the Features to be deleted.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -525,6 +533,7 @@ public final class DeleteFeatureRequest extends com.google.protobuf.GeneratedMes
      * Required. The name of the Features to be deleted.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -550,6 +559,7 @@ public final class DeleteFeatureRequest extends com.google.protobuf.GeneratedMes
      * Required. The name of the Features to be deleted.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -571,6 +581,7 @@ public final class DeleteFeatureRequest extends com.google.protobuf.GeneratedMes
      * Required. The name of the Features to be deleted.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>

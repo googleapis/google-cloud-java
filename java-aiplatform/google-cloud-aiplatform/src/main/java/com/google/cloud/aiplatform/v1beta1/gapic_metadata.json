@@ -659,6 +659,33 @@
         }
       }
     },
+    "LlmUtilityService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LlmUtilityServiceClient",
+          "rpcs": {
+            "ComputeTokens": {
+              "methods": ["computeTokens", "computeTokens", "computeTokens", "computeTokensCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "MatchService": {
       "clients": {
         "grpc": {
@@ -991,6 +1018,9 @@
         "grpc": {
           "libraryClient": "PipelineServiceClient",
           "rpcs": {
+            "BatchDeletePipelineJobs": {
+              "methods": ["batchDeletePipelineJobsAsync", "batchDeletePipelineJobsAsync", "batchDeletePipelineJobsAsync", "batchDeletePipelineJobsOperationCallable", "batchDeletePipelineJobsCallable"]
+            },
             "CancelPipelineJob": {
               "methods": ["cancelPipelineJob", "cancelPipelineJob", "cancelPipelineJob", "cancelPipelineJobCallable"]
             },

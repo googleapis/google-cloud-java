@@ -71,7 +71,7 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The audience list resource name.
-   * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+   * Format: `properties/{property}/audienceLists/{audience_list}`
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The audience list resource name.
-   * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+   * Format: `properties/{property}/audienceLists/{audience_list}`
    * </pre>
    *
    * <code>
@@ -468,7 +468,7 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The audience list resource name.
-     * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+     * Format: `properties/{property}/audienceLists/{audience_list}`
      * </pre>
      *
      * <code>
@@ -493,7 +493,7 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The audience list resource name.
-     * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+     * Format: `properties/{property}/audienceLists/{audience_list}`
      * </pre>
      *
      * <code>
@@ -518,7 +518,7 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The audience list resource name.
-     * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+     * Format: `properties/{property}/audienceLists/{audience_list}`
      * </pre>
      *
      * <code>
@@ -542,7 +542,7 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The audience list resource name.
-     * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+     * Format: `properties/{property}/audienceLists/{audience_list}`
      * </pre>
      *
      * <code>
@@ -562,7 +562,7 @@ public final class GetAudienceListRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The audience list resource name.
-     * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+     * Format: `properties/{property}/audienceLists/{audience_list}`
      * </pre>
      *
      * <code>

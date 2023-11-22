@@ -117,4 +117,31 @@ public interface MachineSpecOrBuilder
    * @return The acceleratorCount.
    */
   int getAcceleratorCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The topology of the TPUs. Corresponds to the TPU topologies
+   * available from GKE. (Example: tpu_topology: "2x2x1").
+   * </pre>
+   *
+   * <code>string tpu_topology = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The tpuTopology.
+   */
+  java.lang.String getTpuTopology();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The topology of the TPUs. Corresponds to the TPU topologies
+   * available from GKE. (Example: tpu_topology: "2x2x1").
+   * </pre>
+   *
+   * <code>string tpu_topology = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The bytes for tpuTopology.
+   */
+  com.google.protobuf.ByteString getTpuTopologyBytes();
 }

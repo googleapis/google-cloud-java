@@ -40,6 +40,7 @@ public class AsyncUpdateRun {
           UpdateRunRequest.newBuilder()
               .setRun(Run.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
+              .setAllowMissing(true)
               .build();
       ApiFuture<Run> future = lineageClient.updateRunCallable().futureCall(request);
       // Do something.

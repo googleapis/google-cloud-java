@@ -362,9 +362,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Name of the `JobRun`. Format is
-   * projects/{project}/locations/{location}/
-   * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-   * {rollouts}/jobRuns/{uuid}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -388,9 +386,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Name of the `JobRun`. Format is
-   * projects/{project}/locations/{location}/
-   * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-   * {rollouts}/jobRuns/{uuid}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1939,9 +1935,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `JobRun`. Format is
-     * projects/{project}/locations/{location}/
-     * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-     * {rollouts}/jobRuns/{uuid}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1964,9 +1958,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `JobRun`. Format is
-     * projects/{project}/locations/{location}/
-     * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-     * {rollouts}/jobRuns/{uuid}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1989,9 +1981,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `JobRun`. Format is
-     * projects/{project}/locations/{location}/
-     * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-     * {rollouts}/jobRuns/{uuid}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2013,9 +2003,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `JobRun`. Format is
-     * projects/{project}/locations/{location}/
-     * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-     * {rollouts}/jobRuns/{uuid}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2033,9 +2021,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `JobRun`. Format is
-     * projects/{project}/locations/{location}/
-     * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-     * {rollouts}/jobRuns/{uuid}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

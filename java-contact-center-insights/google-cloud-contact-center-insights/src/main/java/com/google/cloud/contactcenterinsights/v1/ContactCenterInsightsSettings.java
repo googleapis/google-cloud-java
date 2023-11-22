@@ -167,6 +167,23 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
         .bulkAnalyzeConversationsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to bulkDeleteConversations. */
+  public UnaryCallSettings<BulkDeleteConversationsRequest, Operation>
+      bulkDeleteConversationsSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings())
+        .bulkDeleteConversationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to bulkDeleteConversations. */
+  public OperationCallSettings<
+          BulkDeleteConversationsRequest,
+          BulkDeleteConversationsResponse,
+          BulkDeleteConversationsMetadata>
+      bulkDeleteConversationsOperationSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings())
+        .bulkDeleteConversationsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to ingestConversations. */
   public UnaryCallSettings<IngestConversationsRequest, Operation> ingestConversationsSettings() {
     return ((ContactCenterInsightsStubSettings) getStubSettings()).ingestConversationsSettings();
@@ -558,6 +575,21 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
             BulkAnalyzeConversationsMetadata>
         bulkAnalyzeConversationsOperationSettings() {
       return getStubSettingsBuilder().bulkAnalyzeConversationsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to bulkDeleteConversations. */
+    public UnaryCallSettings.Builder<BulkDeleteConversationsRequest, Operation>
+        bulkDeleteConversationsSettings() {
+      return getStubSettingsBuilder().bulkDeleteConversationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to bulkDeleteConversations. */
+    public OperationCallSettings.Builder<
+            BulkDeleteConversationsRequest,
+            BulkDeleteConversationsResponse,
+            BulkDeleteConversationsMetadata>
+        bulkDeleteConversationsOperationSettings() {
+      return getStubSettingsBuilder().bulkDeleteConversationsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to ingestConversations. */

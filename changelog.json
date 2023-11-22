@@ -4,6 +4,345 @@
     {
       "changes": [
         {
+          "type": "feat",
+          "sha": "36fd92bbcd9b7f38d3567e7146499d35cb0b41af",
+          "message": "[dlp] Introduce Discovery API protos and methods",
+          "issues": [
+            "9996"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dlp",
+      "id": "108bb154-c39f-4329-93eb-655aa74abb6b",
+      "createTime": "2023-11-06T13:34:06.106Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "baf18bd13715a18ec0f9dbb5812ba150695e34f6",
+          "message": "[artifactregistry] use code font for resource name references",
+          "issues": [
+            "9997"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-artifact-registry",
+      "id": "a530043a-87dd-4b61-86e6-e75e7b05d96a",
+      "createTime": "2023-11-06T13:34:06.100Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2021b5a92fdcb0907985a60301006576dfe51833",
+          "message": "[dataform] Support for ReleaseConfigs",
+          "issues": [
+            "9999"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataform",
+      "id": "04eb74d7-fc23-446d-9bb4-e619acda5be5",
+      "createTime": "2023-11-06T13:34:06.093Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "2bd259f0bd17e9e059b4a1d7cd2acae6b5a254e8",
+          "message": "[documentai] updated comments",
+          "issues": [
+            "10015"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-document-ai",
+      "id": "633bd6ad-9ced-4531-b3ae-6f88432c1681",
+      "createTime": "2023-11-06T13:34:06.081Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "4edc21bc0e54f9b52eb367beac2d438197f23432",
+          "message": "[batch] update default max parallel tasks per job",
+          "issues": [
+            "10011"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-batch",
+      "id": "868919c3-8d01-46f8-bb43-42371f594315",
+      "createTime": "2023-11-06T13:34:06.077Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "95a6f1585dbafa985788b714ff394cd4cb2d1f5c",
+          "message": "[dataplex] DataQualityDimension is now part of the DataQualityDimensionResult message",
+          "issues": [
+            "10010"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataplex",
+      "id": "08998b3d-e1b1-4abe-8484-a42630230149",
+      "createTime": "2023-11-06T13:34:06.072Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9c2647b653085253c9b98853ee7d430363da5baa",
+          "message": "[container] added EnterpriseConfig",
+          "issues": [
+            "10021"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "aede3bde55b79edf0f6e403688ae6606460765b1",
+          "message": "[container] add ResourceManagerTags API to attach tags on the underlying Compute Engine VMs of GKE Nodes which can be used to selectively enforce Cloud Firewall network firewall policies",
+          "issues": [
+            "10008"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "395ed01c-69ee-4d83-882c-c70590fdb287",
+      "createTime": "2023-11-06T13:34:06.067Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "bc8bbd0794170806bb059fc12b21068ad4b7688f",
+          "message": "[alloydb] Add new field in `GenerateClientCertificate` v1 API to allow AlloyDB connectors request client certs with metadata exchange support",
+          "issues": [
+            "10024"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-alloydb",
+      "id": "50eee53d-7c24-4437-9001-895d01c82802",
+      "createTime": "2023-11-06T13:34:06.061Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "e336c70660cd0663f91675a30ace51f42b5e60a1",
+          "message": "[cloudbuild] Add optional field \"SourceFetcher\" to choose source fetcher tool",
+          "issues": [
+            "10022"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-build",
+      "id": "3e071c7a-78ee-47da-a08f-99302abad964",
+      "createTime": "2023-11-06T13:34:06.056Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "09b31ad455e18d60148201a8f385b56f801222df",
+          "message": "[maps-fleetengine-delivery] new module for maps-fleetengine-delivery",
+          "issues": [
+            "10028"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-fleetengine-delivery",
+      "id": "c95fafd1-a2d9-4538-8a2a-df2f449205e7",
+      "createTime": "2023-11-06T13:34:06.050Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "bb0964c3b3a199884ee3d8f1a90d2cea2d22a8f9",
+          "message": "[dataproc] support required_registration_fraction for secondary workers",
+          "issues": [
+            "10031"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc",
+      "id": "c3534d29-c360-4dd3-93e8-9e26ea6ecebf",
+      "createTime": "2023-11-06T13:34:06.045Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "7ca3309c6ce48669b3979e8afdb020cdcadb855f",
+          "message": "[speech] Support MP3, TranscriptNormalization and SpeakerLabels in STT V1 API",
+          "issues": [
+            "10027"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "bda78416ad7575ae92d81fc02068e7417f5ae624",
+          "message": "[speech] add transcript normalization + m4a audio format support",
+          "issues": [
+            "10009"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-speech",
+      "id": "20e0c11c-811d-4fa3-9e25-c191f410fb5f",
+      "createTime": "2023-11-06T13:34:06.040Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "399cb6d106f710ae7d569160fd0f06dc231bc306",
+          "message": "[clouddeploy] add Automation API and Rollback API",
+          "issues": [
+            "10034"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-deploy",
+      "id": "0607078d-5662-4adf-8360-a1efe91125f2",
+      "createTime": "2023-11-06T13:34:06.036Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "7e76fbc65ef0d812b9dedbb022961614d9f61b06",
+          "message": "[maps-places] new module for maps-places",
+          "issues": [
+            "9420"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-places",
+      "id": "142a9c86-6264-490d-be26-62a55b1f4b9b",
+      "createTime": "2023-11-06T13:34:06.030Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "53488e4829ccab1337b879d202e66abeb332663b",
+          "message": "[maps-fleetengine] new module for maps-fleetengine",
+          "issues": [
+            "10033"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-fleetengine",
+      "id": "390d7d80-5bf6-4923-b825-4285aa0833fd",
+      "createTime": "2023-11-06T13:34:06.025Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "dbdc8a128dd35a71cd476f03b04e0ae8a809b40d",
+          "message": "[contactcenterinsights] Launch BulkDelete API, and bulk audio import via the IngestConversations API",
+          "issues": [
+            "10039"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-contact-center-insights",
+      "id": "25fdc6a9-7f1a-48f2-a13f-91ea69db2903",
+      "createTime": "2023-11-06T13:34:06.020Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "cc0e248a9ee4658dbd3b2649d01381df218b4419",
+          "message": "[aiplatform] add Optimized to FeatureOnlineStore",
+          "issues": [
+            "10040"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "5067fe49e688515268104f55dfc74ee74ef1a9b5",
+          "message": "[aiplatform] change CreateFeature metadata",
+          "issues": [
+            "10029"
+          ],
+          "scope": "aiplatform/v1beta1"
+        },
+        {
+          "type": "feat",
+          "sha": "d80aa3c6cb96bbe8a16827b81699a15979cceed4",
+          "message": "[aiplatform] Adding new fields for concurrent explanations",
+          "issues": [
+            "10016"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "c0aeed75-7370-4cc4-b696-3f3f44f22c54",
+      "createTime": "2023-11-06T13:34:06.013Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "ceb26a1f5b6b74963c7adeb9e2879a586ffcc801",
+          "message": "[datalineage] add open lineage support",
+          "issues": [
+            "10041"
+          ]
+        }
+      ],
+      "version": "1.24.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datalineage",
+      "id": "d8b81465-6ab3-49c7-bc20-425a909c3cc2",
+      "createTime": "2023-11-06T13:34:06.008Z"
+    },
+    {
+      "changes": [
+        {
           "type": "fix",
           "sha": "b12f226051bfc264b6f498aaed48ecca18f50196",
           "message": "lenient vision face annotation results",
@@ -12437,5 +12776,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-10-25T03:09:16.122Z"
+  "updateTime": "2023-11-06T13:34:06.106Z"
 }

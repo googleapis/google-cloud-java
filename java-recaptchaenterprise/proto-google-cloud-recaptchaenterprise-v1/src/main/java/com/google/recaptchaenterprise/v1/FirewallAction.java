@@ -1361,11 +1361,11 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The address to redirect to. The target is a relative path in the
-     * current host. Example: "/blog/404.html".
+     * Optional. The address to redirect to. The target is a relative path in
+     * the current host. Example: "/blog/404.html".
      * </pre>
      *
-     * <code>string path = 1;</code>
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The path.
      */
@@ -1374,11 +1374,11 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The address to redirect to. The target is a relative path in the
-     * current host. Example: "/blog/404.html".
+     * Optional. The address to redirect to. The target is a relative path in
+     * the current host. Example: "/blog/404.html".
      * </pre>
      *
-     * <code>string path = 1;</code>
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for path.
      */
@@ -1437,11 +1437,11 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The address to redirect to. The target is a relative path in the
-     * current host. Example: "/blog/404.html".
+     * Optional. The address to redirect to. The target is a relative path in
+     * the current host. Example: "/blog/404.html".
      * </pre>
      *
-     * <code>string path = 1;</code>
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The path.
      */
@@ -1461,11 +1461,11 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The address to redirect to. The target is a relative path in the
-     * current host. Example: "/blog/404.html".
+     * Optional. The address to redirect to. The target is a relative path in
+     * the current host. Example: "/blog/404.html".
      * </pre>
      *
-     * <code>string path = 1;</code>
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for path.
      */
@@ -1843,11 +1843,11 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The address to redirect to. The target is a relative path in the
-       * current host. Example: "/blog/404.html".
+       * Optional. The address to redirect to. The target is a relative path in
+       * the current host. Example: "/blog/404.html".
        * </pre>
        *
-       * <code>string path = 1;</code>
+       * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The path.
        */
@@ -1866,11 +1866,11 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The address to redirect to. The target is a relative path in the
-       * current host. Example: "/blog/404.html".
+       * Optional. The address to redirect to. The target is a relative path in
+       * the current host. Example: "/blog/404.html".
        * </pre>
        *
-       * <code>string path = 1;</code>
+       * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for path.
        */
@@ -1889,11 +1889,11 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The address to redirect to. The target is a relative path in the
-       * current host. Example: "/blog/404.html".
+       * Optional. The address to redirect to. The target is a relative path in
+       * the current host. Example: "/blog/404.html".
        * </pre>
        *
-       * <code>string path = 1;</code>
+       * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The path to set.
        * @return This builder for chaining.
@@ -1911,11 +1911,11 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The address to redirect to. The target is a relative path in the
-       * current host. Example: "/blog/404.html".
+       * Optional. The address to redirect to. The target is a relative path in
+       * the current host. Example: "/blog/404.html".
        * </pre>
        *
-       * <code>string path = 1;</code>
+       * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1929,11 +1929,11 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The address to redirect to. The target is a relative path in the
-       * current host. Example: "/blog/404.html".
+       * Optional. The address to redirect to. The target is a relative path in
+       * the current host. Example: "/blog/404.html".
        * </pre>
        *
-       * <code>string path = 1;</code>
+       * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for path to set.
        * @return This builder for chaining.
@@ -2025,10 +2025,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The header key to set in the request to the backend server.
+     * Optional. The header key to set in the request to the backend server.
      * </pre>
      *
-     * <code>string key = 1;</code>
+     * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The key.
      */
@@ -2037,10 +2037,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The header key to set in the request to the backend server.
+     * Optional. The header key to set in the request to the backend server.
      * </pre>
      *
-     * <code>string key = 1;</code>
+     * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for key.
      */
@@ -2050,10 +2050,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The header value to set in the request to the backend server.
+     * Optional. The header value to set in the request to the backend server.
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The value.
      */
@@ -2062,10 +2062,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The header value to set in the request to the backend server.
+     * Optional. The header value to set in the request to the backend server.
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for value.
      */
@@ -2126,10 +2126,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The header key to set in the request to the backend server.
+     * Optional. The header key to set in the request to the backend server.
      * </pre>
      *
-     * <code>string key = 1;</code>
+     * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The key.
      */
@@ -2149,10 +2149,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The header key to set in the request to the backend server.
+     * Optional. The header key to set in the request to the backend server.
      * </pre>
      *
-     * <code>string key = 1;</code>
+     * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for key.
      */
@@ -2177,10 +2177,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The header value to set in the request to the backend server.
+     * Optional. The header value to set in the request to the backend server.
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The value.
      */
@@ -2200,10 +2200,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The header value to set in the request to the backend server.
+     * Optional. The header value to set in the request to the backend server.
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for value.
      */
@@ -2606,10 +2606,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The header key to set in the request to the backend server.
+       * Optional. The header key to set in the request to the backend server.
        * </pre>
        *
-       * <code>string key = 1;</code>
+       * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The key.
        */
@@ -2628,10 +2628,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The header key to set in the request to the backend server.
+       * Optional. The header key to set in the request to the backend server.
        * </pre>
        *
-       * <code>string key = 1;</code>
+       * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for key.
        */
@@ -2650,10 +2650,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The header key to set in the request to the backend server.
+       * Optional. The header key to set in the request to the backend server.
        * </pre>
        *
-       * <code>string key = 1;</code>
+       * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The key to set.
        * @return This builder for chaining.
@@ -2671,10 +2671,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The header key to set in the request to the backend server.
+       * Optional. The header key to set in the request to the backend server.
        * </pre>
        *
-       * <code>string key = 1;</code>
+       * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -2688,10 +2688,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The header key to set in the request to the backend server.
+       * Optional. The header key to set in the request to the backend server.
        * </pre>
        *
-       * <code>string key = 1;</code>
+       * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for key to set.
        * @return This builder for chaining.
@@ -2712,10 +2712,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The header value to set in the request to the backend server.
+       * Optional. The header value to set in the request to the backend server.
        * </pre>
        *
-       * <code>string value = 2;</code>
+       * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The value.
        */
@@ -2734,10 +2734,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The header value to set in the request to the backend server.
+       * Optional. The header value to set in the request to the backend server.
        * </pre>
        *
-       * <code>string value = 2;</code>
+       * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for value.
        */
@@ -2756,10 +2756,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The header value to set in the request to the backend server.
+       * Optional. The header value to set in the request to the backend server.
        * </pre>
        *
-       * <code>string value = 2;</code>
+       * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The value to set.
        * @return This builder for chaining.
@@ -2777,10 +2777,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The header value to set in the request to the backend server.
+       * Optional. The header value to set in the request to the backend server.
        * </pre>
        *
-       * <code>string value = 2;</code>
+       * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -2794,10 +2794,10 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The header value to set in the request to the backend server.
+       * Optional. The header value to set in the request to the backend server.
        * </pre>
        *
-       * <code>string value = 2;</code>
+       * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for value to set.
        * @return This builder for chaining.

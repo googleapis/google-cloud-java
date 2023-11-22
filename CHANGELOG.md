@@ -1,5 +1,47 @@
 # Changelog
 
+## [1.24.0](https://github.com/googleapis/google-cloud-java/compare/v1.23.0...v1.24.0) (2023-11-06)
+
+
+### Features
+
+* [aiplatform] add Optimized to FeatureOnlineStore ([#10040](https://github.com/googleapis/google-cloud-java/issues/10040)) ([cc0e248](https://github.com/googleapis/google-cloud-java/commit/cc0e248a9ee4658dbd3b2649d01381df218b4419))
+* [aiplatform] Adding new fields for concurrent explanations ([#10016](https://github.com/googleapis/google-cloud-java/issues/10016)) ([d80aa3c](https://github.com/googleapis/google-cloud-java/commit/d80aa3c6cb96bbe8a16827b81699a15979cceed4))
+* [alloydb] Add new field in `GenerateClientCertificate` v1 API to allow AlloyDB connectors request client certs with metadata exchange support ([#10024](https://github.com/googleapis/google-cloud-java/issues/10024)) ([bc8bbd0](https://github.com/googleapis/google-cloud-java/commit/bc8bbd0794170806bb059fc12b21068ad4b7688f))
+* [cloudbuild] Add optional field "SourceFetcher" to choose source fetcher tool ([#10022](https://github.com/googleapis/google-cloud-java/issues/10022)) ([e336c70](https://github.com/googleapis/google-cloud-java/commit/e336c70660cd0663f91675a30ace51f42b5e60a1))
+* [clouddeploy] add Automation API and Rollback API ([#10034](https://github.com/googleapis/google-cloud-java/issues/10034)) ([399cb6d](https://github.com/googleapis/google-cloud-java/commit/399cb6d106f710ae7d569160fd0f06dc231bc306))
+* [contactcenterinsights] Launch BulkDelete API, and bulk audio import via the IngestConversations API ([#10039](https://github.com/googleapis/google-cloud-java/issues/10039)) ([dbdc8a1](https://github.com/googleapis/google-cloud-java/commit/dbdc8a128dd35a71cd476f03b04e0ae8a809b40d))
+* [container] add ResourceManagerTags API to attach tags on the underlying Compute Engine VMs of GKE Nodes which can be used to selectively enforce Cloud Firewall network firewall policies ([#10008](https://github.com/googleapis/google-cloud-java/issues/10008)) ([aede3bd](https://github.com/googleapis/google-cloud-java/commit/aede3bde55b79edf0f6e403688ae6606460765b1))
+* [container] added EnterpriseConfig ([#10021](https://github.com/googleapis/google-cloud-java/issues/10021)) ([9c2647b](https://github.com/googleapis/google-cloud-java/commit/9c2647b653085253c9b98853ee7d430363da5baa))
+* [dataform] Support for ReleaseConfigs ([#9999](https://github.com/googleapis/google-cloud-java/issues/9999)) ([2021b5a](https://github.com/googleapis/google-cloud-java/commit/2021b5a92fdcb0907985a60301006576dfe51833))
+* [datalineage] add open lineage support ([#10041](https://github.com/googleapis/google-cloud-java/issues/10041)) ([ceb26a1](https://github.com/googleapis/google-cloud-java/commit/ceb26a1f5b6b74963c7adeb9e2879a586ffcc801))
+* [dataplex] DataQualityDimension is now part of the DataQualityDimensionResult message ([#10010](https://github.com/googleapis/google-cloud-java/issues/10010)) ([95a6f15](https://github.com/googleapis/google-cloud-java/commit/95a6f1585dbafa985788b714ff394cd4cb2d1f5c))
+* [dataproc] support required_registration_fraction for secondary workers ([#10031](https://github.com/googleapis/google-cloud-java/issues/10031)) ([bb0964c](https://github.com/googleapis/google-cloud-java/commit/bb0964c3b3a199884ee3d8f1a90d2cea2d22a8f9))
+* [dlp] Introduce Discovery API protos and methods ([#9996](https://github.com/googleapis/google-cloud-java/issues/9996)) ([36fd92b](https://github.com/googleapis/google-cloud-java/commit/36fd92bbcd9b7f38d3567e7146499d35cb0b41af))
+* [maps-fleetengine-delivery] new module for maps-fleetengine-delivery ([#10028](https://github.com/googleapis/google-cloud-java/issues/10028)) ([09b31ad](https://github.com/googleapis/google-cloud-java/commit/09b31ad455e18d60148201a8f385b56f801222df))
+* [maps-fleetengine] new module for maps-fleetengine ([#10033](https://github.com/googleapis/google-cloud-java/issues/10033)) ([53488e4](https://github.com/googleapis/google-cloud-java/commit/53488e4829ccab1337b879d202e66abeb332663b))
+* [maps-places] new module for maps-places ([#9420](https://github.com/googleapis/google-cloud-java/issues/9420)) ([7e76fbc](https://github.com/googleapis/google-cloud-java/commit/7e76fbc65ef0d812b9dedbb022961614d9f61b06))
+* [speech] add transcript normalization + m4a audio format support ([#10009](https://github.com/googleapis/google-cloud-java/issues/10009)) ([bda7841](https://github.com/googleapis/google-cloud-java/commit/bda78416ad7575ae92d81fc02068e7417f5ae624))
+* [speech] Support MP3, TranscriptNormalization and SpeakerLabels in STT V1 API ([#10027](https://github.com/googleapis/google-cloud-java/issues/10027)) ([7ca3309](https://github.com/googleapis/google-cloud-java/commit/7ca3309c6ce48669b3979e8afdb020cdcadb855f))
+
+
+### Bug Fixes
+
+* **aiplatform/v1beta1:** [aiplatform] change CreateFeature metadata ([#10029](https://github.com/googleapis/google-cloud-java/issues/10029)) ([5067fe4](https://github.com/googleapis/google-cloud-java/commit/5067fe49e688515268104f55dfc74ee74ef1a9b5))
+* **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20231028-2.0.0 ([#10012](https://github.com/googleapis/google-cloud-java/issues/10012)) ([2df5d78](https://github.com/googleapis/google-cloud-java/commit/2df5d7886acdf5153d85058220ed1a329a7297cc))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.125.11 ([#10023](https://github.com/googleapis/google-cloud-java/issues/10023)) ([7d010c3](https://github.com/googleapis/google-cloud-java/commit/7d010c3b5806d9cc7ab17450c2772f3187f667a4))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.125.9 ([#10007](https://github.com/googleapis/google-cloud-java/issues/10007)) ([8103c93](https://github.com/googleapis/google-cloud-java/commit/8103c93d12adce7f50b21ebc7d9de1c442c5a1e0))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.6.1 ([#10014](https://github.com/googleapis/google-cloud-java/issues/10014)) ([7b1b742](https://github.com/googleapis/google-cloud-java/commit/7b1b742dab21139398032549fb03e127b1a03841))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.19.0 ([#10018](https://github.com/googleapis/google-cloud-java/issues/10018)) ([d9b705a](https://github.com/googleapis/google-cloud-java/commit/d9b705aaed8ea4447c7a02d5c54300f8909a30b1))
+
+
+### Documentation
+
+* [artifactregistry] use code font for resource name references ([#9997](https://github.com/googleapis/google-cloud-java/issues/9997)) ([baf18bd](https://github.com/googleapis/google-cloud-java/commit/baf18bd13715a18ec0f9dbb5812ba150695e34f6))
+* [batch] update default max parallel tasks per job ([#10011](https://github.com/googleapis/google-cloud-java/issues/10011)) ([4edc21b](https://github.com/googleapis/google-cloud-java/commit/4edc21bc0e54f9b52eb367beac2d438197f23432))
+* [documentai] updated comments ([#10015](https://github.com/googleapis/google-cloud-java/issues/10015)) ([2bd259f](https://github.com/googleapis/google-cloud-java/commit/2bd259f0bd17e9e059b4a1d7cd2acae6b5a254e8))
+* fix Speech Recognition Client link ([#10001](https://github.com/googleapis/google-cloud-java/issues/10001)) ([e681bd2](https://github.com/googleapis/google-cloud-java/commit/e681bd252f796f733602bfa72b8b8d77bb9c024e))
+
 ## [1.23.0](https://github.com/googleapis/google-cloud-java/compare/v1.22.0...v1.23.0) (2023-10-25)
 
 
@@ -79,7 +121,6 @@
 * **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.5.8 ([#9941](https://github.com/googleapis/google-cloud-java/issues/9941)) ([f818d26](https://github.com/googleapis/google-cloud-java/commit/f818d26968e1f19d302da1f1ea0145b2cc496ce0))
 * **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.17.0 ([#9942](https://github.com/googleapis/google-cloud-java/issues/9942)) ([2cc7888](https://github.com/googleapis/google-cloud-java/commit/2cc78885d76ae5e7dfc4cc9f3034c25fa22c6cc1))
 * remove IoT integration tests ([#9944](https://github.com/googleapis/google-cloud-java/issues/9944)) ([237c070](https://github.com/googleapis/google-cloud-java/commit/237c070a9d0a3ecf6a25387648a4d5dd81d705c2))
-* telcoautomation documentation links ([#9938](https://github.com/googleapis/google-cloud-java/issues/9938)) ([54262fd](https://github.com/googleapis/google-cloud-java/commit/54262fd530705e063bc2a0b85f9e6c6d8e5d74e7))
 
 ## [1.21.0](https://github.com/googleapis/google-cloud-java/compare/v1.20.0...v1.21.0) (2023-09-28)
 

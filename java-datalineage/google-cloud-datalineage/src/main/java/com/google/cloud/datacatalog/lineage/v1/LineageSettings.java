@@ -57,7 +57,7 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createProcess to 30 seconds:
+ * <p>For example, to set the total timeout of processOpenLineageRunEvent to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -67,10 +67,10 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * LineageSettings.Builder lineageSettingsBuilder = LineageSettings.newBuilder();
  * lineageSettingsBuilder
- *     .createProcessSettings()
+ *     .processOpenLineageRunEventSettings()
  *     .setRetrySettings(
  *         lineageSettingsBuilder
- *             .createProcessSettings()
+ *             .processOpenLineageRunEventSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -80,6 +80,12 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class LineageSettings extends ClientSettings<LineageSettings> {
+
+  /** Returns the object with the settings used for calls to processOpenLineageRunEvent. */
+  public UnaryCallSettings<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+      processOpenLineageRunEventSettings() {
+    return ((LineageStubSettings) getStubSettings()).processOpenLineageRunEventSettings();
+  }
 
   /** Returns the object with the settings used for calls to createProcess. */
   public UnaryCallSettings<CreateProcessRequest, Process> createProcessSettings() {
@@ -294,6 +300,13 @@ public class LineageSettings extends ClientSettings<LineageSettings> {
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to processOpenLineageRunEvent. */
+    public UnaryCallSettings.Builder<
+            ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+        processOpenLineageRunEventSettings() {
+      return getStubSettingsBuilder().processOpenLineageRunEventSettings();
     }
 
     /** Returns the builder for the settings used for calls to createProcess. */

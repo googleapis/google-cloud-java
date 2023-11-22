@@ -61,6 +61,28 @@ public class MockLineageImpl extends LineageImplBase {
   }
 
   @Override
+  public void processOpenLineageRunEvent(
+      ProcessOpenLineageRunEventRequest request,
+      StreamObserver<ProcessOpenLineageRunEventResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ProcessOpenLineageRunEventResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ProcessOpenLineageRunEventResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ProcessOpenLineageRunEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ProcessOpenLineageRunEventResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createProcess(
       CreateProcessRequest request, StreamObserver<Process> responseObserver) {
     Object response = responses.poll();

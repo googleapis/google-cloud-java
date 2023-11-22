@@ -1507,6 +1507,174 @@ public class PipelineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Batch deletes PipelineJobs The Operation is atomic. If it fails, none of the PipelineJobs are
+   * deleted. If it succeeds, all of the PipelineJobs are deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchDeletePipelineJobsResponse response =
+   *       pipelineServiceClient.batchDeletePipelineJobsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the PipelineJobs' parent resource. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param names Required. The names of the PipelineJobs to delete. A maximum of 32 PipelineJobs
+   *     can be deleted in a batch. Format:
+   *     `projects/{project}/locations/{location}/pipelineJobs/{pipelineJob}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchDeletePipelineJobsResponse, DeleteOperationMetadata>
+      batchDeletePipelineJobsAsync(LocationName parent, List<String> names) {
+    BatchDeletePipelineJobsRequest request =
+        BatchDeletePipelineJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchDeletePipelineJobsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch deletes PipelineJobs The Operation is atomic. If it fails, none of the PipelineJobs are
+   * deleted. If it succeeds, all of the PipelineJobs are deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchDeletePipelineJobsResponse response =
+   *       pipelineServiceClient.batchDeletePipelineJobsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the PipelineJobs' parent resource. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param names Required. The names of the PipelineJobs to delete. A maximum of 32 PipelineJobs
+   *     can be deleted in a batch. Format:
+   *     `projects/{project}/locations/{location}/pipelineJobs/{pipelineJob}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchDeletePipelineJobsResponse, DeleteOperationMetadata>
+      batchDeletePipelineJobsAsync(String parent, List<String> names) {
+    BatchDeletePipelineJobsRequest request =
+        BatchDeletePipelineJobsRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return batchDeletePipelineJobsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch deletes PipelineJobs The Operation is atomic. If it fails, none of the PipelineJobs are
+   * deleted. If it succeeds, all of the PipelineJobs are deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   BatchDeletePipelineJobsRequest request =
+   *       BatchDeletePipelineJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchDeletePipelineJobsResponse response =
+   *       pipelineServiceClient.batchDeletePipelineJobsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchDeletePipelineJobsResponse, DeleteOperationMetadata>
+      batchDeletePipelineJobsAsync(BatchDeletePipelineJobsRequest request) {
+    return batchDeletePipelineJobsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch deletes PipelineJobs The Operation is atomic. If it fails, none of the PipelineJobs are
+   * deleted. If it succeeds, all of the PipelineJobs are deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   BatchDeletePipelineJobsRequest request =
+   *       BatchDeletePipelineJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   OperationFuture<BatchDeletePipelineJobsResponse, DeleteOperationMetadata> future =
+   *       pipelineServiceClient.batchDeletePipelineJobsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BatchDeletePipelineJobsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          BatchDeletePipelineJobsRequest, BatchDeletePipelineJobsResponse, DeleteOperationMetadata>
+      batchDeletePipelineJobsOperationCallable() {
+    return stub.batchDeletePipelineJobsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch deletes PipelineJobs The Operation is atomic. If it fails, none of the PipelineJobs are
+   * deleted. If it succeeds, all of the PipelineJobs are deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
+   *   BatchDeletePipelineJobsRequest request =
+   *       BatchDeletePipelineJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       pipelineServiceClient.batchDeletePipelineJobsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchDeletePipelineJobsRequest, Operation>
+      batchDeletePipelineJobsCallable() {
+    return stub.batchDeletePipelineJobsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Cancels a PipelineJob. Starts asynchronous cancellation on the PipelineJob. The server makes a
    * best effort to cancel the pipeline, but success is not guaranteed. Clients can use
    * [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1beta1.PipelineService.GetPipelineJob]

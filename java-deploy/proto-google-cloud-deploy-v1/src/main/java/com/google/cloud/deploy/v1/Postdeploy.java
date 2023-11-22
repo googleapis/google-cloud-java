@@ -71,7 +71,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A sequence of skaffold custom actions to invoke during execution
+   * Optional. A sequence of Skaffold custom actions to invoke during execution
    * of the postdeploy job.
    * </pre>
    *
@@ -86,7 +86,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A sequence of skaffold custom actions to invoke during execution
+   * Optional. A sequence of Skaffold custom actions to invoke during execution
    * of the postdeploy job.
    * </pre>
    *
@@ -101,7 +101,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A sequence of skaffold custom actions to invoke during execution
+   * Optional. A sequence of Skaffold custom actions to invoke during execution
    * of the postdeploy job.
    * </pre>
    *
@@ -117,7 +117,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A sequence of skaffold custom actions to invoke during execution
+   * Optional. A sequence of Skaffold custom actions to invoke during execution
    * of the postdeploy job.
    * </pre>
    *
@@ -496,7 +496,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A sequence of skaffold custom actions to invoke during execution
+     * Optional. A sequence of Skaffold custom actions to invoke during execution
      * of the postdeploy job.
      * </pre>
      *
@@ -512,7 +512,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A sequence of skaffold custom actions to invoke during execution
+     * Optional. A sequence of Skaffold custom actions to invoke during execution
      * of the postdeploy job.
      * </pre>
      *
@@ -527,7 +527,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A sequence of skaffold custom actions to invoke during execution
+     * Optional. A sequence of Skaffold custom actions to invoke during execution
      * of the postdeploy job.
      * </pre>
      *
@@ -543,7 +543,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A sequence of skaffold custom actions to invoke during execution
+     * Optional. A sequence of Skaffold custom actions to invoke during execution
      * of the postdeploy job.
      * </pre>
      *
@@ -559,7 +559,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A sequence of skaffold custom actions to invoke during execution
+     * Optional. A sequence of Skaffold custom actions to invoke during execution
      * of the postdeploy job.
      * </pre>
      *
@@ -583,7 +583,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A sequence of skaffold custom actions to invoke during execution
+     * Optional. A sequence of Skaffold custom actions to invoke during execution
      * of the postdeploy job.
      * </pre>
      *
@@ -606,7 +606,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A sequence of skaffold custom actions to invoke during execution
+     * Optional. A sequence of Skaffold custom actions to invoke during execution
      * of the postdeploy job.
      * </pre>
      *
@@ -626,7 +626,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A sequence of skaffold custom actions to invoke during execution
+     * Optional. A sequence of Skaffold custom actions to invoke during execution
      * of the postdeploy job.
      * </pre>
      *
@@ -645,7 +645,7 @@ public final class Postdeploy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A sequence of skaffold custom actions to invoke during execution
+     * Optional. A sequence of Skaffold custom actions to invoke during execution
      * of the postdeploy job.
      * </pre>
      *

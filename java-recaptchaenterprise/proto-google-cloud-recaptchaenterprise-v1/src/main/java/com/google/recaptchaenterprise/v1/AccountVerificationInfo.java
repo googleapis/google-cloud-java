@@ -405,10 +405,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Endpoints that can be used for identity verification.
+   * Optional. Endpoints that can be used for identity verification.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -420,10 +421,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Endpoints that can be used for identity verification.
+   * Optional. Endpoints that can be used for identity verification.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -436,10 +438,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Endpoints that can be used for identity verification.
+   * Optional. Endpoints that can be used for identity verification.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -450,10 +453,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Endpoints that can be used for identity verification.
+   * Optional. Endpoints that can be used for identity verification.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -464,10 +468,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Endpoints that can be used for identity verification.
+   * Optional. Endpoints that can be used for identity verification.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -484,11 +489,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Language code preference for the verification message, set as a IETF BCP 47
-   * language code.
+   * Optional. Language code preference for the verification message, set as a
+   * IETF BCP 47 language code.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The languageCode.
    */
@@ -508,11 +513,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Language code preference for the verification message, set as a IETF BCP 47
-   * language code.
+   * Optional. Language code preference for the verification message, set as a
+   * IETF BCP 47 language code.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for languageCode.
    */
@@ -587,7 +592,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    * <code>string username = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is deprecated.
-   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=552
+   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=553
    * @return The username.
    */
   @java.lang.Override
@@ -614,7 +619,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    * <code>string username = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is deprecated.
-   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=552
+   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=553
    * @return The bytes for username.
    */
   @java.lang.Override
@@ -1119,10 +1124,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.recaptchaenterprise.v1.EndpointVerificationInfo>
@@ -1137,10 +1143,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getEndpointsCount() {
@@ -1154,10 +1161,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.EndpointVerificationInfo getEndpoints(int index) {
@@ -1171,10 +1179,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setEndpoints(
@@ -1195,10 +1204,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setEndpoints(
@@ -1217,10 +1227,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addEndpoints(com.google.recaptchaenterprise.v1.EndpointVerificationInfo value) {
@@ -1240,10 +1251,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addEndpoints(
@@ -1264,10 +1276,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addEndpoints(
@@ -1285,10 +1298,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addEndpoints(
@@ -1307,10 +1321,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllEndpoints(
@@ -1329,10 +1344,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearEndpoints() {
@@ -1349,10 +1365,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeEndpoints(int index) {
@@ -1369,10 +1386,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.EndpointVerificationInfo.Builder getEndpointsBuilder(
@@ -1383,10 +1401,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.EndpointVerificationInfoOrBuilder
@@ -1401,10 +1420,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<
@@ -1420,10 +1440,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.EndpointVerificationInfo.Builder
@@ -1436,10 +1457,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.recaptchaenterprise.v1.EndpointVerificationInfo.Builder addEndpointsBuilder(
@@ -1453,10 +1475,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Endpoints that can be used for identity verification.
+     * Optional. Endpoints that can be used for identity verification.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.recaptchaenterprise.v1.EndpointVerificationInfo.Builder>
@@ -1486,11 +1509,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Language code preference for the verification message, set as a IETF BCP 47
-     * language code.
+     * Optional. Language code preference for the verification message, set as a
+     * IETF BCP 47 language code.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The languageCode.
      */
@@ -1509,11 +1532,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Language code preference for the verification message, set as a IETF BCP 47
-     * language code.
+     * Optional. Language code preference for the verification message, set as a
+     * IETF BCP 47 language code.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for languageCode.
      */
@@ -1532,11 +1555,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Language code preference for the verification message, set as a IETF BCP 47
-     * language code.
+     * Optional. Language code preference for the verification message, set as a
+     * IETF BCP 47 language code.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The languageCode to set.
      * @return This builder for chaining.
@@ -1554,11 +1577,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Language code preference for the verification message, set as a IETF BCP 47
-     * language code.
+     * Optional. Language code preference for the verification message, set as a
+     * IETF BCP 47 language code.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1572,11 +1595,11 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Language code preference for the verification message, set as a IETF BCP 47
-     * language code.
+     * Optional. Language code preference for the verification message, set as a
+     * IETF BCP 47 language code.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for languageCode to set.
      * @return This builder for chaining.
@@ -1709,7 +1732,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=552
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=553
      * @return The username.
      */
     @java.lang.Deprecated
@@ -1735,7 +1758,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=552
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=553
      * @return The bytes for username.
      */
     @java.lang.Deprecated
@@ -1761,7 +1784,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=552
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=553
      * @param value The username to set.
      * @return This builder for chaining.
      */
@@ -1786,7 +1809,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=552
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=553
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1807,7 +1830,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=552
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=553
      * @param value The bytes for username to set.
      * @return This builder for chaining.
      */
