@@ -172,17 +172,23 @@ Example: `https://cloud.google.com/alloydb/docs`
 
 ### REST Docs
 
-The corresponding value in the Cloud Drop page is `documentation_uri`.
+Not every library has these, as they are generated adhoc. Poke around the product docs link to see if there is a valid REST API reference link.
 The value must starts with "https://".
 
-Example: `https://cloud.google.com/alloydb/docs`
+Example: `https://cloud.google.com/alloydb/docs/reference/rest`
+
+If they exist, add them as a flag to the python command below like:
+`--rest-docs="https://cloud.google.com/alloydb/docs/reference/rest" \`
 
 ### RPC Docs
 
-The corresponding value in the Cloud Drop page is `documentation_uri`.
+Not every library has these, as they are generated adhoc. Poke around the product docs link to see if there is a valid RPC API reference link.
 The value must starts with "https://".
 
-Example: `https://cloud.google.com/alloydb/docs`
+Example: `https://cloud.google.com/speech-to-text/docs/reference/rpc`
+
+If they exist, add them as a flag to the python command below like:
+`--rpc-docs="https://cloud.google.com/speech-to-text/docs/reference/rpc" \`
 
 ### API description
 
