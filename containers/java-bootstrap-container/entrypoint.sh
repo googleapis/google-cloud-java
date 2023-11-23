@@ -27,6 +27,9 @@ MONO_REPO_NAME="google-cloud-java"
 WORKSPACE_DIR="/workspace"
 PATH_TO_CONTAINER_VARS="$WORKSPACE_DIR/interContainerVars.json"
 
+# confirm docker can be run
+docker run hello-world
+
 # workaround for local development (docker run -v
 # path_to_monorepo:/workspace/google-cloud-java)
 git config --global --add safe.directory /workspace/google-cloud-java
@@ -46,6 +49,7 @@ python generation/new_client/new-client.py generate \
   --api-description="Telecom Network Automation is a Google-managed,
   cloud implementation of Nephio, a Linux Foundation open source project that
   can deliver simple, carrier-grade, Kubernetes-based, multi-cloud,
-  multi-vendor, cloud-native intent automation via common automation blueprints."
+  multi-vendor, cloud-native intent automation via common automation blueprints." \
+  --googleapis-gen-url="https://${GITHUB_TOKEN}@github.com/googleapis/googleapis-gen.git"
 
 
