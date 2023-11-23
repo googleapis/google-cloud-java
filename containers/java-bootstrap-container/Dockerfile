@@ -55,8 +55,6 @@ COPY --from=docker /usr/local/bin/ /usr/local/bin/
 VOLUME /var/lib/docker
 
 
-COPY . /
-
 ENV PYENV_ROOT="/.pyenv" \
     PATH="/.pyenv/bin:/.pyenv/shims:$PATH"
 
@@ -77,6 +75,8 @@ RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN pyenv install 3.9.13
+
+COPY . /
 
 
 
