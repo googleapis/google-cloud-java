@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.125.12](https://github.com/googleapis/java-pubsub/compare/v1.125.11...v1.125.12) (2023-11-21)
+
+
+### Bug Fixes
+
+* Concurrent modification of processing receievd messages ([#1807](https://github.com/googleapis/java-pubsub/issues/1807)) ([d162126](https://github.com/googleapis/java-pubsub/commit/d16212627b0d9b6616e0a9b20af2c430e2f6b36f))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.34.2 ([#1821](https://github.com/googleapis/java-pubsub/issues/1821)) ([c21ba1a](https://github.com/googleapis/java-pubsub/commit/c21ba1a51acf3411e7f9793f579a103ee1d36f38))
+* Update dependency com.google.cloud:google-cloud-storage to v2.29.1 ([#1817](https://github.com/googleapis/java-pubsub/issues/1817)) ([e179b94](https://github.com/googleapis/java-pubsub/commit/e179b94b7034fbb6c10775b0fe469ab129c0d6c8))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.10.1 ([#1819](https://github.com/googleapis/java-pubsub/issues/1819)) ([af84aa3](https://github.com/googleapis/java-pubsub/commit/af84aa3f5434d3e8ff2122b72cae0fc1c7323742))
+
 ## [1.125.11](https://github.com/googleapis/java-pubsub/compare/v1.125.10...v1.125.11) (2023-11-01)
 
 
