@@ -444,6 +444,75 @@ public class SessionsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Updates the feedback received from the user for a single turn of the bot response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SessionsClient sessionsClient = SessionsClient.create()) {
+   *   SubmitAnswerFeedbackRequest request =
+   *       SubmitAnswerFeedbackRequest.newBuilder()
+   *           .setSession(
+   *               SessionName.ofProjectLocationAgentSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]")
+   *                   .toString())
+   *           .setResponseId("responseId-633138884")
+   *           .setAnswerFeedback(AnswerFeedback.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   AnswerFeedback response = sessionsClient.submitAnswerFeedback(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnswerFeedback submitAnswerFeedback(SubmitAnswerFeedbackRequest request) {
+    return submitAnswerFeedbackCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the feedback received from the user for a single turn of the bot response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SessionsClient sessionsClient = SessionsClient.create()) {
+   *   SubmitAnswerFeedbackRequest request =
+   *       SubmitAnswerFeedbackRequest.newBuilder()
+   *           .setSession(
+   *               SessionName.ofProjectLocationAgentSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]")
+   *                   .toString())
+   *           .setResponseId("responseId-633138884")
+   *           .setAnswerFeedback(AnswerFeedback.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AnswerFeedback> future =
+   *       sessionsClient.submitAnswerFeedbackCallable().futureCall(request);
+   *   // Do something.
+   *   AnswerFeedback response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SubmitAnswerFeedbackRequest, AnswerFeedback>
+      submitAnswerFeedbackCallable() {
+    return stub.submitAnswerFeedbackCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:

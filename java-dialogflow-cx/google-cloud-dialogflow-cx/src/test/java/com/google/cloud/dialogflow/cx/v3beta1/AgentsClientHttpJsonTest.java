@@ -209,6 +209,7 @@ public class AgentsClientHttpJsonTest {
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
+            .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -271,6 +272,7 @@ public class AgentsClientHttpJsonTest {
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
+            .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -333,6 +335,7 @@ public class AgentsClientHttpJsonTest {
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
+            .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -397,6 +400,7 @@ public class AgentsClientHttpJsonTest {
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
+            .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -461,6 +465,7 @@ public class AgentsClientHttpJsonTest {
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
+            .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -485,6 +490,7 @@ public class AgentsClientHttpJsonTest {
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
+            .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -535,6 +541,7 @@ public class AgentsClientHttpJsonTest {
               .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
               .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
               .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
+              .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAgent(agent, updateMask);

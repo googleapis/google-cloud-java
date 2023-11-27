@@ -111,13 +111,13 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
           .add("https://www.googleapis.com/auth/dialogflow")
           .build();
 
-  private final PagedCallSettings<
-          ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
-      listEntityTypesSettings;
   private final UnaryCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeSettings;
   private final UnaryCallSettings<CreateEntityTypeRequest, EntityType> createEntityTypeSettings;
   private final UnaryCallSettings<UpdateEntityTypeRequest, EntityType> updateEntityTypeSettings;
   private final UnaryCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings;
+  private final PagedCallSettings<
+          ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+      listEntityTypesSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -232,13 +232,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
             }
           };
 
-  /** Returns the object with the settings used for calls to listEntityTypes. */
-  public PagedCallSettings<
-          ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
-      listEntityTypesSettings() {
-    return listEntityTypesSettings;
-  }
-
   /** Returns the object with the settings used for calls to getEntityType. */
   public UnaryCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeSettings() {
     return getEntityTypeSettings;
@@ -257,6 +250,13 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   /** Returns the object with the settings used for calls to deleteEntityType. */
   public UnaryCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings() {
     return deleteEntityTypeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listEntityTypes. */
+  public PagedCallSettings<
+          ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+      listEntityTypesSettings() {
+    return listEntityTypesSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -376,11 +376,11 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   protected EntityTypesStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    listEntityTypesSettings = settingsBuilder.listEntityTypesSettings().build();
     getEntityTypeSettings = settingsBuilder.getEntityTypeSettings().build();
     createEntityTypeSettings = settingsBuilder.createEntityTypeSettings().build();
     updateEntityTypeSettings = settingsBuilder.updateEntityTypeSettings().build();
     deleteEntityTypeSettings = settingsBuilder.deleteEntityTypeSettings().build();
+    listEntityTypesSettings = settingsBuilder.listEntityTypesSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -388,9 +388,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   /** Builder for EntityTypesStubSettings. */
   public static class Builder extends StubSettings.Builder<EntityTypesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-    private final PagedCallSettings.Builder<
-            ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
-        listEntityTypesSettings;
     private final UnaryCallSettings.Builder<GetEntityTypeRequest, EntityType> getEntityTypeSettings;
     private final UnaryCallSettings.Builder<CreateEntityTypeRequest, EntityType>
         createEntityTypeSettings;
@@ -398,6 +395,9 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
         updateEntityTypeSettings;
     private final UnaryCallSettings.Builder<DeleteEntityTypeRequest, Empty>
         deleteEntityTypeSettings;
+    private final PagedCallSettings.Builder<
+            ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+        listEntityTypesSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -440,21 +440,21 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      listEntityTypesSettings = PagedCallSettings.newBuilder(LIST_ENTITY_TYPES_PAGE_STR_FACT);
       getEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listEntityTypesSettings = PagedCallSettings.newBuilder(LIST_ENTITY_TYPES_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listEntityTypesSettings,
               getEntityTypeSettings,
               createEntityTypeSettings,
               updateEntityTypeSettings,
               deleteEntityTypeSettings,
+              listEntityTypesSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -463,21 +463,21 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     protected Builder(EntityTypesStubSettings settings) {
       super(settings);
 
-      listEntityTypesSettings = settings.listEntityTypesSettings.toBuilder();
       getEntityTypeSettings = settings.getEntityTypeSettings.toBuilder();
       createEntityTypeSettings = settings.createEntityTypeSettings.toBuilder();
       updateEntityTypeSettings = settings.updateEntityTypeSettings.toBuilder();
       deleteEntityTypeSettings = settings.deleteEntityTypeSettings.toBuilder();
+      listEntityTypesSettings = settings.listEntityTypesSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listEntityTypesSettings,
               getEntityTypeSettings,
               createEntityTypeSettings,
               updateEntityTypeSettings,
               deleteEntityTypeSettings,
+              listEntityTypesSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -510,11 +510,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
 
     private static Builder initDefaults(Builder builder) {
       builder
-          .listEntityTypesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
           .getEntityTypeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -531,6 +526,11 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
 
       builder
           .deleteEntityTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listEntityTypesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -562,13 +562,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to listEntityTypes. */
-    public PagedCallSettings.Builder<
-            ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
-        listEntityTypesSettings() {
-      return listEntityTypesSettings;
-    }
-
     /** Returns the builder for the settings used for calls to getEntityType. */
     public UnaryCallSettings.Builder<GetEntityTypeRequest, EntityType> getEntityTypeSettings() {
       return getEntityTypeSettings;
@@ -589,6 +582,13 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     /** Returns the builder for the settings used for calls to deleteEntityType. */
     public UnaryCallSettings.Builder<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings() {
       return deleteEntityTypeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listEntityTypes. */
+    public PagedCallSettings.Builder<
+            ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+        listEntityTypesSettings() {
+      return listEntityTypesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

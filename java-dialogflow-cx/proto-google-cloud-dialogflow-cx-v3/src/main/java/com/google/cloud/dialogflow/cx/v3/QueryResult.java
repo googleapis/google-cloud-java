@@ -939,7 +939,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.dialogflow.cx.v3.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/session.proto;l=727
+   *     google/cloud/dialogflow/cx/v3/session.proto;l=919
    * @return Whether the intent field is set.
    */
   @java.lang.Override
@@ -962,7 +962,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.dialogflow.cx.v3.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/session.proto;l=727
+   *     google/cloud/dialogflow/cx/v3/session.proto;l=919
    * @return The intent.
    */
   @java.lang.Override
@@ -1014,7 +1014,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent_detection_confidence is
-   *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=738
+   *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=930
    * @return The intentDetectionConfidence.
    */
   @java.lang.Override
@@ -1293,6 +1293,25 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         : advancedSettings_;
   }
 
+  public static final int ALLOW_ANSWER_FEEDBACK_FIELD_NUMBER = 32;
+  private boolean allowAnswerFeedback_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the Thumbs up/Thumbs down rating controls are need to be
+   * shown for the response in the Dialogflow Messenger widget.
+   * </pre>
+   *
+   * <code>bool allow_answer_feedback = 32;</code>
+   *
+   * @return The allowAnswerFeedback.
+   */
+  @java.lang.Override
+  public boolean getAllowAnswerFeedback() {
+    return allowAnswerFeedback_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1358,6 +1377,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (queryCase_ == 23) {
       output.writeMessage(23, (com.google.cloud.dialogflow.cx.v3.DtmfInput) query_);
     }
+    if (allowAnswerFeedback_ != false) {
+      output.writeBool(32, allowAnswerFeedback_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1422,6 +1444,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               23, (com.google.cloud.dialogflow.cx.v3.DtmfInput) query_);
     }
+    if (allowAnswerFeedback_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(32, allowAnswerFeedback_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1472,6 +1497,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (hasAdvancedSettings()) {
       if (!getAdvancedSettings().equals(other.getAdvancedSettings())) return false;
     }
+    if (getAllowAnswerFeedback() != other.getAllowAnswerFeedback()) return false;
     if (!getQueryCase().equals(other.getQueryCase())) return false;
     switch (queryCase_) {
       case 1:
@@ -1547,6 +1573,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ADVANCED_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getAdvancedSettings().hashCode();
     }
+    hash = (37 * hash) + ALLOW_ANSWER_FEEDBACK_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowAnswerFeedback());
     switch (queryCase_) {
       case 1:
         hash = (37 * hash) + TEXT_FIELD_NUMBER;
@@ -1771,6 +1799,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         advancedSettingsBuilder_.dispose();
         advancedSettingsBuilder_ = null;
       }
+      allowAnswerFeedback_ = false;
       queryCase_ = 0;
       query_ = null;
       return this;
@@ -1873,6 +1902,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.advancedSettings_ =
             advancedSettingsBuilder_ == null ? advancedSettings_ : advancedSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.allowAnswerFeedback_ = allowAnswerFeedback_;
       }
     }
 
@@ -2038,6 +2070,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasAdvancedSettings()) {
         mergeAdvancedSettings(other.getAdvancedSettings());
+      }
+      if (other.getAllowAnswerFeedback() != false) {
+        setAllowAnswerFeedback(other.getAllowAnswerFeedback());
       }
       switch (other.getQueryCase()) {
         case TEXT:
@@ -2232,6 +2267,12 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
                 queryCase_ = 23;
                 break;
               } // case 186
+            case 256:
+              {
+                allowAnswerFeedback_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 256
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4865,7 +4906,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.Intent intent = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/session.proto;l=727
+     *     google/cloud/dialogflow/cx/v3/session.proto;l=919
      * @return Whether the intent field is set.
      */
     @java.lang.Deprecated
@@ -4887,7 +4928,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.Intent intent = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/session.proto;l=727
+     *     google/cloud/dialogflow/cx/v3/session.proto;l=919
      * @return The intent.
      */
     @java.lang.Deprecated
@@ -5103,7 +5144,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=738
+     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=930
      * @return The intentDetectionConfidence.
      */
     @java.lang.Override
@@ -5129,7 +5170,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=738
+     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=930
      * @param value The intentDetectionConfidence to set.
      * @return This builder for chaining.
      */
@@ -5159,7 +5200,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=738
+     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=930
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -6125,6 +6166,62 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         advancedSettings_ = null;
       }
       return advancedSettingsBuilder_;
+    }
+
+    private boolean allowAnswerFeedback_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the Thumbs up/Thumbs down rating controls are need to be
+     * shown for the response in the Dialogflow Messenger widget.
+     * </pre>
+     *
+     * <code>bool allow_answer_feedback = 32;</code>
+     *
+     * @return The allowAnswerFeedback.
+     */
+    @java.lang.Override
+    public boolean getAllowAnswerFeedback() {
+      return allowAnswerFeedback_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the Thumbs up/Thumbs down rating controls are need to be
+     * shown for the response in the Dialogflow Messenger widget.
+     * </pre>
+     *
+     * <code>bool allow_answer_feedback = 32;</code>
+     *
+     * @param value The allowAnswerFeedback to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowAnswerFeedback(boolean value) {
+
+      allowAnswerFeedback_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the Thumbs up/Thumbs down rating controls are need to be
+     * shown for the response in the Dialogflow Messenger widget.
+     * </pre>
+     *
+     * <code>bool allow_answer_feedback = 32;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowAnswerFeedback() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      allowAnswerFeedback_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

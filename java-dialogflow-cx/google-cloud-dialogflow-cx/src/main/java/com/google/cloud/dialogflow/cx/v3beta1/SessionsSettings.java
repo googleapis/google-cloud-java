@@ -101,6 +101,12 @@ public class SessionsSettings extends ClientSettings<SessionsSettings> {
     return ((SessionsStubSettings) getStubSettings()).fulfillIntentSettings();
   }
 
+  /** Returns the object with the settings used for calls to submitAnswerFeedback. */
+  public UnaryCallSettings<SubmitAnswerFeedbackRequest, AnswerFeedback>
+      submitAnswerFeedbackSettings() {
+    return ((SessionsStubSettings) getStubSettings()).submitAnswerFeedbackSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -249,6 +255,12 @@ public class SessionsSettings extends ClientSettings<SessionsSettings> {
     public UnaryCallSettings.Builder<FulfillIntentRequest, FulfillIntentResponse>
         fulfillIntentSettings() {
       return getStubSettingsBuilder().fulfillIntentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to submitAnswerFeedback. */
+    public UnaryCallSettings.Builder<SubmitAnswerFeedbackRequest, AnswerFeedback>
+        submitAnswerFeedbackSettings() {
+      return getStubSettingsBuilder().submitAnswerFeedbackSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

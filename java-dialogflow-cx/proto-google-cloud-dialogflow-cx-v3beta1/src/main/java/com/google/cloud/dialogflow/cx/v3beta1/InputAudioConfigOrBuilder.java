@@ -261,4 +261,39 @@ public interface InputAudioConfigOrBuilder
    * @return The singleUtterance.
    */
   boolean getSingleUtterance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of barge-in behavior during the streaming of input audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+   *
+   * @return Whether the bargeInConfig field is set.
+   */
+  boolean hasBargeInConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of barge-in behavior during the streaming of input audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+   *
+   * @return The bargeInConfig.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig getBargeInConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of barge-in behavior during the streaming of input audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.BargeInConfigOrBuilder getBargeInConfigOrBuilder();
 }

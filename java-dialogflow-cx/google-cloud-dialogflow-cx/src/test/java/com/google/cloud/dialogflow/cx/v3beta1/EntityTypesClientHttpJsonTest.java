@@ -86,106 +86,6 @@ public class EntityTypesClientHttpJsonTest {
   }
 
   @Test
-  public void listEntityTypesTest() throws Exception {
-    EntityType responsesElement = EntityType.newBuilder().build();
-    ListEntityTypesResponse expectedResponse =
-        ListEntityTypesResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllEntityTypes(Arrays.asList(responsesElement))
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-
-    ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent);
-
-    List<EntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void listEntityTypesExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-      client.listEntityTypes(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listEntityTypesTest2() throws Exception {
-    EntityType responsesElement = EntityType.newBuilder().build();
-    ListEntityTypesResponse expectedResponse =
-        ListEntityTypesResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllEntityTypes(Arrays.asList(responsesElement))
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String parent = "projects/project-1167/locations/location-1167/agents/agent-1167";
-
-    ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent);
-
-    List<EntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void listEntityTypesExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String parent = "projects/project-1167/locations/location-1167/agents/agent-1167";
-      client.listEntityTypes(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
   public void getEntityTypeTest() throws Exception {
     EntityType expectedResponse =
         EntityType.newBuilder()
@@ -540,6 +440,106 @@ public class EntityTypesClientHttpJsonTest {
       String name =
           "projects/project-4320/locations/location-4320/agents/agent-4320/entityTypes/entityType-4320";
       client.deleteEntityType(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEntityTypesTest() throws Exception {
+    EntityType responsesElement = EntityType.newBuilder().build();
+    ListEntityTypesResponse expectedResponse =
+        ListEntityTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntityTypes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+
+    ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent);
+
+    List<EntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listEntityTypesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+      client.listEntityTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEntityTypesTest2() throws Exception {
+    EntityType responsesElement = EntityType.newBuilder().build();
+    ListEntityTypesResponse expectedResponse =
+        ListEntityTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntityTypes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-1167/locations/location-1167/agents/agent-1167";
+
+    ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent);
+
+    List<EntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listEntityTypesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-1167/locations/location-1167/agents/agent-1167";
+      client.listEntityTypes(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

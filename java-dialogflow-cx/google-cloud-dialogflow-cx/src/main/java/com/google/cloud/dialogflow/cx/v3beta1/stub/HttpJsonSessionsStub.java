@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback;
 import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest;
@@ -40,6 +41,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.SubmitAnswerFeedbackRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -184,6 +186,43 @@ public class HttpJsonSessionsStub extends SessionsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SubmitAnswerFeedbackRequest, AnswerFeedback>
+      submitAnswerFeedbackMethodDescriptor =
+          ApiMethodDescriptor.<SubmitAnswerFeedbackRequest, AnswerFeedback>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Sessions/SubmitAnswerFeedback")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SubmitAnswerFeedbackRequest>newBuilder()
+                      .setPath(
+                          "/v3beta1/{session=projects/*/locations/*/agents/*/sessions/*}:submitAnswerFeedback",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SubmitAnswerFeedbackRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "session", request.getSession());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SubmitAnswerFeedbackRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearSession().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AnswerFeedback>newBuilder()
+                      .setDefaultInstance(AnswerFeedback.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -255,6 +294,8 @@ public class HttpJsonSessionsStub extends SessionsStub {
   private final UnaryCallable<DetectIntentRequest, DetectIntentResponse> detectIntentCallable;
   private final UnaryCallable<MatchIntentRequest, MatchIntentResponse> matchIntentCallable;
   private final UnaryCallable<FulfillIntentRequest, FulfillIntentResponse> fulfillIntentCallable;
+  private final UnaryCallable<SubmitAnswerFeedbackRequest, AnswerFeedback>
+      submitAnswerFeedbackCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -337,6 +378,18 @@ public class HttpJsonSessionsStub extends SessionsStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<SubmitAnswerFeedbackRequest, AnswerFeedback>
+        submitAnswerFeedbackTransportSettings =
+            HttpJsonCallSettings.<SubmitAnswerFeedbackRequest, AnswerFeedback>newBuilder()
+                .setMethodDescriptor(submitAnswerFeedbackMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("session", String.valueOf(request.getSession()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -370,6 +423,11 @@ public class HttpJsonSessionsStub extends SessionsStub {
     this.fulfillIntentCallable =
         callableFactory.createUnaryCallable(
             fulfillIntentTransportSettings, settings.fulfillIntentSettings(), clientContext);
+    this.submitAnswerFeedbackCallable =
+        callableFactory.createUnaryCallable(
+            submitAnswerFeedbackTransportSettings,
+            settings.submitAnswerFeedbackSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -390,6 +448,7 @@ public class HttpJsonSessionsStub extends SessionsStub {
     methodDescriptors.add(detectIntentMethodDescriptor);
     methodDescriptors.add(matchIntentMethodDescriptor);
     methodDescriptors.add(fulfillIntentMethodDescriptor);
+    methodDescriptors.add(submitAnswerFeedbackMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -408,6 +467,11 @@ public class HttpJsonSessionsStub extends SessionsStub {
   @Override
   public UnaryCallable<FulfillIntentRequest, FulfillIntentResponse> fulfillIntentCallable() {
     return fulfillIntentCallable;
+  }
+
+  @Override
+  public UnaryCallable<SubmitAnswerFeedbackRequest, AnswerFeedback> submitAnswerFeedbackCallable() {
+    return submitAnswerFeedbackCallable;
   }
 
   @Override

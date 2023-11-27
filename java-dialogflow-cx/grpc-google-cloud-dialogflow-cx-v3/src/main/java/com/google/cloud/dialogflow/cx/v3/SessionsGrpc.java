@@ -225,6 +225,54 @@ public final class SessionsGrpc {
     return getFulfillIntentMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3.SubmitAnswerFeedbackRequest,
+          com.google.cloud.dialogflow.cx.v3.AnswerFeedback>
+      getSubmitAnswerFeedbackMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SubmitAnswerFeedback",
+      requestType = com.google.cloud.dialogflow.cx.v3.SubmitAnswerFeedbackRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3.AnswerFeedback.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3.SubmitAnswerFeedbackRequest,
+          com.google.cloud.dialogflow.cx.v3.AnswerFeedback>
+      getSubmitAnswerFeedbackMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3.SubmitAnswerFeedbackRequest,
+            com.google.cloud.dialogflow.cx.v3.AnswerFeedback>
+        getSubmitAnswerFeedbackMethod;
+    if ((getSubmitAnswerFeedbackMethod = SessionsGrpc.getSubmitAnswerFeedbackMethod) == null) {
+      synchronized (SessionsGrpc.class) {
+        if ((getSubmitAnswerFeedbackMethod = SessionsGrpc.getSubmitAnswerFeedbackMethod) == null) {
+          SessionsGrpc.getSubmitAnswerFeedbackMethod =
+              getSubmitAnswerFeedbackMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3.SubmitAnswerFeedbackRequest,
+                          com.google.cloud.dialogflow.cx.v3.AnswerFeedback>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SubmitAnswerFeedback"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3.SubmitAnswerFeedbackRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3.AnswerFeedback
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SessionsMethodDescriptorSupplier("SubmitAnswerFeedback"))
+                      .build();
+        }
+      }
+    }
+    return getSubmitAnswerFeedbackMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static SessionsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SessionsStub> factory =
@@ -356,6 +404,22 @@ public final class SessionsGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getFulfillIntentMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the feedback received from the user for a single turn of the bot
+     * response.
+     * </pre>
+     */
+    default void submitAnswerFeedback(
+        com.google.cloud.dialogflow.cx.v3.SubmitAnswerFeedbackRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.AnswerFeedback>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSubmitAnswerFeedbackMethod(), responseObserver);
+    }
   }
 
   /**
@@ -482,6 +546,24 @@ public final class SessionsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the feedback received from the user for a single turn of the bot
+     * response.
+     * </pre>
+     */
+    public void submitAnswerFeedback(
+        com.google.cloud.dialogflow.cx.v3.SubmitAnswerFeedbackRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.AnswerFeedback>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSubmitAnswerFeedbackMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -555,6 +637,20 @@ public final class SessionsGrpc {
         com.google.cloud.dialogflow.cx.v3.FulfillIntentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFulfillIntentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the feedback received from the user for a single turn of the bot
+     * response.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3.AnswerFeedback submitAnswerFeedback(
+        com.google.cloud.dialogflow.cx.v3.SubmitAnswerFeedbackRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitAnswerFeedbackMethod(), getCallOptions(), request);
     }
   }
 
@@ -633,12 +729,29 @@ public final class SessionsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFulfillIntentMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the feedback received from the user for a single turn of the bot
+     * response.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3.AnswerFeedback>
+        submitAnswerFeedback(
+            com.google.cloud.dialogflow.cx.v3.SubmitAnswerFeedbackRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSubmitAnswerFeedbackMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_DETECT_INTENT = 0;
   private static final int METHODID_MATCH_INTENT = 1;
   private static final int METHODID_FULFILL_INTENT = 2;
-  private static final int METHODID_STREAMING_DETECT_INTENT = 3;
+  private static final int METHODID_SUBMIT_ANSWER_FEEDBACK = 3;
+  private static final int METHODID_STREAMING_DETECT_INTENT = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -673,6 +786,12 @@ public final class SessionsGrpc {
           serviceImpl.fulfillIntent(
               (com.google.cloud.dialogflow.cx.v3.FulfillIntentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.FulfillIntentResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SUBMIT_ANSWER_FEEDBACK:
+          serviceImpl.submitAnswerFeedback(
+              (com.google.cloud.dialogflow.cx.v3.SubmitAnswerFeedbackRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.AnswerFeedback>)
                   responseObserver);
           break;
         default:
@@ -727,6 +846,13 @@ public final class SessionsGrpc {
                     com.google.cloud.dialogflow.cx.v3.FulfillIntentRequest,
                     com.google.cloud.dialogflow.cx.v3.FulfillIntentResponse>(
                     service, METHODID_FULFILL_INTENT)))
+        .addMethod(
+            getSubmitAnswerFeedbackMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.SubmitAnswerFeedbackRequest,
+                    com.google.cloud.dialogflow.cx.v3.AnswerFeedback>(
+                    service, METHODID_SUBMIT_ANSWER_FEEDBACK)))
         .build();
   }
 
@@ -780,6 +906,7 @@ public final class SessionsGrpc {
                       .addMethod(getStreamingDetectIntentMethod())
                       .addMethod(getMatchIntentMethod())
                       .addMethod(getFulfillIntentMethod())
+                      .addMethod(getSubmitAnswerFeedbackMethod())
                       .build();
         }
       }

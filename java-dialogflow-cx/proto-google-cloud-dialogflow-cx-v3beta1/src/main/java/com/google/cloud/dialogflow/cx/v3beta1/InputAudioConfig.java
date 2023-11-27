@@ -382,6 +382,56 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     return singleUtterance_;
   }
 
+  public static final int BARGE_IN_CONFIG_FIELD_NUMBER = 15;
+  private com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig bargeInConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of barge-in behavior during the streaming of input audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+   *
+   * @return Whether the bargeInConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasBargeInConfig() {
+    return bargeInConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of barge-in behavior during the streaming of input audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+   *
+   * @return The bargeInConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig getBargeInConfig() {
+    return bargeInConfig_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig.getDefaultInstance()
+        : bargeInConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of barge-in behavior during the streaming of input audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.BargeInConfigOrBuilder getBargeInConfigOrBuilder() {
+    return bargeInConfig_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig.getDefaultInstance()
+        : bargeInConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -421,6 +471,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
     if (enableWordInfo_ != false) {
       output.writeBool(13, enableWordInfo_);
+    }
+    if (bargeInConfig_ != null) {
+      output.writeMessage(15, getBargeInConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -462,6 +515,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (enableWordInfo_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, enableWordInfo_);
     }
+    if (bargeInConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getBargeInConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -485,6 +541,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (!getModel().equals(other.getModel())) return false;
     if (modelVariant_ != other.modelVariant_) return false;
     if (getSingleUtterance() != other.getSingleUtterance()) return false;
+    if (hasBargeInConfig() != other.hasBargeInConfig()) return false;
+    if (hasBargeInConfig()) {
+      if (!getBargeInConfig().equals(other.getBargeInConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -512,6 +572,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + modelVariant_;
     hash = (37 * hash) + SINGLE_UTTERANCE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSingleUtterance());
+    if (hasBargeInConfig()) {
+      hash = (37 * hash) + BARGE_IN_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getBargeInConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -659,6 +723,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       model_ = "";
       modelVariant_ = 0;
       singleUtterance_ = false;
+      bargeInConfig_ = null;
+      if (bargeInConfigBuilder_ != null) {
+        bargeInConfigBuilder_.dispose();
+        bargeInConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -716,6 +785,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.singleUtterance_ = singleUtterance_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.bargeInConfig_ =
+            bargeInConfigBuilder_ == null ? bargeInConfig_ : bargeInConfigBuilder_.build();
       }
     }
 
@@ -795,6 +868,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (other.getSingleUtterance() != false) {
         setSingleUtterance(other.getSingleUtterance());
       }
+      if (other.hasBargeInConfig()) {
+        mergeBargeInConfig(other.getBargeInConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -864,6 +940,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 104
+            case 122:
+              {
+                input.readMessage(getBargeInConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1693,6 +1775,192 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       singleUtterance_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig bargeInConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig,
+            com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.BargeInConfigOrBuilder>
+        bargeInConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of barge-in behavior during the streaming of input audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+     *
+     * @return Whether the bargeInConfig field is set.
+     */
+    public boolean hasBargeInConfig() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of barge-in behavior during the streaming of input audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+     *
+     * @return The bargeInConfig.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig getBargeInConfig() {
+      if (bargeInConfigBuilder_ == null) {
+        return bargeInConfig_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig.getDefaultInstance()
+            : bargeInConfig_;
+      } else {
+        return bargeInConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of barge-in behavior during the streaming of input audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+     */
+    public Builder setBargeInConfig(com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig value) {
+      if (bargeInConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bargeInConfig_ = value;
+      } else {
+        bargeInConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of barge-in behavior during the streaming of input audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+     */
+    public Builder setBargeInConfig(
+        com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig.Builder builderForValue) {
+      if (bargeInConfigBuilder_ == null) {
+        bargeInConfig_ = builderForValue.build();
+      } else {
+        bargeInConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of barge-in behavior during the streaming of input audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+     */
+    public Builder mergeBargeInConfig(com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig value) {
+      if (bargeInConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && bargeInConfig_ != null
+            && bargeInConfig_
+                != com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig.getDefaultInstance()) {
+          getBargeInConfigBuilder().mergeFrom(value);
+        } else {
+          bargeInConfig_ = value;
+        }
+      } else {
+        bargeInConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of barge-in behavior during the streaming of input audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+     */
+    public Builder clearBargeInConfig() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      bargeInConfig_ = null;
+      if (bargeInConfigBuilder_ != null) {
+        bargeInConfigBuilder_.dispose();
+        bargeInConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of barge-in behavior during the streaming of input audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig.Builder getBargeInConfigBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getBargeInConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of barge-in behavior during the streaming of input audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.BargeInConfigOrBuilder
+        getBargeInConfigOrBuilder() {
+      if (bargeInConfigBuilder_ != null) {
+        return bargeInConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return bargeInConfig_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig.getDefaultInstance()
+            : bargeInConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of barge-in behavior during the streaming of input audio.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig,
+            com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.BargeInConfigOrBuilder>
+        getBargeInConfigFieldBuilder() {
+      if (bargeInConfigBuilder_ == null) {
+        bargeInConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig,
+                com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.BargeInConfigOrBuilder>(
+                getBargeInConfig(), getParentForChildren(), isClean());
+        bargeInConfig_ = null;
+      }
+      return bargeInConfigBuilder_;
     }
 
     @java.lang.Override
