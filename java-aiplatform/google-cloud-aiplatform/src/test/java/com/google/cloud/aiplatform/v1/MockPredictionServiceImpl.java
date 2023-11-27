@@ -100,6 +100,85 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
   }
 
   @Override
+  public void directPredict(
+      DirectPredictRequest request, StreamObserver<DirectPredictResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DirectPredictResponse) {
+      requests.add(request);
+      responseObserver.onNext(((DirectPredictResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DirectPredict, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DirectPredictResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void directRawPredict(
+      DirectRawPredictRequest request, StreamObserver<DirectRawPredictResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DirectRawPredictResponse) {
+      requests.add(request);
+      responseObserver.onNext(((DirectRawPredictResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DirectRawPredict, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DirectRawPredictResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public StreamObserver<StreamingPredictRequest> streamingPredict(
+      final StreamObserver<StreamingPredictResponse> responseObserver) {
+    StreamObserver<StreamingPredictRequest> requestObserver =
+        new StreamObserver<StreamingPredictRequest>() {
+          @Override
+          public void onNext(StreamingPredictRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof StreamingPredictResponse) {
+              responseObserver.onNext(((StreamingPredictResponse) response));
+            } else if (response instanceof Exception) {
+              responseObserver.onError(((Exception) response));
+            } else {
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method StreamingPredict, expected %s or %s",
+                          response == null ? "null" : response.getClass().getName(),
+                          StreamingPredictResponse.class.getName(),
+                          Exception.class.getName())));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
+  }
+
+  @Override
   public void serverStreamingPredict(
       StreamingPredictRequest request, StreamObserver<StreamingPredictResponse> responseObserver) {
     Object response = responses.poll();
@@ -118,6 +197,43 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
                   StreamingPredictResponse.class.getName(),
                   Exception.class.getName())));
     }
+  }
+
+  @Override
+  public StreamObserver<StreamingRawPredictRequest> streamingRawPredict(
+      final StreamObserver<StreamingRawPredictResponse> responseObserver) {
+    StreamObserver<StreamingRawPredictRequest> requestObserver =
+        new StreamObserver<StreamingRawPredictRequest>() {
+          @Override
+          public void onNext(StreamingRawPredictRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof StreamingRawPredictResponse) {
+              responseObserver.onNext(((StreamingRawPredictResponse) response));
+            } else if (response instanceof Exception) {
+              responseObserver.onError(((Exception) response));
+            } else {
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method StreamingRawPredict, expected %s or %s",
+                          response == null ? "null" : response.getClass().getName(),
+                          StreamingRawPredictResponse.class.getName(),
+                          Exception.class.getName())));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
   }
 
   @Override

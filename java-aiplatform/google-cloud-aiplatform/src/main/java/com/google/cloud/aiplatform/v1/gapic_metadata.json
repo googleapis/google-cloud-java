@@ -991,6 +991,12 @@
         "grpc": {
           "libraryClient": "PredictionServiceClient",
           "rpcs": {
+            "DirectPredict": {
+              "methods": ["directPredict", "directPredictCallable"]
+            },
+            "DirectRawPredict": {
+              "methods": ["directRawPredict", "directRawPredictCallable"]
+            },
             "Explain": {
               "methods": ["explain", "explain", "explain", "explainCallable"]
             },
@@ -1014,6 +1020,12 @@
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "StreamingPredict": {
+              "methods": ["streamingPredictCallable"]
+            },
+            "StreamingRawPredict": {
+              "methods": ["streamingRawPredictCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
