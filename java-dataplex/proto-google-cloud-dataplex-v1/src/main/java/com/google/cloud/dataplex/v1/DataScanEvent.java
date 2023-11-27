@@ -1410,6 +1410,180 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, bool&gt; dimension_passed = 3;</code>
      */
     boolean getDimensionPassedOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * The table-level data quality score for the data scan job.
+     *
+     * The data quality score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>float score = 4;</code>
+     *
+     * @return The score.
+     */
+    float getScore();
+
+    /**
+     *
+     *
+     * <pre>
+     * The score of each dimension for data quality result.
+     * The key of the map is the name of the dimension.
+     * The value is the data quality score for the dimension.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+     */
+    int getDimensionScoreCount();
+    /**
+     *
+     *
+     * <pre>
+     * The score of each dimension for data quality result.
+     * The key of the map is the name of the dimension.
+     * The value is the data quality score for the dimension.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+     */
+    boolean containsDimensionScore(java.lang.String key);
+    /** Use {@link #getDimensionScoreMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Float> getDimensionScore();
+    /**
+     *
+     *
+     * <pre>
+     * The score of each dimension for data quality result.
+     * The key of the map is the name of the dimension.
+     * The value is the data quality score for the dimension.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.Float> getDimensionScoreMap();
+    /**
+     *
+     *
+     * <pre>
+     * The score of each dimension for data quality result.
+     * The key of the map is the name of the dimension.
+     * The value is the data quality score for the dimension.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+     */
+    float getDimensionScoreOrDefault(java.lang.String key, float defaultValue);
+    /**
+     *
+     *
+     * <pre>
+     * The score of each dimension for data quality result.
+     * The key of the map is the name of the dimension.
+     * The value is the data quality score for the dimension.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+     */
+    float getDimensionScoreOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * The score of each column scanned in the data scan job.
+     * The key of the map is the name of the column.
+     * The value is the data quality score for the column.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; column_score = 6;</code>
+     */
+    int getColumnScoreCount();
+    /**
+     *
+     *
+     * <pre>
+     * The score of each column scanned in the data scan job.
+     * The key of the map is the name of the column.
+     * The value is the data quality score for the column.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; column_score = 6;</code>
+     */
+    boolean containsColumnScore(java.lang.String key);
+    /** Use {@link #getColumnScoreMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Float> getColumnScore();
+    /**
+     *
+     *
+     * <pre>
+     * The score of each column scanned in the data scan job.
+     * The key of the map is the name of the column.
+     * The value is the data quality score for the column.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; column_score = 6;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.Float> getColumnScoreMap();
+    /**
+     *
+     *
+     * <pre>
+     * The score of each column scanned in the data scan job.
+     * The key of the map is the name of the column.
+     * The value is the data quality score for the column.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; column_score = 6;</code>
+     */
+    float getColumnScoreOrDefault(java.lang.String key, float defaultValue);
+    /**
+     *
+     *
+     * <pre>
+     * The score of each column scanned in the data scan job.
+     * The key of the map is the name of the column.
+     * The value is the data quality score for the column.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; column_score = 6;</code>
+     */
+    float getColumnScoreOrThrow(java.lang.String key);
   }
   /**
    *
@@ -1449,6 +1623,10 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 3:
           return internalGetDimensionPassed();
+        case 5:
+          return internalGetDimensionScore();
+        case 6:
+          return internalGetColumnScore();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1615,6 +1793,269 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       return map.get(key);
     }
 
+    public static final int SCORE_FIELD_NUMBER = 4;
+    private float score_ = 0F;
+    /**
+     *
+     *
+     * <pre>
+     * The table-level data quality score for the data scan job.
+     *
+     * The data quality score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>float score = 4;</code>
+     *
+     * @return The score.
+     */
+    @java.lang.Override
+    public float getScore() {
+      return score_;
+    }
+
+    public static final int DIMENSION_SCORE_FIELD_NUMBER = 5;
+
+    private static final class DimensionScoreDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.Float> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.Float>newDefaultInstance(
+              com.google.cloud.dataplex.v1.LogsProto
+                  .internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityResult_DimensionScoreEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.FLOAT,
+              0F);
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Float> dimensionScore_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Float>
+        internalGetDimensionScore() {
+      if (dimensionScore_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            DimensionScoreDefaultEntryHolder.defaultEntry);
+      }
+      return dimensionScore_;
+    }
+
+    public int getDimensionScoreCount() {
+      return internalGetDimensionScore().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The score of each dimension for data quality result.
+     * The key of the map is the name of the dimension.
+     * The value is the data quality score for the dimension.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+     */
+    @java.lang.Override
+    public boolean containsDimensionScore(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetDimensionScore().getMap().containsKey(key);
+    }
+    /** Use {@link #getDimensionScoreMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Float> getDimensionScore() {
+      return getDimensionScoreMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The score of each dimension for data quality result.
+     * The key of the map is the name of the dimension.
+     * The value is the data quality score for the dimension.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.Float> getDimensionScoreMap() {
+      return internalGetDimensionScore().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The score of each dimension for data quality result.
+     * The key of the map is the name of the dimension.
+     * The value is the data quality score for the dimension.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+     */
+    @java.lang.Override
+    public float getDimensionScoreOrDefault(java.lang.String key, float defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Float> map = internalGetDimensionScore().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The score of each dimension for data quality result.
+     * The key of the map is the name of the dimension.
+     * The value is the data quality score for the dimension.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+     */
+    @java.lang.Override
+    public float getDimensionScoreOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Float> map = internalGetDimensionScore().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int COLUMN_SCORE_FIELD_NUMBER = 6;
+
+    private static final class ColumnScoreDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.Float> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.Float>newDefaultInstance(
+              com.google.cloud.dataplex.v1.LogsProto
+                  .internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityResult_ColumnScoreEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.FLOAT,
+              0F);
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Float> columnScore_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Float>
+        internalGetColumnScore() {
+      if (columnScore_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ColumnScoreDefaultEntryHolder.defaultEntry);
+      }
+      return columnScore_;
+    }
+
+    public int getColumnScoreCount() {
+      return internalGetColumnScore().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The score of each column scanned in the data scan job.
+     * The key of the map is the name of the column.
+     * The value is the data quality score for the column.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; column_score = 6;</code>
+     */
+    @java.lang.Override
+    public boolean containsColumnScore(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetColumnScore().getMap().containsKey(key);
+    }
+    /** Use {@link #getColumnScoreMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Float> getColumnScore() {
+      return getColumnScoreMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The score of each column scanned in the data scan job.
+     * The key of the map is the name of the column.
+     * The value is the data quality score for the column.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; column_score = 6;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.Float> getColumnScoreMap() {
+      return internalGetColumnScore().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The score of each column scanned in the data scan job.
+     * The key of the map is the name of the column.
+     * The value is the data quality score for the column.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; column_score = 6;</code>
+     */
+    @java.lang.Override
+    public float getColumnScoreOrDefault(java.lang.String key, float defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Float> map = internalGetColumnScore().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The score of each column scanned in the data scan job.
+     * The key of the map is the name of the column.
+     * The value is the data quality score for the column.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>map&lt;string, float&gt; column_score = 6;</code>
+     */
+    @java.lang.Override
+    public float getColumnScoreOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Float> map = internalGetColumnScore().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1637,6 +2078,13 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetDimensionPassed(), DimensionPassedDefaultEntryHolder.defaultEntry, 3);
+      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
+        output.writeFloat(4, score_);
+      }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetDimensionScore(), DimensionScoreDefaultEntryHolder.defaultEntry, 5);
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetColumnScore(), ColumnScoreDefaultEntryHolder.defaultEntry, 6);
       getUnknownFields().writeTo(output);
     }
 
@@ -1662,6 +2110,29 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
                 .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, dimensionPassed__);
       }
+      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, score_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.Float> entry :
+          internalGetDimensionScore().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Float> dimensionScore__ =
+            DimensionScoreDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, dimensionScore__);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.Float> entry :
+          internalGetColumnScore().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Float> columnScore__ =
+            ColumnScoreDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, columnScore__);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1681,6 +2152,10 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       if (getRowCount() != other.getRowCount()) return false;
       if (getPassed() != other.getPassed()) return false;
       if (!internalGetDimensionPassed().equals(other.internalGetDimensionPassed())) return false;
+      if (java.lang.Float.floatToIntBits(getScore())
+          != java.lang.Float.floatToIntBits(other.getScore())) return false;
+      if (!internalGetDimensionScore().equals(other.internalGetDimensionScore())) return false;
+      if (!internalGetColumnScore().equals(other.internalGetColumnScore())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1699,6 +2174,16 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       if (!internalGetDimensionPassed().getMap().isEmpty()) {
         hash = (37 * hash) + DIMENSION_PASSED_FIELD_NUMBER;
         hash = (53 * hash) + internalGetDimensionPassed().hashCode();
+      }
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getScore());
+      if (!internalGetDimensionScore().getMap().isEmpty()) {
+        hash = (37 * hash) + DIMENSION_SCORE_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetDimensionScore().hashCode();
+      }
+      if (!internalGetColumnScore().getMap().isEmpty()) {
+        hash = (37 * hash) + COLUMN_SCORE_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetColumnScore().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1826,6 +2311,10 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
         switch (number) {
           case 3:
             return internalGetDimensionPassed();
+          case 5:
+            return internalGetDimensionScore();
+          case 6:
+            return internalGetColumnScore();
           default:
             throw new RuntimeException("Invalid map field number: " + number);
         }
@@ -1836,6 +2325,10 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
         switch (number) {
           case 3:
             return internalGetMutableDimensionPassed();
+          case 5:
+            return internalGetMutableDimensionScore();
+          case 6:
+            return internalGetMutableColumnScore();
           default:
             throw new RuntimeException("Invalid map field number: " + number);
         }
@@ -1865,6 +2358,9 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
         rowCount_ = 0L;
         passed_ = false;
         internalGetMutableDimensionPassed().clear();
+        score_ = 0F;
+        internalGetMutableDimensionScore().clear();
+        internalGetMutableColumnScore().clear();
         return this;
       }
 
@@ -1912,6 +2408,17 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.dimensionPassed_ = internalGetDimensionPassed();
           result.dimensionPassed_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.score_ = score_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.dimensionScore_ = internalGetDimensionScore();
+          result.dimensionScore_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.columnScore_ = internalGetColumnScore();
+          result.columnScore_.makeImmutable();
         }
       }
 
@@ -1972,6 +2479,13 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
         }
         internalGetMutableDimensionPassed().mergeFrom(other.internalGetDimensionPassed());
         bitField0_ |= 0x00000004;
+        if (other.getScore() != 0F) {
+          setScore(other.getScore());
+        }
+        internalGetMutableDimensionScore().mergeFrom(other.internalGetDimensionScore());
+        bitField0_ |= 0x00000010;
+        internalGetMutableColumnScore().mergeFrom(other.internalGetColumnScore());
+        bitField0_ |= 0x00000020;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2023,6 +2537,36 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 37:
+                {
+                  score_ = input.readFloat();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 37
+              case 42:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.Float> dimensionScore__ =
+                      input.readMessage(
+                          DimensionScoreDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+                  internalGetMutableDimensionScore()
+                      .getMutableMap()
+                      .put(dimensionScore__.getKey(), dimensionScore__.getValue());
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.Float> columnScore__ =
+                      input.readMessage(
+                          ColumnScoreDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+                  internalGetMutableColumnScore()
+                      .getMutableMap()
+                      .put(columnScore__.getKey(), columnScore__.getValue());
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2331,6 +2875,461 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
           java.util.Map<java.lang.String, java.lang.Boolean> values) {
         internalGetMutableDimensionPassed().getMutableMap().putAll(values);
         bitField0_ |= 0x00000004;
+        return this;
+      }
+
+      private float score_;
+      /**
+       *
+       *
+       * <pre>
+       * The table-level data quality score for the data scan job.
+       *
+       * The data quality score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>float score = 4;</code>
+       *
+       * @return The score.
+       */
+      @java.lang.Override
+      public float getScore() {
+        return score_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The table-level data quality score for the data scan job.
+       *
+       * The data quality score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>float score = 4;</code>
+       *
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(float value) {
+
+        score_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The table-level data quality score for the data scan job.
+       *
+       * The data quality score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>float score = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        score_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Float> dimensionScore_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Float>
+          internalGetDimensionScore() {
+        if (dimensionScore_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              DimensionScoreDefaultEntryHolder.defaultEntry);
+        }
+        return dimensionScore_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Float>
+          internalGetMutableDimensionScore() {
+        if (dimensionScore_ == null) {
+          dimensionScore_ =
+              com.google.protobuf.MapField.newMapField(
+                  DimensionScoreDefaultEntryHolder.defaultEntry);
+        }
+        if (!dimensionScore_.isMutable()) {
+          dimensionScore_ = dimensionScore_.copy();
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return dimensionScore_;
+      }
+
+      public int getDimensionScoreCount() {
+        return internalGetDimensionScore().getMap().size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The score of each dimension for data quality result.
+       * The key of the map is the name of the dimension.
+       * The value is the data quality score for the dimension.
+       *
+       * The score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+       */
+      @java.lang.Override
+      public boolean containsDimensionScore(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetDimensionScore().getMap().containsKey(key);
+      }
+      /** Use {@link #getDimensionScoreMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Float> getDimensionScore() {
+        return getDimensionScoreMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The score of each dimension for data quality result.
+       * The key of the map is the name of the dimension.
+       * The value is the data quality score for the dimension.
+       *
+       * The score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.Float> getDimensionScoreMap() {
+        return internalGetDimensionScore().getMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The score of each dimension for data quality result.
+       * The key of the map is the name of the dimension.
+       * The value is the data quality score for the dimension.
+       *
+       * The score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+       */
+      @java.lang.Override
+      public float getDimensionScoreOrDefault(java.lang.String key, float defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.Float> map = internalGetDimensionScore().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The score of each dimension for data quality result.
+       * The key of the map is the name of the dimension.
+       * The value is the data quality score for the dimension.
+       *
+       * The score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+       */
+      @java.lang.Override
+      public float getDimensionScoreOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.Float> map = internalGetDimensionScore().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearDimensionScore() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        internalGetMutableDimensionScore().getMutableMap().clear();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The score of each dimension for data quality result.
+       * The key of the map is the name of the dimension.
+       * The value is the data quality score for the dimension.
+       *
+       * The score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+       */
+      public Builder removeDimensionScore(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableDimensionScore().getMutableMap().remove(key);
+        return this;
+      }
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Float> getMutableDimensionScore() {
+        bitField0_ |= 0x00000010;
+        return internalGetMutableDimensionScore().getMutableMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The score of each dimension for data quality result.
+       * The key of the map is the name of the dimension.
+       * The value is the data quality score for the dimension.
+       *
+       * The score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+       */
+      public Builder putDimensionScore(java.lang.String key, float value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+
+        internalGetMutableDimensionScore().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The score of each dimension for data quality result.
+       * The key of the map is the name of the dimension.
+       * The value is the data quality score for the dimension.
+       *
+       * The score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; dimension_score = 5;</code>
+       */
+      public Builder putAllDimensionScore(java.util.Map<java.lang.String, java.lang.Float> values) {
+        internalGetMutableDimensionScore().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Float> columnScore_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Float>
+          internalGetColumnScore() {
+        if (columnScore_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ColumnScoreDefaultEntryHolder.defaultEntry);
+        }
+        return columnScore_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Float>
+          internalGetMutableColumnScore() {
+        if (columnScore_ == null) {
+          columnScore_ =
+              com.google.protobuf.MapField.newMapField(ColumnScoreDefaultEntryHolder.defaultEntry);
+        }
+        if (!columnScore_.isMutable()) {
+          columnScore_ = columnScore_.copy();
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return columnScore_;
+      }
+
+      public int getColumnScoreCount() {
+        return internalGetColumnScore().getMap().size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The score of each column scanned in the data scan job.
+       * The key of the map is the name of the column.
+       * The value is the data quality score for the column.
+       *
+       * The score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; column_score = 6;</code>
+       */
+      @java.lang.Override
+      public boolean containsColumnScore(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetColumnScore().getMap().containsKey(key);
+      }
+      /** Use {@link #getColumnScoreMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Float> getColumnScore() {
+        return getColumnScoreMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The score of each column scanned in the data scan job.
+       * The key of the map is the name of the column.
+       * The value is the data quality score for the column.
+       *
+       * The score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; column_score = 6;</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.Float> getColumnScoreMap() {
+        return internalGetColumnScore().getMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The score of each column scanned in the data scan job.
+       * The key of the map is the name of the column.
+       * The value is the data quality score for the column.
+       *
+       * The score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; column_score = 6;</code>
+       */
+      @java.lang.Override
+      public float getColumnScoreOrDefault(java.lang.String key, float defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.Float> map = internalGetColumnScore().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The score of each column scanned in the data scan job.
+       * The key of the map is the name of the column.
+       * The value is the data quality score for the column.
+       *
+       * The score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; column_score = 6;</code>
+       */
+      @java.lang.Override
+      public float getColumnScoreOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.Float> map = internalGetColumnScore().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearColumnScore() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        internalGetMutableColumnScore().getMutableMap().clear();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The score of each column scanned in the data scan job.
+       * The key of the map is the name of the column.
+       * The value is the data quality score for the column.
+       *
+       * The score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; column_score = 6;</code>
+       */
+      public Builder removeColumnScore(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableColumnScore().getMutableMap().remove(key);
+        return this;
+      }
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Float> getMutableColumnScore() {
+        bitField0_ |= 0x00000020;
+        return internalGetMutableColumnScore().getMutableMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The score of each column scanned in the data scan job.
+       * The key of the map is the name of the column.
+       * The value is the data quality score for the column.
+       *
+       * The score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; column_score = 6;</code>
+       */
+      public Builder putColumnScore(java.lang.String key, float value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+
+        internalGetMutableColumnScore().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The score of each column scanned in the data scan job.
+       * The key of the map is the name of the column.
+       * The value is the data quality score for the column.
+       *
+       * The score ranges between [0, 100] (up to two decimal
+       * points).
+       * </pre>
+       *
+       * <code>map&lt;string, float&gt; column_score = 6;</code>
+       */
+      public Builder putAllColumnScore(java.util.Map<java.lang.String, java.lang.Float> values) {
+        internalGetMutableColumnScore().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000020;
         return this;
       }
 
