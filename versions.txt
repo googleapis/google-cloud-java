@@ -697,9 +697,6 @@ grpc-google-maps-fleetengine-delivery-v1:0.1.0:0.2.0-SNAPSHOT
 google-maps-places:0.1.0:0.2.0-SNAPSHOT
 proto-google-maps-places-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-maps-places-v1:0.1.0:0.2.0-SNAPSHOT
-google-maps-fleetengine:0.1.0:0.2.0-SNAPSHOT
-proto-google-maps-fleetengine-v1:0.1.0:0.2.0-SNAPSHOT
-grpc-google-maps-fleetengine-v1:0.1.0:0.2.0-SNAPSHOT
 google-cloud-telcoautomation:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-telcoautomation-v1:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-telcoautomation-v1alpha1:0.0.0:0.0.1-SNAPSHOT

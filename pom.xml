@@ -108,7 +108,6 @@
     <module>java-managed-identities</module>
     <module>java-maps-addressvalidation</module>
     <module>java-maps-fleetengine-delivery</module>
-    <module>java-maps-fleetengine</module>
     <module>java-maps-mapsplatformdatasets</module>
     <module>java-maps-places</module>
     <module>java-maps-routing</module>
