@@ -41,6 +41,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     name_ = "";
     annotation_ = 0;
     reasons_ = java.util.Collections.emptyList();
+    accountId_ = "";
     hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
   }
 
@@ -863,8 +864,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Reasons for the annotation that are assigned to the event.
    * </pre>
    *
    * <code>
@@ -884,8 +884,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Reasons for the annotation that are assigned to the event.
    * </pre>
    *
    * <code>
@@ -902,8 +901,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Reasons for the annotation that are assigned to the event.
    * </pre>
    *
    * <code>
@@ -921,8 +919,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Reasons for the annotation that are assigned to the event.
    * </pre>
    *
    * <code>
@@ -939,8 +936,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Reasons for the annotation that are assigned to the event.
    * </pre>
    *
    * <code>
@@ -957,17 +953,71 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
 
   private int reasonsMemoizedSerializedSize;
 
+  public static final int ACCOUNT_ID_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object accountId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A stable account identifier to apply to the assessment. This is
+   * an alternative to setting `account_id` in `CreateAssessment`, for example
+   * when a stable account identifier is not yet known in the initial request.
+   * </pre>
+   *
+   * <code>string account_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The accountId.
+   */
+  @java.lang.Override
+  public java.lang.String getAccountId() {
+    java.lang.Object ref = accountId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      accountId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A stable account identifier to apply to the assessment. This is
+   * an alternative to setting `account_id` in `CreateAssessment`, for example
+   * when a stable account identifier is not yet known in the initial request.
+   * </pre>
+   *
+   * <code>string account_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for accountId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAccountIdBytes() {
+    java.lang.Object ref = accountId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      accountId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int HASHED_ACCOUNT_ID_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
    * <pre>
-   * Optional. Unique stable hashed user identifier to apply to the assessment.
-   * This is an alternative to setting the hashed_account_id in
-   * CreateAssessment, for example when the account identifier is not yet known
-   * in the initial request. It is recommended that the identifier is hashed
-   * using hmac-sha256 with stable secret.
+   * Optional. A stable hashed account identifier to apply to the assessment.
+   * This is an alternative to setting `hashed_account_id` in
+   * `CreateAssessment`, for example when a stable account identifier is not yet
+   * known in the initial request.
    * </pre>
    *
    * <code>bytes hashed_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1076,6 +1126,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     if (transactionEvent_ != null) {
       output.writeMessage(5, getTransactionEvent());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, accountId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1112,6 +1165,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     if (transactionEvent_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getTransactionEvent());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, accountId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1131,6 +1187,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     if (!getName().equals(other.getName())) return false;
     if (annotation_ != other.annotation_) return false;
     if (!reasons_.equals(other.reasons_)) return false;
+    if (!getAccountId().equals(other.getAccountId())) return false;
     if (!getHashedAccountId().equals(other.getHashedAccountId())) return false;
     if (hasTransactionEvent() != other.hasTransactionEvent()) return false;
     if (hasTransactionEvent()) {
@@ -1155,6 +1212,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       hash = (37 * hash) + REASONS_FIELD_NUMBER;
       hash = (53 * hash) + reasons_.hashCode();
     }
+    hash = (37 * hash) + ACCOUNT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getAccountId().hashCode();
     hash = (37 * hash) + HASHED_ACCOUNT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getHashedAccountId().hashCode();
     if (hasTransactionEvent()) {
@@ -1305,6 +1364,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       annotation_ = 0;
       reasons_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      accountId_ = "";
       hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
       transactionEvent_ = null;
       if (transactionEventBuilder_ != null) {
@@ -1364,9 +1424,12 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         result.annotation_ = annotation_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.hashedAccountId_ = hashedAccountId_;
+        result.accountId_ = accountId_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.hashedAccountId_ = hashedAccountId_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.transactionEvent_ =
             transactionEventBuilder_ == null ? transactionEvent_ : transactionEventBuilder_.build();
       }
@@ -1436,6 +1499,11 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         }
         onChanged();
       }
+      if (!other.getAccountId().isEmpty()) {
+        accountId_ = other.accountId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       if (other.getHashedAccountId() != com.google.protobuf.ByteString.EMPTY) {
         setHashedAccountId(other.getHashedAccountId());
       }
@@ -1502,16 +1570,22 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
             case 34:
               {
                 hashedAccountId_ = input.readBytes();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getTransactionEventFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
+            case 58:
+              {
+                accountId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1778,8 +1852,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Reasons for the annotation that are assigned to the event.
      * </pre>
      *
      * <code>
@@ -1798,8 +1871,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Reasons for the annotation that are assigned to the event.
      * </pre>
      *
      * <code>
@@ -1815,8 +1887,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Reasons for the annotation that are assigned to the event.
      * </pre>
      *
      * <code>
@@ -1834,8 +1905,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Reasons for the annotation that are assigned to the event.
      * </pre>
      *
      * <code>
@@ -1860,8 +1930,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Reasons for the annotation that are assigned to the event.
      * </pre>
      *
      * <code>
@@ -1885,8 +1954,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Reasons for the annotation that are assigned to the event.
      * </pre>
      *
      * <code>
@@ -1911,8 +1979,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Reasons for the annotation that are assigned to the event.
      * </pre>
      *
      * <code>
@@ -1931,8 +1998,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Reasons for the annotation that are assigned to the event.
      * </pre>
      *
      * <code>
@@ -1948,8 +2014,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Reasons for the annotation that are assigned to the event.
      * </pre>
      *
      * <code>
@@ -1966,8 +2031,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Reasons for the annotation that are assigned to the event.
      * </pre>
      *
      * <code>
@@ -1988,8 +2052,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Reasons for the annotation that are assigned to the event.
      * </pre>
      *
      * <code>
@@ -2009,8 +2072,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Reasons for the annotation that are assigned to the event.
      * </pre>
      *
      * <code>
@@ -2029,16 +2091,131 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       return this;
     }
 
+    private java.lang.Object accountId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A stable account identifier to apply to the assessment. This is
+     * an alternative to setting `account_id` in `CreateAssessment`, for example
+     * when a stable account identifier is not yet known in the initial request.
+     * </pre>
+     *
+     * <code>string account_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The accountId.
+     */
+    public java.lang.String getAccountId() {
+      java.lang.Object ref = accountId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        accountId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A stable account identifier to apply to the assessment. This is
+     * an alternative to setting `account_id` in `CreateAssessment`, for example
+     * when a stable account identifier is not yet known in the initial request.
+     * </pre>
+     *
+     * <code>string account_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for accountId.
+     */
+    public com.google.protobuf.ByteString getAccountIdBytes() {
+      java.lang.Object ref = accountId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        accountId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A stable account identifier to apply to the assessment. This is
+     * an alternative to setting `account_id` in `CreateAssessment`, for example
+     * when a stable account identifier is not yet known in the initial request.
+     * </pre>
+     *
+     * <code>string account_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The accountId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAccountId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      accountId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A stable account identifier to apply to the assessment. This is
+     * an alternative to setting `account_id` in `CreateAssessment`, for example
+     * when a stable account identifier is not yet known in the initial request.
+     * </pre>
+     *
+     * <code>string account_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAccountId() {
+      accountId_ = getDefaultInstance().getAccountId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A stable account identifier to apply to the assessment. This is
+     * an alternative to setting `account_id` in `CreateAssessment`, for example
+     * when a stable account identifier is not yet known in the initial request.
+     * </pre>
+     *
+     * <code>string account_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for accountId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAccountIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      accountId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.ByteString hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
     /**
      *
      *
      * <pre>
-     * Optional. Unique stable hashed user identifier to apply to the assessment.
-     * This is an alternative to setting the hashed_account_id in
-     * CreateAssessment, for example when the account identifier is not yet known
-     * in the initial request. It is recommended that the identifier is hashed
-     * using hmac-sha256 with stable secret.
+     * Optional. A stable hashed account identifier to apply to the assessment.
+     * This is an alternative to setting `hashed_account_id` in
+     * `CreateAssessment`, for example when a stable account identifier is not yet
+     * known in the initial request.
      * </pre>
      *
      * <code>bytes hashed_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2053,11 +2230,10 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Unique stable hashed user identifier to apply to the assessment.
-     * This is an alternative to setting the hashed_account_id in
-     * CreateAssessment, for example when the account identifier is not yet known
-     * in the initial request. It is recommended that the identifier is hashed
-     * using hmac-sha256 with stable secret.
+     * Optional. A stable hashed account identifier to apply to the assessment.
+     * This is an alternative to setting `hashed_account_id` in
+     * `CreateAssessment`, for example when a stable account identifier is not yet
+     * known in the initial request.
      * </pre>
      *
      * <code>bytes hashed_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2070,7 +2246,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       hashedAccountId_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2078,11 +2254,10 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Unique stable hashed user identifier to apply to the assessment.
-     * This is an alternative to setting the hashed_account_id in
-     * CreateAssessment, for example when the account identifier is not yet known
-     * in the initial request. It is recommended that the identifier is hashed
-     * using hmac-sha256 with stable secret.
+     * Optional. A stable hashed account identifier to apply to the assessment.
+     * This is an alternative to setting `hashed_account_id` in
+     * `CreateAssessment`, for example when a stable account identifier is not yet
+     * known in the initial request.
      * </pre>
      *
      * <code>bytes hashed_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2090,7 +2265,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearHashedAccountId() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       hashedAccountId_ = getDefaultInstance().getHashedAccountId();
       onChanged();
       return this;
@@ -2117,7 +2292,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * @return Whether the transactionEvent field is set.
      */
     public boolean hasTransactionEvent() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2163,7 +2338,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       } else {
         transactionEventBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2186,7 +2361,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       } else {
         transactionEventBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2204,7 +2379,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      */
     public Builder mergeTransactionEvent(com.google.recaptchaenterprise.v1.TransactionEvent value) {
       if (transactionEventBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && transactionEvent_ != null
             && transactionEvent_
                 != com.google.recaptchaenterprise.v1.TransactionEvent.getDefaultInstance()) {
@@ -2215,7 +2390,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       } else {
         transactionEventBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2232,7 +2407,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearTransactionEvent() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       transactionEvent_ = null;
       if (transactionEventBuilder_ != null) {
         transactionEventBuilder_.dispose();
@@ -2254,7 +2429,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionEvent.Builder getTransactionEventBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getTransactionEventFieldBuilder().getBuilder();
     }

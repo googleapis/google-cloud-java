@@ -23,7 +23,6 @@ package com.google.recaptchaenterprise.v1beta1;
  *
  * <pre>
  * Transaction data associated with a payment protected by reCAPTCHA Enterprise.
- * All fields are optional.
  * </pre>
  *
  * Protobuf type {@code google.cloud.recaptchaenterprise.v1beta1.TransactionData}
@@ -6702,7 +6701,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Transaction data associated with a payment protected by reCAPTCHA Enterprise.
-   * All fields are optional.
    * </pre>
    *
    * Protobuf type {@code google.cloud.recaptchaenterprise.v1beta1.TransactionData}
