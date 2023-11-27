@@ -1748,9 +1748,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource to create analyses in. Format:
+   * @param parent Required. The parent resource to delete conversations from. Format:
    *     projects/{project}/locations/{location}
-   * @param filter Filter used to select the subset of conversations to analyze.
+   * @param filter Filter used to select the subset of conversations to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BulkDeleteConversationsResponse, BulkDeleteConversationsMetadata>
@@ -1784,9 +1784,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource to create analyses in. Format:
+   * @param parent Required. The parent resource to delete conversations from. Format:
    *     projects/{project}/locations/{location}
-   * @param filter Filter used to select the subset of conversations to analyze.
+   * @param filter Filter used to select the subset of conversations to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BulkDeleteConversationsResponse, BulkDeleteConversationsMetadata>

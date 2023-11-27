@@ -178,7 +178,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * The object type is unspecified and will default to TRANSCRIPT.
+       * The object type is unspecified and will default to `TRANSCRIPT`.
        * </pre>
        *
        * <code>BUCKET_OBJECT_TYPE_UNSPECIFIED = 0;</code>
@@ -211,7 +211,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * The object type is unspecified and will default to TRANSCRIPT.
+       * The object type is unspecified and will default to `TRANSCRIPT`.
        * </pre>
        *
        * <code>BUCKET_OBJECT_TYPE_UNSPECIFIED = 0;</code>

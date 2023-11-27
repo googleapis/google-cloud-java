@@ -22,7 +22,7 @@ package com.google.cloud.contactcenterinsights.v1;
  *
  *
  * <pre>
- * The response for a bulk analyze conversations operation.
+ * The response for a bulk delete conversations operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.contactcenterinsights.v1.BulkDeleteConversationsResponse}
@@ -219,7 +219,7 @@ public final class BulkDeleteConversationsResponse extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The response for a bulk analyze conversations operation.
+   * The response for a bulk delete conversations operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.contactcenterinsights.v1.BulkDeleteConversationsResponse}

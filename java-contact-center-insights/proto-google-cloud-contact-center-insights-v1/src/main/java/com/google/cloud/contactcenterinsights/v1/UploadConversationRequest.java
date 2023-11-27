@@ -242,8 +242,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. DLP settings for transcript redaction. Optional, will default to
-   * the config specified in Settings.
+   * Optional. DLP settings for transcript redaction. Will default to the config
+   * specified in Settings.
    * </pre>
    *
    * <code>
@@ -260,8 +260,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. DLP settings for transcript redaction. Optional, will default to
-   * the config specified in Settings.
+   * Optional. DLP settings for transcript redaction. Will default to the config
+   * specified in Settings.
    * </pre>
    *
    * <code>
@@ -280,8 +280,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. DLP settings for transcript redaction. Optional, will default to
-   * the config specified in Settings.
+   * Optional. DLP settings for transcript redaction. Will default to the config
+   * specified in Settings.
    * </pre>
    *
    * <code>
@@ -302,8 +302,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Default Speech-to-Text configuration. Optional, will default to
-   * the config specified in Settings.
+   * Optional. Speech-to-Text configuration. Will default to the config
+   * specified in Settings.
    * </pre>
    *
    * <code>
@@ -320,8 +320,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Default Speech-to-Text configuration. Optional, will default to
-   * the config specified in Settings.
+   * Optional. Speech-to-Text configuration. Will default to the config
+   * specified in Settings.
    * </pre>
    *
    * <code>
@@ -340,8 +340,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Default Speech-to-Text configuration. Optional, will default to
-   * the config specified in Settings.
+   * Optional. Speech-to-Text configuration. Will default to the config
+   * specified in Settings.
    * </pre>
    *
    * <code>
@@ -1288,8 +1288,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. DLP settings for transcript redaction. Optional, will default to
-     * the config specified in Settings.
+     * Optional. DLP settings for transcript redaction. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1305,8 +1305,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. DLP settings for transcript redaction. Optional, will default to
-     * the config specified in Settings.
+     * Optional. DLP settings for transcript redaction. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1328,8 +1328,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. DLP settings for transcript redaction. Optional, will default to
-     * the config specified in Settings.
+     * Optional. DLP settings for transcript redaction. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1354,8 +1354,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. DLP settings for transcript redaction. Optional, will default to
-     * the config specified in Settings.
+     * Optional. DLP settings for transcript redaction. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1377,8 +1377,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. DLP settings for transcript redaction. Optional, will default to
-     * the config specified in Settings.
+     * Optional. DLP settings for transcript redaction. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1407,8 +1407,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. DLP settings for transcript redaction. Optional, will default to
-     * the config specified in Settings.
+     * Optional. DLP settings for transcript redaction. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1429,8 +1429,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. DLP settings for transcript redaction. Optional, will default to
-     * the config specified in Settings.
+     * Optional. DLP settings for transcript redaction. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1447,8 +1447,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. DLP settings for transcript redaction. Optional, will default to
-     * the config specified in Settings.
+     * Optional. DLP settings for transcript redaction. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1469,8 +1469,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. DLP settings for transcript redaction. Optional, will default to
-     * the config specified in Settings.
+     * Optional. DLP settings for transcript redaction. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1504,8 +1504,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Default Speech-to-Text configuration. Optional, will default to
-     * the config specified in Settings.
+     * Optional. Speech-to-Text configuration. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1521,8 +1521,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Default Speech-to-Text configuration. Optional, will default to
-     * the config specified in Settings.
+     * Optional. Speech-to-Text configuration. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1544,8 +1544,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Default Speech-to-Text configuration. Optional, will default to
-     * the config specified in Settings.
+     * Optional. Speech-to-Text configuration. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1569,8 +1569,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Default Speech-to-Text configuration. Optional, will default to
-     * the config specified in Settings.
+     * Optional. Speech-to-Text configuration. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1592,8 +1592,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Default Speech-to-Text configuration. Optional, will default to
-     * the config specified in Settings.
+     * Optional. Speech-to-Text configuration. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1621,8 +1621,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Default Speech-to-Text configuration. Optional, will default to
-     * the config specified in Settings.
+     * Optional. Speech-to-Text configuration. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1643,8 +1643,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Default Speech-to-Text configuration. Optional, will default to
-     * the config specified in Settings.
+     * Optional. Speech-to-Text configuration. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1660,8 +1660,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Default Speech-to-Text configuration. Optional, will default to
-     * the config specified in Settings.
+     * Optional. Speech-to-Text configuration. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
@@ -1682,8 +1682,8 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Default Speech-to-Text configuration. Optional, will default to
-     * the config specified in Settings.
+     * Optional. Speech-to-Text configuration. Will default to the config
+     * specified in Settings.
      * </pre>
      *
      * <code>
