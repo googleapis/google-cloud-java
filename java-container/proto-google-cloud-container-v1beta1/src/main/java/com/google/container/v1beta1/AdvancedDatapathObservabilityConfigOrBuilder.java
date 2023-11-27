@@ -62,4 +62,29 @@ public interface AdvancedDatapathObservabilityConfigOrBuilder
    * @return The relayMode.
    */
   com.google.container.v1beta1.AdvancedDatapathObservabilityConfig.RelayMode getRelayMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable Relay component
+   * </pre>
+   *
+   * <code>optional bool enable_relay = 3;</code>
+   *
+   * @return Whether the enableRelay field is set.
+   */
+  boolean hasEnableRelay();
+  /**
+   *
+   *
+   * <pre>
+   * Enable Relay component
+   * </pre>
+   *
+   * <code>optional bool enable_relay = 3;</code>
+   *
+   * @return The enableRelay.
+   */
+  boolean getEnableRelay();
 }

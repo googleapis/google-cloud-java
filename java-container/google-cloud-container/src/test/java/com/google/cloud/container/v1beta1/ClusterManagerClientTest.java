@@ -1389,6 +1389,7 @@ public class ClusterManagerClientTest {
             .setPlacementPolicy(NodePool.PlacementPolicy.newBuilder().build())
             .setUpdateInfo(NodePool.UpdateInfo.newBuilder().build())
             .setEtag("etag3123477")
+            .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
             .setBestEffortProvisioning(BestEffortProvisioning.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);

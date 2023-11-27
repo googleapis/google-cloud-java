@@ -28,29 +28,6 @@ package com.google.container.v1beta1;
  * of Kubernetes labels applied to them, which may be used to reference them
  * during pod scheduling. They may also be resized up or down, to accommodate
  * the workload.
- * These upgrade settings control the level of parallelism and the level of
- * disruption caused by an upgrade.
- *
- * maxUnavailable controls the number of nodes that can be simultaneously
- * unavailable.
- *
- * maxSurge controls the number of additional nodes that can be added to the
- * node pool temporarily for the time of the upgrade to increase the number of
- * available nodes.
- *
- * (maxUnavailable + maxSurge) determines the level of parallelism (how many
- * nodes are being upgraded at the same time).
- *
- * Note: upgrades inevitably introduce some disruption since workloads need to
- * be moved from old nodes to new, upgraded ones. Even if maxUnavailable=0,
- * this holds true. (Disruption stays within the limits of
- * PodDisruptionBudget, if it is configured.)
- *
- * Consider a hypothetical node pool with 5 nodes having maxSurge=2,
- * maxUnavailable=1. This means the upgrade process upgrades 3 nodes
- * simultaneously. It creates 2 additional (upgraded) nodes, then it brings
- * down 3 old (not yet upgraded) nodes at the same time. This ensures that
- * there are always at least 4 nodes available.
  * </pre>
  *
  * Protobuf type {@code google.container.v1beta1.NodePool}
@@ -467,6 +444,30 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * These upgrade settings control the level of parallelism and the level of
+   * disruption caused by an upgrade.
+   *
+   * maxUnavailable controls the number of nodes that can be simultaneously
+   * unavailable.
+   *
+   * maxSurge controls the number of additional nodes that can be added to the
+   * node pool temporarily for the time of the upgrade to increase the number of
+   * available nodes.
+   *
+   * (maxUnavailable + maxSurge) determines the level of parallelism (how many
+   * nodes are being upgraded at the same time).
+   *
+   * Note: upgrades inevitably introduce some disruption since workloads need to
+   * be moved from old nodes to new, upgraded ones. Even if maxUnavailable=0,
+   * this holds true. (Disruption stays within the limits of
+   * PodDisruptionBudget, if it is configured.)
+   *
+   * Consider a hypothetical node pool with 5 nodes having maxSurge=2,
+   * maxUnavailable=1. This means the upgrade process upgrades 3 nodes
+   * simultaneously. It creates 2 additional (upgraded) nodes, then it brings
+   * down 3 old (not yet upgraded) nodes at the same time. This ensures that
+   * there are always at least 4 nodes available.
+   *
    * These upgrade settings configure the upgrade strategy for the node pool.
    * Use strategy to switch between the strategies applied to the node pool.
    *
@@ -872,6 +873,30 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * These upgrade settings control the level of parallelism and the level of
+     * disruption caused by an upgrade.
+     *
+     * maxUnavailable controls the number of nodes that can be simultaneously
+     * unavailable.
+     *
+     * maxSurge controls the number of additional nodes that can be added to the
+     * node pool temporarily for the time of the upgrade to increase the number of
+     * available nodes.
+     *
+     * (maxUnavailable + maxSurge) determines the level of parallelism (how many
+     * nodes are being upgraded at the same time).
+     *
+     * Note: upgrades inevitably introduce some disruption since workloads need to
+     * be moved from old nodes to new, upgraded ones. Even if maxUnavailable=0,
+     * this holds true. (Disruption stays within the limits of
+     * PodDisruptionBudget, if it is configured.)
+     *
+     * Consider a hypothetical node pool with 5 nodes having maxSurge=2,
+     * maxUnavailable=1. This means the upgrade process upgrades 3 nodes
+     * simultaneously. It creates 2 additional (upgraded) nodes, then it brings
+     * down 3 old (not yet upgraded) nodes at the same time. This ensures that
+     * there are always at least 4 nodes available.
+     *
      * These upgrade settings configure the upgrade strategy for the node pool.
      * Use strategy to switch between the strategies applied to the node pool.
      *
@@ -5636,6 +5661,556 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface QueuedProvisioningOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1beta1.NodePool.QueuedProvisioning)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Denotes that this nodepool is QRM specific, meaning nodes can be only
+     * obtained through queuing via the Cluster Autoscaler ProvisioningRequest
+     * API.
+     * </pre>
+     *
+     * <code>bool enabled = 1;</code>
+     *
+     * @return The enabled.
+     */
+    boolean getEnabled();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * QueuedProvisioning defines the queued provisioning used by the node pool.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1beta1.NodePool.QueuedProvisioning}
+   */
+  public static final class QueuedProvisioning extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1beta1.NodePool.QueuedProvisioning)
+      QueuedProvisioningOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use QueuedProvisioning.newBuilder() to construct.
+    private QueuedProvisioning(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private QueuedProvisioning() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new QueuedProvisioning();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_NodePool_QueuedProvisioning_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_NodePool_QueuedProvisioning_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1beta1.NodePool.QueuedProvisioning.class,
+              com.google.container.v1beta1.NodePool.QueuedProvisioning.Builder.class);
+    }
+
+    public static final int ENABLED_FIELD_NUMBER = 1;
+    private boolean enabled_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Denotes that this nodepool is QRM specific, meaning nodes can be only
+     * obtained through queuing via the Cluster Autoscaler ProvisioningRequest
+     * API.
+     * </pre>
+     *
+     * <code>bool enabled = 1;</code>
+     *
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enabled_ != false) {
+        output.writeBool(1, enabled_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1beta1.NodePool.QueuedProvisioning)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1beta1.NodePool.QueuedProvisioning other =
+          (com.google.container.v1beta1.NodePool.QueuedProvisioning) obj;
+
+      if (getEnabled() != other.getEnabled()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1beta1.NodePool.QueuedProvisioning parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.NodePool.QueuedProvisioning parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NodePool.QueuedProvisioning parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.NodePool.QueuedProvisioning parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NodePool.QueuedProvisioning parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.NodePool.QueuedProvisioning parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NodePool.QueuedProvisioning parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.NodePool.QueuedProvisioning parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NodePool.QueuedProvisioning parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.NodePool.QueuedProvisioning parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NodePool.QueuedProvisioning parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.NodePool.QueuedProvisioning parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1beta1.NodePool.QueuedProvisioning prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * QueuedProvisioning defines the queued provisioning used by the node pool.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1beta1.NodePool.QueuedProvisioning}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1beta1.NodePool.QueuedProvisioning)
+        com.google.container.v1beta1.NodePool.QueuedProvisioningOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_NodePool_QueuedProvisioning_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_NodePool_QueuedProvisioning_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1beta1.NodePool.QueuedProvisioning.class,
+                com.google.container.v1beta1.NodePool.QueuedProvisioning.Builder.class);
+      }
+
+      // Construct using com.google.container.v1beta1.NodePool.QueuedProvisioning.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enabled_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_NodePool_QueuedProvisioning_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.NodePool.QueuedProvisioning getDefaultInstanceForType() {
+        return com.google.container.v1beta1.NodePool.QueuedProvisioning.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.NodePool.QueuedProvisioning build() {
+        com.google.container.v1beta1.NodePool.QueuedProvisioning result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.NodePool.QueuedProvisioning buildPartial() {
+        com.google.container.v1beta1.NodePool.QueuedProvisioning result =
+            new com.google.container.v1beta1.NodePool.QueuedProvisioning(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.container.v1beta1.NodePool.QueuedProvisioning result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1beta1.NodePool.QueuedProvisioning) {
+          return mergeFrom((com.google.container.v1beta1.NodePool.QueuedProvisioning) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.container.v1beta1.NodePool.QueuedProvisioning other) {
+        if (other == com.google.container.v1beta1.NodePool.QueuedProvisioning.getDefaultInstance())
+          return this;
+        if (other.getEnabled() != false) {
+          setEnabled(other.getEnabled());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enabled_;
+      /**
+       *
+       *
+       * <pre>
+       * Denotes that this nodepool is QRM specific, meaning nodes can be only
+       * obtained through queuing via the Cluster Autoscaler ProvisioningRequest
+       * API.
+       * </pre>
+       *
+       * <code>bool enabled = 1;</code>
+       *
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public boolean getEnabled() {
+        return enabled_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Denotes that this nodepool is QRM specific, meaning nodes can be only
+       * obtained through queuing via the Cluster Autoscaler ProvisioningRequest
+       * API.
+       * </pre>
+       *
+       * <code>bool enabled = 1;</code>
+       *
+       * @param value The enabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnabled(boolean value) {
+
+        enabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Denotes that this nodepool is QRM specific, meaning nodes can be only
+       * obtained through queuing via the Cluster Autoscaler ProvisioningRequest
+       * API.
+       * </pre>
+       *
+       * <code>bool enabled = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1beta1.NodePool.QueuedProvisioning)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1beta1.NodePool.QueuedProvisioning)
+    private static final com.google.container.v1beta1.NodePool.QueuedProvisioning DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1beta1.NodePool.QueuedProvisioning();
+    }
+
+    public static com.google.container.v1beta1.NodePool.QueuedProvisioning getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueuedProvisioning> PARSER =
+        new com.google.protobuf.AbstractParser<QueuedProvisioning>() {
+          @java.lang.Override
+          public QueuedProvisioning parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<QueuedProvisioning> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueuedProvisioning> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1beta1.NodePool.QueuedProvisioning getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -6144,7 +6719,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4007
+   *     google/container/v1beta1/cluster_service.proto;l=4018
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -6172,7 +6747,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4007
+   *     google/container/v1beta1/cluster_service.proto;l=4018
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -6650,6 +7225,57 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int QUEUED_PROVISIONING_FIELD_NUMBER = 112;
+  private com.google.container.v1beta1.NodePool.QueuedProvisioning queuedProvisioning_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the configuration of queued provisioning.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 112;</code>
+   *
+   * @return Whether the queuedProvisioning field is set.
+   */
+  @java.lang.Override
+  public boolean hasQueuedProvisioning() {
+    return queuedProvisioning_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the configuration of queued provisioning.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 112;</code>
+   *
+   * @return The queuedProvisioning.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodePool.QueuedProvisioning getQueuedProvisioning() {
+    return queuedProvisioning_ == null
+        ? com.google.container.v1beta1.NodePool.QueuedProvisioning.getDefaultInstance()
+        : queuedProvisioning_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the configuration of queued provisioning.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 112;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodePool.QueuedProvisioningOrBuilder
+      getQueuedProvisioningOrBuilder() {
+    return queuedProvisioning_ == null
+        ? com.google.container.v1beta1.NodePool.QueuedProvisioning.getDefaultInstance()
+        : queuedProvisioning_;
+  }
+
   public static final int BEST_EFFORT_PROVISIONING_FIELD_NUMBER = 113;
   private com.google.container.v1beta1.BestEffortProvisioning bestEffortProvisioning_;
   /**
@@ -6772,6 +7398,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 110, etag_);
     }
+    if (queuedProvisioning_ != null) {
+      output.writeMessage(112, getQueuedProvisioning());
+    }
     if (bestEffortProvisioning_ != null) {
       output.writeMessage(113, getBestEffortProvisioning());
     }
@@ -6851,6 +7480,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(110, etag_);
     }
+    if (queuedProvisioning_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(112, getQueuedProvisioning());
+    }
     if (bestEffortProvisioning_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -6914,6 +7547,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateInfo().equals(other.getUpdateInfo())) return false;
     }
     if (!getEtag().equals(other.getEtag())) return false;
+    if (hasQueuedProvisioning() != other.hasQueuedProvisioning()) return false;
+    if (hasQueuedProvisioning()) {
+      if (!getQueuedProvisioning().equals(other.getQueuedProvisioning())) return false;
+    }
     if (hasBestEffortProvisioning() != other.hasBestEffortProvisioning()) return false;
     if (hasBestEffortProvisioning()) {
       if (!getBestEffortProvisioning().equals(other.getBestEffortProvisioning())) return false;
@@ -6989,6 +7626,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    if (hasQueuedProvisioning()) {
+      hash = (37 * hash) + QUEUED_PROVISIONING_FIELD_NUMBER;
+      hash = (53 * hash) + getQueuedProvisioning().hashCode();
+    }
     if (hasBestEffortProvisioning()) {
       hash = (37 * hash) + BEST_EFFORT_PROVISIONING_FIELD_NUMBER;
       hash = (53 * hash) + getBestEffortProvisioning().hashCode();
@@ -7102,29 +7743,6 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * of Kubernetes labels applied to them, which may be used to reference them
    * during pod scheduling. They may also be resized up or down, to accommodate
    * the workload.
-   * These upgrade settings control the level of parallelism and the level of
-   * disruption caused by an upgrade.
-   *
-   * maxUnavailable controls the number of nodes that can be simultaneously
-   * unavailable.
-   *
-   * maxSurge controls the number of additional nodes that can be added to the
-   * node pool temporarily for the time of the upgrade to increase the number of
-   * available nodes.
-   *
-   * (maxUnavailable + maxSurge) determines the level of parallelism (how many
-   * nodes are being upgraded at the same time).
-   *
-   * Note: upgrades inevitably introduce some disruption since workloads need to
-   * be moved from old nodes to new, upgraded ones. Even if maxUnavailable=0,
-   * this holds true. (Disruption stays within the limits of
-   * PodDisruptionBudget, if it is configured.)
-   *
-   * Consider a hypothetical node pool with 5 nodes having maxSurge=2,
-   * maxUnavailable=1. This means the upgrade process upgrades 3 nodes
-   * simultaneously. It creates 2 additional (upgraded) nodes, then it brings
-   * down 3 old (not yet upgraded) nodes at the same time. This ensures that
-   * there are always at least 4 nodes available.
    * </pre>
    *
    * Protobuf type {@code google.container.v1beta1.NodePool}
@@ -7216,6 +7834,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         updateInfoBuilder_ = null;
       }
       etag_ = "";
+      queuedProvisioning_ = null;
+      if (queuedProvisioningBuilder_ != null) {
+        queuedProvisioningBuilder_.dispose();
+        queuedProvisioningBuilder_ = null;
+      }
       bestEffortProvisioning_ = null;
       if (bestEffortProvisioningBuilder_ != null) {
         bestEffortProvisioningBuilder_.dispose();
@@ -7334,6 +7957,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         result.etag_ = etag_;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.queuedProvisioning_ =
+            queuedProvisioningBuilder_ == null
+                ? queuedProvisioning_
+                : queuedProvisioningBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.bestEffortProvisioning_ =
             bestEffortProvisioningBuilder_ == null
                 ? bestEffortProvisioning_
@@ -7491,6 +8120,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00040000;
         onChanged();
       }
+      if (other.hasQueuedProvisioning()) {
+        mergeQueuedProvisioning(other.getQueuedProvisioning());
+      }
       if (other.hasBestEffortProvisioning()) {
         mergeBestEffortProvisioning(other.getBestEffortProvisioning());
       }
@@ -7644,11 +8276,18 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00040000;
                 break;
               } // case 882
+            case 898:
+              {
+                input.readMessage(
+                    getQueuedProvisioningFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 898
             case 906:
               {
                 input.readMessage(
                     getBestEffortProvisioningFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 906
             default:
@@ -9005,7 +9644,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4007
+     *     google/container/v1beta1/cluster_service.proto;l=4018
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -9032,7 +9671,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4007
+     *     google/container/v1beta1/cluster_service.proto;l=4018
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -9059,7 +9698,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4007
+     *     google/container/v1beta1/cluster_service.proto;l=4018
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -9085,7 +9724,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4007
+     *     google/container/v1beta1/cluster_service.proto;l=4018
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -9107,7 +9746,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4007
+     *     google/container/v1beta1/cluster_service.proto;l=4018
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
@@ -10803,6 +11442,195 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.container.v1beta1.NodePool.QueuedProvisioning queuedProvisioning_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodePool.QueuedProvisioning,
+            com.google.container.v1beta1.NodePool.QueuedProvisioning.Builder,
+            com.google.container.v1beta1.NodePool.QueuedProvisioningOrBuilder>
+        queuedProvisioningBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 112;</code>
+     *
+     * @return Whether the queuedProvisioning field is set.
+     */
+    public boolean hasQueuedProvisioning() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 112;</code>
+     *
+     * @return The queuedProvisioning.
+     */
+    public com.google.container.v1beta1.NodePool.QueuedProvisioning getQueuedProvisioning() {
+      if (queuedProvisioningBuilder_ == null) {
+        return queuedProvisioning_ == null
+            ? com.google.container.v1beta1.NodePool.QueuedProvisioning.getDefaultInstance()
+            : queuedProvisioning_;
+      } else {
+        return queuedProvisioningBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 112;</code>
+     */
+    public Builder setQueuedProvisioning(
+        com.google.container.v1beta1.NodePool.QueuedProvisioning value) {
+      if (queuedProvisioningBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        queuedProvisioning_ = value;
+      } else {
+        queuedProvisioningBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 112;</code>
+     */
+    public Builder setQueuedProvisioning(
+        com.google.container.v1beta1.NodePool.QueuedProvisioning.Builder builderForValue) {
+      if (queuedProvisioningBuilder_ == null) {
+        queuedProvisioning_ = builderForValue.build();
+      } else {
+        queuedProvisioningBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 112;</code>
+     */
+    public Builder mergeQueuedProvisioning(
+        com.google.container.v1beta1.NodePool.QueuedProvisioning value) {
+      if (queuedProvisioningBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && queuedProvisioning_ != null
+            && queuedProvisioning_
+                != com.google.container.v1beta1.NodePool.QueuedProvisioning.getDefaultInstance()) {
+          getQueuedProvisioningBuilder().mergeFrom(value);
+        } else {
+          queuedProvisioning_ = value;
+        }
+      } else {
+        queuedProvisioningBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 112;</code>
+     */
+    public Builder clearQueuedProvisioning() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      queuedProvisioning_ = null;
+      if (queuedProvisioningBuilder_ != null) {
+        queuedProvisioningBuilder_.dispose();
+        queuedProvisioningBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 112;</code>
+     */
+    public com.google.container.v1beta1.NodePool.QueuedProvisioning.Builder
+        getQueuedProvisioningBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getQueuedProvisioningFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 112;</code>
+     */
+    public com.google.container.v1beta1.NodePool.QueuedProvisioningOrBuilder
+        getQueuedProvisioningOrBuilder() {
+      if (queuedProvisioningBuilder_ != null) {
+        return queuedProvisioningBuilder_.getMessageOrBuilder();
+      } else {
+        return queuedProvisioning_ == null
+            ? com.google.container.v1beta1.NodePool.QueuedProvisioning.getDefaultInstance()
+            : queuedProvisioning_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 112;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodePool.QueuedProvisioning,
+            com.google.container.v1beta1.NodePool.QueuedProvisioning.Builder,
+            com.google.container.v1beta1.NodePool.QueuedProvisioningOrBuilder>
+        getQueuedProvisioningFieldBuilder() {
+      if (queuedProvisioningBuilder_ == null) {
+        queuedProvisioningBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.NodePool.QueuedProvisioning,
+                com.google.container.v1beta1.NodePool.QueuedProvisioning.Builder,
+                com.google.container.v1beta1.NodePool.QueuedProvisioningOrBuilder>(
+                getQueuedProvisioning(), getParentForChildren(), isClean());
+        queuedProvisioning_ = null;
+      }
+      return queuedProvisioningBuilder_;
+    }
+
     private com.google.container.v1beta1.BestEffortProvisioning bestEffortProvisioning_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1beta1.BestEffortProvisioning,
@@ -10821,7 +11649,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the bestEffortProvisioning field is set.
      */
     public boolean hasBestEffortProvisioning() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -10862,7 +11690,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       } else {
         bestEffortProvisioningBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -10882,7 +11710,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       } else {
         bestEffortProvisioningBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -10898,7 +11726,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeBestEffortProvisioning(
         com.google.container.v1beta1.BestEffortProvisioning value) {
       if (bestEffortProvisioningBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && bestEffortProvisioning_ != null
             && bestEffortProvisioning_
                 != com.google.container.v1beta1.BestEffortProvisioning.getDefaultInstance()) {
@@ -10909,7 +11737,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       } else {
         bestEffortProvisioningBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -10923,7 +11751,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.BestEffortProvisioning best_effort_provisioning = 113;</code>
      */
     public Builder clearBestEffortProvisioning() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       bestEffortProvisioning_ = null;
       if (bestEffortProvisioningBuilder_ != null) {
         bestEffortProvisioningBuilder_.dispose();
@@ -10943,7 +11771,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.container.v1beta1.BestEffortProvisioning.Builder
         getBestEffortProvisioningBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getBestEffortProvisioningFieldBuilder().getBuilder();
     }
