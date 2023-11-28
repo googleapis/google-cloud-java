@@ -39,12 +39,13 @@ public class TableInsertRows {
     Map<String, Object> rowContent = new HashMap<>();
     rowContent.put("booleanField", true);
     rowContent.put("numericField", "3.14");
-
-    tableInsertRows(datasetName, tableName, rowContent);
+    // TODO(developer): Replace the row id with a unique value for each row.
+    String rowId = "ROW_ID";
+    tableInsertRows(datasetName, tableName, rowId, rowContent);
   }
 
   public static void tableInsertRows(
-      String datasetName, String tableName, Map<String, Object> rowContent) {
+      String datasetName, String tableName, String rowId, Map<String, Object> rowContent) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
@@ -58,9 +59,8 @@ public class TableInsertRows {
           bigquery.insertAll(
               InsertAllRequest.newBuilder(tableId)
                   // More rows can be added in the same RPC by invoking .addRow() on the builder.
-                  // You can also supply optional unique row keys to support de-duplication
-                  // scenarios.
-                  .addRow(rowContent)
+                  // You can omit the unique row ids to disable de-duplication.
+                  .addRow(rowId, rowContent)
                   .build());
 
       if (response.hasErrors()) {

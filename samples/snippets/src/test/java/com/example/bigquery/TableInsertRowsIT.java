@@ -88,8 +88,9 @@ public class TableInsertRowsIT {
     Map<String, Object> rowContent = new HashMap<>();
     rowContent.put("booleanField", true);
     rowContent.put("numericField", "3.14");
+    String rowId = "ROW_ID";
     // Testing
-    TableInsertRows.tableInsertRows(BIGQUERY_DATASET_NAME, tableName, rowContent);
+    TableInsertRows.tableInsertRows(BIGQUERY_DATASET_NAME, tableName, rowId, rowContent);
     assertThat(bout.toString()).contains("Rows successfully inserted into table");
   }
 }

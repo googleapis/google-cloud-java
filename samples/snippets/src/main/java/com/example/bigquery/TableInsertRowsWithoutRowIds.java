@@ -54,6 +54,8 @@ public class TableInsertRowsWithoutRowIds {
       InsertAllResponse response =
           bigquery.insertAll(
               InsertAllRequest.newBuilder(TableId.of(datasetName, tableName))
+                  // No row ids disable de-duplication, and also disable the retries in the Java
+                  // library.
                   .setRows(
                       ImmutableList.of(
                           InsertAllRequest.RowToInsert.of(rowContent1),
