@@ -22,8 +22,8 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Response message for simulating a SecurityHealthAnalyticsCustomModule against
- * a given resource.
+ * Response message for simulating a `SecurityHealthAnalyticsCustomModule`
+ * against a given resource.
  * </pre>
  *
  * Protobuf type {@code
@@ -1904,8 +1904,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
    *
    *
    * <pre>
-   * Response message for simulating a SecurityHealthAnalyticsCustomModule against
-   * a given resource.
+   * Response message for simulating a `SecurityHealthAnalyticsCustomModule`
+   * against a given resource.
    * </pre>
    *
    * Protobuf type {@code
