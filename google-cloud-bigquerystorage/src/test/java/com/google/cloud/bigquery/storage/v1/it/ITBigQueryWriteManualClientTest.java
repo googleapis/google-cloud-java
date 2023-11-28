@@ -73,6 +73,8 @@ public class ITBigQueryWriteManualClientTest {
   private static final String TABLE = "testtable";
   private static final String TABLE2 = "complicatedtable";
 
+  private static final String TEST_TRACE_ID = "DATAFLOW:job_id";
+
   private static final String DESCRIPTION = "BigQuery Write Java manual client test dataset";
 
   private static BigQueryWriteClient client;
@@ -928,6 +930,7 @@ public class ITBigQueryWriteManualClientTest {
                 ProtoSchemaConverter.convert(SimpleTypeForDefaultValue.getDescriptor()))
             .setDefaultMissingValueInterpretation(MissingValueInterpretation.DEFAULT_VALUE)
             .setEnableConnectionPool(true)
+            .setTraceId(TEST_TRACE_ID)
             .build()) {
       // 1. row has both fields set.
       SimpleTypeForDefaultValue simpleTypeForDefaultValue1 =
@@ -1534,16 +1537,19 @@ public class ITBigQueryWriteManualClientTest {
         StreamWriter.newBuilder(defaultStream1)
             .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
             .setEnableConnectionPool(true)
+            .setTraceId(TEST_TRACE_ID)
             .build();
     StreamWriter streamWriter2 =
         StreamWriter.newBuilder(defaultStream2)
             .setWriterSchema(ProtoSchemaConverter.convert(ComplicateType.getDescriptor()))
             .setEnableConnectionPool(true)
+            .setTraceId(TEST_TRACE_ID)
             .build();
     StreamWriter streamWriter3 =
         StreamWriter.newBuilder(defaultStream3)
             .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
             .setEnableConnectionPool(true)
+            .setTraceId(TEST_TRACE_ID)
             .build();
     ApiFuture<AppendRowsResponse> response1 =
         streamWriter1.append(CreateProtoRows(new String[] {"aaa"}));
@@ -1557,6 +1563,9 @@ public class ITBigQueryWriteManualClientTest {
     assertEquals("us", streamWriter1.getLocation());
     assertEquals("us", streamWriter2.getLocation());
     assertEquals("eu", streamWriter3.getLocation());
+    streamWriter1.close();
+    streamWriter2.close();
+    streamWriter3.close();
   }
 
   @Test

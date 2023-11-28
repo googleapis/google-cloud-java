@@ -371,22 +371,24 @@ public class StreamWriter implements AutoCloseable {
 
   // Validate whether the fetched connection pool matched certain properties.
   private void validateFetchedConnectonPool(StreamWriter.Builder builder) {
-    String paramsValidatedFailed = "";
-    if (!Objects.equals(
-        this.singleConnectionOrConnectionPool.connectionWorkerPool().getTraceId(),
-        builder.traceId)) {
-      paramsValidatedFailed = "Trace id";
-    } else if (!Objects.equals(
-        this.singleConnectionOrConnectionPool.connectionWorkerPool().limitExceededBehavior(),
-        builder.limitExceededBehavior)) {
-      paramsValidatedFailed = "Limit Exceeds Behavior";
-    }
-
-    if (!paramsValidatedFailed.isEmpty()) {
+    String storedTraceId =
+        this.singleConnectionOrConnectionPool.connectionWorkerPool().getTraceId();
+    if (!Objects.equals(storedTraceId, builder.traceId)) {
       throw new IllegalArgumentException(
           String.format(
-              "%s used for the same connection pool for the same location must be the same!",
-              paramsValidatedFailed));
+              "Trace id used for the same connection pool for the same location must be the same, "
+                  + "however stored trace id is %s, and expected trace id is %s.",
+              storedTraceId, builder.traceId));
+    }
+    FlowController.LimitExceededBehavior storedLimitExceededBehavior =
+        singleConnectionOrConnectionPool.connectionWorkerPool().limitExceededBehavior();
+    if (!Objects.equals(storedLimitExceededBehavior, builder.limitExceededBehavior)) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Limit exceeded behavior setting used for the same connection pool for the same "
+                  + "location must be the same, however stored value is %s, and expected "
+                  + "value is %s.",
+              storedLimitExceededBehavior, builder.limitExceededBehavior));
     }
   }
 
