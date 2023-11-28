@@ -542,6 +542,62 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
        *
        *
        * <pre>
+       * The name of the container.
+       * </pre>
+       *
+       * <code>string container_name = 5;</code>
+       *
+       * @return The containerName.
+       */
+      java.lang.String getContainerName();
+      /**
+       *
+       *
+       * <pre>
+       * The name of the container.
+       * </pre>
+       *
+       * <code>string container_name = 5;</code>
+       *
+       * @return The bytes for containerName.
+       */
+      com.google.protobuf.ByteString getContainerNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The container type that this image belongs to.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.ContainerType container_type = 6;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for containerType.
+       */
+      int getContainerTypeValue();
+      /**
+       *
+       *
+       * <pre>
+       * The container type that this image belongs to.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.ContainerType container_type = 6;
+       * </code>
+       *
+       * @return The containerType.
+       */
+      com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+              .ContinuousValidationPodEvent.ImageDetails.ContainerType
+          getContainerType();
+
+      /**
+       *
+       *
+       * <pre>
        * The result of the audit for this image.
        * </pre>
        *
@@ -688,6 +744,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
 
       private ImageDetails() {
         image_ = "";
+        containerName_ = "";
+        containerType_ = 0;
         result_ = 0;
         description_ = "";
         checkResults_ = java.util.Collections.emptyList();
@@ -714,6 +772,197 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                     .ContinuousValidationPodEvent.ImageDetails.class,
                 com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                     .ContinuousValidationPodEvent.ImageDetails.Builder.class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The container type.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.ContainerType}
+       */
+      public enum ContainerType implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * The container type should always be specified. This is an error.
+         * </pre>
+         *
+         * <code>CONTAINER_TYPE_UNSPECIFIED = 0;</code>
+         */
+        CONTAINER_TYPE_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * A regular deployment.
+         * </pre>
+         *
+         * <code>CONTAINER = 1;</code>
+         */
+        CONTAINER(1),
+        /**
+         *
+         *
+         * <pre>
+         * Init container defined as specified at
+         * https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
+         * </pre>
+         *
+         * <code>INIT_CONTAINER = 2;</code>
+         */
+        INIT_CONTAINER(2),
+        /**
+         *
+         *
+         * <pre>
+         * Ephemeral container defined as specified at
+         * https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/
+         * </pre>
+         *
+         * <code>EPHEMERAL_CONTAINER = 3;</code>
+         */
+        EPHEMERAL_CONTAINER(3),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * The container type should always be specified. This is an error.
+         * </pre>
+         *
+         * <code>CONTAINER_TYPE_UNSPECIFIED = 0;</code>
+         */
+        public static final int CONTAINER_TYPE_UNSPECIFIED_VALUE = 0;
+        /**
+         *
+         *
+         * <pre>
+         * A regular deployment.
+         * </pre>
+         *
+         * <code>CONTAINER = 1;</code>
+         */
+        public static final int CONTAINER_VALUE = 1;
+        /**
+         *
+         *
+         * <pre>
+         * Init container defined as specified at
+         * https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
+         * </pre>
+         *
+         * <code>INIT_CONTAINER = 2;</code>
+         */
+        public static final int INIT_CONTAINER_VALUE = 2;
+        /**
+         *
+         *
+         * <pre>
+         * Ephemeral container defined as specified at
+         * https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/
+         * </pre>
+         *
+         * <code>EPHEMERAL_CONTAINER = 3;</code>
+         */
+        public static final int EPHEMERAL_CONTAINER_VALUE = 3;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ContainerType valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static ContainerType forNumber(int value) {
+          switch (value) {
+            case 0:
+              return CONTAINER_TYPE_UNSPECIFIED;
+            case 1:
+              return CONTAINER;
+            case 2:
+              return INIT_CONTAINER;
+            case 3:
+              return EPHEMERAL_CONTAINER;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<ContainerType>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<ContainerType>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<ContainerType>() {
+                  public ContainerType findValueByNumber(int number) {
+                    return ContainerType.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+              .ContinuousValidationPodEvent.ImageDetails.getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final ContainerType[] VALUES = values();
+
+        public static ContainerType valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private ContainerType(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.ContainerType)
       }
 
       /**
@@ -854,7 +1103,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
               .ContinuousValidationPodEvent.ImageDetails.getDescriptor()
               .getEnumTypes()
-              .get(0);
+              .get(1);
         }
 
         private static final AuditResult[] VALUES = values();
@@ -4621,6 +4870,105 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         }
       }
 
+      public static final int CONTAINER_NAME_FIELD_NUMBER = 5;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object containerName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the container.
+       * </pre>
+       *
+       * <code>string container_name = 5;</code>
+       *
+       * @return The containerName.
+       */
+      @java.lang.Override
+      public java.lang.String getContainerName() {
+        java.lang.Object ref = containerName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          containerName_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the container.
+       * </pre>
+       *
+       * <code>string container_name = 5;</code>
+       *
+       * @return The bytes for containerName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getContainerNameBytes() {
+        java.lang.Object ref = containerName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          containerName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int CONTAINER_TYPE_FIELD_NUMBER = 6;
+      private int containerType_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The container type that this image belongs to.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.ContainerType container_type = 6;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for containerType.
+       */
+      @java.lang.Override
+      public int getContainerTypeValue() {
+        return containerType_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The container type that this image belongs to.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.ContainerType container_type = 6;
+       * </code>
+       *
+       * @return The containerType.
+       */
+      @java.lang.Override
+      public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+              .ContinuousValidationPodEvent.ImageDetails.ContainerType
+          getContainerType() {
+        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.ContainerType
+            result =
+                com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.ContainerType.forNumber(
+                    containerType_);
+        return result == null
+            ? com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.ContainerType.UNRECOGNIZED
+            : result;
+      }
+
       public static final int RESULT_FIELD_NUMBER = 2;
       private int result_ = 0;
       /**
@@ -4842,6 +5190,15 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         for (int i = 0; i < checkResults_.size(); i++) {
           output.writeMessage(4, checkResults_.get(i));
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(containerName_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, containerName_);
+        }
+        if (containerType_
+            != com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.ContainerType.CONTAINER_TYPE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(6, containerType_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -4865,6 +5222,15 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         }
         for (int i = 0; i < checkResults_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, checkResults_.get(i));
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(containerName_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, containerName_);
+        }
+        if (containerType_
+            != com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.ContainerType.CONTAINER_TYPE_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, containerType_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -4890,6 +5256,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                     obj;
 
         if (!getImage().equals(other.getImage())) return false;
+        if (!getContainerName().equals(other.getContainerName())) return false;
+        if (containerType_ != other.containerType_) return false;
         if (result_ != other.result_) return false;
         if (!getDescription().equals(other.getDescription())) return false;
         if (!getCheckResultsList().equals(other.getCheckResultsList())) return false;
@@ -4906,6 +5274,10 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + IMAGE_FIELD_NUMBER;
         hash = (53 * hash) + getImage().hashCode();
+        hash = (37 * hash) + CONTAINER_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getContainerName().hashCode();
+        hash = (37 * hash) + CONTAINER_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + containerType_;
         hash = (37 * hash) + RESULT_FIELD_NUMBER;
         hash = (53 * hash) + result_;
         hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
@@ -5084,6 +5456,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           super.clear();
           bitField0_ = 0;
           image_ = "";
+          containerName_ = "";
+          containerType_ = 0;
           result_ = 0;
           description_ = "";
           if (checkResultsBuilder_ == null) {
@@ -5092,7 +5466,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             checkResults_ = null;
             checkResultsBuilder_.clear();
           }
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000020);
           return this;
         }
 
@@ -5145,9 +5519,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                     .ContinuousValidationPodEvent.ImageDetails
                 result) {
           if (checkResultsBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) != 0)) {
+            if (((bitField0_ & 0x00000020) != 0)) {
               checkResults_ = java.util.Collections.unmodifiableList(checkResults_);
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000020);
             }
             result.checkResults_ = checkResults_;
           } else {
@@ -5164,9 +5538,15 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             result.image_ = image_;
           }
           if (((from_bitField0_ & 0x00000002) != 0)) {
-            result.result_ = result_;
+            result.containerName_ = containerName_;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.containerType_ = containerType_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.result_ = result_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
             result.description_ = description_;
           }
         }
@@ -5234,19 +5614,27 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             bitField0_ |= 0x00000001;
             onChanged();
           }
+          if (!other.getContainerName().isEmpty()) {
+            containerName_ = other.containerName_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          if (other.containerType_ != 0) {
+            setContainerTypeValue(other.getContainerTypeValue());
+          }
           if (other.result_ != 0) {
             setResultValue(other.getResultValue());
           }
           if (!other.getDescription().isEmpty()) {
             description_ = other.description_;
-            bitField0_ |= 0x00000004;
+            bitField0_ |= 0x00000010;
             onChanged();
           }
           if (checkResultsBuilder_ == null) {
             if (!other.checkResults_.isEmpty()) {
               if (checkResults_.isEmpty()) {
                 checkResults_ = other.checkResults_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000020);
               } else {
                 ensureCheckResultsIsMutable();
                 checkResults_.addAll(other.checkResults_);
@@ -5259,7 +5647,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                 checkResultsBuilder_.dispose();
                 checkResultsBuilder_ = null;
                 checkResults_ = other.checkResults_;
-                bitField0_ = (bitField0_ & ~0x00000008);
+                bitField0_ = (bitField0_ & ~0x00000020);
                 checkResultsBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                         ? getCheckResultsFieldBuilder()
@@ -5304,13 +5692,13 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                 case 16:
                   {
                     result_ = input.readEnum();
-                    bitField0_ |= 0x00000002;
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 16
                 case 26:
                   {
                     description_ = input.readStringRequireUtf8();
-                    bitField0_ |= 0x00000004;
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 26
                 case 34:
@@ -5331,6 +5719,18 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                     }
                     break;
                   } // case 34
+                case 42:
+                  {
+                    containerName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 42
+                case 48:
+                  {
+                    containerType_ = input.readEnum();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 48
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5456,6 +5856,224 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           return this;
         }
 
+        private java.lang.Object containerName_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The name of the container.
+         * </pre>
+         *
+         * <code>string container_name = 5;</code>
+         *
+         * @return The containerName.
+         */
+        public java.lang.String getContainerName() {
+          java.lang.Object ref = containerName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            containerName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The name of the container.
+         * </pre>
+         *
+         * <code>string container_name = 5;</code>
+         *
+         * @return The bytes for containerName.
+         */
+        public com.google.protobuf.ByteString getContainerNameBytes() {
+          java.lang.Object ref = containerName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            containerName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The name of the container.
+         * </pre>
+         *
+         * <code>string container_name = 5;</code>
+         *
+         * @param value The containerName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContainerName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          containerName_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The name of the container.
+         * </pre>
+         *
+         * <code>string container_name = 5;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearContainerName() {
+          containerName_ = getDefaultInstance().getContainerName();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The name of the container.
+         * </pre>
+         *
+         * <code>string container_name = 5;</code>
+         *
+         * @param value The bytes for containerName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContainerNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          containerName_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private int containerType_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * The container type that this image belongs to.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.ContainerType container_type = 6;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for containerType.
+         */
+        @java.lang.Override
+        public int getContainerTypeValue() {
+          return containerType_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The container type that this image belongs to.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.ContainerType container_type = 6;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for containerType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContainerTypeValue(int value) {
+          containerType_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The container type that this image belongs to.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.ContainerType container_type = 6;
+         * </code>
+         *
+         * @return The containerType.
+         */
+        @java.lang.Override
+        public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                .ContinuousValidationPodEvent.ImageDetails.ContainerType
+            getContainerType() {
+          com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.ContainerType
+              result =
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                      .ContinuousValidationPodEvent.ImageDetails.ContainerType.forNumber(
+                      containerType_);
+          return result == null
+              ? com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                  .ContinuousValidationPodEvent.ImageDetails.ContainerType.UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The container type that this image belongs to.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.ContainerType container_type = 6;
+         * </code>
+         *
+         * @param value The containerType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContainerType(
+            com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                    .ContinuousValidationPodEvent.ImageDetails.ContainerType
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000004;
+          containerType_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The container type that this image belongs to.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.ContainerType container_type = 6;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearContainerType() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          containerType_ = 0;
+          onChanged();
+          return this;
+        }
+
         private int result_ = 0;
         /**
          *
@@ -5490,7 +6108,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
          */
         public Builder setResultValue(int value) {
           result_ = value;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -5542,7 +6160,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           if (value == null) {
             throw new NullPointerException();
           }
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
           result_ = value.getNumber();
           onChanged();
           return this;
@@ -5561,7 +6179,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
          * @return This builder for chaining.
          */
         public Builder clearResult() {
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
           result_ = 0;
           onChanged();
           return this;
@@ -5629,7 +6247,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             throw new NullPointerException();
           }
           description_ = value;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -5646,7 +6264,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
          */
         public Builder clearDescription() {
           description_ = getDefaultInstance().getDescription();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
           return this;
         }
@@ -5668,7 +6286,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           }
           checkByteStringIsUtf8(value);
           description_ = value;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -5679,12 +6297,12 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             checkResults_ = java.util.Collections.emptyList();
 
         private void ensureCheckResultsIsMutable() {
-          if (!((bitField0_ & 0x00000008) != 0)) {
+          if (!((bitField0_ & 0x00000020) != 0)) {
             checkResults_ =
                 new java.util.ArrayList<
                     com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                         .ContinuousValidationPodEvent.ImageDetails.CheckResult>(checkResults_);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000020;
           }
         }
 
@@ -5953,7 +6571,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         public Builder clearCheckResults() {
           if (checkResultsBuilder_ == null) {
             checkResults_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000020);
             onChanged();
           } else {
             checkResultsBuilder_.clear();
@@ -6114,7 +6732,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                     com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                         .ContinuousValidationPodEvent.ImageDetails.CheckResultOrBuilder>(
                     checkResults_,
-                    ((bitField0_ & 0x00000008) != 0),
+                    ((bitField0_ & 0x00000020) != 0),
                     getParentForChildren(),
                     isClean());
             checkResults_ = null;
