@@ -55,7 +55,7 @@ public class ConnectionWorkerPoolTest {
   private static MockServiceHelper serviceHelper;
   private BigQueryWriteSettings clientSettings;
 
-  private static final String TEST_TRACE_ID = "home:job1";
+  private static final String TEST_TRACE_ID = "DATAFLOW:job_id";
   private static final String TEST_STREAM_1 = "projects/p1/datasets/d1/tables/t1/streams/_default";
   private static final String TEST_STREAM_2 = "projects/p1/datasets/d1/tables/t2/streams/_default";
 
@@ -372,6 +372,7 @@ public class ConnectionWorkerPoolTest {
   @Test
   public void testCloseExternalClient()
       throws IOException, InterruptedException, ExecutionException {
+    StreamWriter.clearConnectionPool();
     // Try append 100 requests.
     long appendCount = 100L;
     // testBigQueryWrite is used to
@@ -417,6 +418,10 @@ public class ConnectionWorkerPoolTest {
       assertThat(response.getAppendResult().getOffset().getValue()).isEqualTo(i);
     }
     assertThat(testBigQueryWrite.getAppendRequests().size()).isEqualTo(appendCount * 2);
+    for (int i = 0; i < streamWriterList.size(); i++) {
+      streamWriterList.get(i).close();
+    }
+    StreamWriter.clearConnectionPool();
   }
 
   private AppendRowsResponse createAppendResponse(long offset) {

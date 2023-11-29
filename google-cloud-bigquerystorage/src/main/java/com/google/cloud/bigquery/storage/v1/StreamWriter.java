@@ -586,6 +586,12 @@ public class StreamWriter implements AutoCloseable {
     return connectionWorkerPool;
   }
 
+  // A method to clear the static connectio pool to avoid making pool visible to other tests.
+  @VisibleForTesting
+  static void clearConnectionPool() {
+    connectionPoolMap.clear();
+  }
+
   /** A builder of {@link StreamWriter}s. */
   public static final class Builder {
     private static final long DEFAULT_MAX_INFLIGHT_REQUESTS = 1000L;
