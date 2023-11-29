@@ -1,0 +1,45 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.analytics.data.v1alpha",
+  "libraryPackage": "com.google.analytics.data.v1alpha",
+  "services": {
+    "AlphaAnalyticsData": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AlphaAnalyticsDataClient",
+          "rpcs": {
+            "CreateAudienceList": {
+              "methods": ["createAudienceListAsync", "createAudienceListAsync", "createAudienceListAsync", "createAudienceListOperationCallable", "createAudienceListCallable"]
+            },
+            "CreateRecurringAudienceList": {
+              "methods": ["createRecurringAudienceList", "createRecurringAudienceList", "createRecurringAudienceList", "createRecurringAudienceListCallable"]
+            },
+            "GetAudienceList": {
+              "methods": ["getAudienceList", "getAudienceList", "getAudienceList", "getAudienceListCallable"]
+            },
+            "GetRecurringAudienceList": {
+              "methods": ["getRecurringAudienceList", "getRecurringAudienceList", "getRecurringAudienceList", "getRecurringAudienceListCallable"]
+            },
+            "ListAudienceLists": {
+              "methods": ["listAudienceLists", "listAudienceLists", "listAudienceLists", "listAudienceListsPagedCallable", "listAudienceListsCallable"]
+            },
+            "ListRecurringAudienceLists": {
+              "methods": ["listRecurringAudienceLists", "listRecurringAudienceLists", "listRecurringAudienceLists", "listRecurringAudienceListsPagedCallable", "listRecurringAudienceListsCallable"]
+            },
+            "QueryAudienceList": {
+              "methods": ["queryAudienceList", "queryAudienceList", "queryAudienceListCallable"]
+            },
+            "RunFunnelReport": {
+              "methods": ["runFunnelReport", "runFunnelReportCallable"]
+            },
+            "SheetExportAudienceList": {
+              "methods": ["sheetExportAudienceList", "sheetExportAudienceList", "sheetExportAudienceList", "sheetExportAudienceListCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
