@@ -6,4 +6,15 @@
     <method>java.util.List getSplits(com.google.datastore.v1.Query, com.google.datastore.v1.PartitionId, int, com.google.datastore.v1.client.Datastore, com.google.protobuf.Timestamp)</method>
     <differenceType>7012</differenceType>
   </difference>
+  <!-- removing deprecated/BetaApi methods-->
+  <difference>
+    <className>com/google/datastore/v1/client/DatastoreOptions</className>
+    <method>java.lang.String getDatabaseId()</method>
+    <differenceType>7002</differenceType>
+  </difference>
+  <difference>
+    <className>com/google/datastore/v1/client/DatastoreOptions$Builder</className>
+    <method>com.google.datastore.v1.client.DatastoreOptions$Builder databaseId(java.lang.String)</method>
+    <differenceType>7002</differenceType>
+  </difference>
 </differences>

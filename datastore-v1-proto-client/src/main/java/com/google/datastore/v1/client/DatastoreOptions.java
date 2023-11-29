@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
-import com.google.api.core.BetaApi;
 import java.util.Arrays;
 import java.util.List;
 
@@ -42,8 +41,6 @@ import java.util.List;
 public class DatastoreOptions {
   private final String projectId;
 
-  @Deprecated private final String databaseId;
-
   private final String projectEndpoint;
   private final String host;
   private final String localHost;
@@ -60,7 +57,6 @@ public class DatastoreOptions {
         b.projectId != null || b.projectEndpoint != null,
         "Either project ID or project endpoint must be provided.");
     this.projectId = b.projectId;
-    this.databaseId = b.databaseId;
     this.projectEndpoint = b.projectEndpoint;
     this.host = b.host;
     this.localHost = b.localHost;
@@ -78,8 +74,6 @@ public class DatastoreOptions {
 
     private String projectId;
 
-    @Deprecated private String databaseId;
-
     private String projectEndpoint;
     private String host;
     private String localHost;
@@ -91,7 +85,6 @@ public class DatastoreOptions {
 
     public Builder(DatastoreOptions options) {
       this.projectId = options.projectId;
-      this.databaseId = options.databaseId;
       this.projectEndpoint = options.projectEndpoint;
       this.host = options.host;
       this.localHost = options.localHost;
@@ -108,24 +101,6 @@ public class DatastoreOptions {
     public Builder projectId(String projectId) {
       checkArgument(projectEndpoint == null, PROJECT_ENDPOINT_AND_PROJECT_ID_ERROR);
       this.projectId = projectId;
-      return this;
-    }
-
-    /**
-     * This field is ignored and will be removed in a future release. Please set the database id on
-     * the request itself. For example:
-     *
-     * <pre>{@code
-     * CommitRequest.newBuilder()
-     *     .setDatabaseId("my-database-id")
-     *     ....
-     *     .build();
-     * }</pre>
-     */
-    @BetaApi
-    @Deprecated
-    public Builder databaseId(String databaseId) {
-      this.databaseId = databaseId;
       return this;
     }
 
@@ -201,23 +176,6 @@ public class DatastoreOptions {
 
   public String getProjectId() {
     return projectId;
-  }
-
-  /**
-   * This field is ignored and will be removed in a future release. Please set the database id on
-   * the request itself. For example:
-   *
-   * <pre>{@code
-   * CommitRequest.newBuilder()
-   *     .setDatabaseId("my-database-id")
-   *     ....
-   *     .build();
-   * }</pre>
-   */
-  @BetaApi
-  @Deprecated
-  public String getDatabaseId() {
-    return databaseId;
   }
 
   public String getProjectEndpoint() {
