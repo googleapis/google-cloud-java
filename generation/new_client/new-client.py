@@ -153,15 +153,11 @@ def main(ctx):
 @click.option(
     "--rest-docs",
     type=str,
-    default=None,
-    prompt="REST Documentation URL",
     help="If it exists, link to the REST Documentation for a service"
 )
 @click.option(
     "--rpc-docs",
     type=str,
-    default=None,
-    prompt="RPC Documentation URL",
     help="If it exists, link to the RPC Documentation for a service"
 )
 def generate(
