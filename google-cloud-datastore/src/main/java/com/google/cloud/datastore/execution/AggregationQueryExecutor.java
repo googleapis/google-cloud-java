@@ -20,7 +20,7 @@ import com.google.cloud.datastore.AggregationQuery;
 import com.google.cloud.datastore.AggregationResults;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.ReadOption;
-import com.google.cloud.datastore.ReadOption.QueryAndReadOptions;
+import com.google.cloud.datastore.ReadOption.QueryConfig;
 import com.google.cloud.datastore.execution.request.AggregationQueryRequestProtoPreparer;
 import com.google.cloud.datastore.execution.response.AggregationQueryResponseTransformer;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
@@ -57,10 +57,10 @@ public class AggregationQueryExecutor
 
   private RunAggregationQueryRequest getRunAggregationQueryRequest(
       AggregationQuery query, ReadOption... readOptions) {
-    QueryAndReadOptions<AggregationQuery> queryAndReadOptions =
+    QueryConfig<AggregationQuery> queryConfig =
         readOptions == null
-            ? QueryAndReadOptions.create(query)
-            : QueryAndReadOptions.create(query, Arrays.asList(readOptions));
-    return this.protoPreparer.prepare(queryAndReadOptions);
+            ? QueryConfig.create(query)
+            : QueryConfig.create(query, Arrays.asList(readOptions));
+    return this.protoPreparer.prepare(queryConfig);
   }
 }

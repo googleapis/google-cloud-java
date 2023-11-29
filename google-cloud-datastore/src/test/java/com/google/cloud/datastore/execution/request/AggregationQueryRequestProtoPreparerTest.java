@@ -38,7 +38,7 @@ import com.google.cloud.datastore.EntityQuery;
 import com.google.cloud.datastore.GqlQuery;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.ReadOption;
-import com.google.cloud.datastore.ReadOption.QueryAndReadOptions;
+import com.google.cloud.datastore.ReadOption.QueryConfig;
 import com.google.common.collect.ImmutableMap;
 import com.google.datastore.v1.RunAggregationQueryRequest;
 import java.util.HashMap;
@@ -91,7 +91,7 @@ public class AggregationQueryRequestProtoPreparerTest {
   @Test
   public void shouldPrepareAggregationQueryRequestWithGivenStructuredQuery() {
     RunAggregationQueryRequest runAggregationQueryRequest =
-        protoPreparer.prepare(QueryAndReadOptions.create(AGGREGATION_OVER_STRUCTURED_QUERY));
+        protoPreparer.prepare(QueryConfig.create(AGGREGATION_OVER_STRUCTURED_QUERY));
 
     assertThat(runAggregationQueryRequest.getProjectId()).isEqualTo(PROJECT_ID);
     assertThat(runAggregationQueryRequest.getDatabaseId()).isEqualTo(DATABASE_ID);
@@ -114,7 +114,7 @@ public class AggregationQueryRequestProtoPreparerTest {
   @Test
   public void shouldPrepareAggregationQueryRequestWithGivenGqlQuery() {
     RunAggregationQueryRequest runAggregationQueryRequest =
-        protoPreparer.prepare(QueryAndReadOptions.create(AGGREGATION_OVER_GQL_QUERY));
+        protoPreparer.prepare(QueryConfig.create(AGGREGATION_OVER_GQL_QUERY));
 
     assertThat(runAggregationQueryRequest.getProjectId()).isEqualTo(PROJECT_ID);
     assertThat(runAggregationQueryRequest.getDatabaseId()).isEqualTo(DATABASE_ID);
@@ -172,9 +172,9 @@ public class AggregationQueryRequestProtoPreparerTest {
         Query.newAggregationQueryBuilder().over(COMPLETED_TASK_GQL_QUERY).build();
 
     RunAggregationQueryRequest runAggregationQueryFromStructuredQuery =
-        protoPreparer.prepare(QueryAndReadOptions.create(structuredQueryWithoutNamespace));
+        protoPreparer.prepare(QueryConfig.create(structuredQueryWithoutNamespace));
     RunAggregationQueryRequest runAggregationQueryFromGqlQuery =
-        protoPreparer.prepare(QueryAndReadOptions.create(gqlQueryWithoutNamespace));
+        protoPreparer.prepare(QueryConfig.create(gqlQueryWithoutNamespace));
 
     assertThat(runAggregationQueryFromStructuredQuery.getPartitionId().getNamespaceId())
         .isEqualTo(NAMESPACE);
@@ -183,6 +183,6 @@ public class AggregationQueryRequestProtoPreparerTest {
   }
 
   private RunAggregationQueryRequest prepareQuery(AggregationQuery query, ReadOption readOption) {
-    return protoPreparer.prepare(QueryAndReadOptions.create(query, singletonList(readOption)));
+    return protoPreparer.prepare(QueryConfig.create(query, singletonList(readOption)));
   }
 }

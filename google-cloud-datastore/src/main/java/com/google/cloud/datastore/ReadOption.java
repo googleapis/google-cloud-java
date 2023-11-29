@@ -142,17 +142,17 @@ public abstract class ReadOption implements Serializable {
   }
 
   @InternalApi
-  public static class QueryAndReadOptions<Q extends Query<?>> {
+  public static class QueryConfig<Q extends Query<?>> {
 
     Q query;
     List<ReadOption> readOptions;
 
-    private QueryAndReadOptions(Q query, List<ReadOption> readOptions) {
+    private QueryConfig(Q query, List<ReadOption> readOptions) {
       this.query = query;
       this.readOptions = readOptions;
     }
 
-    private QueryAndReadOptions(Q query) {
+    private QueryConfig(Q query) {
       this.query = query;
       this.readOptions = Collections.emptyList();
     }
@@ -165,13 +165,13 @@ public abstract class ReadOption implements Serializable {
       return readOptions;
     }
 
-    public static <Q extends Query<?>> QueryAndReadOptions<Q> create(Q query) {
-      return new QueryAndReadOptions<>(query);
+    public static <Q extends Query<?>> QueryConfig<Q> create(Q query) {
+      return new QueryConfig<>(query);
     }
 
-    public static <Q extends Query<?>> QueryAndReadOptions<Q> create(
+    public static <Q extends Query<?>> QueryConfig<Q> create(
         Q query, List<ReadOption> readOptions) {
-      return new QueryAndReadOptions<>(query, readOptions);
+      return new QueryConfig<>(query, readOptions);
     }
   }
 }

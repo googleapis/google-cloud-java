@@ -22,7 +22,7 @@ import com.google.cloud.datastore.AggregationQuery;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.GqlQueryProtoPreparer;
 import com.google.cloud.datastore.ReadOption;
-import com.google.cloud.datastore.ReadOption.QueryAndReadOptions;
+import com.google.cloud.datastore.ReadOption.QueryConfig;
 import com.google.cloud.datastore.ReadOptionProtoPreparer;
 import com.google.cloud.datastore.StructuredQueryProtoPreparer;
 import com.google.cloud.datastore.aggregation.Aggregation;
@@ -37,7 +37,7 @@ import java.util.Optional;
 
 @InternalApi
 public class AggregationQueryRequestProtoPreparer
-    implements ProtoPreparer<QueryAndReadOptions<AggregationQuery>, RunAggregationQueryRequest> {
+    implements ProtoPreparer<QueryConfig<AggregationQuery>, RunAggregationQueryRequest> {
 
   private final DatastoreOptions datastoreOptions;
   private final StructuredQueryProtoPreparer structuredQueryProtoPreparer;
@@ -52,10 +52,9 @@ public class AggregationQueryRequestProtoPreparer
   }
 
   @Override
-  public RunAggregationQueryRequest prepare(
-      QueryAndReadOptions<AggregationQuery> aggregationQueryAndReadOptions) {
-    AggregationQuery aggregationQuery = aggregationQueryAndReadOptions.getQuery();
-    List<ReadOption> readOptions = aggregationQueryAndReadOptions.getReadOptions();
+  public RunAggregationQueryRequest prepare(QueryConfig<AggregationQuery> queryConfig) {
+    AggregationQuery aggregationQuery = queryConfig.getQuery();
+    List<ReadOption> readOptions = queryConfig.getReadOptions();
     PartitionId partitionId = getPartitionId(aggregationQuery);
     RunAggregationQueryRequest.Builder aggregationQueryRequestBuilder =
         RunAggregationQueryRequest.newBuilder()
