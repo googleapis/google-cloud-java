@@ -172,7 +172,8 @@ Example: `https://cloud.google.com/alloydb/docs`
 
 ### REST Docs
 
-Not every library has these, as they are generated adhoc. Poke around the product docs link to see if there is a valid REST API reference link.
+This link must be found manually (until b/310975675 is implemented), and may not exist for every library, as they are generated adhoc.
+Poke around the product docs link to see if there is a valid REST API reference link.
 The value must starts with "https://".
 
 Example: `https://cloud.google.com/alloydb/docs/reference/rest`
@@ -182,7 +183,8 @@ If they exist, add them as a flag to the python command below like:
 
 ### RPC Docs
 
-Not every library has these, as they are generated adhoc. Poke around the product docs link to see if there is a valid RPC API reference link.
+This link must be found manually (until b/310975675 is implemented), and may not exist for every library, as they are generated adhoc.
+Poke around the product docs link to see if there is a valid RPC API reference link.
 The value must starts with "https://".
 
 Example: `https://cloud.google.com/speech-to-text/docs/reference/rpc`
