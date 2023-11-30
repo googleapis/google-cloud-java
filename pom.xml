@@ -54,7 +54,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-bigquery-parent</site.installationModule>
-    <google-api-services-bigquery.version>v2-rev20231008-2.0.0</google-api-services-bigquery.version>
+    <google-api-services-bigquery.version>v2-rev20231111-2.0.0</google-api-services-bigquery.version>
     <google.cloud.shared-dependencies.version>3.19.0</google.cloud.shared-dependencies.version>
     <arrow.version>12.0.1</arrow.version>
   </properties>
