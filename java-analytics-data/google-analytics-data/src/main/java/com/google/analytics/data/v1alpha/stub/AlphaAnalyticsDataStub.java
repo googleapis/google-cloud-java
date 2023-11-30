@@ -17,15 +17,21 @@
 package com.google.analytics.data.v1alpha.stub;
 
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListAudienceListsPagedResponse;
+import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRecurringAudienceListsPagedResponse;
 
 import com.google.analytics.data.v1alpha.AudienceList;
 import com.google.analytics.data.v1alpha.AudienceListMetadata;
 import com.google.analytics.data.v1alpha.CreateAudienceListRequest;
+import com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.GetAudienceListRequest;
+import com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.ListAudienceListsRequest;
 import com.google.analytics.data.v1alpha.ListAudienceListsResponse;
+import com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest;
+import com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse;
 import com.google.analytics.data.v1alpha.QueryAudienceListRequest;
 import com.google.analytics.data.v1alpha.QueryAudienceListResponse;
+import com.google.analytics.data.v1alpha.RecurringAudienceList;
 import com.google.analytics.data.v1alpha.RunFunnelReportRequest;
 import com.google.analytics.data.v1alpha.RunFunnelReportResponse;
 import com.google.analytics.data.v1alpha.SheetExportAudienceListRequest;
@@ -92,6 +98,29 @@ public abstract class AlphaAnalyticsDataStub implements BackgroundResource {
   public UnaryCallable<ListAudienceListsRequest, ListAudienceListsResponse>
       listAudienceListsCallable() {
     throw new UnsupportedOperationException("Not implemented: listAudienceListsCallable()");
+  }
+
+  public UnaryCallable<CreateRecurringAudienceListRequest, RecurringAudienceList>
+      createRecurringAudienceListCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createRecurringAudienceListCallable()");
+  }
+
+  public UnaryCallable<GetRecurringAudienceListRequest, RecurringAudienceList>
+      getRecurringAudienceListCallable() {
+    throw new UnsupportedOperationException("Not implemented: getRecurringAudienceListCallable()");
+  }
+
+  public UnaryCallable<ListRecurringAudienceListsRequest, ListRecurringAudienceListsPagedResponse>
+      listRecurringAudienceListsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRecurringAudienceListsPagedCallable()");
+  }
+
+  public UnaryCallable<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
+      listRecurringAudienceListsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRecurringAudienceListsCallable()");
   }
 
   @Override

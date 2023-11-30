@@ -17,6 +17,7 @@
 package com.google.analytics.data.v1alpha;
 
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListAudienceListsPagedResponse;
+import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRecurringAudienceListsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -169,6 +170,8 @@ public class AlphaAnalyticsDataClientTest {
             .setCreationQuotaTokensCharged(1232901266)
             .setRowCount(1340416618)
             .setErrorMessage("errorMessage1203236063")
+            .setPercentageCompleted(-1292047642)
+            .setRecurringAudienceList("recurringAudienceList1055738943")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -225,6 +228,8 @@ public class AlphaAnalyticsDataClientTest {
             .setCreationQuotaTokensCharged(1232901266)
             .setRowCount(1340416618)
             .setErrorMessage("errorMessage1203236063")
+            .setPercentageCompleted(-1292047642)
+            .setRecurringAudienceList("recurringAudienceList1055738943")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -405,6 +410,8 @@ public class AlphaAnalyticsDataClientTest {
             .setCreationQuotaTokensCharged(1232901266)
             .setRowCount(1340416618)
             .setErrorMessage("errorMessage1203236063")
+            .setPercentageCompleted(-1292047642)
+            .setRecurringAudienceList("recurringAudienceList1055738943")
             .build();
     mockAlphaAnalyticsData.addResponse(expectedResponse);
 
@@ -450,6 +457,8 @@ public class AlphaAnalyticsDataClientTest {
             .setCreationQuotaTokensCharged(1232901266)
             .setRowCount(1340416618)
             .setErrorMessage("errorMessage1203236063")
+            .setPercentageCompleted(-1292047642)
+            .setRecurringAudienceList("recurringAudienceList1055738943")
             .build();
     mockAlphaAnalyticsData.addResponse(expectedResponse);
 
@@ -565,6 +574,288 @@ public class AlphaAnalyticsDataClientTest {
     try {
       String parent = "parent-995424086";
       client.listAudienceLists(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createRecurringAudienceListTest() throws Exception {
+    RecurringAudienceList expectedResponse =
+        RecurringAudienceList.newBuilder()
+            .setName(
+                RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]").toString())
+            .setAudience("audience975628804")
+            .setAudienceDisplayName("audienceDisplayName1537141193")
+            .addAllDimensions(new ArrayList<AudienceDimension>())
+            .setActiveDaysRemaining(-1427137945)
+            .addAllAudienceLists(new ArrayList<String>())
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    RecurringAudienceList recurringAudienceList = RecurringAudienceList.newBuilder().build();
+
+    RecurringAudienceList actualResponse =
+        client.createRecurringAudienceList(parent, recurringAudienceList);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRecurringAudienceListRequest actualRequest =
+        ((CreateRecurringAudienceListRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(recurringAudienceList, actualRequest.getRecurringAudienceList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRecurringAudienceListExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      RecurringAudienceList recurringAudienceList = RecurringAudienceList.newBuilder().build();
+      client.createRecurringAudienceList(parent, recurringAudienceList);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createRecurringAudienceListTest2() throws Exception {
+    RecurringAudienceList expectedResponse =
+        RecurringAudienceList.newBuilder()
+            .setName(
+                RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]").toString())
+            .setAudience("audience975628804")
+            .setAudienceDisplayName("audienceDisplayName1537141193")
+            .addAllDimensions(new ArrayList<AudienceDimension>())
+            .setActiveDaysRemaining(-1427137945)
+            .addAllAudienceLists(new ArrayList<String>())
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    RecurringAudienceList recurringAudienceList = RecurringAudienceList.newBuilder().build();
+
+    RecurringAudienceList actualResponse =
+        client.createRecurringAudienceList(parent, recurringAudienceList);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRecurringAudienceListRequest actualRequest =
+        ((CreateRecurringAudienceListRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(recurringAudienceList, actualRequest.getRecurringAudienceList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRecurringAudienceListExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      RecurringAudienceList recurringAudienceList = RecurringAudienceList.newBuilder().build();
+      client.createRecurringAudienceList(parent, recurringAudienceList);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRecurringAudienceListTest() throws Exception {
+    RecurringAudienceList expectedResponse =
+        RecurringAudienceList.newBuilder()
+            .setName(
+                RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]").toString())
+            .setAudience("audience975628804")
+            .setAudienceDisplayName("audienceDisplayName1537141193")
+            .addAllDimensions(new ArrayList<AudienceDimension>())
+            .setActiveDaysRemaining(-1427137945)
+            .addAllAudienceLists(new ArrayList<String>())
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    RecurringAudienceListName name =
+        RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]");
+
+    RecurringAudienceList actualResponse = client.getRecurringAudienceList(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRecurringAudienceListRequest actualRequest =
+        ((GetRecurringAudienceListRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRecurringAudienceListExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      RecurringAudienceListName name =
+          RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]");
+      client.getRecurringAudienceList(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRecurringAudienceListTest2() throws Exception {
+    RecurringAudienceList expectedResponse =
+        RecurringAudienceList.newBuilder()
+            .setName(
+                RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]").toString())
+            .setAudience("audience975628804")
+            .setAudienceDisplayName("audienceDisplayName1537141193")
+            .addAllDimensions(new ArrayList<AudienceDimension>())
+            .setActiveDaysRemaining(-1427137945)
+            .addAllAudienceLists(new ArrayList<String>())
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RecurringAudienceList actualResponse = client.getRecurringAudienceList(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRecurringAudienceListRequest actualRequest =
+        ((GetRecurringAudienceListRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRecurringAudienceListExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getRecurringAudienceList(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRecurringAudienceListsTest() throws Exception {
+    RecurringAudienceList responsesElement = RecurringAudienceList.newBuilder().build();
+    ListRecurringAudienceListsResponse expectedResponse =
+        ListRecurringAudienceListsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRecurringAudienceLists(Arrays.asList(responsesElement))
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListRecurringAudienceListsPagedResponse pagedListResponse =
+        client.listRecurringAudienceLists(parent);
+
+    List<RecurringAudienceList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRecurringAudienceListsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRecurringAudienceListsRequest actualRequest =
+        ((ListRecurringAudienceListsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRecurringAudienceListsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listRecurringAudienceLists(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRecurringAudienceListsTest2() throws Exception {
+    RecurringAudienceList responsesElement = RecurringAudienceList.newBuilder().build();
+    ListRecurringAudienceListsResponse expectedResponse =
+        ListRecurringAudienceListsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRecurringAudienceLists(Arrays.asList(responsesElement))
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListRecurringAudienceListsPagedResponse pagedListResponse =
+        client.listRecurringAudienceLists(parent);
+
+    List<RecurringAudienceList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRecurringAudienceListsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRecurringAudienceListsRequest actualRequest =
+        ((ListRecurringAudienceListsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRecurringAudienceListsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listRecurringAudienceLists(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

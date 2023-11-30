@@ -17,6 +17,7 @@
 package com.google.analytics.data.v1alpha;
 
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListAudienceListsPagedResponse;
+import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRecurringAudienceListsPagedResponse;
 
 import com.google.analytics.data.v1alpha.stub.AlphaAnalyticsDataStubSettings;
 import com.google.api.core.ApiFunction;
@@ -119,6 +120,29 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
           ListAudienceListsRequest, ListAudienceListsResponse, ListAudienceListsPagedResponse>
       listAudienceListsSettings() {
     return ((AlphaAnalyticsDataStubSettings) getStubSettings()).listAudienceListsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createRecurringAudienceList. */
+  public UnaryCallSettings<CreateRecurringAudienceListRequest, RecurringAudienceList>
+      createRecurringAudienceListSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings())
+        .createRecurringAudienceListSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getRecurringAudienceList. */
+  public UnaryCallSettings<GetRecurringAudienceListRequest, RecurringAudienceList>
+      getRecurringAudienceListSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).getRecurringAudienceListSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listRecurringAudienceLists. */
+  public PagedCallSettings<
+          ListRecurringAudienceListsRequest,
+          ListRecurringAudienceListsResponse,
+          ListRecurringAudienceListsPagedResponse>
+      listRecurringAudienceListsSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings())
+        .listRecurringAudienceListsSettings();
   }
 
   public static final AlphaAnalyticsDataSettings create(AlphaAnalyticsDataStubSettings stub)
@@ -279,6 +303,27 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
             ListAudienceListsRequest, ListAudienceListsResponse, ListAudienceListsPagedResponse>
         listAudienceListsSettings() {
       return getStubSettingsBuilder().listAudienceListsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createRecurringAudienceList. */
+    public UnaryCallSettings.Builder<CreateRecurringAudienceListRequest, RecurringAudienceList>
+        createRecurringAudienceListSettings() {
+      return getStubSettingsBuilder().createRecurringAudienceListSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRecurringAudienceList. */
+    public UnaryCallSettings.Builder<GetRecurringAudienceListRequest, RecurringAudienceList>
+        getRecurringAudienceListSettings() {
+      return getStubSettingsBuilder().getRecurringAudienceListSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listRecurringAudienceLists. */
+    public PagedCallSettings.Builder<
+            ListRecurringAudienceListsRequest,
+            ListRecurringAudienceListsResponse,
+            ListRecurringAudienceListsPagedResponse>
+        listRecurringAudienceListsSettings() {
+      return getStubSettingsBuilder().listRecurringAudienceListsSettings();
     }
 
     @Override
