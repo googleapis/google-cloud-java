@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.17.6](https://github.com/googleapis/java-datastore/compare/v2.17.5...v2.17.6) (2023-11-30)
+
+
+### Bug Fixes
+
+* Remove deprecated `databaseId` field in DatastoreOptions ([#1237](https://github.com/googleapis/java-datastore/issues/1237)) ([05e25e5](https://github.com/googleapis/java-datastore/commit/05e25e5d31f72f9cdedbb5efa85c64b55ccbc405))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#1247](https://github.com/googleapis/java-datastore/issues/1247)) ([c4e3533](https://github.com/googleapis/java-datastore/commit/c4e3533fe357827cc25d0f029e5a83ced31db12a))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.10.1 ([#1230](https://github.com/googleapis/java-datastore/issues/1230)) ([05c7fc6](https://github.com/googleapis/java-datastore/commit/05c7fc69d52f5a9026a6529f638fe6164860e8f9))
+
 ## [2.17.5](https://github.com/googleapis/java-datastore/compare/v2.17.4...v2.17.5) (2023-11-02)
 
 
