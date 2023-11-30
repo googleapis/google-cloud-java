@@ -2685,6 +2685,33 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testRoutineDataGovernanceType() {
+    String routineName = RemoteBigQueryHelper.generateRoutineName();
+    RoutineId routineId = RoutineId.of(ROUTINE_DATASET, routineName);
+    RoutineInfo routineInfo =
+        RoutineInfo.newBuilder(routineId)
+            .setLanguage("SQL")
+            .setRoutineType("SCALAR_FUNCTION")
+            .setBody("x")
+            .setArguments(
+                ImmutableList.of(
+                    RoutineArgument.newBuilder()
+                        .setName("x")
+                        .setDataType(StandardSQLDataType.newBuilder("INT64").build())
+                        .build()))
+            .setReturnType(StandardSQLDataType.newBuilder("INT64").build())
+            .setDataGovernanceType("DATA_MASKING")
+            .build();
+
+    Routine routine = bigquery.create(routineInfo);
+    assertNotNull(routine);
+    assertEquals(routine.getLanguage(), "SQL");
+    assertEquals(routine.getRoutineType(), "SCALAR_FUNCTION");
+    assertEquals(routine.getReturnType(), StandardSQLDataType.newBuilder("INT64").build());
+    assertEquals(routine.getDataGovernanceType(), "DATA_MASKING");
+  }
+
+  @Test
   public void testAuthorizeRoutine() {
     String routineName = RemoteBigQueryHelper.generateRoutineName();
     RoutineId routineId = RoutineId.of(PROJECT_ID, ROUTINE_DATASET, routineName);

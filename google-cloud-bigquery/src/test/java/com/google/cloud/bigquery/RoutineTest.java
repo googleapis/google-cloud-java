@@ -91,6 +91,8 @@ public class RoutineTest {
           .setMaxBatchingRows(10L)
           .build();
 
+  private static final String DATA_GOVERNANCE_TYPE = "DATA_MASKING";
+
   private static final RoutineInfo ROUTINE_INFO =
       RoutineInfo.newBuilder(ROUTINE_ID)
           .setEtag(ETAG)
@@ -104,6 +106,7 @@ public class RoutineTest {
           .setImportedLibraries(IMPORTED_LIBRARIES)
           .setBody(BODY)
           .setRemoteFunctionOptions(REMOTE_FUNCTION_OPTIONS)
+          .setDataGovernanceType(DATA_GOVERNANCE_TYPE)
           .build();
 
   private static final RoutineInfo ROUTINE_INFO_TVF =
@@ -146,6 +149,7 @@ public class RoutineTest {
             .setImportedLibraries(IMPORTED_LIBRARIES)
             .setBody(BODY)
             .setRemoteFunctionOptions(REMOTE_FUNCTION_OPTIONS)
+            .setDataGovernanceType(DATA_GOVERNANCE_TYPE)
             .build();
     assertEquals(ETAG, builtRoutine.getEtag());
     assertEquals(DETERMINISM_LEVEL, builtRoutine.getDeterminismLevel());
@@ -247,5 +251,6 @@ public class RoutineTest {
     assertEquals(expected.getBody(), value.getBody());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.getRemoteFunctionOptions(), value.getRemoteFunctionOptions());
+    assertEquals(expected.getDataGovernanceType(), value.getDataGovernanceType());
   }
 }

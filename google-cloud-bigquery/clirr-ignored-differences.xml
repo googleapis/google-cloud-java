@@ -22,6 +22,11 @@
   <difference>
     <differenceType>7013</differenceType>
     <className>com/google/cloud/bigquery/RoutineInfo*</className>
+    <method>*DataGovernanceType(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/RoutineInfo*</className>
     <method>*RemoteFunctionOptions(*)</method>
   </difference>
   <difference>

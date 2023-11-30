@@ -72,6 +72,8 @@ public class RoutineInfo implements Serializable {
   private final String body;
   private final RemoteFunctionOptions remoteFunctionOptions;
 
+  private final String dataGovernanceType;
+
   public abstract static class Builder {
 
     abstract Builder setRoutineId(RoutineId id);
@@ -157,6 +159,13 @@ public class RoutineInfo implements Serializable {
      */
     public abstract Builder setRemoteFunctionOptions(RemoteFunctionOptions remoteFunctionOptions);
 
+    /**
+     * Sets the data governance type for the Builder (e.g. DATA_MASKING).
+     *
+     * <p>See https://cloud.google.com/bigquery/docs/reference/rest/v2/routines
+     */
+    public abstract Builder setDataGovernanceType(String dataGovernanceType);
+
     /** Creates a {@code RoutineInfo} object. */
     public abstract RoutineInfo build();
   }
@@ -177,6 +186,8 @@ public class RoutineInfo implements Serializable {
     private String body;
     private RemoteFunctionOptions remoteFunctionOptions;
 
+    private String dataGovernanceType;
+
     BuilderImpl() {}
 
     BuilderImpl(RoutineInfo routineInfo) {
@@ -194,6 +205,7 @@ public class RoutineInfo implements Serializable {
       this.importedLibrariesList = routineInfo.importedLibrariesList;
       this.body = routineInfo.body;
       this.remoteFunctionOptions = routineInfo.remoteFunctionOptions;
+      this.dataGovernanceType = routineInfo.dataGovernanceType;
     }
 
     BuilderImpl(Routine routinePb) {
@@ -225,6 +237,7 @@ public class RoutineInfo implements Serializable {
         this.remoteFunctionOptions =
             RemoteFunctionOptions.fromPb(routinePb.getRemoteFunctionOptions());
       }
+      this.dataGovernanceType = routinePb.getDataGovernanceType();
     }
 
     @Override
@@ -312,6 +325,12 @@ public class RoutineInfo implements Serializable {
     }
 
     @Override
+    public Builder setDataGovernanceType(String dataGovernanceType) {
+      this.dataGovernanceType = dataGovernanceType;
+      return this;
+    }
+
+    @Override
     public RoutineInfo build() {
       return new RoutineInfo(this);
     }
@@ -332,6 +351,7 @@ public class RoutineInfo implements Serializable {
     this.importedLibrariesList = builder.importedLibrariesList;
     this.body = builder.body;
     this.remoteFunctionOptions = builder.remoteFunctionOptions;
+    this.dataGovernanceType = builder.dataGovernanceType;
   }
 
   /** Returns the RoutineId identified for the routine resource. * */
@@ -411,6 +431,11 @@ public class RoutineInfo implements Serializable {
     return remoteFunctionOptions;
   };
 
+  /** Returns the data governance type of the routine, e.g. DATA_MASKING. */
+  public String getDataGovernanceType() {
+    return dataGovernanceType;
+  }
+
   /** Returns a builder pre-populated using the current values of this routine. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
@@ -433,6 +458,7 @@ public class RoutineInfo implements Serializable {
         .add("importedLibrariesList", importedLibrariesList)
         .add("body", body)
         .add("remoteFunctionOptions", remoteFunctionOptions)
+        .add("dataGovernanceType", dataGovernanceType)
         .toString();
   }
 
@@ -452,7 +478,8 @@ public class RoutineInfo implements Serializable {
         returnTableType,
         importedLibrariesList,
         body,
-        remoteFunctionOptions);
+        remoteFunctionOptions,
+        dataGovernanceType);
   }
 
   @Override
@@ -490,7 +517,8 @@ public class RoutineInfo implements Serializable {
             .setDescription(getDescription())
             .setDeterminismLevel(getDeterminismLevel())
             .setLastModifiedTime(getLastModifiedTime())
-            .setLanguage(getLanguage());
+            .setLanguage(getLanguage())
+            .setDataGovernanceType(getDataGovernanceType());
     if (getRoutineId() != null) {
       routinePb.setRoutineReference(getRoutineId().toPb());
     }
@@ -505,6 +533,9 @@ public class RoutineInfo implements Serializable {
     }
     if (getRemoteFunctionOptions() != null) {
       routinePb.setRemoteFunctionOptions(getRemoteFunctionOptions().toPb());
+    }
+    if (getImportedLibraries() != null) {
+      routinePb.setImportedLibraries(getImportedLibraries());
     }
     return routinePb;
   }

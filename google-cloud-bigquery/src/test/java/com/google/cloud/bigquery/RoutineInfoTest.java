@@ -33,6 +33,8 @@ public class RoutineInfoTest {
   private static final Long LAST_MODIFIED_TIME = 20L;
   private static final String LANGUAGE = "SQL";
 
+  private static final String DATA_GOVERNANCE_TYPE = "DATA_MASKING";
+
   private static final RoutineArgument ARG_1 =
       RoutineArgument.newBuilder()
           .setDataType(StandardSQLDataType.newBuilder("STRING").build())
@@ -63,6 +65,7 @@ public class RoutineInfoTest {
           .setReturnType(RETURN_TYPE)
           .setImportedLibraries(IMPORTED_LIBRARIES)
           .setBody(BODY)
+          .setDataGovernanceType(DATA_GOVERNANCE_TYPE)
           .build();
 
   @Test
@@ -90,6 +93,7 @@ public class RoutineInfoTest {
     assertEquals(RETURN_TYPE, ROUTINE_INFO.getReturnType());
     assertEquals(IMPORTED_LIBRARIES, ROUTINE_INFO.getImportedLibraries());
     assertEquals(BODY, ROUTINE_INFO.getBody());
+    assertEquals(DATA_GOVERNANCE_TYPE, ROUTINE_INFO.getDataGovernanceType());
   }
 
   @Test
@@ -107,8 +111,10 @@ public class RoutineInfoTest {
     assertNull(routineInfo.getReturnType());
     assertNull(routineInfo.getImportedLibraries());
     assertNull(routineInfo.getBody());
+    assertNull(routineInfo.getDataGovernanceType());
   }
 
+  @Test
   public void testToAndFromPb() {
     compareRoutineInfo(ROUTINE_INFO, RoutineInfo.fromPb(ROUTINE_INFO.toPb()));
   }
@@ -132,6 +138,7 @@ public class RoutineInfoTest {
     assertEquals(expected.getReturnType(), value.getReturnType());
     assertEquals(expected.getImportedLibraries(), value.getImportedLibraries());
     assertEquals(expected.getBody(), value.getBody());
+    assertEquals(expected.getDataGovernanceType(), value.getDataGovernanceType());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }

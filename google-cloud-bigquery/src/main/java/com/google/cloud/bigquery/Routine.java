@@ -136,6 +136,12 @@ public class Routine extends RoutineInfo {
     }
 
     @Override
+    public Builder setDataGovernanceType(String dataGovernanceType) {
+      infoBuilder.setDataGovernanceType(dataGovernanceType);
+      return this;
+    }
+
+    @Override
     public Routine build() {
       return new Routine(bigquery, infoBuilder);
     }
