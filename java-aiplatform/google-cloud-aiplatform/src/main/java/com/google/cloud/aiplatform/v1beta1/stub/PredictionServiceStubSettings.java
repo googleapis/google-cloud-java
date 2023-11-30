@@ -38,12 +38,17 @@ import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
 import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
+import com.google.cloud.aiplatform.v1beta1.DirectPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.DirectPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.ExplainRequest;
 import com.google.cloud.aiplatform.v1beta1.ExplainResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictRequest;
@@ -51,6 +56,8 @@ import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.RawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamingRawPredictResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -116,8 +123,16 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
   private final UnaryCallSettings<PredictRequest, PredictResponse> predictSettings;
   private final UnaryCallSettings<RawPredictRequest, HttpBody> rawPredictSettings;
+  private final UnaryCallSettings<DirectPredictRequest, DirectPredictResponse>
+      directPredictSettings;
+  private final UnaryCallSettings<DirectRawPredictRequest, DirectRawPredictResponse>
+      directRawPredictSettings;
+  private final StreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
+      streamingPredictSettings;
   private final ServerStreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
       serverStreamingPredictSettings;
+  private final StreamingCallSettings<StreamingRawPredictRequest, StreamingRawPredictResponse>
+      streamingRawPredictSettings;
   private final UnaryCallSettings<ExplainRequest, ExplainResponse> explainSettings;
   private final UnaryCallSettings<CountTokensRequest, CountTokensResponse> countTokensSettings;
   private final PagedCallSettings<
@@ -192,10 +207,33 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     return rawPredictSettings;
   }
 
+  /** Returns the object with the settings used for calls to directPredict. */
+  public UnaryCallSettings<DirectPredictRequest, DirectPredictResponse> directPredictSettings() {
+    return directPredictSettings;
+  }
+
+  /** Returns the object with the settings used for calls to directRawPredict. */
+  public UnaryCallSettings<DirectRawPredictRequest, DirectRawPredictResponse>
+      directRawPredictSettings() {
+    return directRawPredictSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamingPredict. */
+  public StreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
+      streamingPredictSettings() {
+    return streamingPredictSettings;
+  }
+
   /** Returns the object with the settings used for calls to serverStreamingPredict. */
   public ServerStreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
       serverStreamingPredictSettings() {
     return serverStreamingPredictSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamingRawPredict. */
+  public StreamingCallSettings<StreamingRawPredictRequest, StreamingRawPredictResponse>
+      streamingRawPredictSettings() {
+    return streamingRawPredictSettings;
   }
 
   /** Returns the object with the settings used for calls to explain. */
@@ -312,7 +350,11 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
     predictSettings = settingsBuilder.predictSettings().build();
     rawPredictSettings = settingsBuilder.rawPredictSettings().build();
+    directPredictSettings = settingsBuilder.directPredictSettings().build();
+    directRawPredictSettings = settingsBuilder.directRawPredictSettings().build();
+    streamingPredictSettings = settingsBuilder.streamingPredictSettings().build();
     serverStreamingPredictSettings = settingsBuilder.serverStreamingPredictSettings().build();
+    streamingRawPredictSettings = settingsBuilder.streamingRawPredictSettings().build();
     explainSettings = settingsBuilder.explainSettings().build();
     countTokensSettings = settingsBuilder.countTokensSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
@@ -327,9 +369,18 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<PredictRequest, PredictResponse> predictSettings;
     private final UnaryCallSettings.Builder<RawPredictRequest, HttpBody> rawPredictSettings;
+    private final UnaryCallSettings.Builder<DirectPredictRequest, DirectPredictResponse>
+        directPredictSettings;
+    private final UnaryCallSettings.Builder<DirectRawPredictRequest, DirectRawPredictResponse>
+        directRawPredictSettings;
+    private final StreamingCallSettings.Builder<StreamingPredictRequest, StreamingPredictResponse>
+        streamingPredictSettings;
     private final ServerStreamingCallSettings.Builder<
             StreamingPredictRequest, StreamingPredictResponse>
         serverStreamingPredictSettings;
+    private final StreamingCallSettings.Builder<
+            StreamingRawPredictRequest, StreamingRawPredictResponse>
+        streamingRawPredictSettings;
     private final UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings;
     private final UnaryCallSettings.Builder<CountTokensRequest, CountTokensResponse>
         countTokensSettings;
@@ -380,7 +431,11 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       predictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       rawPredictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      directPredictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      directRawPredictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      streamingPredictSettings = StreamingCallSettings.newBuilder();
       serverStreamingPredictSettings = ServerStreamingCallSettings.newBuilder();
+      streamingRawPredictSettings = StreamingCallSettings.newBuilder();
       explainSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       countTokensSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
@@ -393,6 +448,8 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               predictSettings,
               rawPredictSettings,
+              directPredictSettings,
+              directRawPredictSettings,
               explainSettings,
               countTokensSettings,
               listLocationsSettings,
@@ -408,7 +465,11 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       predictSettings = settings.predictSettings.toBuilder();
       rawPredictSettings = settings.rawPredictSettings.toBuilder();
+      directPredictSettings = settings.directPredictSettings.toBuilder();
+      directRawPredictSettings = settings.directRawPredictSettings.toBuilder();
+      streamingPredictSettings = settings.streamingPredictSettings.toBuilder();
       serverStreamingPredictSettings = settings.serverStreamingPredictSettings.toBuilder();
+      streamingRawPredictSettings = settings.streamingRawPredictSettings.toBuilder();
       explainSettings = settings.explainSettings.toBuilder();
       countTokensSettings = settings.countTokensSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
@@ -421,6 +482,8 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               predictSettings,
               rawPredictSettings,
+              directPredictSettings,
+              directRawPredictSettings,
               explainSettings,
               countTokensSettings,
               listLocationsSettings,
@@ -451,6 +514,16 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       builder
           .rawPredictSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .directPredictSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .directRawPredictSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -522,10 +595,34 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       return rawPredictSettings;
     }
 
+    /** Returns the builder for the settings used for calls to directPredict. */
+    public UnaryCallSettings.Builder<DirectPredictRequest, DirectPredictResponse>
+        directPredictSettings() {
+      return directPredictSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to directRawPredict. */
+    public UnaryCallSettings.Builder<DirectRawPredictRequest, DirectRawPredictResponse>
+        directRawPredictSettings() {
+      return directRawPredictSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamingPredict. */
+    public StreamingCallSettings.Builder<StreamingPredictRequest, StreamingPredictResponse>
+        streamingPredictSettings() {
+      return streamingPredictSettings;
+    }
+
     /** Returns the builder for the settings used for calls to serverStreamingPredict. */
     public ServerStreamingCallSettings.Builder<StreamingPredictRequest, StreamingPredictResponse>
         serverStreamingPredictSettings() {
       return serverStreamingPredictSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamingRawPredict. */
+    public StreamingCallSettings.Builder<StreamingRawPredictRequest, StreamingRawPredictResponse>
+        streamingRawPredictSettings() {
+      return streamingRawPredictSettings;
     }
 
     /** Returns the builder for the settings used for calls to explain. */

@@ -21,10 +21,15 @@ import static com.google.cloud.aiplatform.v1beta1.PredictionServiceClient.ListLo
 import com.google.api.HttpBody;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
 import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
+import com.google.cloud.aiplatform.v1beta1.DirectPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.DirectPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.ExplainRequest;
 import com.google.cloud.aiplatform.v1beta1.ExplainResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictRequest;
@@ -32,6 +37,8 @@ import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.RawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamingRawPredictResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -61,9 +68,28 @@ public abstract class PredictionServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: rawPredictCallable()");
   }
 
+  public UnaryCallable<DirectPredictRequest, DirectPredictResponse> directPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: directPredictCallable()");
+  }
+
+  public UnaryCallable<DirectRawPredictRequest, DirectRawPredictResponse>
+      directRawPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: directRawPredictCallable()");
+  }
+
+  public BidiStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
+      streamingPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamingPredictCallable()");
+  }
+
   public ServerStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
       serverStreamingPredictCallable() {
     throw new UnsupportedOperationException("Not implemented: serverStreamingPredictCallable()");
+  }
+
+  public BidiStreamingCallable<StreamingRawPredictRequest, StreamingRawPredictResponse>
+      streamingRawPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamingRawPredictCallable()");
   }
 
   public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
