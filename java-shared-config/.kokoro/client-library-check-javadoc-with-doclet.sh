@@ -8,7 +8,7 @@ set -x
 mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
 
 # Read the current version of this BOM in the POM. Example version: '0.116.1-alpha-SNAPSHOT'
-VERSION_POM=pom.xml
+VERSION_POM=java-shared-config/pom.xml
 # Namespace (xmlns) prevents xmllint from specifying tag names in XPath
 VERSION=`sed -e 's/xmlns=".*"//' ${VERSION_POM} | xmllint --xpath '/project/version/text()' -`
 

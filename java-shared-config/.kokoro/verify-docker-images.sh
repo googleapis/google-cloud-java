@@ -21,7 +21,9 @@ scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 cd ${scriptDir}/.. || exit
 
 # Fetch the java-shared-config version in source of the current commit.
+pushd java-shared-config
 javaSharedConfigVersion="$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)"
+popd
 
 branchName=$(git name-rev "${KOKORO_GIT_COMMIT}" | sed 's/.* //')
 gitCommitMessage=$(git log -1 "$(git rev-parse --short "${KOKORO_GIT_COMMIT}")" | grep "chore(main): release *")
