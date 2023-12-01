@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.47.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.46.0...v2.47.0) (2023-12-01)
+
+
+### Features
+
+* Adding CDC sample ([#2263](https://github.com/googleapis/java-bigquerystorage/issues/2263)) ([ba134e4](https://github.com/googleapis/java-bigquerystorage/commit/ba134e403f7696d5e797faf7c07ff817b90f1085))
+
+
+### Bug Fixes
+
+* An atempt to solve test failure in nightly build ([#2330](https://github.com/googleapis/java-bigquerystorage/issues/2330)) ([f77465e](https://github.com/googleapis/java-bigquerystorage/commit/f77465e094ca9b00fc2eb6882a69b9eb9dfd8edb))
+* Fix a test that is flaky ([#2340](https://github.com/googleapis/java-bigquerystorage/issues/2340)) ([cb6e2c9](https://github.com/googleapis/java-bigquerystorage/commit/cb6e2c97c854d89c2679d17a24f021a676f25039))
+* Fix the write api integration test ([#2333](https://github.com/googleapis/java-bigquerystorage/issues/2333)) ([a69bec9](https://github.com/googleapis/java-bigquerystorage/commit/a69bec9c017509ef3beb975e2b6d929c12420c0c))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.34.2 ([#2313](https://github.com/googleapis/java-bigquerystorage/issues/2313)) ([1e1b60c](https://github.com/googleapis/java-bigquerystorage/commit/1e1b60cbc036bd8ed48736e3c53a10bc3a76c821))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#2336](https://github.com/googleapis/java-bigquerystorage/issues/2336)) ([6ada6c5](https://github.com/googleapis/java-bigquerystorage/commit/6ada6c5fd411576c2c27ab94e7ef47f7ba02629b))
+
 ## [2.46.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.45.0...v2.46.0) (2023-11-15)
 
 
