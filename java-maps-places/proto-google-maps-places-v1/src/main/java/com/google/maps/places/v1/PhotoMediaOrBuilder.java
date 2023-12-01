@@ -18,58 +18,60 @@
 
 package com.google.maps.places.v1;
 
-public interface Int32RangeOrBuilder
+public interface PhotoMediaOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.maps.places.v1.Int32Range)
+    // @@protoc_insertion_point(interface_extends:google.maps.places.v1.PhotoMedia)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Lower bound. If unset, behavior is documented on the range field.
+   * The resource name of a photo. It is returned in Place's photos.name field.
+   * Format: places/&lt;place_id&gt;/photos/&lt;photo_reference&gt;/media.
    * </pre>
    *
-   * <code>optional int32 min = 1;</code>
+   * <code>string name = 1;</code>
    *
-   * @return Whether the min field is set.
+   * @return The name.
    */
-  boolean hasMin();
+  java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * Lower bound. If unset, behavior is documented on the range field.
+   * The resource name of a photo. It is returned in Place's photos.name field.
+   * Format: places/&lt;place_id&gt;/photos/&lt;photo_reference&gt;/media.
    * </pre>
    *
-   * <code>optional int32 min = 1;</code>
+   * <code>string name = 1;</code>
    *
-   * @return The min.
+   * @return The bytes for name.
    */
-  int getMin();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
    *
    *
    * <pre>
-   * Upper bound. If unset, behavior is documented on the range field.
+   * A short-lived uri that can be used to render the photo.
    * </pre>
    *
-   * <code>optional int32 max = 2;</code>
+   * <code>string photo_uri = 2;</code>
    *
-   * @return Whether the max field is set.
+   * @return The photoUri.
    */
-  boolean hasMax();
+  java.lang.String getPhotoUri();
   /**
    *
    *
    * <pre>
-   * Upper bound. If unset, behavior is documented on the range field.
+   * A short-lived uri that can be used to render the photo.
    * </pre>
    *
-   * <code>optional int32 max = 2;</code>
+   * <code>string photo_uri = 2;</code>
    *
-   * @return The max.
+   * @return The bytes for photoUri.
    */
-  int getMax();
+  com.google.protobuf.ByteString getPhotoUriBytes();
 }

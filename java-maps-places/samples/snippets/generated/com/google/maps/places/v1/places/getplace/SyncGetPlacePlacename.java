@@ -16,33 +16,27 @@
 
 package com.google.maps.places.v1.samples;
 
-// [START places_v1_generated_PlacesSettings_SearchText_sync]
-import com.google.maps.places.v1.PlacesSettings;
-import java.time.Duration;
+// [START places_v1_generated_Places_GetPlace_Placename_sync]
+import com.google.maps.places.v1.Place;
+import com.google.maps.places.v1.PlaceName;
+import com.google.maps.places.v1.PlacesClient;
 
-public class SyncSearchText {
+public class SyncGetPlacePlacename {
 
   public static void main(String[] args) throws Exception {
-    syncSearchText();
+    syncGetPlacePlacename();
   }
 
-  public static void syncSearchText() throws Exception {
+  public static void syncGetPlacePlacename() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    PlacesSettings.Builder placesSettingsBuilder = PlacesSettings.newBuilder();
-    placesSettingsBuilder
-        .searchTextSettings()
-        .setRetrySettings(
-            placesSettingsBuilder
-                .searchTextSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    PlacesSettings placesSettings = placesSettingsBuilder.build();
+    try (PlacesClient placesClient = PlacesClient.create()) {
+      PlaceName name = PlaceName.of("[PLACE_ID]");
+      Place response = placesClient.getPlace(name);
+    }
   }
 }
-// [END places_v1_generated_PlacesSettings_SearchText_sync]
+// [END places_v1_generated_Places_GetPlace_Placename_sync]

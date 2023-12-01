@@ -38,6 +38,12 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.maps.places.v1.GetPhotoMediaRequest;
+import com.google.maps.places.v1.GetPlaceRequest;
+import com.google.maps.places.v1.PhotoMedia;
+import com.google.maps.places.v1.Place;
+import com.google.maps.places.v1.SearchNearbyRequest;
+import com.google.maps.places.v1.SearchNearbyResponse;
 import com.google.maps.places.v1.SearchTextRequest;
 import com.google.maps.places.v1.SearchTextResponse;
 import java.io.IOException;
@@ -59,7 +65,7 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of searchText to 30 seconds:
+ * <p>For example, to set the total timeout of searchNearby to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -69,10 +75,10 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * PlacesStubSettings.Builder placesSettingsBuilder = PlacesStubSettings.newBuilder();
  * placesSettingsBuilder
- *     .searchTextSettings()
+ *     .searchNearbySettings()
  *     .setRetrySettings(
  *         placesSettingsBuilder
- *             .searchTextSettings()
+ *             .searchNearbySettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -86,11 +92,29 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().build();
 
+  private final UnaryCallSettings<SearchNearbyRequest, SearchNearbyResponse> searchNearbySettings;
   private final UnaryCallSettings<SearchTextRequest, SearchTextResponse> searchTextSettings;
+  private final UnaryCallSettings<GetPhotoMediaRequest, PhotoMedia> getPhotoMediaSettings;
+  private final UnaryCallSettings<GetPlaceRequest, Place> getPlaceSettings;
+
+  /** Returns the object with the settings used for calls to searchNearby. */
+  public UnaryCallSettings<SearchNearbyRequest, SearchNearbyResponse> searchNearbySettings() {
+    return searchNearbySettings;
+  }
 
   /** Returns the object with the settings used for calls to searchText. */
   public UnaryCallSettings<SearchTextRequest, SearchTextResponse> searchTextSettings() {
     return searchTextSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getPhotoMedia. */
+  public UnaryCallSettings<GetPhotoMediaRequest, PhotoMedia> getPhotoMediaSettings() {
+    return getPhotoMediaSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getPlace. */
+  public UnaryCallSettings<GetPlaceRequest, Place> getPlaceSettings() {
+    return getPlaceSettings;
   }
 
   public PlacesStub createStub() throws IOException {
@@ -197,14 +221,21 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
   protected PlacesStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    searchNearbySettings = settingsBuilder.searchNearbySettings().build();
     searchTextSettings = settingsBuilder.searchTextSettings().build();
+    getPhotoMediaSettings = settingsBuilder.getPhotoMediaSettings().build();
+    getPlaceSettings = settingsBuilder.getPlaceSettings().build();
   }
 
   /** Builder for PlacesStubSettings. */
   public static class Builder extends StubSettings.Builder<PlacesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final UnaryCallSettings.Builder<SearchNearbyRequest, SearchNearbyResponse>
+        searchNearbySettings;
     private final UnaryCallSettings.Builder<SearchTextRequest, SearchTextResponse>
         searchTextSettings;
+    private final UnaryCallSettings.Builder<GetPhotoMediaRequest, PhotoMedia> getPhotoMediaSettings;
+    private final UnaryCallSettings.Builder<GetPlaceRequest, Place> getPlaceSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -232,20 +263,28 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      searchNearbySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       searchTextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getPhotoMediaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getPlaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(searchTextSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              searchNearbySettings, searchTextSettings, getPhotoMediaSettings, getPlaceSettings);
       initDefaults(this);
     }
 
     protected Builder(PlacesStubSettings settings) {
       super(settings);
 
+      searchNearbySettings = settings.searchNearbySettings.toBuilder();
       searchTextSettings = settings.searchTextSettings.toBuilder();
+      getPhotoMediaSettings = settings.getPhotoMediaSettings.toBuilder();
+      getPlaceSettings = settings.getPlaceSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(searchTextSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              searchNearbySettings, searchTextSettings, getPhotoMediaSettings, getPlaceSettings);
     }
 
     private static Builder createDefault() {
@@ -276,7 +315,22 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
 
     private static Builder initDefaults(Builder builder) {
       builder
+          .searchNearbySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .searchTextSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getPhotoMediaSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getPlaceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -298,9 +352,25 @@ public class PlacesStubSettings extends StubSettings<PlacesStubSettings> {
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to searchNearby. */
+    public UnaryCallSettings.Builder<SearchNearbyRequest, SearchNearbyResponse>
+        searchNearbySettings() {
+      return searchNearbySettings;
+    }
+
     /** Returns the builder for the settings used for calls to searchText. */
     public UnaryCallSettings.Builder<SearchTextRequest, SearchTextResponse> searchTextSettings() {
       return searchTextSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getPhotoMedia. */
+    public UnaryCallSettings.Builder<GetPhotoMediaRequest, PhotoMedia> getPhotoMediaSettings() {
+      return getPhotoMediaSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getPlace. */
+    public UnaryCallSettings.Builder<GetPlaceRequest, Place> getPlaceSettings() {
+      return getPlaceSettings;
     }
 
     @Override

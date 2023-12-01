@@ -56,6 +56,7 @@ public interface SearchTextRequestOrBuilder
    * If the language code is unspecified or unrecognized, place details of any
    * language may be returned, with a preference for English if such details
    * exist.
+   *
    * Current list of supported languages:
    * https://developers.google.com/maps/faq#languagesupport.
    * </pre>
@@ -73,6 +74,7 @@ public interface SearchTextRequestOrBuilder
    * If the language code is unspecified or unrecognized, place details of any
    * language may be returned, with a preference for English if such details
    * exist.
+   *
    * Current list of supported languages:
    * https://developers.google.com/maps/faq#languagesupport.
    * </pre>
@@ -88,10 +90,14 @@ public interface SearchTextRequestOrBuilder
    *
    * <pre>
    * The Unicode country/region code (CLDR) of the location where the
-   * request is coming from. It is used to display the place details, like
-   * region-specific place name, if available.
+   * request is coming from. This parameter is used to display the place
+   * details, like region-specific place name, if available. The parameter can
+   * affect results based on applicable law.
+   *
    * For more information, see
    * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+   *
+   *
    * Note that 3-digit region codes are not currently supported.
    * </pre>
    *
@@ -105,10 +111,14 @@ public interface SearchTextRequestOrBuilder
    *
    * <pre>
    * The Unicode country/region code (CLDR) of the location where the
-   * request is coming from. It is used to display the place details, like
-   * region-specific place name, if available.
+   * request is coming from. This parameter is used to display the place
+   * details, like region-specific place name, if available. The parameter can
+   * affect results based on applicable law.
+   *
    * For more information, see
    * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+   *
+   *
    * Note that 3-digit region codes are not currently supported.
    * </pre>
    *
@@ -142,63 +152,6 @@ public interface SearchTextRequestOrBuilder
    * @return The rankPreference.
    */
   com.google.maps.places.v1.SearchTextRequest.RankPreference getRankPreference();
-
-  /**
-   *
-   *
-   * <pre>
-   * The region to search. Setting location would usually yields
-   * better results. Recommended to set. This location serves as a bias unless
-   * strict_restriction is set to true, which turns the location to a strict
-   * restriction.
-   * Deprecated.  Use LocationRestriction or LocationBias instead.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.SearchTextRequest.Location location = 5 [deprecated = true];
-   * </code>
-   *
-   * @deprecated google.maps.places.v1.SearchTextRequest.location is deprecated. See
-   *     google/maps/places/v1/places_service.proto;l=141
-   * @return Whether the location field is set.
-   */
-  @java.lang.Deprecated
-  boolean hasLocation();
-  /**
-   *
-   *
-   * <pre>
-   * The region to search. Setting location would usually yields
-   * better results. Recommended to set. This location serves as a bias unless
-   * strict_restriction is set to true, which turns the location to a strict
-   * restriction.
-   * Deprecated.  Use LocationRestriction or LocationBias instead.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.SearchTextRequest.Location location = 5 [deprecated = true];
-   * </code>
-   *
-   * @deprecated google.maps.places.v1.SearchTextRequest.location is deprecated. See
-   *     google/maps/places/v1/places_service.proto;l=141
-   * @return The location.
-   */
-  @java.lang.Deprecated
-  com.google.maps.places.v1.SearchTextRequest.Location getLocation();
-  /**
-   *
-   *
-   * <pre>
-   * The region to search. Setting location would usually yields
-   * better results. Recommended to set. This location serves as a bias unless
-   * strict_restriction is set to true, which turns the location to a strict
-   * restriction.
-   * Deprecated.  Use LocationRestriction or LocationBias instead.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.SearchTextRequest.Location location = 5 [deprecated = true];
-   * </code>
-   */
-  @java.lang.Deprecated
-  com.google.maps.places.v1.SearchTextRequest.LocationOrBuilder getLocationOrBuilder();
 
   /**
    *
@@ -247,63 +200,9 @@ public interface SearchTextRequestOrBuilder
    *
    *
    * <pre>
-   * [Deprecated!]Used to restrict the search to places that are within a
-   * certain price range. This is on a scale of 0 to 4. Set a minimum of 0 or
-   * set a maximum of 4 has no effect on the search results. Min price is
-   * default to 0 and max price is default to 4. Default value will be used if
-   * either min or max is unset.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.Int32Range price_range = 8 [deprecated = true];</code>
-   *
-   * @deprecated google.maps.places.v1.SearchTextRequest.price_range is deprecated. See
-   *     google/maps/places/v1/places_service.proto;l=157
-   * @return Whether the priceRange field is set.
-   */
-  @java.lang.Deprecated
-  boolean hasPriceRange();
-  /**
-   *
-   *
-   * <pre>
-   * [Deprecated!]Used to restrict the search to places that are within a
-   * certain price range. This is on a scale of 0 to 4. Set a minimum of 0 or
-   * set a maximum of 4 has no effect on the search results. Min price is
-   * default to 0 and max price is default to 4. Default value will be used if
-   * either min or max is unset.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.Int32Range price_range = 8 [deprecated = true];</code>
-   *
-   * @deprecated google.maps.places.v1.SearchTextRequest.price_range is deprecated. See
-   *     google/maps/places/v1/places_service.proto;l=157
-   * @return The priceRange.
-   */
-  @java.lang.Deprecated
-  com.google.maps.places.v1.Int32Range getPriceRange();
-  /**
-   *
-   *
-   * <pre>
-   * [Deprecated!]Used to restrict the search to places that are within a
-   * certain price range. This is on a scale of 0 to 4. Set a minimum of 0 or
-   * set a maximum of 4 has no effect on the search results. Min price is
-   * default to 0 and max price is default to 4. Default value will be used if
-   * either min or max is unset.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.Int32Range price_range = 8 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated
-  com.google.maps.places.v1.Int32RangeOrBuilder getPriceRangeOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * Filter out results whose average user rating is strictly less than this
    * limit. A valid value must be an float between 0 and 5 (inclusively) at a
-   * 0.5 cadence i.e. `[0, 0.5, 1.0, ... , 5.0]` inclusively. This is to keep
+   * 0.5 cadence i.e. [0, 0.5, 1.0, ... , 5.0] inclusively. This is to keep
    * parity with LocalRefinement_UserRating. The input rating will round up to
    * the nearest 0.5(ceiling). For instance, a rating of 0.6 will eliminate all
    * results with a less than 1.0 rating.

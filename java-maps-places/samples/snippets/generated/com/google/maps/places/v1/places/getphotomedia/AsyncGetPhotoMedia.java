@@ -14,35 +14,39 @@
  * limitations under the License.
  */
 
-package com.google.maps.places.v1.stub.samples;
+package com.google.maps.places.v1.samples;
 
-// [START places_v1_generated_PlacesStubSettings_SearchText_sync]
-import com.google.maps.places.v1.stub.PlacesStubSettings;
-import java.time.Duration;
+// [START places_v1_generated_Places_GetPhotoMedia_async]
+import com.google.api.core.ApiFuture;
+import com.google.maps.places.v1.GetPhotoMediaRequest;
+import com.google.maps.places.v1.PhotoMedia;
+import com.google.maps.places.v1.PhotoMediaName;
+import com.google.maps.places.v1.PlacesClient;
 
-public class SyncSearchText {
+public class AsyncGetPhotoMedia {
 
   public static void main(String[] args) throws Exception {
-    syncSearchText();
+    asyncGetPhotoMedia();
   }
 
-  public static void syncSearchText() throws Exception {
+  public static void asyncGetPhotoMedia() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    PlacesStubSettings.Builder placesSettingsBuilder = PlacesStubSettings.newBuilder();
-    placesSettingsBuilder
-        .searchTextSettings()
-        .setRetrySettings(
-            placesSettingsBuilder
-                .searchTextSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    PlacesStubSettings placesSettings = placesSettingsBuilder.build();
+    try (PlacesClient placesClient = PlacesClient.create()) {
+      GetPhotoMediaRequest request =
+          GetPhotoMediaRequest.newBuilder()
+              .setName(PhotoMediaName.of("[PLACE_ID]", "[PHOTO_REFERENCE]").toString())
+              .setMaxWidthPx(-428899428)
+              .setMaxHeightPx(-1974259963)
+              .setSkipHttpRedirect(true)
+              .build();
+      ApiFuture<PhotoMedia> future = placesClient.getPhotoMediaCallable().futureCall(request);
+      // Do something.
+      PhotoMedia response = future.get();
+    }
   }
 }
-// [END places_v1_generated_PlacesStubSettings_SearchText_sync]
+// [END places_v1_generated_Places_GetPhotoMedia_async]

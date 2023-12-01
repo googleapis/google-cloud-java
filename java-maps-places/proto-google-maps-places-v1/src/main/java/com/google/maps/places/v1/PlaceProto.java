@@ -40,21 +40,17 @@ public final class PlaceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_maps_places_v1_Place_PlusCode_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_maps_places_v1_Place_Review_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_maps_places_v1_Place_Review_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_maps_places_v1_Place_OpeningHours_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_maps_places_v1_Place_OpeningHours_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_maps_places_v1_Place_OpeningHours_OpeningHoursPeriod_descriptor;
+      internal_static_google_maps_places_v1_Place_OpeningHours_Period_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_maps_places_v1_Place_OpeningHours_OpeningHoursPeriod_fieldAccessorTable;
+      internal_static_google_maps_places_v1_Place_OpeningHours_Period_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_maps_places_v1_Place_OpeningHours_OpeningHoursPeriod_OpeningHoursPoint_descriptor;
+      internal_static_google_maps_places_v1_Place_OpeningHours_Period_Point_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_maps_places_v1_Place_OpeningHours_OpeningHoursPeriod_OpeningHoursPoint_fieldAccessorTable;
+      internal_static_google_maps_places_v1_Place_OpeningHours_Period_Point_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_maps_places_v1_Place_OpeningHours_SpecialDay_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -64,9 +60,21 @@ public final class PlaceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_maps_places_v1_Place_Attribution_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_maps_places_v1_Place_EditorialSummary_descriptor;
+      internal_static_google_maps_places_v1_Place_PaymentOptions_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_maps_places_v1_Place_EditorialSummary_fieldAccessorTable;
+      internal_static_google_maps_places_v1_Place_PaymentOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_maps_places_v1_Place_ParkingOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_maps_places_v1_Place_ParkingOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_maps_places_v1_Place_SubDestination_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_maps_places_v1_Place_SubDestination_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_maps_places_v1_Place_AccessibilityOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_maps_places_v1_Place_AccessibilityOptions_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -78,114 +86,171 @@ public final class PlaceProto {
     java.lang.String[] descriptorData = {
       "\n!google/maps/places/v1/place.proto\022\025goo"
           + "gle.maps.places.v1\032\037google/api/field_beh"
-          + "avior.proto\032\036google/geo/type/viewport.pr"
-          + "oto\032\037google/protobuf/timestamp.proto\032\026go"
-          + "ogle/type/date.proto\032\030google/type/latlng"
-          + ".proto\032 google/type/localized_text.proto"
-          + "\"\264\033\n\005Place\022\017\n\002id\030\002 \001(\tB\003\340A\002\0220\n\014display_n"
-          + "ame\030\037 \001(\0132\032.google.type.LocalizedText\022\r\n"
-          + "\005types\030\005 \003(\t\022\035\n\025national_phone_number\030\007 "
-          + "\001(\t\022\"\n\032international_phone_number\030\010 \001(\t\022"
-          + "\031\n\021formatted_address\030\t \001(\t\022I\n\022address_co"
-          + "mponents\030\n \003(\0132-.google.maps.places.v1.P"
-          + "lace.AddressComponent\0228\n\tplus_code\030\013 \001(\013"
-          + "2%.google.maps.places.v1.Place.PlusCode\022"
-          + "%\n\010location\030\014 \001(\0132\023.google.type.LatLng\022+"
-          + "\n\010viewport\030\r \001(\0132\031.google.geo.type.Viewp"
-          + "ort\022\016\n\006rating\030\016 \001(\001\022\027\n\017google_maps_uri\030\017"
-          + " \001(\t\022\023\n\013website_uri\030\020 \001(\t\0224\n\007reviews\030\024 \003"
-          + "(\0132#.google.maps.places.v1.Place.Review\022"
-          + "@\n\ropening_hours\030\025 \001(\0132).google.maps.pla"
-          + "ces.v1.Place.OpeningHours\022\032\n\022utc_offset_"
-          + "minutes\030\026 \001(\005\022\032\n\022adr_format_address\030\030 \001("
-          + "\t\022D\n\017business_status\030\031 \001(\0162+.google.maps"
-          + ".places.v1.Place.BusinessStatus\0226\n\013price"
-          + "_level\030\032 \001(\0162!.google.maps.places.v1.Pri"
-          + "ceLevel\022>\n\014attributions\030\033 \003(\0132(.google.m"
-          + "aps.places.v1.Place.Attribution\022\031\n\021user_"
-          + "rating_count\030\034 \001(\005\022\032\n\022icon_mask_base_uri"
-          + "\030\035 \001(\t\022\035\n\025icon_background_color\030\036 \001(\t\022\024\n"
-          + "\007takeout\030! \001(\010H\000\210\001\001\022\025\n\010delivery\030\" \001(\010H\001\210"
-          + "\001\001\022\024\n\007dine_in\030# \001(\010H\002\210\001\001\022\034\n\017curbside_pic"
-          + "kup\030$ \001(\010H\003\210\001\001\022+\n\036wheelchair_accessible_"
-          + "entrance\030% \001(\010H\004\210\001\001\022\027\n\nreservable\030& \001(\010H"
-          + "\005\210\001\001\022\035\n\020serves_breakfast\030\' \001(\010H\006\210\001\001\022\031\n\014s"
-          + "erves_lunch\030( \001(\010H\007\210\001\001\022\032\n\rserves_dinner\030"
-          + ") \001(\010H\010\210\001\001\022\030\n\013serves_beer\030* \001(\010H\t\210\001\001\022\030\n\013"
-          + "serves_wine\030+ \001(\010H\n\210\001\001\022\032\n\rserves_brunch\030"
-          + ", \001(\010H\013\210\001\001\022#\n\026serves_vegetarian_food\030- \001"
-          + "(\010H\014\210\001\001\022H\n\025current_opening_hours\030. \001(\0132)"
-          + ".google.maps.places.v1.Place.OpeningHour"
-          + "s\022R\n\037current_secondary_opening_hours\030/ \003"
-          + "(\0132).google.maps.places.v1.Place.Opening"
-          + "Hours\022J\n\027secondary_opening_hours\0301 \003(\0132)"
-          + ".google.maps.places.v1.Place.OpeningHour"
-          + "s\022H\n\021editorial_summary\0300 \001(\0132-.google.ma"
-          + "ps.places.v1.Place.EditorialSummary\032_\n\020A"
-          + "ddressComponent\022\021\n\tlong_text\030\001 \001(\t\022\022\n\nsh"
-          + "ort_text\030\002 \001(\t\022\r\n\005types\030\003 \003(\t\022\025\n\rlanguag"
-          + "e_code\030\004 \001(\t\0326\n\010PlusCode\022\023\n\013global_code\030"
-          + "\001 \001(\t\022\025\n\rcompound_code\030\002 \001(\t\032\221\002\n\006Review\022"
-          + "0\n\014publish_time\030\001 \001(\0132\032.google.protobuf."
-          + "Timestamp\022)\n!relative_publish_time_descr"
-          + "iption\030\002 \001(\t\022(\n\004text\030\t \001(\0132\032.google.type"
-          + ".LocalizedText\022\016\n\006author\030\004 \001(\t\022\022\n\nauthor"
-          + "_uri\030\005 \001(\t\022\030\n\020author_photo_uri\030\006 \001(\t\022\016\n\006"
-          + "rating\030\007 \001(\001\022\036\n\026original_language_code\030\n"
-          + " \001(\t\022\022\n\ntranslated\030\013 \001(\010\032\357\007\n\014OpeningHour"
-          + "s\022\020\n\010open_now\030\001 \001(\010\022M\n\007periods\030\002 \003(\0132<.g"
+          + "avior.proto\032\031google/api/resource.proto\032\036"
+          + "google/geo/type/viewport.proto\032\'google/m"
+          + "aps/places/v1/ev_charging.proto\032(google/"
+          + "maps/places/v1/fuel_options.proto\032!googl"
+          + "e/maps/places/v1/photo.proto\032\"google/map"
+          + "s/places/v1/review.proto\032\026google/type/da"
+          + "te.proto\032\030google/type/latlng.proto\032 goog"
+          + "le/type/localized_text.proto\"\303*\n\005Place\022\022"
+          + "\n\004name\030\001 \001(\tB\004\342A\001\003\022\020\n\002id\030\002 \001(\tB\004\342A\001\003\0226\n\014"
+          + "display_name\030\037 \001(\0132\032.google.type.Localiz"
+          + "edTextB\004\342A\001\003\022\023\n\005types\030\005 \003(\tB\004\342A\001\003\022#\n\025nat"
+          + "ional_phone_number\030\007 \001(\tB\004\342A\001\003\022(\n\032intern"
+          + "ational_phone_number\030\010 \001(\tB\004\342A\001\003\022\037\n\021form"
+          + "atted_address\030\t \001(\tB\004\342A\001\003\022O\n\022address_com"
+          + "ponents\030\n \003(\0132-.google.maps.places.v1.Pl"
+          + "ace.AddressComponentB\004\342A\001\003\022>\n\tplus_code\030"
+          + "\013 \001(\0132%.google.maps.places.v1.Place.Plus"
+          + "CodeB\004\342A\001\003\022+\n\010location\030\014 \001(\0132\023.google.ty"
+          + "pe.LatLngB\004\342A\001\003\0221\n\010viewport\030\r \001(\0132\031.goog"
+          + "le.geo.type.ViewportB\004\342A\001\003\022\024\n\006rating\030\016 \001"
+          + "(\001B\004\342A\001\003\022\035\n\017google_maps_uri\030\017 \001(\tB\004\342A\001\003\022"
+          + "\031\n\013website_uri\030\020 \001(\tB\004\342A\001\003\0224\n\007reviews\0305 "
+          + "\003(\0132\035.google.maps.places.v1.ReviewB\004\342A\001\003"
+          + "\022N\n\025regular_opening_hours\030\025 \001(\0132).google"
+          + ".maps.places.v1.Place.OpeningHoursB\004\342A\001\003"
+          + "\022%\n\022utc_offset_minutes\030\026 \001(\005B\004\342A\001\003H\000\210\001\001\022"
+          + "2\n\006photos\0306 \003(\0132\034.google.maps.places.v1."
+          + "PhotoB\004\342A\001\003\022 \n\022adr_format_address\030\030 \001(\tB"
+          + "\004\342A\001\003\022J\n\017business_status\030\031 \001(\0162+.google."
+          + "maps.places.v1.Place.BusinessStatusB\004\342A\001"
+          + "\003\022<\n\013price_level\030\032 \001(\0162!.google.maps.pla"
+          + "ces.v1.PriceLevelB\004\342A\001\003\022D\n\014attributions\030"
+          + "\033 \003(\0132(.google.maps.places.v1.Place.Attr"
+          + "ibutionB\004\342A\001\003\022$\n\021user_rating_count\030\034 \001(\005"
+          + "B\004\342A\001\003H\001\210\001\001\022 \n\022icon_mask_base_uri\030\035 \001(\tB"
+          + "\004\342A\001\003\022#\n\025icon_background_color\030\036 \001(\tB\004\342A"
+          + "\001\003\022\032\n\007takeout\030! \001(\010B\004\342A\001\003H\002\210\001\001\022\033\n\010delive"
+          + "ry\030\" \001(\010B\004\342A\001\003H\003\210\001\001\022\032\n\007dine_in\030# \001(\010B\004\342A"
+          + "\001\003H\004\210\001\001\022\"\n\017curbside_pickup\030$ \001(\010B\004\342A\001\003H\005"
+          + "\210\001\001\022\035\n\nreservable\030& \001(\010B\004\342A\001\003H\006\210\001\001\022#\n\020se"
+          + "rves_breakfast\030\' \001(\010B\004\342A\001\003H\007\210\001\001\022\037\n\014serve"
+          + "s_lunch\030( \001(\010B\004\342A\001\003H\010\210\001\001\022 \n\rserves_dinne"
+          + "r\030) \001(\010B\004\342A\001\003H\t\210\001\001\022\036\n\013serves_beer\030* \001(\010B"
+          + "\004\342A\001\003H\n\210\001\001\022\036\n\013serves_wine\030+ \001(\010B\004\342A\001\003H\013\210"
+          + "\001\001\022 \n\rserves_brunch\030, \001(\010B\004\342A\001\003H\014\210\001\001\022)\n\026"
+          + "serves_vegetarian_food\030- \001(\010B\004\342A\001\003H\r\210\001\001\022"
+          + "N\n\025current_opening_hours\030. \001(\0132).google."
+          + "maps.places.v1.Place.OpeningHoursB\004\342A\001\003\022"
+          + "X\n\037current_secondary_opening_hours\030/ \003(\013"
+          + "2).google.maps.places.v1.Place.OpeningHo"
+          + "ursB\004\342A\001\003\022X\n\037regular_secondary_opening_h"
+          + "ours\0301 \003(\0132).google.maps.places.v1.Place"
+          + ".OpeningHoursB\004\342A\001\003\022;\n\021editorial_summary"
+          + "\0304 \001(\0132\032.google.type.LocalizedTextB\004\342A\001\003"
+          + "\022\"\n\017outdoor_seating\0307 \001(\010B\004\342A\001\003H\016\210\001\001\022\035\n\n"
+          + "live_music\0308 \001(\010B\004\342A\001\003H\017\210\001\001\022$\n\021menu_for_"
+          + "children\0309 \001(\010B\004\342A\001\003H\020\210\001\001\022#\n\020serves_cock"
+          + "tails\030: \001(\010B\004\342A\001\003H\021\210\001\001\022!\n\016serves_dessert"
+          + "\030; \001(\010B\004\342A\001\003H\022\210\001\001\022 \n\rserves_coffee\030< \001(\010"
+          + "B\004\342A\001\003H\023\210\001\001\022$\n\021good_for_children\030> \001(\010B\004"
+          + "\342A\001\003H\024\210\001\001\022\036\n\013allows_dogs\030? \001(\010B\004\342A\001\003H\025\210\001"
+          + "\001\022\033\n\010restroom\030@ \001(\010B\004\342A\001\003H\026\210\001\001\022\"\n\017good_f"
+          + "or_groups\030A \001(\010B\004\342A\001\003H\027\210\001\001\022+\n\030good_for_w"
+          + "atching_sports\030B \001(\010B\004\342A\001\003H\030\210\001\001\022J\n\017payme"
+          + "nt_options\030C \001(\0132+.google.maps.places.v1"
+          + ".Place.PaymentOptionsB\004\342A\001\003\022J\n\017parking_o"
+          + "ptions\030F \001(\0132+.google.maps.places.v1.Pla"
+          + "ce.ParkingOptionsB\004\342A\001\003\022K\n\020sub_destinati"
+          + "ons\030G \003(\0132+.google.maps.places.v1.Place."
+          + "SubDestinationB\004\342A\001\003\022[\n\025accessibility_op"
+          + "tions\030H \001(\01321.google.maps.places.v1.Plac"
+          + "e.AccessibilityOptionsB\004\342A\001\003H\031\210\001\001\022>\n\014fue"
+          + "l_options\030N \001(\0132\".google.maps.places.v1."
+          + "FuelOptionsB\004\342A\001\003\022G\n\021ev_charge_options\030O"
+          + " \001(\0132&.google.maps.places.v1.EVChargeOpt"
+          + "ionsB\004\342A\001\003\032w\n\020AddressComponent\022\027\n\tlong_t"
+          + "ext\030\001 \001(\tB\004\342A\001\003\022\030\n\nshort_text\030\002 \001(\tB\004\342A\001"
+          + "\003\022\023\n\005types\030\003 \003(\tB\004\342A\001\003\022\033\n\rlanguage_code\030"
+          + "\004 \001(\tB\004\342A\001\003\032B\n\010PlusCode\022\031\n\013global_code\030\001"
+          + " \001(\tB\004\342A\001\003\022\033\n\rcompound_code\030\002 \001(\tB\004\342A\001\003\032"
+          + "\342\007\n\014OpeningHours\022\033\n\010open_now\030\001 \001(\010B\004\342A\001\003"
+          + "H\000\210\001\001\022G\n\007periods\030\002 \003(\01320.google.maps.pla"
+          + "ces.v1.Place.OpeningHours.PeriodB\004\342A\001\003\022\""
+          + "\n\024weekday_descriptions\030\003 \003(\tB\004\342A\001\003\022`\n\024se"
+          + "condary_hours_type\030\004 \001(\0162<.google.maps.p"
+          + "laces.v1.Place.OpeningHours.SecondaryHou"
+          + "rsTypeB\004\342A\001\003\022P\n\014special_days\030\005 \003(\01324.goo"
+          + "gle.maps.places.v1.Place.OpeningHours.Sp"
+          + "ecialDayB\004\342A\001\003\032\323\002\n\006Period\022J\n\004open\030\001 \001(\0132"
+          + "6.google.maps.places.v1.Place.OpeningHou"
+          + "rs.Period.PointB\004\342A\001\003\022K\n\005close\030\002 \001(\01326.g"
           + "oogle.maps.places.v1.Place.OpeningHours."
-          + "OpeningHoursPeriod\022\034\n\024weekday_descriptio"
-          + "ns\030\003 \003(\t\022X\n\023secondary_hour_type\030\004 \001(\0162;."
-          + "google.maps.places.v1.Place.OpeningHours"
-          + ".SecondaryHourType\022J\n\014special_days\030\005 \003(\013"
-          + "24.google.maps.places.v1.Place.OpeningHo"
-          + "urs.SpecialDay\032\216\003\n\022OpeningHoursPeriod\022\\\n"
-          + "\004open\030\001 \001(\0132N.google.maps.places.v1.Plac"
-          + "e.OpeningHours.OpeningHoursPeriod.Openin"
-          + "gHoursPoint\022]\n\005close\030\002 \001(\0132N.google.maps"
-          + ".places.v1.Place.OpeningHours.OpeningHou"
-          + "rsPeriod.OpeningHoursPoint\032\272\001\n\021OpeningHo"
-          + "ursPoint\022\020\n\003day\030\001 \001(\005H\000\210\001\001\022\021\n\004hour\030\002 \001(\005"
-          + "H\001\210\001\001\022\023\n\006minute\030\003 \001(\005H\002\210\001\001\022\033\n\017date_depre"
-          + "cated\030\004 \001(\tB\002\030\001\022\037\n\004date\030\006 \001(\0132\021.google.t"
-          + "ype.Date\022\021\n\ttruncated\030\005 \001(\010B\006\n\004_dayB\007\n\005_"
-          + "hourB\t\n\007_minute\032-\n\nSpecialDay\022\037\n\004date\030\001 "
-          + "\001(\0132\021.google.type.Date\"\371\001\n\021SecondaryHour"
-          + "Type\022#\n\037SECONDARY_HOUR_TYPE_UNSPECIFIED\020"
-          + "\000\022\021\n\rDRIVE_THROUGH\020\001\022\016\n\nHAPPY_HOUR\020\002\022\014\n\010"
-          + "DELIVERY\020\003\022\013\n\007TAKEOUT\020\004\022\013\n\007KITCHEN\020\005\022\r\n\t"
-          + "BREAKFAST\020\006\022\t\n\005LUNCH\020\007\022\n\n\006DINNER\020\010\022\n\n\006BR"
-          + "UNCH\020\t\022\n\n\006PICKUP\020\n\022\n\n\006ACCESS\020\013\022\020\n\014SENIOR"
-          + "_HOURS\020\014\022\030\n\024ONLINE_SERVICE_HOURS\020\r\0325\n\013At"
-          + "tribution\022\020\n\010provider\030\001 \001(\t\022\024\n\014provider_"
-          + "uri\030\002 \001(\t\032@\n\020EditorialSummary\022,\n\010overvie"
-          + "w\030\001 \001(\0132\032.google.type.LocalizedText\"r\n\016B"
-          + "usinessStatus\022\037\n\033BUSINESS_STATUS_UNSPECI"
-          + "FIED\020\000\022\017\n\013OPERATIONAL\020\001\022\026\n\022CLOSED_TEMPOR"
-          + "ARILY\020\002\022\026\n\022CLOSED_PERMANENTLY\020\003B\n\n\010_take"
-          + "outB\013\n\t_deliveryB\n\n\010_dine_inB\022\n\020_curbsid"
-          + "e_pickupB!\n\037_wheelchair_accessible_entra"
-          + "nceB\r\n\013_reservableB\023\n\021_serves_breakfastB"
-          + "\017\n\r_serves_lunchB\020\n\016_serves_dinnerB\016\n\014_s"
-          + "erves_beerB\016\n\014_serves_wineB\020\n\016_serves_br"
-          + "unchB\031\n\027_serves_vegetarian_food*u\n\nPrice"
-          + "Level\022\033\n\027PRICE_LEVEL_UNSPECIFIED\020\000\022\010\n\004FR"
-          + "EE\020\001\022\017\n\013INEXPENSIVE\020\002\022\014\n\010MODERATE\020\003\022\r\n\tE"
-          + "XPENSIVE\020\004\022\022\n\016VERY_EXPENSIVE\020\005B\242\001\n\031com.g"
-          + "oogle.maps.places.v1B\nPlaceProtoP\001Z;goog"
-          + "le.golang.org/genproto/googleapis/maps/p"
-          + "laces/v1;places\370\001\001\242\002\006GMPSV1\252\002\025Google.Map"
-          + "s.Places.V1\312\002\025Google\\Maps\\Places\\V1b\006pro"
-          + "to3"
+          + "Period.PointB\004\342A\001\003\032\257\001\n\005Point\022\026\n\003day\030\001 \001("
+          + "\005B\004\342A\001\003H\000\210\001\001\022\027\n\004hour\030\002 \001(\005B\004\342A\001\003H\001\210\001\001\022\031\n"
+          + "\006minute\030\003 \001(\005B\004\342A\001\003H\002\210\001\001\022%\n\004date\030\006 \001(\0132\021"
+          + ".google.type.DateB\004\342A\001\003\022\027\n\ttruncated\030\005 \001"
+          + "(\010B\004\342A\001\003B\006\n\004_dayB\007\n\005_hourB\t\n\007_minute\0323\n\n"
+          + "SpecialDay\022%\n\004date\030\001 \001(\0132\021.google.type.D"
+          + "ateB\004\342A\001\003\"\373\001\n\022SecondaryHoursType\022$\n SECO"
+          + "NDARY_HOURS_TYPE_UNSPECIFIED\020\000\022\021\n\rDRIVE_"
+          + "THROUGH\020\001\022\016\n\nHAPPY_HOUR\020\002\022\014\n\010DELIVERY\020\003\022"
+          + "\013\n\007TAKEOUT\020\004\022\013\n\007KITCHEN\020\005\022\r\n\tBREAKFAST\020\006"
+          + "\022\t\n\005LUNCH\020\007\022\n\n\006DINNER\020\010\022\n\n\006BRUNCH\020\t\022\n\n\006P"
+          + "ICKUP\020\n\022\n\n\006ACCESS\020\013\022\020\n\014SENIOR_HOURS\020\014\022\030\n"
+          + "\024ONLINE_SERVICE_HOURS\020\rB\013\n\t_open_now\032A\n\013"
+          + "Attribution\022\026\n\010provider\030\001 \001(\tB\004\342A\001\003\022\032\n\014p"
+          + "rovider_uri\030\002 \001(\tB\004\342A\001\003\032\346\001\n\016PaymentOptio"
+          + "ns\022!\n\024accepts_credit_cards\030\001 \001(\010H\000\210\001\001\022 \n"
+          + "\023accepts_debit_cards\030\002 \001(\010H\001\210\001\001\022\036\n\021accep"
+          + "ts_cash_only\030\003 \001(\010H\002\210\001\001\022\030\n\013accepts_nfc\030\004"
+          + " \001(\010H\003\210\001\001B\027\n\025_accepts_credit_cardsB\026\n\024_a"
+          + "ccepts_debit_cardsB\024\n\022_accepts_cash_only"
+          + "B\016\n\014_accepts_nfc\032\216\003\n\016ParkingOptions\022\035\n\020f"
+          + "ree_parking_lot\030\001 \001(\010H\000\210\001\001\022\035\n\020paid_parki"
+          + "ng_lot\030\002 \001(\010H\001\210\001\001\022 \n\023free_street_parking"
+          + "\030\003 \001(\010H\002\210\001\001\022 \n\023paid_street_parking\030\004 \001(\010"
+          + "H\003\210\001\001\022\032\n\rvalet_parking\030\005 \001(\010H\004\210\001\001\022 \n\023fre"
+          + "e_garage_parking\030\006 \001(\010H\005\210\001\001\022 \n\023paid_gara"
+          + "ge_parking\030\007 \001(\010H\006\210\001\001B\023\n\021_free_parking_l"
+          + "otB\023\n\021_paid_parking_lotB\026\n\024_free_street_"
+          + "parkingB\026\n\024_paid_street_parkingB\020\n\016_vale"
+          + "t_parkingB\026\n\024_free_garage_parkingB\026\n\024_pa"
+          + "id_garage_parking\032L\n\016SubDestination\022.\n\004n"
+          + "ame\030\001 \001(\tB \372A\035\n\033places.googleapis.com/Pl"
+          + "ace\022\n\n\002id\030\002 \001(\t\032f\n\024AccessibilityOptions\022"
+          + "+\n\036wheelchair_accessible_entrance\030\002 \001(\010H"
+          + "\000\210\001\001B!\n\037_wheelchair_accessible_entrance\""
+          + "r\n\016BusinessStatus\022\037\n\033BUSINESS_STATUS_UNS"
+          + "PECIFIED\020\000\022\017\n\013OPERATIONAL\020\001\022\026\n\022CLOSED_TE"
+          + "MPORARILY\020\002\022\026\n\022CLOSED_PERMANENTLY\020\003:B\352A?"
+          + "\n\033places.googleapis.com/Place\022\021places/{p"
+          + "lace_id}*\006places2\005placeB\025\n\023_utc_offset_m"
+          + "inutesB\024\n\022_user_rating_countB\n\n\010_takeout"
+          + "B\013\n\t_deliveryB\n\n\010_dine_inB\022\n\020_curbside_p"
+          + "ickupB\r\n\013_reservableB\023\n\021_serves_breakfas"
+          + "tB\017\n\r_serves_lunchB\020\n\016_serves_dinnerB\016\n\014"
+          + "_serves_beerB\016\n\014_serves_wineB\020\n\016_serves_"
+          + "brunchB\031\n\027_serves_vegetarian_foodB\022\n\020_ou"
+          + "tdoor_seatingB\r\n\013_live_musicB\024\n\022_menu_fo"
+          + "r_childrenB\023\n\021_serves_cocktailsB\021\n\017_serv"
+          + "es_dessertB\020\n\016_serves_coffeeB\024\n\022_good_fo"
+          + "r_childrenB\016\n\014_allows_dogsB\013\n\t_restroomB"
+          + "\022\n\020_good_for_groupsB\033\n\031_good_for_watchin"
+          + "g_sportsB\030\n\026_accessibility_options*\261\001\n\nP"
+          + "riceLevel\022\033\n\027PRICE_LEVEL_UNSPECIFIED\020\000\022\024"
+          + "\n\020PRICE_LEVEL_FREE\020\001\022\033\n\027PRICE_LEVEL_INEX"
+          + "PENSIVE\020\002\022\030\n\024PRICE_LEVEL_MODERATE\020\003\022\031\n\025P"
+          + "RICE_LEVEL_EXPENSIVE\020\004\022\036\n\032PRICE_LEVEL_VE"
+          + "RY_EXPENSIVE\020\005B\236\001\n\031com.google.maps.place"
+          + "s.v1B\nPlaceProtoP\001Z7cloud.google.com/go/"
+          + "maps/places/apiv1/placespb;placespb\370\001\001\242\002"
+          + "\006GMPSV1\252\002\025Google.Maps.Places.V1\312\002\025Google"
+          + "\\Maps\\Places\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.geo.type.ViewportProto.getDescriptor(),
-              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.maps.places.v1.EvChargingProto.getDescriptor(),
+              com.google.maps.places.v1.FuelOptionsProto.getDescriptor(),
+              com.google.maps.places.v1.PhotoProto.getDescriptor(),
+              com.google.maps.places.v1.ReviewProto.getDescriptor(),
               com.google.type.DateProto.getDescriptor(),
               com.google.type.LatLngProto.getDescriptor(),
               com.google.type.LocalizedTextProto.getDescriptor(),
@@ -196,6 +261,7 @@ public final class PlaceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_Place_descriptor,
             new java.lang.String[] {
+              "Name",
               "Id",
               "DisplayName",
               "Types",
@@ -210,8 +276,9 @@ public final class PlaceProto {
               "GoogleMapsUri",
               "WebsiteUri",
               "Reviews",
-              "OpeningHours",
+              "RegularOpeningHours",
               "UtcOffsetMinutes",
+              "Photos",
               "AdrFormatAddress",
               "BusinessStatus",
               "PriceLevel",
@@ -223,7 +290,6 @@ public final class PlaceProto {
               "Delivery",
               "DineIn",
               "CurbsidePickup",
-              "WheelchairAccessibleEntrance",
               "Reservable",
               "ServesBreakfast",
               "ServesLunch",
@@ -234,13 +300,31 @@ public final class PlaceProto {
               "ServesVegetarianFood",
               "CurrentOpeningHours",
               "CurrentSecondaryOpeningHours",
-              "SecondaryOpeningHours",
+              "RegularSecondaryOpeningHours",
               "EditorialSummary",
+              "OutdoorSeating",
+              "LiveMusic",
+              "MenuForChildren",
+              "ServesCocktails",
+              "ServesDessert",
+              "ServesCoffee",
+              "GoodForChildren",
+              "AllowsDogs",
+              "Restroom",
+              "GoodForGroups",
+              "GoodForWatchingSports",
+              "PaymentOptions",
+              "ParkingOptions",
+              "SubDestinations",
+              "AccessibilityOptions",
+              "FuelOptions",
+              "EvChargeOptions",
+              "UtcOffsetMinutes",
+              "UserRatingCount",
               "Takeout",
               "Delivery",
               "DineIn",
               "CurbsidePickup",
-              "WheelchairAccessibleEntrance",
               "Reservable",
               "ServesBreakfast",
               "ServesLunch",
@@ -249,6 +333,18 @@ public final class PlaceProto {
               "ServesWine",
               "ServesBrunch",
               "ServesVegetarianFood",
+              "OutdoorSeating",
+              "LiveMusic",
+              "MenuForChildren",
+              "ServesCocktails",
+              "ServesDessert",
+              "ServesCoffee",
+              "GoodForChildren",
+              "AllowsDogs",
+              "Restroom",
+              "GoodForGroups",
+              "GoodForWatchingSports",
+              "AccessibilityOptions",
             });
     internal_static_google_maps_places_v1_Place_AddressComponent_descriptor =
         internal_static_google_maps_places_v1_Place_descriptor.getNestedTypes().get(0);
@@ -266,55 +362,36 @@ public final class PlaceProto {
             new java.lang.String[] {
               "GlobalCode", "CompoundCode",
             });
-    internal_static_google_maps_places_v1_Place_Review_descriptor =
-        internal_static_google_maps_places_v1_Place_descriptor.getNestedTypes().get(2);
-    internal_static_google_maps_places_v1_Place_Review_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_maps_places_v1_Place_Review_descriptor,
-            new java.lang.String[] {
-              "PublishTime",
-              "RelativePublishTimeDescription",
-              "Text",
-              "Author",
-              "AuthorUri",
-              "AuthorPhotoUri",
-              "Rating",
-              "OriginalLanguageCode",
-              "Translated",
-            });
     internal_static_google_maps_places_v1_Place_OpeningHours_descriptor =
-        internal_static_google_maps_places_v1_Place_descriptor.getNestedTypes().get(3);
+        internal_static_google_maps_places_v1_Place_descriptor.getNestedTypes().get(2);
     internal_static_google_maps_places_v1_Place_OpeningHours_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_Place_OpeningHours_descriptor,
             new java.lang.String[] {
-              "OpenNow", "Periods", "WeekdayDescriptions", "SecondaryHourType", "SpecialDays",
+              "OpenNow",
+              "Periods",
+              "WeekdayDescriptions",
+              "SecondaryHoursType",
+              "SpecialDays",
+              "OpenNow",
             });
-    internal_static_google_maps_places_v1_Place_OpeningHours_OpeningHoursPeriod_descriptor =
+    internal_static_google_maps_places_v1_Place_OpeningHours_Period_descriptor =
         internal_static_google_maps_places_v1_Place_OpeningHours_descriptor.getNestedTypes().get(0);
-    internal_static_google_maps_places_v1_Place_OpeningHours_OpeningHoursPeriod_fieldAccessorTable =
+    internal_static_google_maps_places_v1_Place_OpeningHours_Period_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_maps_places_v1_Place_OpeningHours_OpeningHoursPeriod_descriptor,
+            internal_static_google_maps_places_v1_Place_OpeningHours_Period_descriptor,
             new java.lang.String[] {
               "Open", "Close",
             });
-    internal_static_google_maps_places_v1_Place_OpeningHours_OpeningHoursPeriod_OpeningHoursPoint_descriptor =
-        internal_static_google_maps_places_v1_Place_OpeningHours_OpeningHoursPeriod_descriptor
+    internal_static_google_maps_places_v1_Place_OpeningHours_Period_Point_descriptor =
+        internal_static_google_maps_places_v1_Place_OpeningHours_Period_descriptor
             .getNestedTypes()
             .get(0);
-    internal_static_google_maps_places_v1_Place_OpeningHours_OpeningHoursPeriod_OpeningHoursPoint_fieldAccessorTable =
+    internal_static_google_maps_places_v1_Place_OpeningHours_Period_Point_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_maps_places_v1_Place_OpeningHours_OpeningHoursPeriod_OpeningHoursPoint_descriptor,
+            internal_static_google_maps_places_v1_Place_OpeningHours_Period_Point_descriptor,
             new java.lang.String[] {
-              "Day",
-              "Hour",
-              "Minute",
-              "DateDeprecated",
-              "Date",
-              "Truncated",
-              "Day",
-              "Hour",
-              "Minute",
+              "Day", "Hour", "Minute", "Date", "Truncated", "Day", "Hour", "Minute",
             });
     internal_static_google_maps_places_v1_Place_OpeningHours_SpecialDay_descriptor =
         internal_static_google_maps_places_v1_Place_OpeningHours_descriptor.getNestedTypes().get(1);
@@ -325,29 +402,79 @@ public final class PlaceProto {
               "Date",
             });
     internal_static_google_maps_places_v1_Place_Attribution_descriptor =
-        internal_static_google_maps_places_v1_Place_descriptor.getNestedTypes().get(4);
+        internal_static_google_maps_places_v1_Place_descriptor.getNestedTypes().get(3);
     internal_static_google_maps_places_v1_Place_Attribution_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_Place_Attribution_descriptor,
             new java.lang.String[] {
               "Provider", "ProviderUri",
             });
-    internal_static_google_maps_places_v1_Place_EditorialSummary_descriptor =
-        internal_static_google_maps_places_v1_Place_descriptor.getNestedTypes().get(5);
-    internal_static_google_maps_places_v1_Place_EditorialSummary_fieldAccessorTable =
+    internal_static_google_maps_places_v1_Place_PaymentOptions_descriptor =
+        internal_static_google_maps_places_v1_Place_descriptor.getNestedTypes().get(4);
+    internal_static_google_maps_places_v1_Place_PaymentOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_maps_places_v1_Place_EditorialSummary_descriptor,
+            internal_static_google_maps_places_v1_Place_PaymentOptions_descriptor,
             new java.lang.String[] {
-              "Overview",
+              "AcceptsCreditCards",
+              "AcceptsDebitCards",
+              "AcceptsCashOnly",
+              "AcceptsNfc",
+              "AcceptsCreditCards",
+              "AcceptsDebitCards",
+              "AcceptsCashOnly",
+              "AcceptsNfc",
+            });
+    internal_static_google_maps_places_v1_Place_ParkingOptions_descriptor =
+        internal_static_google_maps_places_v1_Place_descriptor.getNestedTypes().get(5);
+    internal_static_google_maps_places_v1_Place_ParkingOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_maps_places_v1_Place_ParkingOptions_descriptor,
+            new java.lang.String[] {
+              "FreeParkingLot",
+              "PaidParkingLot",
+              "FreeStreetParking",
+              "PaidStreetParking",
+              "ValetParking",
+              "FreeGarageParking",
+              "PaidGarageParking",
+              "FreeParkingLot",
+              "PaidParkingLot",
+              "FreeStreetParking",
+              "PaidStreetParking",
+              "ValetParking",
+              "FreeGarageParking",
+              "PaidGarageParking",
+            });
+    internal_static_google_maps_places_v1_Place_SubDestination_descriptor =
+        internal_static_google_maps_places_v1_Place_descriptor.getNestedTypes().get(6);
+    internal_static_google_maps_places_v1_Place_SubDestination_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_maps_places_v1_Place_SubDestination_descriptor,
+            new java.lang.String[] {
+              "Name", "Id",
+            });
+    internal_static_google_maps_places_v1_Place_AccessibilityOptions_descriptor =
+        internal_static_google_maps_places_v1_Place_descriptor.getNestedTypes().get(7);
+    internal_static_google_maps_places_v1_Place_AccessibilityOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_maps_places_v1_Place_AccessibilityOptions_descriptor,
+            new java.lang.String[] {
+              "WheelchairAccessibleEntrance", "WheelchairAccessibleEntrance",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.geo.type.ViewportProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.maps.places.v1.EvChargingProto.getDescriptor();
+    com.google.maps.places.v1.FuelOptionsProto.getDescriptor();
+    com.google.maps.places.v1.PhotoProto.getDescriptor();
+    com.google.maps.places.v1.ReviewProto.getDescriptor();
     com.google.type.DateProto.getDescriptor();
     com.google.type.LatLngProto.getDescriptor();
     com.google.type.LocalizedTextProto.getDescriptor();

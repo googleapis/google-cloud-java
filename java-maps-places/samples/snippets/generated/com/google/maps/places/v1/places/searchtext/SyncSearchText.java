@@ -17,7 +17,6 @@
 package com.google.maps.places.v1.samples;
 
 // [START places_v1_generated_Places_SearchText_sync]
-import com.google.maps.places.v1.Int32Range;
 import com.google.maps.places.v1.PlacesClient;
 import com.google.maps.places.v1.PriceLevel;
 import com.google.maps.places.v1.SearchTextRequest;
@@ -42,10 +41,8 @@ public class SyncSearchText {
               .setTextQuery("textQuery-1050470501")
               .setLanguageCode("languageCode-2092349083")
               .setRegionCode("regionCode-1991004415")
-              .setLocation(SearchTextRequest.Location.newBuilder().build())
               .setIncludedType("includedType-45971946")
               .setOpenNow(true)
-              .setPriceRange(Int32Range.newBuilder().build())
               .setMinRating(-543315926)
               .setMaxResultCount(-1736124056)
               .addAllPriceLevels(new ArrayList<PriceLevel>())

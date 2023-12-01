@@ -10,6 +10,15 @@
         "grpc": {
           "libraryClient": "PlacesClient",
           "rpcs": {
+            "GetPhotoMedia": {
+              "methods": ["getPhotoMedia", "getPhotoMedia", "getPhotoMedia", "getPhotoMediaCallable"]
+            },
+            "GetPlace": {
+              "methods": ["getPlace", "getPlace", "getPlace", "getPlaceCallable"]
+            },
+            "SearchNearby": {
+              "methods": ["searchNearby", "searchNearbyCallable"]
+            },
             "SearchText": {
               "methods": ["searchText", "searchTextCallable"]
             }
