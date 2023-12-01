@@ -25,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java: [8, 11, 17]
+        java: [8, 11, 17, 21]
     steps:
     - name: Get current week within the year
       id: date
@@ -33,7 +33,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
       with:
-        distribution: zulu
+        distribution: temurin
         java-version: ${{matrix.java}}
     - run: java -version
     - uses: actions/cache@v3
@@ -53,7 +53,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
       with:
-        distribution: zulu
+        distribution: temurin
         java-version: 11
         cache: 'maven'
     - run: java -version
@@ -70,7 +70,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
       with:
-        distribution: zulu
+        distribution: temurin
         java-version: 11
     - run: java -version
     - uses: actions/cache@v3
@@ -90,7 +90,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
       with:
-        distribution: zulu
+        distribution: temurin
         java-version: 11
     - run: java -version
     - uses: actions/cache@v3
