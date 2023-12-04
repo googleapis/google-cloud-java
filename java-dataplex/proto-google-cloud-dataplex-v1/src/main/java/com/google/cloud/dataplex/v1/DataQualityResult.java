@@ -39,6 +39,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
 
   private DataQualityResult() {
     dimensions_ = java.util.Collections.emptyList();
+    columns_ = java.util.Collections.emptyList();
     rules_ = java.util.Collections.emptyList();
   }
 
@@ -1993,6 +1994,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  private int bitField0_;
   public static final int PASSED_FIELD_NUMBER = 5;
   private boolean passed_ = false;
   /**
@@ -2009,6 +2011,43 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public boolean getPassed() {
     return passed_;
+  }
+
+  public static final int SCORE_FIELD_NUMBER = 9;
+  private float score_ = 0F;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The overall data quality score.
+   *
+   * The score ranges between [0, 100] (up to two decimal points).
+   * </pre>
+   *
+   * <code>optional float score = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the score field is set.
+   */
+  @java.lang.Override
+  public boolean hasScore() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The overall data quality score.
+   *
+   * The score ranges between [0, 100] (up to two decimal points).
+   * </pre>
+   *
+   * <code>optional float score = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The score.
+   */
+  @java.lang.Override
+  public float getScore() {
+    return score_;
   }
 
   public static final int DIMENSIONS_FIELD_NUMBER = 2;
@@ -2097,6 +2136,103 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder getDimensionsOrBuilder(
       int index) {
     return dimensions_.get(index);
+  }
+
+  public static final int COLUMNS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dataplex.v1.DataQualityColumnResult> columns_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of results at the column level.
+   *
+   * A column will have a corresponding `DataQualityColumnResult` if and only if
+   * there is at least one rule with the 'column' field set to it.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dataplex.v1.DataQualityColumnResult> getColumnsList() {
+    return columns_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of results at the column level.
+   *
+   * A column will have a corresponding `DataQualityColumnResult` if and only if
+   * there is at least one rule with the 'column' field set to it.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityColumnResultOrBuilder>
+      getColumnsOrBuilderList() {
+    return columns_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of results at the column level.
+   *
+   * A column will have a corresponding `DataQualityColumnResult` if and only if
+   * there is at least one rule with the 'column' field set to it.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getColumnsCount() {
+    return columns_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of results at the column level.
+   *
+   * A column will have a corresponding `DataQualityColumnResult` if and only if
+   * there is at least one rule with the 'column' field set to it.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataQualityColumnResult getColumns(int index) {
+    return columns_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of results at the column level.
+   *
+   * A column will have a corresponding `DataQualityColumnResult` if and only if
+   * there is at least one rule with the 'column' field set to it.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataQualityColumnResultOrBuilder getColumnsOrBuilder(
+      int index) {
+    return columns_.get(index);
   }
 
   public static final int RULES_FIELD_NUMBER = 3;
@@ -2329,6 +2465,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
     if (postScanActionsResult_ != null) {
       output.writeMessage(8, getPostScanActionsResult());
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeFloat(9, score_);
+    }
+    for (int i = 0; i < columns_.size(); i++) {
+      output.writeMessage(10, columns_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2357,6 +2499,12 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(8, getPostScanActionsResult());
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(9, score_);
+    }
+    for (int i = 0; i < columns_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, columns_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2374,7 +2522,13 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
         (com.google.cloud.dataplex.v1.DataQualityResult) obj;
 
     if (getPassed() != other.getPassed()) return false;
+    if (hasScore() != other.hasScore()) return false;
+    if (hasScore()) {
+      if (java.lang.Float.floatToIntBits(getScore())
+          != java.lang.Float.floatToIntBits(other.getScore())) return false;
+    }
     if (!getDimensionsList().equals(other.getDimensionsList())) return false;
+    if (!getColumnsList().equals(other.getColumnsList())) return false;
     if (!getRulesList().equals(other.getRulesList())) return false;
     if (getRowCount() != other.getRowCount()) return false;
     if (hasScannedData() != other.hasScannedData()) return false;
@@ -2398,9 +2552,17 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PASSED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPassed());
+    if (hasScore()) {
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getScore());
+    }
     if (getDimensionsCount() > 0) {
       hash = (37 * hash) + DIMENSIONS_FIELD_NUMBER;
       hash = (53 * hash) + getDimensionsList().hashCode();
+    }
+    if (getColumnsCount() > 0) {
+      hash = (37 * hash) + COLUMNS_FIELD_NUMBER;
+      hash = (53 * hash) + getColumnsList().hashCode();
     }
     if (getRulesCount() > 0) {
       hash = (37 * hash) + RULES_FIELD_NUMBER;
@@ -2556,20 +2718,28 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
       super.clear();
       bitField0_ = 0;
       passed_ = false;
+      score_ = 0F;
       if (dimensionsBuilder_ == null) {
         dimensions_ = java.util.Collections.emptyList();
       } else {
         dimensions_ = null;
         dimensionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
+      if (columnsBuilder_ == null) {
+        columns_ = java.util.Collections.emptyList();
+      } else {
+        columns_ = null;
+        columnsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
       } else {
         rules_ = null;
         rulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       rowCount_ = 0L;
       scannedData_ = null;
       if (scannedDataBuilder_ != null) {
@@ -2618,18 +2788,27 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
 
     private void buildPartialRepeatedFields(com.google.cloud.dataplex.v1.DataQualityResult result) {
       if (dimensionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           dimensions_ = java.util.Collections.unmodifiableList(dimensions_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.dimensions_ = dimensions_;
       } else {
         result.dimensions_ = dimensionsBuilder_.build();
       }
+      if (columnsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          columns_ = java.util.Collections.unmodifiableList(columns_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.columns_ = columns_;
+      } else {
+        result.columns_ = columnsBuilder_.build();
+      }
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.rules_ = rules_;
       } else {
@@ -2642,19 +2821,25 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.passed_ = passed_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.score_ = score_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.rowCount_ = rowCount_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.scannedData_ =
             scannedDataBuilder_ == null ? scannedData_ : scannedDataBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.postScanActionsResult_ =
             postScanActionsResultBuilder_ == null
                 ? postScanActionsResult_
                 : postScanActionsResultBuilder_.build();
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -2705,11 +2890,14 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
       if (other.getPassed() != false) {
         setPassed(other.getPassed());
       }
+      if (other.hasScore()) {
+        setScore(other.getScore());
+      }
       if (dimensionsBuilder_ == null) {
         if (!other.dimensions_.isEmpty()) {
           if (dimensions_.isEmpty()) {
             dimensions_ = other.dimensions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureDimensionsIsMutable();
             dimensions_.addAll(other.dimensions_);
@@ -2722,7 +2910,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
             dimensionsBuilder_.dispose();
             dimensionsBuilder_ = null;
             dimensions_ = other.dimensions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             dimensionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDimensionsFieldBuilder()
@@ -2732,11 +2920,38 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
           }
         }
       }
+      if (columnsBuilder_ == null) {
+        if (!other.columns_.isEmpty()) {
+          if (columns_.isEmpty()) {
+            columns_ = other.columns_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureColumnsIsMutable();
+            columns_.addAll(other.columns_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.columns_.isEmpty()) {
+          if (columnsBuilder_.isEmpty()) {
+            columnsBuilder_.dispose();
+            columnsBuilder_ = null;
+            columns_ = other.columns_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            columnsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getColumnsFieldBuilder()
+                    : null;
+          } else {
+            columnsBuilder_.addAllMessages(other.columns_);
+          }
+        }
+      }
       if (rulesBuilder_ == null) {
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -2749,7 +2964,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -2825,7 +3040,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
             case 32:
               {
                 rowCount_ = input.readInt64();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 32
             case 40:
@@ -2837,16 +3052,36 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
             case 58:
               {
                 input.readMessage(getScannedDataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(
                     getPostScanActionsResultFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 77:
+              {
+                score_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 77
+            case 82:
+              {
+                com.google.cloud.dataplex.v1.DataQualityColumnResult m =
+                    input.readMessage(
+                        com.google.cloud.dataplex.v1.DataQualityColumnResult.parser(),
+                        extensionRegistry);
+                if (columnsBuilder_ == null) {
+                  ensureColumnsIsMutable();
+                  columns_.add(m);
+                } else {
+                  columnsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2919,15 +3154,91 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private float score_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The overall data quality score.
+     *
+     * The score ranges between [0, 100] (up to two decimal points).
+     * </pre>
+     *
+     * <code>optional float score = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the score field is set.
+     */
+    @java.lang.Override
+    public boolean hasScore() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The overall data quality score.
+     *
+     * The score ranges between [0, 100] (up to two decimal points).
+     * </pre>
+     *
+     * <code>optional float score = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The score.
+     */
+    @java.lang.Override
+    public float getScore() {
+      return score_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The overall data quality score.
+     *
+     * The score ranges between [0, 100] (up to two decimal points).
+     * </pre>
+     *
+     * <code>optional float score = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The score to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScore(float value) {
+
+      score_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The overall data quality score.
+     *
+     * The score ranges between [0, 100] (up to two decimal points).
+     * </pre>
+     *
+     * <code>optional float score = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearScore() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      score_ = 0F;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.dataplex.v1.DataQualityDimensionResult> dimensions_ =
         java.util.Collections.emptyList();
 
     private void ensureDimensionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         dimensions_ =
             new java.util.ArrayList<com.google.cloud.dataplex.v1.DataQualityDimensionResult>(
                 dimensions_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -3182,7 +3493,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
     public Builder clearDimensions() {
       if (dimensionsBuilder_ == null) {
         dimensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         dimensionsBuilder_.clear();
@@ -3330,20 +3641,467 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.dataplex.v1.DataQualityDimensionResult,
                 com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder,
                 com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder>(
-                dimensions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                dimensions_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         dimensions_ = null;
       }
       return dimensionsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.dataplex.v1.DataQualityColumnResult> columns_ =
+        java.util.Collections.emptyList();
+
+    private void ensureColumnsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        columns_ =
+            new java.util.ArrayList<com.google.cloud.dataplex.v1.DataQualityColumnResult>(columns_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataQualityColumnResult,
+            com.google.cloud.dataplex.v1.DataQualityColumnResult.Builder,
+            com.google.cloud.dataplex.v1.DataQualityColumnResultOrBuilder>
+        columnsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dataplex.v1.DataQualityColumnResult> getColumnsList() {
+      if (columnsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(columns_);
+      } else {
+        return columnsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getColumnsCount() {
+      if (columnsBuilder_ == null) {
+        return columns_.size();
+      } else {
+        return columnsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityColumnResult getColumns(int index) {
+      if (columnsBuilder_ == null) {
+        return columns_.get(index);
+      } else {
+        return columnsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setColumns(
+        int index, com.google.cloud.dataplex.v1.DataQualityColumnResult value) {
+      if (columnsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureColumnsIsMutable();
+        columns_.set(index, value);
+        onChanged();
+      } else {
+        columnsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setColumns(
+        int index, com.google.cloud.dataplex.v1.DataQualityColumnResult.Builder builderForValue) {
+      if (columnsBuilder_ == null) {
+        ensureColumnsIsMutable();
+        columns_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        columnsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addColumns(com.google.cloud.dataplex.v1.DataQualityColumnResult value) {
+      if (columnsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureColumnsIsMutable();
+        columns_.add(value);
+        onChanged();
+      } else {
+        columnsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addColumns(
+        int index, com.google.cloud.dataplex.v1.DataQualityColumnResult value) {
+      if (columnsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureColumnsIsMutable();
+        columns_.add(index, value);
+        onChanged();
+      } else {
+        columnsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addColumns(
+        com.google.cloud.dataplex.v1.DataQualityColumnResult.Builder builderForValue) {
+      if (columnsBuilder_ == null) {
+        ensureColumnsIsMutable();
+        columns_.add(builderForValue.build());
+        onChanged();
+      } else {
+        columnsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addColumns(
+        int index, com.google.cloud.dataplex.v1.DataQualityColumnResult.Builder builderForValue) {
+      if (columnsBuilder_ == null) {
+        ensureColumnsIsMutable();
+        columns_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        columnsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllColumns(
+        java.lang.Iterable<? extends com.google.cloud.dataplex.v1.DataQualityColumnResult> values) {
+      if (columnsBuilder_ == null) {
+        ensureColumnsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, columns_);
+        onChanged();
+      } else {
+        columnsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearColumns() {
+      if (columnsBuilder_ == null) {
+        columns_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        columnsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeColumns(int index) {
+      if (columnsBuilder_ == null) {
+        ensureColumnsIsMutable();
+        columns_.remove(index);
+        onChanged();
+      } else {
+        columnsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityColumnResult.Builder getColumnsBuilder(
+        int index) {
+      return getColumnsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityColumnResultOrBuilder getColumnsOrBuilder(
+        int index) {
+      if (columnsBuilder_ == null) {
+        return columns_.get(index);
+      } else {
+        return columnsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityColumnResultOrBuilder>
+        getColumnsOrBuilderList() {
+      if (columnsBuilder_ != null) {
+        return columnsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(columns_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityColumnResult.Builder addColumnsBuilder() {
+      return getColumnsFieldBuilder()
+          .addBuilder(com.google.cloud.dataplex.v1.DataQualityColumnResult.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityColumnResult.Builder addColumnsBuilder(
+        int index) {
+      return getColumnsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.dataplex.v1.DataQualityColumnResult.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of results at the column level.
+     *
+     * A column will have a corresponding `DataQualityColumnResult` if and only if
+     * there is at least one rule with the 'column' field set to it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dataplex.v1.DataQualityColumnResult.Builder>
+        getColumnsBuilderList() {
+      return getColumnsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataQualityColumnResult,
+            com.google.cloud.dataplex.v1.DataQualityColumnResult.Builder,
+            com.google.cloud.dataplex.v1.DataQualityColumnResultOrBuilder>
+        getColumnsFieldBuilder() {
+      if (columnsBuilder_ == null) {
+        columnsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataQualityColumnResult,
+                com.google.cloud.dataplex.v1.DataQualityColumnResult.Builder,
+                com.google.cloud.dataplex.v1.DataQualityColumnResultOrBuilder>(
+                columns_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+        columns_ = null;
+      }
+      return columnsBuilder_;
     }
 
     private java.util.List<com.google.cloud.dataplex.v1.DataQualityRuleResult> rules_ =
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         rules_ =
             new java.util.ArrayList<com.google.cloud.dataplex.v1.DataQualityRuleResult>(rules_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -3559,7 +4317,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -3683,7 +4441,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.dataplex.v1.DataQualityRuleResult,
                 com.google.cloud.dataplex.v1.DataQualityRuleResult.Builder,
                 com.google.cloud.dataplex.v1.DataQualityRuleResultOrBuilder>(
-                rules_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -3720,7 +4478,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
     public Builder setRowCount(long value) {
 
       rowCount_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3736,7 +4494,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRowCount() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       rowCount_ = 0L;
       onChanged();
       return this;
@@ -3760,7 +4518,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      * @return Whether the scannedData field is set.
      */
     public boolean hasScannedData() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3800,7 +4558,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
       } else {
         scannedDataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3820,7 +4578,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
       } else {
         scannedDataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3835,7 +4593,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeScannedData(com.google.cloud.dataplex.v1.ScannedData value) {
       if (scannedDataBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && scannedData_ != null
             && scannedData_ != com.google.cloud.dataplex.v1.ScannedData.getDefaultInstance()) {
           getScannedDataBuilder().mergeFrom(value);
@@ -3845,7 +4603,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
       } else {
         scannedDataBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3859,7 +4617,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
      */
     public Builder clearScannedData() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       scannedData_ = null;
       if (scannedDataBuilder_ != null) {
         scannedDataBuilder_.dispose();
@@ -3878,7 +4636,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
      */
     public com.google.cloud.dataplex.v1.ScannedData.Builder getScannedDataBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getScannedDataFieldBuilder().getBuilder();
     }
@@ -3947,7 +4705,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      * @return Whether the postScanActionsResult field is set.
      */
     public boolean hasPostScanActionsResult() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3994,7 +4752,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
       } else {
         postScanActionsResultBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4017,7 +4775,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
       } else {
         postScanActionsResultBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4035,7 +4793,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
     public Builder mergePostScanActionsResult(
         com.google.cloud.dataplex.v1.DataQualityResult.PostScanActionsResult value) {
       if (postScanActionsResultBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && postScanActionsResult_ != null
             && postScanActionsResult_
                 != com.google.cloud.dataplex.v1.DataQualityResult.PostScanActionsResult
@@ -4047,7 +4805,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
       } else {
         postScanActionsResultBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4063,7 +4821,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearPostScanActionsResult() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       postScanActionsResult_ = null;
       if (postScanActionsResultBuilder_ != null) {
         postScanActionsResultBuilder_.dispose();
@@ -4085,7 +4843,7 @@ public final class DataQualityResult extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.dataplex.v1.DataQualityResult.PostScanActionsResult.Builder
         getPostScanActionsResultBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getPostScanActionsResultFieldBuilder().getBuilder();
     }
