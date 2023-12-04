@@ -9,6 +9,7 @@ target/
 # Intellij
 *.iml
 .idea/
+.vscode/
 
 # python utilities
 *.pyc

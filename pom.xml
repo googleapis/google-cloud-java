@@ -255,6 +255,72 @@
 
   <profiles>
     <profile>
+      <!-- This profile is used to enable GraalVM native image testing in BQ storage-->
+      <id>customNative</id>
+      <dependencies>
+        <!-- Add this dependency to resolve class org.opentest4j.TestAbortedException -->
+        <dependency>
+          <groupId>org.opentest4j</groupId>
+          <artifactId>opentest4j</artifactId>
+          <version>1.3.0</version>
+        </dependency>
+        <dependency>
+          <groupId>org.junit.vintage</groupId>
+          <artifactId>junit-vintage-engine</artifactId>
+          <version>5.9.3</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${surefire.version}</version>
+            <dependencies>
+              <dependency>
+                <groupId>org.junit.vintage</groupId>
+                <artifactId>junit-vintage-engine</artifactId>
+                <version>5.9.3</version>
+              </dependency>
+            </dependencies>
+            <configuration>
+              <!-- Include all tests during native image testing. -->
+              <excludes combine.self="override">
+                <exclude>**/ITBigQueryWrite*RetryTest.java</exclude>
+              </excludes>
+              <includes>
+                <include>**/IT*.java</include>
+                <!-- Enable unit tests in generated libraries for native image testing. -->
+                <include>**/*ClientTest.java</include>
+              </includes>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.graalvm.buildtools</groupId>
+            <artifactId>native-maven-plugin</artifactId>
+            <version>0.9.23</version>
+            <extensions>true</extensions>
+            <executions>
+              <execution>
+                <id>test-native</id>
+                <goals>
+                  <goal>test</goal>
+                </goals>
+                <phase>test</phase>
+              </execution>
+            </executions>
+            <configuration>
+              <buildArgs>
+                <buildArg>--no-fallback</buildArg>
+                <buildArg>--no-server</buildArg>
+              </buildArgs>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
       <id>include-samples</id>
       <modules>
         <module>samples</module>
