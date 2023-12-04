@@ -333,11 +333,12 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When true, use the topic's schema as the columns to write to in BigQuery,
-   * if it exists.
+   * Optional. When true, use the topic's schema as the columns to write to in
+   * BigQuery, if it exists. `use_topic_schema` and `use_table_schema` cannot be
+   * enabled at the same time.
    * </pre>
    *
-   * <code>bool use_topic_schema = 2;</code>
+   * <code>bool use_topic_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The useTopicSchema.
    */
@@ -431,6 +432,26 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.pubsub.v1.BigQueryConfig.State.UNRECOGNIZED : result;
   }
 
+  public static final int USE_TABLE_SCHEMA_FIELD_NUMBER = 6;
+  private boolean useTableSchema_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When true, use the BigQuery table's schema as the columns to
+   * write to in BigQuery. `use_table_schema` and `use_topic_schema` cannot be
+   * enabled at the same time.
+   * </pre>
+   *
+   * <code>bool use_table_schema = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The useTableSchema.
+   */
+  @java.lang.Override
+  public boolean getUseTableSchema() {
+    return useTableSchema_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -460,6 +481,9 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.pubsub.v1.BigQueryConfig.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, state_);
     }
+    if (useTableSchema_ != false) {
+      output.writeBool(6, useTableSchema_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -484,6 +508,9 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.pubsub.v1.BigQueryConfig.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, state_);
     }
+    if (useTableSchema_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, useTableSchema_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -504,6 +531,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     if (getWriteMetadata() != other.getWriteMetadata()) return false;
     if (getDropUnknownFields() != other.getDropUnknownFields()) return false;
     if (state_ != other.state_) return false;
+    if (getUseTableSchema() != other.getUseTableSchema()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -525,6 +553,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDropUnknownFields());
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    hash = (37 * hash) + USE_TABLE_SCHEMA_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseTableSchema());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -668,6 +698,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       writeMetadata_ = false;
       dropUnknownFields_ = false;
       state_ = 0;
+      useTableSchema_ = false;
       return this;
     }
 
@@ -717,6 +748,9 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.useTableSchema_ = useTableSchema_;
       }
     }
 
@@ -782,6 +816,9 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
+      if (other.getUseTableSchema() != false) {
+        setUseTableSchema(other.getUseTableSchema());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -838,6 +875,12 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 48:
+              {
+                useTableSchema_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -973,11 +1016,12 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When true, use the topic's schema as the columns to write to in BigQuery,
-     * if it exists.
+     * Optional. When true, use the topic's schema as the columns to write to in
+     * BigQuery, if it exists. `use_topic_schema` and `use_table_schema` cannot be
+     * enabled at the same time.
      * </pre>
      *
-     * <code>bool use_topic_schema = 2;</code>
+     * <code>bool use_topic_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The useTopicSchema.
      */
@@ -989,11 +1033,12 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When true, use the topic's schema as the columns to write to in BigQuery,
-     * if it exists.
+     * Optional. When true, use the topic's schema as the columns to write to in
+     * BigQuery, if it exists. `use_topic_schema` and `use_table_schema` cannot be
+     * enabled at the same time.
      * </pre>
      *
-     * <code>bool use_topic_schema = 2;</code>
+     * <code>bool use_topic_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The useTopicSchema to set.
      * @return This builder for chaining.
@@ -1009,11 +1054,12 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When true, use the topic's schema as the columns to write to in BigQuery,
-     * if it exists.
+     * Optional. When true, use the topic's schema as the columns to write to in
+     * BigQuery, if it exists. `use_topic_schema` and `use_table_schema` cannot be
+     * enabled at the same time.
      * </pre>
      *
-     * <code>bool use_topic_schema = 2;</code>
+     * <code>bool use_topic_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1255,6 +1301,65 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearState() {
       bitField0_ = (bitField0_ & ~0x00000010);
       state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean useTableSchema_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When true, use the BigQuery table's schema as the columns to
+     * write to in BigQuery. `use_table_schema` and `use_topic_schema` cannot be
+     * enabled at the same time.
+     * </pre>
+     *
+     * <code>bool use_table_schema = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The useTableSchema.
+     */
+    @java.lang.Override
+    public boolean getUseTableSchema() {
+      return useTableSchema_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When true, use the BigQuery table's schema as the columns to
+     * write to in BigQuery. `use_table_schema` and `use_topic_schema` cannot be
+     * enabled at the same time.
+     * </pre>
+     *
+     * <code>bool use_table_schema = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The useTableSchema to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseTableSchema(boolean value) {
+
+      useTableSchema_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When true, use the BigQuery table's schema as the columns to
+     * write to in BigQuery. `use_table_schema` and `use_topic_schema` cannot be
+     * enabled at the same time.
+     * </pre>
+     *
+     * <code>bool use_table_schema = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseTableSchema() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      useTableSchema_ = false;
       onChanged();
       return this;
     }

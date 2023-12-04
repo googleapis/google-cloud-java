@@ -54,11 +54,12 @@ public interface BigQueryConfigOrBuilder
    *
    *
    * <pre>
-   * When true, use the topic's schema as the columns to write to in BigQuery,
-   * if it exists.
+   * Optional. When true, use the topic's schema as the columns to write to in
+   * BigQuery, if it exists. `use_topic_schema` and `use_table_schema` cannot be
+   * enabled at the same time.
    * </pre>
    *
-   * <code>bool use_topic_schema = 2;</code>
+   * <code>bool use_topic_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The useTopicSchema.
    */
@@ -128,4 +129,19 @@ public interface BigQueryConfigOrBuilder
    * @return The state.
    */
   com.google.pubsub.v1.BigQueryConfig.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When true, use the BigQuery table's schema as the columns to
+   * write to in BigQuery. `use_table_schema` and `use_topic_schema` cannot be
+   * enabled at the same time.
+   * </pre>
+   *
+   * <code>bool use_table_schema = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The useTableSchema.
+   */
+  boolean getUseTableSchema();
 }
