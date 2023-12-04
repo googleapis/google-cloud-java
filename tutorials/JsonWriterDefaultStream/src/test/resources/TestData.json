@@ -1,5 +1,0 @@
-{"commit":"0001","parent":["00001"],"author":"user1","committer":"GitHub","commit_msg":{"subject":"Commit 1","message":"This is a commit.\n\n"},"repo_name":"googleapis/java-bigquerystorage","commit_date":"2019-07-23T20:28:01"}
-{"commit":"0002","parent":["00002"],"author":"user1","committer":"GitHub","commit_msg":{"subject":"Commit 2","message":"This is a commit.\n\n"},"repo_name":"googleapis/java-bigquerystorage","commit_date":"2019-12-05T16:05:16"}
-{"commit":"0003","parent":["00003"],"author":"user1","committer":"GitHub","commit_msg":{"subject":"Commit 3","message":"This is a commit.\n\n"},"repo_name":"googleapis/java-bigquerystorage","commit_date":"2019-03-21T16:59:23"}
-{"commit":"0004","parent":["00004"],"author":"user1","committer":"GitHub","commit_msg":{"subject":"Commit 4","message":"This is a commit.\n\n"},"repo_name":"googleapis/java-bigquerystorage","commit_date":"2019-01-11T01:31:39"}
-{"commit":"0005","parent":["00005"],"author":"user1","committer":"GitHub","commit_msg":{"subject":"Commit 5","message":"This is a commit.\n\n"},"repo_name":"googleapis/java-bigquerystorage","commit_date":"2019-07-31T19:09:09"}
