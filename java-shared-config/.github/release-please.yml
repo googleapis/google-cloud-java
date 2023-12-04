@@ -1,5 +1,6 @@
 releaseType: java-yoshi
 handleGHRelease: true
+extraFiles: [".cloudbuild/cloudbuild.yaml", ".cloudbuild/cloudbuild-test.yaml"]
 branches:
 - bumpMinorPreMajor: true
   handleGHRelease: true
