@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/googleapis/java-shared-config/compare/v1.6.1...v1.7.0) (2023-12-04)
+
+
+### Features
+
+* Separate native-image-shared-config into its own module ([#712](https://github.com/googleapis/java-shared-config/issues/712)) ([567fecb](https://github.com/googleapis/java-shared-config/commit/567fecb2fd80bd6e2fe509e4c2a97685f35e2b84))
+
 ## [1.6.1](https://github.com/googleapis/java-shared-config/compare/v1.6.0...v1.6.1) (2023-10-31)
 
 
