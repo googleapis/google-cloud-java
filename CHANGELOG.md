@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.35.0](https://github.com/googleapis/java-bigquery/compare/v2.34.2...v2.35.0) (2023-12-01)
+
+
+### Features
+
+* Add InputBytes to extract job statistics ([#2998](https://github.com/googleapis/java-bigquery/issues/2998)) ([19b7c3a](https://github.com/googleapis/java-bigquery/commit/19b7c3ad842a566d4e3e93e48625e0281504de80))
+* Add Routine DataGovernanceType ([#3006](https://github.com/googleapis/java-bigquery/issues/3006)) ([ecb567b](https://github.com/googleapis/java-bigquery/commit/ecb567b75849cd0665ac4ab315a5af3bdf934f48))
+
+
+### Bug Fixes
+
+* Update TableInsertRows.java ([#2999](https://github.com/googleapis/java-bigquery/issues/2999)) ([ff4a086](https://github.com/googleapis/java-bigquery/commit/ff4a086f0aa3c0401b62489ea8a0b9e2fd6cb3fe))
+
+
+### Dependencies
+
+* Update actions/github-script action to v7 ([#3001](https://github.com/googleapis/java-bigquery/issues/3001)) ([d1bdeab](https://github.com/googleapis/java-bigquery/commit/d1bdeab242ea2e6374d1b6d0bbd9eadf638cbcb2))
+* Update actions/setup-java action to v4 ([#3018](https://github.com/googleapis/java-bigquery/issues/3018)) ([14ed571](https://github.com/googleapis/java-bigquery/commit/14ed571365f600b188b7d6716e2549c5b81868ad))
+* Update arrow.version to v14 ([#3023](https://github.com/googleapis/java-bigquery/issues/3023)) ([759fd64](https://github.com/googleapis/java-bigquery/commit/759fd64f73a437e4b9847a807b5b716069b4d20e))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20231111-2.0.0 ([#3020](https://github.com/googleapis/java-bigquery/issues/3020)) ([ef48002](https://github.com/googleapis/java-bigquery/commit/ef480029c9e1958c1b6a6f2241b110fb3cfe036d))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#3019](https://github.com/googleapis/java-bigquery/issues/3019)) ([0293edb](https://github.com/googleapis/java-bigquery/commit/0293edb74e02f44803faacbce400df20da53f66c))
+
 ## [2.34.2](https://github.com/googleapis/java-bigquery/compare/v2.34.1...v2.34.2) (2023-11-07)
 
 
