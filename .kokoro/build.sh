@@ -84,7 +84,7 @@ graalvm)
           -Dsurefire.failIfNoSpecifiedTests=false \
           -Dfailsafe.failIfNoSpecifiedTests=false \
           -fae \
-          test          
+          verify          
     RETURN_CODE=$?
     ;;
 graalvm17)
@@ -94,7 +94,7 @@ graalvm17)
     -Dit.test=!ITBigQueryWrite*RetryTest \
     -Dsurefire.failIfNoSpecifiedTests=false \
     -Dfailsafe.failIfNoSpecifiedTests=false \
-    test
+    verify
     RETURN_CODE=$?
     ;;
 samples)
