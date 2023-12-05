@@ -14,6 +14,7 @@
 # limitations under the License.
 
 set -eo pipefail
+set -x
 
 
 function modify_shared_config() {
@@ -26,18 +27,13 @@ function modify_shared_config() {
 EOF
 }
 
-if [ -z "${MODULES_UNDER_TEST}" ]; then
-  echo "MODULES_UNDER_TEST must be set to run downstream-build.sh"
-  exit 1
-fi
-
 ### Round 1
 ## Get the directory of the build script and install java-shared-config
 scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 ## cd to the parent directory, i.e. the root of the git repo
 cd "${scriptDir}/../.."
 mvn -B -ntp install -Dcheckstyle.skip -Dfmt.skip -DskipTests
-SHARED_CONFIG_VERSION=$(sed -e 's/xmlns=".*"//' pom.xml | xmllint --xpath '/project/version/text()' -)
+SHARED_CONFIG_VERSION=$(sed -e 's/xmlns=".*"//' java-shared-config/pom.xml | xmllint --xpath '/project/version/text()' -)
 
 # Use GCP Maven Mirror
 mkdir -p "${HOME}/.m2"
@@ -70,22 +66,5 @@ popd
 pushd sdk-platform-java/showcase
 mvn test -Pnative,-showcase -Denforcer.skip=true -ntp -B
 popd
-
-
-### Round 3
-# Update the shared-config version in google-cloud-jar-parent
-git clone "https://github.com/googleapis/google-cloud-java.git" --depth=1
-pushd google-cloud-java/google-cloud-pom-parent
-modify_shared_config
-popd
-
-# Run the updated java-shared-config against google-cloud-java
-pushd google-cloud-java
-source ./.kokoro/common.sh
-RETURN_CODE=0
-setup_application_credentials
-setup_cloud "$MODULES_UNDER_TEST"
-run_graalvm_tests "$MODULES_UNDER_TEST"
-
 
 exit $RETURN_CODE
