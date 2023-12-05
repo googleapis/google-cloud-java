@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.30.0](https://github.com/googleapis/java-bigtable/compare/v2.29.1...v2.30.0) (2023-12-05)
+
+
+### Features
+
+* Client sends routing cookie back to server ([#1888](https://github.com/googleapis/java-bigtable/issues/1888)) ([4c73abd](https://github.com/googleapis/java-bigtable/commit/4c73abd2f4a07808b591dd9178e87715d2f3008d))
+
+
+### Dependencies
+
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.10.1 ([#1990](https://github.com/googleapis/java-bigtable/issues/1990)) ([7ad70e3](https://github.com/googleapis/java-bigtable/commit/7ad70e3abc1af7dfab715386978bf14f02b34e5d))
+* Update shared dependencies ([#2016](https://github.com/googleapis/java-bigtable/issues/2016)) ([4e49dff](https://github.com/googleapis/java-bigtable/commit/4e49dffa72db8dd04e75ca86178d875fab6f566b))
+
 ## [2.29.1](https://github.com/googleapis/java-bigtable/compare/v2.29.0...v2.29.1) (2023-11-07)
 
 
