@@ -14,21 +14,9 @@
 # limitations under the License.
 set -ex
 
-function save_to_temp_then_file() {
-    TEMP_FILE="$(echo mktemp)"
-    # Redirect output to temporary file TEMP_FILE
-    cat > $TEMP_FILE
-    # Replace the original file
-    mv -f $TEMP_FILE "${1}"
-}
-
 
 MONO_REPO_NAME="google-cloud-java"
 WORKSPACE_DIR="/workspace"
-PATH_TO_CONTAINER_VARS="$WORKSPACE_DIR/interContainerVars.json"
-
-# confirm docker can be run
-docker run hello-world
 
 # workaround for local development (docker run -v
 # path_to_monorepo:/workspace/google-cloud-java)
@@ -42,14 +30,10 @@ cd "$WORKSPACE_DIR/$MONO_REPO_NAME"
 python -m pip install -r generation/new_client/requirements.txt
 
 python generation/new_client/new-client.py generate \
-  --api_shortname=telcoautomation \
-  --proto-path=google/cloud/telcoautomation \
-  --name-pretty="Telco Automation API" \
-  --product-docs="https://cloud.google.com/telcoautomation/docs/overview" \
-  --api-description="Telecom Network Automation is a Google-managed,
-  cloud implementation of Nephio, a Linux Foundation open source project that
-  can deliver simple, carrier-grade, Kubernetes-based, multi-cloud,
-  multi-vendor, cloud-native intent automation via common automation blueprints." \
-  --googleapis-gen-url="https://${GITHUB_TOKEN}@github.com/googleapis/googleapis-gen.git"
+  --api_shortname=edgenetwork \
+  --proto-path=google/cloud/edgenetwork \
+  --name-pretty="Distributed Cloud Edge Network API" \
+  --product-docs="https://cloud.google.com/distributed-cloud/edge/latest/docs/overview" \
+  --api-description="Network management API for Distributed Cloud Edge."
 
 
