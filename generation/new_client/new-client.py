@@ -247,78 +247,8 @@ def generate(
         api_shortname=api_shortname
     )
 
-    # get the sha256 digets for the owlbot image
-    subprocess.check_call(["docker", "pull", "-q", owlbot_image])
-    owlbot_image_digest = (
-        subprocess.check_output(
-            ["docker", "inspect", "--format='{{index .RepoDigests 0}}", owlbot_image,],
-            encoding="utf-8",
-        )
-            .strip()
-            .split("@")[-1]
-    )
-
-    user = subprocess.check_output(["id", "-u"], encoding="utf8").strip()
-    group = subprocess.check_output(["id", "-g"], encoding="utf8").strip()
-
-    # run owlbot copy
-    print("Cloning googleapis-gen...")
-    subprocess.check_call(["git", "clone", "-q", googleapis_gen_url, "./gen/googleapis-gen"], cwd=workdir)
-    subprocess.check_call(["docker", "pull", "gcr.io/cloud-devrel-public-resources/owlbot-cli:latest"])
-    copy_code_parameters = [
-        "docker",
-        "run",
-        "--rm",
-        "--user",
-        f"{user}:{group}",
-        "-v",
-        f"{workdir}:/repo",
-        "-v",
-        ""f"{workdir}""/gen/googleapis-gen:/googleapis-gen",
-        "-w",
-        "/repo",
-        "--env", "HOME=/tmp",
-        "gcr.io/cloud-devrel-public-resources/owlbot-cli:latest",
-        "copy-code",
-        "--source-repo=/googleapis-gen",
-        f"--config-file={owlbot_yaml_location_from_module}"
-    ]
-    print("Running copy-code: " + str(copy_code_parameters))
-    print("  in directory: " + str(workdir))
-    subprocess.check_call(
-        copy_code_parameters,
-        cwd=workdir,
-    )
-
-    print("Removing googleapis-gen...")
-    subprocess.check_call(["rm", "-fr", "gen"], cwd=workdir)
-
-    # Bringing owl-bot-staging from the new module's directory to the root
-    # directory so that owlbot-java can process them.
-    subprocess.check_call(
-        [
-            "mv",
-            "owl-bot-staging",
-            "../"
-        ],
-        cwd=workdir,
-    )
-    monorepo_root=(workdir / '..').resolve()
-    print("monorepo_root=",monorepo_root)
-    print("Running the post-processor...")
-    subprocess.check_call(
-        [
-            "docker",
-            "run",
-            "--rm",
-            "-v",
-            f"{monorepo_root}:/workspace",
-            "--user",
-            f"{user}:{group}",
-            owlbot_image,
-        ],
-        cwd=monorepo_root,
-    )
+    # this section is intended to be called after postprocessed code
+    return
 
     # Remove irrelevant files from templates
     subprocess.check_call(

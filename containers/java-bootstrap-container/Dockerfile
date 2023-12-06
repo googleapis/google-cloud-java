@@ -74,10 +74,10 @@ RUN apt-get install -y --no-install-recommends \
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+
 RUN pyenv install 3.9.13
 
 COPY . /
-
 
 
 RUN chmod 755 /entrypoint.sh
