@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.1](https://github.com/googleapis/java-shared-config/compare/v1.7.0...v1.7.1) (2023-12-07)
+
+
+### Bug Fixes
+
+* Move release configs to native-image-shared-config ([#725](https://github.com/googleapis/java-shared-config/issues/725)) ([58ffb4e](https://github.com/googleapis/java-shared-config/commit/58ffb4e8218ac98b516e01b68b34b54b4cecec98))
+
 ## [1.7.0](https://github.com/googleapis/java-shared-config/compare/v1.6.1...v1.7.0) (2023-12-04)
 
 
