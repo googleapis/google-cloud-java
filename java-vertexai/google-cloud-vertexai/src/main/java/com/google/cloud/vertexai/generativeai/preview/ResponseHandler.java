@@ -99,7 +99,8 @@ public class ResponseHandler {
     candidates.forEach(
         (index, candidate) ->
             aggregatedCandidates.add(
-                candidate.toBuilder()
+                candidate
+                    .toBuilder()
                     .setContent(
                         Content.newBuilder()
                             .setRole("model")

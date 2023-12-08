@@ -116,7 +116,8 @@ public class ChatSession {
    * @return a stream of responses.
    */
   public ResponseStream<GenerateContentResponse> sendMessageStream(
-      Content content, GenerationConfig generationConfig) throws IOException, IllegalArgumentException {
+      Content content, GenerationConfig generationConfig)
+      throws IOException, IllegalArgumentException {
     return sendMessageStream(content, generationConfig, null);
   }
 
@@ -128,7 +129,8 @@ public class ChatSession {
    * @return a stream of responses.
    */
   public ResponseStream<GenerateContentResponse> sendMessageStream(
-      Content content, List<SafetySetting> safetySettings) throws IOException, IllegalArgumentException {
+      Content content, List<SafetySetting> safetySettings)
+      throws IOException, IllegalArgumentException {
     return sendMessageStream(content, null, safetySettings);
   }
 
