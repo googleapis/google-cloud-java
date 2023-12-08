@@ -702,3 +702,8 @@ grpc-google-cloud-telcoautomation-v1alpha1:0.1.0:0.2.0-SNAPSHOT
 google-cloud-securesourcemanager:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-securesourcemanager-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-securesourcemanager-v1:0.1.0:0.2.0-SNAPSHOT
+google-cloud-vertexai:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-vertexai-v1:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-vertexai-v1beta1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-vertexai-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-vertexai-v1beta1:0.0.1:0.0.1-SNAPSHOT
