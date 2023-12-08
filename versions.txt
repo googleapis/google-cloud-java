@@ -702,3 +702,6 @@ grpc-google-cloud-telcoautomation-v1alpha1:0.1.0:0.2.0-SNAPSHOT
 google-cloud-securesourcemanager:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-securesourcemanager-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-securesourcemanager-v1:0.1.0:0.2.0-SNAPSHOT
+google-cloud-edgenetwork:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-edgenetwork-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-edgenetwork-v1:0.0.0:0.0.1-SNAPSHOT
