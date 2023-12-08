@@ -70,7 +70,7 @@ RUN apt-get install -y --no-install-recommends \
         make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev \
         libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev \
         libxml2-dev libxmlsec1-dev libffi-dev \
-        ca-certificates
+        ca-certificates moreutils jq
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
