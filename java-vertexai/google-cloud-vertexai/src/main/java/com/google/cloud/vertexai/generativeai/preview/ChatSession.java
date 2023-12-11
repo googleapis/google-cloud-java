@@ -19,10 +19,10 @@ package com.google.cloud.vertexai.generativeai.preview;
 import static com.google.cloud.vertexai.generativeai.preview.ResponseHandler.aggregateStreamIntoResponse;
 import static com.google.cloud.vertexai.generativeai.preview.ResponseHandler.getContent;
 
-import com.google.cloud.vertexai.v1beta1.Content;
-import com.google.cloud.vertexai.v1beta1.GenerateContentResponse;
-import com.google.cloud.vertexai.v1beta1.GenerationConfig;
-import com.google.cloud.vertexai.v1beta1.SafetySetting;
+import com.google.cloud.vertexai.api.Content;
+import com.google.cloud.vertexai.api.GenerateContentResponse;
+import com.google.cloud.vertexai.api.GenerationConfig;
+import com.google.cloud.vertexai.api.SafetySetting;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -88,7 +88,7 @@ public class ChatSession {
       throws IOException {
     checkLastResponseAndEditHistory();
 
-    history.add(ContentMaker.fromString("user", text));
+    history.add(ContentMaker.fromString(text));
 
     ResponseStream<GenerateContentResponse> respStream =
         model.generateContentStream(history, generationConfig, safetySettings);
@@ -116,8 +116,7 @@ public class ChatSession {
    * @return a stream of responses.
    */
   public ResponseStream<GenerateContentResponse> sendMessageStream(
-      Content content, GenerationConfig generationConfig)
-      throws IOException, IllegalArgumentException {
+      Content content, GenerationConfig generationConfig) throws IOException, IllegalArgumentException {
     return sendMessageStream(content, generationConfig, null);
   }
 
@@ -129,8 +128,7 @@ public class ChatSession {
    * @return a stream of responses.
    */
   public ResponseStream<GenerateContentResponse> sendMessageStream(
-      Content content, List<SafetySetting> safetySettings)
-      throws IOException, IllegalArgumentException {
+      Content content, List<SafetySetting> safetySettings) throws IOException, IllegalArgumentException {
     return sendMessageStream(content, null, safetySettings);
   }
 
@@ -208,7 +206,7 @@ public class ChatSession {
       throws IOException {
 
     checkLastResponseAndEditHistory();
-    history.add(ContentMaker.fromString("user", text));
+    history.add(ContentMaker.fromString(text));
     GenerateContentResponse response =
         model.generateContent(history, generationConfig, safetySettings);
     currentResponse = response;

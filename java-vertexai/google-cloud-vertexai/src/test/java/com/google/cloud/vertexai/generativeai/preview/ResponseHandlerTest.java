@@ -18,15 +18,24 @@ package com.google.cloud.vertexai.generativeai.preview;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
+import static org.mockito.Mockito.when;
 
-import com.google.cloud.vertexai.v1beta1.Candidate;
-import com.google.cloud.vertexai.v1beta1.Candidate.FinishReason;
-import com.google.cloud.vertexai.v1beta1.Content;
-import com.google.cloud.vertexai.v1beta1.GenerateContentResponse;
-import com.google.cloud.vertexai.v1beta1.Part;
+import com.google.cloud.vertexai.api.Candidate;
+import com.google.cloud.vertexai.api.Candidate.FinishReason;
+import com.google.cloud.vertexai.api.Citation;
+import com.google.cloud.vertexai.api.CitationMetadata;
+import com.google.cloud.vertexai.api.Content;
+import com.google.cloud.vertexai.api.GenerateContentResponse;
+import com.google.cloud.vertexai.api.Part;
+import java.util.Arrays;
+import java.util.Iterator;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 @RunWith(JUnit4.class)
 public final class ResponseHandlerTest {
@@ -38,18 +47,37 @@ public final class ResponseHandlerTest {
           .addParts(Part.newBuilder().setText(TEXT_1))
           .addParts(Part.newBuilder().setText(TEXT_2))
           .build();
-  private static final Candidate CANDIDATE = Candidate.newBuilder().setContent(CONTENT).build();
-  private static final GenerateContentResponse RESPONSE =
-      GenerateContentResponse.newBuilder().addCandidates(CANDIDATE).build();
+  private static final Citation CITATION_1 =
+      Citation.newBuilder().setUri("gs://citation1").setStartIndex(1).setEndIndex(2).build();
+  private static final Citation CITATION_2 =
+      Citation.newBuilder().setUri("gs://citation2").setStartIndex(10).setEndIndex(11).build();
+  private static final Candidate CANDIDATE_1 =
+      Candidate.newBuilder()
+          .setContent(CONTENT)
+          .setCitationMetadata(CitationMetadata.newBuilder().addCitations(CITATION_1))
+          .build();
+  private static final Candidate CANDIDATE_2 =
+      Candidate.newBuilder()
+          .setContent(CONTENT)
+          .setCitationMetadata(CitationMetadata.newBuilder().addCitations(CITATION_2))
+          .build();
+  private static final GenerateContentResponse RESPONSE_1 =
+      GenerateContentResponse.newBuilder().addCandidates(CANDIDATE_1).build();
+  private static final GenerateContentResponse RESPONSE_2 =
+      GenerateContentResponse.newBuilder().addCandidates(CANDIDATE_2).build();
   private static final GenerateContentResponse INVALID_RESPONSE =
       GenerateContentResponse.newBuilder()
-          .addCandidates(CANDIDATE)
-          .addCandidates(CANDIDATE)
+          .addCandidates(CANDIDATE_1)
+          .addCandidates(CANDIDATE_2)
           .build();
+
+  @Rule public final MockitoRule mocksRule = MockitoJUnit.rule();
+
+  @Mock private Iterator<GenerateContentResponse> mockServerStreamIterator;
 
   @Test
   public void testGetTextFromResponse() {
-    String text = ResponseHandler.getText(RESPONSE);
+    String text = ResponseHandler.getText(RESPONSE_1);
     assertThat(text).isEqualTo(TEXT_1 + TEXT_2);
   }
 
@@ -68,7 +96,7 @@ public final class ResponseHandlerTest {
 
   @Test
   public void testGetContentFromResponse() {
-    Content content = ResponseHandler.getContent(RESPONSE);
+    Content content = ResponseHandler.getContent(RESPONSE_1);
     assertThat(content).isEqualTo(CONTENT);
   }
 
@@ -87,12 +115,20 @@ public final class ResponseHandlerTest {
 
   @Test
   public void getFinishReason_unspecified() {
-    Content content =
-        Content.newBuilder().addParts(Part.newBuilder().setText("replied message")).build();
-    Candidate candidate = Candidate.newBuilder().setContent(content).build();
-    GenerateContentResponse response =
-        GenerateContentResponse.newBuilder().addCandidates(candidate).build();
-    assertThat(ResponseHandler.getFinishReason(response))
-        .isEqualTo(FinishReason.FINISH_REASON_UNSPECIFIED);
+    FinishReason finishReason = ResponseHandler.getFinishReason(RESPONSE_1);
+    assertThat(finishReason).isEqualTo(FinishReason.FINISH_REASON_UNSPECIFIED);
+  }
+
+  @Test
+  public void testAggregateStreamIntoResponse() {
+    ResponseStream<GenerateContentResponse> responseStream =
+        new ResponseStream(new ResponseStreamIteratorWithHistory(mockServerStreamIterator));
+    when(mockServerStreamIterator.hasNext()).thenReturn(true, true, false);
+    when(mockServerStreamIterator.next()).thenReturn(RESPONSE_1, RESPONSE_2);
+
+    GenerateContentResponse response = ResponseHandler.aggregateStreamIntoResponse(responseStream);
+    assertThat(ResponseHandler.getText(response)).isEqualTo(TEXT_1 + TEXT_2 + TEXT_1 + TEXT_2);
+    assertThat(response.getCandidates(0).getCitationMetadata().getCitationsList())
+        .isEqualTo(Arrays.asList(CITATION_1, CITATION_2));
   }
 }

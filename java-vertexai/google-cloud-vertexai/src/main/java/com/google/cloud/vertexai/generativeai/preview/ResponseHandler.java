@@ -16,11 +16,14 @@
 
 package com.google.cloud.vertexai.generativeai.preview;
 
-import com.google.cloud.vertexai.v1beta1.Candidate;
-import com.google.cloud.vertexai.v1beta1.Candidate.FinishReason;
-import com.google.cloud.vertexai.v1beta1.Content;
-import com.google.cloud.vertexai.v1beta1.GenerateContentResponse;
-import com.google.cloud.vertexai.v1beta1.Part;
+import com.google.cloud.vertexai.api.Candidate;
+import com.google.cloud.vertexai.api.Candidate.Builder;
+import com.google.cloud.vertexai.api.Candidate.FinishReason;
+import com.google.cloud.vertexai.api.Citation;
+import com.google.cloud.vertexai.api.CitationMetadata;
+import com.google.cloud.vertexai.api.Content;
+import com.google.cloud.vertexai.api.GenerateContentResponse;
+import com.google.cloud.vertexai.api.Part;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,7 +32,13 @@ import java.util.Map;
 /** Helper class to handle GenerateContentResponse. */
 public class ResponseHandler {
 
-  /** Get the text message in a GenerateContentResponse. */
+  /**
+   * Get the text message in a GenerateContentResponse.
+   *
+   * @param response a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance
+   * @return a String that aggregates all the text parts in the response
+   * @throws IllegalArgumentException if the response has 0 or more than 1 candidates
+   */
   public static String getText(GenerateContentResponse response) {
     if (response.getCandidatesCount() != 1) {
       throw new IllegalArgumentException(
@@ -47,7 +56,13 @@ public class ResponseHandler {
     return text;
   }
 
-  /** Get the content in a GenerateContentResponse. */
+  /**
+   * Get the content in a GenerateContentResponse.
+   *
+   * @param response a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance
+   * @return the {@link com.google.cloud.vertexai.api.Content} in the response
+   * @throws IllegalArgumentException if the response has 0 or more than 1 candidates
+   */
   public static Content getContent(GenerateContentResponse response) {
     if (response.getCandidatesCount() != 1) {
       throw new IllegalArgumentException(
@@ -59,60 +74,13 @@ public class ResponseHandler {
     return response.getCandidates(0).getContent();
   }
 
-  /** Aggregate a stream of responses into a single GenerateContentResponse. */
-  static GenerateContentResponse aggregateStreamIntoResponse(
-      ResponseStream<GenerateContentResponse> responseStream) {
-    GenerateContentResponse res = GenerateContentResponse.getDefaultInstance();
-    Map<Integer, List<Part>> aggregated = new HashMap<>();
-    Map<Integer, Candidate> candidates = new HashMap<>();
-
-    for (GenerateContentResponse response : responseStream) {
-      res = response;
-      for (Candidate candidate : response.getCandidatesList()) {
-        int index = candidate.getIndex();
-        List<Part> parts = candidate.getContent().getPartsList();
-        candidates.put(index, candidate);
-
-        List<Part> aggregatedParts =
-            aggregated.containsKey(index) ? aggregated.get(index) : new ArrayList<>();
-        if (aggregatedParts.size() == 0 || parts.size() == 0) {
-          aggregatedParts.addAll(parts);
-        } else {
-          Part aggregatedTailPart = aggregatedParts.get(aggregatedParts.size() - 1);
-          Part currentResponseHeadPart = parts.get(0);
-          if (!aggregatedTailPart.hasText() || !currentResponseHeadPart.hasText()) {
-            aggregatedParts.addAll(parts);
-          } else {
-            aggregatedParts.remove(aggregatedParts.size() - 1);
-            aggregatedParts.add(
-                Part.newBuilder()
-                    .setText(aggregatedTailPart.getText() + currentResponseHeadPart.getText())
-                    .build());
-            aggregatedParts.addAll(parts.subList(1, parts.size()));
-          }
-        }
-        aggregated.put(index, aggregatedParts);
-      }
-    }
-
-    List<Candidate> aggregatedCandidates = new ArrayList<>();
-    candidates.forEach(
-        (index, candidate) ->
-            aggregatedCandidates.add(
-                candidate
-                    .toBuilder()
-                    .setContent(
-                        Content.newBuilder()
-                            .setRole("model")
-                            .clearParts()
-                            .addAllParts(aggregated.get(index)))
-                    .build()));
-    res = res.toBuilder().clearCandidates().addAllCandidates(aggregatedCandidates).build();
-
-    return res;
-  }
-
-  /** Get the finish reason in a GenerateContentResponse. */
+  /**
+   * Get the finish reason in a GenerateContentResponse.
+   *
+   * @param response a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance
+   * @return the {@link com.google.cloud.vertexai.api.FinishReason} in the response
+   * @throws IllegalArgumentException if the response has 0 or more than 1 candidates
+   */
   public static FinishReason getFinishReason(GenerateContentResponse response) {
     if (response.getCandidatesCount() != 1) {
       throw new IllegalArgumentException(
@@ -121,5 +89,83 @@ public class ResponseHandler {
               response.getCandidatesCount()));
     }
     return response.getCandidates(0).getFinishReason();
+  }
+
+  /** Aggregate a stream of responses into a single GenerateContentResponse. */
+  static GenerateContentResponse aggregateStreamIntoResponse(
+      ResponseStream<GenerateContentResponse> responseStream) {
+    GenerateContentResponse res = GenerateContentResponse.getDefaultInstance();
+    Map<Integer, Candidate> candidates = new HashMap<>();
+    Map<Integer, List<Part>> aggregatedContentParts = new HashMap<>();
+    Map<Integer, List<Citation>> aggregatedCitationMetadata = new HashMap<>();
+
+    for (GenerateContentResponse response : responseStream) {
+      res = response;
+      for (Candidate candidate : response.getCandidatesList()) {
+        // Keep track of candidates by index
+        int index = candidate.getIndex();
+        candidates.put(index, candidate);
+
+        // Aggregates parts
+        if (candidate.hasContent()) {
+          List<Part> parts = candidate.getContent().getPartsList();
+          List<Part> aggregatedParts =
+              aggregatedContentParts.containsKey(index)
+                  ? aggregatedContentParts.get(index)
+                  : new ArrayList<>();
+          if (aggregatedParts.size() == 0 || parts.size() == 0) {
+            aggregatedParts.addAll(parts);
+          } else {
+            Part aggregatedTailPart = aggregatedParts.get(aggregatedParts.size() - 1);
+            Part currentResponseHeadPart = parts.get(0);
+            if (!aggregatedTailPart.hasText() || !currentResponseHeadPart.hasText()) {
+              aggregatedParts.addAll(parts);
+            } else {
+              aggregatedParts.remove(aggregatedParts.size() - 1);
+              aggregatedParts.add(
+                  Part.newBuilder()
+                      .setText(aggregatedTailPart.getText() + currentResponseHeadPart.getText())
+                      .build());
+              aggregatedParts.addAll(parts.subList(1, parts.size()));
+            }
+          }
+          aggregatedContentParts.put(index, aggregatedParts);
+        }
+
+        // Aggregates citations
+        if (candidate.hasCitationMetadata()) {
+          List<Citation> citations = candidate.getCitationMetadata().getCitationsList();
+          List<Citation> aggregatedCitations =
+              aggregatedCitationMetadata.containsKey(index)
+                  ? aggregatedCitationMetadata.get(index)
+                  : new ArrayList<>();
+          aggregatedCitations.addAll(citations);
+          aggregatedCitationMetadata.put(index, aggregatedCitations);
+        }
+      }
+    }
+
+    // Update candidates with aggregated data
+    List<Candidate> aggregatedCandidates = new ArrayList<>();
+    candidates.forEach(
+        (index, candidate) -> {
+          Builder candidateBuilder = candidate.toBuilder();
+          if (aggregatedContentParts.containsKey(index)) {
+            candidateBuilder.setContent(
+                Content.newBuilder()
+                    .setRole("model")
+                    .addAllParts(aggregatedContentParts.get(index)));
+          }
+          if (aggregatedCitationMetadata.containsKey(index)) {
+            candidateBuilder.setCitationMetadata(
+                CitationMetadata.newBuilder()
+                    .addAllCitations(aggregatedCitationMetadata.get(index)));
+          }
+          aggregatedCandidates.add(candidateBuilder.build());
+        });
+
+    res = res.toBuilder().clearCandidates().addAllCandidates(aggregatedCandidates).build();
+
+    return res;
   }
 }

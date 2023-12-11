@@ -25,7 +25,7 @@ option csharp_namespace = "Google.Cloud.VertexAI.V1Beta1";
 option go_package = "cloud.google.com/go/vertexai/apiv1beta1/vertexaipb;vertexaipb";
 option java_multiple_files = true;
 option java_outer_classname = "ContentProto";
-option java_package = "com.google.cloud.vertexai.v1beta1";
+option java_package = "com.google.cloud.vertexai.api";
 option php_namespace = "Google\\Cloud\\VertexAI\\V1beta1";
 option ruby_package = "Google::Cloud::VertexAI::V1beta1";
 

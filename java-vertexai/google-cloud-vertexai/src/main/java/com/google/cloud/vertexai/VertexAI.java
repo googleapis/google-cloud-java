@@ -17,8 +17,8 @@
 package com.google.cloud.vertexai;
 
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.vertexai.v1beta1.PredictionServiceClient;
-import com.google.cloud.vertexai.v1beta1.PredictionServiceSettings;
+import com.google.cloud.vertexai.api.PredictionServiceClient;
+import com.google.cloud.vertexai.api.PredictionServiceSettings;
 import java.io.IOException;
 
 /**

@@ -20,12 +20,12 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 import static org.mockito.Mockito.when;
 
-import com.google.cloud.vertexai.v1beta1.Candidate;
-import com.google.cloud.vertexai.v1beta1.Candidate.FinishReason;
-import com.google.cloud.vertexai.v1beta1.Content;
-import com.google.cloud.vertexai.v1beta1.FileData;
-import com.google.cloud.vertexai.v1beta1.GenerateContentResponse;
-import com.google.cloud.vertexai.v1beta1.Part;
+import com.google.cloud.vertexai.api.Candidate;
+import com.google.cloud.vertexai.api.Candidate.FinishReason;
+import com.google.cloud.vertexai.api.Content;
+import com.google.cloud.vertexai.api.FileData;
+import com.google.cloud.vertexai.api.GenerateContentResponse;
+import com.google.cloud.vertexai.api.Part;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Iterator;
