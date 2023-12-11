@@ -241,7 +241,6 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
   }
 
-
   @Ignore("need to make the test compatible with Mockito 4.x")
   @Test
   public void testGenerateContentwithContents() throws Exception {

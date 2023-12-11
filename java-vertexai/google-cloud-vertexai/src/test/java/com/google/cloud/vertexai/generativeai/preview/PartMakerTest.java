@@ -85,5 +85,4 @@ public final class PartMakerTest {
     assertThat(part.getFileData().getMimeType()).isEqualTo("image/gif");
     assertThat(part.getFileData().getFileUri()).isEqualTo(fileUrl.toString());
   }
-
 }

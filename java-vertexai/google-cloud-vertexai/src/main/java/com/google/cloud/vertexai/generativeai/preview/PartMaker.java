@@ -29,8 +29,7 @@ public class PartMaker {
   private PartMaker() {}
 
   /**
-   * Make a {@link com.google.cloud.vertexai.api.Part} from mimeType and data (or link to the
-   * data).
+   * Make a {@link com.google.cloud.vertexai.api.Part} from mimeType and data (or link to the data).
    *
    * @param mimeType currently accepted values are "image/png", "image/jpeg", "video/mp4",
    *     "video/mpeg", "video/quicktime", "video/x-msvideo", "video/x-ms-wmv", "video/x-flv"

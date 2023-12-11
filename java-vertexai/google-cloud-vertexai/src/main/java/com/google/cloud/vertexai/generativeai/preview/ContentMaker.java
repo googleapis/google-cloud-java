@@ -67,8 +67,8 @@ public class ContentMaker {
   /**
    * Create a content from an array of Objects, assuming the role is "user".
    *
-   * <p>The resulting content can contain multiple {@link com.google.cloud.vertexai.api.Part}s.
-   * Each element in the array becomes one part.
+   * <p>The resulting content can contain multiple {@link com.google.cloud.vertexai.api.Part}s. Each
+   * element in the array becomes one part.
    *
    * <p>To create a non-text modality content for any other
    *

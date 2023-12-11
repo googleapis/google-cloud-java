@@ -73,8 +73,8 @@ public class GenerativeModel {
    *
    * @param modelName the name of the generative model. See {@link Constants#GENERATIVE_MODEL_NAMES}
    *     for all the available names
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
-   *     that will be used by default for generating response
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance that
+   *     will be used by default for generating response
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
    *     for the generative model
    */
@@ -87,8 +87,8 @@ public class GenerativeModel {
    *
    * @param modelName the name of the generative model. See {@link Constants#GENERATIVE_MODEL_NAMES}
    *     for all the available names
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
-   *     that will be used by default for generating response
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance that
+   *     will be used by default for generating response
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
    *     for the generative model
    * @param transport the {@link Transport} layer for API calls in the generative model. It
@@ -104,8 +104,8 @@ public class GenerativeModel {
    *
    * @param modelName the name of the generative model. See {@link Constants#GENERATIVE_MODEL_NAMES}
    *     for all the available names
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting}
-   *     instances that will be used by default for generating response
+   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} instances
+   *     that will be used by default for generating response
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
    *     for the generative model
    */
@@ -118,8 +118,8 @@ public class GenerativeModel {
    *
    * @param modelName the name of the generative model. See {@link Constants#GENERATIVE_MODEL_NAMES}
    *     for all the available names
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting}
-   *     instances that will be used by default for generating response
+   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} instances
+   *     that will be used by default for generating response
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
    *     for the generative model
    * @param transport the {@link Transport} layer for API calls in the generative model. It
@@ -138,10 +138,10 @@ public class GenerativeModel {
    *
    * @param modelName the name of the generative model. See {@link Constants#GENERATIVE_MODEL_NAMES}
    *     for all the available names
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance that
+   *     will be used by default for generating response
+   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} instances
    *     that will be used by default for generating response
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting}
-   *     instances that will be used by default for generating response
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
    *     for the generative model
    */
@@ -158,10 +158,10 @@ public class GenerativeModel {
    *
    * @param modelName the name of the generative model. See {@link Constants#GENERATIVE_MODEL_NAMES}
    *     for all the available names
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance that
+   *     will be used by default for generating response
+   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} instances
    *     that will be used by default for generating response
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting}
-   *     instances that will be used by default for generating response
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
    *     for the generative model
    * @param transport the {@link Transport} layer for API calls in the generative model. It
@@ -200,8 +200,8 @@ public class GenerativeModel {
    * Count tokens in a text message.
    *
    * @param text a text message to count tokens
-   * @return a {@link com.google.cloud.vertexai.api.CountTokensResponse} instance that contains
-   *     the total tokens and total billable characters of the given list of contents
+   * @return a {@link com.google.cloud.vertexai.api.CountTokensResponse} instance that contains the
+   *     total tokens and total billable characters of the given list of contents
    * @throws IOException if an I/O error occurs while making the API call
    */
   public CountTokensResponse countTokens(String text) throws IOException {
@@ -215,8 +215,8 @@ public class GenerativeModel {
    * Count tokens in a list of contents.
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to count tokens
-   * @return a {@link com.google.cloud.vertexai.api.CountTokensResponse} instance that contains
-   *     the total tokens and total billable characters of the given list of contents
+   * @return a {@link com.google.cloud.vertexai.api.CountTokensResponse} instance that contains the
+   *     total tokens and total billable characters of the given list of contents
    * @throws IOException if an I/O error occurs while making the API call
    */
   public CountTokensResponse countTokens(List<Content> contents) throws IOException {
@@ -228,10 +228,10 @@ public class GenerativeModel {
   /**
    * Send CountTokensRequest given a request builder.
    *
-   * @param requestBuilder a {@link com.google.cloud.vertexai.api.CountTokensRequest.Builder}
-   *     that contains a list of contents
-   * @return a {@link com.google.cloud.vertexai.api.CountTokensResponse} instance that contains
-   *     the total tokens and total billable characters of the given list of contents
+   * @param requestBuilder a {@link com.google.cloud.vertexai.api.CountTokensRequest.Builder} that
+   *     contains a list of contents
+   * @return a {@link com.google.cloud.vertexai.api.CountTokensResponse} instance that contains the
+   *     total tokens and total billable characters of the given list of contents
    * @throws IOException if an I/O error occurs while making the API call
    */
   private CountTokensResponse countTokensFromBuilder(CountTokensRequest.Builder requestBuilder)
@@ -249,8 +249,8 @@ public class GenerativeModel {
    * Generate content from generative model given a text.
    *
    * @param text a text message to send to the generative model
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that
-   *     contains response contents and other metadata
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
   public GenerateContentResponse generateContent(String text) throws IOException {
@@ -261,10 +261,10 @@ public class GenerativeModel {
    * Generate content from generative model given a text and generation config.
    *
    * @param text a text message to send to the generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
-   *     for generating response. {@link #getGenerationConfig} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that
-   *     contains response contents and other metadata
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
+   *     generating response. {@link #getGenerationConfig} will not be used if this is set
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
   public GenerateContentResponse generateContent(String text, GenerationConfig generationConfig)
@@ -278,8 +278,8 @@ public class GenerativeModel {
    * @param text a text message to send to the generative model
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
    *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that
-   *     contains response contents and other metadata
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
   public GenerateContentResponse generateContent(String text, List<SafetySetting> safetySettings)
@@ -291,12 +291,12 @@ public class GenerativeModel {
    * Generate content from generative model given a text, generation config, and safety settings.
    *
    * @param text a text message to send to the generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
-   *     for generating response. {@link #getGenerationConfig} will not be used if this is set
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
+   *     generating response. {@link #getGenerationConfig} will not be used if this is set
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
    *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that
-   *     contains response contents and other metadata
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
   public GenerateContentResponse generateContent(
@@ -313,8 +313,8 @@ public class GenerativeModel {
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
    *     generative model
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that
-   *     contains response contents and other metadata
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
   public GenerateContentResponse generateContent(List<Content> contents) throws IOException {
@@ -326,10 +326,10 @@ public class GenerativeModel {
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
    *     generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
-   *     for generating response. {@link #getGenerationConfig} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that
-   *     contains response contents and other metadata
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
+   *     generating response. {@link #getGenerationConfig} will not be used if this is set
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
   public GenerateContentResponse generateContent(
@@ -344,8 +344,8 @@ public class GenerativeModel {
    *     generative model
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
    *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that
-   *     contains response contents and other metadata
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
   public GenerateContentResponse generateContent(
@@ -359,12 +359,12 @@ public class GenerativeModel {
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
    *     generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
-   *     for generating response. {@link #getGenerationConfig} will not be used if this is set
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
+   *     generating response. {@link #getGenerationConfig} will not be used if this is set
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
    *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that
-   *     contains response contents and other metadata
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
   public GenerateContentResponse generateContent(
@@ -387,10 +387,9 @@ public class GenerativeModel {
   /**
    * Generate content from this model given a single content.
    *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative
-   *     model
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that
-   *     contains response contents and other metadata
+   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
   public GenerateContentResponse generateContent(Content content) throws IOException {
@@ -400,12 +399,11 @@ public class GenerativeModel {
   /**
    * Generate content from this model given a single content and generation config.
    *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative
-   *     model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
-   *     for generating response. {@link #getGenerationConfig} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that
-   *     contains response contents and other metadata
+   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
+   *     generating response. {@link #getGenerationConfig} will not be used if this is set
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
   public GenerateContentResponse generateContent(Content content, GenerationConfig generationConfig)
@@ -416,12 +414,11 @@ public class GenerativeModel {
   /**
    * Generate content from this model given a single content and safety settings.
    *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative
-   *     model
+   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
    *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that
-   *     contains response contents and other metadata
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
   public GenerateContentResponse generateContent(
@@ -433,14 +430,13 @@ public class GenerativeModel {
    * Generate content from generative model given a single content, generation config, and safety
    * settings.
    *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative
-   *     model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
-   *     for generating response. {@link #getGenerationConfig} will not be used if this is set
+   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
+   *     generating response. {@link #getGenerationConfig} will not be used if this is set
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
    *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that
-   *     contains response contents and other metadata
+   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
+   *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
   public GenerateContentResponse generateContent(
@@ -467,8 +463,8 @@ public class GenerativeModel {
    * config.
    *
    * @param text a text message to send to the generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
-   *     for generating response. {@link #getGenerationConfig} will not be used if this is set
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
+   *     generating response. {@link #getGenerationConfig} will not be used if this is set
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
@@ -498,8 +494,8 @@ public class GenerativeModel {
    * and safety settings.
    *
    * @param text a text message to send to the generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
-   *     for generating response. {@link #getGenerationConfig} will not be used if this is set
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
+   *     generating response. {@link #getGenerationConfig} will not be used if this is set
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
    *     generating response. {@link #getSafetySettings} will not be used if this is set
    * @return a {@link ResponseStream} that contains a streaming of {@link
@@ -518,8 +514,8 @@ public class GenerativeModel {
   /**
    * Generate content with streaming support from generative model given a single Content.
    *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative
-   *     model. The role of the content is "user".
+   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model.
+   *     The role of the content is "user".
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
@@ -533,10 +529,9 @@ public class GenerativeModel {
    * Generate content with streaming support from generative model given a single Content and
    * generation config.
    *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative
-   *     model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
-   *     for generating response. {@link #getGenerationConfig} will not be used if this is set
+   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
+   *     generating response. {@link #getGenerationConfig} will not be used if this is set
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
@@ -550,8 +545,7 @@ public class GenerativeModel {
    * Generate content with streaming support from generative model given a single content and safety
    * settings.
    *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative
-   *     model
+   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
    *     generating response. {@link #getSafetySettings} will not be used if this is set
    * @return a {@link ResponseStream} that contains a streaming of {@link
@@ -567,10 +561,9 @@ public class GenerativeModel {
    * Generate content with streaming support from generative model given a single content,
    * generation config, and safety settings.
    *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative
-   *     model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
-   *     for generating response. {@link #getGenerationConfig} will not be used if this is set
+   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
+   *     generating response. {@link #getGenerationConfig} will not be used if this is set
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
    *     generating response. {@link #getSafetySettings} will not be used if this is set
    * @return a {@link ResponseStream} that contains a streaming of {@link
@@ -603,8 +596,8 @@ public class GenerativeModel {
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
    *     generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
-   *     for generating response. {@link #getGenerationConfig} will not be used if this is set
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
+   *     generating response. {@link #getGenerationConfig} will not be used if this is set
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
@@ -637,8 +630,8 @@ public class GenerativeModel {
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
    *     generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance
-   *     for generating response. {@link #getGenerationConfig} will not be used if this is set
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
+   *     generating response. {@link #getGenerationConfig} will not be used if this is set
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
    *     generating response. {@link #getSafetySettings} will not be used if this is set
    * @return a {@link ResponseStream} that contains a streaming of {@link
@@ -665,8 +658,8 @@ public class GenerativeModel {
   /**
    * A base generateContentStream method that will be used internally.
    *
-   * @param requestBuilder a {@link
-   *     com.google.cloud.vertexai.api.GenerateContentRequest.Builder} instance
+   * @param requestBuilder a {@link com.google.cloud.vertexai.api.GenerateContentRequest.Builder}
+   *     instance
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
@@ -736,8 +729,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Returns the {@link com.google.cloud.vertexai.api.GenerationConfig} of this generative
-   * model.
+   * Returns the {@link com.google.cloud.vertexai.api.GenerationConfig} of this generative model.
    */
   public GenerationConfig getGenerationConfig() {
     return this.generationConfig;
