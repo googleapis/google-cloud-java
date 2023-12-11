@@ -11,6 +11,6 @@
   "repo_short": "java-vertexai",
   "distribution_name": "com.google.cloud:google-cloud-vertexai",
   "api_id": "vertexai.googleapis.com",
-  "library_type": "GAPIC_AUTO",
+  "library_type": "GAPIC_COMBO",
   "requires_billing": true
 }
