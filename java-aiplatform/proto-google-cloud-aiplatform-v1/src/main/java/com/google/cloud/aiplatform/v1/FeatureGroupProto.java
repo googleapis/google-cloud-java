@@ -55,7 +55,7 @@ public final class FeatureGroupProto {
           + "m/v1/io.proto\032\037google/protobuf/timestamp"
           + ".proto\"\231\005\n\014FeatureGroup\022F\n\tbig_query\030\007 \001"
           + "(\01321.google.cloud.aiplatform.v1.FeatureG"
-          + "roup.BigQueryH\000\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\0225\n\013c"
+          + "roup.BigQueryH\000\022\022\n\004name\030\001 \001(\tB\004\342A\001\010\0225\n\013c"
           + "reate_time\030\002 \001(\0132\032.google.protobuf.Times"
           + "tampB\004\342A\001\003\0225\n\013update_time\030\003 \001(\0132\032.google"
           + ".protobuf.TimestampB\004\342A\001\003\022\022\n\004etag\030\004 \001(\tB"

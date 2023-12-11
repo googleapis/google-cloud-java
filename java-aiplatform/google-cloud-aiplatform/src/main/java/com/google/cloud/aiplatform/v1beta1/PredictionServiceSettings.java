@@ -136,6 +136,12 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     return ((PredictionServiceStubSettings) getStubSettings()).countTokensSettings();
   }
 
+  /** Returns the object with the settings used for calls to streamGenerateContent. */
+  public ServerStreamingCallSettings<GenerateContentRequest, GenerateContentResponse>
+      streamGenerateContentSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).streamGenerateContentSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -309,6 +315,12 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     public UnaryCallSettings.Builder<CountTokensRequest, CountTokensResponse>
         countTokensSettings() {
       return getStubSettingsBuilder().countTokensSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to streamGenerateContent. */
+    public ServerStreamingCallSettings.Builder<GenerateContentRequest, GenerateContentResponse>
+        streamGenerateContentSettings() {
+      return getStubSettingsBuilder().streamGenerateContentSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

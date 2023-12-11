@@ -29,6 +29,8 @@ import com.google.cloud.aiplatform.v1.DirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1.DirectRawPredictResponse;
 import com.google.cloud.aiplatform.v1.ExplainRequest;
 import com.google.cloud.aiplatform.v1.ExplainResponse;
+import com.google.cloud.aiplatform.v1.GenerateContentRequest;
+import com.google.cloud.aiplatform.v1.GenerateContentResponse;
 import com.google.cloud.aiplatform.v1.PredictRequest;
 import com.google.cloud.aiplatform.v1.PredictResponse;
 import com.google.cloud.aiplatform.v1.RawPredictRequest;
@@ -90,6 +92,11 @@ public abstract class PredictionServiceStub implements BackgroundResource {
 
   public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     throw new UnsupportedOperationException("Not implemented: explainCallable()");
+  }
+
+  public ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
+      streamGenerateContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamGenerateContentCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -988,6 +988,40 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Generate content with multimodal inputs with streaming support.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   GenerateContentRequest request =
+   *       GenerateContentRequest.newBuilder()
+   *           .setModel("model104069929")
+   *           .addAllContents(new ArrayList<Content>())
+   *           .addAllTools(new ArrayList<Tool>())
+   *           .addAllSafetySettings(new ArrayList<SafetySetting>())
+   *           .setGenerationConfig(GenerationConfig.newBuilder().build())
+   *           .build();
+   *   ServerStream<GenerateContentResponse> stream =
+   *       predictionServiceClient.streamGenerateContentCallable().call(request);
+   *   for (GenerateContentResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
+      streamGenerateContentCallable() {
+    return stub.streamGenerateContentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:

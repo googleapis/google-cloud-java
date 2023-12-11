@@ -46,7 +46,7 @@ public final class FeatureViewSyncProto {
           + "oto\032\031google/api/resource.proto\032\037google/p"
           + "rotobuf/timestamp.proto\032\027google/rpc/stat"
           + "us.proto\032\032google/type/interval.proto\"\201\003\n"
-          + "\017FeatureViewSync\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\0225\n\013"
+          + "\017FeatureViewSync\022\022\n\004name\030\001 \001(\tB\004\342A\001\010\0225\n\013"
           + "create_time\030\002 \001(\0132\032.google.protobuf.Time"
           + "stampB\004\342A\001\003\022-\n\010run_time\030\005 \001(\0132\025.google.t"
           + "ype.IntervalB\004\342A\001\003\022.\n\014final_status\030\004 \001(\013"

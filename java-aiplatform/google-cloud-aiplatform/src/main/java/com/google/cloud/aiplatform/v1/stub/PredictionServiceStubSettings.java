@@ -49,6 +49,8 @@ import com.google.cloud.aiplatform.v1.DirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1.DirectRawPredictResponse;
 import com.google.cloud.aiplatform.v1.ExplainRequest;
 import com.google.cloud.aiplatform.v1.ExplainResponse;
+import com.google.cloud.aiplatform.v1.GenerateContentRequest;
+import com.google.cloud.aiplatform.v1.GenerateContentResponse;
 import com.google.cloud.aiplatform.v1.PredictRequest;
 import com.google.cloud.aiplatform.v1.PredictResponse;
 import com.google.cloud.aiplatform.v1.RawPredictRequest;
@@ -130,6 +132,8 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
   private final StreamingCallSettings<StreamingRawPredictRequest, StreamingRawPredictResponse>
       streamingRawPredictSettings;
   private final UnaryCallSettings<ExplainRequest, ExplainResponse> explainSettings;
+  private final ServerStreamingCallSettings<GenerateContentRequest, GenerateContentResponse>
+      streamGenerateContentSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -234,6 +238,12 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
   /** Returns the object with the settings used for calls to explain. */
   public UnaryCallSettings<ExplainRequest, ExplainResponse> explainSettings() {
     return explainSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamGenerateContent. */
+  public ServerStreamingCallSettings<GenerateContentRequest, GenerateContentResponse>
+      streamGenerateContentSettings() {
+    return streamGenerateContentSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -346,6 +356,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     serverStreamingPredictSettings = settingsBuilder.serverStreamingPredictSettings().build();
     streamingRawPredictSettings = settingsBuilder.streamingRawPredictSettings().build();
     explainSettings = settingsBuilder.explainSettings().build();
+    streamGenerateContentSettings = settingsBuilder.streamGenerateContentSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -371,6 +382,9 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
             StreamingRawPredictRequest, StreamingRawPredictResponse>
         streamingRawPredictSettings;
     private final UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings;
+    private final ServerStreamingCallSettings.Builder<
+            GenerateContentRequest, GenerateContentResponse>
+        streamGenerateContentSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -414,6 +428,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       serverStreamingPredictSettings = ServerStreamingCallSettings.newBuilder();
       streamingRawPredictSettings = StreamingCallSettings.newBuilder();
       explainSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      streamGenerateContentSettings = ServerStreamingCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -446,6 +461,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       serverStreamingPredictSettings = settings.serverStreamingPredictSettings.toBuilder();
       streamingRawPredictSettings = settings.streamingRawPredictSettings.toBuilder();
       explainSettings = settings.explainSettings.toBuilder();
+      streamGenerateContentSettings = settings.streamGenerateContentSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -507,6 +523,11 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       builder
           .explainSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .streamGenerateContentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -596,6 +617,12 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     /** Returns the builder for the settings used for calls to explain. */
     public UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings() {
       return explainSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamGenerateContent. */
+    public ServerStreamingCallSettings.Builder<GenerateContentRequest, GenerateContentResponse>
+        streamGenerateContentSettings() {
+      return streamGenerateContentSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

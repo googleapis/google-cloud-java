@@ -56,7 +56,7 @@ public final class FeatureGroupProto {
           + "tobuf/timestamp.proto\"\250\005\n\014FeatureGroup\022K"
           + "\n\tbig_query\030\007 \001(\01326.google.cloud.aiplatf"
           + "orm.v1beta1.FeatureGroup.BigQueryH\000\022\022\n\004n"
-          + "ame\030\001 \001(\tB\004\342A\001\003\0225\n\013create_time\030\002 \001(\0132\032.g"
+          + "ame\030\001 \001(\tB\004\342A\001\010\0225\n\013create_time\030\002 \001(\0132\032.g"
           + "oogle.protobuf.TimestampB\004\342A\001\003\0225\n\013update"
           + "_time\030\003 \001(\0132\032.google.protobuf.TimestampB"
           + "\004\342A\001\003\022\022\n\004etag\030\004 \001(\tB\004\342A\001\001\022O\n\006labels\030\005 \003("
