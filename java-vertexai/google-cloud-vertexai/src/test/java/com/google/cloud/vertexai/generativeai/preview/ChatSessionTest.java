@@ -210,6 +210,29 @@ public final class ChatSessionTest {
   }
 
   @Test
+  public void sendMessageWithTextThenModifyHistory_historyChangedToNewContentList()
+      throws IOException {
+
+    // (Arrange) Set up the return value of the generateContent
+    when(mockGenerativeModel.generateContent(
+            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+        .thenReturn(RESPONSE_FROM_UNARY_CALL);
+
+    // (Act) Send text message via sendMessage and get the history.
+    GenerateContentResponse response = chat.sendMessage(SAMPLE_MESSAGE1);
+    List<Content> history = chat.getHistory();
+    // (Assert) Assert that 1) the first content contains the user request text, and 2) the second
+    // content in history contains the response.
+    assertThat(history.get(0).getParts(0).getText()).isEqualTo(SAMPLE_MESSAGE1);
+    assertThat(history.get(1).getParts(0).getText()).isEqualTo(FULL_RESPONSE_TEXT);
+
+    // (Act) Set history to an empty list
+    chat.setHistory(Arrays.asList());
+    // (Assert) Asser that the history is empty.
+    assertThat(chat.getHistory().size()).isEqualTo(0);
+  }
+
+  @Test
   public void sendMessageStreamWithText_throwsIllegalStateExceptionWhenFinishReasonIsNotSTOP()
       throws IOException {
     // (Arrange) Set up the responseStream
@@ -234,10 +257,11 @@ public final class ChatSessionTest {
     // reason.
     IllegalStateException thrown =
         assertThrows(IllegalStateException.class, () -> chat.getHistory());
-    assertThat(thrown)
-        .hasMessageThat()
-        .isEqualTo(
-            "Response stream did not finish normally. Finish reason is FINISH_REASON_UNSPECIFIED.");
+    assertThat(thrown).hasMessageThat().isEqualTo("Rerun getHistory() to get cleaned history.");
+
+    // Assert that the history can be fetched again and it's empty.
+    List<Content> history = chat.getHistory();
+    assertThat(history.size()).isEqualTo(0);
   }
 
   @Test
@@ -255,8 +279,9 @@ public final class ChatSessionTest {
     // reason.
     IllegalStateException thrown =
         assertThrows(IllegalStateException.class, () -> chat.getHistory());
-    assertThat(thrown)
-        .hasMessageThat()
-        .isEqualTo("Response did not finish normally. Finish reason is SAFETY.");
+    assertThat(thrown).hasMessageThat().isEqualTo("Rerun getHistory() to get cleaned history.");
+    // Assert that the history can be fetched again and it's empty.
+    List<Content> history = chat.getHistory();
+    assertThat(history.size()).isEqualTo(0);
   }
 }

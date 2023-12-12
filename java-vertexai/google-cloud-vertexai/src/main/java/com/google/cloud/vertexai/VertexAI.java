@@ -146,7 +146,7 @@ public class VertexAI implements AutoCloseable {
       PredictionServiceSettings settings =
           PredictionServiceSettings.newBuilder()
               .setEndpoint(
-                  String.format("%s-autopush-aiplatform.sandbox.googleapis.com:443", this.location))
+                  String.format("%s-prod-aiplatform.sandbox.googleapis.com:443", this.location))
               .setCredentialsProvider(FixedCredentialsProvider.create(this.credentials))
               .build();
       predictionServiceClient = PredictionServiceClient.create(settings);
@@ -163,7 +163,7 @@ public class VertexAI implements AutoCloseable {
       PredictionServiceSettings settings =
           PredictionServiceSettings.newHttpJsonBuilder()
               .setEndpoint(
-                  String.format("%s-autopush-aiplatform.sandbox.googleapis.com:443", this.location))
+                  String.format("%s-prod-aiplatform.sandbox.googleapis.com:443", this.location))
               .setCredentialsProvider(FixedCredentialsProvider.create(this.credentials))
               .build();
       predictionServiceRestClient = PredictionServiceClient.create(settings);
