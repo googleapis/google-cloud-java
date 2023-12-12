@@ -5,6 +5,57 @@
       "changes": [
         {
           "type": "feat",
+          "sha": "b6c07b96a10c1d1920138b8eae06385af14823f1",
+          "message": "[aiplatform] add Content",
+          "issues": [
+            "10116"
+          ]
+        }
+      ],
+      "version": "1.26.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "9fd69848-112a-4048-bd96-ab0eef3b473d",
+      "createTime": "2023-12-12T19:18:10.653Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "91eccd5a3621cd3b112f05d3b0dd6b4aec0fe9b2",
+          "message": "[vertexai] Initial release of Vertex Java SDK",
+          "issues": [
+            "10129"
+          ]
+        }
+      ],
+      "version": "1.26.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vertexai",
+      "id": "e0bc74e8-b9c3-4d3d-b912-c3b34ff860d0",
+      "createTime": "2023-12-12T19:18:10.645Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "91eccd5a3621cd3b112f05d3b0dd6b4aec0fe9b2",
+          "message": "[vertexai] Initial release of Vertex Java SDK",
+          "issues": [
+            "10129"
+          ]
+        }
+      ],
+      "version": "1.26.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-resourcemanager",
+      "id": "8e0276ad-a6a8-4825-89b8-4dd805e78cfc",
+      "createTime": "2023-12-12T19:18:10.639Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
           "sha": "7d1f4fe6c044fd7328c5fdd78ba16c166e801e00",
           "message": "[file] Added REGIONAL tier support in the v1beta1 API",
           "issues": [
@@ -16861,5 +16912,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-12-04T15:18:59.628Z"
+  "updateTime": "2023-12-12T19:18:10.653Z"
 }

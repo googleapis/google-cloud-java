@@ -42,20 +42,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-networkconnectivity</artifactId>
-  <version>1.30.0</version>
+  <version>1.31.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-networkconnectivity:1.30.0'
+implementation 'com.google.cloud:google-cloud-networkconnectivity:1.31.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-networkconnectivity" % "1.30.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-networkconnectivity" % "1.31.0"
 ```
 <!-- {x-version-update-end} -->
 

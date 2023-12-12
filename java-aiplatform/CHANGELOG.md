@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.33.0 (2023-12-12)
+
+### Features
+
+* add Content ([#10116](https://github.com/googleapis/google-cloud-java/issues/10116)) ([b6c07b9](https://github.com/googleapis/google-cloud-java/commit/b6c07b96a10c1d1920138b8eae06385af14823f1))
+
+
+
 ## 3.32.0 (2023-12-04)
 
 ### Features
