@@ -18,7 +18,9 @@ package com.google.cloud.vertexai.generativeai.preview;
 
 import static com.google.cloud.vertexai.generativeai.preview.ResponseHandler.aggregateStreamIntoResponse;
 import static com.google.cloud.vertexai.generativeai.preview.ResponseHandler.getContent;
+import static com.google.cloud.vertexai.generativeai.preview.ResponseHandler.getFinishReason;
 
+import com.google.cloud.vertexai.api.Candidate.FinishReason;
 import com.google.cloud.vertexai.api.Content;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.GenerationConfig;
@@ -45,7 +47,8 @@ public class ChatSession {
    * Sends a message to the model and returns a stream of responses.
    *
    * @param text the message to be sent.
-   * @return a stream of responses.
+   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
+   *     stream by stream() method.
    */
   public ResponseStream<GenerateContentResponse> sendMessageStream(String text) throws IOException {
     return sendMessageStream(text, null, null);
@@ -56,7 +59,8 @@ public class ChatSession {
    *
    * @param text the message to be sent.
    * @param generationConfig the generation config.
-   * @return a stream of responses.
+   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
+   *     stream by stream() method.
    */
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       String text, GenerationConfig generationConfig) throws IOException {
@@ -68,7 +72,8 @@ public class ChatSession {
    *
    * @param text the message to be sent.
    * @param safetySettings the safety settings.
-   * @return a stream of responses.
+   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
+   *     stream by stream() method.
    */
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       String text, List<SafetySetting> safetySettings) throws IOException {
@@ -81,7 +86,8 @@ public class ChatSession {
    * @param text the message to be sent.
    * @param generationConfig the generation config.
    * @param safetySettings the safety settings.
-   * @return a stream of responses.
+   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
+   *     stream by stream() method.
    */
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       String text, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
@@ -101,7 +107,8 @@ public class ChatSession {
    * Sends a message to the model and returns a stream of responses.
    *
    * @param content the content to be sent.
-   * @return a stream of responses.
+   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
+   *     stream by stream() method.
    */
   public ResponseStream<GenerateContentResponse> sendMessageStream(Content content)
       throws IOException, IllegalArgumentException {
@@ -113,7 +120,8 @@ public class ChatSession {
    *
    * @param content the content to be sent.
    * @param generationConfig the generation config.
-   * @return a stream of responses.
+   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
+   *     stream by stream() method.
    */
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       Content content, GenerationConfig generationConfig)
@@ -126,7 +134,8 @@ public class ChatSession {
    *
    * @param content the content to be sent.
    * @param safetySettings the safety settings.
-   * @return a stream of responses.
+   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
+   *     stream by stream() method.
    */
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       Content content, List<SafetySetting> safetySettings)
@@ -140,7 +149,8 @@ public class ChatSession {
    * @param content the content to be sent.
    * @param generationConfig the generation config.
    * @param safetySettings the safety settings.
-   * @return a stream of responses.
+   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
+   *     stream by stream() method.
    */
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       Content content, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
@@ -270,6 +280,11 @@ public class ChatSession {
     return response;
   }
 
+  private void removeLastContent() {
+    int lastIndex = history.size() - 1;
+    history.remove(lastIndex);
+  }
+
   /**
    * Checks whether the last response is available and edit the history if necessary.
    *
@@ -281,10 +296,24 @@ public class ChatSession {
     } else if (currentResponseStream != null && !currentResponseStream.isConsumed()) {
       throw new IllegalStateException("Response stream is not consumed");
     } else if (currentResponseStream != null && currentResponseStream.isConsumed()) {
-      // TODO(zhenyiqi): also checks the finish reason, if it's not STOP, throw an error
-      history.add(getContent(aggregateStreamIntoResponse(currentResponseStream)));
+      GenerateContentResponse response = aggregateStreamIntoResponse(currentResponseStream);
+      FinishReason finishReason = getFinishReason(response);
+      if (finishReason != FinishReason.STOP && finishReason != FinishReason.MAX_TOKENS) {
+        // We also remove the request from the history.
+        removeLastContent();
+        throw new IllegalStateException(
+            String.format(
+                "Response stream did not finish normally. Finish reason is %s.", finishReason));
+      }
+      history.add(getContent(response));
     } else if (currentResponseStream == null && currentResponse != null) {
-      // TODO(zhenyiqi): also checks the finish reason, if it's not STOP, throw an error
+      FinishReason finishReason = getFinishReason(currentResponse);
+      // We also remove the request from the history.
+      if (finishReason != FinishReason.STOP && finishReason != FinishReason.MAX_TOKENS) {
+        removeLastContent();
+        throw new IllegalStateException(
+            String.format("Response did not finish normally. Finish reason is %s.", finishReason));
+      }
       history.add(getContent(currentResponse));
       currentResponse = null;
     }
