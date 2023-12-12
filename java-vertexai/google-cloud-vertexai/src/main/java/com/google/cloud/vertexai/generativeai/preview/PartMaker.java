@@ -23,7 +23,7 @@ import com.google.protobuf.ByteString;
 import java.net.URI;
 import java.net.URL;
 
-/** */
+/** Helper class to create {@link com.google.cloud.vertexai.api.Part} */
 public class PartMaker {
 
   private PartMaker() {}

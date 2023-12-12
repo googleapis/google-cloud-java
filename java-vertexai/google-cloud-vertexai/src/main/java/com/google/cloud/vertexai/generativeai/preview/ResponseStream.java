@@ -21,7 +21,7 @@ import java.util.Iterator;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-/** */
+/** An iterable of GenerateContentResponse. */
 public class ResponseStream<GenerateContentResponse> implements Iterable<GenerateContentResponse> {
 
   private ResponseStreamIteratorWithHistory<GenerateContentResponse> iteratorWithHistory;
@@ -43,10 +43,16 @@ public class ResponseStream<GenerateContentResponse> implements Iterable<Generat
     }
   }
 
+  /** Make a stream from the instance. */
   public Stream<GenerateContentResponse> stream() {
     return StreamSupport.stream(this.spliterator(), false);
   }
 
+  /**
+   * Whether the content has been consumed.
+   *
+   * <p>"consumed" means all the content has been iterated through.
+   */
   public boolean isConsumed() {
     return iteratorWithHistory.isConsumed();
   }

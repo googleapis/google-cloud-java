@@ -29,7 +29,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/** Helper class to handle GenerateContentResponse. */
+/** Helper class to post-process GenerateContentResponse. */
 public class ResponseHandler {
 
   /**
@@ -37,14 +37,15 @@ public class ResponseHandler {
    *
    * @param response a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance
    * @return a String that aggregates all the text parts in the response
-   * @throws IllegalArgumentException if the response has 0 or more than 1 candidates
+   * @throws IllegalArgumentException if the response has 0 or more than 1 candidates, or if the
+   *     response is blocked by safety reason or unauthorized citations
    */
   public static String getText(GenerateContentResponse response) {
-    if (response.getCandidatesCount() != 1) {
-      throw new IllegalArgumentException(
-          String.format(
-              "This response should have exactly 1 candidate, but it has %s.",
-              response.getCandidatesCount()));
+    FinishReason finishReason = getFinishReason(response);
+    if (finishReason == FinishReason.SAFETY) {
+      throw new IllegalArgumentException("The response is blocked due to safety reason.");
+    } else if (finishReason == FinishReason.RECITATION) {
+      throw new IllegalArgumentException("The response is blocked due to unauthorized citations.");
     }
 
     String text = "";
@@ -61,14 +62,15 @@ public class ResponseHandler {
    *
    * @param response a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance
    * @return the {@link com.google.cloud.vertexai.api.Content} in the response
-   * @throws IllegalArgumentException if the response has 0 or more than 1 candidates
+   * @throws IllegalArgumentException if the response has 0 or more than 1 candidates, or if the
+   *     response is blocked by safety reason or unauthorized citations
    */
   public static Content getContent(GenerateContentResponse response) {
-    if (response.getCandidatesCount() != 1) {
-      throw new IllegalArgumentException(
-          String.format(
-              "This response should have exactly 1 candidate, but it has %s.",
-              response.getCandidatesCount()));
+    FinishReason finishReason = getFinishReason(response);
+    if (finishReason == FinishReason.SAFETY) {
+      throw new IllegalArgumentException("The response is blocked due to safety reason.");
+    } else if (finishReason == FinishReason.RECITATION) {
+      throw new IllegalArgumentException("The response is blocked due to unauthorized citations.");
     }
 
     return response.getCandidates(0).getContent();
