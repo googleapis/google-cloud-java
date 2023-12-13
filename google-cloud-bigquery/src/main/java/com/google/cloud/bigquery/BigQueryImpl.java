@@ -437,7 +437,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
         if (matcher.find()) {
           // If the Job ALREADY EXISTS, retrieve it.
-          Job job = this.getJob(jobInfo.getJobId());
+          Job job = this.getJob(jobInfo.getJobId(), JobOption.fields(JobField.STATISTICS));
 
           long jobCreationTime = job.getStatistics().getCreationTime();
           long jobMinStaleTime = System.currentTimeMillis();

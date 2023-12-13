@@ -16,47 +16,27 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.cloud.bigquery.BigQuery.JobField.STATISTICS;
+import static com.google.cloud.bigquery.BigQuery.JobField.USER_EMAIL;
+import static com.google.cloud.bigquery.BigQueryImpl.optionMap;
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-import static org.mockito.Mockito.any;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import com.google.api.gax.paging.Page;
-import com.google.api.services.bigquery.model.ErrorProto;
-import com.google.api.services.bigquery.model.GetQueryResultsResponse;
-import com.google.api.services.bigquery.model.JobConfigurationQuery;
-import com.google.api.services.bigquery.model.QueryRequest;
-import com.google.api.services.bigquery.model.TableCell;
-import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
-import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
-import com.google.api.services.bigquery.model.TableDataList;
-import com.google.api.services.bigquery.model.TableRow;
+import com.google.api.services.bigquery.model.*;
+import com.google.api.services.bigquery.model.JobStatistics;
 import com.google.cloud.Policy;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
+import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.common.base.Function;
 import com.google.common.base.Supplier;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
+import com.google.common.collect.*;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.Collections;
@@ -422,12 +402,11 @@ public class BigQueryImplTest {
           BigQueryRpc.Option.START_INDEX, 0L);
 
   // Job options
-  private static final BigQuery.JobOption JOB_OPTION_FIELDS =
-      BigQuery.JobOption.fields(BigQuery.JobField.USER_EMAIL);
+  private static final JobOption JOB_OPTION_FIELDS = JobOption.fields(USER_EMAIL);
 
   // Job list options
   private static final BigQuery.JobListOption JOB_LIST_OPTION_FIELD =
-      BigQuery.JobListOption.fields(BigQuery.JobField.STATISTICS);
+      BigQuery.JobListOption.fields(STATISTICS);
   private static final BigQuery.JobListOption JOB_LIST_ALL_USERS =
       BigQuery.JobListOption.allUsers();
   private static final BigQuery.JobListOption JOB_LIST_STATE_FILTER =
@@ -1615,7 +1594,7 @@ public class BigQueryImplTest {
             any(com.google.api.services.bigquery.model.Job.class), capturedOptions.capture()))
         .thenReturn(newJobPb());
 
-    BigQuery.JobOption jobOptions = BigQuery.JobOption.fields(BigQuery.JobField.USER_EMAIL);
+    JobOption jobOptions = JobOption.fields(USER_EMAIL);
 
     bigquery = options.getService();
     bigquery.create(JobInfo.of(QueryJobConfiguration.of("SOME QUERY")), jobOptions);
@@ -1672,6 +1651,35 @@ public class BigQueryImplTest {
     verify(bigqueryRpcMock).create(jobCapture.capture(), eq(EMPTY_RPC_OPTIONS));
     verify(bigqueryRpcMock)
         .getJob(any(String.class), eq(id), eq((String) null), eq(EMPTY_RPC_OPTIONS));
+  }
+
+  @Test
+  public void testCreateJobTryGetNotRandom() {
+    Map<BigQueryRpc.Option, ?> withStatisticOption = optionMap(JobOption.fields(STATISTICS));
+    final String id = "testCreateJobTryGet-id";
+    String query = "SELECT * in FOO";
+
+    when(bigqueryRpcMock.create(jobCapture.capture(), eq(EMPTY_RPC_OPTIONS)))
+        .thenThrow(
+            new BigQueryException(
+                409,
+                "already exists, for some reason",
+                new RuntimeException("Already Exists: Job")));
+    when(bigqueryRpcMock.getJob(
+            any(String.class), eq(id), eq((String) null), eq(withStatisticOption)))
+        .thenReturn(
+            newJobPb()
+                .setId(id)
+                .setStatistics(new JobStatistics().setCreationTime(System.currentTimeMillis())));
+
+    bigquery = options.getService();
+    Job job =
+        ((BigQueryImpl) bigquery).create(JobInfo.of(JobId.of(id), QueryJobConfiguration.of(query)));
+    assertThat(job).isNotNull();
+    assertThat(jobCapture.getValue().getJobReference().getJobId()).isEqualTo(id);
+    verify(bigqueryRpcMock).create(jobCapture.capture(), eq(EMPTY_RPC_OPTIONS));
+    verify(bigqueryRpcMock)
+        .getJob(any(String.class), eq(id), eq((String) null), eq(withStatisticOption));
   }
 
   @Test
@@ -1925,7 +1933,7 @@ public class BigQueryImplTest {
             JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap()))
         .thenReturn(jobResponsePb);
     when(bigqueryRpcMock.getQueryResults(
-            PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+            PROJECT, JOB, null, optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
         .thenReturn(responsePb);
     when(bigqueryRpcMock.listTableData(
             PROJECT, DATASET, TABLE, Collections.<BigQueryRpc.Option, Object>emptyMap()))
@@ -1946,8 +1954,7 @@ public class BigQueryImplTest {
     verify(bigqueryRpcMock)
         .create(JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap());
     verify(bigqueryRpcMock)
-        .getQueryResults(
-            PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS));
+        .getQueryResults(PROJECT, JOB, null, optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS));
 
     verify(bigqueryRpcMock)
         .listTableData(PROJECT, DATASET, TABLE, Collections.<BigQueryRpc.Option, Object>emptyMap());
@@ -2003,10 +2010,7 @@ public class BigQueryImplTest {
     responseJob.getConfiguration().getQuery().setDestinationTable(TABLE_ID.toPb());
     when(bigqueryRpcMock.getJob(PROJECT, JOB, null, EMPTY_RPC_OPTIONS)).thenReturn(responseJob);
     when(bigqueryRpcMock.listTableData(
-            PROJECT,
-            DATASET,
-            TABLE,
-            BigQueryImpl.optionMap(BigQuery.TableDataListOption.pageToken(CURSOR))))
+            PROJECT, DATASET, TABLE, optionMap(BigQuery.TableDataListOption.pageToken(CURSOR))))
         .thenReturn(
             new TableDataList()
                 .setPageToken(CURSOR)
@@ -2044,10 +2048,7 @@ public class BigQueryImplTest {
     verify(bigqueryRpcMock).getJob(PROJECT, JOB, null, EMPTY_RPC_OPTIONS);
     verify(bigqueryRpcMock)
         .listTableData(
-            PROJECT,
-            DATASET,
-            TABLE,
-            BigQueryImpl.optionMap(BigQuery.TableDataListOption.pageToken(CURSOR)));
+            PROJECT, DATASET, TABLE, optionMap(BigQuery.TableDataListOption.pageToken(CURSOR)));
     verify(bigqueryRpcMock).queryRpc(eq(PROJECT), requestPbCapture.capture());
   }
 
@@ -2084,7 +2085,7 @@ public class BigQueryImplTest {
     responseJob.getConfiguration().getQuery().setDestinationTable(TABLE_ID.toPb());
     when(bigqueryRpcMock.getJob(PROJECT, JOB, null, EMPTY_RPC_OPTIONS)).thenReturn(responseJob);
     when(bigqueryRpcMock.getQueryResults(
-            PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+            PROJECT, JOB, null, optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
         .thenReturn(queryResultsResponsePb);
     when(bigqueryRpcMock.listTableData(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
         .thenReturn(new TableDataList().setRows(ImmutableList.of(TABLE_ROW)).setTotalRows(1L));
@@ -2108,8 +2109,7 @@ public class BigQueryImplTest {
     verify(bigqueryRpcMock).queryRpc(eq(PROJECT), requestPbCapture.capture());
     verify(bigqueryRpcMock).getJob(PROJECT, JOB, null, EMPTY_RPC_OPTIONS);
     verify(bigqueryRpcMock)
-        .getQueryResults(
-            PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS));
+        .getQueryResults(PROJECT, JOB, null, optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS));
     verify(bigqueryRpcMock).listTableData(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS);
   }
 
@@ -2143,7 +2143,7 @@ public class BigQueryImplTest {
     optionMap.put(pageSizeOption.getRpcOption(), pageSizeOption.getValue());
 
     when(bigqueryRpcMock.getQueryResults(
-            PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+            PROJECT, JOB, null, optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
         .thenReturn(responsePb);
     when(bigqueryRpcMock.listTableData(PROJECT, DATASET, TABLE, optionMap))
         .thenReturn(
@@ -2164,8 +2164,7 @@ public class BigQueryImplTest {
     verify(bigqueryRpcMock)
         .create(JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap());
     verify(bigqueryRpcMock)
-        .getQueryResults(
-            PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS));
+        .getQueryResults(PROJECT, JOB, null, optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS));
     verify(bigqueryRpcMock).listTableData(PROJECT, DATASET, TABLE, optionMap);
   }
 
@@ -2199,10 +2198,10 @@ public class BigQueryImplTest {
             JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap()))
         .thenReturn(jobResponsePb1);
     when(bigqueryRpcMock.getQueryResults(
-            PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+            PROJECT, JOB, null, optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
         .thenReturn(responsePb1);
     when(bigqueryRpcMock.getQueryResults(
-            PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+            PROJECT, JOB, null, optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
         .thenReturn(responsePb2);
     when(bigqueryRpcMock.listTableData(
             PROJECT, DATASET, TABLE, Collections.<BigQueryRpc.Option, Object>emptyMap()))
@@ -2223,11 +2222,9 @@ public class BigQueryImplTest {
     verify(bigqueryRpcMock)
         .create(JOB_INFO.toPb(), Collections.<BigQueryRpc.Option, Object>emptyMap());
     verify(bigqueryRpcMock)
-        .getQueryResults(
-            PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS));
+        .getQueryResults(PROJECT, JOB, null, optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS));
     verify(bigqueryRpcMock)
-        .getQueryResults(
-            PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS));
+        .getQueryResults(PROJECT, JOB, null, optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS));
     verify(bigqueryRpcMock)
         .listTableData(PROJECT, DATASET, TABLE, Collections.<BigQueryRpc.Option, Object>emptyMap());
   }
