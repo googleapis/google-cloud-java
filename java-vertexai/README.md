@@ -117,7 +117,7 @@ public class Main {
 
 To get a streamed output, you can use the `generateContentStream` method
 
-```
+```java
 package <your package name>
 
 import com.google.cloud.vertexai.VertexAI;
