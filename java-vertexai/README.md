@@ -91,7 +91,7 @@ Vertex AI provides [Generative AI Studio](generative-ai-studio) that supports te
 
 Vertex AI SDK allows you to access the service programmatically. The following code snippet is the most basic usage of SDK
 
-```
+```java
 package <your package name>
 
 import com.google.cloud.vertexai.VertexAI;
