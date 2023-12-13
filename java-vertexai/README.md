@@ -144,7 +144,7 @@ public class Main {
 
 To generate text based on data of multiple modalities, one needs to make a `Content`, which is made easier by `ContentMaker`:
 
-```
+```java
 package <your package name>;
 
 import com.google.cloud.vertexai.VertexAI;
