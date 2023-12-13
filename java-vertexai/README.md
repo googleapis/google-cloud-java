@@ -79,12 +79,12 @@ To acquire user credentials to use for [Application Default Credentials][adc], r
 
 ### Installation and setup
 
-You'll need to obtain the `google-cloud-vertexai` library.  See the [Add Dependency](#(Add Dependency)) section
+You'll need to obtain the `google-cloud-vertexai` library.  See the [Add Dependency](#add-dependency) section
 to add `google-cloud-vertexai` as a dependency in your code.
 
 ## About Vertex AI
 
-[Vertex AI][product-docs] is an integrated suite of machine learning tools and services for building and using ML models with AutoML or custom code. It was previously known as AI Platform. Vertex AI offers both novices and experts the best workbench for the entire machine learning development lifecycle. This SDK currently only supports Generative AI service on the Vertex AI platform. To access the full set of services on the Vertex AI, consider using the [`google-cloud-aiplatform` client libraries][aiplatform-client-libraries]. 
+[Vertex AI][product-docs] is an integrated suite of machine learning tools and services for building and using ML models with AutoML or custom code. It was previously known as AI Platform. Vertex AI offers both novices and experts the best workbench for the entire machine learning development lifecycle. This SDK currently only supports Generative AI service on the Vertex AI platform. To access the full set of services on the Vertex AI, consider using the [`google-cloud-aiplatform` client libraries][aiplatform-client-libraries].
 
 ### Vertex AI SDK
 Vertex AI provides [Generative AI Studio](generative-ai-studio) that supports text generation from multi-modality input via a set of most advanced models from Google. This brings out a wide range of applications.
@@ -106,7 +106,7 @@ public class Main {
   public static void main(String[] args) throws IOException {
     try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION);) {
 
-      GenerativeModel model = new GenerativeModel("gemini-pro, vertexAi);
+      GenerativeModel model = new GenerativeModel("gemini-pro", vertexAi);
 
       GenerateContentResponse response = model.generateContent("How are you?");
       // Do something with the response
@@ -293,7 +293,7 @@ public class Main {
   public static void main(String[] args) throws IOException {
     try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION, Transport.REST);) {
 
-      GenerativeModel model = new GenerativeModel("gemini-pro, vertexAi);
+      GenerativeModel model = new GenerativeModel("gemini-pro", vertexAi);
 
       GenerateContentResponse response = model.generateContent("How are you?");
       // Do something with the response
