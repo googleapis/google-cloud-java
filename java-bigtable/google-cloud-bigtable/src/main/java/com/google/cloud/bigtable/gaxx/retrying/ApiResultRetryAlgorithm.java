@@ -16,36 +16,38 @@
 package com.google.cloud.bigtable.gaxx.retrying;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.retrying.ResultRetryAlgorithm;
-import com.google.api.gax.retrying.TimedAttemptSettings;
+import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
+import com.google.api.gax.retrying.RetryingContext;
 import com.google.api.gax.rpc.ApiException;
-import com.google.api.gax.rpc.DeadlineExceededException;
-import org.threeten.bp.Duration;
 
 /** For internal use, public for technical reasons. */
 @InternalApi
-public class ApiResultRetryAlgorithm<ResponseT> implements ResultRetryAlgorithm<ResponseT> {
-  // Duration to sleep on if the error is DEADLINE_EXCEEDED.
-  public static final Duration DEADLINE_SLEEP_DURATION = Duration.ofMillis(1);
+public class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<ResponseT> {
 
+  /** Returns true if previousThrowable is an {@link ApiException} that is retryable. */
   @Override
-  public TimedAttemptSettings createNextAttempt(
-      Throwable prevThrowable, ResponseT prevResponse, TimedAttemptSettings prevSettings) {
-    if (prevThrowable != null && prevThrowable instanceof DeadlineExceededException) {
-      return TimedAttemptSettings.newBuilder()
-          .setGlobalSettings(prevSettings.getGlobalSettings())
-          .setRetryDelay(prevSettings.getRetryDelay())
-          .setRpcTimeout(prevSettings.getRpcTimeout())
-          .setRandomizedRetryDelay(DEADLINE_SLEEP_DURATION)
-          .setAttemptCount(prevSettings.getAttemptCount() + 1)
-          .setFirstAttemptStartTimeNanos(prevSettings.getFirstAttemptStartTimeNanos())
-          .build();
-    }
-    return null;
+  public boolean shouldRetry(Throwable previousThrowable, ResponseT previousResponse) {
+    return (previousThrowable instanceof ApiException)
+        && ((ApiException) previousThrowable).isRetryable();
   }
 
+  /**
+   * If {@link RetryingContext#getRetryableCodes()} is not null: Returns true if the status code of
+   * previousThrowable is in the list of retryable code of the {@link RetryingContext}.
+   *
+   * <p>Otherwise it returns the result of {@link #shouldRetry(Throwable, Object)}.
+   */
   @Override
-  public boolean shouldRetry(Throwable prevThrowable, ResponseT prevResponse) {
-    return (prevThrowable instanceof ApiException) && ((ApiException) prevThrowable).isRetryable();
+  public boolean shouldRetry(
+      RetryingContext context, Throwable previousThrowable, ResponseT previousResponse) {
+    if (context.getRetryableCodes() != null) {
+      // Ignore the isRetryable() value of the throwable if the RetryingContext has a specific list
+      // of codes that should be retried.
+      return (previousThrowable instanceof ApiException)
+          && context
+              .getRetryableCodes()
+              .contains(((ApiException) previousThrowable).getStatusCode().getCode());
+    }
+    return shouldRetry(previousThrowable, previousResponse);
   }
 }

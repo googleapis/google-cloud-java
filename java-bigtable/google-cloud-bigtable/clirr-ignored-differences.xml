@@ -150,4 +150,10 @@
         <differenceType>8001</differenceType>
         <className>com/google/cloud/bigtable/data/v2/stub/metrics/BigtableTracerBatchedUnaryCallable</className>
     </difference>
+    <!-- InternalApi was updated -->
+    <difference>
+        <differenceType>6001</differenceType>
+        <className>com/google/cloud/bigtable/gaxx/retrying/ApiResultRetryAlgorithm</className>
+        <field>*</field>
+    </difference>
 </differences>
