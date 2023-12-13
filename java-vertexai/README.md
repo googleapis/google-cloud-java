@@ -178,7 +178,7 @@ public class Main {
 
 For a multi-turn conversation, one needs to make a `Content` list to represent the whole conversation between two roles: "user" and "model".
 
-```
+```java
 package <your package name>;
 
 import com.google.cloud.vertexai.VertexAI;
@@ -224,7 +224,7 @@ public class Main {
 
 Yeah, we know, that isn't the most intuitive and easy way to chat with a model. Therefore we provide a `Chat` class:
 
-```
+```java
 package <your package name>;
 
 import com.google.cloud.vertexai.VertexAI;
@@ -277,7 +277,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 Vertex AI uses gRPC and rest for the transport layer. By default, we use gRPC transport. To use rest, passing a `Transport.REST` to the `VertexAI` constructor as the example below:
 
-```
+```java
 package <your package name>
 
 import com.google.cloud.vertexai.VertexAI;
