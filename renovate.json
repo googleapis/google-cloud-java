@@ -11,7 +11,7 @@
   ],
   "includePaths": [
     "pom.xml",
-    "README.md",
+    "**/README.md",
     "google-cloud-pom-parent/pom.xml",
     "google-cloud-jar-parent/pom.xml",
     "java-shared-dependencies/first-party-dependencies/pom.xml",
