@@ -1,9 +1,9 @@
 # Configuration for the Blunderbuss GitHub app. For more info see
 # https://github.com/googleapis/repo-automation-bots/tree/main/packages/blunderbuss
 assign_issues:
-  - googleapis/api-logging-reviewers
+  - googleapis/api-logging-java-reviewers
 assign_prs:
-  - googleapis/api-logging-reviewers
+  - googleapis/api-logging-java-reviewers
 assign_prs_by:
   - labels:
     - samples
