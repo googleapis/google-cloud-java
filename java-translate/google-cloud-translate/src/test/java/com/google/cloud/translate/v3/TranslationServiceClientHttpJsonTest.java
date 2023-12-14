@@ -16,6 +16,9 @@
 
 package com.google.cloud.translate.v3;
 
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtDatasetsPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtFilesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtSentencesPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossariesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -31,6 +34,7 @@ import com.google.cloud.translate.v3.stub.HttpJsonTranslationServiceStub;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
+import com.google.protobuf.Empty;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1194,6 +1198,972 @@ public class TranslationServiceClientHttpJsonTest {
       client.deleteGlossaryAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createAdaptiveMtDatasetTest() throws Exception {
+    AdaptiveMtDataset expectedResponse =
+        AdaptiveMtDataset.newBuilder()
+            .setName(AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    AdaptiveMtDataset adaptiveMtDataset = AdaptiveMtDataset.newBuilder().build();
+
+    AdaptiveMtDataset actualResponse = client.createAdaptiveMtDataset(parent, adaptiveMtDataset);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAdaptiveMtDatasetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      AdaptiveMtDataset adaptiveMtDataset = AdaptiveMtDataset.newBuilder().build();
+      client.createAdaptiveMtDataset(parent, adaptiveMtDataset);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAdaptiveMtDatasetTest2() throws Exception {
+    AdaptiveMtDataset expectedResponse =
+        AdaptiveMtDataset.newBuilder()
+            .setName(AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    AdaptiveMtDataset adaptiveMtDataset = AdaptiveMtDataset.newBuilder().build();
+
+    AdaptiveMtDataset actualResponse = client.createAdaptiveMtDataset(parent, adaptiveMtDataset);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAdaptiveMtDatasetExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      AdaptiveMtDataset adaptiveMtDataset = AdaptiveMtDataset.newBuilder().build();
+      client.createAdaptiveMtDataset(parent, adaptiveMtDataset);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAdaptiveMtDatasetTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    AdaptiveMtDatasetName name = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    client.deleteAdaptiveMtDataset(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAdaptiveMtDatasetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AdaptiveMtDatasetName name = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      client.deleteAdaptiveMtDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAdaptiveMtDatasetTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-1672/locations/location-1672/adaptiveMtDatasets/adaptiveMtDataset-1672";
+
+    client.deleteAdaptiveMtDataset(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAdaptiveMtDatasetExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1672/locations/location-1672/adaptiveMtDatasets/adaptiveMtDataset-1672";
+      client.deleteAdaptiveMtDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAdaptiveMtDatasetTest() throws Exception {
+    AdaptiveMtDataset expectedResponse =
+        AdaptiveMtDataset.newBuilder()
+            .setName(AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AdaptiveMtDatasetName name = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    AdaptiveMtDataset actualResponse = client.getAdaptiveMtDataset(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAdaptiveMtDatasetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AdaptiveMtDatasetName name = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      client.getAdaptiveMtDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAdaptiveMtDatasetTest2() throws Exception {
+    AdaptiveMtDataset expectedResponse =
+        AdaptiveMtDataset.newBuilder()
+            .setName(AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-1672/locations/location-1672/adaptiveMtDatasets/adaptiveMtDataset-1672";
+
+    AdaptiveMtDataset actualResponse = client.getAdaptiveMtDataset(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAdaptiveMtDatasetExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1672/locations/location-1672/adaptiveMtDatasets/adaptiveMtDataset-1672";
+      client.getAdaptiveMtDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdaptiveMtDatasetsTest() throws Exception {
+    AdaptiveMtDataset responsesElement = AdaptiveMtDataset.newBuilder().build();
+    ListAdaptiveMtDatasetsResponse expectedResponse =
+        ListAdaptiveMtDatasetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdaptiveMtDatasets(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAdaptiveMtDatasetsPagedResponse pagedListResponse = client.listAdaptiveMtDatasets(parent);
+
+    List<AdaptiveMtDataset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdaptiveMtDatasetsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAdaptiveMtDatasetsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAdaptiveMtDatasets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdaptiveMtDatasetsTest2() throws Exception {
+    AdaptiveMtDataset responsesElement = AdaptiveMtDataset.newBuilder().build();
+    ListAdaptiveMtDatasetsResponse expectedResponse =
+        ListAdaptiveMtDatasetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdaptiveMtDatasets(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListAdaptiveMtDatasetsPagedResponse pagedListResponse = client.listAdaptiveMtDatasets(parent);
+
+    List<AdaptiveMtDataset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdaptiveMtDatasetsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAdaptiveMtDatasetsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listAdaptiveMtDatasets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void adaptiveMtTranslateTest() throws Exception {
+    AdaptiveMtTranslateResponse expectedResponse =
+        AdaptiveMtTranslateResponse.newBuilder()
+            .addAllTranslations(new ArrayList<AdaptiveMtTranslation>())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    List<String> content = new ArrayList<>();
+
+    AdaptiveMtTranslateResponse actualResponse = client.adaptiveMtTranslate(parent, content);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void adaptiveMtTranslateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      List<String> content = new ArrayList<>();
+      client.adaptiveMtTranslate(parent, content);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void adaptiveMtTranslateTest2() throws Exception {
+    AdaptiveMtTranslateResponse expectedResponse =
+        AdaptiveMtTranslateResponse.newBuilder()
+            .addAllTranslations(new ArrayList<AdaptiveMtTranslation>())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    List<String> content = new ArrayList<>();
+
+    AdaptiveMtTranslateResponse actualResponse = client.adaptiveMtTranslate(parent, content);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void adaptiveMtTranslateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      List<String> content = new ArrayList<>();
+      client.adaptiveMtTranslate(parent, content);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAdaptiveMtFileTest() throws Exception {
+    AdaptiveMtFile expectedResponse =
+        AdaptiveMtFile.newBuilder()
+            .setName(
+                AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setEntryCount(-811131134)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AdaptiveMtFileName name =
+        AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]");
+
+    AdaptiveMtFile actualResponse = client.getAdaptiveMtFile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAdaptiveMtFileExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AdaptiveMtFileName name =
+          AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]");
+      client.getAdaptiveMtFile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAdaptiveMtFileTest2() throws Exception {
+    AdaptiveMtFile expectedResponse =
+        AdaptiveMtFile.newBuilder()
+            .setName(
+                AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setEntryCount(-811131134)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-2034/locations/location-2034/adaptiveMtDatasets/adaptiveMtDataset-2034/adaptiveMtFiles/adaptiveMtFile-2034";
+
+    AdaptiveMtFile actualResponse = client.getAdaptiveMtFile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAdaptiveMtFileExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-2034/locations/location-2034/adaptiveMtDatasets/adaptiveMtDataset-2034/adaptiveMtFiles/adaptiveMtFile-2034";
+      client.getAdaptiveMtFile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAdaptiveMtFileTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    AdaptiveMtFileName name =
+        AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]");
+
+    client.deleteAdaptiveMtFile(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAdaptiveMtFileExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AdaptiveMtFileName name =
+          AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]");
+      client.deleteAdaptiveMtFile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAdaptiveMtFileTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-2034/locations/location-2034/adaptiveMtDatasets/adaptiveMtDataset-2034/adaptiveMtFiles/adaptiveMtFile-2034";
+
+    client.deleteAdaptiveMtFile(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAdaptiveMtFileExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-2034/locations/location-2034/adaptiveMtDatasets/adaptiveMtDataset-2034/adaptiveMtFiles/adaptiveMtFile-2034";
+      client.deleteAdaptiveMtFile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void importAdaptiveMtFileTest() throws Exception {
+    ImportAdaptiveMtFileResponse expectedResponse =
+        ImportAdaptiveMtFileResponse.newBuilder()
+            .setAdaptiveMtFile(AdaptiveMtFile.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AdaptiveMtDatasetName parent = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    ImportAdaptiveMtFileResponse actualResponse = client.importAdaptiveMtFile(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importAdaptiveMtFileExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AdaptiveMtDatasetName parent =
+          AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      client.importAdaptiveMtFile(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void importAdaptiveMtFileTest2() throws Exception {
+    ImportAdaptiveMtFileResponse expectedResponse =
+        ImportAdaptiveMtFileResponse.newBuilder()
+            .setAdaptiveMtFile(AdaptiveMtFile.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-7369/locations/location-7369/adaptiveMtDatasets/adaptiveMtDataset-7369";
+
+    ImportAdaptiveMtFileResponse actualResponse = client.importAdaptiveMtFile(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importAdaptiveMtFileExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-7369/locations/location-7369/adaptiveMtDatasets/adaptiveMtDataset-7369";
+      client.importAdaptiveMtFile(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdaptiveMtFilesTest() throws Exception {
+    AdaptiveMtFile responsesElement = AdaptiveMtFile.newBuilder().build();
+    ListAdaptiveMtFilesResponse expectedResponse =
+        ListAdaptiveMtFilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdaptiveMtFiles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AdaptiveMtDatasetName parent = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    ListAdaptiveMtFilesPagedResponse pagedListResponse = client.listAdaptiveMtFiles(parent);
+
+    List<AdaptiveMtFile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdaptiveMtFilesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAdaptiveMtFilesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AdaptiveMtDatasetName parent =
+          AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      client.listAdaptiveMtFiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdaptiveMtFilesTest2() throws Exception {
+    AdaptiveMtFile responsesElement = AdaptiveMtFile.newBuilder().build();
+    ListAdaptiveMtFilesResponse expectedResponse =
+        ListAdaptiveMtFilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdaptiveMtFiles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-7369/locations/location-7369/adaptiveMtDatasets/adaptiveMtDataset-7369";
+
+    ListAdaptiveMtFilesPagedResponse pagedListResponse = client.listAdaptiveMtFiles(parent);
+
+    List<AdaptiveMtFile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdaptiveMtFilesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAdaptiveMtFilesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-7369/locations/location-7369/adaptiveMtDatasets/adaptiveMtDataset-7369";
+      client.listAdaptiveMtFiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdaptiveMtSentencesTest() throws Exception {
+    AdaptiveMtSentence responsesElement = AdaptiveMtSentence.newBuilder().build();
+    ListAdaptiveMtSentencesResponse expectedResponse =
+        ListAdaptiveMtSentencesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdaptiveMtSentences(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AdaptiveMtFileName parent =
+        AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]");
+
+    ListAdaptiveMtSentencesPagedResponse pagedListResponse = client.listAdaptiveMtSentences(parent);
+
+    List<AdaptiveMtSentence> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdaptiveMtSentencesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAdaptiveMtSentencesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AdaptiveMtFileName parent =
+          AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]");
+      client.listAdaptiveMtSentences(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdaptiveMtSentencesTest2() throws Exception {
+    AdaptiveMtSentence responsesElement = AdaptiveMtSentence.newBuilder().build();
+    ListAdaptiveMtSentencesResponse expectedResponse =
+        ListAdaptiveMtSentencesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdaptiveMtSentences(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-2383/locations/location-2383/adaptiveMtDatasets/adaptiveMtDataset-2383/adaptiveMtFiles/adaptiveMtFile-2383";
+
+    ListAdaptiveMtSentencesPagedResponse pagedListResponse = client.listAdaptiveMtSentences(parent);
+
+    List<AdaptiveMtSentence> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdaptiveMtSentencesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAdaptiveMtSentencesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-2383/locations/location-2383/adaptiveMtDatasets/adaptiveMtDataset-2383/adaptiveMtFiles/adaptiveMtFile-2383";
+      client.listAdaptiveMtSentences(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

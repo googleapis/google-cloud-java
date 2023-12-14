@@ -16,6 +16,9 @@
 
 package com.google.cloud.translate.v3.stub;
 
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtDatasetsPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtFilesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtSentencesPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossariesPagedResponse;
 
 import com.google.api.HttpRule;
@@ -35,22 +38,39 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.translate.v3.AdaptiveMtDataset;
+import com.google.cloud.translate.v3.AdaptiveMtFile;
+import com.google.cloud.translate.v3.AdaptiveMtTranslateRequest;
+import com.google.cloud.translate.v3.AdaptiveMtTranslateResponse;
 import com.google.cloud.translate.v3.BatchTranslateDocumentMetadata;
 import com.google.cloud.translate.v3.BatchTranslateDocumentRequest;
 import com.google.cloud.translate.v3.BatchTranslateDocumentResponse;
 import com.google.cloud.translate.v3.BatchTranslateMetadata;
 import com.google.cloud.translate.v3.BatchTranslateResponse;
 import com.google.cloud.translate.v3.BatchTranslateTextRequest;
+import com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest;
 import com.google.cloud.translate.v3.CreateGlossaryMetadata;
 import com.google.cloud.translate.v3.CreateGlossaryRequest;
+import com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest;
+import com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest;
 import com.google.cloud.translate.v3.DeleteGlossaryMetadata;
 import com.google.cloud.translate.v3.DeleteGlossaryRequest;
 import com.google.cloud.translate.v3.DeleteGlossaryResponse;
 import com.google.cloud.translate.v3.DetectLanguageRequest;
 import com.google.cloud.translate.v3.DetectLanguageResponse;
+import com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest;
+import com.google.cloud.translate.v3.GetAdaptiveMtFileRequest;
 import com.google.cloud.translate.v3.GetGlossaryRequest;
 import com.google.cloud.translate.v3.GetSupportedLanguagesRequest;
 import com.google.cloud.translate.v3.Glossary;
+import com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest;
+import com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse;
+import com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest;
+import com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse;
+import com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest;
+import com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse;
+import com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest;
+import com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse;
 import com.google.cloud.translate.v3.ListGlossariesRequest;
 import com.google.cloud.translate.v3.ListGlossariesResponse;
 import com.google.cloud.translate.v3.SupportedLanguages;
@@ -60,6 +80,7 @@ import com.google.cloud.translate.v3.TranslateTextRequest;
 import com.google.cloud.translate.v3.TranslateTextResponse;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -472,6 +493,380 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      createAdaptiveMtDatasetMethodDescriptor =
+          ApiMethodDescriptor.<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/CreateAdaptiveMtDataset")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAdaptiveMtDatasetRequest>newBuilder()
+                      .setPath(
+                          "/v3/{parent=projects/*/locations/*}/adaptiveMtDatasets",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAdaptiveMtDatasetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAdaptiveMtDatasetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "adaptiveMtDataset", request.getAdaptiveMtDataset(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AdaptiveMtDataset>newBuilder()
+                      .setDefaultInstance(AdaptiveMtDataset.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAdaptiveMtDatasetRequest, Empty>
+      deleteAdaptiveMtDatasetMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAdaptiveMtDatasetRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/DeleteAdaptiveMtDataset")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAdaptiveMtDatasetRequest>newBuilder()
+                      .setPath(
+                          "/v3/{name=projects/*/locations/*/adaptiveMtDatasets/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAdaptiveMtDatasetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAdaptiveMtDatasetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      getAdaptiveMtDatasetMethodDescriptor =
+          ApiMethodDescriptor.<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/GetAdaptiveMtDataset")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAdaptiveMtDatasetRequest>newBuilder()
+                      .setPath(
+                          "/v3/{name=projects/*/locations/*/adaptiveMtDatasets/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAdaptiveMtDatasetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAdaptiveMtDatasetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AdaptiveMtDataset>newBuilder()
+                      .setDefaultInstance(AdaptiveMtDataset.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>
+      listAdaptiveMtDatasetsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/ListAdaptiveMtDatasets")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAdaptiveMtDatasetsRequest>newBuilder()
+                      .setPath(
+                          "/v3/{parent=projects/*/locations/*}/adaptiveMtDatasets",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAdaptiveMtDatasetsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAdaptiveMtDatasetsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAdaptiveMtDatasetsResponse>newBuilder()
+                      .setDefaultInstance(ListAdaptiveMtDatasetsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+      adaptiveMtTranslateMethodDescriptor =
+          ApiMethodDescriptor.<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/AdaptiveMtTranslate")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AdaptiveMtTranslateRequest>newBuilder()
+                      .setPath(
+                          "/v3/{parent=projects/*/locations/*}:adaptiveMtTranslate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AdaptiveMtTranslateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AdaptiveMtTranslateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AdaptiveMtTranslateResponse>newBuilder()
+                      .setDefaultInstance(AdaptiveMtTranslateResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAdaptiveMtFileRequest, AdaptiveMtFile>
+      getAdaptiveMtFileMethodDescriptor =
+          ApiMethodDescriptor.<GetAdaptiveMtFileRequest, AdaptiveMtFile>newBuilder()
+              .setFullMethodName("google.cloud.translation.v3.TranslationService/GetAdaptiveMtFile")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAdaptiveMtFileRequest>newBuilder()
+                      .setPath(
+                          "/v3/{name=projects/*/locations/*/adaptiveMtDatasets/*/adaptiveMtFiles/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAdaptiveMtFileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAdaptiveMtFileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AdaptiveMtFile>newBuilder()
+                      .setDefaultInstance(AdaptiveMtFile.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAdaptiveMtFileRequest, Empty>
+      deleteAdaptiveMtFileMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAdaptiveMtFileRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/DeleteAdaptiveMtFile")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAdaptiveMtFileRequest>newBuilder()
+                      .setPath(
+                          "/v3/{name=projects/*/locations/*/adaptiveMtDatasets/*/adaptiveMtFiles/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAdaptiveMtFileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAdaptiveMtFileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+      importAdaptiveMtFileMethodDescriptor =
+          ApiMethodDescriptor
+              .<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/ImportAdaptiveMtFile")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ImportAdaptiveMtFileRequest>newBuilder()
+                      .setPath(
+                          "/v3/{parent=projects/*/locations/*/adaptiveMtDatasets/*}:importAdaptiveMtFile",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportAdaptiveMtFileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportAdaptiveMtFileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ImportAdaptiveMtFileResponse>newBuilder()
+                      .setDefaultInstance(ImportAdaptiveMtFileResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>
+      listAdaptiveMtFilesMethodDescriptor =
+          ApiMethodDescriptor.<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/ListAdaptiveMtFiles")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAdaptiveMtFilesRequest>newBuilder()
+                      .setPath(
+                          "/v3/{parent=projects/*/locations/*/adaptiveMtDatasets/*}/adaptiveMtFiles",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAdaptiveMtFilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAdaptiveMtFilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAdaptiveMtFilesResponse>newBuilder()
+                      .setDefaultInstance(ListAdaptiveMtFilesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>
+      listAdaptiveMtSentencesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/ListAdaptiveMtSentences")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAdaptiveMtSentencesRequest>newBuilder()
+                      .setPath(
+                          "/v3/{parent=projects/*/locations/*/adaptiveMtDatasets/*/adaptiveMtFiles/*}/adaptiveMtSentences",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAdaptiveMtSentencesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v3/{parent=projects/*/locations/*/adaptiveMtDatasets/*}/adaptiveMtSentences")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAdaptiveMtSentencesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAdaptiveMtSentencesResponse>newBuilder()
+                      .setDefaultInstance(ListAdaptiveMtSentencesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<TranslateTextRequest, TranslateTextResponse> translateTextCallable;
   private final UnaryCallable<DetectLanguageRequest, DetectLanguageResponse> detectLanguageCallable;
   private final UnaryCallable<GetSupportedLanguagesRequest, SupportedLanguages>
@@ -500,6 +895,30 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
   private final OperationCallable<
           DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationCallable;
+  private final UnaryCallable<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      createAdaptiveMtDatasetCallable;
+  private final UnaryCallable<DeleteAdaptiveMtDatasetRequest, Empty>
+      deleteAdaptiveMtDatasetCallable;
+  private final UnaryCallable<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      getAdaptiveMtDatasetCallable;
+  private final UnaryCallable<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>
+      listAdaptiveMtDatasetsCallable;
+  private final UnaryCallable<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsPagedResponse>
+      listAdaptiveMtDatasetsPagedCallable;
+  private final UnaryCallable<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+      adaptiveMtTranslateCallable;
+  private final UnaryCallable<GetAdaptiveMtFileRequest, AdaptiveMtFile> getAdaptiveMtFileCallable;
+  private final UnaryCallable<DeleteAdaptiveMtFileRequest, Empty> deleteAdaptiveMtFileCallable;
+  private final UnaryCallable<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+      importAdaptiveMtFileCallable;
+  private final UnaryCallable<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>
+      listAdaptiveMtFilesCallable;
+  private final UnaryCallable<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesPagedResponse>
+      listAdaptiveMtFilesPagedCallable;
+  private final UnaryCallable<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>
+      listAdaptiveMtSentencesCallable;
+  private final UnaryCallable<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesPagedResponse>
+      listAdaptiveMtSentencesPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -694,6 +1113,130 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+        createAdaptiveMtDatasetTransportSettings =
+            HttpJsonCallSettings.<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>newBuilder()
+                .setMethodDescriptor(createAdaptiveMtDatasetMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteAdaptiveMtDatasetRequest, Empty>
+        deleteAdaptiveMtDatasetTransportSettings =
+            HttpJsonCallSettings.<DeleteAdaptiveMtDatasetRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteAdaptiveMtDatasetMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+        getAdaptiveMtDatasetTransportSettings =
+            HttpJsonCallSettings.<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>newBuilder()
+                .setMethodDescriptor(getAdaptiveMtDatasetMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>
+        listAdaptiveMtDatasetsTransportSettings =
+            HttpJsonCallSettings
+                .<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>newBuilder()
+                .setMethodDescriptor(listAdaptiveMtDatasetsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+        adaptiveMtTranslateTransportSettings =
+            HttpJsonCallSettings
+                .<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>newBuilder()
+                .setMethodDescriptor(adaptiveMtTranslateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetAdaptiveMtFileRequest, AdaptiveMtFile>
+        getAdaptiveMtFileTransportSettings =
+            HttpJsonCallSettings.<GetAdaptiveMtFileRequest, AdaptiveMtFile>newBuilder()
+                .setMethodDescriptor(getAdaptiveMtFileMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteAdaptiveMtFileRequest, Empty> deleteAdaptiveMtFileTransportSettings =
+        HttpJsonCallSettings.<DeleteAdaptiveMtFileRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAdaptiveMtFileMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+        importAdaptiveMtFileTransportSettings =
+            HttpJsonCallSettings
+                .<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>newBuilder()
+                .setMethodDescriptor(importAdaptiveMtFileMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>
+        listAdaptiveMtFilesTransportSettings =
+            HttpJsonCallSettings
+                .<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>newBuilder()
+                .setMethodDescriptor(listAdaptiveMtFilesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>
+        listAdaptiveMtSentencesTransportSettings =
+            HttpJsonCallSettings
+                .<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>newBuilder()
+                .setMethodDescriptor(listAdaptiveMtSentencesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.translateTextCallable =
         callableFactory.createUnaryCallable(
@@ -760,6 +1303,71 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
             settings.deleteGlossaryOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.createAdaptiveMtDatasetCallable =
+        callableFactory.createUnaryCallable(
+            createAdaptiveMtDatasetTransportSettings,
+            settings.createAdaptiveMtDatasetSettings(),
+            clientContext);
+    this.deleteAdaptiveMtDatasetCallable =
+        callableFactory.createUnaryCallable(
+            deleteAdaptiveMtDatasetTransportSettings,
+            settings.deleteAdaptiveMtDatasetSettings(),
+            clientContext);
+    this.getAdaptiveMtDatasetCallable =
+        callableFactory.createUnaryCallable(
+            getAdaptiveMtDatasetTransportSettings,
+            settings.getAdaptiveMtDatasetSettings(),
+            clientContext);
+    this.listAdaptiveMtDatasetsCallable =
+        callableFactory.createUnaryCallable(
+            listAdaptiveMtDatasetsTransportSettings,
+            settings.listAdaptiveMtDatasetsSettings(),
+            clientContext);
+    this.listAdaptiveMtDatasetsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAdaptiveMtDatasetsTransportSettings,
+            settings.listAdaptiveMtDatasetsSettings(),
+            clientContext);
+    this.adaptiveMtTranslateCallable =
+        callableFactory.createUnaryCallable(
+            adaptiveMtTranslateTransportSettings,
+            settings.adaptiveMtTranslateSettings(),
+            clientContext);
+    this.getAdaptiveMtFileCallable =
+        callableFactory.createUnaryCallable(
+            getAdaptiveMtFileTransportSettings,
+            settings.getAdaptiveMtFileSettings(),
+            clientContext);
+    this.deleteAdaptiveMtFileCallable =
+        callableFactory.createUnaryCallable(
+            deleteAdaptiveMtFileTransportSettings,
+            settings.deleteAdaptiveMtFileSettings(),
+            clientContext);
+    this.importAdaptiveMtFileCallable =
+        callableFactory.createUnaryCallable(
+            importAdaptiveMtFileTransportSettings,
+            settings.importAdaptiveMtFileSettings(),
+            clientContext);
+    this.listAdaptiveMtFilesCallable =
+        callableFactory.createUnaryCallable(
+            listAdaptiveMtFilesTransportSettings,
+            settings.listAdaptiveMtFilesSettings(),
+            clientContext);
+    this.listAdaptiveMtFilesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAdaptiveMtFilesTransportSettings,
+            settings.listAdaptiveMtFilesSettings(),
+            clientContext);
+    this.listAdaptiveMtSentencesCallable =
+        callableFactory.createUnaryCallable(
+            listAdaptiveMtSentencesTransportSettings,
+            settings.listAdaptiveMtSentencesSettings(),
+            clientContext);
+    this.listAdaptiveMtSentencesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAdaptiveMtSentencesTransportSettings,
+            settings.listAdaptiveMtSentencesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -778,6 +1386,16 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
     methodDescriptors.add(listGlossariesMethodDescriptor);
     methodDescriptors.add(getGlossaryMethodDescriptor);
     methodDescriptors.add(deleteGlossaryMethodDescriptor);
+    methodDescriptors.add(createAdaptiveMtDatasetMethodDescriptor);
+    methodDescriptors.add(deleteAdaptiveMtDatasetMethodDescriptor);
+    methodDescriptors.add(getAdaptiveMtDatasetMethodDescriptor);
+    methodDescriptors.add(listAdaptiveMtDatasetsMethodDescriptor);
+    methodDescriptors.add(adaptiveMtTranslateMethodDescriptor);
+    methodDescriptors.add(getAdaptiveMtFileMethodDescriptor);
+    methodDescriptors.add(deleteAdaptiveMtFileMethodDescriptor);
+    methodDescriptors.add(importAdaptiveMtFileMethodDescriptor);
+    methodDescriptors.add(listAdaptiveMtFilesMethodDescriptor);
+    methodDescriptors.add(listAdaptiveMtSentencesMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -869,6 +1487,81 @@ public class HttpJsonTranslationServiceStub extends TranslationServiceStub {
   public OperationCallable<DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationCallable() {
     return deleteGlossaryOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      createAdaptiveMtDatasetCallable() {
+    return createAdaptiveMtDatasetCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAdaptiveMtDatasetRequest, Empty> deleteAdaptiveMtDatasetCallable() {
+    return deleteAdaptiveMtDatasetCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      getAdaptiveMtDatasetCallable() {
+    return getAdaptiveMtDatasetCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>
+      listAdaptiveMtDatasetsCallable() {
+    return listAdaptiveMtDatasetsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsPagedResponse>
+      listAdaptiveMtDatasetsPagedCallable() {
+    return listAdaptiveMtDatasetsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+      adaptiveMtTranslateCallable() {
+    return adaptiveMtTranslateCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAdaptiveMtFileRequest, AdaptiveMtFile> getAdaptiveMtFileCallable() {
+    return getAdaptiveMtFileCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAdaptiveMtFileRequest, Empty> deleteAdaptiveMtFileCallable() {
+    return deleteAdaptiveMtFileCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+      importAdaptiveMtFileCallable() {
+    return importAdaptiveMtFileCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>
+      listAdaptiveMtFilesCallable() {
+    return listAdaptiveMtFilesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesPagedResponse>
+      listAdaptiveMtFilesPagedCallable() {
+    return listAdaptiveMtFilesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>
+      listAdaptiveMtSentencesCallable() {
+    return listAdaptiveMtSentencesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesPagedResponse>
+      listAdaptiveMtSentencesPagedCallable() {
+    return listAdaptiveMtSentencesPagedCallable;
   }
 
   @Override
