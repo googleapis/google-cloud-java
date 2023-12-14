@@ -970,7 +970,7 @@ class ConnectionWorker implements AutoCloseable {
       lock.lock();
       try {
         requestWrapper.retryCount++;
-        if (this.retrySettings != null && errorCode == Code.RESOURCE_EXHAUSTED) {
+        if (this.retrySettings != null && useBackoffForError(errorCode, streamName)) {
           // Trigger exponential backoff in append loop when request is resent for quota errors.
           // createNextAttempt correctly initializes the retry delay; createfirstAttempt does not
           // include a positive delay, just 0.
@@ -1146,6 +1146,17 @@ class ConnectionWorker implements AutoCloseable {
         || statusCode == Code.CANCELLED
         || statusCode == Code.INTERNAL
         || statusCode == Code.DEADLINE_EXCEEDED;
+  }
+
+  private boolean useBackoffForError(Code statusCode, String streamName) {
+    // Default stream uses backoff for INTERNAL, as THROTTLED errors are more likely with default
+    // streams.  RESOURCE_EXHAUSTED streams are used for backoff for each stream type.
+    if (isDefaultStreamName(streamName)) {
+      if (statusCode == Code.INTERNAL) {
+        return true;
+      }
+    }
+    return statusCode == Code.RESOURCE_EXHAUSTED;
   }
 
   private void doneCallback(Throwable finalStatus) {

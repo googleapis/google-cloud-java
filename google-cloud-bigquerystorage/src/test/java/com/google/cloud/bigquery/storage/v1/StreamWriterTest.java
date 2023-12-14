@@ -2048,6 +2048,44 @@ public class StreamWriterTest {
   }
 
   @Test
+  public void testAppendInternalErrorRetryExponentialBackoff() throws Exception {
+    StreamWriter writer = getTestStreamWriterRetryEnabled();
+
+    testBigQueryWrite.addResponse(
+        new DummyResponseSupplierWillFailThenSucceed(
+            new FakeBigQueryWriteImpl.Response(createAppendResponse(0)),
+            /* totalFailCount= */ MAX_RETRY_NUM_ATTEMPTS + 1,
+            com.google.rpc.Status.newBuilder().setCode(Code.INTERNAL.ordinal()).build()));
+
+    ApiFuture<AppendRowsResponse> future =
+        writer.append(createProtoRows(new String[] {String.valueOf(0)}), 0);
+
+    ExecutionException ex =
+        assertThrows(
+            ExecutionException.class,
+            () -> {
+              future.get();
+            });
+    assertEquals(
+        Status.Code.INTERNAL, ((StatusRuntimeException) ex.getCause()).getStatus().getCode());
+
+    ArrayList<Instant> instants = testBigQueryWrite.getLatestRequestReceivedInstants();
+    Instant previousInstant = instants.get(0);
+    // Include initial attempt
+    assertEquals(instants.size(), MAX_RETRY_NUM_ATTEMPTS + 1);
+    double minExpectedDelay = INITIAL_RETRY_MILLIS * 0.95;
+    for (int i = 1; i < instants.size(); i++) {
+      Instant currentInstant = instants.get(i);
+      double differenceInMillis =
+          java.time.Duration.between(previousInstant, currentInstant).toMillis();
+      assertThat(differenceInMillis).isAtLeast((double) INITIAL_RETRY_MILLIS);
+      assertThat(differenceInMillis).isGreaterThan(minExpectedDelay);
+      minExpectedDelay = minExpectedDelay * RETRY_MULTIPLIER;
+      previousInstant = currentInstant;
+    }
+  }
+
+  @Test
   public void testAppendSuccessAndNonRetryableError() throws Exception {
     StreamWriter writer = getTestStreamWriterRetryEnabled();
     testBigQueryWrite.addResponse(createAppendResponse(0));
