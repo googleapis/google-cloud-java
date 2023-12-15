@@ -17,10 +17,13 @@
 package com.google.cloud.vertexai;
 
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.vertexai.api.PredictionServiceClient;
 import com.google.cloud.vertexai.api.PredictionServiceSettings;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -42,7 +45,7 @@ public class VertexAI implements AutoCloseable {
 
   private final String projectId;
   private final String location;
-  private final GoogleCredentials credentials;
+  private final Credentials credentials;
   private Transport transport = Transport.GRPC;
   // The clients will be instantiated lazily
   private PredictionServiceClient predictionServiceClient = null;
@@ -55,7 +58,7 @@ public class VertexAI implements AutoCloseable {
    * @param location the default location to use when making API calls
    * @param credentials the custom credentials to use when making API calls
    */
-  public VertexAI(String projectId, String location, GoogleCredentials credentials) {
+  public VertexAI(String projectId, String location, Credentials credentials) {
     this.projectId = projectId;
     this.location = location;
     this.credentials = credentials;
@@ -87,10 +90,13 @@ public class VertexAI implements AutoCloseable {
     Logger logger = Logger.getLogger("com.google.auth.oauth2.DefaultCredentialsProvider");
     Level previousLevel = logger.getLevel();
     logger.setLevel(Level.SEVERE);
-    GoogleCredentials credentials =
-        scopes.length == 0
-            ? GoogleCredentials.getApplicationDefault()
-            : GoogleCredentials.getApplicationDefault().createScoped(scopes);
+    GoogleCredentialsProvider googleCredentialsProvider =
+        GoogleCredentialsProvider.newBuilder()
+            .setScopesToApply(Arrays.asList(scopes))
+            .setUseJwtAccessWithScope(true)
+            .build();
+    Credentials credentials = googleCredentialsProvider.getCredentials();
+
     logger.setLevel(previousLevel);
 
     this.projectId = projectId;
@@ -128,7 +134,7 @@ public class VertexAI implements AutoCloseable {
   }
 
   /** Returns the default credentials to use when making API calls. */
-  public GoogleCredentials getCredentials() {
+  public Credentials getCredentials() {
     return credentials;
   }
 
