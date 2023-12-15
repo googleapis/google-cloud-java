@@ -92,9 +92,7 @@ public class VertexAI implements AutoCloseable {
     List<String> defaultScopes =
         PredictionServiceStubSettings.defaultCredentialsProviderBuilder().getScopesToApply();
     GoogleCredentials credentials =
-        scopes.length == 0
-            ? GoogleCredentials.getApplicationDefault().createScoped(defaultScopes)
-            : GoogleCredentials.getApplicationDefault().createScoped(scopes);
+        scopes.length == 0 ? null : GoogleCredentials.getApplicationDefault().createScoped(scopes);
     logger.setLevel(previousLevel);
 
     this.projectId = projectId;
@@ -147,12 +145,12 @@ public class VertexAI implements AutoCloseable {
    */
   public PredictionServiceClient getPredictionServiceClient() throws IOException {
     if (predictionServiceClient == null) {
-      PredictionServiceSettings settings =
-          PredictionServiceSettings.newBuilder()
-              .setEndpoint(String.format("%s-aiplatform.googleapis.com:443", this.location))
-              .setCredentialsProvider(FixedCredentialsProvider.create(this.credentials))
-              .build();
-      predictionServiceClient = PredictionServiceClient.create(settings);
+      PredictionServiceSettings.Builder settingsBuilder = PredictionServiceSettings.newBuilder();
+      settingsBuilder.setEndpoint(String.format("%s-aiplatform.googleapis.com:443", this.location));
+      if (this.credentials != null) {
+        settingsBuilder.setCredentialsProvider(FixedCredentialsProvider.create(this.credentials));
+      }
+      predictionServiceClient = PredictionServiceClient.create(settingsBuilder.build());
     }
     return predictionServiceClient;
   }
@@ -163,12 +161,13 @@ public class VertexAI implements AutoCloseable {
    */
   public PredictionServiceClient getPredictionServiceRestClient() throws IOException {
     if (predictionServiceRestClient == null) {
-      PredictionServiceSettings settings =
-          PredictionServiceSettings.newHttpJsonBuilder()
-              .setEndpoint(String.format("%s-aiplatform.googleapis.com:443", this.location))
-              .setCredentialsProvider(FixedCredentialsProvider.create(this.credentials))
-              .build();
-      predictionServiceRestClient = PredictionServiceClient.create(settings);
+      PredictionServiceSettings.Builder settingsBuilder =
+          PredictionServiceSettings.newHttpJsonBuilder();
+      settingsBuilder.setEndpoint(String.format("%s-aiplatform.googleapis.com:443", this.location));
+      if (this.credentials != null) {
+        settingsBuilder.setCredentialsProvider(FixedCredentialsProvider.create(this.credentials));
+      }
+      predictionServiceRestClient = PredictionServiceClient.create(settingsBuilder.build());
     }
     return predictionServiceRestClient;
   }
