@@ -16,13 +16,15 @@
 
 package com.google.cloud.vertexai;
 
+import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
-import com.google.auth.oauth2.GoogleCredentials;
+import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.auth.Credentials;
 import com.google.cloud.vertexai.api.PredictionServiceClient;
 import com.google.cloud.vertexai.api.PredictionServiceSettings;
 import com.google.cloud.vertexai.api.stub.PredictionServiceStubSettings;
 import java.io.IOException;
-import java.util.List;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -44,7 +46,7 @@ public class VertexAI implements AutoCloseable {
 
   private final String projectId;
   private final String location;
-  private final GoogleCredentials credentials;
+  private CredentialsProvider credentialsProvider = null;
   private Transport transport = Transport.GRPC;
   // The clients will be instantiated lazily
   private PredictionServiceClient predictionServiceClient = null;
@@ -57,10 +59,10 @@ public class VertexAI implements AutoCloseable {
    * @param location the default location to use when making API calls
    * @param credentials the custom credentials to use when making API calls
    */
-  public VertexAI(String projectId, String location, GoogleCredentials credentials) {
+  public VertexAI(String projectId, String location, Credentials credentials) {
     this.projectId = projectId;
     this.location = location;
-    this.credentials = credentials;
+    this.credentialsProvider = FixedCredentialsProvider.create(credentials);
   }
 
   /**
@@ -71,8 +73,7 @@ public class VertexAI implements AutoCloseable {
    * @param transport the default {@link Transport} layer to use to send API requests
    * @param credentials the default custom credentials to use when making API calls
    */
-  public VertexAI(
-      String projectId, String location, Transport transport, GoogleCredentials credentials) {
+  public VertexAI(String projectId, String location, Transport transport, Credentials credentials) {
     this(projectId, location, credentials);
     this.transport = transport;
   }
@@ -89,15 +90,17 @@ public class VertexAI implements AutoCloseable {
     Logger logger = Logger.getLogger("com.google.auth.oauth2.DefaultCredentialsProvider");
     Level previousLevel = logger.getLevel();
     logger.setLevel(Level.SEVERE);
-    List<String> defaultScopes =
-        PredictionServiceStubSettings.defaultCredentialsProviderBuilder().getScopesToApply();
-    GoogleCredentials credentials =
-        scopes.length == 0 ? null : GoogleCredentials.getApplicationDefault().createScoped(scopes);
+    CredentialsProvider credentialsProvider =
+        scopes.length == 0
+            ? null
+            : GoogleCredentialsProvider.newBuilder()
+                .setScopesToApply(Arrays.asList(scopes))
+                .setUseJwtAccessWithScope(true)
+                .build();
     logger.setLevel(previousLevel);
 
     this.projectId = projectId;
     this.location = location;
-    this.credentials = credentials;
   }
 
   /**
@@ -130,8 +133,8 @@ public class VertexAI implements AutoCloseable {
   }
 
   /** Returns the default credentials to use when making API calls. */
-  public GoogleCredentials getCredentials() {
-    return credentials;
+  public Credentials getCredentials() throws IOException {
+    return credentialsProvider.getCredentials();
   }
 
   /** Sets the value for {@link #getTransport()}. */
@@ -147,8 +150,8 @@ public class VertexAI implements AutoCloseable {
     if (predictionServiceClient == null) {
       PredictionServiceSettings.Builder settingsBuilder = PredictionServiceSettings.newBuilder();
       settingsBuilder.setEndpoint(String.format("%s-aiplatform.googleapis.com:443", this.location));
-      if (this.credentials != null) {
-        settingsBuilder.setCredentialsProvider(FixedCredentialsProvider.create(this.credentials));
+      if (this.credentialsProvider != null) {
+        settingsBuilder.setCredentialsProvider(this.credentialsProvider);
       }
       predictionServiceClient = PredictionServiceClient.create(settingsBuilder.build());
     }
@@ -164,8 +167,8 @@ public class VertexAI implements AutoCloseable {
       PredictionServiceSettings.Builder settingsBuilder =
           PredictionServiceSettings.newHttpJsonBuilder();
       settingsBuilder.setEndpoint(String.format("%s-aiplatform.googleapis.com:443", this.location));
-      if (this.credentials != null) {
-        settingsBuilder.setCredentialsProvider(FixedCredentialsProvider.create(this.credentials));
+      if (this.credentialsProvider != null) {
+        settingsBuilder.setCredentialsProvider(this.credentialsProvider);
       }
       predictionServiceRestClient = PredictionServiceClient.create(settingsBuilder.build());
     }
