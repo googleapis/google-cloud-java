@@ -23,7 +23,6 @@ import static org.mockito.Mockito.when;
 import com.google.cloud.vertexai.api.Candidate;
 import com.google.cloud.vertexai.api.Candidate.FinishReason;
 import com.google.cloud.vertexai.api.Content;
-import com.google.cloud.vertexai.api.FileData;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.Part;
 import java.io.IOException;
@@ -150,46 +149,6 @@ public final class ChatSessionTest {
     IllegalStateException thrown =
         assertThrows(IllegalStateException.class, () -> chat.getHistory());
     assertThat(thrown).hasMessageThat().isEqualTo("Response stream is not consumed");
-  }
-
-  @Test
-  public void sendMessageStreamWithContent_throwsIllegalArgumentExceptionForMultipleParts()
-      throws IOException {
-    // (Arrange) Prepare a Content that contains multiple parts
-    Content content =
-        Content.newBuilder()
-            .addParts(Part.newBuilder().setText(SAMPLE_MESSAGE1))
-            .addParts(Part.newBuilder().setText(SAMPLE_MESSAGE1))
-            .build();
-
-    // (Act & Assert) Send request that contains multiple parts. Assert IllegalArgumentException is
-    // thrown.
-    IllegalArgumentException thrown =
-        assertThrows(IllegalArgumentException.class, () -> chat.sendMessageStream(content));
-    assertThat(thrown)
-        .hasMessageThat()
-        .isEqualTo("ChatSession only allow text content in one single Part.");
-  }
-
-  @Test
-  public void sendMessageStreamWithContent_throwsIllegalArgumentExceptionForMultiModal()
-      throws IOException {
-    // (Arrange) Prepare a Content that contains a single image in FileData
-    Content content =
-        Content.newBuilder()
-            .addParts(
-                Part.newBuilder()
-                    .setFileData(
-                        FileData.newBuilder()
-                            .setMimeType("image/png")
-                            .setFileUri("gs://image.png")))
-            .build();
-
-    // (Act & Assert) Send request that contain other modality. Assert IllegalArgumentException is
-    // thrown.
-    IllegalArgumentException thrown =
-        assertThrows(IllegalArgumentException.class, () -> chat.sendMessageStream(content));
-    assertThat(thrown).hasMessageThat().isEqualTo("ChatSession only allow text content.");
   }
 
   @Test

@@ -155,14 +155,8 @@ public class ChatSession {
    */
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       Content content, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
-      throws IOException, IllegalArgumentException {
+      throws IOException {
     checkLastResponseAndEditHistory();
-    if (content.getPartsCount() != 1) {
-      throw new IllegalArgumentException("ChatSession only allow text content in one single Part.");
-    }
-    if (!content.getParts(0).hasText()) {
-      throw new IllegalArgumentException("ChatSession only allow text content.");
-    }
 
     history.add(content);
     ResponseStream<GenerateContentResponse> respStream =

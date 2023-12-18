@@ -46,7 +46,7 @@ public class VertexAI implements AutoCloseable {
 
   private final String projectId;
   private final String location;
-  private CredentialsProvider credentialsProvider = null;
+  private CredentialsProvider credentialsProvider;
   private Transport transport = Transport.GRPC;
   // The clients will be instantiated lazily
   private PredictionServiceClient predictionServiceClient = null;
@@ -86,10 +86,6 @@ public class VertexAI implements AutoCloseable {
    * @param scopes collection of scopes in the default credentials
    */
   public VertexAI(String projectId, String location, String... scopes) throws IOException {
-    // Disable the warning message logged in getApplicationDefault
-    Logger logger = Logger.getLogger("com.google.auth.oauth2.DefaultCredentialsProvider");
-    Level previousLevel = logger.getLevel();
-    logger.setLevel(Level.SEVERE);
     CredentialsProvider credentialsProvider =
         scopes.length == 0
             ? null
@@ -97,10 +93,10 @@ public class VertexAI implements AutoCloseable {
                 .setScopesToApply(Arrays.asList(scopes))
                 .setUseJwtAccessWithScope(true)
                 .build();
-    logger.setLevel(previousLevel);
 
     this.projectId = projectId;
     this.location = location;
+    this.credentialsProvider = credentialsProvider;
   }
 
   /**
@@ -153,7 +149,12 @@ public class VertexAI implements AutoCloseable {
       if (this.credentialsProvider != null) {
         settingsBuilder.setCredentialsProvider(this.credentialsProvider);
       }
+      // Disable the warning message logged in getApplicationDefault
+      Logger logger = Logger.getLogger("com.google.auth.oauth2.DefaultCredentialsProvider");
+      Level previousLevel = logger.getLevel();
+      logger.setLevel(Level.SEVERE);
       predictionServiceClient = PredictionServiceClient.create(settingsBuilder.build());
+      logger.setLevel(previousLevel);
     }
     return predictionServiceClient;
   }
@@ -170,7 +171,12 @@ public class VertexAI implements AutoCloseable {
       if (this.credentialsProvider != null) {
         settingsBuilder.setCredentialsProvider(this.credentialsProvider);
       }
+      // Disable the warning message logged in getApplicationDefault
+      Logger logger = Logger.getLogger("com.google.auth.oauth2.DefaultCredentialsProvider");
+      Level previousLevel = logger.getLevel();
+      logger.setLevel(Level.SEVERE);
       predictionServiceRestClient = PredictionServiceClient.create(settingsBuilder.build());
+      logger.setLevel(previousLevel);
     }
     return predictionServiceRestClient;
   }
