@@ -137,16 +137,19 @@ The example in this README uses AlloyDB's [Cloud Drop](https://github.com/google
 ### API short name
 
 For convenience of the subsequent commands, define a variable for API short name.
-This value will be used to generate the `distribution_name` as well as the sub-directory for the client library within this repo. It is also the default value for many additional parameters, so take care to select a unique and reasonable value.
+This value will be used by default to generate the following:
+* `distribution_name`
+* `destination-name`
+* `proto_path`
 
 The corresponding value in the Cloud Drop page is `api_short_name`.
 
+Example: `alloydb`
+
 > [!IMPORTANT]
 > `api_short_name` is not always unique across client libraries.
-> In the instance that the `api_short_name` is already in use by an existing client library, determine a unique name and append it to the `--destination-name`.
-> See example under [Advanced Options](#advanced-options).
-
-Example: `alloydb`
+> In the instance that the `api_short_name` is already in use by an existing client library, you will need to determine a unique name.
+> See example under [Advanced Options](#Example with duplicate api_short_name).
 
 ### Proto path
 
@@ -326,6 +329,8 @@ Let's say you get a new library request where the Cloud Drop value for `api_shor
 You discover that `maps-routing` is already in use by an existing client library!
 
 You need to determine a unique `destination_name` for the new library's subdirectory as well as a unique `distribution_name` for the artifact to be published (confirm these values with the service team on the buganizer ticket before proceeding).
+
+You will **still use** the non-unique `api_short_name` for the `api_short_name` flag.
 
 There is no hard and fast rule for determining a unique name, so some discussion will be necessary.
 
