@@ -108,4 +108,33 @@ public interface TokenOptionsOrBuilder
    * @return The bytes of the nonce at the given index.
    */
   com.google.protobuf.ByteString getNonceBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional token type to select what type of token to return.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenType token_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for tokenType.
+   */
+  int getTokenTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional token type to select what type of token to return.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenType token_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tokenType.
+   */
+  com.google.cloud.confidentialcomputing.v1.TokenType getTokenType();
 }

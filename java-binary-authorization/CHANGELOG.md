@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.31.0 (2023-12-12)
+
+* No change
+
+
+## 1.30.0 (2023-12-04)
+
+### Features
+
+* add container_name, container_type fields to Continuous Validation Logs ([#10085](https://github.com/googleapis/google-cloud-java/issues/10085)) ([ee237cd](https://github.com/googleapis/google-cloud-java/commit/ee237cd3a511aaa7b135d619892bdfe7ac307e75))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#10093](https://github.com/googleapis/google-cloud-java/issues/10093)) ([91a4e4e](https://github.com/googleapis/google-cloud-java/commit/91a4e4e20252f667b8fc6bda0d9ceaf947348274))
+
+
 ## 1.29.0 (2023-11-06)
 
 ### Dependencies

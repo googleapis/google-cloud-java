@@ -192,6 +192,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
@@ -240,6 +241,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
@@ -288,6 +290,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
@@ -350,6 +353,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
@@ -412,6 +416,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
@@ -471,6 +476,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
@@ -516,6 +522,72 @@ public class CloudFilestoreManagerClientTest {
               .setFileShare("fileShare-1327728701")
               .build();
       client.restoreInstanceAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void revertInstanceTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setDescription("description-1724546052")
+            .setStatusMessage("statusMessage-958704715")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .addAllFileShares(new ArrayList<FileShareConfig>())
+            .addAllNetworks(new ArrayList<NetworkConfig>())
+            .setEtag("etag3123477")
+            .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setKmsKeyName("kmsKeyName412586233")
+            .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("revertInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudFilestoreManager.addResponse(resultOperation);
+
+    RevertInstanceRequest request =
+        RevertInstanceRequest.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setTargetSnapshotId("targetSnapshotId-2099459472")
+            .build();
+
+    Instance actualResponse = client.revertInstanceAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudFilestoreManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RevertInstanceRequest actualRequest = ((RevertInstanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getTargetSnapshotId(), actualRequest.getTargetSnapshotId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void revertInstanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudFilestoreManager.addException(exception);
+
+    try {
+      RevertInstanceRequest request =
+          RevertInstanceRequest.newBuilder()
+              .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .setTargetSnapshotId("targetSnapshotId-2099459472")
+              .build();
+      client.revertInstanceAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -1136,6 +1208,7 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKey("kmsKey-1127483058")
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
@@ -1184,6 +1257,7 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKey("kmsKey-1127483058")
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
@@ -1232,6 +1306,7 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKey("kmsKey-1127483058")
             .build();
     Operation resultOperation =
@@ -1294,6 +1369,7 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKey("kmsKey-1127483058")
             .build();
     Operation resultOperation =
@@ -1440,6 +1516,7 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKey("kmsKey-1127483058")
             .build();
     Operation resultOperation =

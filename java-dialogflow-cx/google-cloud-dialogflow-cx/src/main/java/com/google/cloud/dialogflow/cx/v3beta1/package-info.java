@@ -155,6 +155,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= GeneratorsClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [Generators][google.cloud.dialogflow.cx.v3beta1.Generator]
+ *
+ * <p>Sample for GeneratorsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GeneratorsClient generatorsClient = GeneratorsClient.create()) {
+ *   GeneratorName name = GeneratorName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[GENERATOR]");
+ *   Generator response = generatorsClient.getGenerator(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= IntentsClient =======================
  *
  * <p>Service Description: Service for managing

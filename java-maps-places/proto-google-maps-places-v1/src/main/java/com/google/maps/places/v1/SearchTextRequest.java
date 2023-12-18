@@ -22,7 +22,7 @@ package com.google.maps.places.v1;
  *
  *
  * <pre>
- * Request data structure for SearchText.
+ * Request proto for SearchText.
  * </pre>
  *
  * Protobuf type {@code google.maps.places.v1.SearchTextRequest}
@@ -50,11 +50,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchTextRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -231,968 +226,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.maps.places.v1.SearchTextRequest.RankPreference)
   }
 
-  public interface LocationOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.maps.places.v1.SearchTextRequest.Location)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * A rectangle box defined by northeast and southwest corner.
-     * </pre>
-     *
-     * <code>.google.geo.type.Viewport rectangle = 1;</code>
-     *
-     * @return Whether the rectangle field is set.
-     */
-    boolean hasRectangle();
-    /**
-     *
-     *
-     * <pre>
-     * A rectangle box defined by northeast and southwest corner.
-     * </pre>
-     *
-     * <code>.google.geo.type.Viewport rectangle = 1;</code>
-     *
-     * @return The rectangle.
-     */
-    com.google.geo.type.Viewport getRectangle();
-    /**
-     *
-     *
-     * <pre>
-     * A rectangle box defined by northeast and southwest corner.
-     * </pre>
-     *
-     * <code>.google.geo.type.Viewport rectangle = 1;</code>
-     */
-    com.google.geo.type.ViewportOrBuilder getRectangleOrBuilder();
-
-    /**
-     *
-     *
-     * <pre>
-     * Make location field a strict restriction and filter out POIs outside of
-     * the given location. If location type field is unset this field will have
-     * no effect.
-     * </pre>
-     *
-     * <code>bool strict_restriction = 2;</code>
-     *
-     * @return The strictRestriction.
-     */
-    boolean getStrictRestriction();
-
-    public com.google.maps.places.v1.SearchTextRequest.Location.TypeCase getTypeCase();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The region to search.
-   * Deprecated. Use LocationRestriction or LocationBias instead.
-   * </pre>
-   *
-   * Protobuf type {@code google.maps.places.v1.SearchTextRequest.Location}
-   */
-  public static final class Location extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.maps.places.v1.SearchTextRequest.Location)
-      LocationOrBuilder {
-    private static final long serialVersionUID = 0L;
-    // Use Location.newBuilder() to construct.
-    private Location(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private Location() {}
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new Location();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.maps.places.v1.PlacesServiceProto
-          .internal_static_google_maps_places_v1_SearchTextRequest_Location_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.maps.places.v1.PlacesServiceProto
-          .internal_static_google_maps_places_v1_SearchTextRequest_Location_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.maps.places.v1.SearchTextRequest.Location.class,
-              com.google.maps.places.v1.SearchTextRequest.Location.Builder.class);
-    }
-
-    private int typeCase_ = 0;
-    private java.lang.Object type_;
-
-    public enum TypeCase
-        implements
-            com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      RECTANGLE(1),
-      TYPE_NOT_SET(0);
-      private final int value;
-
-      private TypeCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static TypeCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static TypeCase forNumber(int value) {
-        switch (value) {
-          case 1:
-            return RECTANGLE;
-          case 0:
-            return TYPE_NOT_SET;
-          default:
-            return null;
-        }
-      }
-
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public TypeCase getTypeCase() {
-      return TypeCase.forNumber(typeCase_);
-    }
-
-    public static final int RECTANGLE_FIELD_NUMBER = 1;
-    /**
-     *
-     *
-     * <pre>
-     * A rectangle box defined by northeast and southwest corner.
-     * </pre>
-     *
-     * <code>.google.geo.type.Viewport rectangle = 1;</code>
-     *
-     * @return Whether the rectangle field is set.
-     */
-    @java.lang.Override
-    public boolean hasRectangle() {
-      return typeCase_ == 1;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A rectangle box defined by northeast and southwest corner.
-     * </pre>
-     *
-     * <code>.google.geo.type.Viewport rectangle = 1;</code>
-     *
-     * @return The rectangle.
-     */
-    @java.lang.Override
-    public com.google.geo.type.Viewport getRectangle() {
-      if (typeCase_ == 1) {
-        return (com.google.geo.type.Viewport) type_;
-      }
-      return com.google.geo.type.Viewport.getDefaultInstance();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A rectangle box defined by northeast and southwest corner.
-     * </pre>
-     *
-     * <code>.google.geo.type.Viewport rectangle = 1;</code>
-     */
-    @java.lang.Override
-    public com.google.geo.type.ViewportOrBuilder getRectangleOrBuilder() {
-      if (typeCase_ == 1) {
-        return (com.google.geo.type.Viewport) type_;
-      }
-      return com.google.geo.type.Viewport.getDefaultInstance();
-    }
-
-    public static final int STRICT_RESTRICTION_FIELD_NUMBER = 2;
-    private boolean strictRestriction_ = false;
-    /**
-     *
-     *
-     * <pre>
-     * Make location field a strict restriction and filter out POIs outside of
-     * the given location. If location type field is unset this field will have
-     * no effect.
-     * </pre>
-     *
-     * <code>bool strict_restriction = 2;</code>
-     *
-     * @return The strictRestriction.
-     */
-    @java.lang.Override
-    public boolean getStrictRestriction() {
-      return strictRestriction_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (typeCase_ == 1) {
-        output.writeMessage(1, (com.google.geo.type.Viewport) type_);
-      }
-      if (strictRestriction_ != false) {
-        output.writeBool(2, strictRestriction_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (typeCase_ == 1) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeMessageSize(
-                1, (com.google.geo.type.Viewport) type_);
-      }
-      if (strictRestriction_ != false) {
-        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, strictRestriction_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj instanceof com.google.maps.places.v1.SearchTextRequest.Location)) {
-        return super.equals(obj);
-      }
-      com.google.maps.places.v1.SearchTextRequest.Location other =
-          (com.google.maps.places.v1.SearchTextRequest.Location) obj;
-
-      if (getStrictRestriction() != other.getStrictRestriction()) return false;
-      if (!getTypeCase().equals(other.getTypeCase())) return false;
-      switch (typeCase_) {
-        case 1:
-          if (!getRectangle().equals(other.getRectangle())) return false;
-          break;
-        case 0:
-        default:
-      }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + STRICT_RESTRICTION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStrictRestriction());
-      switch (typeCase_) {
-        case 1:
-          hash = (37 * hash) + RECTANGLE_FIELD_NUMBER;
-          hash = (53 * hash) + getRectangle().hashCode();
-          break;
-        case 0:
-        default:
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.maps.places.v1.SearchTextRequest.Location parseFrom(
-        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.maps.places.v1.SearchTextRequest.Location parseFrom(
-        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.maps.places.v1.SearchTextRequest.Location parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.maps.places.v1.SearchTextRequest.Location parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.maps.places.v1.SearchTextRequest.Location parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.maps.places.v1.SearchTextRequest.Location parseFrom(
-        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.maps.places.v1.SearchTextRequest.Location parseFrom(
-        java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.maps.places.v1.SearchTextRequest.Location parseFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.maps.places.v1.SearchTextRequest.Location parseDelimitedFrom(
-        java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.maps.places.v1.SearchTextRequest.Location parseDelimitedFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.maps.places.v1.SearchTextRequest.Location parseFrom(
-        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.maps.places.v1.SearchTextRequest.Location parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.maps.places.v1.SearchTextRequest.Location prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The region to search.
-     * Deprecated. Use LocationRestriction or LocationBias instead.
-     * </pre>
-     *
-     * Protobuf type {@code google.maps.places.v1.SearchTextRequest.Location}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.maps.places.v1.SearchTextRequest.Location)
-        com.google.maps.places.v1.SearchTextRequest.LocationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.maps.places.v1.PlacesServiceProto
-            .internal_static_google_maps_places_v1_SearchTextRequest_Location_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.maps.places.v1.PlacesServiceProto
-            .internal_static_google_maps_places_v1_SearchTextRequest_Location_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.maps.places.v1.SearchTextRequest.Location.class,
-                com.google.maps.places.v1.SearchTextRequest.Location.Builder.class);
-      }
-
-      // Construct using com.google.maps.places.v1.SearchTextRequest.Location.newBuilder()
-      private Builder() {}
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        if (rectangleBuilder_ != null) {
-          rectangleBuilder_.clear();
-        }
-        strictRestriction_ = false;
-        typeCase_ = 0;
-        type_ = null;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.maps.places.v1.PlacesServiceProto
-            .internal_static_google_maps_places_v1_SearchTextRequest_Location_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.maps.places.v1.SearchTextRequest.Location getDefaultInstanceForType() {
-        return com.google.maps.places.v1.SearchTextRequest.Location.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.maps.places.v1.SearchTextRequest.Location build() {
-        com.google.maps.places.v1.SearchTextRequest.Location result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.maps.places.v1.SearchTextRequest.Location buildPartial() {
-        com.google.maps.places.v1.SearchTextRequest.Location result =
-            new com.google.maps.places.v1.SearchTextRequest.Location(this);
-        if (bitField0_ != 0) {
-          buildPartial0(result);
-        }
-        buildPartialOneofs(result);
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(com.google.maps.places.v1.SearchTextRequest.Location result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.strictRestriction_ = strictRestriction_;
-        }
-      }
-
-      private void buildPartialOneofs(com.google.maps.places.v1.SearchTextRequest.Location result) {
-        result.typeCase_ = typeCase_;
-        result.type_ = this.type_;
-        if (typeCase_ == 1 && rectangleBuilder_ != null) {
-          result.type_ = rectangleBuilder_.build();
-        }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.maps.places.v1.SearchTextRequest.Location) {
-          return mergeFrom((com.google.maps.places.v1.SearchTextRequest.Location) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.maps.places.v1.SearchTextRequest.Location other) {
-        if (other == com.google.maps.places.v1.SearchTextRequest.Location.getDefaultInstance())
-          return this;
-        if (other.getStrictRestriction() != false) {
-          setStrictRestriction(other.getStrictRestriction());
-        }
-        switch (other.getTypeCase()) {
-          case RECTANGLE:
-            {
-              mergeRectangle(other.getRectangle());
-              break;
-            }
-          case TYPE_NOT_SET:
-            {
-              break;
-            }
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  input.readMessage(getRectangleFieldBuilder().getBuilder(), extensionRegistry);
-                  typeCase_ = 1;
-                  break;
-                } // case 10
-              case 16:
-                {
-                  strictRestriction_ = input.readBool();
-                  bitField0_ |= 0x00000002;
-                  break;
-                } // case 16
-              default:
-                {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-
-      private int typeCase_ = 0;
-      private java.lang.Object type_;
-
-      public TypeCase getTypeCase() {
-        return TypeCase.forNumber(typeCase_);
-      }
-
-      public Builder clearType() {
-        typeCase_ = 0;
-        type_ = null;
-        onChanged();
-        return this;
-      }
-
-      private int bitField0_;
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.geo.type.Viewport,
-              com.google.geo.type.Viewport.Builder,
-              com.google.geo.type.ViewportOrBuilder>
-          rectangleBuilder_;
-      /**
-       *
-       *
-       * <pre>
-       * A rectangle box defined by northeast and southwest corner.
-       * </pre>
-       *
-       * <code>.google.geo.type.Viewport rectangle = 1;</code>
-       *
-       * @return Whether the rectangle field is set.
-       */
-      @java.lang.Override
-      public boolean hasRectangle() {
-        return typeCase_ == 1;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A rectangle box defined by northeast and southwest corner.
-       * </pre>
-       *
-       * <code>.google.geo.type.Viewport rectangle = 1;</code>
-       *
-       * @return The rectangle.
-       */
-      @java.lang.Override
-      public com.google.geo.type.Viewport getRectangle() {
-        if (rectangleBuilder_ == null) {
-          if (typeCase_ == 1) {
-            return (com.google.geo.type.Viewport) type_;
-          }
-          return com.google.geo.type.Viewport.getDefaultInstance();
-        } else {
-          if (typeCase_ == 1) {
-            return rectangleBuilder_.getMessage();
-          }
-          return com.google.geo.type.Viewport.getDefaultInstance();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A rectangle box defined by northeast and southwest corner.
-       * </pre>
-       *
-       * <code>.google.geo.type.Viewport rectangle = 1;</code>
-       */
-      public Builder setRectangle(com.google.geo.type.Viewport value) {
-        if (rectangleBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          type_ = value;
-          onChanged();
-        } else {
-          rectangleBuilder_.setMessage(value);
-        }
-        typeCase_ = 1;
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A rectangle box defined by northeast and southwest corner.
-       * </pre>
-       *
-       * <code>.google.geo.type.Viewport rectangle = 1;</code>
-       */
-      public Builder setRectangle(com.google.geo.type.Viewport.Builder builderForValue) {
-        if (rectangleBuilder_ == null) {
-          type_ = builderForValue.build();
-          onChanged();
-        } else {
-          rectangleBuilder_.setMessage(builderForValue.build());
-        }
-        typeCase_ = 1;
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A rectangle box defined by northeast and southwest corner.
-       * </pre>
-       *
-       * <code>.google.geo.type.Viewport rectangle = 1;</code>
-       */
-      public Builder mergeRectangle(com.google.geo.type.Viewport value) {
-        if (rectangleBuilder_ == null) {
-          if (typeCase_ == 1 && type_ != com.google.geo.type.Viewport.getDefaultInstance()) {
-            type_ =
-                com.google.geo.type.Viewport.newBuilder((com.google.geo.type.Viewport) type_)
-                    .mergeFrom(value)
-                    .buildPartial();
-          } else {
-            type_ = value;
-          }
-          onChanged();
-        } else {
-          if (typeCase_ == 1) {
-            rectangleBuilder_.mergeFrom(value);
-          } else {
-            rectangleBuilder_.setMessage(value);
-          }
-        }
-        typeCase_ = 1;
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A rectangle box defined by northeast and southwest corner.
-       * </pre>
-       *
-       * <code>.google.geo.type.Viewport rectangle = 1;</code>
-       */
-      public Builder clearRectangle() {
-        if (rectangleBuilder_ == null) {
-          if (typeCase_ == 1) {
-            typeCase_ = 0;
-            type_ = null;
-            onChanged();
-          }
-        } else {
-          if (typeCase_ == 1) {
-            typeCase_ = 0;
-            type_ = null;
-          }
-          rectangleBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A rectangle box defined by northeast and southwest corner.
-       * </pre>
-       *
-       * <code>.google.geo.type.Viewport rectangle = 1;</code>
-       */
-      public com.google.geo.type.Viewport.Builder getRectangleBuilder() {
-        return getRectangleFieldBuilder().getBuilder();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A rectangle box defined by northeast and southwest corner.
-       * </pre>
-       *
-       * <code>.google.geo.type.Viewport rectangle = 1;</code>
-       */
-      @java.lang.Override
-      public com.google.geo.type.ViewportOrBuilder getRectangleOrBuilder() {
-        if ((typeCase_ == 1) && (rectangleBuilder_ != null)) {
-          return rectangleBuilder_.getMessageOrBuilder();
-        } else {
-          if (typeCase_ == 1) {
-            return (com.google.geo.type.Viewport) type_;
-          }
-          return com.google.geo.type.Viewport.getDefaultInstance();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A rectangle box defined by northeast and southwest corner.
-       * </pre>
-       *
-       * <code>.google.geo.type.Viewport rectangle = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.geo.type.Viewport,
-              com.google.geo.type.Viewport.Builder,
-              com.google.geo.type.ViewportOrBuilder>
-          getRectangleFieldBuilder() {
-        if (rectangleBuilder_ == null) {
-          if (!(typeCase_ == 1)) {
-            type_ = com.google.geo.type.Viewport.getDefaultInstance();
-          }
-          rectangleBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.geo.type.Viewport,
-                  com.google.geo.type.Viewport.Builder,
-                  com.google.geo.type.ViewportOrBuilder>(
-                  (com.google.geo.type.Viewport) type_, getParentForChildren(), isClean());
-          type_ = null;
-        }
-        typeCase_ = 1;
-        onChanged();
-        return rectangleBuilder_;
-      }
-
-      private boolean strictRestriction_;
-      /**
-       *
-       *
-       * <pre>
-       * Make location field a strict restriction and filter out POIs outside of
-       * the given location. If location type field is unset this field will have
-       * no effect.
-       * </pre>
-       *
-       * <code>bool strict_restriction = 2;</code>
-       *
-       * @return The strictRestriction.
-       */
-      @java.lang.Override
-      public boolean getStrictRestriction() {
-        return strictRestriction_;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Make location field a strict restriction and filter out POIs outside of
-       * the given location. If location type field is unset this field will have
-       * no effect.
-       * </pre>
-       *
-       * <code>bool strict_restriction = 2;</code>
-       *
-       * @param value The strictRestriction to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStrictRestriction(boolean value) {
-
-        strictRestriction_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Make location field a strict restriction and filter out POIs outside of
-       * the given location. If location type field is unset this field will have
-       * no effect.
-       * </pre>
-       *
-       * <code>bool strict_restriction = 2;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearStrictRestriction() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        strictRestriction_ = false;
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.maps.places.v1.SearchTextRequest.Location)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.maps.places.v1.SearchTextRequest.Location)
-    private static final com.google.maps.places.v1.SearchTextRequest.Location DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE = new com.google.maps.places.v1.SearchTextRequest.Location();
-    }
-
-    public static com.google.maps.places.v1.SearchTextRequest.Location getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Location> PARSER =
-        new com.google.protobuf.AbstractParser<Location>() {
-          @java.lang.Override
-          public Location parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            Builder builder = newBuilder();
-            try {
-              builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
-            }
-            return builder.buildPartial();
-          }
-        };
-
-    public static com.google.protobuf.Parser<Location> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Location> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.maps.places.v1.SearchTextRequest.Location getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-  }
-
   public interface LocationBiasOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.maps.places.v1.SearchTextRequest.LocationBias)
@@ -1268,7 +301,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      */
     com.google.maps.places.v1.CircleOrBuilder getCircleOrBuilder();
 
-    public com.google.maps.places.v1.SearchTextRequest.LocationBias.TypeCase getTypeCase();
+    com.google.maps.places.v1.SearchTextRequest.LocationBias.TypeCase getTypeCase();
   }
   /**
    *
@@ -1298,11 +331,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       return new LocationBias();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.maps.places.v1.PlacesServiceProto
           .internal_static_google_maps_places_v1_SearchTextRequest_LocationBias_descriptor;
@@ -1319,6 +347,8 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int typeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object type_;
 
     public enum TypeCase
@@ -2406,7 +1436,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      */
     com.google.geo.type.ViewportOrBuilder getRectangleOrBuilder();
 
-    public com.google.maps.places.v1.SearchTextRequest.LocationRestriction.TypeCase getTypeCase();
+    com.google.maps.places.v1.SearchTextRequest.LocationRestriction.TypeCase getTypeCase();
   }
   /**
    *
@@ -2436,11 +1466,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       return new LocationRestriction();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.maps.places.v1.PlacesServiceProto
           .internal_static_google_maps_places_v1_SearchTextRequest_LocationRestriction_descriptor;
@@ -2457,6 +1482,8 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int typeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object type_;
 
     public enum TypeCase
@@ -3285,6 +2312,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
    * If the language code is unspecified or unrecognized, place details of any
    * language may be returned, with a preference for English if such details
    * exist.
+   *
    * Current list of supported languages:
    * https://developers.google.com/maps/faq#languagesupport.
    * </pre>
@@ -3313,6 +2341,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
    * If the language code is unspecified or unrecognized, place details of any
    * language may be returned, with a preference for English if such details
    * exist.
+   *
    * Current list of supported languages:
    * https://developers.google.com/maps/faq#languagesupport.
    * </pre>
@@ -3343,10 +2372,14 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The Unicode country/region code (CLDR) of the location where the
-   * request is coming from. It is used to display the place details, like
-   * region-specific place name, if available.
+   * request is coming from. This parameter is used to display the place
+   * details, like region-specific place name, if available. The parameter can
+   * affect results based on applicable law.
+   *
    * For more information, see
    * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+   *
+   *
    * Note that 3-digit region codes are not currently supported.
    * </pre>
    *
@@ -3371,10 +2404,14 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The Unicode country/region code (CLDR) of the location where the
-   * request is coming from. It is used to display the place details, like
-   * region-specific place name, if available.
+   * request is coming from. This parameter is used to display the place
+   * details, like region-specific place name, if available. The parameter can
+   * affect results based on applicable law.
+   *
    * For more information, see
    * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+   *
+   *
    * Note that 3-digit region codes are not currently supported.
    * </pre>
    *
@@ -3430,78 +2467,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     return result == null
         ? com.google.maps.places.v1.SearchTextRequest.RankPreference.UNRECOGNIZED
         : result;
-  }
-
-  public static final int LOCATION_FIELD_NUMBER = 5;
-  private com.google.maps.places.v1.SearchTextRequest.Location location_;
-  /**
-   *
-   *
-   * <pre>
-   * The region to search. Setting location would usually yields
-   * better results. Recommended to set. This location serves as a bias unless
-   * strict_restriction is set to true, which turns the location to a strict
-   * restriction.
-   * Deprecated.  Use LocationRestriction or LocationBias instead.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.SearchTextRequest.Location location = 5 [deprecated = true];
-   * </code>
-   *
-   * @deprecated google.maps.places.v1.SearchTextRequest.location is deprecated. See
-   *     google/maps/places/v1/places_service.proto;l=141
-   * @return Whether the location field is set.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public boolean hasLocation() {
-    return location_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The region to search. Setting location would usually yields
-   * better results. Recommended to set. This location serves as a bias unless
-   * strict_restriction is set to true, which turns the location to a strict
-   * restriction.
-   * Deprecated.  Use LocationRestriction or LocationBias instead.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.SearchTextRequest.Location location = 5 [deprecated = true];
-   * </code>
-   *
-   * @deprecated google.maps.places.v1.SearchTextRequest.location is deprecated. See
-   *     google/maps/places/v1/places_service.proto;l=141
-   * @return The location.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.maps.places.v1.SearchTextRequest.Location getLocation() {
-    return location_ == null
-        ? com.google.maps.places.v1.SearchTextRequest.Location.getDefaultInstance()
-        : location_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The region to search. Setting location would usually yields
-   * better results. Recommended to set. This location serves as a bias unless
-   * strict_restriction is set to true, which turns the location to a strict
-   * restriction.
-   * Deprecated.  Use LocationRestriction or LocationBias instead.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.SearchTextRequest.Location location = 5 [deprecated = true];
-   * </code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.maps.places.v1.SearchTextRequest.LocationOrBuilder getLocationOrBuilder() {
-    return location_ == null
-        ? com.google.maps.places.v1.SearchTextRequest.Location.getDefaultInstance()
-        : location_;
   }
 
   public static final int INCLUDED_TYPE_FIELD_NUMBER = 6;
@@ -3578,75 +2543,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     return openNow_;
   }
 
-  public static final int PRICE_RANGE_FIELD_NUMBER = 8;
-  private com.google.maps.places.v1.Int32Range priceRange_;
-  /**
-   *
-   *
-   * <pre>
-   * [Deprecated!]Used to restrict the search to places that are within a
-   * certain price range. This is on a scale of 0 to 4. Set a minimum of 0 or
-   * set a maximum of 4 has no effect on the search results. Min price is
-   * default to 0 and max price is default to 4. Default value will be used if
-   * either min or max is unset.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.Int32Range price_range = 8 [deprecated = true];</code>
-   *
-   * @deprecated google.maps.places.v1.SearchTextRequest.price_range is deprecated. See
-   *     google/maps/places/v1/places_service.proto;l=157
-   * @return Whether the priceRange field is set.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public boolean hasPriceRange() {
-    return priceRange_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * [Deprecated!]Used to restrict the search to places that are within a
-   * certain price range. This is on a scale of 0 to 4. Set a minimum of 0 or
-   * set a maximum of 4 has no effect on the search results. Min price is
-   * default to 0 and max price is default to 4. Default value will be used if
-   * either min or max is unset.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.Int32Range price_range = 8 [deprecated = true];</code>
-   *
-   * @deprecated google.maps.places.v1.SearchTextRequest.price_range is deprecated. See
-   *     google/maps/places/v1/places_service.proto;l=157
-   * @return The priceRange.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.maps.places.v1.Int32Range getPriceRange() {
-    return priceRange_ == null
-        ? com.google.maps.places.v1.Int32Range.getDefaultInstance()
-        : priceRange_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * [Deprecated!]Used to restrict the search to places that are within a
-   * certain price range. This is on a scale of 0 to 4. Set a minimum of 0 or
-   * set a maximum of 4 has no effect on the search results. Min price is
-   * default to 0 and max price is default to 4. Default value will be used if
-   * either min or max is unset.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.Int32Range price_range = 8 [deprecated = true];</code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.maps.places.v1.Int32RangeOrBuilder getPriceRangeOrBuilder() {
-    return priceRange_ == null
-        ? com.google.maps.places.v1.Int32Range.getDefaultInstance()
-        : priceRange_;
-  }
-
   public static final int MIN_RATING_FIELD_NUMBER = 9;
   private double minRating_ = 0D;
   /**
@@ -3655,7 +2551,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Filter out results whose average user rating is strictly less than this
    * limit. A valid value must be an float between 0 and 5 (inclusively) at a
-   * 0.5 cadence i.e. `[0, 0.5, 1.0, ... , 5.0]` inclusively. This is to keep
+   * 0.5 cadence i.e. [0, 0.5, 1.0, ... , 5.0] inclusively. This is to keep
    * parity with LocalRefinement_UserRating. The input rating will round up to
    * the nearest 0.5(ceiling). For instance, a rating of 0.6 will eliminate all
    * results with a less than 1.0 rating.
@@ -3964,17 +2860,11 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       output.writeEnum(4, rankPreference_);
     }
-    if (location_ != null) {
-      output.writeMessage(5, getLocation());
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(includedType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, includedType_);
     }
     if (openNow_ != false) {
       output.writeBool(7, openNow_);
-    }
-    if (priceRange_ != null) {
-      output.writeMessage(8, getPriceRange());
     }
     if (java.lang.Double.doubleToRawLongBits(minRating_) != 0) {
       output.writeDouble(9, minRating_);
@@ -4021,17 +2911,11 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, rankPreference_);
     }
-    if (location_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getLocation());
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(includedType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, includedType_);
     }
     if (openNow_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, openNow_);
-    }
-    if (priceRange_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getPriceRange());
     }
     if (java.lang.Double.doubleToRawLongBits(minRating_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(9, minRating_);
@@ -4081,16 +2965,8 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!getRegionCode().equals(other.getRegionCode())) return false;
     if (rankPreference_ != other.rankPreference_) return false;
-    if (hasLocation() != other.hasLocation()) return false;
-    if (hasLocation()) {
-      if (!getLocation().equals(other.getLocation())) return false;
-    }
     if (!getIncludedType().equals(other.getIncludedType())) return false;
     if (getOpenNow() != other.getOpenNow()) return false;
-    if (hasPriceRange() != other.hasPriceRange()) return false;
-    if (hasPriceRange()) {
-      if (!getPriceRange().equals(other.getPriceRange())) return false;
-    }
     if (java.lang.Double.doubleToLongBits(getMinRating())
         != java.lang.Double.doubleToLongBits(other.getMinRating())) return false;
     if (getMaxResultCount() != other.getMaxResultCount()) return false;
@@ -4123,18 +2999,10 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getRegionCode().hashCode();
     hash = (37 * hash) + RANK_PREFERENCE_FIELD_NUMBER;
     hash = (53 * hash) + rankPreference_;
-    if (hasLocation()) {
-      hash = (37 * hash) + LOCATION_FIELD_NUMBER;
-      hash = (53 * hash) + getLocation().hashCode();
-    }
     hash = (37 * hash) + INCLUDED_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getIncludedType().hashCode();
     hash = (37 * hash) + OPEN_NOW_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOpenNow());
-    if (hasPriceRange()) {
-      hash = (37 * hash) + PRICE_RANGE_FIELD_NUMBER;
-      hash = (53 * hash) + getPriceRange().hashCode();
-    }
     hash = (37 * hash) + MIN_RATING_FIELD_NUMBER;
     hash =
         (53 * hash)
@@ -4260,7 +3128,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request data structure for SearchText.
+   * Request proto for SearchText.
    * </pre>
    *
    * Protobuf type {@code google.maps.places.v1.SearchTextRequest}
@@ -4299,22 +3167,12 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       languageCode_ = "";
       regionCode_ = "";
       rankPreference_ = 0;
-      location_ = null;
-      if (locationBuilder_ != null) {
-        locationBuilder_.dispose();
-        locationBuilder_ = null;
-      }
       includedType_ = "";
       openNow_ = false;
-      priceRange_ = null;
-      if (priceRangeBuilder_ != null) {
-        priceRangeBuilder_.dispose();
-        priceRangeBuilder_ = null;
-      }
       minRating_ = 0D;
       maxResultCount_ = 0;
       priceLevels_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000100);
       strictTypeFiltering_ = false;
       locationBias_ = null;
       if (locationBiasBuilder_ != null) {
@@ -4362,9 +3220,9 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private void buildPartialRepeatedFields(com.google.maps.places.v1.SearchTextRequest result) {
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         priceLevels_ = java.util.Collections.unmodifiableList(priceLevels_);
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.priceLevels_ = priceLevels_;
     }
@@ -4384,31 +3242,25 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         result.rankPreference_ = rankPreference_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.location_ = locationBuilder_ == null ? location_ : locationBuilder_.build();
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.includedType_ = includedType_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.openNow_ = openNow_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.priceRange_ = priceRangeBuilder_ == null ? priceRange_ : priceRangeBuilder_.build();
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.minRating_ = minRating_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.maxResultCount_ = maxResultCount_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.strictTypeFiltering_ = strictTypeFiltering_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.locationBias_ =
             locationBiasBuilder_ == null ? locationBias_ : locationBiasBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.locationRestriction_ =
             locationRestrictionBuilder_ == null
                 ? locationRestriction_
@@ -4479,19 +3331,13 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       if (other.rankPreference_ != 0) {
         setRankPreferenceValue(other.getRankPreferenceValue());
       }
-      if (other.hasLocation()) {
-        mergeLocation(other.getLocation());
-      }
       if (!other.getIncludedType().isEmpty()) {
         includedType_ = other.includedType_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getOpenNow() != false) {
         setOpenNow(other.getOpenNow());
-      }
-      if (other.hasPriceRange()) {
-        mergePriceRange(other.getPriceRange());
       }
       if (other.getMinRating() != 0D) {
         setMinRating(other.getMinRating());
@@ -4502,7 +3348,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       if (!other.priceLevels_.isEmpty()) {
         if (priceLevels_.isEmpty()) {
           priceLevels_ = other.priceLevels_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensurePriceLevelsIsMutable();
           priceLevels_.addAll(other.priceLevels_);
@@ -4568,40 +3414,28 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
-            case 42:
-              {
-                input.readMessage(getLocationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
             case 50:
               {
                 includedType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 56:
               {
                 openNow_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
-            case 66:
-              {
-                input.readMessage(getPriceRangeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 66
             case 73:
               {
                 minRating_ = input.readDouble();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 73
             case 80:
               {
                 maxResultCount_ = input.readInt32();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 80
             case 88:
@@ -4626,20 +3460,20 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
             case 96:
               {
                 strictTypeFiltering_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 96
             case 106:
               {
                 input.readMessage(getLocationBiasFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(
                     getLocationRestrictionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 114
             default:
@@ -4776,6 +3610,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * If the language code is unspecified or unrecognized, place details of any
      * language may be returned, with a preference for English if such details
      * exist.
+     *
      * Current list of supported languages:
      * https://developers.google.com/maps/faq#languagesupport.
      * </pre>
@@ -4803,6 +3638,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * If the language code is unspecified or unrecognized, place details of any
      * language may be returned, with a preference for English if such details
      * exist.
+     *
      * Current list of supported languages:
      * https://developers.google.com/maps/faq#languagesupport.
      * </pre>
@@ -4830,6 +3666,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * If the language code is unspecified or unrecognized, place details of any
      * language may be returned, with a preference for English if such details
      * exist.
+     *
      * Current list of supported languages:
      * https://developers.google.com/maps/faq#languagesupport.
      * </pre>
@@ -4856,6 +3693,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * If the language code is unspecified or unrecognized, place details of any
      * language may be returned, with a preference for English if such details
      * exist.
+     *
      * Current list of supported languages:
      * https://developers.google.com/maps/faq#languagesupport.
      * </pre>
@@ -4878,6 +3716,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * If the language code is unspecified or unrecognized, place details of any
      * language may be returned, with a preference for English if such details
      * exist.
+     *
      * Current list of supported languages:
      * https://developers.google.com/maps/faq#languagesupport.
      * </pre>
@@ -4904,10 +3743,14 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The Unicode country/region code (CLDR) of the location where the
-     * request is coming from. It is used to display the place details, like
-     * region-specific place name, if available.
+     * request is coming from. This parameter is used to display the place
+     * details, like region-specific place name, if available. The parameter can
+     * affect results based on applicable law.
+     *
      * For more information, see
      * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+     *
+     *
      * Note that 3-digit region codes are not currently supported.
      * </pre>
      *
@@ -4931,10 +3774,14 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The Unicode country/region code (CLDR) of the location where the
-     * request is coming from. It is used to display the place details, like
-     * region-specific place name, if available.
+     * request is coming from. This parameter is used to display the place
+     * details, like region-specific place name, if available. The parameter can
+     * affect results based on applicable law.
+     *
      * For more information, see
      * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+     *
+     *
      * Note that 3-digit region codes are not currently supported.
      * </pre>
      *
@@ -4958,10 +3805,14 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The Unicode country/region code (CLDR) of the location where the
-     * request is coming from. It is used to display the place details, like
-     * region-specific place name, if available.
+     * request is coming from. This parameter is used to display the place
+     * details, like region-specific place name, if available. The parameter can
+     * affect results based on applicable law.
+     *
      * For more information, see
      * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+     *
+     *
      * Note that 3-digit region codes are not currently supported.
      * </pre>
      *
@@ -4984,10 +3835,14 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The Unicode country/region code (CLDR) of the location where the
-     * request is coming from. It is used to display the place details, like
-     * region-specific place name, if available.
+     * request is coming from. This parameter is used to display the place
+     * details, like region-specific place name, if available. The parameter can
+     * affect results based on applicable law.
+     *
      * For more information, see
      * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+     *
+     *
      * Note that 3-digit region codes are not currently supported.
      * </pre>
      *
@@ -5006,10 +3861,14 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The Unicode country/region code (CLDR) of the location where the
-     * request is coming from. It is used to display the place details, like
-     * region-specific place name, if available.
+     * request is coming from. This parameter is used to display the place
+     * details, like region-specific place name, if available. The parameter can
+     * affect results based on applicable law.
+     *
      * For more information, see
      * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+     *
+     *
      * Note that 3-digit region codes are not currently supported.
      * </pre>
      *
@@ -5122,248 +3981,6 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.maps.places.v1.SearchTextRequest.Location location_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.maps.places.v1.SearchTextRequest.Location,
-            com.google.maps.places.v1.SearchTextRequest.Location.Builder,
-            com.google.maps.places.v1.SearchTextRequest.LocationOrBuilder>
-        locationBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * The region to search. Setting location would usually yields
-     * better results. Recommended to set. This location serves as a bias unless
-     * strict_restriction is set to true, which turns the location to a strict
-     * restriction.
-     * Deprecated.  Use LocationRestriction or LocationBias instead.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.SearchTextRequest.Location location = 5 [deprecated = true];
-     * </code>
-     *
-     * @deprecated google.maps.places.v1.SearchTextRequest.location is deprecated. See
-     *     google/maps/places/v1/places_service.proto;l=141
-     * @return Whether the location field is set.
-     */
-    @java.lang.Deprecated
-    public boolean hasLocation() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The region to search. Setting location would usually yields
-     * better results. Recommended to set. This location serves as a bias unless
-     * strict_restriction is set to true, which turns the location to a strict
-     * restriction.
-     * Deprecated.  Use LocationRestriction or LocationBias instead.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.SearchTextRequest.Location location = 5 [deprecated = true];
-     * </code>
-     *
-     * @deprecated google.maps.places.v1.SearchTextRequest.location is deprecated. See
-     *     google/maps/places/v1/places_service.proto;l=141
-     * @return The location.
-     */
-    @java.lang.Deprecated
-    public com.google.maps.places.v1.SearchTextRequest.Location getLocation() {
-      if (locationBuilder_ == null) {
-        return location_ == null
-            ? com.google.maps.places.v1.SearchTextRequest.Location.getDefaultInstance()
-            : location_;
-      } else {
-        return locationBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The region to search. Setting location would usually yields
-     * better results. Recommended to set. This location serves as a bias unless
-     * strict_restriction is set to true, which turns the location to a strict
-     * restriction.
-     * Deprecated.  Use LocationRestriction or LocationBias instead.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.SearchTextRequest.Location location = 5 [deprecated = true];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder setLocation(com.google.maps.places.v1.SearchTextRequest.Location value) {
-      if (locationBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        location_ = value;
-      } else {
-        locationBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The region to search. Setting location would usually yields
-     * better results. Recommended to set. This location serves as a bias unless
-     * strict_restriction is set to true, which turns the location to a strict
-     * restriction.
-     * Deprecated.  Use LocationRestriction or LocationBias instead.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.SearchTextRequest.Location location = 5 [deprecated = true];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder setLocation(
-        com.google.maps.places.v1.SearchTextRequest.Location.Builder builderForValue) {
-      if (locationBuilder_ == null) {
-        location_ = builderForValue.build();
-      } else {
-        locationBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The region to search. Setting location would usually yields
-     * better results. Recommended to set. This location serves as a bias unless
-     * strict_restriction is set to true, which turns the location to a strict
-     * restriction.
-     * Deprecated.  Use LocationRestriction or LocationBias instead.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.SearchTextRequest.Location location = 5 [deprecated = true];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder mergeLocation(com.google.maps.places.v1.SearchTextRequest.Location value) {
-      if (locationBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
-            && location_ != null
-            && location_
-                != com.google.maps.places.v1.SearchTextRequest.Location.getDefaultInstance()) {
-          getLocationBuilder().mergeFrom(value);
-        } else {
-          location_ = value;
-        }
-      } else {
-        locationBuilder_.mergeFrom(value);
-      }
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The region to search. Setting location would usually yields
-     * better results. Recommended to set. This location serves as a bias unless
-     * strict_restriction is set to true, which turns the location to a strict
-     * restriction.
-     * Deprecated.  Use LocationRestriction or LocationBias instead.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.SearchTextRequest.Location location = 5 [deprecated = true];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder clearLocation() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      location_ = null;
-      if (locationBuilder_ != null) {
-        locationBuilder_.dispose();
-        locationBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The region to search. Setting location would usually yields
-     * better results. Recommended to set. This location serves as a bias unless
-     * strict_restriction is set to true, which turns the location to a strict
-     * restriction.
-     * Deprecated.  Use LocationRestriction or LocationBias instead.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.SearchTextRequest.Location location = 5 [deprecated = true];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public com.google.maps.places.v1.SearchTextRequest.Location.Builder getLocationBuilder() {
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return getLocationFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The region to search. Setting location would usually yields
-     * better results. Recommended to set. This location serves as a bias unless
-     * strict_restriction is set to true, which turns the location to a strict
-     * restriction.
-     * Deprecated.  Use LocationRestriction or LocationBias instead.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.SearchTextRequest.Location location = 5 [deprecated = true];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public com.google.maps.places.v1.SearchTextRequest.LocationOrBuilder getLocationOrBuilder() {
-      if (locationBuilder_ != null) {
-        return locationBuilder_.getMessageOrBuilder();
-      } else {
-        return location_ == null
-            ? com.google.maps.places.v1.SearchTextRequest.Location.getDefaultInstance()
-            : location_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The region to search. Setting location would usually yields
-     * better results. Recommended to set. This location serves as a bias unless
-     * strict_restriction is set to true, which turns the location to a strict
-     * restriction.
-     * Deprecated.  Use LocationRestriction or LocationBias instead.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.SearchTextRequest.Location location = 5 [deprecated = true];
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.maps.places.v1.SearchTextRequest.Location,
-            com.google.maps.places.v1.SearchTextRequest.Location.Builder,
-            com.google.maps.places.v1.SearchTextRequest.LocationOrBuilder>
-        getLocationFieldBuilder() {
-      if (locationBuilder_ == null) {
-        locationBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.maps.places.v1.SearchTextRequest.Location,
-                com.google.maps.places.v1.SearchTextRequest.Location.Builder,
-                com.google.maps.places.v1.SearchTextRequest.LocationOrBuilder>(
-                getLocation(), getParentForChildren(), isClean());
-        location_ = null;
-      }
-      return locationBuilder_;
-    }
-
     private java.lang.Object includedType_ = "";
     /**
      *
@@ -5432,7 +4049,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       includedType_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5451,7 +4068,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearIncludedType() {
       includedType_ = getDefaultInstance().getIncludedType();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -5475,7 +4092,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       includedType_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5513,7 +4130,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public Builder setOpenNow(boolean value) {
 
       openNow_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5530,241 +4147,10 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearOpenNow() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       openNow_ = false;
       onChanged();
       return this;
-    }
-
-    private com.google.maps.places.v1.Int32Range priceRange_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.maps.places.v1.Int32Range,
-            com.google.maps.places.v1.Int32Range.Builder,
-            com.google.maps.places.v1.Int32RangeOrBuilder>
-        priceRangeBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * [Deprecated!]Used to restrict the search to places that are within a
-     * certain price range. This is on a scale of 0 to 4. Set a minimum of 0 or
-     * set a maximum of 4 has no effect on the search results. Min price is
-     * default to 0 and max price is default to 4. Default value will be used if
-     * either min or max is unset.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Int32Range price_range = 8 [deprecated = true];</code>
-     *
-     * @deprecated google.maps.places.v1.SearchTextRequest.price_range is deprecated. See
-     *     google/maps/places/v1/places_service.proto;l=157
-     * @return Whether the priceRange field is set.
-     */
-    @java.lang.Deprecated
-    public boolean hasPriceRange() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Deprecated!]Used to restrict the search to places that are within a
-     * certain price range. This is on a scale of 0 to 4. Set a minimum of 0 or
-     * set a maximum of 4 has no effect on the search results. Min price is
-     * default to 0 and max price is default to 4. Default value will be used if
-     * either min or max is unset.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Int32Range price_range = 8 [deprecated = true];</code>
-     *
-     * @deprecated google.maps.places.v1.SearchTextRequest.price_range is deprecated. See
-     *     google/maps/places/v1/places_service.proto;l=157
-     * @return The priceRange.
-     */
-    @java.lang.Deprecated
-    public com.google.maps.places.v1.Int32Range getPriceRange() {
-      if (priceRangeBuilder_ == null) {
-        return priceRange_ == null
-            ? com.google.maps.places.v1.Int32Range.getDefaultInstance()
-            : priceRange_;
-      } else {
-        return priceRangeBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Deprecated!]Used to restrict the search to places that are within a
-     * certain price range. This is on a scale of 0 to 4. Set a minimum of 0 or
-     * set a maximum of 4 has no effect on the search results. Min price is
-     * default to 0 and max price is default to 4. Default value will be used if
-     * either min or max is unset.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Int32Range price_range = 8 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public Builder setPriceRange(com.google.maps.places.v1.Int32Range value) {
-      if (priceRangeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        priceRange_ = value;
-      } else {
-        priceRangeBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000080;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Deprecated!]Used to restrict the search to places that are within a
-     * certain price range. This is on a scale of 0 to 4. Set a minimum of 0 or
-     * set a maximum of 4 has no effect on the search results. Min price is
-     * default to 0 and max price is default to 4. Default value will be used if
-     * either min or max is unset.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Int32Range price_range = 8 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public Builder setPriceRange(com.google.maps.places.v1.Int32Range.Builder builderForValue) {
-      if (priceRangeBuilder_ == null) {
-        priceRange_ = builderForValue.build();
-      } else {
-        priceRangeBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000080;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Deprecated!]Used to restrict the search to places that are within a
-     * certain price range. This is on a scale of 0 to 4. Set a minimum of 0 or
-     * set a maximum of 4 has no effect on the search results. Min price is
-     * default to 0 and max price is default to 4. Default value will be used if
-     * either min or max is unset.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Int32Range price_range = 8 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public Builder mergePriceRange(com.google.maps.places.v1.Int32Range value) {
-      if (priceRangeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
-            && priceRange_ != null
-            && priceRange_ != com.google.maps.places.v1.Int32Range.getDefaultInstance()) {
-          getPriceRangeBuilder().mergeFrom(value);
-        } else {
-          priceRange_ = value;
-        }
-      } else {
-        priceRangeBuilder_.mergeFrom(value);
-      }
-      bitField0_ |= 0x00000080;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Deprecated!]Used to restrict the search to places that are within a
-     * certain price range. This is on a scale of 0 to 4. Set a minimum of 0 or
-     * set a maximum of 4 has no effect on the search results. Min price is
-     * default to 0 and max price is default to 4. Default value will be used if
-     * either min or max is unset.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Int32Range price_range = 8 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public Builder clearPriceRange() {
-      bitField0_ = (bitField0_ & ~0x00000080);
-      priceRange_ = null;
-      if (priceRangeBuilder_ != null) {
-        priceRangeBuilder_.dispose();
-        priceRangeBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Deprecated!]Used to restrict the search to places that are within a
-     * certain price range. This is on a scale of 0 to 4. Set a minimum of 0 or
-     * set a maximum of 4 has no effect on the search results. Min price is
-     * default to 0 and max price is default to 4. Default value will be used if
-     * either min or max is unset.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Int32Range price_range = 8 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public com.google.maps.places.v1.Int32Range.Builder getPriceRangeBuilder() {
-      bitField0_ |= 0x00000080;
-      onChanged();
-      return getPriceRangeFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Deprecated!]Used to restrict the search to places that are within a
-     * certain price range. This is on a scale of 0 to 4. Set a minimum of 0 or
-     * set a maximum of 4 has no effect on the search results. Min price is
-     * default to 0 and max price is default to 4. Default value will be used if
-     * either min or max is unset.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Int32Range price_range = 8 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated
-    public com.google.maps.places.v1.Int32RangeOrBuilder getPriceRangeOrBuilder() {
-      if (priceRangeBuilder_ != null) {
-        return priceRangeBuilder_.getMessageOrBuilder();
-      } else {
-        return priceRange_ == null
-            ? com.google.maps.places.v1.Int32Range.getDefaultInstance()
-            : priceRange_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * [Deprecated!]Used to restrict the search to places that are within a
-     * certain price range. This is on a scale of 0 to 4. Set a minimum of 0 or
-     * set a maximum of 4 has no effect on the search results. Min price is
-     * default to 0 and max price is default to 4. Default value will be used if
-     * either min or max is unset.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Int32Range price_range = 8 [deprecated = true];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.maps.places.v1.Int32Range,
-            com.google.maps.places.v1.Int32Range.Builder,
-            com.google.maps.places.v1.Int32RangeOrBuilder>
-        getPriceRangeFieldBuilder() {
-      if (priceRangeBuilder_ == null) {
-        priceRangeBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.maps.places.v1.Int32Range,
-                com.google.maps.places.v1.Int32Range.Builder,
-                com.google.maps.places.v1.Int32RangeOrBuilder>(
-                getPriceRange(), getParentForChildren(), isClean());
-        priceRange_ = null;
-      }
-      return priceRangeBuilder_;
     }
 
     private double minRating_;
@@ -5774,7 +4160,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Filter out results whose average user rating is strictly less than this
      * limit. A valid value must be an float between 0 and 5 (inclusively) at a
-     * 0.5 cadence i.e. `[0, 0.5, 1.0, ... , 5.0]` inclusively. This is to keep
+     * 0.5 cadence i.e. [0, 0.5, 1.0, ... , 5.0] inclusively. This is to keep
      * parity with LocalRefinement_UserRating. The input rating will round up to
      * the nearest 0.5(ceiling). For instance, a rating of 0.6 will eliminate all
      * results with a less than 1.0 rating.
@@ -5794,7 +4180,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Filter out results whose average user rating is strictly less than this
      * limit. A valid value must be an float between 0 and 5 (inclusively) at a
-     * 0.5 cadence i.e. `[0, 0.5, 1.0, ... , 5.0]` inclusively. This is to keep
+     * 0.5 cadence i.e. [0, 0.5, 1.0, ... , 5.0] inclusively. This is to keep
      * parity with LocalRefinement_UserRating. The input rating will round up to
      * the nearest 0.5(ceiling). For instance, a rating of 0.6 will eliminate all
      * results with a less than 1.0 rating.
@@ -5808,7 +4194,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public Builder setMinRating(double value) {
 
       minRating_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -5818,7 +4204,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Filter out results whose average user rating is strictly less than this
      * limit. A valid value must be an float between 0 and 5 (inclusively) at a
-     * 0.5 cadence i.e. `[0, 0.5, 1.0, ... , 5.0]` inclusively. This is to keep
+     * 0.5 cadence i.e. [0, 0.5, 1.0, ... , 5.0] inclusively. This is to keep
      * parity with LocalRefinement_UserRating. The input rating will round up to
      * the nearest 0.5(ceiling). For instance, a rating of 0.6 will eliminate all
      * results with a less than 1.0 rating.
@@ -5829,7 +4215,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMinRating() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000040);
       minRating_ = 0D;
       onChanged();
       return this;
@@ -5872,7 +4258,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public Builder setMaxResultCount(int value) {
 
       maxResultCount_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -5891,7 +4277,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMaxResultCount() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000080);
       maxResultCount_ = 0;
       onChanged();
       return this;
@@ -5900,9 +4286,9 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     private java.util.List<java.lang.Integer> priceLevels_ = java.util.Collections.emptyList();
 
     private void ensurePriceLevelsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         priceLevels_ = new java.util.ArrayList<java.lang.Integer>(priceLevels_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -6041,7 +4427,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearPriceLevels() {
       priceLevels_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -6175,7 +4561,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public Builder setStrictTypeFiltering(boolean value) {
 
       strictTypeFiltering_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6192,7 +4578,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearStrictTypeFiltering() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000200);
       strictTypeFiltering_ = false;
       onChanged();
       return this;
@@ -6218,7 +4604,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the locationBias field is set.
      */
     public boolean hasLocationBias() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -6262,7 +4648,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       } else {
         locationBiasBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6284,7 +4670,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       } else {
         locationBiasBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6302,7 +4688,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public Builder mergeLocationBias(
         com.google.maps.places.v1.SearchTextRequest.LocationBias value) {
       if (locationBiasBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && locationBias_ != null
             && locationBias_
                 != com.google.maps.places.v1.SearchTextRequest.LocationBias.getDefaultInstance()) {
@@ -6313,7 +4699,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       } else {
         locationBiasBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6329,7 +4715,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.maps.places.v1.SearchTextRequest.LocationBias location_bias = 13;</code>
      */
     public Builder clearLocationBias() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000400);
       locationBias_ = null;
       if (locationBiasBuilder_ != null) {
         locationBiasBuilder_.dispose();
@@ -6351,7 +4737,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      */
     public com.google.maps.places.v1.SearchTextRequest.LocationBias.Builder
         getLocationBiasBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getLocationBiasFieldBuilder().getBuilder();
     }
@@ -6425,7 +4811,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the locationRestriction field is set.
      */
     public boolean hasLocationRestriction() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -6473,7 +4859,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       } else {
         locationRestrictionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6496,7 +4882,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       } else {
         locationRestrictionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6515,7 +4901,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
     public Builder mergeLocationRestriction(
         com.google.maps.places.v1.SearchTextRequest.LocationRestriction value) {
       if (locationRestrictionBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && locationRestriction_ != null
             && locationRestriction_
                 != com.google.maps.places.v1.SearchTextRequest.LocationRestriction
@@ -6527,7 +4913,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
       } else {
         locationRestrictionBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6544,7 +4930,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearLocationRestriction() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00000800);
       locationRestriction_ = null;
       if (locationRestrictionBuilder_ != null) {
         locationRestrictionBuilder_.dispose();
@@ -6567,7 +4953,7 @@ public final class SearchTextRequest extends com.google.protobuf.GeneratedMessag
      */
     public com.google.maps.places.v1.SearchTextRequest.LocationRestriction.Builder
         getLocationRestrictionBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getLocationRestrictionFieldBuilder().getBuilder();
     }

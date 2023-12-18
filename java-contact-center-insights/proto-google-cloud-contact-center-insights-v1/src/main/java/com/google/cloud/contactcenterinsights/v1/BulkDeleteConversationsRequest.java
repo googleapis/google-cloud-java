@@ -72,7 +72,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The parent resource to create analyses in.
+   * Required. The parent resource to delete conversations from.
    * Format:
    * projects/{project}/locations/{location}
    * </pre>
@@ -99,7 +99,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The parent resource to create analyses in.
+   * Required. The parent resource to delete conversations from.
    * Format:
    * projects/{project}/locations/{location}
    * </pre>
@@ -131,7 +131,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Filter used to select the subset of conversations to analyze.
+   * Filter used to select the subset of conversations to delete.
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -154,7 +154,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Filter used to select the subset of conversations to analyze.
+   * Filter used to select the subset of conversations to delete.
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -180,8 +180,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Maximum number of conversations to delete. The default is 1000. It can be
-   * changed by setting the `max_delete_count` field.
+   * Maximum number of conversations to delete.
    * </pre>
    *
    * <code>int32 max_delete_count = 3;</code>
@@ -641,7 +640,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent resource to create analyses in.
+     * Required. The parent resource to delete conversations from.
      * Format:
      * projects/{project}/locations/{location}
      * </pre>
@@ -667,7 +666,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent resource to create analyses in.
+     * Required. The parent resource to delete conversations from.
      * Format:
      * projects/{project}/locations/{location}
      * </pre>
@@ -693,7 +692,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent resource to create analyses in.
+     * Required. The parent resource to delete conversations from.
      * Format:
      * projects/{project}/locations/{location}
      * </pre>
@@ -718,7 +717,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent resource to create analyses in.
+     * Required. The parent resource to delete conversations from.
      * Format:
      * projects/{project}/locations/{location}
      * </pre>
@@ -739,7 +738,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent resource to create analyses in.
+     * Required. The parent resource to delete conversations from.
      * Format:
      * projects/{project}/locations/{location}
      * </pre>
@@ -767,7 +766,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Filter used to select the subset of conversations to analyze.
+     * Filter used to select the subset of conversations to delete.
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -789,7 +788,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Filter used to select the subset of conversations to analyze.
+     * Filter used to select the subset of conversations to delete.
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -811,7 +810,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Filter used to select the subset of conversations to analyze.
+     * Filter used to select the subset of conversations to delete.
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -832,7 +831,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Filter used to select the subset of conversations to analyze.
+     * Filter used to select the subset of conversations to delete.
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -849,7 +848,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Filter used to select the subset of conversations to analyze.
+     * Filter used to select the subset of conversations to delete.
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -873,8 +872,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Maximum number of conversations to delete. The default is 1000. It can be
-     * changed by setting the `max_delete_count` field.
+     * Maximum number of conversations to delete.
      * </pre>
      *
      * <code>int32 max_delete_count = 3;</code>
@@ -889,8 +887,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Maximum number of conversations to delete. The default is 1000. It can be
-     * changed by setting the `max_delete_count` field.
+     * Maximum number of conversations to delete.
      * </pre>
      *
      * <code>int32 max_delete_count = 3;</code>
@@ -909,8 +906,7 @@ public final class BulkDeleteConversationsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Maximum number of conversations to delete. The default is 1000. It can be
-     * changed by setting the `max_delete_count` field.
+     * Maximum number of conversations to delete.
      * </pre>
      *
      * <code>int32 max_delete_count = 3;</code>

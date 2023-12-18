@@ -17,6 +17,7 @@
 package com.google.analytics.data.v1alpha;
 
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListAudienceListsPagedResponse;
+import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRecurringAudienceListsPagedResponse;
 
 import com.google.analytics.data.v1alpha.stub.HttpJsonAlphaAnalyticsDataStub;
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -153,11 +154,16 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
   public void createAudienceListTest() throws Exception {
     AudienceList expectedResponse =
         AudienceList.newBuilder()
-            .setName(AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]").toString())
+            .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
             .setAudience("audience975628804")
             .setAudienceDisplayName("audienceDisplayName1537141193")
             .addAllDimensions(new ArrayList<AudienceDimension>())
             .setBeginCreatingTime(Timestamp.newBuilder().build())
+            .setCreationQuotaTokensCharged(1232901266)
+            .setRowCount(1340416618)
+            .setErrorMessage("errorMessage1203236063")
+            .setPercentageCompleted(-1292047642)
+            .setRecurringAudienceList("recurringAudienceList1055738943")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -167,7 +173,7 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
             .build();
     mockService.addResponse(resultOperation);
 
-    PropertyName parent = PropertyName.of("[PROPERTYID]");
+    PropertyName parent = PropertyName.of("[PROPERTY]");
     AudienceList audienceList = AudienceList.newBuilder().build();
 
     AudienceList actualResponse = client.createAudienceListAsync(parent, audienceList).get();
@@ -196,7 +202,7 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      PropertyName parent = PropertyName.of("[PROPERTYID]");
+      PropertyName parent = PropertyName.of("[PROPERTY]");
       AudienceList audienceList = AudienceList.newBuilder().build();
       client.createAudienceListAsync(parent, audienceList).get();
       Assert.fail("No exception raised");
@@ -208,11 +214,16 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
   public void createAudienceListTest2() throws Exception {
     AudienceList expectedResponse =
         AudienceList.newBuilder()
-            .setName(AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]").toString())
+            .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
             .setAudience("audience975628804")
             .setAudienceDisplayName("audienceDisplayName1537141193")
             .addAllDimensions(new ArrayList<AudienceDimension>())
             .setBeginCreatingTime(Timestamp.newBuilder().build())
+            .setCreationQuotaTokensCharged(1232901266)
+            .setRowCount(1340416618)
+            .setErrorMessage("errorMessage1203236063")
+            .setPercentageCompleted(-1292047642)
+            .setRecurringAudienceList("recurringAudienceList1055738943")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -306,18 +317,117 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
   }
 
   @Test
+  public void sheetExportAudienceListTest() throws Exception {
+    SheetExportAudienceListResponse expectedResponse =
+        SheetExportAudienceListResponse.newBuilder()
+            .setSpreadsheetUri("spreadsheetUri1336397312")
+            .setSpreadsheetId("spreadsheetId1844224519")
+            .setRowCount(1340416618)
+            .setAudienceList(AudienceList.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
+
+    SheetExportAudienceListResponse actualResponse = client.sheetExportAudienceList(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void sheetExportAudienceListExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
+      client.sheetExportAudienceList(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void sheetExportAudienceListTest2() throws Exception {
+    SheetExportAudienceListResponse expectedResponse =
+        SheetExportAudienceListResponse.newBuilder()
+            .setSpreadsheetUri("spreadsheetUri1336397312")
+            .setSpreadsheetId("spreadsheetId1844224519")
+            .setRowCount(1340416618)
+            .setAudienceList(AudienceList.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-6618/audienceLists/audienceList-6618";
+
+    SheetExportAudienceListResponse actualResponse = client.sheetExportAudienceList(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void sheetExportAudienceListExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-6618/audienceLists/audienceList-6618";
+      client.sheetExportAudienceList(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getAudienceListTest() throws Exception {
     AudienceList expectedResponse =
         AudienceList.newBuilder()
-            .setName(AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]").toString())
+            .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
             .setAudience("audience975628804")
             .setAudienceDisplayName("audienceDisplayName1537141193")
             .addAllDimensions(new ArrayList<AudienceDimension>())
             .setBeginCreatingTime(Timestamp.newBuilder().build())
+            .setCreationQuotaTokensCharged(1232901266)
+            .setRowCount(1340416618)
+            .setErrorMessage("errorMessage1203236063")
+            .setPercentageCompleted(-1292047642)
+            .setRecurringAudienceList("recurringAudienceList1055738943")
             .build();
     mockService.addResponse(expectedResponse);
 
-    AudienceListName name = AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]");
+    AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
 
     AudienceList actualResponse = client.getAudienceList(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -345,7 +455,7 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      AudienceListName name = AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]");
+      AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
       client.getAudienceList(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -357,11 +467,16 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
   public void getAudienceListTest2() throws Exception {
     AudienceList expectedResponse =
         AudienceList.newBuilder()
-            .setName(AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]").toString())
+            .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
             .setAudience("audience975628804")
             .setAudienceDisplayName("audienceDisplayName1537141193")
             .addAllDimensions(new ArrayList<AudienceDimension>())
             .setBeginCreatingTime(Timestamp.newBuilder().build())
+            .setCreationQuotaTokensCharged(1232901266)
+            .setRowCount(1340416618)
+            .setErrorMessage("errorMessage1203236063")
+            .setPercentageCompleted(-1292047642)
+            .setRecurringAudienceList("recurringAudienceList1055738943")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -411,7 +526,7 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    PropertyName parent = PropertyName.of("[PROPERTYID]");
+    PropertyName parent = PropertyName.of("[PROPERTY]");
 
     ListAudienceListsPagedResponse pagedListResponse = client.listAudienceLists(parent);
 
@@ -443,7 +558,7 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      PropertyName parent = PropertyName.of("[PROPERTYID]");
+      PropertyName parent = PropertyName.of("[PROPERTY]");
       client.listAudienceLists(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -495,6 +610,316 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
     try {
       String parent = "properties/propertie-2024";
       client.listAudienceLists(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createRecurringAudienceListTest() throws Exception {
+    RecurringAudienceList expectedResponse =
+        RecurringAudienceList.newBuilder()
+            .setName(
+                RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]").toString())
+            .setAudience("audience975628804")
+            .setAudienceDisplayName("audienceDisplayName1537141193")
+            .addAllDimensions(new ArrayList<AudienceDimension>())
+            .setActiveDaysRemaining(-1427137945)
+            .addAllAudienceLists(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    RecurringAudienceList recurringAudienceList = RecurringAudienceList.newBuilder().build();
+
+    RecurringAudienceList actualResponse =
+        client.createRecurringAudienceList(parent, recurringAudienceList);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createRecurringAudienceListExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      RecurringAudienceList recurringAudienceList = RecurringAudienceList.newBuilder().build();
+      client.createRecurringAudienceList(parent, recurringAudienceList);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createRecurringAudienceListTest2() throws Exception {
+    RecurringAudienceList expectedResponse =
+        RecurringAudienceList.newBuilder()
+            .setName(
+                RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]").toString())
+            .setAudience("audience975628804")
+            .setAudienceDisplayName("audienceDisplayName1537141193")
+            .addAllDimensions(new ArrayList<AudienceDimension>())
+            .setActiveDaysRemaining(-1427137945)
+            .addAllAudienceLists(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+    RecurringAudienceList recurringAudienceList = RecurringAudienceList.newBuilder().build();
+
+    RecurringAudienceList actualResponse =
+        client.createRecurringAudienceList(parent, recurringAudienceList);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createRecurringAudienceListExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      RecurringAudienceList recurringAudienceList = RecurringAudienceList.newBuilder().build();
+      client.createRecurringAudienceList(parent, recurringAudienceList);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRecurringAudienceListTest() throws Exception {
+    RecurringAudienceList expectedResponse =
+        RecurringAudienceList.newBuilder()
+            .setName(
+                RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]").toString())
+            .setAudience("audience975628804")
+            .setAudienceDisplayName("audienceDisplayName1537141193")
+            .addAllDimensions(new ArrayList<AudienceDimension>())
+            .setActiveDaysRemaining(-1427137945)
+            .addAllAudienceLists(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RecurringAudienceListName name =
+        RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]");
+
+    RecurringAudienceList actualResponse = client.getRecurringAudienceList(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRecurringAudienceListExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RecurringAudienceListName name =
+          RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]");
+      client.getRecurringAudienceList(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRecurringAudienceListTest2() throws Exception {
+    RecurringAudienceList expectedResponse =
+        RecurringAudienceList.newBuilder()
+            .setName(
+                RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]").toString())
+            .setAudience("audience975628804")
+            .setAudienceDisplayName("audienceDisplayName1537141193")
+            .addAllDimensions(new ArrayList<AudienceDimension>())
+            .setActiveDaysRemaining(-1427137945)
+            .addAllAudienceLists(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-8187/recurringAudienceLists/recurringAudienceList-8187";
+
+    RecurringAudienceList actualResponse = client.getRecurringAudienceList(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRecurringAudienceListExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-8187/recurringAudienceLists/recurringAudienceList-8187";
+      client.getRecurringAudienceList(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRecurringAudienceListsTest() throws Exception {
+    RecurringAudienceList responsesElement = RecurringAudienceList.newBuilder().build();
+    ListRecurringAudienceListsResponse expectedResponse =
+        ListRecurringAudienceListsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRecurringAudienceLists(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListRecurringAudienceListsPagedResponse pagedListResponse =
+        client.listRecurringAudienceLists(parent);
+
+    List<RecurringAudienceList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRecurringAudienceListsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRecurringAudienceListsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listRecurringAudienceLists(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRecurringAudienceListsTest2() throws Exception {
+    RecurringAudienceList responsesElement = RecurringAudienceList.newBuilder().build();
+    ListRecurringAudienceListsResponse expectedResponse =
+        ListRecurringAudienceListsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRecurringAudienceLists(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+
+    ListRecurringAudienceListsPagedResponse pagedListResponse =
+        client.listRecurringAudienceLists(parent);
+
+    List<RecurringAudienceList> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRecurringAudienceListsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRecurringAudienceListsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      client.listRecurringAudienceLists(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

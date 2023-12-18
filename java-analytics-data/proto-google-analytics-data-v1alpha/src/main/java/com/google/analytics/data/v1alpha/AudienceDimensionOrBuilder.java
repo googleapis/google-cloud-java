@@ -27,12 +27,12 @@ public interface AudienceDimensionOrBuilder
    *
    *
    * <pre>
-   * The API name of the dimension. See the [API
+   * Optional. The API name of the dimension. See the [API
    * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-api-schema#dimensions)
    * for the list of dimension names.
    * </pre>
    *
-   * <code>string dimension_name = 1;</code>
+   * <code>string dimension_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The dimensionName.
    */
@@ -41,12 +41,12 @@ public interface AudienceDimensionOrBuilder
    *
    *
    * <pre>
-   * The API name of the dimension. See the [API
+   * Optional. The API name of the dimension. See the [API
    * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-api-schema#dimensions)
    * for the list of dimension names.
    * </pre>
    *
-   * <code>string dimension_name = 1;</code>
+   * <code>string dimension_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for dimensionName.
    */

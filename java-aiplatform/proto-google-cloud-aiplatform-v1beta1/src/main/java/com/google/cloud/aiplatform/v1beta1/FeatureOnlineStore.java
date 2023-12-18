@@ -1835,7 +1835,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optimized storage type to replace lightning
+   * Optimized storage type
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized}
@@ -2030,7 +2030,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optimized storage type to replace lightning
+     * Optimized storage type
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized}
@@ -4345,11 +4345,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Name of the FeatureOnlineStore. Format:
+   * Identifier. Name of the FeatureOnlineStore. Format:
    * `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -4369,11 +4369,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Name of the FeatureOnlineStore. Format:
+   * Identifier. Name of the FeatureOnlineStore. Format:
    * `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -6034,11 +6034,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Name of the FeatureOnlineStore. Format:
+     * Identifier. Name of the FeatureOnlineStore. Format:
      * `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -6057,11 +6057,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Name of the FeatureOnlineStore. Format:
+     * Identifier. Name of the FeatureOnlineStore. Format:
      * `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -6080,11 +6080,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Name of the FeatureOnlineStore. Format:
+     * Identifier. Name of the FeatureOnlineStore. Format:
      * `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -6102,11 +6102,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Name of the FeatureOnlineStore. Format:
+     * Identifier. Name of the FeatureOnlineStore. Format:
      * `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -6120,11 +6120,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Name of the FeatureOnlineStore. Format:
+     * Identifier. Name of the FeatureOnlineStore. Format:
      * `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

@@ -54,10 +54,10 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Human-readable display name of this key. Modifiable by user.
+   * Required. Human-readable display name of this key. Modifiable by user.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -66,10 +66,10 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Human-readable display name of this key. Modifiable by user.
+   * Required. Human-readable display name of this key. Modifiable by user.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -184,22 +184,22 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -209,22 +209,22 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -235,11 +235,11 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -285,10 +285,12 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Options for user acceptance testing.
+   * Optional. Options for user acceptance testing.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the testingOptions field is set.
    */
@@ -297,10 +299,12 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Options for user acceptance testing.
+   * Optional. Options for user acceptance testing.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The testingOptions.
    */
@@ -309,10 +313,12 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Options for user acceptance testing.
+   * Optional. Options for user acceptance testing.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.recaptchaenterprise.v1.TestingOptionsOrBuilder getTestingOptionsOrBuilder();
 
@@ -320,10 +326,12 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Settings for WAF
+   * Optional. Settings for WAF
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the wafSettings field is set.
    */
@@ -332,10 +340,12 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Settings for WAF
+   * Optional. Settings for WAF
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The wafSettings.
    */
@@ -344,10 +354,12 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Settings for WAF
+   * Optional. Settings for WAF
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.recaptchaenterprise.v1.WafSettingsOrBuilder getWafSettingsOrBuilder();
 

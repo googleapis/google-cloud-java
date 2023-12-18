@@ -181,175 +181,6 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the list of all entity types in the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-   *   for (EntityType element : entityTypesClient.listEntityTypes(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The agent to list all entity types for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListEntityTypesPagedResponse listEntityTypes(AgentName parent) {
-    ListEntityTypesRequest request =
-        ListEntityTypesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listEntityTypes(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns the list of all entity types in the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
-   *   for (EntityType element : entityTypesClient.listEntityTypes(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The agent to list all entity types for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListEntityTypesPagedResponse listEntityTypes(String parent) {
-    ListEntityTypesRequest request = ListEntityTypesRequest.newBuilder().setParent(parent).build();
-    return listEntityTypes(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns the list of all entity types in the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ListEntityTypesRequest request =
-   *       ListEntityTypesRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
-   *           .setLanguageCode("languageCode-2092349083")
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   for (EntityType element : entityTypesClient.listEntityTypes(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListEntityTypesPagedResponse listEntityTypes(ListEntityTypesRequest request) {
-    return listEntityTypesPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns the list of all entity types in the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ListEntityTypesRequest request =
-   *       ListEntityTypesRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
-   *           .setLanguageCode("languageCode-2092349083")
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   ApiFuture<EntityType> future =
-   *       entityTypesClient.listEntityTypesPagedCallable().futureCall(request);
-   *   // Do something.
-   *   for (EntityType element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
-      listEntityTypesPagedCallable() {
-    return stub.listEntityTypesPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Returns the list of all entity types in the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
-   *   ListEntityTypesRequest request =
-   *       ListEntityTypesRequest.newBuilder()
-   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
-   *           .setLanguageCode("languageCode-2092349083")
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   while (true) {
-   *     ListEntityTypesResponse response =
-   *         entityTypesClient.listEntityTypesCallable().call(request);
-   *     for (EntityType element : response.getEntityTypesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse>
-      listEntityTypesCallable() {
-    return stub.listEntityTypesCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Retrieves the specified entity type.
    *
    * <p>Sample code:
@@ -822,6 +653,175 @@ public class EntityTypesClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable() {
     return stub.deleteEntityTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of all entity types in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+   *   for (EntityType element : entityTypesClient.listEntityTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The agent to list all entity types for. Format: `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEntityTypesPagedResponse listEntityTypes(AgentName parent) {
+    ListEntityTypesRequest request =
+        ListEntityTypesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listEntityTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of all entity types in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
+   *   for (EntityType element : entityTypesClient.listEntityTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The agent to list all entity types for. Format: `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEntityTypesPagedResponse listEntityTypes(String parent) {
+    ListEntityTypesRequest request = ListEntityTypesRequest.newBuilder().setParent(parent).build();
+    return listEntityTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of all entity types in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   ListEntityTypesRequest request =
+   *       ListEntityTypesRequest.newBuilder()
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (EntityType element : entityTypesClient.listEntityTypes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEntityTypesPagedResponse listEntityTypes(ListEntityTypesRequest request) {
+    return listEntityTypesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of all entity types in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   ListEntityTypesRequest request =
+   *       ListEntityTypesRequest.newBuilder()
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<EntityType> future =
+   *       entityTypesClient.listEntityTypesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (EntityType element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
+      listEntityTypesPagedCallable() {
+    return stub.listEntityTypesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of all entity types in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   ListEntityTypesRequest request =
+   *       ListEntityTypesRequest.newBuilder()
+   *           .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListEntityTypesResponse response =
+   *         entityTypesClient.listEntityTypesCallable().call(request);
+   *     for (EntityType element : response.getEntityTypesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse>
+      listEntityTypesCallable() {
+    return stub.listEntityTypesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

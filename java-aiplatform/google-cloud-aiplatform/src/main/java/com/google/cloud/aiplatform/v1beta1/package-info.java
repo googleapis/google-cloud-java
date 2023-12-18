@@ -132,9 +132,9 @@
  *     FeatureOnlineStoreServiceClient.create()) {
  *   FeatureViewName featureView =
  *       FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]");
- *   String id = "id3355";
+ *   FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
  *   FetchFeatureValuesResponse response =
- *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, id);
+ *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, dataKey);
  * }
  * }</pre>
  *
@@ -230,6 +230,26 @@
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   CustomJob customJob = CustomJob.newBuilder().build();
  *   CustomJob response = jobServiceClient.createCustomJob(parent, customJob);
+ * }
+ * }</pre>
+ *
+ * <p>======================= LlmUtilityServiceClient =======================
+ *
+ * <p>Service Description: Service for LLM related utility functions.
+ *
+ * <p>Sample for LlmUtilityServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (LlmUtilityServiceClient llmUtilityServiceClient = LlmUtilityServiceClient.create()) {
+ *   EndpointName endpoint =
+ *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+ *   List<Value> instances = new ArrayList<>();
+ *   ComputeTokensResponse response = llmUtilityServiceClient.computeTokens(endpoint, instances);
  * }
  * }</pre>
  *

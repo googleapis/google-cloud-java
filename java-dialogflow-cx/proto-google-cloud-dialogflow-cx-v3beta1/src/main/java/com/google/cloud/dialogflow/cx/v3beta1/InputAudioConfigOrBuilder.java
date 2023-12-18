@@ -164,8 +164,8 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * Optional. Which Speech model to select for the given request. Select the
    * model best suited to your domain to get best results. If a model is not
-   * explicitly specified, then we auto-select a model based on the parameters
-   * in the InputAudioConfig.
+   * explicitly specified, then Dialogflow auto-selects a model based on other
+   * parameters in the InputAudioConfig and Agent settings.
    * If enhanced speech model is enabled for the agent and an enhanced
    * version of the specified model for the language does not exist, then the
    * speech is recognized using the standard version of the specified model.
@@ -178,7 +178,12 @@ public interface InputAudioConfigOrBuilder
    *
    * - phone_call (best for Agent Assist and telephony)
    * - latest_short (best for Dialogflow non-telephony)
-   * - command_and_search (best for very short utterances and commands)
+   * - command_and_search
+   *
+   * Leave this field unspecified to use
+   * [Agent Speech
+   * settings](https://cloud.google.com/dialogflow/cx/docs/concept/agent#settings-speech)
+   * for model selection.
    * </pre>
    *
    * <code>string model = 7;</code>
@@ -192,8 +197,8 @@ public interface InputAudioConfigOrBuilder
    * <pre>
    * Optional. Which Speech model to select for the given request. Select the
    * model best suited to your domain to get best results. If a model is not
-   * explicitly specified, then we auto-select a model based on the parameters
-   * in the InputAudioConfig.
+   * explicitly specified, then Dialogflow auto-selects a model based on other
+   * parameters in the InputAudioConfig and Agent settings.
    * If enhanced speech model is enabled for the agent and an enhanced
    * version of the specified model for the language does not exist, then the
    * speech is recognized using the standard version of the specified model.
@@ -206,7 +211,12 @@ public interface InputAudioConfigOrBuilder
    *
    * - phone_call (best for Agent Assist and telephony)
    * - latest_short (best for Dialogflow non-telephony)
-   * - command_and_search (best for very short utterances and commands)
+   * - command_and_search
+   *
+   * Leave this field unspecified to use
+   * [Agent Speech
+   * settings](https://cloud.google.com/dialogflow/cx/docs/concept/agent#settings-speech)
+   * for model selection.
    * </pre>
    *
    * <code>string model = 7;</code>
@@ -261,4 +271,39 @@ public interface InputAudioConfigOrBuilder
    * @return The singleUtterance.
    */
   boolean getSingleUtterance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of barge-in behavior during the streaming of input audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+   *
+   * @return Whether the bargeInConfig field is set.
+   */
+  boolean hasBargeInConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of barge-in behavior during the streaming of input audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+   *
+   * @return The bargeInConfig.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.BargeInConfig getBargeInConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of barge-in behavior during the streaming of input audio.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.BargeInConfig barge_in_config = 15;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.BargeInConfigOrBuilder getBargeInConfigOrBuilder();
 }

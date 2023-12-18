@@ -68,10 +68,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If set to true, allowed_bundle_ids are not enforced.
+   * Optional. If set to true, allowed_bundle_ids are not enforced.
    * </pre>
    *
-   * <code>bool allow_all_bundle_ids = 2;</code>
+   * <code>bool allow_all_bundle_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowAllBundleIds.
    */
@@ -89,11 +89,11 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * iOS bundle ids of apps allowed to use the key.
+   * Optional. iOS bundle ids of apps allowed to use the key.
    * Example: 'com.companyname.productname.appname'
    * </pre>
    *
-   * <code>repeated string allowed_bundle_ids = 1;</code>
+   * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the allowedBundleIds.
    */
@@ -104,11 +104,11 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * iOS bundle ids of apps allowed to use the key.
+   * Optional. iOS bundle ids of apps allowed to use the key.
    * Example: 'com.companyname.productname.appname'
    * </pre>
    *
-   * <code>repeated string allowed_bundle_ids = 1;</code>
+   * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of allowedBundleIds.
    */
@@ -119,11 +119,11 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * iOS bundle ids of apps allowed to use the key.
+   * Optional. iOS bundle ids of apps allowed to use the key.
    * Example: 'com.companyname.productname.appname'
    * </pre>
    *
-   * <code>repeated string allowed_bundle_ids = 1;</code>
+   * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The allowedBundleIds at the given index.
@@ -135,11 +135,11 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * iOS bundle ids of apps allowed to use the key.
+   * Optional. iOS bundle ids of apps allowed to use the key.
    * Example: 'com.companyname.productname.appname'
    * </pre>
    *
-   * <code>repeated string allowed_bundle_ids = 1;</code>
+   * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the allowedBundleIds at the given index.
@@ -154,14 +154,16 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Apple Developer account details for the app that is protected by the
-   * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
-   * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+   * Optional. Apple Developer account details for the app that is protected by
+   * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
+   * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
    * Providing these fields allows reCAPTCHA Enterprise to get a better
    * assessment of the integrity of your app.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the appleDeveloperId field is set.
    */
@@ -173,14 +175,16 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Apple Developer account details for the app that is protected by the
-   * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
-   * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+   * Optional. Apple Developer account details for the app that is protected by
+   * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
+   * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
    * Providing these fields allows reCAPTCHA Enterprise to get a better
    * assessment of the integrity of your app.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The appleDeveloperId.
    */
@@ -194,14 +198,16 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Apple Developer account details for the app that is protected by the
-   * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
-   * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+   * Optional. Apple Developer account details for the app that is protected by
+   * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
+   * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
    * Providing these fields allows reCAPTCHA Enterprise to get a better
    * assessment of the integrity of your app.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.AppleDeveloperIdOrBuilder
@@ -627,10 +633,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set to true, allowed_bundle_ids are not enforced.
+     * Optional. If set to true, allowed_bundle_ids are not enforced.
      * </pre>
      *
-     * <code>bool allow_all_bundle_ids = 2;</code>
+     * <code>bool allow_all_bundle_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allowAllBundleIds.
      */
@@ -642,10 +648,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set to true, allowed_bundle_ids are not enforced.
+     * Optional. If set to true, allowed_bundle_ids are not enforced.
      * </pre>
      *
-     * <code>bool allow_all_bundle_ids = 2;</code>
+     * <code>bool allow_all_bundle_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The allowAllBundleIds to set.
      * @return This builder for chaining.
@@ -661,10 +667,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set to true, allowed_bundle_ids are not enforced.
+     * Optional. If set to true, allowed_bundle_ids are not enforced.
      * </pre>
      *
-     * <code>bool allow_all_bundle_ids = 2;</code>
+     * <code>bool allow_all_bundle_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -688,11 +694,12 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * iOS bundle ids of apps allowed to use the key.
+     * Optional. iOS bundle ids of apps allowed to use the key.
      * Example: 'com.companyname.productname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_bundle_ids = 1;</code>
+     * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return A list containing the allowedBundleIds.
      */
@@ -704,11 +711,12 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * iOS bundle ids of apps allowed to use the key.
+     * Optional. iOS bundle ids of apps allowed to use the key.
      * Example: 'com.companyname.productname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_bundle_ids = 1;</code>
+     * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The count of allowedBundleIds.
      */
@@ -719,11 +727,12 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * iOS bundle ids of apps allowed to use the key.
+     * Optional. iOS bundle ids of apps allowed to use the key.
      * Example: 'com.companyname.productname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_bundle_ids = 1;</code>
+     * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The allowedBundleIds at the given index.
@@ -735,11 +744,12 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * iOS bundle ids of apps allowed to use the key.
+     * Optional. iOS bundle ids of apps allowed to use the key.
      * Example: 'com.companyname.productname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_bundle_ids = 1;</code>
+     * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the allowedBundleIds at the given index.
@@ -751,11 +761,12 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * iOS bundle ids of apps allowed to use the key.
+     * Optional. iOS bundle ids of apps allowed to use the key.
      * Example: 'com.companyname.productname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_bundle_ids = 1;</code>
+     * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The allowedBundleIds to set.
@@ -775,11 +786,12 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * iOS bundle ids of apps allowed to use the key.
+     * Optional. iOS bundle ids of apps allowed to use the key.
      * Example: 'com.companyname.productname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_bundle_ids = 1;</code>
+     * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The allowedBundleIds to add.
      * @return This builder for chaining.
@@ -798,11 +810,12 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * iOS bundle ids of apps allowed to use the key.
+     * Optional. iOS bundle ids of apps allowed to use the key.
      * Example: 'com.companyname.productname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_bundle_ids = 1;</code>
+     * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param values The allowedBundleIds to add.
      * @return This builder for chaining.
@@ -818,11 +831,12 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * iOS bundle ids of apps allowed to use the key.
+     * Optional. iOS bundle ids of apps allowed to use the key.
      * Example: 'com.companyname.productname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_bundle_ids = 1;</code>
+     * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -837,11 +851,12 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * iOS bundle ids of apps allowed to use the key.
+     * Optional. iOS bundle ids of apps allowed to use the key.
      * Example: 'com.companyname.productname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_bundle_ids = 1;</code>
+     * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes of the allowedBundleIds to add.
      * @return This builder for chaining.
@@ -868,14 +883,16 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Apple Developer account details for the app that is protected by the
-     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
-     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Optional. Apple Developer account details for the app that is protected by
+     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
+     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
      * Providing these fields allows reCAPTCHA Enterprise to get a better
      * assessment of the integrity of your app.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the appleDeveloperId field is set.
      */
@@ -886,14 +903,16 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Apple Developer account details for the app that is protected by the
-     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
-     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Optional. Apple Developer account details for the app that is protected by
+     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
+     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
      * Providing these fields allows reCAPTCHA Enterprise to get a better
      * assessment of the integrity of your app.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The appleDeveloperId.
      */
@@ -910,14 +929,16 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Apple Developer account details for the app that is protected by the
-     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
-     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Optional. Apple Developer account details for the app that is protected by
+     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
+     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
      * Providing these fields allows reCAPTCHA Enterprise to get a better
      * assessment of the integrity of your app.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAppleDeveloperId(com.google.recaptchaenterprise.v1.AppleDeveloperId value) {
       if (appleDeveloperIdBuilder_ == null) {
@@ -936,14 +957,16 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Apple Developer account details for the app that is protected by the
-     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
-     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Optional. Apple Developer account details for the app that is protected by
+     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
+     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
      * Providing these fields allows reCAPTCHA Enterprise to get a better
      * assessment of the integrity of your app.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAppleDeveloperId(
         com.google.recaptchaenterprise.v1.AppleDeveloperId.Builder builderForValue) {
@@ -960,14 +983,16 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Apple Developer account details for the app that is protected by the
-     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
-     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Optional. Apple Developer account details for the app that is protected by
+     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
+     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
      * Providing these fields allows reCAPTCHA Enterprise to get a better
      * assessment of the integrity of your app.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeAppleDeveloperId(com.google.recaptchaenterprise.v1.AppleDeveloperId value) {
       if (appleDeveloperIdBuilder_ == null) {
@@ -990,14 +1015,16 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Apple Developer account details for the app that is protected by the
-     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
-     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Optional. Apple Developer account details for the app that is protected by
+     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
+     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
      * Providing these fields allows reCAPTCHA Enterprise to get a better
      * assessment of the integrity of your app.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearAppleDeveloperId() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1013,14 +1040,16 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Apple Developer account details for the app that is protected by the
-     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
-     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Optional. Apple Developer account details for the app that is protected by
+     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
+     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
      * Providing these fields allows reCAPTCHA Enterprise to get a better
      * assessment of the integrity of your app.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.AppleDeveloperId.Builder getAppleDeveloperIdBuilder() {
       bitField0_ |= 0x00000004;
@@ -1031,14 +1060,16 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Apple Developer account details for the app that is protected by the
-     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
-     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Optional. Apple Developer account details for the app that is protected by
+     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
+     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
      * Providing these fields allows reCAPTCHA Enterprise to get a better
      * assessment of the integrity of your app.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.AppleDeveloperIdOrBuilder
         getAppleDeveloperIdOrBuilder() {
@@ -1054,14 +1085,16 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Apple Developer account details for the app that is protected by the
-     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
-     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Optional. Apple Developer account details for the app that is protected by
+     * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
+     * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
      * Providing these fields allows reCAPTCHA Enterprise to get a better
      * assessment of the integrity of your app.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.recaptchaenterprise.v1.AppleDeveloperId,

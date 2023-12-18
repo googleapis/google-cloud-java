@@ -27,11 +27,11 @@ public interface QueryAudienceListRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the audience list to retrieve users from.
-   * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+   * Required. The name of the audience list to retrieve users from.
+   * Format: `properties/{property}/audienceLists/{audience_list}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The name.
    */
@@ -40,11 +40,11 @@ public interface QueryAudienceListRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the audience list to retrieve users from.
-   * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+   * Required. The name of the audience list to retrieve users from.
+   * Format: `properties/{property}/audienceLists/{audience_list}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for name.
    */
@@ -54,7 +54,8 @@ public interface QueryAudienceListRequestOrBuilder
    *
    *
    * <pre>
-   * The row count of the start row. The first row is counted as row 0.
+   * Optional. The row count of the start row. The first row is counted as row
+   * 0.
    *
    * When paging, the first request does not specify offset; or equivalently,
    * sets offset to 0; the first request returns the first `limit` of rows. The
@@ -65,7 +66,7 @@ public interface QueryAudienceListRequestOrBuilder
    * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>
    *
-   * <code>int64 offset = 2;</code>
+   * <code>int64 offset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The offset.
    */
@@ -75,9 +76,9 @@ public interface QueryAudienceListRequestOrBuilder
    *
    *
    * <pre>
-   * The number of rows to return. If unspecified, 10,000 rows are returned. The
-   * API returns a maximum of 250,000 rows per request, no matter how many you
-   * ask for. `limit` must be positive.
+   * Optional. The number of rows to return. If unspecified, 10,000 rows are
+   * returned. The API returns a maximum of 250,000 rows per request, no matter
+   * how many you ask for. `limit` must be positive.
    *
    * The API can also return fewer rows than the requested `limit`, if there
    * aren't as many dimension values as the `limit`.
@@ -86,7 +87,7 @@ public interface QueryAudienceListRequestOrBuilder
    * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>
    *
-   * <code>int64 limit = 3;</code>
+   * <code>int64 limit = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The limit.
    */

@@ -36,7 +36,7 @@ public interface ListNodePoolsRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3694
+   *     google/container/v1beta1/cluster_service.proto;l=3696
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface ListNodePoolsRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3694
+   *     google/container/v1beta1/cluster_service.proto;l=3696
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface ListNodePoolsRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3701
+   *     google/container/v1beta1/cluster_service.proto;l=3703
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface ListNodePoolsRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3701
+   *     google/container/v1beta1/cluster_service.proto;l=3703
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface ListNodePoolsRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3705
+   *     google/container/v1beta1/cluster_service.proto;l=3707
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface ListNodePoolsRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3705
+   *     google/container/v1beta1/cluster_service.proto;l=3707
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

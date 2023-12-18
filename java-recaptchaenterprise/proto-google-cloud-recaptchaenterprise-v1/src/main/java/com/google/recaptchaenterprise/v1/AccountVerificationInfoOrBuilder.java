@@ -27,10 +27,11 @@ public interface AccountVerificationInfoOrBuilder
    *
    *
    * <pre>
-   * Endpoints that can be used for identity verification.
+   * Optional. Endpoints that can be used for identity verification.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<com.google.recaptchaenterprise.v1.EndpointVerificationInfo> getEndpointsList();
@@ -38,10 +39,11 @@ public interface AccountVerificationInfoOrBuilder
    *
    *
    * <pre>
-   * Endpoints that can be used for identity verification.
+   * Optional. Endpoints that can be used for identity verification.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.recaptchaenterprise.v1.EndpointVerificationInfo getEndpoints(int index);
@@ -49,10 +51,11 @@ public interface AccountVerificationInfoOrBuilder
    *
    *
    * <pre>
-   * Endpoints that can be used for identity verification.
+   * Optional. Endpoints that can be used for identity verification.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getEndpointsCount();
@@ -60,10 +63,11 @@ public interface AccountVerificationInfoOrBuilder
    *
    *
    * <pre>
-   * Endpoints that can be used for identity verification.
+   * Optional. Endpoints that can be used for identity verification.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<? extends com.google.recaptchaenterprise.v1.EndpointVerificationInfoOrBuilder>
@@ -72,10 +76,11 @@ public interface AccountVerificationInfoOrBuilder
    *
    *
    * <pre>
-   * Endpoints that can be used for identity verification.
+   * Optional. Endpoints that can be used for identity verification.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1;
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.EndpointVerificationInfo endpoints = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.recaptchaenterprise.v1.EndpointVerificationInfoOrBuilder getEndpointsOrBuilder(
@@ -85,11 +90,11 @@ public interface AccountVerificationInfoOrBuilder
    *
    *
    * <pre>
-   * Language code preference for the verification message, set as a IETF BCP 47
-   * language code.
+   * Optional. Language code preference for the verification message, set as a
+   * IETF BCP 47 language code.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The languageCode.
    */
@@ -98,11 +103,11 @@ public interface AccountVerificationInfoOrBuilder
    *
    *
    * <pre>
-   * Language code preference for the verification message, set as a IETF BCP 47
-   * language code.
+   * Optional. Language code preference for the verification message, set as a
+   * IETF BCP 47 language code.
    * </pre>
    *
-   * <code>string language_code = 3;</code>
+   * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for languageCode.
    */
@@ -148,7 +153,7 @@ public interface AccountVerificationInfoOrBuilder
    * <code>string username = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is deprecated.
-   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=552
+   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=556
    * @return The username.
    */
   @java.lang.Deprecated
@@ -164,7 +169,7 @@ public interface AccountVerificationInfoOrBuilder
    * <code>string username = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is deprecated.
-   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=552
+   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=556
    * @return The bytes for username.
    */
   @java.lang.Deprecated

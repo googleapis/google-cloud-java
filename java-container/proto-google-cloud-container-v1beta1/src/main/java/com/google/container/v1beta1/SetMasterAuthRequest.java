@@ -270,7 +270,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.SetMasterAuthRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3371
+   *     google/container/v1beta1/cluster_service.proto;l=3373
    * @return The projectId.
    */
   @java.lang.Override
@@ -299,7 +299,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.SetMasterAuthRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3371
+   *     google/container/v1beta1/cluster_service.proto;l=3373
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -333,7 +333,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetMasterAuthRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3378
+   *     google/container/v1beta1/cluster_service.proto;l=3380
    * @return The zone.
    */
   @java.lang.Override
@@ -362,7 +362,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetMasterAuthRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3378
+   *     google/container/v1beta1/cluster_service.proto;l=3380
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -395,7 +395,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.SetMasterAuthRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3382
+   *     google/container/v1beta1/cluster_service.proto;l=3384
    * @return The clusterId.
    */
   @java.lang.Override
@@ -423,7 +423,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.SetMasterAuthRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3382
+   *     google/container/v1beta1/cluster_service.proto;l=3384
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -1067,7 +1067,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMasterAuthRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3371
+     *     google/container/v1beta1/cluster_service.proto;l=3373
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -1095,7 +1095,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMasterAuthRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3371
+     *     google/container/v1beta1/cluster_service.proto;l=3373
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -1123,7 +1123,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMasterAuthRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3371
+     *     google/container/v1beta1/cluster_service.proto;l=3373
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -1150,7 +1150,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMasterAuthRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3371
+     *     google/container/v1beta1/cluster_service.proto;l=3373
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1173,7 +1173,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMasterAuthRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3371
+     *     google/container/v1beta1/cluster_service.proto;l=3373
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -1203,7 +1203,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetMasterAuthRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3378
+     *     google/container/v1beta1/cluster_service.proto;l=3380
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -1231,7 +1231,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetMasterAuthRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3378
+     *     google/container/v1beta1/cluster_service.proto;l=3380
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1259,7 +1259,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetMasterAuthRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3378
+     *     google/container/v1beta1/cluster_service.proto;l=3380
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1286,7 +1286,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetMasterAuthRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3378
+     *     google/container/v1beta1/cluster_service.proto;l=3380
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1309,7 +1309,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetMasterAuthRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3378
+     *     google/container/v1beta1/cluster_service.proto;l=3380
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1338,7 +1338,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMasterAuthRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3382
+     *     google/container/v1beta1/cluster_service.proto;l=3384
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1365,7 +1365,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMasterAuthRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3382
+     *     google/container/v1beta1/cluster_service.proto;l=3384
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1392,7 +1392,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMasterAuthRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3382
+     *     google/container/v1beta1/cluster_service.proto;l=3384
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1418,7 +1418,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMasterAuthRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3382
+     *     google/container/v1beta1/cluster_service.proto;l=3384
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1440,7 +1440,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMasterAuthRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3382
+     *     google/container/v1beta1/cluster_service.proto;l=3384
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */

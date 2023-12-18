@@ -359,5 +359,50 @@ public interface StudySpecOrBuilder
    */
   com.google.cloud.aiplatform.v1.StudySpec.MeasurementSelectionType getMeasurementSelectionType();
 
+  /**
+   *
+   *
+   * <pre>
+   * Conditions for automated stopping of a Study. Enable automated stopping by
+   * configuring at least one condition.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+   * </code>
+   *
+   * @return Whether the studyStoppingConfig field is set.
+   */
+  boolean hasStudyStoppingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Conditions for automated stopping of a Study. Enable automated stopping by
+   * configuring at least one condition.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+   * </code>
+   *
+   * @return The studyStoppingConfig.
+   */
+  com.google.cloud.aiplatform.v1.StudySpec.StudyStoppingConfig getStudyStoppingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Conditions for automated stopping of a Study. Enable automated stopping by
+   * configuring at least one condition.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.StudySpec.StudyStoppingConfigOrBuilder
+      getStudyStoppingConfigOrBuilder();
+
   com.google.cloud.aiplatform.v1.StudySpec.AutomatedStoppingSpecCase getAutomatedStoppingSpecCase();
 }

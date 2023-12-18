@@ -27,12 +27,12 @@ public interface PrivatePasswordLeakVerificationOrBuilder
    *
    *
    * <pre>
-   * Optional. Exactly 26-bit prefix of the SHA-256 hash of the canonicalized
+   * Required. Exactly 26-bit prefix of the SHA-256 hash of the canonicalized
    * username. It is used to look up password leaks associated with that hash
    * prefix.
    * </pre>
    *
-   * <code>bytes lookup_hash_prefix = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bytes lookup_hash_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The lookupHashPrefix.
    */

@@ -70,6 +70,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= DataStoreServiceClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] configuration.
+ *
+ * <p>Sample for DataStoreServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DataStoreServiceClient dataStoreServiceClient = DataStoreServiceClient.create()) {
+ *   DataStoreName name =
+ *       DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+ *   DataStore response = dataStoreServiceClient.getDataStore(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= DocumentServiceClient =======================
  *
  * <p>Service Description: Service for ingesting
@@ -88,6 +108,26 @@
  *       DocumentName.ofProjectLocationDataStoreBranchDocumentName(
  *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
  *   Document response = documentServiceClient.getDocument(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= EngineServiceClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [Engine][google.cloud.discoveryengine.v1alpha.Engine] configuration.
+ *
+ * <p>Sample for EngineServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+ *   Engine engine = Engine.newBuilder().build();
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   Engine response = engineServiceClient.updateEngine(engine, updateMask);
  * }
  * }</pre>
  *

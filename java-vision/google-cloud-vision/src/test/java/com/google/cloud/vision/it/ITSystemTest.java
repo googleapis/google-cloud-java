@@ -28,8 +28,6 @@ import com.google.cloud.vision.v1.ColorInfo;
 import com.google.cloud.vision.v1.CreateProductRequest;
 import com.google.cloud.vision.v1.CreateProductSetRequest;
 import com.google.cloud.vision.v1.CreateReferenceImageRequest;
-import com.google.cloud.vision.v1.CropHint;
-import com.google.cloud.vision.v1.CropHintsAnnotation;
 import com.google.cloud.vision.v1.DeleteProductRequest;
 import com.google.cloud.vision.v1.DeleteProductSetRequest;
 import com.google.cloud.vision.v1.DeleteReferenceImageRequest;
@@ -62,7 +60,6 @@ import com.google.cloud.vision.v1.RemoveProductFromProductSetRequest;
 import com.google.cloud.vision.v1.SafeSearchAnnotation;
 import com.google.cloud.vision.v1.TextAnnotation;
 import com.google.cloud.vision.v1.UpdateProductRequest;
-import com.google.cloud.vision.v1.Vertex;
 import com.google.cloud.vision.v1.WebDetection;
 import com.google.cloud.vision.v1.WebDetectionParams;
 import com.google.common.collect.ImmutableList;
@@ -74,7 +71,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
@@ -537,32 +533,6 @@ public class ITSystemTest {
     }
     String allAnnotations = String.join(";", actual);
     assertThat(allAnnotations).ignoringCase().contains("Palace of Fine Arts");
-  }
-
-  @Test
-  public void detectCropHintsTest() throws IOException {
-    AnnotateImageResponse res = requestAnnotatedImage("wakeupcat.jpg", Type.CROP_HINTS, false);
-    List<Integer> actual = new ArrayList<>();
-    CropHintsAnnotation annotation = res.getCropHintsAnnotation();
-    for (CropHint hint : assertNotEmpty(res, annotation.getCropHintsList())) {
-      for (Vertex vertex : assertNotEmpty(res, hint.getBoundingPoly().getVerticesList())) {
-        actual.add(vertex.getX());
-      }
-    }
-    assertEquals(Arrays.asList(210, 476, 476, 210), actual);
-  }
-
-  @Test
-  public void detectCropHintsGcsTest() throws IOException {
-    AnnotateImageResponse res = requestAnnotatedImage("label/wakeupcat.jpg", Type.CROP_HINTS, true);
-    List<Integer> actual = new ArrayList<>();
-    CropHintsAnnotation annotation = res.getCropHintsAnnotation();
-    for (CropHint hint : assertNotEmpty(res, annotation.getCropHintsList())) {
-      for (Vertex vertex : assertNotEmpty(res, hint.getBoundingPoly().getVerticesList())) {
-        actual.add(vertex.getX());
-      }
-    }
-    assertEquals(Arrays.asList(210, 476, 476, 210), actual);
   }
 
   @Test

@@ -22,6 +22,10 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * Service definition for the Places API.
+ * Note: every request actually requires a field mask set outside of the request
+ * proto (all/'*' is not assumed).  That can be set via either a side channel
+ * (SystemParameterContext) over RPC, or a header (X-Goog-FieldMask) over HTTP.
+ * See: https://cloud.google.com/apis/docs/system-parameters
  * </pre>
  */
 @javax.annotation.Generated(
@@ -32,9 +36,53 @@ public final class PlacesGrpc {
 
   private PlacesGrpc() {}
 
-  public static final String SERVICE_NAME = "google.maps.places.v1.Places";
+  public static final java.lang.String SERVICE_NAME = "google.maps.places.v1.Places";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.maps.places.v1.SearchNearbyRequest,
+          com.google.maps.places.v1.SearchNearbyResponse>
+      getSearchNearbyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchNearby",
+      requestType = com.google.maps.places.v1.SearchNearbyRequest.class,
+      responseType = com.google.maps.places.v1.SearchNearbyResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.maps.places.v1.SearchNearbyRequest,
+          com.google.maps.places.v1.SearchNearbyResponse>
+      getSearchNearbyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.maps.places.v1.SearchNearbyRequest,
+            com.google.maps.places.v1.SearchNearbyResponse>
+        getSearchNearbyMethod;
+    if ((getSearchNearbyMethod = PlacesGrpc.getSearchNearbyMethod) == null) {
+      synchronized (PlacesGrpc.class) {
+        if ((getSearchNearbyMethod = PlacesGrpc.getSearchNearbyMethod) == null) {
+          PlacesGrpc.getSearchNearbyMethod =
+              getSearchNearbyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.maps.places.v1.SearchNearbyRequest,
+                          com.google.maps.places.v1.SearchNearbyResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchNearby"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.places.v1.SearchNearbyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.places.v1.SearchNearbyResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new PlacesMethodDescriptorSupplier("SearchNearby"))
+                      .build();
+        }
+      }
+    }
+    return getSearchNearbyMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<
           com.google.maps.places.v1.SearchTextRequest, com.google.maps.places.v1.SearchTextResponse>
       getSearchTextMethod;
@@ -75,6 +123,87 @@ public final class PlacesGrpc {
       }
     }
     return getSearchTextMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.maps.places.v1.GetPhotoMediaRequest, com.google.maps.places.v1.PhotoMedia>
+      getGetPhotoMediaMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPhotoMedia",
+      requestType = com.google.maps.places.v1.GetPhotoMediaRequest.class,
+      responseType = com.google.maps.places.v1.PhotoMedia.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.maps.places.v1.GetPhotoMediaRequest, com.google.maps.places.v1.PhotoMedia>
+      getGetPhotoMediaMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.maps.places.v1.GetPhotoMediaRequest, com.google.maps.places.v1.PhotoMedia>
+        getGetPhotoMediaMethod;
+    if ((getGetPhotoMediaMethod = PlacesGrpc.getGetPhotoMediaMethod) == null) {
+      synchronized (PlacesGrpc.class) {
+        if ((getGetPhotoMediaMethod = PlacesGrpc.getGetPhotoMediaMethod) == null) {
+          PlacesGrpc.getGetPhotoMediaMethod =
+              getGetPhotoMediaMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.maps.places.v1.GetPhotoMediaRequest,
+                          com.google.maps.places.v1.PhotoMedia>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPhotoMedia"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.places.v1.GetPhotoMediaRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.places.v1.PhotoMedia.getDefaultInstance()))
+                      .setSchemaDescriptor(new PlacesMethodDescriptorSupplier("GetPhotoMedia"))
+                      .build();
+        }
+      }
+    }
+    return getGetPhotoMediaMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.maps.places.v1.GetPlaceRequest, com.google.maps.places.v1.Place>
+      getGetPlaceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPlace",
+      requestType = com.google.maps.places.v1.GetPlaceRequest.class,
+      responseType = com.google.maps.places.v1.Place.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.maps.places.v1.GetPlaceRequest, com.google.maps.places.v1.Place>
+      getGetPlaceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.maps.places.v1.GetPlaceRequest, com.google.maps.places.v1.Place>
+        getGetPlaceMethod;
+    if ((getGetPlaceMethod = PlacesGrpc.getGetPlaceMethod) == null) {
+      synchronized (PlacesGrpc.class) {
+        if ((getGetPlaceMethod = PlacesGrpc.getGetPlaceMethod) == null) {
+          PlacesGrpc.getGetPlaceMethod =
+              getGetPlaceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.maps.places.v1.GetPlaceRequest, com.google.maps.places.v1.Place>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPlace"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.places.v1.GetPlaceRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.places.v1.Place.getDefaultInstance()))
+                      .setSchemaDescriptor(new PlacesMethodDescriptorSupplier("GetPlace"))
+                      .build();
+        }
+      }
+    }
+    return getGetPlaceMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -122,9 +251,28 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
+   * Note: every request actually requires a field mask set outside of the request
+   * proto (all/'*' is not assumed).  That can be set via either a side channel
+   * (SystemParameterContext) over RPC, or a header (X-Goog-FieldMask) over HTTP.
+   * See: https://cloud.google.com/apis/docs/system-parameters
    * </pre>
    */
   public interface AsyncService {
+
+    /**
+     *
+     *
+     * <pre>
+     * Search for places near locations.
+     * </pre>
+     */
+    default void searchNearby(
+        com.google.maps.places.v1.SearchNearbyRequest request,
+        io.grpc.stub.StreamObserver<com.google.maps.places.v1.SearchNearbyResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchNearbyMethod(), responseObserver);
+    }
 
     /**
      *
@@ -139,6 +287,33 @@ public final class PlacesGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchTextMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a photo media with a photo reference string.
+     * </pre>
+     */
+    default void getPhotoMedia(
+        com.google.maps.places.v1.GetPhotoMediaRequest request,
+        io.grpc.stub.StreamObserver<com.google.maps.places.v1.PhotoMedia> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetPhotoMediaMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a Place with a place id (in a name) string.
+     * </pre>
+     */
+    default void getPlace(
+        com.google.maps.places.v1.GetPlaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.maps.places.v1.Place> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPlaceMethod(), responseObserver);
+    }
   }
 
   /**
@@ -146,6 +321,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
+   * Note: every request actually requires a field mask set outside of the request
+   * proto (all/'*' is not assumed).  That can be set via either a side channel
+   * (SystemParameterContext) over RPC, or a header (X-Goog-FieldMask) over HTTP.
+   * See: https://cloud.google.com/apis/docs/system-parameters
    * </pre>
    */
   public abstract static class PlacesImplBase implements io.grpc.BindableService, AsyncService {
@@ -161,6 +340,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
+   * Note: every request actually requires a field mask set outside of the request
+   * proto (all/'*' is not assumed).  That can be set via either a side channel
+   * (SystemParameterContext) over RPC, or a header (X-Goog-FieldMask) over HTTP.
+   * See: https://cloud.google.com/apis/docs/system-parameters
    * </pre>
    */
   public static final class PlacesStub extends io.grpc.stub.AbstractAsyncStub<PlacesStub> {
@@ -177,6 +360,23 @@ public final class PlacesGrpc {
      *
      *
      * <pre>
+     * Search for places near locations.
+     * </pre>
+     */
+    public void searchNearby(
+        com.google.maps.places.v1.SearchNearbyRequest request,
+        io.grpc.stub.StreamObserver<com.google.maps.places.v1.SearchNearbyResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchNearbyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Text query based place search.
      * </pre>
      */
@@ -187,6 +387,36 @@ public final class PlacesGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchTextMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a photo media with a photo reference string.
+     * </pre>
+     */
+    public void getPhotoMedia(
+        com.google.maps.places.v1.GetPhotoMediaRequest request,
+        io.grpc.stub.StreamObserver<com.google.maps.places.v1.PhotoMedia> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPhotoMediaMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a Place with a place id (in a name) string.
+     * </pre>
+     */
+    public void getPlace(
+        com.google.maps.places.v1.GetPlaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.maps.places.v1.Place> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPlaceMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -194,6 +424,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
+   * Note: every request actually requires a field mask set outside of the request
+   * proto (all/'*' is not assumed).  That can be set via either a side channel
+   * (SystemParameterContext) over RPC, or a header (X-Goog-FieldMask) over HTTP.
+   * See: https://cloud.google.com/apis/docs/system-parameters
    * </pre>
    */
   public static final class PlacesBlockingStub
@@ -211,6 +445,19 @@ public final class PlacesGrpc {
      *
      *
      * <pre>
+     * Search for places near locations.
+     * </pre>
+     */
+    public com.google.maps.places.v1.SearchNearbyResponse searchNearby(
+        com.google.maps.places.v1.SearchNearbyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchNearbyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Text query based place search.
      * </pre>
      */
@@ -219,6 +466,32 @@ public final class PlacesGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchTextMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a photo media with a photo reference string.
+     * </pre>
+     */
+    public com.google.maps.places.v1.PhotoMedia getPhotoMedia(
+        com.google.maps.places.v1.GetPhotoMediaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPhotoMediaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a Place with a place id (in a name) string.
+     * </pre>
+     */
+    public com.google.maps.places.v1.Place getPlace(
+        com.google.maps.places.v1.GetPlaceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPlaceMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -226,6 +499,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
+   * Note: every request actually requires a field mask set outside of the request
+   * proto (all/'*' is not assumed).  That can be set via either a side channel
+   * (SystemParameterContext) over RPC, or a header (X-Goog-FieldMask) over HTTP.
+   * See: https://cloud.google.com/apis/docs/system-parameters
    * </pre>
    */
   public static final class PlacesFutureStub
@@ -243,6 +520,20 @@ public final class PlacesGrpc {
      *
      *
      * <pre>
+     * Search for places near locations.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.maps.places.v1.SearchNearbyResponse>
+        searchNearby(com.google.maps.places.v1.SearchNearbyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchNearbyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Text query based place search.
      * </pre>
      */
@@ -252,9 +543,38 @@ public final class PlacesGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchTextMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a photo media with a photo reference string.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.maps.places.v1.PhotoMedia>
+        getPhotoMedia(com.google.maps.places.v1.GetPhotoMediaRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPhotoMediaMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a Place with a place id (in a name) string.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.maps.places.v1.Place>
+        getPlace(com.google.maps.places.v1.GetPlaceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPlaceMethod(), getCallOptions()), request);
+    }
   }
 
-  private static final int METHODID_SEARCH_TEXT = 0;
+  private static final int METHODID_SEARCH_NEARBY = 0;
+  private static final int METHODID_SEARCH_TEXT = 1;
+  private static final int METHODID_GET_PHOTO_MEDIA = 2;
+  private static final int METHODID_GET_PLACE = 3;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -273,11 +593,27 @@ public final class PlacesGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_SEARCH_NEARBY:
+          serviceImpl.searchNearby(
+              (com.google.maps.places.v1.SearchNearbyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.maps.places.v1.SearchNearbyResponse>)
+                  responseObserver);
+          break;
         case METHODID_SEARCH_TEXT:
           serviceImpl.searchText(
               (com.google.maps.places.v1.SearchTextRequest) request,
               (io.grpc.stub.StreamObserver<com.google.maps.places.v1.SearchTextResponse>)
                   responseObserver);
+          break;
+        case METHODID_GET_PHOTO_MEDIA:
+          serviceImpl.getPhotoMedia(
+              (com.google.maps.places.v1.GetPhotoMediaRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.maps.places.v1.PhotoMedia>) responseObserver);
+          break;
+        case METHODID_GET_PLACE:
+          serviceImpl.getPlace(
+              (com.google.maps.places.v1.GetPlaceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.maps.places.v1.Place>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -298,11 +634,30 @@ public final class PlacesGrpc {
   public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
         .addMethod(
+            getSearchNearbyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.places.v1.SearchNearbyRequest,
+                    com.google.maps.places.v1.SearchNearbyResponse>(
+                    service, METHODID_SEARCH_NEARBY)))
+        .addMethod(
             getSearchTextMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.maps.places.v1.SearchTextRequest,
                     com.google.maps.places.v1.SearchTextResponse>(service, METHODID_SEARCH_TEXT)))
+        .addMethod(
+            getGetPhotoMediaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.places.v1.GetPhotoMediaRequest,
+                    com.google.maps.places.v1.PhotoMedia>(service, METHODID_GET_PHOTO_MEDIA)))
+        .addMethod(
+            getGetPlaceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.places.v1.GetPlaceRequest, com.google.maps.places.v1.Place>(
+                    service, METHODID_GET_PLACE)))
         .build();
   }
 
@@ -328,9 +683,9 @@ public final class PlacesGrpc {
 
   private static final class PlacesMethodDescriptorSupplier extends PlacesBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    PlacesMethodDescriptorSupplier(String methodName) {
+    PlacesMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -352,7 +707,10 @@ public final class PlacesGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new PlacesFileDescriptorSupplier())
+                      .addMethod(getSearchNearbyMethod())
                       .addMethod(getSearchTextMethod())
+                      .addMethod(getGetPhotoMediaMethod())
+                      .addMethod(getGetPlaceMethod())
                       .build();
         }
       }

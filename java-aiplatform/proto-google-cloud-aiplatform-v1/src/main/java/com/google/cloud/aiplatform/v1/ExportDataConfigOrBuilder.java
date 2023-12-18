@@ -121,6 +121,41 @@ public interface ExportDataConfigOrBuilder
    *
    *
    * <pre>
+   * Split based on the provided filters for each set.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ExportFilterSplit filter_split = 7;</code>
+   *
+   * @return Whether the filterSplit field is set.
+   */
+  boolean hasFilterSplit();
+  /**
+   *
+   *
+   * <pre>
+   * Split based on the provided filters for each set.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ExportFilterSplit filter_split = 7;</code>
+   *
+   * @return The filterSplit.
+   */
+  com.google.cloud.aiplatform.v1.ExportFilterSplit getFilterSplit();
+  /**
+   *
+   *
+   * <pre>
+   * Split based on the provided filters for each set.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ExportFilterSplit filter_split = 7;</code>
+   */
+  com.google.cloud.aiplatform.v1.ExportFilterSplitOrBuilder getFilterSplitOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * An expression for filtering what part of the Dataset is to be exported.
    * Only Annotations that match this filter will be exported. The filter syntax
    * is the same as in
@@ -147,6 +182,159 @@ public interface ExportDataConfigOrBuilder
    * @return The bytes for annotationsFilter.
    */
   com.google.protobuf.ByteString getAnnotationsFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The ID of a SavedQuery (annotation set) under the Dataset specified by
+   * [dataset_id][] used for filtering Annotations for training.
+   *
+   * Only used for custom training data export use cases.
+   * Only applicable to Datasets that have SavedQueries.
+   *
+   * Only Annotations that are associated with this SavedQuery are used in
+   * respectively training. When used in conjunction with
+   * [annotations_filter][google.cloud.aiplatform.v1.ExportDataConfig.annotations_filter],
+   * the Annotations used for training are filtered by both
+   * [saved_query_id][google.cloud.aiplatform.v1.ExportDataConfig.saved_query_id]
+   * and
+   * [annotations_filter][google.cloud.aiplatform.v1.ExportDataConfig.annotations_filter].
+   *
+   * Only one of
+   * [saved_query_id][google.cloud.aiplatform.v1.ExportDataConfig.saved_query_id]
+   * and
+   * [annotation_schema_uri][google.cloud.aiplatform.v1.ExportDataConfig.annotation_schema_uri]
+   * should be specified as both of them represent the same thing: problem type.
+   * </pre>
+   *
+   * <code>string saved_query_id = 11;</code>
+   *
+   * @return The savedQueryId.
+   */
+  java.lang.String getSavedQueryId();
+  /**
+   *
+   *
+   * <pre>
+   * The ID of a SavedQuery (annotation set) under the Dataset specified by
+   * [dataset_id][] used for filtering Annotations for training.
+   *
+   * Only used for custom training data export use cases.
+   * Only applicable to Datasets that have SavedQueries.
+   *
+   * Only Annotations that are associated with this SavedQuery are used in
+   * respectively training. When used in conjunction with
+   * [annotations_filter][google.cloud.aiplatform.v1.ExportDataConfig.annotations_filter],
+   * the Annotations used for training are filtered by both
+   * [saved_query_id][google.cloud.aiplatform.v1.ExportDataConfig.saved_query_id]
+   * and
+   * [annotations_filter][google.cloud.aiplatform.v1.ExportDataConfig.annotations_filter].
+   *
+   * Only one of
+   * [saved_query_id][google.cloud.aiplatform.v1.ExportDataConfig.saved_query_id]
+   * and
+   * [annotation_schema_uri][google.cloud.aiplatform.v1.ExportDataConfig.annotation_schema_uri]
+   * should be specified as both of them represent the same thing: problem type.
+   * </pre>
+   *
+   * <code>string saved_query_id = 11;</code>
+   *
+   * @return The bytes for savedQueryId.
+   */
+  com.google.protobuf.ByteString getSavedQueryIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage URI that points to a YAML file describing the annotation
+   * schema. The schema is defined as an OpenAPI 3.0.2 [Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+   * The schema files that can be used here are found in
+   * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
+   * chosen schema must be consistent with
+   * [metadata][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] of the
+   * Dataset specified by [dataset_id][].
+   *
+   * Only used for custom training data export use cases.
+   * Only applicable to Datasets that have DataItems and Annotations.
+   *
+   * Only Annotations that both match this schema and belong to DataItems not
+   * ignored by the split method are used in respectively training, validation
+   * or test role, depending on the role of the DataItem they are on.
+   *
+   * When used in conjunction with
+   * [annotations_filter][google.cloud.aiplatform.v1.ExportDataConfig.annotations_filter],
+   * the Annotations used for training are filtered by both
+   * [annotations_filter][google.cloud.aiplatform.v1.ExportDataConfig.annotations_filter]
+   * and
+   * [annotation_schema_uri][google.cloud.aiplatform.v1.ExportDataConfig.annotation_schema_uri].
+   * </pre>
+   *
+   * <code>string annotation_schema_uri = 12;</code>
+   *
+   * @return The annotationSchemaUri.
+   */
+  java.lang.String getAnnotationSchemaUri();
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage URI that points to a YAML file describing the annotation
+   * schema. The schema is defined as an OpenAPI 3.0.2 [Schema
+   * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
+   * The schema files that can be used here are found in
+   * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
+   * chosen schema must be consistent with
+   * [metadata][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] of the
+   * Dataset specified by [dataset_id][].
+   *
+   * Only used for custom training data export use cases.
+   * Only applicable to Datasets that have DataItems and Annotations.
+   *
+   * Only Annotations that both match this schema and belong to DataItems not
+   * ignored by the split method are used in respectively training, validation
+   * or test role, depending on the role of the DataItem they are on.
+   *
+   * When used in conjunction with
+   * [annotations_filter][google.cloud.aiplatform.v1.ExportDataConfig.annotations_filter],
+   * the Annotations used for training are filtered by both
+   * [annotations_filter][google.cloud.aiplatform.v1.ExportDataConfig.annotations_filter]
+   * and
+   * [annotation_schema_uri][google.cloud.aiplatform.v1.ExportDataConfig.annotation_schema_uri].
+   * </pre>
+   *
+   * <code>string annotation_schema_uri = 12;</code>
+   *
+   * @return The bytes for annotationSchemaUri.
+   */
+  com.google.protobuf.ByteString getAnnotationSchemaUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the usage of the exported files.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ExportDataConfig.ExportUse export_use = 4;</code>
+   *
+   * @return The enum numeric value on the wire for exportUse.
+   */
+  int getExportUseValue();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the usage of the exported files.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ExportDataConfig.ExportUse export_use = 4;</code>
+   *
+   * @return The exportUse.
+   */
+  com.google.cloud.aiplatform.v1.ExportDataConfig.ExportUse getExportUse();
 
   com.google.cloud.aiplatform.v1.ExportDataConfig.DestinationCase getDestinationCase();
 

@@ -35,7 +35,8 @@ public class SyncDeleteFeatureString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
       String name =
-          FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
+          FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+                  "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
               .toString();
       featurestoreServiceClient.deleteFeatureAsync(name).get();
     }

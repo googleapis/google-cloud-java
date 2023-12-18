@@ -45,6 +45,8 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
     audienceDisplayName_ = "";
     dimensions_ = java.util.Collections.emptyList();
     state_ = 0;
+    errorMessage_ = "";
+    recurringAudienceList_ = "";
   }
 
   @java.lang.Override
@@ -264,13 +266,15 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The audience list resource name assigned during creation. This
-   * resource name identifies this `AudienceList`.
+   * Output only. Identifier. The audience list resource name assigned during
+   * creation. This resource name identifies this `AudienceList`.
    *
-   * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+   * Format: `properties/{property}/audienceLists/{audience_list}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The name.
    */
@@ -290,13 +294,15 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The audience list resource name assigned during creation. This
-   * resource name identifies this `AudienceList`.
+   * Output only. Identifier. The audience list resource name assigned during
+   * creation. This resource name identifies this `AudienceList`.
    *
-   * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+   * Format: `properties/{property}/audienceLists/{audience_list}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -325,7 +331,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
    * audience being listed and is shared between the Analytics Data &amp; Admin
    * APIs.
    *
-   * Format: `properties/{propertyId}/audiences/{audienceId}`
+   * Format: `properties/{property}/audiences/{audience}`
    * </pre>
    *
    * <code>string audience = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -352,7 +358,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
    * audience being listed and is shared between the Analytics Data &amp; Admin
    * APIs.
    *
-   * Format: `properties/{propertyId}/audiences/{audienceId}`
+   * Format: `properties/{property}/audiences/{audience}`
    * </pre>
    *
    * <code>string audience = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -433,7 +439,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The dimensions requested and displayed in the report response.
+   * Required. The dimensions requested and displayed in the query response.
    * </pre>
    *
    * <code>
@@ -448,7 +454,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The dimensions requested and displayed in the report response.
+   * Required. The dimensions requested and displayed in the query response.
    * </pre>
    *
    * <code>
@@ -464,7 +470,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The dimensions requested and displayed in the report response.
+   * Required. The dimensions requested and displayed in the query response.
    * </pre>
    *
    * <code>
@@ -479,7 +485,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The dimensions requested and displayed in the report response.
+   * Required. The dimensions requested and displayed in the query response.
    * </pre>
    *
    * <code>
@@ -494,7 +500,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The dimensions requested and displayed in the report response.
+   * Required. The dimensions requested and displayed in the query response.
    * </pre>
    *
    * <code>
@@ -624,6 +630,251 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
         : beginCreatingTime_;
   }
 
+  public static final int CREATION_QUOTA_TOKENS_CHARGED_FIELD_NUMBER = 7;
+  private int creationQuotaTokensCharged_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The total quota tokens charged during creation of the
+   * AudienceList. Because this token count is based on activity from the
+   * `CREATING` state, this tokens charged will be fixed once an AudienceList
+   * enters the `ACTIVE` or `FAILED` states.
+   * </pre>
+   *
+   * <code>int32 creation_quota_tokens_charged = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The creationQuotaTokensCharged.
+   */
+  @java.lang.Override
+  public int getCreationQuotaTokensCharged() {
+    return creationQuotaTokensCharged_;
+  }
+
+  public static final int ROW_COUNT_FIELD_NUMBER = 8;
+  private int rowCount_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The total number of rows in the AudienceList result.
+   * </pre>
+   *
+   * <code>optional int32 row_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the rowCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasRowCount() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The total number of rows in the AudienceList result.
+   * </pre>
+   *
+   * <code>optional int32 row_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The rowCount.
+   */
+  @java.lang.Override
+  public int getRowCount() {
+    return rowCount_;
+  }
+
+  public static final int ERROR_MESSAGE_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorMessage_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error message is populated when an audience list fails during
+   * creation. A common reason for such a failure is quota exhaustion.
+   * </pre>
+   *
+   * <code>optional string error_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the errorMessage field is set.
+   */
+  @java.lang.Override
+  public boolean hasErrorMessage() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error message is populated when an audience list fails during
+   * creation. A common reason for such a failure is quota exhaustion.
+   * </pre>
+   *
+   * <code>optional string error_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The errorMessage.
+   */
+  @java.lang.Override
+  public java.lang.String getErrorMessage() {
+    java.lang.Object ref = errorMessage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      errorMessage_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error message is populated when an audience list fails during
+   * creation. A common reason for such a failure is quota exhaustion.
+   * </pre>
+   *
+   * <code>optional string error_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for errorMessage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getErrorMessageBytes() {
+    java.lang.Object ref = errorMessage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      errorMessage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PERCENTAGE_COMPLETED_FIELD_NUMBER = 11;
+  private double percentageCompleted_ = 0D;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The percentage completed for this audience export ranging
+   * between 0 to 100.
+   * </pre>
+   *
+   * <code>optional double percentage_completed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the percentageCompleted field is set.
+   */
+  @java.lang.Override
+  public boolean hasPercentageCompleted() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The percentage completed for this audience export ranging
+   * between 0 to 100.
+   * </pre>
+   *
+   * <code>optional double percentage_completed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The percentageCompleted.
+   */
+  @java.lang.Override
+  public double getPercentageCompleted() {
+    return percentageCompleted_;
+  }
+
+  public static final int RECURRING_AUDIENCE_LIST_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object recurringAudienceList_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recurring audience list that created this audience list.
+   * Recurring audience lists create audience lists daily.
+   *
+   * If audience lists are created directly, they will have no associated
+   * recurring audience list, and this field will be blank.
+   * </pre>
+   *
+   * <code>
+   * optional string recurring_audience_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the recurringAudienceList field is set.
+   */
+  @java.lang.Override
+  public boolean hasRecurringAudienceList() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recurring audience list that created this audience list.
+   * Recurring audience lists create audience lists daily.
+   *
+   * If audience lists are created directly, they will have no associated
+   * recurring audience list, and this field will be blank.
+   * </pre>
+   *
+   * <code>
+   * optional string recurring_audience_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The recurringAudienceList.
+   */
+  @java.lang.Override
+  public java.lang.String getRecurringAudienceList() {
+    java.lang.Object ref = recurringAudienceList_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      recurringAudienceList_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recurring audience list that created this audience list.
+   * Recurring audience lists create audience lists daily.
+   *
+   * If audience lists are created directly, they will have no associated
+   * recurring audience list, and this field will be blank.
+   * </pre>
+   *
+   * <code>
+   * optional string recurring_audience_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for recurringAudienceList.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRecurringAudienceListBytes() {
+    java.lang.Object ref = recurringAudienceList_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      recurringAudienceList_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -656,6 +907,21 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getBeginCreatingTime());
     }
+    if (creationQuotaTokensCharged_ != 0) {
+      output.writeInt32(7, creationQuotaTokensCharged_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt32(8, rowCount_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, errorMessage_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeDouble(11, percentageCompleted_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, recurringAudienceList_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -682,6 +948,22 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getBeginCreatingTime());
+    }
+    if (creationQuotaTokensCharged_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(7, creationQuotaTokensCharged_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, rowCount_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, errorMessage_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(11, percentageCompleted_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, recurringAudienceList_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -711,6 +993,24 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
     if (hasBeginCreatingTime()) {
       if (!getBeginCreatingTime().equals(other.getBeginCreatingTime())) return false;
     }
+    if (getCreationQuotaTokensCharged() != other.getCreationQuotaTokensCharged()) return false;
+    if (hasRowCount() != other.hasRowCount()) return false;
+    if (hasRowCount()) {
+      if (getRowCount() != other.getRowCount()) return false;
+    }
+    if (hasErrorMessage() != other.hasErrorMessage()) return false;
+    if (hasErrorMessage()) {
+      if (!getErrorMessage().equals(other.getErrorMessage())) return false;
+    }
+    if (hasPercentageCompleted() != other.hasPercentageCompleted()) return false;
+    if (hasPercentageCompleted()) {
+      if (java.lang.Double.doubleToLongBits(getPercentageCompleted())
+          != java.lang.Double.doubleToLongBits(other.getPercentageCompleted())) return false;
+    }
+    if (hasRecurringAudienceList() != other.hasRecurringAudienceList()) return false;
+    if (hasRecurringAudienceList()) {
+      if (!getRecurringAudienceList().equals(other.getRecurringAudienceList())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -739,6 +1039,27 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
     if (hasBeginCreatingTime()) {
       hash = (37 * hash) + BEGIN_CREATING_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getBeginCreatingTime().hashCode();
+    }
+    hash = (37 * hash) + CREATION_QUOTA_TOKENS_CHARGED_FIELD_NUMBER;
+    hash = (53 * hash) + getCreationQuotaTokensCharged();
+    if (hasRowCount()) {
+      hash = (37 * hash) + ROW_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getRowCount();
+    }
+    if (hasErrorMessage()) {
+      hash = (37 * hash) + ERROR_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorMessage().hashCode();
+    }
+    if (hasPercentageCompleted()) {
+      hash = (37 * hash) + PERCENTAGE_COMPLETED_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getPercentageCompleted()));
+    }
+    if (hasRecurringAudienceList()) {
+      hash = (37 * hash) + RECURRING_AUDIENCE_LIST_FIELD_NUMBER;
+      hash = (53 * hash) + getRecurringAudienceList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -907,6 +1228,11 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
         beginCreatingTimeBuilder_.dispose();
         beginCreatingTimeBuilder_ = null;
       }
+      creationQuotaTokensCharged_ = 0;
+      rowCount_ = 0;
+      errorMessage_ = "";
+      percentageCompleted_ = 0D;
+      recurringAudienceList_ = "";
       return this;
     }
 
@@ -976,6 +1302,25 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
                 ? beginCreatingTime_
                 : beginCreatingTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.creationQuotaTokensCharged_ = creationQuotaTokensCharged_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.rowCount_ = rowCount_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.errorMessage_ = errorMessage_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.percentageCompleted_ = percentageCompleted_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.recurringAudienceList_ = recurringAudienceList_;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1073,6 +1418,25 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
       if (other.hasBeginCreatingTime()) {
         mergeBeginCreatingTime(other.getBeginCreatingTime());
       }
+      if (other.getCreationQuotaTokensCharged() != 0) {
+        setCreationQuotaTokensCharged(other.getCreationQuotaTokensCharged());
+      }
+      if (other.hasRowCount()) {
+        setRowCount(other.getRowCount());
+      }
+      if (other.hasErrorMessage()) {
+        errorMessage_ = other.errorMessage_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (other.hasPercentageCompleted()) {
+        setPercentageCompleted(other.getPercentageCompleted());
+      }
+      if (other.hasRecurringAudienceList()) {
+        recurringAudienceList_ = other.recurringAudienceList_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1144,6 +1508,36 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 56:
+              {
+                creationQuotaTokensCharged_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+            case 64:
+              {
+                rowCount_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+            case 74:
+              {
+                errorMessage_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+            case 89:
+              {
+                percentageCompleted_ = input.readDouble();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 89
+            case 98:
+              {
+                recurringAudienceList_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1168,13 +1562,15 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The audience list resource name assigned during creation. This
-     * resource name identifies this `AudienceList`.
+     * Output only. Identifier. The audience list resource name assigned during
+     * creation. This resource name identifies this `AudienceList`.
      *
-     * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+     * Format: `properties/{property}/audienceLists/{audience_list}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The name.
      */
@@ -1193,13 +1589,15 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The audience list resource name assigned during creation. This
-     * resource name identifies this `AudienceList`.
+     * Output only. Identifier. The audience list resource name assigned during
+     * creation. This resource name identifies this `AudienceList`.
      *
-     * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+     * Format: `properties/{property}/audienceLists/{audience_list}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -1218,13 +1616,15 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The audience list resource name assigned during creation. This
-     * resource name identifies this `AudienceList`.
+     * Output only. Identifier. The audience list resource name assigned during
+     * creation. This resource name identifies this `AudienceList`.
      *
-     * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+     * Format: `properties/{property}/audienceLists/{audience_list}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1242,13 +1642,15 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The audience list resource name assigned during creation. This
-     * resource name identifies this `AudienceList`.
+     * Output only. Identifier. The audience list resource name assigned during
+     * creation. This resource name identifies this `AudienceList`.
      *
-     * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+     * Format: `properties/{property}/audienceLists/{audience_list}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1262,13 +1664,15 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The audience list resource name assigned during creation. This
-     * resource name identifies this `AudienceList`.
+     * Output only. Identifier. The audience list resource name assigned during
+     * creation. This resource name identifies this `AudienceList`.
      *
-     * Format: `properties/{propertyId}/audienceLists/{audienceListId}`
+     * Format: `properties/{property}/audienceLists/{audience_list}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1293,7 +1697,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      * audience being listed and is shared between the Analytics Data &amp; Admin
      * APIs.
      *
-     * Format: `properties/{propertyId}/audiences/{audienceId}`
+     * Format: `properties/{property}/audiences/{audience}`
      * </pre>
      *
      * <code>string audience = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1319,7 +1723,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      * audience being listed and is shared between the Analytics Data &amp; Admin
      * APIs.
      *
-     * Format: `properties/{propertyId}/audiences/{audienceId}`
+     * Format: `properties/{property}/audiences/{audience}`
      * </pre>
      *
      * <code>string audience = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1345,7 +1749,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      * audience being listed and is shared between the Analytics Data &amp; Admin
      * APIs.
      *
-     * Format: `properties/{propertyId}/audiences/{audienceId}`
+     * Format: `properties/{property}/audiences/{audience}`
      * </pre>
      *
      * <code>string audience = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1370,7 +1774,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      * audience being listed and is shared between the Analytics Data &amp; Admin
      * APIs.
      *
-     * Format: `properties/{propertyId}/audiences/{audienceId}`
+     * Format: `properties/{property}/audiences/{audience}`
      * </pre>
      *
      * <code>string audience = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1391,7 +1795,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      * audience being listed and is shared between the Analytics Data &amp; Admin
      * APIs.
      *
-     * Format: `properties/{propertyId}/audiences/{audienceId}`
+     * Format: `properties/{property}/audiences/{audience}`
      * </pre>
      *
      * <code>string audience = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1543,7 +1947,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1561,7 +1965,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1579,7 +1983,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1597,7 +2001,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1622,7 +2026,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1644,7 +2048,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1668,7 +2072,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1693,7 +2097,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1715,7 +2119,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1737,7 +2141,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1759,7 +2163,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1780,7 +2184,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1801,7 +2205,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1816,7 +2220,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1835,7 +2239,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1854,7 +2258,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1869,7 +2273,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -1886,7 +2290,7 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The dimensions requested and displayed in the report response.
+     * Required. The dimensions requested and displayed in the query response.
      * </pre>
      *
      * <code>
@@ -2242,6 +2646,497 @@ public final class AudienceList extends com.google.protobuf.GeneratedMessageV3
         beginCreatingTime_ = null;
       }
       return beginCreatingTimeBuilder_;
+    }
+
+    private int creationQuotaTokensCharged_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total quota tokens charged during creation of the
+     * AudienceList. Because this token count is based on activity from the
+     * `CREATING` state, this tokens charged will be fixed once an AudienceList
+     * enters the `ACTIVE` or `FAILED` states.
+     * </pre>
+     *
+     * <code>int32 creation_quota_tokens_charged = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The creationQuotaTokensCharged.
+     */
+    @java.lang.Override
+    public int getCreationQuotaTokensCharged() {
+      return creationQuotaTokensCharged_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total quota tokens charged during creation of the
+     * AudienceList. Because this token count is based on activity from the
+     * `CREATING` state, this tokens charged will be fixed once an AudienceList
+     * enters the `ACTIVE` or `FAILED` states.
+     * </pre>
+     *
+     * <code>int32 creation_quota_tokens_charged = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The creationQuotaTokensCharged to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreationQuotaTokensCharged(int value) {
+
+      creationQuotaTokensCharged_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total quota tokens charged during creation of the
+     * AudienceList. Because this token count is based on activity from the
+     * `CREATING` state, this tokens charged will be fixed once an AudienceList
+     * enters the `ACTIVE` or `FAILED` states.
+     * </pre>
+     *
+     * <code>int32 creation_quota_tokens_charged = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCreationQuotaTokensCharged() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      creationQuotaTokensCharged_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int rowCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total number of rows in the AudienceList result.
+     * </pre>
+     *
+     * <code>optional int32 row_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the rowCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasRowCount() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total number of rows in the AudienceList result.
+     * </pre>
+     *
+     * <code>optional int32 row_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The rowCount.
+     */
+    @java.lang.Override
+    public int getRowCount() {
+      return rowCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total number of rows in the AudienceList result.
+     * </pre>
+     *
+     * <code>optional int32 row_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The rowCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRowCount(int value) {
+
+      rowCount_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total number of rows in the AudienceList result.
+     * </pre>
+     *
+     * <code>optional int32 row_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRowCount() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      rowCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object errorMessage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Error message is populated when an audience list fails during
+     * creation. A common reason for such a failure is quota exhaustion.
+     * </pre>
+     *
+     * <code>optional string error_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the errorMessage field is set.
+     */
+    public boolean hasErrorMessage() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Error message is populated when an audience list fails during
+     * creation. A common reason for such a failure is quota exhaustion.
+     * </pre>
+     *
+     * <code>optional string error_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The errorMessage.
+     */
+    public java.lang.String getErrorMessage() {
+      java.lang.Object ref = errorMessage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        errorMessage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Error message is populated when an audience list fails during
+     * creation. A common reason for such a failure is quota exhaustion.
+     * </pre>
+     *
+     * <code>optional string error_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for errorMessage.
+     */
+    public com.google.protobuf.ByteString getErrorMessageBytes() {
+      java.lang.Object ref = errorMessage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        errorMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Error message is populated when an audience list fails during
+     * creation. A common reason for such a failure is quota exhaustion.
+     * </pre>
+     *
+     * <code>optional string error_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The errorMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setErrorMessage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      errorMessage_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Error message is populated when an audience list fails during
+     * creation. A common reason for such a failure is quota exhaustion.
+     * </pre>
+     *
+     * <code>optional string error_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearErrorMessage() {
+      errorMessage_ = getDefaultInstance().getErrorMessage();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Error message is populated when an audience list fails during
+     * creation. A common reason for such a failure is quota exhaustion.
+     * </pre>
+     *
+     * <code>optional string error_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for errorMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setErrorMessageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      errorMessage_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private double percentageCompleted_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The percentage completed for this audience export ranging
+     * between 0 to 100.
+     * </pre>
+     *
+     * <code>optional double percentage_completed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the percentageCompleted field is set.
+     */
+    @java.lang.Override
+    public boolean hasPercentageCompleted() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The percentage completed for this audience export ranging
+     * between 0 to 100.
+     * </pre>
+     *
+     * <code>optional double percentage_completed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The percentageCompleted.
+     */
+    @java.lang.Override
+    public double getPercentageCompleted() {
+      return percentageCompleted_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The percentage completed for this audience export ranging
+     * between 0 to 100.
+     * </pre>
+     *
+     * <code>optional double percentage_completed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The percentageCompleted to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPercentageCompleted(double value) {
+
+      percentageCompleted_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The percentage completed for this audience export ranging
+     * between 0 to 100.
+     * </pre>
+     *
+     * <code>optional double percentage_completed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPercentageCompleted() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      percentageCompleted_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object recurringAudienceList_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recurring audience list that created this audience list.
+     * Recurring audience lists create audience lists daily.
+     *
+     * If audience lists are created directly, they will have no associated
+     * recurring audience list, and this field will be blank.
+     * </pre>
+     *
+     * <code>
+     * optional string recurring_audience_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the recurringAudienceList field is set.
+     */
+    public boolean hasRecurringAudienceList() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recurring audience list that created this audience list.
+     * Recurring audience lists create audience lists daily.
+     *
+     * If audience lists are created directly, they will have no associated
+     * recurring audience list, and this field will be blank.
+     * </pre>
+     *
+     * <code>
+     * optional string recurring_audience_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The recurringAudienceList.
+     */
+    public java.lang.String getRecurringAudienceList() {
+      java.lang.Object ref = recurringAudienceList_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        recurringAudienceList_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recurring audience list that created this audience list.
+     * Recurring audience lists create audience lists daily.
+     *
+     * If audience lists are created directly, they will have no associated
+     * recurring audience list, and this field will be blank.
+     * </pre>
+     *
+     * <code>
+     * optional string recurring_audience_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for recurringAudienceList.
+     */
+    public com.google.protobuf.ByteString getRecurringAudienceListBytes() {
+      java.lang.Object ref = recurringAudienceList_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        recurringAudienceList_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recurring audience list that created this audience list.
+     * Recurring audience lists create audience lists daily.
+     *
+     * If audience lists are created directly, they will have no associated
+     * recurring audience list, and this field will be blank.
+     * </pre>
+     *
+     * <code>
+     * optional string recurring_audience_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The recurringAudienceList to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRecurringAudienceList(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      recurringAudienceList_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recurring audience list that created this audience list.
+     * Recurring audience lists create audience lists daily.
+     *
+     * If audience lists are created directly, they will have no associated
+     * recurring audience list, and this field will be blank.
+     * </pre>
+     *
+     * <code>
+     * optional string recurring_audience_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRecurringAudienceList() {
+      recurringAudienceList_ = getDefaultInstance().getRecurringAudienceList();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recurring audience list that created this audience list.
+     * Recurring audience lists create audience lists daily.
+     *
+     * If audience lists are created directly, they will have no associated
+     * recurring audience list, and this field will be blank.
+     * </pre>
+     *
+     * <code>
+     * optional string recurring_audience_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for recurringAudienceList to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRecurringAudienceListBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      recurringAudienceList_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -246,6 +246,7 @@ public final class AdvancedDatapathObservabilityConfig
     // @@protoc_insertion_point(enum_scope:google.container.v1beta1.AdvancedDatapathObservabilityConfig.RelayMode)
   }
 
+  private int bitField0_;
   public static final int ENABLE_METRICS_FIELD_NUMBER = 1;
   private boolean enableMetrics_ = false;
   /**
@@ -304,6 +305,39 @@ public final class AdvancedDatapathObservabilityConfig
         : result;
   }
 
+  public static final int ENABLE_RELAY_FIELD_NUMBER = 3;
+  private boolean enableRelay_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Enable Relay component
+   * </pre>
+   *
+   * <code>optional bool enable_relay = 3;</code>
+   *
+   * @return Whether the enableRelay field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableRelay() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable Relay component
+   * </pre>
+   *
+   * <code>optional bool enable_relay = 3;</code>
+   *
+   * @return The enableRelay.
+   */
+  @java.lang.Override
+  public boolean getEnableRelay() {
+    return enableRelay_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -327,6 +361,9 @@ public final class AdvancedDatapathObservabilityConfig
             .getNumber()) {
       output.writeEnum(2, relayMode_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(3, enableRelay_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -344,6 +381,9 @@ public final class AdvancedDatapathObservabilityConfig
             .RELAY_MODE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, relayMode_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, enableRelay_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -363,6 +403,10 @@ public final class AdvancedDatapathObservabilityConfig
 
     if (getEnableMetrics() != other.getEnableMetrics()) return false;
     if (relayMode_ != other.relayMode_) return false;
+    if (hasEnableRelay() != other.hasEnableRelay()) return false;
+    if (hasEnableRelay()) {
+      if (getEnableRelay() != other.getEnableRelay()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -378,6 +422,10 @@ public final class AdvancedDatapathObservabilityConfig
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableMetrics());
     hash = (37 * hash) + RELAY_MODE_FIELD_NUMBER;
     hash = (53 * hash) + relayMode_;
+    if (hasEnableRelay()) {
+      hash = (37 * hash) + ENABLE_RELAY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableRelay());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -521,6 +569,7 @@ public final class AdvancedDatapathObservabilityConfig
       bitField0_ = 0;
       enableMetrics_ = false;
       relayMode_ = 0;
+      enableRelay_ = false;
       return this;
     }
 
@@ -565,6 +614,12 @@ public final class AdvancedDatapathObservabilityConfig
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.relayMode_ = relayMode_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.enableRelay_ = enableRelay_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -621,6 +676,9 @@ public final class AdvancedDatapathObservabilityConfig
       if (other.relayMode_ != 0) {
         setRelayModeValue(other.getRelayModeValue());
       }
+      if (other.hasEnableRelay()) {
+        setEnableRelay(other.getEnableRelay());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -659,6 +717,12 @@ public final class AdvancedDatapathObservabilityConfig
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                enableRelay_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -827,6 +891,74 @@ public final class AdvancedDatapathObservabilityConfig
     public Builder clearRelayMode() {
       bitField0_ = (bitField0_ & ~0x00000002);
       relayMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableRelay_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable Relay component
+     * </pre>
+     *
+     * <code>optional bool enable_relay = 3;</code>
+     *
+     * @return Whether the enableRelay field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableRelay() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable Relay component
+     * </pre>
+     *
+     * <code>optional bool enable_relay = 3;</code>
+     *
+     * @return The enableRelay.
+     */
+    @java.lang.Override
+    public boolean getEnableRelay() {
+      return enableRelay_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable Relay component
+     * </pre>
+     *
+     * <code>optional bool enable_relay = 3;</code>
+     *
+     * @param value The enableRelay to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableRelay(boolean value) {
+
+      enableRelay_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable Relay component
+     * </pre>
+     *
+     * <code>optional bool enable_relay = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableRelay() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      enableRelay_ = false;
       onChanged();
       return this;
     }

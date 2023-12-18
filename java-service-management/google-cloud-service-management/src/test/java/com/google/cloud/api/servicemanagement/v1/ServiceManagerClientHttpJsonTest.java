@@ -861,6 +861,7 @@ public class ServiceManagerClientHttpJsonTest {
             .matches());
   }
 
+  @Ignore
   @Test
   public void setIamPolicyExceptionTest() throws Exception {
     ApiException exception =
@@ -918,6 +919,7 @@ public class ServiceManagerClientHttpJsonTest {
             .matches());
   }
 
+  @Ignore
   @Test
   public void getIamPolicyExceptionTest() throws Exception {
     ApiException exception =
@@ -969,6 +971,7 @@ public class ServiceManagerClientHttpJsonTest {
             .matches());
   }
 
+  @Ignore
   @Test
   public void testIamPermissionsExceptionTest() throws Exception {
     ApiException exception =

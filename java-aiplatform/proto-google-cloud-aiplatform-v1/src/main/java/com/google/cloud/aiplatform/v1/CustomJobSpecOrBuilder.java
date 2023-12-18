@@ -394,6 +394,37 @@ public interface CustomJobSpecOrBuilder
    *
    *
    * <pre>
+   * The ID of the location to store protected artifacts. e.g. us-central1.
+   * Populate only when the location is different than CustomJob location.
+   * List of supported locations:
+   * https://cloud.google.com/vertex-ai/docs/general/locations
+   * </pre>
+   *
+   * <code>string protected_artifact_location_id = 19;</code>
+   *
+   * @return The protectedArtifactLocationId.
+   */
+  java.lang.String getProtectedArtifactLocationId();
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the location to store protected artifacts. e.g. us-central1.
+   * Populate only when the location is different than CustomJob location.
+   * List of supported locations:
+   * https://cloud.google.com/vertex-ai/docs/general/locations
+   * </pre>
+   *
+   * <code>string protected_artifact_location_id = 19;</code>
+   *
+   * @return The bytes for protectedArtifactLocationId.
+   */
+  com.google.protobuf.ByteString getProtectedArtifactLocationIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The name of a Vertex AI
    * [Tensorboard][google.cloud.aiplatform.v1.Tensorboard] resource to which
    * this CustomJob will upload Tensorboard logs. Format:

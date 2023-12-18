@@ -76,4 +76,49 @@ public interface LogsPolicyOrBuilder
    * @return The bytes for logsPath.
    */
   com.google.protobuf.ByteString getLogsPathBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional settings for Cloud Logging. It will only take effect
+   * when the destination of LogsPolicy is set to CLOUD_LOGGING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.batch.v1alpha.LogsPolicy.CloudLoggingOption cloud_logging_option = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the cloudLoggingOption field is set.
+   */
+  boolean hasCloudLoggingOption();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional settings for Cloud Logging. It will only take effect
+   * when the destination of LogsPolicy is set to CLOUD_LOGGING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.batch.v1alpha.LogsPolicy.CloudLoggingOption cloud_logging_option = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The cloudLoggingOption.
+   */
+  com.google.cloud.batch.v1alpha.LogsPolicy.CloudLoggingOption getCloudLoggingOption();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional settings for Cloud Logging. It will only take effect
+   * when the destination of LogsPolicy is set to CLOUD_LOGGING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.batch.v1alpha.LogsPolicy.CloudLoggingOption cloud_logging_option = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.batch.v1alpha.LogsPolicy.CloudLoggingOptionOrBuilder
+      getCloudLoggingOptionOrBuilder();
 }

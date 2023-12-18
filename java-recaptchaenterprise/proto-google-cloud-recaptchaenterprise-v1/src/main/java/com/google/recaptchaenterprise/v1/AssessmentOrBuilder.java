@@ -54,10 +54,12 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * The event being assessed.
+   * Optional. The event being assessed.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.Event event = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the event field is set.
    */
@@ -66,10 +68,12 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * The event being assessed.
+   * Optional. The event being assessed.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.Event event = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The event.
    */
@@ -78,10 +82,12 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * The event being assessed.
+   * Optional. The event being assessed.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.Event event = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.recaptchaenterprise.v1.EventOrBuilder getEventOrBuilder();
 
@@ -171,11 +177,12 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Account verification information for identity verification. The assessment
-   * event must include a token and site key to use this feature.
+   * Optional. Account verification information for identity verification. The
+   * assessment event must include a token and site key to use this feature.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the accountVerification field is set.
@@ -185,11 +192,12 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Account verification information for identity verification. The assessment
-   * event must include a token and site key to use this feature.
+   * Optional. Account verification information for identity verification. The
+   * assessment event must include a token and site key to use this feature.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The accountVerification.
@@ -199,11 +207,12 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Account verification information for identity verification. The assessment
-   * event must include a token and site key to use this feature.
+   * Optional. Account verification information for identity verification. The
+   * assessment event must include a token and site key to use this feature.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.recaptchaenterprise.v1.AccountVerificationInfoOrBuilder
@@ -213,12 +222,12 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment returned by account defender when a hashed_account_id is
-   * provided.
+   * Output only. Assessment returned by account defender when an account
+   * identifier is provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the accountDefenderAssessment field is set.
@@ -228,12 +237,12 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment returned by account defender when a hashed_account_id is
-   * provided.
+   * Output only. Assessment returned by account defender when an account
+   * identifier is provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The accountDefenderAssessment.
@@ -243,12 +252,12 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment returned by account defender when a hashed_account_id is
-   * provided.
+   * Output only. Assessment returned by account defender when an account
+   * identifier is provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6;
+   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment account_defender_assessment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.recaptchaenterprise.v1.AccountDefenderAssessmentOrBuilder
@@ -258,12 +267,13 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * The private password leak verification field contains the parameters that
-   * are used to to check for leaks privately without sharing user credentials.
+   * Optional. The private password leak verification field contains the
+   * parameters that are used to to check for leaks privately without sharing
+   * user credentials.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the privatePasswordLeakVerification field is set.
@@ -273,12 +283,13 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * The private password leak verification field contains the parameters that
-   * are used to to check for leaks privately without sharing user credentials.
+   * Optional. The private password leak verification field contains the
+   * parameters that are used to to check for leaks privately without sharing
+   * user credentials.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The privatePasswordLeakVerification.
@@ -289,12 +300,13 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * The private password leak verification field contains the parameters that
-   * are used to to check for leaks privately without sharing user credentials.
+   * Optional. The private password leak verification field contains the
+   * parameters that are used to to check for leaks privately without sharing
+   * user credentials.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerificationOrBuilder
@@ -304,12 +316,12 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment returned when firewall policies belonging to the project are
-   * evaluated using the field firewall_policy_evaluation.
+   * Output only. Assessment returned when firewall policies belonging to the
+   * project are evaluated using the field firewall_policy_evaluation.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the firewallPolicyAssessment field is set.
@@ -319,12 +331,12 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment returned when firewall policies belonging to the project are
-   * evaluated using the field firewall_policy_evaluation.
+   * Output only. Assessment returned when firewall policies belonging to the
+   * project are evaluated using the field firewall_policy_evaluation.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The firewallPolicyAssessment.
@@ -334,12 +346,12 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment returned when firewall policies belonging to the project are
-   * evaluated using the field firewall_policy_evaluation.
+   * Output only. Assessment returned when firewall policies belonging to the
+   * project are evaluated using the field firewall_policy_evaluation.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.recaptchaenterprise.v1.FirewallPolicyAssessmentOrBuilder
@@ -349,11 +361,12 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment returned by Fraud Prevention when TransactionData is provided.
+   * Output only. Assessment returned by Fraud Prevention when TransactionData
+   * is provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the fraudPreventionAssessment field is set.
@@ -363,11 +376,12 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment returned by Fraud Prevention when TransactionData is provided.
+   * Output only. Assessment returned by Fraud Prevention when TransactionData
+   * is provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The fraudPreventionAssessment.
@@ -377,11 +391,12 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment returned by Fraud Prevention when TransactionData is provided.
+   * Output only. Assessment returned by Fraud Prevention when TransactionData
+   * is provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11;
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment fraud_prevention_assessment = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.recaptchaenterprise.v1.FraudPreventionAssessmentOrBuilder

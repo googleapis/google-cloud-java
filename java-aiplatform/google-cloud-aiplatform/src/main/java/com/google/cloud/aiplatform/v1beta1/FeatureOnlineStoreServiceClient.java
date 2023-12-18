@@ -57,9 +57,9 @@ import javax.annotation.Generated;
  *     FeatureOnlineStoreServiceClient.create()) {
  *   FeatureViewName featureView =
  *       FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]");
- *   String id = "id3355";
+ *   FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
  *   FetchFeatureValuesResponse response =
- *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, id);
+ *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, dataKey);
  * }
  * }</pre>
  *
@@ -191,24 +191,23 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
    *     FeatureOnlineStoreServiceClient.create()) {
    *   FeatureViewName featureView =
    *       FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]");
-   *   String id = "id3355";
+   *   FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
    *   FetchFeatureValuesResponse response =
-   *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, id);
+   *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, dataKey);
    * }
    * }</pre>
    *
    * @param featureView Required. FeatureView resource format
    *     `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}/featureViews/{featureView}`
-   * @param id Simple ID. The whole string will be used as is to identify Entity to fetch feature
-   *     values for.
+   * @param dataKey Optional. The request key to fetch feature values for.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchFeatureValuesResponse fetchFeatureValues(
-      FeatureViewName featureView, String id) {
+      FeatureViewName featureView, FeatureViewDataKey dataKey) {
     FetchFeatureValuesRequest request =
         FetchFeatureValuesRequest.newBuilder()
             .setFeatureView(featureView == null ? null : featureView.toString())
-            .setId(id)
+            .setDataKey(dataKey)
             .build();
     return fetchFeatureValues(request);
   }
@@ -230,21 +229,24 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
    *   String featureView =
    *       FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
    *           .toString();
-   *   String id = "id3355";
+   *   FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
    *   FetchFeatureValuesResponse response =
-   *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, id);
+   *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, dataKey);
    * }
    * }</pre>
    *
    * @param featureView Required. FeatureView resource format
    *     `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}/featureViews/{featureView}`
-   * @param id Simple ID. The whole string will be used as is to identify Entity to fetch feature
-   *     values for.
+   * @param dataKey Optional. The request key to fetch feature values for.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchFeatureValuesResponse fetchFeatureValues(String featureView, String id) {
+  public final FetchFeatureValuesResponse fetchFeatureValues(
+      String featureView, FeatureViewDataKey dataKey) {
     FetchFeatureValuesRequest request =
-        FetchFeatureValuesRequest.newBuilder().setFeatureView(featureView).setId(id).build();
+        FetchFeatureValuesRequest.newBuilder()
+            .setFeatureView(featureView)
+            .setDataKey(dataKey)
+            .build();
     return fetchFeatureValues(request);
   }
 
@@ -268,6 +270,8 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
    *               FeatureViewName.of(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
    *                   .toString())
+   *           .setDataKey(FeatureViewDataKey.newBuilder().build())
+   *           .setDataFormat(FeatureViewDataFormat.forNumber(0))
    *           .build();
    *   FetchFeatureValuesResponse response =
    *       featureOnlineStoreServiceClient.fetchFeatureValues(request);
@@ -301,6 +305,8 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
    *               FeatureViewName.of(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
    *                   .toString())
+   *           .setDataKey(FeatureViewDataKey.newBuilder().build())
+   *           .setDataFormat(FeatureViewDataFormat.forNumber(0))
    *           .build();
    *   ApiFuture<FetchFeatureValuesResponse> future =
    *       featureOnlineStoreServiceClient.fetchFeatureValuesCallable().futureCall(request);

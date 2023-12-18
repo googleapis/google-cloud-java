@@ -108,9 +108,9 @@ public class FeatureOnlineStoreServiceClientTest {
 
     FeatureViewName featureView =
         FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]");
-    String id = "id3355";
+    FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
 
-    FetchFeatureValuesResponse actualResponse = client.fetchFeatureValues(featureView, id);
+    FetchFeatureValuesResponse actualResponse = client.fetchFeatureValues(featureView, dataKey);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockFeatureOnlineStoreService.getRequests();
@@ -118,7 +118,7 @@ public class FeatureOnlineStoreServiceClientTest {
     FetchFeatureValuesRequest actualRequest = ((FetchFeatureValuesRequest) actualRequests.get(0));
 
     Assert.assertEquals(featureView.toString(), actualRequest.getFeatureView());
-    Assert.assertEquals(id, actualRequest.getId());
+    Assert.assertEquals(dataKey, actualRequest.getDataKey());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -133,8 +133,8 @@ public class FeatureOnlineStoreServiceClientTest {
     try {
       FeatureViewName featureView =
           FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]");
-      String id = "id3355";
-      client.fetchFeatureValues(featureView, id);
+      FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
+      client.fetchFeatureValues(featureView, dataKey);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -147,9 +147,9 @@ public class FeatureOnlineStoreServiceClientTest {
     mockFeatureOnlineStoreService.addResponse(expectedResponse);
 
     String featureView = "featureView-376914245";
-    String id = "id3355";
+    FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
 
-    FetchFeatureValuesResponse actualResponse = client.fetchFeatureValues(featureView, id);
+    FetchFeatureValuesResponse actualResponse = client.fetchFeatureValues(featureView, dataKey);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockFeatureOnlineStoreService.getRequests();
@@ -157,7 +157,7 @@ public class FeatureOnlineStoreServiceClientTest {
     FetchFeatureValuesRequest actualRequest = ((FetchFeatureValuesRequest) actualRequests.get(0));
 
     Assert.assertEquals(featureView, actualRequest.getFeatureView());
-    Assert.assertEquals(id, actualRequest.getId());
+    Assert.assertEquals(dataKey, actualRequest.getDataKey());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -171,8 +171,8 @@ public class FeatureOnlineStoreServiceClientTest {
 
     try {
       String featureView = "featureView-376914245";
-      String id = "id3355";
-      client.fetchFeatureValues(featureView, id);
+      FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
+      client.fetchFeatureValues(featureView, dataKey);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

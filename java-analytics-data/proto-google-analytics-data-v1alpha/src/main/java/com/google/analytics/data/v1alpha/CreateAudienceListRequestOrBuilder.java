@@ -28,7 +28,7 @@ public interface CreateAudienceListRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource where this audience list will be created.
-   * Format: `properties/{propertyId}`
+   * Format: `properties/{property}`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CreateAudienceListRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource where this audience list will be created.
-   * Format: `properties/{propertyId}`
+   * Format: `properties/{property}`
    * </pre>
    *
    * <code>

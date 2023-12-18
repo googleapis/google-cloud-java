@@ -64,44 +64,6 @@ import javax.annotation.Generated;
 public class HttpJsonEntityTypesStub extends EntityTypesStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 
-  private static final ApiMethodDescriptor<ListEntityTypesRequest, ListEntityTypesResponse>
-      listEntityTypesMethodDescriptor =
-          ApiMethodDescriptor.<ListEntityTypesRequest, ListEntityTypesResponse>newBuilder()
-              .setFullMethodName("google.cloud.dialogflow.cx.v3.EntityTypes/ListEntityTypes")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<ListEntityTypesRequest>newBuilder()
-                      .setPath(
-                          "/v3/{parent=projects/*/locations/*/agents/*}/entityTypes",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<ListEntityTypesRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "parent", request.getParent());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<ListEntityTypesRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(
-                                fields, "languageCode", request.getLanguageCode());
-                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<ListEntityTypesResponse>newBuilder()
-                      .setDefaultInstance(ListEntityTypesResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
   private static final ApiMethodDescriptor<GetEntityTypeRequest, EntityType>
       getEntityTypeMethodDescriptor =
           ApiMethodDescriptor.<GetEntityTypeRequest, EntityType>newBuilder()
@@ -253,6 +215,44 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ListEntityTypesRequest, ListEntityTypesResponse>
+      listEntityTypesMethodDescriptor =
+          ApiMethodDescriptor.<ListEntityTypesRequest, ListEntityTypesResponse>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.cx.v3.EntityTypes/ListEntityTypes")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListEntityTypesRequest>newBuilder()
+                      .setPath(
+                          "/v3/{parent=projects/*/locations/*/agents/*}/entityTypes",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListEntityTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListEntityTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "languageCode", request.getLanguageCode());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListEntityTypesResponse>newBuilder()
+                      .setDefaultInstance(ListEntityTypesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -321,14 +321,14 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                       .build())
               .build();
 
-  private final UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse>
-      listEntityTypesCallable;
-  private final UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
-      listEntityTypesPagedCallable;
   private final UnaryCallable<GetEntityTypeRequest, EntityType> getEntityTypeCallable;
   private final UnaryCallable<CreateEntityTypeRequest, EntityType> createEntityTypeCallable;
   private final UnaryCallable<UpdateEntityTypeRequest, EntityType> updateEntityTypeCallable;
   private final UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable;
+  private final UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse>
+      listEntityTypesCallable;
+  private final UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
+      listEntityTypesPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -376,18 +376,6 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
-    HttpJsonCallSettings<ListEntityTypesRequest, ListEntityTypesResponse>
-        listEntityTypesTransportSettings =
-            HttpJsonCallSettings.<ListEntityTypesRequest, ListEntityTypesResponse>newBuilder()
-                .setMethodDescriptor(listEntityTypesMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
     HttpJsonCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeTransportSettings =
         HttpJsonCallSettings.<GetEntityTypeRequest, EntityType>newBuilder()
             .setMethodDescriptor(getEntityTypeMethodDescriptor)
@@ -433,6 +421,18 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListEntityTypesRequest, ListEntityTypesResponse>
+        listEntityTypesTransportSettings =
+            HttpJsonCallSettings.<ListEntityTypesRequest, ListEntityTypesResponse>newBuilder()
+                .setMethodDescriptor(listEntityTypesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -457,12 +457,6 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                 })
             .build();
 
-    this.listEntityTypesCallable =
-        callableFactory.createUnaryCallable(
-            listEntityTypesTransportSettings, settings.listEntityTypesSettings(), clientContext);
-    this.listEntityTypesPagedCallable =
-        callableFactory.createPagedCallable(
-            listEntityTypesTransportSettings, settings.listEntityTypesSettings(), clientContext);
     this.getEntityTypeCallable =
         callableFactory.createUnaryCallable(
             getEntityTypeTransportSettings, settings.getEntityTypeSettings(), clientContext);
@@ -475,6 +469,12 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
     this.deleteEntityTypeCallable =
         callableFactory.createUnaryCallable(
             deleteEntityTypeTransportSettings, settings.deleteEntityTypeSettings(), clientContext);
+    this.listEntityTypesCallable =
+        callableFactory.createUnaryCallable(
+            listEntityTypesTransportSettings, settings.listEntityTypesSettings(), clientContext);
+    this.listEntityTypesPagedCallable =
+        callableFactory.createPagedCallable(
+            listEntityTypesTransportSettings, settings.listEntityTypesSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -492,25 +492,14 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
-    methodDescriptors.add(listEntityTypesMethodDescriptor);
     methodDescriptors.add(getEntityTypeMethodDescriptor);
     methodDescriptors.add(createEntityTypeMethodDescriptor);
     methodDescriptors.add(updateEntityTypeMethodDescriptor);
     methodDescriptors.add(deleteEntityTypeMethodDescriptor);
+    methodDescriptors.add(listEntityTypesMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
-  }
-
-  @Override
-  public UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse> listEntityTypesCallable() {
-    return listEntityTypesCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
-      listEntityTypesPagedCallable() {
-    return listEntityTypesPagedCallable;
   }
 
   @Override
@@ -531,6 +520,17 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
   @Override
   public UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable() {
     return deleteEntityTypeCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse> listEntityTypesCallable() {
+    return listEntityTypesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
+      listEntityTypesPagedCallable() {
+    return listEntityTypesPagedCallable;
   }
 
   @Override

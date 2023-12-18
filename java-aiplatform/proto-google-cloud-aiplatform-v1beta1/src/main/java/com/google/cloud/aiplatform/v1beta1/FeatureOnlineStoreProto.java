@@ -75,7 +75,7 @@ public final class FeatureOnlineStoreProto {
           + "FeatureOnlineStore.BigtableH\000\022R\n\toptimiz"
           + "ed\030\014 \001(\0132=.google.cloud.aiplatform.v1bet"
           + "a1.FeatureOnlineStore.OptimizedH\000\022\022\n\004nam"
-          + "e\030\001 \001(\tB\004\342A\001\003\0225\n\013create_time\030\003 \001(\0132\032.goo"
+          + "e\030\001 \001(\tB\004\342A\001\010\0225\n\013create_time\030\003 \001(\0132\032.goo"
           + "gle.protobuf.TimestampB\004\342A\001\003\0225\n\013update_t"
           + "ime\030\004 \001(\0132\032.google.protobuf.TimestampB\004\342"
           + "A\001\003\022\022\n\004etag\030\005 \001(\tB\004\342A\001\001\022U\n\006labels\030\006 \003(\0132"

@@ -129,6 +129,57 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
         : workloadPolicyConfig_;
   }
 
+  public static final int CONVERSION_STATUS_FIELD_NUMBER = 3;
+  private com.google.container.v1beta1.AutopilotConversionStatus conversionStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * ConversionStatus shows conversion status.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AutopilotConversionStatus conversion_status = 3;</code>
+   *
+   * @return Whether the conversionStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasConversionStatus() {
+    return conversionStatus_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ConversionStatus shows conversion status.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AutopilotConversionStatus conversion_status = 3;</code>
+   *
+   * @return The conversionStatus.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AutopilotConversionStatus getConversionStatus() {
+    return conversionStatus_ == null
+        ? com.google.container.v1beta1.AutopilotConversionStatus.getDefaultInstance()
+        : conversionStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ConversionStatus shows conversion status.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AutopilotConversionStatus conversion_status = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AutopilotConversionStatusOrBuilder
+      getConversionStatusOrBuilder() {
+    return conversionStatus_ == null
+        ? com.google.container.v1beta1.AutopilotConversionStatus.getDefaultInstance()
+        : conversionStatus_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -149,6 +200,9 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     if (workloadPolicyConfig_ != null) {
       output.writeMessage(2, getWorkloadPolicyConfig());
     }
+    if (conversionStatus_ != null) {
+      output.writeMessage(3, getConversionStatus());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -164,6 +218,9 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     if (workloadPolicyConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, getWorkloadPolicyConfig());
+    }
+    if (conversionStatus_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getConversionStatus());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -185,6 +242,10 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     if (hasWorkloadPolicyConfig()) {
       if (!getWorkloadPolicyConfig().equals(other.getWorkloadPolicyConfig())) return false;
     }
+    if (hasConversionStatus() != other.hasConversionStatus()) return false;
+    if (hasConversionStatus()) {
+      if (!getConversionStatus().equals(other.getConversionStatus())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -201,6 +262,10 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     if (hasWorkloadPolicyConfig()) {
       hash = (37 * hash) + WORKLOAD_POLICY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getWorkloadPolicyConfig().hashCode();
+    }
+    if (hasConversionStatus()) {
+      hash = (37 * hash) + CONVERSION_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getConversionStatus().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -347,6 +412,11 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
         workloadPolicyConfigBuilder_.dispose();
         workloadPolicyConfigBuilder_ = null;
       }
+      conversionStatus_ = null;
+      if (conversionStatusBuilder_ != null) {
+        conversionStatusBuilder_.dispose();
+        conversionStatusBuilder_ = null;
+      }
       return this;
     }
 
@@ -391,6 +461,10 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
             workloadPolicyConfigBuilder_ == null
                 ? workloadPolicyConfig_
                 : workloadPolicyConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.conversionStatus_ =
+            conversionStatusBuilder_ == null ? conversionStatus_ : conversionStatusBuilder_.build();
       }
     }
 
@@ -445,6 +519,9 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
       if (other.hasWorkloadPolicyConfig()) {
         mergeWorkloadPolicyConfig(other.getWorkloadPolicyConfig());
       }
+      if (other.hasConversionStatus()) {
+        mergeConversionStatus(other.getConversionStatus());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -484,6 +561,13 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getConversionStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -743,6 +827,195 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
         workloadPolicyConfig_ = null;
       }
       return workloadPolicyConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.AutopilotConversionStatus conversionStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.AutopilotConversionStatus,
+            com.google.container.v1beta1.AutopilotConversionStatus.Builder,
+            com.google.container.v1beta1.AutopilotConversionStatusOrBuilder>
+        conversionStatusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * ConversionStatus shows conversion status.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AutopilotConversionStatus conversion_status = 3;</code>
+     *
+     * @return Whether the conversionStatus field is set.
+     */
+    public boolean hasConversionStatus() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ConversionStatus shows conversion status.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AutopilotConversionStatus conversion_status = 3;</code>
+     *
+     * @return The conversionStatus.
+     */
+    public com.google.container.v1beta1.AutopilotConversionStatus getConversionStatus() {
+      if (conversionStatusBuilder_ == null) {
+        return conversionStatus_ == null
+            ? com.google.container.v1beta1.AutopilotConversionStatus.getDefaultInstance()
+            : conversionStatus_;
+      } else {
+        return conversionStatusBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ConversionStatus shows conversion status.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AutopilotConversionStatus conversion_status = 3;</code>
+     */
+    public Builder setConversionStatus(
+        com.google.container.v1beta1.AutopilotConversionStatus value) {
+      if (conversionStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        conversionStatus_ = value;
+      } else {
+        conversionStatusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ConversionStatus shows conversion status.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AutopilotConversionStatus conversion_status = 3;</code>
+     */
+    public Builder setConversionStatus(
+        com.google.container.v1beta1.AutopilotConversionStatus.Builder builderForValue) {
+      if (conversionStatusBuilder_ == null) {
+        conversionStatus_ = builderForValue.build();
+      } else {
+        conversionStatusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ConversionStatus shows conversion status.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AutopilotConversionStatus conversion_status = 3;</code>
+     */
+    public Builder mergeConversionStatus(
+        com.google.container.v1beta1.AutopilotConversionStatus value) {
+      if (conversionStatusBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && conversionStatus_ != null
+            && conversionStatus_
+                != com.google.container.v1beta1.AutopilotConversionStatus.getDefaultInstance()) {
+          getConversionStatusBuilder().mergeFrom(value);
+        } else {
+          conversionStatus_ = value;
+        }
+      } else {
+        conversionStatusBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ConversionStatus shows conversion status.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AutopilotConversionStatus conversion_status = 3;</code>
+     */
+    public Builder clearConversionStatus() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      conversionStatus_ = null;
+      if (conversionStatusBuilder_ != null) {
+        conversionStatusBuilder_.dispose();
+        conversionStatusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ConversionStatus shows conversion status.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AutopilotConversionStatus conversion_status = 3;</code>
+     */
+    public com.google.container.v1beta1.AutopilotConversionStatus.Builder
+        getConversionStatusBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getConversionStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ConversionStatus shows conversion status.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AutopilotConversionStatus conversion_status = 3;</code>
+     */
+    public com.google.container.v1beta1.AutopilotConversionStatusOrBuilder
+        getConversionStatusOrBuilder() {
+      if (conversionStatusBuilder_ != null) {
+        return conversionStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return conversionStatus_ == null
+            ? com.google.container.v1beta1.AutopilotConversionStatus.getDefaultInstance()
+            : conversionStatus_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ConversionStatus shows conversion status.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AutopilotConversionStatus conversion_status = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.AutopilotConversionStatus,
+            com.google.container.v1beta1.AutopilotConversionStatus.Builder,
+            com.google.container.v1beta1.AutopilotConversionStatusOrBuilder>
+        getConversionStatusFieldBuilder() {
+      if (conversionStatusBuilder_ == null) {
+        conversionStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.AutopilotConversionStatus,
+                com.google.container.v1beta1.AutopilotConversionStatus.Builder,
+                com.google.container.v1beta1.AutopilotConversionStatusOrBuilder>(
+                getConversionStatus(), getParentForChildren(), isClean());
+        conversionStatus_ = null;
+      }
+      return conversionStatusBuilder_;
     }
 
     @java.lang.Override

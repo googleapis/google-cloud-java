@@ -445,10 +445,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If set to true, it means allowed_domains will not be enforced.
+   * Optional. If set to true, it means allowed_domains will not be enforced.
    * </pre>
    *
-   * <code>bool allow_all_domains = 3;</code>
+   * <code>bool allow_all_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowAllDomains.
    */
@@ -466,13 +466,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Domains or subdomains of websites allowed to use the key. All subdomains
-   * of an allowed domain are automatically allowed. A valid domain requires a
-   * host and must not include any path, port, query or fragment.
+   * Optional. Domains or subdomains of websites allowed to use the key. All
+   * subdomains of an allowed domain are automatically allowed. A valid domain
+   * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
    * </pre>
    *
-   * <code>repeated string allowed_domains = 1;</code>
+   * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the allowedDomains.
    */
@@ -483,13 +483,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Domains or subdomains of websites allowed to use the key. All subdomains
-   * of an allowed domain are automatically allowed. A valid domain requires a
-   * host and must not include any path, port, query or fragment.
+   * Optional. Domains or subdomains of websites allowed to use the key. All
+   * subdomains of an allowed domain are automatically allowed. A valid domain
+   * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
    * </pre>
    *
-   * <code>repeated string allowed_domains = 1;</code>
+   * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of allowedDomains.
    */
@@ -500,13 +500,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Domains or subdomains of websites allowed to use the key. All subdomains
-   * of an allowed domain are automatically allowed. A valid domain requires a
-   * host and must not include any path, port, query or fragment.
+   * Optional. Domains or subdomains of websites allowed to use the key. All
+   * subdomains of an allowed domain are automatically allowed. A valid domain
+   * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
    * </pre>
    *
-   * <code>repeated string allowed_domains = 1;</code>
+   * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The allowedDomains at the given index.
@@ -518,13 +518,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Domains or subdomains of websites allowed to use the key. All subdomains
-   * of an allowed domain are automatically allowed. A valid domain requires a
-   * host and must not include any path, port, query or fragment.
+   * Optional. Domains or subdomains of websites allowed to use the key. All
+   * subdomains of an allowed domain are automatically allowed. A valid domain
+   * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
    * </pre>
    *
-   * <code>repeated string allowed_domains = 1;</code>
+   * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the allowedDomains at the given index.
@@ -539,11 +539,11 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If set to true, the key can be used on AMP (Accelerated Mobile Pages)
-   * websites. This is supported only for the SCORE integration type.
+   * Optional. If set to true, the key can be used on AMP (Accelerated Mobile
+   * Pages) websites. This is supported only for the SCORE integration type.
    * </pre>
    *
-   * <code>bool allow_amp_traffic = 2;</code>
+   * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowAmpTraffic.
    */
@@ -600,13 +600,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings for the frequency and difficulty at which this key triggers
-   * captcha challenges. This should only be specified for IntegrationTypes
-   * CHECKBOX and INVISIBLE.
+   * Optional. Settings for the frequency and difficulty at which this key
+   * triggers captcha challenges. This should only be specified for
+   * IntegrationTypes CHECKBOX and INVISIBLE.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
+   * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for challengeSecurityPreference.
@@ -619,13 +619,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings for the frequency and difficulty at which this key triggers
-   * captcha challenges. This should only be specified for IntegrationTypes
-   * CHECKBOX and INVISIBLE.
+   * Optional. Settings for the frequency and difficulty at which this key
+   * triggers captcha challenges. This should only be specified for
+   * IntegrationTypes CHECKBOX and INVISIBLE.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
+   * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The challengeSecurityPreference.
@@ -1103,10 +1103,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set to true, it means allowed_domains will not be enforced.
+     * Optional. If set to true, it means allowed_domains will not be enforced.
      * </pre>
      *
-     * <code>bool allow_all_domains = 3;</code>
+     * <code>bool allow_all_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allowAllDomains.
      */
@@ -1118,10 +1118,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set to true, it means allowed_domains will not be enforced.
+     * Optional. If set to true, it means allowed_domains will not be enforced.
      * </pre>
      *
-     * <code>bool allow_all_domains = 3;</code>
+     * <code>bool allow_all_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The allowAllDomains to set.
      * @return This builder for chaining.
@@ -1137,10 +1137,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set to true, it means allowed_domains will not be enforced.
+     * Optional. If set to true, it means allowed_domains will not be enforced.
      * </pre>
      *
-     * <code>bool allow_all_domains = 3;</code>
+     * <code>bool allow_all_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1164,13 +1164,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Domains or subdomains of websites allowed to use the key. All subdomains
-     * of an allowed domain are automatically allowed. A valid domain requires a
-     * host and must not include any path, port, query or fragment.
+     * Optional. Domains or subdomains of websites allowed to use the key. All
+     * subdomains of an allowed domain are automatically allowed. A valid domain
+     * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
      * </pre>
      *
-     * <code>repeated string allowed_domains = 1;</code>
+     * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the allowedDomains.
      */
@@ -1182,13 +1182,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Domains or subdomains of websites allowed to use the key. All subdomains
-     * of an allowed domain are automatically allowed. A valid domain requires a
-     * host and must not include any path, port, query or fragment.
+     * Optional. Domains or subdomains of websites allowed to use the key. All
+     * subdomains of an allowed domain are automatically allowed. A valid domain
+     * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
      * </pre>
      *
-     * <code>repeated string allowed_domains = 1;</code>
+     * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of allowedDomains.
      */
@@ -1199,13 +1199,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Domains or subdomains of websites allowed to use the key. All subdomains
-     * of an allowed domain are automatically allowed. A valid domain requires a
-     * host and must not include any path, port, query or fragment.
+     * Optional. Domains or subdomains of websites allowed to use the key. All
+     * subdomains of an allowed domain are automatically allowed. A valid domain
+     * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
      * </pre>
      *
-     * <code>repeated string allowed_domains = 1;</code>
+     * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The allowedDomains at the given index.
@@ -1217,13 +1217,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Domains or subdomains of websites allowed to use the key. All subdomains
-     * of an allowed domain are automatically allowed. A valid domain requires a
-     * host and must not include any path, port, query or fragment.
+     * Optional. Domains or subdomains of websites allowed to use the key. All
+     * subdomains of an allowed domain are automatically allowed. A valid domain
+     * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
      * </pre>
      *
-     * <code>repeated string allowed_domains = 1;</code>
+     * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the allowedDomains at the given index.
@@ -1235,13 +1235,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Domains or subdomains of websites allowed to use the key. All subdomains
-     * of an allowed domain are automatically allowed. A valid domain requires a
-     * host and must not include any path, port, query or fragment.
+     * Optional. Domains or subdomains of websites allowed to use the key. All
+     * subdomains of an allowed domain are automatically allowed. A valid domain
+     * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
      * </pre>
      *
-     * <code>repeated string allowed_domains = 1;</code>
+     * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The allowedDomains to set.
@@ -1261,13 +1261,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Domains or subdomains of websites allowed to use the key. All subdomains
-     * of an allowed domain are automatically allowed. A valid domain requires a
-     * host and must not include any path, port, query or fragment.
+     * Optional. Domains or subdomains of websites allowed to use the key. All
+     * subdomains of an allowed domain are automatically allowed. A valid domain
+     * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
      * </pre>
      *
-     * <code>repeated string allowed_domains = 1;</code>
+     * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The allowedDomains to add.
      * @return This builder for chaining.
@@ -1286,13 +1286,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Domains or subdomains of websites allowed to use the key. All subdomains
-     * of an allowed domain are automatically allowed. A valid domain requires a
-     * host and must not include any path, port, query or fragment.
+     * Optional. Domains or subdomains of websites allowed to use the key. All
+     * subdomains of an allowed domain are automatically allowed. A valid domain
+     * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
      * </pre>
      *
-     * <code>repeated string allowed_domains = 1;</code>
+     * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The allowedDomains to add.
      * @return This builder for chaining.
@@ -1308,13 +1308,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Domains or subdomains of websites allowed to use the key. All subdomains
-     * of an allowed domain are automatically allowed. A valid domain requires a
-     * host and must not include any path, port, query or fragment.
+     * Optional. Domains or subdomains of websites allowed to use the key. All
+     * subdomains of an allowed domain are automatically allowed. A valid domain
+     * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
      * </pre>
      *
-     * <code>repeated string allowed_domains = 1;</code>
+     * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1329,13 +1329,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Domains or subdomains of websites allowed to use the key. All subdomains
-     * of an allowed domain are automatically allowed. A valid domain requires a
-     * host and must not include any path, port, query or fragment.
+     * Optional. Domains or subdomains of websites allowed to use the key. All
+     * subdomains of an allowed domain are automatically allowed. A valid domain
+     * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
      * </pre>
      *
-     * <code>repeated string allowed_domains = 1;</code>
+     * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the allowedDomains to add.
      * @return This builder for chaining.
@@ -1357,11 +1357,11 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set to true, the key can be used on AMP (Accelerated Mobile Pages)
-     * websites. This is supported only for the SCORE integration type.
+     * Optional. If set to true, the key can be used on AMP (Accelerated Mobile
+     * Pages) websites. This is supported only for the SCORE integration type.
      * </pre>
      *
-     * <code>bool allow_amp_traffic = 2;</code>
+     * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allowAmpTraffic.
      */
@@ -1373,11 +1373,11 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set to true, the key can be used on AMP (Accelerated Mobile Pages)
-     * websites. This is supported only for the SCORE integration type.
+     * Optional. If set to true, the key can be used on AMP (Accelerated Mobile
+     * Pages) websites. This is supported only for the SCORE integration type.
      * </pre>
      *
-     * <code>bool allow_amp_traffic = 2;</code>
+     * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The allowAmpTraffic to set.
      * @return This builder for chaining.
@@ -1393,11 +1393,11 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set to true, the key can be used on AMP (Accelerated Mobile Pages)
-     * websites. This is supported only for the SCORE integration type.
+     * Optional. If set to true, the key can be used on AMP (Accelerated Mobile
+     * Pages) websites. This is supported only for the SCORE integration type.
      * </pre>
      *
-     * <code>bool allow_amp_traffic = 2;</code>
+     * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1517,13 +1517,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for the frequency and difficulty at which this key triggers
-     * captcha challenges. This should only be specified for IntegrationTypes
-     * CHECKBOX and INVISIBLE.
+     * Optional. Settings for the frequency and difficulty at which this key
+     * triggers captcha challenges. This should only be specified for
+     * IntegrationTypes CHECKBOX and INVISIBLE.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for challengeSecurityPreference.
@@ -1536,13 +1536,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for the frequency and difficulty at which this key triggers
-     * captcha challenges. This should only be specified for IntegrationTypes
-     * CHECKBOX and INVISIBLE.
+     * Optional. Settings for the frequency and difficulty at which this key
+     * triggers captcha challenges. This should only be specified for
+     * IntegrationTypes CHECKBOX and INVISIBLE.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for challengeSecurityPreference to set.
@@ -1558,13 +1558,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for the frequency and difficulty at which this key triggers
-     * captcha challenges. This should only be specified for IntegrationTypes
-     * CHECKBOX and INVISIBLE.
+     * Optional. Settings for the frequency and difficulty at which this key
+     * triggers captcha challenges. This should only be specified for
+     * IntegrationTypes CHECKBOX and INVISIBLE.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The challengeSecurityPreference.
@@ -1584,13 +1584,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for the frequency and difficulty at which this key triggers
-     * captcha challenges. This should only be specified for IntegrationTypes
-     * CHECKBOX and INVISIBLE.
+     * Optional. Settings for the frequency and difficulty at which this key
+     * triggers captcha challenges. This should only be specified for
+     * IntegrationTypes CHECKBOX and INVISIBLE.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The challengeSecurityPreference to set.
@@ -1610,13 +1610,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for the frequency and difficulty at which this key triggers
-     * captcha challenges. This should only be specified for IntegrationTypes
-     * CHECKBOX and INVISIBLE.
+     * Optional. Settings for the frequency and difficulty at which this key
+     * triggers captcha challenges. This should only be specified for
+     * IntegrationTypes CHECKBOX and INVISIBLE.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.

@@ -248,6 +248,36 @@
         }
       }
     },
+    "Generators": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GeneratorsClient",
+          "rpcs": {
+            "CreateGenerator": {
+              "methods": ["createGenerator", "createGenerator", "createGenerator", "createGeneratorCallable"]
+            },
+            "DeleteGenerator": {
+              "methods": ["deleteGenerator", "deleteGenerator", "deleteGenerator", "deleteGeneratorCallable"]
+            },
+            "GetGenerator": {
+              "methods": ["getGenerator", "getGenerator", "getGenerator", "getGeneratorCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListGenerators": {
+              "methods": ["listGenerators", "listGenerators", "listGenerators", "listGeneratorsPagedCallable", "listGeneratorsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateGenerator": {
+              "methods": ["updateGenerator", "updateGenerator", "updateGeneratorCallable"]
+            }
+          }
+        }
+      }
+    },
     "Intents": {
       "clients": {
         "grpc": {
@@ -366,6 +396,9 @@
             },
             "StreamingDetectIntent": {
               "methods": ["streamingDetectIntentCallable"]
+            },
+            "SubmitAnswerFeedback": {
+              "methods": ["submitAnswerFeedback", "submitAnswerFeedbackCallable"]
             }
           }
         }

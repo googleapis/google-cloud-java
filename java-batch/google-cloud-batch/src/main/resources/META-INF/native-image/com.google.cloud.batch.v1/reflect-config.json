@@ -972,6 +972,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.batch.v1.LogsPolicy$CloudLoggingOption",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.batch.v1.LogsPolicy$CloudLoggingOption$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.batch.v1.LogsPolicy$Destination",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

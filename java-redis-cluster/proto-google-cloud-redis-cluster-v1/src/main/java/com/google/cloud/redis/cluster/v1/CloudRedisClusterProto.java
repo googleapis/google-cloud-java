@@ -195,10 +195,11 @@ public final class CloudRedisClusterProto {
           + "ster_id\202\323\344\223\0027\",/v1/{parent=projects/*/lo"
           + "cations/*}/clusters:\007cluster\032H\312A\024redis.g"
           + "oogleapis.com\322A.https://www.googleapis.c"
-          + "om/auth/cloud-platformBz\n!com.google.clo"
-          + "ud.redis.cluster.v1B\026CloudRedisClusterPr"
-          + "otoP\001Z;cloud.google.com/go/redis/cluster"
-          + "/apiv1/clusterpb;clusterpbb\006proto3"
+          + "om/auth/cloud-platformB\236\001\n!com.google.cl"
+          + "oud.redis.cluster.v1B\026CloudRedisClusterP"
+          + "rotoP\001Z;cloud.google.com/go/redis/cluste"
+          + "r/apiv1/clusterpb;clusterpb\352\002!Google::Cl"
+          + "oud::Redis::Cluster::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

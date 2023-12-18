@@ -128,11 +128,12 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A description of what this policy aims to achieve, for convenience
-   * purposes. The description can at most include 256 UTF-8 characters.
+   * Optional. A description of what this policy aims to achieve, for
+   * convenience purposes. The description can at most include 256 UTF-8
+   * characters.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -152,11 +153,12 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A description of what this policy aims to achieve, for convenience
-   * purposes. The description can at most include 256 UTF-8 characters.
+   * Optional. A description of what this policy aims to achieve, for
+   * convenience purposes. The description can at most include 256 UTF-8
+   * characters.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -181,13 +183,13 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The path for which this policy applies, specified as a glob pattern.
-   * For more information on glob, see the [manual
+   * Optional. The path for which this policy applies, specified as a glob
+   * pattern. For more information on glob, see the [manual
    * page](https://man7.org/linux/man-pages/man7/glob.7.html).
    * A path has a max length of 200 characters.
    * </pre>
    *
-   * <code>string path = 4;</code>
+   * <code>string path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The path.
    */
@@ -207,13 +209,13 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The path for which this policy applies, specified as a glob pattern.
-   * For more information on glob, see the [manual
+   * Optional. The path for which this policy applies, specified as a glob
+   * pattern. For more information on glob, see the [manual
    * page](https://man7.org/linux/man-pages/man7/glob.7.html).
    * A path has a max length of 200 characters.
    * </pre>
    *
-   * <code>string path = 4;</code>
+   * <code>string path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for path.
    */
@@ -238,17 +240,18 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A CEL (Common Expression Language) conditional expression that specifies if
-   * this policy applies to an incoming user request. If this condition
-   * evaluates to true and the requested path matched the path pattern, the
-   * associated actions should be executed by the caller. The condition string
-   * is checked for CEL syntax correctness on creation. For more information,
-   * see the [CEL spec](https://github.com/google/cel-spec) and its [language
+   * Optional. A CEL (Common Expression Language) conditional expression that
+   * specifies if this policy applies to an incoming user request. If this
+   * condition evaluates to true and the requested path matched the path
+   * pattern, the associated actions should be executed by the caller. The
+   * condition string is checked for CEL syntax correctness on creation. For
+   * more information, see the [CEL spec](https://github.com/google/cel-spec)
+   * and its [language
    * definition](https://github.com/google/cel-spec/blob/master/doc/langdef.md).
    * A condition has a max length of 500 characters.
    * </pre>
    *
-   * <code>string condition = 5;</code>
+   * <code>string condition = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The condition.
    */
@@ -268,17 +271,18 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A CEL (Common Expression Language) conditional expression that specifies if
-   * this policy applies to an incoming user request. If this condition
-   * evaluates to true and the requested path matched the path pattern, the
-   * associated actions should be executed by the caller. The condition string
-   * is checked for CEL syntax correctness on creation. For more information,
-   * see the [CEL spec](https://github.com/google/cel-spec) and its [language
+   * Optional. A CEL (Common Expression Language) conditional expression that
+   * specifies if this policy applies to an incoming user request. If this
+   * condition evaluates to true and the requested path matched the path
+   * pattern, the associated actions should be executed by the caller. The
+   * condition string is checked for CEL syntax correctness on creation. For
+   * more information, see the [CEL spec](https://github.com/google/cel-spec)
+   * and its [language
    * definition](https://github.com/google/cel-spec/blob/master/doc/langdef.md).
    * A condition has a max length of 500 characters.
    * </pre>
    *
-   * <code>string condition = 5;</code>
+   * <code>string condition = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for condition.
    */
@@ -303,7 +307,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The actions that the caller should take regarding user access.
+   * Optional. The actions that the caller should take regarding user access.
    * There should be at most one terminal action. A terminal action is any
    * action that forces a response, such as `AllowAction`,
    * `BlockAction` or `SubstituteAction`.
@@ -311,7 +315,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * specified. A single policy can contain up to 16 actions.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.recaptchaenterprise.v1.FirewallAction> getActionsList() {
@@ -321,7 +327,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The actions that the caller should take regarding user access.
+   * Optional. The actions that the caller should take regarding user access.
    * There should be at most one terminal action. A terminal action is any
    * action that forces a response, such as `AllowAction`,
    * `BlockAction` or `SubstituteAction`.
@@ -329,7 +335,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * specified. A single policy can contain up to 16 actions.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.recaptchaenterprise.v1.FirewallActionOrBuilder>
@@ -340,7 +348,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The actions that the caller should take regarding user access.
+   * Optional. The actions that the caller should take regarding user access.
    * There should be at most one terminal action. A terminal action is any
    * action that forces a response, such as `AllowAction`,
    * `BlockAction` or `SubstituteAction`.
@@ -348,7 +356,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * specified. A single policy can contain up to 16 actions.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getActionsCount() {
@@ -358,7 +368,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The actions that the caller should take regarding user access.
+   * Optional. The actions that the caller should take regarding user access.
    * There should be at most one terminal action. A terminal action is any
    * action that forces a response, such as `AllowAction`,
    * `BlockAction` or `SubstituteAction`.
@@ -366,7 +376,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * specified. A single policy can contain up to 16 actions.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.FirewallAction getActions(int index) {
@@ -376,7 +388,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The actions that the caller should take regarding user access.
+   * Optional. The actions that the caller should take regarding user access.
    * There should be at most one terminal action. A terminal action is any
    * action that forces a response, such as `AllowAction`,
    * `BlockAction` or `SubstituteAction`.
@@ -384,7 +396,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    * specified. A single policy can contain up to 16 actions.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.FirewallActionOrBuilder getActionsOrBuilder(int index) {
@@ -995,11 +1009,12 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of what this policy aims to achieve, for convenience
-     * purposes. The description can at most include 256 UTF-8 characters.
+     * Optional. A description of what this policy aims to achieve, for
+     * convenience purposes. The description can at most include 256 UTF-8
+     * characters.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -1018,11 +1033,12 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of what this policy aims to achieve, for convenience
-     * purposes. The description can at most include 256 UTF-8 characters.
+     * Optional. A description of what this policy aims to achieve, for
+     * convenience purposes. The description can at most include 256 UTF-8
+     * characters.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -1041,11 +1057,12 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of what this policy aims to achieve, for convenience
-     * purposes. The description can at most include 256 UTF-8 characters.
+     * Optional. A description of what this policy aims to achieve, for
+     * convenience purposes. The description can at most include 256 UTF-8
+     * characters.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1063,11 +1080,12 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of what this policy aims to achieve, for convenience
-     * purposes. The description can at most include 256 UTF-8 characters.
+     * Optional. A description of what this policy aims to achieve, for
+     * convenience purposes. The description can at most include 256 UTF-8
+     * characters.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1081,11 +1099,12 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of what this policy aims to achieve, for convenience
-     * purposes. The description can at most include 256 UTF-8 characters.
+     * Optional. A description of what this policy aims to achieve, for
+     * convenience purposes. The description can at most include 256 UTF-8
+     * characters.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1106,13 +1125,13 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path for which this policy applies, specified as a glob pattern.
-     * For more information on glob, see the [manual
+     * Optional. The path for which this policy applies, specified as a glob
+     * pattern. For more information on glob, see the [manual
      * page](https://man7.org/linux/man-pages/man7/glob.7.html).
      * A path has a max length of 200 characters.
      * </pre>
      *
-     * <code>string path = 4;</code>
+     * <code>string path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The path.
      */
@@ -1131,13 +1150,13 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path for which this policy applies, specified as a glob pattern.
-     * For more information on glob, see the [manual
+     * Optional. The path for which this policy applies, specified as a glob
+     * pattern. For more information on glob, see the [manual
      * page](https://man7.org/linux/man-pages/man7/glob.7.html).
      * A path has a max length of 200 characters.
      * </pre>
      *
-     * <code>string path = 4;</code>
+     * <code>string path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for path.
      */
@@ -1156,13 +1175,13 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path for which this policy applies, specified as a glob pattern.
-     * For more information on glob, see the [manual
+     * Optional. The path for which this policy applies, specified as a glob
+     * pattern. For more information on glob, see the [manual
      * page](https://man7.org/linux/man-pages/man7/glob.7.html).
      * A path has a max length of 200 characters.
      * </pre>
      *
-     * <code>string path = 4;</code>
+     * <code>string path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The path to set.
      * @return This builder for chaining.
@@ -1180,13 +1199,13 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path for which this policy applies, specified as a glob pattern.
-     * For more information on glob, see the [manual
+     * Optional. The path for which this policy applies, specified as a glob
+     * pattern. For more information on glob, see the [manual
      * page](https://man7.org/linux/man-pages/man7/glob.7.html).
      * A path has a max length of 200 characters.
      * </pre>
      *
-     * <code>string path = 4;</code>
+     * <code>string path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1200,13 +1219,13 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path for which this policy applies, specified as a glob pattern.
-     * For more information on glob, see the [manual
+     * Optional. The path for which this policy applies, specified as a glob
+     * pattern. For more information on glob, see the [manual
      * page](https://man7.org/linux/man-pages/man7/glob.7.html).
      * A path has a max length of 200 characters.
      * </pre>
      *
-     * <code>string path = 4;</code>
+     * <code>string path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for path to set.
      * @return This builder for chaining.
@@ -1227,17 +1246,18 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A CEL (Common Expression Language) conditional expression that specifies if
-     * this policy applies to an incoming user request. If this condition
-     * evaluates to true and the requested path matched the path pattern, the
-     * associated actions should be executed by the caller. The condition string
-     * is checked for CEL syntax correctness on creation. For more information,
-     * see the [CEL spec](https://github.com/google/cel-spec) and its [language
+     * Optional. A CEL (Common Expression Language) conditional expression that
+     * specifies if this policy applies to an incoming user request. If this
+     * condition evaluates to true and the requested path matched the path
+     * pattern, the associated actions should be executed by the caller. The
+     * condition string is checked for CEL syntax correctness on creation. For
+     * more information, see the [CEL spec](https://github.com/google/cel-spec)
+     * and its [language
      * definition](https://github.com/google/cel-spec/blob/master/doc/langdef.md).
      * A condition has a max length of 500 characters.
      * </pre>
      *
-     * <code>string condition = 5;</code>
+     * <code>string condition = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The condition.
      */
@@ -1256,17 +1276,18 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A CEL (Common Expression Language) conditional expression that specifies if
-     * this policy applies to an incoming user request. If this condition
-     * evaluates to true and the requested path matched the path pattern, the
-     * associated actions should be executed by the caller. The condition string
-     * is checked for CEL syntax correctness on creation. For more information,
-     * see the [CEL spec](https://github.com/google/cel-spec) and its [language
+     * Optional. A CEL (Common Expression Language) conditional expression that
+     * specifies if this policy applies to an incoming user request. If this
+     * condition evaluates to true and the requested path matched the path
+     * pattern, the associated actions should be executed by the caller. The
+     * condition string is checked for CEL syntax correctness on creation. For
+     * more information, see the [CEL spec](https://github.com/google/cel-spec)
+     * and its [language
      * definition](https://github.com/google/cel-spec/blob/master/doc/langdef.md).
      * A condition has a max length of 500 characters.
      * </pre>
      *
-     * <code>string condition = 5;</code>
+     * <code>string condition = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for condition.
      */
@@ -1285,17 +1306,18 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A CEL (Common Expression Language) conditional expression that specifies if
-     * this policy applies to an incoming user request. If this condition
-     * evaluates to true and the requested path matched the path pattern, the
-     * associated actions should be executed by the caller. The condition string
-     * is checked for CEL syntax correctness on creation. For more information,
-     * see the [CEL spec](https://github.com/google/cel-spec) and its [language
+     * Optional. A CEL (Common Expression Language) conditional expression that
+     * specifies if this policy applies to an incoming user request. If this
+     * condition evaluates to true and the requested path matched the path
+     * pattern, the associated actions should be executed by the caller. The
+     * condition string is checked for CEL syntax correctness on creation. For
+     * more information, see the [CEL spec](https://github.com/google/cel-spec)
+     * and its [language
      * definition](https://github.com/google/cel-spec/blob/master/doc/langdef.md).
      * A condition has a max length of 500 characters.
      * </pre>
      *
-     * <code>string condition = 5;</code>
+     * <code>string condition = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The condition to set.
      * @return This builder for chaining.
@@ -1313,17 +1335,18 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A CEL (Common Expression Language) conditional expression that specifies if
-     * this policy applies to an incoming user request. If this condition
-     * evaluates to true and the requested path matched the path pattern, the
-     * associated actions should be executed by the caller. The condition string
-     * is checked for CEL syntax correctness on creation. For more information,
-     * see the [CEL spec](https://github.com/google/cel-spec) and its [language
+     * Optional. A CEL (Common Expression Language) conditional expression that
+     * specifies if this policy applies to an incoming user request. If this
+     * condition evaluates to true and the requested path matched the path
+     * pattern, the associated actions should be executed by the caller. The
+     * condition string is checked for CEL syntax correctness on creation. For
+     * more information, see the [CEL spec](https://github.com/google/cel-spec)
+     * and its [language
      * definition](https://github.com/google/cel-spec/blob/master/doc/langdef.md).
      * A condition has a max length of 500 characters.
      * </pre>
      *
-     * <code>string condition = 5;</code>
+     * <code>string condition = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1337,17 +1360,18 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A CEL (Common Expression Language) conditional expression that specifies if
-     * this policy applies to an incoming user request. If this condition
-     * evaluates to true and the requested path matched the path pattern, the
-     * associated actions should be executed by the caller. The condition string
-     * is checked for CEL syntax correctness on creation. For more information,
-     * see the [CEL spec](https://github.com/google/cel-spec) and its [language
+     * Optional. A CEL (Common Expression Language) conditional expression that
+     * specifies if this policy applies to an incoming user request. If this
+     * condition evaluates to true and the requested path matched the path
+     * pattern, the associated actions should be executed by the caller. The
+     * condition string is checked for CEL syntax correctness on creation. For
+     * more information, see the [CEL spec](https://github.com/google/cel-spec)
+     * and its [language
      * definition](https://github.com/google/cel-spec/blob/master/doc/langdef.md).
      * A condition has a max length of 500 characters.
      * </pre>
      *
-     * <code>string condition = 5;</code>
+     * <code>string condition = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for condition to set.
      * @return This builder for chaining.
@@ -1384,7 +1408,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1392,7 +1416,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.recaptchaenterprise.v1.FirewallAction> getActionsList() {
       if (actionsBuilder_ == null) {
@@ -1405,7 +1431,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1413,7 +1439,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getActionsCount() {
       if (actionsBuilder_ == null) {
@@ -1426,7 +1454,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1434,7 +1462,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.FirewallAction getActions(int index) {
       if (actionsBuilder_ == null) {
@@ -1447,7 +1477,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1455,7 +1485,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setActions(int index, com.google.recaptchaenterprise.v1.FirewallAction value) {
       if (actionsBuilder_ == null) {
@@ -1474,7 +1506,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1482,7 +1514,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setActions(
         int index, com.google.recaptchaenterprise.v1.FirewallAction.Builder builderForValue) {
@@ -1499,7 +1533,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1507,7 +1541,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addActions(com.google.recaptchaenterprise.v1.FirewallAction value) {
       if (actionsBuilder_ == null) {
@@ -1526,7 +1562,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1534,7 +1570,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addActions(int index, com.google.recaptchaenterprise.v1.FirewallAction value) {
       if (actionsBuilder_ == null) {
@@ -1553,7 +1591,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1561,7 +1599,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addActions(
         com.google.recaptchaenterprise.v1.FirewallAction.Builder builderForValue) {
@@ -1578,7 +1618,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1586,7 +1626,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addActions(
         int index, com.google.recaptchaenterprise.v1.FirewallAction.Builder builderForValue) {
@@ -1603,7 +1645,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1611,7 +1653,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllActions(
         java.lang.Iterable<? extends com.google.recaptchaenterprise.v1.FirewallAction> values) {
@@ -1628,7 +1672,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1636,7 +1680,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearActions() {
       if (actionsBuilder_ == null) {
@@ -1652,7 +1698,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1660,7 +1706,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeActions(int index) {
       if (actionsBuilder_ == null) {
@@ -1676,7 +1724,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1684,7 +1732,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.FirewallAction.Builder getActionsBuilder(int index) {
       return getActionsFieldBuilder().getBuilder(index);
@@ -1693,7 +1743,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1701,7 +1751,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.FirewallActionOrBuilder getActionsOrBuilder(
         int index) {
@@ -1715,7 +1767,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1723,7 +1775,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.recaptchaenterprise.v1.FirewallActionOrBuilder>
         getActionsOrBuilderList() {
@@ -1737,7 +1791,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1745,7 +1799,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.FirewallAction.Builder addActionsBuilder() {
       return getActionsFieldBuilder()
@@ -1755,7 +1811,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1763,7 +1819,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.FirewallAction.Builder addActionsBuilder(int index) {
       return getActionsFieldBuilder()
@@ -1773,7 +1831,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actions that the caller should take regarding user access.
+     * Optional. The actions that the caller should take regarding user access.
      * There should be at most one terminal action. A terminal action is any
      * action that forces a response, such as `AllowAction`,
      * `BlockAction` or `SubstituteAction`.
@@ -1781,7 +1839,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * specified. A single policy can contain up to 16 actions.
      * </pre>
      *
-     * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.recaptchaenterprise.v1.FirewallAction.Builder>
         getActionsBuilderList() {

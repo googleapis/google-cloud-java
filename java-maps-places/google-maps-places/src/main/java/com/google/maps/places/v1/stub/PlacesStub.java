@@ -18,6 +18,12 @@ package com.google.maps.places.v1.stub;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.maps.places.v1.GetPhotoMediaRequest;
+import com.google.maps.places.v1.GetPlaceRequest;
+import com.google.maps.places.v1.PhotoMedia;
+import com.google.maps.places.v1.Place;
+import com.google.maps.places.v1.SearchNearbyRequest;
+import com.google.maps.places.v1.SearchNearbyResponse;
 import com.google.maps.places.v1.SearchTextRequest;
 import com.google.maps.places.v1.SearchTextResponse;
 import javax.annotation.Generated;
@@ -31,8 +37,20 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class PlacesStub implements BackgroundResource {
 
+  public UnaryCallable<SearchNearbyRequest, SearchNearbyResponse> searchNearbyCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchNearbyCallable()");
+  }
+
   public UnaryCallable<SearchTextRequest, SearchTextResponse> searchTextCallable() {
     throw new UnsupportedOperationException("Not implemented: searchTextCallable()");
+  }
+
+  public UnaryCallable<GetPhotoMediaRequest, PhotoMedia> getPhotoMediaCallable() {
+    throw new UnsupportedOperationException("Not implemented: getPhotoMediaCallable()");
+  }
+
+  public UnaryCallable<GetPlaceRequest, Place> getPlaceCallable() {
+    throw new UnsupportedOperationException("Not implemented: getPlaceCallable()");
   }
 
   @Override

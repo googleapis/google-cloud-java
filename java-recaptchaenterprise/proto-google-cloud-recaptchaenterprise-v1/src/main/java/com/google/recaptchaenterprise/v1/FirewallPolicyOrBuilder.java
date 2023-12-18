@@ -54,11 +54,12 @@ public interface FirewallPolicyOrBuilder
    *
    *
    * <pre>
-   * A description of what this policy aims to achieve, for convenience
-   * purposes. The description can at most include 256 UTF-8 characters.
+   * Optional. A description of what this policy aims to achieve, for
+   * convenience purposes. The description can at most include 256 UTF-8
+   * characters.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -67,11 +68,12 @@ public interface FirewallPolicyOrBuilder
    *
    *
    * <pre>
-   * A description of what this policy aims to achieve, for convenience
-   * purposes. The description can at most include 256 UTF-8 characters.
+   * Optional. A description of what this policy aims to achieve, for
+   * convenience purposes. The description can at most include 256 UTF-8
+   * characters.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -81,13 +83,13 @@ public interface FirewallPolicyOrBuilder
    *
    *
    * <pre>
-   * The path for which this policy applies, specified as a glob pattern.
-   * For more information on glob, see the [manual
+   * Optional. The path for which this policy applies, specified as a glob
+   * pattern. For more information on glob, see the [manual
    * page](https://man7.org/linux/man-pages/man7/glob.7.html).
    * A path has a max length of 200 characters.
    * </pre>
    *
-   * <code>string path = 4;</code>
+   * <code>string path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The path.
    */
@@ -96,13 +98,13 @@ public interface FirewallPolicyOrBuilder
    *
    *
    * <pre>
-   * The path for which this policy applies, specified as a glob pattern.
-   * For more information on glob, see the [manual
+   * Optional. The path for which this policy applies, specified as a glob
+   * pattern. For more information on glob, see the [manual
    * page](https://man7.org/linux/man-pages/man7/glob.7.html).
    * A path has a max length of 200 characters.
    * </pre>
    *
-   * <code>string path = 4;</code>
+   * <code>string path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for path.
    */
@@ -112,17 +114,18 @@ public interface FirewallPolicyOrBuilder
    *
    *
    * <pre>
-   * A CEL (Common Expression Language) conditional expression that specifies if
-   * this policy applies to an incoming user request. If this condition
-   * evaluates to true and the requested path matched the path pattern, the
-   * associated actions should be executed by the caller. The condition string
-   * is checked for CEL syntax correctness on creation. For more information,
-   * see the [CEL spec](https://github.com/google/cel-spec) and its [language
+   * Optional. A CEL (Common Expression Language) conditional expression that
+   * specifies if this policy applies to an incoming user request. If this
+   * condition evaluates to true and the requested path matched the path
+   * pattern, the associated actions should be executed by the caller. The
+   * condition string is checked for CEL syntax correctness on creation. For
+   * more information, see the [CEL spec](https://github.com/google/cel-spec)
+   * and its [language
    * definition](https://github.com/google/cel-spec/blob/master/doc/langdef.md).
    * A condition has a max length of 500 characters.
    * </pre>
    *
-   * <code>string condition = 5;</code>
+   * <code>string condition = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The condition.
    */
@@ -131,17 +134,18 @@ public interface FirewallPolicyOrBuilder
    *
    *
    * <pre>
-   * A CEL (Common Expression Language) conditional expression that specifies if
-   * this policy applies to an incoming user request. If this condition
-   * evaluates to true and the requested path matched the path pattern, the
-   * associated actions should be executed by the caller. The condition string
-   * is checked for CEL syntax correctness on creation. For more information,
-   * see the [CEL spec](https://github.com/google/cel-spec) and its [language
+   * Optional. A CEL (Common Expression Language) conditional expression that
+   * specifies if this policy applies to an incoming user request. If this
+   * condition evaluates to true and the requested path matched the path
+   * pattern, the associated actions should be executed by the caller. The
+   * condition string is checked for CEL syntax correctness on creation. For
+   * more information, see the [CEL spec](https://github.com/google/cel-spec)
+   * and its [language
    * definition](https://github.com/google/cel-spec/blob/master/doc/langdef.md).
    * A condition has a max length of 500 characters.
    * </pre>
    *
-   * <code>string condition = 5;</code>
+   * <code>string condition = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for condition.
    */
@@ -151,7 +155,7 @@ public interface FirewallPolicyOrBuilder
    *
    *
    * <pre>
-   * The actions that the caller should take regarding user access.
+   * Optional. The actions that the caller should take regarding user access.
    * There should be at most one terminal action. A terminal action is any
    * action that forces a response, such as `AllowAction`,
    * `BlockAction` or `SubstituteAction`.
@@ -159,14 +163,16 @@ public interface FirewallPolicyOrBuilder
    * specified. A single policy can contain up to 16 actions.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.recaptchaenterprise.v1.FirewallAction> getActionsList();
   /**
    *
    *
    * <pre>
-   * The actions that the caller should take regarding user access.
+   * Optional. The actions that the caller should take regarding user access.
    * There should be at most one terminal action. A terminal action is any
    * action that forces a response, such as `AllowAction`,
    * `BlockAction` or `SubstituteAction`.
@@ -174,14 +180,16 @@ public interface FirewallPolicyOrBuilder
    * specified. A single policy can contain up to 16 actions.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.recaptchaenterprise.v1.FirewallAction getActions(int index);
   /**
    *
    *
    * <pre>
-   * The actions that the caller should take regarding user access.
+   * Optional. The actions that the caller should take regarding user access.
    * There should be at most one terminal action. A terminal action is any
    * action that forces a response, such as `AllowAction`,
    * `BlockAction` or `SubstituteAction`.
@@ -189,14 +197,16 @@ public interface FirewallPolicyOrBuilder
    * specified. A single policy can contain up to 16 actions.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getActionsCount();
   /**
    *
    *
    * <pre>
-   * The actions that the caller should take regarding user access.
+   * Optional. The actions that the caller should take regarding user access.
    * There should be at most one terminal action. A terminal action is any
    * action that forces a response, such as `AllowAction`,
    * `BlockAction` or `SubstituteAction`.
@@ -204,7 +214,9 @@ public interface FirewallPolicyOrBuilder
    * specified. A single policy can contain up to 16 actions.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.recaptchaenterprise.v1.FirewallActionOrBuilder>
       getActionsOrBuilderList();
@@ -212,7 +224,7 @@ public interface FirewallPolicyOrBuilder
    *
    *
    * <pre>
-   * The actions that the caller should take regarding user access.
+   * Optional. The actions that the caller should take regarding user access.
    * There should be at most one terminal action. A terminal action is any
    * action that forces a response, such as `AllowAction`,
    * `BlockAction` or `SubstituteAction`.
@@ -220,7 +232,9 @@ public interface FirewallPolicyOrBuilder
    * specified. A single policy can contain up to 16 actions.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FirewallAction actions = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.recaptchaenterprise.v1.FirewallActionOrBuilder getActionsOrBuilder(int index);
 }

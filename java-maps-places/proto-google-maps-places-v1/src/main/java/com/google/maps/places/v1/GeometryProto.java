@@ -43,13 +43,13 @@ public final class GeometryProto {
       "\n$google/maps/places/v1/geometry.proto\022\025"
           + "google.maps.places.v1\032\037google/api/field_"
           + "behavior.proto\032\030google/type/latlng.proto"
-          + "\"G\n\006Circle\022(\n\006center\030\001 \001(\0132\023.google.type"
-          + ".LatLngB\003\340A\002\022\023\n\006radius\030\002 \001(\001B\003\340A\002B\245\001\n\031co"
-          + "m.google.maps.places.v1B\rGeometryProtoP\001"
-          + "Z;google.golang.org/genproto/googleapis/"
-          + "maps/places/v1;places\370\001\001\242\002\006GMPSV1\252\002\025Goog"
-          + "le.Maps.Places.V1\312\002\025Google\\Maps\\Places\\V"
-          + "1b\006proto3"
+          + "\"I\n\006Circle\022)\n\006center\030\001 \001(\0132\023.google.type"
+          + ".LatLngB\004\342A\001\002\022\024\n\006radius\030\002 \001(\001B\004\342A\001\002B\241\001\n\031"
+          + "com.google.maps.places.v1B\rGeometryProto"
+          + "P\001Z7cloud.google.com/go/maps/places/apiv"
+          + "1/placespb;placespb\370\001\001\242\002\006GMPSV1\252\002\025Google"
+          + ".Maps.Places.V1\312\002\025Google\\Maps\\Places\\V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

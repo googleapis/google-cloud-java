@@ -60,27 +60,6 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
   }
 
   @Override
-  public void listEntityTypes(
-      ListEntityTypesRequest request, StreamObserver<ListEntityTypesResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof ListEntityTypesResponse) {
-      requests.add(request);
-      responseObserver.onNext(((ListEntityTypesResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method ListEntityTypes, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  ListEntityTypesResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void getEntityType(
       GetEntityTypeRequest request, StreamObserver<EntityType> responseObserver) {
     Object response = responses.poll();
@@ -160,6 +139,27 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
                   "Unrecognized response type %s for method DeleteEntityType, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listEntityTypes(
+      ListEntityTypesRequest request, StreamObserver<ListEntityTypesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListEntityTypesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListEntityTypesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListEntityTypes, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListEntityTypesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

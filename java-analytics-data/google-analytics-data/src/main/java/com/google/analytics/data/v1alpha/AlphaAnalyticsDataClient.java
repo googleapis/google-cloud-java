@@ -321,6 +321,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * list the users in an audience list, first create the audience list through this method and then
    * send the audience resource name to the `QueryAudienceList` method.
    *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
    * <p>An audience list is a snapshot of the users currently in the audience at the time of
    * audience list creation. Creating audience lists for one audience on different days will return
    * different results as users enter and exit the audience.
@@ -329,6 +333,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * important to your business. To learn more, see
    * https://support.google.com/analytics/answer/9267572. Audience lists contain the users in each
    * audience.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -339,7 +347,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   PropertyName parent = PropertyName.of("[PROPERTYID]");
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
    *   AudienceList audienceList = AudienceList.newBuilder().build();
    *   AudienceList response =
    *       alphaAnalyticsDataClient.createAudienceListAsync(parent, audienceList).get();
@@ -347,7 +355,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource where this audience list will be created. Format:
-   *     `properties/{propertyId}`
+   *     `properties/{property}`
    * @param audienceList Required. The audience list to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -368,6 +376,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * list the users in an audience list, first create the audience list through this method and then
    * send the audience resource name to the `QueryAudienceList` method.
    *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
    * <p>An audience list is a snapshot of the users currently in the audience at the time of
    * audience list creation. Creating audience lists for one audience on different days will return
    * different results as users enter and exit the audience.
@@ -376,6 +388,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * important to your business. To learn more, see
    * https://support.google.com/analytics/answer/9267572. Audience lists contain the users in each
    * audience.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -386,7 +402,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   String parent = PropertyName.of("[PROPERTYID]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   AudienceList audienceList = AudienceList.newBuilder().build();
    *   AudienceList response =
    *       alphaAnalyticsDataClient.createAudienceListAsync(parent, audienceList).get();
@@ -394,7 +410,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource where this audience list will be created. Format:
-   *     `properties/{propertyId}`
+   *     `properties/{property}`
    * @param audienceList Required. The audience list to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -415,6 +431,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * list the users in an audience list, first create the audience list through this method and then
    * send the audience resource name to the `QueryAudienceList` method.
    *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
    * <p>An audience list is a snapshot of the users currently in the audience at the time of
    * audience list creation. Creating audience lists for one audience on different days will return
    * different results as users enter and exit the audience.
@@ -423,6 +443,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * important to your business. To learn more, see
    * https://support.google.com/analytics/answer/9267572. Audience lists contain the users in each
    * audience.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -435,7 +459,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
    *   CreateAudienceListRequest request =
    *       CreateAudienceListRequest.newBuilder()
-   *           .setParent(PropertyName.of("[PROPERTYID]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setAudienceList(AudienceList.newBuilder().build())
    *           .build();
    *   AudienceList response = alphaAnalyticsDataClient.createAudienceListAsync(request).get();
@@ -457,6 +481,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * list the users in an audience list, first create the audience list through this method and then
    * send the audience resource name to the `QueryAudienceList` method.
    *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
    * <p>An audience list is a snapshot of the users currently in the audience at the time of
    * audience list creation. Creating audience lists for one audience on different days will return
    * different results as users enter and exit the audience.
@@ -465,6 +493,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * important to your business. To learn more, see
    * https://support.google.com/analytics/answer/9267572. Audience lists contain the users in each
    * audience.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -477,7 +509,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
    *   CreateAudienceListRequest request =
    *       CreateAudienceListRequest.newBuilder()
-   *           .setParent(PropertyName.of("[PROPERTYID]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setAudienceList(AudienceList.newBuilder().build())
    *           .build();
    *   OperationFuture<AudienceList, AudienceListMetadata> future =
@@ -499,6 +531,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * list the users in an audience list, first create the audience list through this method and then
    * send the audience resource name to the `QueryAudienceList` method.
    *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
    * <p>An audience list is a snapshot of the users currently in the audience at the time of
    * audience list creation. Creating audience lists for one audience on different days will return
    * different results as users enter and exit the audience.
@@ -507,6 +543,10 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * important to your business. To learn more, see
    * https://support.google.com/analytics/answer/9267572. Audience lists contain the users in each
    * audience.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -519,7 +559,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
    *   CreateAudienceListRequest request =
    *       CreateAudienceListRequest.newBuilder()
-   *           .setParent(PropertyName.of("[PROPERTYID]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setAudienceList(AudienceList.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
@@ -538,11 +578,19 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * Retrieves an audience list of users. After creating an audience, the users are not immediately
    * available for listing. First, a request to `CreateAudienceList` is necessary to create an
    * audience list of users, and then second, this method is used to retrieve the users in the
-   * audience.
+   * audience list.
+   *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
    *
    * <p>Audiences in Google Analytics 4 allow you to segment your users in the ways that are
    * important to your business. To learn more, see
    * https://support.google.com/analytics/answer/9267572.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -558,8 +606,8 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name The name of the audience list to retrieve users from. Format:
-   *     `properties/{propertyId}/audienceLists/{audienceListId}`
+   * @param name Required. The name of the audience list to retrieve users from. Format:
+   *     `properties/{property}/audienceLists/{audience_list}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final QueryAudienceListResponse queryAudienceList(String name) {
@@ -572,11 +620,19 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * Retrieves an audience list of users. After creating an audience, the users are not immediately
    * available for listing. First, a request to `CreateAudienceList` is necessary to create an
    * audience list of users, and then second, this method is used to retrieve the users in the
-   * audience.
+   * audience list.
+   *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
    *
    * <p>Audiences in Google Analytics 4 allow you to segment your users in the ways that are
    * important to your business. To learn more, see
    * https://support.google.com/analytics/answer/9267572.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -609,11 +665,19 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * Retrieves an audience list of users. After creating an audience, the users are not immediately
    * available for listing. First, a request to `CreateAudienceList` is necessary to create an
    * audience list of users, and then second, this method is used to retrieve the users in the
-   * audience.
+   * audience list.
+   *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
    *
    * <p>Audiences in Google Analytics 4 allow you to segment your users in the ways that are
    * important to your business. To learn more, see
    * https://support.google.com/analytics/answer/9267572.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -644,8 +708,22 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets configuration metadata about a specific audience list. This method can be used to
-   * understand an audience list after it has been created.
+   * Exports an audience list of users to a Google Sheet. After creating an audience, the users are
+   * not immediately available for listing. First, a request to `CreateAudienceList` is necessary to
+   * create an audience list of users, and then second, this method is used to export those users in
+   * the audience list to a Google Sheet.
+   *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
+   * <p>Audiences in Google Analytics 4 allow you to segment your users in the ways that are
+   * important to your business. To learn more, see
+   * https://support.google.com/analytics/answer/9267572.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
    *
    * <p>Sample code:
    *
@@ -656,13 +734,190 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   AudienceListName name = AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]");
+   *   AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
+   *   SheetExportAudienceListResponse response =
+   *       alphaAnalyticsDataClient.sheetExportAudienceList(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the audience list to retrieve users from. Format:
+   *     `properties/{property}/audienceLists/{audience_list}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SheetExportAudienceListResponse sheetExportAudienceList(AudienceListName name) {
+    SheetExportAudienceListRequest request =
+        SheetExportAudienceListRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return sheetExportAudienceList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports an audience list of users to a Google Sheet. After creating an audience, the users are
+   * not immediately available for listing. First, a request to `CreateAudienceList` is necessary to
+   * create an audience list of users, and then second, this method is used to export those users in
+   * the audience list to a Google Sheet.
+   *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
+   * <p>Audiences in Google Analytics 4 allow you to segment your users in the ways that are
+   * important to your business. To learn more, see
+   * https://support.google.com/analytics/answer/9267572.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   String name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString();
+   *   SheetExportAudienceListResponse response =
+   *       alphaAnalyticsDataClient.sheetExportAudienceList(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the audience list to retrieve users from. Format:
+   *     `properties/{property}/audienceLists/{audience_list}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SheetExportAudienceListResponse sheetExportAudienceList(String name) {
+    SheetExportAudienceListRequest request =
+        SheetExportAudienceListRequest.newBuilder().setName(name).build();
+    return sheetExportAudienceList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports an audience list of users to a Google Sheet. After creating an audience, the users are
+   * not immediately available for listing. First, a request to `CreateAudienceList` is necessary to
+   * create an audience list of users, and then second, this method is used to export those users in
+   * the audience list to a Google Sheet.
+   *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
+   * <p>Audiences in Google Analytics 4 allow you to segment your users in the ways that are
+   * important to your business. To learn more, see
+   * https://support.google.com/analytics/answer/9267572.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   SheetExportAudienceListRequest request =
+   *       SheetExportAudienceListRequest.newBuilder()
+   *           .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
+   *           .setOffset(-1019779949)
+   *           .setLimit(102976443)
+   *           .build();
+   *   SheetExportAudienceListResponse response =
+   *       alphaAnalyticsDataClient.sheetExportAudienceList(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SheetExportAudienceListResponse sheetExportAudienceList(
+      SheetExportAudienceListRequest request) {
+    return sheetExportAudienceListCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports an audience list of users to a Google Sheet. After creating an audience, the users are
+   * not immediately available for listing. First, a request to `CreateAudienceList` is necessary to
+   * create an audience list of users, and then second, this method is used to export those users in
+   * the audience list to a Google Sheet.
+   *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
+   * <p>Audiences in Google Analytics 4 allow you to segment your users in the ways that are
+   * important to your business. To learn more, see
+   * https://support.google.com/analytics/answer/9267572.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   SheetExportAudienceListRequest request =
+   *       SheetExportAudienceListRequest.newBuilder()
+   *           .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
+   *           .setOffset(-1019779949)
+   *           .setLimit(102976443)
+   *           .build();
+   *   ApiFuture<SheetExportAudienceListResponse> future =
+   *       alphaAnalyticsDataClient.sheetExportAudienceListCallable().futureCall(request);
+   *   // Do something.
+   *   SheetExportAudienceListResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+      sheetExportAudienceListCallable() {
+    return stub.sheetExportAudienceListCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets configuration metadata about a specific audience list. This method can be used to
+   * understand an audience list after it has been created.
+   *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
    *   AudienceList response = alphaAnalyticsDataClient.getAudienceList(name);
    * }
    * }</pre>
    *
    * @param name Required. The audience list resource name. Format:
-   *     `properties/{propertyId}/audienceLists/{audienceListId}`
+   *     `properties/{property}/audienceLists/{audience_list}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AudienceList getAudienceList(AudienceListName name) {
@@ -676,6 +931,14 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * Gets configuration metadata about a specific audience list. This method can be used to
    * understand an audience list after it has been created.
    *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -685,13 +948,13 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   String name = AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]").toString();
+   *   String name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString();
    *   AudienceList response = alphaAnalyticsDataClient.getAudienceList(name);
    * }
    * }</pre>
    *
    * @param name Required. The audience list resource name. Format:
-   *     `properties/{propertyId}/audienceLists/{audienceListId}`
+   *     `properties/{property}/audienceLists/{audience_list}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AudienceList getAudienceList(String name) {
@@ -704,6 +967,14 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * Gets configuration metadata about a specific audience list. This method can be used to
    * understand an audience list after it has been created.
    *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -715,7 +986,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
    *   GetAudienceListRequest request =
    *       GetAudienceListRequest.newBuilder()
-   *           .setName(AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]").toString())
+   *           .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
    *           .build();
    *   AudienceList response = alphaAnalyticsDataClient.getAudienceList(request);
    * }
@@ -733,6 +1004,14 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * Gets configuration metadata about a specific audience list. This method can be used to
    * understand an audience list after it has been created.
    *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -744,7 +1023,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
    *   GetAudienceListRequest request =
    *       GetAudienceListRequest.newBuilder()
-   *           .setName(AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]").toString())
+   *           .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
    *           .build();
    *   ApiFuture<AudienceList> future =
    *       alphaAnalyticsDataClient.getAudienceListCallable().futureCall(request);
@@ -764,6 +1043,14 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * can have multiple audience lists that represent the list of users that were in an audience on
    * different days.
    *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -773,7 +1060,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   PropertyName parent = PropertyName.of("[PROPERTYID]");
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
    *   for (AudienceList element : alphaAnalyticsDataClient.listAudienceLists(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -781,7 +1068,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. All audience lists for this property will be listed in the response.
-   *     Format: `properties/{propertyId}`
+   *     Format: `properties/{property}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAudienceListsPagedResponse listAudienceLists(PropertyName parent) {
@@ -799,6 +1086,14 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * can have multiple audience lists that represent the list of users that were in an audience on
    * different days.
    *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -808,7 +1103,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   String parent = PropertyName.of("[PROPERTYID]").toString();
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
    *   for (AudienceList element : alphaAnalyticsDataClient.listAudienceLists(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -816,7 +1111,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. All audience lists for this property will be listed in the response.
-   *     Format: `properties/{propertyId}`
+   *     Format: `properties/{property}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAudienceListsPagedResponse listAudienceLists(String parent) {
@@ -832,6 +1127,14 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * can have multiple audience lists that represent the list of users that were in an audience on
    * different days.
    *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -843,7 +1146,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
    *   ListAudienceListsRequest request =
    *       ListAudienceListsRequest.newBuilder()
-   *           .setParent(PropertyName.of("[PROPERTYID]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -868,6 +1171,14 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * can have multiple audience lists that represent the list of users that were in an audience on
    * different days.
    *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -879,7 +1190,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
    *   ListAudienceListsRequest request =
    *       ListAudienceListsRequest.newBuilder()
-   *           .setParent(PropertyName.of("[PROPERTYID]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -904,6 +1215,14 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * can have multiple audience lists that represent the list of users that were in an audience on
    * different days.
    *
+   * <p>See [Creating an Audience
+   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+   * for an introduction to Audience Lists with examples.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -915,7 +1234,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
    *   ListAudienceListsRequest request =
    *       ListAudienceListsRequest.newBuilder()
-   *           .setParent(PropertyName.of("[PROPERTYID]").toString())
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -938,6 +1257,548 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
   public final UnaryCallable<ListAudienceListsRequest, ListAudienceListsResponse>
       listAudienceListsCallable() {
     return stub.listAudienceListsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a recurring audience list. Recurring audience lists produces new audience lists each
+   * day. Audience lists are users in an audience at the time of the list's creation.
+   *
+   * <p>A recurring audience list ensures that you have audience list based on the most recent data
+   * available for use each day. If you manually create audience list, you don't know when an
+   * audience list based on an additional day's data is available. This recurring audience list
+   * automates the creation of an audience list when an additional day's data is available. You will
+   * consume fewer quota tokens by using recurring audience list versus manually creating audience
+   * list at various times of day trying to guess when an additional day's data is ready.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   RecurringAudienceList recurringAudienceList = RecurringAudienceList.newBuilder().build();
+   *   RecurringAudienceList response =
+   *       alphaAnalyticsDataClient.createRecurringAudienceList(parent, recurringAudienceList);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this recurring audience list will be created.
+   *     Format: `properties/{property}`
+   * @param recurringAudienceList Required. The recurring audience list to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecurringAudienceList createRecurringAudienceList(
+      PropertyName parent, RecurringAudienceList recurringAudienceList) {
+    CreateRecurringAudienceListRequest request =
+        CreateRecurringAudienceListRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRecurringAudienceList(recurringAudienceList)
+            .build();
+    return createRecurringAudienceList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a recurring audience list. Recurring audience lists produces new audience lists each
+   * day. Audience lists are users in an audience at the time of the list's creation.
+   *
+   * <p>A recurring audience list ensures that you have audience list based on the most recent data
+   * available for use each day. If you manually create audience list, you don't know when an
+   * audience list based on an additional day's data is available. This recurring audience list
+   * automates the creation of an audience list when an additional day's data is available. You will
+   * consume fewer quota tokens by using recurring audience list versus manually creating audience
+   * list at various times of day trying to guess when an additional day's data is ready.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   RecurringAudienceList recurringAudienceList = RecurringAudienceList.newBuilder().build();
+   *   RecurringAudienceList response =
+   *       alphaAnalyticsDataClient.createRecurringAudienceList(parent, recurringAudienceList);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this recurring audience list will be created.
+   *     Format: `properties/{property}`
+   * @param recurringAudienceList Required. The recurring audience list to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecurringAudienceList createRecurringAudienceList(
+      String parent, RecurringAudienceList recurringAudienceList) {
+    CreateRecurringAudienceListRequest request =
+        CreateRecurringAudienceListRequest.newBuilder()
+            .setParent(parent)
+            .setRecurringAudienceList(recurringAudienceList)
+            .build();
+    return createRecurringAudienceList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a recurring audience list. Recurring audience lists produces new audience lists each
+   * day. Audience lists are users in an audience at the time of the list's creation.
+   *
+   * <p>A recurring audience list ensures that you have audience list based on the most recent data
+   * available for use each day. If you manually create audience list, you don't know when an
+   * audience list based on an additional day's data is available. This recurring audience list
+   * automates the creation of an audience list when an additional day's data is available. You will
+   * consume fewer quota tokens by using recurring audience list versus manually creating audience
+   * list at various times of day trying to guess when an additional day's data is ready.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   CreateRecurringAudienceListRequest request =
+   *       CreateRecurringAudienceListRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setRecurringAudienceList(RecurringAudienceList.newBuilder().build())
+   *           .build();
+   *   RecurringAudienceList response =
+   *       alphaAnalyticsDataClient.createRecurringAudienceList(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecurringAudienceList createRecurringAudienceList(
+      CreateRecurringAudienceListRequest request) {
+    return createRecurringAudienceListCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a recurring audience list. Recurring audience lists produces new audience lists each
+   * day. Audience lists are users in an audience at the time of the list's creation.
+   *
+   * <p>A recurring audience list ensures that you have audience list based on the most recent data
+   * available for use each day. If you manually create audience list, you don't know when an
+   * audience list based on an additional day's data is available. This recurring audience list
+   * automates the creation of an audience list when an additional day's data is available. You will
+   * consume fewer quota tokens by using recurring audience list versus manually creating audience
+   * list at various times of day trying to guess when an additional day's data is ready.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   CreateRecurringAudienceListRequest request =
+   *       CreateRecurringAudienceListRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setRecurringAudienceList(RecurringAudienceList.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RecurringAudienceList> future =
+   *       alphaAnalyticsDataClient.createRecurringAudienceListCallable().futureCall(request);
+   *   // Do something.
+   *   RecurringAudienceList response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateRecurringAudienceListRequest, RecurringAudienceList>
+      createRecurringAudienceListCallable() {
+    return stub.createRecurringAudienceListCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets configuration metadata about a specific recurring audience list. This method can be used
+   * to understand a recurring audience list's state after it has been created. For example, a
+   * recurring audience list resource will generate audience list instances for each day, and this
+   * method can be used to get the resource name of the most recent audience list instance.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   RecurringAudienceListName name =
+   *       RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]");
+   *   RecurringAudienceList response = alphaAnalyticsDataClient.getRecurringAudienceList(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The recurring audience list resource name. Format:
+   *     `properties/{property}/recurringAudienceLists/{recurring_audience_list}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecurringAudienceList getRecurringAudienceList(RecurringAudienceListName name) {
+    GetRecurringAudienceListRequest request =
+        GetRecurringAudienceListRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getRecurringAudienceList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets configuration metadata about a specific recurring audience list. This method can be used
+   * to understand a recurring audience list's state after it has been created. For example, a
+   * recurring audience list resource will generate audience list instances for each day, and this
+   * method can be used to get the resource name of the most recent audience list instance.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   String name =
+   *       RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]").toString();
+   *   RecurringAudienceList response = alphaAnalyticsDataClient.getRecurringAudienceList(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The recurring audience list resource name. Format:
+   *     `properties/{property}/recurringAudienceLists/{recurring_audience_list}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecurringAudienceList getRecurringAudienceList(String name) {
+    GetRecurringAudienceListRequest request =
+        GetRecurringAudienceListRequest.newBuilder().setName(name).build();
+    return getRecurringAudienceList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets configuration metadata about a specific recurring audience list. This method can be used
+   * to understand a recurring audience list's state after it has been created. For example, a
+   * recurring audience list resource will generate audience list instances for each day, and this
+   * method can be used to get the resource name of the most recent audience list instance.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   GetRecurringAudienceListRequest request =
+   *       GetRecurringAudienceListRequest.newBuilder()
+   *           .setName(
+   *               RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]")
+   *                   .toString())
+   *           .build();
+   *   RecurringAudienceList response = alphaAnalyticsDataClient.getRecurringAudienceList(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecurringAudienceList getRecurringAudienceList(
+      GetRecurringAudienceListRequest request) {
+    return getRecurringAudienceListCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets configuration metadata about a specific recurring audience list. This method can be used
+   * to understand a recurring audience list's state after it has been created. For example, a
+   * recurring audience list resource will generate audience list instances for each day, and this
+   * method can be used to get the resource name of the most recent audience list instance.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   GetRecurringAudienceListRequest request =
+   *       GetRecurringAudienceListRequest.newBuilder()
+   *           .setName(
+   *               RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<RecurringAudienceList> future =
+   *       alphaAnalyticsDataClient.getRecurringAudienceListCallable().futureCall(request);
+   *   // Do something.
+   *   RecurringAudienceList response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRecurringAudienceListRequest, RecurringAudienceList>
+      getRecurringAudienceListCallable() {
+    return stub.getRecurringAudienceListCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all recurring audience lists for a property. This method can be used for you to find and
+   * reuse existing recurring audience lists rather than creating unnecessary new recurring audience
+   * lists. The same audience can have multiple recurring audience lists that represent different
+   * dimension combinations; for example, just the dimension `deviceId` or both the dimensions
+   * `deviceId` and `userId`.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (RecurringAudienceList element :
+   *       alphaAnalyticsDataClient.listRecurringAudienceLists(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. All recurring audience lists for this property will be listed in the
+   *     response. Format: `properties/{property}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRecurringAudienceListsPagedResponse listRecurringAudienceLists(
+      PropertyName parent) {
+    ListRecurringAudienceListsRequest request =
+        ListRecurringAudienceListsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listRecurringAudienceLists(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all recurring audience lists for a property. This method can be used for you to find and
+   * reuse existing recurring audience lists rather than creating unnecessary new recurring audience
+   * lists. The same audience can have multiple recurring audience lists that represent different
+   * dimension combinations; for example, just the dimension `deviceId` or both the dimensions
+   * `deviceId` and `userId`.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (RecurringAudienceList element :
+   *       alphaAnalyticsDataClient.listRecurringAudienceLists(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. All recurring audience lists for this property will be listed in the
+   *     response. Format: `properties/{property}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRecurringAudienceListsPagedResponse listRecurringAudienceLists(String parent) {
+    ListRecurringAudienceListsRequest request =
+        ListRecurringAudienceListsRequest.newBuilder().setParent(parent).build();
+    return listRecurringAudienceLists(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all recurring audience lists for a property. This method can be used for you to find and
+   * reuse existing recurring audience lists rather than creating unnecessary new recurring audience
+   * lists. The same audience can have multiple recurring audience lists that represent different
+   * dimension combinations; for example, just the dimension `deviceId` or both the dimensions
+   * `deviceId` and `userId`.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   ListRecurringAudienceListsRequest request =
+   *       ListRecurringAudienceListsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (RecurringAudienceList element :
+   *       alphaAnalyticsDataClient.listRecurringAudienceLists(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRecurringAudienceListsPagedResponse listRecurringAudienceLists(
+      ListRecurringAudienceListsRequest request) {
+    return listRecurringAudienceListsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all recurring audience lists for a property. This method can be used for you to find and
+   * reuse existing recurring audience lists rather than creating unnecessary new recurring audience
+   * lists. The same audience can have multiple recurring audience lists that represent different
+   * dimension combinations; for example, just the dimension `deviceId` or both the dimensions
+   * `deviceId` and `userId`.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   ListRecurringAudienceListsRequest request =
+   *       ListRecurringAudienceListsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<RecurringAudienceList> future =
+   *       alphaAnalyticsDataClient.listRecurringAudienceListsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (RecurringAudienceList element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListRecurringAudienceListsRequest, ListRecurringAudienceListsPagedResponse>
+      listRecurringAudienceListsPagedCallable() {
+    return stub.listRecurringAudienceListsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all recurring audience lists for a property. This method can be used for you to find and
+   * reuse existing recurring audience lists rather than creating unnecessary new recurring audience
+   * lists. The same audience can have multiple recurring audience lists that represent different
+   * dimension combinations; for example, just the dimension `deviceId` or both the dimensions
+   * `deviceId` and `userId`.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   ListRecurringAudienceListsRequest request =
+   *       ListRecurringAudienceListsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListRecurringAudienceListsResponse response =
+   *         alphaAnalyticsDataClient.listRecurringAudienceListsCallable().call(request);
+   *     for (RecurringAudienceList element : response.getRecurringAudienceListsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
+      listRecurringAudienceListsCallable() {
+    return stub.listRecurringAudienceListsCallable();
   }
 
   @Override
@@ -1047,6 +1908,102 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
     protected ListAudienceListsFixedSizeCollection createCollection(
         List<ListAudienceListsPage> pages, int collectionSize) {
       return new ListAudienceListsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRecurringAudienceListsPagedResponse
+      extends AbstractPagedListResponse<
+          ListRecurringAudienceListsRequest,
+          ListRecurringAudienceListsResponse,
+          RecurringAudienceList,
+          ListRecurringAudienceListsPage,
+          ListRecurringAudienceListsFixedSizeCollection> {
+
+    public static ApiFuture<ListRecurringAudienceListsPagedResponse> createAsync(
+        PageContext<
+                ListRecurringAudienceListsRequest,
+                ListRecurringAudienceListsResponse,
+                RecurringAudienceList>
+            context,
+        ApiFuture<ListRecurringAudienceListsResponse> futureResponse) {
+      ApiFuture<ListRecurringAudienceListsPage> futurePage =
+          ListRecurringAudienceListsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRecurringAudienceListsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRecurringAudienceListsPagedResponse(ListRecurringAudienceListsPage page) {
+      super(page, ListRecurringAudienceListsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRecurringAudienceListsPage
+      extends AbstractPage<
+          ListRecurringAudienceListsRequest,
+          ListRecurringAudienceListsResponse,
+          RecurringAudienceList,
+          ListRecurringAudienceListsPage> {
+
+    private ListRecurringAudienceListsPage(
+        PageContext<
+                ListRecurringAudienceListsRequest,
+                ListRecurringAudienceListsResponse,
+                RecurringAudienceList>
+            context,
+        ListRecurringAudienceListsResponse response) {
+      super(context, response);
+    }
+
+    private static ListRecurringAudienceListsPage createEmptyPage() {
+      return new ListRecurringAudienceListsPage(null, null);
+    }
+
+    @Override
+    protected ListRecurringAudienceListsPage createPage(
+        PageContext<
+                ListRecurringAudienceListsRequest,
+                ListRecurringAudienceListsResponse,
+                RecurringAudienceList>
+            context,
+        ListRecurringAudienceListsResponse response) {
+      return new ListRecurringAudienceListsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRecurringAudienceListsPage> createPageAsync(
+        PageContext<
+                ListRecurringAudienceListsRequest,
+                ListRecurringAudienceListsResponse,
+                RecurringAudienceList>
+            context,
+        ApiFuture<ListRecurringAudienceListsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRecurringAudienceListsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRecurringAudienceListsRequest,
+          ListRecurringAudienceListsResponse,
+          RecurringAudienceList,
+          ListRecurringAudienceListsPage,
+          ListRecurringAudienceListsFixedSizeCollection> {
+
+    private ListRecurringAudienceListsFixedSizeCollection(
+        List<ListRecurringAudienceListsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRecurringAudienceListsFixedSizeCollection createEmptyCollection() {
+      return new ListRecurringAudienceListsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRecurringAudienceListsFixedSizeCollection createCollection(
+        List<ListRecurringAudienceListsPage> pages, int collectionSize) {
+      return new ListRecurringAudienceListsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

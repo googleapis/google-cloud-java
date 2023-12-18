@@ -26,7 +26,10 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Service definition for the Places API.
+ * Service Description: Service definition for the Places API. Note: every request actually requires
+ * a field mask set outside of the request proto (all/'&#42;' is not assumed). That can be set via
+ * either a side channel (SystemParameterContext) over RPC, or a header (X-Goog-FieldMask) over
+ * HTTP. See: https://cloud.google.com/apis/docs/system-parameters
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -38,23 +41,18 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (PlacesClient placesClient = PlacesClient.create()) {
- *   SearchTextRequest request =
- *       SearchTextRequest.newBuilder()
- *           .setTextQuery("textQuery-1050470501")
+ *   SearchNearbyRequest request =
+ *       SearchNearbyRequest.newBuilder()
  *           .setLanguageCode("languageCode-2092349083")
  *           .setRegionCode("regionCode-1991004415")
- *           .setLocation(SearchTextRequest.Location.newBuilder().build())
- *           .setIncludedType("includedType-45971946")
- *           .setOpenNow(true)
- *           .setPriceRange(Int32Range.newBuilder().build())
- *           .setMinRating(-543315926)
+ *           .addAllIncludedTypes(new ArrayList<String>())
+ *           .addAllExcludedTypes(new ArrayList<String>())
+ *           .addAllIncludedPrimaryTypes(new ArrayList<String>())
+ *           .addAllExcludedPrimaryTypes(new ArrayList<String>())
  *           .setMaxResultCount(-1736124056)
- *           .addAllPriceLevels(new ArrayList<PriceLevel>())
- *           .setStrictTypeFiltering(true)
- *           .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
- *           .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
+ *           .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
  *           .build();
- *   SearchTextResponse response = placesClient.searchText(request);
+ *   SearchNearbyResponse response = placesClient.searchNearby(request);
  * }
  * }</pre>
  *
@@ -176,6 +174,76 @@ public class PlacesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Search for places near locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacesClient placesClient = PlacesClient.create()) {
+   *   SearchNearbyRequest request =
+   *       SearchNearbyRequest.newBuilder()
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setRegionCode("regionCode-1991004415")
+   *           .addAllIncludedTypes(new ArrayList<String>())
+   *           .addAllExcludedTypes(new ArrayList<String>())
+   *           .addAllIncludedPrimaryTypes(new ArrayList<String>())
+   *           .addAllExcludedPrimaryTypes(new ArrayList<String>())
+   *           .setMaxResultCount(-1736124056)
+   *           .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+   *           .build();
+   *   SearchNearbyResponse response = placesClient.searchNearby(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchNearbyResponse searchNearby(SearchNearbyRequest request) {
+    return searchNearbyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Search for places near locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacesClient placesClient = PlacesClient.create()) {
+   *   SearchNearbyRequest request =
+   *       SearchNearbyRequest.newBuilder()
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setRegionCode("regionCode-1991004415")
+   *           .addAllIncludedTypes(new ArrayList<String>())
+   *           .addAllExcludedTypes(new ArrayList<String>())
+   *           .addAllIncludedPrimaryTypes(new ArrayList<String>())
+   *           .addAllExcludedPrimaryTypes(new ArrayList<String>())
+   *           .setMaxResultCount(-1736124056)
+   *           .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SearchNearbyResponse> future =
+   *       placesClient.searchNearbyCallable().futureCall(request);
+   *   // Do something.
+   *   SearchNearbyResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchNearbyRequest, SearchNearbyResponse> searchNearbyCallable() {
+    return stub.searchNearbyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Text query based place search.
    *
    * <p>Sample code:
@@ -192,10 +260,8 @@ public class PlacesClient implements BackgroundResource {
    *           .setTextQuery("textQuery-1050470501")
    *           .setLanguageCode("languageCode-2092349083")
    *           .setRegionCode("regionCode-1991004415")
-   *           .setLocation(SearchTextRequest.Location.newBuilder().build())
    *           .setIncludedType("includedType-45971946")
    *           .setOpenNow(true)
-   *           .setPriceRange(Int32Range.newBuilder().build())
    *           .setMinRating(-543315926)
    *           .setMaxResultCount(-1736124056)
    *           .addAllPriceLevels(new ArrayList<PriceLevel>())
@@ -232,10 +298,8 @@ public class PlacesClient implements BackgroundResource {
    *           .setTextQuery("textQuery-1050470501")
    *           .setLanguageCode("languageCode-2092349083")
    *           .setRegionCode("regionCode-1991004415")
-   *           .setLocation(SearchTextRequest.Location.newBuilder().build())
    *           .setIncludedType("includedType-45971946")
    *           .setOpenNow(true)
-   *           .setPriceRange(Int32Range.newBuilder().build())
    *           .setMinRating(-543315926)
    *           .setMaxResultCount(-1736124056)
    *           .addAllPriceLevels(new ArrayList<PriceLevel>())
@@ -251,6 +315,236 @@ public class PlacesClient implements BackgroundResource {
    */
   public final UnaryCallable<SearchTextRequest, SearchTextResponse> searchTextCallable() {
     return stub.searchTextCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a photo media with a photo reference string.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacesClient placesClient = PlacesClient.create()) {
+   *   PhotoMediaName name = PhotoMediaName.of("[PLACE_ID]", "[PHOTO_REFERENCE]");
+   *   PhotoMedia response = placesClient.getPhotoMedia(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of a photo. It is returned in Place's photos.name
+   *     field. Format: places/&lt;place_id&gt;/photos/&lt;photo_reference&gt;/media.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PhotoMedia getPhotoMedia(PhotoMediaName name) {
+    GetPhotoMediaRequest request =
+        GetPhotoMediaRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getPhotoMedia(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a photo media with a photo reference string.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacesClient placesClient = PlacesClient.create()) {
+   *   String name = PhotoMediaName.of("[PLACE_ID]", "[PHOTO_REFERENCE]").toString();
+   *   PhotoMedia response = placesClient.getPhotoMedia(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of a photo. It is returned in Place's photos.name
+   *     field. Format: places/&lt;place_id&gt;/photos/&lt;photo_reference&gt;/media.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PhotoMedia getPhotoMedia(String name) {
+    GetPhotoMediaRequest request = GetPhotoMediaRequest.newBuilder().setName(name).build();
+    return getPhotoMedia(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a photo media with a photo reference string.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacesClient placesClient = PlacesClient.create()) {
+   *   GetPhotoMediaRequest request =
+   *       GetPhotoMediaRequest.newBuilder()
+   *           .setName(PhotoMediaName.of("[PLACE_ID]", "[PHOTO_REFERENCE]").toString())
+   *           .setMaxWidthPx(-428899428)
+   *           .setMaxHeightPx(-1974259963)
+   *           .setSkipHttpRedirect(true)
+   *           .build();
+   *   PhotoMedia response = placesClient.getPhotoMedia(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PhotoMedia getPhotoMedia(GetPhotoMediaRequest request) {
+    return getPhotoMediaCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a photo media with a photo reference string.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacesClient placesClient = PlacesClient.create()) {
+   *   GetPhotoMediaRequest request =
+   *       GetPhotoMediaRequest.newBuilder()
+   *           .setName(PhotoMediaName.of("[PLACE_ID]", "[PHOTO_REFERENCE]").toString())
+   *           .setMaxWidthPx(-428899428)
+   *           .setMaxHeightPx(-1974259963)
+   *           .setSkipHttpRedirect(true)
+   *           .build();
+   *   ApiFuture<PhotoMedia> future = placesClient.getPhotoMediaCallable().futureCall(request);
+   *   // Do something.
+   *   PhotoMedia response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetPhotoMediaRequest, PhotoMedia> getPhotoMediaCallable() {
+    return stub.getPhotoMediaCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a Place with a place id (in a name) string.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacesClient placesClient = PlacesClient.create()) {
+   *   PlaceName name = PlaceName.of("[PLACE_ID]");
+   *   Place response = placesClient.getPlace(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A place_id returned in a Place (with "places/" prefix), or equivalently
+   *     the name in the same Place. Format: places/&lt;place_id&gt;.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Place getPlace(PlaceName name) {
+    GetPlaceRequest request =
+        GetPlaceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getPlace(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a Place with a place id (in a name) string.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacesClient placesClient = PlacesClient.create()) {
+   *   String name = PlaceName.of("[PLACE_ID]").toString();
+   *   Place response = placesClient.getPlace(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A place_id returned in a Place (with "places/" prefix), or equivalently
+   *     the name in the same Place. Format: places/&lt;place_id&gt;.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Place getPlace(String name) {
+    GetPlaceRequest request = GetPlaceRequest.newBuilder().setName(name).build();
+    return getPlace(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a Place with a place id (in a name) string.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacesClient placesClient = PlacesClient.create()) {
+   *   GetPlaceRequest request =
+   *       GetPlaceRequest.newBuilder()
+   *           .setName(PlaceName.of("[PLACE_ID]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setRegionCode("regionCode-1991004415")
+   *           .build();
+   *   Place response = placesClient.getPlace(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Place getPlace(GetPlaceRequest request) {
+    return getPlaceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a Place with a place id (in a name) string.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PlacesClient placesClient = PlacesClient.create()) {
+   *   GetPlaceRequest request =
+   *       GetPlaceRequest.newBuilder()
+   *           .setName(PlaceName.of("[PLACE_ID]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setRegionCode("regionCode-1991004415")
+   *           .build();
+   *   ApiFuture<Place> future = placesClient.getPlaceCallable().futureCall(request);
+   *   // Do something.
+   *   Place response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetPlaceRequest, Place> getPlaceCallable() {
+    return stub.getPlaceCallable();
   }
 
   @Override

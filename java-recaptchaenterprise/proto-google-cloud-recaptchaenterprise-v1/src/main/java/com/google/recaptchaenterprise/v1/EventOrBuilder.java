@@ -164,14 +164,19 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Optional. Unique stable hashed user identifier for the request. The
-   * identifier must be hashed using hmac-sha256 with stable secret.
+   * Optional. Deprecated: use `user_info.account_id` instead.
+   * Unique stable hashed user identifier for the request. The identifier must
+   * be hashed using hmac-sha256 with stable secret.
    * </pre>
    *
-   * <code>bytes hashed_account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bytes hashed_account_id = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
+   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=663
    * @return The hashedAccountId.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getHashedAccountId();
 
   /**
@@ -233,7 +238,7 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional JA3 fingerprint for SSL clients.
+   * Optional. JA3 fingerprint for SSL clients.
    * </pre>
    *
    * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -245,7 +250,7 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional JA3 fingerprint for SSL clients.
+   * Optional. JA3 fingerprint for SSL clients.
    * </pre>
    *
    * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -366,4 +371,54 @@ public interface EventOrBuilder
    * </code>
    */
   com.google.recaptchaenterprise.v1.TransactionDataOrBuilder getTransactionDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the user that generates this event, when they
+   * can be identified. They are often identified through the use of an account
+   * for logged-in requests or login/registration requests, or by providing user
+   * identifiers for guest actions like checkout.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.UserInfo user_info = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the userInfo field is set.
+   */
+  boolean hasUserInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the user that generates this event, when they
+   * can be identified. They are often identified through the use of an account
+   * for logged-in requests or login/registration requests, or by providing user
+   * identifiers for guest actions like checkout.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.UserInfo user_info = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The userInfo.
+   */
+  com.google.recaptchaenterprise.v1.UserInfo getUserInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the user that generates this event, when they
+   * can be identified. They are often identified through the use of an account
+   * for logged-in requests or login/registration requests, or by providing user
+   * identifiers for guest actions like checkout.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.UserInfo user_info = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.UserInfoOrBuilder getUserInfoOrBuilder();
 }

@@ -45,11 +45,6 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
     return new Circle();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.places.v1.GeometryProto
         .internal_static_google_maps_places_v1_Circle_descriptor;
@@ -71,8 +66,9 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Center latitude and longitude.
-   * The range of latitude must be within `[-90.0, 90.0]`. The range of the
-   * longitude must be within `[-180.0, 180.0]`.
+   *
+   * The range of latitude must be within [-90.0, 90.0]. The range of the
+   * longitude must be within [-180.0, 180.0].
    * </pre>
    *
    * <code>.google.type.LatLng center = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -88,8 +84,9 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Center latitude and longitude.
-   * The range of latitude must be within `[-90.0, 90.0]`. The range of the
-   * longitude must be within `[-180.0, 180.0]`.
+   *
+   * The range of latitude must be within [-90.0, 90.0]. The range of the
+   * longitude must be within [-180.0, 180.0].
    * </pre>
    *
    * <code>.google.type.LatLng center = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -105,8 +102,9 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Center latitude and longitude.
-   * The range of latitude must be within `[-90.0, 90.0]`. The range of the
-   * longitude must be within `[-180.0, 180.0]`.
+   *
+   * The range of latitude must be within [-90.0, 90.0]. The range of the
+   * longitude must be within [-180.0, 180.0].
    * </pre>
    *
    * <code>.google.type.LatLng center = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -122,8 +120,8 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Radius measured in meters. The radius must be within `[0.0,
-   * 50000.0]`.
+   * Required. Radius measured in meters. The radius must be within [0.0,
+   * 50000.0].
    * </pre>
    *
    * <code>double radius = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -514,8 +512,9 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Center latitude and longitude.
-     * The range of latitude must be within `[-90.0, 90.0]`. The range of the
-     * longitude must be within `[-180.0, 180.0]`.
+     *
+     * The range of latitude must be within [-90.0, 90.0]. The range of the
+     * longitude must be within [-180.0, 180.0].
      * </pre>
      *
      * <code>.google.type.LatLng center = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -530,8 +529,9 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Center latitude and longitude.
-     * The range of latitude must be within `[-90.0, 90.0]`. The range of the
-     * longitude must be within `[-180.0, 180.0]`.
+     *
+     * The range of latitude must be within [-90.0, 90.0]. The range of the
+     * longitude must be within [-180.0, 180.0].
      * </pre>
      *
      * <code>.google.type.LatLng center = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -550,8 +550,9 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Center latitude and longitude.
-     * The range of latitude must be within `[-90.0, 90.0]`. The range of the
-     * longitude must be within `[-180.0, 180.0]`.
+     *
+     * The range of latitude must be within [-90.0, 90.0]. The range of the
+     * longitude must be within [-180.0, 180.0].
      * </pre>
      *
      * <code>.google.type.LatLng center = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -574,8 +575,9 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Center latitude and longitude.
-     * The range of latitude must be within `[-90.0, 90.0]`. The range of the
-     * longitude must be within `[-180.0, 180.0]`.
+     *
+     * The range of latitude must be within [-90.0, 90.0]. The range of the
+     * longitude must be within [-180.0, 180.0].
      * </pre>
      *
      * <code>.google.type.LatLng center = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -595,8 +597,9 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Center latitude and longitude.
-     * The range of latitude must be within `[-90.0, 90.0]`. The range of the
-     * longitude must be within `[-180.0, 180.0]`.
+     *
+     * The range of latitude must be within [-90.0, 90.0]. The range of the
+     * longitude must be within [-180.0, 180.0].
      * </pre>
      *
      * <code>.google.type.LatLng center = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -622,8 +625,9 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Center latitude and longitude.
-     * The range of latitude must be within `[-90.0, 90.0]`. The range of the
-     * longitude must be within `[-180.0, 180.0]`.
+     *
+     * The range of latitude must be within [-90.0, 90.0]. The range of the
+     * longitude must be within [-180.0, 180.0].
      * </pre>
      *
      * <code>.google.type.LatLng center = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -643,8 +647,9 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Center latitude and longitude.
-     * The range of latitude must be within `[-90.0, 90.0]`. The range of the
-     * longitude must be within `[-180.0, 180.0]`.
+     *
+     * The range of latitude must be within [-90.0, 90.0]. The range of the
+     * longitude must be within [-180.0, 180.0].
      * </pre>
      *
      * <code>.google.type.LatLng center = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -659,8 +664,9 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Center latitude and longitude.
-     * The range of latitude must be within `[-90.0, 90.0]`. The range of the
-     * longitude must be within `[-180.0, 180.0]`.
+     *
+     * The range of latitude must be within [-90.0, 90.0]. The range of the
+     * longitude must be within [-180.0, 180.0].
      * </pre>
      *
      * <code>.google.type.LatLng center = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -677,8 +683,9 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Center latitude and longitude.
-     * The range of latitude must be within `[-90.0, 90.0]`. The range of the
-     * longitude must be within `[-180.0, 180.0]`.
+     *
+     * The range of latitude must be within [-90.0, 90.0]. The range of the
+     * longitude must be within [-180.0, 180.0].
      * </pre>
      *
      * <code>.google.type.LatLng center = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -702,8 +709,8 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Radius measured in meters. The radius must be within `[0.0,
-     * 50000.0]`.
+     * Required. Radius measured in meters. The radius must be within [0.0,
+     * 50000.0].
      * </pre>
      *
      * <code>double radius = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -718,8 +725,8 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Radius measured in meters. The radius must be within `[0.0,
-     * 50000.0]`.
+     * Required. Radius measured in meters. The radius must be within [0.0,
+     * 50000.0].
      * </pre>
      *
      * <code>double radius = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -738,8 +745,8 @@ public final class Circle extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Radius measured in meters. The radius must be within `[0.0,
-     * 50000.0]`.
+     * Required. Radius measured in meters. The radius must be within [0.0,
+     * 50000.0].
      * </pre>
      *
      * <code>double radius = 2 [(.google.api.field_behavior) = REQUIRED];</code>

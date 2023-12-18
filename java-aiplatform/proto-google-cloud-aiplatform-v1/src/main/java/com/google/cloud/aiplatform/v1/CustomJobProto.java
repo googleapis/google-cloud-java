@@ -101,7 +101,7 @@ public final class CustomJobProto {
           + "\022\r\n\005value\030\002 \001(\t:\0028\001:i\352Af\n#aiplatform.goo"
           + "gleapis.com/CustomJob\022?projects/{project"
           + "}/locations/{location}/customJobs/{custo"
-          + "m_job}\"\351\004\n\rCustomJobSpec\022K\n\021worker_pool_"
+          + "m_job}\"\221\005\n\rCustomJobSpec\022K\n\021worker_pool_"
           + "specs\030\001 \003(\0132*.google.cloud.aiplatform.v1"
           + ".WorkerPoolSpecB\004\342A\001\002\022:\n\nscheduling\030\003 \001("
           + "\0132&.google.cloud.aiplatform.v1.Schedulin"
@@ -109,7 +109,8 @@ public final class CustomJobProto {
           + "\001(\tB\'\342A\001\001\372A \n\036compute.googleapis.com/Net"
           + "work\022 \n\022reserved_ip_ranges\030\r \003(\tB\004\342A\001\001\022I"
           + "\n\025base_output_directory\030\006 \001(\0132*.google.c"
-          + "loud.aiplatform.v1.GcsDestination\022C\n\013ten"
+          + "loud.aiplatform.v1.GcsDestination\022&\n\036pro"
+          + "tected_artifact_location_id\030\023 \001(\t\022C\n\013ten"
           + "sorboard\030\007 \001(\tB.\342A\001\001\372A\'\n%aiplatform.goog"
           + "leapis.com/Tensorboard\022\037\n\021enable_web_acc"
           + "ess\030\n \001(\010B\004\342A\001\001\022%\n\027enable_dashboard_acce"
@@ -206,6 +207,7 @@ public final class CustomJobProto {
               "Network",
               "ReservedIpRanges",
               "BaseOutputDirectory",
+              "ProtectedArtifactLocationId",
               "Tensorboard",
               "EnableWebAccess",
               "EnableDashboardAccess",

@@ -117,7 +117,10 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name of the file share (must be 16 characters or less).
+   * Required. The name of the file share. Must use 1-16 characters for the
+   * basic service tier and 1-63 characters for all other service tiers.
+   * Must use lowercase letters, numbers, or underscores `[a-z0-9_]`. Must
+   * start with a letter. Immutable.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -140,7 +143,10 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name of the file share (must be 16 characters or less).
+   * Required. The name of the file share. Must use 1-16 characters for the
+   * basic service tier and 1-63 characters for all other service tiers.
+   * Must use lowercase letters, numbers, or underscores `[a-z0-9_]`. Must
+   * start with a letter. Immutable.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -835,7 +841,10 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the file share (must be 16 characters or less).
+     * Required. The name of the file share. Must use 1-16 characters for the
+     * basic service tier and 1-63 characters for all other service tiers.
+     * Must use lowercase letters, numbers, or underscores `[a-z0-9_]`. Must
+     * start with a letter. Immutable.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -857,7 +866,10 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the file share (must be 16 characters or less).
+     * Required. The name of the file share. Must use 1-16 characters for the
+     * basic service tier and 1-63 characters for all other service tiers.
+     * Must use lowercase letters, numbers, or underscores `[a-z0-9_]`. Must
+     * start with a letter. Immutable.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -879,7 +891,10 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the file share (must be 16 characters or less).
+     * Required. The name of the file share. Must use 1-16 characters for the
+     * basic service tier and 1-63 characters for all other service tiers.
+     * Must use lowercase letters, numbers, or underscores `[a-z0-9_]`. Must
+     * start with a letter. Immutable.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -900,7 +915,10 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the file share (must be 16 characters or less).
+     * Required. The name of the file share. Must use 1-16 characters for the
+     * basic service tier and 1-63 characters for all other service tiers.
+     * Must use lowercase letters, numbers, or underscores `[a-z0-9_]`. Must
+     * start with a letter. Immutable.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -917,7 +935,10 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the file share (must be 16 characters or less).
+     * Required. The name of the file share. Must use 1-16 characters for the
+     * basic service tier and 1-63 characters for all other service tiers.
+     * Must use lowercase letters, numbers, or underscores `[a-z0-9_]`. Must
+     * start with a letter. Immutable.
      * </pre>
      *
      * <code>string name = 1;</code>

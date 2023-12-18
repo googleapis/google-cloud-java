@@ -35,7 +35,8 @@ public class SyncGetFeatureFeaturename {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
       FeatureName name =
-          FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
+          FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+              "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
       Feature response = featurestoreServiceClient.getFeature(name);
     }
   }

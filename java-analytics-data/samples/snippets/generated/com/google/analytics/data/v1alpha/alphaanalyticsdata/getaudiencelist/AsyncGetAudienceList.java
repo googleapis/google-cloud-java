@@ -38,7 +38,7 @@ public class AsyncGetAudienceList {
     try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
       GetAudienceListRequest request =
           GetAudienceListRequest.newBuilder()
-              .setName(AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]").toString())
+              .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
               .build();
       ApiFuture<AudienceList> future =
           alphaAnalyticsDataClient.getAudienceListCallable().futureCall(request);

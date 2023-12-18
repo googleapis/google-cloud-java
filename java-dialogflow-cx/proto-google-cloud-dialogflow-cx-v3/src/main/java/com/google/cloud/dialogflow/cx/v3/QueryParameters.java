@@ -922,6 +922,163 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     return sessionTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : sessionTtl_;
   }
 
+  public static final int END_USER_METADATA_FIELD_NUMBER = 18;
+  private com.google.protobuf.Struct endUserMetadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the end-user to improve the relevance and
+   * accuracy of generative answers.
+   *
+   * This will be interpreted and used by a language model, so, for good
+   * results, the data should be self-descriptive, and in a simple structure.
+   *
+   * Example:
+   *
+   * ```json
+   * {
+   *   "subscription plan": "Business Premium Plus",
+   *   "devices owned": [
+   *     {"model": "Google Pixel 7"},
+   *     {"model": "Google Pixel Tablet"}
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct end_user_metadata = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the endUserMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndUserMetadata() {
+    return endUserMetadata_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the end-user to improve the relevance and
+   * accuracy of generative answers.
+   *
+   * This will be interpreted and used by a language model, so, for good
+   * results, the data should be self-descriptive, and in a simple structure.
+   *
+   * Example:
+   *
+   * ```json
+   * {
+   *   "subscription plan": "Business Premium Plus",
+   *   "devices owned": [
+   *     {"model": "Google Pixel 7"},
+   *     {"model": "Google Pixel Tablet"}
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct end_user_metadata = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The endUserMetadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getEndUserMetadata() {
+    return endUserMetadata_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : endUserMetadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the end-user to improve the relevance and
+   * accuracy of generative answers.
+   *
+   * This will be interpreted and used by a language model, so, for good
+   * results, the data should be self-descriptive, and in a simple structure.
+   *
+   * Example:
+   *
+   * ```json
+   * {
+   *   "subscription plan": "Business Premium Plus",
+   *   "devices owned": [
+   *     {"model": "Google Pixel 7"},
+   *     {"model": "Google Pixel Tablet"}
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct end_user_metadata = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getEndUserMetadataOrBuilder() {
+    return endUserMetadata_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : endUserMetadata_;
+  }
+
+  public static final int SEARCH_CONFIG_FIELD_NUMBER = 20;
+  private com.google.cloud.dialogflow.cx.v3.SearchConfig searchConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Search configuration for UCS search queries.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.SearchConfig search_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the searchConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSearchConfig() {
+    return searchConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Search configuration for UCS search queries.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.SearchConfig search_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The searchConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.SearchConfig getSearchConfig() {
+    return searchConfig_ == null
+        ? com.google.cloud.dialogflow.cx.v3.SearchConfig.getDefaultInstance()
+        : searchConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Search configuration for UCS search queries.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.SearchConfig search_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.SearchConfigOrBuilder getSearchConfigOrBuilder() {
+    return searchConfig_ == null
+        ? com.google.cloud.dialogflow.cx.v3.SearchConfig.getDefaultInstance()
+        : searchConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -970,6 +1127,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     }
     if (sessionTtl_ != null) {
       output.writeMessage(16, getSessionTtl());
+    }
+    if (endUserMetadata_ != null) {
+      output.writeMessage(18, getEndUserMetadata());
+    }
+    if (searchConfig_ != null) {
+      output.writeMessage(20, getSearchConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1029,6 +1192,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (sessionTtl_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getSessionTtl());
     }
+    if (endUserMetadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getEndUserMetadata());
+    }
+    if (searchConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getSearchConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1068,6 +1237,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (hasSessionTtl() != other.hasSessionTtl()) return false;
     if (hasSessionTtl()) {
       if (!getSessionTtl().equals(other.getSessionTtl())) return false;
+    }
+    if (hasEndUserMetadata() != other.hasEndUserMetadata()) return false;
+    if (hasEndUserMetadata()) {
+      if (!getEndUserMetadata().equals(other.getEndUserMetadata())) return false;
+    }
+    if (hasSearchConfig() != other.hasSearchConfig()) return false;
+    if (hasSearchConfig()) {
+      if (!getSearchConfig().equals(other.getSearchConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1117,6 +1294,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (hasSessionTtl()) {
       hash = (37 * hash) + SESSION_TTL_FIELD_NUMBER;
       hash = (53 * hash) + getSessionTtl().hashCode();
+    }
+    if (hasEndUserMetadata()) {
+      hash = (37 * hash) + END_USER_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getEndUserMetadata().hashCode();
+    }
+    if (hasSearchConfig()) {
+      hash = (37 * hash) + SEARCH_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSearchConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1311,6 +1496,16 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         sessionTtlBuilder_.dispose();
         sessionTtlBuilder_ = null;
       }
+      endUserMetadata_ = null;
+      if (endUserMetadataBuilder_ != null) {
+        endUserMetadataBuilder_.dispose();
+        endUserMetadataBuilder_ = null;
+      }
+      searchConfig_ = null;
+      if (searchConfigBuilder_ != null) {
+        searchConfigBuilder_.dispose();
+        searchConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1396,6 +1591,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.sessionTtl_ = sessionTtlBuilder_ == null ? sessionTtl_ : sessionTtlBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.endUserMetadata_ =
+            endUserMetadataBuilder_ == null ? endUserMetadata_ : endUserMetadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.searchConfig_ =
+            searchConfigBuilder_ == null ? searchConfig_ : searchConfigBuilder_.build();
       }
     }
 
@@ -1517,6 +1720,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (other.hasSessionTtl()) {
         mergeSessionTtl(other.getSessionTtl());
       }
+      if (other.hasEndUserMetadata()) {
+        mergeEndUserMetadata(other.getEndUserMetadata());
+      }
+      if (other.hasSearchConfig()) {
+        mergeSearchConfig(other.getSearchConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1630,6 +1839,18 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000800;
                 break;
               } // case 130
+            case 146:
+              {
+                input.readMessage(getEndUserMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 146
+            case 162:
+              {
+                input.readMessage(getSearchConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4110,6 +4331,554 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         sessionTtl_ = null;
       }
       return sessionTtlBuilder_;
+    }
+
+    private com.google.protobuf.Struct endUserMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        endUserMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the endUserMetadata field is set.
+     */
+    public boolean hasEndUserMetadata() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The endUserMetadata.
+     */
+    public com.google.protobuf.Struct getEndUserMetadata() {
+      if (endUserMetadataBuilder_ == null) {
+        return endUserMetadata_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : endUserMetadata_;
+      } else {
+        return endUserMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEndUserMetadata(com.google.protobuf.Struct value) {
+      if (endUserMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endUserMetadata_ = value;
+      } else {
+        endUserMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEndUserMetadata(com.google.protobuf.Struct.Builder builderForValue) {
+      if (endUserMetadataBuilder_ == null) {
+        endUserMetadata_ = builderForValue.build();
+      } else {
+        endUserMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEndUserMetadata(com.google.protobuf.Struct value) {
+      if (endUserMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && endUserMetadata_ != null
+            && endUserMetadata_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getEndUserMetadataBuilder().mergeFrom(value);
+        } else {
+          endUserMetadata_ = value;
+        }
+      } else {
+        endUserMetadataBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEndUserMetadata() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      endUserMetadata_ = null;
+      if (endUserMetadataBuilder_ != null) {
+        endUserMetadataBuilder_.dispose();
+        endUserMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Struct.Builder getEndUserMetadataBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getEndUserMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.StructOrBuilder getEndUserMetadataOrBuilder() {
+      if (endUserMetadataBuilder_ != null) {
+        return endUserMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return endUserMetadata_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : endUserMetadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the end-user to improve the relevance and
+     * accuracy of generative answers.
+     *
+     * This will be interpreted and used by a language model, so, for good
+     * results, the data should be self-descriptive, and in a simple structure.
+     *
+     * Example:
+     *
+     * ```json
+     * {
+     *   "subscription plan": "Business Premium Plus",
+     *   "devices owned": [
+     *     {"model": "Google Pixel 7"},
+     *     {"model": "Google Pixel Tablet"}
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct end_user_metadata = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        getEndUserMetadataFieldBuilder() {
+      if (endUserMetadataBuilder_ == null) {
+        endUserMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getEndUserMetadata(), getParentForChildren(), isClean());
+        endUserMetadata_ = null;
+      }
+      return endUserMetadataBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3.SearchConfig searchConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.SearchConfig,
+            com.google.cloud.dialogflow.cx.v3.SearchConfig.Builder,
+            com.google.cloud.dialogflow.cx.v3.SearchConfigOrBuilder>
+        searchConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search configuration for UCS search queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SearchConfig search_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the searchConfig field is set.
+     */
+    public boolean hasSearchConfig() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search configuration for UCS search queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SearchConfig search_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The searchConfig.
+     */
+    public com.google.cloud.dialogflow.cx.v3.SearchConfig getSearchConfig() {
+      if (searchConfigBuilder_ == null) {
+        return searchConfig_ == null
+            ? com.google.cloud.dialogflow.cx.v3.SearchConfig.getDefaultInstance()
+            : searchConfig_;
+      } else {
+        return searchConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search configuration for UCS search queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SearchConfig search_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSearchConfig(com.google.cloud.dialogflow.cx.v3.SearchConfig value) {
+      if (searchConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        searchConfig_ = value;
+      } else {
+        searchConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search configuration for UCS search queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SearchConfig search_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSearchConfig(
+        com.google.cloud.dialogflow.cx.v3.SearchConfig.Builder builderForValue) {
+      if (searchConfigBuilder_ == null) {
+        searchConfig_ = builderForValue.build();
+      } else {
+        searchConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search configuration for UCS search queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SearchConfig search_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSearchConfig(com.google.cloud.dialogflow.cx.v3.SearchConfig value) {
+      if (searchConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && searchConfig_ != null
+            && searchConfig_
+                != com.google.cloud.dialogflow.cx.v3.SearchConfig.getDefaultInstance()) {
+          getSearchConfigBuilder().mergeFrom(value);
+        } else {
+          searchConfig_ = value;
+        }
+      } else {
+        searchConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search configuration for UCS search queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SearchConfig search_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSearchConfig() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      searchConfig_ = null;
+      if (searchConfigBuilder_ != null) {
+        searchConfigBuilder_.dispose();
+        searchConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search configuration for UCS search queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SearchConfig search_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.SearchConfig.Builder getSearchConfigBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getSearchConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search configuration for UCS search queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SearchConfig search_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.SearchConfigOrBuilder getSearchConfigOrBuilder() {
+      if (searchConfigBuilder_ != null) {
+        return searchConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return searchConfig_ == null
+            ? com.google.cloud.dialogflow.cx.v3.SearchConfig.getDefaultInstance()
+            : searchConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search configuration for UCS search queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.SearchConfig search_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.SearchConfig,
+            com.google.cloud.dialogflow.cx.v3.SearchConfig.Builder,
+            com.google.cloud.dialogflow.cx.v3.SearchConfigOrBuilder>
+        getSearchConfigFieldBuilder() {
+      if (searchConfigBuilder_ == null) {
+        searchConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.SearchConfig,
+                com.google.cloud.dialogflow.cx.v3.SearchConfig.Builder,
+                com.google.cloud.dialogflow.cx.v3.SearchConfigOrBuilder>(
+                getSearchConfig(), getParentForChildren(), isClean());
+        searchConfig_ = null;
+      }
+      return searchConfigBuilder_;
     }
 
     @java.lang.Override

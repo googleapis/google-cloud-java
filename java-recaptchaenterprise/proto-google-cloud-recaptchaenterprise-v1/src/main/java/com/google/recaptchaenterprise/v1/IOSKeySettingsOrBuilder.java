@@ -27,10 +27,10 @@ public interface IOSKeySettingsOrBuilder
    *
    *
    * <pre>
-   * If set to true, allowed_bundle_ids are not enforced.
+   * Optional. If set to true, allowed_bundle_ids are not enforced.
    * </pre>
    *
-   * <code>bool allow_all_bundle_ids = 2;</code>
+   * <code>bool allow_all_bundle_ids = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowAllBundleIds.
    */
@@ -40,11 +40,11 @@ public interface IOSKeySettingsOrBuilder
    *
    *
    * <pre>
-   * iOS bundle ids of apps allowed to use the key.
+   * Optional. iOS bundle ids of apps allowed to use the key.
    * Example: 'com.companyname.productname.appname'
    * </pre>
    *
-   * <code>repeated string allowed_bundle_ids = 1;</code>
+   * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the allowedBundleIds.
    */
@@ -53,11 +53,11 @@ public interface IOSKeySettingsOrBuilder
    *
    *
    * <pre>
-   * iOS bundle ids of apps allowed to use the key.
+   * Optional. iOS bundle ids of apps allowed to use the key.
    * Example: 'com.companyname.productname.appname'
    * </pre>
    *
-   * <code>repeated string allowed_bundle_ids = 1;</code>
+   * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of allowedBundleIds.
    */
@@ -66,11 +66,11 @@ public interface IOSKeySettingsOrBuilder
    *
    *
    * <pre>
-   * iOS bundle ids of apps allowed to use the key.
+   * Optional. iOS bundle ids of apps allowed to use the key.
    * Example: 'com.companyname.productname.appname'
    * </pre>
    *
-   * <code>repeated string allowed_bundle_ids = 1;</code>
+   * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The allowedBundleIds at the given index.
@@ -80,11 +80,11 @@ public interface IOSKeySettingsOrBuilder
    *
    *
    * <pre>
-   * iOS bundle ids of apps allowed to use the key.
+   * Optional. iOS bundle ids of apps allowed to use the key.
    * Example: 'com.companyname.productname.appname'
    * </pre>
    *
-   * <code>repeated string allowed_bundle_ids = 1;</code>
+   * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the allowedBundleIds at the given index.
@@ -95,14 +95,16 @@ public interface IOSKeySettingsOrBuilder
    *
    *
    * <pre>
-   * Apple Developer account details for the app that is protected by the
-   * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
-   * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+   * Optional. Apple Developer account details for the app that is protected by
+   * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
+   * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
    * Providing these fields allows reCAPTCHA Enterprise to get a better
    * assessment of the integrity of your app.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the appleDeveloperId field is set.
    */
@@ -111,14 +113,16 @@ public interface IOSKeySettingsOrBuilder
    *
    *
    * <pre>
-   * Apple Developer account details for the app that is protected by the
-   * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
-   * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+   * Optional. Apple Developer account details for the app that is protected by
+   * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
+   * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
    * Providing these fields allows reCAPTCHA Enterprise to get a better
    * assessment of the integrity of your app.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The appleDeveloperId.
    */
@@ -127,14 +131,16 @@ public interface IOSKeySettingsOrBuilder
    *
    *
    * <pre>
-   * Apple Developer account details for the app that is protected by the
-   * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
-   * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+   * Optional. Apple Developer account details for the app that is protected by
+   * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
+   * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
    * Providing these fields allows reCAPTCHA Enterprise to get a better
    * assessment of the integrity of your app.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.recaptchaenterprise.v1.AppleDeveloperIdOrBuilder getAppleDeveloperIdOrBuilder();
 }

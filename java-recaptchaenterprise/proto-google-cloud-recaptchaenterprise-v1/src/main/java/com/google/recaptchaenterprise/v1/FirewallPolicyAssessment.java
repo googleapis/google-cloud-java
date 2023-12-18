@@ -66,11 +66,11 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * If the processing of a policy config fails, an error will be populated
-   * and the firewall_policy will be left empty.
+   * Output only. If the processing of a policy config fails, an error will be
+   * populated and the firewall_policy will be left empty.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 5;</code>
+   * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the error field is set.
    */
@@ -82,11 +82,11 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * If the processing of a policy config fails, an error will be populated
-   * and the firewall_policy will be left empty.
+   * Output only. If the processing of a policy config fails, an error will be
+   * populated and the firewall_policy will be left empty.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 5;</code>
+   * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The error.
    */
@@ -98,11 +98,11 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * If the processing of a policy config fails, an error will be populated
-   * and the firewall_policy will be left empty.
+   * Output only. If the processing of a policy config fails, an error will be
+   * populated and the firewall_policy will be left empty.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 5;</code>
+   * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
@@ -561,11 +561,11 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If the processing of a policy config fails, an error will be populated
-     * and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error will be
+     * populated and the firewall_policy will be left empty.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 5;</code>
+     * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return Whether the error field is set.
      */
@@ -576,11 +576,11 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If the processing of a policy config fails, an error will be populated
-     * and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error will be
+     * populated and the firewall_policy will be left empty.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 5;</code>
+     * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The error.
      */
@@ -595,11 +595,11 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If the processing of a policy config fails, an error will be populated
-     * and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error will be
+     * populated and the firewall_policy will be left empty.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 5;</code>
+     * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
@@ -618,11 +618,11 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If the processing of a policy config fails, an error will be populated
-     * and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error will be
+     * populated and the firewall_policy will be left empty.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 5;</code>
+     * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
@@ -638,11 +638,11 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If the processing of a policy config fails, an error will be populated
-     * and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error will be
+     * populated and the firewall_policy will be left empty.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 5;</code>
+     * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
@@ -664,11 +664,11 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If the processing of a policy config fails, an error will be populated
-     * and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error will be
+     * populated and the firewall_policy will be left empty.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 5;</code>
+     * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -684,11 +684,11 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If the processing of a policy config fails, an error will be populated
-     * and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error will be
+     * populated and the firewall_policy will be left empty.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 5;</code>
+     * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
       bitField0_ |= 0x00000001;
@@ -699,11 +699,11 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If the processing of a policy config fails, an error will be populated
-     * and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error will be
+     * populated and the firewall_policy will be left empty.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 5;</code>
+     * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
       if (errorBuilder_ != null) {
@@ -716,11 +716,11 @@ public final class FirewallPolicyAssessment extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If the processing of a policy config fails, an error will be populated
-     * and the firewall_policy will be left empty.
+     * Output only. If the processing of a policy config fails, an error will be
+     * populated and the firewall_policy will be left empty.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 5;</code>
+     * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
