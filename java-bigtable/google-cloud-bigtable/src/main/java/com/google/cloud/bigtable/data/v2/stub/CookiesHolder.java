@@ -55,14 +55,14 @@ class CookiesHolder {
    * COOKIE_KEY_PREFIX to cookies. Values in trailers will override the value set in initial
    * metadata for the same keys.
    */
-  void extractCookiesFromMetadata(@Nullable Metadata trailers) {
-    if (trailers == null) {
+  void extractCookiesFromMetadata(@Nullable Metadata metadata) {
+    if (metadata == null) {
       return;
     }
-    for (String key : trailers.keys()) {
+    for (String key : metadata.keys()) {
       if (key.startsWith(COOKIE_KEY_PREFIX)) {
         Metadata.Key<String> metadataKey = Metadata.Key.of(key, Metadata.ASCII_STRING_MARSHALLER);
-        String value = trailers.get(metadataKey);
+        String value = metadata.get(metadataKey);
         cookies.put(metadataKey, value);
       }
     }

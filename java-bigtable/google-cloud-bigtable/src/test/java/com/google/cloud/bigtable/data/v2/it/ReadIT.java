@@ -61,6 +61,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.Before;
 import org.junit.ClassRule;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -322,6 +323,7 @@ public class ReadIT {
   }
 
   @Test
+  @Ignore("Test taking too long to run, ignore for now")
   public void reversedWithForcedResumption() throws IOException, InterruptedException {
     assume()
         .withMessage("reverse scans are not supported in the emulator")

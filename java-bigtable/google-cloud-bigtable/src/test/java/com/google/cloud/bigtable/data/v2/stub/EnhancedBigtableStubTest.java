@@ -549,6 +549,7 @@ public class EnhancedBigtableStubTest {
     FeatureFlags featureFlags = FeatureFlags.parseFrom(decodedFlags);
     assertThat(featureFlags.getMutateRowsRateLimit()).isFalse();
     assertThat(featureFlags.getMutateRowsRateLimit2()).isFalse();
+    stub.close();
   }
 
   @Test
