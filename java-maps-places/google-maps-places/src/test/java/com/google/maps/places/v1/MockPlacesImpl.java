@@ -59,6 +59,27 @@ public class MockPlacesImpl extends PlacesImplBase {
   }
 
   @Override
+  public void searchNearby(
+      SearchNearbyRequest request, StreamObserver<SearchNearbyResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchNearbyResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchNearbyResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchNearby, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchNearbyResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void searchText(
       SearchTextRequest request, StreamObserver<SearchTextResponse> responseObserver) {
     Object response = responses.poll();
@@ -75,6 +96,47 @@ public class MockPlacesImpl extends PlacesImplBase {
                   "Unrecognized response type %s for method SearchText, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchTextResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getPhotoMedia(
+      GetPhotoMediaRequest request, StreamObserver<PhotoMedia> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PhotoMedia) {
+      requests.add(request);
+      responseObserver.onNext(((PhotoMedia) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPhotoMedia, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PhotoMedia.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getPlace(GetPlaceRequest request, StreamObserver<Place> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Place) {
+      requests.add(request);
+      responseObserver.onNext(((Place) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPlace, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Place.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -35,6 +35,7 @@ import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -286,6 +287,69 @@ public class SessionsClientHttpJsonTest {
               .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
               .build();
       client.fulfillIntent(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void submitAnswerFeedbackTest() throws Exception {
+    AnswerFeedback expectedResponse =
+        AnswerFeedback.newBuilder()
+            .setRatingReason(AnswerFeedback.RatingReason.newBuilder().build())
+            .setCustomRating("customRating341643374")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SubmitAnswerFeedbackRequest request =
+        SubmitAnswerFeedbackRequest.newBuilder()
+            .setSession(
+                SessionName.ofProjectLocationAgentSessionName(
+                        "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]")
+                    .toString())
+            .setResponseId("responseId-633138884")
+            .setAnswerFeedback(AnswerFeedback.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    AnswerFeedback actualResponse = client.submitAnswerFeedback(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void submitAnswerFeedbackExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SubmitAnswerFeedbackRequest request =
+          SubmitAnswerFeedbackRequest.newBuilder()
+              .setSession(
+                  SessionName.ofProjectLocationAgentSessionName(
+                          "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]")
+                      .toString())
+              .setResponseId("responseId-633138884")
+              .setAnswerFeedback(AnswerFeedback.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.submitAnswerFeedback(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

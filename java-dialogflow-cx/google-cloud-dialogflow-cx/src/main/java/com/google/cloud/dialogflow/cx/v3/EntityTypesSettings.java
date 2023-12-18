@@ -80,13 +80,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
 
-  /** Returns the object with the settings used for calls to listEntityTypes. */
-  public PagedCallSettings<
-          ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
-      listEntityTypesSettings() {
-    return ((EntityTypesStubSettings) getStubSettings()).listEntityTypesSettings();
-  }
-
   /** Returns the object with the settings used for calls to getEntityType. */
   public UnaryCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeSettings() {
     return ((EntityTypesStubSettings) getStubSettings()).getEntityTypeSettings();
@@ -105,6 +98,13 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
   /** Returns the object with the settings used for calls to deleteEntityType. */
   public UnaryCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings() {
     return ((EntityTypesStubSettings) getStubSettings()).deleteEntityTypeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listEntityTypes. */
+  public PagedCallSettings<
+          ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+      listEntityTypesSettings() {
+    return ((EntityTypesStubSettings) getStubSettings()).listEntityTypesSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -232,13 +232,6 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to listEntityTypes. */
-    public PagedCallSettings.Builder<
-            ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
-        listEntityTypesSettings() {
-      return getStubSettingsBuilder().listEntityTypesSettings();
-    }
-
     /** Returns the builder for the settings used for calls to getEntityType. */
     public UnaryCallSettings.Builder<GetEntityTypeRequest, EntityType> getEntityTypeSettings() {
       return getStubSettingsBuilder().getEntityTypeSettings();
@@ -259,6 +252,13 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
     /** Returns the builder for the settings used for calls to deleteEntityType. */
     public UnaryCallSettings.Builder<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings() {
       return getStubSettingsBuilder().deleteEntityTypeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listEntityTypes. */
+    public PagedCallSettings.Builder<
+            ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+        listEntityTypesSettings() {
+      return getStubSettingsBuilder().listEntityTypesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

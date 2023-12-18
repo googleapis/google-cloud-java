@@ -40,6 +40,35 @@ public interface DataQualityResultOrBuilder
    *
    *
    * <pre>
+   * Output only. The overall data quality score.
+   *
+   * The score ranges between [0, 100] (up to two decimal points).
+   * </pre>
+   *
+   * <code>optional float score = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the score field is set.
+   */
+  boolean hasScore();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The overall data quality score.
+   *
+   * The score ranges between [0, 100] (up to two decimal points).
+   * </pre>
+   *
+   * <code>optional float score = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The score.
+   */
+  float getScore();
+
+  /**
+   *
+   *
+   * <pre>
    * A list of results at the dimension level.
    *
    * A dimension will have a corresponding `DataQualityDimensionResult` if and
@@ -103,6 +132,83 @@ public interface DataQualityResultOrBuilder
    */
   com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder getDimensionsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of results at the column level.
+   *
+   * A column will have a corresponding `DataQualityColumnResult` if and only if
+   * there is at least one rule with the 'column' field set to it.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dataplex.v1.DataQualityColumnResult> getColumnsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of results at the column level.
+   *
+   * A column will have a corresponding `DataQualityColumnResult` if and only if
+   * there is at least one rule with the 'column' field set to it.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataQualityColumnResult getColumns(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of results at the column level.
+   *
+   * A column will have a corresponding `DataQualityColumnResult` if and only if
+   * there is at least one rule with the 'column' field set to it.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getColumnsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of results at the column level.
+   *
+   * A column will have a corresponding `DataQualityColumnResult` if and only if
+   * there is at least one rule with the 'column' field set to it.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityColumnResultOrBuilder>
+      getColumnsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of results at the column level.
+   *
+   * A column will have a corresponding `DataQualityColumnResult` if and only if
+   * there is at least one rule with the 'column' field set to it.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityColumnResult columns = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataQualityColumnResultOrBuilder getColumnsOrBuilder(int index);
 
   /**
    *

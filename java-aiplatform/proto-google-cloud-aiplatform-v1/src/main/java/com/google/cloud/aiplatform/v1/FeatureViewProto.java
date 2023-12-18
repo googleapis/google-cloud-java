@@ -69,7 +69,7 @@ public final class FeatureViewProto {
           + "FeatureView.BigQuerySourceB\004\342A\001\001H\000\022f\n\027fe"
           + "ature_registry_source\030\t \001(\0132=.google.clo"
           + "ud.aiplatform.v1.FeatureView.FeatureRegi"
-          + "strySourceB\004\342A\001\001H\000\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\0225"
+          + "strySourceB\004\342A\001\001H\000\022\022\n\004name\030\001 \001(\tB\004\342A\001\010\0225"
           + "\n\013create_time\030\002 \001(\0132\032.google.protobuf.Ti"
           + "mestampB\004\342A\001\003\0225\n\013update_time\030\003 \001(\0132\032.goo"
           + "gle.protobuf.TimestampB\004\342A\001\003\022\022\n\004etag\030\004 \001"

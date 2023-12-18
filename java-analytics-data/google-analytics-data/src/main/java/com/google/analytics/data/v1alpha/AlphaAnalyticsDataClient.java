@@ -1259,6 +1259,548 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
     return stub.listAudienceListsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a recurring audience list. Recurring audience lists produces new audience lists each
+   * day. Audience lists are users in an audience at the time of the list's creation.
+   *
+   * <p>A recurring audience list ensures that you have audience list based on the most recent data
+   * available for use each day. If you manually create audience list, you don't know when an
+   * audience list based on an additional day's data is available. This recurring audience list
+   * automates the creation of an audience list when an additional day's data is available. You will
+   * consume fewer quota tokens by using recurring audience list versus manually creating audience
+   * list at various times of day trying to guess when an additional day's data is ready.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   RecurringAudienceList recurringAudienceList = RecurringAudienceList.newBuilder().build();
+   *   RecurringAudienceList response =
+   *       alphaAnalyticsDataClient.createRecurringAudienceList(parent, recurringAudienceList);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this recurring audience list will be created.
+   *     Format: `properties/{property}`
+   * @param recurringAudienceList Required. The recurring audience list to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecurringAudienceList createRecurringAudienceList(
+      PropertyName parent, RecurringAudienceList recurringAudienceList) {
+    CreateRecurringAudienceListRequest request =
+        CreateRecurringAudienceListRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRecurringAudienceList(recurringAudienceList)
+            .build();
+    return createRecurringAudienceList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a recurring audience list. Recurring audience lists produces new audience lists each
+   * day. Audience lists are users in an audience at the time of the list's creation.
+   *
+   * <p>A recurring audience list ensures that you have audience list based on the most recent data
+   * available for use each day. If you manually create audience list, you don't know when an
+   * audience list based on an additional day's data is available. This recurring audience list
+   * automates the creation of an audience list when an additional day's data is available. You will
+   * consume fewer quota tokens by using recurring audience list versus manually creating audience
+   * list at various times of day trying to guess when an additional day's data is ready.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   RecurringAudienceList recurringAudienceList = RecurringAudienceList.newBuilder().build();
+   *   RecurringAudienceList response =
+   *       alphaAnalyticsDataClient.createRecurringAudienceList(parent, recurringAudienceList);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this recurring audience list will be created.
+   *     Format: `properties/{property}`
+   * @param recurringAudienceList Required. The recurring audience list to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecurringAudienceList createRecurringAudienceList(
+      String parent, RecurringAudienceList recurringAudienceList) {
+    CreateRecurringAudienceListRequest request =
+        CreateRecurringAudienceListRequest.newBuilder()
+            .setParent(parent)
+            .setRecurringAudienceList(recurringAudienceList)
+            .build();
+    return createRecurringAudienceList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a recurring audience list. Recurring audience lists produces new audience lists each
+   * day. Audience lists are users in an audience at the time of the list's creation.
+   *
+   * <p>A recurring audience list ensures that you have audience list based on the most recent data
+   * available for use each day. If you manually create audience list, you don't know when an
+   * audience list based on an additional day's data is available. This recurring audience list
+   * automates the creation of an audience list when an additional day's data is available. You will
+   * consume fewer quota tokens by using recurring audience list versus manually creating audience
+   * list at various times of day trying to guess when an additional day's data is ready.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   CreateRecurringAudienceListRequest request =
+   *       CreateRecurringAudienceListRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setRecurringAudienceList(RecurringAudienceList.newBuilder().build())
+   *           .build();
+   *   RecurringAudienceList response =
+   *       alphaAnalyticsDataClient.createRecurringAudienceList(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecurringAudienceList createRecurringAudienceList(
+      CreateRecurringAudienceListRequest request) {
+    return createRecurringAudienceListCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a recurring audience list. Recurring audience lists produces new audience lists each
+   * day. Audience lists are users in an audience at the time of the list's creation.
+   *
+   * <p>A recurring audience list ensures that you have audience list based on the most recent data
+   * available for use each day. If you manually create audience list, you don't know when an
+   * audience list based on an additional day's data is available. This recurring audience list
+   * automates the creation of an audience list when an additional day's data is available. You will
+   * consume fewer quota tokens by using recurring audience list versus manually creating audience
+   * list at various times of day trying to guess when an additional day's data is ready.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   CreateRecurringAudienceListRequest request =
+   *       CreateRecurringAudienceListRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setRecurringAudienceList(RecurringAudienceList.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RecurringAudienceList> future =
+   *       alphaAnalyticsDataClient.createRecurringAudienceListCallable().futureCall(request);
+   *   // Do something.
+   *   RecurringAudienceList response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateRecurringAudienceListRequest, RecurringAudienceList>
+      createRecurringAudienceListCallable() {
+    return stub.createRecurringAudienceListCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets configuration metadata about a specific recurring audience list. This method can be used
+   * to understand a recurring audience list's state after it has been created. For example, a
+   * recurring audience list resource will generate audience list instances for each day, and this
+   * method can be used to get the resource name of the most recent audience list instance.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   RecurringAudienceListName name =
+   *       RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]");
+   *   RecurringAudienceList response = alphaAnalyticsDataClient.getRecurringAudienceList(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The recurring audience list resource name. Format:
+   *     `properties/{property}/recurringAudienceLists/{recurring_audience_list}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecurringAudienceList getRecurringAudienceList(RecurringAudienceListName name) {
+    GetRecurringAudienceListRequest request =
+        GetRecurringAudienceListRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getRecurringAudienceList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets configuration metadata about a specific recurring audience list. This method can be used
+   * to understand a recurring audience list's state after it has been created. For example, a
+   * recurring audience list resource will generate audience list instances for each day, and this
+   * method can be used to get the resource name of the most recent audience list instance.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   String name =
+   *       RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]").toString();
+   *   RecurringAudienceList response = alphaAnalyticsDataClient.getRecurringAudienceList(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The recurring audience list resource name. Format:
+   *     `properties/{property}/recurringAudienceLists/{recurring_audience_list}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecurringAudienceList getRecurringAudienceList(String name) {
+    GetRecurringAudienceListRequest request =
+        GetRecurringAudienceListRequest.newBuilder().setName(name).build();
+    return getRecurringAudienceList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets configuration metadata about a specific recurring audience list. This method can be used
+   * to understand a recurring audience list's state after it has been created. For example, a
+   * recurring audience list resource will generate audience list instances for each day, and this
+   * method can be used to get the resource name of the most recent audience list instance.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   GetRecurringAudienceListRequest request =
+   *       GetRecurringAudienceListRequest.newBuilder()
+   *           .setName(
+   *               RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]")
+   *                   .toString())
+   *           .build();
+   *   RecurringAudienceList response = alphaAnalyticsDataClient.getRecurringAudienceList(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecurringAudienceList getRecurringAudienceList(
+      GetRecurringAudienceListRequest request) {
+    return getRecurringAudienceListCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets configuration metadata about a specific recurring audience list. This method can be used
+   * to understand a recurring audience list's state after it has been created. For example, a
+   * recurring audience list resource will generate audience list instances for each day, and this
+   * method can be used to get the resource name of the most recent audience list instance.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   GetRecurringAudienceListRequest request =
+   *       GetRecurringAudienceListRequest.newBuilder()
+   *           .setName(
+   *               RecurringAudienceListName.of("[PROPERTY]", "[RECURRING_AUDIENCE_LIST]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<RecurringAudienceList> future =
+   *       alphaAnalyticsDataClient.getRecurringAudienceListCallable().futureCall(request);
+   *   // Do something.
+   *   RecurringAudienceList response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRecurringAudienceListRequest, RecurringAudienceList>
+      getRecurringAudienceListCallable() {
+    return stub.getRecurringAudienceListCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all recurring audience lists for a property. This method can be used for you to find and
+   * reuse existing recurring audience lists rather than creating unnecessary new recurring audience
+   * lists. The same audience can have multiple recurring audience lists that represent different
+   * dimension combinations; for example, just the dimension `deviceId` or both the dimensions
+   * `deviceId` and `userId`.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (RecurringAudienceList element :
+   *       alphaAnalyticsDataClient.listRecurringAudienceLists(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. All recurring audience lists for this property will be listed in the
+   *     response. Format: `properties/{property}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRecurringAudienceListsPagedResponse listRecurringAudienceLists(
+      PropertyName parent) {
+    ListRecurringAudienceListsRequest request =
+        ListRecurringAudienceListsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listRecurringAudienceLists(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all recurring audience lists for a property. This method can be used for you to find and
+   * reuse existing recurring audience lists rather than creating unnecessary new recurring audience
+   * lists. The same audience can have multiple recurring audience lists that represent different
+   * dimension combinations; for example, just the dimension `deviceId` or both the dimensions
+   * `deviceId` and `userId`.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (RecurringAudienceList element :
+   *       alphaAnalyticsDataClient.listRecurringAudienceLists(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. All recurring audience lists for this property will be listed in the
+   *     response. Format: `properties/{property}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRecurringAudienceListsPagedResponse listRecurringAudienceLists(String parent) {
+    ListRecurringAudienceListsRequest request =
+        ListRecurringAudienceListsRequest.newBuilder().setParent(parent).build();
+    return listRecurringAudienceLists(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all recurring audience lists for a property. This method can be used for you to find and
+   * reuse existing recurring audience lists rather than creating unnecessary new recurring audience
+   * lists. The same audience can have multiple recurring audience lists that represent different
+   * dimension combinations; for example, just the dimension `deviceId` or both the dimensions
+   * `deviceId` and `userId`.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   ListRecurringAudienceListsRequest request =
+   *       ListRecurringAudienceListsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (RecurringAudienceList element :
+   *       alphaAnalyticsDataClient.listRecurringAudienceLists(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRecurringAudienceListsPagedResponse listRecurringAudienceLists(
+      ListRecurringAudienceListsRequest request) {
+    return listRecurringAudienceListsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all recurring audience lists for a property. This method can be used for you to find and
+   * reuse existing recurring audience lists rather than creating unnecessary new recurring audience
+   * lists. The same audience can have multiple recurring audience lists that represent different
+   * dimension combinations; for example, just the dimension `deviceId` or both the dimensions
+   * `deviceId` and `userId`.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   ListRecurringAudienceListsRequest request =
+   *       ListRecurringAudienceListsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<RecurringAudienceList> future =
+   *       alphaAnalyticsDataClient.listRecurringAudienceListsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (RecurringAudienceList element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListRecurringAudienceListsRequest, ListRecurringAudienceListsPagedResponse>
+      listRecurringAudienceListsPagedCallable() {
+    return stub.listRecurringAudienceListsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all recurring audience lists for a property. This method can be used for you to find and
+   * reuse existing recurring audience lists rather than creating unnecessary new recurring audience
+   * lists. The same audience can have multiple recurring audience lists that represent different
+   * dimension combinations; for example, just the dimension `deviceId` or both the dimensions
+   * `deviceId` and `userId`.
+   *
+   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
+   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
+   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   ListRecurringAudienceListsRequest request =
+   *       ListRecurringAudienceListsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListRecurringAudienceListsResponse response =
+   *         alphaAnalyticsDataClient.listRecurringAudienceListsCallable().call(request);
+   *     for (RecurringAudienceList element : response.getRecurringAudienceListsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
+      listRecurringAudienceListsCallable() {
+    return stub.listRecurringAudienceListsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -1366,6 +1908,102 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
     protected ListAudienceListsFixedSizeCollection createCollection(
         List<ListAudienceListsPage> pages, int collectionSize) {
       return new ListAudienceListsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRecurringAudienceListsPagedResponse
+      extends AbstractPagedListResponse<
+          ListRecurringAudienceListsRequest,
+          ListRecurringAudienceListsResponse,
+          RecurringAudienceList,
+          ListRecurringAudienceListsPage,
+          ListRecurringAudienceListsFixedSizeCollection> {
+
+    public static ApiFuture<ListRecurringAudienceListsPagedResponse> createAsync(
+        PageContext<
+                ListRecurringAudienceListsRequest,
+                ListRecurringAudienceListsResponse,
+                RecurringAudienceList>
+            context,
+        ApiFuture<ListRecurringAudienceListsResponse> futureResponse) {
+      ApiFuture<ListRecurringAudienceListsPage> futurePage =
+          ListRecurringAudienceListsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRecurringAudienceListsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRecurringAudienceListsPagedResponse(ListRecurringAudienceListsPage page) {
+      super(page, ListRecurringAudienceListsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRecurringAudienceListsPage
+      extends AbstractPage<
+          ListRecurringAudienceListsRequest,
+          ListRecurringAudienceListsResponse,
+          RecurringAudienceList,
+          ListRecurringAudienceListsPage> {
+
+    private ListRecurringAudienceListsPage(
+        PageContext<
+                ListRecurringAudienceListsRequest,
+                ListRecurringAudienceListsResponse,
+                RecurringAudienceList>
+            context,
+        ListRecurringAudienceListsResponse response) {
+      super(context, response);
+    }
+
+    private static ListRecurringAudienceListsPage createEmptyPage() {
+      return new ListRecurringAudienceListsPage(null, null);
+    }
+
+    @Override
+    protected ListRecurringAudienceListsPage createPage(
+        PageContext<
+                ListRecurringAudienceListsRequest,
+                ListRecurringAudienceListsResponse,
+                RecurringAudienceList>
+            context,
+        ListRecurringAudienceListsResponse response) {
+      return new ListRecurringAudienceListsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRecurringAudienceListsPage> createPageAsync(
+        PageContext<
+                ListRecurringAudienceListsRequest,
+                ListRecurringAudienceListsResponse,
+                RecurringAudienceList>
+            context,
+        ApiFuture<ListRecurringAudienceListsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRecurringAudienceListsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRecurringAudienceListsRequest,
+          ListRecurringAudienceListsResponse,
+          RecurringAudienceList,
+          ListRecurringAudienceListsPage,
+          ListRecurringAudienceListsFixedSizeCollection> {
+
+    private ListRecurringAudienceListsFixedSizeCollection(
+        List<ListRecurringAudienceListsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRecurringAudienceListsFixedSizeCollection createEmptyCollection() {
+      return new ListRecurringAudienceListsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRecurringAudienceListsFixedSizeCollection createCollection(
+        List<ListRecurringAudienceListsPage> pages, int collectionSize) {
+      return new ListRecurringAudienceListsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -24,6 +24,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -546,6 +547,175 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Perform an unary online prediction request for Vertex first-party products and frameworks.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   DirectPredictRequest request =
+   *       DirectPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .addAllInputs(new ArrayList<Tensor>())
+   *           .setParameters(Tensor.newBuilder().build())
+   *           .build();
+   *   DirectPredictResponse response = predictionServiceClient.directPredict(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DirectPredictResponse directPredict(DirectPredictRequest request) {
+    return directPredictCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform an unary online prediction request for Vertex first-party products and frameworks.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   DirectPredictRequest request =
+   *       DirectPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .addAllInputs(new ArrayList<Tensor>())
+   *           .setParameters(Tensor.newBuilder().build())
+   *           .build();
+   *   ApiFuture<DirectPredictResponse> future =
+   *       predictionServiceClient.directPredictCallable().futureCall(request);
+   *   // Do something.
+   *   DirectPredictResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DirectPredictRequest, DirectPredictResponse> directPredictCallable() {
+    return stub.directPredictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform an online prediction request through gRPC.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   DirectRawPredictRequest request =
+   *       DirectRawPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .setMethodName("methodName-723163380")
+   *           .setInput(ByteString.EMPTY)
+   *           .build();
+   *   DirectRawPredictResponse response = predictionServiceClient.directRawPredict(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DirectRawPredictResponse directRawPredict(DirectRawPredictRequest request) {
+    return directRawPredictCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform an online prediction request through gRPC.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   DirectRawPredictRequest request =
+   *       DirectRawPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .setMethodName("methodName-723163380")
+   *           .setInput(ByteString.EMPTY)
+   *           .build();
+   *   ApiFuture<DirectRawPredictResponse> future =
+   *       predictionServiceClient.directRawPredictCallable().futureCall(request);
+   *   // Do something.
+   *   DirectRawPredictResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DirectRawPredictRequest, DirectRawPredictResponse>
+      directRawPredictCallable() {
+    return stub.directRawPredictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a streaming online prediction request for Vertex first-party products and frameworks.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   BidiStream<StreamingPredictRequest, StreamingPredictResponse> bidiStream =
+   *       predictionServiceClient.streamingPredictCallable().call();
+   *   StreamingPredictRequest request =
+   *       StreamingPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .addAllInputs(new ArrayList<Tensor>())
+   *           .setParameters(Tensor.newBuilder().build())
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (StreamingPredictResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
+      streamingPredictCallable() {
+    return stub.streamingPredictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Perform a server-side streaming online prediction request for Vertex LLM streaming.
    *
    * <p>Sample code:
@@ -577,6 +747,42 @@ public class PredictionServiceClient implements BackgroundResource {
   public final ServerStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
       serverStreamingPredictCallable() {
     return stub.serverStreamingPredictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a streaming online prediction request through gRPC.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   BidiStream<StreamingRawPredictRequest, StreamingRawPredictResponse> bidiStream =
+   *       predictionServiceClient.streamingRawPredictCallable().call();
+   *   StreamingRawPredictRequest request =
+   *       StreamingRawPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .setMethodName("methodName-723163380")
+   *           .setInput(ByteString.EMPTY)
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (StreamingRawPredictResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<StreamingRawPredictRequest, StreamingRawPredictResponse>
+      streamingRawPredictCallable() {
+    return stub.streamingRawPredictCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -879,7 +1085,9 @@ public class PredictionServiceClient implements BackgroundResource {
    *               EndpointName.ofProjectLocationEndpointName(
    *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
+   *           .setModel("model104069929")
    *           .addAllInstances(new ArrayList<Value>())
+   *           .addAllContents(new ArrayList<Content>())
    *           .build();
    *   CountTokensResponse response = predictionServiceClient.countTokens(request);
    * }
@@ -911,7 +1119,9 @@ public class PredictionServiceClient implements BackgroundResource {
    *               EndpointName.ofProjectLocationEndpointName(
    *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
+   *           .setModel("model104069929")
    *           .addAllInstances(new ArrayList<Value>())
+   *           .addAllContents(new ArrayList<Content>())
    *           .build();
    *   ApiFuture<CountTokensResponse> future =
    *       predictionServiceClient.countTokensCallable().futureCall(request);
@@ -922,6 +1132,40 @@ public class PredictionServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable() {
     return stub.countTokensCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generate content with multimodal inputs with streaming support.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   GenerateContentRequest request =
+   *       GenerateContentRequest.newBuilder()
+   *           .setModel("model104069929")
+   *           .addAllContents(new ArrayList<Content>())
+   *           .addAllTools(new ArrayList<Tool>())
+   *           .addAllSafetySettings(new ArrayList<SafetySetting>())
+   *           .setGenerationConfig(GenerationConfig.newBuilder().build())
+   *           .build();
+   *   ServerStream<GenerateContentResponse> stream =
+   *       predictionServiceClient.streamGenerateContentCallable().call(request);
+   *   for (GenerateContentResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
+      streamGenerateContentCallable() {
+    return stub.streamGenerateContentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

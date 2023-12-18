@@ -109,7 +109,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Use Binary Authorization with the policies specified in policy_bindings.
+     * Use Binary Authorization Continuous Validation with the policies
+     * specified in policy_bindings.
      * </pre>
      *
      * <code>POLICY_BINDINGS = 5;</code>
@@ -119,8 +120,9 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Use Binary Authorization with the policies specified in policy_bindings,
-     * and also with the project's singleton policy in enforcement mode.
+     * Use Binary Authorization Continuous Validation with the policies
+     * specified in policy_bindings and enforce Kubernetes admission requests
+     * with Binary Authorization using the project's singleton policy.
      * </pre>
      *
      * <code>POLICY_BINDINGS_AND_PROJECT_SINGLETON_POLICY_ENFORCE = 6;</code>
@@ -165,7 +167,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Use Binary Authorization with the policies specified in policy_bindings.
+     * Use Binary Authorization Continuous Validation with the policies
+     * specified in policy_bindings.
      * </pre>
      *
      * <code>POLICY_BINDINGS = 5;</code>
@@ -175,8 +178,9 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Use Binary Authorization with the policies specified in policy_bindings,
-     * and also with the project's singleton policy in enforcement mode.
+     * Use Binary Authorization Continuous Validation with the policies
+     * specified in policy_bindings and enforce Kubernetes admission requests
+     * with Binary Authorization using the project's singleton policy.
      * </pre>
      *
      * <code>POLICY_BINDINGS_AND_PROJECT_SINGLETON_POLICY_ENFORCE = 6;</code>
@@ -1007,7 +1011,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
    * <code>bool enabled = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1823
+   *     google/container/v1beta1/cluster_service.proto;l=1825
    * @return The enabled.
    */
   @java.lang.Override
@@ -1595,7 +1599,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1823
+     *     google/container/v1beta1/cluster_service.proto;l=1825
      * @return The enabled.
      */
     @java.lang.Override
@@ -1615,7 +1619,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1823
+     *     google/container/v1beta1/cluster_service.proto;l=1825
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
@@ -1639,7 +1643,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1823
+     *     google/container/v1beta1/cluster_service.proto;l=1825
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

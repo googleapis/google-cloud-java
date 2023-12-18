@@ -187,4 +187,70 @@ public class MockAlphaAnalyticsDataImpl extends AlphaAnalyticsDataImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void createRecurringAudienceList(
+      CreateRecurringAudienceListRequest request,
+      StreamObserver<RecurringAudienceList> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RecurringAudienceList) {
+      requests.add(request);
+      responseObserver.onNext(((RecurringAudienceList) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateRecurringAudienceList, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RecurringAudienceList.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getRecurringAudienceList(
+      GetRecurringAudienceListRequest request,
+      StreamObserver<RecurringAudienceList> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RecurringAudienceList) {
+      requests.add(request);
+      responseObserver.onNext(((RecurringAudienceList) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRecurringAudienceList, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RecurringAudienceList.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRecurringAudienceLists(
+      ListRecurringAudienceListsRequest request,
+      StreamObserver<ListRecurringAudienceListsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRecurringAudienceListsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRecurringAudienceListsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRecurringAudienceLists, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRecurringAudienceListsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

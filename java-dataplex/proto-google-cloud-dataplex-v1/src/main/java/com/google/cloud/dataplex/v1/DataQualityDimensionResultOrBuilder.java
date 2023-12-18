@@ -76,4 +76,37 @@ public interface DataQualityDimensionResultOrBuilder
    * @return The passed.
    */
   boolean getPassed();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension-level data quality score for this data scan job
+   * if and only if the 'dimension' field is set.
+   *
+   * The score ranges between [0, 100] (up to two decimal
+   * points).
+   * </pre>
+   *
+   * <code>optional float score = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the score field is set.
+   */
+  boolean hasScore();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension-level data quality score for this data scan job
+   * if and only if the 'dimension' field is set.
+   *
+   * The score ranges between [0, 100] (up to two decimal
+   * points).
+   * </pre>
+   *
+   * <code>optional float score = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The score.
+   */
+  float getScore();
 }

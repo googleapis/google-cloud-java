@@ -203,6 +203,36 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>ACCESS_POLICY_UPDATE = 14;</code>
      */
     ACCESS_POLICY_UPDATE(14),
+    /**
+     *
+     *
+     * <pre>
+     * Number of resources matched with particular Query.
+     * </pre>
+     *
+     * <code>GOVERNANCE_RULE_MATCHED_RESOURCES = 15;</code>
+     */
+    GOVERNANCE_RULE_MATCHED_RESOURCES(15),
+    /**
+     *
+     *
+     * <pre>
+     * Rule processing exceeds the allowed limit.
+     * </pre>
+     *
+     * <code>GOVERNANCE_RULE_SEARCH_LIMIT_EXCEEDS = 16;</code>
+     */
+    GOVERNANCE_RULE_SEARCH_LIMIT_EXCEEDS(16),
+    /**
+     *
+     *
+     * <pre>
+     * Rule processing errors.
+     * </pre>
+     *
+     * <code>GOVERNANCE_RULE_ERRORS = 17;</code>
+     */
+    GOVERNANCE_RULE_ERRORS(17),
     UNRECOGNIZED(-1),
     ;
 
@@ -336,6 +366,36 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>ACCESS_POLICY_UPDATE = 14;</code>
      */
     public static final int ACCESS_POLICY_UPDATE_VALUE = 14;
+    /**
+     *
+     *
+     * <pre>
+     * Number of resources matched with particular Query.
+     * </pre>
+     *
+     * <code>GOVERNANCE_RULE_MATCHED_RESOURCES = 15;</code>
+     */
+    public static final int GOVERNANCE_RULE_MATCHED_RESOURCES_VALUE = 15;
+    /**
+     *
+     *
+     * <pre>
+     * Rule processing exceeds the allowed limit.
+     * </pre>
+     *
+     * <code>GOVERNANCE_RULE_SEARCH_LIMIT_EXCEEDS = 16;</code>
+     */
+    public static final int GOVERNANCE_RULE_SEARCH_LIMIT_EXCEEDS_VALUE = 16;
+    /**
+     *
+     *
+     * <pre>
+     * Rule processing errors.
+     * </pre>
+     *
+     * <code>GOVERNANCE_RULE_ERRORS = 17;</code>
+     */
+    public static final int GOVERNANCE_RULE_ERRORS_VALUE = 17;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -387,6 +447,12 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
           return BIGQUERY_POLICY_TAG_SET_IAM_POLICY;
         case 14:
           return ACCESS_POLICY_UPDATE;
+        case 15:
+          return GOVERNANCE_RULE_MATCHED_RESOURCES;
+        case 16:
+          return GOVERNANCE_RULE_SEARCH_LIMIT_EXCEEDS;
+        case 17:
+          return GOVERNANCE_RULE_ERRORS;
         default:
           return null;
       }

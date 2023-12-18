@@ -778,6 +778,32 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     return permissiveSsh_;
   }
 
+  public static final int ENABLE_OSLOGIN_FIELD_NUMBER = 13;
+  private boolean enableOslogin_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When true, Batch will use the OS Login generated POSIX account to
+   * exeucute the runnables instead of the default root user.
+   *
+   * To control root or non-root privilege for runnable execution, the project &#92;
+   * Admin user needs to configure IAM roles according to
+   * https://cloud.google.com/compute/docs/oslogin/set-up-oslogin#configure_users.
+   * Specifically, if a root execution is needed, the roles/compute.osAdminLogin
+   * should be granted to the Batch job submitter. Otherwise,
+   * roles/compute.osLogin should be granted to the Batch job submitter.
+   * </pre>
+   *
+   * <code>bool enable_oslogin = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableOslogin.
+   */
+  @java.lang.Override
+  public boolean getEnableOslogin() {
+    return enableOslogin_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -825,6 +851,9 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     }
     if (permissiveSsh_ != false) {
       output.writeBool(12, permissiveSsh_);
+    }
+    if (enableOslogin_ != false) {
+      output.writeBool(13, enableOslogin_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -877,6 +906,9 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     if (permissiveSsh_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, permissiveSsh_);
     }
+    if (enableOslogin_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, enableOslogin_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -909,6 +941,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     if (getTaskCountPerNode() != other.getTaskCountPerNode()) return false;
     if (getRequireHostsFile() != other.getRequireHostsFile()) return false;
     if (getPermissiveSsh() != other.getPermissiveSsh()) return false;
+    if (getEnableOslogin() != other.getEnableOslogin()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -950,6 +983,8 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequireHostsFile());
     hash = (37 * hash) + PERMISSIVE_SSH_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPermissiveSsh());
+    hash = (37 * hash) + ENABLE_OSLOGIN_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableOslogin());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1134,6 +1169,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       taskCountPerNode_ = 0L;
       requireHostsFile_ = false;
       permissiveSsh_ = false;
+      enableOslogin_ = false;
       return this;
     }
 
@@ -1214,6 +1250,9 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.permissiveSsh_ = permissiveSsh_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.enableOslogin_ = enableOslogin_;
       }
     }
 
@@ -1319,6 +1358,9 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getPermissiveSsh() != false) {
         setPermissiveSsh(other.getPermissiveSsh());
+      }
+      if (other.getEnableOslogin() != false) {
+        setEnableOslogin(other.getEnableOslogin());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1426,6 +1468,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 96
+            case 104:
+              {
+                enableOslogin_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3048,6 +3096,83 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPermissiveSsh() {
       bitField0_ = (bitField0_ & ~0x00000400);
       permissiveSsh_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableOslogin_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When true, Batch will use the OS Login generated POSIX account to
+     * exeucute the runnables instead of the default root user.
+     *
+     * To control root or non-root privilege for runnable execution, the project &#92;
+     * Admin user needs to configure IAM roles according to
+     * https://cloud.google.com/compute/docs/oslogin/set-up-oslogin#configure_users.
+     * Specifically, if a root execution is needed, the roles/compute.osAdminLogin
+     * should be granted to the Batch job submitter. Otherwise,
+     * roles/compute.osLogin should be granted to the Batch job submitter.
+     * </pre>
+     *
+     * <code>bool enable_oslogin = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableOslogin.
+     */
+    @java.lang.Override
+    public boolean getEnableOslogin() {
+      return enableOslogin_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When true, Batch will use the OS Login generated POSIX account to
+     * exeucute the runnables instead of the default root user.
+     *
+     * To control root or non-root privilege for runnable execution, the project &#92;
+     * Admin user needs to configure IAM roles according to
+     * https://cloud.google.com/compute/docs/oslogin/set-up-oslogin#configure_users.
+     * Specifically, if a root execution is needed, the roles/compute.osAdminLogin
+     * should be granted to the Batch job submitter. Otherwise,
+     * roles/compute.osLogin should be granted to the Batch job submitter.
+     * </pre>
+     *
+     * <code>bool enable_oslogin = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableOslogin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableOslogin(boolean value) {
+
+      enableOslogin_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When true, Batch will use the OS Login generated POSIX account to
+     * exeucute the runnables instead of the default root user.
+     *
+     * To control root or non-root privilege for runnable execution, the project &#92;
+     * Admin user needs to configure IAM roles according to
+     * https://cloud.google.com/compute/docs/oslogin/set-up-oslogin#configure_users.
+     * Specifically, if a root execution is needed, the roles/compute.osAdminLogin
+     * should be granted to the Batch job submitter. Otherwise,
+     * roles/compute.osLogin should be granted to the Batch job submitter.
+     * </pre>
+     *
+     * <code>bool enable_oslogin = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableOslogin() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      enableOslogin_ = false;
       onChanged();
       return this;
     }

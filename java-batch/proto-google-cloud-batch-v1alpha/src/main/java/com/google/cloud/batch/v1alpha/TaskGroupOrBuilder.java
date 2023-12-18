@@ -408,4 +408,25 @@ public interface TaskGroupOrBuilder
    * @return The permissiveSsh.
    */
   boolean getPermissiveSsh();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When true, Batch will use the OS Login generated POSIX account to
+   * exeucute the runnables instead of the default root user.
+   *
+   * To control root or non-root privilege for runnable execution, the project &#92;
+   * Admin user needs to configure IAM roles according to
+   * https://cloud.google.com/compute/docs/oslogin/set-up-oslogin#configure_users.
+   * Specifically, if a root execution is needed, the roles/compute.osAdminLogin
+   * should be granted to the Batch job submitter. Otherwise,
+   * roles/compute.osLogin should be granted to the Batch job submitter.
+   * </pre>
+   *
+   * <code>bool enable_oslogin = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableOslogin.
+   */
+  boolean getEnableOslogin();
 }

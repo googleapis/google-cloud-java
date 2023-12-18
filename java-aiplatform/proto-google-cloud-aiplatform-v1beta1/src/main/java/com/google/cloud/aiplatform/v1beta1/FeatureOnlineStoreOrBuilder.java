@@ -115,11 +115,11 @@ public interface FeatureOnlineStoreOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the FeatureOnlineStore. Format:
+   * Identifier. Name of the FeatureOnlineStore. Format:
    * `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -128,11 +128,11 @@ public interface FeatureOnlineStoreOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the FeatureOnlineStore. Format:
+   * Identifier. Name of the FeatureOnlineStore. Format:
    * `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

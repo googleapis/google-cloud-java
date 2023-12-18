@@ -489,6 +489,10 @@ public interface AllocationPolicyOrBuilder
    *
    * <pre>
    * The network policy.
+   *
+   * If you define an instance template in the InstancePolicyOrTemplate field,
+   * Batch will use the network settings in the instance template instead of
+   * this field.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.AllocationPolicy.NetworkPolicy network = 7;</code>
@@ -501,6 +505,10 @@ public interface AllocationPolicyOrBuilder
    *
    * <pre>
    * The network policy.
+   *
+   * If you define an instance template in the InstancePolicyOrTemplate field,
+   * Batch will use the network settings in the instance template instead of
+   * this field.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.AllocationPolicy.NetworkPolicy network = 7;</code>
@@ -513,6 +521,10 @@ public interface AllocationPolicyOrBuilder
    *
    * <pre>
    * The network policy.
+   *
+   * If you define an instance template in the InstancePolicyOrTemplate field,
+   * Batch will use the network settings in the instance template instead of
+   * this field.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.AllocationPolicy.NetworkPolicy network = 7;</code>

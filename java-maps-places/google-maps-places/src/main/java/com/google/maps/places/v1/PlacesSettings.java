@@ -47,7 +47,7 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of searchText to 30 seconds:
+ * <p>For example, to set the total timeout of searchNearby to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -57,10 +57,10 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * PlacesSettings.Builder placesSettingsBuilder = PlacesSettings.newBuilder();
  * placesSettingsBuilder
- *     .searchTextSettings()
+ *     .searchNearbySettings()
  *     .setRetrySettings(
  *         placesSettingsBuilder
- *             .searchTextSettings()
+ *             .searchNearbySettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -71,9 +71,24 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class PlacesSettings extends ClientSettings<PlacesSettings> {
 
+  /** Returns the object with the settings used for calls to searchNearby. */
+  public UnaryCallSettings<SearchNearbyRequest, SearchNearbyResponse> searchNearbySettings() {
+    return ((PlacesStubSettings) getStubSettings()).searchNearbySettings();
+  }
+
   /** Returns the object with the settings used for calls to searchText. */
   public UnaryCallSettings<SearchTextRequest, SearchTextResponse> searchTextSettings() {
     return ((PlacesStubSettings) getStubSettings()).searchTextSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPhotoMedia. */
+  public UnaryCallSettings<GetPhotoMediaRequest, PhotoMedia> getPhotoMediaSettings() {
+    return ((PlacesStubSettings) getStubSettings()).getPhotoMediaSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPlace. */
+  public UnaryCallSettings<GetPlaceRequest, Place> getPlaceSettings() {
+    return ((PlacesStubSettings) getStubSettings()).getPlaceSettings();
   }
 
   public static final PlacesSettings create(PlacesStubSettings stub) throws IOException {
@@ -190,9 +205,25 @@ public class PlacesSettings extends ClientSettings<PlacesSettings> {
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to searchNearby. */
+    public UnaryCallSettings.Builder<SearchNearbyRequest, SearchNearbyResponse>
+        searchNearbySettings() {
+      return getStubSettingsBuilder().searchNearbySettings();
+    }
+
     /** Returns the builder for the settings used for calls to searchText. */
     public UnaryCallSettings.Builder<SearchTextRequest, SearchTextResponse> searchTextSettings() {
       return getStubSettingsBuilder().searchTextSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPhotoMedia. */
+    public UnaryCallSettings.Builder<GetPhotoMediaRequest, PhotoMedia> getPhotoMediaSettings() {
+      return getStubSettingsBuilder().getPhotoMediaSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPlace. */
+    public UnaryCallSettings.Builder<GetPlaceRequest, Place> getPlaceSettings() {
+      return getStubSettingsBuilder().getPlaceSettings();
     }
 
     @Override

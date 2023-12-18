@@ -345,8 +345,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Assessment returned by account defender when a
-   * hashed_account_id is provided.
+   * Output only. Assessment returned by account defender when an account
+   * identifier is provided.
    * </pre>
    *
    * <code>
@@ -363,8 +363,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Assessment returned by account defender when a
-   * hashed_account_id is provided.
+   * Output only. Assessment returned by account defender when an account
+   * identifier is provided.
    * </pre>
    *
    * <code>
@@ -384,8 +384,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Assessment returned by account defender when a
-   * hashed_account_id is provided.
+   * Output only. Assessment returned by account defender when an account
+   * identifier is provided.
    * </pre>
    *
    * <code>
@@ -2246,8 +2246,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when a
-     * hashed_account_id is provided.
+     * Output only. Assessment returned by account defender when an account
+     * identifier is provided.
      * </pre>
      *
      * <code>
@@ -2263,8 +2263,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when a
-     * hashed_account_id is provided.
+     * Output only. Assessment returned by account defender when an account
+     * identifier is provided.
      * </pre>
      *
      * <code>
@@ -2287,8 +2287,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when a
-     * hashed_account_id is provided.
+     * Output only. Assessment returned by account defender when an account
+     * identifier is provided.
      * </pre>
      *
      * <code>
@@ -2313,8 +2313,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when a
-     * hashed_account_id is provided.
+     * Output only. Assessment returned by account defender when an account
+     * identifier is provided.
      * </pre>
      *
      * <code>
@@ -2336,8 +2336,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when a
-     * hashed_account_id is provided.
+     * Output only. Assessment returned by account defender when an account
+     * identifier is provided.
      * </pre>
      *
      * <code>
@@ -2367,8 +2367,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when a
-     * hashed_account_id is provided.
+     * Output only. Assessment returned by account defender when an account
+     * identifier is provided.
      * </pre>
      *
      * <code>
@@ -2389,8 +2389,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when a
-     * hashed_account_id is provided.
+     * Output only. Assessment returned by account defender when an account
+     * identifier is provided.
      * </pre>
      *
      * <code>
@@ -2407,8 +2407,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when a
-     * hashed_account_id is provided.
+     * Output only. Assessment returned by account defender when an account
+     * identifier is provided.
      * </pre>
      *
      * <code>
@@ -2429,8 +2429,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when a
-     * hashed_account_id is provided.
+     * Output only. Assessment returned by account defender when an account
+     * identifier is provided.
      * </pre>
      *
      * <code>

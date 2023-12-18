@@ -103,6 +103,49 @@ public interface DeployedModelOrBuilder
    *
    *
    * <pre>
+   * The resource name of the shared DeploymentResourcePool to deploy on.
+   * Format:
+   * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
+   * </pre>
+   *
+   * <code>string shared_resources = 17 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the sharedResources field is set.
+   */
+  boolean hasSharedResources();
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the shared DeploymentResourcePool to deploy on.
+   * Format:
+   * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
+   * </pre>
+   *
+   * <code>string shared_resources = 17 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The sharedResources.
+   */
+  java.lang.String getSharedResources();
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the shared DeploymentResourcePool to deploy on.
+   * Format:
+   * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
+   * </pre>
+   *
+   * <code>string shared_resources = 17 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for sharedResources.
+   */
+  com.google.protobuf.ByteString getSharedResourcesBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Immutable. The ID of the DeployedModel. If not provided upon deployment,
    * Vertex AI will generate a value for this ID.
    *

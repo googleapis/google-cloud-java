@@ -592,7 +592,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    * <code>string username = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is deprecated.
-   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=553
+   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=556
    * @return The username.
    */
   @java.lang.Override
@@ -619,7 +619,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    * <code>string username = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is deprecated.
-   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=553
+   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=556
    * @return The bytes for username.
    */
   @java.lang.Override
@@ -1732,7 +1732,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=553
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=556
      * @return The username.
      */
     @java.lang.Deprecated
@@ -1758,7 +1758,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=553
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=556
      * @return The bytes for username.
      */
     @java.lang.Deprecated
@@ -1784,7 +1784,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=553
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=556
      * @param value The username to set.
      * @return This builder for chaining.
      */
@@ -1809,7 +1809,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=553
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=556
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1830,7 +1830,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=553
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=556
      * @param value The bytes for username to set.
      * @return This builder for chaining.
      */

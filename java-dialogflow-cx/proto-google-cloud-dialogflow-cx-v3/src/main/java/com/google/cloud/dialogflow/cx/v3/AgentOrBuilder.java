@@ -383,7 +383,7 @@ public interface AgentOrBuilder
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/agent.proto;l=314
+   *     google/cloud/dialogflow/cx/v3/agent.proto;l=323
    * @return The enableStackdriverLogging.
    */
   @java.lang.Deprecated
@@ -577,4 +577,46 @@ public interface AgentOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.Agent.GenAppBuilderSettingsOrBuilder
       getGenAppBuilderSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Answer feedback collection settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Agent.AnswerFeedbackSettings answer_feedback_settings = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the answerFeedbackSettings field is set.
+   */
+  boolean hasAnswerFeedbackSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Answer feedback collection settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Agent.AnswerFeedbackSettings answer_feedback_settings = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The answerFeedbackSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.Agent.AnswerFeedbackSettings getAnswerFeedbackSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Answer feedback collection settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Agent.AnswerFeedbackSettings answer_feedback_settings = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.Agent.AnswerFeedbackSettingsOrBuilder
+      getAnswerFeedbackSettingsOrBuilder();
 }

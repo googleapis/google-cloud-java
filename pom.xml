@@ -107,8 +107,6 @@
     <module>java-life-sciences</module>
     <module>java-managed-identities</module>
     <module>java-maps-addressvalidation</module>
-    <module>java-maps-fleetengine-delivery</module>
-    <module>java-maps-fleetengine</module>
     <module>java-maps-mapsplatformdatasets</module>
     <module>java-maps-places</module>
     <module>java-maps-routing</module>
@@ -147,6 +145,7 @@
     <module>java-run</module>
     <module>java-scheduler</module>
     <module>java-secretmanager</module>
+    <module>java-securesourcemanager</module>
     <module>java-securitycenter</module>
     <module>java-securitycenter-settings</module>
     <module>java-security-private-ca</module>
@@ -167,6 +166,7 @@
     <module>java-tpu</module>
     <module>java-trace</module>
     <module>java-translate</module>
+    <module>java-vertexai</module>
     <module>java-video-intelligence</module>
     <module>java-video-live-stream</module>
     <module>java-video-stitcher</module>

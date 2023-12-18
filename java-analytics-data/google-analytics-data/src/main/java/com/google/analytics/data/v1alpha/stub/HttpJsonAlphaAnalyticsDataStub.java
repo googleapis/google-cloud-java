@@ -17,15 +17,21 @@
 package com.google.analytics.data.v1alpha.stub;
 
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListAudienceListsPagedResponse;
+import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRecurringAudienceListsPagedResponse;
 
 import com.google.analytics.data.v1alpha.AudienceList;
 import com.google.analytics.data.v1alpha.AudienceListMetadata;
 import com.google.analytics.data.v1alpha.CreateAudienceListRequest;
+import com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.GetAudienceListRequest;
+import com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.ListAudienceListsRequest;
 import com.google.analytics.data.v1alpha.ListAudienceListsResponse;
+import com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest;
+import com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse;
 import com.google.analytics.data.v1alpha.QueryAudienceListRequest;
 import com.google.analytics.data.v1alpha.QueryAudienceListResponse;
+import com.google.analytics.data.v1alpha.RecurringAudienceList;
 import com.google.analytics.data.v1alpha.RunFunnelReportRequest;
 import com.google.analytics.data.v1alpha.RunFunnelReportResponse;
 import com.google.analytics.data.v1alpha.SheetExportAudienceListRequest;
@@ -298,6 +304,123 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          CreateRecurringAudienceListRequest, RecurringAudienceList>
+      createRecurringAudienceListMethodDescriptor =
+          ApiMethodDescriptor
+              .<CreateRecurringAudienceListRequest, RecurringAudienceList>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.data.v1alpha.AlphaAnalyticsData/CreateRecurringAudienceList")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateRecurringAudienceListRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/recurringAudienceLists",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateRecurringAudienceListRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateRecurringAudienceListRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "recurringAudienceList",
+                                      request.getRecurringAudienceList(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RecurringAudienceList>newBuilder()
+                      .setDefaultInstance(RecurringAudienceList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetRecurringAudienceListRequest, RecurringAudienceList>
+      getRecurringAudienceListMethodDescriptor =
+          ApiMethodDescriptor.<GetRecurringAudienceListRequest, RecurringAudienceList>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.data.v1alpha.AlphaAnalyticsData/GetRecurringAudienceList")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetRecurringAudienceListRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/recurringAudienceLists/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRecurringAudienceListRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRecurringAudienceListRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RecurringAudienceList>newBuilder()
+                      .setDefaultInstance(RecurringAudienceList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
+      listRecurringAudienceListsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.data.v1alpha.AlphaAnalyticsData/ListRecurringAudienceLists")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListRecurringAudienceListsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/recurringAudienceLists",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRecurringAudienceListsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRecurringAudienceListsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListRecurringAudienceListsResponse>newBuilder()
+                      .setDefaultInstance(ListRecurringAudienceListsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<RunFunnelReportRequest, RunFunnelReportResponse>
       runFunnelReportCallable;
   private final UnaryCallable<CreateAudienceListRequest, Operation> createAudienceListCallable;
@@ -312,6 +435,15 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
       listAudienceListsCallable;
   private final UnaryCallable<ListAudienceListsRequest, ListAudienceListsPagedResponse>
       listAudienceListsPagedCallable;
+  private final UnaryCallable<CreateRecurringAudienceListRequest, RecurringAudienceList>
+      createRecurringAudienceListCallable;
+  private final UnaryCallable<GetRecurringAudienceListRequest, RecurringAudienceList>
+      getRecurringAudienceListCallable;
+  private final UnaryCallable<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
+      listRecurringAudienceListsCallable;
+  private final UnaryCallable<
+          ListRecurringAudienceListsRequest, ListRecurringAudienceListsPagedResponse>
+      listRecurringAudienceListsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -431,6 +563,45 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CreateRecurringAudienceListRequest, RecurringAudienceList>
+        createRecurringAudienceListTransportSettings =
+            HttpJsonCallSettings
+                .<CreateRecurringAudienceListRequest, RecurringAudienceList>newBuilder()
+                .setMethodDescriptor(createRecurringAudienceListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetRecurringAudienceListRequest, RecurringAudienceList>
+        getRecurringAudienceListTransportSettings =
+            HttpJsonCallSettings
+                .<GetRecurringAudienceListRequest, RecurringAudienceList>newBuilder()
+                .setMethodDescriptor(getRecurringAudienceListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
+        listRecurringAudienceListsTransportSettings =
+            HttpJsonCallSettings
+                .<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>newBuilder()
+                .setMethodDescriptor(listRecurringAudienceListsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.runFunnelReportCallable =
         callableFactory.createUnaryCallable(
@@ -469,6 +640,26 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
             listAudienceListsTransportSettings,
             settings.listAudienceListsSettings(),
             clientContext);
+    this.createRecurringAudienceListCallable =
+        callableFactory.createUnaryCallable(
+            createRecurringAudienceListTransportSettings,
+            settings.createRecurringAudienceListSettings(),
+            clientContext);
+    this.getRecurringAudienceListCallable =
+        callableFactory.createUnaryCallable(
+            getRecurringAudienceListTransportSettings,
+            settings.getRecurringAudienceListSettings(),
+            clientContext);
+    this.listRecurringAudienceListsCallable =
+        callableFactory.createUnaryCallable(
+            listRecurringAudienceListsTransportSettings,
+            settings.listRecurringAudienceListsSettings(),
+            clientContext);
+    this.listRecurringAudienceListsPagedCallable =
+        callableFactory.createPagedCallable(
+            listRecurringAudienceListsTransportSettings,
+            settings.listRecurringAudienceListsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -483,6 +674,9 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
     methodDescriptors.add(sheetExportAudienceListMethodDescriptor);
     methodDescriptors.add(getAudienceListMethodDescriptor);
     methodDescriptors.add(listAudienceListsMethodDescriptor);
+    methodDescriptors.add(createRecurringAudienceListMethodDescriptor);
+    methodDescriptors.add(getRecurringAudienceListMethodDescriptor);
+    methodDescriptors.add(listRecurringAudienceListsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -533,6 +727,30 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   public UnaryCallable<ListAudienceListsRequest, ListAudienceListsPagedResponse>
       listAudienceListsPagedCallable() {
     return listAudienceListsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRecurringAudienceListRequest, RecurringAudienceList>
+      createRecurringAudienceListCallable() {
+    return createRecurringAudienceListCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRecurringAudienceListRequest, RecurringAudienceList>
+      getRecurringAudienceListCallable() {
+    return getRecurringAudienceListCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
+      listRecurringAudienceListsCallable() {
+    return listRecurringAudienceListsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRecurringAudienceListsRequest, ListRecurringAudienceListsPagedResponse>
+      listRecurringAudienceListsPagedCallable() {
+    return listRecurringAudienceListsPagedCallable;
   }
 
   @Override

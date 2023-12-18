@@ -92,94 +92,6 @@ public class EntityTypesClientTest {
   }
 
   @Test
-  public void listEntityTypesTest() throws Exception {
-    EntityType responsesElement = EntityType.newBuilder().build();
-    ListEntityTypesResponse expectedResponse =
-        ListEntityTypesResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllEntityTypes(Arrays.asList(responsesElement))
-            .build();
-    mockEntityTypes.addResponse(expectedResponse);
-
-    AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-
-    ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent);
-
-    List<EntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListEntityTypesRequest actualRequest = ((ListEntityTypesRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void listEntityTypesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockEntityTypes.addException(exception);
-
-    try {
-      AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-      client.listEntityTypes(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listEntityTypesTest2() throws Exception {
-    EntityType responsesElement = EntityType.newBuilder().build();
-    ListEntityTypesResponse expectedResponse =
-        ListEntityTypesResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllEntityTypes(Arrays.asList(responsesElement))
-            .build();
-    mockEntityTypes.addResponse(expectedResponse);
-
-    String parent = "parent-995424086";
-
-    ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent);
-
-    List<EntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListEntityTypesRequest actualRequest = ((ListEntityTypesRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void listEntityTypesExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockEntityTypes.addException(exception);
-
-    try {
-      String parent = "parent-995424086";
-      client.listEntityTypes(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
   public void getEntityTypeTest() throws Exception {
     EntityType expectedResponse =
         EntityType.newBuilder()
@@ -472,6 +384,94 @@ public class EntityTypesClientTest {
     try {
       String name = "name3373707";
       client.deleteEntityType(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEntityTypesTest() throws Exception {
+    EntityType responsesElement = EntityType.newBuilder().build();
+    ListEntityTypesResponse expectedResponse =
+        ListEntityTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntityTypes(Arrays.asList(responsesElement))
+            .build();
+    mockEntityTypes.addResponse(expectedResponse);
+
+    AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+
+    ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent);
+
+    List<EntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEntityTypesRequest actualRequest = ((ListEntityTypesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEntityTypesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEntityTypes.addException(exception);
+
+    try {
+      AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+      client.listEntityTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEntityTypesTest2() throws Exception {
+    EntityType responsesElement = EntityType.newBuilder().build();
+    ListEntityTypesResponse expectedResponse =
+        ListEntityTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntityTypes(Arrays.asList(responsesElement))
+            .build();
+    mockEntityTypes.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent);
+
+    List<EntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEntityTypes.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEntityTypesRequest actualRequest = ((ListEntityTypesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEntityTypesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEntityTypes.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listEntityTypes(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

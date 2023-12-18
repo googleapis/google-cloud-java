@@ -70,4 +70,39 @@ public interface AutopilotOrBuilder
    * <code>.google.container.v1beta1.WorkloadPolicyConfig workload_policy_config = 2;</code>
    */
   com.google.container.v1beta1.WorkloadPolicyConfigOrBuilder getWorkloadPolicyConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * ConversionStatus shows conversion status.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AutopilotConversionStatus conversion_status = 3;</code>
+   *
+   * @return Whether the conversionStatus field is set.
+   */
+  boolean hasConversionStatus();
+  /**
+   *
+   *
+   * <pre>
+   * ConversionStatus shows conversion status.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AutopilotConversionStatus conversion_status = 3;</code>
+   *
+   * @return The conversionStatus.
+   */
+  com.google.container.v1beta1.AutopilotConversionStatus getConversionStatus();
+  /**
+   *
+   *
+   * <pre>
+   * ConversionStatus shows conversion status.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AutopilotConversionStatus conversion_status = 3;</code>
+   */
+  com.google.container.v1beta1.AutopilotConversionStatusOrBuilder getConversionStatusOrBuilder();
 }

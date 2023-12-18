@@ -71,11 +71,11 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Name of the FeatureViewSync. Format:
+   * Identifier. Name of the FeatureViewSync. Format:
    * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}/featureViewSyncs/{feature_view_sync}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -95,11 +95,11 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Name of the FeatureViewSync. Format:
+   * Identifier. Name of the FeatureViewSync. Format:
    * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}/featureViewSyncs/{feature_view_sync}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -704,11 +704,11 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Name of the FeatureViewSync. Format:
+     * Identifier. Name of the FeatureViewSync. Format:
      * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}/featureViewSyncs/{feature_view_sync}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -727,11 +727,11 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Name of the FeatureViewSync. Format:
+     * Identifier. Name of the FeatureViewSync. Format:
      * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}/featureViewSyncs/{feature_view_sync}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -750,11 +750,11 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Name of the FeatureViewSync. Format:
+     * Identifier. Name of the FeatureViewSync. Format:
      * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}/featureViewSyncs/{feature_view_sync}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -772,11 +772,11 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Name of the FeatureViewSync. Format:
+     * Identifier. Name of the FeatureViewSync. Format:
      * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}/featureViewSyncs/{feature_view_sync}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -790,11 +790,11 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Name of the FeatureViewSync. Format:
+     * Identifier. Name of the FeatureViewSync. Format:
      * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}/featureViewSyncs/{feature_view_sync}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

@@ -47,6 +47,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     ports_ = java.util.Collections.emptyList();
     predictRoute_ = "";
     healthRoute_ = "";
+    grpcPorts_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -1206,6 +1207,127 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int GRPC_PORTS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.Port> grpcPorts_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+   * prediction requests that it receives to the first port on this list. Vertex
+   * AI also sends liveness and health checks to this port.
+   *
+   * If you do not specify this field, gRPC requests to the container will be
+   * disabled.
+   *
+   * Vertex AI does not use ports other than the first one listed. This field
+   * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.Port> getGrpcPortsList() {
+    return grpcPorts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+   * prediction requests that it receives to the first port on this list. Vertex
+   * AI also sends liveness and health checks to this port.
+   *
+   * If you do not specify this field, gRPC requests to the container will be
+   * disabled.
+   *
+   * Vertex AI does not use ports other than the first one listed. This field
+   * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.PortOrBuilder>
+      getGrpcPortsOrBuilderList() {
+    return grpcPorts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+   * prediction requests that it receives to the first port on this list. Vertex
+   * AI also sends liveness and health checks to this port.
+   *
+   * If you do not specify this field, gRPC requests to the container will be
+   * disabled.
+   *
+   * Vertex AI does not use ports other than the first one listed. This field
+   * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public int getGrpcPortsCount() {
+    return grpcPorts_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+   * prediction requests that it receives to the first port on this list. Vertex
+   * AI also sends liveness and health checks to this port.
+   *
+   * If you do not specify this field, gRPC requests to the container will be
+   * disabled.
+   *
+   * Vertex AI does not use ports other than the first one listed. This field
+   * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Port getGrpcPorts(int index) {
+    return grpcPorts_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+   * prediction requests that it receives to the first port on this list. Vertex
+   * AI also sends liveness and health checks to this port.
+   *
+   * If you do not specify this field, gRPC requests to the container will be
+   * disabled.
+   *
+   * Vertex AI does not use ports other than the first one listed. This field
+   * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PortOrBuilder getGrpcPortsOrBuilder(int index) {
+    return grpcPorts_.get(index);
+  }
+
   public static final int DEPLOYMENT_TIMEOUT_FIELD_NUMBER = 10;
   private com.google.protobuf.Duration deploymentTimeout_;
   /**
@@ -1431,6 +1553,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(healthRoute_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, healthRoute_);
     }
+    for (int i = 0; i < grpcPorts_.size(); i++) {
+      output.writeMessage(9, grpcPorts_.get(i));
+    }
     if (deploymentTimeout_ != null) {
       output.writeMessage(10, getDeploymentTimeout());
     }
@@ -1483,6 +1608,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(healthRoute_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, healthRoute_);
     }
+    for (int i = 0; i < grpcPorts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, grpcPorts_.get(i));
+    }
     if (deploymentTimeout_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getDeploymentTimeout());
     }
@@ -1518,6 +1646,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     if (!getPortsList().equals(other.getPortsList())) return false;
     if (!getPredictRoute().equals(other.getPredictRoute())) return false;
     if (!getHealthRoute().equals(other.getHealthRoute())) return false;
+    if (!getGrpcPortsList().equals(other.getGrpcPortsList())) return false;
     if (hasDeploymentTimeout() != other.hasDeploymentTimeout()) return false;
     if (hasDeploymentTimeout()) {
       if (!getDeploymentTimeout().equals(other.getDeploymentTimeout())) return false;
@@ -1564,6 +1693,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getPredictRoute().hashCode();
     hash = (37 * hash) + HEALTH_ROUTE_FIELD_NUMBER;
     hash = (53 * hash) + getHealthRoute().hashCode();
+    if (getGrpcPortsCount() > 0) {
+      hash = (37 * hash) + GRPC_PORTS_FIELD_NUMBER;
+      hash = (53 * hash) + getGrpcPortsList().hashCode();
+    }
     if (hasDeploymentTimeout()) {
       hash = (37 * hash) + DEPLOYMENT_TIMEOUT_FIELD_NUMBER;
       hash = (53 * hash) + getDeploymentTimeout().hashCode();
@@ -1739,6 +1872,13 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       bitField0_ = (bitField0_ & ~0x00000010);
       predictRoute_ = "";
       healthRoute_ = "";
+      if (grpcPortsBuilder_ == null) {
+        grpcPorts_ = java.util.Collections.emptyList();
+      } else {
+        grpcPorts_ = null;
+        grpcPortsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000080);
       deploymentTimeout_ = null;
       if (deploymentTimeoutBuilder_ != null) {
         deploymentTimeoutBuilder_.dispose();
@@ -1810,6 +1950,15 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         result.ports_ = portsBuilder_.build();
       }
+      if (grpcPortsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)) {
+          grpcPorts_ = java.util.Collections.unmodifiableList(grpcPorts_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.grpcPorts_ = grpcPorts_;
+      } else {
+        result.grpcPorts_ = grpcPortsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ModelContainerSpec result) {
@@ -1831,20 +1980,20 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.healthRoute_ = healthRoute_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.deploymentTimeout_ =
             deploymentTimeoutBuilder_ == null
                 ? deploymentTimeout_
                 : deploymentTimeoutBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.sharedMemorySizeMb_ = sharedMemorySizeMb_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.startupProbe_ =
             startupProbeBuilder_ == null ? startupProbe_ : startupProbeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.healthProbe_ =
             healthProbeBuilder_ == null ? healthProbe_ : healthProbeBuilder_.build();
       }
@@ -1985,6 +2134,33 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (grpcPortsBuilder_ == null) {
+        if (!other.grpcPorts_.isEmpty()) {
+          if (grpcPorts_.isEmpty()) {
+            grpcPorts_ = other.grpcPorts_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureGrpcPortsIsMutable();
+            grpcPorts_.addAll(other.grpcPorts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.grpcPorts_.isEmpty()) {
+          if (grpcPortsBuilder_.isEmpty()) {
+            grpcPortsBuilder_.dispose();
+            grpcPortsBuilder_ = null;
+            grpcPorts_ = other.grpcPorts_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            grpcPortsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getGrpcPortsFieldBuilder()
+                    : null;
+          } else {
+            grpcPortsBuilder_.addAllMessages(other.grpcPorts_);
+          }
+        }
+      }
       if (other.hasDeploymentTimeout()) {
         mergeDeploymentTimeout(other.getDeploymentTimeout());
       }
@@ -2081,29 +2257,42 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 74:
+              {
+                com.google.cloud.aiplatform.v1beta1.Port m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.Port.parser(), extensionRegistry);
+                if (grpcPortsBuilder_ == null) {
+                  ensureGrpcPortsIsMutable();
+                  grpcPorts_.add(m);
+                } else {
+                  grpcPortsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
             case 82:
               {
                 input.readMessage(
                     getDeploymentTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             case 88:
               {
                 sharedMemorySizeMb_ = input.readInt64();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 88
             case 98:
               {
                 input.readMessage(getStartupProbeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getHealthProbeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 106
             default:
@@ -5487,6 +5676,535 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.Port> grpcPorts_ =
+        java.util.Collections.emptyList();
+
+    private void ensureGrpcPortsIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        grpcPorts_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.Port>(grpcPorts_);
+        bitField0_ |= 0x00000080;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Port,
+            com.google.cloud.aiplatform.v1beta1.Port.Builder,
+            com.google.cloud.aiplatform.v1beta1.PortOrBuilder>
+        grpcPortsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.Port> getGrpcPortsList() {
+      if (grpcPortsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(grpcPorts_);
+      } else {
+        return grpcPortsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public int getGrpcPortsCount() {
+      if (grpcPortsBuilder_ == null) {
+        return grpcPorts_.size();
+      } else {
+        return grpcPortsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Port getGrpcPorts(int index) {
+      if (grpcPortsBuilder_ == null) {
+        return grpcPorts_.get(index);
+      } else {
+        return grpcPortsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setGrpcPorts(int index, com.google.cloud.aiplatform.v1beta1.Port value) {
+      if (grpcPortsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGrpcPortsIsMutable();
+        grpcPorts_.set(index, value);
+        onChanged();
+      } else {
+        grpcPortsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setGrpcPorts(
+        int index, com.google.cloud.aiplatform.v1beta1.Port.Builder builderForValue) {
+      if (grpcPortsBuilder_ == null) {
+        ensureGrpcPortsIsMutable();
+        grpcPorts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        grpcPortsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder addGrpcPorts(com.google.cloud.aiplatform.v1beta1.Port value) {
+      if (grpcPortsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGrpcPortsIsMutable();
+        grpcPorts_.add(value);
+        onChanged();
+      } else {
+        grpcPortsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder addGrpcPorts(int index, com.google.cloud.aiplatform.v1beta1.Port value) {
+      if (grpcPortsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGrpcPortsIsMutable();
+        grpcPorts_.add(index, value);
+        onChanged();
+      } else {
+        grpcPortsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder addGrpcPorts(com.google.cloud.aiplatform.v1beta1.Port.Builder builderForValue) {
+      if (grpcPortsBuilder_ == null) {
+        ensureGrpcPortsIsMutable();
+        grpcPorts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        grpcPortsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder addGrpcPorts(
+        int index, com.google.cloud.aiplatform.v1beta1.Port.Builder builderForValue) {
+      if (grpcPortsBuilder_ == null) {
+        ensureGrpcPortsIsMutable();
+        grpcPorts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        grpcPortsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder addAllGrpcPorts(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.Port> values) {
+      if (grpcPortsBuilder_ == null) {
+        ensureGrpcPortsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, grpcPorts_);
+        onChanged();
+      } else {
+        grpcPortsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearGrpcPorts() {
+      if (grpcPortsBuilder_ == null) {
+        grpcPorts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        grpcPortsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder removeGrpcPorts(int index) {
+      if (grpcPortsBuilder_ == null) {
+        ensureGrpcPortsIsMutable();
+        grpcPorts_.remove(index);
+        onChanged();
+      } else {
+        grpcPortsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Port.Builder getGrpcPortsBuilder(int index) {
+      return getGrpcPortsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PortOrBuilder getGrpcPortsOrBuilder(int index) {
+      if (grpcPortsBuilder_ == null) {
+        return grpcPorts_.get(index);
+      } else {
+        return grpcPortsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.PortOrBuilder>
+        getGrpcPortsOrBuilderList() {
+      if (grpcPortsBuilder_ != null) {
+        return grpcPortsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(grpcPorts_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Port.Builder addGrpcPortsBuilder() {
+      return getGrpcPortsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.Port.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Port.Builder addGrpcPortsBuilder(int index) {
+      return getGrpcPortsFieldBuilder()
+          .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Port.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+     * prediction requests that it receives to the first port on this list. Vertex
+     * AI also sends liveness and health checks to this port.
+     *
+     * If you do not specify this field, gRPC requests to the container will be
+     * disabled.
+     *
+     * Vertex AI does not use ports other than the first one listed. This field
+     * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.Port.Builder>
+        getGrpcPortsBuilderList() {
+      return getGrpcPortsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Port,
+            com.google.cloud.aiplatform.v1beta1.Port.Builder,
+            com.google.cloud.aiplatform.v1beta1.PortOrBuilder>
+        getGrpcPortsFieldBuilder() {
+      if (grpcPortsBuilder_ == null) {
+        grpcPortsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Port,
+                com.google.cloud.aiplatform.v1beta1.Port.Builder,
+                com.google.cloud.aiplatform.v1beta1.PortOrBuilder>(
+                grpcPorts_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
+        grpcPorts_ = null;
+      }
+      return grpcPortsBuilder_;
+    }
+
     private com.google.protobuf.Duration deploymentTimeout_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -5508,7 +6226,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * @return Whether the deploymentTimeout field is set.
      */
     public boolean hasDeploymentTimeout() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -5554,7 +6272,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         deploymentTimeoutBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5576,7 +6294,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         deploymentTimeoutBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5594,7 +6312,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeDeploymentTimeout(com.google.protobuf.Duration value) {
       if (deploymentTimeoutBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && deploymentTimeout_ != null
             && deploymentTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getDeploymentTimeoutBuilder().mergeFrom(value);
@@ -5604,7 +6322,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         deploymentTimeoutBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5621,7 +6339,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearDeploymentTimeout() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       deploymentTimeout_ = null;
       if (deploymentTimeoutBuilder_ != null) {
         deploymentTimeoutBuilder_.dispose();
@@ -5643,7 +6361,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Duration.Builder getDeploymentTimeoutBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getDeploymentTimeoutFieldBuilder().getBuilder();
     }
@@ -5730,7 +6448,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     public Builder setSharedMemorySizeMb(long value) {
 
       sharedMemorySizeMb_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5747,7 +6465,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSharedMemorySizeMb() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       sharedMemorySizeMb_ = 0L;
       onChanged();
       return this;
@@ -5773,7 +6491,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * @return Whether the startupProbe field is set.
      */
     public boolean hasStartupProbe() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -5817,7 +6535,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         startupProbeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5839,7 +6557,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         startupProbeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5856,7 +6574,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeStartupProbe(com.google.cloud.aiplatform.v1beta1.Probe value) {
       if (startupProbeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && startupProbe_ != null
             && startupProbe_ != com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()) {
           getStartupProbeBuilder().mergeFrom(value);
@@ -5866,7 +6584,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         startupProbeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5882,7 +6600,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearStartupProbe() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       startupProbe_ = null;
       if (startupProbeBuilder_ != null) {
         startupProbeBuilder_.dispose();
@@ -5903,7 +6621,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Probe.Builder getStartupProbeBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getStartupProbeFieldBuilder().getBuilder();
     }
@@ -5975,7 +6693,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * @return Whether the healthProbe field is set.
      */
     public boolean hasHealthProbe() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -6019,7 +6737,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         healthProbeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6041,7 +6759,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         healthProbeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6058,7 +6776,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeHealthProbe(com.google.cloud.aiplatform.v1beta1.Probe value) {
       if (healthProbeBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && healthProbe_ != null
             && healthProbe_ != com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()) {
           getHealthProbeBuilder().mergeFrom(value);
@@ -6068,7 +6786,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         healthProbeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6084,7 +6802,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearHealthProbe() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       healthProbe_ = null;
       if (healthProbeBuilder_ != null) {
         healthProbeBuilder_.dispose();
@@ -6105,7 +6823,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Probe.Builder getHealthProbeBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getHealthProbeFieldBuilder().getBuilder();
     }

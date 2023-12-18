@@ -91,8 +91,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Reasons for the annotation that are assigned to the event.
    * </pre>
    *
    * <code>
@@ -107,8 +106,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Reasons for the annotation that are assigned to the event.
    * </pre>
    *
    * <code>
@@ -122,8 +120,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Reasons for the annotation that are assigned to the event.
    * </pre>
    *
    * <code>
@@ -138,8 +135,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Reasons for the annotation that are assigned to the event.
    * </pre>
    *
    * <code>
@@ -153,8 +149,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Reasons for the annotation that are assigned to the event.
    * </pre>
    *
    * <code>
@@ -170,11 +165,39 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Unique stable hashed user identifier to apply to the assessment.
-   * This is an alternative to setting the hashed_account_id in
-   * CreateAssessment, for example when the account identifier is not yet known
-   * in the initial request. It is recommended that the identifier is hashed
-   * using hmac-sha256 with stable secret.
+   * Optional. A stable account identifier to apply to the assessment. This is
+   * an alternative to setting `account_id` in `CreateAssessment`, for example
+   * when a stable account identifier is not yet known in the initial request.
+   * </pre>
+   *
+   * <code>string account_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The accountId.
+   */
+  java.lang.String getAccountId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A stable account identifier to apply to the assessment. This is
+   * an alternative to setting `account_id` in `CreateAssessment`, for example
+   * when a stable account identifier is not yet known in the initial request.
+   * </pre>
+   *
+   * <code>string account_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for accountId.
+   */
+  com.google.protobuf.ByteString getAccountIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A stable hashed account identifier to apply to the assessment.
+   * This is an alternative to setting `hashed_account_id` in
+   * `CreateAssessment`, for example when a stable account identifier is not yet
+   * known in the initial request.
    * </pre>
    *
    * <code>bytes hashed_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -17,6 +17,7 @@
 package com.google.cloud.aiplatform.v1beta1.samples;
 
 // [START aiplatform_v1beta1_generated_PredictionService_CountTokens_sync]
+import com.google.cloud.aiplatform.v1beta1.Content;
 import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
 import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
 import com.google.cloud.aiplatform.v1beta1.EndpointName;
@@ -43,7 +44,9 @@ public class SyncCountTokens {
                   EndpointName.ofProjectLocationEndpointName(
                           "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
+              .setModel("model104069929")
               .addAllInstances(new ArrayList<Value>())
+              .addAllContents(new ArrayList<Content>())
               .build();
       CountTokensResponse response = predictionServiceClient.countTokens(request);
     }

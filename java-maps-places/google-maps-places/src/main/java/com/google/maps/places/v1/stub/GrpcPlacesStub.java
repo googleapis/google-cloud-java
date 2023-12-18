@@ -21,8 +21,15 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.maps.places.v1.GetPhotoMediaRequest;
+import com.google.maps.places.v1.GetPlaceRequest;
+import com.google.maps.places.v1.PhotoMedia;
+import com.google.maps.places.v1.Place;
+import com.google.maps.places.v1.SearchNearbyRequest;
+import com.google.maps.places.v1.SearchNearbyResponse;
 import com.google.maps.places.v1.SearchTextRequest;
 import com.google.maps.places.v1.SearchTextResponse;
 import io.grpc.MethodDescriptor;
@@ -39,6 +46,16 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class GrpcPlacesStub extends PlacesStub {
+  private static final MethodDescriptor<SearchNearbyRequest, SearchNearbyResponse>
+      searchNearbyMethodDescriptor =
+          MethodDescriptor.<SearchNearbyRequest, SearchNearbyResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.maps.places.v1.Places/SearchNearby")
+              .setRequestMarshaller(ProtoUtils.marshaller(SearchNearbyRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchNearbyResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<SearchTextRequest, SearchTextResponse>
       searchTextMethodDescriptor =
           MethodDescriptor.<SearchTextRequest, SearchTextResponse>newBuilder()
@@ -48,7 +65,28 @@ public class GrpcPlacesStub extends PlacesStub {
               .setResponseMarshaller(ProtoUtils.marshaller(SearchTextResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetPhotoMediaRequest, PhotoMedia>
+      getPhotoMediaMethodDescriptor =
+          MethodDescriptor.<GetPhotoMediaRequest, PhotoMedia>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.maps.places.v1.Places/GetPhotoMedia")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetPhotoMediaRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(PhotoMedia.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetPlaceRequest, Place> getPlaceMethodDescriptor =
+      MethodDescriptor.<GetPlaceRequest, Place>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.maps.places.v1.Places/GetPlace")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetPlaceRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Place.getDefaultInstance()))
+          .build();
+
+  private final UnaryCallable<SearchNearbyRequest, SearchNearbyResponse> searchNearbyCallable;
   private final UnaryCallable<SearchTextRequest, SearchTextResponse> searchTextCallable;
+  private final UnaryCallable<GetPhotoMediaRequest, PhotoMedia> getPhotoMediaCallable;
+  private final UnaryCallable<GetPlaceRequest, Place> getPlaceCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -89,14 +127,47 @@ public class GrpcPlacesStub extends PlacesStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<SearchNearbyRequest, SearchNearbyResponse> searchNearbyTransportSettings =
+        GrpcCallSettings.<SearchNearbyRequest, SearchNearbyResponse>newBuilder()
+            .setMethodDescriptor(searchNearbyMethodDescriptor)
+            .build();
     GrpcCallSettings<SearchTextRequest, SearchTextResponse> searchTextTransportSettings =
         GrpcCallSettings.<SearchTextRequest, SearchTextResponse>newBuilder()
             .setMethodDescriptor(searchTextMethodDescriptor)
             .build();
+    GrpcCallSettings<GetPhotoMediaRequest, PhotoMedia> getPhotoMediaTransportSettings =
+        GrpcCallSettings.<GetPhotoMediaRequest, PhotoMedia>newBuilder()
+            .setMethodDescriptor(getPhotoMediaMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetPlaceRequest, Place> getPlaceTransportSettings =
+        GrpcCallSettings.<GetPlaceRequest, Place>newBuilder()
+            .setMethodDescriptor(getPlaceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
+    this.searchNearbyCallable =
+        callableFactory.createUnaryCallable(
+            searchNearbyTransportSettings, settings.searchNearbySettings(), clientContext);
     this.searchTextCallable =
         callableFactory.createUnaryCallable(
             searchTextTransportSettings, settings.searchTextSettings(), clientContext);
+    this.getPhotoMediaCallable =
+        callableFactory.createUnaryCallable(
+            getPhotoMediaTransportSettings, settings.getPhotoMediaSettings(), clientContext);
+    this.getPlaceCallable =
+        callableFactory.createUnaryCallable(
+            getPlaceTransportSettings, settings.getPlaceSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -107,8 +178,23 @@ public class GrpcPlacesStub extends PlacesStub {
   }
 
   @Override
+  public UnaryCallable<SearchNearbyRequest, SearchNearbyResponse> searchNearbyCallable() {
+    return searchNearbyCallable;
+  }
+
+  @Override
   public UnaryCallable<SearchTextRequest, SearchTextResponse> searchTextCallable() {
     return searchTextCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPhotoMediaRequest, PhotoMedia> getPhotoMediaCallable() {
+    return getPhotoMediaCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPlaceRequest, Place> getPlaceCallable() {
+    return getPlaceCallable;
   }
 
   @Override

@@ -91,6 +91,35 @@ message Model {
         [(google.api.field_behavior) = OUTPUT_ONLY];
   }
 
+  // Stats of data used for train or evaluate the Model.
+  message DataStats {
+    // Number of DataItems that were used for training this Model.
+    int64 training_data_items_count = 1;
+
+    // Number of DataItems that were used for validating this Model during
+    // training.
+    int64 validation_data_items_count = 2;
+
+    // Number of DataItems that were used for evaluating this Model. If the
+    // Model is evaluated multiple times, this will be the number of test
+    // DataItems used by the first evaluation. If the Model is not evaluated,
+    // the number is 0.
+    int64 test_data_items_count = 3;
+
+    // Number of Annotations that are used for training this Model.
+    int64 training_annotations_count = 4;
+
+    // Number of Annotations that are used for validating this Model during
+    // training.
+    int64 validation_annotations_count = 5;
+
+    // Number of Annotations that are used for evaluating this Model. If the
+    // Model is evaluated multiple times, this will be the number of test
+    // Annotations used by the first evaluation. If the Model is not evaluated,
+    // the number is 0.
+    int64 test_annotations_count = 6;
+  }
+
   // Contains information about the original Model if this Model is a copy.
   message OriginalModelInfo {
     // Output only. The resource name of the Model this Model is a copy of,
@@ -120,7 +149,9 @@ message Model {
 
     // Resources that can be shared by multiple
     // [DeployedModels][google.cloud.aiplatform.v1.DeployedModel]. A
-    // pre-configured [DeploymentResourcePool][] is required.
+    // pre-configured
+    // [DeploymentResourcePool][google.cloud.aiplatform.v1.DeploymentResourcePool]
+    // is required.
     SHARED_RESOURCES = 3;
   }
 
@@ -394,6 +425,12 @@ message Model {
   //
   // See https://goo.gl/xmQnxf for more information and examples of labels.
   map<string, string> labels = 17;
+
+  // Stats of data used for training or evaluating the Model.
+  //
+  // Only populated when the Model is trained by a TrainingPipeline with
+  // [data_input_config][TrainingPipeline.data_input_config].
+  DataStats data_stats = 21;
 
   // Customer-managed encryption key spec for a Model. If set, this
   // Model and all sub-resources of this Model will be secured by this key.
@@ -692,6 +729,17 @@ message ModelContainerSpec {
   //   variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
   string health_route = 7 [(google.api.field_behavior) = IMMUTABLE];
 
+  // Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+  // prediction requests that it receives to the first port on this list. Vertex
+  // AI also sends liveness and health checks to this port.
+  //
+  // If you do not specify this field, gRPC requests to the container will be
+  // disabled.
+  //
+  // Vertex AI does not use ports other than the first one listed. This field
+  // corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+  repeated Port grpc_ports = 9 [(google.api.field_behavior) = IMMUTABLE];
+
   // Immutable. Deployment timeout.
   // Limit for deployment timeout is 2 hours.
   google.protobuf.Duration deployment_timeout = 10
@@ -736,6 +784,9 @@ message ModelSourceInfo {
 
     // The Model is saved or tuned from Genie.
     GENIE = 5;
+
+    // The Model is uploaded by text embedding finetuning pipeline.
+    CUSTOM_TEXT_EMBEDDING = 6;
   }
 
   // Type of the model source.

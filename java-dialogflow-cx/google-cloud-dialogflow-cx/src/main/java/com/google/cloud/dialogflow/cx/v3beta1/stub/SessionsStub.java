@@ -22,6 +22,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback;
 import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest;
@@ -30,6 +31,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.SubmitAnswerFeedbackRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -61,6 +63,10 @@ public abstract class SessionsStub implements BackgroundResource {
 
   public UnaryCallable<FulfillIntentRequest, FulfillIntentResponse> fulfillIntentCallable() {
     throw new UnsupportedOperationException("Not implemented: fulfillIntentCallable()");
+  }
+
+  public UnaryCallable<SubmitAnswerFeedbackRequest, AnswerFeedback> submitAnswerFeedbackCallable() {
+    throw new UnsupportedOperationException("Not implemented: submitAnswerFeedbackCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -38,8 +38,16 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRICE_LEVEL_UNSPECIFIED = 0;</code>
    */
   PRICE_LEVEL_UNSPECIFIED(0),
-  /** <code>FREE = 1;</code> */
-  FREE(1),
+  /**
+   *
+   *
+   * <pre>
+   * Place provides free services.
+   * </pre>
+   *
+   * <code>PRICE_LEVEL_FREE = 1;</code>
+   */
+  PRICE_LEVEL_FREE(1),
   /**
    *
    *
@@ -47,9 +55,9 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * Place provides inexpensive services.
    * </pre>
    *
-   * <code>INEXPENSIVE = 2;</code>
+   * <code>PRICE_LEVEL_INEXPENSIVE = 2;</code>
    */
-  INEXPENSIVE(2),
+  PRICE_LEVEL_INEXPENSIVE(2),
   /**
    *
    *
@@ -57,9 +65,9 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * Place provides moderately priced services.
    * </pre>
    *
-   * <code>MODERATE = 3;</code>
+   * <code>PRICE_LEVEL_MODERATE = 3;</code>
    */
-  MODERATE(3),
+  PRICE_LEVEL_MODERATE(3),
   /**
    *
    *
@@ -67,19 +75,19 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * Place provides expensive services.
    * </pre>
    *
-   * <code>EXPENSIVE = 4;</code>
+   * <code>PRICE_LEVEL_EXPENSIVE = 4;</code>
    */
-  EXPENSIVE(4),
+  PRICE_LEVEL_EXPENSIVE(4),
   /**
    *
    *
    * <pre>
-   * Place provides very expensive services.
+   * Place provides very expensive service s.
    * </pre>
    *
-   * <code>VERY_EXPENSIVE = 5;</code>
+   * <code>PRICE_LEVEL_VERY_EXPENSIVE = 5;</code>
    */
-  VERY_EXPENSIVE(5),
+  PRICE_LEVEL_VERY_EXPENSIVE(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -93,8 +101,16 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRICE_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int PRICE_LEVEL_UNSPECIFIED_VALUE = 0;
-  /** <code>FREE = 1;</code> */
-  public static final int FREE_VALUE = 1;
+  /**
+   *
+   *
+   * <pre>
+   * Place provides free services.
+   * </pre>
+   *
+   * <code>PRICE_LEVEL_FREE = 1;</code>
+   */
+  public static final int PRICE_LEVEL_FREE_VALUE = 1;
   /**
    *
    *
@@ -102,9 +118,9 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * Place provides inexpensive services.
    * </pre>
    *
-   * <code>INEXPENSIVE = 2;</code>
+   * <code>PRICE_LEVEL_INEXPENSIVE = 2;</code>
    */
-  public static final int INEXPENSIVE_VALUE = 2;
+  public static final int PRICE_LEVEL_INEXPENSIVE_VALUE = 2;
   /**
    *
    *
@@ -112,9 +128,9 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * Place provides moderately priced services.
    * </pre>
    *
-   * <code>MODERATE = 3;</code>
+   * <code>PRICE_LEVEL_MODERATE = 3;</code>
    */
-  public static final int MODERATE_VALUE = 3;
+  public static final int PRICE_LEVEL_MODERATE_VALUE = 3;
   /**
    *
    *
@@ -122,19 +138,19 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * Place provides expensive services.
    * </pre>
    *
-   * <code>EXPENSIVE = 4;</code>
+   * <code>PRICE_LEVEL_EXPENSIVE = 4;</code>
    */
-  public static final int EXPENSIVE_VALUE = 4;
+  public static final int PRICE_LEVEL_EXPENSIVE_VALUE = 4;
   /**
    *
    *
    * <pre>
-   * Place provides very expensive services.
+   * Place provides very expensive service s.
    * </pre>
    *
-   * <code>VERY_EXPENSIVE = 5;</code>
+   * <code>PRICE_LEVEL_VERY_EXPENSIVE = 5;</code>
    */
-  public static final int VERY_EXPENSIVE_VALUE = 5;
+  public static final int PRICE_LEVEL_VERY_EXPENSIVE_VALUE = 5;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -163,15 +179,15 @@ public enum PriceLevel implements com.google.protobuf.ProtocolMessageEnum {
       case 0:
         return PRICE_LEVEL_UNSPECIFIED;
       case 1:
-        return FREE;
+        return PRICE_LEVEL_FREE;
       case 2:
-        return INEXPENSIVE;
+        return PRICE_LEVEL_INEXPENSIVE;
       case 3:
-        return MODERATE;
+        return PRICE_LEVEL_MODERATE;
       case 4:
-        return EXPENSIVE;
+        return PRICE_LEVEL_EXPENSIVE;
       case 5:
-        return VERY_EXPENSIVE;
+        return PRICE_LEVEL_VERY_EXPENSIVE;
       default:
         return null;
     }

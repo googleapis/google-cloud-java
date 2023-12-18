@@ -53,17 +53,6 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class GrpcEntityTypesStub extends EntityTypesStub {
-  private static final MethodDescriptor<ListEntityTypesRequest, ListEntityTypesResponse>
-      listEntityTypesMethodDescriptor =
-          MethodDescriptor.<ListEntityTypesRequest, ListEntityTypesResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.dialogflow.cx.v3.EntityTypes/ListEntityTypes")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListEntityTypesRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListEntityTypesResponse.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<GetEntityTypeRequest, EntityType>
       getEntityTypeMethodDescriptor =
           MethodDescriptor.<GetEntityTypeRequest, EntityType>newBuilder()
@@ -104,6 +93,17 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListEntityTypesRequest, ListEntityTypesResponse>
+      listEntityTypesMethodDescriptor =
+          MethodDescriptor.<ListEntityTypesRequest, ListEntityTypesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3.EntityTypes/ListEntityTypes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListEntityTypesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListEntityTypesResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -123,14 +123,14 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
           .build();
 
-  private final UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse>
-      listEntityTypesCallable;
-  private final UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
-      listEntityTypesPagedCallable;
   private final UnaryCallable<GetEntityTypeRequest, EntityType> getEntityTypeCallable;
   private final UnaryCallable<CreateEntityTypeRequest, EntityType> createEntityTypeCallable;
   private final UnaryCallable<UpdateEntityTypeRequest, EntityType> updateEntityTypeCallable;
   private final UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable;
+  private final UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse>
+      listEntityTypesCallable;
+  private final UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
+      listEntityTypesPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -178,17 +178,6 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<ListEntityTypesRequest, ListEntityTypesResponse>
-        listEntityTypesTransportSettings =
-            GrpcCallSettings.<ListEntityTypesRequest, ListEntityTypesResponse>newBuilder()
-                .setMethodDescriptor(listEntityTypesMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
     GrpcCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeTransportSettings =
         GrpcCallSettings.<GetEntityTypeRequest, EntityType>newBuilder()
             .setMethodDescriptor(getEntityTypeMethodDescriptor)
@@ -230,6 +219,17 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListEntityTypesRequest, ListEntityTypesResponse>
+        listEntityTypesTransportSettings =
+            GrpcCallSettings.<ListEntityTypesRequest, ListEntityTypesResponse>newBuilder()
+                .setMethodDescriptor(listEntityTypesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -251,12 +251,6 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                 })
             .build();
 
-    this.listEntityTypesCallable =
-        callableFactory.createUnaryCallable(
-            listEntityTypesTransportSettings, settings.listEntityTypesSettings(), clientContext);
-    this.listEntityTypesPagedCallable =
-        callableFactory.createPagedCallable(
-            listEntityTypesTransportSettings, settings.listEntityTypesSettings(), clientContext);
     this.getEntityTypeCallable =
         callableFactory.createUnaryCallable(
             getEntityTypeTransportSettings, settings.getEntityTypeSettings(), clientContext);
@@ -269,6 +263,12 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
     this.deleteEntityTypeCallable =
         callableFactory.createUnaryCallable(
             deleteEntityTypeTransportSettings, settings.deleteEntityTypeSettings(), clientContext);
+    this.listEntityTypesCallable =
+        callableFactory.createUnaryCallable(
+            listEntityTypesTransportSettings, settings.listEntityTypesSettings(), clientContext);
+    this.listEntityTypesPagedCallable =
+        callableFactory.createPagedCallable(
+            listEntityTypesTransportSettings, settings.listEntityTypesSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -285,17 +285,6 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
 
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  @Override
-  public UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse> listEntityTypesCallable() {
-    return listEntityTypesCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
-      listEntityTypesPagedCallable() {
-    return listEntityTypesPagedCallable;
   }
 
   @Override
@@ -316,6 +305,17 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
   @Override
   public UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable() {
     return deleteEntityTypeCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse> listEntityTypesCallable() {
+    return listEntityTypesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
+      listEntityTypesPagedCallable() {
+    return listEntityTypesPagedCallable;
   }
 
   @Override

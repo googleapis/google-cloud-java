@@ -13,11 +13,20 @@
             "CreateAudienceList": {
               "methods": ["createAudienceListAsync", "createAudienceListAsync", "createAudienceListAsync", "createAudienceListOperationCallable", "createAudienceListCallable"]
             },
+            "CreateRecurringAudienceList": {
+              "methods": ["createRecurringAudienceList", "createRecurringAudienceList", "createRecurringAudienceList", "createRecurringAudienceListCallable"]
+            },
             "GetAudienceList": {
               "methods": ["getAudienceList", "getAudienceList", "getAudienceList", "getAudienceListCallable"]
             },
+            "GetRecurringAudienceList": {
+              "methods": ["getRecurringAudienceList", "getRecurringAudienceList", "getRecurringAudienceList", "getRecurringAudienceListCallable"]
+            },
             "ListAudienceLists": {
               "methods": ["listAudienceLists", "listAudienceLists", "listAudienceLists", "listAudienceListsPagedCallable", "listAudienceListsCallable"]
+            },
+            "ListRecurringAudienceLists": {
+              "methods": ["listRecurringAudienceLists", "listRecurringAudienceLists", "listRecurringAudienceLists", "listRecurringAudienceListsPagedCallable", "listRecurringAudienceListsCallable"]
             },
             "QueryAudienceList": {
               "methods": ["queryAudienceList", "queryAudienceList", "queryAudienceListCallable"]

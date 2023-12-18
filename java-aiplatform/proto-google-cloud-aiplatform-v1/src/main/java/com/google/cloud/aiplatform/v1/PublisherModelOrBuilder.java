@@ -238,6 +238,35 @@ public interface PublisherModelOrBuilder
    *
    *
    * <pre>
+   * Optional. Indicates the state of the model version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PublisherModel.VersionState version_state = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for versionState.
+   */
+  int getVersionStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates the state of the model version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PublisherModel.VersionState version_state = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The versionState.
+   */
+  com.google.cloud.aiplatform.v1.PublisherModel.VersionState getVersionState();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Output only. Immutable. Used to indicate this model has a
    * publisher model and provide the template of the publisher model resource
    * name.

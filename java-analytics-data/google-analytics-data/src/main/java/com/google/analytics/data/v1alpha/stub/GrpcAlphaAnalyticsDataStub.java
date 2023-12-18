@@ -17,15 +17,21 @@
 package com.google.analytics.data.v1alpha.stub;
 
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListAudienceListsPagedResponse;
+import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRecurringAudienceListsPagedResponse;
 
 import com.google.analytics.data.v1alpha.AudienceList;
 import com.google.analytics.data.v1alpha.AudienceListMetadata;
 import com.google.analytics.data.v1alpha.CreateAudienceListRequest;
+import com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.GetAudienceListRequest;
+import com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.ListAudienceListsRequest;
 import com.google.analytics.data.v1alpha.ListAudienceListsResponse;
+import com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest;
+import com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse;
 import com.google.analytics.data.v1alpha.QueryAudienceListRequest;
 import com.google.analytics.data.v1alpha.QueryAudienceListResponse;
+import com.google.analytics.data.v1alpha.RecurringAudienceList;
 import com.google.analytics.data.v1alpha.RunFunnelReportRequest;
 import com.google.analytics.data.v1alpha.RunFunnelReportResponse;
 import com.google.analytics.data.v1alpha.SheetExportAudienceListRequest;
@@ -126,6 +132,44 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   ProtoUtils.marshaller(ListAudienceListsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateRecurringAudienceListRequest, RecurringAudienceList>
+      createRecurringAudienceListMethodDescriptor =
+          MethodDescriptor.<CreateRecurringAudienceListRequest, RecurringAudienceList>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.data.v1alpha.AlphaAnalyticsData/CreateRecurringAudienceList")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateRecurringAudienceListRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RecurringAudienceList.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetRecurringAudienceListRequest, RecurringAudienceList>
+      getRecurringAudienceListMethodDescriptor =
+          MethodDescriptor.<GetRecurringAudienceListRequest, RecurringAudienceList>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.data.v1alpha.AlphaAnalyticsData/GetRecurringAudienceList")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetRecurringAudienceListRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RecurringAudienceList.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
+      listRecurringAudienceListsMethodDescriptor =
+          MethodDescriptor
+              .<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.data.v1alpha.AlphaAnalyticsData/ListRecurringAudienceLists")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListRecurringAudienceListsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListRecurringAudienceListsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<RunFunnelReportRequest, RunFunnelReportResponse>
       runFunnelReportCallable;
   private final UnaryCallable<CreateAudienceListRequest, Operation> createAudienceListCallable;
@@ -140,6 +184,15 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
       listAudienceListsCallable;
   private final UnaryCallable<ListAudienceListsRequest, ListAudienceListsPagedResponse>
       listAudienceListsPagedCallable;
+  private final UnaryCallable<CreateRecurringAudienceListRequest, RecurringAudienceList>
+      createRecurringAudienceListCallable;
+  private final UnaryCallable<GetRecurringAudienceListRequest, RecurringAudienceList>
+      getRecurringAudienceListCallable;
+  private final UnaryCallable<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
+      listRecurringAudienceListsCallable;
+  private final UnaryCallable<
+          ListRecurringAudienceListsRequest, ListRecurringAudienceListsPagedResponse>
+      listRecurringAudienceListsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -250,6 +303,40 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<CreateRecurringAudienceListRequest, RecurringAudienceList>
+        createRecurringAudienceListTransportSettings =
+            GrpcCallSettings.<CreateRecurringAudienceListRequest, RecurringAudienceList>newBuilder()
+                .setMethodDescriptor(createRecurringAudienceListMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetRecurringAudienceListRequest, RecurringAudienceList>
+        getRecurringAudienceListTransportSettings =
+            GrpcCallSettings.<GetRecurringAudienceListRequest, RecurringAudienceList>newBuilder()
+                .setMethodDescriptor(getRecurringAudienceListMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
+        listRecurringAudienceListsTransportSettings =
+            GrpcCallSettings
+                .<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>newBuilder()
+                .setMethodDescriptor(listRecurringAudienceListsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.runFunnelReportCallable =
         callableFactory.createUnaryCallable(
@@ -287,6 +374,26 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
         callableFactory.createPagedCallable(
             listAudienceListsTransportSettings,
             settings.listAudienceListsSettings(),
+            clientContext);
+    this.createRecurringAudienceListCallable =
+        callableFactory.createUnaryCallable(
+            createRecurringAudienceListTransportSettings,
+            settings.createRecurringAudienceListSettings(),
+            clientContext);
+    this.getRecurringAudienceListCallable =
+        callableFactory.createUnaryCallable(
+            getRecurringAudienceListTransportSettings,
+            settings.getRecurringAudienceListSettings(),
+            clientContext);
+    this.listRecurringAudienceListsCallable =
+        callableFactory.createUnaryCallable(
+            listRecurringAudienceListsTransportSettings,
+            settings.listRecurringAudienceListsSettings(),
+            clientContext);
+    this.listRecurringAudienceListsPagedCallable =
+        callableFactory.createPagedCallable(
+            listRecurringAudienceListsTransportSettings,
+            settings.listRecurringAudienceListsSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -340,6 +447,30 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   public UnaryCallable<ListAudienceListsRequest, ListAudienceListsPagedResponse>
       listAudienceListsPagedCallable() {
     return listAudienceListsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRecurringAudienceListRequest, RecurringAudienceList>
+      createRecurringAudienceListCallable() {
+    return createRecurringAudienceListCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRecurringAudienceListRequest, RecurringAudienceList>
+      getRecurringAudienceListCallable() {
+    return getRecurringAudienceListCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
+      listRecurringAudienceListsCallable() {
+    return listRecurringAudienceListsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRecurringAudienceListsRequest, ListRecurringAudienceListsPagedResponse>
+      listRecurringAudienceListsPagedCallable() {
+    return listRecurringAudienceListsPagedCallable;
   }
 
   @Override

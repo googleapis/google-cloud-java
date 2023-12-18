@@ -663,4 +663,131 @@ public interface QueryParametersOrBuilder
    * </code>
    */
   com.google.protobuf.DurationOrBuilder getSessionTtlOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the end-user to improve the relevance and
+   * accuracy of generative answers.
+   *
+   * This will be interpreted and used by a language model, so, for good
+   * results, the data should be self-descriptive, and in a simple structure.
+   *
+   * Example:
+   *
+   * ```json
+   * {
+   *   "subscription plan": "Business Premium Plus",
+   *   "devices owned": [
+   *     {"model": "Google Pixel 7"},
+   *     {"model": "Google Pixel Tablet"}
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct end_user_metadata = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the endUserMetadata field is set.
+   */
+  boolean hasEndUserMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the end-user to improve the relevance and
+   * accuracy of generative answers.
+   *
+   * This will be interpreted and used by a language model, so, for good
+   * results, the data should be self-descriptive, and in a simple structure.
+   *
+   * Example:
+   *
+   * ```json
+   * {
+   *   "subscription plan": "Business Premium Plus",
+   *   "devices owned": [
+   *     {"model": "Google Pixel 7"},
+   *     {"model": "Google Pixel Tablet"}
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct end_user_metadata = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The endUserMetadata.
+   */
+  com.google.protobuf.Struct getEndUserMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the end-user to improve the relevance and
+   * accuracy of generative answers.
+   *
+   * This will be interpreted and used by a language model, so, for good
+   * results, the data should be self-descriptive, and in a simple structure.
+   *
+   * Example:
+   *
+   * ```json
+   * {
+   *   "subscription plan": "Business Premium Plus",
+   *   "devices owned": [
+   *     {"model": "Google Pixel 7"},
+   *     {"model": "Google Pixel Tablet"}
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct end_user_metadata = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.StructOrBuilder getEndUserMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Search configuration for UCS search queries.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.SearchConfig search_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the searchConfig field is set.
+   */
+  boolean hasSearchConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Search configuration for UCS search queries.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.SearchConfig search_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The searchConfig.
+   */
+  com.google.cloud.dialogflow.cx.v3.SearchConfig getSearchConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Search configuration for UCS search queries.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.SearchConfig search_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.SearchConfigOrBuilder getSearchConfigOrBuilder();
 }

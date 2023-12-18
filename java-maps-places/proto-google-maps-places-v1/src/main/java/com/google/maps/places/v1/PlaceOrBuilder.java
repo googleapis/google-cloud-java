@@ -27,10 +27,37 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Required. The unique identifier of a place.
+   * Output only. An ID representing this place which may be used to look up
+   * this place again (a.k.a. the API "resource" name: places/&lt;place_id&gt;).
    * </pre>
    *
-   * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An ID representing this place which may be used to look up
+   * this place again (a.k.a. the API "resource" name: places/&lt;place_id&gt;).
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The unique identifier of a place.
+   * </pre>
+   *
+   * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The id.
    */
@@ -39,10 +66,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Required. The unique identifier of a place.
+   * Output only. The unique identifier of a place.
    * </pre>
    *
-   * <code>string id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for id.
    */
@@ -52,11 +79,14 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The localized name of the place, suitable as a short human-readable
-   * description. For example, "Google Sydney", "Starbucks", "Pyrmont", etc.
+   * Output only. The localized name of the place, suitable as a short
+   * human-readable description. For example, "Google Sydney", "Starbucks",
+   * "Pyrmont", etc.
    * </pre>
    *
-   * <code>.google.type.LocalizedText display_name = 31;</code>
+   * <code>
+   * .google.type.LocalizedText display_name = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the displayName field is set.
    */
@@ -65,11 +95,14 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The localized name of the place, suitable as a short human-readable
-   * description. For example, "Google Sydney", "Starbucks", "Pyrmont", etc.
+   * Output only. The localized name of the place, suitable as a short
+   * human-readable description. For example, "Google Sydney", "Starbucks",
+   * "Pyrmont", etc.
    * </pre>
    *
-   * <code>.google.type.LocalizedText display_name = 31;</code>
+   * <code>
+   * .google.type.LocalizedText display_name = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The displayName.
    */
@@ -78,11 +111,14 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The localized name of the place, suitable as a short human-readable
-   * description. For example, "Google Sydney", "Starbucks", "Pyrmont", etc.
+   * Output only. The localized name of the place, suitable as a short
+   * human-readable description. For example, "Google Sydney", "Starbucks",
+   * "Pyrmont", etc.
    * </pre>
    *
-   * <code>.google.type.LocalizedText display_name = 31;</code>
+   * <code>
+   * .google.type.LocalizedText display_name = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.type.LocalizedTextOrBuilder getDisplayNameOrBuilder();
 
@@ -90,11 +126,11 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A set of type tags for this result. For example, "political" and
-   * "locality".
+   * Output only. A set of type tags for this result. For example, "political"
+   * and "locality".
    * </pre>
    *
-   * <code>repeated string types = 5;</code>
+   * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return A list containing the types.
    */
@@ -103,11 +139,11 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A set of type tags for this result. For example, "political" and
-   * "locality".
+   * Output only. A set of type tags for this result. For example, "political"
+   * and "locality".
    * </pre>
    *
-   * <code>repeated string types = 5;</code>
+   * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The count of types.
    */
@@ -116,11 +152,11 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A set of type tags for this result. For example, "political" and
-   * "locality".
+   * Output only. A set of type tags for this result. For example, "political"
+   * and "locality".
    * </pre>
    *
-   * <code>repeated string types = 5;</code>
+   * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @param index The index of the element to return.
    * @return The types at the given index.
@@ -130,11 +166,11 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A set of type tags for this result. For example, "political" and
-   * "locality".
+   * Output only. A set of type tags for this result. For example, "political"
+   * and "locality".
    * </pre>
    *
-   * <code>repeated string types = 5;</code>
+   * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the types at the given index.
@@ -145,10 +181,11 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A human-readable phone number for the place, in national format.
+   * Output only. A human-readable phone number for the place, in national
+   * format.
    * </pre>
    *
-   * <code>string national_phone_number = 7;</code>
+   * <code>string national_phone_number = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The nationalPhoneNumber.
    */
@@ -157,10 +194,11 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A human-readable phone number for the place, in national format.
+   * Output only. A human-readable phone number for the place, in national
+   * format.
    * </pre>
    *
-   * <code>string national_phone_number = 7;</code>
+   * <code>string national_phone_number = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for nationalPhoneNumber.
    */
@@ -170,10 +208,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A human-readable phone number for the place, in international format.
+   * Output only. A human-readable phone number for the place, in international
+   * format.
    * </pre>
    *
-   * <code>string international_phone_number = 8;</code>
+   * <code>string international_phone_number = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The internationalPhoneNumber.
    */
@@ -182,10 +222,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A human-readable phone number for the place, in international format.
+   * Output only. A human-readable phone number for the place, in international
+   * format.
    * </pre>
    *
-   * <code>string international_phone_number = 8;</code>
+   * <code>string international_phone_number = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for internationalPhoneNumber.
    */
@@ -195,10 +237,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A full, human-readable address for this place.
+   * Output only. A full, human-readable address for this place.
    * </pre>
    *
-   * <code>string formatted_address = 9;</code>
+   * <code>string formatted_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The formattedAddress.
    */
@@ -207,10 +249,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A full, human-readable address for this place.
+   * Output only. A full, human-readable address for this place.
    * </pre>
    *
-   * <code>string formatted_address = 9;</code>
+   * <code>string formatted_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for formattedAddress.
    */
@@ -220,40 +262,48 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Repeated components for each locality level.
+   * Output only. Repeated components for each locality level.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.maps.places.v1.Place.AddressComponent> getAddressComponentsList();
   /**
    *
    *
    * <pre>
-   * Repeated components for each locality level.
+   * Output only. Repeated components for each locality level.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.maps.places.v1.Place.AddressComponent getAddressComponents(int index);
   /**
    *
    *
    * <pre>
-   * Repeated components for each locality level.
+   * Output only. Repeated components for each locality level.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getAddressComponentsCount();
   /**
    *
    *
    * <pre>
-   * Repeated components for each locality level.
+   * Output only. Repeated components for each locality level.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.maps.places.v1.Place.AddressComponentOrBuilder>
       getAddressComponentsOrBuilderList();
@@ -261,10 +311,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Repeated components for each locality level.
+   * Output only. Repeated components for each locality level.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.maps.places.v1.Place.AddressComponentOrBuilder getAddressComponentsOrBuilder(
       int index);
@@ -273,10 +325,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Plus code of the place location lat/long.
+   * Output only. Plus code of the place location lat/long.
    * </pre>
    *
-   * <code>.google.maps.places.v1.Place.PlusCode plus_code = 11;</code>
+   * <code>
+   * .google.maps.places.v1.Place.PlusCode plus_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the plusCode field is set.
    */
@@ -285,10 +339,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Plus code of the place location lat/long.
+   * Output only. Plus code of the place location lat/long.
    * </pre>
    *
-   * <code>.google.maps.places.v1.Place.PlusCode plus_code = 11;</code>
+   * <code>
+   * .google.maps.places.v1.Place.PlusCode plus_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The plusCode.
    */
@@ -297,10 +353,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Plus code of the place location lat/long.
+   * Output only. Plus code of the place location lat/long.
    * </pre>
    *
-   * <code>.google.maps.places.v1.Place.PlusCode plus_code = 11;</code>
+   * <code>
+   * .google.maps.places.v1.Place.PlusCode plus_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.maps.places.v1.Place.PlusCodeOrBuilder getPlusCodeOrBuilder();
 
@@ -308,10 +366,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The position of this place.
+   * Output only. The position of this place.
    * </pre>
    *
-   * <code>.google.type.LatLng location = 12;</code>
+   * <code>.google.type.LatLng location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the location field is set.
    */
@@ -320,10 +378,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The position of this place.
+   * Output only. The position of this place.
    * </pre>
    *
-   * <code>.google.type.LatLng location = 12;</code>
+   * <code>.google.type.LatLng location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The location.
    */
@@ -332,10 +390,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The position of this place.
+   * Output only. The position of this place.
    * </pre>
    *
-   * <code>.google.type.LatLng location = 12;</code>
+   * <code>.google.type.LatLng location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.type.LatLngOrBuilder getLocationOrBuilder();
 
@@ -343,10 +401,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A viewport suitable for displaying the place on an average-sized map.
+   * Output only. A viewport suitable for displaying the place on an
+   * average-sized map.
    * </pre>
    *
-   * <code>.google.geo.type.Viewport viewport = 13;</code>
+   * <code>.google.geo.type.Viewport viewport = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the viewport field is set.
    */
@@ -355,10 +415,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A viewport suitable for displaying the place on an average-sized map.
+   * Output only. A viewport suitable for displaying the place on an
+   * average-sized map.
    * </pre>
    *
-   * <code>.google.geo.type.Viewport viewport = 13;</code>
+   * <code>.google.geo.type.Viewport viewport = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The viewport.
    */
@@ -367,10 +429,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A viewport suitable for displaying the place on an average-sized map.
+   * Output only. A viewport suitable for displaying the place on an
+   * average-sized map.
    * </pre>
    *
-   * <code>.google.geo.type.Viewport viewport = 13;</code>
+   * <code>.google.geo.type.Viewport viewport = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.geo.type.ViewportOrBuilder getViewportOrBuilder();
 
@@ -378,10 +442,11 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A rating between 1.0 and 5.0, based on user reviews of this place.
+   * Output only. A rating between 1.0 and 5.0, based on user reviews of this
+   * place.
    * </pre>
    *
-   * <code>double rating = 14;</code>
+   * <code>double rating = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The rating.
    */
@@ -391,10 +456,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A URL providing more information about this place.
+   * Output only. A URL providing more information about this place.
    * </pre>
    *
-   * <code>string google_maps_uri = 15;</code>
+   * <code>string google_maps_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The googleMapsUri.
    */
@@ -403,10 +468,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A URL providing more information about this place.
+   * Output only. A URL providing more information about this place.
    * </pre>
    *
-   * <code>string google_maps_uri = 15;</code>
+   * <code>string google_maps_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for googleMapsUri.
    */
@@ -416,13 +481,13 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The authoritative website for this place, e.g. a business' homepage.
-   * Note that for places that are part of a chain (e.g. an IKEA store), this
-   * will usually be the website for the individual store, not the overall
-   * chain.
+   * Output only. The authoritative website for this place, e.g. a business'
+   * homepage. Note that for places that are part of a chain (e.g. an IKEA
+   * store), this will usually be the website for the individual store, not the
+   * overall chain.
    * </pre>
    *
-   * <code>string website_uri = 16;</code>
+   * <code>string website_uri = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The websiteUri.
    */
@@ -431,13 +496,13 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The authoritative website for this place, e.g. a business' homepage.
-   * Note that for places that are part of a chain (e.g. an IKEA store), this
-   * will usually be the website for the individual store, not the overall
-   * chain.
+   * Output only. The authoritative website for this place, e.g. a business'
+   * homepage. Note that for places that are part of a chain (e.g. an IKEA
+   * store), this will usually be the website for the individual store, not the
+   * overall chain.
    * </pre>
    *
-   * <code>string website_uri = 16;</code>
+   * <code>string website_uri = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for websiteUri.
    */
@@ -447,99 +512,130 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * List of reviews about this place.
+   * Output only. List of reviews about this place.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.Review reviews = 20;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
-  java.util.List<com.google.maps.places.v1.Place.Review> getReviewsList();
+  java.util.List<com.google.maps.places.v1.Review> getReviewsList();
   /**
    *
    *
    * <pre>
-   * List of reviews about this place.
+   * Output only. List of reviews about this place.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.Review reviews = 20;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
-  com.google.maps.places.v1.Place.Review getReviews(int index);
+  com.google.maps.places.v1.Review getReviews(int index);
   /**
    *
    *
    * <pre>
-   * List of reviews about this place.
+   * Output only. List of reviews about this place.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.Review reviews = 20;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getReviewsCount();
   /**
    *
    *
    * <pre>
-   * List of reviews about this place.
+   * Output only. List of reviews about this place.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.Review reviews = 20;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
-  java.util.List<? extends com.google.maps.places.v1.Place.ReviewOrBuilder>
-      getReviewsOrBuilderList();
+  java.util.List<? extends com.google.maps.places.v1.ReviewOrBuilder> getReviewsOrBuilderList();
   /**
    *
    *
    * <pre>
-   * List of reviews about this place.
+   * Output only. List of reviews about this place.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.Review reviews = 20;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
-  com.google.maps.places.v1.Place.ReviewOrBuilder getReviewsOrBuilder(int index);
+  com.google.maps.places.v1.ReviewOrBuilder getReviewsOrBuilder(int index);
 
   /**
    *
    *
    * <pre>
-   * The regular hours of operation.
+   * Output only. The regular hours of operation.
    * </pre>
    *
-   * <code>.google.maps.places.v1.Place.OpeningHours opening_hours = 21;</code>
+   * <code>
+   * .google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
-   * @return Whether the openingHours field is set.
+   * @return Whether the regularOpeningHours field is set.
    */
-  boolean hasOpeningHours();
+  boolean hasRegularOpeningHours();
   /**
    *
    *
    * <pre>
-   * The regular hours of operation.
+   * Output only. The regular hours of operation.
    * </pre>
    *
-   * <code>.google.maps.places.v1.Place.OpeningHours opening_hours = 21;</code>
+   * <code>
+   * .google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
-   * @return The openingHours.
+   * @return The regularOpeningHours.
    */
-  com.google.maps.places.v1.Place.OpeningHours getOpeningHours();
+  com.google.maps.places.v1.Place.OpeningHours getRegularOpeningHours();
   /**
    *
    *
    * <pre>
-   * The regular hours of operation.
+   * Output only. The regular hours of operation.
    * </pre>
    *
-   * <code>.google.maps.places.v1.Place.OpeningHours opening_hours = 21;</code>
+   * <code>
+   * .google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
-  com.google.maps.places.v1.Place.OpeningHoursOrBuilder getOpeningHoursOrBuilder();
+  com.google.maps.places.v1.Place.OpeningHoursOrBuilder getRegularOpeningHoursOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * Number of minutes this place's timezone is currently offset from UTC.
-   * This is expressed in minutes to support timezones that are offset by
-   * fractions of an hour, e.g. X hours and 15 minutes.
+   * Output only. Number of minutes this place's timezone is currently offset
+   * from UTC. This is expressed in minutes to support timezones that are offset
+   * by fractions of an hour, e.g. X hours and 15 minutes.
    * </pre>
    *
-   * <code>int32 utc_offset_minutes = 22;</code>
+   * <code>optional int32 utc_offset_minutes = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the utcOffsetMinutes field is set.
+   */
+  boolean hasUtcOffsetMinutes();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of minutes this place's timezone is currently offset
+   * from UTC. This is expressed in minutes to support timezones that are offset
+   * by fractions of an hour, e.g. X hours and 15 minutes.
+   * </pre>
+   *
+   * <code>optional int32 utc_offset_minutes = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The utcOffsetMinutes.
    */
@@ -549,10 +645,72 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The place's address in adr microformat: http://microformats.org/wiki/adr.
+   * Output only. Information (including references) about photos of this place.
    * </pre>
    *
-   * <code>string adr_format_address = 24;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.maps.places.v1.Photo> getPhotosList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information (including references) about photos of this place.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.maps.places.v1.Photo getPhotos(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information (including references) about photos of this place.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getPhotosCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information (including references) about photos of this place.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.maps.places.v1.PhotoOrBuilder> getPhotosOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information (including references) about photos of this place.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.maps.places.v1.PhotoOrBuilder getPhotosOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The place's address in adr microformat:
+   * http://microformats.org/wiki/adr.
+   * </pre>
+   *
+   * <code>string adr_format_address = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The adrFormatAddress.
    */
@@ -561,10 +719,11 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The place's address in adr microformat: http://microformats.org/wiki/adr.
+   * Output only. The place's address in adr microformat:
+   * http://microformats.org/wiki/adr.
    * </pre>
    *
-   * <code>string adr_format_address = 24;</code>
+   * <code>string adr_format_address = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for adrFormatAddress.
    */
@@ -574,10 +733,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The business status for the place.
+   * Output only. The business status for the place.
    * </pre>
    *
-   * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
+   * <code>
+   * .google.maps.places.v1.Place.BusinessStatus business_status = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for businessStatus.
    */
@@ -586,10 +747,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The business status for the place.
+   * Output only. The business status for the place.
    * </pre>
    *
-   * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
+   * <code>
+   * .google.maps.places.v1.Place.BusinessStatus business_status = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The businessStatus.
    */
@@ -599,10 +762,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Price level of the place.
+   * Output only. Price level of the place.
    * </pre>
    *
-   * <code>.google.maps.places.v1.PriceLevel price_level = 26;</code>
+   * <code>
+   * .google.maps.places.v1.PriceLevel price_level = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for priceLevel.
    */
@@ -611,10 +776,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Price level of the place.
+   * Output only. Price level of the place.
    * </pre>
    *
-   * <code>.google.maps.places.v1.PriceLevel price_level = 26;</code>
+   * <code>
+   * .google.maps.places.v1.PriceLevel price_level = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The priceLevel.
    */
@@ -624,40 +791,48 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A set of data provider that must be shown with this result.
+   * Output only. A set of data provider that must be shown with this result.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.maps.places.v1.Place.Attribution> getAttributionsList();
   /**
    *
    *
    * <pre>
-   * A set of data provider that must be shown with this result.
+   * Output only. A set of data provider that must be shown with this result.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.maps.places.v1.Place.Attribution getAttributions(int index);
   /**
    *
    *
    * <pre>
-   * A set of data provider that must be shown with this result.
+   * Output only. A set of data provider that must be shown with this result.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getAttributionsCount();
   /**
    *
    *
    * <pre>
-   * A set of data provider that must be shown with this result.
+   * Output only. A set of data provider that must be shown with this result.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.maps.places.v1.Place.AttributionOrBuilder>
       getAttributionsOrBuilderList();
@@ -665,10 +840,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A set of data provider that must be shown with this result.
+   * Output only. A set of data provider that must be shown with this result.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.maps.places.v1.Place.AttributionOrBuilder getAttributionsOrBuilder(int index);
 
@@ -676,10 +853,26 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The total number of reviews (with or without text) for this place.
+   * Output only. The total number of reviews (with or without text) for this
+   * place.
    * </pre>
    *
-   * <code>int32 user_rating_count = 28;</code>
+   * <code>optional int32 user_rating_count = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the userRatingCount field is set.
+   */
+  boolean hasUserRatingCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The total number of reviews (with or without text) for this
+   * place.
+   * </pre>
+   *
+   * <code>optional int32 user_rating_count = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The userRatingCount.
    */
@@ -689,11 +882,11 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A truncated URL to an v2 icon mask. User can access different icon type by
-   * appending type suffix to the end (eg, ".svg" or ".png").
+   * Output only. A truncated URL to an v2 icon mask. User can access different
+   * icon type by appending type suffix to the end (eg, ".svg" or ".png").
    * </pre>
    *
-   * <code>string icon_mask_base_uri = 29;</code>
+   * <code>string icon_mask_base_uri = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The iconMaskBaseUri.
    */
@@ -702,11 +895,11 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A truncated URL to an v2 icon mask. User can access different icon type by
-   * appending type suffix to the end (eg, ".svg" or ".png").
+   * Output only. A truncated URL to an v2 icon mask. User can access different
+   * icon type by appending type suffix to the end (eg, ".svg" or ".png").
    * </pre>
    *
-   * <code>string icon_mask_base_uri = 29;</code>
+   * <code>string icon_mask_base_uri = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for iconMaskBaseUri.
    */
@@ -716,10 +909,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Background color for icon_mask in hex format, e.g. #909CE1.
+   * Output only. Background color for icon_mask in hex format, e.g. #909CE1.
    * </pre>
    *
-   * <code>string icon_background_color = 30;</code>
+   * <code>string icon_background_color = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The iconBackgroundColor.
    */
@@ -728,10 +921,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Background color for icon_mask in hex format, e.g. #909CE1.
+   * Output only. Background color for icon_mask in hex format, e.g. #909CE1.
    * </pre>
    *
-   * <code>string icon_background_color = 30;</code>
+   * <code>string icon_background_color = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for iconBackgroundColor.
    */
@@ -741,10 +934,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the business supports takeout.
+   * Output only. Specifies if the business supports takeout.
    * </pre>
    *
-   * <code>optional bool takeout = 33;</code>
+   * <code>optional bool takeout = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the takeout field is set.
    */
@@ -753,10 +946,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the business supports takeout.
+   * Output only. Specifies if the business supports takeout.
    * </pre>
    *
-   * <code>optional bool takeout = 33;</code>
+   * <code>optional bool takeout = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The takeout.
    */
@@ -766,10 +959,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the business supports delivery.
+   * Output only. Specifies if the business supports delivery.
    * </pre>
    *
-   * <code>optional bool delivery = 34;</code>
+   * <code>optional bool delivery = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the delivery field is set.
    */
@@ -778,10 +971,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the business supports delivery.
+   * Output only. Specifies if the business supports delivery.
    * </pre>
    *
-   * <code>optional bool delivery = 34;</code>
+   * <code>optional bool delivery = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The delivery.
    */
@@ -791,10 +984,11 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the business supports indoor or outdoor seating options.
+   * Output only. Specifies if the business supports indoor or outdoor seating
+   * options.
    * </pre>
    *
-   * <code>optional bool dine_in = 35;</code>
+   * <code>optional bool dine_in = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the dineIn field is set.
    */
@@ -803,10 +997,11 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the business supports indoor or outdoor seating options.
+   * Output only. Specifies if the business supports indoor or outdoor seating
+   * options.
    * </pre>
    *
-   * <code>optional bool dine_in = 35;</code>
+   * <code>optional bool dine_in = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The dineIn.
    */
@@ -816,10 +1011,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the business supports curbside pickup.
+   * Output only. Specifies if the business supports curbside pickup.
    * </pre>
    *
-   * <code>optional bool curbside_pickup = 36;</code>
+   * <code>optional bool curbside_pickup = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the curbsidePickup field is set.
    */
@@ -828,10 +1023,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the business supports curbside pickup.
+   * Output only. Specifies if the business supports curbside pickup.
    * </pre>
    *
-   * <code>optional bool curbside_pickup = 36;</code>
+   * <code>optional bool curbside_pickup = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The curbsidePickup.
    */
@@ -841,35 +1036,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place has an entrance that is wheelchair-accessible.
+   * Output only. Specifies if the place supports reservations.
    * </pre>
    *
-   * <code>optional bool wheelchair_accessible_entrance = 37;</code>
-   *
-   * @return Whether the wheelchairAccessibleEntrance field is set.
-   */
-  boolean hasWheelchairAccessibleEntrance();
-  /**
-   *
-   *
-   * <pre>
-   * Specifies if the place has an entrance that is wheelchair-accessible.
-   * </pre>
-   *
-   * <code>optional bool wheelchair_accessible_entrance = 37;</code>
-   *
-   * @return The wheelchairAccessibleEntrance.
-   */
-  boolean getWheelchairAccessibleEntrance();
-
-  /**
-   *
-   *
-   * <pre>
-   * Specifies if the place supports reservations.
-   * </pre>
-   *
-   * <code>optional bool reservable = 38;</code>
+   * <code>optional bool reservable = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the reservable field is set.
    */
@@ -878,10 +1048,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place supports reservations.
+   * Output only. Specifies if the place supports reservations.
    * </pre>
    *
-   * <code>optional bool reservable = 38;</code>
+   * <code>optional bool reservable = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The reservable.
    */
@@ -891,10 +1061,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place serves breakfast.
+   * Output only. Specifies if the place serves breakfast.
    * </pre>
    *
-   * <code>optional bool serves_breakfast = 39;</code>
+   * <code>optional bool serves_breakfast = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the servesBreakfast field is set.
    */
@@ -903,10 +1073,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place serves breakfast.
+   * Output only. Specifies if the place serves breakfast.
    * </pre>
    *
-   * <code>optional bool serves_breakfast = 39;</code>
+   * <code>optional bool serves_breakfast = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The servesBreakfast.
    */
@@ -916,10 +1086,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place serves lunch.
+   * Output only. Specifies if the place serves lunch.
    * </pre>
    *
-   * <code>optional bool serves_lunch = 40;</code>
+   * <code>optional bool serves_lunch = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the servesLunch field is set.
    */
@@ -928,10 +1098,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place serves lunch.
+   * Output only. Specifies if the place serves lunch.
    * </pre>
    *
-   * <code>optional bool serves_lunch = 40;</code>
+   * <code>optional bool serves_lunch = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The servesLunch.
    */
@@ -941,10 +1111,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place serves dinner.
+   * Output only. Specifies if the place serves dinner.
    * </pre>
    *
-   * <code>optional bool serves_dinner = 41;</code>
+   * <code>optional bool serves_dinner = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the servesDinner field is set.
    */
@@ -953,10 +1123,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place serves dinner.
+   * Output only. Specifies if the place serves dinner.
    * </pre>
    *
-   * <code>optional bool serves_dinner = 41;</code>
+   * <code>optional bool serves_dinner = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The servesDinner.
    */
@@ -966,10 +1136,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place serves beer.
+   * Output only. Specifies if the place serves beer.
    * </pre>
    *
-   * <code>optional bool serves_beer = 42;</code>
+   * <code>optional bool serves_beer = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the servesBeer field is set.
    */
@@ -978,10 +1148,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place serves beer.
+   * Output only. Specifies if the place serves beer.
    * </pre>
    *
-   * <code>optional bool serves_beer = 42;</code>
+   * <code>optional bool serves_beer = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The servesBeer.
    */
@@ -991,10 +1161,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place serves wine.
+   * Output only. Specifies if the place serves wine.
    * </pre>
    *
-   * <code>optional bool serves_wine = 43;</code>
+   * <code>optional bool serves_wine = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the servesWine field is set.
    */
@@ -1003,10 +1173,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place serves wine.
+   * Output only. Specifies if the place serves wine.
    * </pre>
    *
-   * <code>optional bool serves_wine = 43;</code>
+   * <code>optional bool serves_wine = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The servesWine.
    */
@@ -1016,10 +1186,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place serves brunch.
+   * Output only. Specifies if the place serves brunch.
    * </pre>
    *
-   * <code>optional bool serves_brunch = 44;</code>
+   * <code>optional bool serves_brunch = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the servesBrunch field is set.
    */
@@ -1028,10 +1198,10 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place serves brunch.
+   * Output only. Specifies if the place serves brunch.
    * </pre>
    *
-   * <code>optional bool serves_brunch = 44;</code>
+   * <code>optional bool serves_brunch = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The servesBrunch.
    */
@@ -1041,10 +1211,11 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place serves vegetarian food.
+   * Output only. Specifies if the place serves vegetarian food.
    * </pre>
    *
-   * <code>optional bool serves_vegetarian_food = 45;</code>
+   * <code>optional bool serves_vegetarian_food = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the servesVegetarianFood field is set.
    */
@@ -1053,10 +1224,11 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Specifies if the place serves vegetarian food.
+   * Output only. Specifies if the place serves vegetarian food.
    * </pre>
    *
-   * <code>optional bool serves_vegetarian_food = 45;</code>
+   * <code>optional bool serves_vegetarian_food = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The servesVegetarianFood.
    */
@@ -1066,13 +1238,15 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The hours of operation for the next seven days (including today). The time
-   * period starts at midnight on the date of the request and ends at 11:59 pm
-   * six days later. This field includes the special_days subfield of all hours,
-   * set for dates that have exceptional hours.
+   * Output only. The hours of operation for the next seven days (including
+   * today). The time period starts at midnight on the date of the request and
+   * ends at 11:59 pm six days later. This field includes the special_days
+   * subfield of all hours, set for dates that have exceptional hours.
    * </pre>
    *
-   * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
+   * <code>
+   * .google.maps.places.v1.Place.OpeningHours current_opening_hours = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the currentOpeningHours field is set.
    */
@@ -1081,13 +1255,15 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The hours of operation for the next seven days (including today). The time
-   * period starts at midnight on the date of the request and ends at 11:59 pm
-   * six days later. This field includes the special_days subfield of all hours,
-   * set for dates that have exceptional hours.
+   * Output only. The hours of operation for the next seven days (including
+   * today). The time period starts at midnight on the date of the request and
+   * ends at 11:59 pm six days later. This field includes the special_days
+   * subfield of all hours, set for dates that have exceptional hours.
    * </pre>
    *
-   * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
+   * <code>
+   * .google.maps.places.v1.Place.OpeningHours current_opening_hours = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The currentOpeningHours.
    */
@@ -1096,13 +1272,15 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * The hours of operation for the next seven days (including today). The time
-   * period starts at midnight on the date of the request and ends at 11:59 pm
-   * six days later. This field includes the special_days subfield of all hours,
-   * set for dates that have exceptional hours.
+   * Output only. The hours of operation for the next seven days (including
+   * today). The time period starts at midnight on the date of the request and
+   * ends at 11:59 pm six days later. This field includes the special_days
+   * subfield of all hours, set for dates that have exceptional hours.
    * </pre>
    *
-   * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
+   * <code>
+   * .google.maps.places.v1.Place.OpeningHours current_opening_hours = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.maps.places.v1.Place.OpeningHoursOrBuilder getCurrentOpeningHoursOrBuilder();
 
@@ -1110,17 +1288,18 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Contains an array of entries for the next seven days including information
-   * about secondary hours of a business. Secondary hours are different from a
-   * business's main hours. For example, a restaurant can specify drive through
-   * hours or delivery hours as its secondary hours. This field populates the
-   * type subfield, which draws from a predefined list of opening hours types
-   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-   * place. This field includes the special_days subfield of all hours, set for
-   * dates that have exceptional hours.
+   * Output only. Contains an array of entries for the next seven days including
+   * information about secondary hours of a business. Secondary hours are
+   * different from a business's main hours. For example, a restaurant can
+   * specify drive through hours or delivery hours as its secondary hours. This
+   * field populates the type subfield, which draws from a predefined list of
+   * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
+   * the types of the place. This field includes the special_days subfield of
+   * all hours, set for dates that have exceptional hours.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
+   * <code>
+   * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   java.util.List<com.google.maps.places.v1.Place.OpeningHours>
@@ -1129,17 +1308,18 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Contains an array of entries for the next seven days including information
-   * about secondary hours of a business. Secondary hours are different from a
-   * business's main hours. For example, a restaurant can specify drive through
-   * hours or delivery hours as its secondary hours. This field populates the
-   * type subfield, which draws from a predefined list of opening hours types
-   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-   * place. This field includes the special_days subfield of all hours, set for
-   * dates that have exceptional hours.
+   * Output only. Contains an array of entries for the next seven days including
+   * information about secondary hours of a business. Secondary hours are
+   * different from a business's main hours. For example, a restaurant can
+   * specify drive through hours or delivery hours as its secondary hours. This
+   * field populates the type subfield, which draws from a predefined list of
+   * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
+   * the types of the place. This field includes the special_days subfield of
+   * all hours, set for dates that have exceptional hours.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
+   * <code>
+   * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.maps.places.v1.Place.OpeningHours getCurrentSecondaryOpeningHours(int index);
@@ -1147,17 +1327,18 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Contains an array of entries for the next seven days including information
-   * about secondary hours of a business. Secondary hours are different from a
-   * business's main hours. For example, a restaurant can specify drive through
-   * hours or delivery hours as its secondary hours. This field populates the
-   * type subfield, which draws from a predefined list of opening hours types
-   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-   * place. This field includes the special_days subfield of all hours, set for
-   * dates that have exceptional hours.
+   * Output only. Contains an array of entries for the next seven days including
+   * information about secondary hours of a business. Secondary hours are
+   * different from a business's main hours. For example, a restaurant can
+   * specify drive through hours or delivery hours as its secondary hours. This
+   * field populates the type subfield, which draws from a predefined list of
+   * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
+   * the types of the place. This field includes the special_days subfield of
+   * all hours, set for dates that have exceptional hours.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
+   * <code>
+   * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   int getCurrentSecondaryOpeningHoursCount();
@@ -1165,17 +1346,18 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Contains an array of entries for the next seven days including information
-   * about secondary hours of a business. Secondary hours are different from a
-   * business's main hours. For example, a restaurant can specify drive through
-   * hours or delivery hours as its secondary hours. This field populates the
-   * type subfield, which draws from a predefined list of opening hours types
-   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-   * place. This field includes the special_days subfield of all hours, set for
-   * dates that have exceptional hours.
+   * Output only. Contains an array of entries for the next seven days including
+   * information about secondary hours of a business. Secondary hours are
+   * different from a business's main hours. For example, a restaurant can
+   * specify drive through hours or delivery hours as its secondary hours. This
+   * field populates the type subfield, which draws from a predefined list of
+   * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
+   * the types of the place. This field includes the special_days subfield of
+   * all hours, set for dates that have exceptional hours.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
+   * <code>
+   * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   java.util.List<? extends com.google.maps.places.v1.Place.OpeningHoursOrBuilder>
@@ -1184,17 +1366,18 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Contains an array of entries for the next seven days including information
-   * about secondary hours of a business. Secondary hours are different from a
-   * business's main hours. For example, a restaurant can specify drive through
-   * hours or delivery hours as its secondary hours. This field populates the
-   * type subfield, which draws from a predefined list of opening hours types
-   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-   * place. This field includes the special_days subfield of all hours, set for
-   * dates that have exceptional hours.
+   * Output only. Contains an array of entries for the next seven days including
+   * information about secondary hours of a business. Secondary hours are
+   * different from a business's main hours. For example, a restaurant can
+   * specify drive through hours or delivery hours as its secondary hours. This
+   * field populates the type subfield, which draws from a predefined list of
+   * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
+   * the types of the place. This field includes the special_days subfield of
+   * all hours, set for dates that have exceptional hours.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
+   * <code>
+   * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.maps.places.v1.Place.OpeningHoursOrBuilder getCurrentSecondaryOpeningHoursOrBuilder(
@@ -1204,90 +1387,109 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Contains an array of entries for information about regular secondary hours
-   * of a business. Secondary hours are different from a business's main hours.
-   * For example, a restaurant can specify drive through hours or delivery hours
-   * as its secondary hours. This field populates the type subfield, which draws
-   * from a predefined list of opening hours types (such as DRIVE_THROUGH,
-   * PICKUP, or TAKEOUT) based on the types of the place.
+   * Output only. Contains an array of entries for information about regular
+   * secondary hours of a business. Secondary hours are different from a
+   * business's main hours. For example, a restaurant can specify drive through
+   * hours or delivery hours as its secondary hours. This field populates the
+   * type subfield, which draws from a predefined list of opening hours types
+   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+   * place.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.OpeningHours secondary_opening_hours = 49;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
-  java.util.List<com.google.maps.places.v1.Place.OpeningHours> getSecondaryOpeningHoursList();
+  java.util.List<com.google.maps.places.v1.Place.OpeningHours>
+      getRegularSecondaryOpeningHoursList();
   /**
    *
    *
    * <pre>
-   * Contains an array of entries for information about regular secondary hours
-   * of a business. Secondary hours are different from a business's main hours.
-   * For example, a restaurant can specify drive through hours or delivery hours
-   * as its secondary hours. This field populates the type subfield, which draws
-   * from a predefined list of opening hours types (such as DRIVE_THROUGH,
-   * PICKUP, or TAKEOUT) based on the types of the place.
+   * Output only. Contains an array of entries for information about regular
+   * secondary hours of a business. Secondary hours are different from a
+   * business's main hours. For example, a restaurant can specify drive through
+   * hours or delivery hours as its secondary hours. This field populates the
+   * type subfield, which draws from a predefined list of opening hours types
+   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+   * place.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.OpeningHours secondary_opening_hours = 49;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
-  com.google.maps.places.v1.Place.OpeningHours getSecondaryOpeningHours(int index);
+  com.google.maps.places.v1.Place.OpeningHours getRegularSecondaryOpeningHours(int index);
   /**
    *
    *
    * <pre>
-   * Contains an array of entries for information about regular secondary hours
-   * of a business. Secondary hours are different from a business's main hours.
-   * For example, a restaurant can specify drive through hours or delivery hours
-   * as its secondary hours. This field populates the type subfield, which draws
-   * from a predefined list of opening hours types (such as DRIVE_THROUGH,
-   * PICKUP, or TAKEOUT) based on the types of the place.
+   * Output only. Contains an array of entries for information about regular
+   * secondary hours of a business. Secondary hours are different from a
+   * business's main hours. For example, a restaurant can specify drive through
+   * hours or delivery hours as its secondary hours. This field populates the
+   * type subfield, which draws from a predefined list of opening hours types
+   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+   * place.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.OpeningHours secondary_opening_hours = 49;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
-  int getSecondaryOpeningHoursCount();
+  int getRegularSecondaryOpeningHoursCount();
   /**
    *
    *
    * <pre>
-   * Contains an array of entries for information about regular secondary hours
-   * of a business. Secondary hours are different from a business's main hours.
-   * For example, a restaurant can specify drive through hours or delivery hours
-   * as its secondary hours. This field populates the type subfield, which draws
-   * from a predefined list of opening hours types (such as DRIVE_THROUGH,
-   * PICKUP, or TAKEOUT) based on the types of the place.
+   * Output only. Contains an array of entries for information about regular
+   * secondary hours of a business. Secondary hours are different from a
+   * business's main hours. For example, a restaurant can specify drive through
+   * hours or delivery hours as its secondary hours. This field populates the
+   * type subfield, which draws from a predefined list of opening hours types
+   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+   * place.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.OpeningHours secondary_opening_hours = 49;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.maps.places.v1.Place.OpeningHoursOrBuilder>
-      getSecondaryOpeningHoursOrBuilderList();
+      getRegularSecondaryOpeningHoursOrBuilderList();
   /**
    *
    *
    * <pre>
-   * Contains an array of entries for information about regular secondary hours
-   * of a business. Secondary hours are different from a business's main hours.
-   * For example, a restaurant can specify drive through hours or delivery hours
-   * as its secondary hours. This field populates the type subfield, which draws
-   * from a predefined list of opening hours types (such as DRIVE_THROUGH,
-   * PICKUP, or TAKEOUT) based on the types of the place.
+   * Output only. Contains an array of entries for information about regular
+   * secondary hours of a business. Secondary hours are different from a
+   * business's main hours. For example, a restaurant can specify drive through
+   * hours or delivery hours as its secondary hours. This field populates the
+   * type subfield, which draws from a predefined list of opening hours types
+   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+   * place.
    * </pre>
    *
-   * <code>repeated .google.maps.places.v1.Place.OpeningHours secondary_opening_hours = 49;</code>
+   * <code>
+   * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
-  com.google.maps.places.v1.Place.OpeningHoursOrBuilder getSecondaryOpeningHoursOrBuilder(
+  com.google.maps.places.v1.Place.OpeningHoursOrBuilder getRegularSecondaryOpeningHoursOrBuilder(
       int index);
 
   /**
    *
    *
    * <pre>
-   * Contains a summary of the place. A summary is comprised of a textual
-   * overview, and also includes the language code for these if applicable.
-   * Summary text must be presented as-is and can not be modified or altered.
+   * Output only. Contains a summary of the place. A summary is comprised of a
+   * textual overview, and also includes the language code for these if
+   * applicable. Summary text must be presented as-is and can not be modified or
+   * altered.
    * </pre>
    *
-   * <code>.google.maps.places.v1.Place.EditorialSummary editorial_summary = 48;</code>
+   * <code>
+   * .google.type.LocalizedText editorial_summary = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the editorialSummary field is set.
    */
@@ -1296,26 +1498,561 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Contains a summary of the place. A summary is comprised of a textual
-   * overview, and also includes the language code for these if applicable.
-   * Summary text must be presented as-is and can not be modified or altered.
+   * Output only. Contains a summary of the place. A summary is comprised of a
+   * textual overview, and also includes the language code for these if
+   * applicable. Summary text must be presented as-is and can not be modified or
+   * altered.
    * </pre>
    *
-   * <code>.google.maps.places.v1.Place.EditorialSummary editorial_summary = 48;</code>
+   * <code>
+   * .google.type.LocalizedText editorial_summary = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The editorialSummary.
    */
-  com.google.maps.places.v1.Place.EditorialSummary getEditorialSummary();
+  com.google.type.LocalizedText getEditorialSummary();
   /**
    *
    *
    * <pre>
-   * Contains a summary of the place. A summary is comprised of a textual
-   * overview, and also includes the language code for these if applicable.
-   * Summary text must be presented as-is and can not be modified or altered.
+   * Output only. Contains a summary of the place. A summary is comprised of a
+   * textual overview, and also includes the language code for these if
+   * applicable. Summary text must be presented as-is and can not be modified or
+   * altered.
    * </pre>
    *
-   * <code>.google.maps.places.v1.Place.EditorialSummary editorial_summary = 48;</code>
+   * <code>
+   * .google.type.LocalizedText editorial_summary = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
-  com.google.maps.places.v1.Place.EditorialSummaryOrBuilder getEditorialSummaryOrBuilder();
+  com.google.type.LocalizedTextOrBuilder getEditorialSummaryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place provides outdoor seating.
+   * </pre>
+   *
+   * <code>optional bool outdoor_seating = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the outdoorSeating field is set.
+   */
+  boolean hasOutdoorSeating();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place provides outdoor seating.
+   * </pre>
+   *
+   * <code>optional bool outdoor_seating = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The outdoorSeating.
+   */
+  boolean getOutdoorSeating();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place provides live music.
+   * </pre>
+   *
+   * <code>optional bool live_music = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the liveMusic field is set.
+   */
+  boolean hasLiveMusic();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place provides live music.
+   * </pre>
+   *
+   * <code>optional bool live_music = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The liveMusic.
+   */
+  boolean getLiveMusic();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place has a children's menu.
+   * </pre>
+   *
+   * <code>optional bool menu_for_children = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the menuForChildren field is set.
+   */
+  boolean hasMenuForChildren();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place has a children's menu.
+   * </pre>
+   *
+   * <code>optional bool menu_for_children = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The menuForChildren.
+   */
+  boolean getMenuForChildren();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place serves cocktails.
+   * </pre>
+   *
+   * <code>optional bool serves_cocktails = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the servesCocktails field is set.
+   */
+  boolean hasServesCocktails();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place serves cocktails.
+   * </pre>
+   *
+   * <code>optional bool serves_cocktails = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The servesCocktails.
+   */
+  boolean getServesCocktails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place serves dessert.
+   * </pre>
+   *
+   * <code>optional bool serves_dessert = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the servesDessert field is set.
+   */
+  boolean hasServesDessert();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place serves dessert.
+   * </pre>
+   *
+   * <code>optional bool serves_dessert = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The servesDessert.
+   */
+  boolean getServesDessert();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place serves coffee.
+   * </pre>
+   *
+   * <code>optional bool serves_coffee = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the servesCoffee field is set.
+   */
+  boolean hasServesCoffee();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place serves coffee.
+   * </pre>
+   *
+   * <code>optional bool serves_coffee = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The servesCoffee.
+   */
+  boolean getServesCoffee();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place is good for children.
+   * </pre>
+   *
+   * <code>optional bool good_for_children = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the goodForChildren field is set.
+   */
+  boolean hasGoodForChildren();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place is good for children.
+   * </pre>
+   *
+   * <code>optional bool good_for_children = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The goodForChildren.
+   */
+  boolean getGoodForChildren();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place allows dogs.
+   * </pre>
+   *
+   * <code>optional bool allows_dogs = 63 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the allowsDogs field is set.
+   */
+  boolean hasAllowsDogs();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place allows dogs.
+   * </pre>
+   *
+   * <code>optional bool allows_dogs = 63 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The allowsDogs.
+   */
+  boolean getAllowsDogs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place has restroom.
+   * </pre>
+   *
+   * <code>optional bool restroom = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the restroom field is set.
+   */
+  boolean hasRestroom();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place has restroom.
+   * </pre>
+   *
+   * <code>optional bool restroom = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The restroom.
+   */
+  boolean getRestroom();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place accommodates groups.
+   * </pre>
+   *
+   * <code>optional bool good_for_groups = 65 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the goodForGroups field is set.
+   */
+  boolean hasGoodForGroups();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place accommodates groups.
+   * </pre>
+   *
+   * <code>optional bool good_for_groups = 65 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The goodForGroups.
+   */
+  boolean getGoodForGroups();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place is suitable for watching sports.
+   * </pre>
+   *
+   * <code>optional bool good_for_watching_sports = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the goodForWatchingSports field is set.
+   */
+  boolean hasGoodForWatchingSports();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Place is suitable for watching sports.
+   * </pre>
+   *
+   * <code>optional bool good_for_watching_sports = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The goodForWatchingSports.
+   */
+  boolean getGoodForWatchingSports();
+
+  /**
+   * <code>
+   * .google.maps.places.v1.Place.PaymentOptions payment_options = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the paymentOptions field is set.
+   */
+  boolean hasPaymentOptions();
+  /**
+   * <code>
+   * .google.maps.places.v1.Place.PaymentOptions payment_options = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The paymentOptions.
+   */
+  com.google.maps.places.v1.Place.PaymentOptions getPaymentOptions();
+  /**
+   * <code>
+   * .google.maps.places.v1.Place.PaymentOptions payment_options = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.maps.places.v1.Place.PaymentOptionsOrBuilder getPaymentOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Options of parking provided by the place.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.Place.ParkingOptions parking_options = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the parkingOptions field is set.
+   */
+  boolean hasParkingOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Options of parking provided by the place.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.Place.ParkingOptions parking_options = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The parkingOptions.
+   */
+  com.google.maps.places.v1.Place.ParkingOptions getParkingOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Options of parking provided by the place.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.Place.ParkingOptions parking_options = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.maps.places.v1.Place.ParkingOptionsOrBuilder getParkingOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of sub destinations related to the place.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.maps.places.v1.Place.SubDestination> getSubDestinationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of sub destinations related to the place.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.maps.places.v1.Place.SubDestination getSubDestinations(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of sub destinations related to the place.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getSubDestinationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of sub destinations related to the place.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.maps.places.v1.Place.SubDestinationOrBuilder>
+      getSubDestinationsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of sub destinations related to the place.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.maps.places.v1.Place.SubDestinationOrBuilder getSubDestinationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the accessibility options a place offers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the accessibilityOptions field is set.
+   */
+  boolean hasAccessibilityOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the accessibility options a place offers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The accessibilityOptions.
+   */
+  com.google.maps.places.v1.Place.AccessibilityOptions getAccessibilityOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the accessibility options a place offers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.maps.places.v1.Place.AccessibilityOptionsOrBuilder getAccessibilityOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent information about fuel options in a gas
+   * station. This information is updated regularly.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.FuelOptions fuel_options = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the fuelOptions field is set.
+   */
+  boolean hasFuelOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent information about fuel options in a gas
+   * station. This information is updated regularly.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.FuelOptions fuel_options = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The fuelOptions.
+   */
+  com.google.maps.places.v1.FuelOptions getFuelOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent information about fuel options in a gas
+   * station. This information is updated regularly.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.FuelOptions fuel_options = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.maps.places.v1.FuelOptionsOrBuilder getFuelOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information of ev charging options.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.EVChargeOptions ev_charge_options = 79 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the evChargeOptions field is set.
+   */
+  boolean hasEvChargeOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information of ev charging options.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.EVChargeOptions ev_charge_options = 79 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The evChargeOptions.
+   */
+  com.google.maps.places.v1.EVChargeOptions getEvChargeOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information of ev charging options.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.places.v1.EVChargeOptions ev_charge_options = 79 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.maps.places.v1.EVChargeOptionsOrBuilder getEvChargeOptionsOrBuilder();
 }

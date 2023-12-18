@@ -60,6 +60,35 @@ public interface CountTokensRequestOrBuilder
    *
    *
    * <pre>
+   * Required. The name of the publisher model requested to serve the
+   * prediction. Format:
+   * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
+   * </pre>
+   *
+   * <code>string model = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The model.
+   */
+  java.lang.String getModel();
+  /**
+   *
+   *
+   * <pre>
+   * Required. The name of the publisher model requested to serve the
+   * prediction. Format:
+   * `projects/{project}/locations/{location}/publishers/&#42;&#47;models/&#42;`
+   * </pre>
+   *
+   * <code>string model = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for model.
+   */
+  com.google.protobuf.ByteString getModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The instances that are the input to token counting call.
    * Schema is identical to the prediction schema of the underlying model.
    * </pre>
@@ -116,4 +145,66 @@ public interface CountTokensRequestOrBuilder
    * </code>
    */
   com.google.protobuf.ValueOrBuilder getInstancesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Input content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getContentsList();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Input content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Content getContents(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Required. Input content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  int getContentsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Input content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
+      getContentsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Input content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Content contents = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ContentOrBuilder getContentsOrBuilder(int index);
 }

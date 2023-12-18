@@ -21,7 +21,10 @@
  *
  * <p>======================= PlacesClient =======================
  *
- * <p>Service Description: Service definition for the Places API.
+ * <p>Service Description: Service definition for the Places API. Note: every request actually
+ * requires a field mask set outside of the request proto (all/'&#42;' is not assumed). That can be
+ * set via either a side channel (SystemParameterContext) over RPC, or a header (X-Goog-FieldMask)
+ * over HTTP. See: https://cloud.google.com/apis/docs/system-parameters
  *
  * <p>Sample for PlacesClient:
  *
@@ -32,23 +35,18 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (PlacesClient placesClient = PlacesClient.create()) {
- *   SearchTextRequest request =
- *       SearchTextRequest.newBuilder()
- *           .setTextQuery("textQuery-1050470501")
+ *   SearchNearbyRequest request =
+ *       SearchNearbyRequest.newBuilder()
  *           .setLanguageCode("languageCode-2092349083")
  *           .setRegionCode("regionCode-1991004415")
- *           .setLocation(SearchTextRequest.Location.newBuilder().build())
- *           .setIncludedType("includedType-45971946")
- *           .setOpenNow(true)
- *           .setPriceRange(Int32Range.newBuilder().build())
- *           .setMinRating(-543315926)
+ *           .addAllIncludedTypes(new ArrayList<String>())
+ *           .addAllExcludedTypes(new ArrayList<String>())
+ *           .addAllIncludedPrimaryTypes(new ArrayList<String>())
+ *           .addAllExcludedPrimaryTypes(new ArrayList<String>())
  *           .setMaxResultCount(-1736124056)
- *           .addAllPriceLevels(new ArrayList<PriceLevel>())
- *           .setStrictTypeFiltering(true)
- *           .setLocationBias(SearchTextRequest.LocationBias.newBuilder().build())
- *           .setLocationRestriction(SearchTextRequest.LocationRestriction.newBuilder().build())
+ *           .setLocationRestriction(SearchNearbyRequest.LocationRestriction.newBuilder().build())
  *           .build();
- *   SearchTextResponse response = placesClient.searchText(request);
+ *   SearchNearbyResponse response = placesClient.searchNearby(request);
  * }
  * }</pre>
  */

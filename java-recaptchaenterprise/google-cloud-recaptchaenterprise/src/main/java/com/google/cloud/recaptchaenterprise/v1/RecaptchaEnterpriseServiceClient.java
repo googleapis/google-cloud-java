@@ -425,6 +425,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *       AnnotateAssessmentRequest.newBuilder()
    *           .setName(AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString())
    *           .addAllReasons(new ArrayList<AnnotateAssessmentRequest.Reason>())
+   *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setTransactionEvent(TransactionEvent.newBuilder().build())
    *           .build();
@@ -459,6 +460,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *       AnnotateAssessmentRequest.newBuilder()
    *           .setName(AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString())
    *           .addAllReasons(new ArrayList<AnnotateAssessmentRequest.Reason>())
+   *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setTransactionEvent(TransactionEvent.newBuilder().build())
    *           .build();

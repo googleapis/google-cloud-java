@@ -122,7 +122,7 @@ public interface AudienceListOrBuilder
    *
    *
    * <pre>
-   * Required. The dimensions requested and displayed in the report response.
+   * Required. The dimensions requested and displayed in the query response.
    * </pre>
    *
    * <code>
@@ -134,7 +134,7 @@ public interface AudienceListOrBuilder
    *
    *
    * <pre>
-   * Required. The dimensions requested and displayed in the report response.
+   * Required. The dimensions requested and displayed in the query response.
    * </pre>
    *
    * <code>
@@ -146,7 +146,7 @@ public interface AudienceListOrBuilder
    *
    *
    * <pre>
-   * Required. The dimensions requested and displayed in the report response.
+   * Required. The dimensions requested and displayed in the query response.
    * </pre>
    *
    * <code>
@@ -158,7 +158,7 @@ public interface AudienceListOrBuilder
    *
    *
    * <pre>
-   * Required. The dimensions requested and displayed in the report response.
+   * Required. The dimensions requested and displayed in the query response.
    * </pre>
    *
    * <code>
@@ -171,7 +171,7 @@ public interface AudienceListOrBuilder
    *
    *
    * <pre>
-   * Required. The dimensions requested and displayed in the report response.
+   * Required. The dimensions requested and displayed in the query response.
    * </pre>
    *
    * <code>
@@ -348,4 +348,88 @@ public interface AudienceListOrBuilder
    * @return The bytes for errorMessage.
    */
   com.google.protobuf.ByteString getErrorMessageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The percentage completed for this audience export ranging
+   * between 0 to 100.
+   * </pre>
+   *
+   * <code>optional double percentage_completed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the percentageCompleted field is set.
+   */
+  boolean hasPercentageCompleted();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The percentage completed for this audience export ranging
+   * between 0 to 100.
+   * </pre>
+   *
+   * <code>optional double percentage_completed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The percentageCompleted.
+   */
+  double getPercentageCompleted();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recurring audience list that created this audience list.
+   * Recurring audience lists create audience lists daily.
+   *
+   * If audience lists are created directly, they will have no associated
+   * recurring audience list, and this field will be blank.
+   * </pre>
+   *
+   * <code>
+   * optional string recurring_audience_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the recurringAudienceList field is set.
+   */
+  boolean hasRecurringAudienceList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recurring audience list that created this audience list.
+   * Recurring audience lists create audience lists daily.
+   *
+   * If audience lists are created directly, they will have no associated
+   * recurring audience list, and this field will be blank.
+   * </pre>
+   *
+   * <code>
+   * optional string recurring_audience_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The recurringAudienceList.
+   */
+  java.lang.String getRecurringAudienceList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recurring audience list that created this audience list.
+   * Recurring audience lists create audience lists daily.
+   *
+   * If audience lists are created directly, they will have no associated
+   * recurring audience list, and this field will be blank.
+   * </pre>
+   *
+   * <code>
+   * optional string recurring_audience_list = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for recurringAudienceList.
+   */
+  com.google.protobuf.ByteString getRecurringAudienceListBytes();
 }

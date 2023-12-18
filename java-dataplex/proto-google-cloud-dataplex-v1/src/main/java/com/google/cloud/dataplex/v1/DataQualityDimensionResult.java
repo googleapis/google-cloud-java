@@ -61,6 +61,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
             com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DIMENSION_FIELD_NUMBER = 1;
   private com.google.cloud.dataplex.v1.DataQualityDimension dimension_;
   /**
@@ -135,6 +136,47 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     return passed_;
   }
 
+  public static final int SCORE_FIELD_NUMBER = 4;
+  private float score_ = 0F;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension-level data quality score for this data scan job
+   * if and only if the 'dimension' field is set.
+   *
+   * The score ranges between [0, 100] (up to two decimal
+   * points).
+   * </pre>
+   *
+   * <code>optional float score = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the score field is set.
+   */
+  @java.lang.Override
+  public boolean hasScore() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension-level data quality score for this data scan job
+   * if and only if the 'dimension' field is set.
+   *
+   * The score ranges between [0, 100] (up to two decimal
+   * points).
+   * </pre>
+   *
+   * <code>optional float score = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The score.
+   */
+  @java.lang.Override
+  public float getScore() {
+    return score_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -155,6 +197,9 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     if (passed_ != false) {
       output.writeBool(3, passed_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeFloat(4, score_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -169,6 +214,9 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     }
     if (passed_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, passed_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, score_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -191,6 +239,11 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
       if (!getDimension().equals(other.getDimension())) return false;
     }
     if (getPassed() != other.getPassed()) return false;
+    if (hasScore() != other.hasScore()) return false;
+    if (hasScore()) {
+      if (java.lang.Float.floatToIntBits(getScore())
+          != java.lang.Float.floatToIntBits(other.getScore())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -208,6 +261,10 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     }
     hash = (37 * hash) + PASSED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPassed());
+    if (hasScore()) {
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getScore());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -355,6 +412,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
         dimensionBuilder_ = null;
       }
       passed_ = false;
+      score_ = 0F;
       return this;
     }
 
@@ -397,6 +455,12 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.passed_ = passed_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.score_ = score_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -451,6 +515,9 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
       if (other.getPassed() != false) {
         setPassed(other.getPassed());
       }
+      if (other.hasScore()) {
+        setScore(other.getScore());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -489,6 +556,12 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000002;
                 break;
               } // case 24
+            case 37:
+              {
+                score_ = input.readFloat();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 37
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -760,6 +833,90 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     public Builder clearPassed() {
       bitField0_ = (bitField0_ & ~0x00000002);
       passed_ = false;
+      onChanged();
+      return this;
+    }
+
+    private float score_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level data quality score for this data scan job
+     * if and only if the 'dimension' field is set.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>optional float score = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the score field is set.
+     */
+    @java.lang.Override
+    public boolean hasScore() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level data quality score for this data scan job
+     * if and only if the 'dimension' field is set.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>optional float score = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The score.
+     */
+    @java.lang.Override
+    public float getScore() {
+      return score_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level data quality score for this data scan job
+     * if and only if the 'dimension' field is set.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>optional float score = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The score to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScore(float value) {
+
+      score_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level data quality score for this data scan job
+     * if and only if the 'dimension' field is set.
+     *
+     * The score ranges between [0, 100] (up to two decimal
+     * points).
+     * </pre>
+     *
+     * <code>optional float score = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearScore() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      score_ = 0F;
       onChanged();
       return this;
     }

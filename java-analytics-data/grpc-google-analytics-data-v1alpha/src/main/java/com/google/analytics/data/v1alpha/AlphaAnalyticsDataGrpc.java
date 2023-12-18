@@ -324,6 +324,165 @@ public final class AlphaAnalyticsDataGrpc {
     return getListAudienceListsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest,
+          com.google.analytics.data.v1alpha.RecurringAudienceList>
+      getCreateRecurringAudienceListMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateRecurringAudienceList",
+      requestType = com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest.class,
+      responseType = com.google.analytics.data.v1alpha.RecurringAudienceList.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest,
+          com.google.analytics.data.v1alpha.RecurringAudienceList>
+      getCreateRecurringAudienceListMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest,
+            com.google.analytics.data.v1alpha.RecurringAudienceList>
+        getCreateRecurringAudienceListMethod;
+    if ((getCreateRecurringAudienceListMethod =
+            AlphaAnalyticsDataGrpc.getCreateRecurringAudienceListMethod)
+        == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getCreateRecurringAudienceListMethod =
+                AlphaAnalyticsDataGrpc.getCreateRecurringAudienceListMethod)
+            == null) {
+          AlphaAnalyticsDataGrpc.getCreateRecurringAudienceListMethod =
+              getCreateRecurringAudienceListMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest,
+                          com.google.analytics.data.v1alpha.RecurringAudienceList>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateRecurringAudienceList"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.RecurringAudienceList
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier(
+                              "CreateRecurringAudienceList"))
+                      .build();
+        }
+      }
+    }
+    return getCreateRecurringAudienceListMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest,
+          com.google.analytics.data.v1alpha.RecurringAudienceList>
+      getGetRecurringAudienceListMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRecurringAudienceList",
+      requestType = com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest.class,
+      responseType = com.google.analytics.data.v1alpha.RecurringAudienceList.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest,
+          com.google.analytics.data.v1alpha.RecurringAudienceList>
+      getGetRecurringAudienceListMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest,
+            com.google.analytics.data.v1alpha.RecurringAudienceList>
+        getGetRecurringAudienceListMethod;
+    if ((getGetRecurringAudienceListMethod =
+            AlphaAnalyticsDataGrpc.getGetRecurringAudienceListMethod)
+        == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getGetRecurringAudienceListMethod =
+                AlphaAnalyticsDataGrpc.getGetRecurringAudienceListMethod)
+            == null) {
+          AlphaAnalyticsDataGrpc.getGetRecurringAudienceListMethod =
+              getGetRecurringAudienceListMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest,
+                          com.google.analytics.data.v1alpha.RecurringAudienceList>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetRecurringAudienceList"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.RecurringAudienceList
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier(
+                              "GetRecurringAudienceList"))
+                      .build();
+        }
+      }
+    }
+    return getGetRecurringAudienceListMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest,
+          com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse>
+      getListRecurringAudienceListsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRecurringAudienceLists",
+      requestType = com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest.class,
+      responseType = com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest,
+          com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse>
+      getListRecurringAudienceListsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest,
+            com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse>
+        getListRecurringAudienceListsMethod;
+    if ((getListRecurringAudienceListsMethod =
+            AlphaAnalyticsDataGrpc.getListRecurringAudienceListsMethod)
+        == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getListRecurringAudienceListsMethod =
+                AlphaAnalyticsDataGrpc.getListRecurringAudienceListsMethod)
+            == null) {
+          AlphaAnalyticsDataGrpc.getListRecurringAudienceListsMethod =
+              getListRecurringAudienceListsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest,
+                          com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListRecurringAudienceLists"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlphaAnalyticsDataMethodDescriptorSupplier(
+                              "ListRecurringAudienceLists"))
+                      .build();
+        }
+      }
+    }
+    return getListRecurringAudienceListsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AlphaAnalyticsDataStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AlphaAnalyticsDataStub> factory =
@@ -546,6 +705,86 @@ public final class AlphaAnalyticsDataGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListAudienceListsMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a recurring audience list. Recurring audience lists produces new
+     * audience lists each day. Audience lists are users in an audience at the
+     * time of the list's creation.
+     * A recurring audience list ensures that you have audience list based on the
+     * most recent data available for use each day. If you manually create
+     * audience list, you don't know when an audience list based on an additional
+     * day's data is available. This recurring audience list automates the
+     * creation of an audience list when an additional day's data is available.
+     * You will consume fewer quota tokens by using recurring audience list versus
+     * manually creating audience list at various times of day trying to guess
+     * when an additional day's data is ready.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    default void createRecurringAudienceList(
+        com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.RecurringAudienceList>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateRecurringAudienceListMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets configuration metadata about a specific recurring audience list. This
+     * method can be used to understand a recurring audience list's state after it
+     * has been created. For example, a recurring audience list resource will
+     * generate audience list instances for each day, and this method can be used
+     * to get the resource name of the most recent audience list instance.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    default void getRecurringAudienceList(
+        com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.RecurringAudienceList>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetRecurringAudienceListMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all recurring audience lists for a property. This method can be used
+     * for you to find and reuse existing recurring audience lists rather than
+     * creating unnecessary new recurring audience lists. The same audience can
+     * have multiple recurring audience lists that represent different dimension
+     * combinations; for example, just the dimension `deviceId` or both the
+     * dimensions `deviceId` and `userId`.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    default void listRecurringAudienceLists(
+        com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListRecurringAudienceListsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -767,6 +1006,92 @@ public final class AlphaAnalyticsDataGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a recurring audience list. Recurring audience lists produces new
+     * audience lists each day. Audience lists are users in an audience at the
+     * time of the list's creation.
+     * A recurring audience list ensures that you have audience list based on the
+     * most recent data available for use each day. If you manually create
+     * audience list, you don't know when an audience list based on an additional
+     * day's data is available. This recurring audience list automates the
+     * creation of an audience list when an additional day's data is available.
+     * You will consume fewer quota tokens by using recurring audience list versus
+     * manually creating audience list at various times of day trying to guess
+     * when an additional day's data is ready.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public void createRecurringAudienceList(
+        com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.RecurringAudienceList>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateRecurringAudienceListMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets configuration metadata about a specific recurring audience list. This
+     * method can be used to understand a recurring audience list's state after it
+     * has been created. For example, a recurring audience list resource will
+     * generate audience list instances for each day, and this method can be used
+     * to get the resource name of the most recent audience list instance.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public void getRecurringAudienceList(
+        com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.RecurringAudienceList>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRecurringAudienceListMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all recurring audience lists for a property. This method can be used
+     * for you to find and reuse existing recurring audience lists rather than
+     * creating unnecessary new recurring audience lists. The same audience can
+     * have multiple recurring audience lists that represent different dimension
+     * combinations; for example, just the dimension `deviceId` or both the
+     * dimensions `deviceId` and `userId`.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public void listRecurringAudienceLists(
+        com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRecurringAudienceListsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -949,6 +1274,80 @@ public final class AlphaAnalyticsDataGrpc {
         com.google.analytics.data.v1alpha.ListAudienceListsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAudienceListsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a recurring audience list. Recurring audience lists produces new
+     * audience lists each day. Audience lists are users in an audience at the
+     * time of the list's creation.
+     * A recurring audience list ensures that you have audience list based on the
+     * most recent data available for use each day. If you manually create
+     * audience list, you don't know when an audience list based on an additional
+     * day's data is available. This recurring audience list automates the
+     * creation of an audience list when an additional day's data is available.
+     * You will consume fewer quota tokens by using recurring audience list versus
+     * manually creating audience list at various times of day trying to guess
+     * when an additional day's data is ready.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.RecurringAudienceList createRecurringAudienceList(
+        com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRecurringAudienceListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets configuration metadata about a specific recurring audience list. This
+     * method can be used to understand a recurring audience list's state after it
+     * has been created. For example, a recurring audience list resource will
+     * generate audience list instances for each day, and this method can be used
+     * to get the resource name of the most recent audience list instance.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.RecurringAudienceList getRecurringAudienceList(
+        com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRecurringAudienceListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all recurring audience lists for a property. This method can be used
+     * for you to find and reuse existing recurring audience lists rather than
+     * creating unnecessary new recurring audience lists. The same audience can
+     * have multiple recurring audience lists that represent different dimension
+     * combinations; for example, just the dimension `deviceId` or both the
+     * dimensions `deviceId` and `userId`.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse
+        listRecurringAudienceLists(
+            com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRecurringAudienceListsMethod(), getCallOptions(), request);
     }
   }
 
@@ -1137,6 +1536,85 @@ public final class AlphaAnalyticsDataGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAudienceListsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a recurring audience list. Recurring audience lists produces new
+     * audience lists each day. Audience lists are users in an audience at the
+     * time of the list's creation.
+     * A recurring audience list ensures that you have audience list based on the
+     * most recent data available for use each day. If you manually create
+     * audience list, you don't know when an audience list based on an additional
+     * day's data is available. This recurring audience list automates the
+     * creation of an audience list when an additional day's data is available.
+     * You will consume fewer quota tokens by using recurring audience list versus
+     * manually creating audience list at various times of day trying to guess
+     * when an additional day's data is ready.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.RecurringAudienceList>
+        createRecurringAudienceList(
+            com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateRecurringAudienceListMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets configuration metadata about a specific recurring audience list. This
+     * method can be used to understand a recurring audience list's state after it
+     * has been created. For example, a recurring audience list resource will
+     * generate audience list instances for each day, and this method can be used
+     * to get the resource name of the most recent audience list instance.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.RecurringAudienceList>
+        getRecurringAudienceList(
+            com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRecurringAudienceListMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all recurring audience lists for a property. This method can be used
+     * for you to find and reuse existing recurring audience lists rather than
+     * creating unnecessary new recurring audience lists. The same audience can
+     * have multiple recurring audience lists that represent different dimension
+     * combinations; for example, just the dimension `deviceId` or both the
+     * dimensions `deviceId` and `userId`.
+     * This method is introduced at alpha stability with the intention of
+     * gathering feedback on syntax and capabilities before entering beta. To give
+     * your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse>
+        listRecurringAudienceLists(
+            com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRecurringAudienceListsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_RUN_FUNNEL_REPORT = 0;
@@ -1145,6 +1623,9 @@ public final class AlphaAnalyticsDataGrpc {
   private static final int METHODID_SHEET_EXPORT_AUDIENCE_LIST = 3;
   private static final int METHODID_GET_AUDIENCE_LIST = 4;
   private static final int METHODID_LIST_AUDIENCE_LISTS = 5;
+  private static final int METHODID_CREATE_RECURRING_AUDIENCE_LIST = 6;
+  private static final int METHODID_GET_RECURRING_AUDIENCE_LIST = 7;
+  private static final int METHODID_LIST_RECURRING_AUDIENCE_LISTS = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1200,6 +1681,25 @@ public final class AlphaAnalyticsDataGrpc {
               (com.google.analytics.data.v1alpha.ListAudienceListsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.data.v1alpha.ListAudienceListsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_RECURRING_AUDIENCE_LIST:
+          serviceImpl.createRecurringAudienceList(
+              (com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.RecurringAudienceList>)
+                  responseObserver);
+          break;
+        case METHODID_GET_RECURRING_AUDIENCE_LIST:
+          serviceImpl.getRecurringAudienceList(
+              (com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.RecurringAudienceList>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RECURRING_AUDIENCE_LISTS:
+          serviceImpl.listRecurringAudienceLists(
+              (com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse>)
                   responseObserver);
           break;
         default:
@@ -1261,6 +1761,27 @@ public final class AlphaAnalyticsDataGrpc {
                     com.google.analytics.data.v1alpha.ListAudienceListsRequest,
                     com.google.analytics.data.v1alpha.ListAudienceListsResponse>(
                     service, METHODID_LIST_AUDIENCE_LISTS)))
+        .addMethod(
+            getCreateRecurringAudienceListMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest,
+                    com.google.analytics.data.v1alpha.RecurringAudienceList>(
+                    service, METHODID_CREATE_RECURRING_AUDIENCE_LIST)))
+        .addMethod(
+            getGetRecurringAudienceListMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest,
+                    com.google.analytics.data.v1alpha.RecurringAudienceList>(
+                    service, METHODID_GET_RECURRING_AUDIENCE_LIST)))
+        .addMethod(
+            getListRecurringAudienceListsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest,
+                    com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse>(
+                    service, METHODID_LIST_RECURRING_AUDIENCE_LISTS)))
         .build();
   }
 
@@ -1318,6 +1839,9 @@ public final class AlphaAnalyticsDataGrpc {
                       .addMethod(getSheetExportAudienceListMethod())
                       .addMethod(getGetAudienceListMethod())
                       .addMethod(getListAudienceListsMethod())
+                      .addMethod(getCreateRecurringAudienceListMethod())
+                      .addMethod(getGetRecurringAudienceListMethod())
+                      .addMethod(getListRecurringAudienceListsMethod())
                       .build();
         }
       }

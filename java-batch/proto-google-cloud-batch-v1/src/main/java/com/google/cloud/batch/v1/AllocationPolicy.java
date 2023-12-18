@@ -4466,7 +4466,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=340
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=349
      * @return The installGpuDrivers.
      */
     @java.lang.Deprecated
@@ -4637,7 +4637,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=340
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=349
      * @return The installGpuDrivers.
      */
     @java.lang.Override
@@ -5299,7 +5299,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=340
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=349
        * @return The installGpuDrivers.
        */
       @java.lang.Override
@@ -5317,7 +5317,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=340
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=349
        * @param value The installGpuDrivers to set.
        * @return This builder for chaining.
        */
@@ -5339,7 +5339,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=340
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=349
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -13018,6 +13018,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The network policy.
+   *
+   * If you define an instance template in the InstancePolicyOrTemplate field,
+   * Batch will use the network settings in the instance template instead of
+   * this field.
    * </pre>
    *
    * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
@@ -13033,6 +13037,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The network policy.
+   *
+   * If you define an instance template in the InstancePolicyOrTemplate field,
+   * Batch will use the network settings in the instance template instead of
+   * this field.
    * </pre>
    *
    * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
@@ -13050,6 +13058,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The network policy.
+   *
+   * If you define an instance template in the InstancePolicyOrTemplate field,
+   * Batch will use the network settings in the instance template instead of
+   * this field.
    * </pre>
    *
    * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
@@ -14699,6 +14711,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The network policy.
+     *
+     * If you define an instance template in the InstancePolicyOrTemplate field,
+     * Batch will use the network settings in the instance template instead of
+     * this field.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
@@ -14713,6 +14729,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The network policy.
+     *
+     * If you define an instance template in the InstancePolicyOrTemplate field,
+     * Batch will use the network settings in the instance template instead of
+     * this field.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
@@ -14733,6 +14753,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The network policy.
+     *
+     * If you define an instance template in the InstancePolicyOrTemplate field,
+     * Batch will use the network settings in the instance template instead of
+     * this field.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
@@ -14755,6 +14779,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The network policy.
+     *
+     * If you define an instance template in the InstancePolicyOrTemplate field,
+     * Batch will use the network settings in the instance template instead of
+     * this field.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
@@ -14775,6 +14803,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The network policy.
+     *
+     * If you define an instance template in the InstancePolicyOrTemplate field,
+     * Batch will use the network settings in the instance template instead of
+     * this field.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
@@ -14801,6 +14833,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The network policy.
+     *
+     * If you define an instance template in the InstancePolicyOrTemplate field,
+     * Batch will use the network settings in the instance template instead of
+     * this field.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
@@ -14820,6 +14856,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The network policy.
+     *
+     * If you define an instance template in the InstancePolicyOrTemplate field,
+     * Batch will use the network settings in the instance template instead of
+     * this field.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
@@ -14834,6 +14874,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The network policy.
+     *
+     * If you define an instance template in the InstancePolicyOrTemplate field,
+     * Batch will use the network settings in the instance template instead of
+     * this field.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
@@ -14852,6 +14896,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The network policy.
+     *
+     * If you define an instance template in the InstancePolicyOrTemplate field,
+     * Batch will use the network settings in the instance template instead of
+     * this field.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy network = 7;</code>
