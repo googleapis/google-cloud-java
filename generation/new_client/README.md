@@ -137,9 +137,18 @@ The example in this README uses AlloyDB's [Cloud Drop](https://github.com/google
 ### API short name
 
 For convenience of the subsequent commands, define a variable for API short name.
+This value will be used by default to generate the following:
+* `--distribution-name`
+* `--destination-name`
+
 The corresponding value in the Cloud Drop page is `api_short_name`.
 
 Example: `alloydb`
+
+> [!IMPORTANT]
+> `api_short_name` is not always unique across client libraries.
+> In the instance that the `api_short_name` is already in use by an existing client library, you will need to determine a unique name.
+> See example under [Advanced Options](#Example with duplicate api_short_name).
 
 ### Proto path
 
@@ -311,6 +320,31 @@ generated Google Maps Routes API Java client library.
   --cloud-api=false \
   --requires-billing=true \
   --distribution-name="com.google.maps:google-maps-routing"
+```
+### Example with duplicate api_short_name
+
+Let's say you get a new library request where the Cloud Drop value for `api_short_name` is `maps-routing`.
+
+You discover that `maps-routing` is already in use by an existing client library!
+
+You need to determine a unique `destination_name` for the new library's subdirectory as well as a unique `distribution_name` for the artifact to be published. There is no hard and fast rule for determining a unique name, so some discussion will be necessary. Confirm the `distribution_name` with the service team on the buganizer ticket before proceeding, as this name is visible to customers as the Maven artifact name.
+
+You will **still use** the non-unique `api_short_name` for the `api_short_name` flag. This is important because the `api_short_name` is used to derive links within cloud.google.com to enable the API.
+
+Let's say that after some discussion, `maps-routing-gps` is selected as a suitable unique subdirectory name and `com.google.maps:google-maps-routing-gps` is selected as a suitable unique artifact name. You would then use the following command:
+
+```
+~/google-cloud-java$ python3.9 generation/new_client/new-client.py generate \
+  --api_shortname=maps-routing \
+  --proto-path=google/maps/routing \
+  --name-pretty="Routes API" \
+  --product-docs="https://developers.google.com/maps/documentation/routes" \
+  --api-description="Routes API is the next generation, performance optimized version of the existing Directions API and Distance Matrix API. It helps you find the ideal route from A to Z, calculates ETAs and distances for matrices of origin and destination locations, and also offers new features." \
+  --api-id=routes.googleapis.com \
+  --cloud-api=false \
+  --requires-billing=true \
+  --distribution-name="com.google.maps:google-maps-routing-gps" \
+  --destination-name="maps-routing-gps"
 ```
 
 # Principles
