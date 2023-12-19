@@ -18,16 +18,13 @@ package com.google.cloud.bigtable.gaxx.retrying;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
-import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
 import com.google.api.gax.retrying.StreamingRetryAlgorithm;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
-import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import java.util.Collection;
 
 // TODO: remove this once ApiResultRetryAlgorithm is added to gax.
 /**
@@ -48,23 +45,14 @@ public class Callables {
 
     UnaryCallSettings<?, ?> settings = callSettings;
 
-    if (areRetriesDisabled(settings.getRetryableCodes(), settings.getRetrySettings())) {
-      // When retries are disabled, the total timeout can be treated as the rpc timeout.
-      settings =
-          settings
-              .toBuilder()
-              .setSimpleTimeoutNoRetries(settings.getRetrySettings().getTotalTimeout())
-              .build();
-    }
-
     RetryAlgorithm<ResponseT> retryAlgorithm =
         new RetryAlgorithm<>(
-            new ApiResultRetryAlgorithm<ResponseT>(),
+            new RetryInfoRetryAlgorithm<>(),
             new ExponentialRetryAlgorithm(settings.getRetrySettings(), clientContext.getClock()));
-    ScheduledRetryingExecutor<ResponseT> retryingExecutor =
+    ScheduledRetryingExecutor<ResponseT> executor =
         new ScheduledRetryingExecutor<>(retryAlgorithm, clientContext.getExecutor());
-    return new RetryingCallable<>(
-        clientContext.getDefaultCallContext(), innerCallable, retryingExecutor);
+
+    return new RetryingCallable<>(clientContext.getDefaultCallContext(), innerCallable, executor);
   }
 
   public static <RequestT, ResponseT> ServerStreamingCallable<RequestT, ResponseT> retrying(
@@ -73,18 +61,10 @@ public class Callables {
       ClientContext clientContext) {
 
     ServerStreamingCallSettings<RequestT, ResponseT> settings = callSettings;
-    if (areRetriesDisabled(settings.getRetryableCodes(), settings.getRetrySettings())) {
-      // When retries are disabled, the total timeout can be treated as the rpc timeout.
-      settings =
-          settings
-              .toBuilder()
-              .setSimpleTimeoutNoRetries(settings.getRetrySettings().getTotalTimeout())
-              .build();
-    }
 
     StreamingRetryAlgorithm<Void> retryAlgorithm =
         new StreamingRetryAlgorithm<>(
-            new ApiResultRetryAlgorithm<Void>(),
+            new RetryInfoRetryAlgorithm<>(),
             new ExponentialRetryAlgorithm(settings.getRetrySettings(), clientContext.getClock()));
 
     ScheduledRetryingExecutor<Void> retryingExecutor =
@@ -92,12 +72,5 @@ public class Callables {
 
     return new RetryingServerStreamingCallable<>(
         innerCallable, retryingExecutor, settings.getResumptionStrategy());
-  }
-
-  private static boolean areRetriesDisabled(
-      Collection<StatusCode.Code> retryableCodes, RetrySettings retrySettings) {
-    return retrySettings.getMaxAttempts() == 1
-        || retryableCodes.isEmpty()
-        || (retrySettings.getMaxAttempts() == 0 && retrySettings.getTotalTimeout().isZero());
   }
 }

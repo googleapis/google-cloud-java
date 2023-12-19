@@ -78,6 +78,7 @@ public class EnhancedBigtableStubSettingsTest {
     WatchdogProvider watchdogProvider = Mockito.mock(WatchdogProvider.class);
     Duration watchdogInterval = Duration.ofSeconds(12);
     boolean enableRoutingCookie = false;
+    boolean enableRetryInfo = false;
 
     EnhancedBigtableStubSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder()
@@ -89,7 +90,8 @@ public class EnhancedBigtableStubSettingsTest {
             .setCredentialsProvider(credentialsProvider)
             .setStreamWatchdogProvider(watchdogProvider)
             .setStreamWatchdogCheckInterval(watchdogInterval)
-            .setEnableRoutingCookie(enableRoutingCookie);
+            .setEnableRoutingCookie(enableRoutingCookie)
+            .setEnableRetryInfo(enableRetryInfo);
 
     verifyBuilder(
         builder,
@@ -101,7 +103,8 @@ public class EnhancedBigtableStubSettingsTest {
         credentialsProvider,
         watchdogProvider,
         watchdogInterval,
-        enableRoutingCookie);
+        enableRoutingCookie,
+        enableRetryInfo);
     verifySettings(
         builder.build(),
         projectId,
@@ -112,7 +115,8 @@ public class EnhancedBigtableStubSettingsTest {
         credentialsProvider,
         watchdogProvider,
         watchdogInterval,
-        enableRoutingCookie);
+        enableRoutingCookie,
+        enableRetryInfo);
     verifyBuilder(
         builder.build().toBuilder(),
         projectId,
@@ -123,7 +127,8 @@ public class EnhancedBigtableStubSettingsTest {
         credentialsProvider,
         watchdogProvider,
         watchdogInterval,
-        enableRoutingCookie);
+        enableRoutingCookie,
+        enableRetryInfo);
   }
 
   private void verifyBuilder(
@@ -136,7 +141,8 @@ public class EnhancedBigtableStubSettingsTest {
       CredentialsProvider credentialsProvider,
       WatchdogProvider watchdogProvider,
       Duration watchdogInterval,
-      boolean enableRoutingCookie) {
+      boolean enableRoutingCookie,
+      boolean enableRetryInfo) {
     assertThat(builder.getProjectId()).isEqualTo(projectId);
     assertThat(builder.getInstanceId()).isEqualTo(instanceId);
     assertThat(builder.getAppProfileId()).isEqualTo(appProfileId);
@@ -146,6 +152,7 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(builder.getStreamWatchdogProvider()).isSameInstanceAs(watchdogProvider);
     assertThat(builder.getStreamWatchdogCheckInterval()).isEqualTo(watchdogInterval);
     assertThat(builder.getEnableRoutingCookie()).isEqualTo(enableRoutingCookie);
+    assertThat(builder.getEnableRetryInfo()).isEqualTo(enableRetryInfo);
   }
 
   private void verifySettings(
@@ -158,7 +165,8 @@ public class EnhancedBigtableStubSettingsTest {
       CredentialsProvider credentialsProvider,
       WatchdogProvider watchdogProvider,
       Duration watchdogInterval,
-      boolean enableRoutingCookie) {
+      boolean enableRoutingCookie,
+      boolean enableRetryInfo) {
     assertThat(settings.getProjectId()).isEqualTo(projectId);
     assertThat(settings.getInstanceId()).isEqualTo(instanceId);
     assertThat(settings.getAppProfileId()).isEqualTo(appProfileId);
@@ -168,6 +176,7 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(settings.getStreamWatchdogProvider()).isSameInstanceAs(watchdogProvider);
     assertThat(settings.getStreamWatchdogCheckInterval()).isEqualTo(watchdogInterval);
     assertThat(settings.getEnableRoutingCookie()).isEqualTo(enableRoutingCookie);
+    assertThat(settings.getEnableRetryInfo()).isEqualTo(enableRetryInfo);
   }
 
   @Test
@@ -801,9 +810,25 @@ public class EnhancedBigtableStubSettingsTest {
             .setProjectId(dummyProjectId)
             .setInstanceId(dummyInstanceId)
             .setCredentialsProvider(credentialsProvider);
+
     assertThat(builder.getEnableRoutingCookie()).isTrue();
     assertThat(builder.build().getEnableRoutingCookie()).isTrue();
     assertThat(builder.build().toBuilder().getEnableRoutingCookie()).isTrue();
+  }
+
+  public void enableRetryInfoDefaultValueTest() throws IOException {
+    String dummyProjectId = "my-project";
+    String dummyInstanceId = "my-instance";
+    CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
+    Mockito.when(credentialsProvider.getCredentials()).thenReturn(new FakeCredentials());
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId)
+            .setCredentialsProvider(credentialsProvider);
+    assertThat(builder.getEnableRetryInfo()).isTrue();
+    assertThat(builder.build().getEnableRetryInfo()).isTrue();
+    assertThat(builder.build().toBuilder().getEnableRetryInfo()).isTrue();
   }
 
   @Test
@@ -823,6 +848,23 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(builder.build().toBuilder().getEnableRoutingCookie()).isFalse();
   }
 
+  @Test
+  public void enableRetryInfoFalseValueTest() throws IOException {
+    String dummyProjectId = "my-project";
+    String dummyInstanceId = "my-instance";
+    CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
+    Mockito.when(credentialsProvider.getCredentials()).thenReturn(new FakeCredentials());
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId)
+            .setEnableRetryInfo(false)
+            .setCredentialsProvider(credentialsProvider);
+    assertThat(builder.getEnableRetryInfo()).isFalse();
+    assertThat(builder.build().getEnableRetryInfo()).isFalse();
+    assertThat(builder.build().toBuilder().getEnableRetryInfo()).isFalse();
+  }
+
   static final String[] SETTINGS_LIST = {
     "projectId",
     "instanceId",
@@ -831,6 +873,7 @@ public class EnhancedBigtableStubSettingsTest {
     "primedTableIds",
     "jwtAudienceMapping",
     "enableRoutingCookie",
+    "enableRetryInfo",
     "readRowsSettings",
     "readRowSettings",
     "sampleRowKeysSettings",

@@ -28,6 +28,7 @@ import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcRawCallableFactory;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetryingExecutorWithContext;
@@ -108,6 +109,7 @@ import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsRetryCompletedCal
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsUserCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.RowMergingCallable;
 import com.google.cloud.bigtable.gaxx.retrying.ApiResultRetryAlgorithm;
+import com.google.cloud.bigtable.gaxx.retrying.RetryInfoRetryAlgorithm;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -762,11 +764,19 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> withBigtableTracer =
         new BigtableTracerStreamingCallable<>(convertException);
 
+    BasicResultRetryAlgorithm<Void> resultRetryAlgorithm;
+    if (settings.getEnableRetryInfo()) {
+      resultRetryAlgorithm = new RetryInfoRetryAlgorithm<>();
+    } else {
+      resultRetryAlgorithm = new ApiResultRetryAlgorithm<>();
+    }
+
     RetryAlgorithm<Void> retryAlgorithm =
         new RetryAlgorithm<>(
-            new ApiResultRetryAlgorithm<Void>(),
+            resultRetryAlgorithm,
             new ExponentialRetryAlgorithm(
                 settings.bulkMutateRowsSettings().getRetrySettings(), clientContext.getClock()));
+
     RetryingExecutorWithContext<Void> retryingExecutor =
         new ScheduledRetryingExecutor<>(retryAlgorithm, clientContext.getExecutor());
 
@@ -1056,8 +1066,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
   private <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> withRetries(
       UnaryCallable<RequestT, ResponseT> innerCallable, UnaryCallSettings<?, ?> unaryCallSettings) {
-    UnaryCallable<RequestT, ResponseT> retrying =
-        Callables.retrying(innerCallable, unaryCallSettings, clientContext);
+    UnaryCallable<RequestT, ResponseT> retrying;
+    if (settings.getEnableRetryInfo()) {
+      retrying =
+          com.google.cloud.bigtable.gaxx.retrying.Callables.retrying(
+              innerCallable, unaryCallSettings, clientContext);
+    } else {
+      retrying = Callables.retrying(innerCallable, unaryCallSettings, clientContext);
+    }
     if (settings.getEnableRoutingCookie()) {
       return new CookiesUnaryCallable<>(retrying);
     }
@@ -1067,8 +1083,15 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private <RequestT, ResponseT> ServerStreamingCallable<RequestT, ResponseT> withRetries(
       ServerStreamingCallable<RequestT, ResponseT> innerCallable,
       ServerStreamingCallSettings<RequestT, ResponseT> serverStreamingCallSettings) {
-    ServerStreamingCallable<RequestT, ResponseT> retrying =
-        Callables.retrying(innerCallable, serverStreamingCallSettings, clientContext);
+
+    ServerStreamingCallable<RequestT, ResponseT> retrying;
+    if (settings.getEnableRetryInfo()) {
+      retrying =
+          com.google.cloud.bigtable.gaxx.retrying.Callables.retrying(
+              innerCallable, serverStreamingCallSettings, clientContext);
+    } else {
+      retrying = Callables.retrying(innerCallable, serverStreamingCallSettings, clientContext);
+    }
     if (settings.getEnableRoutingCookie()) {
       return new CookiesServerStreamingCallable<>(retrying);
     }

@@ -161,7 +161,10 @@
       <artifactId>grpc-alts</artifactId>
       <scope>runtime</scope>
     </dependency>
-    <!-- Runtime dependencies for credentials -->
+    <dependency>
+      <groupId>org.checkerframework</groupId>
+      <artifactId>checker-qual</artifactId>
+    </dependency><!-- Runtime dependencies for credentials -->
     <dependency>
       <groupId>com.google.http-client</groupId>
       <artifactId>google-http-client</artifactId>
