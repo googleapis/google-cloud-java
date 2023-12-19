@@ -16,6 +16,8 @@
 
 package com.google.cloud.vertexai;
 
+import static com.google.cloud.vertexai.api.stub.PredictionServiceStubSettings.DEFAULT_SERVICE_SCOPES;
+
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.vertexai.api.PredictionServiceClient;
@@ -89,7 +91,7 @@ public class VertexAI implements AutoCloseable {
     logger.setLevel(Level.SEVERE);
     GoogleCredentials credentials =
         scopes.length == 0
-            ? GoogleCredentials.getApplicationDefault()
+            ? GoogleCredentials.getApplicationDefault().createScoped(DEFAULT_SERVICE_SCOPES)
             : GoogleCredentials.getApplicationDefault().createScoped(scopes);
     logger.setLevel(previousLevel);
 
