@@ -20,7 +20,9 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.vertexai.api.PredictionServiceClient;
 import com.google.cloud.vertexai.api.PredictionServiceSettings;
+import com.google.cloud.vertexai.api.stub.PredictionServiceStubSettings;
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -87,9 +89,11 @@ public class VertexAI implements AutoCloseable {
     Logger logger = Logger.getLogger("com.google.auth.oauth2.DefaultCredentialsProvider");
     Level previousLevel = logger.getLevel();
     logger.setLevel(Level.SEVERE);
+    List<String> defaultScopes =
+        PredictionServiceStubSettings.defaultCredentialsProviderBuilder().getScopesToApply();
     GoogleCredentials credentials =
         scopes.length == 0
-            ? GoogleCredentials.getApplicationDefault()
+            ? GoogleCredentials.getApplicationDefault().createScoped(defaultScopes)
             : GoogleCredentials.getApplicationDefault().createScoped(scopes);
     logger.setLevel(previousLevel);
 
