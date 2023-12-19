@@ -150,6 +150,16 @@ def main(ctx):
     help="The URL of the repository that has generated Java code from proto "
          "service definition"
 )
+@click.option(
+    "--rest-docs",
+    type=str,
+    help="If it exists, link to the REST Documentation for a service"
+)
+@click.option(
+    "--rpc-docs",
+    type=str,
+    help="If it exists, link to the RPC Documentation for a service"
+)
 def generate(
     api_shortname,
     name_pretty,
@@ -168,6 +178,8 @@ def generate(
     owlbot_image,
     library_type,
     googleapis_gen_url,
+    rest_docs,
+    rpc_docs,
 ):
     cloud_prefix = "cloud-" if cloud_api else ""
 
@@ -208,6 +220,11 @@ def generate(
     if requires_billing:
         repo_metadata["requires_billing"] = True
 
+    if rest_docs:
+        repo_metadata["rest_documentation"] = rest_docs
+
+    if rpc_docs:
+        repo_metadata["rpc_documentation"] = rpc_docs
     # Initialize workdir
     workdir = Path(f"{sys.path[0]}/../../java-{output_name}").resolve()
     if os.path.isdir(workdir):
