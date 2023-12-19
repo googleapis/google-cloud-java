@@ -93,7 +93,7 @@ public class SubscribeWithAvroSchemaRevisionsExample {
               Schema schema = schemaServiceClient.getSchema(name + "@" + revision);
               org.apache.avro.Schema avroSchema =
                   new org.apache.avro.Schema.Parser().parse(schema.getDefinition());
-              reader = new SpecificDatumReader<State>(State.getClassSchema(), avroSchema);
+              reader = new SpecificDatumReader<State>(avroSchema, State.getClassSchema());
               synchronized (revisionReaders) {
                 revisionReaders.put(revision, reader);
               }
