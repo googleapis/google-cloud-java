@@ -122,7 +122,7 @@ import org.threeten.bp.Duration;
 @Generated("by gapic-generator-java")
 public class PredictionServiceStubSettings extends StubSettings<PredictionServiceStubSettings> {
   /** The default scopes of the service. */
-  public static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
+  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
   private final UnaryCallSettings<PredictRequest, PredictResponse> predictSettings;
