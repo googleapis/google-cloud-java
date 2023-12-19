@@ -6227,27 +6227,80 @@ public class ITBigQueryTest {
 
   @Test
   public void testStatelessQueries() throws InterruptedException {
+    // Create local BigQuery to not contaminate global test parameters.
+    RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
+    BigQuery bigQuery = bigqueryHelper.getOptions().getService();
+
     // simulate setting the QUERY_PREVIEW_ENABLED environment variable
-    bigquery.getOptions().setQueryPreviewEnabled("TRUE");
-    assertNull(executeSimpleQuery().getJobId());
+    bigQuery.getOptions().setQueryPreviewEnabled("TRUE");
+    assertNull(executeSimpleQuery(bigQuery).getJobId());
 
     // the flag should be case-insensitive
-    bigquery.getOptions().setQueryPreviewEnabled("tRuE");
-    assertNull(executeSimpleQuery().getJobId());
+    bigQuery.getOptions().setQueryPreviewEnabled("tRuE");
+    assertNull(executeSimpleQuery(bigQuery).getJobId());
 
     // any other values won't enable optional job creation mode
-    bigquery.getOptions().setQueryPreviewEnabled("test_value");
-    assertNotNull(executeSimpleQuery().getJobId());
+    bigQuery.getOptions().setQueryPreviewEnabled("test_value");
+    assertNotNull(executeSimpleQuery(bigQuery).getJobId());
 
     // reset the flag
-    bigquery.getOptions().setQueryPreviewEnabled(null);
-    assertNotNull(executeSimpleQuery().getJobId());
+    bigQuery.getOptions().setQueryPreviewEnabled(null);
+    assertNotNull(executeSimpleQuery(bigQuery).getJobId());
   }
 
-  private TableResult executeSimpleQuery() throws InterruptedException {
+  private TableResult executeSimpleQuery(BigQuery bigQuery) throws InterruptedException {
     String query = "SELECT 1 as one";
     QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query).build();
-    TableResult result = bigquery.query(config);
+    TableResult result = bigQuery.query(config);
     return result;
+  }
+
+  @Test
+  public void testStatelessQueriesWithLocation() throws Exception {
+    // This test validates BigQueryOption location is used for stateless query by verifying that the
+    // stateless query fails when the BigQueryOption location does not match the dataset location.
+    String location = "EU";
+    String wrongLocation = "US";
+
+    RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
+    BigQuery bigQuery =
+        bigqueryHelper.getOptions().toBuilder().setLocation(location).build().getService();
+
+    Dataset dataset =
+        bigQuery.create(
+            DatasetInfo.newBuilder("locationset_" + UUID.randomUUID().toString().replace("-", "_"))
+                .setLocation(location)
+                .build());
+    try {
+      TableId tableId = TableId.of(dataset.getDatasetId().getDataset(), "sometable");
+      Schema schema = Schema.of(Field.of("name", LegacySQLTypeName.STRING));
+      TableDefinition tableDef = StandardTableDefinition.of(schema);
+      Table table = bigQuery.create(TableInfo.newBuilder(tableId, tableDef).build());
+
+      String query =
+          String.format(
+              "SELECT * FROM `%s.%s.%s`",
+              table.getTableId().getProject(),
+              table.getTableId().getDataset(),
+              table.getTableId().getTable());
+
+      // Test stateless query when BigQueryOption location matches dataset location.
+      bigQuery.getOptions().setQueryPreviewEnabled("TRUE");
+      TableResult tb = bigQuery.query(QueryJobConfiguration.of(query));
+      assertNull(tb.getJobId());
+
+      // Test stateless query when BigQueryOption location does not match dataset location.
+      try {
+        BigQuery bigQueryWrongLocation =
+            bigqueryHelper.getOptions().toBuilder().setLocation(wrongLocation).build().getService();
+        bigQueryWrongLocation.getOptions().setQueryPreviewEnabled("TRUE");
+        bigQueryWrongLocation.query(QueryJobConfiguration.of(query));
+        fail("querying a table with wrong location shouldn't work");
+      } catch (BigQueryException e) {
+        // Nothing to do
+      }
+    } finally {
+      bigQuery.delete(dataset.getDatasetId(), DatasetDeleteOption.deleteContents());
+    }
   }
 }

@@ -1994,6 +1994,47 @@ public class BigQueryImplTest {
         QUERY_JOB_CONFIGURATION_FOR_QUERY.getDefaultDataset().getDataset(),
         requestPb.getDefaultDataset().getDatasetId());
     assertEquals(QUERY_JOB_CONFIGURATION_FOR_QUERY.useQueryCache(), requestPb.getUseQueryCache());
+    assertNull(requestPb.getLocation());
+
+    verify(bigqueryRpcMock).queryRpc(eq(PROJECT), requestPbCapture.capture());
+  }
+
+  @Test
+  public void testFastQueryRequestCompletedWithLocation() throws InterruptedException {
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setCacheHit(false)
+            .setJobComplete(true)
+            .setKind("bigquery#queryResponse")
+            .setPageToken(null)
+            .setRows(ImmutableList.of(TABLE_ROW))
+            .setSchema(TABLE_SCHEMA.toPb())
+            .setTotalBytesProcessed(42L)
+            .setTotalRows(BigInteger.valueOf(1L));
+
+    when(bigqueryRpcMock.queryRpc(eq(PROJECT), requestPbCapture.capture()))
+        .thenReturn(queryResponsePb);
+
+    BigQueryOptions options = createBigQueryOptionsForProjectWithLocation(PROJECT, rpcFactoryMock);
+    bigquery = options.getService();
+    TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY);
+    assertNull(result.getNextPage());
+    assertNull(result.getNextPageToken());
+    assertFalse(result.hasNextPage());
+    assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
+    assertThat(result.getTotalRows()).isEqualTo(1);
+    for (FieldValueList row : result.getValues()) {
+      assertThat(row.get(0).getBooleanValue()).isFalse();
+      assertThat(row.get(1).getLongValue()).isEqualTo(1);
+    }
+
+    QueryRequest requestPb = requestPbCapture.getValue();
+    assertEquals(QUERY_JOB_CONFIGURATION_FOR_QUERY.getQuery(), requestPb.getQuery());
+    assertEquals(
+        QUERY_JOB_CONFIGURATION_FOR_QUERY.getDefaultDataset().getDataset(),
+        requestPb.getDefaultDataset().getDatasetId());
+    assertEquals(QUERY_JOB_CONFIGURATION_FOR_QUERY.useQueryCache(), requestPb.getUseQueryCache());
+    assertEquals(LOCATION, requestPb.getLocation());
 
     verify(bigqueryRpcMock).queryRpc(eq(PROJECT), requestPbCapture.capture());
   }

@@ -1339,6 +1339,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     if (requestInfo.isFastQuerySupported(null)) {
       String projectId = getOptions().getProjectId();
       QueryRequest content = requestInfo.toPb();
+      if (getOptions().getLocation() != null) {
+        content.setLocation(getOptions().getLocation());
+      }
       return queryRpc(projectId, content, options);
     }
     // Otherwise, fall back to the existing create query job logic
@@ -1437,12 +1440,14 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       String projectId =
           jobId.getProject() != null ? jobId.getProject() : getOptions().getProjectId();
       QueryRequest content = requestInfo.toPb();
-      // Be careful when setting the location in JobId, if a location is specified in the JobId,
-      // the job created by the query method will be in that location, even if the table to be
+      // Be careful when setting the location, if a location is specified in the BigQueryOption or
+      // JobId the job created by the query method will be in that location, even if the table to be
       // queried is in a different location. This may cause the query to fail with
       // "BigQueryException: Not found"
       if (jobId.getLocation() != null) {
         content.setLocation(jobId.getLocation());
+      } else if (getOptions().getLocation() != null) {
+        content.setLocation(getOptions().getLocation());
       }
 
       return queryRpc(projectId, content, options);
