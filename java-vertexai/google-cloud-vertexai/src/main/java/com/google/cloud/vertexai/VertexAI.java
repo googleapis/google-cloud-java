@@ -16,7 +16,6 @@
 
 package com.google.cloud.vertexai;
 
-
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.vertexai.api.PredictionServiceClient;
