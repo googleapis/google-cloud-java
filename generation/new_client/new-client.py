@@ -187,9 +187,6 @@ def generate(
         f"https://cloud.google.com/{language}/docs/reference/{distribution_name_short}/latest/overview"
     )
 
-    if proto_path is None:
-        proto_path = f"/google/cloud/{api_shortname}"
-
     if api_shortname == "":
         sys.exit("api_shortname is empty")
 

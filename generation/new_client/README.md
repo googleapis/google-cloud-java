@@ -138,9 +138,8 @@ The example in this README uses AlloyDB's [Cloud Drop](https://github.com/google
 
 For convenience of the subsequent commands, define a variable for API short name.
 This value will be used by default to generate the following:
-* `distribution_name`
-* `destination-name`
-* `proto_path`
+* `--distribution-name`
+* `--destination-name`
 
 The corresponding value in the Cloud Drop page is `api_short_name`.
 
@@ -328,15 +327,12 @@ Let's say you get a new library request where the Cloud Drop value for `api_shor
 
 You discover that `maps-routing` is already in use by an existing client library!
 
-You need to determine a unique `destination_name` for the new library's subdirectory as well as a unique `distribution_name` for the artifact to be published (confirm these values with the service team on the buganizer ticket before proceeding).
+You need to determine a unique `destination_name` for the new library's subdirectory as well as a unique `distribution_name` for the artifact to be published. There is no hard and fast rule for determining a unique name, so some discussion will be necessary. Confirm the `distribution_name` with the service team on the buganizer ticket before proceeding, as this name is visible to customers as the Maven artifact name.
 
-You will **still use** the non-unique `api_short_name` for the `api_short_name` flag.
+You will **still use** the non-unique `api_short_name` for the `api_short_name` flag. This is important because the `api_short_name` is used to derive links within cloud.google.com to enable the API.
 
-There is no hard and fast rule for determining a unique name, so some discussion will be necessary.
+Let's say that after some discussion, `maps-routing-gps` is selected as a suitable unique subdirectory name and `com.google.maps:google-maps-routing-gps` is selected as a suitable unique artifact name. You would then use the following command:
 
-Let's say that after some discussion, `maps-routing-gps` is selected as a suitable unique subdirectory name and artifact name.
-
-You would then use the following command:
 ```
 ~/google-cloud-java$ python3.9 generation/new_client/new-client.py generate \
   --api_shortname=maps-routing \
