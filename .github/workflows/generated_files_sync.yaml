@@ -19,6 +19,8 @@ on:
     - main
   pull_request:
 name: generation diff
+permissions:
+  contents: read
 jobs:
   root-pom:
     # root pom.xml does not have diff from generated one

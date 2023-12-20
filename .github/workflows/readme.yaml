@@ -18,9 +18,13 @@ on:
   # every morning
   - cron: '0 1 * * *'
 name: readme
+permissions:
+  contents: read
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write # for googleapis/code-suggester
     if: github.repository_owner == 'googleapis'
     steps:
     - uses: actions/checkout@v2
