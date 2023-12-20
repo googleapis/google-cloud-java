@@ -1,4 +1,4 @@
-name: New Client
+name: New Client (for testing new client release scripts in a pull request)
 on:
   schedule:
     - cron: '0 2 * * *' # nightly at 2 am UTC
