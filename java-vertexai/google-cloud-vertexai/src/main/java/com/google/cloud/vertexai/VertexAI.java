@@ -24,7 +24,9 @@ import com.google.cloud.vertexai.api.PredictionServiceClient;
 import com.google.cloud.vertexai.api.PredictionServiceSettings;
 import com.google.cloud.vertexai.api.stub.PredictionServiceStubSettings;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -86,11 +88,16 @@ public class VertexAI implements AutoCloseable {
    * @param scopes collection of scopes in the default credentials
    */
   public VertexAI(String projectId, String location, String... scopes) throws IOException {
+    List<String> defaultScopes =
+        PredictionServiceStubSettings.defaultCredentialsProviderBuilder().getScopesToApply();
+    List<String> allScopes = new ArrayList<String>(Arrays.asList(scopes));
+    // defaultScopes contains the necessary scope to make service account credentials work.
+    allScopes.addAll(defaultScopes);
     CredentialsProvider credentialsProvider =
         scopes.length == 0
             ? null
             : GoogleCredentialsProvider.newBuilder()
-                .setScopesToApply(Arrays.asList(scopes))
+                .setScopesToApply(allScopes)
                 .setUseJwtAccessWithScope(true)
                 .build();
 
