@@ -22,18 +22,66 @@ WORKSPACE_DIR="/workspace"
 # path_to_monorepo:/workspace/google-cloud-java)
 git config --global --add safe.directory /workspace/google-cloud-java
 
-cd $WORKSPACE_DIR/$MONO_REPO_NAME
-git checkout owlbot-bootstrapper-experiment
-pyenv local 3.9.13
 cd "$WORKSPACE_DIR/$MONO_REPO_NAME"
+# looks like checking out a branch makes the changes to not be detected
+# git checkout owlbot-bootstrapper-experiment
 
-python -m pip install -r generation/new_client/requirements.txt
+mkdir java-edgenetwork
+cat > java-edgenetwork/owlbot.py <<- EOF
+import synthtool as s
+from synthtool.languages import java
 
-python generation/new_client/new-client.py generate \
-  --api_shortname=edgenetwork \
-  --proto-path=google/cloud/edgenetwork \
-  --name-pretty="Distributed Cloud Edge Network API" \
-  --product-docs="https://cloud.google.com/distributed-cloud/edge/latest/docs/overview" \
-  --api-description="Network management API for Distributed Cloud Edge."
 
+for library in s.get_staging_dirs():
+    # put any special-case replacements here
+    s.move(library)
+
+s.remove_staging_dirs()
+java.common_templates(monorepo=True, )
+EOF
+
+cat > java-edgenetwork/.OwlBot.yaml <<- EOF
+deep-remove-regex:
+- "/java-edgenetwork/grpc-google-.*/src"
+- "/java-edgenetwork/proto-google-.*/src"
+- "/java-edgenetwork/google-.*/src"
+- "/java-edgenetwork/samples/snippets/generated"
+
+deep-preserve-regex:
+- "/java-edgenetwork/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
+deep-copy-regex:
+- source: "/google/cloud/edgenetwork/(v.*)/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-edgenetwork/\$1/proto-google-cloud-edgenetwork-\$1/src"
+- source: "/google/cloud/edgenetwork/(v.*)/.*-java/grpc-google-.*/src"
+  dest: "/owl-bot-staging/java-edgenetwork/\$1/grpc-google-cloud-edgenetwork-\$1/src"
+- source: "/google/cloud/edgenetwork/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-edgenetwork/\$1/google-cloud-edgenetwork/src"
+- source: "/google/cloud/edgenetwork/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-edgenetwork/\$1/samples/snippets/generated"
+
+
+api-name: edgenetwork
+EOF
+
+cat > java-edgenetwork/.repo-metadata.json <<- EOF
+{
+  "api_shortname": "edgenetwork",
+  "name_pretty": "Distributed Cloud Edge Network API",
+  "product_documentation": "https://cloud.google.com/distributed-cloud/edge/latest/docs/overview",
+  "api_description": "Network management API for Distributed Cloud Edge.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-edgenetwork/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-edgenetwork",
+  "repo_short": "java-edgenetwork",
+  "distribution_name": "com.google.cloud:google-cloud-edgenetwork",
+  "api_id": "edgenetwork.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
+EOF
+
+jq '. += {"owlbotYamlPath": "java-edgenetwork/.OwlBot.yaml"}' "${INTER_CONTAINER_VARS_PATH}" | sponge "${INTER_CONTAINER_VARS_PATH}"
 
