@@ -1,0 +1,123 @@
+# Copyright 2022 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# Github action job to test core java library features on
+# downstream client libraries before they are released.
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+name: ci
+jobs:
+  units:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [11, 17, 21]
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: ${{matrix.java}}
+    - run: java -version
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: test
+  units-java8:
+    # Building using Java 17 and run the tests with Java 8 runtime
+    name: "units (8)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: 8
+          distribution: temurin
+      - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
+        # Maven surefire plugin (unit tests) allows us to specify JVM to run the tests.
+        # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
+        run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}/bin/java" >> $GITHUB_ENV
+        shell: bash
+      - uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+      - run: .kokoro/build.sh
+        env:
+          JOB_TYPE: test
+  windows:
+    runs-on: windows-latest
+    steps:
+    - name: Support longpaths
+      run: git config --system core.longpaths true
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 8
+    - run: java -version
+    - run: .kokoro/build.bat
+      env:
+        JOB_TYPE: test
+  dependencies:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [17]
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: ${{matrix.java}}
+    - run: java -version
+    - run: .kokoro/dependencies.sh
+  javadoc:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 17
+    - run: java -version
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: javadoc
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 11
+    - run: java -version
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: lint
+  clirr:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 8
+    - run: java -version
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: clirr
