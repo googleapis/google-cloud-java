@@ -1,0 +1,23 @@
+name: Generate new GAPIC client library
+on:
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip' # caching pip dependencies
+      - name: Get current week within the year
+        id: date
+        run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
+      - uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 11
+      - run: java -version
+      - run: echo 'a message'
+
