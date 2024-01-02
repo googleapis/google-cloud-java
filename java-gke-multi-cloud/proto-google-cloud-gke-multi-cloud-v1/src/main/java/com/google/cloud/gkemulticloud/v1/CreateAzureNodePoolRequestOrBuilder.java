@@ -30,7 +30,8 @@ public interface CreateAzureNodePoolRequestOrBuilder
    * Required. The [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
    * resource where this node pool will be created.
    *
-   * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   * `AzureCluster` names are formatted as
+   * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
@@ -50,7 +51,8 @@ public interface CreateAzureNodePoolRequestOrBuilder
    * Required. The [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
    * resource where this node pool will be created.
    *
-   * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   * `AzureCluster` names are formatted as
+   * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.

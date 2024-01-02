@@ -151,6 +151,8 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
    *  *   `annotations`.
    *  *   `control_plane.version`.
    *  *   `authorization.admin_users`.
+   *  *   `authorization.admin_groups`.
+   *  *   `binary_authorization.evaluation_mode`.
    *  *   `control_plane.aws_services_authentication.role_arn`.
    *  *   `control_plane.aws_services_authentication.role_session_name`.
    *  *   `control_plane.config_encryption.kms_key_arn`.
@@ -162,6 +164,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
    *  *   `control_plane.root_volume.size_gib`.
    *  *   `control_plane.root_volume.volume_type`.
    *  *   `control_plane.root_volume.iops`.
+   *  *   `control_plane.root_volume.throughput`.
    *  *   `control_plane.root_volume.kms_key_arn`.
    *  *   `control_plane.ssh_config`.
    *  *   `control_plane.ssh_config.ec2_key_pair`.
@@ -170,6 +173,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
    *  *   `logging_config.component_config.enable_components`.
    *  *   `control_plane.tags`.
    *  *   `monitoring_config.managed_prometheus_config.enabled`.
+   *  *   `networking.per_node_pool_sg_rules_disabled`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -193,6 +197,8 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
    *  *   `annotations`.
    *  *   `control_plane.version`.
    *  *   `authorization.admin_users`.
+   *  *   `authorization.admin_groups`.
+   *  *   `binary_authorization.evaluation_mode`.
    *  *   `control_plane.aws_services_authentication.role_arn`.
    *  *   `control_plane.aws_services_authentication.role_session_name`.
    *  *   `control_plane.config_encryption.kms_key_arn`.
@@ -204,6 +210,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
    *  *   `control_plane.root_volume.size_gib`.
    *  *   `control_plane.root_volume.volume_type`.
    *  *   `control_plane.root_volume.iops`.
+   *  *   `control_plane.root_volume.throughput`.
    *  *   `control_plane.root_volume.kms_key_arn`.
    *  *   `control_plane.ssh_config`.
    *  *   `control_plane.ssh_config.ec2_key_pair`.
@@ -212,6 +219,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
    *  *   `logging_config.component_config.enable_components`.
    *  *   `control_plane.tags`.
    *  *   `monitoring_config.managed_prometheus_config.enabled`.
+   *  *   `networking.per_node_pool_sg_rules_disabled`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -235,6 +243,8 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
    *  *   `annotations`.
    *  *   `control_plane.version`.
    *  *   `authorization.admin_users`.
+   *  *   `authorization.admin_groups`.
+   *  *   `binary_authorization.evaluation_mode`.
    *  *   `control_plane.aws_services_authentication.role_arn`.
    *  *   `control_plane.aws_services_authentication.role_session_name`.
    *  *   `control_plane.config_encryption.kms_key_arn`.
@@ -246,6 +256,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
    *  *   `control_plane.root_volume.size_gib`.
    *  *   `control_plane.root_volume.volume_type`.
    *  *   `control_plane.root_volume.iops`.
+   *  *   `control_plane.root_volume.throughput`.
    *  *   `control_plane.root_volume.kms_key_arn`.
    *  *   `control_plane.ssh_config`.
    *  *   `control_plane.ssh_config.ec2_key_pair`.
@@ -254,6 +265,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
    *  *   `logging_config.component_config.enable_components`.
    *  *   `control_plane.tags`.
    *  *   `monitoring_config.managed_prometheus_config.enabled`.
+   *  *   `networking.per_node_pool_sg_rules_disabled`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -949,6 +961,8 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `annotations`.
      *  *   `control_plane.version`.
      *  *   `authorization.admin_users`.
+     *  *   `authorization.admin_groups`.
+     *  *   `binary_authorization.evaluation_mode`.
      *  *   `control_plane.aws_services_authentication.role_arn`.
      *  *   `control_plane.aws_services_authentication.role_session_name`.
      *  *   `control_plane.config_encryption.kms_key_arn`.
@@ -960,6 +974,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `control_plane.root_volume.size_gib`.
      *  *   `control_plane.root_volume.volume_type`.
      *  *   `control_plane.root_volume.iops`.
+     *  *   `control_plane.root_volume.throughput`.
      *  *   `control_plane.root_volume.kms_key_arn`.
      *  *   `control_plane.ssh_config`.
      *  *   `control_plane.ssh_config.ec2_key_pair`.
@@ -968,6 +983,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `logging_config.component_config.enable_components`.
      *  *   `control_plane.tags`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `networking.per_node_pool_sg_rules_disabled`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -990,6 +1006,8 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `annotations`.
      *  *   `control_plane.version`.
      *  *   `authorization.admin_users`.
+     *  *   `authorization.admin_groups`.
+     *  *   `binary_authorization.evaluation_mode`.
      *  *   `control_plane.aws_services_authentication.role_arn`.
      *  *   `control_plane.aws_services_authentication.role_session_name`.
      *  *   `control_plane.config_encryption.kms_key_arn`.
@@ -1001,6 +1019,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `control_plane.root_volume.size_gib`.
      *  *   `control_plane.root_volume.volume_type`.
      *  *   `control_plane.root_volume.iops`.
+     *  *   `control_plane.root_volume.throughput`.
      *  *   `control_plane.root_volume.kms_key_arn`.
      *  *   `control_plane.ssh_config`.
      *  *   `control_plane.ssh_config.ec2_key_pair`.
@@ -1009,6 +1028,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `logging_config.component_config.enable_components`.
      *  *   `control_plane.tags`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `networking.per_node_pool_sg_rules_disabled`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -1037,6 +1057,8 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `annotations`.
      *  *   `control_plane.version`.
      *  *   `authorization.admin_users`.
+     *  *   `authorization.admin_groups`.
+     *  *   `binary_authorization.evaluation_mode`.
      *  *   `control_plane.aws_services_authentication.role_arn`.
      *  *   `control_plane.aws_services_authentication.role_session_name`.
      *  *   `control_plane.config_encryption.kms_key_arn`.
@@ -1048,6 +1070,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `control_plane.root_volume.size_gib`.
      *  *   `control_plane.root_volume.volume_type`.
      *  *   `control_plane.root_volume.iops`.
+     *  *   `control_plane.root_volume.throughput`.
      *  *   `control_plane.root_volume.kms_key_arn`.
      *  *   `control_plane.ssh_config`.
      *  *   `control_plane.ssh_config.ec2_key_pair`.
@@ -1056,6 +1079,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `logging_config.component_config.enable_components`.
      *  *   `control_plane.tags`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `networking.per_node_pool_sg_rules_disabled`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -1086,6 +1110,8 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `annotations`.
      *  *   `control_plane.version`.
      *  *   `authorization.admin_users`.
+     *  *   `authorization.admin_groups`.
+     *  *   `binary_authorization.evaluation_mode`.
      *  *   `control_plane.aws_services_authentication.role_arn`.
      *  *   `control_plane.aws_services_authentication.role_session_name`.
      *  *   `control_plane.config_encryption.kms_key_arn`.
@@ -1097,6 +1123,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `control_plane.root_volume.size_gib`.
      *  *   `control_plane.root_volume.volume_type`.
      *  *   `control_plane.root_volume.iops`.
+     *  *   `control_plane.root_volume.throughput`.
      *  *   `control_plane.root_volume.kms_key_arn`.
      *  *   `control_plane.ssh_config`.
      *  *   `control_plane.ssh_config.ec2_key_pair`.
@@ -1105,6 +1132,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `logging_config.component_config.enable_components`.
      *  *   `control_plane.tags`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `networking.per_node_pool_sg_rules_disabled`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -1132,6 +1160,8 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `annotations`.
      *  *   `control_plane.version`.
      *  *   `authorization.admin_users`.
+     *  *   `authorization.admin_groups`.
+     *  *   `binary_authorization.evaluation_mode`.
      *  *   `control_plane.aws_services_authentication.role_arn`.
      *  *   `control_plane.aws_services_authentication.role_session_name`.
      *  *   `control_plane.config_encryption.kms_key_arn`.
@@ -1143,6 +1173,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `control_plane.root_volume.size_gib`.
      *  *   `control_plane.root_volume.volume_type`.
      *  *   `control_plane.root_volume.iops`.
+     *  *   `control_plane.root_volume.throughput`.
      *  *   `control_plane.root_volume.kms_key_arn`.
      *  *   `control_plane.ssh_config`.
      *  *   `control_plane.ssh_config.ec2_key_pair`.
@@ -1151,6 +1182,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `logging_config.component_config.enable_components`.
      *  *   `control_plane.tags`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `networking.per_node_pool_sg_rules_disabled`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -1184,6 +1216,8 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `annotations`.
      *  *   `control_plane.version`.
      *  *   `authorization.admin_users`.
+     *  *   `authorization.admin_groups`.
+     *  *   `binary_authorization.evaluation_mode`.
      *  *   `control_plane.aws_services_authentication.role_arn`.
      *  *   `control_plane.aws_services_authentication.role_session_name`.
      *  *   `control_plane.config_encryption.kms_key_arn`.
@@ -1195,6 +1229,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `control_plane.root_volume.size_gib`.
      *  *   `control_plane.root_volume.volume_type`.
      *  *   `control_plane.root_volume.iops`.
+     *  *   `control_plane.root_volume.throughput`.
      *  *   `control_plane.root_volume.kms_key_arn`.
      *  *   `control_plane.ssh_config`.
      *  *   `control_plane.ssh_config.ec2_key_pair`.
@@ -1203,6 +1238,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `logging_config.component_config.enable_components`.
      *  *   `control_plane.tags`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `networking.per_node_pool_sg_rules_disabled`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -1230,6 +1266,8 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `annotations`.
      *  *   `control_plane.version`.
      *  *   `authorization.admin_users`.
+     *  *   `authorization.admin_groups`.
+     *  *   `binary_authorization.evaluation_mode`.
      *  *   `control_plane.aws_services_authentication.role_arn`.
      *  *   `control_plane.aws_services_authentication.role_session_name`.
      *  *   `control_plane.config_encryption.kms_key_arn`.
@@ -1241,6 +1279,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `control_plane.root_volume.size_gib`.
      *  *   `control_plane.root_volume.volume_type`.
      *  *   `control_plane.root_volume.iops`.
+     *  *   `control_plane.root_volume.throughput`.
      *  *   `control_plane.root_volume.kms_key_arn`.
      *  *   `control_plane.ssh_config`.
      *  *   `control_plane.ssh_config.ec2_key_pair`.
@@ -1249,6 +1288,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `logging_config.component_config.enable_components`.
      *  *   `control_plane.tags`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `networking.per_node_pool_sg_rules_disabled`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -1271,6 +1311,8 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `annotations`.
      *  *   `control_plane.version`.
      *  *   `authorization.admin_users`.
+     *  *   `authorization.admin_groups`.
+     *  *   `binary_authorization.evaluation_mode`.
      *  *   `control_plane.aws_services_authentication.role_arn`.
      *  *   `control_plane.aws_services_authentication.role_session_name`.
      *  *   `control_plane.config_encryption.kms_key_arn`.
@@ -1282,6 +1324,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `control_plane.root_volume.size_gib`.
      *  *   `control_plane.root_volume.volume_type`.
      *  *   `control_plane.root_volume.iops`.
+     *  *   `control_plane.root_volume.throughput`.
      *  *   `control_plane.root_volume.kms_key_arn`.
      *  *   `control_plane.ssh_config`.
      *  *   `control_plane.ssh_config.ec2_key_pair`.
@@ -1290,6 +1333,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `logging_config.component_config.enable_components`.
      *  *   `control_plane.tags`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `networking.per_node_pool_sg_rules_disabled`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -1316,6 +1360,8 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `annotations`.
      *  *   `control_plane.version`.
      *  *   `authorization.admin_users`.
+     *  *   `authorization.admin_groups`.
+     *  *   `binary_authorization.evaluation_mode`.
      *  *   `control_plane.aws_services_authentication.role_arn`.
      *  *   `control_plane.aws_services_authentication.role_session_name`.
      *  *   `control_plane.config_encryption.kms_key_arn`.
@@ -1327,6 +1373,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `control_plane.root_volume.size_gib`.
      *  *   `control_plane.root_volume.volume_type`.
      *  *   `control_plane.root_volume.iops`.
+     *  *   `control_plane.root_volume.throughput`.
      *  *   `control_plane.root_volume.kms_key_arn`.
      *  *   `control_plane.ssh_config`.
      *  *   `control_plane.ssh_config.ec2_key_pair`.
@@ -1335,6 +1382,7 @@ public final class UpdateAwsClusterRequest extends com.google.protobuf.Generated
      *  *   `logging_config.component_config.enable_components`.
      *  *   `control_plane.tags`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `networking.per_node_pool_sg_rules_disabled`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = REQUIRED];

@@ -317,6 +317,62 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
     }
   }
 
+  public static final int PROXY_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.gkemulticloud.v1.AttachedProxyConfig proxyConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Proxy configuration for outbound HTTP(S) traffic.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the proxyConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasProxyConfig() {
+    return proxyConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Proxy configuration for outbound HTTP(S) traffic.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The proxyConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AttachedProxyConfig getProxyConfig() {
+    return proxyConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.getDefaultInstance()
+        : proxyConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Proxy configuration for outbound HTTP(S) traffic.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AttachedProxyConfigOrBuilder getProxyConfigOrBuilder() {
+    return proxyConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.getDefaultInstance()
+        : proxyConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -346,6 +402,9 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distribution_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, distribution_);
     }
+    if (proxyConfig_ != null) {
+      output.writeMessage(6, getProxyConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -370,6 +429,9 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(distribution_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, distribution_);
     }
+    if (proxyConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getProxyConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -391,6 +453,10 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
     if (!getFleetMembership().equals(other.getFleetMembership())) return false;
     if (!getPlatformVersion().equals(other.getPlatformVersion())) return false;
     if (!getDistribution().equals(other.getDistribution())) return false;
+    if (hasProxyConfig() != other.hasProxyConfig()) return false;
+    if (hasProxyConfig()) {
+      if (!getProxyConfig().equals(other.getProxyConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -412,6 +478,10 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
     hash = (53 * hash) + getPlatformVersion().hashCode();
     hash = (37 * hash) + DISTRIBUTION_FIELD_NUMBER;
     hash = (53 * hash) + getDistribution().hashCode();
+    if (hasProxyConfig()) {
+      hash = (37 * hash) + PROXY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getProxyConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -557,6 +627,11 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
       fleetMembership_ = "";
       platformVersion_ = "";
       distribution_ = "";
+      proxyConfig_ = null;
+      if (proxyConfigBuilder_ != null) {
+        proxyConfigBuilder_.dispose();
+        proxyConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -609,6 +684,10 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.distribution_ = distribution_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.proxyConfig_ =
+            proxyConfigBuilder_ == null ? proxyConfig_ : proxyConfigBuilder_.build();
       }
     }
 
@@ -682,6 +761,9 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.hasProxyConfig()) {
+        mergeProxyConfig(other.getProxyConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -738,6 +820,12 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(getProxyConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1307,6 +1395,210 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.gkemulticloud.v1.AttachedProxyConfig proxyConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AttachedProxyConfig,
+            com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.AttachedProxyConfigOrBuilder>
+        proxyConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the proxyConfig field is set.
+     */
+    public boolean hasProxyConfig() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The proxyConfig.
+     */
+    public com.google.cloud.gkemulticloud.v1.AttachedProxyConfig getProxyConfig() {
+      if (proxyConfigBuilder_ == null) {
+        return proxyConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.getDefaultInstance()
+            : proxyConfig_;
+      } else {
+        return proxyConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProxyConfig(com.google.cloud.gkemulticloud.v1.AttachedProxyConfig value) {
+      if (proxyConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        proxyConfig_ = value;
+      } else {
+        proxyConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProxyConfig(
+        com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.Builder builderForValue) {
+      if (proxyConfigBuilder_ == null) {
+        proxyConfig_ = builderForValue.build();
+      } else {
+        proxyConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeProxyConfig(com.google.cloud.gkemulticloud.v1.AttachedProxyConfig value) {
+      if (proxyConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && proxyConfig_ != null
+            && proxyConfig_
+                != com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.getDefaultInstance()) {
+          getProxyConfigBuilder().mergeFrom(value);
+        } else {
+          proxyConfig_ = value;
+        }
+      } else {
+        proxyConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearProxyConfig() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      proxyConfig_ = null;
+      if (proxyConfigBuilder_ != null) {
+        proxyConfigBuilder_.dispose();
+        proxyConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.Builder getProxyConfigBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getProxyConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AttachedProxyConfigOrBuilder
+        getProxyConfigOrBuilder() {
+      if (proxyConfigBuilder_ != null) {
+        return proxyConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return proxyConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.getDefaultInstance()
+            : proxyConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AttachedProxyConfig,
+            com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.AttachedProxyConfigOrBuilder>
+        getProxyConfigFieldBuilder() {
+      if (proxyConfigBuilder_ == null) {
+        proxyConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.AttachedProxyConfig,
+                com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.Builder,
+                com.google.cloud.gkemulticloud.v1.AttachedProxyConfigOrBuilder>(
+                getProxyConfig(), getParentForChildren(), isClean());
+        proxyConfig_ = null;
+      }
+      return proxyConfigBuilder_;
     }
 
     @java.lang.Override

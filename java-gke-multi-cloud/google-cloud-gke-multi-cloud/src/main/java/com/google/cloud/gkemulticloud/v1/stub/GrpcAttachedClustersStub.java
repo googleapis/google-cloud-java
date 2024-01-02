@@ -30,6 +30,8 @@ import com.google.cloud.gkemulticloud.v1.AttachedCluster;
 import com.google.cloud.gkemulticloud.v1.AttachedServerConfig;
 import com.google.cloud.gkemulticloud.v1.CreateAttachedClusterRequest;
 import com.google.cloud.gkemulticloud.v1.DeleteAttachedClusterRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse;
 import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestResponse;
 import com.google.cloud.gkemulticloud.v1.GetAttachedClusterRequest;
@@ -154,6 +156,23 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       GenerateAttachedClusterInstallManifestResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+      generateAttachedClusterAgentTokenMethodDescriptor =
+          MethodDescriptor
+              .<GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.gkemulticloud.v1.AttachedClusters/GenerateAttachedClusterAgentToken")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GenerateAttachedClusterAgentTokenRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      GenerateAttachedClusterAgentTokenResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateAttachedClusterRequest, Operation>
       createAttachedClusterCallable;
   private final OperationCallable<CreateAttachedClusterRequest, AttachedCluster, OperationMetadata>
@@ -182,6 +201,9 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
           GenerateAttachedClusterInstallManifestRequest,
           GenerateAttachedClusterInstallManifestResponse>
       generateAttachedClusterInstallManifestCallable;
+  private final UnaryCallable<
+          GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+      generateAttachedClusterAgentTokenCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -322,6 +344,21 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<
+            GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+        generateAttachedClusterAgentTokenTransportSettings =
+            GrpcCallSettings
+                .<GenerateAttachedClusterAgentTokenRequest,
+                    GenerateAttachedClusterAgentTokenResponse>
+                    newBuilder()
+                .setMethodDescriptor(generateAttachedClusterAgentTokenMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("attached_cluster", String.valueOf(request.getAttachedCluster()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createAttachedClusterCallable =
         callableFactory.createUnaryCallable(
@@ -391,6 +428,11 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
         callableFactory.createUnaryCallable(
             generateAttachedClusterInstallManifestTransportSettings,
             settings.generateAttachedClusterInstallManifestSettings(),
+            clientContext);
+    this.generateAttachedClusterAgentTokenCallable =
+        callableFactory.createUnaryCallable(
+            generateAttachedClusterAgentTokenTransportSettings,
+            settings.generateAttachedClusterAgentTokenSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -474,6 +516,13 @@ public class GrpcAttachedClustersStub extends AttachedClustersStub {
           GenerateAttachedClusterInstallManifestResponse>
       generateAttachedClusterInstallManifestCallable() {
     return generateAttachedClusterInstallManifestCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+      generateAttachedClusterAgentTokenCallable() {
+    return generateAttachedClusterAgentTokenCallable;
   }
 
   @Override

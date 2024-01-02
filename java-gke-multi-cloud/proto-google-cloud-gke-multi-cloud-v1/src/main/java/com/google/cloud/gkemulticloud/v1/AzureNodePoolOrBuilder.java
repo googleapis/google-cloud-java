@@ -610,4 +610,45 @@ public interface AzureNodePoolOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AzureNodePoolErrorOrBuilder getErrorsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Management configuration for this node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AzureNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the management field is set.
+   */
+  boolean hasManagement();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Management configuration for this node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AzureNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The management.
+   */
+  com.google.cloud.gkemulticloud.v1.AzureNodeManagement getManagement();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Management configuration for this node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AzureNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.AzureNodeManagementOrBuilder getManagementOrBuilder();
 }

@@ -101,6 +101,22 @@ public interface DeleteAwsClusterRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. If set to true, the deletion of
+   * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource will
+   * succeed even if errors occur during deleting in cluster resources. Using
+   * this parameter may result in orphaned resources in the cluster.
+   * </pre>
+   *
+   * <code>bool ignore_errors = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ignoreErrors.
+   */
+  boolean getIgnoreErrors();
+
+  /**
+   *
+   *
+   * <pre>
    * The current etag of the
    * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
    *

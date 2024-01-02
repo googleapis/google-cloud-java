@@ -158,6 +158,13 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
     return ((AzureClustersStubSettings) getStubSettings()).deleteAzureClusterOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to generateAzureClusterAgentToken. */
+  public UnaryCallSettings<
+          GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+      generateAzureClusterAgentTokenSettings() {
+    return ((AzureClustersStubSettings) getStubSettings()).generateAzureClusterAgentTokenSettings();
+  }
+
   /** Returns the object with the settings used for calls to generateAzureAccessToken. */
   public UnaryCallSettings<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
       generateAzureAccessTokenSettings() {
@@ -207,6 +214,18 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
   public OperationCallSettings<DeleteAzureNodePoolRequest, Empty, OperationMetadata>
       deleteAzureNodePoolOperationSettings() {
     return ((AzureClustersStubSettings) getStubSettings()).deleteAzureNodePoolOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAzureOpenIdConfig. */
+  public UnaryCallSettings<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+      getAzureOpenIdConfigSettings() {
+    return ((AzureClustersStubSettings) getStubSettings()).getAzureOpenIdConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAzureJsonWebKeys. */
+  public UnaryCallSettings<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
+      getAzureJsonWebKeysSettings() {
+    return ((AzureClustersStubSettings) getStubSettings()).getAzureJsonWebKeysSettings();
   }
 
   /** Returns the object with the settings used for calls to getAzureServerConfig. */
@@ -415,6 +434,13 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
       return getStubSettingsBuilder().deleteAzureClusterOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to generateAzureClusterAgentToken. */
+    public UnaryCallSettings.Builder<
+            GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+        generateAzureClusterAgentTokenSettings() {
+      return getStubSettingsBuilder().generateAzureClusterAgentTokenSettings();
+    }
+
     /** Returns the builder for the settings used for calls to generateAzureAccessToken. */
     public UnaryCallSettings.Builder<
             GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
@@ -471,6 +497,18 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
     public OperationCallSettings.Builder<DeleteAzureNodePoolRequest, Empty, OperationMetadata>
         deleteAzureNodePoolOperationSettings() {
       return getStubSettingsBuilder().deleteAzureNodePoolOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAzureOpenIdConfig. */
+    public UnaryCallSettings.Builder<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+        getAzureOpenIdConfigSettings() {
+      return getStubSettingsBuilder().getAzureOpenIdConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAzureJsonWebKeys. */
+    public UnaryCallSettings.Builder<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
+        getAzureJsonWebKeysSettings() {
+      return getStubSettingsBuilder().getAzureJsonWebKeysSettings();
     }
 
     /** Returns the builder for the settings used for calls to getAzureServerConfig. */

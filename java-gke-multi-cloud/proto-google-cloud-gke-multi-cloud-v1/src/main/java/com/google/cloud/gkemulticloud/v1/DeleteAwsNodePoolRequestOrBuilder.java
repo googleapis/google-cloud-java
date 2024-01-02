@@ -102,6 +102,22 @@ public interface DeleteAwsNodePoolRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. If set to true, the deletion of
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource will
+   * succeed even if errors occur during deleting in node pool resources. Using
+   * this parameter may result in orphaned resources in the node pool.
+   * </pre>
+   *
+   * <code>bool ignore_errors = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ignoreErrors.
+   */
+  boolean getIgnoreErrors();
+
+  /**
+   *
+   *
+   * <pre>
    * The current ETag of the
    * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
    *

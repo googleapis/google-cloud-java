@@ -335,8 +335,7 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. The OS image type to use on node pool instances.
-   * Can have a value of `ubuntu`, or `windows` if the cluster enables
-   * the Windows node pool preview feature.
+   * Can be unspecified, or have a value of `ubuntu`.
    *
    * When unspecified, it defaults to `ubuntu`.
    * </pre>
@@ -362,8 +361,7 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. The OS image type to use on node pool instances.
-   * Can have a value of `ubuntu`, or `windows` if the cluster enables
-   * the Windows node pool preview feature.
+   * Can be unspecified, or have a value of `ubuntu`.
    *
    * When unspecified, it defaults to `ubuntu`.
    * </pre>
@@ -1969,8 +1967,7 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The OS image type to use on node pool instances.
-     * Can have a value of `ubuntu`, or `windows` if the cluster enables
-     * the Windows node pool preview feature.
+     * Can be unspecified, or have a value of `ubuntu`.
      *
      * When unspecified, it defaults to `ubuntu`.
      * </pre>
@@ -1995,8 +1992,7 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The OS image type to use on node pool instances.
-     * Can have a value of `ubuntu`, or `windows` if the cluster enables
-     * the Windows node pool preview feature.
+     * Can be unspecified, or have a value of `ubuntu`.
      *
      * When unspecified, it defaults to `ubuntu`.
      * </pre>
@@ -2021,8 +2017,7 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The OS image type to use on node pool instances.
-     * Can have a value of `ubuntu`, or `windows` if the cluster enables
-     * the Windows node pool preview feature.
+     * Can be unspecified, or have a value of `ubuntu`.
      *
      * When unspecified, it defaults to `ubuntu`.
      * </pre>
@@ -2046,8 +2041,7 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The OS image type to use on node pool instances.
-     * Can have a value of `ubuntu`, or `windows` if the cluster enables
-     * the Windows node pool preview feature.
+     * Can be unspecified, or have a value of `ubuntu`.
      *
      * When unspecified, it defaults to `ubuntu`.
      * </pre>
@@ -2067,8 +2061,7 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The OS image type to use on node pool instances.
-     * Can have a value of `ubuntu`, or `windows` if the cluster enables
-     * the Windows node pool preview feature.
+     * Can be unspecified, or have a value of `ubuntu`.
      *
      * When unspecified, it defaults to `ubuntu`.
      * </pre>
