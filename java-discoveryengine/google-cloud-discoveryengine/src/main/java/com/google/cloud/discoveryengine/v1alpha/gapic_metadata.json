@@ -179,13 +179,58 @@
         }
       }
     },
+    "SearchTuningService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SearchTuningServiceClient",
+          "rpcs": {
+            "TrainCustomModel": {
+              "methods": ["trainCustomModelAsync", "trainCustomModelOperationCallable", "trainCustomModelCallable"]
+            }
+          }
+        }
+      }
+    },
     "SiteSearchEngineService": {
       "clients": {
         "grpc": {
           "libraryClient": "SiteSearchEngineServiceClient",
           "rpcs": {
+            "BatchCreateTargetSites": {
+              "methods": ["batchCreateTargetSitesAsync", "batchCreateTargetSitesOperationCallable", "batchCreateTargetSitesCallable"]
+            },
+            "BatchVerifyTargetSites": {
+              "methods": ["batchVerifyTargetSitesAsync", "batchVerifyTargetSitesOperationCallable", "batchVerifyTargetSitesCallable"]
+            },
+            "CreateTargetSite": {
+              "methods": ["createTargetSiteAsync", "createTargetSiteAsync", "createTargetSiteAsync", "createTargetSiteOperationCallable", "createTargetSiteCallable"]
+            },
+            "DeleteTargetSite": {
+              "methods": ["deleteTargetSiteAsync", "deleteTargetSiteAsync", "deleteTargetSiteAsync", "deleteTargetSiteOperationCallable", "deleteTargetSiteCallable"]
+            },
+            "DisableAdvancedSiteSearch": {
+              "methods": ["disableAdvancedSiteSearchAsync", "disableAdvancedSiteSearchOperationCallable", "disableAdvancedSiteSearchCallable"]
+            },
+            "EnableAdvancedSiteSearch": {
+              "methods": ["enableAdvancedSiteSearchAsync", "enableAdvancedSiteSearchOperationCallable", "enableAdvancedSiteSearchCallable"]
+            },
+            "FetchDomainVerificationStatus": {
+              "methods": ["fetchDomainVerificationStatus", "fetchDomainVerificationStatusPagedCallable", "fetchDomainVerificationStatusCallable"]
+            },
+            "GetSiteSearchEngine": {
+              "methods": ["getSiteSearchEngine", "getSiteSearchEngine", "getSiteSearchEngine", "getSiteSearchEngineCallable"]
+            },
+            "GetTargetSite": {
+              "methods": ["getTargetSite", "getTargetSite", "getTargetSite", "getTargetSiteCallable"]
+            },
+            "ListTargetSites": {
+              "methods": ["listTargetSites", "listTargetSites", "listTargetSites", "listTargetSitesPagedCallable", "listTargetSitesCallable"]
+            },
             "RecrawlUris": {
               "methods": ["recrawlUrisAsync", "recrawlUrisOperationCallable", "recrawlUrisCallable"]
+            },
+            "UpdateTargetSite": {
+              "methods": ["updateTargetSiteAsync", "updateTargetSiteAsync", "updateTargetSiteOperationCallable", "updateTargetSiteCallable"]
             }
           }
         }

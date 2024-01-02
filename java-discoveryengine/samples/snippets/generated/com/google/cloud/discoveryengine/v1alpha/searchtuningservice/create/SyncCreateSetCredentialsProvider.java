@@ -16,35 +16,30 @@
 
 package com.google.cloud.discoveryengine.v1alpha.samples;
 
-// [START discoveryengine_v1alpha_generated_SiteSearchEngineServiceSettings_RecrawlUris_sync]
-import com.google.cloud.discoveryengine.v1alpha.SiteSearchEngineServiceSettings;
-import java.time.Duration;
+// [START discoveryengine_v1alpha_generated_SearchTuningService_Create_SetCredentialsProvider_sync]
+import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.cloud.discoveryengine.v1alpha.SearchTuningServiceClient;
+import com.google.cloud.discoveryengine.v1alpha.SearchTuningServiceSettings;
+import com.google.cloud.discoveryengine.v1alpha.myCredentials;
 
-public class SyncRecrawlUris {
+public class SyncCreateSetCredentialsProvider {
 
   public static void main(String[] args) throws Exception {
-    syncRecrawlUris();
+    syncCreateSetCredentialsProvider();
   }
 
-  public static void syncRecrawlUris() throws Exception {
+  public static void syncCreateSetCredentialsProvider() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    SiteSearchEngineServiceSettings.Builder siteSearchEngineServiceSettingsBuilder =
-        SiteSearchEngineServiceSettings.newBuilder();
-    siteSearchEngineServiceSettingsBuilder
-        .recrawlUrisSettings()
-        .setRetrySettings(
-            siteSearchEngineServiceSettingsBuilder
-                .recrawlUrisSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    SiteSearchEngineServiceSettings siteSearchEngineServiceSettings =
-        siteSearchEngineServiceSettingsBuilder.build();
+    SearchTuningServiceSettings searchTuningServiceSettings =
+        SearchTuningServiceSettings.newBuilder()
+            .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+            .build();
+    SearchTuningServiceClient searchTuningServiceClient =
+        SearchTuningServiceClient.create(searchTuningServiceSettings);
   }
 }
-// [END discoveryengine_v1alpha_generated_SiteSearchEngineServiceSettings_RecrawlUris_sync]
+// [END discoveryengine_v1alpha_generated_SearchTuningService_Create_SetCredentialsProvider_sync]

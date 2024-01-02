@@ -1030,7 +1030,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Resumes the training of an existing engine. Only applicable if [solution_type][] is
+   * Resumes the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1059,7 +1060,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Resumes the training of an existing engine. Only applicable if [solution_type][] is
+   * Resumes the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1087,7 +1089,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Resumes the training of an existing engine. Only applicable if [solution_type][] is
+   * Resumes the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1117,7 +1120,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Resumes the training of an existing engine. Only applicable if [solution_type][] is
+   * Resumes the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
