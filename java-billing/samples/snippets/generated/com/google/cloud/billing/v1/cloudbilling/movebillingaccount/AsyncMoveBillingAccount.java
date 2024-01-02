@@ -16,34 +16,37 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START cloudbilling_v1_generated_CloudBilling_UpdateBillingAccount_sync]
+// [START cloudbilling_v1_generated_CloudBilling_MoveBillingAccount_async]
+import com.google.api.core.ApiFuture;
 import com.google.cloud.billing.v1.BillingAccount;
 import com.google.cloud.billing.v1.BillingAccountName;
 import com.google.cloud.billing.v1.CloudBillingClient;
-import com.google.cloud.billing.v1.UpdateBillingAccountRequest;
-import com.google.protobuf.FieldMask;
+import com.google.cloud.billing.v1.MoveBillingAccountRequest;
+import com.google.cloud.billing.v1.OrganizationName;
 
-public class SyncUpdateBillingAccount {
+public class AsyncMoveBillingAccount {
 
   public static void main(String[] args) throws Exception {
-    syncUpdateBillingAccount();
+    asyncMoveBillingAccount();
   }
 
-  public static void syncUpdateBillingAccount() throws Exception {
+  public static void asyncMoveBillingAccount() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-      UpdateBillingAccountRequest request =
-          UpdateBillingAccountRequest.newBuilder()
+      MoveBillingAccountRequest request =
+          MoveBillingAccountRequest.newBuilder()
               .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
-              .setAccount(BillingAccount.newBuilder().build())
-              .setUpdateMask(FieldMask.newBuilder().build())
+              .setDestinationParent(OrganizationName.of("[ORGANIZATION]").toString())
               .build();
-      BillingAccount response = cloudBillingClient.updateBillingAccount(request);
+      ApiFuture<BillingAccount> future =
+          cloudBillingClient.moveBillingAccountCallable().futureCall(request);
+      // Do something.
+      BillingAccount response = future.get();
     }
   }
 }
-// [END cloudbilling_v1_generated_CloudBilling_UpdateBillingAccount_sync]
+// [END cloudbilling_v1_generated_CloudBilling_MoveBillingAccount_async]

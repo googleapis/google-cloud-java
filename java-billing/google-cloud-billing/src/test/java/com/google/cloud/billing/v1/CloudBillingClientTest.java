@@ -93,14 +93,15 @@ public class CloudBillingClientTest {
   public void getBillingAccountTest() throws Exception {
     BillingAccount expectedResponse =
         BillingAccount.newBuilder()
-            .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+            .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
             .setOpen(true)
             .setDisplayName("displayName1714148973")
             .setMasterBillingAccount("masterBillingAccount1488941620")
+            .setParent("parent-995424086")
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
-    BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+    BillingAccountName name = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
 
     BillingAccount actualResponse = client.getBillingAccount(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -122,7 +123,7 @@ public class CloudBillingClientTest {
     mockCloudBilling.addException(exception);
 
     try {
-      BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+      BillingAccountName name = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
       client.getBillingAccount(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -134,10 +135,11 @@ public class CloudBillingClientTest {
   public void getBillingAccountTest2() throws Exception {
     BillingAccount expectedResponse =
         BillingAccount.newBuilder()
-            .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+            .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
             .setOpen(true)
             .setDisplayName("displayName1714148973")
             .setMasterBillingAccount("masterBillingAccount1488941620")
+            .setParent("parent-995424086")
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
@@ -209,8 +211,53 @@ public class CloudBillingClientTest {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
+              .setParent("parent-995424086")
               .build();
       client.listBillingAccounts(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBillingAccountsTest2() throws Exception {
+    BillingAccount responsesElement = BillingAccount.newBuilder().build();
+    ListBillingAccountsResponse expectedResponse =
+        ListBillingAccountsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBillingAccounts(Arrays.asList(responsesElement))
+            .build();
+    mockCloudBilling.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListBillingAccountsPagedResponse pagedListResponse = client.listBillingAccounts(parent);
+
+    List<BillingAccount> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBillingAccountsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudBilling.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBillingAccountsRequest actualRequest = ((ListBillingAccountsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBillingAccountsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudBilling.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listBillingAccounts(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -221,14 +268,15 @@ public class CloudBillingClientTest {
   public void updateBillingAccountTest() throws Exception {
     BillingAccount expectedResponse =
         BillingAccount.newBuilder()
-            .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+            .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
             .setOpen(true)
             .setDisplayName("displayName1714148973")
             .setMasterBillingAccount("masterBillingAccount1488941620")
+            .setParent("parent-995424086")
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
-    BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+    BillingAccountName name = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
     BillingAccount account = BillingAccount.newBuilder().build();
 
     BillingAccount actualResponse = client.updateBillingAccount(name, account);
@@ -253,7 +301,7 @@ public class CloudBillingClientTest {
     mockCloudBilling.addException(exception);
 
     try {
-      BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+      BillingAccountName name = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
       BillingAccount account = BillingAccount.newBuilder().build();
       client.updateBillingAccount(name, account);
       Assert.fail("No exception raised");
@@ -266,10 +314,11 @@ public class CloudBillingClientTest {
   public void updateBillingAccountTest2() throws Exception {
     BillingAccount expectedResponse =
         BillingAccount.newBuilder()
-            .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+            .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
             .setOpen(true)
             .setDisplayName("displayName1714148973")
             .setMasterBillingAccount("masterBillingAccount1488941620")
+            .setParent("parent-995424086")
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
@@ -311,10 +360,11 @@ public class CloudBillingClientTest {
   public void createBillingAccountTest() throws Exception {
     BillingAccount expectedResponse =
         BillingAccount.newBuilder()
-            .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+            .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
             .setOpen(true)
             .setDisplayName("displayName1714148973")
             .setMasterBillingAccount("masterBillingAccount1488941620")
+            .setParent("parent-995424086")
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
@@ -350,6 +400,52 @@ public class CloudBillingClientTest {
   }
 
   @Test
+  public void createBillingAccountTest2() throws Exception {
+    BillingAccount expectedResponse =
+        BillingAccount.newBuilder()
+            .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
+            .setOpen(true)
+            .setDisplayName("displayName1714148973")
+            .setMasterBillingAccount("masterBillingAccount1488941620")
+            .setParent("parent-995424086")
+            .build();
+    mockCloudBilling.addResponse(expectedResponse);
+
+    BillingAccount billingAccount = BillingAccount.newBuilder().build();
+    String parent = "parent-995424086";
+
+    BillingAccount actualResponse = client.createBillingAccount(billingAccount, parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudBilling.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateBillingAccountRequest actualRequest =
+        ((CreateBillingAccountRequest) actualRequests.get(0));
+
+    Assert.assertEquals(billingAccount, actualRequest.getBillingAccount());
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createBillingAccountExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudBilling.addException(exception);
+
+    try {
+      BillingAccount billingAccount = BillingAccount.newBuilder().build();
+      String parent = "parent-995424086";
+      client.createBillingAccount(billingAccount, parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listProjectBillingInfoTest() throws Exception {
     ProjectBillingInfo responsesElement = ProjectBillingInfo.newBuilder().build();
     ListProjectBillingInfoResponse expectedResponse =
@@ -359,7 +455,7 @@ public class CloudBillingClientTest {
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
-    BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+    BillingAccountName name = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
 
     ListProjectBillingInfoPagedResponse pagedListResponse = client.listProjectBillingInfo(name);
 
@@ -386,7 +482,7 @@ public class CloudBillingClientTest {
     mockCloudBilling.addException(exception);
 
     try {
-      BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+      BillingAccountName name = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
       client.listProjectBillingInfo(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -579,7 +675,7 @@ public class CloudBillingClientTest {
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
-    ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
+    ResourceName resource = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -601,7 +697,7 @@ public class CloudBillingClientTest {
     mockCloudBilling.addException(exception);
 
     try {
-      ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
+      ResourceName resource = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -661,7 +757,7 @@ public class CloudBillingClientTest {
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
-    ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
+    ResourceName resource = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -685,7 +781,7 @@ public class CloudBillingClientTest {
     mockCloudBilling.addException(exception);
 
     try {
-      ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
+      ResourceName resource = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -744,7 +840,7 @@ public class CloudBillingClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockCloudBilling.addResponse(expectedResponse);
 
-    ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
+    ResourceName resource = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -768,7 +864,7 @@ public class CloudBillingClientTest {
     mockCloudBilling.addException(exception);
 
     try {
-      ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
+      ResourceName resource = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");
@@ -810,6 +906,57 @@ public class CloudBillingClientTest {
       String resource = "resource-341064690";
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void moveBillingAccountTest() throws Exception {
+    BillingAccount expectedResponse =
+        BillingAccount.newBuilder()
+            .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
+            .setOpen(true)
+            .setDisplayName("displayName1714148973")
+            .setMasterBillingAccount("masterBillingAccount1488941620")
+            .setParent("parent-995424086")
+            .build();
+    mockCloudBilling.addResponse(expectedResponse);
+
+    MoveBillingAccountRequest request =
+        MoveBillingAccountRequest.newBuilder()
+            .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
+            .setDestinationParent(OrganizationName.of("[ORGANIZATION]").toString())
+            .build();
+
+    BillingAccount actualResponse = client.moveBillingAccount(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudBilling.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MoveBillingAccountRequest actualRequest = ((MoveBillingAccountRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getDestinationParent(), actualRequest.getDestinationParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void moveBillingAccountExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudBilling.addException(exception);
+
+    try {
+      MoveBillingAccountRequest request =
+          MoveBillingAccountRequest.newBuilder()
+              .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
+              .setDestinationParent(OrganizationName.of("[ORGANIZATION]").toString())
+              .build();
+      client.moveBillingAccount(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

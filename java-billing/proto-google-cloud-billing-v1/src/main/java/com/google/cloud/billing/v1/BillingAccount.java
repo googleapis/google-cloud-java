@@ -43,6 +43,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     displayName_ = "";
     masterBillingAccount_ = "";
+    parent_ = "";
   }
 
   @java.lang.Override
@@ -260,6 +261,71 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PARENT_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The billing account's parent resource identifier.
+   * Use the `MoveBillingAccount` method to update the account's parent resource
+   * if it is a organization.
+   * Format:
+   *   - `organizations/{organization_id}`, for example,
+   *     `organizations/12345678`
+   *   - `billingAccounts/{billing_account_id}`, for example,
+   *     `billingAccounts/012345-567890-ABCDEF`
+   * </pre>
+   *
+   * <code>string parent = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The parent.
+   */
+  @java.lang.Override
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The billing account's parent resource identifier.
+   * Use the `MoveBillingAccount` method to update the account's parent resource
+   * if it is a organization.
+   * Format:
+   *   - `organizations/{organization_id}`, for example,
+   *     `organizations/12345678`
+   *   - `billingAccounts/{billing_account_id}`, for example,
+   *     `billingAccounts/012345-567890-ABCDEF`
+   * </pre>
+   *
+   * <code>string parent = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for parent.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -286,6 +352,9 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(masterBillingAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, masterBillingAccount_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, parent_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -307,6 +376,9 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(masterBillingAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, masterBillingAccount_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, parent_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -327,6 +399,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     if (getOpen() != other.getOpen()) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getMasterBillingAccount().equals(other.getMasterBillingAccount())) return false;
+    if (!getParent().equals(other.getParent())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -346,6 +419,8 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + MASTER_BILLING_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getMasterBillingAccount().hashCode();
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -491,6 +566,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       open_ = false;
       displayName_ = "";
       masterBillingAccount_ = "";
+      parent_ = "";
       return this;
     }
 
@@ -538,6 +614,9 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.masterBillingAccount_ = masterBillingAccount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.parent_ = parent_;
       }
     }
 
@@ -604,6 +683,11 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -654,6 +738,12 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 50:
+              {
+                parent_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1099,6 +1189,147 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       masterBillingAccount_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object parent_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The billing account's parent resource identifier.
+     * Use the `MoveBillingAccount` method to update the account's parent resource
+     * if it is a organization.
+     * Format:
+     *   - `organizations/{organization_id}`, for example,
+     *     `organizations/12345678`
+     *   - `billingAccounts/{billing_account_id}`, for example,
+     *     `billingAccounts/012345-567890-ABCDEF`
+     * </pre>
+     *
+     * <code>string parent = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The parent.
+     */
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The billing account's parent resource identifier.
+     * Use the `MoveBillingAccount` method to update the account's parent resource
+     * if it is a organization.
+     * Format:
+     *   - `organizations/{organization_id}`, for example,
+     *     `organizations/12345678`
+     *   - `billingAccounts/{billing_account_id}`, for example,
+     *     `billingAccounts/012345-567890-ABCDEF`
+     * </pre>
+     *
+     * <code>string parent = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for parent.
+     */
+    public com.google.protobuf.ByteString getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The billing account's parent resource identifier.
+     * Use the `MoveBillingAccount` method to update the account's parent resource
+     * if it is a organization.
+     * Format:
+     *   - `organizations/{organization_id}`, for example,
+     *     `organizations/12345678`
+     *   - `billingAccounts/{billing_account_id}`, for example,
+     *     `billingAccounts/012345-567890-ABCDEF`
+     * </pre>
+     *
+     * <code>string parent = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      parent_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The billing account's parent resource identifier.
+     * Use the `MoveBillingAccount` method to update the account's parent resource
+     * if it is a organization.
+     * Format:
+     *   - `organizations/{organization_id}`, for example,
+     *     `organizations/12345678`
+     *   - `billingAccounts/{billing_account_id}`, for example,
+     *     `billingAccounts/012345-567890-ABCDEF`
+     * </pre>
+     *
+     * <code>string parent = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParent() {
+      parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The billing account's parent resource identifier.
+     * Use the `MoveBillingAccount` method to update the account's parent resource
+     * if it is a organization.
+     * Format:
+     *   - `organizations/{organization_id}`, for example,
+     *     `organizations/12345678`
+     *   - `billingAccounts/{billing_account_id}`, for example,
+     *     `billingAccounts/012345-567890-ABCDEF`
+     * </pre>
+     *
+     * <code>string parent = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      parent_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
