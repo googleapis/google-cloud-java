@@ -22,7 +22,7 @@ package com.google.cloud.deploy.v1;
  *
  *
  * <pre>
- * TargetsPresentCondition contains information on any Targets defined in
+ * `TargetsPresentCondition` contains information on any Targets referenced in
  * the Delivery Pipeline that do not actually exist.
  * </pre>
  *
@@ -388,7 +388,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * TargetsPresentCondition contains information on any Targets defined in
+   * `TargetsPresentCondition` contains information on any Targets referenced in
    * the Delivery Pipeline that do not actually exist.
    * </pre>
    *

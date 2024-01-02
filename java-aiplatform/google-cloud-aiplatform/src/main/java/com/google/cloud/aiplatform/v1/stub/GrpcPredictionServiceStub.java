@@ -34,6 +34,8 @@ import com.google.cloud.aiplatform.v1.DirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1.DirectRawPredictResponse;
 import com.google.cloud.aiplatform.v1.ExplainRequest;
 import com.google.cloud.aiplatform.v1.ExplainResponse;
+import com.google.cloud.aiplatform.v1.GenerateContentRequest;
+import com.google.cloud.aiplatform.v1.GenerateContentResponse;
 import com.google.cloud.aiplatform.v1.PredictRequest;
 import com.google.cloud.aiplatform.v1.PredictResponse;
 import com.google.cloud.aiplatform.v1.RawPredictRequest;
@@ -145,6 +147,18 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(ExplainResponse.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<GenerateContentRequest, GenerateContentResponse>
+      streamGenerateContentMethodDescriptor =
+          MethodDescriptor.<GenerateContentRequest, GenerateContentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.PredictionService/StreamGenerateContent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateContentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GenerateContentResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -203,6 +217,8 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   private final BidiStreamingCallable<StreamingRawPredictRequest, StreamingRawPredictResponse>
       streamingRawPredictCallable;
   private final UnaryCallable<ExplainRequest, ExplainResponse> explainCallable;
+  private final ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
+      streamGenerateContentCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -328,6 +344,17 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GenerateContentRequest, GenerateContentResponse>
+        streamGenerateContentTransportSettings =
+            GrpcCallSettings.<GenerateContentRequest, GenerateContentResponse>newBuilder()
+                .setMethodDescriptor(streamGenerateContentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("model", String.valueOf(request.getModel()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -408,6 +435,11 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
     this.explainCallable =
         callableFactory.createUnaryCallable(
             explainTransportSettings, settings.explainSettings(), clientContext);
+    this.streamGenerateContentCallable =
+        callableFactory.createServerStreamingCallable(
+            streamGenerateContentTransportSettings,
+            settings.streamGenerateContentSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -479,6 +511,12 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   @Override
   public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     return explainCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
+      streamGenerateContentCallable() {
+    return streamGenerateContentCallable;
   }
 
   @Override

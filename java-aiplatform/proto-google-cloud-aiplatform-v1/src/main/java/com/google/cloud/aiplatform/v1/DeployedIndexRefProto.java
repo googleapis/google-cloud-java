@@ -43,16 +43,16 @@ public final class DeployedIndexRefProto {
       "\n3google/cloud/aiplatform/v1/deployed_in"
           + "dex_ref.proto\022\032google.cloud.aiplatform.v"
           + "1\032\037google/api/field_behavior.proto\032\031goog"
-          + "le/api/resource.proto\"}\n\020DeployedIndexRe"
-          + "f\022H\n\016index_endpoint\030\001 \001(\tB0\342A\001\005\372A)\n\'aipl"
-          + "atform.googleapis.com/IndexEndpoint\022\037\n\021d"
-          + "eployed_index_id\030\002 \001(\tB\004\342A\001\005B\323\001\n\036com.goo"
-          + "gle.cloud.aiplatform.v1B\025DeployedIndexRe"
-          + "fProtoP\001Z>cloud.google.com/go/aiplatform"
-          + "/apiv1/aiplatformpb;aiplatformpb\252\002\032Googl"
-          + "e.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIP"
-          + "latform\\V1\352\002\035Google::Cloud::AIPlatform::"
-          + "V1b\006proto3"
+          + "le/api/resource.proto\"\231\001\n\020DeployedIndexR"
+          + "ef\022H\n\016index_endpoint\030\001 \001(\tB0\342A\001\005\372A)\n\'aip"
+          + "latform.googleapis.com/IndexEndpoint\022\037\n\021"
+          + "deployed_index_id\030\002 \001(\tB\004\342A\001\005\022\032\n\014display"
+          + "_name\030\003 \001(\tB\004\342A\001\003B\323\001\n\036com.google.cloud.a"
+          + "iplatform.v1B\025DeployedIndexRefProtoP\001Z>c"
+          + "loud.google.com/go/aiplatform/apiv1/aipl"
+          + "atformpb;aiplatformpb\252\002\032Google.Cloud.AIP"
+          + "latform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352"
+          + "\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -67,7 +67,7 @@ public final class DeployedIndexRefProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_DeployedIndexRef_descriptor,
             new java.lang.String[] {
-              "IndexEndpoint", "DeployedIndexId",
+              "IndexEndpoint", "DeployedIndexId", "DisplayName",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -132,6 +132,16 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * <code>GENIE = 5;</code>
      */
     GENIE(5),
+    /**
+     *
+     *
+     * <pre>
+     * The Model is uploaded by text embedding finetuning pipeline.
+     * </pre>
+     *
+     * <code>CUSTOM_TEXT_EMBEDDING = 6;</code>
+     */
+    CUSTOM_TEXT_EMBEDDING(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -195,6 +205,16 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * <code>GENIE = 5;</code>
      */
     public static final int GENIE_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The Model is uploaded by text embedding finetuning pipeline.
+     * </pre>
+     *
+     * <code>CUSTOM_TEXT_EMBEDDING = 6;</code>
+     */
+    public static final int CUSTOM_TEXT_EMBEDDING_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -232,6 +252,8 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
           return MODEL_GARDEN;
         case 5:
           return GENIE;
+        case 6:
+          return CUSTOM_TEXT_EMBEDDING;
         default:
           return null;
       }

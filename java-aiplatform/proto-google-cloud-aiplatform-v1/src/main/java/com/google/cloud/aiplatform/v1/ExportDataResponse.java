@@ -72,7 +72,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * All of the files that are exported in this export operation.
+   * All of the files that are exported in this export operation. For custom
+   * code training export, only three (training, validation and test) GCS paths
+   * in wildcard format are populated (e.g., gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>
@@ -86,7 +88,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * All of the files that are exported in this export operation.
+   * All of the files that are exported in this export operation. For custom
+   * code training export, only three (training, validation and test) GCS paths
+   * in wildcard format are populated (e.g., gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>
@@ -100,7 +104,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * All of the files that are exported in this export operation.
+   * All of the files that are exported in this export operation. For custom
+   * code training export, only three (training, validation and test) GCS paths
+   * in wildcard format are populated (e.g., gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>
@@ -115,7 +121,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * All of the files that are exported in this export operation.
+   * All of the files that are exported in this export operation. For custom
+   * code training export, only three (training, validation and test) GCS paths
+   * in wildcard format are populated (e.g., gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>
@@ -125,6 +133,62 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
    */
   public com.google.protobuf.ByteString getExportedFilesBytes(int index) {
     return exportedFiles_.getByteString(index);
+  }
+
+  public static final int DATA_STATS_FIELD_NUMBER = 2;
+  private com.google.cloud.aiplatform.v1.Model.DataStats dataStats_;
+  /**
+   *
+   *
+   * <pre>
+   * Only present for custom code training export use case. Records data stats,
+   * i.e., train/validation/test item/annotation counts calculated during
+   * the export operation.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 2;</code>
+   *
+   * @return Whether the dataStats field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataStats() {
+    return dataStats_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Only present for custom code training export use case. Records data stats,
+   * i.e., train/validation/test item/annotation counts calculated during
+   * the export operation.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 2;</code>
+   *
+   * @return The dataStats.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Model.DataStats getDataStats() {
+    return dataStats_ == null
+        ? com.google.cloud.aiplatform.v1.Model.DataStats.getDefaultInstance()
+        : dataStats_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Only present for custom code training export use case. Records data stats,
+   * i.e., train/validation/test item/annotation counts calculated during
+   * the export operation.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Model.DataStatsOrBuilder getDataStatsOrBuilder() {
+    return dataStats_ == null
+        ? com.google.cloud.aiplatform.v1.Model.DataStats.getDefaultInstance()
+        : dataStats_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -144,6 +208,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < exportedFiles_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, exportedFiles_.getRaw(i));
     }
+    if (dataStats_ != null) {
+      output.writeMessage(2, getDataStats());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -160,6 +227,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
       }
       size += dataSize;
       size += 1 * getExportedFilesList().size();
+    }
+    if (dataStats_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDataStats());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -178,6 +248,10 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
         (com.google.cloud.aiplatform.v1.ExportDataResponse) obj;
 
     if (!getExportedFilesList().equals(other.getExportedFilesList())) return false;
+    if (hasDataStats() != other.hasDataStats()) return false;
+    if (hasDataStats()) {
+      if (!getDataStats().equals(other.getDataStats())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -192,6 +266,10 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
     if (getExportedFilesCount() > 0) {
       hash = (37 * hash) + EXPORTED_FILES_FIELD_NUMBER;
       hash = (53 * hash) + getExportedFilesList().hashCode();
+    }
+    if (hasDataStats()) {
+      hash = (37 * hash) + DATA_STATS_FIELD_NUMBER;
+      hash = (53 * hash) + getDataStats().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -334,6 +412,11 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
       super.clear();
       bitField0_ = 0;
       exportedFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      dataStats_ = null;
+      if (dataStatsBuilder_ != null) {
+        dataStatsBuilder_.dispose();
+        dataStatsBuilder_ = null;
+      }
       return this;
     }
 
@@ -373,6 +456,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000001) != 0)) {
         exportedFiles_.makeImmutable();
         result.exportedFiles_ = exportedFiles_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataStats_ = dataStatsBuilder_ == null ? dataStats_ : dataStatsBuilder_.build();
       }
     }
 
@@ -432,6 +518,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
         }
         onChanged();
       }
+      if (other.hasDataStats()) {
+        mergeDataStats(other.getDataStats());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -465,6 +554,12 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
                 exportedFiles_.add(s);
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getDataStatsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -497,7 +592,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -512,7 +609,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -526,7 +625,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -541,7 +642,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -556,7 +659,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -579,7 +684,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -601,7 +708,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -620,7 +729,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -638,7 +749,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -656,6 +769,208 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.Model.DataStats dataStats_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Model.DataStats,
+            com.google.cloud.aiplatform.v1.Model.DataStats.Builder,
+            com.google.cloud.aiplatform.v1.Model.DataStatsOrBuilder>
+        dataStatsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Only present for custom code training export use case. Records data stats,
+     * i.e., train/validation/test item/annotation counts calculated during
+     * the export operation.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 2;</code>
+     *
+     * @return Whether the dataStats field is set.
+     */
+    public boolean hasDataStats() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only present for custom code training export use case. Records data stats,
+     * i.e., train/validation/test item/annotation counts calculated during
+     * the export operation.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 2;</code>
+     *
+     * @return The dataStats.
+     */
+    public com.google.cloud.aiplatform.v1.Model.DataStats getDataStats() {
+      if (dataStatsBuilder_ == null) {
+        return dataStats_ == null
+            ? com.google.cloud.aiplatform.v1.Model.DataStats.getDefaultInstance()
+            : dataStats_;
+      } else {
+        return dataStatsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only present for custom code training export use case. Records data stats,
+     * i.e., train/validation/test item/annotation counts calculated during
+     * the export operation.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 2;</code>
+     */
+    public Builder setDataStats(com.google.cloud.aiplatform.v1.Model.DataStats value) {
+      if (dataStatsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataStats_ = value;
+      } else {
+        dataStatsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only present for custom code training export use case. Records data stats,
+     * i.e., train/validation/test item/annotation counts calculated during
+     * the export operation.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 2;</code>
+     */
+    public Builder setDataStats(
+        com.google.cloud.aiplatform.v1.Model.DataStats.Builder builderForValue) {
+      if (dataStatsBuilder_ == null) {
+        dataStats_ = builderForValue.build();
+      } else {
+        dataStatsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only present for custom code training export use case. Records data stats,
+     * i.e., train/validation/test item/annotation counts calculated during
+     * the export operation.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 2;</code>
+     */
+    public Builder mergeDataStats(com.google.cloud.aiplatform.v1.Model.DataStats value) {
+      if (dataStatsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && dataStats_ != null
+            && dataStats_ != com.google.cloud.aiplatform.v1.Model.DataStats.getDefaultInstance()) {
+          getDataStatsBuilder().mergeFrom(value);
+        } else {
+          dataStats_ = value;
+        }
+      } else {
+        dataStatsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only present for custom code training export use case. Records data stats,
+     * i.e., train/validation/test item/annotation counts calculated during
+     * the export operation.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 2;</code>
+     */
+    public Builder clearDataStats() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      dataStats_ = null;
+      if (dataStatsBuilder_ != null) {
+        dataStatsBuilder_.dispose();
+        dataStatsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only present for custom code training export use case. Records data stats,
+     * i.e., train/validation/test item/annotation counts calculated during
+     * the export operation.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 2;</code>
+     */
+    public com.google.cloud.aiplatform.v1.Model.DataStats.Builder getDataStatsBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getDataStatsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only present for custom code training export use case. Records data stats,
+     * i.e., train/validation/test item/annotation counts calculated during
+     * the export operation.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 2;</code>
+     */
+    public com.google.cloud.aiplatform.v1.Model.DataStatsOrBuilder getDataStatsOrBuilder() {
+      if (dataStatsBuilder_ != null) {
+        return dataStatsBuilder_.getMessageOrBuilder();
+      } else {
+        return dataStats_ == null
+            ? com.google.cloud.aiplatform.v1.Model.DataStats.getDefaultInstance()
+            : dataStats_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only present for custom code training export use case. Records data stats,
+     * i.e., train/validation/test item/annotation counts calculated during
+     * the export operation.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Model.DataStats,
+            com.google.cloud.aiplatform.v1.Model.DataStats.Builder,
+            com.google.cloud.aiplatform.v1.Model.DataStatsOrBuilder>
+        getDataStatsFieldBuilder() {
+      if (dataStatsBuilder_ == null) {
+        dataStatsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.Model.DataStats,
+                com.google.cloud.aiplatform.v1.Model.DataStats.Builder,
+                com.google.cloud.aiplatform.v1.Model.DataStatsOrBuilder>(
+                getDataStats(), getParentForChildren(), isClean());
+        dataStats_ = null;
+      }
+      return dataStatsBuilder_;
     }
 
     @java.lang.Override

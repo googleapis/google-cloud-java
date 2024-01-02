@@ -112,7 +112,7 @@ public interface AdvanceRolloutOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. The phase to which the rollout will be advanced to.
+   * Output only. The phase the rollout will be advanced to.
    * </pre>
    *
    * <code>string destination_phase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -124,7 +124,7 @@ public interface AdvanceRolloutOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. The phase to which the rollout will be advanced to.
+   * Output only. The phase the rollout will be advanced to.
    * </pre>
    *
    * <code>string destination_phase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

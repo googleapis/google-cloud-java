@@ -39,7 +39,7 @@ public class AsyncTestIamPermissions {
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+              .setResource(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

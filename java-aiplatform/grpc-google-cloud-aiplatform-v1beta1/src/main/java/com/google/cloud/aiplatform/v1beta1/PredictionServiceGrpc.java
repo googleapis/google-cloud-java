@@ -460,6 +460,56 @@ public final class PredictionServiceGrpc {
     return getCountTokensMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GenerateContentRequest,
+          com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>
+      getStreamGenerateContentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamGenerateContent",
+      requestType = com.google.cloud.aiplatform.v1beta1.GenerateContentRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GenerateContentRequest,
+          com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>
+      getStreamGenerateContentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.GenerateContentRequest,
+            com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>
+        getStreamGenerateContentMethod;
+    if ((getStreamGenerateContentMethod = PredictionServiceGrpc.getStreamGenerateContentMethod)
+        == null) {
+      synchronized (PredictionServiceGrpc.class) {
+        if ((getStreamGenerateContentMethod = PredictionServiceGrpc.getStreamGenerateContentMethod)
+            == null) {
+          PredictionServiceGrpc.getStreamGenerateContentMethod =
+              getStreamGenerateContentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.GenerateContentRequest,
+                          com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "StreamGenerateContent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.GenerateContentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.GenerateContentResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PredictionServiceMethodDescriptorSupplier("StreamGenerateContent"))
+                      .build();
+        }
+      }
+    }
+    return getStreamGenerateContentMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static PredictionServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<PredictionServiceStub> factory =
@@ -662,6 +712,21 @@ public final class PredictionServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCountTokensMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generate content with multimodal inputs with streaming support.
+     * </pre>
+     */
+    default void streamGenerateContent(
+        com.google.cloud.aiplatform.v1beta1.GenerateContentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStreamGenerateContentMethod(), responseObserver);
+    }
   }
 
   /**
@@ -862,6 +927,23 @@ public final class PredictionServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generate content with multimodal inputs with streaming support.
+     * </pre>
+     */
+    public void streamGenerateContent(
+        com.google.cloud.aiplatform.v1beta1.GenerateContentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getStreamGenerateContentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -993,6 +1075,19 @@ public final class PredictionServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCountTokensMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generate content with multimodal inputs with streaming support.
+     * </pre>
+     */
+    public java.util.Iterator<com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>
+        streamGenerateContent(com.google.cloud.aiplatform.v1beta1.GenerateContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getStreamGenerateContentMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1122,8 +1217,9 @@ public final class PredictionServiceGrpc {
   private static final int METHODID_SERVER_STREAMING_PREDICT = 4;
   private static final int METHODID_EXPLAIN = 5;
   private static final int METHODID_COUNT_TOKENS = 6;
-  private static final int METHODID_STREAMING_PREDICT = 7;
-  private static final int METHODID_STREAMING_RAW_PREDICT = 8;
+  private static final int METHODID_STREAM_GENERATE_CONTENT = 7;
+  private static final int METHODID_STREAMING_PREDICT = 8;
+  private static final int METHODID_STREAMING_RAW_PREDICT = 9;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1184,6 +1280,13 @@ public final class PredictionServiceGrpc {
           serviceImpl.countTokens(
               (com.google.cloud.aiplatform.v1beta1.CountTokensRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.CountTokensResponse>)
+                  responseObserver);
+          break;
+        case METHODID_STREAM_GENERATE_CONTENT:
+          serviceImpl.streamGenerateContent(
+              (com.google.cloud.aiplatform.v1beta1.GenerateContentRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>)
                   responseObserver);
           break;
         default:
@@ -1278,6 +1381,13 @@ public final class PredictionServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.CountTokensRequest,
                     com.google.cloud.aiplatform.v1beta1.CountTokensResponse>(
                     service, METHODID_COUNT_TOKENS)))
+        .addMethod(
+            getStreamGenerateContentMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GenerateContentRequest,
+                    com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>(
+                    service, METHODID_STREAM_GENERATE_CONTENT)))
         .build();
   }
 
@@ -1338,6 +1448,7 @@ public final class PredictionServiceGrpc {
                       .addMethod(getStreamingRawPredictMethod())
                       .addMethod(getExplainMethod())
                       .addMethod(getCountTokensMethod())
+                      .addMethod(getStreamGenerateContentMethod())
                       .build();
         }
       }

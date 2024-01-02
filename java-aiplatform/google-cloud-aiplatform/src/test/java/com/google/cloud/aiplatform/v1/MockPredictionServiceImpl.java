@@ -255,4 +255,25 @@ public class MockPredictionServiceImpl extends PredictionServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void streamGenerateContent(
+      GenerateContentRequest request, StreamObserver<GenerateContentResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateContentResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateContentResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StreamGenerateContent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateContentResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

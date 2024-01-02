@@ -133,4 +133,43 @@ public interface BillingAccountOrBuilder
    * @return The bytes for masterBillingAccount.
    */
   com.google.protobuf.ByteString getMasterBillingAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The billing account's parent resource identifier.
+   * Use the `MoveBillingAccount` method to update the account's parent resource
+   * if it is a organization.
+   * Format:
+   *   - `organizations/{organization_id}`, for example,
+   *     `organizations/12345678`
+   *   - `billingAccounts/{billing_account_id}`, for example,
+   *     `billingAccounts/012345-567890-ABCDEF`
+   * </pre>
+   *
+   * <code>string parent = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The parent.
+   */
+  java.lang.String getParent();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The billing account's parent resource identifier.
+   * Use the `MoveBillingAccount` method to update the account's parent resource
+   * if it is a organization.
+   * Format:
+   *   - `organizations/{organization_id}`, for example,
+   *     `organizations/12345678`
+   *   - `billingAccounts/{billing_account_id}`, for example,
+   *     `billingAccounts/012345-567890-ABCDEF`
+   * </pre>
+   *
+   * <code>string parent = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for parent.
+   */
+  com.google.protobuf.ByteString getParentBytes();
 }

@@ -37,6 +37,7 @@ public class SyncCreateBillingAccount {
       CreateBillingAccountRequest request =
           CreateBillingAccountRequest.newBuilder()
               .setBillingAccount(BillingAccount.newBuilder().build())
+              .setParent("parent-995424086")
               .build();
       BillingAccount response = cloudBillingClient.createBillingAccount(request);
     }

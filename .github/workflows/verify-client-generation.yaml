@@ -1,4 +1,4 @@
-name: New Client
+name: Verify GAPIC client library generation
 on:
   schedule:
     - cron: '0 2 * * *' # nightly at 2 am UTC
