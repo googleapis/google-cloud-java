@@ -18,6 +18,7 @@ package com.google.cloud.deploy.v1.stub;
 
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
@@ -56,17 +57,21 @@ import com.google.cloud.deploy.v1.CancelRolloutRequest;
 import com.google.cloud.deploy.v1.CancelRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
 import com.google.cloud.deploy.v1.CreateAutomationRequest;
+import com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.CreateTargetRequest;
+import com.google.cloud.deploy.v1.CustomTargetType;
 import com.google.cloud.deploy.v1.DeleteAutomationRequest;
+import com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
 import com.google.cloud.deploy.v1.GetAutomationRequest;
 import com.google.cloud.deploy.v1.GetAutomationRunRequest;
 import com.google.cloud.deploy.v1.GetConfigRequest;
+import com.google.cloud.deploy.v1.GetCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
@@ -79,6 +84,8 @@ import com.google.cloud.deploy.v1.ListAutomationRunsRequest;
 import com.google.cloud.deploy.v1.ListAutomationRunsResponse;
 import com.google.cloud.deploy.v1.ListAutomationsRequest;
 import com.google.cloud.deploy.v1.ListAutomationsResponse;
+import com.google.cloud.deploy.v1.ListCustomTargetTypesRequest;
+import com.google.cloud.deploy.v1.ListCustomTargetTypesResponse;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
 import com.google.cloud.deploy.v1.ListJobRunsRequest;
@@ -100,6 +107,7 @@ import com.google.cloud.deploy.v1.Target;
 import com.google.cloud.deploy.v1.TerminateJobRunRequest;
 import com.google.cloud.deploy.v1.TerminateJobRunResponse;
 import com.google.cloud.deploy.v1.UpdateAutomationRequest;
+import com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -140,6 +148,7 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
           .add(Automation.getDescriptor())
           .add(DeliveryPipeline.getDescriptor())
           .add(Target.getDescriptor())
+          .add(CustomTargetType.getDescriptor())
           .add(Release.getDescriptor())
           .build();
 
@@ -594,6 +603,217 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                       .build())
               .setOperationSnapshotFactory(
                   (DeleteTargetRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
+      listCustomTargetTypesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/ListCustomTargetTypes")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListCustomTargetTypesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/customTargetTypes",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCustomTargetTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCustomTargetTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListCustomTargetTypesResponse>newBuilder()
+                      .setDefaultInstance(ListCustomTargetTypesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetCustomTargetTypeRequest, CustomTargetType>
+      getCustomTargetTypeMethodDescriptor =
+          ApiMethodDescriptor.<GetCustomTargetTypeRequest, CustomTargetType>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetCustomTargetType")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetCustomTargetTypeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/customTargetTypes/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CustomTargetType>newBuilder()
+                      .setDefaultInstance(CustomTargetType.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateCustomTargetTypeRequest, Operation>
+      createCustomTargetTypeMethodDescriptor =
+          ApiMethodDescriptor.<CreateCustomTargetTypeRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/CreateCustomTargetType")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateCustomTargetTypeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/customTargetTypes",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "customTargetTypeId", request.getCustomTargetTypeId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("customTargetType", request.getCustomTargetType(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateCustomTargetTypeRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateCustomTargetTypeRequest, Operation>
+      updateCustomTargetTypeMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCustomTargetTypeRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/UpdateCustomTargetType")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCustomTargetTypeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{customTargetType.name=projects/*/locations/*/customTargetTypes/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "customTargetType.name",
+                                request.getCustomTargetType().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("customTargetType", request.getCustomTargetType(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateCustomTargetTypeRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteCustomTargetTypeRequest, Operation>
+      deleteCustomTargetTypeMethodDescriptor =
+          ApiMethodDescriptor.<DeleteCustomTargetTypeRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/DeleteCustomTargetType")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteCustomTargetTypeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/customTargetTypes/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteCustomTargetTypeRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -1724,6 +1944,26 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   private final UnaryCallable<DeleteTargetRequest, Operation> deleteTargetCallable;
   private final OperationCallable<DeleteTargetRequest, Empty, OperationMetadata>
       deleteTargetOperationCallable;
+  private final UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
+      listCustomTargetTypesCallable;
+  private final UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesPagedResponse>
+      listCustomTargetTypesPagedCallable;
+  private final UnaryCallable<GetCustomTargetTypeRequest, CustomTargetType>
+      getCustomTargetTypeCallable;
+  private final UnaryCallable<CreateCustomTargetTypeRequest, Operation>
+      createCustomTargetTypeCallable;
+  private final OperationCallable<
+          CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      createCustomTargetTypeOperationCallable;
+  private final UnaryCallable<UpdateCustomTargetTypeRequest, Operation>
+      updateCustomTargetTypeCallable;
+  private final OperationCallable<
+          UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      updateCustomTargetTypeOperationCallable;
+  private final UnaryCallable<DeleteCustomTargetTypeRequest, Operation>
+      deleteCustomTargetTypeCallable;
+  private final OperationCallable<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+      deleteCustomTargetTypeOperationCallable;
   private final UnaryCallable<ListReleasesRequest, ListReleasesResponse> listReleasesCallable;
   private final UnaryCallable<ListReleasesRequest, ListReleasesPagedResponse>
       listReleasesPagedCallable;
@@ -1981,6 +2221,69 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
+        listCustomTargetTypesTransportSettings =
+            HttpJsonCallSettings
+                .<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>newBuilder()
+                .setMethodDescriptor(listCustomTargetTypesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetCustomTargetTypeRequest, CustomTargetType>
+        getCustomTargetTypeTransportSettings =
+            HttpJsonCallSettings.<GetCustomTargetTypeRequest, CustomTargetType>newBuilder()
+                .setMethodDescriptor(getCustomTargetTypeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateCustomTargetTypeRequest, Operation>
+        createCustomTargetTypeTransportSettings =
+            HttpJsonCallSettings.<CreateCustomTargetTypeRequest, Operation>newBuilder()
+                .setMethodDescriptor(createCustomTargetTypeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateCustomTargetTypeRequest, Operation>
+        updateCustomTargetTypeTransportSettings =
+            HttpJsonCallSettings.<UpdateCustomTargetTypeRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateCustomTargetTypeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "custom_target_type.name",
+                          String.valueOf(request.getCustomTargetType().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteCustomTargetTypeRequest, Operation>
+        deleteCustomTargetTypeTransportSettings =
+            HttpJsonCallSettings.<DeleteCustomTargetTypeRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteCustomTargetTypeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListReleasesRequest, ListReleasesResponse> listReleasesTransportSettings =
         HttpJsonCallSettings.<ListReleasesRequest, ListReleasesResponse>newBuilder()
             .setMethodDescriptor(listReleasesMethodDescriptor)
@@ -2399,6 +2702,54 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
             settings.deleteTargetOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listCustomTargetTypesCallable =
+        callableFactory.createUnaryCallable(
+            listCustomTargetTypesTransportSettings,
+            settings.listCustomTargetTypesSettings(),
+            clientContext);
+    this.listCustomTargetTypesPagedCallable =
+        callableFactory.createPagedCallable(
+            listCustomTargetTypesTransportSettings,
+            settings.listCustomTargetTypesSettings(),
+            clientContext);
+    this.getCustomTargetTypeCallable =
+        callableFactory.createUnaryCallable(
+            getCustomTargetTypeTransportSettings,
+            settings.getCustomTargetTypeSettings(),
+            clientContext);
+    this.createCustomTargetTypeCallable =
+        callableFactory.createUnaryCallable(
+            createCustomTargetTypeTransportSettings,
+            settings.createCustomTargetTypeSettings(),
+            clientContext);
+    this.createCustomTargetTypeOperationCallable =
+        callableFactory.createOperationCallable(
+            createCustomTargetTypeTransportSettings,
+            settings.createCustomTargetTypeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateCustomTargetTypeCallable =
+        callableFactory.createUnaryCallable(
+            updateCustomTargetTypeTransportSettings,
+            settings.updateCustomTargetTypeSettings(),
+            clientContext);
+    this.updateCustomTargetTypeOperationCallable =
+        callableFactory.createOperationCallable(
+            updateCustomTargetTypeTransportSettings,
+            settings.updateCustomTargetTypeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteCustomTargetTypeCallable =
+        callableFactory.createUnaryCallable(
+            deleteCustomTargetTypeTransportSettings,
+            settings.deleteCustomTargetTypeSettings(),
+            clientContext);
+    this.deleteCustomTargetTypeOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteCustomTargetTypeTransportSettings,
+            settings.deleteCustomTargetTypeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listReleasesCallable =
         callableFactory.createUnaryCallable(
             listReleasesTransportSettings, settings.listReleasesSettings(), clientContext);
@@ -2561,6 +2912,11 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
     methodDescriptors.add(createTargetMethodDescriptor);
     methodDescriptors.add(updateTargetMethodDescriptor);
     methodDescriptors.add(deleteTargetMethodDescriptor);
+    methodDescriptors.add(listCustomTargetTypesMethodDescriptor);
+    methodDescriptors.add(getCustomTargetTypeMethodDescriptor);
+    methodDescriptors.add(createCustomTargetTypeMethodDescriptor);
+    methodDescriptors.add(updateCustomTargetTypeMethodDescriptor);
+    methodDescriptors.add(deleteCustomTargetTypeMethodDescriptor);
     methodDescriptors.add(listReleasesMethodDescriptor);
     methodDescriptors.add(getReleaseMethodDescriptor);
     methodDescriptors.add(createReleaseMethodDescriptor);
@@ -2698,6 +3054,56 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   public OperationCallable<DeleteTargetRequest, Empty, OperationMetadata>
       deleteTargetOperationCallable() {
     return deleteTargetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
+      listCustomTargetTypesCallable() {
+    return listCustomTargetTypesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesPagedResponse>
+      listCustomTargetTypesPagedCallable() {
+    return listCustomTargetTypesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCustomTargetTypeRequest, CustomTargetType> getCustomTargetTypeCallable() {
+    return getCustomTargetTypeCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomTargetTypeRequest, Operation> createCustomTargetTypeCallable() {
+    return createCustomTargetTypeCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      createCustomTargetTypeOperationCallable() {
+    return createCustomTargetTypeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCustomTargetTypeRequest, Operation> updateCustomTargetTypeCallable() {
+    return updateCustomTargetTypeCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      updateCustomTargetTypeOperationCallable() {
+    return updateCustomTargetTypeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCustomTargetTypeRequest, Operation> deleteCustomTargetTypeCallable() {
+    return deleteCustomTargetTypeCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+      deleteCustomTargetTypeOperationCallable() {
+    return deleteCustomTargetTypeOperationCallable;
   }
 
   @Override

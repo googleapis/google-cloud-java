@@ -1111,7 +1111,15 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getCronBytes();
   }
-  /** Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.SyncConfig} */
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Sync. Only one option is set.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.SyncConfig}
+   */
   public static final class SyncConfig extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureView.SyncConfig)
@@ -1369,7 +1377,15 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-    /** Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.SyncConfig} */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Sync. Only one option is set.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.SyncConfig}
+     */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
@@ -7973,11 +7989,11 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Name of the FeatureView. Format:
+   * Identifier. Name of the FeatureView. Format:
    * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -7997,11 +8013,11 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Name of the FeatureView. Format:
+   * Identifier. Name of the FeatureView. Format:
    * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -9588,11 +9604,11 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the FeatureView. Format:
+     * Identifier. Name of the FeatureView. Format:
      * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -9611,11 +9627,11 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the FeatureView. Format:
+     * Identifier. Name of the FeatureView. Format:
      * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -9634,11 +9650,11 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the FeatureView. Format:
+     * Identifier. Name of the FeatureView. Format:
      * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -9656,11 +9672,11 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the FeatureView. Format:
+     * Identifier. Name of the FeatureView. Format:
      * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -9674,11 +9690,11 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the FeatureView. Format:
+     * Identifier. Name of the FeatureView. Format:
      * `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

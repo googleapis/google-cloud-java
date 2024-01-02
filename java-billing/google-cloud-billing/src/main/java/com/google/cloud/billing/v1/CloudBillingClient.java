@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
- *   BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+ *   BillingAccountName name = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
  *   BillingAccount response = cloudBillingClient.getBillingAccount(name);
  * }
  * }</pre>
@@ -190,7 +190,7 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-   *   BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   BillingAccountName name = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
    *   BillingAccount response = cloudBillingClient.getBillingAccount(name);
    * }
    * }</pre>
@@ -221,7 +221,7 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-   *   String name = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   String name = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString();
    *   BillingAccount response = cloudBillingClient.getBillingAccount(name);
    * }
    * }</pre>
@@ -251,7 +251,7 @@ public class CloudBillingClient implements BackgroundResource {
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   GetBillingAccountRequest request =
    *       GetBillingAccountRequest.newBuilder()
-   *           .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
    *           .build();
    *   BillingAccount response = cloudBillingClient.getBillingAccount(request);
    * }
@@ -280,7 +280,7 @@ public class CloudBillingClient implements BackgroundResource {
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   GetBillingAccountRequest request =
    *       GetBillingAccountRequest.newBuilder()
-   *           .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
    *           .build();
    *   ApiFuture<BillingAccount> future =
    *       cloudBillingClient.getBillingAccountCallable().futureCall(request);
@@ -335,11 +335,44 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (BillingAccount element : cloudBillingClient.listBillingAccounts(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Optional. The parent resource to list billing accounts from. Format: -
+   *     `organizations/{organization_id}`, for example, `organizations/12345678` -
+   *     `billingAccounts/{billing_account_id}`, for example, `billingAccounts/012345-567890-ABCDEF`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBillingAccountsPagedResponse listBillingAccounts(String parent) {
+    ListBillingAccountsRequest request =
+        ListBillingAccountsRequest.newBuilder().setParent(parent).build();
+    return listBillingAccounts(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the billing accounts that the current authenticated user has permission to
+   * [view](https://cloud.google.com/billing/docs/how-to/billing-access).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   ListBillingAccountsRequest request =
    *       ListBillingAccountsRequest.newBuilder()
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setParent("parent-995424086")
    *           .build();
    *   for (BillingAccount element : cloudBillingClient.listBillingAccounts(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -374,6 +407,7 @@ public class CloudBillingClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setParent("parent-995424086")
    *           .build();
    *   ApiFuture<BillingAccount> future =
    *       cloudBillingClient.listBillingAccountsPagedCallable().futureCall(request);
@@ -408,6 +442,7 @@ public class CloudBillingClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setParent("parent-995424086")
    *           .build();
    *   while (true) {
    *     ListBillingAccountsResponse response =
@@ -447,7 +482,7 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-   *   BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   BillingAccountName name = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
    *   BillingAccount account = BillingAccount.newBuilder().build();
    *   BillingAccount response = cloudBillingClient.updateBillingAccount(name, account);
    * }
@@ -484,7 +519,7 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-   *   String name = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   String name = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString();
    *   BillingAccount account = BillingAccount.newBuilder().build();
    *   BillingAccount response = cloudBillingClient.updateBillingAccount(name, account);
    * }
@@ -519,7 +554,7 @@ public class CloudBillingClient implements BackgroundResource {
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   UpdateBillingAccountRequest request =
    *       UpdateBillingAccountRequest.newBuilder()
-   *           .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
    *           .setAccount(BillingAccount.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -553,7 +588,7 @@ public class CloudBillingClient implements BackgroundResource {
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   UpdateBillingAccountRequest request =
    *       UpdateBillingAccountRequest.newBuilder()
-   *           .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
    *           .setAccount(BillingAccount.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -635,9 +670,58 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   BillingAccount billingAccount = BillingAccount.newBuilder().build();
+   *   String parent = "parent-995424086";
+   *   BillingAccount response = cloudBillingClient.createBillingAccount(billingAccount, parent);
+   * }
+   * }</pre>
+   *
+   * @param billingAccount Required. The billing account resource to create. Currently
+   *     CreateBillingAccount only supports subaccount creation, so any created billing accounts
+   *     must be under a provided parent billing account.
+   * @param parent Optional. The parent to create a billing account from. Format: -
+   *     `organizations/{organization_id}`, for example, `organizations/12345678` -
+   *     `billingAccounts/{billing_account_id}`, for example, `billingAccounts/012345-567890-ABCDEF`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BillingAccount createBillingAccount(BillingAccount billingAccount, String parent) {
+    CreateBillingAccountRequest request =
+        CreateBillingAccountRequest.newBuilder()
+            .setBillingAccount(billingAccount)
+            .setParent(parent)
+            .build();
+    return createBillingAccount(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This method creates [billing
+   * subaccounts](https://cloud.google.com/billing/docs/concepts#subaccounts).
+   *
+   * <p>Google Cloud resellers should use the Channel Services APIs,
+   * [accounts.customers.create](https://cloud.google.com/channel/docs/reference/rest/v1/accounts.customers/create)
+   * and
+   * [accounts.customers.entitlements.create](https://cloud.google.com/channel/docs/reference/rest/v1/accounts.customers.entitlements/create).
+   *
+   * <p>When creating a subaccount, the current authenticated user must have the
+   * `billing.accounts.update` IAM permission on the parent account, which is typically given to
+   * billing account [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
+   * This method will return an error if the parent account has not been provisioned for
+   * subaccounts.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   CreateBillingAccountRequest request =
    *       CreateBillingAccountRequest.newBuilder()
    *           .setBillingAccount(BillingAccount.newBuilder().build())
+   *           .setParent("parent-995424086")
    *           .build();
    *   BillingAccount response = cloudBillingClient.createBillingAccount(request);
    * }
@@ -678,6 +762,7 @@ public class CloudBillingClient implements BackgroundResource {
    *   CreateBillingAccountRequest request =
    *       CreateBillingAccountRequest.newBuilder()
    *           .setBillingAccount(BillingAccount.newBuilder().build())
+   *           .setParent("parent-995424086")
    *           .build();
    *   ApiFuture<BillingAccount> future =
    *       cloudBillingClient.createBillingAccountCallable().futureCall(request);
@@ -706,7 +791,7 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-   *   BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   BillingAccountName name = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
    *   for (ProjectBillingInfo element :
    *       cloudBillingClient.listProjectBillingInfo(name).iterateAll()) {
    *     // doThingsWith(element);
@@ -741,7 +826,7 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-   *   String name = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   String name = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString();
    *   for (ProjectBillingInfo element :
    *       cloudBillingClient.listProjectBillingInfo(name).iterateAll()) {
    *     // doThingsWith(element);
@@ -776,7 +861,7 @@ public class CloudBillingClient implements BackgroundResource {
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   ListProjectBillingInfoRequest request =
    *       ListProjectBillingInfoRequest.newBuilder()
-   *           .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -812,7 +897,7 @@ public class CloudBillingClient implements BackgroundResource {
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   ListProjectBillingInfoRequest request =
    *       ListProjectBillingInfoRequest.newBuilder()
-   *           .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -847,7 +932,7 @@ public class CloudBillingClient implements BackgroundResource {
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   ListProjectBillingInfoRequest request =
    *       ListProjectBillingInfoRequest.newBuilder()
-   *           .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1194,7 +1279,7 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-   *   ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   ResourceName resource = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
    *   Policy response = cloudBillingClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -1226,7 +1311,7 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-   *   String resource = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   String resource = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString();
    *   Policy response = cloudBillingClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -1257,7 +1342,7 @@ public class CloudBillingClient implements BackgroundResource {
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setResource(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = cloudBillingClient.getIamPolicy(request);
@@ -1288,7 +1373,7 @@ public class CloudBillingClient implements BackgroundResource {
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setResource(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = cloudBillingClient.getIamPolicyCallable().futureCall(request);
@@ -1317,7 +1402,7 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-   *   ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   ResourceName resource = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = cloudBillingClient.setIamPolicy(resource, policy);
    * }
@@ -1355,7 +1440,7 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-   *   String resource = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   String resource = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = cloudBillingClient.setIamPolicy(resource, policy);
    * }
@@ -1392,7 +1477,7 @@ public class CloudBillingClient implements BackgroundResource {
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setResource(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1425,7 +1510,7 @@ public class CloudBillingClient implements BackgroundResource {
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setResource(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1454,7 +1539,7 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-   *   ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   ResourceName resource = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       cloudBillingClient.testIamPermissions(resource, permissions);
@@ -1493,7 +1578,7 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-   *   String resource = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   String resource = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString();
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       cloudBillingClient.testIamPermissions(resource, permissions);
@@ -1534,7 +1619,7 @@ public class CloudBillingClient implements BackgroundResource {
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setResource(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = cloudBillingClient.testIamPermissions(request);
@@ -1565,7 +1650,7 @@ public class CloudBillingClient implements BackgroundResource {
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setResource(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
@@ -1578,6 +1663,65 @@ public class CloudBillingClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Changes which parent organization a billing account belongs to.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   MoveBillingAccountRequest request =
+   *       MoveBillingAccountRequest.newBuilder()
+   *           .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
+   *           .setDestinationParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .build();
+   *   BillingAccount response = cloudBillingClient.moveBillingAccount(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BillingAccount moveBillingAccount(MoveBillingAccountRequest request) {
+    return moveBillingAccountCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Changes which parent organization a billing account belongs to.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   MoveBillingAccountRequest request =
+   *       MoveBillingAccountRequest.newBuilder()
+   *           .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
+   *           .setDestinationParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .build();
+   *   ApiFuture<BillingAccount> future =
+   *       cloudBillingClient.moveBillingAccountCallable().futureCall(request);
+   *   // Do something.
+   *   BillingAccount response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MoveBillingAccountRequest, BillingAccount>
+      moveBillingAccountCallable() {
+    return stub.moveBillingAccountCallable();
   }
 
   @Override

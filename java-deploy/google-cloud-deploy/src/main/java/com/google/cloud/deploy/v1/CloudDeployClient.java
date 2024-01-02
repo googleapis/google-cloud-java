@@ -1879,6 +1879,785 @@ public class CloudDeployClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists CustomTargetTypes in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (CustomTargetType element :
+   *       cloudDeployClient.listCustomTargetTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent that owns this collection of custom target types. Format
+   *     must be `projects/{project_id}/locations/{location_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomTargetTypesPagedResponse listCustomTargetTypes(LocationName parent) {
+    ListCustomTargetTypesRequest request =
+        ListCustomTargetTypesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCustomTargetTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomTargetTypes in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (CustomTargetType element :
+   *       cloudDeployClient.listCustomTargetTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent that owns this collection of custom target types. Format
+   *     must be `projects/{project_id}/locations/{location_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomTargetTypesPagedResponse listCustomTargetTypes(String parent) {
+    ListCustomTargetTypesRequest request =
+        ListCustomTargetTypesRequest.newBuilder().setParent(parent).build();
+    return listCustomTargetTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomTargetTypes in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   ListCustomTargetTypesRequest request =
+   *       ListCustomTargetTypesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (CustomTargetType element :
+   *       cloudDeployClient.listCustomTargetTypes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomTargetTypesPagedResponse listCustomTargetTypes(
+      ListCustomTargetTypesRequest request) {
+    return listCustomTargetTypesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomTargetTypes in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   ListCustomTargetTypesRequest request =
+   *       ListCustomTargetTypesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<CustomTargetType> future =
+   *       cloudDeployClient.listCustomTargetTypesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (CustomTargetType element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesPagedResponse>
+      listCustomTargetTypesPagedCallable() {
+    return stub.listCustomTargetTypesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomTargetTypes in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   ListCustomTargetTypesRequest request =
+   *       ListCustomTargetTypesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListCustomTargetTypesResponse response =
+   *         cloudDeployClient.listCustomTargetTypesCallable().call(request);
+   *     for (CustomTargetType element : response.getCustomTargetTypesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
+      listCustomTargetTypesCallable() {
+    return stub.listCustomTargetTypesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CustomTargetTypeName name =
+   *       CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]");
+   *   CustomTargetType response = cloudDeployClient.getCustomTargetType(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the `CustomTargetType`. Format must be
+   *     `projects/{project_id}/locations/{location_name}/customTargetTypes/{custom_target_type}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomTargetType getCustomTargetType(CustomTargetTypeName name) {
+    GetCustomTargetTypeRequest request =
+        GetCustomTargetTypeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getCustomTargetType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String name =
+   *       CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]").toString();
+   *   CustomTargetType response = cloudDeployClient.getCustomTargetType(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the `CustomTargetType`. Format must be
+   *     `projects/{project_id}/locations/{location_name}/customTargetTypes/{custom_target_type}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomTargetType getCustomTargetType(String name) {
+    GetCustomTargetTypeRequest request =
+        GetCustomTargetTypeRequest.newBuilder().setName(name).build();
+    return getCustomTargetType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   GetCustomTargetTypeRequest request =
+   *       GetCustomTargetTypeRequest.newBuilder()
+   *           .setName(
+   *               CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   CustomTargetType response = cloudDeployClient.getCustomTargetType(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomTargetType getCustomTargetType(GetCustomTargetTypeRequest request) {
+    return getCustomTargetTypeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   GetCustomTargetTypeRequest request =
+   *       GetCustomTargetTypeRequest.newBuilder()
+   *           .setName(
+   *               CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<CustomTargetType> future =
+   *       cloudDeployClient.getCustomTargetTypeCallable().futureCall(request);
+   *   // Do something.
+   *   CustomTargetType response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetCustomTargetTypeRequest, CustomTargetType>
+      getCustomTargetTypeCallable() {
+    return stub.getCustomTargetTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CustomTargetType in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   CustomTargetType customTargetType = CustomTargetType.newBuilder().build();
+   *   String customTargetTypeId = "customTargetTypeId1451302135";
+   *   CustomTargetType response =
+   *       cloudDeployClient
+   *           .createCustomTargetTypeAsync(parent, customTargetType, customTargetTypeId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection in which the `CustomTargetType` should be created
+   *     in. Format should be `projects/{project_id}/locations/{location_name}`.
+   * @param customTargetType Required. The `CustomTargetType` to create.
+   * @param customTargetTypeId Required. ID of the `CustomTargetType`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CustomTargetType, OperationMetadata> createCustomTargetTypeAsync(
+      LocationName parent, CustomTargetType customTargetType, String customTargetTypeId) {
+    CreateCustomTargetTypeRequest request =
+        CreateCustomTargetTypeRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCustomTargetType(customTargetType)
+            .setCustomTargetTypeId(customTargetTypeId)
+            .build();
+    return createCustomTargetTypeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CustomTargetType in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   CustomTargetType customTargetType = CustomTargetType.newBuilder().build();
+   *   String customTargetTypeId = "customTargetTypeId1451302135";
+   *   CustomTargetType response =
+   *       cloudDeployClient
+   *           .createCustomTargetTypeAsync(parent, customTargetType, customTargetTypeId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection in which the `CustomTargetType` should be created
+   *     in. Format should be `projects/{project_id}/locations/{location_name}`.
+   * @param customTargetType Required. The `CustomTargetType` to create.
+   * @param customTargetTypeId Required. ID of the `CustomTargetType`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CustomTargetType, OperationMetadata> createCustomTargetTypeAsync(
+      String parent, CustomTargetType customTargetType, String customTargetTypeId) {
+    CreateCustomTargetTypeRequest request =
+        CreateCustomTargetTypeRequest.newBuilder()
+            .setParent(parent)
+            .setCustomTargetType(customTargetType)
+            .setCustomTargetTypeId(customTargetTypeId)
+            .build();
+    return createCustomTargetTypeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CustomTargetType in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CreateCustomTargetTypeRequest request =
+   *       CreateCustomTargetTypeRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setCustomTargetTypeId("customTargetTypeId1451302135")
+   *           .setCustomTargetType(CustomTargetType.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   CustomTargetType response = cloudDeployClient.createCustomTargetTypeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CustomTargetType, OperationMetadata> createCustomTargetTypeAsync(
+      CreateCustomTargetTypeRequest request) {
+    return createCustomTargetTypeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CustomTargetType in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CreateCustomTargetTypeRequest request =
+   *       CreateCustomTargetTypeRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setCustomTargetTypeId("customTargetTypeId1451302135")
+   *           .setCustomTargetType(CustomTargetType.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<CustomTargetType, OperationMetadata> future =
+   *       cloudDeployClient.createCustomTargetTypeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   CustomTargetType response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      createCustomTargetTypeOperationCallable() {
+    return stub.createCustomTargetTypeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CustomTargetType in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CreateCustomTargetTypeRequest request =
+   *       CreateCustomTargetTypeRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setCustomTargetTypeId("customTargetTypeId1451302135")
+   *           .setCustomTargetType(CustomTargetType.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudDeployClient.createCustomTargetTypeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCustomTargetTypeRequest, Operation>
+      createCustomTargetTypeCallable() {
+    return stub.createCustomTargetTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CustomTargetType customTargetType = CustomTargetType.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CustomTargetType response =
+   *       cloudDeployClient.updateCustomTargetTypeAsync(customTargetType, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param customTargetType Required. The `CustomTargetType` to update.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     `CustomTargetType` resource by the update. The fields specified in the update_mask are
+   *     relative to the resource, not the full request. A field will be overwritten if it is in the
+   *     mask. If the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CustomTargetType, OperationMetadata> updateCustomTargetTypeAsync(
+      CustomTargetType customTargetType, FieldMask updateMask) {
+    UpdateCustomTargetTypeRequest request =
+        UpdateCustomTargetTypeRequest.newBuilder()
+            .setCustomTargetType(customTargetType)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateCustomTargetTypeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   UpdateCustomTargetTypeRequest request =
+   *       UpdateCustomTargetTypeRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCustomTargetType(CustomTargetType.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   CustomTargetType response = cloudDeployClient.updateCustomTargetTypeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CustomTargetType, OperationMetadata> updateCustomTargetTypeAsync(
+      UpdateCustomTargetTypeRequest request) {
+    return updateCustomTargetTypeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   UpdateCustomTargetTypeRequest request =
+   *       UpdateCustomTargetTypeRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCustomTargetType(CustomTargetType.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<CustomTargetType, OperationMetadata> future =
+   *       cloudDeployClient.updateCustomTargetTypeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   CustomTargetType response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      updateCustomTargetTypeOperationCallable() {
+    return stub.updateCustomTargetTypeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   UpdateCustomTargetTypeRequest request =
+   *       UpdateCustomTargetTypeRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCustomTargetType(CustomTargetType.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudDeployClient.updateCustomTargetTypeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCustomTargetTypeRequest, Operation>
+      updateCustomTargetTypeCallable() {
+    return stub.updateCustomTargetTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CustomTargetTypeName name =
+   *       CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]");
+   *   cloudDeployClient.deleteCustomTargetTypeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `CustomTargetType` to delete. Format must be
+   *     `projects/{project_id}/locations/{location_name}/customTargetTypes/{custom_target_type}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteCustomTargetTypeAsync(
+      CustomTargetTypeName name) {
+    DeleteCustomTargetTypeRequest request =
+        DeleteCustomTargetTypeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteCustomTargetTypeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String name =
+   *       CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]").toString();
+   *   cloudDeployClient.deleteCustomTargetTypeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `CustomTargetType` to delete. Format must be
+   *     `projects/{project_id}/locations/{location_name}/customTargetTypes/{custom_target_type}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteCustomTargetTypeAsync(String name) {
+    DeleteCustomTargetTypeRequest request =
+        DeleteCustomTargetTypeRequest.newBuilder().setName(name).build();
+    return deleteCustomTargetTypeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeleteCustomTargetTypeRequest request =
+   *       DeleteCustomTargetTypeRequest.newBuilder()
+   *           .setName(
+   *               CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   cloudDeployClient.deleteCustomTargetTypeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteCustomTargetTypeAsync(
+      DeleteCustomTargetTypeRequest request) {
+    return deleteCustomTargetTypeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeleteCustomTargetTypeRequest request =
+   *       DeleteCustomTargetTypeRequest.newBuilder()
+   *           .setName(
+   *               CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       cloudDeployClient.deleteCustomTargetTypeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+      deleteCustomTargetTypeOperationCallable() {
+    return stub.deleteCustomTargetTypeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeleteCustomTargetTypeRequest request =
+   *       DeleteCustomTargetTypeRequest.newBuilder()
+   *           .setName(
+   *               CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudDeployClient.deleteCustomTargetTypeCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteCustomTargetTypeRequest, Operation>
+      deleteCustomTargetTypeCallable() {
+    return stub.deleteCustomTargetTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists Releases in a given project and location.
    *
    * <p>Sample code:
@@ -4862,7 +5641,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of automations. Format must be
+   * @param parent Required. The parent `Delivery Pipeline`, which owns this collection of
+   *     automations. Format must be
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -4895,7 +5675,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of automations. Format must be
+   * @param parent Required. The parent `Delivery Pipeline`, which owns this collection of
+   *     automations. Format must be
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -5163,8 +5944,9 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of automationRuns. Format must
-   *     be `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}`.
+   * @param parent Required. The parent `Delivery Pipeline`, which owns this collection of
+   *     automationRuns. Format must be
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAutomationRunsPagedResponse listAutomationRuns(DeliveryPipelineName parent) {
@@ -5196,8 +5978,9 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of automationRuns. Format must
-   *     be `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}`.
+   * @param parent Required. The parent `Delivery Pipeline`, which owns this collection of
+   *     automationRuns. Format must be
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAutomationRunsPagedResponse listAutomationRuns(String parent) {
@@ -5999,6 +6782,90 @@ public class CloudDeployClient implements BackgroundResource {
     protected ListTargetsFixedSizeCollection createCollection(
         List<ListTargetsPage> pages, int collectionSize) {
       return new ListTargetsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListCustomTargetTypesPagedResponse
+      extends AbstractPagedListResponse<
+          ListCustomTargetTypesRequest,
+          ListCustomTargetTypesResponse,
+          CustomTargetType,
+          ListCustomTargetTypesPage,
+          ListCustomTargetTypesFixedSizeCollection> {
+
+    public static ApiFuture<ListCustomTargetTypesPagedResponse> createAsync(
+        PageContext<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse, CustomTargetType>
+            context,
+        ApiFuture<ListCustomTargetTypesResponse> futureResponse) {
+      ApiFuture<ListCustomTargetTypesPage> futurePage =
+          ListCustomTargetTypesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListCustomTargetTypesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListCustomTargetTypesPagedResponse(ListCustomTargetTypesPage page) {
+      super(page, ListCustomTargetTypesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListCustomTargetTypesPage
+      extends AbstractPage<
+          ListCustomTargetTypesRequest,
+          ListCustomTargetTypesResponse,
+          CustomTargetType,
+          ListCustomTargetTypesPage> {
+
+    private ListCustomTargetTypesPage(
+        PageContext<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse, CustomTargetType>
+            context,
+        ListCustomTargetTypesResponse response) {
+      super(context, response);
+    }
+
+    private static ListCustomTargetTypesPage createEmptyPage() {
+      return new ListCustomTargetTypesPage(null, null);
+    }
+
+    @Override
+    protected ListCustomTargetTypesPage createPage(
+        PageContext<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse, CustomTargetType>
+            context,
+        ListCustomTargetTypesResponse response) {
+      return new ListCustomTargetTypesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListCustomTargetTypesPage> createPageAsync(
+        PageContext<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse, CustomTargetType>
+            context,
+        ApiFuture<ListCustomTargetTypesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListCustomTargetTypesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListCustomTargetTypesRequest,
+          ListCustomTargetTypesResponse,
+          CustomTargetType,
+          ListCustomTargetTypesPage,
+          ListCustomTargetTypesFixedSizeCollection> {
+
+    private ListCustomTargetTypesFixedSizeCollection(
+        List<ListCustomTargetTypesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListCustomTargetTypesFixedSizeCollection createEmptyCollection() {
+      return new ListCustomTargetTypesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListCustomTargetTypesFixedSizeCollection createCollection(
+        List<ListCustomTargetTypesPage> pages, int collectionSize) {
+      return new ListCustomTargetTypesFixedSizeCollection(pages, collectionSize);
     }
   }
 

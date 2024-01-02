@@ -1,0 +1,16 @@
+{
+  "api_shortname": "vertexai",
+  "name_pretty": "VertexAI API",
+  "product_documentation": "https://cloud.google.com/vertex-ai/docs",
+  "api_description": "Vertex AI is an integrated suite of machine learning tools and services for building and using ML models with AutoML or custom code. It offers both novices and experts the best workbench for the entire machine learning development lifecycle.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-vertexai/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/java-vertexai",
+  "repo_short": "java-vertexai",
+  "distribution_name": "com.google.cloud:google-cloud-vertexai",
+  "api_id": "vertexai.googleapis.com",
+  "library_type": "GAPIC_COMBO",
+  "requires_billing": true
+}

@@ -27,7 +27,9 @@ public interface ExportDataResponseOrBuilder
    *
    *
    * <pre>
-   * All of the files that are exported in this export operation.
+   * All of the files that are exported in this export operation. For custom
+   * code training export, only three (training, validation and test) GCS paths
+   * in wildcard format are populated (e.g., gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>
@@ -39,7 +41,9 @@ public interface ExportDataResponseOrBuilder
    *
    *
    * <pre>
-   * All of the files that are exported in this export operation.
+   * All of the files that are exported in this export operation. For custom
+   * code training export, only three (training, validation and test) GCS paths
+   * in wildcard format are populated (e.g., gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>
@@ -51,7 +55,9 @@ public interface ExportDataResponseOrBuilder
    *
    *
    * <pre>
-   * All of the files that are exported in this export operation.
+   * All of the files that are exported in this export operation. For custom
+   * code training export, only three (training, validation and test) GCS paths
+   * in wildcard format are populated (e.g., gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>
@@ -64,7 +70,9 @@ public interface ExportDataResponseOrBuilder
    *
    *
    * <pre>
-   * All of the files that are exported in this export operation.
+   * All of the files that are exported in this export operation. For custom
+   * code training export, only three (training, validation and test) GCS paths
+   * in wildcard format are populated (e.g., gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>
@@ -73,4 +81,45 @@ public interface ExportDataResponseOrBuilder
    * @return The bytes of the exportedFiles at the given index.
    */
   com.google.protobuf.ByteString getExportedFilesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Only present for custom code training export use case. Records data stats,
+   * i.e., train/validation/test item/annotation counts calculated during
+   * the export operation.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 2;</code>
+   *
+   * @return Whether the dataStats field is set.
+   */
+  boolean hasDataStats();
+  /**
+   *
+   *
+   * <pre>
+   * Only present for custom code training export use case. Records data stats,
+   * i.e., train/validation/test item/annotation counts calculated during
+   * the export operation.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 2;</code>
+   *
+   * @return The dataStats.
+   */
+  com.google.cloud.aiplatform.v1.Model.DataStats getDataStats();
+  /**
+   *
+   *
+   * <pre>
+   * Only present for custom code training export use case. Records data stats,
+   * i.e., train/validation/test item/annotation counts calculated during
+   * the export operation.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 2;</code>
+   */
+  com.google.cloud.aiplatform.v1.Model.DataStatsOrBuilder getDataStatsOrBuilder();
 }

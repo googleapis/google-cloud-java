@@ -274,4 +274,25 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void moveBillingAccount(
+      MoveBillingAccountRequest request, StreamObserver<BillingAccount> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BillingAccount) {
+      requests.add(request);
+      responseObserver.onNext(((BillingAccount) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MoveBillingAccount, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BillingAccount.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

@@ -74,7 +74,8 @@ public interface ListBillingAccountsRequestOrBuilder
    * This only supports filtering for
    * [subaccounts](https://cloud.google.com/billing/docs/concepts) under a
    * single provided parent billing account.
-   * (e.g. "master_billing_account=billingAccounts/012345-678901-ABCDEF").
+   * (for example,
+   * `master_billing_account=billingAccounts/012345-678901-ABCDEF`).
    * Boolean algebra and other fields are not currently supported.
    * </pre>
    *
@@ -91,7 +92,8 @@ public interface ListBillingAccountsRequestOrBuilder
    * This only supports filtering for
    * [subaccounts](https://cloud.google.com/billing/docs/concepts) under a
    * single provided parent billing account.
-   * (e.g. "master_billing_account=billingAccounts/012345-678901-ABCDEF").
+   * (for example,
+   * `master_billing_account=billingAccounts/012345-678901-ABCDEF`).
    * Boolean algebra and other fields are not currently supported.
    * </pre>
    *
@@ -100,4 +102,39 @@ public interface ListBillingAccountsRequestOrBuilder
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parent resource to list billing accounts from.
+   * Format:
+   *   - `organizations/{organization_id}`, for example,
+   *     `organizations/12345678`
+   *   - `billingAccounts/{billing_account_id}`, for example,
+   *     `billingAccounts/012345-567890-ABCDEF`
+   * </pre>
+   *
+   * <code>string parent = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The parent.
+   */
+  java.lang.String getParent();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parent resource to list billing accounts from.
+   * Format:
+   *   - `organizations/{organization_id}`, for example,
+   *     `organizations/12345678`
+   *   - `billingAccounts/{billing_account_id}`, for example,
+   *     `billingAccounts/012345-567890-ABCDEF`
+   * </pre>
+   *
+   * <code>string parent = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for parent.
+   */
+  com.google.protobuf.ByteString getParentBytes();
 }

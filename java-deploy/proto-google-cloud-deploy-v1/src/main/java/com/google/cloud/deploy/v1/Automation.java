@@ -25,7 +25,7 @@ package com.google.cloud.deploy.v1;
  * An `Automation` resource in the Cloud Deploy API.
  *
  * An `Automation` enables the automation of manually driven actions for
- * a Delivery Pipeline, which includes Release promotion amongst Targets,
+ * a Delivery Pipeline, which includes Release promotion among Targets,
  * Rollout repair and Rollout deployment strategy advancement. The intention
  * of Automation is to reduce manual intervention in the continuous delivery
  * process.
@@ -1228,7 +1228,7 @@ public final class Automation extends com.google.protobuf.GeneratedMessageV3
    * An `Automation` resource in the Cloud Deploy API.
    *
    * An `Automation` enables the automation of manually driven actions for
-   * a Delivery Pipeline, which includes Release promotion amongst Targets,
+   * a Delivery Pipeline, which includes Release promotion among Targets,
    * Rollout repair and Rollout deployment strategy advancement. The intention
    * of Automation is to reduce manual intervention in the continuous delivery
    * process.

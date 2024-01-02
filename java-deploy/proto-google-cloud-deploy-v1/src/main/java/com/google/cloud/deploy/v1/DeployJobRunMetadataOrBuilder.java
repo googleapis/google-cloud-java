@@ -66,4 +66,86 @@ public interface DeployJobRunMetadataOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.CloudRunMetadataOrBuilder getCloudRunOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom Target metadata associated with a `DeployJobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomTargetDeployMetadata custom_target = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the customTarget field is set.
+   */
+  boolean hasCustomTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom Target metadata associated with a `DeployJobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomTargetDeployMetadata custom_target = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The customTarget.
+   */
+  com.google.cloud.deploy.v1.CustomTargetDeployMetadata getCustomTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom Target metadata associated with a `DeployJobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomTargetDeployMetadata custom_target = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.CustomTargetDeployMetadataOrBuilder getCustomTargetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom metadata provided by user defined deploy operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the custom field is set.
+   */
+  boolean hasCustom();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom metadata provided by user defined deploy operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The custom.
+   */
+  com.google.cloud.deploy.v1.CustomMetadata getCustom();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom metadata provided by user defined deploy operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.CustomMetadataOrBuilder getCustomOrBuilder();
 }

@@ -11,7 +11,7 @@
           "libraryClient": "CloudBillingClient",
           "rpcs": {
             "CreateBillingAccount": {
-              "methods": ["createBillingAccount", "createBillingAccount", "createBillingAccountCallable"]
+              "methods": ["createBillingAccount", "createBillingAccount", "createBillingAccount", "createBillingAccountCallable"]
             },
             "GetBillingAccount": {
               "methods": ["getBillingAccount", "getBillingAccount", "getBillingAccount", "getBillingAccountCallable"]
@@ -23,10 +23,13 @@
               "methods": ["getProjectBillingInfo", "getProjectBillingInfo", "getProjectBillingInfo", "getProjectBillingInfoCallable"]
             },
             "ListBillingAccounts": {
-              "methods": ["listBillingAccounts", "listBillingAccounts", "listBillingAccountsPagedCallable", "listBillingAccountsCallable"]
+              "methods": ["listBillingAccounts", "listBillingAccounts", "listBillingAccounts", "listBillingAccountsPagedCallable", "listBillingAccountsCallable"]
             },
             "ListProjectBillingInfo": {
               "methods": ["listProjectBillingInfo", "listProjectBillingInfo", "listProjectBillingInfo", "listProjectBillingInfoPagedCallable", "listProjectBillingInfoCallable"]
+            },
+            "MoveBillingAccount": {
+              "methods": ["moveBillingAccount", "moveBillingAccountCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
