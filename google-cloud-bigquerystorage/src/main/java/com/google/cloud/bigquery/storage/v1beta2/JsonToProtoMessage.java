@@ -36,7 +36,10 @@ import org.threeten.bp.LocalTime;
 /**
  * Converts Json data to protocol buffer messages given the protocol buffer descriptor. The protobuf
  * descriptor must have all fields lowercased.
+ *
+ * <p>This client lib is deprecated, please use v1 instead.
  */
+@Deprecated
 public class JsonToProtoMessage {
   private static final Logger LOG = Logger.getLogger(JsonToProtoMessage.class.getName());
   private static ImmutableMap<FieldDescriptor.Type, String> FieldTypeToDebugMessage =

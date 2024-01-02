@@ -35,7 +35,10 @@ import io.grpc.StatusRuntimeException;
  * in receiving order.
  *
  * <p>It's user's responsibility to do the flow control and maintain the lifetime of the requests.
+ *
+ * <p>This client lib is deprecated, please use v1 instead.
  */
+@Deprecated
 public class StreamConnection {
   private BidiStreamingCallable<AppendRowsRequest, AppendRowsResponse> bidiStreamingCallable;
   private ClientStream<AppendRowsRequest> clientStream;

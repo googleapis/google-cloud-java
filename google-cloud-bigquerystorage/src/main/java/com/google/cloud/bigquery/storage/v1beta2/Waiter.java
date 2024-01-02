@@ -29,6 +29,7 @@ import java.util.logging.Logger;
  * A barrier kind of object that helps keep track of pending actions and synchronously wait until
  * all have completed.
  */
+@Deprecated
 class Waiter {
   private static final Logger LOG =
       Logger.getLogger(com.google.cloud.bigquery.storage.v1beta2.Waiter.class.getName());

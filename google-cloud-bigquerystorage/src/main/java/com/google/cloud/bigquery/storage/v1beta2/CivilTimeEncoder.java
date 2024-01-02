@@ -47,6 +47,7 @@ import org.threeten.bp.temporal.ChronoUnit;
  * <p>When encoding the TIME or DATETIME into a bit field, larger date/time field is on the more
  * significant side.
  */
+@Deprecated
 public final class CivilTimeEncoder {
   private static final int NANO_LENGTH = 30;
   private static final int MICRO_LENGTH = 20;

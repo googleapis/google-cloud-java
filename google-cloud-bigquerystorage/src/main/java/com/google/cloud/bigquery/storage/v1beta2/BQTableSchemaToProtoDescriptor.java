@@ -33,6 +33,7 @@ import java.util.List;
  * when constructing the protobuf descriptor. The mapping between field types and field modes are
  * shown in the ImmutableMaps below.
  */
+@Deprecated
 public class BQTableSchemaToProtoDescriptor {
   private static ImmutableMap<TableFieldSchema.Mode, FieldDescriptorProto.Label>
       BQTableSchemaModeMap =

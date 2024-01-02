@@ -35,7 +35,10 @@ import org.json.JSONObject;
  * A StreamWriter that can write JSON data (JSONObjects) to BigQuery tables. The JsonStreamWriter is
  * built on top of a StreamWriter, and it simply converts all JSON data to protobuf messages then
  * calls StreamWriter's append() method to write to BigQuery tables.
+ *
+ * <p>This client lib is deprecated, please use v1 instead.
  */
+@Deprecated
 public class JsonStreamWriter implements AutoCloseable {
   private static String streamPatternString =
       "projects/[^/]+/datasets/[^/]+/tables/[^/]+/streams/[^/]+";

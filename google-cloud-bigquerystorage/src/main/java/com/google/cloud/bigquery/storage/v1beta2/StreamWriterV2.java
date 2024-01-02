@@ -45,7 +45,10 @@ import javax.annotation.concurrent.GuardedBy;
  * <p>TODO: Support batching.
  *
  * <p>TODO: Support schema change.
+ *
+ * <p>This client lib is deprecated, please use v1 instead.
  */
+@Deprecated
 public class StreamWriterV2 implements AutoCloseable {
   private static final Logger log = Logger.getLogger(StreamWriterV2.class.getName());
 
