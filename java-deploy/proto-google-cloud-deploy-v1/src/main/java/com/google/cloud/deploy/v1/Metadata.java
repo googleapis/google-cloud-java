@@ -178,6 +178,62 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         : automation_;
   }
 
+  public static final int CUSTOM_FIELD_NUMBER = 3;
+  private com.google.cloud.deploy.v1.CustomMetadata custom_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom metadata provided by user defined `Rollout` operations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the custom field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustom() {
+    return custom_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom metadata provided by user defined `Rollout` operations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The custom.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CustomMetadata getCustom() {
+    return custom_ == null
+        ? com.google.cloud.deploy.v1.CustomMetadata.getDefaultInstance()
+        : custom_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom metadata provided by user defined `Rollout` operations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CustomMetadataOrBuilder getCustomOrBuilder() {
+    return custom_ == null
+        ? com.google.cloud.deploy.v1.CustomMetadata.getDefaultInstance()
+        : custom_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -198,6 +254,9 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     if (automation_ != null) {
       output.writeMessage(2, getAutomation());
     }
+    if (custom_ != null) {
+      output.writeMessage(3, getCustom());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -212,6 +271,9 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     }
     if (automation_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getAutomation());
+    }
+    if (custom_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCustom());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -236,6 +298,10 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     if (hasAutomation()) {
       if (!getAutomation().equals(other.getAutomation())) return false;
     }
+    if (hasCustom() != other.hasCustom()) return false;
+    if (hasCustom()) {
+      if (!getCustom().equals(other.getCustom())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -254,6 +320,10 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     if (hasAutomation()) {
       hash = (37 * hash) + AUTOMATION_FIELD_NUMBER;
       hash = (53 * hash) + getAutomation().hashCode();
+    }
+    if (hasCustom()) {
+      hash = (37 * hash) + CUSTOM_FIELD_NUMBER;
+      hash = (53 * hash) + getCustom().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -403,6 +473,11 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         automationBuilder_.dispose();
         automationBuilder_ = null;
       }
+      custom_ = null;
+      if (customBuilder_ != null) {
+        customBuilder_.dispose();
+        customBuilder_ = null;
+      }
       return this;
     }
 
@@ -443,6 +518,9 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.automation_ = automationBuilder_ == null ? automation_ : automationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.custom_ = customBuilder_ == null ? custom_ : customBuilder_.build();
       }
     }
 
@@ -497,6 +575,9 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAutomation()) {
         mergeAutomation(other.getAutomation());
       }
+      if (other.hasCustom()) {
+        mergeCustom(other.getCustom());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -535,6 +616,12 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getCustomFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -975,6 +1062,207 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         automation_ = null;
       }
       return automationBuilder_;
+    }
+
+    private com.google.cloud.deploy.v1.CustomMetadata custom_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.CustomMetadata,
+            com.google.cloud.deploy.v1.CustomMetadata.Builder,
+            com.google.cloud.deploy.v1.CustomMetadataOrBuilder>
+        customBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the custom field is set.
+     */
+    public boolean hasCustom() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The custom.
+     */
+    public com.google.cloud.deploy.v1.CustomMetadata getCustom() {
+      if (customBuilder_ == null) {
+        return custom_ == null
+            ? com.google.cloud.deploy.v1.CustomMetadata.getDefaultInstance()
+            : custom_;
+      } else {
+        return customBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustom(com.google.cloud.deploy.v1.CustomMetadata value) {
+      if (customBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        custom_ = value;
+      } else {
+        customBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustom(com.google.cloud.deploy.v1.CustomMetadata.Builder builderForValue) {
+      if (customBuilder_ == null) {
+        custom_ = builderForValue.build();
+      } else {
+        customBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCustom(com.google.cloud.deploy.v1.CustomMetadata value) {
+      if (customBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && custom_ != null
+            && custom_ != com.google.cloud.deploy.v1.CustomMetadata.getDefaultInstance()) {
+          getCustomBuilder().mergeFrom(value);
+        } else {
+          custom_ = value;
+        }
+      } else {
+        customBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCustom() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      custom_ = null;
+      if (customBuilder_ != null) {
+        customBuilder_.dispose();
+        customBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.CustomMetadata.Builder getCustomBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getCustomFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.CustomMetadataOrBuilder getCustomOrBuilder() {
+      if (customBuilder_ != null) {
+        return customBuilder_.getMessageOrBuilder();
+      } else {
+        return custom_ == null
+            ? com.google.cloud.deploy.v1.CustomMetadata.getDefaultInstance()
+            : custom_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.CustomMetadata,
+            com.google.cloud.deploy.v1.CustomMetadata.Builder,
+            com.google.cloud.deploy.v1.CustomMetadataOrBuilder>
+        getCustomFieldBuilder() {
+      if (customBuilder_ == null) {
+        customBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.CustomMetadata,
+                com.google.cloud.deploy.v1.CustomMetadata.Builder,
+                com.google.cloud.deploy.v1.CustomMetadataOrBuilder>(
+                getCustom(), getParentForChildren(), isClean());
+        custom_ = null;
+      }
+      return customBuilder_;
     }
 
     @java.lang.Override

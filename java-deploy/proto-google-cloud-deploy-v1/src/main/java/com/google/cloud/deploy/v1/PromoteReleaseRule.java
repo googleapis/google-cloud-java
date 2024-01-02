@@ -178,6 +178,7 @@ public final class PromoteReleaseRule extends com.google.protobuf.GeneratedMessa
    * Optional. The ID of the stage in the pipeline to which this `Release` is
    * deploying. If unspecified, default it to the next stage in the promotion
    * flow. The value of this field could be one of the following:
+   *
    * * The last segment of a target name. It only needs the ID to determine
    * if the target is one of the stages in the promotion sequence defined
    * in the pipeline.
@@ -207,6 +208,7 @@ public final class PromoteReleaseRule extends com.google.protobuf.GeneratedMessa
    * Optional. The ID of the stage in the pipeline to which this `Release` is
    * deploying. If unspecified, default it to the next stage in the promotion
    * flow. The value of this field could be one of the following:
+   *
    * * The last segment of a target name. It only needs the ID to determine
    * if the target is one of the stages in the promotion sequence defined
    * in the pipeline.
@@ -1098,6 +1100,7 @@ public final class PromoteReleaseRule extends com.google.protobuf.GeneratedMessa
      * Optional. The ID of the stage in the pipeline to which this `Release` is
      * deploying. If unspecified, default it to the next stage in the promotion
      * flow. The value of this field could be one of the following:
+     *
      * * The last segment of a target name. It only needs the ID to determine
      * if the target is one of the stages in the promotion sequence defined
      * in the pipeline.
@@ -1126,6 +1129,7 @@ public final class PromoteReleaseRule extends com.google.protobuf.GeneratedMessa
      * Optional. The ID of the stage in the pipeline to which this `Release` is
      * deploying. If unspecified, default it to the next stage in the promotion
      * flow. The value of this field could be one of the following:
+     *
      * * The last segment of a target name. It only needs the ID to determine
      * if the target is one of the stages in the promotion sequence defined
      * in the pipeline.
@@ -1154,6 +1158,7 @@ public final class PromoteReleaseRule extends com.google.protobuf.GeneratedMessa
      * Optional. The ID of the stage in the pipeline to which this `Release` is
      * deploying. If unspecified, default it to the next stage in the promotion
      * flow. The value of this field could be one of the following:
+     *
      * * The last segment of a target name. It only needs the ID to determine
      * if the target is one of the stages in the promotion sequence defined
      * in the pipeline.
@@ -1181,6 +1186,7 @@ public final class PromoteReleaseRule extends com.google.protobuf.GeneratedMessa
      * Optional. The ID of the stage in the pipeline to which this `Release` is
      * deploying. If unspecified, default it to the next stage in the promotion
      * flow. The value of this field could be one of the following:
+     *
      * * The last segment of a target name. It only needs the ID to determine
      * if the target is one of the stages in the promotion sequence defined
      * in the pipeline.
@@ -1204,6 +1210,7 @@ public final class PromoteReleaseRule extends com.google.protobuf.GeneratedMessa
      * Optional. The ID of the stage in the pipeline to which this `Release` is
      * deploying. If unspecified, default it to the next stage in the promotion
      * flow. The value of this field could be one of the following:
+     *
      * * The last segment of a target name. It only needs the ID to determine
      * if the target is one of the stages in the promotion sequence defined
      * in the pipeline.

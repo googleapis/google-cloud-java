@@ -73,8 +73,8 @@ public final class ListAutomationsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of automations. Format
-   * must be
+   * Required. The parent `Delivery Pipeline`, which owns this collection of
+   * automations. Format must be
    * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * </pre>
    *
@@ -100,8 +100,8 @@ public final class ListAutomationsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of automations. Format
-   * must be
+   * Required. The parent `Delivery Pipeline`, which owns this collection of
+   * automations. Format must be
    * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * </pre>
    *
@@ -749,8 +749,8 @@ public final class ListAutomationsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The parent, which owns this collection of automations. Format
-     * must be
+     * Required. The parent `Delivery Pipeline`, which owns this collection of
+     * automations. Format must be
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
@@ -775,8 +775,8 @@ public final class ListAutomationsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The parent, which owns this collection of automations. Format
-     * must be
+     * Required. The parent `Delivery Pipeline`, which owns this collection of
+     * automations. Format must be
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
@@ -801,8 +801,8 @@ public final class ListAutomationsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The parent, which owns this collection of automations. Format
-     * must be
+     * Required. The parent `Delivery Pipeline`, which owns this collection of
+     * automations. Format must be
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
@@ -826,8 +826,8 @@ public final class ListAutomationsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The parent, which owns this collection of automations. Format
-     * must be
+     * Required. The parent `Delivery Pipeline`, which owns this collection of
+     * automations. Format must be
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
@@ -847,8 +847,8 @@ public final class ListAutomationsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The parent, which owns this collection of automations. Format
-     * must be
+     * Required. The parent `Delivery Pipeline`, which owns this collection of
+     * automations. Format must be
      * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *

@@ -27,7 +27,7 @@ public interface ListAutomationsResponseOrBuilder
    *
    *
    * <pre>
-   * The `Automations` objects.
+   * The `Automation` objects.
    * </pre>
    *
    * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -37,7 +37,7 @@ public interface ListAutomationsResponseOrBuilder
    *
    *
    * <pre>
-   * The `Automations` objects.
+   * The `Automation` objects.
    * </pre>
    *
    * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -47,7 +47,7 @@ public interface ListAutomationsResponseOrBuilder
    *
    *
    * <pre>
-   * The `Automations` objects.
+   * The `Automation` objects.
    * </pre>
    *
    * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -57,7 +57,7 @@ public interface ListAutomationsResponseOrBuilder
    *
    *
    * <pre>
-   * The `Automations` objects.
+   * The `Automation` objects.
    * </pre>
    *
    * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -68,7 +68,7 @@ public interface ListAutomationsResponseOrBuilder
    *
    *
    * <pre>
-   * The `Automations` objects.
+   * The `Automation` objects.
    * </pre>
    *
    * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>

@@ -72,7 +72,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The `Automations` objects.
+   * The `Automation` objects.
    * </pre>
    *
    * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -85,7 +85,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The `Automations` objects.
+   * The `Automation` objects.
    * </pre>
    *
    * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -99,7 +99,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The `Automations` objects.
+   * The `Automation` objects.
    * </pre>
    *
    * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -112,7 +112,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The `Automations` objects.
+   * The `Automation` objects.
    * </pre>
    *
    * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -125,7 +125,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The `Automations` objects.
+   * The `Automation` objects.
    * </pre>
    *
    * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -724,7 +724,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -740,7 +740,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -756,7 +756,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -772,7 +772,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -794,7 +794,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -814,7 +814,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -836,7 +836,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -858,7 +858,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -877,7 +877,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -897,7 +897,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -917,7 +917,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -936,7 +936,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -955,7 +955,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -967,7 +967,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -983,7 +983,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -1000,7 +1000,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -1013,7 +1013,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
@@ -1026,7 +1026,7 @@ public final class ListAutomationsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The `Automations` objects.
+     * The `Automation` objects.
      * </pre>
      *
      * <code>repeated .google.cloud.deploy.v1.Automation automations = 1;</code>
