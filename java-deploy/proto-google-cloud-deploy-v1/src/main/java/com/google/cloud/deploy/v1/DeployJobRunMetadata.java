@@ -120,6 +120,118 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
         : cloudRun_;
   }
 
+  public static final int CUSTOM_TARGET_FIELD_NUMBER = 2;
+  private com.google.cloud.deploy.v1.CustomTargetDeployMetadata customTarget_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom Target metadata associated with a `DeployJobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomTargetDeployMetadata custom_target = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the customTarget field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomTarget() {
+    return customTarget_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom Target metadata associated with a `DeployJobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomTargetDeployMetadata custom_target = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The customTarget.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CustomTargetDeployMetadata getCustomTarget() {
+    return customTarget_ == null
+        ? com.google.cloud.deploy.v1.CustomTargetDeployMetadata.getDefaultInstance()
+        : customTarget_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom Target metadata associated with a `DeployJobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomTargetDeployMetadata custom_target = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CustomTargetDeployMetadataOrBuilder getCustomTargetOrBuilder() {
+    return customTarget_ == null
+        ? com.google.cloud.deploy.v1.CustomTargetDeployMetadata.getDefaultInstance()
+        : customTarget_;
+  }
+
+  public static final int CUSTOM_FIELD_NUMBER = 3;
+  private com.google.cloud.deploy.v1.CustomMetadata custom_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom metadata provided by user defined deploy operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the custom field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustom() {
+    return custom_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom metadata provided by user defined deploy operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The custom.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CustomMetadata getCustom() {
+    return custom_ == null
+        ? com.google.cloud.deploy.v1.CustomMetadata.getDefaultInstance()
+        : custom_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom metadata provided by user defined deploy operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CustomMetadataOrBuilder getCustomOrBuilder() {
+    return custom_ == null
+        ? com.google.cloud.deploy.v1.CustomMetadata.getDefaultInstance()
+        : custom_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -137,6 +249,12 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
     if (cloudRun_ != null) {
       output.writeMessage(1, getCloudRun());
     }
+    if (customTarget_ != null) {
+      output.writeMessage(2, getCustomTarget());
+    }
+    if (custom_ != null) {
+      output.writeMessage(3, getCustom());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -148,6 +266,12 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
     size = 0;
     if (cloudRun_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getCloudRun());
+    }
+    if (customTarget_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getCustomTarget());
+    }
+    if (custom_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCustom());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -169,6 +293,14 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
     if (hasCloudRun()) {
       if (!getCloudRun().equals(other.getCloudRun())) return false;
     }
+    if (hasCustomTarget() != other.hasCustomTarget()) return false;
+    if (hasCustomTarget()) {
+      if (!getCustomTarget().equals(other.getCustomTarget())) return false;
+    }
+    if (hasCustom() != other.hasCustom()) return false;
+    if (hasCustom()) {
+      if (!getCustom().equals(other.getCustom())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -183,6 +315,14 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
     if (hasCloudRun()) {
       hash = (37 * hash) + CLOUD_RUN_FIELD_NUMBER;
       hash = (53 * hash) + getCloudRun().hashCode();
+    }
+    if (hasCustomTarget()) {
+      hash = (37 * hash) + CUSTOM_TARGET_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomTarget().hashCode();
+    }
+    if (hasCustom()) {
+      hash = (37 * hash) + CUSTOM_FIELD_NUMBER;
+      hash = (53 * hash) + getCustom().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -329,6 +469,16 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
         cloudRunBuilder_.dispose();
         cloudRunBuilder_ = null;
       }
+      customTarget_ = null;
+      if (customTargetBuilder_ != null) {
+        customTargetBuilder_.dispose();
+        customTargetBuilder_ = null;
+      }
+      custom_ = null;
+      if (customBuilder_ != null) {
+        customBuilder_.dispose();
+        customBuilder_ = null;
+      }
       return this;
     }
 
@@ -367,6 +517,13 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.cloudRun_ = cloudRunBuilder_ == null ? cloudRun_ : cloudRunBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.customTarget_ =
+            customTargetBuilder_ == null ? customTarget_ : customTargetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.custom_ = customBuilder_ == null ? custom_ : customBuilder_.build();
       }
     }
 
@@ -419,6 +576,12 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
       if (other.hasCloudRun()) {
         mergeCloudRun(other.getCloudRun());
       }
+      if (other.hasCustomTarget()) {
+        mergeCustomTarget(other.getCustomTarget());
+      }
+      if (other.hasCustom()) {
+        mergeCustom(other.getCustom());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -451,6 +614,18 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getCustomTargetFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getCustomFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -679,6 +854,411 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
         cloudRun_ = null;
       }
       return cloudRunBuilder_;
+    }
+
+    private com.google.cloud.deploy.v1.CustomTargetDeployMetadata customTarget_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.CustomTargetDeployMetadata,
+            com.google.cloud.deploy.v1.CustomTargetDeployMetadata.Builder,
+            com.google.cloud.deploy.v1.CustomTargetDeployMetadataOrBuilder>
+        customTargetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom Target metadata associated with a `DeployJobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTargetDeployMetadata custom_target = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the customTarget field is set.
+     */
+    public boolean hasCustomTarget() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom Target metadata associated with a `DeployJobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTargetDeployMetadata custom_target = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The customTarget.
+     */
+    public com.google.cloud.deploy.v1.CustomTargetDeployMetadata getCustomTarget() {
+      if (customTargetBuilder_ == null) {
+        return customTarget_ == null
+            ? com.google.cloud.deploy.v1.CustomTargetDeployMetadata.getDefaultInstance()
+            : customTarget_;
+      } else {
+        return customTargetBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom Target metadata associated with a `DeployJobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTargetDeployMetadata custom_target = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustomTarget(com.google.cloud.deploy.v1.CustomTargetDeployMetadata value) {
+      if (customTargetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customTarget_ = value;
+      } else {
+        customTargetBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom Target metadata associated with a `DeployJobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTargetDeployMetadata custom_target = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustomTarget(
+        com.google.cloud.deploy.v1.CustomTargetDeployMetadata.Builder builderForValue) {
+      if (customTargetBuilder_ == null) {
+        customTarget_ = builderForValue.build();
+      } else {
+        customTargetBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom Target metadata associated with a `DeployJobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTargetDeployMetadata custom_target = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCustomTarget(com.google.cloud.deploy.v1.CustomTargetDeployMetadata value) {
+      if (customTargetBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && customTarget_ != null
+            && customTarget_
+                != com.google.cloud.deploy.v1.CustomTargetDeployMetadata.getDefaultInstance()) {
+          getCustomTargetBuilder().mergeFrom(value);
+        } else {
+          customTarget_ = value;
+        }
+      } else {
+        customTargetBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom Target metadata associated with a `DeployJobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTargetDeployMetadata custom_target = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCustomTarget() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      customTarget_ = null;
+      if (customTargetBuilder_ != null) {
+        customTargetBuilder_.dispose();
+        customTargetBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom Target metadata associated with a `DeployJobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTargetDeployMetadata custom_target = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.CustomTargetDeployMetadata.Builder getCustomTargetBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getCustomTargetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom Target metadata associated with a `DeployJobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTargetDeployMetadata custom_target = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.CustomTargetDeployMetadataOrBuilder
+        getCustomTargetOrBuilder() {
+      if (customTargetBuilder_ != null) {
+        return customTargetBuilder_.getMessageOrBuilder();
+      } else {
+        return customTarget_ == null
+            ? com.google.cloud.deploy.v1.CustomTargetDeployMetadata.getDefaultInstance()
+            : customTarget_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom Target metadata associated with a `DeployJobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTargetDeployMetadata custom_target = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.CustomTargetDeployMetadata,
+            com.google.cloud.deploy.v1.CustomTargetDeployMetadata.Builder,
+            com.google.cloud.deploy.v1.CustomTargetDeployMetadataOrBuilder>
+        getCustomTargetFieldBuilder() {
+      if (customTargetBuilder_ == null) {
+        customTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.CustomTargetDeployMetadata,
+                com.google.cloud.deploy.v1.CustomTargetDeployMetadata.Builder,
+                com.google.cloud.deploy.v1.CustomTargetDeployMetadataOrBuilder>(
+                getCustomTarget(), getParentForChildren(), isClean());
+        customTarget_ = null;
+      }
+      return customTargetBuilder_;
+    }
+
+    private com.google.cloud.deploy.v1.CustomMetadata custom_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.CustomMetadata,
+            com.google.cloud.deploy.v1.CustomMetadata.Builder,
+            com.google.cloud.deploy.v1.CustomMetadataOrBuilder>
+        customBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined deploy operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the custom field is set.
+     */
+    public boolean hasCustom() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined deploy operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The custom.
+     */
+    public com.google.cloud.deploy.v1.CustomMetadata getCustom() {
+      if (customBuilder_ == null) {
+        return custom_ == null
+            ? com.google.cloud.deploy.v1.CustomMetadata.getDefaultInstance()
+            : custom_;
+      } else {
+        return customBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined deploy operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustom(com.google.cloud.deploy.v1.CustomMetadata value) {
+      if (customBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        custom_ = value;
+      } else {
+        customBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined deploy operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustom(com.google.cloud.deploy.v1.CustomMetadata.Builder builderForValue) {
+      if (customBuilder_ == null) {
+        custom_ = builderForValue.build();
+      } else {
+        customBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined deploy operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCustom(com.google.cloud.deploy.v1.CustomMetadata value) {
+      if (customBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && custom_ != null
+            && custom_ != com.google.cloud.deploy.v1.CustomMetadata.getDefaultInstance()) {
+          getCustomBuilder().mergeFrom(value);
+        } else {
+          custom_ = value;
+        }
+      } else {
+        customBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined deploy operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCustom() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      custom_ = null;
+      if (customBuilder_ != null) {
+        customBuilder_.dispose();
+        customBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined deploy operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.CustomMetadata.Builder getCustomBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getCustomFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined deploy operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.CustomMetadataOrBuilder getCustomOrBuilder() {
+      if (customBuilder_ != null) {
+        return customBuilder_.getMessageOrBuilder();
+      } else {
+        return custom_ == null
+            ? com.google.cloud.deploy.v1.CustomMetadata.getDefaultInstance()
+            : custom_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Custom metadata provided by user defined deploy operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.CustomMetadata,
+            com.google.cloud.deploy.v1.CustomMetadata.Builder,
+            com.google.cloud.deploy.v1.CustomMetadataOrBuilder>
+        getCustomFieldBuilder() {
+      if (customBuilder_ == null) {
+        customBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.CustomMetadata,
+                com.google.cloud.deploy.v1.CustomMetadata.Builder,
+                com.google.cloud.deploy.v1.CustomMetadataOrBuilder>(
+                getCustom(), getParentForChildren(), isClean());
+        custom_ = null;
+      }
+      return customBuilder_;
     }
 
     @java.lang.Override

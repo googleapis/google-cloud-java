@@ -37,7 +37,7 @@ public class SyncGetBillingAccount {
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
       GetBillingAccountRequest request =
           GetBillingAccountRequest.newBuilder()
-              .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+              .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
               .build();
       BillingAccount response = cloudBillingClient.getBillingAccount(request);
     }

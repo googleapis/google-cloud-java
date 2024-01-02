@@ -259,7 +259,9 @@ public class LlmUtilityServiceClient implements BackgroundResource {
    *               EndpointName.ofProjectLocationEndpointName(
    *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
+   *           .setModel("model104069929")
    *           .addAllInstances(new ArrayList<Value>())
+   *           .addAllContents(new ArrayList<Content>())
    *           .build();
    *   CountTokensResponse response = llmUtilityServiceClient.countTokens(request);
    * }
@@ -291,7 +293,9 @@ public class LlmUtilityServiceClient implements BackgroundResource {
    *               EndpointName.ofProjectLocationEndpointName(
    *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
+   *           .setModel("model104069929")
    *           .addAllInstances(new ArrayList<Value>())
+   *           .addAllContents(new ArrayList<Content>())
    *           .build();
    *   ApiFuture<CountTokensResponse> future =
    *       llmUtilityServiceClient.countTokensCallable().futureCall(request);

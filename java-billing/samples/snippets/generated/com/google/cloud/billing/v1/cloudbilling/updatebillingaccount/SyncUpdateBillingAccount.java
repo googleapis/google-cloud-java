@@ -38,7 +38,7 @@ public class SyncUpdateBillingAccount {
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
       UpdateBillingAccountRequest request =
           UpdateBillingAccountRequest.newBuilder()
-              .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+              .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
               .setAccount(BillingAccount.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

@@ -72,7 +72,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * All of the files that are exported in this export operation.
+   * All of the files that are exported in this export operation. For custom
+   * code training export, only three (training, validation and test) GCS paths
+   * in wildcard format are populated (e.g., gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>
@@ -86,7 +88,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * All of the files that are exported in this export operation.
+   * All of the files that are exported in this export operation. For custom
+   * code training export, only three (training, validation and test) GCS paths
+   * in wildcard format are populated (e.g., gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>
@@ -100,7 +104,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * All of the files that are exported in this export operation.
+   * All of the files that are exported in this export operation. For custom
+   * code training export, only three (training, validation and test) GCS paths
+   * in wildcard format are populated (e.g., gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>
@@ -115,7 +121,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * All of the files that are exported in this export operation.
+   * All of the files that are exported in this export operation. For custom
+   * code training export, only three (training, validation and test) GCS paths
+   * in wildcard format are populated (e.g., gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>
@@ -498,7 +506,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -513,7 +523,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -527,7 +539,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -542,7 +556,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -557,7 +573,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -580,7 +598,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -602,7 +622,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -621,7 +643,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>
@@ -639,7 +663,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * All of the files that are exported in this export operation.
+     * All of the files that are exported in this export operation. For custom
+     * code training export, only three (training, validation and test) GCS paths
+     * in wildcard format are populated (e.g., gs://.../training-*).
      * </pre>
      *
      * <code>repeated string exported_files = 1;</code>

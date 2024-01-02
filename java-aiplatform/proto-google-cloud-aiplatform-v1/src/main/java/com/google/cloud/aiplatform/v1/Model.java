@@ -138,7 +138,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resources that can be shared by multiple
      * [DeployedModels][google.cloud.aiplatform.v1.DeployedModel]. A
-     * pre-configured [DeploymentResourcePool][] is required.
+     * pre-configured
+     * [DeploymentResourcePool][google.cloud.aiplatform.v1.DeploymentResourcePool]
+     * is required.
      * </pre>
      *
      * <code>SHARED_RESOURCES = 3;</code>
@@ -186,7 +188,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Resources that can be shared by multiple
      * [DeployedModels][google.cloud.aiplatform.v1.DeployedModel]. A
-     * pre-configured [DeploymentResourcePool][] is required.
+     * pre-configured
+     * [DeploymentResourcePool][google.cloud.aiplatform.v1.DeploymentResourcePool]
+     * is required.
      * </pre>
      *
      * <code>SHARED_RESOURCES = 3;</code>
@@ -1788,6 +1792,1118 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.aiplatform.v1.Model.ExportFormat getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface DataStatsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.Model.DataStats)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of DataItems that were used for training this Model.
+     * </pre>
+     *
+     * <code>int64 training_data_items_count = 1;</code>
+     *
+     * @return The trainingDataItemsCount.
+     */
+    long getTrainingDataItemsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of DataItems that were used for validating this Model during
+     * training.
+     * </pre>
+     *
+     * <code>int64 validation_data_items_count = 2;</code>
+     *
+     * @return The validationDataItemsCount.
+     */
+    long getValidationDataItemsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of DataItems that were used for evaluating this Model. If the
+     * Model is evaluated multiple times, this will be the number of test
+     * DataItems used by the first evaluation. If the Model is not evaluated,
+     * the number is 0.
+     * </pre>
+     *
+     * <code>int64 test_data_items_count = 3;</code>
+     *
+     * @return The testDataItemsCount.
+     */
+    long getTestDataItemsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of Annotations that are used for training this Model.
+     * </pre>
+     *
+     * <code>int64 training_annotations_count = 4;</code>
+     *
+     * @return The trainingAnnotationsCount.
+     */
+    long getTrainingAnnotationsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of Annotations that are used for validating this Model during
+     * training.
+     * </pre>
+     *
+     * <code>int64 validation_annotations_count = 5;</code>
+     *
+     * @return The validationAnnotationsCount.
+     */
+    long getValidationAnnotationsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of Annotations that are used for evaluating this Model. If the
+     * Model is evaluated multiple times, this will be the number of test
+     * Annotations used by the first evaluation. If the Model is not evaluated,
+     * the number is 0.
+     * </pre>
+     *
+     * <code>int64 test_annotations_count = 6;</code>
+     *
+     * @return The testAnnotationsCount.
+     */
+    long getTestAnnotationsCount();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Stats of data used for train or evaluate the Model.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.Model.DataStats}
+   */
+  public static final class DataStats extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Model.DataStats)
+      DataStatsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DataStats.newBuilder() to construct.
+    private DataStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DataStats() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DataStats();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1_Model_DataStats_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1_Model_DataStats_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.Model.DataStats.class,
+              com.google.cloud.aiplatform.v1.Model.DataStats.Builder.class);
+    }
+
+    public static final int TRAINING_DATA_ITEMS_COUNT_FIELD_NUMBER = 1;
+    private long trainingDataItemsCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Number of DataItems that were used for training this Model.
+     * </pre>
+     *
+     * <code>int64 training_data_items_count = 1;</code>
+     *
+     * @return The trainingDataItemsCount.
+     */
+    @java.lang.Override
+    public long getTrainingDataItemsCount() {
+      return trainingDataItemsCount_;
+    }
+
+    public static final int VALIDATION_DATA_ITEMS_COUNT_FIELD_NUMBER = 2;
+    private long validationDataItemsCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Number of DataItems that were used for validating this Model during
+     * training.
+     * </pre>
+     *
+     * <code>int64 validation_data_items_count = 2;</code>
+     *
+     * @return The validationDataItemsCount.
+     */
+    @java.lang.Override
+    public long getValidationDataItemsCount() {
+      return validationDataItemsCount_;
+    }
+
+    public static final int TEST_DATA_ITEMS_COUNT_FIELD_NUMBER = 3;
+    private long testDataItemsCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Number of DataItems that were used for evaluating this Model. If the
+     * Model is evaluated multiple times, this will be the number of test
+     * DataItems used by the first evaluation. If the Model is not evaluated,
+     * the number is 0.
+     * </pre>
+     *
+     * <code>int64 test_data_items_count = 3;</code>
+     *
+     * @return The testDataItemsCount.
+     */
+    @java.lang.Override
+    public long getTestDataItemsCount() {
+      return testDataItemsCount_;
+    }
+
+    public static final int TRAINING_ANNOTATIONS_COUNT_FIELD_NUMBER = 4;
+    private long trainingAnnotationsCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Number of Annotations that are used for training this Model.
+     * </pre>
+     *
+     * <code>int64 training_annotations_count = 4;</code>
+     *
+     * @return The trainingAnnotationsCount.
+     */
+    @java.lang.Override
+    public long getTrainingAnnotationsCount() {
+      return trainingAnnotationsCount_;
+    }
+
+    public static final int VALIDATION_ANNOTATIONS_COUNT_FIELD_NUMBER = 5;
+    private long validationAnnotationsCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Number of Annotations that are used for validating this Model during
+     * training.
+     * </pre>
+     *
+     * <code>int64 validation_annotations_count = 5;</code>
+     *
+     * @return The validationAnnotationsCount.
+     */
+    @java.lang.Override
+    public long getValidationAnnotationsCount() {
+      return validationAnnotationsCount_;
+    }
+
+    public static final int TEST_ANNOTATIONS_COUNT_FIELD_NUMBER = 6;
+    private long testAnnotationsCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Number of Annotations that are used for evaluating this Model. If the
+     * Model is evaluated multiple times, this will be the number of test
+     * Annotations used by the first evaluation. If the Model is not evaluated,
+     * the number is 0.
+     * </pre>
+     *
+     * <code>int64 test_annotations_count = 6;</code>
+     *
+     * @return The testAnnotationsCount.
+     */
+    @java.lang.Override
+    public long getTestAnnotationsCount() {
+      return testAnnotationsCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (trainingDataItemsCount_ != 0L) {
+        output.writeInt64(1, trainingDataItemsCount_);
+      }
+      if (validationDataItemsCount_ != 0L) {
+        output.writeInt64(2, validationDataItemsCount_);
+      }
+      if (testDataItemsCount_ != 0L) {
+        output.writeInt64(3, testDataItemsCount_);
+      }
+      if (trainingAnnotationsCount_ != 0L) {
+        output.writeInt64(4, trainingAnnotationsCount_);
+      }
+      if (validationAnnotationsCount_ != 0L) {
+        output.writeInt64(5, validationAnnotationsCount_);
+      }
+      if (testAnnotationsCount_ != 0L) {
+        output.writeInt64(6, testAnnotationsCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (trainingDataItemsCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, trainingDataItemsCount_);
+      }
+      if (validationDataItemsCount_ != 0L) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt64Size(2, validationDataItemsCount_);
+      }
+      if (testDataItemsCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, testDataItemsCount_);
+      }
+      if (trainingAnnotationsCount_ != 0L) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt64Size(4, trainingAnnotationsCount_);
+      }
+      if (validationAnnotationsCount_ != 0L) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt64Size(5, validationAnnotationsCount_);
+      }
+      if (testAnnotationsCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, testAnnotationsCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.Model.DataStats)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.Model.DataStats other =
+          (com.google.cloud.aiplatform.v1.Model.DataStats) obj;
+
+      if (getTrainingDataItemsCount() != other.getTrainingDataItemsCount()) return false;
+      if (getValidationDataItemsCount() != other.getValidationDataItemsCount()) return false;
+      if (getTestDataItemsCount() != other.getTestDataItemsCount()) return false;
+      if (getTrainingAnnotationsCount() != other.getTrainingAnnotationsCount()) return false;
+      if (getValidationAnnotationsCount() != other.getValidationAnnotationsCount()) return false;
+      if (getTestAnnotationsCount() != other.getTestAnnotationsCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TRAINING_DATA_ITEMS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTrainingDataItemsCount());
+      hash = (37 * hash) + VALIDATION_DATA_ITEMS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getValidationDataItemsCount());
+      hash = (37 * hash) + TEST_DATA_ITEMS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTestDataItemsCount());
+      hash = (37 * hash) + TRAINING_ANNOTATIONS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTrainingAnnotationsCount());
+      hash = (37 * hash) + VALIDATION_ANNOTATIONS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getValidationAnnotationsCount());
+      hash = (37 * hash) + TEST_ANNOTATIONS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTestAnnotationsCount());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.DataStats parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.DataStats parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.DataStats parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.DataStats parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.DataStats parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.DataStats parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.DataStats parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.DataStats parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.DataStats parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.DataStats parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.DataStats parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.DataStats parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.aiplatform.v1.Model.DataStats prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stats of data used for train or evaluate the Model.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.Model.DataStats}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.Model.DataStats)
+        com.google.cloud.aiplatform.v1.Model.DataStatsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1_Model_DataStats_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1_Model_DataStats_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.Model.DataStats.class,
+                com.google.cloud.aiplatform.v1.Model.DataStats.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1.Model.DataStats.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        trainingDataItemsCount_ = 0L;
+        validationDataItemsCount_ = 0L;
+        testDataItemsCount_ = 0L;
+        trainingAnnotationsCount_ = 0L;
+        validationAnnotationsCount_ = 0L;
+        testAnnotationsCount_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1_Model_DataStats_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Model.DataStats getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.Model.DataStats.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Model.DataStats build() {
+        com.google.cloud.aiplatform.v1.Model.DataStats result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Model.DataStats buildPartial() {
+        com.google.cloud.aiplatform.v1.Model.DataStats result =
+            new com.google.cloud.aiplatform.v1.Model.DataStats(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1.Model.DataStats result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.trainingDataItemsCount_ = trainingDataItemsCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.validationDataItemsCount_ = validationDataItemsCount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.testDataItemsCount_ = testDataItemsCount_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.trainingAnnotationsCount_ = trainingAnnotationsCount_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.validationAnnotationsCount_ = validationAnnotationsCount_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.testAnnotationsCount_ = testAnnotationsCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.Model.DataStats) {
+          return mergeFrom((com.google.cloud.aiplatform.v1.Model.DataStats) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1.Model.DataStats other) {
+        if (other == com.google.cloud.aiplatform.v1.Model.DataStats.getDefaultInstance())
+          return this;
+        if (other.getTrainingDataItemsCount() != 0L) {
+          setTrainingDataItemsCount(other.getTrainingDataItemsCount());
+        }
+        if (other.getValidationDataItemsCount() != 0L) {
+          setValidationDataItemsCount(other.getValidationDataItemsCount());
+        }
+        if (other.getTestDataItemsCount() != 0L) {
+          setTestDataItemsCount(other.getTestDataItemsCount());
+        }
+        if (other.getTrainingAnnotationsCount() != 0L) {
+          setTrainingAnnotationsCount(other.getTrainingAnnotationsCount());
+        }
+        if (other.getValidationAnnotationsCount() != 0L) {
+          setValidationAnnotationsCount(other.getValidationAnnotationsCount());
+        }
+        if (other.getTestAnnotationsCount() != 0L) {
+          setTestAnnotationsCount(other.getTestAnnotationsCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  trainingDataItemsCount_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  validationDataItemsCount_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  testDataItemsCount_ = input.readInt64();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  trainingAnnotationsCount_ = input.readInt64();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 40:
+                {
+                  validationAnnotationsCount_ = input.readInt64();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
+              case 48:
+                {
+                  testAnnotationsCount_ = input.readInt64();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 48
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long trainingDataItemsCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of DataItems that were used for training this Model.
+       * </pre>
+       *
+       * <code>int64 training_data_items_count = 1;</code>
+       *
+       * @return The trainingDataItemsCount.
+       */
+      @java.lang.Override
+      public long getTrainingDataItemsCount() {
+        return trainingDataItemsCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of DataItems that were used for training this Model.
+       * </pre>
+       *
+       * <code>int64 training_data_items_count = 1;</code>
+       *
+       * @param value The trainingDataItemsCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrainingDataItemsCount(long value) {
+
+        trainingDataItemsCount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of DataItems that were used for training this Model.
+       * </pre>
+       *
+       * <code>int64 training_data_items_count = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTrainingDataItemsCount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        trainingDataItemsCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long validationDataItemsCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of DataItems that were used for validating this Model during
+       * training.
+       * </pre>
+       *
+       * <code>int64 validation_data_items_count = 2;</code>
+       *
+       * @return The validationDataItemsCount.
+       */
+      @java.lang.Override
+      public long getValidationDataItemsCount() {
+        return validationDataItemsCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of DataItems that were used for validating this Model during
+       * training.
+       * </pre>
+       *
+       * <code>int64 validation_data_items_count = 2;</code>
+       *
+       * @param value The validationDataItemsCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidationDataItemsCount(long value) {
+
+        validationDataItemsCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of DataItems that were used for validating this Model during
+       * training.
+       * </pre>
+       *
+       * <code>int64 validation_data_items_count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValidationDataItemsCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        validationDataItemsCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long testDataItemsCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of DataItems that were used for evaluating this Model. If the
+       * Model is evaluated multiple times, this will be the number of test
+       * DataItems used by the first evaluation. If the Model is not evaluated,
+       * the number is 0.
+       * </pre>
+       *
+       * <code>int64 test_data_items_count = 3;</code>
+       *
+       * @return The testDataItemsCount.
+       */
+      @java.lang.Override
+      public long getTestDataItemsCount() {
+        return testDataItemsCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of DataItems that were used for evaluating this Model. If the
+       * Model is evaluated multiple times, this will be the number of test
+       * DataItems used by the first evaluation. If the Model is not evaluated,
+       * the number is 0.
+       * </pre>
+       *
+       * <code>int64 test_data_items_count = 3;</code>
+       *
+       * @param value The testDataItemsCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTestDataItemsCount(long value) {
+
+        testDataItemsCount_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of DataItems that were used for evaluating this Model. If the
+       * Model is evaluated multiple times, this will be the number of test
+       * DataItems used by the first evaluation. If the Model is not evaluated,
+       * the number is 0.
+       * </pre>
+       *
+       * <code>int64 test_data_items_count = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTestDataItemsCount() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        testDataItemsCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long trainingAnnotationsCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of Annotations that are used for training this Model.
+       * </pre>
+       *
+       * <code>int64 training_annotations_count = 4;</code>
+       *
+       * @return The trainingAnnotationsCount.
+       */
+      @java.lang.Override
+      public long getTrainingAnnotationsCount() {
+        return trainingAnnotationsCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of Annotations that are used for training this Model.
+       * </pre>
+       *
+       * <code>int64 training_annotations_count = 4;</code>
+       *
+       * @param value The trainingAnnotationsCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrainingAnnotationsCount(long value) {
+
+        trainingAnnotationsCount_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of Annotations that are used for training this Model.
+       * </pre>
+       *
+       * <code>int64 training_annotations_count = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTrainingAnnotationsCount() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        trainingAnnotationsCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long validationAnnotationsCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of Annotations that are used for validating this Model during
+       * training.
+       * </pre>
+       *
+       * <code>int64 validation_annotations_count = 5;</code>
+       *
+       * @return The validationAnnotationsCount.
+       */
+      @java.lang.Override
+      public long getValidationAnnotationsCount() {
+        return validationAnnotationsCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of Annotations that are used for validating this Model during
+       * training.
+       * </pre>
+       *
+       * <code>int64 validation_annotations_count = 5;</code>
+       *
+       * @param value The validationAnnotationsCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidationAnnotationsCount(long value) {
+
+        validationAnnotationsCount_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of Annotations that are used for validating this Model during
+       * training.
+       * </pre>
+       *
+       * <code>int64 validation_annotations_count = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValidationAnnotationsCount() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        validationAnnotationsCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long testAnnotationsCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of Annotations that are used for evaluating this Model. If the
+       * Model is evaluated multiple times, this will be the number of test
+       * Annotations used by the first evaluation. If the Model is not evaluated,
+       * the number is 0.
+       * </pre>
+       *
+       * <code>int64 test_annotations_count = 6;</code>
+       *
+       * @return The testAnnotationsCount.
+       */
+      @java.lang.Override
+      public long getTestAnnotationsCount() {
+        return testAnnotationsCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of Annotations that are used for evaluating this Model. If the
+       * Model is evaluated multiple times, this will be the number of test
+       * Annotations used by the first evaluation. If the Model is not evaluated,
+       * the number is 0.
+       * </pre>
+       *
+       * <code>int64 test_annotations_count = 6;</code>
+       *
+       * @param value The testAnnotationsCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTestAnnotationsCount(long value) {
+
+        testAnnotationsCount_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of Annotations that are used for evaluating this Model. If the
+       * Model is evaluated multiple times, this will be the number of test
+       * Annotations used by the first evaluation. If the Model is not evaluated,
+       * the number is 0.
+       * </pre>
+       *
+       * <code>int64 test_annotations_count = 6;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTestAnnotationsCount() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        testAnnotationsCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.Model.DataStats)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.Model.DataStats)
+    private static final com.google.cloud.aiplatform.v1.Model.DataStats DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.Model.DataStats();
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.DataStats getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DataStats> PARSER =
+        new com.google.protobuf.AbstractParser<DataStats>() {
+          @java.lang.Override
+          public DataStats parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DataStats> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DataStats> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.Model.DataStats getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -4628,6 +5744,65 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int DATA_STATS_FIELD_NUMBER = 21;
+  private com.google.cloud.aiplatform.v1.Model.DataStats dataStats_;
+  /**
+   *
+   *
+   * <pre>
+   * Stats of data used for training or evaluating the Model.
+   *
+   * Only populated when the Model is trained by a TrainingPipeline with
+   * [data_input_config][TrainingPipeline.data_input_config].
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
+   *
+   * @return Whether the dataStats field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataStats() {
+    return dataStats_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Stats of data used for training or evaluating the Model.
+   *
+   * Only populated when the Model is trained by a TrainingPipeline with
+   * [data_input_config][TrainingPipeline.data_input_config].
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
+   *
+   * @return The dataStats.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Model.DataStats getDataStats() {
+    return dataStats_ == null
+        ? com.google.cloud.aiplatform.v1.Model.DataStats.getDefaultInstance()
+        : dataStats_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Stats of data used for training or evaluating the Model.
+   *
+   * Only populated when the Model is trained by a TrainingPipeline with
+   * [data_input_config][TrainingPipeline.data_input_config].
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Model.DataStatsOrBuilder getDataStatsOrBuilder() {
+    return dataStats_ == null
+        ? com.google.cloud.aiplatform.v1.Model.DataStats.getDefaultInstance()
+        : dataStats_;
+  }
+
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 24;
   private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
   /**
@@ -4928,6 +6103,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < supportedExportFormats_.size(); i++) {
       output.writeMessage(20, supportedExportFormats_.get(i));
     }
+    if (dataStats_ != null) {
+      output.writeMessage(21, getDataStats());
+    }
     if (explanationSpec_ != null) {
       output.writeMessage(23, getExplanationSpec());
     }
@@ -5054,6 +6232,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               20, supportedExportFormats_.get(i));
     }
+    if (dataStats_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getDataStats());
+    }
     if (explanationSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getExplanationSpec());
     }
@@ -5163,6 +6344,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getEtag().equals(other.getEtag())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (hasDataStats() != other.hasDataStats()) return false;
+    if (hasDataStats()) {
+      if (!getDataStats().equals(other.getDataStats())) return false;
+    }
     if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
@@ -5266,6 +6451,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (hasDataStats()) {
+      hash = (37 * hash) + DATA_STATS_FIELD_NUMBER;
+      hash = (53 * hash) + getDataStats().hashCode();
     }
     if (hasEncryptionSpec()) {
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
@@ -5509,6 +6698,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       etag_ = "";
       internalGetMutableLabels().clear();
+      dataStats_ = null;
+      if (dataStatsBuilder_ != null) {
+        dataStatsBuilder_.dispose();
+        dataStatsBuilder_ = null;
+      }
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -5668,20 +6862,23 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         result.labels_.makeImmutable();
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.dataStats_ = dataStatsBuilder_ == null ? dataStats_ : dataStatsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.encryptionSpec_ =
             encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.modelSourceInfo_ =
             modelSourceInfoBuilder_ == null ? modelSourceInfo_ : modelSourceInfoBuilder_.build();
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.originalModelInfo_ =
             originalModelInfoBuilder_ == null
                 ? originalModelInfo_
                 : originalModelInfoBuilder_.build();
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.metadataArtifact_ = metadataArtifact_;
       }
     }
@@ -5901,6 +7098,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x01000000;
+      if (other.hasDataStats()) {
+        mergeDataStats(other.getDataStats());
+      }
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
       }
@@ -5912,7 +7112,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMetadataArtifact().isEmpty()) {
         metadataArtifact_ = other.metadataArtifact_;
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -6080,6 +7280,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 162
+            case 170:
+              {
+                input.readMessage(getDataStatsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 170
             case 186:
               {
                 input.readMessage(getExplanationSpecFieldBuilder().getBuilder(), extensionRegistry);
@@ -6089,7 +7295,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             case 194:
               {
                 input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 194
             case 210:
@@ -6135,19 +7341,19 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getOriginalModelInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 274
             case 306:
               {
                 input.readMessage(getModelSourceInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 306
             case 354:
               {
                 metadataArtifact_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 354
             case 378:
@@ -12138,6 +13344,217 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.aiplatform.v1.Model.DataStats dataStats_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Model.DataStats,
+            com.google.cloud.aiplatform.v1.Model.DataStats.Builder,
+            com.google.cloud.aiplatform.v1.Model.DataStatsOrBuilder>
+        dataStatsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Stats of data used for training or evaluating the Model.
+     *
+     * Only populated when the Model is trained by a TrainingPipeline with
+     * [data_input_config][TrainingPipeline.data_input_config].
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
+     *
+     * @return Whether the dataStats field is set.
+     */
+    public boolean hasDataStats() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stats of data used for training or evaluating the Model.
+     *
+     * Only populated when the Model is trained by a TrainingPipeline with
+     * [data_input_config][TrainingPipeline.data_input_config].
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
+     *
+     * @return The dataStats.
+     */
+    public com.google.cloud.aiplatform.v1.Model.DataStats getDataStats() {
+      if (dataStatsBuilder_ == null) {
+        return dataStats_ == null
+            ? com.google.cloud.aiplatform.v1.Model.DataStats.getDefaultInstance()
+            : dataStats_;
+      } else {
+        return dataStatsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stats of data used for training or evaluating the Model.
+     *
+     * Only populated when the Model is trained by a TrainingPipeline with
+     * [data_input_config][TrainingPipeline.data_input_config].
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
+     */
+    public Builder setDataStats(com.google.cloud.aiplatform.v1.Model.DataStats value) {
+      if (dataStatsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataStats_ = value;
+      } else {
+        dataStatsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stats of data used for training or evaluating the Model.
+     *
+     * Only populated when the Model is trained by a TrainingPipeline with
+     * [data_input_config][TrainingPipeline.data_input_config].
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
+     */
+    public Builder setDataStats(
+        com.google.cloud.aiplatform.v1.Model.DataStats.Builder builderForValue) {
+      if (dataStatsBuilder_ == null) {
+        dataStats_ = builderForValue.build();
+      } else {
+        dataStatsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stats of data used for training or evaluating the Model.
+     *
+     * Only populated when the Model is trained by a TrainingPipeline with
+     * [data_input_config][TrainingPipeline.data_input_config].
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
+     */
+    public Builder mergeDataStats(com.google.cloud.aiplatform.v1.Model.DataStats value) {
+      if (dataStatsBuilder_ == null) {
+        if (((bitField0_ & 0x02000000) != 0)
+            && dataStats_ != null
+            && dataStats_ != com.google.cloud.aiplatform.v1.Model.DataStats.getDefaultInstance()) {
+          getDataStatsBuilder().mergeFrom(value);
+        } else {
+          dataStats_ = value;
+        }
+      } else {
+        dataStatsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stats of data used for training or evaluating the Model.
+     *
+     * Only populated when the Model is trained by a TrainingPipeline with
+     * [data_input_config][TrainingPipeline.data_input_config].
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
+     */
+    public Builder clearDataStats() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      dataStats_ = null;
+      if (dataStatsBuilder_ != null) {
+        dataStatsBuilder_.dispose();
+        dataStatsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stats of data used for training or evaluating the Model.
+     *
+     * Only populated when the Model is trained by a TrainingPipeline with
+     * [data_input_config][TrainingPipeline.data_input_config].
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
+     */
+    public com.google.cloud.aiplatform.v1.Model.DataStats.Builder getDataStatsBuilder() {
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return getDataStatsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stats of data used for training or evaluating the Model.
+     *
+     * Only populated when the Model is trained by a TrainingPipeline with
+     * [data_input_config][TrainingPipeline.data_input_config].
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
+     */
+    public com.google.cloud.aiplatform.v1.Model.DataStatsOrBuilder getDataStatsOrBuilder() {
+      if (dataStatsBuilder_ != null) {
+        return dataStatsBuilder_.getMessageOrBuilder();
+      } else {
+        return dataStats_ == null
+            ? com.google.cloud.aiplatform.v1.Model.DataStats.getDefaultInstance()
+            : dataStats_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stats of data used for training or evaluating the Model.
+     *
+     * Only populated when the Model is trained by a TrainingPipeline with
+     * [data_input_config][TrainingPipeline.data_input_config].
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Model.DataStats,
+            com.google.cloud.aiplatform.v1.Model.DataStats.Builder,
+            com.google.cloud.aiplatform.v1.Model.DataStatsOrBuilder>
+        getDataStatsFieldBuilder() {
+      if (dataStatsBuilder_ == null) {
+        dataStatsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.Model.DataStats,
+                com.google.cloud.aiplatform.v1.Model.DataStats.Builder,
+                com.google.cloud.aiplatform.v1.Model.DataStatsOrBuilder>(
+                getDataStats(), getParentForChildren(), isClean());
+        dataStats_ = null;
+      }
+      return dataStatsBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.EncryptionSpec,
@@ -12157,7 +13574,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encryptionSpec field is set.
      */
     public boolean hasEncryptionSpec() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
     /**
      *
@@ -12199,7 +13616,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -12220,7 +13637,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -12236,7 +13653,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
       if (encryptionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x02000000) != 0)
+        if (((bitField0_ & 0x04000000) != 0)
             && encryptionSpec_ != null
             && encryptionSpec_
                 != com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()) {
@@ -12247,7 +13664,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -12262,7 +13679,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 24;</code>
      */
     public Builder clearEncryptionSpec() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -12282,7 +13699,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 24;</code>
      */
     public com.google.cloud.aiplatform.v1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
@@ -12353,7 +13770,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the modelSourceInfo field is set.
      */
     public boolean hasModelSourceInfo() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
     /**
      *
@@ -12399,7 +13816,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         modelSourceInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -12422,7 +13839,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         modelSourceInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -12440,7 +13857,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeModelSourceInfo(com.google.cloud.aiplatform.v1.ModelSourceInfo value) {
       if (modelSourceInfoBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0)
+        if (((bitField0_ & 0x08000000) != 0)
             && modelSourceInfo_ != null
             && modelSourceInfo_
                 != com.google.cloud.aiplatform.v1.ModelSourceInfo.getDefaultInstance()) {
@@ -12451,7 +13868,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         modelSourceInfoBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -12468,7 +13885,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearModelSourceInfo() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       modelSourceInfo_ = null;
       if (modelSourceInfoBuilder_ != null) {
         modelSourceInfoBuilder_.dispose();
@@ -12490,7 +13907,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1.ModelSourceInfo.Builder getModelSourceInfoBuilder() {
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return getModelSourceInfoFieldBuilder().getBuilder();
     }
@@ -12565,7 +13982,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the originalModelInfo field is set.
      */
     public boolean hasOriginalModelInfo() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
     /**
      *
@@ -12612,7 +14029,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         originalModelInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -12635,7 +14052,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         originalModelInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -12654,7 +14071,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeOriginalModelInfo(
         com.google.cloud.aiplatform.v1.Model.OriginalModelInfo value) {
       if (originalModelInfoBuilder_ == null) {
-        if (((bitField0_ & 0x08000000) != 0)
+        if (((bitField0_ & 0x10000000) != 0)
             && originalModelInfo_ != null
             && originalModelInfo_
                 != com.google.cloud.aiplatform.v1.Model.OriginalModelInfo.getDefaultInstance()) {
@@ -12665,7 +14082,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         originalModelInfoBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -12682,7 +14099,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearOriginalModelInfo() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       originalModelInfo_ = null;
       if (originalModelInfoBuilder_ != null) {
         originalModelInfoBuilder_.dispose();
@@ -12705,7 +14122,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1.Model.OriginalModelInfo.Builder
         getOriginalModelInfoBuilder() {
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return getOriginalModelInfoFieldBuilder().getBuilder();
     }
@@ -12831,7 +14248,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       metadataArtifact_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -12851,7 +14268,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMetadataArtifact() {
       metadataArtifact_ = getDefaultInstance().getMetadataArtifact();
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       onChanged();
       return this;
     }
@@ -12876,7 +14293,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       metadataArtifact_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }

@@ -690,6 +690,64 @@ public class PredictionServiceClientTest {
   }
 
   @Test
+  public void streamGenerateContentTest() throws Exception {
+    GenerateContentResponse expectedResponse =
+        GenerateContentResponse.newBuilder()
+            .addAllCandidates(new ArrayList<Candidate>())
+            .setPromptFeedback(GenerateContentResponse.PromptFeedback.newBuilder().build())
+            .setUsageMetadata(GenerateContentResponse.UsageMetadata.newBuilder().build())
+            .build();
+    mockPredictionService.addResponse(expectedResponse);
+    GenerateContentRequest request =
+        GenerateContentRequest.newBuilder()
+            .setModel("model104069929")
+            .addAllContents(new ArrayList<Content>())
+            .addAllTools(new ArrayList<Tool>())
+            .addAllSafetySettings(new ArrayList<SafetySetting>())
+            .setGenerationConfig(GenerationConfig.newBuilder().build())
+            .build();
+
+    MockStreamObserver<GenerateContentResponse> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse> callable =
+        client.streamGenerateContentCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    List<GenerateContentResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void streamGenerateContentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPredictionService.addException(exception);
+    GenerateContentRequest request =
+        GenerateContentRequest.newBuilder()
+            .setModel("model104069929")
+            .addAllContents(new ArrayList<Content>())
+            .addAllTools(new ArrayList<Tool>())
+            .addAllSafetySettings(new ArrayList<SafetySetting>())
+            .setGenerationConfig(GenerationConfig.newBuilder().build())
+            .build();
+
+    MockStreamObserver<GenerateContentResponse> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse> callable =
+        client.streamGenerateContentCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    try {
+      List<GenerateContentResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

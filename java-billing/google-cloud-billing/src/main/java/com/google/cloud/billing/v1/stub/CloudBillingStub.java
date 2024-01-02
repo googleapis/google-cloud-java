@@ -29,6 +29,7 @@ import com.google.cloud.billing.v1.ListBillingAccountsRequest;
 import com.google.cloud.billing.v1.ListBillingAccountsResponse;
 import com.google.cloud.billing.v1.ListProjectBillingInfoRequest;
 import com.google.cloud.billing.v1.ListProjectBillingInfoResponse;
+import com.google.cloud.billing.v1.MoveBillingAccountRequest;
 import com.google.cloud.billing.v1.ProjectBillingInfo;
 import com.google.cloud.billing.v1.UpdateBillingAccountRequest;
 import com.google.cloud.billing.v1.UpdateProjectBillingInfoRequest;
@@ -102,6 +103,10 @@ public abstract class CloudBillingStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public UnaryCallable<MoveBillingAccountRequest, BillingAccount> moveBillingAccountCallable() {
+    throw new UnsupportedOperationException("Not implemented: moveBillingAccountCallable()");
   }
 
   @Override

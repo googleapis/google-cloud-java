@@ -46,7 +46,7 @@ public final class FeatureViewSyncProto {
           + "e/api/resource.proto\032\037google/protobuf/ti"
           + "mestamp.proto\032\027google/rpc/status.proto\032\032"
           + "google/type/interval.proto\"\201\003\n\017FeatureVi"
-          + "ewSync\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\0225\n\013create_tim"
+          + "ewSync\022\022\n\004name\030\001 \001(\tB\004\342A\001\010\0225\n\013create_tim"
           + "e\030\002 \001(\0132\032.google.protobuf.TimestampB\004\342A\001"
           + "\003\022-\n\010run_time\030\005 \001(\0132\025.google.type.Interv"
           + "alB\004\342A\001\003\022.\n\014final_status\030\004 \001(\0132\022.google."

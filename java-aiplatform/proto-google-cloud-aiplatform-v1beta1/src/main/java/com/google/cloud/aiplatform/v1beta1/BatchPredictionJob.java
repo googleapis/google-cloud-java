@@ -1758,7 +1758,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -1783,7 +1783,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -1808,7 +1808,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -1834,7 +1834,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -1860,7 +1860,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -1884,7 +1884,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -1908,7 +1908,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -1933,7 +1933,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -2229,7 +2229,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -2256,7 +2256,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -2283,7 +2283,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -2311,7 +2311,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -2344,7 +2344,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -2370,7 +2370,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -2396,7 +2396,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -2423,7 +2423,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
      * must be empty.
      *
-     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * The input must be JSONL with objects at each line, BigQuery
      * or TfRecord.
      * </pre>
      *
@@ -3417,7 +3417,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3445,7 +3445,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3472,7 +3472,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3500,7 +3500,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3528,7 +3528,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3564,7 +3564,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3599,7 +3599,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3631,7 +3631,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3662,7 +3662,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3707,7 +3707,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3734,7 +3734,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3760,7 +3760,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3787,7 +3787,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3814,7 +3814,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3849,7 +3849,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3883,7 +3883,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3914,7 +3914,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *
@@ -3944,7 +3944,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
        * [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
        * must be empty.
        *
-       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * The input must be JSONL with objects at each line, BigQuery
        * or TfRecord.
        * </pre>
        *

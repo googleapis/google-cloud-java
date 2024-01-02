@@ -535,6 +535,249 @@ public final class CloudDeployGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.ListCustomTargetTypesRequest,
+          com.google.cloud.deploy.v1.ListCustomTargetTypesResponse>
+      getListCustomTargetTypesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCustomTargetTypes",
+      requestType = com.google.cloud.deploy.v1.ListCustomTargetTypesRequest.class,
+      responseType = com.google.cloud.deploy.v1.ListCustomTargetTypesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.ListCustomTargetTypesRequest,
+          com.google.cloud.deploy.v1.ListCustomTargetTypesResponse>
+      getListCustomTargetTypesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.ListCustomTargetTypesRequest,
+            com.google.cloud.deploy.v1.ListCustomTargetTypesResponse>
+        getListCustomTargetTypesMethod;
+    if ((getListCustomTargetTypesMethod = CloudDeployGrpc.getListCustomTargetTypesMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getListCustomTargetTypesMethod = CloudDeployGrpc.getListCustomTargetTypesMethod)
+            == null) {
+          CloudDeployGrpc.getListCustomTargetTypesMethod =
+              getListCustomTargetTypesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.ListCustomTargetTypesRequest,
+                          com.google.cloud.deploy.v1.ListCustomTargetTypesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListCustomTargetTypes"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.ListCustomTargetTypesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.ListCustomTargetTypesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("ListCustomTargetTypes"))
+                      .build();
+        }
+      }
+    }
+    return getListCustomTargetTypesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.GetCustomTargetTypeRequest,
+          com.google.cloud.deploy.v1.CustomTargetType>
+      getGetCustomTargetTypeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCustomTargetType",
+      requestType = com.google.cloud.deploy.v1.GetCustomTargetTypeRequest.class,
+      responseType = com.google.cloud.deploy.v1.CustomTargetType.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.GetCustomTargetTypeRequest,
+          com.google.cloud.deploy.v1.CustomTargetType>
+      getGetCustomTargetTypeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.GetCustomTargetTypeRequest,
+            com.google.cloud.deploy.v1.CustomTargetType>
+        getGetCustomTargetTypeMethod;
+    if ((getGetCustomTargetTypeMethod = CloudDeployGrpc.getGetCustomTargetTypeMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getGetCustomTargetTypeMethod = CloudDeployGrpc.getGetCustomTargetTypeMethod) == null) {
+          CloudDeployGrpc.getGetCustomTargetTypeMethod =
+              getGetCustomTargetTypeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.GetCustomTargetTypeRequest,
+                          com.google.cloud.deploy.v1.CustomTargetType>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetCustomTargetType"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.GetCustomTargetTypeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.CustomTargetType.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("GetCustomTargetType"))
+                      .build();
+        }
+      }
+    }
+    return getGetCustomTargetTypeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest,
+          com.google.longrunning.Operation>
+      getCreateCustomTargetTypeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCustomTargetType",
+      requestType = com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest,
+          com.google.longrunning.Operation>
+      getCreateCustomTargetTypeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest,
+            com.google.longrunning.Operation>
+        getCreateCustomTargetTypeMethod;
+    if ((getCreateCustomTargetTypeMethod = CloudDeployGrpc.getCreateCustomTargetTypeMethod)
+        == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getCreateCustomTargetTypeMethod = CloudDeployGrpc.getCreateCustomTargetTypeMethod)
+            == null) {
+          CloudDeployGrpc.getCreateCustomTargetTypeMethod =
+              getCreateCustomTargetTypeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateCustomTargetType"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("CreateCustomTargetType"))
+                      .build();
+        }
+      }
+    }
+    return getCreateCustomTargetTypeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest,
+          com.google.longrunning.Operation>
+      getUpdateCustomTargetTypeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCustomTargetType",
+      requestType = com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest,
+          com.google.longrunning.Operation>
+      getUpdateCustomTargetTypeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest,
+            com.google.longrunning.Operation>
+        getUpdateCustomTargetTypeMethod;
+    if ((getUpdateCustomTargetTypeMethod = CloudDeployGrpc.getUpdateCustomTargetTypeMethod)
+        == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getUpdateCustomTargetTypeMethod = CloudDeployGrpc.getUpdateCustomTargetTypeMethod)
+            == null) {
+          CloudDeployGrpc.getUpdateCustomTargetTypeMethod =
+              getUpdateCustomTargetTypeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateCustomTargetType"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("UpdateCustomTargetType"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateCustomTargetTypeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest,
+          com.google.longrunning.Operation>
+      getDeleteCustomTargetTypeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCustomTargetType",
+      requestType = com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest,
+          com.google.longrunning.Operation>
+      getDeleteCustomTargetTypeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest,
+            com.google.longrunning.Operation>
+        getDeleteCustomTargetTypeMethod;
+    if ((getDeleteCustomTargetTypeMethod = CloudDeployGrpc.getDeleteCustomTargetTypeMethod)
+        == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getDeleteCustomTargetTypeMethod = CloudDeployGrpc.getDeleteCustomTargetTypeMethod)
+            == null) {
+          CloudDeployGrpc.getDeleteCustomTargetTypeMethod =
+              getDeleteCustomTargetTypeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteCustomTargetType"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("DeleteCustomTargetType"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteCustomTargetTypeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.deploy.v1.ListReleasesRequest,
           com.google.cloud.deploy.v1.ListReleasesResponse>
       getListReleasesMethod;
@@ -1796,6 +2039,77 @@ public final class CloudDeployGrpc {
      *
      *
      * <pre>
+     * Lists CustomTargetTypes in a given project and location.
+     * </pre>
+     */
+    default void listCustomTargetTypes(
+        com.google.cloud.deploy.v1.ListCustomTargetTypesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.ListCustomTargetTypesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCustomTargetTypesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CustomTargetType.
+     * </pre>
+     */
+    default void getCustomTargetType(
+        com.google.cloud.deploy.v1.GetCustomTargetTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.CustomTargetType> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetCustomTargetTypeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CustomTargetType in a given project and location.
+     * </pre>
+     */
+    default void createCustomTargetType(
+        com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCustomTargetTypeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single CustomTargetType.
+     * </pre>
+     */
+    default void updateCustomTargetType(
+        com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCustomTargetTypeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CustomTargetType.
+     * </pre>
+     */
+    default void deleteCustomTargetType(
+        com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteCustomTargetTypeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Releases in a given project and location.
      * </pre>
      */
@@ -2355,6 +2669,87 @@ public final class CloudDeployGrpc {
      *
      *
      * <pre>
+     * Lists CustomTargetTypes in a given project and location.
+     * </pre>
+     */
+    public void listCustomTargetTypes(
+        com.google.cloud.deploy.v1.ListCustomTargetTypesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.ListCustomTargetTypesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCustomTargetTypesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CustomTargetType.
+     * </pre>
+     */
+    public void getCustomTargetType(
+        com.google.cloud.deploy.v1.GetCustomTargetTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.CustomTargetType> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCustomTargetTypeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CustomTargetType in a given project and location.
+     * </pre>
+     */
+    public void createCustomTargetType(
+        com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCustomTargetTypeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single CustomTargetType.
+     * </pre>
+     */
+    public void updateCustomTargetType(
+        com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCustomTargetTypeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CustomTargetType.
+     * </pre>
+     */
+    public void deleteCustomTargetType(
+        com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteCustomTargetTypeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Releases in a given project and location.
      * </pre>
      */
@@ -2906,6 +3301,71 @@ public final class CloudDeployGrpc {
      *
      *
      * <pre>
+     * Lists CustomTargetTypes in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListCustomTargetTypesResponse listCustomTargetTypes(
+        com.google.cloud.deploy.v1.ListCustomTargetTypesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomTargetTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CustomTargetType.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.CustomTargetType getCustomTargetType(
+        com.google.cloud.deploy.v1.GetCustomTargetTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomTargetTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CustomTargetType in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCustomTargetType(
+        com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomTargetTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single CustomTargetType.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCustomTargetType(
+        com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCustomTargetTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CustomTargetType.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCustomTargetType(
+        com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCustomTargetTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Releases in a given project and location.
      * </pre>
      */
@@ -3389,6 +3849,73 @@ public final class CloudDeployGrpc {
      *
      *
      * <pre>
+     * Lists CustomTargetTypes in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.deploy.v1.ListCustomTargetTypesResponse>
+        listCustomTargetTypes(com.google.cloud.deploy.v1.ListCustomTargetTypesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCustomTargetTypesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CustomTargetType.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.deploy.v1.CustomTargetType>
+        getCustomTargetType(com.google.cloud.deploy.v1.GetCustomTargetTypeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCustomTargetTypeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CustomTargetType in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createCustomTargetType(com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCustomTargetTypeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single CustomTargetType.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateCustomTargetType(com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCustomTargetTypeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CustomTargetType.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteCustomTargetType(com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteCustomTargetTypeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Releases in a given project and location.
      * </pre>
      */
@@ -3726,30 +4253,35 @@ public final class CloudDeployGrpc {
   private static final int METHODID_CREATE_TARGET = 8;
   private static final int METHODID_UPDATE_TARGET = 9;
   private static final int METHODID_DELETE_TARGET = 10;
-  private static final int METHODID_LIST_RELEASES = 11;
-  private static final int METHODID_GET_RELEASE = 12;
-  private static final int METHODID_CREATE_RELEASE = 13;
-  private static final int METHODID_ABANDON_RELEASE = 14;
-  private static final int METHODID_APPROVE_ROLLOUT = 15;
-  private static final int METHODID_ADVANCE_ROLLOUT = 16;
-  private static final int METHODID_CANCEL_ROLLOUT = 17;
-  private static final int METHODID_LIST_ROLLOUTS = 18;
-  private static final int METHODID_GET_ROLLOUT = 19;
-  private static final int METHODID_CREATE_ROLLOUT = 20;
-  private static final int METHODID_IGNORE_JOB = 21;
-  private static final int METHODID_RETRY_JOB = 22;
-  private static final int METHODID_LIST_JOB_RUNS = 23;
-  private static final int METHODID_GET_JOB_RUN = 24;
-  private static final int METHODID_TERMINATE_JOB_RUN = 25;
-  private static final int METHODID_GET_CONFIG = 26;
-  private static final int METHODID_CREATE_AUTOMATION = 27;
-  private static final int METHODID_UPDATE_AUTOMATION = 28;
-  private static final int METHODID_DELETE_AUTOMATION = 29;
-  private static final int METHODID_GET_AUTOMATION = 30;
-  private static final int METHODID_LIST_AUTOMATIONS = 31;
-  private static final int METHODID_GET_AUTOMATION_RUN = 32;
-  private static final int METHODID_LIST_AUTOMATION_RUNS = 33;
-  private static final int METHODID_CANCEL_AUTOMATION_RUN = 34;
+  private static final int METHODID_LIST_CUSTOM_TARGET_TYPES = 11;
+  private static final int METHODID_GET_CUSTOM_TARGET_TYPE = 12;
+  private static final int METHODID_CREATE_CUSTOM_TARGET_TYPE = 13;
+  private static final int METHODID_UPDATE_CUSTOM_TARGET_TYPE = 14;
+  private static final int METHODID_DELETE_CUSTOM_TARGET_TYPE = 15;
+  private static final int METHODID_LIST_RELEASES = 16;
+  private static final int METHODID_GET_RELEASE = 17;
+  private static final int METHODID_CREATE_RELEASE = 18;
+  private static final int METHODID_ABANDON_RELEASE = 19;
+  private static final int METHODID_APPROVE_ROLLOUT = 20;
+  private static final int METHODID_ADVANCE_ROLLOUT = 21;
+  private static final int METHODID_CANCEL_ROLLOUT = 22;
+  private static final int METHODID_LIST_ROLLOUTS = 23;
+  private static final int METHODID_GET_ROLLOUT = 24;
+  private static final int METHODID_CREATE_ROLLOUT = 25;
+  private static final int METHODID_IGNORE_JOB = 26;
+  private static final int METHODID_RETRY_JOB = 27;
+  private static final int METHODID_LIST_JOB_RUNS = 28;
+  private static final int METHODID_GET_JOB_RUN = 29;
+  private static final int METHODID_TERMINATE_JOB_RUN = 30;
+  private static final int METHODID_GET_CONFIG = 31;
+  private static final int METHODID_CREATE_AUTOMATION = 32;
+  private static final int METHODID_UPDATE_AUTOMATION = 33;
+  private static final int METHODID_DELETE_AUTOMATION = 34;
+  private static final int METHODID_GET_AUTOMATION = 35;
+  private static final int METHODID_LIST_AUTOMATIONS = 36;
+  private static final int METHODID_GET_AUTOMATION_RUN = 37;
+  private static final int METHODID_LIST_AUTOMATION_RUNS = 38;
+  private static final int METHODID_CANCEL_AUTOMATION_RUN = 39;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3826,6 +4358,34 @@ public final class CloudDeployGrpc {
         case METHODID_DELETE_TARGET:
           serviceImpl.deleteTarget(
               (com.google.cloud.deploy.v1.DeleteTargetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_CUSTOM_TARGET_TYPES:
+          serviceImpl.listCustomTargetTypes(
+              (com.google.cloud.deploy.v1.ListCustomTargetTypesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.deploy.v1.ListCustomTargetTypesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_CUSTOM_TARGET_TYPE:
+          serviceImpl.getCustomTargetType(
+              (com.google.cloud.deploy.v1.GetCustomTargetTypeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.CustomTargetType>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_CUSTOM_TARGET_TYPE:
+          serviceImpl.createCustomTargetType(
+              (com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_CUSTOM_TARGET_TYPE:
+          serviceImpl.updateCustomTargetType(
+              (com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_CUSTOM_TARGET_TYPE:
+          serviceImpl.deleteCustomTargetType(
+              (com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_RELEASES:
@@ -4052,6 +4612,38 @@ public final class CloudDeployGrpc {
                     com.google.cloud.deploy.v1.DeleteTargetRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_TARGET)))
         .addMethod(
+            getListCustomTargetTypesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.ListCustomTargetTypesRequest,
+                    com.google.cloud.deploy.v1.ListCustomTargetTypesResponse>(
+                    service, METHODID_LIST_CUSTOM_TARGET_TYPES)))
+        .addMethod(
+            getGetCustomTargetTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.GetCustomTargetTypeRequest,
+                    com.google.cloud.deploy.v1.CustomTargetType>(
+                    service, METHODID_GET_CUSTOM_TARGET_TYPE)))
+        .addMethod(
+            getCreateCustomTargetTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CUSTOM_TARGET_TYPE)))
+        .addMethod(
+            getUpdateCustomTargetTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_CUSTOM_TARGET_TYPE)))
+        .addMethod(
+            getDeleteCustomTargetTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CUSTOM_TARGET_TYPE)))
+        .addMethod(
             getListReleasesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4269,6 +4861,11 @@ public final class CloudDeployGrpc {
                       .addMethod(getCreateTargetMethod())
                       .addMethod(getUpdateTargetMethod())
                       .addMethod(getDeleteTargetMethod())
+                      .addMethod(getListCustomTargetTypesMethod())
+                      .addMethod(getGetCustomTargetTypeMethod())
+                      .addMethod(getCreateCustomTargetTypeMethod())
+                      .addMethod(getUpdateCustomTargetTypeMethod())
+                      .addMethod(getDeleteCustomTargetTypeMethod())
                       .addMethod(getListReleasesMethod())
                       .addMethod(getGetReleaseMethod())
                       .addMethod(getCreateReleaseMethod())

@@ -37,6 +37,27 @@
  * }
  * }</pre>
  *
+ * <p>======================= DeploymentResourcePoolServiceClient =======================
+ *
+ * <p>Service Description: A service that manages the DeploymentResourcePool resource.
+ *
+ * <p>Sample for DeploymentResourcePoolServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
+ *     DeploymentResourcePoolServiceClient.create()) {
+ *   DeploymentResourcePoolName name =
+ *       DeploymentResourcePoolName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_RESOURCE_POOL]");
+ *   DeploymentResourcePool response =
+ *       deploymentResourcePoolServiceClient.getDeploymentResourcePool(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= EndpointServiceClient =======================
  *
  * <p>Service Description: A service for managing Vertex AI's Endpoints.
