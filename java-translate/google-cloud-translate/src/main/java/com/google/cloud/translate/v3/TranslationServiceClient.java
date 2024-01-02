@@ -32,6 +32,7 @@ import com.google.cloud.translate.v3.stub.TranslationServiceStub;
 import com.google.cloud.translate.v3.stub.TranslationServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1910,6 +1911,1391 @@ public class TranslationServiceClient implements BackgroundResource {
     return stub.deleteGlossaryCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an Adaptive MT dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   AdaptiveMtDataset adaptiveMtDataset = AdaptiveMtDataset.newBuilder().build();
+   *   AdaptiveMtDataset response =
+   *       translationServiceClient.createAdaptiveMtDataset(parent, adaptiveMtDataset);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of the parent project. In form of
+   *     `projects/{project-number-or-id}/locations/{location-id}`
+   * @param adaptiveMtDataset Required. The AdaptiveMtDataset to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdaptiveMtDataset createAdaptiveMtDataset(
+      LocationName parent, AdaptiveMtDataset adaptiveMtDataset) {
+    CreateAdaptiveMtDatasetRequest request =
+        CreateAdaptiveMtDatasetRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAdaptiveMtDataset(adaptiveMtDataset)
+            .build();
+    return createAdaptiveMtDataset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an Adaptive MT dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   AdaptiveMtDataset adaptiveMtDataset = AdaptiveMtDataset.newBuilder().build();
+   *   AdaptiveMtDataset response =
+   *       translationServiceClient.createAdaptiveMtDataset(parent, adaptiveMtDataset);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of the parent project. In form of
+   *     `projects/{project-number-or-id}/locations/{location-id}`
+   * @param adaptiveMtDataset Required. The AdaptiveMtDataset to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdaptiveMtDataset createAdaptiveMtDataset(
+      String parent, AdaptiveMtDataset adaptiveMtDataset) {
+    CreateAdaptiveMtDatasetRequest request =
+        CreateAdaptiveMtDatasetRequest.newBuilder()
+            .setParent(parent)
+            .setAdaptiveMtDataset(adaptiveMtDataset)
+            .build();
+    return createAdaptiveMtDataset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an Adaptive MT dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   CreateAdaptiveMtDatasetRequest request =
+   *       CreateAdaptiveMtDatasetRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAdaptiveMtDataset(AdaptiveMtDataset.newBuilder().build())
+   *           .build();
+   *   AdaptiveMtDataset response = translationServiceClient.createAdaptiveMtDataset(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdaptiveMtDataset createAdaptiveMtDataset(CreateAdaptiveMtDatasetRequest request) {
+    return createAdaptiveMtDatasetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an Adaptive MT dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   CreateAdaptiveMtDatasetRequest request =
+   *       CreateAdaptiveMtDatasetRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAdaptiveMtDataset(AdaptiveMtDataset.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AdaptiveMtDataset> future =
+   *       translationServiceClient.createAdaptiveMtDatasetCallable().futureCall(request);
+   *   // Do something.
+   *   AdaptiveMtDataset response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      createAdaptiveMtDatasetCallable() {
+    return stub.createAdaptiveMtDatasetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Adaptive MT dataset, including all its entries and associated metadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   AdaptiveMtDatasetName name = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   translationServiceClient.deleteAdaptiveMtDataset(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the dataset. In the form of
+   *     `projects/{project-number-or-id}/locations/{location-id}/adaptiveMtDatasets/{adaptive-mt-dataset-id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAdaptiveMtDataset(AdaptiveMtDatasetName name) {
+    DeleteAdaptiveMtDatasetRequest request =
+        DeleteAdaptiveMtDatasetRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteAdaptiveMtDataset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Adaptive MT dataset, including all its entries and associated metadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String name = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString();
+   *   translationServiceClient.deleteAdaptiveMtDataset(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the dataset. In the form of
+   *     `projects/{project-number-or-id}/locations/{location-id}/adaptiveMtDatasets/{adaptive-mt-dataset-id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAdaptiveMtDataset(String name) {
+    DeleteAdaptiveMtDatasetRequest request =
+        DeleteAdaptiveMtDatasetRequest.newBuilder().setName(name).build();
+    deleteAdaptiveMtDataset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Adaptive MT dataset, including all its entries and associated metadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   DeleteAdaptiveMtDatasetRequest request =
+   *       DeleteAdaptiveMtDatasetRequest.newBuilder()
+   *           .setName(AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .build();
+   *   translationServiceClient.deleteAdaptiveMtDataset(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAdaptiveMtDataset(DeleteAdaptiveMtDatasetRequest request) {
+    deleteAdaptiveMtDatasetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Adaptive MT dataset, including all its entries and associated metadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   DeleteAdaptiveMtDatasetRequest request =
+   *       DeleteAdaptiveMtDatasetRequest.newBuilder()
+   *           .setName(AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       translationServiceClient.deleteAdaptiveMtDatasetCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAdaptiveMtDatasetRequest, Empty>
+      deleteAdaptiveMtDatasetCallable() {
+    return stub.deleteAdaptiveMtDatasetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the Adaptive MT dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   AdaptiveMtDatasetName name = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   AdaptiveMtDataset response = translationServiceClient.getAdaptiveMtDataset(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the dataset. In the form of
+   *     `projects/{project-number-or-id}/locations/{location-id}/adaptiveMtDatasets/{adaptive-mt-dataset-id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdaptiveMtDataset getAdaptiveMtDataset(AdaptiveMtDatasetName name) {
+    GetAdaptiveMtDatasetRequest request =
+        GetAdaptiveMtDatasetRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAdaptiveMtDataset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the Adaptive MT dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String name = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString();
+   *   AdaptiveMtDataset response = translationServiceClient.getAdaptiveMtDataset(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the dataset. In the form of
+   *     `projects/{project-number-or-id}/locations/{location-id}/adaptiveMtDatasets/{adaptive-mt-dataset-id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdaptiveMtDataset getAdaptiveMtDataset(String name) {
+    GetAdaptiveMtDatasetRequest request =
+        GetAdaptiveMtDatasetRequest.newBuilder().setName(name).build();
+    return getAdaptiveMtDataset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the Adaptive MT dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   GetAdaptiveMtDatasetRequest request =
+   *       GetAdaptiveMtDatasetRequest.newBuilder()
+   *           .setName(AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .build();
+   *   AdaptiveMtDataset response = translationServiceClient.getAdaptiveMtDataset(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdaptiveMtDataset getAdaptiveMtDataset(GetAdaptiveMtDatasetRequest request) {
+    return getAdaptiveMtDatasetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the Adaptive MT dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   GetAdaptiveMtDatasetRequest request =
+   *       GetAdaptiveMtDatasetRequest.newBuilder()
+   *           .setName(AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .build();
+   *   ApiFuture<AdaptiveMtDataset> future =
+   *       translationServiceClient.getAdaptiveMtDatasetCallable().futureCall(request);
+   *   // Do something.
+   *   AdaptiveMtDataset response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      getAdaptiveMtDatasetCallable() {
+    return stub.getAdaptiveMtDatasetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Adaptive MT datasets for which the caller has read permission.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (AdaptiveMtDataset element :
+   *       translationServiceClient.listAdaptiveMtDatasets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the project from which to list the Adaptive MT
+   *     datasets. `projects/{project-number-or-id}/locations/{location-id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAdaptiveMtDatasetsPagedResponse listAdaptiveMtDatasets(LocationName parent) {
+    ListAdaptiveMtDatasetsRequest request =
+        ListAdaptiveMtDatasetsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAdaptiveMtDatasets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Adaptive MT datasets for which the caller has read permission.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (AdaptiveMtDataset element :
+   *       translationServiceClient.listAdaptiveMtDatasets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the project from which to list the Adaptive MT
+   *     datasets. `projects/{project-number-or-id}/locations/{location-id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAdaptiveMtDatasetsPagedResponse listAdaptiveMtDatasets(String parent) {
+    ListAdaptiveMtDatasetsRequest request =
+        ListAdaptiveMtDatasetsRequest.newBuilder().setParent(parent).build();
+    return listAdaptiveMtDatasets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Adaptive MT datasets for which the caller has read permission.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   ListAdaptiveMtDatasetsRequest request =
+   *       ListAdaptiveMtDatasetsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (AdaptiveMtDataset element :
+   *       translationServiceClient.listAdaptiveMtDatasets(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAdaptiveMtDatasetsPagedResponse listAdaptiveMtDatasets(
+      ListAdaptiveMtDatasetsRequest request) {
+    return listAdaptiveMtDatasetsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Adaptive MT datasets for which the caller has read permission.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   ListAdaptiveMtDatasetsRequest request =
+   *       ListAdaptiveMtDatasetsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<AdaptiveMtDataset> future =
+   *       translationServiceClient.listAdaptiveMtDatasetsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AdaptiveMtDataset element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsPagedResponse>
+      listAdaptiveMtDatasetsPagedCallable() {
+    return stub.listAdaptiveMtDatasetsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Adaptive MT datasets for which the caller has read permission.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   ListAdaptiveMtDatasetsRequest request =
+   *       ListAdaptiveMtDatasetsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListAdaptiveMtDatasetsResponse response =
+   *         translationServiceClient.listAdaptiveMtDatasetsCallable().call(request);
+   *     for (AdaptiveMtDataset element : response.getAdaptiveMtDatasetsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>
+      listAdaptiveMtDatasetsCallable() {
+    return stub.listAdaptiveMtDatasetsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translate text using Adaptive MT.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   List<String> content = new ArrayList<>();
+   *   AdaptiveMtTranslateResponse response =
+   *       translationServiceClient.adaptiveMtTranslate(parent, content);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Location to make a regional call.
+   *     <p>Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   * @param content Required. The content of the input in string format. For now only one sentence
+   *     per request is supported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdaptiveMtTranslateResponse adaptiveMtTranslate(
+      LocationName parent, List<String> content) {
+    AdaptiveMtTranslateRequest request =
+        AdaptiveMtTranslateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllContent(content)
+            .build();
+    return adaptiveMtTranslate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translate text using Adaptive MT.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   List<String> content = new ArrayList<>();
+   *   AdaptiveMtTranslateResponse response =
+   *       translationServiceClient.adaptiveMtTranslate(parent, content);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Location to make a regional call.
+   *     <p>Format: `projects/{project-number-or-id}/locations/{location-id}`.
+   * @param content Required. The content of the input in string format. For now only one sentence
+   *     per request is supported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdaptiveMtTranslateResponse adaptiveMtTranslate(
+      String parent, List<String> content) {
+    AdaptiveMtTranslateRequest request =
+        AdaptiveMtTranslateRequest.newBuilder().setParent(parent).addAllContent(content).build();
+    return adaptiveMtTranslate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translate text using Adaptive MT.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   AdaptiveMtTranslateRequest request =
+   *       AdaptiveMtTranslateRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDataset(
+   *               AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .addAllContent(new ArrayList<String>())
+   *           .build();
+   *   AdaptiveMtTranslateResponse response = translationServiceClient.adaptiveMtTranslate(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdaptiveMtTranslateResponse adaptiveMtTranslate(AdaptiveMtTranslateRequest request) {
+    return adaptiveMtTranslateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Translate text using Adaptive MT.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   AdaptiveMtTranslateRequest request =
+   *       AdaptiveMtTranslateRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDataset(
+   *               AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .addAllContent(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<AdaptiveMtTranslateResponse> future =
+   *       translationServiceClient.adaptiveMtTranslateCallable().futureCall(request);
+   *   // Do something.
+   *   AdaptiveMtTranslateResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+      adaptiveMtTranslateCallable() {
+    return stub.adaptiveMtTranslateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets and AdaptiveMtFile
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   AdaptiveMtFileName name =
+   *       AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]");
+   *   AdaptiveMtFile response = translationServiceClient.getAdaptiveMtFile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the file, in form of
+   *     `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}/adaptiveMtFiles/{file}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdaptiveMtFile getAdaptiveMtFile(AdaptiveMtFileName name) {
+    GetAdaptiveMtFileRequest request =
+        GetAdaptiveMtFileRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAdaptiveMtFile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets and AdaptiveMtFile
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String name =
+   *       AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]").toString();
+   *   AdaptiveMtFile response = translationServiceClient.getAdaptiveMtFile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the file, in form of
+   *     `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}/adaptiveMtFiles/{file}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdaptiveMtFile getAdaptiveMtFile(String name) {
+    GetAdaptiveMtFileRequest request = GetAdaptiveMtFileRequest.newBuilder().setName(name).build();
+    return getAdaptiveMtFile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets and AdaptiveMtFile
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   GetAdaptiveMtFileRequest request =
+   *       GetAdaptiveMtFileRequest.newBuilder()
+   *           .setName(
+   *               AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]")
+   *                   .toString())
+   *           .build();
+   *   AdaptiveMtFile response = translationServiceClient.getAdaptiveMtFile(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdaptiveMtFile getAdaptiveMtFile(GetAdaptiveMtFileRequest request) {
+    return getAdaptiveMtFileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets and AdaptiveMtFile
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   GetAdaptiveMtFileRequest request =
+   *       GetAdaptiveMtFileRequest.newBuilder()
+   *           .setName(
+   *               AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AdaptiveMtFile> future =
+   *       translationServiceClient.getAdaptiveMtFileCallable().futureCall(request);
+   *   // Do something.
+   *   AdaptiveMtFile response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAdaptiveMtFileRequest, AdaptiveMtFile> getAdaptiveMtFileCallable() {
+    return stub.getAdaptiveMtFileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an AdaptiveMtFile along with its sentences.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   AdaptiveMtFileName name =
+   *       AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]");
+   *   translationServiceClient.deleteAdaptiveMtFile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the file to delete, in form of
+   *     `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}/adaptiveMtFiles/{file}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAdaptiveMtFile(AdaptiveMtFileName name) {
+    DeleteAdaptiveMtFileRequest request =
+        DeleteAdaptiveMtFileRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteAdaptiveMtFile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an AdaptiveMtFile along with its sentences.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String name =
+   *       AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]").toString();
+   *   translationServiceClient.deleteAdaptiveMtFile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the file to delete, in form of
+   *     `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}/adaptiveMtFiles/{file}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAdaptiveMtFile(String name) {
+    DeleteAdaptiveMtFileRequest request =
+        DeleteAdaptiveMtFileRequest.newBuilder().setName(name).build();
+    deleteAdaptiveMtFile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an AdaptiveMtFile along with its sentences.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   DeleteAdaptiveMtFileRequest request =
+   *       DeleteAdaptiveMtFileRequest.newBuilder()
+   *           .setName(
+   *               AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]")
+   *                   .toString())
+   *           .build();
+   *   translationServiceClient.deleteAdaptiveMtFile(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAdaptiveMtFile(DeleteAdaptiveMtFileRequest request) {
+    deleteAdaptiveMtFileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an AdaptiveMtFile along with its sentences.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   DeleteAdaptiveMtFileRequest request =
+   *       DeleteAdaptiveMtFileRequest.newBuilder()
+   *           .setName(
+   *               AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       translationServiceClient.deleteAdaptiveMtFileCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAdaptiveMtFileRequest, Empty> deleteAdaptiveMtFileCallable() {
+    return stub.deleteAdaptiveMtFileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports an AdaptiveMtFile and adds all of its sentences into the AdaptiveMtDataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   AdaptiveMtDatasetName parent =
+   *       AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   ImportAdaptiveMtFileResponse response = translationServiceClient.importAdaptiveMtFile(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the file, in form of
+   *     `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImportAdaptiveMtFileResponse importAdaptiveMtFile(AdaptiveMtDatasetName parent) {
+    ImportAdaptiveMtFileRequest request =
+        ImportAdaptiveMtFileRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return importAdaptiveMtFile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports an AdaptiveMtFile and adds all of its sentences into the AdaptiveMtDataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String parent = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString();
+   *   ImportAdaptiveMtFileResponse response = translationServiceClient.importAdaptiveMtFile(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the file, in form of
+   *     `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImportAdaptiveMtFileResponse importAdaptiveMtFile(String parent) {
+    ImportAdaptiveMtFileRequest request =
+        ImportAdaptiveMtFileRequest.newBuilder().setParent(parent).build();
+    return importAdaptiveMtFile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports an AdaptiveMtFile and adds all of its sentences into the AdaptiveMtDataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   ImportAdaptiveMtFileRequest request =
+   *       ImportAdaptiveMtFileRequest.newBuilder()
+   *           .setParent(
+   *               AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .build();
+   *   ImportAdaptiveMtFileResponse response =
+   *       translationServiceClient.importAdaptiveMtFile(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImportAdaptiveMtFileResponse importAdaptiveMtFile(
+      ImportAdaptiveMtFileRequest request) {
+    return importAdaptiveMtFileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports an AdaptiveMtFile and adds all of its sentences into the AdaptiveMtDataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   ImportAdaptiveMtFileRequest request =
+   *       ImportAdaptiveMtFileRequest.newBuilder()
+   *           .setParent(
+   *               AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .build();
+   *   ApiFuture<ImportAdaptiveMtFileResponse> future =
+   *       translationServiceClient.importAdaptiveMtFileCallable().futureCall(request);
+   *   // Do something.
+   *   ImportAdaptiveMtFileResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+      importAdaptiveMtFileCallable() {
+    return stub.importAdaptiveMtFileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all AdaptiveMtFiles associated to an AdaptiveMtDataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   AdaptiveMtDatasetName parent =
+   *       AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   for (AdaptiveMtFile element :
+   *       translationServiceClient.listAdaptiveMtFiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the project from which to list the Adaptive MT
+   *     files. `projects/{project}/locations/{location}/adaptiveMtDatasets/{dataset}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAdaptiveMtFilesPagedResponse listAdaptiveMtFiles(AdaptiveMtDatasetName parent) {
+    ListAdaptiveMtFilesRequest request =
+        ListAdaptiveMtFilesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAdaptiveMtFiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all AdaptiveMtFiles associated to an AdaptiveMtDataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String parent = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString();
+   *   for (AdaptiveMtFile element :
+   *       translationServiceClient.listAdaptiveMtFiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the project from which to list the Adaptive MT
+   *     files. `projects/{project}/locations/{location}/adaptiveMtDatasets/{dataset}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAdaptiveMtFilesPagedResponse listAdaptiveMtFiles(String parent) {
+    ListAdaptiveMtFilesRequest request =
+        ListAdaptiveMtFilesRequest.newBuilder().setParent(parent).build();
+    return listAdaptiveMtFiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all AdaptiveMtFiles associated to an AdaptiveMtDataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   ListAdaptiveMtFilesRequest request =
+   *       ListAdaptiveMtFilesRequest.newBuilder()
+   *           .setParent(
+   *               AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (AdaptiveMtFile element :
+   *       translationServiceClient.listAdaptiveMtFiles(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAdaptiveMtFilesPagedResponse listAdaptiveMtFiles(
+      ListAdaptiveMtFilesRequest request) {
+    return listAdaptiveMtFilesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all AdaptiveMtFiles associated to an AdaptiveMtDataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   ListAdaptiveMtFilesRequest request =
+   *       ListAdaptiveMtFilesRequest.newBuilder()
+   *           .setParent(
+   *               AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<AdaptiveMtFile> future =
+   *       translationServiceClient.listAdaptiveMtFilesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AdaptiveMtFile element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesPagedResponse>
+      listAdaptiveMtFilesPagedCallable() {
+    return stub.listAdaptiveMtFilesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all AdaptiveMtFiles associated to an AdaptiveMtDataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   ListAdaptiveMtFilesRequest request =
+   *       ListAdaptiveMtFilesRequest.newBuilder()
+   *           .setParent(
+   *               AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListAdaptiveMtFilesResponse response =
+   *         translationServiceClient.listAdaptiveMtFilesCallable().call(request);
+   *     for (AdaptiveMtFile element : response.getAdaptiveMtFilesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>
+      listAdaptiveMtFilesCallable() {
+    return stub.listAdaptiveMtFilesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all AdaptiveMtSentences under a given file/dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   AdaptiveMtFileName parent =
+   *       AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]");
+   *   for (AdaptiveMtSentence element :
+   *       translationServiceClient.listAdaptiveMtSentences(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the project from which to list the Adaptive MT
+   *     files. The following format lists all sentences under a file.
+   *     `projects/{project}/locations/{location}/adaptiveMtDatasets/{dataset}/adaptiveMtFiles/{file}`
+   *     The following format lists all sentences within a dataset.
+   *     `projects/{project}/locations/{location}/adaptiveMtDatasets/{dataset}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAdaptiveMtSentencesPagedResponse listAdaptiveMtSentences(
+      AdaptiveMtFileName parent) {
+    ListAdaptiveMtSentencesRequest request =
+        ListAdaptiveMtSentencesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAdaptiveMtSentences(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all AdaptiveMtSentences under a given file/dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String parent =
+   *       AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]").toString();
+   *   for (AdaptiveMtSentence element :
+   *       translationServiceClient.listAdaptiveMtSentences(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the project from which to list the Adaptive MT
+   *     files. The following format lists all sentences under a file.
+   *     `projects/{project}/locations/{location}/adaptiveMtDatasets/{dataset}/adaptiveMtFiles/{file}`
+   *     The following format lists all sentences within a dataset.
+   *     `projects/{project}/locations/{location}/adaptiveMtDatasets/{dataset}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAdaptiveMtSentencesPagedResponse listAdaptiveMtSentences(String parent) {
+    ListAdaptiveMtSentencesRequest request =
+        ListAdaptiveMtSentencesRequest.newBuilder().setParent(parent).build();
+    return listAdaptiveMtSentences(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all AdaptiveMtSentences under a given file/dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   ListAdaptiveMtSentencesRequest request =
+   *       ListAdaptiveMtSentencesRequest.newBuilder()
+   *           .setParent(
+   *               AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (AdaptiveMtSentence element :
+   *       translationServiceClient.listAdaptiveMtSentences(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAdaptiveMtSentencesPagedResponse listAdaptiveMtSentences(
+      ListAdaptiveMtSentencesRequest request) {
+    return listAdaptiveMtSentencesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all AdaptiveMtSentences under a given file/dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   ListAdaptiveMtSentencesRequest request =
+   *       ListAdaptiveMtSentencesRequest.newBuilder()
+   *           .setParent(
+   *               AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<AdaptiveMtSentence> future =
+   *       translationServiceClient.listAdaptiveMtSentencesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AdaptiveMtSentence element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesPagedResponse>
+      listAdaptiveMtSentencesPagedCallable() {
+    return stub.listAdaptiveMtSentencesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all AdaptiveMtSentences under a given file/dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   ListAdaptiveMtSentencesRequest request =
+   *       ListAdaptiveMtSentencesRequest.newBuilder()
+   *           .setParent(
+   *               AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListAdaptiveMtSentencesResponse response =
+   *         translationServiceClient.listAdaptiveMtSentencesCallable().call(request);
+   *     for (AdaptiveMtSentence element : response.getAdaptiveMtSentencesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>
+      listAdaptiveMtSentencesCallable() {
+    return stub.listAdaptiveMtSentencesCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -2013,6 +3399,266 @@ public class TranslationServiceClient implements BackgroundResource {
     protected ListGlossariesFixedSizeCollection createCollection(
         List<ListGlossariesPage> pages, int collectionSize) {
       return new ListGlossariesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAdaptiveMtDatasetsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAdaptiveMtDatasetsRequest,
+          ListAdaptiveMtDatasetsResponse,
+          AdaptiveMtDataset,
+          ListAdaptiveMtDatasetsPage,
+          ListAdaptiveMtDatasetsFixedSizeCollection> {
+
+    public static ApiFuture<ListAdaptiveMtDatasetsPagedResponse> createAsync(
+        PageContext<
+                ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse, AdaptiveMtDataset>
+            context,
+        ApiFuture<ListAdaptiveMtDatasetsResponse> futureResponse) {
+      ApiFuture<ListAdaptiveMtDatasetsPage> futurePage =
+          ListAdaptiveMtDatasetsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAdaptiveMtDatasetsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAdaptiveMtDatasetsPagedResponse(ListAdaptiveMtDatasetsPage page) {
+      super(page, ListAdaptiveMtDatasetsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAdaptiveMtDatasetsPage
+      extends AbstractPage<
+          ListAdaptiveMtDatasetsRequest,
+          ListAdaptiveMtDatasetsResponse,
+          AdaptiveMtDataset,
+          ListAdaptiveMtDatasetsPage> {
+
+    private ListAdaptiveMtDatasetsPage(
+        PageContext<
+                ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse, AdaptiveMtDataset>
+            context,
+        ListAdaptiveMtDatasetsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAdaptiveMtDatasetsPage createEmptyPage() {
+      return new ListAdaptiveMtDatasetsPage(null, null);
+    }
+
+    @Override
+    protected ListAdaptiveMtDatasetsPage createPage(
+        PageContext<
+                ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse, AdaptiveMtDataset>
+            context,
+        ListAdaptiveMtDatasetsResponse response) {
+      return new ListAdaptiveMtDatasetsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAdaptiveMtDatasetsPage> createPageAsync(
+        PageContext<
+                ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse, AdaptiveMtDataset>
+            context,
+        ApiFuture<ListAdaptiveMtDatasetsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAdaptiveMtDatasetsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAdaptiveMtDatasetsRequest,
+          ListAdaptiveMtDatasetsResponse,
+          AdaptiveMtDataset,
+          ListAdaptiveMtDatasetsPage,
+          ListAdaptiveMtDatasetsFixedSizeCollection> {
+
+    private ListAdaptiveMtDatasetsFixedSizeCollection(
+        List<ListAdaptiveMtDatasetsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAdaptiveMtDatasetsFixedSizeCollection createEmptyCollection() {
+      return new ListAdaptiveMtDatasetsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAdaptiveMtDatasetsFixedSizeCollection createCollection(
+        List<ListAdaptiveMtDatasetsPage> pages, int collectionSize) {
+      return new ListAdaptiveMtDatasetsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAdaptiveMtFilesPagedResponse
+      extends AbstractPagedListResponse<
+          ListAdaptiveMtFilesRequest,
+          ListAdaptiveMtFilesResponse,
+          AdaptiveMtFile,
+          ListAdaptiveMtFilesPage,
+          ListAdaptiveMtFilesFixedSizeCollection> {
+
+    public static ApiFuture<ListAdaptiveMtFilesPagedResponse> createAsync(
+        PageContext<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>
+            context,
+        ApiFuture<ListAdaptiveMtFilesResponse> futureResponse) {
+      ApiFuture<ListAdaptiveMtFilesPage> futurePage =
+          ListAdaptiveMtFilesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAdaptiveMtFilesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAdaptiveMtFilesPagedResponse(ListAdaptiveMtFilesPage page) {
+      super(page, ListAdaptiveMtFilesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAdaptiveMtFilesPage
+      extends AbstractPage<
+          ListAdaptiveMtFilesRequest,
+          ListAdaptiveMtFilesResponse,
+          AdaptiveMtFile,
+          ListAdaptiveMtFilesPage> {
+
+    private ListAdaptiveMtFilesPage(
+        PageContext<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>
+            context,
+        ListAdaptiveMtFilesResponse response) {
+      super(context, response);
+    }
+
+    private static ListAdaptiveMtFilesPage createEmptyPage() {
+      return new ListAdaptiveMtFilesPage(null, null);
+    }
+
+    @Override
+    protected ListAdaptiveMtFilesPage createPage(
+        PageContext<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>
+            context,
+        ListAdaptiveMtFilesResponse response) {
+      return new ListAdaptiveMtFilesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAdaptiveMtFilesPage> createPageAsync(
+        PageContext<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>
+            context,
+        ApiFuture<ListAdaptiveMtFilesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAdaptiveMtFilesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAdaptiveMtFilesRequest,
+          ListAdaptiveMtFilesResponse,
+          AdaptiveMtFile,
+          ListAdaptiveMtFilesPage,
+          ListAdaptiveMtFilesFixedSizeCollection> {
+
+    private ListAdaptiveMtFilesFixedSizeCollection(
+        List<ListAdaptiveMtFilesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAdaptiveMtFilesFixedSizeCollection createEmptyCollection() {
+      return new ListAdaptiveMtFilesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAdaptiveMtFilesFixedSizeCollection createCollection(
+        List<ListAdaptiveMtFilesPage> pages, int collectionSize) {
+      return new ListAdaptiveMtFilesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAdaptiveMtSentencesPagedResponse
+      extends AbstractPagedListResponse<
+          ListAdaptiveMtSentencesRequest,
+          ListAdaptiveMtSentencesResponse,
+          AdaptiveMtSentence,
+          ListAdaptiveMtSentencesPage,
+          ListAdaptiveMtSentencesFixedSizeCollection> {
+
+    public static ApiFuture<ListAdaptiveMtSentencesPagedResponse> createAsync(
+        PageContext<
+                ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse, AdaptiveMtSentence>
+            context,
+        ApiFuture<ListAdaptiveMtSentencesResponse> futureResponse) {
+      ApiFuture<ListAdaptiveMtSentencesPage> futurePage =
+          ListAdaptiveMtSentencesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAdaptiveMtSentencesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAdaptiveMtSentencesPagedResponse(ListAdaptiveMtSentencesPage page) {
+      super(page, ListAdaptiveMtSentencesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAdaptiveMtSentencesPage
+      extends AbstractPage<
+          ListAdaptiveMtSentencesRequest,
+          ListAdaptiveMtSentencesResponse,
+          AdaptiveMtSentence,
+          ListAdaptiveMtSentencesPage> {
+
+    private ListAdaptiveMtSentencesPage(
+        PageContext<
+                ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse, AdaptiveMtSentence>
+            context,
+        ListAdaptiveMtSentencesResponse response) {
+      super(context, response);
+    }
+
+    private static ListAdaptiveMtSentencesPage createEmptyPage() {
+      return new ListAdaptiveMtSentencesPage(null, null);
+    }
+
+    @Override
+    protected ListAdaptiveMtSentencesPage createPage(
+        PageContext<
+                ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse, AdaptiveMtSentence>
+            context,
+        ListAdaptiveMtSentencesResponse response) {
+      return new ListAdaptiveMtSentencesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAdaptiveMtSentencesPage> createPageAsync(
+        PageContext<
+                ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse, AdaptiveMtSentence>
+            context,
+        ApiFuture<ListAdaptiveMtSentencesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAdaptiveMtSentencesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAdaptiveMtSentencesRequest,
+          ListAdaptiveMtSentencesResponse,
+          AdaptiveMtSentence,
+          ListAdaptiveMtSentencesPage,
+          ListAdaptiveMtSentencesFixedSizeCollection> {
+
+    private ListAdaptiveMtSentencesFixedSizeCollection(
+        List<ListAdaptiveMtSentencesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAdaptiveMtSentencesFixedSizeCollection createEmptyCollection() {
+      return new ListAdaptiveMtSentencesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAdaptiveMtSentencesFixedSizeCollection createCollection(
+        List<ListAdaptiveMtSentencesPage> pages, int collectionSize) {
+      return new ListAdaptiveMtSentencesFixedSizeCollection(pages, collectionSize);
     }
   }
 }

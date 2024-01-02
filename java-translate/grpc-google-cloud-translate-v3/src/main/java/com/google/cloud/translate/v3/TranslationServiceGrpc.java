@@ -501,6 +501,497 @@ public final class TranslationServiceGrpc {
     return getDeleteGlossaryMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest,
+          com.google.cloud.translate.v3.AdaptiveMtDataset>
+      getCreateAdaptiveMtDatasetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAdaptiveMtDataset",
+      requestType = com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest.class,
+      responseType = com.google.cloud.translate.v3.AdaptiveMtDataset.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest,
+          com.google.cloud.translate.v3.AdaptiveMtDataset>
+      getCreateAdaptiveMtDatasetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest,
+            com.google.cloud.translate.v3.AdaptiveMtDataset>
+        getCreateAdaptiveMtDatasetMethod;
+    if ((getCreateAdaptiveMtDatasetMethod = TranslationServiceGrpc.getCreateAdaptiveMtDatasetMethod)
+        == null) {
+      synchronized (TranslationServiceGrpc.class) {
+        if ((getCreateAdaptiveMtDatasetMethod =
+                TranslationServiceGrpc.getCreateAdaptiveMtDatasetMethod)
+            == null) {
+          TranslationServiceGrpc.getCreateAdaptiveMtDatasetMethod =
+              getCreateAdaptiveMtDatasetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest,
+                          com.google.cloud.translate.v3.AdaptiveMtDataset>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateAdaptiveMtDataset"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.AdaptiveMtDataset.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TranslationServiceMethodDescriptorSupplier("CreateAdaptiveMtDataset"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAdaptiveMtDatasetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest, com.google.protobuf.Empty>
+      getDeleteAdaptiveMtDatasetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAdaptiveMtDataset",
+      requestType = com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest, com.google.protobuf.Empty>
+      getDeleteAdaptiveMtDatasetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest, com.google.protobuf.Empty>
+        getDeleteAdaptiveMtDatasetMethod;
+    if ((getDeleteAdaptiveMtDatasetMethod = TranslationServiceGrpc.getDeleteAdaptiveMtDatasetMethod)
+        == null) {
+      synchronized (TranslationServiceGrpc.class) {
+        if ((getDeleteAdaptiveMtDatasetMethod =
+                TranslationServiceGrpc.getDeleteAdaptiveMtDatasetMethod)
+            == null) {
+          TranslationServiceGrpc.getDeleteAdaptiveMtDatasetMethod =
+              getDeleteAdaptiveMtDatasetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteAdaptiveMtDataset"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TranslationServiceMethodDescriptorSupplier("DeleteAdaptiveMtDataset"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAdaptiveMtDatasetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest,
+          com.google.cloud.translate.v3.AdaptiveMtDataset>
+      getGetAdaptiveMtDatasetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAdaptiveMtDataset",
+      requestType = com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest.class,
+      responseType = com.google.cloud.translate.v3.AdaptiveMtDataset.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest,
+          com.google.cloud.translate.v3.AdaptiveMtDataset>
+      getGetAdaptiveMtDatasetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest,
+            com.google.cloud.translate.v3.AdaptiveMtDataset>
+        getGetAdaptiveMtDatasetMethod;
+    if ((getGetAdaptiveMtDatasetMethod = TranslationServiceGrpc.getGetAdaptiveMtDatasetMethod)
+        == null) {
+      synchronized (TranslationServiceGrpc.class) {
+        if ((getGetAdaptiveMtDatasetMethod = TranslationServiceGrpc.getGetAdaptiveMtDatasetMethod)
+            == null) {
+          TranslationServiceGrpc.getGetAdaptiveMtDatasetMethod =
+              getGetAdaptiveMtDatasetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest,
+                          com.google.cloud.translate.v3.AdaptiveMtDataset>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetAdaptiveMtDataset"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.AdaptiveMtDataset.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TranslationServiceMethodDescriptorSupplier("GetAdaptiveMtDataset"))
+                      .build();
+        }
+      }
+    }
+    return getGetAdaptiveMtDatasetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest,
+          com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse>
+      getListAdaptiveMtDatasetsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAdaptiveMtDatasets",
+      requestType = com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest.class,
+      responseType = com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest,
+          com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse>
+      getListAdaptiveMtDatasetsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest,
+            com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse>
+        getListAdaptiveMtDatasetsMethod;
+    if ((getListAdaptiveMtDatasetsMethod = TranslationServiceGrpc.getListAdaptiveMtDatasetsMethod)
+        == null) {
+      synchronized (TranslationServiceGrpc.class) {
+        if ((getListAdaptiveMtDatasetsMethod =
+                TranslationServiceGrpc.getListAdaptiveMtDatasetsMethod)
+            == null) {
+          TranslationServiceGrpc.getListAdaptiveMtDatasetsMethod =
+              getListAdaptiveMtDatasetsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest,
+                          com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListAdaptiveMtDatasets"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TranslationServiceMethodDescriptorSupplier("ListAdaptiveMtDatasets"))
+                      .build();
+        }
+      }
+    }
+    return getListAdaptiveMtDatasetsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.AdaptiveMtTranslateRequest,
+          com.google.cloud.translate.v3.AdaptiveMtTranslateResponse>
+      getAdaptiveMtTranslateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AdaptiveMtTranslate",
+      requestType = com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.class,
+      responseType = com.google.cloud.translate.v3.AdaptiveMtTranslateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.AdaptiveMtTranslateRequest,
+          com.google.cloud.translate.v3.AdaptiveMtTranslateResponse>
+      getAdaptiveMtTranslateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.translate.v3.AdaptiveMtTranslateRequest,
+            com.google.cloud.translate.v3.AdaptiveMtTranslateResponse>
+        getAdaptiveMtTranslateMethod;
+    if ((getAdaptiveMtTranslateMethod = TranslationServiceGrpc.getAdaptiveMtTranslateMethod)
+        == null) {
+      synchronized (TranslationServiceGrpc.class) {
+        if ((getAdaptiveMtTranslateMethod = TranslationServiceGrpc.getAdaptiveMtTranslateMethod)
+            == null) {
+          TranslationServiceGrpc.getAdaptiveMtTranslateMethod =
+              getAdaptiveMtTranslateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.translate.v3.AdaptiveMtTranslateRequest,
+                          com.google.cloud.translate.v3.AdaptiveMtTranslateResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "AdaptiveMtTranslate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.AdaptiveMtTranslateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.AdaptiveMtTranslateResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TranslationServiceMethodDescriptorSupplier("AdaptiveMtTranslate"))
+                      .build();
+        }
+      }
+    }
+    return getAdaptiveMtTranslateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.GetAdaptiveMtFileRequest,
+          com.google.cloud.translate.v3.AdaptiveMtFile>
+      getGetAdaptiveMtFileMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAdaptiveMtFile",
+      requestType = com.google.cloud.translate.v3.GetAdaptiveMtFileRequest.class,
+      responseType = com.google.cloud.translate.v3.AdaptiveMtFile.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.GetAdaptiveMtFileRequest,
+          com.google.cloud.translate.v3.AdaptiveMtFile>
+      getGetAdaptiveMtFileMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.translate.v3.GetAdaptiveMtFileRequest,
+            com.google.cloud.translate.v3.AdaptiveMtFile>
+        getGetAdaptiveMtFileMethod;
+    if ((getGetAdaptiveMtFileMethod = TranslationServiceGrpc.getGetAdaptiveMtFileMethod) == null) {
+      synchronized (TranslationServiceGrpc.class) {
+        if ((getGetAdaptiveMtFileMethod = TranslationServiceGrpc.getGetAdaptiveMtFileMethod)
+            == null) {
+          TranslationServiceGrpc.getGetAdaptiveMtFileMethod =
+              getGetAdaptiveMtFileMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.translate.v3.GetAdaptiveMtFileRequest,
+                          com.google.cloud.translate.v3.AdaptiveMtFile>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAdaptiveMtFile"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.GetAdaptiveMtFileRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.AdaptiveMtFile.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TranslationServiceMethodDescriptorSupplier("GetAdaptiveMtFile"))
+                      .build();
+        }
+      }
+    }
+    return getGetAdaptiveMtFileMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest, com.google.protobuf.Empty>
+      getDeleteAdaptiveMtFileMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAdaptiveMtFile",
+      requestType = com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest, com.google.protobuf.Empty>
+      getDeleteAdaptiveMtFileMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest, com.google.protobuf.Empty>
+        getDeleteAdaptiveMtFileMethod;
+    if ((getDeleteAdaptiveMtFileMethod = TranslationServiceGrpc.getDeleteAdaptiveMtFileMethod)
+        == null) {
+      synchronized (TranslationServiceGrpc.class) {
+        if ((getDeleteAdaptiveMtFileMethod = TranslationServiceGrpc.getDeleteAdaptiveMtFileMethod)
+            == null) {
+          TranslationServiceGrpc.getDeleteAdaptiveMtFileMethod =
+              getDeleteAdaptiveMtFileMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteAdaptiveMtFile"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TranslationServiceMethodDescriptorSupplier("DeleteAdaptiveMtFile"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAdaptiveMtFileMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest,
+          com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse>
+      getImportAdaptiveMtFileMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportAdaptiveMtFile",
+      requestType = com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest.class,
+      responseType = com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest,
+          com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse>
+      getImportAdaptiveMtFileMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest,
+            com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse>
+        getImportAdaptiveMtFileMethod;
+    if ((getImportAdaptiveMtFileMethod = TranslationServiceGrpc.getImportAdaptiveMtFileMethod)
+        == null) {
+      synchronized (TranslationServiceGrpc.class) {
+        if ((getImportAdaptiveMtFileMethod = TranslationServiceGrpc.getImportAdaptiveMtFileMethod)
+            == null) {
+          TranslationServiceGrpc.getImportAdaptiveMtFileMethod =
+              getImportAdaptiveMtFileMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest,
+                          com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ImportAdaptiveMtFile"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TranslationServiceMethodDescriptorSupplier("ImportAdaptiveMtFile"))
+                      .build();
+        }
+      }
+    }
+    return getImportAdaptiveMtFileMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest,
+          com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse>
+      getListAdaptiveMtFilesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAdaptiveMtFiles",
+      requestType = com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest.class,
+      responseType = com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest,
+          com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse>
+      getListAdaptiveMtFilesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest,
+            com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse>
+        getListAdaptiveMtFilesMethod;
+    if ((getListAdaptiveMtFilesMethod = TranslationServiceGrpc.getListAdaptiveMtFilesMethod)
+        == null) {
+      synchronized (TranslationServiceGrpc.class) {
+        if ((getListAdaptiveMtFilesMethod = TranslationServiceGrpc.getListAdaptiveMtFilesMethod)
+            == null) {
+          TranslationServiceGrpc.getListAdaptiveMtFilesMethod =
+              getListAdaptiveMtFilesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest,
+                          com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListAdaptiveMtFiles"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TranslationServiceMethodDescriptorSupplier("ListAdaptiveMtFiles"))
+                      .build();
+        }
+      }
+    }
+    return getListAdaptiveMtFilesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest,
+          com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse>
+      getListAdaptiveMtSentencesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAdaptiveMtSentences",
+      requestType = com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest.class,
+      responseType = com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest,
+          com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse>
+      getListAdaptiveMtSentencesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest,
+            com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse>
+        getListAdaptiveMtSentencesMethod;
+    if ((getListAdaptiveMtSentencesMethod = TranslationServiceGrpc.getListAdaptiveMtSentencesMethod)
+        == null) {
+      synchronized (TranslationServiceGrpc.class) {
+        if ((getListAdaptiveMtSentencesMethod =
+                TranslationServiceGrpc.getListAdaptiveMtSentencesMethod)
+            == null) {
+          TranslationServiceGrpc.getListAdaptiveMtSentencesMethod =
+              getListAdaptiveMtSentencesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest,
+                          com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListAdaptiveMtSentences"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TranslationServiceMethodDescriptorSupplier("ListAdaptiveMtSentences"))
+                      .build();
+        }
+      }
+    }
+    return getListAdaptiveMtSentencesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static TranslationServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<TranslationServiceStub> factory =
@@ -709,6 +1200,156 @@ public final class TranslationServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteGlossaryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Adaptive MT dataset.
+     * </pre>
+     */
+    default void createAdaptiveMtDataset(
+        com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.AdaptiveMtDataset>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAdaptiveMtDatasetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Adaptive MT dataset, including all its entries and associated
+     * metadata.
+     * </pre>
+     */
+    default void deleteAdaptiveMtDataset(
+        com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAdaptiveMtDatasetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Adaptive MT dataset.
+     * </pre>
+     */
+    default void getAdaptiveMtDataset(
+        com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.AdaptiveMtDataset>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAdaptiveMtDatasetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Adaptive MT datasets for which the caller has read permission.
+     * </pre>
+     */
+    default void listAdaptiveMtDatasets(
+        com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAdaptiveMtDatasetsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translate text using Adaptive MT.
+     * </pre>
+     */
+    default void adaptiveMtTranslate(
+        com.google.cloud.translate.v3.AdaptiveMtTranslateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.AdaptiveMtTranslateResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAdaptiveMtTranslateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets and AdaptiveMtFile
+     * </pre>
+     */
+    default void getAdaptiveMtFile(
+        com.google.cloud.translate.v3.GetAdaptiveMtFileRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.AdaptiveMtFile>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAdaptiveMtFileMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an AdaptiveMtFile along with its sentences.
+     * </pre>
+     */
+    default void deleteAdaptiveMtFile(
+        com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAdaptiveMtFileMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an AdaptiveMtFile and adds all of its sentences into the
+     * AdaptiveMtDataset.
+     * </pre>
+     */
+    default void importAdaptiveMtFile(
+        com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportAdaptiveMtFileMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all AdaptiveMtFiles associated to an AdaptiveMtDataset.
+     * </pre>
+     */
+    default void listAdaptiveMtFiles(
+        com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAdaptiveMtFilesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all AdaptiveMtSentences under a given file/dataset.
+     * </pre>
+     */
+    default void listAdaptiveMtSentences(
+        com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAdaptiveMtSentencesMethod(), responseObserver);
     }
   }
 
@@ -926,6 +1567,176 @@ public final class TranslationServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Adaptive MT dataset.
+     * </pre>
+     */
+    public void createAdaptiveMtDataset(
+        com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.AdaptiveMtDataset>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAdaptiveMtDatasetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Adaptive MT dataset, including all its entries and associated
+     * metadata.
+     * </pre>
+     */
+    public void deleteAdaptiveMtDataset(
+        com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAdaptiveMtDatasetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Adaptive MT dataset.
+     * </pre>
+     */
+    public void getAdaptiveMtDataset(
+        com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.AdaptiveMtDataset>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAdaptiveMtDatasetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Adaptive MT datasets for which the caller has read permission.
+     * </pre>
+     */
+    public void listAdaptiveMtDatasets(
+        com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAdaptiveMtDatasetsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translate text using Adaptive MT.
+     * </pre>
+     */
+    public void adaptiveMtTranslate(
+        com.google.cloud.translate.v3.AdaptiveMtTranslateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.AdaptiveMtTranslateResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAdaptiveMtTranslateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets and AdaptiveMtFile
+     * </pre>
+     */
+    public void getAdaptiveMtFile(
+        com.google.cloud.translate.v3.GetAdaptiveMtFileRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.AdaptiveMtFile>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAdaptiveMtFileMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an AdaptiveMtFile along with its sentences.
+     * </pre>
+     */
+    public void deleteAdaptiveMtFile(
+        com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAdaptiveMtFileMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an AdaptiveMtFile and adds all of its sentences into the
+     * AdaptiveMtDataset.
+     * </pre>
+     */
+    public void importAdaptiveMtFile(
+        com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportAdaptiveMtFileMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all AdaptiveMtFiles associated to an AdaptiveMtDataset.
+     * </pre>
+     */
+    public void listAdaptiveMtFiles(
+        com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAdaptiveMtFilesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all AdaptiveMtSentences under a given file/dataset.
+     * </pre>
+     */
+    public void listAdaptiveMtSentences(
+        com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAdaptiveMtSentencesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1091,6 +1902,138 @@ public final class TranslationServiceGrpc {
         com.google.cloud.translate.v3.DeleteGlossaryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteGlossaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Adaptive MT dataset.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.AdaptiveMtDataset createAdaptiveMtDataset(
+        com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAdaptiveMtDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Adaptive MT dataset, including all its entries and associated
+     * metadata.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAdaptiveMtDataset(
+        com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAdaptiveMtDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Adaptive MT dataset.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.AdaptiveMtDataset getAdaptiveMtDataset(
+        com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAdaptiveMtDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Adaptive MT datasets for which the caller has read permission.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse listAdaptiveMtDatasets(
+        com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAdaptiveMtDatasetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translate text using Adaptive MT.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.AdaptiveMtTranslateResponse adaptiveMtTranslate(
+        com.google.cloud.translate.v3.AdaptiveMtTranslateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAdaptiveMtTranslateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets and AdaptiveMtFile
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.AdaptiveMtFile getAdaptiveMtFile(
+        com.google.cloud.translate.v3.GetAdaptiveMtFileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAdaptiveMtFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an AdaptiveMtFile along with its sentences.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAdaptiveMtFile(
+        com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAdaptiveMtFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an AdaptiveMtFile and adds all of its sentences into the
+     * AdaptiveMtDataset.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse importAdaptiveMtFile(
+        com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportAdaptiveMtFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all AdaptiveMtFiles associated to an AdaptiveMtDataset.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse listAdaptiveMtFiles(
+        com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAdaptiveMtFilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all AdaptiveMtSentences under a given file/dataset.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse listAdaptiveMtSentences(
+        com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAdaptiveMtSentencesMethod(), getCallOptions(), request);
     }
   }
 
@@ -1264,6 +2207,150 @@ public final class TranslationServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteGlossaryMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Adaptive MT dataset.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.translate.v3.AdaptiveMtDataset>
+        createAdaptiveMtDataset(
+            com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAdaptiveMtDatasetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Adaptive MT dataset, including all its entries and associated
+     * metadata.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteAdaptiveMtDataset(
+            com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAdaptiveMtDatasetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Adaptive MT dataset.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.translate.v3.AdaptiveMtDataset>
+        getAdaptiveMtDataset(com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAdaptiveMtDatasetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Adaptive MT datasets for which the caller has read permission.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse>
+        listAdaptiveMtDatasets(
+            com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAdaptiveMtDatasetsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translate text using Adaptive MT.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.translate.v3.AdaptiveMtTranslateResponse>
+        adaptiveMtTranslate(com.google.cloud.translate.v3.AdaptiveMtTranslateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAdaptiveMtTranslateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets and AdaptiveMtFile
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.translate.v3.AdaptiveMtFile>
+        getAdaptiveMtFile(com.google.cloud.translate.v3.GetAdaptiveMtFileRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAdaptiveMtFileMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an AdaptiveMtFile along with its sentences.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteAdaptiveMtFile(com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAdaptiveMtFileMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports an AdaptiveMtFile and adds all of its sentences into the
+     * AdaptiveMtDataset.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse>
+        importAdaptiveMtFile(com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportAdaptiveMtFileMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all AdaptiveMtFiles associated to an AdaptiveMtDataset.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse>
+        listAdaptiveMtFiles(com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAdaptiveMtFilesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all AdaptiveMtSentences under a given file/dataset.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse>
+        listAdaptiveMtSentences(
+            com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAdaptiveMtSentencesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_TRANSLATE_TEXT = 0;
@@ -1276,6 +2363,16 @@ public final class TranslationServiceGrpc {
   private static final int METHODID_LIST_GLOSSARIES = 7;
   private static final int METHODID_GET_GLOSSARY = 8;
   private static final int METHODID_DELETE_GLOSSARY = 9;
+  private static final int METHODID_CREATE_ADAPTIVE_MT_DATASET = 10;
+  private static final int METHODID_DELETE_ADAPTIVE_MT_DATASET = 11;
+  private static final int METHODID_GET_ADAPTIVE_MT_DATASET = 12;
+  private static final int METHODID_LIST_ADAPTIVE_MT_DATASETS = 13;
+  private static final int METHODID_ADAPTIVE_MT_TRANSLATE = 14;
+  private static final int METHODID_GET_ADAPTIVE_MT_FILE = 15;
+  private static final int METHODID_DELETE_ADAPTIVE_MT_FILE = 16;
+  private static final int METHODID_IMPORT_ADAPTIVE_MT_FILE = 17;
+  private static final int METHODID_LIST_ADAPTIVE_MT_FILES = 18;
+  private static final int METHODID_LIST_ADAPTIVE_MT_SENTENCES = 19;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1349,6 +2446,69 @@ public final class TranslationServiceGrpc {
           serviceImpl.deleteGlossary(
               (com.google.cloud.translate.v3.DeleteGlossaryRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_ADAPTIVE_MT_DATASET:
+          serviceImpl.createAdaptiveMtDataset(
+              (com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.AdaptiveMtDataset>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_ADAPTIVE_MT_DATASET:
+          serviceImpl.deleteAdaptiveMtDataset(
+              (com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_ADAPTIVE_MT_DATASET:
+          serviceImpl.getAdaptiveMtDataset(
+              (com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.AdaptiveMtDataset>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_ADAPTIVE_MT_DATASETS:
+          serviceImpl.listAdaptiveMtDatasets(
+              (com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_ADAPTIVE_MT_TRANSLATE:
+          serviceImpl.adaptiveMtTranslate(
+              (com.google.cloud.translate.v3.AdaptiveMtTranslateRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.translate.v3.AdaptiveMtTranslateResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ADAPTIVE_MT_FILE:
+          serviceImpl.getAdaptiveMtFile(
+              (com.google.cloud.translate.v3.GetAdaptiveMtFileRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.translate.v3.AdaptiveMtFile>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_ADAPTIVE_MT_FILE:
+          serviceImpl.deleteAdaptiveMtFile(
+              (com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_IMPORT_ADAPTIVE_MT_FILE:
+          serviceImpl.importAdaptiveMtFile(
+              (com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_ADAPTIVE_MT_FILES:
+          serviceImpl.listAdaptiveMtFiles(
+              (com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_ADAPTIVE_MT_SENTENCES:
+          serviceImpl.listAdaptiveMtSentences(
+              (com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1433,6 +2593,74 @@ public final class TranslationServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.translate.v3.DeleteGlossaryRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_GLOSSARY)))
+        .addMethod(
+            getCreateAdaptiveMtDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest,
+                    com.google.cloud.translate.v3.AdaptiveMtDataset>(
+                    service, METHODID_CREATE_ADAPTIVE_MT_DATASET)))
+        .addMethod(
+            getDeleteAdaptiveMtDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ADAPTIVE_MT_DATASET)))
+        .addMethod(
+            getGetAdaptiveMtDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest,
+                    com.google.cloud.translate.v3.AdaptiveMtDataset>(
+                    service, METHODID_GET_ADAPTIVE_MT_DATASET)))
+        .addMethod(
+            getListAdaptiveMtDatasetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest,
+                    com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse>(
+                    service, METHODID_LIST_ADAPTIVE_MT_DATASETS)))
+        .addMethod(
+            getAdaptiveMtTranslateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.translate.v3.AdaptiveMtTranslateRequest,
+                    com.google.cloud.translate.v3.AdaptiveMtTranslateResponse>(
+                    service, METHODID_ADAPTIVE_MT_TRANSLATE)))
+        .addMethod(
+            getGetAdaptiveMtFileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.translate.v3.GetAdaptiveMtFileRequest,
+                    com.google.cloud.translate.v3.AdaptiveMtFile>(
+                    service, METHODID_GET_ADAPTIVE_MT_FILE)))
+        .addMethod(
+            getDeleteAdaptiveMtFileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ADAPTIVE_MT_FILE)))
+        .addMethod(
+            getImportAdaptiveMtFileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest,
+                    com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse>(
+                    service, METHODID_IMPORT_ADAPTIVE_MT_FILE)))
+        .addMethod(
+            getListAdaptiveMtFilesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest,
+                    com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse>(
+                    service, METHODID_LIST_ADAPTIVE_MT_FILES)))
+        .addMethod(
+            getListAdaptiveMtSentencesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest,
+                    com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse>(
+                    service, METHODID_LIST_ADAPTIVE_MT_SENTENCES)))
         .build();
   }
 
@@ -1494,6 +2722,16 @@ public final class TranslationServiceGrpc {
                       .addMethod(getListGlossariesMethod())
                       .addMethod(getGetGlossaryMethod())
                       .addMethod(getDeleteGlossaryMethod())
+                      .addMethod(getCreateAdaptiveMtDatasetMethod())
+                      .addMethod(getDeleteAdaptiveMtDatasetMethod())
+                      .addMethod(getGetAdaptiveMtDatasetMethod())
+                      .addMethod(getListAdaptiveMtDatasetsMethod())
+                      .addMethod(getAdaptiveMtTranslateMethod())
+                      .addMethod(getGetAdaptiveMtFileMethod())
+                      .addMethod(getDeleteAdaptiveMtFileMethod())
+                      .addMethod(getImportAdaptiveMtFileMethod())
+                      .addMethod(getListAdaptiveMtFilesMethod())
+                      .addMethod(getListAdaptiveMtSentencesMethod())
                       .build();
         }
       }
