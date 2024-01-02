@@ -29,7 +29,8 @@ public interface GetNotificationRequestOrBuilder
    * <pre>
    * Required. A name of the notification to retrieve.
    * Format:
-   * organizations/{organization}/locations/{location}/notifications/{notification}.
+   * organizations/{organization}/locations/{location}/notifications/{notification}
+   * or projects/{projects}/locations/{location}/notifications/{notification}.
    * </pre>
    *
    * <code>
@@ -45,7 +46,8 @@ public interface GetNotificationRequestOrBuilder
    * <pre>
    * Required. A name of the notification to retrieve.
    * Format:
-   * organizations/{organization}/locations/{location}/notifications/{notification}.
+   * organizations/{organization}/locations/{location}/notifications/{notification}
+   * or projects/{projects}/locations/{location}/notifications/{notification}.
    * </pre>
    *
    * <code>

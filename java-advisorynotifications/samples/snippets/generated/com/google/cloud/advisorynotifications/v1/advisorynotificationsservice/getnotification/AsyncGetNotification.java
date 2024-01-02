@@ -40,7 +40,9 @@ public class AsyncGetNotification {
       GetNotificationRequest request =
           GetNotificationRequest.newBuilder()
               .setName(
-                  NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]").toString())
+                  NotificationName.ofOrganizationLocationNotificationName(
+                          "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]")
+                      .toString())
               .setLanguageCode("languageCode-2092349083")
               .build();
       ApiFuture<Notification> future =

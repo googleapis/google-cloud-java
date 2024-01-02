@@ -36,7 +36,9 @@ public class SyncGetNotificationString {
     try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
         AdvisoryNotificationsServiceClient.create()) {
       String name =
-          NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]").toString();
+          NotificationName.ofOrganizationLocationNotificationName(
+                  "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]")
+              .toString();
       Notification response = advisoryNotificationsServiceClient.getNotification(name);
     }
   }
