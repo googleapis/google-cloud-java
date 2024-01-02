@@ -70,12 +70,12 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A reference representing this place review which may be used
-   * to look up this place review again (a.k.a. the API "resource" name:
-   * places/{place_id}/reviews/{review}).
+   * A reference representing this place review which may be used to look up
+   * this place review again (also called the API "resource" name:
+   * `places/{place_id}/reviews/{review}`).
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The name.
    */
@@ -95,12 +95,12 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A reference representing this place review which may be used
-   * to look up this place review again (a.k.a. the API "resource" name:
-   * places/{place_id}/reviews/{review}).
+   * A reference representing this place review which may be used to look up
+   * this place review again (also called the API "resource" name:
+   * `places/{place_id}/reviews/{review}`).
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The bytes for name.
    */
@@ -125,14 +125,11 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A string of formatted recent time, expressing the review time
-   * relative to the current time in a form appropriate for the language and
-   * country.
+   * A string of formatted recent time, expressing the review time relative
+   * to the current time in a form appropriate for the language and country.
    * </pre>
    *
-   * <code>
-   * string relative_publish_time_description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>string relative_publish_time_description = 2;</code>
    *
    * @return The relativePublishTimeDescription.
    */
@@ -152,14 +149,11 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A string of formatted recent time, expressing the review time
-   * relative to the current time in a form appropriate for the language and
-   * country.
+   * A string of formatted recent time, expressing the review time relative
+   * to the current time in a form appropriate for the language and country.
    * </pre>
    *
-   * <code>
-   * string relative_publish_time_description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>string relative_publish_time_description = 2;</code>
    *
    * @return The bytes for relativePublishTimeDescription.
    */
@@ -182,10 +176,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The localized text of the review.
+   * The localized text of the review.
    * </pre>
    *
-   * <code>.google.type.LocalizedText text = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.type.LocalizedText text = 9;</code>
    *
    * @return Whether the text field is set.
    */
@@ -197,10 +191,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The localized text of the review.
+   * The localized text of the review.
    * </pre>
    *
-   * <code>.google.type.LocalizedText text = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.type.LocalizedText text = 9;</code>
    *
    * @return The text.
    */
@@ -212,10 +206,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The localized text of the review.
+   * The localized text of the review.
    * </pre>
    *
-   * <code>.google.type.LocalizedText text = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.type.LocalizedText text = 9;</code>
    */
   @java.lang.Override
   public com.google.type.LocalizedTextOrBuilder getTextOrBuilder() {
@@ -228,12 +222,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The review text in its original language.
+   * The review text in its original language.
    * </pre>
    *
-   * <code>
-   * .google.type.LocalizedText original_text = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.type.LocalizedText original_text = 12;</code>
    *
    * @return Whether the originalText field is set.
    */
@@ -245,12 +237,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The review text in its original language.
+   * The review text in its original language.
    * </pre>
    *
-   * <code>
-   * .google.type.LocalizedText original_text = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.type.LocalizedText original_text = 12;</code>
    *
    * @return The originalText.
    */
@@ -264,12 +254,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The review text in its original language.
+   * The review text in its original language.
    * </pre>
    *
-   * <code>
-   * .google.type.LocalizedText original_text = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.type.LocalizedText original_text = 12;</code>
    */
   @java.lang.Override
   public com.google.type.LocalizedTextOrBuilder getOriginalTextOrBuilder() {
@@ -284,10 +272,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A number between 1.0 and 5.0, a.k.a. the number of stars.
+   * A number between 1.0 and 5.0, also called the number of stars.
    * </pre>
    *
-   * <code>double rating = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>double rating = 7;</code>
    *
    * @return The rating.
    */
@@ -302,12 +290,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This review's author.
+   * This review's author.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.AuthorAttribution author_attribution = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.AuthorAttribution author_attribution = 13;</code>
    *
    * @return Whether the authorAttribution field is set.
    */
@@ -319,12 +305,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This review's author.
+   * This review's author.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.AuthorAttribution author_attribution = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.AuthorAttribution author_attribution = 13;</code>
    *
    * @return The authorAttribution.
    */
@@ -338,12 +322,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This review's author.
+   * This review's author.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.AuthorAttribution author_attribution = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.AuthorAttribution author_attribution = 13;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.AuthorAttributionOrBuilder getAuthorAttributionOrBuilder() {
@@ -358,12 +340,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Timestamp for the review.
+   * Timestamp for the review.
    * </pre>
    *
-   * <code>
-   * .google.protobuf.Timestamp publish_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp publish_time = 14;</code>
    *
    * @return Whether the publishTime field is set.
    */
@@ -375,12 +355,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Timestamp for the review.
+   * Timestamp for the review.
    * </pre>
    *
-   * <code>
-   * .google.protobuf.Timestamp publish_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp publish_time = 14;</code>
    *
    * @return The publishTime.
    */
@@ -392,12 +370,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Timestamp for the review.
+   * Timestamp for the review.
    * </pre>
    *
-   * <code>
-   * .google.protobuf.Timestamp publish_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp publish_time = 14;</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getPublishTimeOrBuilder() {
@@ -930,12 +906,12 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference representing this place review which may be used
-     * to look up this place review again (a.k.a. the API "resource" name:
-     * places/{place_id}/reviews/{review}).
+     * A reference representing this place review which may be used to look up
+     * this place review again (also called the API "resource" name:
+     * `places/{place_id}/reviews/{review}`).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @return The name.
      */
@@ -954,12 +930,12 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference representing this place review which may be used
-     * to look up this place review again (a.k.a. the API "resource" name:
-     * places/{place_id}/reviews/{review}).
+     * A reference representing this place review which may be used to look up
+     * this place review again (also called the API "resource" name:
+     * `places/{place_id}/reviews/{review}`).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @return The bytes for name.
      */
@@ -978,12 +954,12 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference representing this place review which may be used
-     * to look up this place review again (a.k.a. the API "resource" name:
-     * places/{place_id}/reviews/{review}).
+     * A reference representing this place review which may be used to look up
+     * this place review again (also called the API "resource" name:
+     * `places/{place_id}/reviews/{review}`).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1001,12 +977,12 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference representing this place review which may be used
-     * to look up this place review again (a.k.a. the API "resource" name:
-     * places/{place_id}/reviews/{review}).
+     * A reference representing this place review which may be used to look up
+     * this place review again (also called the API "resource" name:
+     * `places/{place_id}/reviews/{review}`).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -1020,12 +996,12 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference representing this place review which may be used
-     * to look up this place review again (a.k.a. the API "resource" name:
-     * places/{place_id}/reviews/{review}).
+     * A reference representing this place review which may be used to look up
+     * this place review again (also called the API "resource" name:
+     * `places/{place_id}/reviews/{review}`).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1046,14 +1022,11 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A string of formatted recent time, expressing the review time
-     * relative to the current time in a form appropriate for the language and
-     * country.
+     * A string of formatted recent time, expressing the review time relative
+     * to the current time in a form appropriate for the language and country.
      * </pre>
      *
-     * <code>
-     * string relative_publish_time_description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string relative_publish_time_description = 2;</code>
      *
      * @return The relativePublishTimeDescription.
      */
@@ -1072,14 +1045,11 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A string of formatted recent time, expressing the review time
-     * relative to the current time in a form appropriate for the language and
-     * country.
+     * A string of formatted recent time, expressing the review time relative
+     * to the current time in a form appropriate for the language and country.
      * </pre>
      *
-     * <code>
-     * string relative_publish_time_description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string relative_publish_time_description = 2;</code>
      *
      * @return The bytes for relativePublishTimeDescription.
      */
@@ -1098,14 +1068,11 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A string of formatted recent time, expressing the review time
-     * relative to the current time in a form appropriate for the language and
-     * country.
+     * A string of formatted recent time, expressing the review time relative
+     * to the current time in a form appropriate for the language and country.
      * </pre>
      *
-     * <code>
-     * string relative_publish_time_description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string relative_publish_time_description = 2;</code>
      *
      * @param value The relativePublishTimeDescription to set.
      * @return This builder for chaining.
@@ -1123,14 +1090,11 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A string of formatted recent time, expressing the review time
-     * relative to the current time in a form appropriate for the language and
-     * country.
+     * A string of formatted recent time, expressing the review time relative
+     * to the current time in a form appropriate for the language and country.
      * </pre>
      *
-     * <code>
-     * string relative_publish_time_description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string relative_publish_time_description = 2;</code>
      *
      * @return This builder for chaining.
      */
@@ -1144,14 +1108,11 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A string of formatted recent time, expressing the review time
-     * relative to the current time in a form appropriate for the language and
-     * country.
+     * A string of formatted recent time, expressing the review time relative
+     * to the current time in a form appropriate for the language and country.
      * </pre>
      *
-     * <code>
-     * string relative_publish_time_description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string relative_publish_time_description = 2;</code>
      *
      * @param value The bytes for relativePublishTimeDescription to set.
      * @return This builder for chaining.
@@ -1177,11 +1138,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized text of the review.
+     * The localized text of the review.
      * </pre>
      *
-     * <code>.google.type.LocalizedText text = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText text = 9;</code>
      *
      * @return Whether the text field is set.
      */
@@ -1192,11 +1152,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized text of the review.
+     * The localized text of the review.
      * </pre>
      *
-     * <code>.google.type.LocalizedText text = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText text = 9;</code>
      *
      * @return The text.
      */
@@ -1211,11 +1170,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized text of the review.
+     * The localized text of the review.
      * </pre>
      *
-     * <code>.google.type.LocalizedText text = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText text = 9;</code>
      */
     public Builder setText(com.google.type.LocalizedText value) {
       if (textBuilder_ == null) {
@@ -1234,11 +1192,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized text of the review.
+     * The localized text of the review.
      * </pre>
      *
-     * <code>.google.type.LocalizedText text = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText text = 9;</code>
      */
     public Builder setText(com.google.type.LocalizedText.Builder builderForValue) {
       if (textBuilder_ == null) {
@@ -1254,11 +1211,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized text of the review.
+     * The localized text of the review.
      * </pre>
      *
-     * <code>.google.type.LocalizedText text = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText text = 9;</code>
      */
     public Builder mergeText(com.google.type.LocalizedText value) {
       if (textBuilder_ == null) {
@@ -1280,11 +1236,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized text of the review.
+     * The localized text of the review.
      * </pre>
      *
-     * <code>.google.type.LocalizedText text = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText text = 9;</code>
      */
     public Builder clearText() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1300,11 +1255,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized text of the review.
+     * The localized text of the review.
      * </pre>
      *
-     * <code>.google.type.LocalizedText text = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText text = 9;</code>
      */
     public com.google.type.LocalizedText.Builder getTextBuilder() {
       bitField0_ |= 0x00000004;
@@ -1315,11 +1269,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized text of the review.
+     * The localized text of the review.
      * </pre>
      *
-     * <code>.google.type.LocalizedText text = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText text = 9;</code>
      */
     public com.google.type.LocalizedTextOrBuilder getTextOrBuilder() {
       if (textBuilder_ != null) {
@@ -1332,11 +1285,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized text of the review.
+     * The localized text of the review.
      * </pre>
      *
-     * <code>.google.type.LocalizedText text = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText text = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LocalizedText,
@@ -1365,12 +1317,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The review text in its original language.
+     * The review text in its original language.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText original_text = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText original_text = 12;</code>
      *
      * @return Whether the originalText field is set.
      */
@@ -1381,12 +1331,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The review text in its original language.
+     * The review text in its original language.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText original_text = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText original_text = 12;</code>
      *
      * @return The originalText.
      */
@@ -1403,12 +1351,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The review text in its original language.
+     * The review text in its original language.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText original_text = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText original_text = 12;</code>
      */
     public Builder setOriginalText(com.google.type.LocalizedText value) {
       if (originalTextBuilder_ == null) {
@@ -1427,12 +1373,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The review text in its original language.
+     * The review text in its original language.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText original_text = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText original_text = 12;</code>
      */
     public Builder setOriginalText(com.google.type.LocalizedText.Builder builderForValue) {
       if (originalTextBuilder_ == null) {
@@ -1448,12 +1392,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The review text in its original language.
+     * The review text in its original language.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText original_text = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText original_text = 12;</code>
      */
     public Builder mergeOriginalText(com.google.type.LocalizedText value) {
       if (originalTextBuilder_ == null) {
@@ -1475,12 +1417,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The review text in its original language.
+     * The review text in its original language.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText original_text = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText original_text = 12;</code>
      */
     public Builder clearOriginalText() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1496,12 +1436,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The review text in its original language.
+     * The review text in its original language.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText original_text = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText original_text = 12;</code>
      */
     public com.google.type.LocalizedText.Builder getOriginalTextBuilder() {
       bitField0_ |= 0x00000008;
@@ -1512,12 +1450,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The review text in its original language.
+     * The review text in its original language.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText original_text = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText original_text = 12;</code>
      */
     public com.google.type.LocalizedTextOrBuilder getOriginalTextOrBuilder() {
       if (originalTextBuilder_ != null) {
@@ -1532,12 +1468,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The review text in its original language.
+     * The review text in its original language.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText original_text = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText original_text = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LocalizedText,
@@ -1561,10 +1495,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A number between 1.0 and 5.0, a.k.a. the number of stars.
+     * A number between 1.0 and 5.0, also called the number of stars.
      * </pre>
      *
-     * <code>double rating = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>double rating = 7;</code>
      *
      * @return The rating.
      */
@@ -1576,10 +1510,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A number between 1.0 and 5.0, a.k.a. the number of stars.
+     * A number between 1.0 and 5.0, also called the number of stars.
      * </pre>
      *
-     * <code>double rating = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>double rating = 7;</code>
      *
      * @param value The rating to set.
      * @return This builder for chaining.
@@ -1595,10 +1529,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A number between 1.0 and 5.0, a.k.a. the number of stars.
+     * A number between 1.0 and 5.0, also called the number of stars.
      * </pre>
      *
-     * <code>double rating = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>double rating = 7;</code>
      *
      * @return This builder for chaining.
      */
@@ -1619,12 +1553,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This review's author.
+     * This review's author.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.AuthorAttribution author_attribution = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.AuthorAttribution author_attribution = 13;</code>
      *
      * @return Whether the authorAttribution field is set.
      */
@@ -1635,12 +1567,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This review's author.
+     * This review's author.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.AuthorAttribution author_attribution = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.AuthorAttribution author_attribution = 13;</code>
      *
      * @return The authorAttribution.
      */
@@ -1657,12 +1587,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This review's author.
+     * This review's author.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.AuthorAttribution author_attribution = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.AuthorAttribution author_attribution = 13;</code>
      */
     public Builder setAuthorAttribution(com.google.maps.places.v1.AuthorAttribution value) {
       if (authorAttributionBuilder_ == null) {
@@ -1681,12 +1609,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This review's author.
+     * This review's author.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.AuthorAttribution author_attribution = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.AuthorAttribution author_attribution = 13;</code>
      */
     public Builder setAuthorAttribution(
         com.google.maps.places.v1.AuthorAttribution.Builder builderForValue) {
@@ -1703,12 +1629,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This review's author.
+     * This review's author.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.AuthorAttribution author_attribution = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.AuthorAttribution author_attribution = 13;</code>
      */
     public Builder mergeAuthorAttribution(com.google.maps.places.v1.AuthorAttribution value) {
       if (authorAttributionBuilder_ == null) {
@@ -1731,12 +1655,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This review's author.
+     * This review's author.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.AuthorAttribution author_attribution = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.AuthorAttribution author_attribution = 13;</code>
      */
     public Builder clearAuthorAttribution() {
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -1752,12 +1674,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This review's author.
+     * This review's author.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.AuthorAttribution author_attribution = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.AuthorAttribution author_attribution = 13;</code>
      */
     public com.google.maps.places.v1.AuthorAttribution.Builder getAuthorAttributionBuilder() {
       bitField0_ |= 0x00000020;
@@ -1768,12 +1688,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This review's author.
+     * This review's author.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.AuthorAttribution author_attribution = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.AuthorAttribution author_attribution = 13;</code>
      */
     public com.google.maps.places.v1.AuthorAttributionOrBuilder getAuthorAttributionOrBuilder() {
       if (authorAttributionBuilder_ != null) {
@@ -1788,12 +1706,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This review's author.
+     * This review's author.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.AuthorAttribution author_attribution = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.AuthorAttribution author_attribution = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.maps.places.v1.AuthorAttribution,
@@ -1822,12 +1738,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamp for the review.
+     * Timestamp for the review.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp publish_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.protobuf.Timestamp publish_time = 14;</code>
      *
      * @return Whether the publishTime field is set.
      */
@@ -1838,12 +1752,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamp for the review.
+     * Timestamp for the review.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp publish_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.protobuf.Timestamp publish_time = 14;</code>
      *
      * @return The publishTime.
      */
@@ -1860,12 +1772,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamp for the review.
+     * Timestamp for the review.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp publish_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.protobuf.Timestamp publish_time = 14;</code>
      */
     public Builder setPublishTime(com.google.protobuf.Timestamp value) {
       if (publishTimeBuilder_ == null) {
@@ -1884,12 +1794,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamp for the review.
+     * Timestamp for the review.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp publish_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.protobuf.Timestamp publish_time = 14;</code>
      */
     public Builder setPublishTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (publishTimeBuilder_ == null) {
@@ -1905,12 +1813,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamp for the review.
+     * Timestamp for the review.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp publish_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.protobuf.Timestamp publish_time = 14;</code>
      */
     public Builder mergePublishTime(com.google.protobuf.Timestamp value) {
       if (publishTimeBuilder_ == null) {
@@ -1932,12 +1838,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamp for the review.
+     * Timestamp for the review.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp publish_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.protobuf.Timestamp publish_time = 14;</code>
      */
     public Builder clearPublishTime() {
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -1953,12 +1857,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamp for the review.
+     * Timestamp for the review.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp publish_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.protobuf.Timestamp publish_time = 14;</code>
      */
     public com.google.protobuf.Timestamp.Builder getPublishTimeBuilder() {
       bitField0_ |= 0x00000040;
@@ -1969,12 +1871,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamp for the review.
+     * Timestamp for the review.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp publish_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.protobuf.Timestamp publish_time = 14;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getPublishTimeOrBuilder() {
       if (publishTimeBuilder_ != null) {
@@ -1989,12 +1889,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Timestamp for the review.
+     * Timestamp for the review.
      * </pre>
      *
-     * <code>
-     * .google.protobuf.Timestamp publish_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.protobuf.Timestamp publish_time = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,

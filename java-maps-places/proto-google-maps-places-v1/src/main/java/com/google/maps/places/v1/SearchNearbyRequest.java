@@ -1156,7 +1156,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * affect results based on applicable law.
    *
    * For more information, see
-   * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+   * https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html.
    *
    *
    * Note that 3-digit region codes are not currently supported.
@@ -1188,7 +1188,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * affect results based on applicable law.
    *
    * For more information, see
-   * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+   * https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html.
    *
    *
    * Note that 3-digit region codes are not currently supported.
@@ -1221,7 +1221,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Included Place type (eg, "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If there are any conflicting types, i.e. a type appears in both
    * included_types and excluded_types, an INVALID_ARGUMENT error is
@@ -1230,7 +1234,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1246,7 +1250,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Included Place type (eg, "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If there are any conflicting types, i.e. a type appears in both
    * included_types and excluded_types, an INVALID_ARGUMENT error is
@@ -1255,7 +1263,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1271,7 +1279,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Included Place type (eg, "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If there are any conflicting types, i.e. a type appears in both
    * included_types and excluded_types, an INVALID_ARGUMENT error is
@@ -1280,7 +1292,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1297,7 +1309,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Included Place type (eg, "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If there are any conflicting types, i.e. a type appears in both
    * included_types and excluded_types, an INVALID_ARGUMENT error is
@@ -1306,7 +1322,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1329,7 +1345,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Excluded Place type (eg, "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If the client provides both included_types (e.g. restaurant) and
    * excluded_types (e.g. cafe), then the response should include places that
@@ -1342,7 +1362,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1358,7 +1378,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Excluded Place type (eg, "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If the client provides both included_types (e.g. restaurant) and
    * excluded_types (e.g. cafe), then the response should include places that
@@ -1371,7 +1395,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1387,7 +1411,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Excluded Place type (eg, "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If the client provides both included_types (e.g. restaurant) and
    * excluded_types (e.g. cafe), then the response should include places that
@@ -1400,7 +1428,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1417,7 +1445,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Excluded Place type (eg, "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If the client provides both included_types (e.g. restaurant) and
    * excluded_types (e.g. cafe), then the response should include places that
@@ -1430,7 +1462,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1453,7 +1485,13 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Included primary Place type (e.g. "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   * A place can only have a single primary type from the supported types table
+   * associated with it.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If there are any conflicting primary types, i.e. a type appears in both
    * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -1462,7 +1500,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1478,7 +1516,13 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Included primary Place type (e.g. "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   * A place can only have a single primary type from the supported types table
+   * associated with it.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If there are any conflicting primary types, i.e. a type appears in both
    * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -1487,7 +1531,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1503,7 +1547,13 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Included primary Place type (e.g. "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   * A place can only have a single primary type from the supported types table
+   * associated with it.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If there are any conflicting primary types, i.e. a type appears in both
    * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -1512,7 +1562,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1529,7 +1579,13 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Included primary Place type (e.g. "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   * A place can only have a single primary type from the supported types table
+   * associated with it.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If there are any conflicting primary types, i.e. a type appears in both
    * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -1538,7 +1594,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1561,7 +1617,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Excluded primary Place type (e.g. "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If there are any conflicting primary types, i.e. a type appears in both
    * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -1570,7 +1630,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1586,7 +1646,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Excluded primary Place type (e.g. "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If there are any conflicting primary types, i.e. a type appears in both
    * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -1595,7 +1659,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1611,7 +1675,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Excluded primary Place type (e.g. "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If there are any conflicting primary types, i.e. a type appears in both
    * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -1620,7 +1688,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1637,7 +1705,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Excluded primary Place type (e.g. "restaurant" or "gas_station") from
-   * https://developers.google.com/places/supported_types.
+   * https://developers.google.com/maps/documentation/places/web-service/place-types.
+   *
+   * Up to 50 types from [Table
+   * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+   * may be specified.
    *
    * If there are any conflicting primary types, i.e. a type appears in both
    * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -1646,7 +1718,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    * If a Place type is specified with multiple type restrictions, only places
    * that satisfy all of the restrictions are returned. For example, if we
    * have {included_types = ["restaurant"], excluded_primary_types =
-   * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+   * ["restaurant"]}, the returned places provide "restaurant"
    * related services but do not operate primarily as "restaurants".
    * </pre>
    *
@@ -1665,7 +1737,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Maximum number of results to return. It must be between 1 and 20,
+   * Maximum number of results to return. It must be between 1 and 20 (default),
    * inclusively. If the number is unset, it falls back to the upper limit. If
    * the number is set to negative or exceeds the upper limit, an
    * INVALID_ARGUMENT error is returned.
@@ -2524,7 +2596,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * affect results based on applicable law.
      *
      * For more information, see
-     * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+     * https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html.
      *
      *
      * Note that 3-digit region codes are not currently supported.
@@ -2555,7 +2627,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * affect results based on applicable law.
      *
      * For more information, see
-     * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+     * https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html.
      *
      *
      * Note that 3-digit region codes are not currently supported.
@@ -2586,7 +2658,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * affect results based on applicable law.
      *
      * For more information, see
-     * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+     * https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html.
      *
      *
      * Note that 3-digit region codes are not currently supported.
@@ -2616,7 +2688,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * affect results based on applicable law.
      *
      * For more information, see
-     * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+     * https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html.
      *
      *
      * Note that 3-digit region codes are not currently supported.
@@ -2642,7 +2714,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * affect results based on applicable law.
      *
      * For more information, see
-     * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+     * https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html.
      *
      *
      * Note that 3-digit region codes are not currently supported.
@@ -2678,7 +2750,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting types, i.e. a type appears in both
      * included_types and excluded_types, an INVALID_ARGUMENT error is
@@ -2687,7 +2763,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -2704,7 +2780,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting types, i.e. a type appears in both
      * included_types and excluded_types, an INVALID_ARGUMENT error is
@@ -2713,7 +2793,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -2729,7 +2809,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting types, i.e. a type appears in both
      * included_types and excluded_types, an INVALID_ARGUMENT error is
@@ -2738,7 +2822,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -2755,7 +2839,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting types, i.e. a type appears in both
      * included_types and excluded_types, an INVALID_ARGUMENT error is
@@ -2764,7 +2852,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -2781,7 +2869,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting types, i.e. a type appears in both
      * included_types and excluded_types, an INVALID_ARGUMENT error is
@@ -2790,7 +2882,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -2815,7 +2907,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting types, i.e. a type appears in both
      * included_types and excluded_types, an INVALID_ARGUMENT error is
@@ -2824,7 +2920,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -2848,7 +2944,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting types, i.e. a type appears in both
      * included_types and excluded_types, an INVALID_ARGUMENT error is
@@ -2857,7 +2957,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -2878,7 +2978,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting types, i.e. a type appears in both
      * included_types and excluded_types, an INVALID_ARGUMENT error is
@@ -2887,7 +2991,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -2907,7 +3011,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting types, i.e. a type appears in both
      * included_types and excluded_types, an INVALID_ARGUMENT error is
@@ -2916,7 +3024,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -2951,7 +3059,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If the client provides both included_types (e.g. restaurant) and
      * excluded_types (e.g. cafe), then the response should include places that
@@ -2964,7 +3076,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -2981,7 +3093,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If the client provides both included_types (e.g. restaurant) and
      * excluded_types (e.g. cafe), then the response should include places that
@@ -2994,7 +3110,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3010,7 +3126,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If the client provides both included_types (e.g. restaurant) and
      * excluded_types (e.g. cafe), then the response should include places that
@@ -3023,7 +3143,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3040,7 +3160,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If the client provides both included_types (e.g. restaurant) and
      * excluded_types (e.g. cafe), then the response should include places that
@@ -3053,7 +3177,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3070,7 +3194,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If the client provides both included_types (e.g. restaurant) and
      * excluded_types (e.g. cafe), then the response should include places that
@@ -3083,7 +3211,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3108,7 +3236,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If the client provides both included_types (e.g. restaurant) and
      * excluded_types (e.g. cafe), then the response should include places that
@@ -3121,7 +3253,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3145,7 +3277,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If the client provides both included_types (e.g. restaurant) and
      * excluded_types (e.g. cafe), then the response should include places that
@@ -3158,7 +3294,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3179,7 +3315,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If the client provides both included_types (e.g. restaurant) and
      * excluded_types (e.g. cafe), then the response should include places that
@@ -3192,7 +3332,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3212,7 +3352,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded Place type (eg, "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If the client provides both included_types (e.g. restaurant) and
      * excluded_types (e.g. cafe), then the response should include places that
@@ -3225,7 +3369,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3260,7 +3404,13 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     * A place can only have a single primary type from the supported types table
+     * associated with it.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3269,7 +3419,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3286,7 +3436,13 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     * A place can only have a single primary type from the supported types table
+     * associated with it.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3295,7 +3451,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3311,7 +3467,13 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     * A place can only have a single primary type from the supported types table
+     * associated with it.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3320,7 +3482,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3337,7 +3499,13 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     * A place can only have a single primary type from the supported types table
+     * associated with it.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3346,7 +3514,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3363,7 +3531,13 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     * A place can only have a single primary type from the supported types table
+     * associated with it.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3372,7 +3546,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3397,7 +3571,13 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     * A place can only have a single primary type from the supported types table
+     * associated with it.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3406,7 +3586,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3430,7 +3610,13 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     * A place can only have a single primary type from the supported types table
+     * associated with it.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3439,7 +3625,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3460,7 +3646,13 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     * A place can only have a single primary type from the supported types table
+     * associated with it.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3469,7 +3661,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3489,7 +3681,13 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Included primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     * A place can only have a single primary type from the supported types table
+     * associated with it.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3498,7 +3696,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3533,7 +3731,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3542,7 +3744,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3559,7 +3761,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3568,7 +3774,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3584,7 +3790,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3593,7 +3803,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3610,7 +3820,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3619,7 +3833,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3636,7 +3850,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3645,7 +3863,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3670,7 +3888,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3679,7 +3901,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3703,7 +3925,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3712,7 +3938,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3733,7 +3959,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3742,7 +3972,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3762,7 +3992,11 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Excluded primary Place type (e.g. "restaurant" or "gas_station") from
-     * https://developers.google.com/places/supported_types.
+     * https://developers.google.com/maps/documentation/places/web-service/place-types.
+     *
+     * Up to 50 types from [Table
+     * A](https://developers.google.com/maps/documentation/places/web-service/place-types#table-a)
+     * may be specified.
      *
      * If there are any conflicting primary types, i.e. a type appears in both
      * included_primary_types and excluded_primary_types, an INVALID_ARGUMENT
@@ -3771,7 +4005,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * If a Place type is specified with multiple type restrictions, only places
      * that satisfy all of the restrictions are returned. For example, if we
      * have {included_types = ["restaurant"], excluded_primary_types =
-     * ["restaurant"]}, the returned places are POIs that provide "restaurant"
+     * ["restaurant"]}, the returned places provide "restaurant"
      * related services but do not operate primarily as "restaurants".
      * </pre>
      *
@@ -3797,7 +4031,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maximum number of results to return. It must be between 1 and 20,
+     * Maximum number of results to return. It must be between 1 and 20 (default),
      * inclusively. If the number is unset, it falls back to the upper limit. If
      * the number is set to negative or exceeds the upper limit, an
      * INVALID_ARGUMENT error is returned.
@@ -3815,7 +4049,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maximum number of results to return. It must be between 1 and 20,
+     * Maximum number of results to return. It must be between 1 and 20 (default),
      * inclusively. If the number is unset, it falls back to the upper limit. If
      * the number is set to negative or exceeds the upper limit, an
      * INVALID_ARGUMENT error is returned.
@@ -3837,7 +4071,7 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maximum number of results to return. It must be between 1 and 20,
+     * Maximum number of results to return. It must be between 1 and 20 (default),
      * inclusively. If the number is unset, it falls back to the upper limit. If
      * the number is set to negative or exceeds the upper limit, an
      * INVALID_ARGUMENT error is returned.

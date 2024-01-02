@@ -27,7 +27,7 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service definition for the Places API. Note: every request actually requires
- * a field mask set outside of the request proto (all/'&#42;' is not assumed). That can be set via
+ * a field mask set outside of the request proto (all/'&#42;', is not assumed). That can be set via
  * either a side channel (SystemParameterContext) over RPC, or a header (X-Goog-FieldMask) over
  * HTTP. See: https://cloud.google.com/apis/docs/system-parameters
  *
@@ -335,8 +335,11 @@ public class PlacesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of a photo. It is returned in Place's photos.name
-   *     field. Format: places/&lt;place_id&gt;/photos/&lt;photo_reference&gt;/media.
+   * @param name Required. The resource name of a photo media in the format:
+   *     `places/{place_id}/photos/{photo_reference}/media`.
+   *     <p>The resource name of a photo as returned in a Place object's `photos.name` field comes
+   *     with the format `places/{place_id}/photos/{photo_reference}`. You need to append `/media`
+   *     at the end of the photo resource to get the photo media resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PhotoMedia getPhotoMedia(PhotoMediaName name) {
@@ -363,8 +366,11 @@ public class PlacesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of a photo. It is returned in Place's photos.name
-   *     field. Format: places/&lt;place_id&gt;/photos/&lt;photo_reference&gt;/media.
+   * @param name Required. The resource name of a photo media in the format:
+   *     `places/{place_id}/photos/{photo_reference}/media`.
+   *     <p>The resource name of a photo as returned in a Place object's `photos.name` field comes
+   *     with the format `places/{place_id}/photos/{photo_reference}`. You need to append `/media`
+   *     at the end of the photo resource to get the photo media resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PhotoMedia getPhotoMedia(String name) {
@@ -435,7 +441,7 @@ public class PlacesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a Place with a place id (in a name) string.
+   * Get place details with a place id (in a name) string.
    *
    * <p>Sample code:
    *
@@ -451,8 +457,8 @@ public class PlacesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. A place_id returned in a Place (with "places/" prefix), or equivalently
-   *     the name in the same Place. Format: places/&lt;place_id&gt;.
+   * @param name Required. A place ID returned in a Place (with "places/" prefix), or equivalently
+   *     the name in the same Place. Format: `places/{place_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Place getPlace(PlaceName name) {
@@ -463,7 +469,7 @@ public class PlacesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a Place with a place id (in a name) string.
+   * Get place details with a place id (in a name) string.
    *
    * <p>Sample code:
    *
@@ -479,8 +485,8 @@ public class PlacesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. A place_id returned in a Place (with "places/" prefix), or equivalently
-   *     the name in the same Place. Format: places/&lt;place_id&gt;.
+   * @param name Required. A place ID returned in a Place (with "places/" prefix), or equivalently
+   *     the name in the same Place. Format: `places/{place_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Place getPlace(String name) {
@@ -490,7 +496,7 @@ public class PlacesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a Place with a place id (in a name) string.
+   * Get place details with a place id (in a name) string.
    *
    * <p>Sample code:
    *
@@ -520,7 +526,7 @@ public class PlacesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a Place with a place id (in a name) string.
+   * Get place details with a place id (in a name) string.
    *
    * <p>Sample code:
    *

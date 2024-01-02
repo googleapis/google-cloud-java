@@ -27,12 +27,12 @@ public interface PhotoOrBuilder
    *
    *
    * <pre>
-   * Output only. A reference representing this place photo which may be used to
-   * look up this place photo again (a.k.a. the API "resource" name:
-   * places/{place_id}/photos/{photo}).
+   * Identifier. A reference representing this place photo which may be used to
+   * look up this place photo again (also called the API "resource" name:
+   * `places/{place_id}/photos/{photo}`).
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -41,12 +41,12 @@ public interface PhotoOrBuilder
    *
    *
    * <pre>
-   * Output only. A reference representing this place photo which may be used to
-   * look up this place photo again (a.k.a. the API "resource" name:
-   * places/{place_id}/photos/{photo}).
+   * Identifier. A reference representing this place photo which may be used to
+   * look up this place photo again (also called the API "resource" name:
+   * `places/{place_id}/photos/{photo}`).
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -56,10 +56,10 @@ public interface PhotoOrBuilder
    *
    *
    * <pre>
-   * Output only. The maximum available width, in pixels.
+   * The maximum available width, in pixels.
    * </pre>
    *
-   * <code>int32 width_px = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int32 width_px = 2;</code>
    *
    * @return The widthPx.
    */
@@ -69,10 +69,10 @@ public interface PhotoOrBuilder
    *
    *
    * <pre>
-   * Output only. The maximum available height, in pixels.
+   * The maximum available height, in pixels.
    * </pre>
    *
-   * <code>int32 height_px = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int32 height_px = 3;</code>
    *
    * @return The heightPx.
    */
@@ -82,48 +82,40 @@ public interface PhotoOrBuilder
    *
    *
    * <pre>
-   * Output only. This photo's authors.
+   * This photo's authors.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
    */
   java.util.List<com.google.maps.places.v1.AuthorAttribution> getAuthorAttributionsList();
   /**
    *
    *
    * <pre>
-   * Output only. This photo's authors.
+   * This photo's authors.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
    */
   com.google.maps.places.v1.AuthorAttribution getAuthorAttributions(int index);
   /**
    *
    *
    * <pre>
-   * Output only. This photo's authors.
+   * This photo's authors.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
    */
   int getAuthorAttributionsCount();
   /**
    *
    *
    * <pre>
-   * Output only. This photo's authors.
+   * This photo's authors.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
    */
   java.util.List<? extends com.google.maps.places.v1.AuthorAttributionOrBuilder>
       getAuthorAttributionsOrBuilderList();
@@ -131,12 +123,10 @@ public interface PhotoOrBuilder
    *
    *
    * <pre>
-   * Output only. This photo's authors.
+   * This photo's authors.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
    */
   com.google.maps.places.v1.AuthorAttributionOrBuilder getAuthorAttributionsOrBuilder(int index);
 }
