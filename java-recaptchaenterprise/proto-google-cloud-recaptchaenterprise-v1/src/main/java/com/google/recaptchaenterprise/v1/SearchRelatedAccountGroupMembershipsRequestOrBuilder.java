@@ -60,15 +60,53 @@ public interface SearchRelatedAccountGroupMembershipsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The unique stable hashed user identifier used to search
-   * connections. The identifier should correspond to a `hashed_account_id`
-   * provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
+   * Optional. The unique stable account identifier used to search connections.
+   * The identifier should correspond to an `account_id` provided in a previous
+   * `CreateAssessment` or `AnnotateAssessment` call. Either hashed_account_id
+   * or account_id must be set, but not both.
    * </pre>
    *
-   * <code>bytes hashed_account_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string account_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @return The accountId.
+   */
+  java.lang.String getAccountId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The unique stable account identifier used to search connections.
+   * The identifier should correspond to an `account_id` provided in a previous
+   * `CreateAssessment` or `AnnotateAssessment` call. Either hashed_account_id
+   * or account_id must be set, but not both.
+   * </pre>
+   *
+   * <code>string account_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for accountId.
+   */
+  com.google.protobuf.ByteString getAccountIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deprecated: use `account_id` instead.
+   * The unique stable hashed account identifier used to search connections. The
+   * identifier should correspond to a `hashed_account_id` provided in a
+   * previous `CreateAssessment` or `AnnotateAssessment` call. Either
+   * hashed_account_id or account_id must be set, but not both.
+   * </pre>
+   *
+   * <code>bytes hashed_account_id = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @deprecated
+   *     google.cloud.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest.hashed_account_id
+   *     is deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=1781
    * @return The hashedAccountId.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getHashedAccountId();
 
   /**

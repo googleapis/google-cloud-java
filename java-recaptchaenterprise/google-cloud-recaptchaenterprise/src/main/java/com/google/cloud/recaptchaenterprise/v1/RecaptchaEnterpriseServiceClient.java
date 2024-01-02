@@ -2437,9 +2437,10 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param project Required. The name of the project to search related account group memberships
    *     from. Specify the project name in the following format: `projects/{project}`.
-   * @param hashedAccountId Optional. The unique stable hashed user identifier used to search
-   *     connections. The identifier should correspond to a `hashed_account_id` provided in a
-   *     previous `CreateAssessment` or `AnnotateAssessment` call.
+   * @param hashedAccountId Optional. Deprecated: use `account_id` instead. The unique stable hashed
+   *     account identifier used to search connections. The identifier should correspond to a
+   *     `hashed_account_id` provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
+   *     Either hashed_account_id or account_id must be set, but not both.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchRelatedAccountGroupMembershipsPagedResponse
@@ -2480,9 +2481,10 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param project Required. The name of the project to search related account group memberships
    *     from. Specify the project name in the following format: `projects/{project}`.
-   * @param hashedAccountId Optional. The unique stable hashed user identifier used to search
-   *     connections. The identifier should correspond to a `hashed_account_id` provided in a
-   *     previous `CreateAssessment` or `AnnotateAssessment` call.
+   * @param hashedAccountId Optional. Deprecated: use `account_id` instead. The unique stable hashed
+   *     account identifier used to search connections. The identifier should correspond to a
+   *     `hashed_account_id` provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
+   *     Either hashed_account_id or account_id must be set, but not both.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchRelatedAccountGroupMembershipsPagedResponse
@@ -2513,6 +2515,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
    *           .setProject(
    *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2552,6 +2555,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
    *           .setProject(
    *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2592,6 +2596,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
    *           .setProject(
    *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")

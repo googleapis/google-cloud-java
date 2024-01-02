@@ -27,11 +27,13 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for the Assessment in the format
+   * Output only. Identifier. The resource name for the Assessment in the format
    * `projects/{project}/assessments/{assessment}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -40,11 +42,13 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for the Assessment in the format
+   * Output only. Identifier. The resource name for the Assessment in the format
    * `projects/{project}/assessments/{assessment}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
