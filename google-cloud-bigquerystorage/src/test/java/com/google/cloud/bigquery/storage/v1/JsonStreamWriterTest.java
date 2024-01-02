@@ -641,6 +641,14 @@ public class JsonStreamWriterTest {
             .build()) {
       assertEquals("projects/p/datasets/d/tables/t/_default", writer.getStreamName());
       assertEquals("aa", writer.getLocation());
+
+      JsonStreamWriter recreate =
+          JsonStreamWriter.newBuilder(writer.getStreamName(), tableSchema)
+              .setChannelProvider(channelProvider)
+              .setCredentialsProvider(NoCredentialsProvider.create())
+              .setExecutorProvider(InstantiatingExecutorProvider.newBuilder().build())
+              .setEnableConnectionPool(true)
+              .build();
     }
   }
 
