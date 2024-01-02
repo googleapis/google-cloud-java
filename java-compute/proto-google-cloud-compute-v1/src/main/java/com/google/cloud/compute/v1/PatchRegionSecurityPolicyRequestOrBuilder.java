@@ -183,4 +183,41 @@ public interface PatchRegionSecurityPolicyRequestOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.SecurityPolicyOrBuilder getSecurityPolicyResourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates fields to be cleared as part of this request.
+   * </pre>
+   *
+   * <code>optional string update_mask = 500079778;</code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates fields to be cleared as part of this request.
+   * </pre>
+   *
+   * <code>optional string update_mask = 500079778;</code>
+   *
+   * @return The updateMask.
+   */
+  java.lang.String getUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates fields to be cleared as part of this request.
+   * </pre>
+   *
+   * <code>optional string update_mask = 500079778;</code>
+   *
+   * @return The bytes for updateMask.
+   */
+  com.google.protobuf.ByteString getUpdateMaskBytes();
 }

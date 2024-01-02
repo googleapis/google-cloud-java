@@ -115,6 +115,11 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
     return ((BackendBucketsStubSettings) getStubSettings()).getSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyBackendBucketRequest, Policy> getIamPolicySettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertBackendBucketRequest, Operation> insertSettings() {
     return ((BackendBucketsStubSettings) getStubSettings()).insertSettings();
@@ -154,6 +159,17 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
       setEdgeSecurityPolicyOperationSettings() {
     return ((BackendBucketsStubSettings) getStubSettings())
         .setEdgeSecurityPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyBackendBucketRequest, Policy> setIamPolicySettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   /** Returns the object with the settings used for calls to update. */
@@ -306,6 +322,12 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
       return getStubSettingsBuilder().getSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyBackendBucketRequest, Policy>
+        getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertBackendBucketRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
@@ -346,6 +368,19 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
             SetEdgeSecurityPolicyBackendBucketRequest, Operation, Operation>
         setEdgeSecurityPolicyOperationSettings() {
       return getStubSettingsBuilder().setEdgeSecurityPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyBackendBucketRequest, Policy>
+        setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsBackendBucketRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to update. */

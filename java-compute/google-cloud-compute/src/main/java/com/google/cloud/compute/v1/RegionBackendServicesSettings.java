@@ -17,6 +17,7 @@
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.RegionBackendServicesClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.RegionBackendServicesClient.ListUsablePagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -120,6 +121,13 @@ public class RegionBackendServicesSettings extends ClientSettings<RegionBackendS
     return ((RegionBackendServicesStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to listUsable. */
+  public PagedCallSettings<
+          ListUsableRegionBackendServicesRequest, BackendServiceListUsable, ListUsablePagedResponse>
+      listUsableSettings() {
+    return ((RegionBackendServicesStubSettings) getStubSettings()).listUsableSettings();
+  }
+
   /** Returns the object with the settings used for calls to patch. */
   public UnaryCallSettings<PatchRegionBackendServiceRequest, Operation> patchSettings() {
     return ((RegionBackendServicesStubSettings) getStubSettings()).patchSettings();
@@ -134,6 +142,25 @@ public class RegionBackendServicesSettings extends ClientSettings<RegionBackendS
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyRegionBackendServiceRequest, Policy> setIamPolicySettings() {
     return ((RegionBackendServicesStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public UnaryCallSettings<SetSecurityPolicyRegionBackendServiceRequest, Operation>
+      setSecurityPolicySettings() {
+    return ((RegionBackendServicesStubSettings) getStubSettings()).setSecurityPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public OperationCallSettings<SetSecurityPolicyRegionBackendServiceRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings() {
+    return ((RegionBackendServicesStubSettings) getStubSettings())
+        .setSecurityPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRegionBackendServiceRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((RegionBackendServicesStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   /** Returns the object with the settings used for calls to update. */
@@ -295,6 +322,15 @@ public class RegionBackendServicesSettings extends ClientSettings<RegionBackendS
       return getStubSettingsBuilder().listSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listUsable. */
+    public PagedCallSettings.Builder<
+            ListUsableRegionBackendServicesRequest,
+            BackendServiceListUsable,
+            ListUsablePagedResponse>
+        listUsableSettings() {
+      return getStubSettingsBuilder().listUsableSettings();
+    }
+
     /** Returns the builder for the settings used for calls to patch. */
     public UnaryCallSettings.Builder<PatchRegionBackendServiceRequest, Operation> patchSettings() {
       return getStubSettingsBuilder().patchSettings();
@@ -310,6 +346,26 @@ public class RegionBackendServicesSettings extends ClientSettings<RegionBackendS
     public UnaryCallSettings.Builder<SetIamPolicyRegionBackendServiceRequest, Policy>
         setIamPolicySettings() {
       return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetSecurityPolicyRegionBackendServiceRequest, Operation>
+        setSecurityPolicySettings() {
+      return getStubSettingsBuilder().setSecurityPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public OperationCallSettings.Builder<
+            SetSecurityPolicyRegionBackendServiceRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings() {
+      return getStubSettingsBuilder().setSecurityPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsRegionBackendServiceRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to update. */

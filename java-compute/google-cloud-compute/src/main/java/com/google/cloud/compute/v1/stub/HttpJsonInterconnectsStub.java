@@ -36,10 +36,12 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteInterconnectRequest;
 import com.google.cloud.compute.v1.GetDiagnosticsInterconnectRequest;
 import com.google.cloud.compute.v1.GetInterconnectRequest;
+import com.google.cloud.compute.v1.GetMacsecConfigInterconnectRequest;
 import com.google.cloud.compute.v1.InsertInterconnectRequest;
 import com.google.cloud.compute.v1.Interconnect;
 import com.google.cloud.compute.v1.InterconnectList;
 import com.google.cloud.compute.v1.InterconnectsGetDiagnosticsResponse;
+import com.google.cloud.compute.v1.InterconnectsGetMacsecConfigResponse;
 import com.google.cloud.compute.v1.ListInterconnectsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
@@ -184,6 +186,44 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<InterconnectsGetDiagnosticsResponse>newBuilder()
                       .setDefaultInstance(InterconnectsGetDiagnosticsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+      getMacsecConfigMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+                  newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Interconnects/GetMacsecConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetMacsecConfigInterconnectRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/interconnects/{interconnect}/getMacsecConfig",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetMacsecConfigInterconnectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "interconnect", request.getInterconnect());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetMacsecConfigInterconnectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<InterconnectsGetMacsecConfigResponse>newBuilder()
+                      .setDefaultInstance(InterconnectsGetMacsecConfigResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -409,6 +449,9 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
   private final UnaryCallable<
           GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>
       getDiagnosticsCallable;
+  private final UnaryCallable<
+          GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+      getMacsecConfigCallable;
   private final UnaryCallable<InsertInterconnectRequest, Operation> insertCallable;
   private final OperationCallable<InsertInterconnectRequest, Operation, Operation>
       insertOperationCallable;
@@ -505,6 +548,21 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+        getMacsecConfigTransportSettings =
+            HttpJsonCallSettings
+                .<GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+                    newBuilder()
+                .setMethodDescriptor(getMacsecConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("interconnect", String.valueOf(request.getInterconnect()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<InsertInterconnectRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertInterconnectRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
@@ -567,6 +625,9 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
     this.getDiagnosticsCallable =
         callableFactory.createUnaryCallable(
             getDiagnosticsTransportSettings, settings.getDiagnosticsSettings(), clientContext);
+    this.getMacsecConfigCallable =
+        callableFactory.createUnaryCallable(
+            getMacsecConfigTransportSettings, settings.getMacsecConfigSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
@@ -611,6 +672,7 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(getDiagnosticsMethodDescriptor);
+    methodDescriptors.add(getMacsecConfigMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
@@ -638,6 +700,12 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
   public UnaryCallable<GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>
       getDiagnosticsCallable() {
     return getDiagnosticsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+      getMacsecConfigCallable() {
+    return getMacsecConfigCallable;
   }
 
   @Override

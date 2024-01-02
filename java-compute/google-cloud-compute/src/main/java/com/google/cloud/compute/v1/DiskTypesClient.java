@@ -210,6 +210,7 @@ public class DiskTypesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, DiskTypesScopedList> element :
    *       diskTypesClient.aggregatedList(request).iterateAll()) {
@@ -247,6 +248,7 @@ public class DiskTypesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, DiskTypesScopedList>> future =
    *       diskTypesClient.aggregatedListPagedCallable().futureCall(request);
@@ -284,6 +286,7 @@ public class DiskTypesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     DiskTypeAggregatedList response = diskTypesClient.aggregatedListCallable().call(request);

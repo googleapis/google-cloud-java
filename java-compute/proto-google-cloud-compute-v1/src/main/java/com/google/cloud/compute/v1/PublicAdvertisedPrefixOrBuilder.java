@@ -27,6 +27,46 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The version of BYOIP API.
+   * Check the ByoipApiVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string byoip_api_version = 162683283;</code>
+   *
+   * @return Whether the byoipApiVersion field is set.
+   */
+  boolean hasByoipApiVersion();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The version of BYOIP API.
+   * Check the ByoipApiVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string byoip_api_version = 162683283;</code>
+   *
+   * @return The byoipApiVersion.
+   */
+  java.lang.String getByoipApiVersion();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The version of BYOIP API.
+   * Check the ByoipApiVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string byoip_api_version = 162683283;</code>
+   *
+   * @return The bytes for byoipApiVersion.
+   */
+  com.google.protobuf.ByteString getByoipApiVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
@@ -306,6 +346,46 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+   * Check the PdpScope enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string pdp_scope = 524264785;</code>
+   *
+   * @return Whether the pdpScope field is set.
+   */
+  boolean hasPdpScope();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+   * Check the PdpScope enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string pdp_scope = 524264785;</code>
+   *
+   * @return The pdpScope.
+   */
+  java.lang.String getPdpScope();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+   * Check the PdpScope enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string pdp_scope = 524264785;</code>
+   *
+   * @return The bytes for pdpScope.
+   */
+  com.google.protobuf.ByteString getPdpScopeBytes();
 
   /**
    *

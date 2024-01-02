@@ -402,7 +402,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone.
    * </pre>
    *
    * <code>repeated string replica_zones = 48438272;</code>
@@ -414,7 +414,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone.
    * </pre>
    *
    * <code>repeated string replica_zones = 48438272;</code>
@@ -426,7 +426,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone.
    * </pre>
    *
    * <code>repeated string replica_zones = 48438272;</code>
@@ -439,7 +439,7 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
-   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone.
    * </pre>
    *
    * <code>repeated string replica_zones = 48438272;</code>

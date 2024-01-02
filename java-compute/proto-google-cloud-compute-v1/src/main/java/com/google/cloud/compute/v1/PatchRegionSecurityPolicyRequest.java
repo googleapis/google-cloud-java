@@ -43,6 +43,7 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
     region_ = "";
     requestId_ = "";
     securityPolicy_ = "";
+    updateMask_ = "";
   }
 
   @java.lang.Override
@@ -350,6 +351,72 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
         : securityPolicyResource_;
   }
 
+  public static final int UPDATE_MASK_FIELD_NUMBER = 500079778;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object updateMask_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Indicates fields to be cleared as part of this request.
+   * </pre>
+   *
+   * <code>optional string update_mask = 500079778;</code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates fields to be cleared as part of this request.
+   * </pre>
+   *
+   * <code>optional string update_mask = 500079778;</code>
+   *
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public java.lang.String getUpdateMask() {
+    java.lang.Object ref = updateMask_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      updateMask_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates fields to be cleared as part of this request.
+   * </pre>
+   *
+   * <code>optional string update_mask = 500079778;</code>
+   *
+   * @return The bytes for updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUpdateMaskBytes() {
+    java.lang.Object ref = updateMask_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      updateMask_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -379,6 +446,9 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 500079778, updateMask_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -404,6 +474,9 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(500079778, updateMask_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -432,6 +505,10 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
     if (hasSecurityPolicyResource()) {
       if (!getSecurityPolicyResource().equals(other.getSecurityPolicyResource())) return false;
     }
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -456,6 +533,10 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
     if (hasSecurityPolicyResource()) {
       hash = (37 * hash) + SECURITY_POLICY_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getSecurityPolicyResource().hashCode();
+    }
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -606,6 +687,7 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
         securityPolicyResourceBuilder_.dispose();
         securityPolicyResourceBuilder_ = null;
       }
+      updateMask_ = "";
       return this;
     }
 
@@ -663,6 +745,10 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
             securityPolicyResourceBuilder_ == null
                 ? securityPolicyResource_
                 : securityPolicyResourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.updateMask_ = updateMask_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -737,6 +823,11 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
       if (other.hasSecurityPolicyResource()) {
         mergeSecurityPolicyResource(other.getSecurityPolicyResource());
       }
+      if (other.hasUpdateMask()) {
+        updateMask_ = other.updateMask_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -794,6 +885,12 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
                 bitField0_ |= 0x00000001;
                 break;
               } // case 1820481738
+            case -294329070:
+              {
+                updateMask_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case -294329070
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1473,6 +1570,126 @@ public final class PatchRegionSecurityPolicyRequest extends com.google.protobuf.
         securityPolicyResource_ = null;
       }
       return securityPolicyResourceBuilder_;
+    }
+
+    private java.lang.Object updateMask_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Indicates fields to be cleared as part of this request.
+     * </pre>
+     *
+     * <code>optional string update_mask = 500079778;</code>
+     *
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates fields to be cleared as part of this request.
+     * </pre>
+     *
+     * <code>optional string update_mask = 500079778;</code>
+     *
+     * @return The updateMask.
+     */
+    public java.lang.String getUpdateMask() {
+      java.lang.Object ref = updateMask_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updateMask_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates fields to be cleared as part of this request.
+     * </pre>
+     *
+     * <code>optional string update_mask = 500079778;</code>
+     *
+     * @return The bytes for updateMask.
+     */
+    public com.google.protobuf.ByteString getUpdateMaskBytes() {
+      java.lang.Object ref = updateMask_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        updateMask_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates fields to be cleared as part of this request.
+     * </pre>
+     *
+     * <code>optional string update_mask = 500079778;</code>
+     *
+     * @param value The updateMask to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdateMask(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      updateMask_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates fields to be cleared as part of this request.
+     * </pre>
+     *
+     * <code>optional string update_mask = 500079778;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUpdateMask() {
+      updateMask_ = getDefaultInstance().getUpdateMask();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates fields to be cleared as part of this request.
+     * </pre>
+     *
+     * <code>optional string update_mask = 500079778;</code>
+     *
+     * @param value The bytes for updateMask to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdateMaskBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      updateMask_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

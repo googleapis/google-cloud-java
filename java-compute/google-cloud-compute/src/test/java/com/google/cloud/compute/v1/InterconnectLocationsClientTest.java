@@ -82,6 +82,8 @@ public class InterconnectLocationsClientTest {
         InterconnectLocation.newBuilder()
             .setAddress("address-1147692044")
             .setAvailabilityZone("availabilityZone-1674934361")
+            .addAllAvailableFeatures(new ArrayList<String>())
+            .addAllAvailableLinkTypes(new ArrayList<String>())
             .setCity("city3053931")
             .setContinent("continent-403427916")
             .setCreationTimestamp("creationTimestamp-370203401")

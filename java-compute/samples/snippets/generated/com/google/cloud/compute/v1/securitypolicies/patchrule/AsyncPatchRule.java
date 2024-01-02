@@ -42,6 +42,7 @@ public class AsyncPatchRule {
               .setProject("project-309310695")
               .setSecurityPolicy("securityPolicy-788621166")
               .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+              .setUpdateMask("updateMask-296147115")
               .setValidateOnly(true)
               .build();
       ApiFuture<Operation> future = securityPoliciesClient.patchRuleCallable().futureCall(request);

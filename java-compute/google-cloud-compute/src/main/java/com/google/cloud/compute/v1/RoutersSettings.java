@@ -99,6 +99,11 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
     return ((RoutersStubSettings) getStubSettings()).getSettings();
   }
 
+  /** Returns the object with the settings used for calls to getNatIpInfo. */
+  public UnaryCallSettings<GetNatIpInfoRouterRequest, NatIpInfoResponse> getNatIpInfoSettings() {
+    return ((RoutersStubSettings) getStubSettings()).getNatIpInfoSettings();
+  }
+
   /** Returns the object with the settings used for calls to getNatMappingInfo. */
   public PagedCallSettings<
           GetNatMappingInfoRoutersRequest,
@@ -274,6 +279,12 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetRouterRequest, Router> getSettings() {
       return getStubSettingsBuilder().getSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNatIpInfo. */
+    public UnaryCallSettings.Builder<GetNatIpInfoRouterRequest, NatIpInfoResponse>
+        getNatIpInfoSettings() {
+      return getStubSettingsBuilder().getNatIpInfoSettings();
     }
 
     /** Returns the builder for the settings used for calls to getNatMappingInfo. */

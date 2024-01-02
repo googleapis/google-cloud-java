@@ -220,6 +220,7 @@ public class NetworkAttachmentsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, NetworkAttachmentsScopedList> element :
    *       networkAttachmentsClient.aggregatedList(request).iterateAll()) {
@@ -259,6 +260,7 @@ public class NetworkAttachmentsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, NetworkAttachmentsScopedList>> future =
    *       networkAttachmentsClient.aggregatedListPagedCallable().futureCall(request);
@@ -297,6 +299,7 @@ public class NetworkAttachmentsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     NetworkAttachmentAggregatedList response =
@@ -929,6 +932,154 @@ public class NetworkAttachmentsClient implements BackgroundResource {
    */
   public final UnaryCallable<ListNetworkAttachmentsRequest, NetworkAttachmentList> listCallable() {
     return stub.listCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches the specified NetworkAttachment resource with the data included in the request. This
+   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkAttachmentsClient networkAttachmentsClient = NetworkAttachmentsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String networkAttachment = "networkAttachment1918512625";
+   *   NetworkAttachment networkAttachmentResource = NetworkAttachment.newBuilder().build();
+   *   Operation response =
+   *       networkAttachmentsClient
+   *           .patchAsync(project, region, networkAttachment, networkAttachmentResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param networkAttachment Name of the NetworkAttachment resource to patch.
+   * @param networkAttachmentResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> patchAsync(
+      String project,
+      String region,
+      String networkAttachment,
+      NetworkAttachment networkAttachmentResource) {
+    PatchNetworkAttachmentRequest request =
+        PatchNetworkAttachmentRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setNetworkAttachment(networkAttachment)
+            .setNetworkAttachmentResource(networkAttachmentResource)
+            .build();
+    return patchAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches the specified NetworkAttachment resource with the data included in the request. This
+   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkAttachmentsClient networkAttachmentsClient = NetworkAttachmentsClient.create()) {
+   *   PatchNetworkAttachmentRequest request =
+   *       PatchNetworkAttachmentRequest.newBuilder()
+   *           .setNetworkAttachment("networkAttachment1918512625")
+   *           .setNetworkAttachmentResource(NetworkAttachment.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response = networkAttachmentsClient.patchAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchAsync(
+      PatchNetworkAttachmentRequest request) {
+    return patchOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches the specified NetworkAttachment resource with the data included in the request. This
+   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkAttachmentsClient networkAttachmentsClient = NetworkAttachmentsClient.create()) {
+   *   PatchNetworkAttachmentRequest request =
+   *       PatchNetworkAttachmentRequest.newBuilder()
+   *           .setNetworkAttachment("networkAttachment1918512625")
+   *           .setNetworkAttachmentResource(NetworkAttachment.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       networkAttachmentsClient.patchOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchNetworkAttachmentRequest, Operation, Operation>
+      patchOperationCallable() {
+    return stub.patchOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches the specified NetworkAttachment resource with the data included in the request. This
+   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkAttachmentsClient networkAttachmentsClient = NetworkAttachmentsClient.create()) {
+   *   PatchNetworkAttachmentRequest request =
+   *       PatchNetworkAttachmentRequest.newBuilder()
+   *           .setNetworkAttachment("networkAttachment1918512625")
+   *           .setNetworkAttachmentResource(NetworkAttachment.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = networkAttachmentsClient.patchCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PatchNetworkAttachmentRequest, Operation> patchCallable() {
+    return stub.patchCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
