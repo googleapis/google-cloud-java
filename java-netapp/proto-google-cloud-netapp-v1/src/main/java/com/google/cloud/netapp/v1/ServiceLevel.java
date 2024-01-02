@@ -28,11 +28,35 @@ package com.google.cloud.netapp.v1;
  * Protobuf enum {@code google.cloud.netapp.v1.ServiceLevel}
  */
 public enum ServiceLevel implements com.google.protobuf.ProtocolMessageEnum {
-  /** <code>SERVICE_LEVEL_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Unspecified service level.
+   * </pre>
+   *
+   * <code>SERVICE_LEVEL_UNSPECIFIED = 0;</code>
+   */
   SERVICE_LEVEL_UNSPECIFIED(0),
-  /** <code>PREMIUM = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Premium service level.
+   * </pre>
+   *
+   * <code>PREMIUM = 1;</code>
+   */
   PREMIUM(1),
-  /** <code>EXTREME = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Extreme service level.
+   * </pre>
+   *
+   * <code>EXTREME = 2;</code>
+   */
   EXTREME(2),
   /**
    *
@@ -47,11 +71,35 @@ public enum ServiceLevel implements com.google.protobuf.ProtocolMessageEnum {
   UNRECOGNIZED(-1),
   ;
 
-  /** <code>SERVICE_LEVEL_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Unspecified service level.
+   * </pre>
+   *
+   * <code>SERVICE_LEVEL_UNSPECIFIED = 0;</code>
+   */
   public static final int SERVICE_LEVEL_UNSPECIFIED_VALUE = 0;
-  /** <code>PREMIUM = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Premium service level.
+   * </pre>
+   *
+   * <code>PREMIUM = 1;</code>
+   */
   public static final int PREMIUM_VALUE = 1;
-  /** <code>EXTREME = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Extreme service level.
+   * </pre>
+   *
+   * <code>EXTREME = 2;</code>
+   */
   public static final int EXTREME_VALUE = 2;
   /**
    *

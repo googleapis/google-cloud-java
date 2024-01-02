@@ -70,6 +70,7 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SOURCE_SNAPSHOT(1),
+    SOURCE_BACKUP(2),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -90,6 +91,8 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
       switch (value) {
         case 1:
           return SOURCE_SNAPSHOT;
+        case 2:
+          return SOURCE_BACKUP;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -182,6 +185,82 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int SOURCE_BACKUP_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Full name of the backup resource.
+   * Format:
+   * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+   * </pre>
+   *
+   * <code>string source_backup = 2;</code>
+   *
+   * @return Whether the sourceBackup field is set.
+   */
+  public boolean hasSourceBackup() {
+    return sourceCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Full name of the backup resource.
+   * Format:
+   * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+   * </pre>
+   *
+   * <code>string source_backup = 2;</code>
+   *
+   * @return The sourceBackup.
+   */
+  public java.lang.String getSourceBackup() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 2) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sourceCase_ == 2) {
+        source_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Full name of the backup resource.
+   * Format:
+   * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+   * </pre>
+   *
+   * <code>string source_backup = 2;</code>
+   *
+   * @return The bytes for sourceBackup.
+   */
+  public com.google.protobuf.ByteString getSourceBackupBytes() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 2) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (sourceCase_ == 2) {
+        source_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -199,6 +278,9 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
     if (sourceCase_ == 1) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, source_);
     }
+    if (sourceCase_ == 2) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, source_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -210,6 +292,9 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
     size = 0;
     if (sourceCase_ == 1) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, source_);
+    }
+    if (sourceCase_ == 2) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, source_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -232,6 +317,9 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
       case 1:
         if (!getSourceSnapshot().equals(other.getSourceSnapshot())) return false;
         break;
+      case 2:
+        if (!getSourceBackup().equals(other.getSourceBackup())) return false;
+        break;
       case 0:
       default:
     }
@@ -250,6 +338,10 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
       case 1:
         hash = (37 * hash) + SOURCE_SNAPSHOT_FIELD_NUMBER;
         hash = (53 * hash) + getSourceSnapshot().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + SOURCE_BACKUP_FIELD_NUMBER;
+        hash = (53 * hash) + getSourceBackup().hashCode();
         break;
       case 0:
       default:
@@ -492,6 +584,13 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
             onChanged();
             break;
           }
+        case SOURCE_BACKUP:
+          {
+            sourceCase_ = 2;
+            source_ = other.source_;
+            onChanged();
+            break;
+          }
         case SOURCE_NOT_SET:
           {
             break;
@@ -530,6 +629,13 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
                 source_ = s;
                 break;
               } // case 10
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 2;
+                source_ = s;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -704,6 +810,152 @@ public final class RestoreParameters extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       sourceCase_ = 1;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Full name of the backup resource.
+     * Format:
+     * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+     * </pre>
+     *
+     * <code>string source_backup = 2;</code>
+     *
+     * @return Whether the sourceBackup field is set.
+     */
+    @java.lang.Override
+    public boolean hasSourceBackup() {
+      return sourceCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Full name of the backup resource.
+     * Format:
+     * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+     * </pre>
+     *
+     * <code>string source_backup = 2;</code>
+     *
+     * @return The sourceBackup.
+     */
+    @java.lang.Override
+    public java.lang.String getSourceBackup() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 2) {
+        ref = source_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 2) {
+          source_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Full name of the backup resource.
+     * Format:
+     * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+     * </pre>
+     *
+     * <code>string source_backup = 2;</code>
+     *
+     * @return The bytes for sourceBackup.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSourceBackupBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 2) {
+        ref = source_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (sourceCase_ == 2) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Full name of the backup resource.
+     * Format:
+     * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+     * </pre>
+     *
+     * <code>string source_backup = 2;</code>
+     *
+     * @param value The sourceBackup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceBackup(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceCase_ = 2;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Full name of the backup resource.
+     * Format:
+     * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+     * </pre>
+     *
+     * <code>string source_backup = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceBackup() {
+      if (sourceCase_ == 2) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Full name of the backup resource.
+     * Format:
+     * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+     * </pre>
+     *
+     * <code>string source_backup = 2;</code>
+     *
+     * @param value The bytes for sourceBackup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceBackupBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceCase_ = 2;
       source_ = value;
       onChanged();
       return this;
