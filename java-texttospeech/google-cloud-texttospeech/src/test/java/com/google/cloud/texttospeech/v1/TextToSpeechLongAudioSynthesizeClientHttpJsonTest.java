@@ -86,7 +86,7 @@ public class TextToSpeechLongAudioSynthesizeClientHttpJsonTest {
 
     SynthesizeLongAudioRequest request =
         SynthesizeLongAudioRequest.newBuilder()
-            .setParent("projects/project-5698/locations/location-5698/voices/voice-5698")
+            .setParent("projects/project-5833/locations/location-5833")
             .setInput(SynthesisInput.newBuilder().build())
             .setAudioConfig(AudioConfig.newBuilder().build())
             .setOutputGcsUri("outputGcsUri-489598154")
@@ -121,7 +121,7 @@ public class TextToSpeechLongAudioSynthesizeClientHttpJsonTest {
     try {
       SynthesizeLongAudioRequest request =
           SynthesizeLongAudioRequest.newBuilder()
-              .setParent("projects/project-5698/locations/location-5698/voices/voice-5698")
+              .setParent("projects/project-5833/locations/location-5833")
               .setInput(SynthesisInput.newBuilder().build())
               .setAudioConfig(AudioConfig.newBuilder().build())
               .setOutputGcsUri("outputGcsUri-489598154")

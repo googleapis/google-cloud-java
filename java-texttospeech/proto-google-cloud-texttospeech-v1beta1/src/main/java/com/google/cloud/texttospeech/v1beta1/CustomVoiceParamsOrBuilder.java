@@ -56,28 +56,34 @@ public interface CustomVoiceParamsOrBuilder
    *
    *
    * <pre>
-   * Optional. The usage of the synthesized audio to be reported.
+   * Optional. Deprecated. The usage of the synthesized audio to be reported.
    * </pre>
    *
    * <code>
-   * .google.cloud.texttospeech.v1beta1.CustomVoiceParams.ReportedUsage reported_usage = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.texttospeech.v1beta1.CustomVoiceParams.ReportedUsage reported_usage = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.texttospeech.v1beta1.CustomVoiceParams.reported_usage is deprecated.
+   *     See google/cloud/texttospeech/v1beta1/cloud_tts.proto;l=306
    * @return The enum numeric value on the wire for reportedUsage.
    */
+  @java.lang.Deprecated
   int getReportedUsageValue();
   /**
    *
    *
    * <pre>
-   * Optional. The usage of the synthesized audio to be reported.
+   * Optional. Deprecated. The usage of the synthesized audio to be reported.
    * </pre>
    *
    * <code>
-   * .google.cloud.texttospeech.v1beta1.CustomVoiceParams.ReportedUsage reported_usage = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.texttospeech.v1beta1.CustomVoiceParams.ReportedUsage reported_usage = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.texttospeech.v1beta1.CustomVoiceParams.reported_usage is deprecated.
+   *     See google/cloud/texttospeech/v1beta1/cloud_tts.proto;l=306
    * @return The reportedUsage.
    */
+  @java.lang.Deprecated
   com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.ReportedUsage getReportedUsage();
 }
