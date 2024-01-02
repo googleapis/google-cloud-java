@@ -166,6 +166,7 @@
     <module>java-tpu</module>
     <module>java-trace</module>
     <module>java-translate</module>
+    <module>java-vertexai</module>
     <module>java-video-intelligence</module>
     <module>java-video-live-stream</module>
     <module>java-video-stitcher</module>

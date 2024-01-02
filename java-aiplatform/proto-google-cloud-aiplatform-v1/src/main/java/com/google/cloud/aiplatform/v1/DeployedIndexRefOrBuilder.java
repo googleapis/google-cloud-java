@@ -76,4 +76,29 @@ public interface DeployedIndexRefOrBuilder
    * @return The bytes for deployedIndexId.
    */
   com.google.protobuf.ByteString getDeployedIndexIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The display name of the DeployedIndex.
+   * </pre>
+   *
+   * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The display name of the DeployedIndex.
+   * </pre>
+   *
+   * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
 }

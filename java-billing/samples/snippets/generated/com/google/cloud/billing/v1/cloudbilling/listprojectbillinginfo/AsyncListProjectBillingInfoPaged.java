@@ -39,7 +39,7 @@ public class AsyncListProjectBillingInfoPaged {
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
       ListProjectBillingInfoRequest request =
           ListProjectBillingInfoRequest.newBuilder()
-              .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+              .setName(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();

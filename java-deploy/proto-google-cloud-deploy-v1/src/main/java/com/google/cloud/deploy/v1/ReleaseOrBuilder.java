@@ -621,6 +621,74 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
+   * Output only. Snapshot of the custom target types referenced by the targets
+   * taken at release creation time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.deploy.v1.CustomTargetType> getCustomTargetTypeSnapshotsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Snapshot of the custom target types referenced by the targets
+   * taken at release creation time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.CustomTargetType getCustomTargetTypeSnapshots(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Snapshot of the custom target types referenced by the targets
+   * taken at release creation time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getCustomTargetTypeSnapshotsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Snapshot of the custom target types referenced by the targets
+   * taken at release creation time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.deploy.v1.CustomTargetTypeOrBuilder>
+      getCustomTargetTypeSnapshotsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Snapshot of the custom target types referenced by the targets
+   * taken at release creation time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.CustomTargetTypeOrBuilder getCustomTargetTypeSnapshotsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Current state of the render operation.
    * </pre>
    *

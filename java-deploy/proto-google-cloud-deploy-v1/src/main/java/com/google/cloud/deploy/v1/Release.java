@@ -48,6 +48,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     skaffoldConfigPath_ = "";
     buildArtifacts_ = java.util.Collections.emptyList();
     targetSnapshots_ = java.util.Collections.emptyList();
+    customTargetTypeSnapshots_ = java.util.Collections.emptyList();
     renderState_ = 0;
     etag_ = "";
     skaffoldVersion_ = "";
@@ -728,7 +729,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The render operation did not complete successfully because the
-       * verification stanza required for verify was not found on the skaffold
+       * verification stanza required for verify was not found on the Skaffold
        * configuration.
        * </pre>
        *
@@ -741,12 +742,33 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The render operation did not complete successfully because the custom
        * action required for predeploy or postdeploy was not found in the
-       * skaffold configuration. See failure_message for additional details.
+       * Skaffold configuration. See failure_message for additional details.
        * </pre>
        *
        * <code>CUSTOM_ACTION_NOT_FOUND = 5;</code>
        */
       CUSTOM_ACTION_NOT_FOUND(5),
+      /**
+       *
+       *
+       * <pre>
+       * Release failed during rendering because the release configuration is
+       * not supported with the specified deployment strategy.
+       * </pre>
+       *
+       * <code>DEPLOYMENT_STRATEGY_NOT_SUPPORTED = 6;</code>
+       */
+      DEPLOYMENT_STRATEGY_NOT_SUPPORTED(6),
+      /**
+       *
+       *
+       * <pre>
+       * The render operation had a feature configured that is not supported.
+       * </pre>
+       *
+       * <code>RENDER_FEATURE_NOT_SUPPORTED = 7;</code>
+       */
+      RENDER_FEATURE_NOT_SUPPORTED(7),
       UNRECOGNIZED(-1),
       ;
 
@@ -799,7 +821,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The render operation did not complete successfully because the
-       * verification stanza required for verify was not found on the skaffold
+       * verification stanza required for verify was not found on the Skaffold
        * configuration.
        * </pre>
        *
@@ -812,12 +834,33 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The render operation did not complete successfully because the custom
        * action required for predeploy or postdeploy was not found in the
-       * skaffold configuration. See failure_message for additional details.
+       * Skaffold configuration. See failure_message for additional details.
        * </pre>
        *
        * <code>CUSTOM_ACTION_NOT_FOUND = 5;</code>
        */
       public static final int CUSTOM_ACTION_NOT_FOUND_VALUE = 5;
+      /**
+       *
+       *
+       * <pre>
+       * Release failed during rendering because the release configuration is
+       * not supported with the specified deployment strategy.
+       * </pre>
+       *
+       * <code>DEPLOYMENT_STRATEGY_NOT_SUPPORTED = 6;</code>
+       */
+      public static final int DEPLOYMENT_STRATEGY_NOT_SUPPORTED_VALUE = 6;
+      /**
+       *
+       *
+       * <pre>
+       * The render operation had a feature configured that is not supported.
+       * </pre>
+       *
+       * <code>RENDER_FEATURE_NOT_SUPPORTED = 7;</code>
+       */
+      public static final int RENDER_FEATURE_NOT_SUPPORTED_VALUE = 7;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -855,6 +898,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
             return VERIFICATION_CONFIG_NOT_FOUND;
           case 5:
             return CUSTOM_ACTION_NOT_FOUND;
+          case 6:
+            return DEPLOYMENT_STRATEGY_NOT_SUPPORTED;
+          case 7:
+            return RENDER_FEATURE_NOT_SUPPORTED;
           default:
             return null;
         }
@@ -2901,7 +2948,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True if the version of skaffold used by this release is supported.
+     * True if the version of Skaffold used by this release is supported.
      * </pre>
      *
      * <code>bool status = 1;</code>
@@ -2914,7 +2961,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The skaffold support state for this release's version of skaffold.
+     * The Skaffold support state for this release's version of Skaffold.
      * </pre>
      *
      * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
@@ -2926,7 +2973,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The skaffold support state for this release's version of skaffold.
+     * The Skaffold support state for this release's version of Skaffold.
      * </pre>
      *
      * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
@@ -2939,7 +2986,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which this release's version of skaffold will enter
+     * The time at which this release's version of Skaffold will enter
      * maintenance mode.
      * </pre>
      *
@@ -2952,7 +2999,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which this release's version of skaffold will enter
+     * The time at which this release's version of Skaffold will enter
      * maintenance mode.
      * </pre>
      *
@@ -2965,7 +3012,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which this release's version of skaffold will enter
+     * The time at which this release's version of Skaffold will enter
      * maintenance mode.
      * </pre>
      *
@@ -2977,7 +3024,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which this release's version of skaffold will no longer be
+     * The time at which this release's version of Skaffold will no longer be
      * supported.
      * </pre>
      *
@@ -2990,7 +3037,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which this release's version of skaffold will no longer be
+     * The time at which this release's version of Skaffold will no longer be
      * supported.
      * </pre>
      *
@@ -3003,7 +3050,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which this release's version of skaffold will no longer be
+     * The time at which this release's version of Skaffold will no longer be
      * supported.
      * </pre>
      *
@@ -3016,7 +3063,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * SkaffoldSupportedCondition contains information about when support for the
-   * release's version of skaffold ends.
+   * release's version of Skaffold ends.
    * </pre>
    *
    * Protobuf type {@code google.cloud.deploy.v1.Release.SkaffoldSupportedCondition}
@@ -3063,7 +3110,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True if the version of skaffold used by this release is supported.
+     * True if the version of Skaffold used by this release is supported.
      * </pre>
      *
      * <code>bool status = 1;</code>
@@ -3081,7 +3128,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The skaffold support state for this release's version of skaffold.
+     * The Skaffold support state for this release's version of Skaffold.
      * </pre>
      *
      * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
@@ -3096,7 +3143,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The skaffold support state for this release's version of skaffold.
+     * The Skaffold support state for this release's version of Skaffold.
      * </pre>
      *
      * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
@@ -3116,7 +3163,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which this release's version of skaffold will enter
+     * The time at which this release's version of Skaffold will enter
      * maintenance mode.
      * </pre>
      *
@@ -3132,7 +3179,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which this release's version of skaffold will enter
+     * The time at which this release's version of Skaffold will enter
      * maintenance mode.
      * </pre>
      *
@@ -3150,7 +3197,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which this release's version of skaffold will enter
+     * The time at which this release's version of Skaffold will enter
      * maintenance mode.
      * </pre>
      *
@@ -3169,7 +3216,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which this release's version of skaffold will no longer be
+     * The time at which this release's version of Skaffold will no longer be
      * supported.
      * </pre>
      *
@@ -3185,7 +3232,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which this release's version of skaffold will no longer be
+     * The time at which this release's version of Skaffold will no longer be
      * supported.
      * </pre>
      *
@@ -3203,7 +3250,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which this release's version of skaffold will no longer be
+     * The time at which this release's version of Skaffold will no longer be
      * supported.
      * </pre>
      *
@@ -3425,7 +3472,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * SkaffoldSupportedCondition contains information about when support for the
-     * release's version of skaffold ends.
+     * release's version of Skaffold ends.
      * </pre>
      *
      * Protobuf type {@code google.cloud.deploy.v1.Release.SkaffoldSupportedCondition}
@@ -3669,7 +3716,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * True if the version of skaffold used by this release is supported.
+       * True if the version of Skaffold used by this release is supported.
        * </pre>
        *
        * <code>bool status = 1;</code>
@@ -3684,7 +3731,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * True if the version of skaffold used by this release is supported.
+       * True if the version of Skaffold used by this release is supported.
        * </pre>
        *
        * <code>bool status = 1;</code>
@@ -3703,7 +3750,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * True if the version of skaffold used by this release is supported.
+       * True if the version of Skaffold used by this release is supported.
        * </pre>
        *
        * <code>bool status = 1;</code>
@@ -3722,7 +3769,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The skaffold support state for this release's version of skaffold.
+       * The Skaffold support state for this release's version of Skaffold.
        * </pre>
        *
        * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
@@ -3737,7 +3784,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The skaffold support state for this release's version of skaffold.
+       * The Skaffold support state for this release's version of Skaffold.
        * </pre>
        *
        * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
@@ -3755,7 +3802,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The skaffold support state for this release's version of skaffold.
+       * The Skaffold support state for this release's version of Skaffold.
        * </pre>
        *
        * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
@@ -3774,7 +3821,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The skaffold support state for this release's version of skaffold.
+       * The Skaffold support state for this release's version of Skaffold.
        * </pre>
        *
        * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
@@ -3796,7 +3843,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The skaffold support state for this release's version of skaffold.
+       * The Skaffold support state for this release's version of Skaffold.
        * </pre>
        *
        * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
@@ -3820,7 +3867,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will enter
+       * The time at which this release's version of Skaffold will enter
        * maintenance mode.
        * </pre>
        *
@@ -3835,7 +3882,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will enter
+       * The time at which this release's version of Skaffold will enter
        * maintenance mode.
        * </pre>
        *
@@ -3856,7 +3903,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will enter
+       * The time at which this release's version of Skaffold will enter
        * maintenance mode.
        * </pre>
        *
@@ -3879,7 +3926,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will enter
+       * The time at which this release's version of Skaffold will enter
        * maintenance mode.
        * </pre>
        *
@@ -3899,7 +3946,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will enter
+       * The time at which this release's version of Skaffold will enter
        * maintenance mode.
        * </pre>
        *
@@ -3925,7 +3972,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will enter
+       * The time at which this release's version of Skaffold will enter
        * maintenance mode.
        * </pre>
        *
@@ -3945,7 +3992,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will enter
+       * The time at which this release's version of Skaffold will enter
        * maintenance mode.
        * </pre>
        *
@@ -3960,7 +4007,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will enter
+       * The time at which this release's version of Skaffold will enter
        * maintenance mode.
        * </pre>
        *
@@ -3979,7 +4026,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will enter
+       * The time at which this release's version of Skaffold will enter
        * maintenance mode.
        * </pre>
        *
@@ -4012,7 +4059,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will no longer be
+       * The time at which this release's version of Skaffold will no longer be
        * supported.
        * </pre>
        *
@@ -4027,7 +4074,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will no longer be
+       * The time at which this release's version of Skaffold will no longer be
        * supported.
        * </pre>
        *
@@ -4048,7 +4095,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will no longer be
+       * The time at which this release's version of Skaffold will no longer be
        * supported.
        * </pre>
        *
@@ -4071,7 +4118,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will no longer be
+       * The time at which this release's version of Skaffold will no longer be
        * supported.
        * </pre>
        *
@@ -4092,7 +4139,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will no longer be
+       * The time at which this release's version of Skaffold will no longer be
        * supported.
        * </pre>
        *
@@ -4118,7 +4165,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will no longer be
+       * The time at which this release's version of Skaffold will no longer be
        * supported.
        * </pre>
        *
@@ -4138,7 +4185,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will no longer be
+       * The time at which this release's version of Skaffold will no longer be
        * supported.
        * </pre>
        *
@@ -4153,7 +4200,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will no longer be
+       * The time at which this release's version of Skaffold will no longer be
        * supported.
        * </pre>
        *
@@ -4172,7 +4219,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The time at which this release's version of skaffold will no longer be
+       * The time at which this release's version of Skaffold will no longer be
        * supported.
        * </pre>
        *
@@ -4310,7 +4357,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details around the support state of the release's skaffold
+     * Details around the support state of the release's Skaffold
      * version.
      * </pre>
      *
@@ -4325,7 +4372,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details around the support state of the release's skaffold
+     * Details around the support state of the release's Skaffold
      * version.
      * </pre>
      *
@@ -4340,7 +4387,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details around the support state of the release's skaffold
+     * Details around the support state of the release's Skaffold
      * version.
      * </pre>
      *
@@ -4454,7 +4501,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details around the support state of the release's skaffold
+     * Details around the support state of the release's Skaffold
      * version.
      * </pre>
      *
@@ -4472,7 +4519,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details around the support state of the release's skaffold
+     * Details around the support state of the release's Skaffold
      * version.
      * </pre>
      *
@@ -4493,7 +4540,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details around the support state of the release's skaffold
+     * Details around the support state of the release's Skaffold
      * version.
      * </pre>
      *
@@ -5116,7 +5163,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details around the support state of the release's skaffold
+       * Details around the support state of the release's Skaffold
        * version.
        * </pre>
        *
@@ -5133,7 +5180,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details around the support state of the release's skaffold
+       * Details around the support state of the release's Skaffold
        * version.
        * </pre>
        *
@@ -5157,7 +5204,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details around the support state of the release's skaffold
+       * Details around the support state of the release's Skaffold
        * version.
        * </pre>
        *
@@ -5183,7 +5230,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details around the support state of the release's skaffold
+       * Details around the support state of the release's Skaffold
        * version.
        * </pre>
        *
@@ -5206,7 +5253,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details around the support state of the release's skaffold
+       * Details around the support state of the release's Skaffold
        * version.
        * </pre>
        *
@@ -5237,7 +5284,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details around the support state of the release's skaffold
+       * Details around the support state of the release's Skaffold
        * version.
        * </pre>
        *
@@ -5259,7 +5306,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details around the support state of the release's skaffold
+       * Details around the support state of the release's Skaffold
        * version.
        * </pre>
        *
@@ -5277,7 +5324,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details around the support state of the release's skaffold
+       * Details around the support state of the release's Skaffold
        * version.
        * </pre>
        *
@@ -5299,7 +5346,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Details around the support state of the release's skaffold
+       * Details around the support state of the release's Skaffold
        * version.
        * </pre>
        *
@@ -6289,6 +6336,94 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     return targetSnapshots_.get(index);
   }
 
+  public static final int CUSTOM_TARGET_TYPE_SNAPSHOTS_FIELD_NUMBER = 27;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.deploy.v1.CustomTargetType> customTargetTypeSnapshots_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Snapshot of the custom target types referenced by the targets
+   * taken at release creation time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.deploy.v1.CustomTargetType>
+      getCustomTargetTypeSnapshotsList() {
+    return customTargetTypeSnapshots_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Snapshot of the custom target types referenced by the targets
+   * taken at release creation time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.deploy.v1.CustomTargetTypeOrBuilder>
+      getCustomTargetTypeSnapshotsOrBuilderList() {
+    return customTargetTypeSnapshots_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Snapshot of the custom target types referenced by the targets
+   * taken at release creation time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getCustomTargetTypeSnapshotsCount() {
+    return customTargetTypeSnapshots_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Snapshot of the custom target types referenced by the targets
+   * taken at release creation time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CustomTargetType getCustomTargetTypeSnapshots(int index) {
+    return customTargetTypeSnapshots_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Snapshot of the custom target types referenced by the targets
+   * taken at release creation time.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CustomTargetTypeOrBuilder getCustomTargetTypeSnapshotsOrBuilder(
+      int index) {
+    return customTargetTypeSnapshots_.get(index);
+  }
+
   public static final int RENDER_STATE_FIELD_NUMBER = 13;
   private int renderState_ = 0;
   /**
@@ -6935,6 +7070,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetDeployParameters(), DeployParametersDefaultEntryHolder.defaultEntry, 25);
+    for (int i = 0; i < customTargetTypeSnapshots_.size(); i++) {
+      output.writeMessage(27, customTargetTypeSnapshots_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -7048,6 +7186,11 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, deployParameters__);
     }
+    for (int i = 0; i < customTargetTypeSnapshots_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              27, customTargetTypeSnapshots_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7089,6 +7232,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       if (!getDeliveryPipelineSnapshot().equals(other.getDeliveryPipelineSnapshot())) return false;
     }
     if (!getTargetSnapshotsList().equals(other.getTargetSnapshotsList())) return false;
+    if (!getCustomTargetTypeSnapshotsList().equals(other.getCustomTargetTypeSnapshotsList()))
+      return false;
     if (renderState_ != other.renderState_) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getSkaffoldVersion().equals(other.getSkaffoldVersion())) return false;
@@ -7153,6 +7298,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (getTargetSnapshotsCount() > 0) {
       hash = (37 * hash) + TARGET_SNAPSHOTS_FIELD_NUMBER;
       hash = (53 * hash) + getTargetSnapshotsList().hashCode();
+    }
+    if (getCustomTargetTypeSnapshotsCount() > 0) {
+      hash = (37 * hash) + CUSTOM_TARGET_TYPE_SNAPSHOTS_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomTargetTypeSnapshotsList().hashCode();
     }
     hash = (37 * hash) + RENDER_STATE_FIELD_NUMBER;
     hash = (53 * hash) + renderState_;
@@ -7395,6 +7544,13 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         targetSnapshotsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00002000);
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        customTargetTypeSnapshots_ = java.util.Collections.emptyList();
+      } else {
+        customTargetTypeSnapshots_ = null;
+        customTargetTypeSnapshotsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00004000);
       renderState_ = 0;
       etag_ = "";
       skaffoldVersion_ = "";
@@ -7459,6 +7615,16 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.targetSnapshots_ = targetSnapshotsBuilder_.build();
       }
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)) {
+          customTargetTypeSnapshots_ =
+              java.util.Collections.unmodifiableList(customTargetTypeSnapshots_);
+          bitField0_ = (bitField0_ & ~0x00004000);
+        }
+        result.customTargetTypeSnapshots_ = customTargetTypeSnapshots_;
+      } else {
+        result.customTargetTypeSnapshots_ = customTargetTypeSnapshotsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.deploy.v1.Release result) {
@@ -7506,27 +7672,27 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
                 ? deliveryPipelineSnapshot_
                 : deliveryPipelineSnapshotBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.renderState_ = renderState_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.skaffoldVersion_ = skaffoldVersion_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.targetArtifacts_ = internalGetTargetArtifacts();
         result.targetArtifacts_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.targetRenders_ = internalGetTargetRenders();
         result.targetRenders_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.deployParameters_ = internalGetDeployParameters();
         result.deployParameters_.makeImmutable();
       }
@@ -7675,28 +7841,55 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        if (!other.customTargetTypeSnapshots_.isEmpty()) {
+          if (customTargetTypeSnapshots_.isEmpty()) {
+            customTargetTypeSnapshots_ = other.customTargetTypeSnapshots_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+          } else {
+            ensureCustomTargetTypeSnapshotsIsMutable();
+            customTargetTypeSnapshots_.addAll(other.customTargetTypeSnapshots_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.customTargetTypeSnapshots_.isEmpty()) {
+          if (customTargetTypeSnapshotsBuilder_.isEmpty()) {
+            customTargetTypeSnapshotsBuilder_.dispose();
+            customTargetTypeSnapshotsBuilder_ = null;
+            customTargetTypeSnapshots_ = other.customTargetTypeSnapshots_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+            customTargetTypeSnapshotsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getCustomTargetTypeSnapshotsFieldBuilder()
+                    : null;
+          } else {
+            customTargetTypeSnapshotsBuilder_.addAllMessages(other.customTargetTypeSnapshots_);
+          }
+        }
+      }
       if (other.renderState_ != 0) {
         setRenderStateValue(other.getRenderStateValue());
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (!other.getSkaffoldVersion().isEmpty()) {
         skaffoldVersion_ = other.skaffoldVersion_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       internalGetMutableTargetArtifacts().mergeFrom(other.internalGetTargetArtifacts());
-      bitField0_ |= 0x00020000;
-      internalGetMutableTargetRenders().mergeFrom(other.internalGetTargetRenders());
       bitField0_ |= 0x00040000;
+      internalGetMutableTargetRenders().mergeFrom(other.internalGetTargetRenders());
+      bitField0_ |= 0x00080000;
       if (other.hasCondition()) {
         mergeCondition(other.getCondition());
       }
       internalGetMutableDeployParameters().mergeFrom(other.internalGetDeployParameters());
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -7825,13 +8018,13 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
             case 104:
               {
                 renderState_ = input.readEnum();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 104
             case 130:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 130
             case 138:
@@ -7843,7 +8036,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
             case 154:
               {
                 skaffoldVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 154
             case 162:
@@ -7857,7 +8050,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableTargetArtifacts()
                     .getMutableMap()
                     .put(targetArtifacts__.getKey(), targetArtifacts__.getValue());
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 162
             case 178:
@@ -7871,7 +8064,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableTargetRenders()
                     .getMutableMap()
                     .put(targetRenders__.getKey(), targetRenders__.getValue());
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 178
             case 184:
@@ -7883,7 +8076,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
             case 194:
               {
                 input.readMessage(getConditionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 194
             case 202:
@@ -7896,9 +8089,22 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableDeployParameters()
                     .getMutableMap()
                     .put(deployParameters__.getKey(), deployParameters__.getValue());
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 202
+            case 218:
+              {
+                com.google.cloud.deploy.v1.CustomTargetType m =
+                    input.readMessage(
+                        com.google.cloud.deploy.v1.CustomTargetType.parser(), extensionRegistry);
+                if (customTargetTypeSnapshotsBuilder_ == null) {
+                  ensureCustomTargetTypeSnapshotsIsMutable();
+                  customTargetTypeSnapshots_.add(m);
+                } else {
+                  customTargetTypeSnapshotsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 218
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10480,6 +10686,422 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       return targetSnapshotsBuilder_;
     }
 
+    private java.util.List<com.google.cloud.deploy.v1.CustomTargetType> customTargetTypeSnapshots_ =
+        java.util.Collections.emptyList();
+
+    private void ensureCustomTargetTypeSnapshotsIsMutable() {
+      if (!((bitField0_ & 0x00004000) != 0)) {
+        customTargetTypeSnapshots_ =
+            new java.util.ArrayList<com.google.cloud.deploy.v1.CustomTargetType>(
+                customTargetTypeSnapshots_);
+        bitField0_ |= 0x00004000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.deploy.v1.CustomTargetType,
+            com.google.cloud.deploy.v1.CustomTargetType.Builder,
+            com.google.cloud.deploy.v1.CustomTargetTypeOrBuilder>
+        customTargetTypeSnapshotsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.deploy.v1.CustomTargetType>
+        getCustomTargetTypeSnapshotsList() {
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(customTargetTypeSnapshots_);
+      } else {
+        return customTargetTypeSnapshotsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getCustomTargetTypeSnapshotsCount() {
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        return customTargetTypeSnapshots_.size();
+      } else {
+        return customTargetTypeSnapshotsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.CustomTargetType getCustomTargetTypeSnapshots(int index) {
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        return customTargetTypeSnapshots_.get(index);
+      } else {
+        return customTargetTypeSnapshotsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustomTargetTypeSnapshots(
+        int index, com.google.cloud.deploy.v1.CustomTargetType value) {
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomTargetTypeSnapshotsIsMutable();
+        customTargetTypeSnapshots_.set(index, value);
+        onChanged();
+      } else {
+        customTargetTypeSnapshotsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustomTargetTypeSnapshots(
+        int index, com.google.cloud.deploy.v1.CustomTargetType.Builder builderForValue) {
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        ensureCustomTargetTypeSnapshotsIsMutable();
+        customTargetTypeSnapshots_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        customTargetTypeSnapshotsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addCustomTargetTypeSnapshots(com.google.cloud.deploy.v1.CustomTargetType value) {
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomTargetTypeSnapshotsIsMutable();
+        customTargetTypeSnapshots_.add(value);
+        onChanged();
+      } else {
+        customTargetTypeSnapshotsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addCustomTargetTypeSnapshots(
+        int index, com.google.cloud.deploy.v1.CustomTargetType value) {
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomTargetTypeSnapshotsIsMutable();
+        customTargetTypeSnapshots_.add(index, value);
+        onChanged();
+      } else {
+        customTargetTypeSnapshotsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addCustomTargetTypeSnapshots(
+        com.google.cloud.deploy.v1.CustomTargetType.Builder builderForValue) {
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        ensureCustomTargetTypeSnapshotsIsMutable();
+        customTargetTypeSnapshots_.add(builderForValue.build());
+        onChanged();
+      } else {
+        customTargetTypeSnapshotsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addCustomTargetTypeSnapshots(
+        int index, com.google.cloud.deploy.v1.CustomTargetType.Builder builderForValue) {
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        ensureCustomTargetTypeSnapshotsIsMutable();
+        customTargetTypeSnapshots_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        customTargetTypeSnapshotsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllCustomTargetTypeSnapshots(
+        java.lang.Iterable<? extends com.google.cloud.deploy.v1.CustomTargetType> values) {
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        ensureCustomTargetTypeSnapshotsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customTargetTypeSnapshots_);
+        onChanged();
+      } else {
+        customTargetTypeSnapshotsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCustomTargetTypeSnapshots() {
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        customTargetTypeSnapshots_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00004000);
+        onChanged();
+      } else {
+        customTargetTypeSnapshotsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeCustomTargetTypeSnapshots(int index) {
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        ensureCustomTargetTypeSnapshotsIsMutable();
+        customTargetTypeSnapshots_.remove(index);
+        onChanged();
+      } else {
+        customTargetTypeSnapshotsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.CustomTargetType.Builder getCustomTargetTypeSnapshotsBuilder(
+        int index) {
+      return getCustomTargetTypeSnapshotsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.CustomTargetTypeOrBuilder
+        getCustomTargetTypeSnapshotsOrBuilder(int index) {
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        return customTargetTypeSnapshots_.get(index);
+      } else {
+        return customTargetTypeSnapshotsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.deploy.v1.CustomTargetTypeOrBuilder>
+        getCustomTargetTypeSnapshotsOrBuilderList() {
+      if (customTargetTypeSnapshotsBuilder_ != null) {
+        return customTargetTypeSnapshotsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(customTargetTypeSnapshots_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.CustomTargetType.Builder
+        addCustomTargetTypeSnapshotsBuilder() {
+      return getCustomTargetTypeSnapshotsFieldBuilder()
+          .addBuilder(com.google.cloud.deploy.v1.CustomTargetType.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.CustomTargetType.Builder addCustomTargetTypeSnapshotsBuilder(
+        int index) {
+      return getCustomTargetTypeSnapshotsFieldBuilder()
+          .addBuilder(index, com.google.cloud.deploy.v1.CustomTargetType.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Snapshot of the custom target types referenced by the targets
+     * taken at release creation time.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.CustomTargetType custom_target_type_snapshots = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.deploy.v1.CustomTargetType.Builder>
+        getCustomTargetTypeSnapshotsBuilderList() {
+      return getCustomTargetTypeSnapshotsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.deploy.v1.CustomTargetType,
+            com.google.cloud.deploy.v1.CustomTargetType.Builder,
+            com.google.cloud.deploy.v1.CustomTargetTypeOrBuilder>
+        getCustomTargetTypeSnapshotsFieldBuilder() {
+      if (customTargetTypeSnapshotsBuilder_ == null) {
+        customTargetTypeSnapshotsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.deploy.v1.CustomTargetType,
+                com.google.cloud.deploy.v1.CustomTargetType.Builder,
+                com.google.cloud.deploy.v1.CustomTargetTypeOrBuilder>(
+                customTargetTypeSnapshots_,
+                ((bitField0_ & 0x00004000) != 0),
+                getParentForChildren(),
+                isClean());
+        customTargetTypeSnapshots_ = null;
+      }
+      return customTargetTypeSnapshotsBuilder_;
+    }
+
     private int renderState_ = 0;
     /**
      *
@@ -10514,7 +11136,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setRenderStateValue(int value) {
       renderState_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -10555,7 +11177,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       renderState_ = value.getNumber();
       onChanged();
       return this;
@@ -10574,7 +11196,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRenderState() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       renderState_ = 0;
       onChanged();
       return this;
@@ -10648,7 +11270,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -10667,7 +11289,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -10691,7 +11313,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -10770,7 +11392,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       skaffoldVersion_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -10791,7 +11413,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSkaffoldVersion() {
       skaffoldVersion_ = getDefaultInstance().getSkaffoldVersion();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -10817,7 +11439,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       skaffoldVersion_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -10847,7 +11469,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       if (!targetArtifacts_.isMutable()) {
         targetArtifacts_ = targetArtifacts_.copy();
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return targetArtifacts_;
     }
@@ -10949,7 +11571,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearTargetArtifacts() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       internalGetMutableTargetArtifacts().getMutableMap().clear();
       return this;
     }
@@ -10976,7 +11598,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.deploy.v1.TargetArtifact>
         getMutableTargetArtifacts() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return internalGetMutableTargetArtifacts().getMutableMap();
     }
     /**
@@ -11000,7 +11622,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableTargetArtifacts().getMutableMap().put(key, value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return this;
     }
     /**
@@ -11018,7 +11640,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllTargetArtifacts(
         java.util.Map<java.lang.String, com.google.cloud.deploy.v1.TargetArtifact> values) {
       internalGetMutableTargetArtifacts().getMutableMap().putAll(values);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return this;
     }
 
@@ -11046,7 +11668,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       if (!targetRenders_.isMutable()) {
         targetRenders_ = targetRenders_.copy();
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return targetRenders_;
     }
@@ -11148,7 +11770,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearTargetRenders() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       internalGetMutableTargetRenders().getMutableMap().clear();
       return this;
     }
@@ -11175,7 +11797,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.deploy.v1.Release.TargetRender>
         getMutableTargetRenders() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       return internalGetMutableTargetRenders().getMutableMap();
     }
     /**
@@ -11199,7 +11821,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableTargetRenders().getMutableMap().put(key, value);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       return this;
     }
     /**
@@ -11217,7 +11839,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllTargetRenders(
         java.util.Map<java.lang.String, com.google.cloud.deploy.v1.Release.TargetRender> values) {
       internalGetMutableTargetRenders().getMutableMap().putAll(values);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       return this;
     }
 
@@ -11241,7 +11863,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the condition field is set.
      */
     public boolean hasCondition() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -11285,7 +11907,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       } else {
         conditionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -11307,7 +11929,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       } else {
         conditionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -11324,7 +11946,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCondition(com.google.cloud.deploy.v1.Release.ReleaseCondition value) {
       if (conditionBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && condition_ != null
             && condition_
                 != com.google.cloud.deploy.v1.Release.ReleaseCondition.getDefaultInstance()) {
@@ -11335,7 +11957,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       } else {
         conditionBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -11351,7 +11973,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCondition() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       condition_ = null;
       if (conditionBuilder_ != null) {
         conditionBuilder_.dispose();
@@ -11372,7 +11994,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.deploy.v1.Release.ReleaseCondition.Builder getConditionBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
@@ -11445,7 +12067,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       if (!deployParameters_.isMutable()) {
         deployParameters_ = deployParameters_.copy();
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return deployParameters_;
     }
@@ -11540,7 +12162,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearDeployParameters() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       internalGetMutableDeployParameters().getMutableMap().clear();
       return this;
     }
@@ -11565,7 +12187,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDeployParameters() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return internalGetMutableDeployParameters().getMutableMap();
     }
     /**
@@ -11587,7 +12209,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableDeployParameters().getMutableMap().put(key, value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return this;
     }
     /**
@@ -11604,7 +12226,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllDeployParameters(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDeployParameters().getMutableMap().putAll(values);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return this;
     }
 

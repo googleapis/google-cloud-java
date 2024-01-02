@@ -291,7 +291,7 @@ public interface AutomationRunOrBuilder
    *
    * <pre>
    * Output only. Explains the current state of the `AutomationRun`. Present
-   * only an explanation is needed.
+   * only when an explanation is needed.
    * </pre>
    *
    * <code>string state_description = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -304,7 +304,7 @@ public interface AutomationRunOrBuilder
    *
    * <pre>
    * Output only. Explains the current state of the `AutomationRun`. Present
-   * only an explanation is needed.
+   * only when an explanation is needed.
    * </pre>
    *
    * <code>string state_description = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -317,8 +317,8 @@ public interface AutomationRunOrBuilder
    *
    *
    * <pre>
-   * Output only. Time the `AutomationRun` will expire. An `AutomationRun` will
-   * expire after 14 days from its creation date.
+   * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
+   * after 14 days from its creation date.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -331,8 +331,8 @@ public interface AutomationRunOrBuilder
    *
    *
    * <pre>
-   * Output only. Time the `AutomationRun` will expire. An `AutomationRun` will
-   * expire after 14 days from its creation date.
+   * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
+   * after 14 days from its creation date.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -345,8 +345,8 @@ public interface AutomationRunOrBuilder
    *
    *
    * <pre>
-   * Output only. Time the `AutomationRun` will expire. An `AutomationRun` will
-   * expire after 14 days from its creation date.
+   * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
+   * after 14 days from its creation date.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];

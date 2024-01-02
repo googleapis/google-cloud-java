@@ -220,7 +220,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. The phase to which the rollout will be advanced to.
+   * Output only. The phase the rollout will be advanced to.
    * </pre>
    *
    * <code>string destination_phase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -243,7 +243,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. The phase to which the rollout will be advanced to.
+   * Output only. The phase the rollout will be advanced to.
    * </pre>
    *
    * <code>string destination_phase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1080,7 +1080,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The phase to which the rollout will be advanced to.
+     * Output only. The phase the rollout will be advanced to.
      * </pre>
      *
      * <code>string destination_phase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1102,7 +1102,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The phase to which the rollout will be advanced to.
+     * Output only. The phase the rollout will be advanced to.
      * </pre>
      *
      * <code>string destination_phase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1124,7 +1124,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The phase to which the rollout will be advanced to.
+     * Output only. The phase the rollout will be advanced to.
      * </pre>
      *
      * <code>string destination_phase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1145,7 +1145,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The phase to which the rollout will be advanced to.
+     * Output only. The phase the rollout will be advanced to.
      * </pre>
      *
      * <code>string destination_phase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1162,7 +1162,7 @@ public final class AdvanceRolloutOperation extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. The phase to which the rollout will be advanced to.
+     * Output only. The phase the rollout will be advanced to.
      * </pre>
      *
      * <code>string destination_phase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

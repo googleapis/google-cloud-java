@@ -565,6 +565,47 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
+   * Optional. Information specifying a Custom Target.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customTarget field is set.
+   */
+  boolean hasCustomTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information specifying a Custom Target.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customTarget.
+   */
+  com.google.cloud.deploy.v1.CustomTarget getCustomTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information specifying a Custom Target.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.CustomTargetOrBuilder getCustomTargetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. This checksum is computed by the server based on the value of
    * other fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
