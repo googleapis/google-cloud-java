@@ -76,6 +76,9 @@
             "ListClusters": {
               "methods": ["listClusters", "listClusters", "listClusters", "listClustersPagedCallable", "listClustersCallable"]
             },
+            "ListDatabases": {
+              "methods": ["listDatabases", "listDatabases", "listDatabases", "listDatabasesPagedCallable", "listDatabasesCallable"]
+            },
             "ListInstances": {
               "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
             },

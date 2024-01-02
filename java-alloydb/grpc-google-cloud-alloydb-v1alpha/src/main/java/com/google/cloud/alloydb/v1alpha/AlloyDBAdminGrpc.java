@@ -1425,6 +1425,53 @@ public final class AlloyDBAdminGrpc {
     return getDeleteUserMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1alpha.ListDatabasesRequest,
+          com.google.cloud.alloydb.v1alpha.ListDatabasesResponse>
+      getListDatabasesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDatabases",
+      requestType = com.google.cloud.alloydb.v1alpha.ListDatabasesRequest.class,
+      responseType = com.google.cloud.alloydb.v1alpha.ListDatabasesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1alpha.ListDatabasesRequest,
+          com.google.cloud.alloydb.v1alpha.ListDatabasesResponse>
+      getListDatabasesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1alpha.ListDatabasesRequest,
+            com.google.cloud.alloydb.v1alpha.ListDatabasesResponse>
+        getListDatabasesMethod;
+    if ((getListDatabasesMethod = AlloyDBAdminGrpc.getListDatabasesMethod) == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getListDatabasesMethod = AlloyDBAdminGrpc.getListDatabasesMethod) == null) {
+          AlloyDBAdminGrpc.getListDatabasesMethod =
+              getListDatabasesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1alpha.ListDatabasesRequest,
+                          com.google.cloud.alloydb.v1alpha.ListDatabasesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDatabases"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1alpha.ListDatabasesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1alpha.ListDatabasesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlloyDBAdminMethodDescriptorSupplier("ListDatabases"))
+                      .build();
+        }
+      }
+    }
+    return getListDatabasesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AlloyDBAdminStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AlloyDBAdminStub> factory =
@@ -1932,6 +1979,21 @@ public final class AlloyDBAdminGrpc {
         com.google.cloud.alloydb.v1alpha.DeleteUserRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Databases in a given project and location.
+     * </pre>
+     */
+    default void listDatabases(
+        com.google.cloud.alloydb.v1alpha.ListDatabasesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1alpha.ListDatabasesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDatabasesMethod(), responseObserver);
     }
   }
 
@@ -2482,6 +2544,23 @@ public final class AlloyDBAdminGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteUserMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Databases in a given project and location.
+     * </pre>
+     */
+    public void listDatabases(
+        com.google.cloud.alloydb.v1alpha.ListDatabasesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1alpha.ListDatabasesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDatabasesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2929,6 +3008,19 @@ public final class AlloyDBAdminGrpc {
         com.google.cloud.alloydb.v1alpha.DeleteUserRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Databases in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.alloydb.v1alpha.ListDatabasesResponse listDatabases(
+        com.google.cloud.alloydb.v1alpha.ListDatabasesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDatabasesMethod(), getCallOptions(), request);
     }
   }
 
@@ -3390,6 +3482,20 @@ public final class AlloyDBAdminGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteUserMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Databases in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.alloydb.v1alpha.ListDatabasesResponse>
+        listDatabases(com.google.cloud.alloydb.v1alpha.ListDatabasesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDatabasesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLUSTERS = 0;
@@ -3423,6 +3529,7 @@ public final class AlloyDBAdminGrpc {
   private static final int METHODID_CREATE_USER = 28;
   private static final int METHODID_UPDATE_USER = 29;
   private static final int METHODID_DELETE_USER = 30;
+  private static final int METHODID_LIST_DATABASES = 31;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3610,6 +3717,12 @@ public final class AlloyDBAdminGrpc {
           serviceImpl.deleteUser(
               (com.google.cloud.alloydb.v1alpha.DeleteUserRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_DATABASES:
+          serviceImpl.listDatabases(
+              (com.google.cloud.alloydb.v1alpha.ListDatabasesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1alpha.ListDatabasesResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -3822,6 +3935,13 @@ public final class AlloyDBAdminGrpc {
                 new MethodHandlers<
                     com.google.cloud.alloydb.v1alpha.DeleteUserRequest, com.google.protobuf.Empty>(
                     service, METHODID_DELETE_USER)))
+        .addMethod(
+            getListDatabasesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1alpha.ListDatabasesRequest,
+                    com.google.cloud.alloydb.v1alpha.ListDatabasesResponse>(
+                    service, METHODID_LIST_DATABASES)))
         .build();
   }
 
@@ -3904,6 +4024,7 @@ public final class AlloyDBAdminGrpc {
                       .addMethod(getCreateUserMethod())
                       .addMethod(getUpdateUserMethod())
                       .addMethod(getDeleteUserMethod())
+                      .addMethod(getListDatabasesMethod())
                       .build();
         }
       }

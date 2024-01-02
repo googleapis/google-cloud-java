@@ -18,6 +18,7 @@ package com.google.cloud.alloydb.v1alpha.stub;
 
 import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListBackupsPagedResponse;
 import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListClustersPagedResponse;
+import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListDatabasesPagedResponse;
 import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListInstancesPagedResponse;
 import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListLocationsPagedResponse;
 import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListSupportedDatabaseFlagsPagedResponse;
@@ -56,6 +57,8 @@ import com.google.cloud.alloydb.v1alpha.ListBackupsRequest;
 import com.google.cloud.alloydb.v1alpha.ListBackupsResponse;
 import com.google.cloud.alloydb.v1alpha.ListClustersRequest;
 import com.google.cloud.alloydb.v1alpha.ListClustersResponse;
+import com.google.cloud.alloydb.v1alpha.ListDatabasesRequest;
+import com.google.cloud.alloydb.v1alpha.ListDatabasesResponse;
 import com.google.cloud.alloydb.v1alpha.ListInstancesRequest;
 import com.google.cloud.alloydb.v1alpha.ListInstancesResponse;
 import com.google.cloud.alloydb.v1alpha.ListSupportedDatabaseFlagsRequest;
@@ -336,6 +339,15 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<DeleteUserRequest, Empty> deleteUserCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteUserCallable()");
+  }
+
+  public UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
+      listDatabasesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDatabasesPagedCallable()");
+  }
+
+  public UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDatabasesCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
