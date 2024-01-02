@@ -18,14 +18,10 @@ package com.google.cloud.bigquery.storage.v1;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
-import java.util.regex.Pattern;
 
 public class BigQuerySchemaUtil {
 
-  private static final String PROTO_COMPATIBLE_NAME_REGEXP = "[A-Za-z_][A-Za-z0-9_]*";
   private static final String PLACEHOLDER_FILED_NAME_PREFIX = "col_";
-  private static final Pattern PROTO_COMPATIBLE_NAME_PATTERN =
-      Pattern.compile(PROTO_COMPATIBLE_NAME_REGEXP);
 
   /**
    * * Checks if the field name is compatible with proto field naming convention.
@@ -35,7 +31,25 @@ public class BigQuerySchemaUtil {
    *     false.
    */
   public static boolean isProtoCompatible(String fieldName) {
-    return PROTO_COMPATIBLE_NAME_PATTERN.matcher(fieldName).matches();
+    int length = fieldName.length();
+    if (length < 1) {
+      return false;
+    }
+    char ch = fieldName.charAt(0);
+    if (!((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || ch == '_')) {
+      return false;
+    }
+    for (int i = 1; i < length; i++) {
+      ch = fieldName.charAt(i);
+      if (!((ch >= 'a' && ch <= 'z')
+          || (ch >= 'A' && ch <= 'Z')
+          || ch == '_'
+          || (ch >= '0' && ch <= '9'))) {
+        return false;
+      }
+    }
+
+    return true;
   }
 
   /**
