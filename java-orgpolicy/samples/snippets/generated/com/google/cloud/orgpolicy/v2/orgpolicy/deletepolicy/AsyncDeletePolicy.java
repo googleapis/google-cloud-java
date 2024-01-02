@@ -39,6 +39,7 @@ public class AsyncDeletePolicy {
       DeletePolicyRequest request =
           DeletePolicyRequest.newBuilder()
               .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
+              .setEtag("etag3123477")
               .build();
       ApiFuture<Empty> future = orgPolicyClient.deletePolicyCallable().futureCall(request);
       // Do something.

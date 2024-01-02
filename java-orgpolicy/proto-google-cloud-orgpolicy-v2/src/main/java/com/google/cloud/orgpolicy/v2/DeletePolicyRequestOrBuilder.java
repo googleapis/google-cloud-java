@@ -28,7 +28,7 @@ public interface DeletePolicyRequestOrBuilder
    *
    * <pre>
    * Required. Name of the policy to delete.
-   * See `Policy` for naming rules.
+   * See the policy entry for naming rules.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface DeletePolicyRequestOrBuilder
    *
    * <pre>
    * Required. Name of the policy to delete.
-   * See `Policy` for naming rules.
+   * See the policy entry for naming rules.
    * </pre>
    *
    * <code>
@@ -53,4 +53,33 @@ public interface DeletePolicyRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The current etag of policy. If an etag is provided and does not
+   * match the current etag of the policy, deletion will be blocked and an
+   * ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The current etag of policy. If an etag is provided and does not
+   * match the current etag of the policy, deletion will be blocked and an
+   * ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
 }

@@ -56,7 +56,7 @@ public interface AlternatePolicySpecOrBuilder
    *
    *
    * <pre>
-   * Specify `Constraint` for configurations of Cloud Platform resources.
+   * Specify constraint for configurations of Google Cloud resources.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -68,7 +68,7 @@ public interface AlternatePolicySpecOrBuilder
    *
    *
    * <pre>
-   * Specify `Constraint` for configurations of Cloud Platform resources.
+   * Specify constraint for configurations of Google Cloud resources.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -80,7 +80,7 @@ public interface AlternatePolicySpecOrBuilder
    *
    *
    * <pre>
-   * Specify `Constraint` for configurations of Cloud Platform resources.
+   * Specify constraint for configurations of Google Cloud resources.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>

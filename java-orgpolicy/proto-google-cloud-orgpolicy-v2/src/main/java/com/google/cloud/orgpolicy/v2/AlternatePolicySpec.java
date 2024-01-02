@@ -124,7 +124,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Specify `Constraint` for configurations of Cloud Platform resources.
+   * Specify constraint for configurations of Google Cloud resources.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -139,7 +139,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Specify `Constraint` for configurations of Cloud Platform resources.
+   * Specify constraint for configurations of Google Cloud resources.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -154,7 +154,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Specify `Constraint` for configurations of Cloud Platform resources.
+   * Specify constraint for configurations of Google Cloud resources.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -664,7 +664,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specify `Constraint` for configurations of Cloud Platform resources.
+     * Specify constraint for configurations of Google Cloud resources.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -678,7 +678,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specify `Constraint` for configurations of Cloud Platform resources.
+     * Specify constraint for configurations of Google Cloud resources.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -698,7 +698,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specify `Constraint` for configurations of Cloud Platform resources.
+     * Specify constraint for configurations of Google Cloud resources.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -720,7 +720,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specify `Constraint` for configurations of Cloud Platform resources.
+     * Specify constraint for configurations of Google Cloud resources.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -739,7 +739,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specify `Constraint` for configurations of Cloud Platform resources.
+     * Specify constraint for configurations of Google Cloud resources.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -764,7 +764,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specify `Constraint` for configurations of Cloud Platform resources.
+     * Specify constraint for configurations of Google Cloud resources.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -783,7 +783,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specify `Constraint` for configurations of Cloud Platform resources.
+     * Specify constraint for configurations of Google Cloud resources.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -797,7 +797,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specify `Constraint` for configurations of Cloud Platform resources.
+     * Specify constraint for configurations of Google Cloud resources.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -815,7 +815,7 @@ public final class AlternatePolicySpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specify `Constraint` for configurations of Cloud Platform resources.
+     * Specify constraint for configurations of Google Cloud resources.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
