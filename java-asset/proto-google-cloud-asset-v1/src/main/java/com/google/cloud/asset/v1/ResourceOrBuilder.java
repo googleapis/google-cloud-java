@@ -163,8 +163,6 @@ public interface ResourceOrBuilder
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * Example:
    * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
-   *
-   * For third-party assets, this field may be set differently.
    * </pre>
    *
    * <code>string parent = 5;</code>
@@ -186,8 +184,6 @@ public interface ResourceOrBuilder
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * Example:
    * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
-   *
-   * For third-party assets, this field may be set differently.
    * </pre>
    *
    * <code>string parent = 5;</code>
