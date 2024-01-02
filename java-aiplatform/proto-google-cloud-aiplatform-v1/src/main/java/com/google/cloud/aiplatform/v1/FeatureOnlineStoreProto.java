@@ -59,7 +59,7 @@ public final class FeatureOnlineStoreProto {
           + "/timestamp.proto\"\365\006\n\022FeatureOnlineStore\022"
           + "K\n\010bigtable\030\010 \001(\01327.google.cloud.aiplatf"
           + "orm.v1.FeatureOnlineStore.BigtableH\000\022\022\n\004"
-          + "name\030\001 \001(\tB\004\342A\001\003\0225\n\013create_time\030\003 \001(\0132\032."
+          + "name\030\001 \001(\tB\004\342A\001\010\0225\n\013create_time\030\003 \001(\0132\032."
           + "google.protobuf.TimestampB\004\342A\001\003\0225\n\013updat"
           + "e_time\030\004 \001(\0132\032.google.protobuf.Timestamp"
           + "B\004\342A\001\003\022\022\n\004etag\030\005 \001(\tB\004\342A\001\001\022P\n\006labels\030\006 \003"

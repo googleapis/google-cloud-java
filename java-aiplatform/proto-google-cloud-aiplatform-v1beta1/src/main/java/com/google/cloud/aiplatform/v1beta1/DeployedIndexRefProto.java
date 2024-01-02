@@ -43,17 +43,17 @@ public final class DeployedIndexRefProto {
       "\n8google/cloud/aiplatform/v1beta1/deploy"
           + "ed_index_ref.proto\022\037google.cloud.aiplatf"
           + "orm.v1beta1\032\037google/api/field_behavior.p"
-          + "roto\032\031google/api/resource.proto\"}\n\020Deplo"
-          + "yedIndexRef\022H\n\016index_endpoint\030\001 \001(\tB0\342A\001"
-          + "\005\372A)\n\'aiplatform.googleapis.com/IndexEnd"
-          + "point\022\037\n\021deployed_index_id\030\002 \001(\tB\004\342A\001\005B\354"
-          + "\001\n#com.google.cloud.aiplatform.v1beta1B\025"
-          + "DeployedIndexRefProtoP\001ZCcloud.google.co"
-          + "m/go/aiplatform/apiv1beta1/aiplatformpb;"
-          + "aiplatformpb\252\002\037Google.Cloud.AIPlatform.V"
-          + "1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1"
-          + "\352\002\"Google::Cloud::AIPlatform::V1beta1b\006p"
-          + "roto3"
+          + "roto\032\031google/api/resource.proto\"\231\001\n\020Depl"
+          + "oyedIndexRef\022H\n\016index_endpoint\030\001 \001(\tB0\342A"
+          + "\001\005\372A)\n\'aiplatform.googleapis.com/IndexEn"
+          + "dpoint\022\037\n\021deployed_index_id\030\002 \001(\tB\004\342A\001\005\022"
+          + "\032\n\014display_name\030\003 \001(\tB\004\342A\001\003B\354\001\n#com.goog"
+          + "le.cloud.aiplatform.v1beta1B\025DeployedInd"
+          + "exRefProtoP\001ZCcloud.google.com/go/aiplat"
+          + "form/apiv1beta1/aiplatformpb;aiplatformp"
+          + "b\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Go"
+          + "ogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::"
+          + "Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -68,7 +68,7 @@ public final class DeployedIndexRefProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeployedIndexRef_descriptor,
             new java.lang.String[] {
-              "IndexEndpoint", "DeployedIndexId",
+              "IndexEndpoint", "DeployedIndexId", "DisplayName",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

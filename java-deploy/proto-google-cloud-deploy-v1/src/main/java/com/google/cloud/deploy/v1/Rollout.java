@@ -703,7 +703,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * No skaffold verify configuration was found.
+     * No Skaffold verify configuration was found.
      * </pre>
      *
      * <code>VERIFICATION_CONFIG_NOT_FOUND = 6;</code>
@@ -720,6 +720,16 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_BUILD_REQUEST_FAILED = 7;</code>
      */
     CLOUD_BUILD_REQUEST_FAILED(7),
+    /**
+     *
+     *
+     * <pre>
+     * A Rollout operation had a feature configured that is not supported.
+     * </pre>
+     *
+     * <code>OPERATION_FEATURE_NOT_SUPPORTED = 8;</code>
+     */
+    OPERATION_FEATURE_NOT_SUPPORTED(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -790,7 +800,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * No skaffold verify configuration was found.
+     * No Skaffold verify configuration was found.
      * </pre>
      *
      * <code>VERIFICATION_CONFIG_NOT_FOUND = 6;</code>
@@ -807,6 +817,16 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_BUILD_REQUEST_FAILED = 7;</code>
      */
     public static final int CLOUD_BUILD_REQUEST_FAILED_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * A Rollout operation had a feature configured that is not supported.
+     * </pre>
+     *
+     * <code>OPERATION_FEATURE_NOT_SUPPORTED = 8;</code>
+     */
+    public static final int OPERATION_FEATURE_NOT_SUPPORTED_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -848,6 +868,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           return VERIFICATION_CONFIG_NOT_FOUND;
         case 7:
           return CLOUD_BUILD_REQUEST_FAILED;
+        case 8:
+          return OPERATION_FEATURE_NOT_SUPPORTED;
         default:
           return null;
       }

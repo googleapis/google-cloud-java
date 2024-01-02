@@ -23,7 +23,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.27.0</version>
+      <version>26.29.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -45,20 +45,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-beyondcorp-clientconnectorservices</artifactId>
-  <version>0.29.0</version>
+  <version>0.30.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-beyondcorp-clientconnectorservices:0.29.0'
+implementation 'com.google.cloud:google-cloud-beyondcorp-clientconnectorservices:0.30.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-beyondcorp-clientconnectorservices" % "0.29.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-beyondcorp-clientconnectorservices" % "0.30.0"
 ```
 <!-- {x-version-update-end} -->
 

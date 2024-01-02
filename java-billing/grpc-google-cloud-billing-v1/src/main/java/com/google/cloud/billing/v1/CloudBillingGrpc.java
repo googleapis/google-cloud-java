@@ -494,6 +494,52 @@ public final class CloudBillingGrpc {
     return getTestIamPermissionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.billing.v1.MoveBillingAccountRequest,
+          com.google.cloud.billing.v1.BillingAccount>
+      getMoveBillingAccountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MoveBillingAccount",
+      requestType = com.google.cloud.billing.v1.MoveBillingAccountRequest.class,
+      responseType = com.google.cloud.billing.v1.BillingAccount.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.billing.v1.MoveBillingAccountRequest,
+          com.google.cloud.billing.v1.BillingAccount>
+      getMoveBillingAccountMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.billing.v1.MoveBillingAccountRequest,
+            com.google.cloud.billing.v1.BillingAccount>
+        getMoveBillingAccountMethod;
+    if ((getMoveBillingAccountMethod = CloudBillingGrpc.getMoveBillingAccountMethod) == null) {
+      synchronized (CloudBillingGrpc.class) {
+        if ((getMoveBillingAccountMethod = CloudBillingGrpc.getMoveBillingAccountMethod) == null) {
+          CloudBillingGrpc.getMoveBillingAccountMethod =
+              getMoveBillingAccountMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.billing.v1.MoveBillingAccountRequest,
+                          com.google.cloud.billing.v1.BillingAccount>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MoveBillingAccount"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.billing.v1.MoveBillingAccountRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.billing.v1.BillingAccount.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudBillingMethodDescriptorSupplier("MoveBillingAccount"))
+                      .build();
+        }
+      }
+    }
+    return getMoveBillingAccountMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudBillingStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudBillingStub> factory =
@@ -675,7 +721,8 @@ public final class CloudBillingGrpc {
      * history of the Google Cloud Console might be billed to the new billing
      * account, even if the charge occurred before the new billing account was
      * assigned to the project.
-     * The current authenticated user must have ownership privileges for both the
+     * The current authenticated user must have ownership privileges for both
+     * the
      * [project](https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo
      * ) and the [billing
      * account](https://cloud.google.com/billing/docs/how-to/billing-access).
@@ -751,6 +798,20 @@ public final class CloudBillingGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Changes which parent organization a billing account belongs to.
+     * </pre>
+     */
+    default void moveBillingAccount(
+        com.google.cloud.billing.v1.MoveBillingAccountRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.BillingAccount> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getMoveBillingAccountMethod(), responseObserver);
     }
   }
 
@@ -932,7 +993,8 @@ public final class CloudBillingGrpc {
      * history of the Google Cloud Console might be billed to the new billing
      * account, even if the charge occurred before the new billing account was
      * assigned to the project.
-     * The current authenticated user must have ownership privileges for both the
+     * The current authenticated user must have ownership privileges for both
+     * the
      * [project](https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo
      * ) and the [billing
      * account](https://cloud.google.com/billing/docs/how-to/billing-access).
@@ -1014,6 +1076,22 @@ public final class CloudBillingGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Changes which parent organization a billing account belongs to.
+     * </pre>
+     */
+    public void moveBillingAccount(
+        com.google.cloud.billing.v1.MoveBillingAccountRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.BillingAccount> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMoveBillingAccountMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1160,7 +1238,8 @@ public final class CloudBillingGrpc {
      * history of the Google Cloud Console might be billed to the new billing
      * account, even if the charge occurred before the new billing account was
      * assigned to the project.
-     * The current authenticated user must have ownership privileges for both the
+     * The current authenticated user must have ownership privileges for both
+     * the
      * [project](https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo
      * ) and the [billing
      * account](https://cloud.google.com/billing/docs/how-to/billing-access).
@@ -1228,6 +1307,19 @@ public final class CloudBillingGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Changes which parent organization a billing account belongs to.
+     * </pre>
+     */
+    public com.google.cloud.billing.v1.BillingAccount moveBillingAccount(
+        com.google.cloud.billing.v1.MoveBillingAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMoveBillingAccountMethod(), getCallOptions(), request);
     }
   }
 
@@ -1378,7 +1470,8 @@ public final class CloudBillingGrpc {
      * history of the Google Cloud Console might be billed to the new billing
      * account, even if the charge occurred before the new billing account was
      * assigned to the project.
-     * The current authenticated user must have ownership privileges for both the
+     * The current authenticated user must have ownership privileges for both
+     * the
      * [project](https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo
      * ) and the [billing
      * account](https://cloud.google.com/billing/docs/how-to/billing-access).
@@ -1452,6 +1545,20 @@ public final class CloudBillingGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Changes which parent organization a billing account belongs to.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.billing.v1.BillingAccount>
+        moveBillingAccount(com.google.cloud.billing.v1.MoveBillingAccountRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMoveBillingAccountMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_BILLING_ACCOUNT = 0;
@@ -1464,6 +1571,7 @@ public final class CloudBillingGrpc {
   private static final int METHODID_GET_IAM_POLICY = 7;
   private static final int METHODID_SET_IAM_POLICY = 8;
   private static final int METHODID_TEST_IAM_PERMISSIONS = 9;
+  private static final int METHODID_MOVE_BILLING_ACCOUNT = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1539,6 +1647,12 @@ public final class CloudBillingGrpc {
           serviceImpl.testIamPermissions(
               (com.google.iam.v1.TestIamPermissionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_MOVE_BILLING_ACCOUNT:
+          serviceImpl.moveBillingAccount(
+              (com.google.cloud.billing.v1.MoveBillingAccountRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.BillingAccount>)
                   responseObserver);
           break;
         default:
@@ -1625,6 +1739,13 @@ public final class CloudBillingGrpc {
                     com.google.iam.v1.TestIamPermissionsRequest,
                     com.google.iam.v1.TestIamPermissionsResponse>(
                     service, METHODID_TEST_IAM_PERMISSIONS)))
+        .addMethod(
+            getMoveBillingAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.billing.v1.MoveBillingAccountRequest,
+                    com.google.cloud.billing.v1.BillingAccount>(
+                    service, METHODID_MOVE_BILLING_ACCOUNT)))
         .build();
   }
 
@@ -1686,6 +1807,7 @@ public final class CloudBillingGrpc {
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
+                      .addMethod(getMoveBillingAccountMethod())
                       .build();
         }
       }
