@@ -41,16 +41,17 @@ public final class FeatureFlagsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/bigtable/v2/feature_flags.proto"
-          + "\022\022google.bigtable.v2\"\212\001\n\014FeatureFlags\022\025\n"
+          + "\022\022google.bigtable.v2\"\266\001\n\014FeatureFlags\022\025\n"
           + "\rreverse_scans\030\001 \001(\010\022\036\n\026mutate_rows_rate"
           + "_limit\030\003 \001(\010\022\037\n\027mutate_rows_rate_limit2\030"
           + "\005 \001(\010\022\"\n\032last_scanned_row_responses\030\004 \001("
-          + "\010B\275\001\n\026com.google.bigtable.v2B\021FeatureFla"
-          + "gsProtoP\001Z:google.golang.org/genproto/go"
-          + "ogleapis/bigtable/v2;bigtable\252\002\030Google.C"
-          + "loud.Bigtable.V2\312\002\030Google\\Cloud\\Bigtable"
-          + "\\V2\352\002\033Google::Cloud::Bigtable::V2b\006proto"
-          + "3"
+          + "\010\022\026\n\016routing_cookie\030\006 \001(\010\022\022\n\nretry_info\030"
+          + "\007 \001(\010B\275\001\n\026com.google.bigtable.v2B\021Featur"
+          + "eFlagsProtoP\001Z:google.golang.org/genprot"
+          + "o/googleapis/bigtable/v2;bigtable\252\002\030Goog"
+          + "le.Cloud.Bigtable.V2\312\002\030Google\\Cloud\\Bigt"
+          + "able\\V2\352\002\033Google::Cloud::Bigtable::V2b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -65,6 +66,8 @@ public final class FeatureFlagsProto {
               "MutateRowsRateLimit",
               "MutateRowsRateLimit2",
               "LastScannedRowResponses",
+              "RoutingCookie",
+              "RetryInfo",
             });
   }
 

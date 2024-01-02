@@ -135,4 +135,17 @@ public interface ModifyColumnFamiliesRequestOrBuilder
    */
   com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder
       getModificationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, ignore safety checks when modifying the column families.
+   * </pre>
+   *
+   * <code>bool ignore_warnings = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ignoreWarnings.
+   */
+  boolean getIgnoreWarnings();
 }

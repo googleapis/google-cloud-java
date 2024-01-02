@@ -1396,6 +1396,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *       ModifyColumnFamiliesRequest.newBuilder()
    *           .setName(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
    *           .addAllModifications(new ArrayList<ModifyColumnFamiliesRequest.Modification>())
+   *           .setIgnoreWarnings(true)
    *           .build();
    *   Table response = baseBigtableTableAdminClient.modifyColumnFamilies(request);
    * }
@@ -1428,6 +1429,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *       ModifyColumnFamiliesRequest.newBuilder()
    *           .setName(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
    *           .addAllModifications(new ArrayList<ModifyColumnFamiliesRequest.Modification>())
+   *           .setIgnoreWarnings(true)
    *           .build();
    *   ApiFuture<Table> future =
    *       baseBigtableTableAdminClient.modifyColumnFamiliesCallable().futureCall(request);

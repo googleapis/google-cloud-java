@@ -80,4 +80,32 @@ public interface FeatureFlagsOrBuilder
    * @return The lastScannedRowResponses.
    */
   boolean getLastScannedRowResponses();
+
+  /**
+   *
+   *
+   * <pre>
+   * Notify the server that the client supports using encoded routing cookie
+   * strings to retry requests with.
+   * </pre>
+   *
+   * <code>bool routing_cookie = 6;</code>
+   *
+   * @return The routingCookie.
+   */
+  boolean getRoutingCookie();
+
+  /**
+   *
+   *
+   * <pre>
+   * Notify the server that the client supports using retry info back off
+   * durations to retry requests with.
+   * </pre>
+   *
+   * <code>bool retry_info = 7;</code>
+   *
+   * @return The retryInfo.
+   */
+  boolean getRetryInfo();
 }
