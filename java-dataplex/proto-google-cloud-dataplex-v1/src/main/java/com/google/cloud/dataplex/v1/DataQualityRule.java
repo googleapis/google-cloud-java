@@ -6971,7 +6971,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    * `ignore_null` is `true`. In that case, such `null` rows are trivially
    * considered passing.
    *
-   * This field is only valid for row-level type rules.
+   * This field is only valid for the following type of rules:
+   *
+   * * RangeExpectation
+   * * RegexExpectation
+   * * SetExpectation
+   * * UniquenessExpectation
    * </pre>
    *
    * <code>bool ignore_null = 501 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9977,7 +9982,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * `ignore_null` is `true`. In that case, such `null` rows are trivially
      * considered passing.
      *
-     * This field is only valid for row-level type rules.
+     * This field is only valid for the following type of rules:
+     *
+     * * RangeExpectation
+     * * RegexExpectation
+     * * SetExpectation
+     * * UniquenessExpectation
      * </pre>
      *
      * <code>bool ignore_null = 501 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9996,7 +10006,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * `ignore_null` is `true`. In that case, such `null` rows are trivially
      * considered passing.
      *
-     * This field is only valid for row-level type rules.
+     * This field is only valid for the following type of rules:
+     *
+     * * RangeExpectation
+     * * RegexExpectation
+     * * SetExpectation
+     * * UniquenessExpectation
      * </pre>
      *
      * <code>bool ignore_null = 501 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10019,7 +10034,12 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      * `ignore_null` is `true`. In that case, such `null` rows are trivially
      * considered passing.
      *
-     * This field is only valid for row-level type rules.
+     * This field is only valid for the following type of rules:
+     *
+     * * RangeExpectation
+     * * RegexExpectation
+     * * SetExpectation
+     * * UniquenessExpectation
      * </pre>
      *
      * <code>bool ignore_null = 501 [(.google.api.field_behavior) = OPTIONAL];</code>
