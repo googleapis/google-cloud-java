@@ -538,6 +538,9 @@ public class ITBigQueryWriteManualClientTest {
                             .build(),
                         com.google.cloud.bigquery.Field.newBuilder(
                                 "test_timestamp", StandardSQLTypeName.TIMESTAMP)
+                            .build(),
+                        com.google.cloud.bigquery.Field.newBuilder(
+                                "test_json", StandardSQLTypeName.JSON)
                             .build())))
             .build();
 
@@ -573,6 +576,7 @@ public class ITBigQueryWriteManualClientTest {
                 ByteString.copyFromUtf8("b").toByteArray()
               }));
       row1.put("test_timestamp", "2022-02-06 07:24:47.84");
+      row1.put("test_json", "{}");
       JSONArray jsonArr1 = new JSONArray(new JSONObject[] {row1});
 
       ApiFuture<AppendRowsResponse> response1 = jsonStreamWriter.append(jsonArr1, -1);
