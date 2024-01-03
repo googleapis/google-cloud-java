@@ -16,7 +16,6 @@
 
 package com.google.cloud.datastore;
 
-import com.google.api.core.BetaApi;
 import com.google.common.collect.ImmutableList;
 
 /**
@@ -37,7 +36,6 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
     this(projectId, namespace, "");
   }
 
-  @BetaApi
   public KeyFactory(String projectId, String namespace, String databaseId) {
     super(projectId);
     setNamespace(namespace);

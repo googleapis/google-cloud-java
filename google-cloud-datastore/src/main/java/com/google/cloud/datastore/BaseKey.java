@@ -20,7 +20,6 @@ import static com.google.cloud.datastore.Validator.validateKind;
 import static com.google.cloud.datastore.Validator.validateNamespace;
 import static com.google.cloud.datastore.Validator.validateProjectId;
 
-import com.google.api.core.BetaApi;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -117,7 +116,6 @@ public abstract class BaseKey implements Serializable {
     }
 
     /** Sets the database id of the key. */
-    @BetaApi
     public B setDatabaseId(String databaseId) {
       this.databaseId = databaseId;
       return self();
@@ -148,7 +146,6 @@ public abstract class BaseKey implements Serializable {
     return namespace;
   }
 
-  @BetaApi
   public String getDatabaseId() {
     return databaseId;
   }

@@ -18,7 +18,6 @@ package com.google.cloud.datastore;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.api.core.BetaApi;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.TextFormat;
@@ -180,7 +179,6 @@ public final class Key extends IncompleteKey {
     return new Builder(projectId, kind, name);
   }
 
-  @BetaApi
   public static Builder newBuilder(String projectId, String kind, String name, String databaseId) {
     return new Builder(projectId, kind, name, databaseId);
   }
@@ -189,7 +187,6 @@ public final class Key extends IncompleteKey {
     return new Builder(projectId, kind, id);
   }
 
-  @BetaApi
   public static Builder newBuilder(String projectId, String kind, long id, String databaseId) {
     return new Builder(projectId, kind, id, databaseId);
   }
