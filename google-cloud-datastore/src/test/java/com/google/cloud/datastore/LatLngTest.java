@@ -19,6 +19,7 @@ package com.google.cloud.datastore;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+import com.google.common.testing.EqualsTester;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -40,7 +41,8 @@ public class LatLngTest {
 
   @Test
   public void testEquals() {
-    assertEquals(gp1, gp1);
+    EqualsTester equalsTester = new EqualsTester();
+    equalsTester.addEqualityGroup(gp1, gp1).testEquals();
     assertNotEquals(gp1, gp2);
   }
 

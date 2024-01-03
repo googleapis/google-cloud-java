@@ -21,6 +21,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 
+import com.google.common.testing.EqualsTester;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -46,7 +47,8 @@ public class BlobTest {
 
   @Test
   public void testEquals() {
-    assertEquals(blob1, blob1);
+    EqualsTester equalsTester = new EqualsTester();
+    equalsTester.addEqualityGroup(blob1, blob1).testEquals();
     assertEquals(blob1, Blob.copyFrom(bytes1));
     assertNotEquals(blob1, blob2);
   }
