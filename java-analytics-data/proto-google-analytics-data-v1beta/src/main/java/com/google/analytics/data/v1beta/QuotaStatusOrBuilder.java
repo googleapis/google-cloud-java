@@ -30,7 +30,19 @@ public interface QuotaStatusOrBuilder
    * Quota consumed by this request.
    * </pre>
    *
-   * <code>int32 consumed = 1;</code>
+   * <code>optional int32 consumed = 1;</code>
+   *
+   * @return Whether the consumed field is set.
+   */
+  boolean hasConsumed();
+  /**
+   *
+   *
+   * <pre>
+   * Quota consumed by this request.
+   * </pre>
+   *
+   * <code>optional int32 consumed = 1;</code>
    *
    * @return The consumed.
    */
@@ -43,7 +55,19 @@ public interface QuotaStatusOrBuilder
    * Quota remaining after this request.
    * </pre>
    *
-   * <code>int32 remaining = 2;</code>
+   * <code>optional int32 remaining = 2;</code>
+   *
+   * @return Whether the remaining field is set.
+   */
+  boolean hasRemaining();
+  /**
+   *
+   *
+   * <pre>
+   * Quota remaining after this request.
+   * </pre>
+   *
+   * <code>optional int32 remaining = 2;</code>
    *
    * @return The remaining.
    */
