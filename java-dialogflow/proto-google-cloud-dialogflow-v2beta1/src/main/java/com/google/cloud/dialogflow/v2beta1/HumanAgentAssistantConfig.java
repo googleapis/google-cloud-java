@@ -846,6 +846,22 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
+     * Optional. Enable including conversation context during query answer
+     * generation. Supported features: KNOWLEDGE_SEARCH.
+     * </pre>
+     *
+     * <code>
+     * bool enable_conversation_augmented_query = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableConversationAugmentedQuery.
+     */
+    boolean getEnableConversationAugmentedQuery();
+
+    /**
+     *
+     *
+     * <pre>
      * Settings of suggestion trigger.
      *
      * Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
@@ -1162,6 +1178,27 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       return disableAgentQueryLogging_;
     }
 
+    public static final int ENABLE_CONVERSATION_AUGMENTED_QUERY_FIELD_NUMBER = 16;
+    private boolean enableConversationAugmentedQuery_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable including conversation context during query answer
+     * generation. Supported features: KNOWLEDGE_SEARCH.
+     * </pre>
+     *
+     * <code>
+     * bool enable_conversation_augmented_query = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableConversationAugmentedQuery.
+     */
+    @java.lang.Override
+    public boolean getEnableConversationAugmentedQuery() {
+      return enableConversationAugmentedQuery_;
+    }
+
     public static final int SUGGESTION_TRIGGER_SETTINGS_FIELD_NUMBER = 10;
     private com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionTriggerSettings
         suggestionTriggerSettings_;
@@ -1454,6 +1491,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (disableAgentQueryLogging_ != false) {
         output.writeBool(14, disableAgentQueryLogging_);
       }
+      if (enableConversationAugmentedQuery_ != false) {
+        output.writeBool(16, enableConversationAugmentedQuery_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1492,6 +1532,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         size +=
             com.google.protobuf.CodedOutputStream.computeBoolSize(14, disableAgentQueryLogging_);
       }
+      if (enableConversationAugmentedQuery_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                16, enableConversationAugmentedQuery_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1517,6 +1562,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
       if (getEnableEventBasedSuggestion() != other.getEnableEventBasedSuggestion()) return false;
       if (getDisableAgentQueryLogging() != other.getDisableAgentQueryLogging()) return false;
+      if (getEnableConversationAugmentedQuery() != other.getEnableConversationAugmentedQuery())
+        return false;
       if (hasSuggestionTriggerSettings() != other.hasSuggestionTriggerSettings()) return false;
       if (hasSuggestionTriggerSettings()) {
         if (!getSuggestionTriggerSettings().equals(other.getSuggestionTriggerSettings()))
@@ -1555,6 +1602,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableEventBasedSuggestion());
       hash = (37 * hash) + DISABLE_AGENT_QUERY_LOGGING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableAgentQueryLogging());
+      hash = (37 * hash) + ENABLE_CONVERSATION_AUGMENTED_QUERY_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getEnableConversationAugmentedQuery());
       if (hasSuggestionTriggerSettings()) {
         hash = (37 * hash) + SUGGESTION_TRIGGER_SETTINGS_FIELD_NUMBER;
         hash = (53 * hash) + getSuggestionTriggerSettings().hashCode();
@@ -1744,6 +1795,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         enableEventBasedSuggestion_ = false;
         disableAgentQueryLogging_ = false;
+        enableConversationAugmentedQuery_ = false;
         suggestionTriggerSettings_ = null;
         if (suggestionTriggerSettingsBuilder_ != null) {
           suggestionTriggerSettingsBuilder_.dispose();
@@ -1822,22 +1874,25 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           result.disableAgentQueryLogging_ = disableAgentQueryLogging_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.enableConversationAugmentedQuery_ = enableConversationAugmentedQuery_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.suggestionTriggerSettings_ =
               suggestionTriggerSettingsBuilder_ == null
                   ? suggestionTriggerSettings_
                   : suggestionTriggerSettingsBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.queryConfig_ =
               queryConfigBuilder_ == null ? queryConfig_ : queryConfigBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           result.conversationModelConfig_ =
               conversationModelConfigBuilder_ == null
                   ? conversationModelConfig_
                   : conversationModelConfigBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (((from_bitField0_ & 0x00000080) != 0)) {
           result.conversationProcessConfig_ =
               conversationProcessConfigBuilder_ == null
                   ? conversationProcessConfig_
@@ -1910,6 +1965,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (other.getDisableAgentQueryLogging() != false) {
           setDisableAgentQueryLogging(other.getDisableAgentQueryLogging());
         }
+        if (other.getEnableConversationAugmentedQuery() != false) {
+          setEnableConversationAugmentedQuery(other.getEnableConversationAugmentedQuery());
+        }
         if (other.hasSuggestionTriggerSettings()) {
           mergeSuggestionTriggerSettings(other.getSuggestionTriggerSettings());
         }
@@ -1964,28 +2022,28 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               case 50:
                 {
                   input.readMessage(getQueryConfigFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 50
               case 58:
                 {
                   input.readMessage(
                       getConversationModelConfigFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000020;
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 58
               case 66:
                 {
                   input.readMessage(
                       getConversationProcessConfigFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000040;
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 66
               case 82:
                 {
                   input.readMessage(
                       getSuggestionTriggerSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 82
               case 112:
@@ -1994,6 +2052,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 112
+              case 128:
+                {
+                  enableConversationAugmentedQuery_ = input.readBool();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 128
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2332,6 +2396,68 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         return this;
       }
 
+      private boolean enableConversationAugmentedQuery_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable including conversation context during query answer
+       * generation. Supported features: KNOWLEDGE_SEARCH.
+       * </pre>
+       *
+       * <code>
+       * bool enable_conversation_augmented_query = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enableConversationAugmentedQuery.
+       */
+      @java.lang.Override
+      public boolean getEnableConversationAugmentedQuery() {
+        return enableConversationAugmentedQuery_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable including conversation context during query answer
+       * generation. Supported features: KNOWLEDGE_SEARCH.
+       * </pre>
+       *
+       * <code>
+       * bool enable_conversation_augmented_query = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enableConversationAugmentedQuery to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableConversationAugmentedQuery(boolean value) {
+
+        enableConversationAugmentedQuery_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable including conversation context during query answer
+       * generation. Supported features: KNOWLEDGE_SEARCH.
+       * </pre>
+       *
+       * <code>
+       * bool enable_conversation_augmented_query = 16 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableConversationAugmentedQuery() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        enableConversationAugmentedQuery_ = false;
+        onChanged();
+        return this;
+      }
+
       private com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
               .SuggestionTriggerSettings
           suggestionTriggerSettings_;
@@ -2360,7 +2486,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return Whether the suggestionTriggerSettings field is set.
        */
       public boolean hasSuggestionTriggerSettings() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -2414,7 +2540,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           suggestionTriggerSettingsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2441,7 +2567,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           suggestionTriggerSettingsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2463,7 +2589,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionTriggerSettings
               value) {
         if (suggestionTriggerSettingsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)
+          if (((bitField0_ & 0x00000010) != 0)
               && suggestionTriggerSettings_ != null
               && suggestionTriggerSettings_
                   != com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
@@ -2475,7 +2601,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           suggestionTriggerSettingsBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2494,7 +2620,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * </code>
        */
       public Builder clearSuggestionTriggerSettings() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         suggestionTriggerSettings_ = null;
         if (suggestionTriggerSettingsBuilder_ != null) {
           suggestionTriggerSettingsBuilder_.dispose();
@@ -2520,7 +2646,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionTriggerSettings
               .Builder
           getSuggestionTriggerSettingsBuilder() {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return getSuggestionTriggerSettingsFieldBuilder().getBuilder();
       }
@@ -2610,7 +2736,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return Whether the queryConfig field is set.
        */
       public boolean hasQueryConfig() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
@@ -2658,7 +2784,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           queryConfigBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2682,7 +2808,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           queryConfigBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2701,7 +2827,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
               value) {
         if (queryConfigBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)
+          if (((bitField0_ & 0x00000020) != 0)
               && queryConfig_ != null
               && queryConfig_
                   != com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
@@ -2713,7 +2839,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           queryConfigBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2729,7 +2855,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * </code>
        */
       public Builder clearQueryConfig() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         queryConfig_ = null;
         if (queryConfigBuilder_ != null) {
           queryConfigBuilder_.dispose();
@@ -2752,7 +2878,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
               .Builder
           getQueryConfigBuilder() {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return getQueryConfigFieldBuilder().getBuilder();
       }
@@ -2835,7 +2961,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return Whether the conversationModelConfig field is set.
        */
       public boolean hasConversationModelConfig() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        *
@@ -2883,7 +3009,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationModelConfigBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2907,7 +3033,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationModelConfigBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2926,7 +3052,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationModelConfig
               value) {
         if (conversationModelConfigBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)
+          if (((bitField0_ & 0x00000040) != 0)
               && conversationModelConfig_ != null
               && conversationModelConfig_
                   != com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
@@ -2938,7 +3064,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationModelConfigBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2954,7 +3080,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * </code>
        */
       public Builder clearConversationModelConfig() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         conversationModelConfig_ = null;
         if (conversationModelConfigBuilder_ != null) {
           conversationModelConfigBuilder_.dispose();
@@ -2977,7 +3103,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationModelConfig
               .Builder
           getConversationModelConfigBuilder() {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return getConversationModelConfigFieldBuilder().getBuilder();
       }
@@ -3062,7 +3188,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return Whether the conversationProcessConfig field is set.
        */
       public boolean hasConversationProcessConfig() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        *
@@ -3110,7 +3236,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationProcessConfigBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -3134,7 +3260,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationProcessConfigBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -3153,7 +3279,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationProcessConfig
               value) {
         if (conversationProcessConfigBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)
+          if (((bitField0_ & 0x00000080) != 0)
               && conversationProcessConfig_ != null
               && conversationProcessConfig_
                   != com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
@@ -3165,7 +3291,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationProcessConfigBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -3181,7 +3307,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * </code>
        */
       public Builder clearConversationProcessConfig() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         conversationProcessConfig_ = null;
         if (conversationProcessConfigBuilder_ != null) {
           conversationProcessConfigBuilder_.dispose();
@@ -3204,7 +3330,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationProcessConfig
               .Builder
           getConversationProcessConfigBuilder() {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return getConversationProcessConfigFieldBuilder().getBuilder();
       }
@@ -4902,6 +5028,53 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
             .ContextFilterSettingsOrBuilder
         getContextFilterSettingsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customized sections chosen to return when requesting a
+     * summary of a conversation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections sections = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sections field is set.
+     */
+    boolean hasSections();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customized sections chosen to return when requesting a
+     * summary of a conversation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections sections = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sections.
+     */
+    com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections
+        getSections();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customized sections chosen to return when requesting a
+     * summary of a conversation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections sections = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+            .SectionsOrBuilder
+        getSectionsOrBuilder();
 
     com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
             .QuerySourceCase
@@ -9526,6 +9699,1395 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
     }
 
+    public interface SectionsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The selected sections chosen to return when requesting a summary of a
+       * conversation. A duplicate selected section will be treated as a single
+       * selected section. If section types are not provided, the default will
+       * be {SITUATION, ACTION, RESULT}.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+       * </code>
+       *
+       * @return A list containing the sectionTypes.
+       */
+      java.util.List<
+              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections.SectionType>
+          getSectionTypesList();
+      /**
+       *
+       *
+       * <pre>
+       * The selected sections chosen to return when requesting a summary of a
+       * conversation. A duplicate selected section will be treated as a single
+       * selected section. If section types are not provided, the default will
+       * be {SITUATION, ACTION, RESULT}.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+       * </code>
+       *
+       * @return The count of sectionTypes.
+       */
+      int getSectionTypesCount();
+      /**
+       *
+       *
+       * <pre>
+       * The selected sections chosen to return when requesting a summary of a
+       * conversation. A duplicate selected section will be treated as a single
+       * selected section. If section types are not provided, the default will
+       * be {SITUATION, ACTION, RESULT}.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The sectionTypes at the given index.
+       */
+      com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections
+              .SectionType
+          getSectionTypes(int index);
+      /**
+       *
+       *
+       * <pre>
+       * The selected sections chosen to return when requesting a summary of a
+       * conversation. A duplicate selected section will be treated as a single
+       * selected section. If section types are not provided, the default will
+       * be {SITUATION, ACTION, RESULT}.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for sectionTypes.
+       */
+      java.util.List<java.lang.Integer> getSectionTypesValueList();
+      /**
+       *
+       *
+       * <pre>
+       * The selected sections chosen to return when requesting a summary of a
+       * conversation. A duplicate selected section will be treated as a single
+       * selected section. If section types are not provided, the default will
+       * be {SITUATION, ACTION, RESULT}.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of sectionTypes at the given index.
+       */
+      int getSectionTypesValue(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Custom sections to return when requesting a summary of a conversation.
+     * This is only supported when `baseline_model_version` == '2.0'.
+     *
+     * Supported features: CONVERSATION_SUMMARIZATION,
+     * CONVERSATION_SUMMARIZATION_VOICE.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections}
+     */
+    public static final class Sections extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections)
+        SectionsOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Sections.newBuilder() to construct.
+      private Sections(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Sections() {
+        sectionTypes_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Sections();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
+            .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_SuggestionQueryConfig_Sections_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
+            .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_SuggestionQueryConfig_Sections_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                    .Sections.class,
+                com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                    .Sections.Builder.class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Selectable sections to return when requesting a summary of a
+       * conversation.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType}
+       */
+      public enum SectionType implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Undefined section type, does not return anything.
+         * </pre>
+         *
+         * <code>SECTION_TYPE_UNSPECIFIED = 0;</code>
+         */
+        SECTION_TYPE_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * What the customer needs help with or has question about.
+         * Section name: "situation".
+         * </pre>
+         *
+         * <code>SITUATION = 1;</code>
+         */
+        SITUATION(1),
+        /**
+         *
+         *
+         * <pre>
+         * What the agent does to help the customer.
+         * Section name: "action".
+         * </pre>
+         *
+         * <code>ACTION = 2;</code>
+         */
+        ACTION(2),
+        /**
+         *
+         *
+         * <pre>
+         * Result of the customer service. A single word describing the result
+         * of the conversation.
+         * Section name: "resolution".
+         * </pre>
+         *
+         * <code>RESOLUTION = 3;</code>
+         */
+        RESOLUTION(3),
+        /**
+         *
+         *
+         * <pre>
+         * Reason for cancellation if the customer requests for a cancellation.
+         * "N/A" otherwise.
+         * Section name: "reason_for_cancellation".
+         * </pre>
+         *
+         * <code>REASON_FOR_CANCELLATION = 4;</code>
+         */
+        REASON_FOR_CANCELLATION(4),
+        /**
+         *
+         *
+         * <pre>
+         * "Unsatisfied" or "Satisfied" depending on the customer's feelings at
+         * the end of the conversation.
+         * Section name: "customer_satisfaction".
+         * </pre>
+         *
+         * <code>CUSTOMER_SATISFACTION = 5;</code>
+         */
+        CUSTOMER_SATISFACTION(5),
+        /**
+         *
+         *
+         * <pre>
+         * Key entities extracted from the conversation, such as ticket number,
+         * order number, dollar amount, etc.
+         * Section names are prefixed by "entities/".
+         * </pre>
+         *
+         * <code>ENTITIES = 6;</code>
+         */
+        ENTITIES(6),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * Undefined section type, does not return anything.
+         * </pre>
+         *
+         * <code>SECTION_TYPE_UNSPECIFIED = 0;</code>
+         */
+        public static final int SECTION_TYPE_UNSPECIFIED_VALUE = 0;
+        /**
+         *
+         *
+         * <pre>
+         * What the customer needs help with or has question about.
+         * Section name: "situation".
+         * </pre>
+         *
+         * <code>SITUATION = 1;</code>
+         */
+        public static final int SITUATION_VALUE = 1;
+        /**
+         *
+         *
+         * <pre>
+         * What the agent does to help the customer.
+         * Section name: "action".
+         * </pre>
+         *
+         * <code>ACTION = 2;</code>
+         */
+        public static final int ACTION_VALUE = 2;
+        /**
+         *
+         *
+         * <pre>
+         * Result of the customer service. A single word describing the result
+         * of the conversation.
+         * Section name: "resolution".
+         * </pre>
+         *
+         * <code>RESOLUTION = 3;</code>
+         */
+        public static final int RESOLUTION_VALUE = 3;
+        /**
+         *
+         *
+         * <pre>
+         * Reason for cancellation if the customer requests for a cancellation.
+         * "N/A" otherwise.
+         * Section name: "reason_for_cancellation".
+         * </pre>
+         *
+         * <code>REASON_FOR_CANCELLATION = 4;</code>
+         */
+        public static final int REASON_FOR_CANCELLATION_VALUE = 4;
+        /**
+         *
+         *
+         * <pre>
+         * "Unsatisfied" or "Satisfied" depending on the customer's feelings at
+         * the end of the conversation.
+         * Section name: "customer_satisfaction".
+         * </pre>
+         *
+         * <code>CUSTOMER_SATISFACTION = 5;</code>
+         */
+        public static final int CUSTOMER_SATISFACTION_VALUE = 5;
+        /**
+         *
+         *
+         * <pre>
+         * Key entities extracted from the conversation, such as ticket number,
+         * order number, dollar amount, etc.
+         * Section names are prefixed by "entities/".
+         * </pre>
+         *
+         * <code>ENTITIES = 6;</code>
+         */
+        public static final int ENTITIES_VALUE = 6;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static SectionType valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static SectionType forNumber(int value) {
+          switch (value) {
+            case 0:
+              return SECTION_TYPE_UNSPECIFIED;
+            case 1:
+              return SITUATION;
+            case 2:
+              return ACTION;
+            case 3:
+              return RESOLUTION;
+            case 4:
+              return REASON_FOR_CANCELLATION;
+            case 5:
+              return CUSTOMER_SATISFACTION;
+            case 6:
+              return ENTITIES;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<SectionType> internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<SectionType>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<SectionType>() {
+                  public SectionType findValueByNumber(int number) {
+                    return SectionType.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+              .Sections.getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final SectionType[] VALUES = values();
+
+        public static SectionType valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private SectionType(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType)
+      }
+
+      public static final int SECTION_TYPES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private java.util.List<java.lang.Integer> sectionTypes_;
+
+      private static final com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer,
+              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections.SectionType>
+          sectionTypes_converter_ =
+              new com.google.protobuf.Internal.ListAdapter.Converter<
+                  java.lang.Integer,
+                  com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                      .SuggestionQueryConfig.Sections.SectionType>() {
+                public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                        .SuggestionQueryConfig.Sections.SectionType
+                    convert(java.lang.Integer from) {
+                  com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                          .SuggestionQueryConfig.Sections.SectionType
+                      result =
+                          com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                              .SuggestionQueryConfig.Sections.SectionType.forNumber(from);
+                  return result == null
+                      ? com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                          .SuggestionQueryConfig.Sections.SectionType.UNRECOGNIZED
+                      : result;
+                }
+              };
+      /**
+       *
+       *
+       * <pre>
+       * The selected sections chosen to return when requesting a summary of a
+       * conversation. A duplicate selected section will be treated as a single
+       * selected section. If section types are not provided, the default will
+       * be {SITUATION, ACTION, RESULT}.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+       * </code>
+       *
+       * @return A list containing the sectionTypes.
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections.SectionType>
+          getSectionTypesList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer,
+            com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                .Sections.SectionType>(sectionTypes_, sectionTypes_converter_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The selected sections chosen to return when requesting a summary of a
+       * conversation. A duplicate selected section will be treated as a single
+       * selected section. If section types are not provided, the default will
+       * be {SITUATION, ACTION, RESULT}.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+       * </code>
+       *
+       * @return The count of sectionTypes.
+       */
+      @java.lang.Override
+      public int getSectionTypesCount() {
+        return sectionTypes_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The selected sections chosen to return when requesting a summary of a
+       * conversation. A duplicate selected section will be treated as a single
+       * selected section. If section types are not provided, the default will
+       * be {SITUATION, ACTION, RESULT}.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The sectionTypes at the given index.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+              .Sections.SectionType
+          getSectionTypes(int index) {
+        return sectionTypes_converter_.convert(sectionTypes_.get(index));
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The selected sections chosen to return when requesting a summary of a
+       * conversation. A duplicate selected section will be treated as a single
+       * selected section. If section types are not provided, the default will
+       * be {SITUATION, ACTION, RESULT}.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for sectionTypes.
+       */
+      @java.lang.Override
+      public java.util.List<java.lang.Integer> getSectionTypesValueList() {
+        return sectionTypes_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The selected sections chosen to return when requesting a summary of a
+       * conversation. A duplicate selected section will be treated as a single
+       * selected section. If section types are not provided, the default will
+       * be {SITUATION, ACTION, RESULT}.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of sectionTypes at the given index.
+       */
+      @java.lang.Override
+      public int getSectionTypesValue(int index) {
+        return sectionTypes_.get(index);
+      }
+
+      private int sectionTypesMemoizedSerializedSize;
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getSerializedSize();
+        if (getSectionTypesList().size() > 0) {
+          output.writeUInt32NoTag(10);
+          output.writeUInt32NoTag(sectionTypesMemoizedSerializedSize);
+        }
+        for (int i = 0; i < sectionTypes_.size(); i++) {
+          output.writeEnumNoTag(sectionTypes_.get(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < sectionTypes_.size(); i++) {
+            dataSize +=
+                com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(sectionTypes_.get(i));
+          }
+          size += dataSize;
+          if (!getSectionTypesList().isEmpty()) {
+            size += 1;
+            size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+          }
+          sectionTypesMemoizedSerializedSize = dataSize;
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                .Sections)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections
+            other =
+                (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                        .Sections)
+                    obj;
+
+        if (!sectionTypes_.equals(other.sectionTypes_)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getSectionTypesCount() > 0) {
+          hash = (37 * hash) + SECTION_TYPES_FIELD_NUMBER;
+          hash = (53 * hash) + sectionTypes_.hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+              .SuggestionQueryConfig.Sections
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+              .SuggestionQueryConfig.Sections
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+              .SuggestionQueryConfig.Sections
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+              .SuggestionQueryConfig.Sections
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+              .SuggestionQueryConfig.Sections
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+              .SuggestionQueryConfig.Sections
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+              .SuggestionQueryConfig.Sections
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+              .SuggestionQueryConfig.Sections
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+              .SuggestionQueryConfig.Sections
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+              .SuggestionQueryConfig.Sections
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+              .SuggestionQueryConfig.Sections
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+              .SuggestionQueryConfig.Sections
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom sections to return when requesting a summary of a conversation.
+       * This is only supported when `baseline_model_version` == '2.0'.
+       *
+       * Supported features: CONVERSATION_SUMMARIZATION,
+       * CONVERSATION_SUMMARIZATION_VOICE.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections)
+          com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+              .SectionsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
+              .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_SuggestionQueryConfig_Sections_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
+              .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_SuggestionQueryConfig_Sections_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                      .SuggestionQueryConfig.Sections.class,
+                  com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                      .SuggestionQueryConfig.Sections.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          sectionTypes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
+              .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_SuggestionQueryConfig_Sections_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                .Sections
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+              .Sections.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                .Sections
+            build() {
+          com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                .Sections
+            buildPartial() {
+          com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections
+              result =
+                  new com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                      .SuggestionQueryConfig.Sections(this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                    .Sections
+                result) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            sectionTypes_ = java.util.Collections.unmodifiableList(sectionTypes_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.sectionTypes_ = sectionTypes_;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                    .Sections
+                result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                        .Sections)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                    .Sections
+                other) {
+          if (other
+              == com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections.getDefaultInstance()) return this;
+          if (!other.sectionTypes_.isEmpty()) {
+            if (sectionTypes_.isEmpty()) {
+              sectionTypes_ = other.sectionTypes_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSectionTypesIsMutable();
+              sectionTypes_.addAll(other.sectionTypes_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    int tmpRaw = input.readEnum();
+                    ensureSectionTypesIsMutable();
+                    sectionTypes_.add(tmpRaw);
+                    break;
+                  } // case 8
+                case 10:
+                  {
+                    int length = input.readRawVarint32();
+                    int oldLimit = input.pushLimit(length);
+                    while (input.getBytesUntilLimit() > 0) {
+                      int tmpRaw = input.readEnum();
+                      ensureSectionTypesIsMutable();
+                      sectionTypes_.add(tmpRaw);
+                    }
+                    input.popLimit(oldLimit);
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.util.List<java.lang.Integer> sectionTypes_ = java.util.Collections.emptyList();
+
+        private void ensureSectionTypesIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            sectionTypes_ = new java.util.ArrayList<java.lang.Integer>(sectionTypes_);
+            bitField0_ |= 0x00000001;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The selected sections chosen to return when requesting a summary of a
+         * conversation. A duplicate selected section will be treated as a single
+         * selected section. If section types are not provided, the default will
+         * be {SITUATION, ACTION, RESULT}.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+         * </code>
+         *
+         * @return A list containing the sectionTypes.
+         */
+        public java.util.List<
+                com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                    .Sections.SectionType>
+            getSectionTypesList() {
+          return new com.google.protobuf.Internal.ListAdapter<
+              java.lang.Integer,
+              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections.SectionType>(sectionTypes_, sectionTypes_converter_);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The selected sections chosen to return when requesting a summary of a
+         * conversation. A duplicate selected section will be treated as a single
+         * selected section. If section types are not provided, the default will
+         * be {SITUATION, ACTION, RESULT}.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+         * </code>
+         *
+         * @return The count of sectionTypes.
+         */
+        public int getSectionTypesCount() {
+          return sectionTypes_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The selected sections chosen to return when requesting a summary of a
+         * conversation. A duplicate selected section will be treated as a single
+         * selected section. If section types are not provided, the default will
+         * be {SITUATION, ACTION, RESULT}.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The sectionTypes at the given index.
+         */
+        public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                .Sections.SectionType
+            getSectionTypes(int index) {
+          return sectionTypes_converter_.convert(sectionTypes_.get(index));
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The selected sections chosen to return when requesting a summary of a
+         * conversation. A duplicate selected section will be treated as a single
+         * selected section. If section types are not provided, the default will
+         * be {SITUATION, ACTION, RESULT}.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The sectionTypes to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSectionTypes(
+            int index,
+            com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                    .Sections.SectionType
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSectionTypesIsMutable();
+          sectionTypes_.set(index, value.getNumber());
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The selected sections chosen to return when requesting a summary of a
+         * conversation. A duplicate selected section will be treated as a single
+         * selected section. If section types are not provided, the default will
+         * be {SITUATION, ACTION, RESULT}.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+         * </code>
+         *
+         * @param value The sectionTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addSectionTypes(
+            com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                    .Sections.SectionType
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSectionTypesIsMutable();
+          sectionTypes_.add(value.getNumber());
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The selected sections chosen to return when requesting a summary of a
+         * conversation. A duplicate selected section will be treated as a single
+         * selected section. If section types are not provided, the default will
+         * be {SITUATION, ACTION, RESULT}.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+         * </code>
+         *
+         * @param values The sectionTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllSectionTypes(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                            .SuggestionQueryConfig.Sections.SectionType>
+                values) {
+          ensureSectionTypesIsMutable();
+          for (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections.SectionType
+              value : values) {
+            sectionTypes_.add(value.getNumber());
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The selected sections chosen to return when requesting a summary of a
+         * conversation. A duplicate selected section will be treated as a single
+         * selected section. If section types are not provided, the default will
+         * be {SITUATION, ACTION, RESULT}.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSectionTypes() {
+          sectionTypes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The selected sections chosen to return when requesting a summary of a
+         * conversation. A duplicate selected section will be treated as a single
+         * selected section. If section types are not provided, the default will
+         * be {SITUATION, ACTION, RESULT}.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+         * </code>
+         *
+         * @return A list containing the enum numeric values on the wire for sectionTypes.
+         */
+        public java.util.List<java.lang.Integer> getSectionTypesValueList() {
+          return java.util.Collections.unmodifiableList(sectionTypes_);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The selected sections chosen to return when requesting a summary of a
+         * conversation. A duplicate selected section will be treated as a single
+         * selected section. If section types are not provided, the default will
+         * be {SITUATION, ACTION, RESULT}.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The enum numeric value on the wire of sectionTypes at the given index.
+         */
+        public int getSectionTypesValue(int index) {
+          return sectionTypes_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The selected sections chosen to return when requesting a summary of a
+         * conversation. A duplicate selected section will be treated as a single
+         * selected section. If section types are not provided, the default will
+         * be {SITUATION, ACTION, RESULT}.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The enum numeric value on the wire for sectionTypes to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSectionTypesValue(int index, int value) {
+          ensureSectionTypesIsMutable();
+          sectionTypes_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The selected sections chosen to return when requesting a summary of a
+         * conversation. A duplicate selected section will be treated as a single
+         * selected section. If section types are not provided, the default will
+         * be {SITUATION, ACTION, RESULT}.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for sectionTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addSectionTypesValue(int value) {
+          ensureSectionTypesIsMutable();
+          sectionTypes_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The selected sections chosen to return when requesting a summary of a
+         * conversation. A duplicate selected section will be treated as a single
+         * selected section. If section types are not provided, the default will
+         * be {SITUATION, ACTION, RESULT}.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections.SectionType section_types = 1;
+         * </code>
+         *
+         * @param values The enum numeric values on the wire for sectionTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllSectionTypesValue(java.lang.Iterable<java.lang.Integer> values) {
+          ensureSectionTypesIsMutable();
+          for (int value : values) {
+            sectionTypes_.add(value);
+          }
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections)
+      private static final com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+              .SuggestionQueryConfig.Sections
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                .Sections();
+      }
+
+      public static com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+              .SuggestionQueryConfig.Sections
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Sections> PARSER =
+          new com.google.protobuf.AbstractParser<Sections>() {
+            @java.lang.Override
+            public Sections parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Sections> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Sections> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+              .Sections
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int querySourceCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -9911,6 +11473,73 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           : contextFilterSettings_;
     }
 
+    public static final int SECTIONS_FIELD_NUMBER = 8;
+    private com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+            .Sections
+        sections_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customized sections chosen to return when requesting a
+     * summary of a conversation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections sections = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sections field is set.
+     */
+    @java.lang.Override
+    public boolean hasSections() {
+      return sections_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customized sections chosen to return when requesting a
+     * summary of a conversation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections sections = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sections.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+            .Sections
+        getSections() {
+      return sections_ == null
+          ? com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+              .Sections.getDefaultInstance()
+          : sections_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customized sections chosen to return when requesting a
+     * summary of a conversation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections sections = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+            .SectionsOrBuilder
+        getSectionsOrBuilder() {
+      return sections_ == null
+          ? com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+              .Sections.getDefaultInstance()
+          : sections_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -9955,6 +11584,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (contextFilterSettings_ != null) {
         output.writeMessage(7, getContextFilterSettings());
       }
+      if (sections_ != null) {
+        output.writeMessage(8, getSections());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -9998,6 +11630,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(7, getContextFilterSettings());
       }
+      if (sections_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSections());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -10022,6 +11657,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (hasContextFilterSettings() != other.hasContextFilterSettings()) return false;
       if (hasContextFilterSettings()) {
         if (!getContextFilterSettings().equals(other.getContextFilterSettings())) return false;
+      }
+      if (hasSections() != other.hasSections()) return false;
+      if (hasSections()) {
+        if (!getSections().equals(other.getSections())) return false;
       }
       if (!getQuerySourceCase().equals(other.getQuerySourceCase())) return false;
       switch (querySourceCase_) {
@@ -10056,6 +11695,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (hasContextFilterSettings()) {
         hash = (37 * hash) + CONTEXT_FILTER_SETTINGS_FIELD_NUMBER;
         hash = (53 * hash) + getContextFilterSettings().hashCode();
+      }
+      if (hasSections()) {
+        hash = (37 * hash) + SECTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getSections().hashCode();
       }
       switch (querySourceCase_) {
         case 1:
@@ -10255,6 +11898,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           contextFilterSettingsBuilder_.dispose();
           contextFilterSettingsBuilder_ = null;
         }
+        sections_ = null;
+        if (sectionsBuilder_ != null) {
+          sectionsBuilder_.dispose();
+          sectionsBuilder_ = null;
+        }
         querySourceCase_ = 0;
         querySource_ = null;
         return this;
@@ -10313,6 +11961,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               contextFilterSettingsBuilder_ == null
                   ? contextFilterSettings_
                   : contextFilterSettingsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.sections_ = sectionsBuilder_ == null ? sections_ : sectionsBuilder_.build();
         }
       }
 
@@ -10395,6 +12046,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         if (other.hasContextFilterSettings()) {
           mergeContextFilterSettings(other.getContextFilterSettings());
+        }
+        if (other.hasSections()) {
+          mergeSections(other.getSections());
         }
         switch (other.getQuerySourceCase()) {
           case KNOWLEDGE_BASE_QUERY_SOURCE:
@@ -10483,6 +12137,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                   bitField0_ |= 0x00000020;
                   break;
                 } // case 58
+              case 66:
+                {
+                  input.readMessage(getSectionsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11745,6 +13405,246 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           contextFilterSettings_ = null;
         }
         return contextFilterSettingsBuilder_;
+      }
+
+      private com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+              .Sections
+          sections_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections,
+              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections.Builder,
+              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .SectionsOrBuilder>
+          sectionsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The customized sections chosen to return when requesting a
+       * summary of a conversation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections sections = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the sections field is set.
+       */
+      public boolean hasSections() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The customized sections chosen to return when requesting a
+       * summary of a conversation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections sections = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The sections.
+       */
+      public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+              .Sections
+          getSections() {
+        if (sectionsBuilder_ == null) {
+          return sections_ == null
+              ? com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections.getDefaultInstance()
+              : sections_;
+        } else {
+          return sectionsBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The customized sections chosen to return when requesting a
+       * summary of a conversation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections sections = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSections(
+          com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections
+              value) {
+        if (sectionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sections_ = value;
+        } else {
+          sectionsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The customized sections chosen to return when requesting a
+       * summary of a conversation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections sections = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSections(
+          com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections.Builder
+              builderForValue) {
+        if (sectionsBuilder_ == null) {
+          sections_ = builderForValue.build();
+        } else {
+          sectionsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The customized sections chosen to return when requesting a
+       * summary of a conversation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections sections = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSections(
+          com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections
+              value) {
+        if (sectionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)
+              && sections_ != null
+              && sections_
+                  != com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                      .SuggestionQueryConfig.Sections.getDefaultInstance()) {
+            getSectionsBuilder().mergeFrom(value);
+          } else {
+            sections_ = value;
+          }
+        } else {
+          sectionsBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The customized sections chosen to return when requesting a
+       * summary of a conversation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections sections = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSections() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        sections_ = null;
+        if (sectionsBuilder_ != null) {
+          sectionsBuilder_.dispose();
+          sectionsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The customized sections chosen to return when requesting a
+       * summary of a conversation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections sections = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+              .Sections.Builder
+          getSectionsBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getSectionsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The customized sections chosen to return when requesting a
+       * summary of a conversation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections sections = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+              .SectionsOrBuilder
+          getSectionsOrBuilder() {
+        if (sectionsBuilder_ != null) {
+          return sectionsBuilder_.getMessageOrBuilder();
+        } else {
+          return sections_ == null
+              ? com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections.getDefaultInstance()
+              : sections_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The customized sections chosen to return when requesting a
+       * summary of a conversation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections sections = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections,
+              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .Sections.Builder,
+              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
+                  .SectionsOrBuilder>
+          getSectionsFieldBuilder() {
+        if (sectionsBuilder_ == null) {
+          sectionsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                      .SuggestionQueryConfig.Sections,
+                  com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                      .SuggestionQueryConfig.Sections.Builder,
+                  com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                      .SuggestionQueryConfig.SectionsOrBuilder>(
+                  getSections(), getParentForChildren(), isClean());
+          sections_ = null;
+        }
+        return sectionsBuilder_;
       }
 
       @java.lang.Override

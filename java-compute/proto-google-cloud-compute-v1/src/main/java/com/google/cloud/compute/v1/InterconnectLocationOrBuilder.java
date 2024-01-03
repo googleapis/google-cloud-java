@@ -101,6 +101,116 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
+   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+   * Check the AvailableFeatures enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string available_features = 496344307;</code>
+   *
+   * @return A list containing the availableFeatures.
+   */
+  java.util.List<java.lang.String> getAvailableFeaturesList();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+   * Check the AvailableFeatures enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string available_features = 496344307;</code>
+   *
+   * @return The count of availableFeatures.
+   */
+  int getAvailableFeaturesCount();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+   * Check the AvailableFeatures enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string available_features = 496344307;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The availableFeatures at the given index.
+   */
+  java.lang.String getAvailableFeatures(int index);
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+   * Check the AvailableFeatures enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string available_features = 496344307;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the availableFeatures at the given index.
+   */
+  com.google.protobuf.ByteString getAvailableFeaturesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+   * Check the AvailableLinkTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string available_link_types = 509504298;</code>
+   *
+   * @return A list containing the availableLinkTypes.
+   */
+  java.util.List<java.lang.String> getAvailableLinkTypesList();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+   * Check the AvailableLinkTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string available_link_types = 509504298;</code>
+   *
+   * @return The count of availableLinkTypes.
+   */
+  int getAvailableLinkTypesCount();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+   * Check the AvailableLinkTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string available_link_types = 509504298;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The availableLinkTypes at the given index.
+   */
+  java.lang.String getAvailableLinkTypes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+   * Check the AvailableLinkTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string available_link_types = 509504298;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the availableLinkTypes at the given index.
+   */
+  com.google.protobuf.ByteString getAvailableLinkTypesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: "Chicago, IL", "Amsterdam, Netherlands".
    * </pre>
    *

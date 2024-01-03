@@ -70,7 +70,7 @@ public final class CommonProto {
           + "CH_TIER_UNSPECIFIED\020\000\022\030\n\024SEARCH_TIER_STA"
           + "NDARD\020\001\022\032\n\026SEARCH_TIER_ENTERPRISE\020\002*C\n\013S"
           + "earchAddOn\022\035\n\031SEARCH_ADD_ON_UNSPECIFIED\020"
-          + "\000\022\025\n\021SEARCH_ADD_ON_LLM\020\001B\343\t\n(com.google."
+          + "\000\022\025\n\021SEARCH_ADD_ON_LLM\020\001B\361\007\n(com.google."
           + "cloud.discoveryengine.v1alphaB\013CommonPro"
           + "toP\001ZRcloud.google.com/go/discoveryengin"
           + "e/apiv1alpha/discoveryenginepb;discovery"
@@ -95,14 +95,8 @@ public final class CommonProto {
           + "ta_store}/servingConfigs/{serving_config"
           + "}\022qprojects/{project}/locations/{locatio"
           + "n}/collections/{collection}/engines/{eng"
-          + "ine}/servingConfigs/{serving_config}\352A\356\001"
-          + "\n/discoveryengine.googleapis.com/SiteSea"
-          + "rchEngine\022Pprojects/{project}/locations/"
-          + "{location}/dataStores/{data_store}/siteS"
-          + "earchEngine\022iprojects/{project}/location"
-          + "s/{location}/collections/{collection}/da"
-          + "taStores/{data_store}/siteSearchEngineb\006"
-          + "proto3"
+          + "ine}/servingConfigs/{serving_config}b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

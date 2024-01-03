@@ -579,7 +579,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource link for the VPC network in which cluster
+     * Optional. The resource link for the VPC network in which cluster
      * resources are created and from which they are accessible via Private IP.
      * The network must belong to the same project as the cluster. It is
      * specified in the form:
@@ -588,7 +588,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The network.
@@ -598,7 +598,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource link for the VPC network in which cluster
+     * Optional. The resource link for the VPC network in which cluster
      * resources are created and from which they are accessible via Private IP.
      * The network must belong to the same project as the cluster. It is
      * specified in the form:
@@ -607,7 +607,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for network.
@@ -623,8 +623,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * instance IPs for this cluster will be created in the allocated range. The
      * range name must comply with RFC 1035. Specifically, the name must be 1-63
      * characters long and match the regular expression
-     * [a-z]([-a-z0-9]*[a-z0-9])?.
-     * Field name is intended to be consistent with CloudSQL.
+     * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     * Field name is intended to be consistent with Cloud SQL.
      * </pre>
      *
      * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -641,8 +641,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * instance IPs for this cluster will be created in the allocated range. The
      * range name must comply with RFC 1035. Specifically, the name must be 1-63
      * characters long and match the regular expression
-     * [a-z]([-a-z0-9]*[a-z0-9])?.
-     * Field name is intended to be consistent with CloudSQL.
+     * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     * Field name is intended to be consistent with Cloud SQL.
      * </pre>
      *
      * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -704,7 +704,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource link for the VPC network in which cluster
+     * Optional. The resource link for the VPC network in which cluster
      * resources are created and from which they are accessible via Private IP.
      * The network must belong to the same project as the cluster. It is
      * specified in the form:
@@ -713,7 +713,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The network.
@@ -734,7 +734,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource link for the VPC network in which cluster
+     * Optional. The resource link for the VPC network in which cluster
      * resources are created and from which they are accessible via Private IP.
      * The network must belong to the same project as the cluster. It is
      * specified in the form:
@@ -743,7 +743,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for network.
@@ -774,8 +774,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * instance IPs for this cluster will be created in the allocated range. The
      * range name must comply with RFC 1035. Specifically, the name must be 1-63
      * characters long and match the regular expression
-     * [a-z]([-a-z0-9]*[a-z0-9])?.
-     * Field name is intended to be consistent with CloudSQL.
+     * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     * Field name is intended to be consistent with Cloud SQL.
      * </pre>
      *
      * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -803,8 +803,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * instance IPs for this cluster will be created in the allocated range. The
      * range name must comply with RFC 1035. Specifically, the name must be 1-63
      * characters long and match the regular expression
-     * [a-z]([-a-z0-9]*[a-z0-9])?.
-     * Field name is intended to be consistent with CloudSQL.
+     * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     * Field name is intended to be consistent with Cloud SQL.
      * </pre>
      *
      * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1200,7 +1200,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The resource link for the VPC network in which cluster
+       * Optional. The resource link for the VPC network in which cluster
        * resources are created and from which they are accessible via Private IP.
        * The network must belong to the same project as the cluster. It is
        * specified in the form:
@@ -1209,7 +1209,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The network.
@@ -1229,7 +1229,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The resource link for the VPC network in which cluster
+       * Optional. The resource link for the VPC network in which cluster
        * resources are created and from which they are accessible via Private IP.
        * The network must belong to the same project as the cluster. It is
        * specified in the form:
@@ -1238,7 +1238,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The bytes for network.
@@ -1258,7 +1258,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The resource link for the VPC network in which cluster
+       * Optional. The resource link for the VPC network in which cluster
        * resources are created and from which they are accessible via Private IP.
        * The network must belong to the same project as the cluster. It is
        * specified in the form:
@@ -1267,7 +1267,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param value The network to set.
@@ -1286,7 +1286,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The resource link for the VPC network in which cluster
+       * Optional. The resource link for the VPC network in which cluster
        * resources are created and from which they are accessible via Private IP.
        * The network must belong to the same project as the cluster. It is
        * specified in the form:
@@ -1295,7 +1295,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return This builder for chaining.
@@ -1310,7 +1310,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The resource link for the VPC network in which cluster
+       * Optional. The resource link for the VPC network in which cluster
        * resources are created and from which they are accessible via Private IP.
        * The network must belong to the same project as the cluster. It is
        * specified in the form:
@@ -1319,7 +1319,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param value The bytes for network to set.
@@ -1346,8 +1346,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * instance IPs for this cluster will be created in the allocated range. The
        * range name must comply with RFC 1035. Specifically, the name must be 1-63
        * characters long and match the regular expression
-       * [a-z]([-a-z0-9]*[a-z0-9])?.
-       * Field name is intended to be consistent with CloudSQL.
+       * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+       * Field name is intended to be consistent with Cloud SQL.
        * </pre>
        *
        * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1374,8 +1374,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * instance IPs for this cluster will be created in the allocated range. The
        * range name must comply with RFC 1035. Specifically, the name must be 1-63
        * characters long and match the regular expression
-       * [a-z]([-a-z0-9]*[a-z0-9])?.
-       * Field name is intended to be consistent with CloudSQL.
+       * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+       * Field name is intended to be consistent with Cloud SQL.
        * </pre>
        *
        * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1402,8 +1402,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * instance IPs for this cluster will be created in the allocated range. The
        * range name must comply with RFC 1035. Specifically, the name must be 1-63
        * characters long and match the regular expression
-       * [a-z]([-a-z0-9]*[a-z0-9])?.
-       * Field name is intended to be consistent with CloudSQL.
+       * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+       * Field name is intended to be consistent with Cloud SQL.
        * </pre>
        *
        * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1429,8 +1429,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * instance IPs for this cluster will be created in the allocated range. The
        * range name must comply with RFC 1035. Specifically, the name must be 1-63
        * characters long and match the regular expression
-       * [a-z]([-a-z0-9]*[a-z0-9])?.
-       * Field name is intended to be consistent with CloudSQL.
+       * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+       * Field name is intended to be consistent with Cloud SQL.
        * </pre>
        *
        * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1452,8 +1452,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * instance IPs for this cluster will be created in the allocated range. The
        * range name must comply with RFC 1035. Specifically, the name must be 1-63
        * characters long and match the regular expression
-       * [a-z]([-a-z0-9]*[a-z0-9])?.
-       * Field name is intended to be consistent with CloudSQL.
+       * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+       * Field name is intended to be consistent with Cloud SQL.
        * </pre>
        *
        * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3010,6 +3010,550 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface PscConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1alpha.Cluster.PscConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Create an instance that allows connections from Private Service
+     * Connect endpoints to the instance.
+     * </pre>
+     *
+     * <code>bool psc_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pscEnabled.
+     */
+    boolean getPscEnabled();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * PscConfig contains PSC related configuration at a cluster level.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.alloydb.v1alpha.Cluster.PscConfig}
+   */
+  public static final class PscConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.Cluster.PscConfig)
+      PscConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PscConfig.newBuilder() to construct.
+    private PscConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PscConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PscConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1alpha.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1alpha_Cluster_PscConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.alloydb.v1alpha.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1alpha_Cluster_PscConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.class,
+              com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.Builder.class);
+    }
+
+    public static final int PSC_ENABLED_FIELD_NUMBER = 1;
+    private boolean pscEnabled_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Create an instance that allows connections from Private Service
+     * Connect endpoints to the instance.
+     * </pre>
+     *
+     * <code>bool psc_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pscEnabled.
+     */
+    @java.lang.Override
+    public boolean getPscEnabled() {
+      return pscEnabled_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (pscEnabled_ != false) {
+        output.writeBool(1, pscEnabled_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (pscEnabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, pscEnabled_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.alloydb.v1alpha.Cluster.PscConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.alloydb.v1alpha.Cluster.PscConfig other =
+          (com.google.cloud.alloydb.v1alpha.Cluster.PscConfig) obj;
+
+      if (getPscEnabled() != other.getPscEnabled()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PSC_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPscEnabled());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Cluster.PscConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Cluster.PscConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Cluster.PscConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Cluster.PscConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Cluster.PscConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Cluster.PscConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Cluster.PscConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Cluster.PscConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Cluster.PscConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Cluster.PscConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Cluster.PscConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Cluster.PscConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.alloydb.v1alpha.Cluster.PscConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PscConfig contains PSC related configuration at a cluster level.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.alloydb.v1alpha.Cluster.PscConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1alpha.Cluster.PscConfig)
+        com.google.cloud.alloydb.v1alpha.Cluster.PscConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1alpha.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1alpha_Cluster_PscConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1alpha.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1alpha_Cluster_PscConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.class,
+                com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        pscEnabled_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.alloydb.v1alpha.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1alpha_Cluster_PscConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1alpha.Cluster.PscConfig getDefaultInstanceForType() {
+        return com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1alpha.Cluster.PscConfig build() {
+        com.google.cloud.alloydb.v1alpha.Cluster.PscConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1alpha.Cluster.PscConfig buildPartial() {
+        com.google.cloud.alloydb.v1alpha.Cluster.PscConfig result =
+            new com.google.cloud.alloydb.v1alpha.Cluster.PscConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.alloydb.v1alpha.Cluster.PscConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.pscEnabled_ = pscEnabled_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.alloydb.v1alpha.Cluster.PscConfig) {
+          return mergeFrom((com.google.cloud.alloydb.v1alpha.Cluster.PscConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.alloydb.v1alpha.Cluster.PscConfig other) {
+        if (other == com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.getDefaultInstance())
+          return this;
+        if (other.getPscEnabled() != false) {
+          setPscEnabled(other.getPscEnabled());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  pscEnabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean pscEnabled_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Create an instance that allows connections from Private Service
+       * Connect endpoints to the instance.
+       * </pre>
+       *
+       * <code>bool psc_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The pscEnabled.
+       */
+      @java.lang.Override
+      public boolean getPscEnabled() {
+        return pscEnabled_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Create an instance that allows connections from Private Service
+       * Connect endpoints to the instance.
+       * </pre>
+       *
+       * <code>bool psc_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The pscEnabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPscEnabled(boolean value) {
+
+        pscEnabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Create an instance that allows connections from Private Service
+       * Connect endpoints to the instance.
+       * </pre>
+       *
+       * <code>bool psc_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPscEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        pscEnabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1alpha.Cluster.PscConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1alpha.Cluster.PscConfig)
+    private static final com.google.cloud.alloydb.v1alpha.Cluster.PscConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.alloydb.v1alpha.Cluster.PscConfig();
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Cluster.PscConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PscConfig> PARSER =
+        new com.google.protobuf.AbstractParser<PscConfig>() {
+          @java.lang.Override
+          public PscConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PscConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PscConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1alpha.Cluster.PscConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int sourceCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -3777,7 +4321,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=546
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=554
    * @return The network.
    */
   @java.lang.Override
@@ -3809,7 +4353,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=546
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=554
    * @return The bytes for network.
    */
   @java.lang.Override
@@ -4150,7 +4694,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=581
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=589
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Override
@@ -4168,7 +4712,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=581
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=589
    * @return The sslConfig.
    */
   @java.lang.Override
@@ -4541,22 +5085,99 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         : primaryConfig_;
   }
 
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 33;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   public static final int SATISFIES_PZS_FIELD_NUMBER = 30;
   private boolean satisfiesPzs_ = false;
   /**
    *
    *
    * <pre>
-   * Reserved for future use.
+   * Output only. Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 30;</code>
+   * <code>bool satisfies_pzs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The satisfiesPzs.
    */
   @java.lang.Override
   public boolean getSatisfiesPzs() {
     return satisfiesPzs_;
+  }
+
+  public static final int PSC_CONFIG_FIELD_NUMBER = 31;
+  private com.google.cloud.alloydb.v1alpha.Cluster.PscConfig pscConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pscConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPscConfig() {
+    return pscConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pscConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1alpha.Cluster.PscConfig getPscConfig() {
+    return pscConfig_ == null
+        ? com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.getDefaultInstance()
+        : pscConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1alpha.Cluster.PscConfigOrBuilder getPscConfigOrBuilder() {
+    return pscConfig_ == null
+        ? com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.getDefaultInstance()
+        : pscConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -4655,6 +5276,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (satisfiesPzs_ != false) {
       output.writeBool(30, satisfiesPzs_);
+    }
+    if (pscConfig_ != null) {
+      output.writeMessage(31, getPscConfig());
+    }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(33, satisfiesPzi_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4771,6 +5398,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, satisfiesPzs_);
     }
+    if (pscConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getPscConfig());
+    }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(33, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4849,7 +5482,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasPrimaryConfig()) {
       if (!getPrimaryConfig().equals(other.getPrimaryConfig())) return false;
     }
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (hasPscConfig() != other.hasPscConfig()) return false;
+    if (hasPscConfig()) {
+      if (!getPscConfig().equals(other.getPscConfig())) return false;
+    }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 15:
@@ -4950,8 +5588,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PRIMARY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getPrimaryConfig().hashCode();
     }
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    if (hasPscConfig()) {
+      hash = (37 * hash) + PSC_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPscConfig().hashCode();
+    }
     switch (sourceCase_) {
       case 15:
         hash = (37 * hash) + BACKUP_SOURCE_FIELD_NUMBER;
@@ -5211,7 +5855,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         primaryConfigBuilder_.dispose();
         primaryConfigBuilder_ = null;
       }
+      satisfiesPzi_ = false;
       satisfiesPzs_ = false;
+      pscConfig_ = null;
+      if (pscConfigBuilder_ != null) {
+        pscConfigBuilder_.dispose();
+        pscConfigBuilder_ = null;
+      }
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -5341,7 +5991,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             primaryConfigBuilder_ == null ? primaryConfig_ : primaryConfigBuilder_.build();
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.pscConfig_ = pscConfigBuilder_ == null ? pscConfig_ : pscConfigBuilder_.build();
       }
     }
 
@@ -5481,8 +6137,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (other.hasPrimaryConfig()) {
         mergePrimaryConfig(other.getPrimaryConfig());
       }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasPscConfig()) {
+        mergePscConfig(other.getPscConfig());
       }
       switch (other.getSourceCase()) {
         case BACKUP_SOURCE:
@@ -5701,9 +6363,21 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             case 240:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 240
+            case 250:
+              {
+                input.readMessage(getPscConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 250
+            case 264:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 264
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7808,7 +8482,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=546
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=554
      * @return The network.
      */
     @java.lang.Deprecated
@@ -7839,7 +8513,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=546
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=554
      * @return The bytes for network.
      */
     @java.lang.Deprecated
@@ -7870,7 +8544,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=546
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=554
      * @param value The network to set.
      * @return This builder for chaining.
      */
@@ -7900,7 +8574,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=546
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=554
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -7926,7 +8600,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=546
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=554
      * @param value The bytes for network to set.
      * @return This builder for chaining.
      */
@@ -8772,7 +9446,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=581
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=589
      * @return Whether the sslConfig field is set.
      */
     @java.lang.Deprecated
@@ -8789,7 +9463,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=581
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=589
      * @return The sslConfig.
      */
     @java.lang.Deprecated
@@ -10204,15 +10878,68 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return primaryConfigBuilder_;
     }
 
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean satisfiesPzs_;
     /**
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Output only. Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 30;</code>
+     * <code>bool satisfies_pzs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The satisfiesPzs.
      */
@@ -10224,10 +10951,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Output only. Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 30;</code>
+     * <code>bool satisfies_pzs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The satisfiesPzs to set.
      * @return This builder for chaining.
@@ -10235,7 +10962,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -10243,18 +10970,230 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Output only. Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 30;</code>
+     * <code>bool satisfies_pzs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.alloydb.v1alpha.Cluster.PscConfig pscConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1alpha.Cluster.PscConfig,
+            com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.Builder,
+            com.google.cloud.alloydb.v1alpha.Cluster.PscConfigOrBuilder>
+        pscConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the pscConfig field is set.
+     */
+    public boolean hasPscConfig() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The pscConfig.
+     */
+    public com.google.cloud.alloydb.v1alpha.Cluster.PscConfig getPscConfig() {
+      if (pscConfigBuilder_ == null) {
+        return pscConfig_ == null
+            ? com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.getDefaultInstance()
+            : pscConfig_;
+      } else {
+        return pscConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPscConfig(com.google.cloud.alloydb.v1alpha.Cluster.PscConfig value) {
+      if (pscConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pscConfig_ = value;
+      } else {
+        pscConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPscConfig(
+        com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.Builder builderForValue) {
+      if (pscConfigBuilder_ == null) {
+        pscConfig_ = builderForValue.build();
+      } else {
+        pscConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePscConfig(com.google.cloud.alloydb.v1alpha.Cluster.PscConfig value) {
+      if (pscConfigBuilder_ == null) {
+        if (((bitField0_ & 0x10000000) != 0)
+            && pscConfig_ != null
+            && pscConfig_
+                != com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.getDefaultInstance()) {
+          getPscConfigBuilder().mergeFrom(value);
+        } else {
+          pscConfig_ = value;
+        }
+      } else {
+        pscConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPscConfig() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      pscConfig_ = null;
+      if (pscConfigBuilder_ != null) {
+        pscConfigBuilder_.dispose();
+        pscConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.Builder getPscConfigBuilder() {
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return getPscConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1alpha.Cluster.PscConfigOrBuilder getPscConfigOrBuilder() {
+      if (pscConfigBuilder_ != null) {
+        return pscConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return pscConfig_ == null
+            ? com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.getDefaultInstance()
+            : pscConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1alpha.Cluster.PscConfig,
+            com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.Builder,
+            com.google.cloud.alloydb.v1alpha.Cluster.PscConfigOrBuilder>
+        getPscConfigFieldBuilder() {
+      if (pscConfigBuilder_ == null) {
+        pscConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1alpha.Cluster.PscConfig,
+                com.google.cloud.alloydb.v1alpha.Cluster.PscConfig.Builder,
+                com.google.cloud.alloydb.v1alpha.Cluster.PscConfigOrBuilder>(
+                getPscConfig(), getParentForChildren(), isClean());
+        pscConfig_ = null;
+      }
+      return pscConfigBuilder_;
     }
 
     @java.lang.Override

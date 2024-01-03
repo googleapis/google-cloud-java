@@ -137,10 +137,11 @@ public final class GeneratorProto {
           + "A\031dialogflow.googleapis.com\322AYhttps://ww"
           + "w.googleapis.com/auth/cloud-platform,htt"
           + "ps://www.googleapis.com/auth/dialogflowB"
-          + "\220\001\n!com.google.cloud.dialogflow.cx.v3B\016G"
+          + "\264\001\n!com.google.cloud.dialogflow.cx.v3B\016G"
           + "eneratorProtoP\001Z1cloud.google.com/go/dia"
           + "logflow/cx/apiv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Goo"
-          + "gle.Cloud.Dialogflow.Cx.V3b\006proto3"
+          + "gle.Cloud.Dialogflow.Cx.V3\352\002!Google::Clo"
+          + "ud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

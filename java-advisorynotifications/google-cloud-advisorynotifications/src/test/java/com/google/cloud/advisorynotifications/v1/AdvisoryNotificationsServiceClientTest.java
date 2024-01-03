@@ -92,7 +92,7 @@ public class AdvisoryNotificationsServiceClientTest {
             .build();
     mockAdvisoryNotificationsService.addResponse(expectedResponse);
 
-    LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
+    LocationName parent = LocationName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]");
 
     ListNotificationsPagedResponse pagedListResponse = client.listNotifications(parent);
 
@@ -118,7 +118,7 @@ public class AdvisoryNotificationsServiceClientTest {
     mockAdvisoryNotificationsService.addException(exception);
 
     try {
-      LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
+      LocationName parent = LocationName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]");
       client.listNotifications(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -175,7 +175,9 @@ public class AdvisoryNotificationsServiceClientTest {
     Notification expectedResponse =
         Notification.newBuilder()
             .setName(
-                NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]").toString())
+                NotificationName.ofOrganizationLocationNotificationName(
+                        "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]")
+                    .toString())
             .setSubject(Subject.newBuilder().build())
             .addAllMessages(new ArrayList<Message>())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -183,7 +185,9 @@ public class AdvisoryNotificationsServiceClientTest {
             .build();
     mockAdvisoryNotificationsService.addResponse(expectedResponse);
 
-    NotificationName name = NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]");
+    NotificationName name =
+        NotificationName.ofOrganizationLocationNotificationName(
+            "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]");
 
     Notification actualResponse = client.getNotification(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -205,7 +209,9 @@ public class AdvisoryNotificationsServiceClientTest {
     mockAdvisoryNotificationsService.addException(exception);
 
     try {
-      NotificationName name = NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]");
+      NotificationName name =
+          NotificationName.ofOrganizationLocationNotificationName(
+              "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]");
       client.getNotification(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -218,7 +224,9 @@ public class AdvisoryNotificationsServiceClientTest {
     Notification expectedResponse =
         Notification.newBuilder()
             .setName(
-                NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]").toString())
+                NotificationName.ofOrganizationLocationNotificationName(
+                        "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]")
+                    .toString())
             .setSubject(Subject.newBuilder().build())
             .addAllMessages(new ArrayList<Message>())
             .setCreateTime(Timestamp.newBuilder().build())

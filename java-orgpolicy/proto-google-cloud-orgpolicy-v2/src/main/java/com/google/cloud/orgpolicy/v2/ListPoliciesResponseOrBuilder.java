@@ -27,8 +27,8 @@ public interface ListPoliciesResponseOrBuilder
    *
    *
    * <pre>
-   * All `Policies` that exist on the resource. It will be empty if no
-   * `Policies` are set.
+   * All policies that exist on the resource. It will be empty if no
+   * policies are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -38,8 +38,8 @@ public interface ListPoliciesResponseOrBuilder
    *
    *
    * <pre>
-   * All `Policies` that exist on the resource. It will be empty if no
-   * `Policies` are set.
+   * All policies that exist on the resource. It will be empty if no
+   * policies are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -49,8 +49,8 @@ public interface ListPoliciesResponseOrBuilder
    *
    *
    * <pre>
-   * All `Policies` that exist on the resource. It will be empty if no
-   * `Policies` are set.
+   * All policies that exist on the resource. It will be empty if no
+   * policies are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -60,8 +60,8 @@ public interface ListPoliciesResponseOrBuilder
    *
    *
    * <pre>
-   * All `Policies` that exist on the resource. It will be empty if no
-   * `Policies` are set.
+   * All policies that exist on the resource. It will be empty if no
+   * policies are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -72,8 +72,8 @@ public interface ListPoliciesResponseOrBuilder
    *
    *
    * <pre>
-   * All `Policies` that exist on the resource. It will be empty if no
-   * `Policies` are set.
+   * All policies that exist on the resource. It will be empty if no
+   * policies are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>

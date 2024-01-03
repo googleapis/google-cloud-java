@@ -24,7 +24,7 @@ package com.google.cloud.deploy.v1;
  * <pre>
  * An `AutomationRun` resource in the Cloud Deploy API.
  *
- * An `AutomationRun` represents an automation execution instance of an
+ * An `AutomationRun` represents an execution instance of an
  * automation rule.
  * </pre>
  *
@@ -770,7 +770,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Explains the current state of the `AutomationRun`. Present
-   * only an explanation is needed.
+   * only when an explanation is needed.
    * </pre>
    *
    * <code>string state_description = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -794,7 +794,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Explains the current state of the `AutomationRun`. Present
-   * only an explanation is needed.
+   * only when an explanation is needed.
    * </pre>
    *
    * <code>string state_description = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -820,8 +820,8 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time the `AutomationRun` will expire. An `AutomationRun` will
-   * expire after 14 days from its creation date.
+   * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
+   * after 14 days from its creation date.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -837,8 +837,8 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time the `AutomationRun` will expire. An `AutomationRun` will
-   * expire after 14 days from its creation date.
+   * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
+   * after 14 days from its creation date.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -854,8 +854,8 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time the `AutomationRun` will expire. An `AutomationRun` will
-   * expire after 14 days from its creation date.
+   * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
+   * after 14 days from its creation date.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1552,7 +1552,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * An `AutomationRun` resource in the Cloud Deploy API.
    *
-   * An `AutomationRun` represents an automation execution instance of an
+   * An `AutomationRun` represents an execution instance of an
    * automation rule.
    * </pre>
    *
@@ -3184,7 +3184,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Explains the current state of the `AutomationRun`. Present
-     * only an explanation is needed.
+     * only when an explanation is needed.
      * </pre>
      *
      * <code>string state_description = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3207,7 +3207,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Explains the current state of the `AutomationRun`. Present
-     * only an explanation is needed.
+     * only when an explanation is needed.
      * </pre>
      *
      * <code>string state_description = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3230,7 +3230,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Explains the current state of the `AutomationRun`. Present
-     * only an explanation is needed.
+     * only when an explanation is needed.
      * </pre>
      *
      * <code>string state_description = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3252,7 +3252,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Explains the current state of the `AutomationRun`. Present
-     * only an explanation is needed.
+     * only when an explanation is needed.
      * </pre>
      *
      * <code>string state_description = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3270,7 +3270,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Explains the current state of the `AutomationRun`. Present
-     * only an explanation is needed.
+     * only when an explanation is needed.
      * </pre>
      *
      * <code>string state_description = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3299,8 +3299,8 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time the `AutomationRun` will expire. An `AutomationRun` will
-     * expire after 14 days from its creation date.
+     * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
+     * after 14 days from its creation date.
      * </pre>
      *
      * <code>
@@ -3316,8 +3316,8 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time the `AutomationRun` will expire. An `AutomationRun` will
-     * expire after 14 days from its creation date.
+     * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
+     * after 14 days from its creation date.
      * </pre>
      *
      * <code>
@@ -3339,8 +3339,8 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time the `AutomationRun` will expire. An `AutomationRun` will
-     * expire after 14 days from its creation date.
+     * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
+     * after 14 days from its creation date.
      * </pre>
      *
      * <code>
@@ -3364,8 +3364,8 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time the `AutomationRun` will expire. An `AutomationRun` will
-     * expire after 14 days from its creation date.
+     * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
+     * after 14 days from its creation date.
      * </pre>
      *
      * <code>
@@ -3386,8 +3386,8 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time the `AutomationRun` will expire. An `AutomationRun` will
-     * expire after 14 days from its creation date.
+     * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
+     * after 14 days from its creation date.
      * </pre>
      *
      * <code>
@@ -3414,8 +3414,8 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time the `AutomationRun` will expire. An `AutomationRun` will
-     * expire after 14 days from its creation date.
+     * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
+     * after 14 days from its creation date.
      * </pre>
      *
      * <code>
@@ -3436,8 +3436,8 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time the `AutomationRun` will expire. An `AutomationRun` will
-     * expire after 14 days from its creation date.
+     * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
+     * after 14 days from its creation date.
      * </pre>
      *
      * <code>
@@ -3453,8 +3453,8 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time the `AutomationRun` will expire. An `AutomationRun` will
-     * expire after 14 days from its creation date.
+     * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
+     * after 14 days from its creation date.
      * </pre>
      *
      * <code>
@@ -3474,8 +3474,8 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time the `AutomationRun` will expire. An `AutomationRun` will
-     * expire after 14 days from its creation date.
+     * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
+     * after 14 days from its creation date.
      * </pre>
      *
      * <code>

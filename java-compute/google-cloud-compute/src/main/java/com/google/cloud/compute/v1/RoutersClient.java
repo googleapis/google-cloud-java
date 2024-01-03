@@ -212,6 +212,7 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, RoutersScopedList> element :
    *       routersClient.aggregatedList(request).iterateAll()) {
@@ -249,6 +250,7 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, RoutersScopedList>> future =
    *       routersClient.aggregatedListPagedCallable().futureCall(request);
@@ -286,6 +288,7 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     RouterAggregatedList response = routersClient.aggregatedListCallable().call(request);
@@ -530,6 +533,104 @@ public class RoutersClient implements BackgroundResource {
    */
   public final UnaryCallable<GetRouterRequest, Router> getCallable() {
     return stub.getCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves runtime NAT IP information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
+   *   NatIpInfoResponse response = routersClient.getNatIpInfo(project, region, router);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param router Name of the Router resource to query for Nat IP information. The name should
+   *     conform to RFC1035.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NatIpInfoResponse getNatIpInfo(String project, String region, String router) {
+    GetNatIpInfoRouterRequest request =
+        GetNatIpInfoRouterRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setRouter(router)
+            .build();
+    return getNatIpInfo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves runtime NAT IP information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   GetNatIpInfoRouterRequest request =
+   *       GetNatIpInfoRouterRequest.newBuilder()
+   *           .setNatName("natName1727733580")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   NatIpInfoResponse response = routersClient.getNatIpInfo(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NatIpInfoResponse getNatIpInfo(GetNatIpInfoRouterRequest request) {
+    return getNatIpInfoCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves runtime NAT IP information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   GetNatIpInfoRouterRequest request =
+   *       GetNatIpInfoRouterRequest.newBuilder()
+   *           .setNatName("natName1727733580")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<NatIpInfoResponse> future =
+   *       routersClient.getNatIpInfoCallable().futureCall(request);
+   *   // Do something.
+   *   NatIpInfoResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetNatIpInfoRouterRequest, NatIpInfoResponse> getNatIpInfoCallable() {
+    return stub.getNatIpInfoCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

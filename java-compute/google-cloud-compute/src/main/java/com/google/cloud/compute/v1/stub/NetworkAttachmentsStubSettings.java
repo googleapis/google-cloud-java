@@ -56,6 +56,7 @@ import com.google.cloud.compute.v1.NetworkAttachmentAggregatedList;
 import com.google.cloud.compute.v1.NetworkAttachmentList;
 import com.google.cloud.compute.v1.NetworkAttachmentsScopedList;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchNetworkAttachmentRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyNetworkAttachmentRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsNetworkAttachmentRequest;
@@ -135,6 +136,9 @@ public class NetworkAttachmentsStubSettings extends StubSettings<NetworkAttachme
   private final PagedCallSettings<
           ListNetworkAttachmentsRequest, NetworkAttachmentList, ListPagedResponse>
       listSettings;
+  private final UnaryCallSettings<PatchNetworkAttachmentRequest, Operation> patchSettings;
+  private final OperationCallSettings<PatchNetworkAttachmentRequest, Operation, Operation>
+      patchOperationSettings;
   private final UnaryCallSettings<SetIamPolicyNetworkAttachmentRequest, Policy>
       setIamPolicySettings;
   private final UnaryCallSettings<
@@ -323,6 +327,17 @@ public class NetworkAttachmentsStubSettings extends StubSettings<NetworkAttachme
     return listSettings;
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public UnaryCallSettings<PatchNetworkAttachmentRequest, Operation> patchSettings() {
+    return patchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchNetworkAttachmentRequest, Operation, Operation>
+      patchOperationSettings() {
+    return patchOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyNetworkAttachmentRequest, Policy> setIamPolicySettings() {
     return setIamPolicySettings;
@@ -418,6 +433,8 @@ public class NetworkAttachmentsStubSettings extends StubSettings<NetworkAttachme
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    patchSettings = settingsBuilder.patchSettings().build();
+    patchOperationSettings = settingsBuilder.patchOperationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
@@ -448,6 +465,9 @@ public class NetworkAttachmentsStubSettings extends StubSettings<NetworkAttachme
     private final PagedCallSettings.Builder<
             ListNetworkAttachmentsRequest, NetworkAttachmentList, ListPagedResponse>
         listSettings;
+    private final UnaryCallSettings.Builder<PatchNetworkAttachmentRequest, Operation> patchSettings;
+    private final OperationCallSettings.Builder<PatchNetworkAttachmentRequest, Operation, Operation>
+        patchOperationSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyNetworkAttachmentRequest, Policy>
         setIamPolicySettings;
     private final UnaryCallSettings.Builder<
@@ -511,6 +531,8 @@ public class NetworkAttachmentsStubSettings extends StubSettings<NetworkAttachme
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      patchOperationSettings = OperationCallSettings.newBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -522,6 +544,7 @@ public class NetworkAttachmentsStubSettings extends StubSettings<NetworkAttachme
               getIamPolicySettings,
               insertSettings,
               listSettings,
+              patchSettings,
               setIamPolicySettings,
               testIamPermissionsSettings);
       initDefaults(this);
@@ -538,6 +561,8 @@ public class NetworkAttachmentsStubSettings extends StubSettings<NetworkAttachme
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      patchSettings = settings.patchSettings.toBuilder();
+      patchOperationSettings = settings.patchOperationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
@@ -549,6 +574,7 @@ public class NetworkAttachmentsStubSettings extends StubSettings<NetworkAttachme
               getIamPolicySettings,
               insertSettings,
               listSettings,
+              patchSettings,
               setIamPolicySettings,
               testIamPermissionsSettings);
     }
@@ -598,6 +624,11 @@ public class NetworkAttachmentsStubSettings extends StubSettings<NetworkAttachme
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .setIamPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -636,6 +667,30 @@ public class NetworkAttachmentsStubSettings extends StubSettings<NetworkAttachme
           .setInitialCallSettings(
               UnaryCallSettings
                   .<InsertNetworkAttachmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .patchOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PatchNetworkAttachmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -724,6 +779,19 @@ public class NetworkAttachmentsStubSettings extends StubSettings<NetworkAttachme
             ListNetworkAttachmentsRequest, NetworkAttachmentList, ListPagedResponse>
         listSettings() {
       return listSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public UnaryCallSettings.Builder<PatchNetworkAttachmentRequest, Operation> patchSettings() {
+      return patchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<PatchNetworkAttachmentRequest, Operation, Operation>
+        patchOperationSettings() {
+      return patchOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

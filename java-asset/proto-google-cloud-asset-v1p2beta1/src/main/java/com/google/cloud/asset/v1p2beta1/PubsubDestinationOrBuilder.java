@@ -27,7 +27,7 @@ public interface PubsubDestinationOrBuilder
    *
    *
    * <pre>
-   * The name of the Cloud Pub/Sub topic to publish to.
+   * The name of the Pub/Sub topic to publish to.
    * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface PubsubDestinationOrBuilder
    *
    *
    * <pre>
-   * The name of the Cloud Pub/Sub topic to publish to.
+   * The name of the Pub/Sub topic to publish to.
    * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
    * </pre>
    *

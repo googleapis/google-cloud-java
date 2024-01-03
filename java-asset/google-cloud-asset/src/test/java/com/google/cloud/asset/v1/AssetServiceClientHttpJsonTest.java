@@ -931,8 +931,8 @@ public class AssetServiceClientHttpJsonTest {
 
     AnalyzeMoveRequest request =
         AnalyzeMoveRequest.newBuilder()
-            .setResource("resource-4407/resource-4407")
-            .setDestinationParent("destinationParent-1733659048")
+            .setResource(ProjectName.of("[PROJECT]").toString())
+            .setDestinationParent(FolderName.of("[FOLDER]").toString())
             .build();
 
     AnalyzeMoveResponse actualResponse = client.analyzeMove(request);
@@ -963,8 +963,8 @@ public class AssetServiceClientHttpJsonTest {
     try {
       AnalyzeMoveRequest request =
           AnalyzeMoveRequest.newBuilder()
-              .setResource("resource-4407/resource-4407")
-              .setDestinationParent("destinationParent-1733659048")
+              .setResource(ProjectName.of("[PROJECT]").toString())
+              .setDestinationParent(FolderName.of("[FOLDER]").toString())
               .build();
       client.analyzeMove(request);
       Assert.fail("No exception raised");

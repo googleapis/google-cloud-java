@@ -419,6 +419,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, InstanceGroupManagersScopedList> element :
    *       instanceGroupManagersClient.aggregatedList(request).iterateAll()) {
@@ -458,6 +459,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, InstanceGroupManagersScopedList>> future =
    *       instanceGroupManagersClient.aggregatedListPagedCallable().futureCall(request);
@@ -497,6 +499,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     InstanceGroupManagerAggregatedList response =

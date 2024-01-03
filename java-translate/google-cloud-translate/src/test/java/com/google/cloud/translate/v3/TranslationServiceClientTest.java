@@ -16,6 +16,9 @@
 
 package com.google.cloud.translate.v3;
 
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtDatasetsPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtFilesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtSentencesPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossariesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -30,6 +33,7 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.Empty;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -1160,6 +1164,856 @@ public class TranslationServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createAdaptiveMtDatasetTest() throws Exception {
+    AdaptiveMtDataset expectedResponse =
+        AdaptiveMtDataset.newBuilder()
+            .setName(AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    AdaptiveMtDataset adaptiveMtDataset = AdaptiveMtDataset.newBuilder().build();
+
+    AdaptiveMtDataset actualResponse = client.createAdaptiveMtDataset(parent, adaptiveMtDataset);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAdaptiveMtDatasetRequest actualRequest =
+        ((CreateAdaptiveMtDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(adaptiveMtDataset, actualRequest.getAdaptiveMtDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAdaptiveMtDatasetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      AdaptiveMtDataset adaptiveMtDataset = AdaptiveMtDataset.newBuilder().build();
+      client.createAdaptiveMtDataset(parent, adaptiveMtDataset);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAdaptiveMtDatasetTest2() throws Exception {
+    AdaptiveMtDataset expectedResponse =
+        AdaptiveMtDataset.newBuilder()
+            .setName(AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    AdaptiveMtDataset adaptiveMtDataset = AdaptiveMtDataset.newBuilder().build();
+
+    AdaptiveMtDataset actualResponse = client.createAdaptiveMtDataset(parent, adaptiveMtDataset);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAdaptiveMtDatasetRequest actualRequest =
+        ((CreateAdaptiveMtDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(adaptiveMtDataset, actualRequest.getAdaptiveMtDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAdaptiveMtDatasetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      AdaptiveMtDataset adaptiveMtDataset = AdaptiveMtDataset.newBuilder().build();
+      client.createAdaptiveMtDataset(parent, adaptiveMtDataset);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAdaptiveMtDatasetTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    AdaptiveMtDatasetName name = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    client.deleteAdaptiveMtDataset(name);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAdaptiveMtDatasetRequest actualRequest =
+        ((DeleteAdaptiveMtDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAdaptiveMtDatasetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      AdaptiveMtDatasetName name = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      client.deleteAdaptiveMtDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAdaptiveMtDatasetTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteAdaptiveMtDataset(name);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAdaptiveMtDatasetRequest actualRequest =
+        ((DeleteAdaptiveMtDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAdaptiveMtDatasetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteAdaptiveMtDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAdaptiveMtDatasetTest() throws Exception {
+    AdaptiveMtDataset expectedResponse =
+        AdaptiveMtDataset.newBuilder()
+            .setName(AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    AdaptiveMtDatasetName name = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    AdaptiveMtDataset actualResponse = client.getAdaptiveMtDataset(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAdaptiveMtDatasetRequest actualRequest =
+        ((GetAdaptiveMtDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAdaptiveMtDatasetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      AdaptiveMtDatasetName name = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      client.getAdaptiveMtDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAdaptiveMtDatasetTest2() throws Exception {
+    AdaptiveMtDataset expectedResponse =
+        AdaptiveMtDataset.newBuilder()
+            .setName(AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSourceLanguageCode("sourceLanguageCode1645917472")
+            .setTargetLanguageCode("targetLanguageCode-106414698")
+            .setExampleCount(1517063674)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AdaptiveMtDataset actualResponse = client.getAdaptiveMtDataset(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAdaptiveMtDatasetRequest actualRequest =
+        ((GetAdaptiveMtDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAdaptiveMtDatasetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAdaptiveMtDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdaptiveMtDatasetsTest() throws Exception {
+    AdaptiveMtDataset responsesElement = AdaptiveMtDataset.newBuilder().build();
+    ListAdaptiveMtDatasetsResponse expectedResponse =
+        ListAdaptiveMtDatasetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdaptiveMtDatasets(Arrays.asList(responsesElement))
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAdaptiveMtDatasetsPagedResponse pagedListResponse = client.listAdaptiveMtDatasets(parent);
+
+    List<AdaptiveMtDataset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdaptiveMtDatasetsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAdaptiveMtDatasetsRequest actualRequest =
+        ((ListAdaptiveMtDatasetsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAdaptiveMtDatasetsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAdaptiveMtDatasets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdaptiveMtDatasetsTest2() throws Exception {
+    AdaptiveMtDataset responsesElement = AdaptiveMtDataset.newBuilder().build();
+    ListAdaptiveMtDatasetsResponse expectedResponse =
+        ListAdaptiveMtDatasetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdaptiveMtDatasets(Arrays.asList(responsesElement))
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAdaptiveMtDatasetsPagedResponse pagedListResponse = client.listAdaptiveMtDatasets(parent);
+
+    List<AdaptiveMtDataset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdaptiveMtDatasetsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAdaptiveMtDatasetsRequest actualRequest =
+        ((ListAdaptiveMtDatasetsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAdaptiveMtDatasetsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAdaptiveMtDatasets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void adaptiveMtTranslateTest() throws Exception {
+    AdaptiveMtTranslateResponse expectedResponse =
+        AdaptiveMtTranslateResponse.newBuilder()
+            .addAllTranslations(new ArrayList<AdaptiveMtTranslation>())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    List<String> content = new ArrayList<>();
+
+    AdaptiveMtTranslateResponse actualResponse = client.adaptiveMtTranslate(parent, content);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AdaptiveMtTranslateRequest actualRequest = ((AdaptiveMtTranslateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(content, actualRequest.getContentList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void adaptiveMtTranslateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      List<String> content = new ArrayList<>();
+      client.adaptiveMtTranslate(parent, content);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void adaptiveMtTranslateTest2() throws Exception {
+    AdaptiveMtTranslateResponse expectedResponse =
+        AdaptiveMtTranslateResponse.newBuilder()
+            .addAllTranslations(new ArrayList<AdaptiveMtTranslation>())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    List<String> content = new ArrayList<>();
+
+    AdaptiveMtTranslateResponse actualResponse = client.adaptiveMtTranslate(parent, content);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AdaptiveMtTranslateRequest actualRequest = ((AdaptiveMtTranslateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(content, actualRequest.getContentList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void adaptiveMtTranslateExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<String> content = new ArrayList<>();
+      client.adaptiveMtTranslate(parent, content);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAdaptiveMtFileTest() throws Exception {
+    AdaptiveMtFile expectedResponse =
+        AdaptiveMtFile.newBuilder()
+            .setName(
+                AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setEntryCount(-811131134)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    AdaptiveMtFileName name =
+        AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]");
+
+    AdaptiveMtFile actualResponse = client.getAdaptiveMtFile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAdaptiveMtFileRequest actualRequest = ((GetAdaptiveMtFileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAdaptiveMtFileExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      AdaptiveMtFileName name =
+          AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]");
+      client.getAdaptiveMtFile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAdaptiveMtFileTest2() throws Exception {
+    AdaptiveMtFile expectedResponse =
+        AdaptiveMtFile.newBuilder()
+            .setName(
+                AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setEntryCount(-811131134)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AdaptiveMtFile actualResponse = client.getAdaptiveMtFile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAdaptiveMtFileRequest actualRequest = ((GetAdaptiveMtFileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAdaptiveMtFileExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAdaptiveMtFile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAdaptiveMtFileTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    AdaptiveMtFileName name =
+        AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]");
+
+    client.deleteAdaptiveMtFile(name);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAdaptiveMtFileRequest actualRequest =
+        ((DeleteAdaptiveMtFileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAdaptiveMtFileExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      AdaptiveMtFileName name =
+          AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]");
+      client.deleteAdaptiveMtFile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAdaptiveMtFileTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteAdaptiveMtFile(name);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAdaptiveMtFileRequest actualRequest =
+        ((DeleteAdaptiveMtFileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAdaptiveMtFileExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteAdaptiveMtFile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void importAdaptiveMtFileTest() throws Exception {
+    ImportAdaptiveMtFileResponse expectedResponse =
+        ImportAdaptiveMtFileResponse.newBuilder()
+            .setAdaptiveMtFile(AdaptiveMtFile.newBuilder().build())
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    AdaptiveMtDatasetName parent = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    ImportAdaptiveMtFileResponse actualResponse = client.importAdaptiveMtFile(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportAdaptiveMtFileRequest actualRequest =
+        ((ImportAdaptiveMtFileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importAdaptiveMtFileExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      AdaptiveMtDatasetName parent =
+          AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      client.importAdaptiveMtFile(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void importAdaptiveMtFileTest2() throws Exception {
+    ImportAdaptiveMtFileResponse expectedResponse =
+        ImportAdaptiveMtFileResponse.newBuilder()
+            .setAdaptiveMtFile(AdaptiveMtFile.newBuilder().build())
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ImportAdaptiveMtFileResponse actualResponse = client.importAdaptiveMtFile(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportAdaptiveMtFileRequest actualRequest =
+        ((ImportAdaptiveMtFileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importAdaptiveMtFileExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.importAdaptiveMtFile(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdaptiveMtFilesTest() throws Exception {
+    AdaptiveMtFile responsesElement = AdaptiveMtFile.newBuilder().build();
+    ListAdaptiveMtFilesResponse expectedResponse =
+        ListAdaptiveMtFilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdaptiveMtFiles(Arrays.asList(responsesElement))
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    AdaptiveMtDatasetName parent = AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    ListAdaptiveMtFilesPagedResponse pagedListResponse = client.listAdaptiveMtFiles(parent);
+
+    List<AdaptiveMtFile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdaptiveMtFilesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAdaptiveMtFilesRequest actualRequest = ((ListAdaptiveMtFilesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAdaptiveMtFilesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      AdaptiveMtDatasetName parent =
+          AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      client.listAdaptiveMtFiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdaptiveMtFilesTest2() throws Exception {
+    AdaptiveMtFile responsesElement = AdaptiveMtFile.newBuilder().build();
+    ListAdaptiveMtFilesResponse expectedResponse =
+        ListAdaptiveMtFilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdaptiveMtFiles(Arrays.asList(responsesElement))
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAdaptiveMtFilesPagedResponse pagedListResponse = client.listAdaptiveMtFiles(parent);
+
+    List<AdaptiveMtFile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdaptiveMtFilesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAdaptiveMtFilesRequest actualRequest = ((ListAdaptiveMtFilesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAdaptiveMtFilesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAdaptiveMtFiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdaptiveMtSentencesTest() throws Exception {
+    AdaptiveMtSentence responsesElement = AdaptiveMtSentence.newBuilder().build();
+    ListAdaptiveMtSentencesResponse expectedResponse =
+        ListAdaptiveMtSentencesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdaptiveMtSentences(Arrays.asList(responsesElement))
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    AdaptiveMtFileName parent =
+        AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]");
+
+    ListAdaptiveMtSentencesPagedResponse pagedListResponse = client.listAdaptiveMtSentences(parent);
+
+    List<AdaptiveMtSentence> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdaptiveMtSentencesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAdaptiveMtSentencesRequest actualRequest =
+        ((ListAdaptiveMtSentencesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAdaptiveMtSentencesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      AdaptiveMtFileName parent =
+          AdaptiveMtFileName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[FILE]");
+      client.listAdaptiveMtSentences(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAdaptiveMtSentencesTest2() throws Exception {
+    AdaptiveMtSentence responsesElement = AdaptiveMtSentence.newBuilder().build();
+    ListAdaptiveMtSentencesResponse expectedResponse =
+        ListAdaptiveMtSentencesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAdaptiveMtSentences(Arrays.asList(responsesElement))
+            .build();
+    mockTranslationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAdaptiveMtSentencesPagedResponse pagedListResponse = client.listAdaptiveMtSentences(parent);
+
+    List<AdaptiveMtSentence> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAdaptiveMtSentencesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTranslationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAdaptiveMtSentencesRequest actualRequest =
+        ((ListAdaptiveMtSentencesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAdaptiveMtSentencesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTranslationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAdaptiveMtSentences(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

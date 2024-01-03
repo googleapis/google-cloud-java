@@ -70,7 +70,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A list of interesting places that meets user's requirements like places
+   * A list of places that meets user's requirements like places
    * types, number of places and specific location restriction.
    * </pre>
    *
@@ -84,7 +84,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A list of interesting places that meets user's requirements like places
+   * A list of places that meets user's requirements like places
    * types, number of places and specific location restriction.
    * </pre>
    *
@@ -99,7 +99,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A list of interesting places that meets user's requirements like places
+   * A list of places that meets user's requirements like places
    * types, number of places and specific location restriction.
    * </pre>
    *
@@ -113,7 +113,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A list of interesting places that meets user's requirements like places
+   * A list of places that meets user's requirements like places
    * types, number of places and specific location restriction.
    * </pre>
    *
@@ -127,7 +127,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A list of interesting places that meets user's requirements like places
+   * A list of places that meets user's requirements like places
    * types, number of places and specific location restriction.
    * </pre>
    *
@@ -545,7 +545,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -562,7 +562,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -579,7 +579,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -596,7 +596,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -619,7 +619,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -639,7 +639,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -662,7 +662,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -685,7 +685,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -705,7 +705,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -725,7 +725,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -746,7 +746,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -766,7 +766,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -786,7 +786,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -799,7 +799,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -816,7 +816,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -834,7 +834,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -848,7 +848,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *
@@ -862,7 +862,7 @@ public final class SearchNearbyResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A list of interesting places that meets user's requirements like places
+     * A list of places that meets user's requirements like places
      * types, number of places and specific location restriction.
      * </pre>
      *

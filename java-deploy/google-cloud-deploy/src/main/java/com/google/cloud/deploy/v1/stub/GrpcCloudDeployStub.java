@@ -18,6 +18,7 @@ package com.google.cloud.deploy.v1.stub;
 
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
@@ -47,17 +48,21 @@ import com.google.cloud.deploy.v1.CancelRolloutRequest;
 import com.google.cloud.deploy.v1.CancelRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
 import com.google.cloud.deploy.v1.CreateAutomationRequest;
+import com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.CreateTargetRequest;
+import com.google.cloud.deploy.v1.CustomTargetType;
 import com.google.cloud.deploy.v1.DeleteAutomationRequest;
+import com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
 import com.google.cloud.deploy.v1.GetAutomationRequest;
 import com.google.cloud.deploy.v1.GetAutomationRunRequest;
 import com.google.cloud.deploy.v1.GetConfigRequest;
+import com.google.cloud.deploy.v1.GetCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
@@ -70,6 +75,8 @@ import com.google.cloud.deploy.v1.ListAutomationRunsRequest;
 import com.google.cloud.deploy.v1.ListAutomationRunsResponse;
 import com.google.cloud.deploy.v1.ListAutomationsRequest;
 import com.google.cloud.deploy.v1.ListAutomationsResponse;
+import com.google.cloud.deploy.v1.ListCustomTargetTypesRequest;
+import com.google.cloud.deploy.v1.ListCustomTargetTypesResponse;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
 import com.google.cloud.deploy.v1.ListJobRunsRequest;
@@ -91,6 +98,7 @@ import com.google.cloud.deploy.v1.Target;
 import com.google.cloud.deploy.v1.TerminateJobRunRequest;
 import com.google.cloud.deploy.v1.TerminateJobRunResponse;
 import com.google.cloud.deploy.v1.UpdateAutomationRequest;
+import com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -223,6 +231,57 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/DeleteTarget")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteTargetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
+      listCustomTargetTypesMethodDescriptor =
+          MethodDescriptor.<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/ListCustomTargetTypes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListCustomTargetTypesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListCustomTargetTypesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetCustomTargetTypeRequest, CustomTargetType>
+      getCustomTargetTypeMethodDescriptor =
+          MethodDescriptor.<GetCustomTargetTypeRequest, CustomTargetType>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetCustomTargetType")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetCustomTargetTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CustomTargetType.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateCustomTargetTypeRequest, Operation>
+      createCustomTargetTypeMethodDescriptor =
+          MethodDescriptor.<CreateCustomTargetTypeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/CreateCustomTargetType")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateCustomTargetTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateCustomTargetTypeRequest, Operation>
+      updateCustomTargetTypeMethodDescriptor =
+          MethodDescriptor.<UpdateCustomTargetTypeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/UpdateCustomTargetType")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateCustomTargetTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteCustomTargetTypeRequest, Operation>
+      deleteCustomTargetTypeMethodDescriptor =
+          MethodDescriptor.<DeleteCustomTargetTypeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/DeleteCustomTargetType")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteCustomTargetTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -544,6 +603,26 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   private final UnaryCallable<DeleteTargetRequest, Operation> deleteTargetCallable;
   private final OperationCallable<DeleteTargetRequest, Empty, OperationMetadata>
       deleteTargetOperationCallable;
+  private final UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
+      listCustomTargetTypesCallable;
+  private final UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesPagedResponse>
+      listCustomTargetTypesPagedCallable;
+  private final UnaryCallable<GetCustomTargetTypeRequest, CustomTargetType>
+      getCustomTargetTypeCallable;
+  private final UnaryCallable<CreateCustomTargetTypeRequest, Operation>
+      createCustomTargetTypeCallable;
+  private final OperationCallable<
+          CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      createCustomTargetTypeOperationCallable;
+  private final UnaryCallable<UpdateCustomTargetTypeRequest, Operation>
+      updateCustomTargetTypeCallable;
+  private final OperationCallable<
+          UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      updateCustomTargetTypeOperationCallable;
+  private final UnaryCallable<DeleteCustomTargetTypeRequest, Operation>
+      deleteCustomTargetTypeCallable;
+  private final OperationCallable<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+      deleteCustomTargetTypeOperationCallable;
   private final UnaryCallable<ListReleasesRequest, ListReleasesResponse> listReleasesCallable;
   private final UnaryCallable<ListReleasesRequest, ListReleasesPagedResponse>
       listReleasesPagedCallable;
@@ -762,6 +841,64 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
+        listCustomTargetTypesTransportSettings =
+            GrpcCallSettings
+                .<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>newBuilder()
+                .setMethodDescriptor(listCustomTargetTypesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetCustomTargetTypeRequest, CustomTargetType>
+        getCustomTargetTypeTransportSettings =
+            GrpcCallSettings.<GetCustomTargetTypeRequest, CustomTargetType>newBuilder()
+                .setMethodDescriptor(getCustomTargetTypeMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateCustomTargetTypeRequest, Operation>
+        createCustomTargetTypeTransportSettings =
+            GrpcCallSettings.<CreateCustomTargetTypeRequest, Operation>newBuilder()
+                .setMethodDescriptor(createCustomTargetTypeMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateCustomTargetTypeRequest, Operation>
+        updateCustomTargetTypeTransportSettings =
+            GrpcCallSettings.<UpdateCustomTargetTypeRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateCustomTargetTypeMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "custom_target_type.name",
+                          String.valueOf(request.getCustomTargetType().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteCustomTargetTypeRequest, Operation>
+        deleteCustomTargetTypeTransportSettings =
+            GrpcCallSettings.<DeleteCustomTargetTypeRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteCustomTargetTypeMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListReleasesRequest, ListReleasesResponse> listReleasesTransportSettings =
         GrpcCallSettings.<ListReleasesRequest, ListReleasesResponse>newBuilder()
             .setMethodDescriptor(listReleasesMethodDescriptor)
@@ -1148,6 +1285,54 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
             settings.deleteTargetOperationSettings(),
             clientContext,
             operationsStub);
+    this.listCustomTargetTypesCallable =
+        callableFactory.createUnaryCallable(
+            listCustomTargetTypesTransportSettings,
+            settings.listCustomTargetTypesSettings(),
+            clientContext);
+    this.listCustomTargetTypesPagedCallable =
+        callableFactory.createPagedCallable(
+            listCustomTargetTypesTransportSettings,
+            settings.listCustomTargetTypesSettings(),
+            clientContext);
+    this.getCustomTargetTypeCallable =
+        callableFactory.createUnaryCallable(
+            getCustomTargetTypeTransportSettings,
+            settings.getCustomTargetTypeSettings(),
+            clientContext);
+    this.createCustomTargetTypeCallable =
+        callableFactory.createUnaryCallable(
+            createCustomTargetTypeTransportSettings,
+            settings.createCustomTargetTypeSettings(),
+            clientContext);
+    this.createCustomTargetTypeOperationCallable =
+        callableFactory.createOperationCallable(
+            createCustomTargetTypeTransportSettings,
+            settings.createCustomTargetTypeOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateCustomTargetTypeCallable =
+        callableFactory.createUnaryCallable(
+            updateCustomTargetTypeTransportSettings,
+            settings.updateCustomTargetTypeSettings(),
+            clientContext);
+    this.updateCustomTargetTypeOperationCallable =
+        callableFactory.createOperationCallable(
+            updateCustomTargetTypeTransportSettings,
+            settings.updateCustomTargetTypeOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteCustomTargetTypeCallable =
+        callableFactory.createUnaryCallable(
+            deleteCustomTargetTypeTransportSettings,
+            settings.deleteCustomTargetTypeSettings(),
+            clientContext);
+    this.deleteCustomTargetTypeOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteCustomTargetTypeTransportSettings,
+            settings.deleteCustomTargetTypeOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listReleasesCallable =
         callableFactory.createUnaryCallable(
             listReleasesTransportSettings, settings.listReleasesSettings(), clientContext);
@@ -1401,6 +1586,56 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   public OperationCallable<DeleteTargetRequest, Empty, OperationMetadata>
       deleteTargetOperationCallable() {
     return deleteTargetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
+      listCustomTargetTypesCallable() {
+    return listCustomTargetTypesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesPagedResponse>
+      listCustomTargetTypesPagedCallable() {
+    return listCustomTargetTypesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCustomTargetTypeRequest, CustomTargetType> getCustomTargetTypeCallable() {
+    return getCustomTargetTypeCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomTargetTypeRequest, Operation> createCustomTargetTypeCallable() {
+    return createCustomTargetTypeCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      createCustomTargetTypeOperationCallable() {
+    return createCustomTargetTypeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCustomTargetTypeRequest, Operation> updateCustomTargetTypeCallable() {
+    return updateCustomTargetTypeCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      updateCustomTargetTypeOperationCallable() {
+    return updateCustomTargetTypeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCustomTargetTypeRequest, Operation> deleteCustomTargetTypeCallable() {
+    return deleteCustomTargetTypeCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+      deleteCustomTargetTypeOperationCallable() {
+    return deleteCustomTargetTypeOperationCallable;
   }
 
   @Override

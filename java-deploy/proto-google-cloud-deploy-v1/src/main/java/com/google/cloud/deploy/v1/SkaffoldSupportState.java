@@ -42,7 +42,7 @@ public enum SkaffoldSupportState implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * This skaffold version is currently supported.
+   * This Skaffold version is currently supported.
    * </pre>
    *
    * <code>SKAFFOLD_SUPPORT_STATE_SUPPORTED = 1;</code>
@@ -52,7 +52,7 @@ public enum SkaffoldSupportState implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * This skaffold version is in maintenance mode.
+   * This Skaffold version is in maintenance mode.
    * </pre>
    *
    * <code>SKAFFOLD_SUPPORT_STATE_MAINTENANCE_MODE = 2;</code>
@@ -62,7 +62,7 @@ public enum SkaffoldSupportState implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * This skaffold version is no longer supported.
+   * This Skaffold version is no longer supported.
    * </pre>
    *
    * <code>SKAFFOLD_SUPPORT_STATE_UNSUPPORTED = 3;</code>
@@ -85,7 +85,7 @@ public enum SkaffoldSupportState implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * This skaffold version is currently supported.
+   * This Skaffold version is currently supported.
    * </pre>
    *
    * <code>SKAFFOLD_SUPPORT_STATE_SUPPORTED = 1;</code>
@@ -95,7 +95,7 @@ public enum SkaffoldSupportState implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * This skaffold version is in maintenance mode.
+   * This Skaffold version is in maintenance mode.
    * </pre>
    *
    * <code>SKAFFOLD_SUPPORT_STATE_MAINTENANCE_MODE = 2;</code>
@@ -105,7 +105,7 @@ public enum SkaffoldSupportState implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * This skaffold version is no longer supported.
+   * This Skaffold version is no longer supported.
    * </pre>
    *
    * <code>SKAFFOLD_SUPPORT_STATE_UNSUPPORTED = 3;</code>

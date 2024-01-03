@@ -40,6 +40,7 @@ public class SyncDeleteAwsCluster {
               .setName(AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
               .setValidateOnly(true)
               .setAllowMissing(true)
+              .setIgnoreErrors(true)
               .setEtag("etag3123477")
               .build();
       awsClustersClient.deleteAwsClusterAsync(request).get();

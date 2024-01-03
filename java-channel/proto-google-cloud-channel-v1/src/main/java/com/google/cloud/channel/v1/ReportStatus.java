@@ -27,6 +27,7 @@ package com.google.cloud.channel.v1;
  *
  * Protobuf type {@code google.cloud.channel.v1.ReportStatus}
  */
+@java.lang.Deprecated
 public final class ReportStatus extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ReportStatus)

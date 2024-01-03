@@ -598,8 +598,8 @@ public interface ResourceSearchResultOrBuilder
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * name.
    *
-   * This field only presents for the purpose of backward compatibility. Please
-   * use the `kms_keys` field to retrieve Cloud KMS key information. This field
+   * This field only presents for the purpose of backward compatibility.
+   * Use the `kms_keys` field to retrieve Cloud KMS key information. This field
    * is available only when the resource's Protobuf contains it and will only be
    * populated for [these resource
    * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
@@ -614,7 +614,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=471
+   *     google/cloud/asset/v1/assets.proto;l=468
    * @return The kmsKey.
    */
   @java.lang.Deprecated
@@ -629,8 +629,8 @@ public interface ResourceSearchResultOrBuilder
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * name.
    *
-   * This field only presents for the purpose of backward compatibility. Please
-   * use the `kms_keys` field to retrieve Cloud KMS key information. This field
+   * This field only presents for the purpose of backward compatibility.
+   * Use the `kms_keys` field to retrieve Cloud KMS key information. This field
    * is available only when the resource's Protobuf contains it and will only be
    * populated for [these resource
    * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
@@ -645,7 +645,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=471
+   *     google/cloud/asset/v1/assets.proto;l=468
    * @return The bytes for kmsKey.
    */
   @java.lang.Deprecated
@@ -948,7 +948,7 @@ public interface ResourceSearchResultOrBuilder
    * metadata fields that are returned by the List or Get APIs provided by the
    * corresponding Google Cloud service (e.g., Compute Engine). see [API
    * references and supported searchable
-   * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
+   * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * to see which fields are included.
    *
    * You can search values of these fields through free text search. However,
@@ -978,7 +978,7 @@ public interface ResourceSearchResultOrBuilder
    * metadata fields that are returned by the List or Get APIs provided by the
    * corresponding Google Cloud service (e.g., Compute Engine). see [API
    * references and supported searchable
-   * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
+   * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * to see which fields are included.
    *
    * You can search values of these fields through free text search. However,
@@ -1008,7 +1008,7 @@ public interface ResourceSearchResultOrBuilder
    * metadata fields that are returned by the List or Get APIs provided by the
    * corresponding Google Cloud service (e.g., Compute Engine). see [API
    * references and supported searchable
-   * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
+   * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * to see which fields are included.
    *
    * You can search values of these fields through free text search. However,
@@ -1316,7 +1316,7 @@ public interface ResourceSearchResultOrBuilder
    *
    * <pre>
    * This field is only present for the purpose of backward compatibility.
-   * Please use the `tags` field instead.
+   * Use the `tags` field instead.
    *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
@@ -1333,7 +1333,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=604
+   *     google/cloud/asset/v1/assets.proto;l=601
    * @return A list containing the tagKeys.
    */
   @java.lang.Deprecated
@@ -1343,7 +1343,7 @@ public interface ResourceSearchResultOrBuilder
    *
    * <pre>
    * This field is only present for the purpose of backward compatibility.
-   * Please use the `tags` field instead.
+   * Use the `tags` field instead.
    *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
@@ -1360,7 +1360,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=604
+   *     google/cloud/asset/v1/assets.proto;l=601
    * @return The count of tagKeys.
    */
   @java.lang.Deprecated
@@ -1370,7 +1370,7 @@ public interface ResourceSearchResultOrBuilder
    *
    * <pre>
    * This field is only present for the purpose of backward compatibility.
-   * Please use the `tags` field instead.
+   * Use the `tags` field instead.
    *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
@@ -1387,7 +1387,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=604
+   *     google/cloud/asset/v1/assets.proto;l=601
    * @param index The index of the element to return.
    * @return The tagKeys at the given index.
    */
@@ -1398,7 +1398,7 @@ public interface ResourceSearchResultOrBuilder
    *
    * <pre>
    * This field is only present for the purpose of backward compatibility.
-   * Please use the `tags` field instead.
+   * Use the `tags` field instead.
    *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
@@ -1415,7 +1415,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=604
+   *     google/cloud/asset/v1/assets.proto;l=601
    * @param index The index of the value to return.
    * @return The bytes of the tagKeys at the given index.
    */
@@ -1427,7 +1427,7 @@ public interface ResourceSearchResultOrBuilder
    *
    * <pre>
    * This field is only present for the purpose of backward compatibility.
-   * Please use the `tags` field instead.
+   * Use the `tags` field instead.
    *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
@@ -1446,7 +1446,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=621
+   *     google/cloud/asset/v1/assets.proto;l=618
    * @return A list containing the tagValues.
    */
   @java.lang.Deprecated
@@ -1456,7 +1456,7 @@ public interface ResourceSearchResultOrBuilder
    *
    * <pre>
    * This field is only present for the purpose of backward compatibility.
-   * Please use the `tags` field instead.
+   * Use the `tags` field instead.
    *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
@@ -1475,7 +1475,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=621
+   *     google/cloud/asset/v1/assets.proto;l=618
    * @return The count of tagValues.
    */
   @java.lang.Deprecated
@@ -1485,7 +1485,7 @@ public interface ResourceSearchResultOrBuilder
    *
    * <pre>
    * This field is only present for the purpose of backward compatibility.
-   * Please use the `tags` field instead.
+   * Use the `tags` field instead.
    *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
@@ -1504,7 +1504,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=621
+   *     google/cloud/asset/v1/assets.proto;l=618
    * @param index The index of the element to return.
    * @return The tagValues at the given index.
    */
@@ -1515,7 +1515,7 @@ public interface ResourceSearchResultOrBuilder
    *
    * <pre>
    * This field is only present for the purpose of backward compatibility.
-   * Please use the `tags` field instead.
+   * Use the `tags` field instead.
    *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
@@ -1534,7 +1534,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=621
+   *     google/cloud/asset/v1/assets.proto;l=618
    * @param index The index of the value to return.
    * @return The bytes of the tagValues at the given index.
    */
@@ -1546,7 +1546,7 @@ public interface ResourceSearchResultOrBuilder
    *
    * <pre>
    * This field is only present for the purpose of backward compatibility.
-   * Please use the `tags` field instead.
+   * Use the `tags` field instead.
    *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
@@ -1561,7 +1561,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=634
+   *     google/cloud/asset/v1/assets.proto;l=631
    * @return A list containing the tagValueIds.
    */
   @java.lang.Deprecated
@@ -1571,7 +1571,7 @@ public interface ResourceSearchResultOrBuilder
    *
    * <pre>
    * This field is only present for the purpose of backward compatibility.
-   * Please use the `tags` field instead.
+   * Use the `tags` field instead.
    *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
@@ -1586,7 +1586,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=634
+   *     google/cloud/asset/v1/assets.proto;l=631
    * @return The count of tagValueIds.
    */
   @java.lang.Deprecated
@@ -1596,7 +1596,7 @@ public interface ResourceSearchResultOrBuilder
    *
    * <pre>
    * This field is only present for the purpose of backward compatibility.
-   * Please use the `tags` field instead.
+   * Use the `tags` field instead.
    *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
@@ -1611,7 +1611,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=634
+   *     google/cloud/asset/v1/assets.proto;l=631
    * @param index The index of the element to return.
    * @return The tagValueIds at the given index.
    */
@@ -1622,7 +1622,7 @@ public interface ResourceSearchResultOrBuilder
    *
    * <pre>
    * This field is only present for the purpose of backward compatibility.
-   * Please use the `tags` field instead.
+   * Use the `tags` field instead.
    *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
@@ -1637,7 +1637,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=634
+   *     google/cloud/asset/v1/assets.proto;l=631
    * @param index The index of the value to return.
    * @return The bytes of the tagValueIds at the given index.
    */
@@ -1944,10 +1944,6 @@ public interface ResourceSearchResultOrBuilder
    * with the asset.
    *
    *
-   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
-   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
-   * returned in the following `security_marks` map. In that case, the prefix
-   * "staging." will be added to the keys of all the staging marks.
    * To search against SCC SecurityMarks field:
    *
    *   * Use a field query:
@@ -1966,10 +1962,6 @@ public interface ResourceSearchResultOrBuilder
    * with the asset.
    *
    *
-   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
-   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
-   * returned in the following `security_marks` map. In that case, the prefix
-   * "staging." will be added to the keys of all the staging marks.
    * To search against SCC SecurityMarks field:
    *
    *   * Use a field query:
@@ -1991,10 +1983,6 @@ public interface ResourceSearchResultOrBuilder
    * with the asset.
    *
    *
-   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
-   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
-   * returned in the following `security_marks` map. In that case, the prefix
-   * "staging." will be added to the keys of all the staging marks.
    * To search against SCC SecurityMarks field:
    *
    *   * Use a field query:
@@ -2013,10 +2001,6 @@ public interface ResourceSearchResultOrBuilder
    * with the asset.
    *
    *
-   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
-   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
-   * returned in the following `security_marks` map. In that case, the prefix
-   * "staging." will be added to the keys of all the staging marks.
    * To search against SCC SecurityMarks field:
    *
    *   * Use a field query:
@@ -2039,10 +2023,6 @@ public interface ResourceSearchResultOrBuilder
    * with the asset.
    *
    *
-   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
-   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
-   * returned in the following `security_marks` map. In that case, the prefix
-   * "staging." will be added to the keys of all the staging marks.
    * To search against SCC SecurityMarks field:
    *
    *   * Use a field query:

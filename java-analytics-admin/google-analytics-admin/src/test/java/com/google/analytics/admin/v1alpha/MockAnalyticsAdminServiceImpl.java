@@ -2758,27 +2758,6 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
-  public void deleteSubpropertyEventFilter(
-      DeleteSubpropertyEventFilterRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Empty) {
-      requests.add(request);
-      responseObserver.onNext(((Empty) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method DeleteSubpropertyEventFilter, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void createSubpropertyEventFilter(
       CreateSubpropertyEventFilterRequest request,
       StreamObserver<SubpropertyEventFilter> responseObserver) {
@@ -2796,6 +2775,93 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   "Unrecognized response type %s for method CreateSubpropertyEventFilter, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SubpropertyEventFilter.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getSubpropertyEventFilter(
+      GetSubpropertyEventFilterRequest request,
+      StreamObserver<SubpropertyEventFilter> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SubpropertyEventFilter) {
+      requests.add(request);
+      responseObserver.onNext(((SubpropertyEventFilter) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSubpropertyEventFilter, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SubpropertyEventFilter.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSubpropertyEventFilters(
+      ListSubpropertyEventFiltersRequest request,
+      StreamObserver<ListSubpropertyEventFiltersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSubpropertyEventFiltersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSubpropertyEventFiltersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSubpropertyEventFilters, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSubpropertyEventFiltersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateSubpropertyEventFilter(
+      UpdateSubpropertyEventFilterRequest request,
+      StreamObserver<SubpropertyEventFilter> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SubpropertyEventFilter) {
+      requests.add(request);
+      responseObserver.onNext(((SubpropertyEventFilter) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSubpropertyEventFilter, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SubpropertyEventFilter.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteSubpropertyEventFilter(
+      DeleteSubpropertyEventFilterRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSubpropertyEventFilter, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

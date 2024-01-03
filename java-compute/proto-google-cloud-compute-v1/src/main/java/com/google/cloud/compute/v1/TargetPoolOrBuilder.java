@@ -401,6 +401,43 @@ public interface TargetPoolOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The resource URL for the security policy associated with this target pool.
+   * </pre>
+   *
+   * <code>optional string security_policy = 171082513;</code>
+   *
+   * @return Whether the securityPolicy field is set.
+   */
+  boolean hasSecurityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The resource URL for the security policy associated with this target pool.
+   * </pre>
+   *
+   * <code>optional string security_policy = 171082513;</code>
+   *
+   * @return The securityPolicy.
+   */
+  java.lang.String getSecurityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The resource URL for the security policy associated with this target pool.
+   * </pre>
+   *
+   * <code>optional string security_policy = 171082513;</code>
+   *
+   * @return The bytes for securityPolicy.
+   */
+  com.google.protobuf.ByteString getSecurityPolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *

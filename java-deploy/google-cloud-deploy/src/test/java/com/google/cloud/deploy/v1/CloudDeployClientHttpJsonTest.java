@@ -18,6 +18,7 @@ package com.google.cloud.deploy.v1;
 
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
@@ -1251,6 +1252,528 @@ public class CloudDeployClientHttpJsonTest {
   }
 
   @Test
+  public void listCustomTargetTypesTest() throws Exception {
+    CustomTargetType responsesElement = CustomTargetType.newBuilder().build();
+    ListCustomTargetTypesResponse expectedResponse =
+        ListCustomTargetTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCustomTargetTypes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListCustomTargetTypesPagedResponse pagedListResponse = client.listCustomTargetTypes(parent);
+
+    List<CustomTargetType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCustomTargetTypesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listCustomTargetTypesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listCustomTargetTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCustomTargetTypesTest2() throws Exception {
+    CustomTargetType responsesElement = CustomTargetType.newBuilder().build();
+    ListCustomTargetTypesResponse expectedResponse =
+        ListCustomTargetTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCustomTargetTypes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListCustomTargetTypesPagedResponse pagedListResponse = client.listCustomTargetTypes(parent);
+
+    List<CustomTargetType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCustomTargetTypesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listCustomTargetTypesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listCustomTargetTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCustomTargetTypeTest() throws Exception {
+    CustomTargetType expectedResponse =
+        CustomTargetType.newBuilder()
+            .setName(
+                CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+                    .toString())
+            .setCustomTargetTypeId("customTargetTypeId1451302135")
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CustomTargetTypeName name =
+        CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]");
+
+    CustomTargetType actualResponse = client.getCustomTargetType(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCustomTargetTypeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomTargetTypeName name =
+          CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]");
+      client.getCustomTargetType(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCustomTargetTypeTest2() throws Exception {
+    CustomTargetType expectedResponse =
+        CustomTargetType.newBuilder()
+            .setName(
+                CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+                    .toString())
+            .setCustomTargetTypeId("customTargetTypeId1451302135")
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6861/locations/location-6861/customTargetTypes/customTargetType-6861";
+
+    CustomTargetType actualResponse = client.getCustomTargetType(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCustomTargetTypeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6861/locations/location-6861/customTargetTypes/customTargetType-6861";
+      client.getCustomTargetType(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCustomTargetTypeTest() throws Exception {
+    CustomTargetType expectedResponse =
+        CustomTargetType.newBuilder()
+            .setName(
+                CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+                    .toString())
+            .setCustomTargetTypeId("customTargetTypeId1451302135")
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createCustomTargetTypeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    CustomTargetType customTargetType = CustomTargetType.newBuilder().build();
+    String customTargetTypeId = "customTargetTypeId1451302135";
+
+    CustomTargetType actualResponse =
+        client.createCustomTargetTypeAsync(parent, customTargetType, customTargetTypeId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCustomTargetTypeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      CustomTargetType customTargetType = CustomTargetType.newBuilder().build();
+      String customTargetTypeId = "customTargetTypeId1451302135";
+      client.createCustomTargetTypeAsync(parent, customTargetType, customTargetTypeId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createCustomTargetTypeTest2() throws Exception {
+    CustomTargetType expectedResponse =
+        CustomTargetType.newBuilder()
+            .setName(
+                CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+                    .toString())
+            .setCustomTargetTypeId("customTargetTypeId1451302135")
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createCustomTargetTypeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    CustomTargetType customTargetType = CustomTargetType.newBuilder().build();
+    String customTargetTypeId = "customTargetTypeId1451302135";
+
+    CustomTargetType actualResponse =
+        client.createCustomTargetTypeAsync(parent, customTargetType, customTargetTypeId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCustomTargetTypeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      CustomTargetType customTargetType = CustomTargetType.newBuilder().build();
+      String customTargetTypeId = "customTargetTypeId1451302135";
+      client.createCustomTargetTypeAsync(parent, customTargetType, customTargetTypeId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateCustomTargetTypeTest() throws Exception {
+    CustomTargetType expectedResponse =
+        CustomTargetType.newBuilder()
+            .setName(
+                CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+                    .toString())
+            .setCustomTargetTypeId("customTargetTypeId1451302135")
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateCustomTargetTypeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    CustomTargetType customTargetType =
+        CustomTargetType.newBuilder()
+            .setName(
+                CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+                    .toString())
+            .setCustomTargetTypeId("customTargetTypeId1451302135")
+            .setUid("uid115792")
+            .setDescription("description-1724546052")
+            .putAllAnnotations(new HashMap<String, String>())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    CustomTargetType actualResponse =
+        client.updateCustomTargetTypeAsync(customTargetType, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateCustomTargetTypeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomTargetType customTargetType =
+          CustomTargetType.newBuilder()
+              .setName(
+                  CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+                      .toString())
+              .setCustomTargetTypeId("customTargetTypeId1451302135")
+              .setUid("uid115792")
+              .setDescription("description-1724546052")
+              .putAllAnnotations(new HashMap<String, String>())
+              .putAllLabels(new HashMap<String, String>())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setEtag("etag3123477")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCustomTargetTypeAsync(customTargetType, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteCustomTargetTypeTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteCustomTargetTypeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    CustomTargetTypeName name =
+        CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]");
+
+    client.deleteCustomTargetTypeAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteCustomTargetTypeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomTargetTypeName name =
+          CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]");
+      client.deleteCustomTargetTypeAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteCustomTargetTypeTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteCustomTargetTypeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-6861/locations/location-6861/customTargetTypes/customTargetType-6861";
+
+    client.deleteCustomTargetTypeAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteCustomTargetTypeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6861/locations/location-6861/customTargetTypes/customTargetType-6861";
+      client.deleteCustomTargetTypeAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void listReleasesTest() throws Exception {
     Release responsesElement = Release.newBuilder().build();
     ListReleasesResponse expectedResponse =
@@ -1374,6 +1897,7 @@ public class CloudDeployClientHttpJsonTest {
             .addAllBuildArtifacts(new ArrayList<BuildArtifact>())
             .setDeliveryPipelineSnapshot(DeliveryPipeline.newBuilder().build())
             .addAllTargetSnapshots(new ArrayList<Target>())
+            .addAllCustomTargetTypeSnapshots(new ArrayList<CustomTargetType>())
             .setEtag("etag3123477")
             .setSkaffoldVersion("skaffoldVersion229290234")
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
@@ -1441,6 +1965,7 @@ public class CloudDeployClientHttpJsonTest {
             .addAllBuildArtifacts(new ArrayList<BuildArtifact>())
             .setDeliveryPipelineSnapshot(DeliveryPipeline.newBuilder().build())
             .addAllTargetSnapshots(new ArrayList<Target>())
+            .addAllCustomTargetTypeSnapshots(new ArrayList<CustomTargetType>())
             .setEtag("etag3123477")
             .setSkaffoldVersion("skaffoldVersion229290234")
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
@@ -1508,6 +2033,7 @@ public class CloudDeployClientHttpJsonTest {
             .addAllBuildArtifacts(new ArrayList<BuildArtifact>())
             .setDeliveryPipelineSnapshot(DeliveryPipeline.newBuilder().build())
             .addAllTargetSnapshots(new ArrayList<Target>())
+            .addAllCustomTargetTypeSnapshots(new ArrayList<CustomTargetType>())
             .setEtag("etag3123477")
             .setSkaffoldVersion("skaffoldVersion229290234")
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
@@ -1584,6 +2110,7 @@ public class CloudDeployClientHttpJsonTest {
             .addAllBuildArtifacts(new ArrayList<BuildArtifact>())
             .setDeliveryPipelineSnapshot(DeliveryPipeline.newBuilder().build())
             .addAllTargetSnapshots(new ArrayList<Target>())
+            .addAllCustomTargetTypeSnapshots(new ArrayList<CustomTargetType>())
             .setEtag("etag3123477")
             .setSkaffoldVersion("skaffoldVersion229290234")
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())

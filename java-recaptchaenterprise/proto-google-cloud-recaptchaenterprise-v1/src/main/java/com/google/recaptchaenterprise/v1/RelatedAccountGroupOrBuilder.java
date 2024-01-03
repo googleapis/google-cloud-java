@@ -27,12 +27,13 @@ public interface RelatedAccountGroupOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name for the related account group in the format
+   * Required. Identifier. The resource name for the related account group in
+   * the format
    * `projects/{project}/relatedaccountgroups/{related_account_group}`.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The name.
@@ -42,12 +43,13 @@ public interface RelatedAccountGroupOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name for the related account group in the format
+   * Required. Identifier. The resource name for the related account group in
+   * the format
    * `projects/{project}/relatedaccountgroups/{related_account_group}`.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for name.

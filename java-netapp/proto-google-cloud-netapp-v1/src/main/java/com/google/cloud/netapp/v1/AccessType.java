@@ -18,7 +18,15 @@
 
 package com.google.cloud.netapp.v1;
 
-/** Protobuf enum {@code google.cloud.netapp.v1.AccessType} */
+/**
+ *
+ *
+ * <pre>
+ * AccessType is an enum of all the supported access types for a volume.
+ * </pre>
+ *
+ * Protobuf enum {@code google.cloud.netapp.v1.AccessType}
+ */
 public enum AccessType implements com.google.protobuf.ProtocolMessageEnum {
   /**
    *

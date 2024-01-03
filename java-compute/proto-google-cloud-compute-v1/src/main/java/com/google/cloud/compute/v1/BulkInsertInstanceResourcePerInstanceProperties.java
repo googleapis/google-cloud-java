@@ -40,6 +40,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
   }
 
   private BulkInsertInstanceResourcePerInstanceProperties() {
+    hostname_ = "";
     name_ = "";
   }
 
@@ -66,6 +67,72 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
   }
 
   private int bitField0_;
+  public static final int HOSTNAME_FIELD_NUMBER = 237067315;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hostname_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+   * </pre>
+   *
+   * <code>optional string hostname = 237067315;</code>
+   *
+   * @return Whether the hostname field is set.
+   */
+  @java.lang.Override
+  public boolean hasHostname() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+   * </pre>
+   *
+   * <code>optional string hostname = 237067315;</code>
+   *
+   * @return The hostname.
+   */
+  @java.lang.Override
+  public java.lang.String getHostname() {
+    java.lang.Object ref = hostname_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      hostname_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+   * </pre>
+   *
+   * <code>optional string hostname = 237067315;</code>
+   *
+   * @return The bytes for hostname.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getHostnameBytes() {
+    java.lang.Object ref = hostname_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      hostname_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 3373707;
 
   @SuppressWarnings("serial")
@@ -83,7 +150,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -146,8 +213,11 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 237067315, hostname_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -158,8 +228,11 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(237067315, hostname_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -178,6 +251,10 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
     com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties other =
         (com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties) obj;
 
+    if (hasHostname() != other.hasHostname()) return false;
+    if (hasHostname()) {
+      if (!getHostname().equals(other.getHostname())) return false;
+    }
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
@@ -193,6 +270,10 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasHostname()) {
+      hash = (37 * hash) + HOSTNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getHostname().hashCode();
+    }
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
@@ -345,6 +426,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      hostname_ = "";
       name_ = "";
       return this;
     }
@@ -389,8 +471,12 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.name_ = name_;
+        result.hostname_ = hostname_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -445,9 +531,14 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
       if (other
           == com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties
               .getDefaultInstance()) return this;
+      if (other.hasHostname()) {
+        hostname_ = other.hostname_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -479,9 +570,15 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26989658
+            case 1896538522:
+              {
+                hostname_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 1896538522
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -501,6 +598,126 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
 
     private int bitField0_;
 
+    private java.lang.Object hostname_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+     * </pre>
+     *
+     * <code>optional string hostname = 237067315;</code>
+     *
+     * @return Whether the hostname field is set.
+     */
+    public boolean hasHostname() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+     * </pre>
+     *
+     * <code>optional string hostname = 237067315;</code>
+     *
+     * @return The hostname.
+     */
+    public java.lang.String getHostname() {
+      java.lang.Object ref = hostname_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        hostname_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+     * </pre>
+     *
+     * <code>optional string hostname = 237067315;</code>
+     *
+     * @return The bytes for hostname.
+     */
+    public com.google.protobuf.ByteString getHostnameBytes() {
+      java.lang.Object ref = hostname_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        hostname_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+     * </pre>
+     *
+     * <code>optional string hostname = 237067315;</code>
+     *
+     * @param value The hostname to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHostname(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      hostname_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+     * </pre>
+     *
+     * <code>optional string hostname = 237067315;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHostname() {
+      hostname_ = getDefaultInstance().getHostname();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+     * </pre>
+     *
+     * <code>optional string hostname = 237067315;</code>
+     *
+     * @param value The bytes for hostname to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHostnameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      hostname_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -514,7 +731,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -577,7 +794,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -594,7 +811,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -616,7 +833,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

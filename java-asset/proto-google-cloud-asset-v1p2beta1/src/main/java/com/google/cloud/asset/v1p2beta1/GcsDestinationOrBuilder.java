@@ -27,7 +27,7 @@ public interface GcsDestinationOrBuilder
    *
    *
    * <pre>
-   * The uri of the Cloud Storage object. It's the same uri that is used by
+   * The URI of the Cloud Storage object. It's the same URI that is used by
    * gsutil. For example: "gs://bucket_name/object_name". See [Viewing and
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
@@ -43,7 +43,7 @@ public interface GcsDestinationOrBuilder
    *
    *
    * <pre>
-   * The uri of the Cloud Storage object. It's the same uri that is used by
+   * The URI of the Cloud Storage object. It's the same URI that is used by
    * gsutil. For example: "gs://bucket_name/object_name". See [Viewing and
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
@@ -59,7 +59,7 @@ public interface GcsDestinationOrBuilder
    *
    *
    * <pre>
-   * The uri of the Cloud Storage object. It's the same uri that is used by
+   * The URI of the Cloud Storage object. It's the same URI that is used by
    * gsutil. For example: "gs://bucket_name/object_name". See [Viewing and
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)

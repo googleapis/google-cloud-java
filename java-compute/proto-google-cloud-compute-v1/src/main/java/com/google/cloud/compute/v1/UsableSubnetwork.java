@@ -252,6 +252,16 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Subnet reserved for Global Envoy-based Load Balancing.
+     * </pre>
+     *
+     * <code>GLOBAL_MANAGED_PROXY = 236463602;</code>
+     */
+    GLOBAL_MANAGED_PROXY(236463602),
+    /**
+     *
+     *
+     * <pre>
      * Subnet reserved for Internal HTTP(S) Load Balancing.
      * </pre>
      *
@@ -268,6 +278,16 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>PRIVATE = 403485027;</code>
      */
     PRIVATE(403485027),
+    /**
+     *
+     *
+     * <pre>
+     * Subnetwork used as source range for Private NAT Gateways.
+     * </pre>
+     *
+     * <code>PRIVATE_NAT = 367764517;</code>
+     */
+    PRIVATE_NAT(367764517),
     /**
      *
      *
@@ -292,7 +312,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Subnetwork used for Regional Internal/External HTTP(S) Load Balancing.
+     * Subnetwork used for Regional Envoy-based Load Balancing.
      * </pre>
      *
      * <code>REGIONAL_MANAGED_PROXY = 153049966;</code>
@@ -311,6 +331,16 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_PURPOSE = 0;</code>
      */
     public static final int UNDEFINED_PURPOSE_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Subnet reserved for Global Envoy-based Load Balancing.
+     * </pre>
+     *
+     * <code>GLOBAL_MANAGED_PROXY = 236463602;</code>
+     */
+    public static final int GLOBAL_MANAGED_PROXY_VALUE = 236463602;
     /**
      *
      *
@@ -335,6 +365,16 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Subnetwork used as source range for Private NAT Gateways.
+     * </pre>
+     *
+     * <code>PRIVATE_NAT = 367764517;</code>
+     */
+    public static final int PRIVATE_NAT_VALUE = 367764517;
+    /**
+     *
+     *
+     * <pre>
      * Regular user created or automatically created subnet.
      * </pre>
      *
@@ -355,7 +395,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Subnetwork used for Regional Internal/External HTTP(S) Load Balancing.
+     * Subnetwork used for Regional Envoy-based Load Balancing.
      * </pre>
      *
      * <code>REGIONAL_MANAGED_PROXY = 153049966;</code>
@@ -388,10 +428,14 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 0:
           return UNDEFINED_PURPOSE;
+        case 236463602:
+          return GLOBAL_MANAGED_PROXY;
         case 248748889:
           return INTERNAL_HTTPS_LOAD_BALANCER;
         case 403485027:
           return PRIVATE;
+        case 367764517:
+          return PRIVATE_NAT;
         case 254902107:
           return PRIVATE_RFC_1918;
         case 48134724:

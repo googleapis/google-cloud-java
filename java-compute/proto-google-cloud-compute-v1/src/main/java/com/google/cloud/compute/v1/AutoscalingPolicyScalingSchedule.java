@@ -305,7 +305,7 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
    *
    *
    * <pre>
-   * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of “UTC” if left empty.
+   * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: https://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of "UTC" if left empty.
    * </pre>
    *
    * <code>optional string time_zone = 36848094;</code>
@@ -320,7 +320,7 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
    *
    *
    * <pre>
-   * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of “UTC” if left empty.
+   * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: https://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of "UTC" if left empty.
    * </pre>
    *
    * <code>optional string time_zone = 36848094;</code>
@@ -343,7 +343,7 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
    *
    *
    * <pre>
-   * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of “UTC” if left empty.
+   * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: https://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of "UTC" if left empty.
    * </pre>
    *
    * <code>optional string time_zone = 36848094;</code>
@@ -1311,7 +1311,7 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
      *
      *
      * <pre>
-     * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of “UTC” if left empty.
+     * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: https://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of "UTC" if left empty.
      * </pre>
      *
      * <code>optional string time_zone = 36848094;</code>
@@ -1325,7 +1325,7 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
      *
      *
      * <pre>
-     * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of “UTC” if left empty.
+     * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: https://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of "UTC" if left empty.
      * </pre>
      *
      * <code>optional string time_zone = 36848094;</code>
@@ -1347,7 +1347,7 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
      *
      *
      * <pre>
-     * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of “UTC” if left empty.
+     * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: https://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of "UTC" if left empty.
      * </pre>
      *
      * <code>optional string time_zone = 36848094;</code>
@@ -1369,7 +1369,7 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
      *
      *
      * <pre>
-     * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of “UTC” if left empty.
+     * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: https://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of "UTC" if left empty.
      * </pre>
      *
      * <code>optional string time_zone = 36848094;</code>
@@ -1390,7 +1390,7 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
      *
      *
      * <pre>
-     * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of “UTC” if left empty.
+     * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: https://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of "UTC" if left empty.
      * </pre>
      *
      * <code>optional string time_zone = 36848094;</code>
@@ -1407,7 +1407,7 @@ public final class AutoscalingPolicyScalingSchedule extends com.google.protobuf.
      *
      *
      * <pre>
-     * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of “UTC” if left empty.
+     * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: https://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of "UTC" if left empty.
      * </pre>
      *
      * <code>optional string time_zone = 36848094;</code>

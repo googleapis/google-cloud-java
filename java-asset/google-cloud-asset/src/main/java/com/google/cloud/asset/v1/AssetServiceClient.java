@@ -1114,31 +1114,31 @@ public class AssetServiceClient implements BackgroundResource {
    *       <li>`labels.env:&#42;` to find Google Cloud resources that have a label `env`.
    *       <li>`tagKeys:env` to find Google Cloud resources that have directly attached tags where
    *           the
-   *           [`TagKey`](https://cloud.google.com/resource-manager/reference/rest/v3/tagKeys#resource:-tagkey)
-   *           .`namespacedName` contains `env`.
+   *           [`TagKey.namespacedName`](https://cloud.google.com/resource-manager/reference/rest/v3/tagKeys#resource:-tagkey)
+   *           contains `env`.
    *       <li>`tagValues:prod&#42;` to find Google Cloud resources that have directly attached tags
    *           where the
-   *           [`TagValue`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
-   *           .`namespacedName` contains a word prefixed by `prod`.
+   *           [`TagValue.namespacedName`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
+   *           contains a word prefixed by `prod`.
    *       <li>`tagValueIds=tagValues/123` to find Google Cloud resources that have directly
    *           attached tags where the
-   *           [`TagValue`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
-   *           .`name` is exactly `tagValues/123`.
+   *           [`TagValue.name`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
+   *           is exactly `tagValues/123`.
    *       <li>`effectiveTagKeys:env` to find Google Cloud resources that have directly attached or
    *           inherited tags where the
-   *           [`TagKey`](https://cloud.google.com/resource-manager/reference/rest/v3/tagKeys#resource:-tagkey)
-   *           .`namespacedName` contains `env`.
+   *           [`TagKey.namespacedName`](https://cloud.google.com/resource-manager/reference/rest/v3/tagKeys#resource:-tagkey)
+   *           contains `env`.
    *       <li>`effectiveTagValues:prod&#42;` to find Google Cloud resources that have directly
    *           attached or inherited tags where the
-   *           [`TagValue`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
-   *           .`namespacedName` contains a word prefixed by `prod`.
+   *           [`TagValue.namespacedName`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
+   *           contains a word prefixed by `prod`.
    *       <li>`effectiveTagValueIds=tagValues/123` to find Google Cloud resources that have
    *           directly attached or inherited tags where the
-   *           [`TagValue`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
-   *           .`name` is exactly `tagValues/123`.
+   *           [`TagValue.name`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
+   *           is exactly `tagValues/123`.
    *       <li>`kmsKey:key` to find Google Cloud resources encrypted with a customer-managed
-   *           encryption key whose name contains `key` as a word. This field is deprecated. Please
-   *           use the `kmsKeys` field to retrieve Cloud KMS key information.
+   *           encryption key whose name contains `key` as a word. This field is deprecated. Use the
+   *           `kmsKeys` field to retrieve Cloud KMS key information.
    *       <li>`kmsKeys:key` to find Google Cloud resources encrypted with customer-managed
    *           encryption keys whose name contains the word `key`.
    *       <li>`relationships:instance-group-1` to find Google Cloud resources that have
@@ -1148,6 +1148,10 @@ public class AssetServiceClient implements BackgroundResource {
    *       <li>`relationships.INSTANCE_TO_INSTANCEGROUP:instance-group-1` to find Compute Engine
    *           instances that have relationships with `instance-group-1` in the Compute Engine
    *           instance group resource name, for relationship type `INSTANCE_TO_INSTANCEGROUP`.
+   *       <li>`sccSecurityMarks.key=value` to find Cloud resources that are attached with security
+   *           marks whose key is `key` and value is `value`.
+   *       <li>`sccSecurityMarks.key:&#42;` to find Cloud resources that are attached with security
+   *           marks whose key is `key`.
    *       <li>`state:ACTIVE` to find Google Cloud resources whose state contains `ACTIVE` as a
    *           word.
    *       <li>`NOT state:ACTIVE` to find Google Cloud resources whose state doesn't contain
@@ -1169,7 +1173,7 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * @param assetTypes Optional. A list of asset types that this request searches for. If empty, it
    *     will search all the [searchable asset
-   *     types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *     types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
    *     <p>Regular expressions are also supported. For example:
    *     <ul>
    *       <li>"compute.googleapis.com.&#42;" snapshots resources whose asset type starts with
@@ -1721,8 +1725,8 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   AnalyzeMoveRequest request =
    *       AnalyzeMoveRequest.newBuilder()
-   *           .setResource("resource-341064690")
-   *           .setDestinationParent("destinationParent-1733659048")
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setDestinationParent(FolderName.of("[FOLDER]").toString())
    *           .build();
    *   AnalyzeMoveResponse response = assetServiceClient.analyzeMove(request);
    * }
@@ -1753,8 +1757,8 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   AnalyzeMoveRequest request =
    *       AnalyzeMoveRequest.newBuilder()
-   *           .setResource("resource-341064690")
-   *           .setDestinationParent("destinationParent-1733659048")
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setDestinationParent(FolderName.of("[FOLDER]").toString())
    *           .build();
    *   ApiFuture<AnalyzeMoveResponse> future =
    *       assetServiceClient.analyzeMoveCallable().futureCall(request);
@@ -2764,11 +2768,15 @@ public class AssetServiceClient implements BackgroundResource {
    *     The response only contains analyzed organization policies for the provided constraint.
    * @param filter The expression to filter
    *     [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
-   *     The only supported field is `consolidated_policy.attached_resource`, and the only supported
-   *     operator is `=`.
-   *     <p>Example:
+   *     Filtering is currently available for bare literal values and the following fields:
+   *     <ul>
+   *       <li>consolidated_policy.attached_resource
+   *       <li>consolidated_policy.rules.enforce
+   *     </ul>
+   *     <p>When filtering by a specific field, the only supported operator is `=`. For example,
+   *     filtering by
    *     consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
-   *     will return the org policy results of"folders/001".
+   *     will return all the Organization Policy results attached to "folders/001".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyzeOrgPoliciesPagedResponse analyzeOrgPolicies(
@@ -2931,9 +2939,15 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * @param constraint Required. The name of the constraint to analyze governed containers for. The
    *     analysis only contains organization policies for the provided constraint.
-   * @param filter The expression to filter the governed containers in result. The only supported
-   *     field is `parent`, and the only supported operator is `=`.
-   *     <p>Example: parent="//cloudresourcemanager.googleapis.com/folders/001" will return all
+   * @param filter The expression to filter
+   *     [AnalyzeOrgPolicyGovernedContainersResponse.governed_containers][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.governed_containers].
+   *     Filtering is currently available for bare literal values and the following fields:
+   *     <ul>
+   *       <li>parent
+   *       <li>consolidated_policy.rules.enforce
+   *     </ul>
+   *     <p>When filtering by a specific field, the only supported operator is `=`. For example,
+   *     filtering by parent="//cloudresourcemanager.googleapis.com/folders/001" will return all the
    *     containers under "folders/001".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3088,8 +3102,7 @@ public class AssetServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>This RPC only returns either resources of types supported by [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
-   * or IAM policies.
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types), or IAM policies.
    *
    * <p>Sample code:
    *
@@ -3121,14 +3134,32 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * @param constraint Required. The name of the constraint to analyze governed assets for. The
    *     analysis only contains analyzed organization policies for the provided constraint.
-   * @param filter The expression to filter the governed assets in result. The only supported fields
-   *     for governed resources are `governed_resource.project` and `governed_resource.folders`. The
-   *     only supported fields for governed iam policies are `governed_iam_policy.project` and
-   *     `governed_iam_policy.folders`. The only supported operator is `=`.
-   *     <p>Example 1: governed_resource.project="projects/12345678" filter will return all governed
-   *     resources under projects/12345678 including the project ifself, if applicable.
-   *     <p>Example 2: governed_iam_policy.folders="folders/12345678" filter will return all
-   *     governed iam policies under folders/12345678, if applicable.
+   * @param filter The expression to filter
+   *     [AnalyzeOrgPolicyGovernedAssetsResponse.governed_assets][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.governed_assets].
+   *     <p>For governed resources, filtering is currently available for bare literal values and the
+   *     following fields:
+   *     <ul>
+   *       <li>governed_resource.project
+   *       <li>governed_resource.folders
+   *       <li>consolidated_policy.rules.enforce When filtering by `governed_resource.project` or
+   *           `consolidated_policy.rules.enforce`, the only supported operator is `=`. When
+   *           filtering by `governed_resource.folders`, the supported operators are `=` and `:`.
+   *           For example, filtering by `governed_resource.project="projects/12345678"` will return
+   *           all the governed resources under "projects/12345678", including the project itself if
+   *           applicable.
+   *     </ul>
+   *     <p>For governed IAM policies, filtering is currently available for bare literal values and
+   *     the following fields:
+   *     <ul>
+   *       <li>governed_iam_policy.project
+   *       <li>governed_iam_policy.folders
+   *       <li>consolidated_policy.rules.enforce When filtering by `governed_iam_policy.project` or
+   *           `consolidated_policy.rules.enforce`, the only supported operator is `=`. When
+   *           filtering by `governed_iam_policy.folders`, the supported operators are `=` and `:`.
+   *           For example, filtering by `governed_iam_policy.folders:"folders/12345678"` will
+   *           return all the governed IAM policies under "folders/001".
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyzeOrgPolicyGovernedAssetsPagedResponse analyzeOrgPolicyGovernedAssets(
@@ -3161,8 +3192,7 @@ public class AssetServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>This RPC only returns either resources of types supported by [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
-   * or IAM policies.
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types), or IAM policies.
    *
    * <p>Sample code:
    *
@@ -3215,8 +3245,7 @@ public class AssetServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>This RPC only returns either resources of types supported by [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
-   * or IAM policies.
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types), or IAM policies.
    *
    * <p>Sample code:
    *
@@ -3270,8 +3299,7 @@ public class AssetServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>This RPC only returns either resources of types supported by [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
-   * or IAM policies.
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types), or IAM policies.
    *
    * <p>Sample code:
    *

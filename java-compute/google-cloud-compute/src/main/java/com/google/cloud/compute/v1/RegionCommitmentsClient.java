@@ -218,6 +218,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, CommitmentsScopedList> element :
    *       regionCommitmentsClient.aggregatedList(request).iterateAll()) {
@@ -256,6 +257,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, CommitmentsScopedList>> future =
    *       regionCommitmentsClient.aggregatedListPagedCallable().futureCall(request);
@@ -293,6 +295,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     CommitmentAggregatedList response =

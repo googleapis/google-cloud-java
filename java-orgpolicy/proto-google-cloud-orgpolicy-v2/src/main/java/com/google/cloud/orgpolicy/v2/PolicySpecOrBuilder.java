@@ -27,16 +27,16 @@ public interface PolicySpecOrBuilder
    *
    *
    * <pre>
-   * An opaque tag indicating the current version of the `Policy`, used for
+   * An opaque tag indicating the current version of the policySpec, used for
    * concurrency control.
    *
    * This field is ignored if used in a `CreatePolicy` request.
    *
-   * When the `Policy` is returned from either a `GetPolicy` or a
+   * When the policy is returned from either a `GetPolicy` or a
    * `ListPolicies` request, this `etag` indicates the version of the
-   * current `Policy` to use when executing a read-modify-write loop.
+   * current policySpec to use when executing a read-modify-write loop.
    *
-   * When the `Policy` is returned from a `GetEffectivePolicy` request, the
+   * When the policy is returned from a `GetEffectivePolicy` request, the
    * `etag` will be unset.
    * </pre>
    *
@@ -49,16 +49,16 @@ public interface PolicySpecOrBuilder
    *
    *
    * <pre>
-   * An opaque tag indicating the current version of the `Policy`, used for
+   * An opaque tag indicating the current version of the policySpec, used for
    * concurrency control.
    *
    * This field is ignored if used in a `CreatePolicy` request.
    *
-   * When the `Policy` is returned from either a `GetPolicy` or a
+   * When the policy is returned from either a `GetPolicy` or a
    * `ListPolicies` request, this `etag` indicates the version of the
-   * current `Policy` to use when executing a read-modify-write loop.
+   * current policySpec to use when executing a read-modify-write loop.
    *
-   * When the `Policy` is returned from a `GetEffectivePolicy` request, the
+   * When the policy is returned from a `GetEffectivePolicy` request, the
    * `etag` will be unset.
    * </pre>
    *
@@ -74,7 +74,7 @@ public interface PolicySpecOrBuilder
    * <pre>
    * Output only. The time stamp this was previously updated. This
    * represents the last time a call to `CreatePolicy` or `UpdatePolicy` was
-   * made for that `Policy`.
+   * made for that policy.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -89,7 +89,7 @@ public interface PolicySpecOrBuilder
    * <pre>
    * Output only. The time stamp this was previously updated. This
    * represents the last time a call to `CreatePolicy` or `UpdatePolicy` was
-   * made for that `Policy`.
+   * made for that policy.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -104,7 +104,7 @@ public interface PolicySpecOrBuilder
    * <pre>
    * Output only. The time stamp this was previously updated. This
    * represents the last time a call to `CreatePolicy` or `UpdatePolicy` was
-   * made for that `Policy`.
+   * made for that policy.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -116,13 +116,12 @@ public interface PolicySpecOrBuilder
    *
    *
    * <pre>
-   * Up to 10 PolicyRules are allowed.
+   * In policies for boolean constraints, the following requirements apply:
    *
-   * In Policies for boolean constraints, the following requirements apply:
-   *   - There must be one and only one PolicyRule where condition is unset.
-   *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-   *     of the PolicyRule without a condition.
-   *   - During policy evaluation, PolicyRules with conditions that are
+   *   - There must be one and only one policy rule where condition is unset.
+   *   - Boolean policy rules with conditions must set `enforced` to the
+   *     opposite of the policy rule without a condition.
+   *   - During policy evaluation, policy rules with conditions that are
    *     true for a target resource take precedence.
    * </pre>
    *
@@ -133,13 +132,12 @@ public interface PolicySpecOrBuilder
    *
    *
    * <pre>
-   * Up to 10 PolicyRules are allowed.
+   * In policies for boolean constraints, the following requirements apply:
    *
-   * In Policies for boolean constraints, the following requirements apply:
-   *   - There must be one and only one PolicyRule where condition is unset.
-   *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-   *     of the PolicyRule without a condition.
-   *   - During policy evaluation, PolicyRules with conditions that are
+   *   - There must be one and only one policy rule where condition is unset.
+   *   - Boolean policy rules with conditions must set `enforced` to the
+   *     opposite of the policy rule without a condition.
+   *   - During policy evaluation, policy rules with conditions that are
    *     true for a target resource take precedence.
    * </pre>
    *
@@ -150,13 +148,12 @@ public interface PolicySpecOrBuilder
    *
    *
    * <pre>
-   * Up to 10 PolicyRules are allowed.
+   * In policies for boolean constraints, the following requirements apply:
    *
-   * In Policies for boolean constraints, the following requirements apply:
-   *   - There must be one and only one PolicyRule where condition is unset.
-   *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-   *     of the PolicyRule without a condition.
-   *   - During policy evaluation, PolicyRules with conditions that are
+   *   - There must be one and only one policy rule where condition is unset.
+   *   - Boolean policy rules with conditions must set `enforced` to the
+   *     opposite of the policy rule without a condition.
+   *   - During policy evaluation, policy rules with conditions that are
    *     true for a target resource take precedence.
    * </pre>
    *
@@ -167,13 +164,12 @@ public interface PolicySpecOrBuilder
    *
    *
    * <pre>
-   * Up to 10 PolicyRules are allowed.
+   * In policies for boolean constraints, the following requirements apply:
    *
-   * In Policies for boolean constraints, the following requirements apply:
-   *   - There must be one and only one PolicyRule where condition is unset.
-   *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-   *     of the PolicyRule without a condition.
-   *   - During policy evaluation, PolicyRules with conditions that are
+   *   - There must be one and only one policy rule where condition is unset.
+   *   - Boolean policy rules with conditions must set `enforced` to the
+   *     opposite of the policy rule without a condition.
+   *   - During policy evaluation, policy rules with conditions that are
    *     true for a target resource take precedence.
    * </pre>
    *
@@ -185,13 +181,12 @@ public interface PolicySpecOrBuilder
    *
    *
    * <pre>
-   * Up to 10 PolicyRules are allowed.
+   * In policies for boolean constraints, the following requirements apply:
    *
-   * In Policies for boolean constraints, the following requirements apply:
-   *   - There must be one and only one PolicyRule where condition is unset.
-   *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-   *     of the PolicyRule without a condition.
-   *   - During policy evaluation, PolicyRules with conditions that are
+   *   - There must be one and only one policy rule where condition is unset.
+   *   - Boolean policy rules with conditions must set `enforced` to the
+   *     opposite of the policy rule without a condition.
+   *   - During policy evaluation, policy rules with conditions that are
    *     true for a target resource take precedence.
    * </pre>
    *
@@ -203,13 +198,13 @@ public interface PolicySpecOrBuilder
    *
    *
    * <pre>
-   * Determines the inheritance behavior for this `Policy`.
+   * Determines the inheritance behavior for this policy.
    *
-   * If `inherit_from_parent` is true, PolicyRules set higher up in the
+   * If `inherit_from_parent` is true, policy rules set higher up in the
    * hierarchy (up to the closest root) are inherited and present in the
    * effective policy. If it is false, then no rules are inherited, and this
-   * Policy becomes the new root for evaluation.
-   * This field can be set only for Policies which configure list constraints.
+   * policy becomes the new root for evaluation.
+   * This field can be set only for policies which configure list constraints.
    * </pre>
    *
    * <code>bool inherit_from_parent = 4;</code>
@@ -223,7 +218,7 @@ public interface PolicySpecOrBuilder
    *
    * <pre>
    * Ignores policies set above this resource and restores the
-   * `constraint_default` enforcement behavior of the specific `Constraint` at
+   * `constraint_default` enforcement behavior of the specific constraint at
    * this resource.
    * This field can be set in policies for either list or boolean
    * constraints. If set, `rules` must be empty and `inherit_from_parent`

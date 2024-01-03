@@ -39,6 +39,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
 
   private AttachedClustersAuthorization() {
     adminUsers_ = java.util.Collections.emptyList();
+    adminGroups_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -70,7 +71,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. Users that can perform operations as a cluster admin. A managed
+   * Optional. Users that can perform operations as a cluster admin. A managed
    * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
    * to the users. Up to ten admin users can be provided.
    *
@@ -79,7 +80,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -90,7 +91,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. Users that can perform operations as a cluster admin. A managed
+   * Optional. Users that can perform operations as a cluster admin. A managed
    * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
    * to the users. Up to ten admin users can be provided.
    *
@@ -99,7 +100,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -111,7 +112,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. Users that can perform operations as a cluster admin. A managed
+   * Optional. Users that can perform operations as a cluster admin. A managed
    * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
    * to the users. Up to ten admin users can be provided.
    *
@@ -120,7 +121,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -131,7 +132,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. Users that can perform operations as a cluster admin. A managed
+   * Optional. Users that can perform operations as a cluster admin. A managed
    * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
    * to the users. Up to ten admin users can be provided.
    *
@@ -140,7 +141,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -151,7 +152,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. Users that can perform operations as a cluster admin. A managed
+   * Optional. Users that can perform operations as a cluster admin. A managed
    * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
    * to the users. Up to ten admin users can be provided.
    *
@@ -160,13 +161,121 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AttachedClusterUserOrBuilder getAdminUsersOrBuilder(
       int index) {
     return adminUsers_.get(index);
+  }
+
+  public static final int ADMIN_GROUPS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterGroup> adminGroups_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Groups of users that can perform operations as a cluster admin. A
+   * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+   * ClusterRole to the groups. Up to ten admin groups can be provided.
+   *
+   * For more info on RBAC, see
+   * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterGroup>
+      getAdminGroupsList() {
+    return adminGroups_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Groups of users that can perform operations as a cluster admin. A
+   * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+   * ClusterRole to the groups. Up to ten admin groups can be provided.
+   *
+   * For more info on RBAC, see
+   * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.gkemulticloud.v1.AttachedClusterGroupOrBuilder>
+      getAdminGroupsOrBuilderList() {
+    return adminGroups_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Groups of users that can perform operations as a cluster admin. A
+   * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+   * ClusterRole to the groups. Up to ten admin groups can be provided.
+   *
+   * For more info on RBAC, see
+   * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAdminGroupsCount() {
+    return adminGroups_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Groups of users that can perform operations as a cluster admin. A
+   * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+   * ClusterRole to the groups. Up to ten admin groups can be provided.
+   *
+   * For more info on RBAC, see
+   * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AttachedClusterGroup getAdminGroups(int index) {
+    return adminGroups_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Groups of users that can perform operations as a cluster admin. A
+   * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+   * ClusterRole to the groups. Up to ten admin groups can be provided.
+   *
+   * For more info on RBAC, see
+   * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AttachedClusterGroupOrBuilder getAdminGroupsOrBuilder(
+      int index) {
+    return adminGroups_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -186,6 +295,9 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
     for (int i = 0; i < adminUsers_.size(); i++) {
       output.writeMessage(1, adminUsers_.get(i));
     }
+    for (int i = 0; i < adminGroups_.size(); i++) {
+      output.writeMessage(2, adminGroups_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -197,6 +309,9 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
     size = 0;
     for (int i = 0; i < adminUsers_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, adminUsers_.get(i));
+    }
+    for (int i = 0; i < adminGroups_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, adminGroups_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -215,6 +330,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         (com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization) obj;
 
     if (!getAdminUsersList().equals(other.getAdminUsersList())) return false;
+    if (!getAdminGroupsList().equals(other.getAdminGroupsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -229,6 +345,10 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
     if (getAdminUsersCount() > 0) {
       hash = (37 * hash) + ADMIN_USERS_FIELD_NUMBER;
       hash = (53 * hash) + getAdminUsersList().hashCode();
+    }
+    if (getAdminGroupsCount() > 0) {
+      hash = (37 * hash) + ADMIN_GROUPS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdminGroupsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -377,6 +497,13 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         adminUsersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (adminGroupsBuilder_ == null) {
+        adminGroups_ = java.util.Collections.emptyList();
+      } else {
+        adminGroups_ = null;
+        adminGroupsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -423,6 +550,15 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         result.adminUsers_ = adminUsers_;
       } else {
         result.adminUsers_ = adminUsersBuilder_.build();
+      }
+      if (adminGroupsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          adminGroups_ = java.util.Collections.unmodifiableList(adminGroups_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.adminGroups_ = adminGroups_;
+      } else {
+        result.adminGroups_ = adminGroupsBuilder_.build();
       }
     }
 
@@ -506,6 +642,33 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
           }
         }
       }
+      if (adminGroupsBuilder_ == null) {
+        if (!other.adminGroups_.isEmpty()) {
+          if (adminGroups_.isEmpty()) {
+            adminGroups_ = other.adminGroups_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureAdminGroupsIsMutable();
+            adminGroups_.addAll(other.adminGroups_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.adminGroups_.isEmpty()) {
+          if (adminGroupsBuilder_.isEmpty()) {
+            adminGroupsBuilder_.dispose();
+            adminGroupsBuilder_ = null;
+            adminGroups_ = other.adminGroups_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            adminGroupsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAdminGroupsFieldBuilder()
+                    : null;
+          } else {
+            adminGroupsBuilder_.addAllMessages(other.adminGroups_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -546,6 +709,20 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
                 }
                 break;
               } // case 10
+            case 18:
+              {
+                com.google.cloud.gkemulticloud.v1.AttachedClusterGroup m =
+                    input.readMessage(
+                        com.google.cloud.gkemulticloud.v1.AttachedClusterGroup.parser(),
+                        extensionRegistry);
+                if (adminGroupsBuilder_ == null) {
+                  ensureAdminGroupsIsMutable();
+                  adminGroups_.add(m);
+                } else {
+                  adminGroupsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -587,7 +764,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -596,7 +773,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterUser>
@@ -611,7 +788,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -620,7 +797,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getAdminUsersCount() {
@@ -634,7 +811,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -643,7 +820,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AttachedClusterUser getAdminUsers(int index) {
@@ -657,7 +834,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -666,7 +843,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setAdminUsers(
@@ -687,7 +864,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -696,7 +873,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setAdminUsers(
@@ -714,7 +891,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -723,7 +900,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAdminUsers(com.google.cloud.gkemulticloud.v1.AttachedClusterUser value) {
@@ -743,7 +920,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -752,7 +929,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAdminUsers(
@@ -773,7 +950,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -782,7 +959,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAdminUsers(
@@ -800,7 +977,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -809,7 +986,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAdminUsers(
@@ -827,7 +1004,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -836,7 +1013,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllAdminUsers(
@@ -855,7 +1032,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -864,7 +1041,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearAdminUsers() {
@@ -881,7 +1058,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -890,7 +1067,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeAdminUsers(int index) {
@@ -907,7 +1084,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -916,7 +1093,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AttachedClusterUser.Builder getAdminUsersBuilder(
@@ -927,7 +1104,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -936,7 +1113,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AttachedClusterUserOrBuilder getAdminUsersOrBuilder(
@@ -951,7 +1128,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -960,7 +1137,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<? extends com.google.cloud.gkemulticloud.v1.AttachedClusterUserOrBuilder>
@@ -975,7 +1152,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -984,7 +1161,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AttachedClusterUser.Builder addAdminUsersBuilder() {
@@ -995,7 +1172,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -1004,7 +1181,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AttachedClusterUser.Builder addAdminUsersBuilder(
@@ -1017,7 +1194,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Users that can perform operations as a cluster admin. A managed
+     * Optional. Users that can perform operations as a cluster admin. A managed
      * ClusterRoleBinding will be created to grant the `cluster-admin` ClusterRole
      * to the users. Up to ten admin users can be provided.
      *
@@ -1026,7 +1203,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterUser admin_users = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterUser.Builder>
@@ -1049,6 +1226,492 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
         adminUsers_ = null;
       }
       return adminUsersBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterGroup> adminGroups_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAdminGroupsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        adminGroups_ =
+            new java.util.ArrayList<com.google.cloud.gkemulticloud.v1.AttachedClusterGroup>(
+                adminGroups_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AttachedClusterGroup,
+            com.google.cloud.gkemulticloud.v1.AttachedClusterGroup.Builder,
+            com.google.cloud.gkemulticloud.v1.AttachedClusterGroupOrBuilder>
+        adminGroupsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterGroup>
+        getAdminGroupsList() {
+      if (adminGroupsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(adminGroups_);
+      } else {
+        return adminGroupsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getAdminGroupsCount() {
+      if (adminGroupsBuilder_ == null) {
+        return adminGroups_.size();
+      } else {
+        return adminGroupsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AttachedClusterGroup getAdminGroups(int index) {
+      if (adminGroupsBuilder_ == null) {
+        return adminGroups_.get(index);
+      } else {
+        return adminGroupsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdminGroups(
+        int index, com.google.cloud.gkemulticloud.v1.AttachedClusterGroup value) {
+      if (adminGroupsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdminGroupsIsMutable();
+        adminGroups_.set(index, value);
+        onChanged();
+      } else {
+        adminGroupsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdminGroups(
+        int index, com.google.cloud.gkemulticloud.v1.AttachedClusterGroup.Builder builderForValue) {
+      if (adminGroupsBuilder_ == null) {
+        ensureAdminGroupsIsMutable();
+        adminGroups_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        adminGroupsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdminGroups(com.google.cloud.gkemulticloud.v1.AttachedClusterGroup value) {
+      if (adminGroupsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdminGroupsIsMutable();
+        adminGroups_.add(value);
+        onChanged();
+      } else {
+        adminGroupsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdminGroups(
+        int index, com.google.cloud.gkemulticloud.v1.AttachedClusterGroup value) {
+      if (adminGroupsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdminGroupsIsMutable();
+        adminGroups_.add(index, value);
+        onChanged();
+      } else {
+        adminGroupsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdminGroups(
+        com.google.cloud.gkemulticloud.v1.AttachedClusterGroup.Builder builderForValue) {
+      if (adminGroupsBuilder_ == null) {
+        ensureAdminGroupsIsMutable();
+        adminGroups_.add(builderForValue.build());
+        onChanged();
+      } else {
+        adminGroupsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdminGroups(
+        int index, com.google.cloud.gkemulticloud.v1.AttachedClusterGroup.Builder builderForValue) {
+      if (adminGroupsBuilder_ == null) {
+        ensureAdminGroupsIsMutable();
+        adminGroups_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        adminGroupsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllAdminGroups(
+        java.lang.Iterable<? extends com.google.cloud.gkemulticloud.v1.AttachedClusterGroup>
+            values) {
+      if (adminGroupsBuilder_ == null) {
+        ensureAdminGroupsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, adminGroups_);
+        onChanged();
+      } else {
+        adminGroupsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAdminGroups() {
+      if (adminGroupsBuilder_ == null) {
+        adminGroups_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        adminGroupsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAdminGroups(int index) {
+      if (adminGroupsBuilder_ == null) {
+        ensureAdminGroupsIsMutable();
+        adminGroups_.remove(index);
+        onChanged();
+      } else {
+        adminGroupsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AttachedClusterGroup.Builder getAdminGroupsBuilder(
+        int index) {
+      return getAdminGroupsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AttachedClusterGroupOrBuilder getAdminGroupsOrBuilder(
+        int index) {
+      if (adminGroupsBuilder_ == null) {
+        return adminGroups_.get(index);
+      } else {
+        return adminGroupsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.gkemulticloud.v1.AttachedClusterGroupOrBuilder>
+        getAdminGroupsOrBuilderList() {
+      if (adminGroupsBuilder_ != null) {
+        return adminGroupsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(adminGroups_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AttachedClusterGroup.Builder addAdminGroupsBuilder() {
+      return getAdminGroupsFieldBuilder()
+          .addBuilder(com.google.cloud.gkemulticloud.v1.AttachedClusterGroup.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AttachedClusterGroup.Builder addAdminGroupsBuilder(
+        int index) {
+      return getAdminGroupsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.gkemulticloud.v1.AttachedClusterGroup.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Groups of users that can perform operations as a cluster admin. A
+     * managed ClusterRoleBinding will be created to grant the `cluster-admin`
+     * ClusterRole to the groups. Up to ten admin groups can be provided.
+     *
+     * For more info on RBAC, see
+     * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AttachedClusterGroup admin_groups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterGroup.Builder>
+        getAdminGroupsBuilderList() {
+      return getAdminGroupsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AttachedClusterGroup,
+            com.google.cloud.gkemulticloud.v1.AttachedClusterGroup.Builder,
+            com.google.cloud.gkemulticloud.v1.AttachedClusterGroupOrBuilder>
+        getAdminGroupsFieldBuilder() {
+      if (adminGroupsBuilder_ == null) {
+        adminGroupsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.AttachedClusterGroup,
+                com.google.cloud.gkemulticloud.v1.AttachedClusterGroup.Builder,
+                com.google.cloud.gkemulticloud.v1.AttachedClusterGroupOrBuilder>(
+                adminGroups_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        adminGroups_ = null;
+      }
+      return adminGroupsBuilder_;
     }
 
     @java.lang.Override

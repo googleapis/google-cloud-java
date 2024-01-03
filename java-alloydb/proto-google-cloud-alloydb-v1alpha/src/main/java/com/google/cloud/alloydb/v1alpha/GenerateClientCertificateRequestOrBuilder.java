@@ -107,13 +107,14 @@ public interface GenerateClientCertificateRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A pem-encoded X.509 certificate signing request (CSR).
+   * Optional. A pem-encoded X.509 certificate signing request (CSR). It is
+   * recommended to use public_key instead.
    * </pre>
    *
    * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest.pem_csr is
-   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1351
+   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1360
    * @return The pemCsr.
    */
   @java.lang.Deprecated
@@ -122,13 +123,14 @@ public interface GenerateClientCertificateRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A pem-encoded X.509 certificate signing request (CSR).
+   * Optional. A pem-encoded X.509 certificate signing request (CSR). It is
+   * recommended to use public_key instead.
    * </pre>
    *
    * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest.pem_csr is
-   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1351
+   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1360
    * @return The bytes for pemCsr.
    */
   @java.lang.Deprecated

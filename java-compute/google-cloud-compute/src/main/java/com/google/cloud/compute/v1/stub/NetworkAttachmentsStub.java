@@ -32,6 +32,7 @@ import com.google.cloud.compute.v1.NetworkAttachment;
 import com.google.cloud.compute.v1.NetworkAttachmentAggregatedList;
 import com.google.cloud.compute.v1.NetworkAttachmentList;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchNetworkAttachmentRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyNetworkAttachmentRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsNetworkAttachmentRequest;
@@ -89,6 +90,15 @@ public abstract class NetworkAttachmentsStub implements BackgroundResource {
 
   public UnaryCallable<ListNetworkAttachmentsRequest, NetworkAttachmentList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<PatchNetworkAttachmentRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
+  public UnaryCallable<PatchNetworkAttachmentRequest, Operation> patchCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchCallable()");
   }
 
   public UnaryCallable<SetIamPolicyNetworkAttachmentRequest, Policy> setIamPolicyCallable() {

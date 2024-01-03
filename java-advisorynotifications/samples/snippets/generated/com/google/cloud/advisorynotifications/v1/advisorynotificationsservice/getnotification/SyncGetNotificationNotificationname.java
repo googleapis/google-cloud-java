@@ -35,7 +35,9 @@ public class SyncGetNotificationNotificationname {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
         AdvisoryNotificationsServiceClient.create()) {
-      NotificationName name = NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]");
+      NotificationName name =
+          NotificationName.ofOrganizationLocationNotificationName(
+              "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]");
       Notification response = advisoryNotificationsServiceClient.getNotification(name);
     }
   }

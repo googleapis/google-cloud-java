@@ -40,7 +40,9 @@ public class AsyncListNotifications {
         AdvisoryNotificationsServiceClient.create()) {
       ListNotificationsRequest request =
           ListNotificationsRequest.newBuilder()
-              .setParent(LocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+              .setParent(
+                  LocationName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]")
+                      .toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setView(NotificationView.forNumber(0))

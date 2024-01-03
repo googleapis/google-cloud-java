@@ -74,11 +74,11 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Name of the author of the [Photo][google.maps.places.v1.Photo]
-   * or [Review][google.maps.places.v1.Review].
+   * Name of the author of the [Photo][google.maps.places.v1.Photo] or
+   * [Review][google.maps.places.v1.Review].
    * </pre>
    *
-   * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string display_name = 1;</code>
    *
    * @return The displayName.
    */
@@ -98,11 +98,11 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Name of the author of the [Photo][google.maps.places.v1.Photo]
-   * or [Review][google.maps.places.v1.Review].
+   * Name of the author of the [Photo][google.maps.places.v1.Photo] or
+   * [Review][google.maps.places.v1.Review].
    * </pre>
    *
-   * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string display_name = 1;</code>
    *
    * @return The bytes for displayName.
    */
@@ -127,11 +127,11 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. URI of the author of the [Photo][google.maps.places.v1.Photo]
-   * or [Review][google.maps.places.v1.Review].
+   * URI of the author of the [Photo][google.maps.places.v1.Photo] or
+   * [Review][google.maps.places.v1.Review].
    * </pre>
    *
-   * <code>string uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string uri = 2;</code>
    *
    * @return The uri.
    */
@@ -151,11 +151,11 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. URI of the author of the [Photo][google.maps.places.v1.Photo]
-   * or [Review][google.maps.places.v1.Review].
+   * URI of the author of the [Photo][google.maps.places.v1.Photo] or
+   * [Review][google.maps.places.v1.Review].
    * </pre>
    *
-   * <code>string uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string uri = 2;</code>
    *
    * @return The bytes for uri.
    */
@@ -180,12 +180,12 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Profile photo URI of the author of the
+   * Profile photo URI of the author of the
    * [Photo][google.maps.places.v1.Photo] or
    * [Review][google.maps.places.v1.Review].
    * </pre>
    *
-   * <code>string photo_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string photo_uri = 3;</code>
    *
    * @return The photoUri.
    */
@@ -205,12 +205,12 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Profile photo URI of the author of the
+   * Profile photo URI of the author of the
    * [Photo][google.maps.places.v1.Photo] or
    * [Review][google.maps.places.v1.Review].
    * </pre>
    *
-   * <code>string photo_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string photo_uri = 3;</code>
    *
    * @return The bytes for photoUri.
    */
@@ -623,11 +623,11 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Name of the author of the [Photo][google.maps.places.v1.Photo]
-     * or [Review][google.maps.places.v1.Review].
+     * Name of the author of the [Photo][google.maps.places.v1.Photo] or
+     * [Review][google.maps.places.v1.Review].
      * </pre>
      *
-     * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string display_name = 1;</code>
      *
      * @return The displayName.
      */
@@ -646,11 +646,11 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Name of the author of the [Photo][google.maps.places.v1.Photo]
-     * or [Review][google.maps.places.v1.Review].
+     * Name of the author of the [Photo][google.maps.places.v1.Photo] or
+     * [Review][google.maps.places.v1.Review].
      * </pre>
      *
-     * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string display_name = 1;</code>
      *
      * @return The bytes for displayName.
      */
@@ -669,11 +669,11 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Name of the author of the [Photo][google.maps.places.v1.Photo]
-     * or [Review][google.maps.places.v1.Review].
+     * Name of the author of the [Photo][google.maps.places.v1.Photo] or
+     * [Review][google.maps.places.v1.Review].
      * </pre>
      *
-     * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string display_name = 1;</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -691,11 +691,11 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Name of the author of the [Photo][google.maps.places.v1.Photo]
-     * or [Review][google.maps.places.v1.Review].
+     * Name of the author of the [Photo][google.maps.places.v1.Photo] or
+     * [Review][google.maps.places.v1.Review].
      * </pre>
      *
-     * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string display_name = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -709,11 +709,11 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Name of the author of the [Photo][google.maps.places.v1.Photo]
-     * or [Review][google.maps.places.v1.Review].
+     * Name of the author of the [Photo][google.maps.places.v1.Photo] or
+     * [Review][google.maps.places.v1.Review].
      * </pre>
      *
-     * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string display_name = 1;</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -734,11 +734,11 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. URI of the author of the [Photo][google.maps.places.v1.Photo]
-     * or [Review][google.maps.places.v1.Review].
+     * URI of the author of the [Photo][google.maps.places.v1.Photo] or
+     * [Review][google.maps.places.v1.Review].
      * </pre>
      *
-     * <code>string uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string uri = 2;</code>
      *
      * @return The uri.
      */
@@ -757,11 +757,11 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. URI of the author of the [Photo][google.maps.places.v1.Photo]
-     * or [Review][google.maps.places.v1.Review].
+     * URI of the author of the [Photo][google.maps.places.v1.Photo] or
+     * [Review][google.maps.places.v1.Review].
      * </pre>
      *
-     * <code>string uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string uri = 2;</code>
      *
      * @return The bytes for uri.
      */
@@ -780,11 +780,11 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. URI of the author of the [Photo][google.maps.places.v1.Photo]
-     * or [Review][google.maps.places.v1.Review].
+     * URI of the author of the [Photo][google.maps.places.v1.Photo] or
+     * [Review][google.maps.places.v1.Review].
      * </pre>
      *
-     * <code>string uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string uri = 2;</code>
      *
      * @param value The uri to set.
      * @return This builder for chaining.
@@ -802,11 +802,11 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. URI of the author of the [Photo][google.maps.places.v1.Photo]
-     * or [Review][google.maps.places.v1.Review].
+     * URI of the author of the [Photo][google.maps.places.v1.Photo] or
+     * [Review][google.maps.places.v1.Review].
      * </pre>
      *
-     * <code>string uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string uri = 2;</code>
      *
      * @return This builder for chaining.
      */
@@ -820,11 +820,11 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. URI of the author of the [Photo][google.maps.places.v1.Photo]
-     * or [Review][google.maps.places.v1.Review].
+     * URI of the author of the [Photo][google.maps.places.v1.Photo] or
+     * [Review][google.maps.places.v1.Review].
      * </pre>
      *
-     * <code>string uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string uri = 2;</code>
      *
      * @param value The bytes for uri to set.
      * @return This builder for chaining.
@@ -845,12 +845,12 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Profile photo URI of the author of the
+     * Profile photo URI of the author of the
      * [Photo][google.maps.places.v1.Photo] or
      * [Review][google.maps.places.v1.Review].
      * </pre>
      *
-     * <code>string photo_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string photo_uri = 3;</code>
      *
      * @return The photoUri.
      */
@@ -869,12 +869,12 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Profile photo URI of the author of the
+     * Profile photo URI of the author of the
      * [Photo][google.maps.places.v1.Photo] or
      * [Review][google.maps.places.v1.Review].
      * </pre>
      *
-     * <code>string photo_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string photo_uri = 3;</code>
      *
      * @return The bytes for photoUri.
      */
@@ -893,12 +893,12 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Profile photo URI of the author of the
+     * Profile photo URI of the author of the
      * [Photo][google.maps.places.v1.Photo] or
      * [Review][google.maps.places.v1.Review].
      * </pre>
      *
-     * <code>string photo_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string photo_uri = 3;</code>
      *
      * @param value The photoUri to set.
      * @return This builder for chaining.
@@ -916,12 +916,12 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Profile photo URI of the author of the
+     * Profile photo URI of the author of the
      * [Photo][google.maps.places.v1.Photo] or
      * [Review][google.maps.places.v1.Review].
      * </pre>
      *
-     * <code>string photo_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string photo_uri = 3;</code>
      *
      * @return This builder for chaining.
      */
@@ -935,12 +935,12 @@ public final class AuthorAttribution extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Profile photo URI of the author of the
+     * Profile photo URI of the author of the
      * [Photo][google.maps.places.v1.Photo] or
      * [Review][google.maps.places.v1.Review].
      * </pre>
      *
-     * <code>string photo_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string photo_uri = 3;</code>
      *
      * @param value The bytes for photoUri to set.
      * @return This builder for chaining.

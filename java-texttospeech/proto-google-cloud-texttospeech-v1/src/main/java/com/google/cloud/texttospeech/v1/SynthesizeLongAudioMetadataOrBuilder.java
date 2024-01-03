@@ -62,35 +62,42 @@ public interface SynthesizeLongAudioMetadataOrBuilder
    *
    *
    * <pre>
-   * Time of the most recent processing update.
+   * Deprecated. Do not use.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+   * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.texttospeech.v1.SynthesizeLongAudioMetadata.last_update_time is
+   *     deprecated. See google/cloud/texttospeech/v1/cloud_tts_lrs.proto;l=86
    * @return Whether the lastUpdateTime field is set.
    */
+  @java.lang.Deprecated
   boolean hasLastUpdateTime();
   /**
    *
    *
    * <pre>
-   * Time of the most recent processing update.
+   * Deprecated. Do not use.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+   * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.texttospeech.v1.SynthesizeLongAudioMetadata.last_update_time is
+   *     deprecated. See google/cloud/texttospeech/v1/cloud_tts_lrs.proto;l=86
    * @return The lastUpdateTime.
    */
+  @java.lang.Deprecated
   com.google.protobuf.Timestamp getLastUpdateTime();
   /**
    *
    *
    * <pre>
-   * Time of the most recent processing update.
+   * Deprecated. Do not use.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+   * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder();
 
   /**

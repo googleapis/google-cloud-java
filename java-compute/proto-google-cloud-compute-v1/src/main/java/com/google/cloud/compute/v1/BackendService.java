@@ -60,6 +60,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     selfLink_ = "";
     serviceBindings_ = com.google.protobuf.LazyStringArrayList.emptyList();
     sessionAffinity_ = "";
+    usedBy_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -489,7 +490,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED, INTERNAL_MANAGED, or EXTERNAL_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.BackendService.LocalityLbPolicy}
@@ -2572,7 +2573,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED, INTERNAL_MANAGED, or EXTERNAL_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * Check the LocalityLbPolicy enum for the list of possible values.
    * </pre>
    *
@@ -2588,7 +2589,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED, INTERNAL_MANAGED, or EXTERNAL_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * Check the LocalityLbPolicy enum for the list of possible values.
    * </pre>
    *
@@ -2612,7 +2613,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED, INTERNAL_MANAGED, or EXTERNAL_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * Check the LocalityLbPolicy enum for the list of possible values.
    * </pre>
    *
@@ -3629,6 +3630,37 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     return timeoutSec_;
   }
 
+  public static final int USED_BY_FIELD_NUMBER = 389320729;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.BackendServiceUsedBy> usedBy_;
+  /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.BackendServiceUsedBy> getUsedByList() {
+    return usedBy_;
+  }
+  /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.BackendServiceUsedByOrBuilder>
+      getUsedByOrBuilderList() {
+    return usedBy_;
+  }
+  /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+  @java.lang.Override
+  public int getUsedByCount() {
+    return usedBy_.size();
+  }
+  /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendServiceUsedBy getUsedBy(int index) {
+    return usedBy_.get(index);
+  }
+  /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendServiceUsedByOrBuilder getUsedByOrBuilder(int index) {
+    return usedBy_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3737,6 +3769,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < customResponseHeaders_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 387539094, customResponseHeaders_.getRaw(i));
+    }
+    for (int i = 0; i < usedBy_.size(); i++) {
+      output.writeMessage(389320729, usedBy_.get(i));
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(421340061, getCircuitBreakers());
@@ -3903,6 +3938,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 5 * getCustomResponseHeadersList().size();
+    }
+    for (int i = 0; i < usedBy_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(389320729, usedBy_.get(i));
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
@@ -4096,6 +4134,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (hasTimeoutSec()) {
       if (getTimeoutSec() != other.getTimeoutSec()) return false;
     }
+    if (!getUsedByList().equals(other.getUsedByList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4266,6 +4305,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (hasTimeoutSec()) {
       hash = (37 * hash) + TIMEOUT_SEC_FIELD_NUMBER;
       hash = (53 * hash) + getTimeoutSec();
+    }
+    if (getUsedByCount() > 0) {
+      hash = (37 * hash) + USED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getUsedByList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4441,6 +4484,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         getOutlierDetectionFieldBuilder();
         getSecuritySettingsFieldBuilder();
         getSubsettingFieldBuilder();
+        getUsedByFieldBuilder();
       }
     }
 
@@ -4549,6 +4593,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         subsettingBuilder_ = null;
       }
       timeoutSec_ = 0;
+      if (usedByBuilder_ == null) {
+        usedBy_ = java.util.Collections.emptyList();
+      } else {
+        usedBy_ = null;
+        usedByBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000100);
       return this;
     }
 
@@ -4605,6 +4656,15 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         result.localityLbPolicies_ = localityLbPolicies_;
       } else {
         result.localityLbPolicies_ = localityLbPoliciesBuilder_.build();
+      }
+      if (usedByBuilder_ == null) {
+        if (((bitField1_ & 0x00000100) != 0)) {
+          usedBy_ = java.util.Collections.unmodifiableList(usedBy_);
+          bitField1_ = (bitField1_ & ~0x00000100);
+        }
+        result.usedBy_ = usedBy_;
+      } else {
+        result.usedBy_ = usedByBuilder_.build();
       }
     }
 
@@ -5060,6 +5120,33 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (other.hasTimeoutSec()) {
         setTimeoutSec(other.getTimeoutSec());
       }
+      if (usedByBuilder_ == null) {
+        if (!other.usedBy_.isEmpty()) {
+          if (usedBy_.isEmpty()) {
+            usedBy_ = other.usedBy_;
+            bitField1_ = (bitField1_ & ~0x00000100);
+          } else {
+            ensureUsedByIsMutable();
+            usedBy_.addAll(other.usedBy_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.usedBy_.isEmpty()) {
+          if (usedByBuilder_.isEmpty()) {
+            usedByBuilder_.dispose();
+            usedByBuilder_ = null;
+            usedBy_ = other.usedBy_;
+            bitField1_ = (bitField1_ & ~0x00000100);
+            usedByBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getUsedByFieldBuilder()
+                    : null;
+          } else {
+            usedByBuilder_.addAllMessages(other.usedBy_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -5293,6 +5380,20 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
                 customResponseHeaders_.add(s);
                 break;
               } // case -1194654542
+            case -1180401462:
+              {
+                com.google.cloud.compute.v1.BackendServiceUsedBy m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.BackendServiceUsedBy.parser(),
+                        extensionRegistry);
+                if (usedByBuilder_ == null) {
+                  ensureUsedByIsMutable();
+                  usedBy_.add(m);
+                } else {
+                  usedByBuilder_.addMessage(m);
+                }
+                break;
+              } // case -1180401462
             case -924246806:
               {
                 input.readMessage(getCircuitBreakersFieldBuilder().getBuilder(), extensionRegistry);
@@ -9009,7 +9110,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED, INTERNAL_MANAGED, or EXTERNAL_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * Check the LocalityLbPolicy enum for the list of possible values.
      * </pre>
      *
@@ -9024,7 +9125,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED, INTERNAL_MANAGED, or EXTERNAL_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * Check the LocalityLbPolicy enum for the list of possible values.
      * </pre>
      *
@@ -9047,7 +9148,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED, INTERNAL_MANAGED, or EXTERNAL_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * Check the LocalityLbPolicy enum for the list of possible values.
      * </pre>
      *
@@ -9070,7 +9171,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED, INTERNAL_MANAGED, or EXTERNAL_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * Check the LocalityLbPolicy enum for the list of possible values.
      * </pre>
      *
@@ -9092,7 +9193,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED, INTERNAL_MANAGED, or EXTERNAL_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * Check the LocalityLbPolicy enum for the list of possible values.
      * </pre>
      *
@@ -9110,7 +9211,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED, INTERNAL_MANAGED, or EXTERNAL_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * Check the LocalityLbPolicy enum for the list of possible values.
      * </pre>
      *
@@ -11456,6 +11557,213 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       timeoutSec_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.compute.v1.BackendServiceUsedBy> usedBy_ =
+        java.util.Collections.emptyList();
+
+    private void ensureUsedByIsMutable() {
+      if (!((bitField1_ & 0x00000100) != 0)) {
+        usedBy_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.BackendServiceUsedBy>(usedBy_);
+        bitField1_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.BackendServiceUsedBy,
+            com.google.cloud.compute.v1.BackendServiceUsedBy.Builder,
+            com.google.cloud.compute.v1.BackendServiceUsedByOrBuilder>
+        usedByBuilder_;
+
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public java.util.List<com.google.cloud.compute.v1.BackendServiceUsedBy> getUsedByList() {
+      if (usedByBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(usedBy_);
+      } else {
+        return usedByBuilder_.getMessageList();
+      }
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public int getUsedByCount() {
+      if (usedByBuilder_ == null) {
+        return usedBy_.size();
+      } else {
+        return usedByBuilder_.getCount();
+      }
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public com.google.cloud.compute.v1.BackendServiceUsedBy getUsedBy(int index) {
+      if (usedByBuilder_ == null) {
+        return usedBy_.get(index);
+      } else {
+        return usedByBuilder_.getMessage(index);
+      }
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public Builder setUsedBy(int index, com.google.cloud.compute.v1.BackendServiceUsedBy value) {
+      if (usedByBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUsedByIsMutable();
+        usedBy_.set(index, value);
+        onChanged();
+      } else {
+        usedByBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public Builder setUsedBy(
+        int index, com.google.cloud.compute.v1.BackendServiceUsedBy.Builder builderForValue) {
+      if (usedByBuilder_ == null) {
+        ensureUsedByIsMutable();
+        usedBy_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        usedByBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public Builder addUsedBy(com.google.cloud.compute.v1.BackendServiceUsedBy value) {
+      if (usedByBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUsedByIsMutable();
+        usedBy_.add(value);
+        onChanged();
+      } else {
+        usedByBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public Builder addUsedBy(int index, com.google.cloud.compute.v1.BackendServiceUsedBy value) {
+      if (usedByBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUsedByIsMutable();
+        usedBy_.add(index, value);
+        onChanged();
+      } else {
+        usedByBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public Builder addUsedBy(
+        com.google.cloud.compute.v1.BackendServiceUsedBy.Builder builderForValue) {
+      if (usedByBuilder_ == null) {
+        ensureUsedByIsMutable();
+        usedBy_.add(builderForValue.build());
+        onChanged();
+      } else {
+        usedByBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public Builder addUsedBy(
+        int index, com.google.cloud.compute.v1.BackendServiceUsedBy.Builder builderForValue) {
+      if (usedByBuilder_ == null) {
+        ensureUsedByIsMutable();
+        usedBy_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        usedByBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public Builder addAllUsedBy(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.BackendServiceUsedBy> values) {
+      if (usedByBuilder_ == null) {
+        ensureUsedByIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, usedBy_);
+        onChanged();
+      } else {
+        usedByBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public Builder clearUsedBy() {
+      if (usedByBuilder_ == null) {
+        usedBy_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000100);
+        onChanged();
+      } else {
+        usedByBuilder_.clear();
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public Builder removeUsedBy(int index) {
+      if (usedByBuilder_ == null) {
+        ensureUsedByIsMutable();
+        usedBy_.remove(index);
+        onChanged();
+      } else {
+        usedByBuilder_.remove(index);
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public com.google.cloud.compute.v1.BackendServiceUsedBy.Builder getUsedByBuilder(int index) {
+      return getUsedByFieldBuilder().getBuilder(index);
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public com.google.cloud.compute.v1.BackendServiceUsedByOrBuilder getUsedByOrBuilder(int index) {
+      if (usedByBuilder_ == null) {
+        return usedBy_.get(index);
+      } else {
+        return usedByBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public java.util.List<? extends com.google.cloud.compute.v1.BackendServiceUsedByOrBuilder>
+        getUsedByOrBuilderList() {
+      if (usedByBuilder_ != null) {
+        return usedByBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(usedBy_);
+      }
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public com.google.cloud.compute.v1.BackendServiceUsedBy.Builder addUsedByBuilder() {
+      return getUsedByFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.BackendServiceUsedBy.getDefaultInstance());
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public com.google.cloud.compute.v1.BackendServiceUsedBy.Builder addUsedByBuilder(int index) {
+      return getUsedByFieldBuilder()
+          .addBuilder(index, com.google.cloud.compute.v1.BackendServiceUsedBy.getDefaultInstance());
+    }
+    /** <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code> */
+    public java.util.List<com.google.cloud.compute.v1.BackendServiceUsedBy.Builder>
+        getUsedByBuilderList() {
+      return getUsedByFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.BackendServiceUsedBy,
+            com.google.cloud.compute.v1.BackendServiceUsedBy.Builder,
+            com.google.cloud.compute.v1.BackendServiceUsedByOrBuilder>
+        getUsedByFieldBuilder() {
+      if (usedByBuilder_ == null) {
+        usedByBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.BackendServiceUsedBy,
+                com.google.cloud.compute.v1.BackendServiceUsedBy.Builder,
+                com.google.cloud.compute.v1.BackendServiceUsedByOrBuilder>(
+                usedBy_, ((bitField1_ & 0x00000100) != 0), getParentForChildren(), isClean());
+        usedBy_ = null;
+      }
+      return usedByBuilder_;
     }
 
     @java.lang.Override

@@ -19,6 +19,7 @@ package com.google.cloud.gkemulticloud.v1.samples;
 // [START gkemulticloud_v1_generated_AttachedClusters_ImportAttachedCluster_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.gkemulticloud.v1.AttachedClustersClient;
+import com.google.cloud.gkemulticloud.v1.AttachedProxyConfig;
 import com.google.cloud.gkemulticloud.v1.ImportAttachedClusterRequest;
 import com.google.cloud.gkemulticloud.v1.LocationName;
 import com.google.longrunning.Operation;
@@ -43,6 +44,7 @@ public class AsyncImportAttachedCluster {
               .setFleetMembership("fleetMembership-665479228")
               .setPlatformVersion("platformVersion1848800485")
               .setDistribution("distribution-1580708220")
+              .setProxyConfig(AttachedProxyConfig.newBuilder().build())
               .build();
       ApiFuture<Operation> future =
           attachedClustersClient.importAttachedClusterCallable().futureCall(request);

@@ -27,7 +27,7 @@ public interface RetryOrBuilder
    *
    *
    * <pre>
-   * Required. Total number of retries. Retry will skipped if set to 0; The
+   * Required. Total number of retries. Retry is skipped if set to 0; The
    * minimum value is 1, and the maximum value is 10.
    * </pre>
    *

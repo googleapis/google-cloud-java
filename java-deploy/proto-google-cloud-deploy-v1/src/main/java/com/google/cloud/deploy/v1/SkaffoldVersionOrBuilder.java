@@ -52,7 +52,7 @@ public interface SkaffoldVersionOrBuilder
    *
    *
    * <pre>
-   * The time at which this version of skaffold will enter maintenance mode.
+   * The time at which this version of Skaffold will enter maintenance mode.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
@@ -64,7 +64,7 @@ public interface SkaffoldVersionOrBuilder
    *
    *
    * <pre>
-   * The time at which this version of skaffold will enter maintenance mode.
+   * The time at which this version of Skaffold will enter maintenance mode.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
@@ -76,7 +76,7 @@ public interface SkaffoldVersionOrBuilder
    *
    *
    * <pre>
-   * The time at which this version of skaffold will enter maintenance mode.
+   * The time at which this version of Skaffold will enter maintenance mode.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
@@ -87,7 +87,7 @@ public interface SkaffoldVersionOrBuilder
    *
    *
    * <pre>
-   * The time at which this version of skaffold will no longer be supported.
+   * The time at which this version of Skaffold will no longer be supported.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
@@ -99,7 +99,7 @@ public interface SkaffoldVersionOrBuilder
    *
    *
    * <pre>
-   * The time at which this version of skaffold will no longer be supported.
+   * The time at which this version of Skaffold will no longer be supported.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
@@ -111,7 +111,7 @@ public interface SkaffoldVersionOrBuilder
    *
    *
    * <pre>
-   * The time at which this version of skaffold will no longer be supported.
+   * The time at which this version of Skaffold will no longer be supported.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>

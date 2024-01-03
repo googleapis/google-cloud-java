@@ -141,6 +141,11 @@ public class CloudBillingSettings extends ClientSettings<CloudBillingSettings> {
     return ((CloudBillingStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to moveBillingAccount. */
+  public UnaryCallSettings<MoveBillingAccountRequest, BillingAccount> moveBillingAccountSettings() {
+    return ((CloudBillingStubSettings) getStubSettings()).moveBillingAccountSettings();
+  }
+
   public static final CloudBillingSettings create(CloudBillingStubSettings stub)
       throws IOException {
     return new CloudBillingSettings.Builder(stub.toBuilder()).build();
@@ -318,6 +323,12 @@ public class CloudBillingSettings extends ClientSettings<CloudBillingSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to moveBillingAccount. */
+    public UnaryCallSettings.Builder<MoveBillingAccountRequest, BillingAccount>
+        moveBillingAccountSettings() {
+      return getStubSettingsBuilder().moveBillingAccountSettings();
     }
 
     @Override

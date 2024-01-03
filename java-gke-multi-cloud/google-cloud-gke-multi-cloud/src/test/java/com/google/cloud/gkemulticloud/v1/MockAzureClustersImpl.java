@@ -250,6 +250,28 @@ public class MockAzureClustersImpl extends AzureClustersImplBase {
   }
 
   @Override
+  public void generateAzureClusterAgentToken(
+      GenerateAzureClusterAgentTokenRequest request,
+      StreamObserver<GenerateAzureClusterAgentTokenResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateAzureClusterAgentTokenResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateAzureClusterAgentTokenResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateAzureClusterAgentToken, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateAzureClusterAgentTokenResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void generateAzureAccessToken(
       GenerateAzureAccessTokenRequest request,
       StreamObserver<GenerateAzureAccessTokenResponse> responseObserver) {
@@ -373,6 +395,48 @@ public class MockAzureClustersImpl extends AzureClustersImplBase {
                   "Unrecognized response type %s for method DeleteAzureNodePool, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAzureOpenIdConfig(
+      GetAzureOpenIdConfigRequest request, StreamObserver<AzureOpenIdConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AzureOpenIdConfig) {
+      requests.add(request);
+      responseObserver.onNext(((AzureOpenIdConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAzureOpenIdConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AzureOpenIdConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAzureJsonWebKeys(
+      GetAzureJsonWebKeysRequest request, StreamObserver<AzureJsonWebKeys> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AzureJsonWebKeys) {
+      requests.add(request);
+      responseObserver.onNext(((AzureJsonWebKeys) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAzureJsonWebKeys, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AzureJsonWebKeys.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -28,7 +28,9 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkemulticloud.v1.AwsCluster;
+import com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys;
 import com.google.cloud.gkemulticloud.v1.AwsNodePool;
+import com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig;
 import com.google.cloud.gkemulticloud.v1.AwsServerConfig;
 import com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest;
@@ -36,14 +38,19 @@ import com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse;
+import com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse;
 import com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest;
+import com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest;
 import com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest;
+import com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest;
 import com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest;
 import com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest;
 import com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse;
 import com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest;
 import com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse;
 import com.google.cloud.gkemulticloud.v1.OperationMetadata;
+import com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest;
 import com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest;
 import com.google.longrunning.Operation;
@@ -115,6 +122,21 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .build();
 
   private static final MethodDescriptor<
+          GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+      generateAwsClusterAgentTokenMethodDescriptor =
+          MethodDescriptor
+              .<GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.gkemulticloud.v1.AwsClusters/GenerateAwsClusterAgentToken")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateAwsClusterAgentTokenRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GenerateAwsClusterAgentTokenResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
           GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
       generateAwsAccessTokenMethodDescriptor =
           MethodDescriptor
@@ -144,6 +166,17 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setFullMethodName("google.cloud.gkemulticloud.v1.AwsClusters/UpdateAwsNodePool")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAwsNodePoolRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RollbackAwsNodePoolUpdateRequest, Operation>
+      rollbackAwsNodePoolUpdateMethodDescriptor =
+          MethodDescriptor.<RollbackAwsNodePoolUpdateRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.gkemulticloud.v1.AwsClusters/RollbackAwsNodePoolUpdate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RollbackAwsNodePoolUpdateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -178,6 +211,26 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+      getAwsOpenIdConfigMethodDescriptor =
+          MethodDescriptor.<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.gkemulticloud.v1.AwsClusters/GetAwsOpenIdConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAwsOpenIdConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AwsOpenIdConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>
+      getAwsJsonWebKeysMethodDescriptor =
+          MethodDescriptor.<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.gkemulticloud.v1.AwsClusters/GetAwsJsonWebKeys")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAwsJsonWebKeysRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AwsJsonWebKeys.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetAwsServerConfigRequest, AwsServerConfig>
       getAwsServerConfigMethodDescriptor =
           MethodDescriptor.<GetAwsServerConfigRequest, AwsServerConfig>newBuilder()
@@ -202,6 +255,9 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
   private final UnaryCallable<DeleteAwsClusterRequest, Operation> deleteAwsClusterCallable;
   private final OperationCallable<DeleteAwsClusterRequest, Empty, OperationMetadata>
       deleteAwsClusterOperationCallable;
+  private final UnaryCallable<
+          GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+      generateAwsClusterAgentTokenCallable;
   private final UnaryCallable<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
       generateAwsAccessTokenCallable;
   private final UnaryCallable<CreateAwsNodePoolRequest, Operation> createAwsNodePoolCallable;
@@ -210,6 +266,10 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
   private final UnaryCallable<UpdateAwsNodePoolRequest, Operation> updateAwsNodePoolCallable;
   private final OperationCallable<UpdateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
       updateAwsNodePoolOperationCallable;
+  private final UnaryCallable<RollbackAwsNodePoolUpdateRequest, Operation>
+      rollbackAwsNodePoolUpdateCallable;
+  private final OperationCallable<RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+      rollbackAwsNodePoolUpdateOperationCallable;
   private final UnaryCallable<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolCallable;
   private final UnaryCallable<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse>
       listAwsNodePoolsCallable;
@@ -218,6 +278,9 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
   private final UnaryCallable<DeleteAwsNodePoolRequest, Operation> deleteAwsNodePoolCallable;
   private final OperationCallable<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
       deleteAwsNodePoolOperationCallable;
+  private final UnaryCallable<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+      getAwsOpenIdConfigCallable;
+  private final UnaryCallable<GetAwsJsonWebKeysRequest, AwsJsonWebKeys> getAwsJsonWebKeysCallable;
   private final UnaryCallable<GetAwsServerConfigRequest, AwsServerConfig>
       getAwsServerConfigCallable;
 
@@ -315,6 +378,19 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+        generateAwsClusterAgentTokenTransportSettings =
+            GrpcCallSettings
+                .<GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+                    newBuilder()
+                .setMethodDescriptor(generateAwsClusterAgentTokenMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
         generateAwsAccessTokenTransportSettings =
             GrpcCallSettings
@@ -348,6 +424,17 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<RollbackAwsNodePoolUpdateRequest, Operation>
+        rollbackAwsNodePoolUpdateTransportSettings =
+            GrpcCallSettings.<RollbackAwsNodePoolUpdateRequest, Operation>newBuilder()
+                .setMethodDescriptor(rollbackAwsNodePoolUpdateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolTransportSettings =
         GrpcCallSettings.<GetAwsNodePoolRequest, AwsNodePool>newBuilder()
             .setMethodDescriptor(getAwsNodePoolMethodDescriptor)
@@ -376,6 +463,27 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+        getAwsOpenIdConfigTransportSettings =
+            GrpcCallSettings.<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>newBuilder()
+                .setMethodDescriptor(getAwsOpenIdConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetAwsJsonWebKeysRequest, AwsJsonWebKeys> getAwsJsonWebKeysTransportSettings =
+        GrpcCallSettings.<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>newBuilder()
+            .setMethodDescriptor(getAwsJsonWebKeysMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("aws_cluster", String.valueOf(request.getAwsCluster()));
                   return builder.build();
                 })
             .build();
@@ -427,6 +535,11 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
             settings.deleteAwsClusterOperationSettings(),
             clientContext,
             operationsStub);
+    this.generateAwsClusterAgentTokenCallable =
+        callableFactory.createUnaryCallable(
+            generateAwsClusterAgentTokenTransportSettings,
+            settings.generateAwsClusterAgentTokenSettings(),
+            clientContext);
     this.generateAwsAccessTokenCallable =
         callableFactory.createUnaryCallable(
             generateAwsAccessTokenTransportSettings,
@@ -454,6 +567,17 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
             settings.updateAwsNodePoolOperationSettings(),
             clientContext,
             operationsStub);
+    this.rollbackAwsNodePoolUpdateCallable =
+        callableFactory.createUnaryCallable(
+            rollbackAwsNodePoolUpdateTransportSettings,
+            settings.rollbackAwsNodePoolUpdateSettings(),
+            clientContext);
+    this.rollbackAwsNodePoolUpdateOperationCallable =
+        callableFactory.createOperationCallable(
+            rollbackAwsNodePoolUpdateTransportSettings,
+            settings.rollbackAwsNodePoolUpdateOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getAwsNodePoolCallable =
         callableFactory.createUnaryCallable(
             getAwsNodePoolTransportSettings, settings.getAwsNodePoolSettings(), clientContext);
@@ -474,6 +598,16 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
             settings.deleteAwsNodePoolOperationSettings(),
             clientContext,
             operationsStub);
+    this.getAwsOpenIdConfigCallable =
+        callableFactory.createUnaryCallable(
+            getAwsOpenIdConfigTransportSettings,
+            settings.getAwsOpenIdConfigSettings(),
+            clientContext);
+    this.getAwsJsonWebKeysCallable =
+        callableFactory.createUnaryCallable(
+            getAwsJsonWebKeysTransportSettings,
+            settings.getAwsJsonWebKeysSettings(),
+            clientContext);
     this.getAwsServerConfigCallable =
         callableFactory.createUnaryCallable(
             getAwsServerConfigTransportSettings,
@@ -538,6 +672,12 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
   }
 
   @Override
+  public UnaryCallable<GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+      generateAwsClusterAgentTokenCallable() {
+    return generateAwsClusterAgentTokenCallable;
+  }
+
+  @Override
   public UnaryCallable<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
       generateAwsAccessTokenCallable() {
     return generateAwsAccessTokenCallable;
@@ -566,6 +706,18 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
   }
 
   @Override
+  public UnaryCallable<RollbackAwsNodePoolUpdateRequest, Operation>
+      rollbackAwsNodePoolUpdateCallable() {
+    return rollbackAwsNodePoolUpdateCallable;
+  }
+
+  @Override
+  public OperationCallable<RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+      rollbackAwsNodePoolUpdateOperationCallable() {
+    return rollbackAwsNodePoolUpdateOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolCallable() {
     return getAwsNodePoolCallable;
   }
@@ -591,6 +743,16 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
   public OperationCallable<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
       deleteAwsNodePoolOperationCallable() {
     return deleteAwsNodePoolOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAwsOpenIdConfigRequest, AwsOpenIdConfig> getAwsOpenIdConfigCallable() {
+    return getAwsOpenIdConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAwsJsonWebKeysRequest, AwsJsonWebKeys> getAwsJsonWebKeysCallable() {
+    return getAwsJsonWebKeysCallable;
   }
 
   @Override

@@ -71,6 +71,10 @@ public final class CloudBillingProto {
       internal_static_google_cloud_billing_v1_UpdateProjectBillingInfoRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_billing_v1_UpdateProjectBillingInfoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_billing_v1_MoveBillingAccountRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_billing_v1_MoveBillingAccountRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -87,96 +91,123 @@ public final class CloudBillingProto {
           + "google/api/resource.proto\032\036google/iam/v1"
           + "/iam_policy.proto\032\032google/iam/v1/policy."
           + "proto\032 google/protobuf/field_mask.proto\""
-          + "\235\001\n\016BillingAccount\022A\n\004name\030\001 \001(\tB3\342A\001\003\372A"
+          + "\352\002\n\016BillingAccount\022A\n\004name\030\001 \001(\tB3\342A\001\003\372A"
           + ",\n*cloudbilling.googleapis.com/BillingAc"
           + "count\022\022\n\004open\030\002 \001(\010B\004\342A\001\003\022\024\n\014display_nam"
-          + "e\030\003 \001(\t\022\036\n\026master_billing_account\030\004 \001(\t\""
-          + "\324\001\n\022ProjectBillingInfo\022\022\n\004name\030\001 \001(\tB\004\342A"
-          + "\001\003\022\030\n\nproject_id\030\002 \001(\tB\004\342A\001\003\022\034\n\024billing_"
-          + "account_name\030\003 \001(\t\022\035\n\017billing_enabled\030\004 "
-          + "\001(\010B\004\342A\001\003:S\352AP\n.cloudbilling.googleapis."
-          + "com/ProjectBillingInfo\022\036projects/{projec"
-          + "t}/billingInfo\"]\n\030GetBillingAccountReque"
-          + "st\022A\n\004name\030\001 \001(\tB3\342A\001\002\372A,\n*cloudbilling."
-          + "googleapis.com/BillingAccount\"S\n\032ListBil"
-          + "lingAccountsRequest\022\021\n\tpage_size\030\001 \001(\005\022\022"
-          + "\n\npage_token\030\002 \001(\t\022\016\n\006filter\030\003 \001(\t\"y\n\033Li"
-          + "stBillingAccountsResponse\022A\n\020billing_acc"
-          + "ounts\030\001 \003(\0132\'.google.cloud.billing.v1.Bi"
-          + "llingAccount\022\027\n\017next_page_token\030\002 \001(\t\"e\n"
-          + "\033CreateBillingAccountRequest\022F\n\017billing_"
-          + "account\030\001 \001(\0132\'.google.cloud.billing.v1."
-          + "BillingAccountB\004\342A\001\002\"\321\001\n\033UpdateBillingAc"
-          + "countRequest\022A\n\004name\030\001 \001(\tB3\342A\001\002\372A,\n*clo"
-          + "udbilling.googleapis.com/BillingAccount\022"
-          + ">\n\007account\030\002 \001(\0132\'.google.cloud.billing."
-          + "v1.BillingAccountB\004\342A\001\002\022/\n\013update_mask\030\003"
-          + " \001(\0132\032.google.protobuf.FieldMask\"\211\001\n\035Lis"
-          + "tProjectBillingInfoRequest\022A\n\004name\030\001 \001(\t"
-          + "B3\342A\001\002\372A,\n*cloudbilling.googleapis.com/B"
-          + "illingAccount\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage"
-          + "_token\030\003 \001(\t\"\204\001\n\036ListProjectBillingInfoR"
-          + "esponse\022I\n\024project_billing_info\030\001 \003(\0132+."
-          + "google.cloud.billing.v1.ProjectBillingIn"
-          + "fo\022\027\n\017next_page_token\030\002 \001(\t\"b\n\034GetProjec"
-          + "tBillingInfoRequest\022B\n\004name\030\001 \001(\tB4\342A\001\002\372"
-          + "A-\n+cloudresourcemanager.googleapis.com/"
-          + "Project\"\200\001\n\037UpdateProjectBillingInfoRequ"
-          + "est\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\022I\n\024project_billi"
-          + "ng_info\030\002 \001(\0132+.google.cloud.billing.v1."
-          + "ProjectBillingInfo2\262\017\n\014CloudBilling\022\234\001\n\021"
-          + "GetBillingAccount\0221.google.cloud.billing"
-          + ".v1.GetBillingAccountRequest\032\'.google.cl"
-          + "oud.billing.v1.BillingAccount\"+\332A\004name\202\323"
-          + "\344\223\002\036\022\034/v1/{name=billingAccounts/*}\022\240\001\n\023L"
-          + "istBillingAccounts\0223.google.cloud.billin"
-          + "g.v1.ListBillingAccountsRequest\0324.google"
-          + ".cloud.billing.v1.ListBillingAccountsRes"
-          + "ponse\"\036\332A\000\202\323\344\223\002\025\022\023/v1/billingAccounts\022\263\001"
-          + "\n\024UpdateBillingAccount\0224.google.cloud.bi"
-          + "lling.v1.UpdateBillingAccountRequest\032\'.g"
-          + "oogle.cloud.billing.v1.BillingAccount\"<\332"
-          + "A\014name,account\202\323\344\223\002\'2\034/v1/{name=billingA"
-          + "ccounts/*}:\007account\022\265\001\n\024CreateBillingAcc"
-          + "ount\0224.google.cloud.billing.v1.CreateBil"
-          + "lingAccountRequest\032\'.google.cloud.billin"
-          + "g.v1.BillingAccount\">\332A\017billing_account\202"
-          + "\323\344\223\002&\"\023/v1/billingAccounts:\017billing_acco"
-          + "unt\022\277\001\n\026ListProjectBillingInfo\0226.google."
-          + "cloud.billing.v1.ListProjectBillingInfoR"
-          + "equest\0327.google.cloud.billing.v1.ListPro"
-          + "jectBillingInfoResponse\"4\332A\004name\202\323\344\223\002\'\022%"
-          + "/v1/{name=billingAccounts/*}/projects\022\255\001"
-          + "\n\025GetProjectBillingInfo\0225.google.cloud.b"
-          + "illing.v1.GetProjectBillingInfoRequest\032+"
-          + ".google.cloud.billing.v1.ProjectBillingI"
-          + "nfo\"0\332A\004name\202\323\344\223\002#\022!/v1/{name=projects/*"
-          + "}/billingInfo\022\336\001\n\030UpdateProjectBillingIn"
-          + "fo\0228.google.cloud.billing.v1.UpdateProje"
-          + "ctBillingInfoRequest\032+.google.cloud.bill"
-          + "ing.v1.ProjectBillingInfo\"[\332A\031name,proje"
-          + "ct_billing_info\202\323\344\223\0029\032!/v1/{name=project"
-          + "s/*}/billingInfo:\024project_billing_info\022\213"
-          + "\001\n\014GetIamPolicy\022\".google.iam.v1.GetIamPo"
-          + "licyRequest\032\025.google.iam.v1.Policy\"@\332A\010r"
-          + "esource\202\323\344\223\002/\022-/v1/{resource=billingAcco"
-          + "unts/*}:getIamPolicy\022\225\001\n\014SetIamPolicy\022\"."
-          + "google.iam.v1.SetIamPolicyRequest\032\025.goog"
-          + "le.iam.v1.Policy\"J\332A\017resource,policy\202\323\344\223"
-          + "\0022\"-/v1/{resource=billingAccounts/*}:set"
-          + "IamPolicy:\001*\022\300\001\n\022TestIamPermissions\022(.go"
-          + "ogle.iam.v1.TestIamPermissionsRequest\032)."
-          + "google.iam.v1.TestIamPermissionsResponse"
-          + "\"U\332A\024resource,permissions\202\323\344\223\0028\"3/v1/{re"
-          + "source=billingAccounts/*}:testIamPermiss"
-          + "ions:\001*\032\265\001\312A\033cloudbilling.googleapis.com"
-          + "\322A\223\001https://www.googleapis.com/auth/clou"
-          + "d-billing,https://www.googleapis.com/aut"
-          + "h/cloud-billing.readonly,https://www.goo"
-          + "gleapis.com/auth/cloud-platformBi\n\033com.g"
-          + "oogle.cloud.billing.v1B\021CloudBillingProt"
-          + "oP\001Z5cloud.google.com/go/billing/apiv1/b"
-          + "illingpb;billingpbb\006proto3"
+          + "e\030\003 \001(\t\022\036\n\026master_billing_account\030\004 \001(\t\022"
+          + "\024\n\006parent\030\006 \001(\tB\004\342A\001\003:\264\001\352A\260\001\n*cloudbilli"
+          + "ng.googleapis.com/BillingAccount\022!billin"
+          + "gAccounts/{billing_account}\022>organizatio"
+          + "ns/{organization}/billingAccounts/{billi"
+          + "ng_account}*\017billingAccounts2\016billingAcc"
+          + "ount\"\324\001\n\022ProjectBillingInfo\022\022\n\004name\030\001 \001("
+          + "\tB\004\342A\001\003\022\030\n\nproject_id\030\002 \001(\tB\004\342A\001\003\022\034\n\024bil"
+          + "ling_account_name\030\003 \001(\t\022\035\n\017billing_enabl"
+          + "ed\030\004 \001(\010B\004\342A\001\003:S\352AP\n.cloudbilling.google"
+          + "apis.com/ProjectBillingInfo\022\036projects/{p"
+          + "roject}/billingInfo\"]\n\030GetBillingAccount"
+          + "Request\022A\n\004name\030\001 \001(\tB3\342A\001\002\372A,\n*cloudbil"
+          + "ling.googleapis.com/BillingAccount\"i\n\032Li"
+          + "stBillingAccountsRequest\022\021\n\tpage_size\030\001 "
+          + "\001(\005\022\022\n\npage_token\030\002 \001(\t\022\016\n\006filter\030\003 \001(\t\022"
+          + "\024\n\006parent\030\004 \001(\tB\004\342A\001\001\"y\n\033ListBillingAcco"
+          + "untsResponse\022A\n\020billing_accounts\030\001 \003(\0132\'"
+          + ".google.cloud.billing.v1.BillingAccount\022"
+          + "\027\n\017next_page_token\030\002 \001(\t\"{\n\033CreateBillin"
+          + "gAccountRequest\022F\n\017billing_account\030\001 \001(\013"
+          + "2\'.google.cloud.billing.v1.BillingAccoun"
+          + "tB\004\342A\001\002\022\024\n\006parent\030\002 \001(\tB\004\342A\001\001\"\321\001\n\033Update"
+          + "BillingAccountRequest\022A\n\004name\030\001 \001(\tB3\342A\001"
+          + "\002\372A,\n*cloudbilling.googleapis.com/Billin"
+          + "gAccount\022>\n\007account\030\002 \001(\0132\'.google.cloud"
+          + ".billing.v1.BillingAccountB\004\342A\001\002\022/\n\013upda"
+          + "te_mask\030\003 \001(\0132\032.google.protobuf.FieldMas"
+          + "k\"\211\001\n\035ListProjectBillingInfoRequest\022A\n\004n"
+          + "ame\030\001 \001(\tB3\342A\001\002\372A,\n*cloudbilling.googlea"
+          + "pis.com/BillingAccount\022\021\n\tpage_size\030\002 \001("
+          + "\005\022\022\n\npage_token\030\003 \001(\t\"\204\001\n\036ListProjectBil"
+          + "lingInfoResponse\022I\n\024project_billing_info"
+          + "\030\001 \003(\0132+.google.cloud.billing.v1.Project"
+          + "BillingInfo\022\027\n\017next_page_token\030\002 \001(\t\"b\n\034"
+          + "GetProjectBillingInfoRequest\022B\n\004name\030\001 \001"
+          + "(\tB4\342A\001\002\372A-\n+cloudresourcemanager.google"
+          + "apis.com/Project\"\200\001\n\037UpdateProjectBillin"
+          + "gInfoRequest\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\022I\n\024proj"
+          + "ect_billing_info\030\002 \001(\0132+.google.cloud.bi"
+          + "lling.v1.ProjectBillingInfo\"\265\001\n\031MoveBill"
+          + "ingAccountRequest\022A\n\004name\030\001 \001(\tB3\342A\001\002\372A,"
+          + "\n*cloudbilling.googleapis.com/BillingAcc"
+          + "ount\022U\n\022destination_parent\030\002 \001(\tB9\342A\001\002\372A"
+          + "2\n0cloudresourcemanager.googleapis.com/O"
+          + "rganization2\241\023\n\014CloudBilling\022\234\001\n\021GetBill"
+          + "ingAccount\0221.google.cloud.billing.v1.Get"
+          + "BillingAccountRequest\032\'.google.cloud.bil"
+          + "ling.v1.BillingAccount\"+\332A\004name\202\323\344\223\002\036\022\034/"
+          + "v1/{name=billingAccounts/*}\022\210\002\n\023ListBill"
+          + "ingAccounts\0223.google.cloud.billing.v1.Li"
+          + "stBillingAccountsRequest\0324.google.cloud."
+          + "billing.v1.ListBillingAccountsResponse\"\205"
+          + "\001\332A\000\332A\006parent\202\323\344\223\002s\022\023/v1/billingAccounts"
+          + "Z.\022,/v1/{parent=organizations/*}/billing"
+          + "AccountsZ,\022*/v1/{parent=billingAccounts/"
+          + "*}/subAccounts\022\263\001\n\024UpdateBillingAccount\022"
+          + "4.google.cloud.billing.v1.UpdateBillingA"
+          + "ccountRequest\032\'.google.cloud.billing.v1."
+          + "BillingAccount\"<\332A\014name,account\202\323\344\223\002\'2\034/"
+          + "v1/{name=billingAccounts/*}:\007account\022\320\002\n"
+          + "\024CreateBillingAccount\0224.google.cloud.bil"
+          + "ling.v1.CreateBillingAccountRequest\032\'.go"
+          + "ogle.cloud.billing.v1.BillingAccount\"\330\001\332"
+          + "A\017billing_account\332A\026billing_account,pare"
+          + "nt\202\323\344\223\002\246\001\"\023/v1/billingAccounts:\017billing_"
+          + "accountZ?\",/v1/{parent=organizations/*}/"
+          + "billingAccounts:\017billing_accountZ=\"*/v1/"
+          + "{parent=billingAccounts/*}/subAccounts:\017"
+          + "billing_account\022\277\001\n\026ListProjectBillingIn"
+          + "fo\0226.google.cloud.billing.v1.ListProject"
+          + "BillingInfoRequest\0327.google.cloud.billin"
+          + "g.v1.ListProjectBillingInfoResponse\"4\332A\004"
+          + "name\202\323\344\223\002\'\022%/v1/{name=billingAccounts/*}"
+          + "/projects\022\255\001\n\025GetProjectBillingInfo\0225.go"
+          + "ogle.cloud.billing.v1.GetProjectBillingI"
+          + "nfoRequest\032+.google.cloud.billing.v1.Pro"
+          + "jectBillingInfo\"0\332A\004name\202\323\344\223\002#\022!/v1/{nam"
+          + "e=projects/*}/billingInfo\022\336\001\n\030UpdateProj"
+          + "ectBillingInfo\0228.google.cloud.billing.v1"
+          + ".UpdateProjectBillingInfoRequest\032+.googl"
+          + "e.cloud.billing.v1.ProjectBillingInfo\"[\332"
+          + "A\031name,project_billing_info\202\323\344\223\0029\032!/v1/{"
+          + "name=projects/*}/billingInfo:\024project_bi"
+          + "lling_info\022\213\001\n\014GetIamPolicy\022\".google.iam"
+          + ".v1.GetIamPolicyRequest\032\025.google.iam.v1."
+          + "Policy\"@\332A\010resource\202\323\344\223\002/\022-/v1/{resource"
+          + "=billingAccounts/*}:getIamPolicy\022\225\001\n\014Set"
+          + "IamPolicy\022\".google.iam.v1.SetIamPolicyRe"
+          + "quest\032\025.google.iam.v1.Policy\"J\332A\017resourc"
+          + "e,policy\202\323\344\223\0022\"-/v1/{resource=billingAcc"
+          + "ounts/*}:setIamPolicy:\001*\022\300\001\n\022TestIamPerm"
+          + "issions\022(.google.iam.v1.TestIamPermissio"
+          + "nsRequest\032).google.iam.v1.TestIamPermiss"
+          + "ionsResponse\"U\332A\024resource,permissions\202\323\344"
+          + "\223\0028\"3/v1/{resource=billingAccounts/*}:te"
+          + "stIamPermissions:\001*\022\351\001\n\022MoveBillingAccou"
+          + "nt\0222.google.cloud.billing.v1.MoveBilling"
+          + "AccountRequest\032\'.google.cloud.billing.v1"
+          + ".BillingAccount\"v\202\323\344\223\002p\"!/v1/{name=billi"
+          + "ngAccounts/*}:move:\001*ZH\022F/v1/{destinatio"
+          + "n_parent=organizations/*}/{name=billingA"
+          + "ccounts/*}:move\032\265\001\312A\033cloudbilling.google"
+          + "apis.com\322A\223\001https://www.googleapis.com/a"
+          + "uth/cloud-billing,https://www.googleapis"
+          + ".com/auth/cloud-billing.readonly,https:/"
+          + "/www.googleapis.com/auth/cloud-platformB"
+          + "\200\002\n\033com.google.cloud.billing.v1B\021CloudBi"
+          + "llingProtoP\001Z5cloud.google.com/go/billin"
+          + "g/apiv1/billingpb;billingpb\352AA\n+cloudres"
+          + "ourcemanager.googleapis.com/Project\022\022pro"
+          + "jects/{project}\352AP\n0cloudresourcemanager"
+          + ".googleapis.com/Organization\022\034organizati"
+          + "ons/{organization}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -196,7 +227,7 @@ public final class CloudBillingProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_billing_v1_BillingAccount_descriptor,
             new java.lang.String[] {
-              "Name", "Open", "DisplayName", "MasterBillingAccount",
+              "Name", "Open", "DisplayName", "MasterBillingAccount", "Parent",
             });
     internal_static_google_cloud_billing_v1_ProjectBillingInfo_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -220,7 +251,7 @@ public final class CloudBillingProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_billing_v1_ListBillingAccountsRequest_descriptor,
             new java.lang.String[] {
-              "PageSize", "PageToken", "Filter",
+              "PageSize", "PageToken", "Filter", "Parent",
             });
     internal_static_google_cloud_billing_v1_ListBillingAccountsResponse_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -236,7 +267,7 @@ public final class CloudBillingProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_billing_v1_CreateBillingAccountRequest_descriptor,
             new java.lang.String[] {
-              "BillingAccount",
+              "BillingAccount", "Parent",
             });
     internal_static_google_cloud_billing_v1_UpdateBillingAccountRequest_descriptor =
         getDescriptor().getMessageTypes().get(6);
@@ -278,6 +309,14 @@ public final class CloudBillingProto {
             new java.lang.String[] {
               "Name", "ProjectBillingInfo",
             });
+    internal_static_google_cloud_billing_v1_MoveBillingAccountRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_billing_v1_MoveBillingAccountRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_billing_v1_MoveBillingAccountRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "DestinationParent",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -286,6 +325,7 @@ public final class CloudBillingProto {
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

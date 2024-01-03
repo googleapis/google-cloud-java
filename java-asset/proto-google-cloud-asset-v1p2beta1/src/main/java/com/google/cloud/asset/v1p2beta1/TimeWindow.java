@@ -22,7 +22,7 @@ package com.google.cloud.asset.v1p2beta1;
  *
  *
  * <pre>
- * A time window of (start_time, end_time].
+ * A time window specified by its `start_time` and `end_time`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1p2beta1.TimeWindow}
@@ -112,8 +112,8 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * End time of the time window (inclusive).
-   * Current timestamp if not specified.
+   * End time of the time window (inclusive). If not specified, the current
+   * timestamp is used instead.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -128,8 +128,8 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * End time of the time window (inclusive).
-   * Current timestamp if not specified.
+   * End time of the time window (inclusive). If not specified, the current
+   * timestamp is used instead.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -144,8 +144,8 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * End time of the time window (inclusive).
-   * Current timestamp if not specified.
+   * End time of the time window (inclusive). If not specified, the current
+   * timestamp is used instead.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -337,7 +337,7 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A time window of (start_time, end_time].
+   * A time window specified by its `start_time` and `end_time`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1p2beta1.TimeWindow}
@@ -723,8 +723,8 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End time of the time window (inclusive).
-     * Current timestamp if not specified.
+     * End time of the time window (inclusive). If not specified, the current
+     * timestamp is used instead.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -738,8 +738,8 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End time of the time window (inclusive).
-     * Current timestamp if not specified.
+     * End time of the time window (inclusive). If not specified, the current
+     * timestamp is used instead.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -757,8 +757,8 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End time of the time window (inclusive).
-     * Current timestamp if not specified.
+     * End time of the time window (inclusive). If not specified, the current
+     * timestamp is used instead.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -780,8 +780,8 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End time of the time window (inclusive).
-     * Current timestamp if not specified.
+     * End time of the time window (inclusive). If not specified, the current
+     * timestamp is used instead.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -800,8 +800,8 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End time of the time window (inclusive).
-     * Current timestamp if not specified.
+     * End time of the time window (inclusive). If not specified, the current
+     * timestamp is used instead.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -826,8 +826,8 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End time of the time window (inclusive).
-     * Current timestamp if not specified.
+     * End time of the time window (inclusive). If not specified, the current
+     * timestamp is used instead.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -846,8 +846,8 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End time of the time window (inclusive).
-     * Current timestamp if not specified.
+     * End time of the time window (inclusive). If not specified, the current
+     * timestamp is used instead.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -861,8 +861,8 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End time of the time window (inclusive).
-     * Current timestamp if not specified.
+     * End time of the time window (inclusive). If not specified, the current
+     * timestamp is used instead.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -878,8 +878,8 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * End time of the time window (inclusive).
-     * Current timestamp if not specified.
+     * End time of the time window (inclusive). If not specified, the current
+     * timestamp is used instead.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>

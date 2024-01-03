@@ -33,7 +33,7 @@ public interface AttachedResourceOrBuilder
    *
    * You can find the supported attached asset types of each resource in this
    * table:
-   * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
+   * `https://cloud.google.com/asset-inventory/docs/supported-asset-types`
    * </pre>
    *
    * <code>string asset_type = 1;</code>
@@ -51,7 +51,7 @@ public interface AttachedResourceOrBuilder
    *
    * You can find the supported attached asset types of each resource in this
    * table:
-   * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
+   * `https://cloud.google.com/asset-inventory/docs/supported-asset-types`
    * </pre>
    *
    * <code>string asset_type = 1;</code>

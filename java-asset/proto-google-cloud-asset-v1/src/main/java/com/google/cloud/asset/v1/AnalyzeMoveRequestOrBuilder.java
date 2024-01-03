@@ -33,7 +33,9 @@ public interface AnalyzeMoveRequestOrBuilder
    * (such as "projects/12345").
    * </pre>
    *
-   * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The resource.
    */
@@ -48,7 +50,9 @@ public interface AnalyzeMoveRequestOrBuilder
    * (such as "projects/12345").
    * </pre>
    *
-   * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for resource.
    */
@@ -65,7 +69,9 @@ public interface AnalyzeMoveRequestOrBuilder
    * "organizations/123").
    * </pre>
    *
-   * <code>string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The destinationParent.
    */
@@ -81,7 +87,9 @@ public interface AnalyzeMoveRequestOrBuilder
    * "organizations/123").
    * </pre>
    *
-   * <code>string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for destinationParent.
    */

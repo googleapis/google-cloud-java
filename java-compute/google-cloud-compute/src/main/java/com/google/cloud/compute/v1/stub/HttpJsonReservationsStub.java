@@ -119,6 +119,12 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                                   "returnPartialSuccess",
                                   request.getReturnPartialSuccess());
                             }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

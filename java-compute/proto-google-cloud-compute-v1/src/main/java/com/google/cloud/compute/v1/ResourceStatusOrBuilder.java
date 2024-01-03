@@ -59,4 +59,24 @@ public interface ResourceStatusOrBuilder
    * @return The bytes for physicalHost.
    */
   com.google.protobuf.ByteString getPhysicalHostBytes();
+
+  /**
+   * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+   * </code>
+   *
+   * @return Whether the upcomingMaintenance field is set.
+   */
+  boolean hasUpcomingMaintenance();
+  /**
+   * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+   * </code>
+   *
+   * @return The upcomingMaintenance.
+   */
+  com.google.cloud.compute.v1.UpcomingMaintenance getUpcomingMaintenance();
+  /**
+   * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
+   * </code>
+   */
+  com.google.cloud.compute.v1.UpcomingMaintenanceOrBuilder getUpcomingMaintenanceOrBuilder();
 }

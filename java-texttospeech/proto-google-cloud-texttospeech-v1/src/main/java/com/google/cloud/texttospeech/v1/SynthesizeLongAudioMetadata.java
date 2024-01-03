@@ -112,14 +112,17 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Time of the most recent processing update.
+   * Deprecated. Do not use.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+   * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.texttospeech.v1.SynthesizeLongAudioMetadata.last_update_time is
+   *     deprecated. See google/cloud/texttospeech/v1/cloud_tts_lrs.proto;l=86
    * @return Whether the lastUpdateTime field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasLastUpdateTime() {
     return lastUpdateTime_ != null;
   }
@@ -127,14 +130,17 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Time of the most recent processing update.
+   * Deprecated. Do not use.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+   * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.texttospeech.v1.SynthesizeLongAudioMetadata.last_update_time is
+   *     deprecated. See google/cloud/texttospeech/v1/cloud_tts_lrs.proto;l=86
    * @return The lastUpdateTime.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.Timestamp getLastUpdateTime() {
     return lastUpdateTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -144,12 +150,13 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Time of the most recent processing update.
+   * Deprecated. Do not use.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+   * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
     return lastUpdateTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -774,13 +781,16 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Time of the most recent processing update.
+     * Deprecated. Do not use.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+     * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.texttospeech.v1.SynthesizeLongAudioMetadata.last_update_time is
+     *     deprecated. See google/cloud/texttospeech/v1/cloud_tts_lrs.proto;l=86
      * @return Whether the lastUpdateTime field is set.
      */
+    @java.lang.Deprecated
     public boolean hasLastUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -788,13 +798,16 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Time of the most recent processing update.
+     * Deprecated. Do not use.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+     * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.texttospeech.v1.SynthesizeLongAudioMetadata.last_update_time is
+     *     deprecated. See google/cloud/texttospeech/v1/cloud_tts_lrs.proto;l=86
      * @return The lastUpdateTime.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.Timestamp getLastUpdateTime() {
       if (lastUpdateTimeBuilder_ == null) {
         return lastUpdateTime_ == null
@@ -808,11 +821,12 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Time of the most recent processing update.
+     * Deprecated. Do not use.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+     * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setLastUpdateTime(com.google.protobuf.Timestamp value) {
       if (lastUpdateTimeBuilder_ == null) {
         if (value == null) {
@@ -830,11 +844,12 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Time of the most recent processing update.
+     * Deprecated. Do not use.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+     * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setLastUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastUpdateTimeBuilder_ == null) {
         lastUpdateTime_ = builderForValue.build();
@@ -849,11 +864,12 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Time of the most recent processing update.
+     * Deprecated. Do not use.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+     * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder mergeLastUpdateTime(com.google.protobuf.Timestamp value) {
       if (lastUpdateTimeBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)
@@ -874,11 +890,12 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Time of the most recent processing update.
+     * Deprecated. Do not use.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+     * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearLastUpdateTime() {
       bitField0_ = (bitField0_ & ~0x00000002);
       lastUpdateTime_ = null;
@@ -893,11 +910,12 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Time of the most recent processing update.
+     * Deprecated. Do not use.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+     * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.Timestamp.Builder getLastUpdateTimeBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
@@ -907,11 +925,12 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Time of the most recent processing update.
+     * Deprecated. Do not use.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+     * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
       if (lastUpdateTimeBuilder_ != null) {
         return lastUpdateTimeBuilder_.getMessageOrBuilder();
@@ -925,10 +944,10 @@ public final class SynthesizeLongAudioMetadata extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Time of the most recent processing update.
+     * Deprecated. Do not use.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
+     * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,

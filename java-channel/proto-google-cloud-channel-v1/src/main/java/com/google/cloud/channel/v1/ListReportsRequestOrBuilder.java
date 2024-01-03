@@ -18,6 +18,7 @@
 
 package com.google.cloud.channel.v1;
 
+@java.lang.Deprecated
 public interface ListReportsRequestOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.channel.v1.ListReportsRequest)

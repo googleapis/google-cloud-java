@@ -70,12 +70,12 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A reference representing this place photo which may be used to
-   * look up this place photo again (a.k.a. the API "resource" name:
-   * places/{place_id}/photos/{photo}).
+   * Identifier. A reference representing this place photo which may be used to
+   * look up this place photo again (also called the API "resource" name:
+   * `places/{place_id}/photos/{photo}`).
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -95,12 +95,12 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A reference representing this place photo which may be used to
-   * look up this place photo again (a.k.a. the API "resource" name:
-   * places/{place_id}/photos/{photo}).
+   * Identifier. A reference representing this place photo which may be used to
+   * look up this place photo again (also called the API "resource" name:
+   * `places/{place_id}/photos/{photo}`).
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -123,10 +123,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The maximum available width, in pixels.
+   * The maximum available width, in pixels.
    * </pre>
    *
-   * <code>int32 width_px = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int32 width_px = 2;</code>
    *
    * @return The widthPx.
    */
@@ -141,10 +141,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The maximum available height, in pixels.
+   * The maximum available height, in pixels.
    * </pre>
    *
-   * <code>int32 height_px = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int32 height_px = 3;</code>
    *
    * @return The heightPx.
    */
@@ -161,12 +161,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This photo's authors.
+   * This photo's authors.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.maps.places.v1.AuthorAttribution> getAuthorAttributionsList() {
@@ -176,12 +174,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This photo's authors.
+   * This photo's authors.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.maps.places.v1.AuthorAttributionOrBuilder>
@@ -192,12 +188,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This photo's authors.
+   * This photo's authors.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
    */
   @java.lang.Override
   public int getAuthorAttributionsCount() {
@@ -207,12 +201,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This photo's authors.
+   * This photo's authors.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.AuthorAttribution getAuthorAttributions(int index) {
@@ -222,12 +214,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This photo's authors.
+   * This photo's authors.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.AuthorAttributionOrBuilder getAuthorAttributionsOrBuilder(
@@ -693,12 +683,12 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference representing this place photo which may be used to
-     * look up this place photo again (a.k.a. the API "resource" name:
-     * places/{place_id}/photos/{photo}).
+     * Identifier. A reference representing this place photo which may be used to
+     * look up this place photo again (also called the API "resource" name:
+     * `places/{place_id}/photos/{photo}`).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -717,12 +707,12 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference representing this place photo which may be used to
-     * look up this place photo again (a.k.a. the API "resource" name:
-     * places/{place_id}/photos/{photo}).
+     * Identifier. A reference representing this place photo which may be used to
+     * look up this place photo again (also called the API "resource" name:
+     * `places/{place_id}/photos/{photo}`).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -741,12 +731,12 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference representing this place photo which may be used to
-     * look up this place photo again (a.k.a. the API "resource" name:
-     * places/{place_id}/photos/{photo}).
+     * Identifier. A reference representing this place photo which may be used to
+     * look up this place photo again (also called the API "resource" name:
+     * `places/{place_id}/photos/{photo}`).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -764,12 +754,12 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference representing this place photo which may be used to
-     * look up this place photo again (a.k.a. the API "resource" name:
-     * places/{place_id}/photos/{photo}).
+     * Identifier. A reference representing this place photo which may be used to
+     * look up this place photo again (also called the API "resource" name:
+     * `places/{place_id}/photos/{photo}`).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -783,12 +773,12 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A reference representing this place photo which may be used to
-     * look up this place photo again (a.k.a. the API "resource" name:
-     * places/{place_id}/photos/{photo}).
+     * Identifier. A reference representing this place photo which may be used to
+     * look up this place photo again (also called the API "resource" name:
+     * `places/{place_id}/photos/{photo}`).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -809,10 +799,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The maximum available width, in pixels.
+     * The maximum available width, in pixels.
      * </pre>
      *
-     * <code>int32 width_px = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int32 width_px = 2;</code>
      *
      * @return The widthPx.
      */
@@ -824,10 +814,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The maximum available width, in pixels.
+     * The maximum available width, in pixels.
      * </pre>
      *
-     * <code>int32 width_px = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int32 width_px = 2;</code>
      *
      * @param value The widthPx to set.
      * @return This builder for chaining.
@@ -843,10 +833,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The maximum available width, in pixels.
+     * The maximum available width, in pixels.
      * </pre>
      *
-     * <code>int32 width_px = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int32 width_px = 2;</code>
      *
      * @return This builder for chaining.
      */
@@ -862,10 +852,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The maximum available height, in pixels.
+     * The maximum available height, in pixels.
      * </pre>
      *
-     * <code>int32 height_px = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int32 height_px = 3;</code>
      *
      * @return The heightPx.
      */
@@ -877,10 +867,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The maximum available height, in pixels.
+     * The maximum available height, in pixels.
      * </pre>
      *
-     * <code>int32 height_px = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int32 height_px = 3;</code>
      *
      * @param value The heightPx to set.
      * @return This builder for chaining.
@@ -896,10 +886,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The maximum available height, in pixels.
+     * The maximum available height, in pixels.
      * </pre>
      *
-     * <code>int32 height_px = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int32 height_px = 3;</code>
      *
      * @return This builder for chaining.
      */
@@ -932,12 +922,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public java.util.List<com.google.maps.places.v1.AuthorAttribution> getAuthorAttributionsList() {
       if (authorAttributionsBuilder_ == null) {
@@ -950,12 +938,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public int getAuthorAttributionsCount() {
       if (authorAttributionsBuilder_ == null) {
@@ -968,12 +954,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public com.google.maps.places.v1.AuthorAttribution getAuthorAttributions(int index) {
       if (authorAttributionsBuilder_ == null) {
@@ -986,12 +970,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public Builder setAuthorAttributions(
         int index, com.google.maps.places.v1.AuthorAttribution value) {
@@ -1011,12 +993,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public Builder setAuthorAttributions(
         int index, com.google.maps.places.v1.AuthorAttribution.Builder builderForValue) {
@@ -1033,12 +1013,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public Builder addAuthorAttributions(com.google.maps.places.v1.AuthorAttribution value) {
       if (authorAttributionsBuilder_ == null) {
@@ -1057,12 +1035,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public Builder addAuthorAttributions(
         int index, com.google.maps.places.v1.AuthorAttribution value) {
@@ -1082,12 +1058,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public Builder addAuthorAttributions(
         com.google.maps.places.v1.AuthorAttribution.Builder builderForValue) {
@@ -1104,12 +1078,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public Builder addAuthorAttributions(
         int index, com.google.maps.places.v1.AuthorAttribution.Builder builderForValue) {
@@ -1126,12 +1098,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public Builder addAllAuthorAttributions(
         java.lang.Iterable<? extends com.google.maps.places.v1.AuthorAttribution> values) {
@@ -1148,12 +1118,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public Builder clearAuthorAttributions() {
       if (authorAttributionsBuilder_ == null) {
@@ -1169,12 +1137,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public Builder removeAuthorAttributions(int index) {
       if (authorAttributionsBuilder_ == null) {
@@ -1190,12 +1156,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public com.google.maps.places.v1.AuthorAttribution.Builder getAuthorAttributionsBuilder(
         int index) {
@@ -1205,12 +1169,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public com.google.maps.places.v1.AuthorAttributionOrBuilder getAuthorAttributionsOrBuilder(
         int index) {
@@ -1224,12 +1186,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public java.util.List<? extends com.google.maps.places.v1.AuthorAttributionOrBuilder>
         getAuthorAttributionsOrBuilderList() {
@@ -1243,12 +1203,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public com.google.maps.places.v1.AuthorAttribution.Builder addAuthorAttributionsBuilder() {
       return getAuthorAttributionsFieldBuilder()
@@ -1258,12 +1216,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public com.google.maps.places.v1.AuthorAttribution.Builder addAuthorAttributionsBuilder(
         int index) {
@@ -1274,12 +1230,10 @@ public final class Photo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This photo's authors.
+     * This photo's authors.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
      */
     public java.util.List<com.google.maps.places.v1.AuthorAttribution.Builder>
         getAuthorAttributionsBuilderList() {

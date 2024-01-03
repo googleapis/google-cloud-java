@@ -11,6 +11,7 @@
   ],
   "includePaths": [
     "pom.xml",
+    "**/README.md",
     "google-cloud-pom-parent/pom.xml",
     "google-cloud-jar-parent/pom.xml",
     "java-shared-dependencies/first-party-dependencies/pom.xml",
@@ -31,6 +32,12 @@
         "value: \"gcr.io/cloud-devrel-kokoro-resources/graalvm17:(?<currentValue>.*?)\""],
       "depNameTemplate": "ghcr.io/graalvm/graalvm-ce",
       "datasourceTemplate": "docker"
+    },
+    {
+      "fileMatch": ["README.md"],
+      "matchStrings": ["<artifactId>libraries-bom</artifactId>\\s+<version>(?<currentValue>.*?)</version>"],
+      "depNameTemplate": "com.google.cloud:libraries-bom",
+      "datasourceTemplate": "maven"
     }
   ]
 }
