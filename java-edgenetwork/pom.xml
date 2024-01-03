@@ -50,4 +50,5 @@
     <module>proto-google-cloud-edgenetwork-v1</module>
     <module>google-cloud-edgenetwork-bom</module>
   </modules>
-</project>
+
+  </project>
