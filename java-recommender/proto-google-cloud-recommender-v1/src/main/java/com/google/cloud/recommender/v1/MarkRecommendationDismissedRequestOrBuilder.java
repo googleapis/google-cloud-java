@@ -27,7 +27,7 @@ public interface MarkRecommendationDismissedRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the recommendation.
+   * Required. Name of the recommendation.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface MarkRecommendationDismissedRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the recommendation.
+   * Required. Name of the recommendation.
    * </pre>
    *
    * <code>
