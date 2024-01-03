@@ -87,6 +87,17 @@ public class PublicDelegatedPrefixesSettings
     return ((PublicDelegatedPrefixesStubSettings) getStubSettings()).aggregatedListSettings();
   }
 
+  /** Returns the object with the settings used for calls to announce. */
+  public UnaryCallSettings<AnnouncePublicDelegatedPrefixeRequest, Operation> announceSettings() {
+    return ((PublicDelegatedPrefixesStubSettings) getStubSettings()).announceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to announce. */
+  public OperationCallSettings<AnnouncePublicDelegatedPrefixeRequest, Operation, Operation>
+      announceOperationSettings() {
+    return ((PublicDelegatedPrefixesStubSettings) getStubSettings()).announceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeletePublicDelegatedPrefixeRequest, Operation> deleteSettings() {
     return ((PublicDelegatedPrefixesStubSettings) getStubSettings()).deleteSettings();
@@ -130,6 +141,17 @@ public class PublicDelegatedPrefixesSettings
   public OperationCallSettings<PatchPublicDelegatedPrefixeRequest, Operation, Operation>
       patchOperationSettings() {
     return ((PublicDelegatedPrefixesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to withdraw. */
+  public UnaryCallSettings<WithdrawPublicDelegatedPrefixeRequest, Operation> withdrawSettings() {
+    return ((PublicDelegatedPrefixesStubSettings) getStubSettings()).withdrawSettings();
+  }
+
+  /** Returns the object with the settings used for calls to withdraw. */
+  public OperationCallSettings<WithdrawPublicDelegatedPrefixeRequest, Operation, Operation>
+      withdrawOperationSettings() {
+    return ((PublicDelegatedPrefixesStubSettings) getStubSettings()).withdrawOperationSettings();
   }
 
   public static final PublicDelegatedPrefixesSettings create(
@@ -240,6 +262,19 @@ public class PublicDelegatedPrefixesSettings
       return getStubSettingsBuilder().aggregatedListSettings();
     }
 
+    /** Returns the builder for the settings used for calls to announce. */
+    public UnaryCallSettings.Builder<AnnouncePublicDelegatedPrefixeRequest, Operation>
+        announceSettings() {
+      return getStubSettingsBuilder().announceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to announce. */
+    public OperationCallSettings.Builder<
+            AnnouncePublicDelegatedPrefixeRequest, Operation, Operation>
+        announceOperationSettings() {
+      return getStubSettingsBuilder().announceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeletePublicDelegatedPrefixeRequest, Operation>
         deleteSettings() {
@@ -287,6 +322,19 @@ public class PublicDelegatedPrefixesSettings
     public OperationCallSettings.Builder<PatchPublicDelegatedPrefixeRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to withdraw. */
+    public UnaryCallSettings.Builder<WithdrawPublicDelegatedPrefixeRequest, Operation>
+        withdrawSettings() {
+      return getStubSettingsBuilder().withdrawSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to withdraw. */
+    public OperationCallSettings.Builder<
+            WithdrawPublicDelegatedPrefixeRequest, Operation, Operation>
+        withdrawOperationSettings() {
+      return getStubSettingsBuilder().withdrawOperationSettings();
     }
 
     @Override

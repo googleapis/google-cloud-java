@@ -374,6 +374,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).setSchedulingOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public UnaryCallSettings<SetSecurityPolicyInstanceRequest, Operation>
+      setSecurityPolicySettings() {
+    return ((InstancesStubSettings) getStubSettings()).setSecurityPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public OperationCallSettings<SetSecurityPolicyInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).setSecurityPolicyOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setServiceAccount. */
   public UnaryCallSettings<SetServiceAccountInstanceRequest, Operation>
       setServiceAccountSettings() {
@@ -933,6 +945,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     public OperationCallSettings.Builder<SetSchedulingInstanceRequest, Operation, Operation>
         setSchedulingOperationSettings() {
       return getStubSettingsBuilder().setSchedulingOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetSecurityPolicyInstanceRequest, Operation>
+        setSecurityPolicySettings() {
+      return getStubSettingsBuilder().setSecurityPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public OperationCallSettings.Builder<SetSecurityPolicyInstanceRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings() {
+      return getStubSettingsBuilder().setSecurityPolicyOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setServiceAccount. */

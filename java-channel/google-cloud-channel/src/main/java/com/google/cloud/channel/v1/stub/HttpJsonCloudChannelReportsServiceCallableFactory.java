@@ -39,7 +39,10 @@ import javax.annotation.Generated;
  * REST callable factory implementation for the CloudChannelReportsService service API.
  *
  * <p>This class is for advanced usage.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 @BetaApi
 public class HttpJsonCloudChannelReportsServiceCallableFactory

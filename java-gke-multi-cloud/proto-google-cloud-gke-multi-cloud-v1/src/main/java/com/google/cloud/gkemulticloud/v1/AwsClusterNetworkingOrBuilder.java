@@ -183,4 +183,22 @@ public interface AwsClusterNetworkingOrBuilder
    * @return The bytes of the serviceAddressCidrBlocks at the given index.
    */
   com.google.protobuf.ByteString getServiceAddressCidrBlocksBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disable the per node pool subnet security group rules on the
+   * control plane security group. When set to true, you must also provide one
+   * or more security groups that ensure node pools are able to send requests to
+   * the control plane on TCP/443 and TCP/8132. Failure to do so may result in
+   * unavailable node pools.
+   * </pre>
+   *
+   * <code>bool per_node_pool_sg_rules_disabled = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The perNodePoolSgRulesDisabled.
+   */
+  boolean getPerNodePoolSgRulesDisabled();
 }

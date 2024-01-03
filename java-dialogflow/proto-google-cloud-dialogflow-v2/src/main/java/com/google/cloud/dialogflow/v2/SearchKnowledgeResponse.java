@@ -40,6 +40,7 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
 
   private SearchKnowledgeResponse() {
     answers_ = java.util.Collections.emptyList();
+    rewrittenQuery_ = "";
   }
 
   @java.lang.Override
@@ -140,6 +141,57 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
     return answers_.get(index);
   }
 
+  public static final int REWRITTEN_QUERY_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rewrittenQuery_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The rewritten query used to search knowledge.
+   * </pre>
+   *
+   * <code>string rewritten_query = 3;</code>
+   *
+   * @return The rewrittenQuery.
+   */
+  @java.lang.Override
+  public java.lang.String getRewrittenQuery() {
+    java.lang.Object ref = rewrittenQuery_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      rewrittenQuery_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The rewritten query used to search knowledge.
+   * </pre>
+   *
+   * <code>string rewritten_query = 3;</code>
+   *
+   * @return The bytes for rewrittenQuery.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRewrittenQueryBytes() {
+    java.lang.Object ref = rewrittenQuery_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      rewrittenQuery_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -157,6 +209,9 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
     for (int i = 0; i < answers_.size(); i++) {
       output.writeMessage(2, answers_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewrittenQuery_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, rewrittenQuery_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -168,6 +223,9 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
     size = 0;
     for (int i = 0; i < answers_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, answers_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rewrittenQuery_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, rewrittenQuery_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -186,6 +244,7 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
         (com.google.cloud.dialogflow.v2.SearchKnowledgeResponse) obj;
 
     if (!getAnswersList().equals(other.getAnswersList())) return false;
+    if (!getRewrittenQuery().equals(other.getRewrittenQuery())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -201,6 +260,8 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       hash = (37 * hash) + ANSWERS_FIELD_NUMBER;
       hash = (53 * hash) + getAnswersList().hashCode();
     }
+    hash = (37 * hash) + REWRITTEN_QUERY_FIELD_NUMBER;
+    hash = (53 * hash) + getRewrittenQuery().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -349,6 +410,7 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
         answersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      rewrittenQuery_ = "";
       return this;
     }
 
@@ -399,6 +461,9 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
 
     private void buildPartial0(com.google.cloud.dialogflow.v2.SearchKnowledgeResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rewrittenQuery_ = rewrittenQuery_;
+      }
     }
 
     @java.lang.Override
@@ -474,6 +539,11 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
           }
         }
       }
+      if (!other.getRewrittenQuery().isEmpty()) {
+        rewrittenQuery_ = other.rewrittenQuery_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -514,6 +584,12 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
                 }
                 break;
               } // case 18
+            case 26:
+              {
+                rewrittenQuery_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -906,6 +982,112 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
         answers_ = null;
       }
       return answersBuilder_;
+    }
+
+    private java.lang.Object rewrittenQuery_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The rewritten query used to search knowledge.
+     * </pre>
+     *
+     * <code>string rewritten_query = 3;</code>
+     *
+     * @return The rewrittenQuery.
+     */
+    public java.lang.String getRewrittenQuery() {
+      java.lang.Object ref = rewrittenQuery_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rewrittenQuery_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The rewritten query used to search knowledge.
+     * </pre>
+     *
+     * <code>string rewritten_query = 3;</code>
+     *
+     * @return The bytes for rewrittenQuery.
+     */
+    public com.google.protobuf.ByteString getRewrittenQueryBytes() {
+      java.lang.Object ref = rewrittenQuery_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        rewrittenQuery_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The rewritten query used to search knowledge.
+     * </pre>
+     *
+     * <code>string rewritten_query = 3;</code>
+     *
+     * @param value The rewrittenQuery to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRewrittenQuery(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      rewrittenQuery_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The rewritten query used to search knowledge.
+     * </pre>
+     *
+     * <code>string rewritten_query = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRewrittenQuery() {
+      rewrittenQuery_ = getDefaultInstance().getRewrittenQuery();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The rewritten query used to search knowledge.
+     * </pre>
+     *
+     * <code>string rewritten_query = 3;</code>
+     *
+     * @param value The bytes for rewrittenQuery to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRewrittenQueryBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      rewrittenQuery_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

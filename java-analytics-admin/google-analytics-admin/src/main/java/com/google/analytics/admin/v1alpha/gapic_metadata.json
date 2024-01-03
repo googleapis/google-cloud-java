@@ -250,6 +250,9 @@
             "GetSearchAds360Link": {
               "methods": ["getSearchAds360Link", "getSearchAds360Link", "getSearchAds360Link", "getSearchAds360LinkCallable"]
             },
+            "GetSubpropertyEventFilter": {
+              "methods": ["getSubpropertyEventFilter", "getSubpropertyEventFilter", "getSubpropertyEventFilter", "getSubpropertyEventFilterCallable"]
+            },
             "ListAccessBindings": {
               "methods": ["listAccessBindings", "listAccessBindings", "listAccessBindings", "listAccessBindings", "listAccessBindingsPagedCallable", "listAccessBindingsCallable"]
             },
@@ -318,6 +321,9 @@
             },
             "ListSearchAds360Links": {
               "methods": ["listSearchAds360Links", "listSearchAds360Links", "listSearchAds360Links", "listSearchAds360LinksPagedCallable", "listSearchAds360LinksCallable"]
+            },
+            "ListSubpropertyEventFilters": {
+              "methods": ["listSubpropertyEventFilters", "listSubpropertyEventFilters", "listSubpropertyEventFilters", "listSubpropertyEventFiltersPagedCallable", "listSubpropertyEventFiltersCallable"]
             },
             "ProvisionAccountTicket": {
               "methods": ["provisionAccountTicket", "provisionAccountTicketCallable"]
@@ -393,6 +399,9 @@
             },
             "UpdateSearchAds360Link": {
               "methods": ["updateSearchAds360Link", "updateSearchAds360Link", "updateSearchAds360LinkCallable"]
+            },
+            "UpdateSubpropertyEventFilter": {
+              "methods": ["updateSubpropertyEventFilter", "updateSubpropertyEventFilter", "updateSubpropertyEventFilterCallable"]
             }
           }
         }

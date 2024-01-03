@@ -96,6 +96,12 @@ public class InterconnectsSettings extends ClientSettings<InterconnectsSettings>
     return ((InterconnectsStubSettings) getStubSettings()).getDiagnosticsSettings();
   }
 
+  /** Returns the object with the settings used for calls to getMacsecConfig. */
+  public UnaryCallSettings<GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+      getMacsecConfigSettings() {
+    return ((InterconnectsStubSettings) getStubSettings()).getMacsecConfigSettings();
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertInterconnectRequest, Operation> insertSettings() {
     return ((InterconnectsStubSettings) getStubSettings()).insertSettings();
@@ -254,6 +260,13 @@ public class InterconnectsSettings extends ClientSettings<InterconnectsSettings>
             GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>
         getDiagnosticsSettings() {
       return getStubSettingsBuilder().getDiagnosticsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMacsecConfig. */
+    public UnaryCallSettings.Builder<
+            GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+        getMacsecConfigSettings() {
+      return getStubSettingsBuilder().getMacsecConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to insert. */

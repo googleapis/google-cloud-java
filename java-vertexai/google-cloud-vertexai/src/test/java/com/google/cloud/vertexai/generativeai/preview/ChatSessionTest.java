@@ -61,19 +61,37 @@ public final class ChatSessionTest {
       GenerateContentResponse.newBuilder()
           .addCandidates(
               Candidate.newBuilder()
-                  .setFinishReason(FinishReason.STOP)
+                  .setFinishReason(FinishReason.MAX_TOKENS)
                   .setContent(
                       Content.newBuilder()
                           .addParts(Part.newBuilder().setText(RESPONSE_STREAM_CHUNK2_TEXT))))
           .build();
+  private static final GenerateContentResponse
+      RESPONSE_STREAM_CHUNK2_RESPONSE_WITHOUT_FINISH_REASON =
+          GenerateContentResponse.newBuilder()
+              .addCandidates(
+                  Candidate.newBuilder()
+                      .setContent(
+                          Content.newBuilder()
+                              .addParts(Part.newBuilder().setText(RESPONSE_STREAM_CHUNK2_TEXT))))
+              .build();
   private static final GenerateContentResponse RESPONSE_FROM_UNARY_CALL =
       GenerateContentResponse.newBuilder()
           .addCandidates(
               Candidate.newBuilder()
+                  .setFinishReason(FinishReason.STOP)
                   .setContent(
                       Content.newBuilder().addParts(Part.newBuilder().setText(FULL_RESPONSE_TEXT))))
           .build();
 
+  private static final GenerateContentResponse RESPONSE_FROM_UNARY_CALL_WITH_OTHER_FINISH_REASON =
+      GenerateContentResponse.newBuilder()
+          .addCandidates(
+              Candidate.newBuilder()
+                  .setFinishReason(FinishReason.SAFETY)
+                  .setContent(
+                      Content.newBuilder().addParts(Part.newBuilder().setText(FULL_RESPONSE_TEXT))))
+          .build();
   @Rule public final MockitoRule mocksRule = MockitoJUnit.rule();
 
   @Mock private GenerativeModel mockGenerativeModel;
@@ -185,10 +203,85 @@ public final class ChatSessionTest {
     // (Act) Send text message via sendMessage and get the history.
     GenerateContentResponse response = chat.sendMessage(SAMPLE_MESSAGE1);
     List<Content> history = chat.getHistory();
-
     // (Assert) Assert that 1) the first content contains the user request text, and 2) the second
     // content in history contains the response.
     assertThat(history.get(0).getParts(0).getText()).isEqualTo(SAMPLE_MESSAGE1);
     assertThat(history.get(1).getParts(0).getText()).isEqualTo(FULL_RESPONSE_TEXT);
+  }
+
+  @Test
+  public void sendMessageWithTextThenModifyHistory_historyChangedToNewContentList()
+      throws IOException {
+
+    // (Arrange) Set up the return value of the generateContent
+    when(mockGenerativeModel.generateContent(
+            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+        .thenReturn(RESPONSE_FROM_UNARY_CALL);
+
+    // (Act) Send text message via sendMessage and get the history.
+    GenerateContentResponse response = chat.sendMessage(SAMPLE_MESSAGE1);
+    List<Content> history = chat.getHistory();
+    // (Assert) Assert that 1) the first content contains the user request text, and 2) the second
+    // content in history contains the response.
+    assertThat(history.get(0).getParts(0).getText()).isEqualTo(SAMPLE_MESSAGE1);
+    assertThat(history.get(1).getParts(0).getText()).isEqualTo(FULL_RESPONSE_TEXT);
+
+    // (Act) Set history to an empty list
+    chat.setHistory(Arrays.asList());
+    // (Assert) Asser that the history is empty.
+    assertThat(chat.getHistory().size()).isEqualTo(0);
+  }
+
+  @Test
+  public void sendMessageStreamWithText_throwsIllegalStateExceptionWhenFinishReasonIsNotSTOP()
+      throws IOException {
+    // (Arrange) Set up the responseStream
+    ResponseStream<GenerateContentResponse> responseStream =
+        new ResponseStream(new ResponseStreamIteratorWithHistory(mockServerStreamIterator));
+    when(mockServerStreamIterator.hasNext()).thenReturn(true, true, false);
+    when(mockServerStreamIterator.next())
+        .thenReturn(
+            RESPONSE_STREAM_CHUNK1_RESPONSE, RESPONSE_STREAM_CHUNK2_RESPONSE_WITHOUT_FINISH_REASON);
+
+    // (Arrange) Set up the return value of the generateContentStream
+    when(mockGenerativeModel.generateContentStream(
+            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+        .thenReturn(responseStream);
+
+    // (Act) send request, consume response
+    ResponseStream<GenerateContentResponse> returndResponseStream =
+        chat.sendMessageStream(SAMPLE_MESSAGE1);
+    returndResponseStream.stream().forEach(element -> {});
+
+    // (Act & Assert) get history and assert IllegalStateException for not having the right finish
+    // reason.
+    IllegalStateException thrown =
+        assertThrows(IllegalStateException.class, () -> chat.getHistory());
+    assertThat(thrown).hasMessageThat().isEqualTo("Rerun getHistory() to get cleaned history.");
+
+    // Assert that the history can be fetched again and it's empty.
+    List<Content> history = chat.getHistory();
+    assertThat(history.size()).isEqualTo(0);
+  }
+
+  @Test
+  public void sendMessageWithText_throwsIllegalStateExceptionWhenFinishReasonIsNotSTOP()
+      throws IOException {
+    // (Arrange) Set up the return value of the generateContent
+    when(mockGenerativeModel.generateContent(
+            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+        .thenReturn(RESPONSE_FROM_UNARY_CALL_WITH_OTHER_FINISH_REASON);
+
+    // (Act) Send text message via sendMessage
+    GenerateContentResponse response = chat.sendMessage(SAMPLE_MESSAGE1);
+
+    // (Act & Assert) get history and assert IllegalStateException for not having the right finish
+    // reason.
+    IllegalStateException thrown =
+        assertThrows(IllegalStateException.class, () -> chat.getHistory());
+    assertThat(thrown).hasMessageThat().isEqualTo("Rerun getHistory() to get cleaned history.");
+    // Assert that the history can be fetched again and it's empty.
+    List<Content> history = chat.getHistory();
+    assertThat(history.size()).isEqualTo(0);
   }
 }

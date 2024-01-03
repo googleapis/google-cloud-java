@@ -165,6 +165,28 @@ public class MockAwsClustersImpl extends AwsClustersImplBase {
   }
 
   @Override
+  public void generateAwsClusterAgentToken(
+      GenerateAwsClusterAgentTokenRequest request,
+      StreamObserver<GenerateAwsClusterAgentTokenResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateAwsClusterAgentTokenResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateAwsClusterAgentTokenResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateAwsClusterAgentToken, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateAwsClusterAgentTokenResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void generateAwsAccessToken(
       GenerateAwsAccessTokenRequest request,
       StreamObserver<GenerateAwsAccessTokenResponse> responseObserver) {
@@ -222,6 +244,27 @@ public class MockAwsClustersImpl extends AwsClustersImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateAwsNodePool, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void rollbackAwsNodePoolUpdate(
+      RollbackAwsNodePoolUpdateRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RollbackAwsNodePoolUpdate, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -287,6 +330,48 @@ public class MockAwsClustersImpl extends AwsClustersImplBase {
                   "Unrecognized response type %s for method DeleteAwsNodePool, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAwsOpenIdConfig(
+      GetAwsOpenIdConfigRequest request, StreamObserver<AwsOpenIdConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AwsOpenIdConfig) {
+      requests.add(request);
+      responseObserver.onNext(((AwsOpenIdConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAwsOpenIdConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AwsOpenIdConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAwsJsonWebKeys(
+      GetAwsJsonWebKeysRequest request, StreamObserver<AwsJsonWebKeys> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AwsJsonWebKeys) {
+      requests.add(request);
+      responseObserver.onNext(((AwsJsonWebKeys) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAwsJsonWebKeys, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AwsJsonWebKeys.class.getName(),
                   Exception.class.getName())));
     }
   }

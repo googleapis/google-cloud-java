@@ -468,7 +468,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * List of reservations in this commitment.
+   * List of create-on-create reseravtions for this commitment.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -478,7 +478,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * List of reservations in this commitment.
+   * List of create-on-create reseravtions for this commitment.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -488,7 +488,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * List of reservations in this commitment.
+   * List of create-on-create reseravtions for this commitment.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -498,7 +498,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * List of reservations in this commitment.
+   * List of create-on-create reseravtions for this commitment.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -509,7 +509,7 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
-   * List of reservations in this commitment.
+   * List of create-on-create reseravtions for this commitment.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>

@@ -169,6 +169,155 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Inserts a rule into a security policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+   *     RegionSecurityPoliciesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String securityPolicy = "securityPolicy-788621166";
+   *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
+   *   Operation response =
+   *       regionSecurityPoliciesClient
+   *           .addRuleAsync(project, region, securityPolicy, securityPolicyRuleResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region scoping this request.
+   * @param securityPolicy Name of the security policy to update.
+   * @param securityPolicyRuleResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> addRuleAsync(
+      String project,
+      String region,
+      String securityPolicy,
+      SecurityPolicyRule securityPolicyRuleResource) {
+    AddRuleRegionSecurityPolicyRequest request =
+        AddRuleRegionSecurityPolicyRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setSecurityPolicy(securityPolicy)
+            .setSecurityPolicyRuleResource(securityPolicyRuleResource)
+            .build();
+    return addRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Inserts a rule into a security policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+   *     RegionSecurityPoliciesClient.create()) {
+   *   AddRuleRegionSecurityPolicyRequest request =
+   *       AddRuleRegionSecurityPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Operation response = regionSecurityPoliciesClient.addRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> addRuleAsync(
+      AddRuleRegionSecurityPolicyRequest request) {
+    return addRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Inserts a rule into a security policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+   *     RegionSecurityPoliciesClient.create()) {
+   *   AddRuleRegionSecurityPolicyRequest request =
+   *       AddRuleRegionSecurityPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionSecurityPoliciesClient.addRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<AddRuleRegionSecurityPolicyRequest, Operation, Operation>
+      addRuleOperationCallable() {
+    return stub.addRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Inserts a rule into a security policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+   *     RegionSecurityPoliciesClient.create()) {
+   *   AddRuleRegionSecurityPolicyRequest request =
+   *       AddRuleRegionSecurityPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionSecurityPoliciesClient.addRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AddRuleRegionSecurityPolicyRequest, Operation> addRuleCallable() {
+    return stub.addRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes the specified policy.
    *
    * <p>Sample code:
@@ -401,6 +550,108 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    */
   public final UnaryCallable<GetRegionSecurityPolicyRequest, SecurityPolicy> getCallable() {
     return stub.getCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a rule at the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+   *     RegionSecurityPoliciesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String securityPolicy = "securityPolicy-788621166";
+   *   SecurityPolicyRule response =
+   *       regionSecurityPoliciesClient.getRule(project, region, securityPolicy);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region scoping this request.
+   * @param securityPolicy Name of the security policy to which the queried rule belongs.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecurityPolicyRule getRule(String project, String region, String securityPolicy) {
+    GetRuleRegionSecurityPolicyRequest request =
+        GetRuleRegionSecurityPolicyRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setSecurityPolicy(securityPolicy)
+            .build();
+    return getRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a rule at the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+   *     RegionSecurityPoliciesClient.create()) {
+   *   GetRuleRegionSecurityPolicyRequest request =
+   *       GetRuleRegionSecurityPolicyRequest.newBuilder()
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .build();
+   *   SecurityPolicyRule response = regionSecurityPoliciesClient.getRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SecurityPolicyRule getRule(GetRuleRegionSecurityPolicyRequest request) {
+    return getRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a rule at the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+   *     RegionSecurityPoliciesClient.create()) {
+   *   GetRuleRegionSecurityPolicyRequest request =
+   *       GetRuleRegionSecurityPolicyRequest.newBuilder()
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .build();
+   *   ApiFuture<SecurityPolicyRule> future =
+   *       regionSecurityPoliciesClient.getRuleCallable().futureCall(request);
+   *   // Do something.
+   *   SecurityPolicyRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule>
+      getRuleCallable() {
+    return stub.getRuleCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -768,6 +1019,7 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
    *           .build();
    *   Operation response = regionSecurityPoliciesClient.patchAsync(request).get();
    * }
@@ -807,6 +1059,7 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
    *           .build();
    *   OperationFuture<Operation, Operation> future =
    *       regionSecurityPoliciesClient.patchOperationCallable().futureCall(request);
@@ -844,6 +1097,7 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
    *           .build();
    *   ApiFuture<Operation> future =
    *       regionSecurityPoliciesClient.patchCallable().futureCall(request);
@@ -854,6 +1108,304 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    */
   public final UnaryCallable<PatchRegionSecurityPolicyRequest, Operation> patchCallable() {
     return stub.patchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches a rule at the specified priority. To clear fields in the rule, leave the fields empty
+   * and specify them in the updateMask.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+   *     RegionSecurityPoliciesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String securityPolicy = "securityPolicy-788621166";
+   *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
+   *   Operation response =
+   *       regionSecurityPoliciesClient
+   *           .patchRuleAsync(project, region, securityPolicy, securityPolicyRuleResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region scoping this request.
+   * @param securityPolicy Name of the security policy to update.
+   * @param securityPolicyRuleResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> patchRuleAsync(
+      String project,
+      String region,
+      String securityPolicy,
+      SecurityPolicyRule securityPolicyRuleResource) {
+    PatchRuleRegionSecurityPolicyRequest request =
+        PatchRuleRegionSecurityPolicyRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setSecurityPolicy(securityPolicy)
+            .setSecurityPolicyRuleResource(securityPolicyRuleResource)
+            .build();
+    return patchRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches a rule at the specified priority. To clear fields in the rule, leave the fields empty
+   * and specify them in the updateMask.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+   *     RegionSecurityPoliciesClient.create()) {
+   *   PatchRuleRegionSecurityPolicyRequest request =
+   *       PatchRuleRegionSecurityPolicyRequest.newBuilder()
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Operation response = regionSecurityPoliciesClient.patchRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchRuleAsync(
+      PatchRuleRegionSecurityPolicyRequest request) {
+    return patchRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches a rule at the specified priority. To clear fields in the rule, leave the fields empty
+   * and specify them in the updateMask.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+   *     RegionSecurityPoliciesClient.create()) {
+   *   PatchRuleRegionSecurityPolicyRequest request =
+   *       PatchRuleRegionSecurityPolicyRequest.newBuilder()
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionSecurityPoliciesClient.patchRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchRuleRegionSecurityPolicyRequest, Operation, Operation>
+      patchRuleOperationCallable() {
+    return stub.patchRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches a rule at the specified priority. To clear fields in the rule, leave the fields empty
+   * and specify them in the updateMask.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+   *     RegionSecurityPoliciesClient.create()) {
+   *   PatchRuleRegionSecurityPolicyRequest request =
+   *       PatchRuleRegionSecurityPolicyRequest.newBuilder()
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionSecurityPoliciesClient.patchRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PatchRuleRegionSecurityPolicyRequest, Operation> patchRuleCallable() {
+    return stub.patchRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a rule at the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+   *     RegionSecurityPoliciesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String securityPolicy = "securityPolicy-788621166";
+   *   Operation response =
+   *       regionSecurityPoliciesClient.removeRuleAsync(project, region, securityPolicy).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region scoping this request.
+   * @param securityPolicy Name of the security policy to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> removeRuleAsync(
+      String project, String region, String securityPolicy) {
+    RemoveRuleRegionSecurityPolicyRequest request =
+        RemoveRuleRegionSecurityPolicyRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setSecurityPolicy(securityPolicy)
+            .build();
+    return removeRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a rule at the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+   *     RegionSecurityPoliciesClient.create()) {
+   *   RemoveRuleRegionSecurityPolicyRequest request =
+   *       RemoveRuleRegionSecurityPolicyRequest.newBuilder()
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .build();
+   *   Operation response = regionSecurityPoliciesClient.removeRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> removeRuleAsync(
+      RemoveRuleRegionSecurityPolicyRequest request) {
+    return removeRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a rule at the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+   *     RegionSecurityPoliciesClient.create()) {
+   *   RemoveRuleRegionSecurityPolicyRequest request =
+   *       RemoveRuleRegionSecurityPolicyRequest.newBuilder()
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionSecurityPoliciesClient.removeRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
+      removeRuleOperationCallable() {
+    return stub.removeRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a rule at the specified priority.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+   *     RegionSecurityPoliciesClient.create()) {
+   *   RemoveRuleRegionSecurityPolicyRequest request =
+   *       RemoveRuleRegionSecurityPolicyRequest.newBuilder()
+   *           .setPriority(-1165461084)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setSecurityPolicy("securityPolicy-788621166")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionSecurityPoliciesClient.removeRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RemoveRuleRegionSecurityPolicyRequest, Operation>
+      removeRuleCallable() {
+    return stub.removeRuleCallable();
   }
 
   @Override

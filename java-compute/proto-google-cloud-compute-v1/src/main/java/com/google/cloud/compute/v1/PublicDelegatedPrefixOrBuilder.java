@@ -27,6 +27,46 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The version of BYOIP API.
+   * Check the ByoipApiVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string byoip_api_version = 162683283;</code>
+   *
+   * @return Whether the byoipApiVersion field is set.
+   */
+  boolean hasByoipApiVersion();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The version of BYOIP API.
+   * Check the ByoipApiVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string byoip_api_version = 162683283;</code>
+   *
+   * @return The byoipApiVersion.
+   */
+  java.lang.String getByoipApiVersion();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The version of BYOIP API.
+   * Check the ByoipApiVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string byoip_api_version = 162683283;</code>
+   *
+   * @return The bytes for byoipApiVersion.
+   */
+  com.google.protobuf.ByteString getByoipApiVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *

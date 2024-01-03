@@ -94,6 +94,8 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     SEV_CAPABLE(87083793),
     /** <code>SEV_LIVE_MIGRATABLE = 392039820;</code> */
     SEV_LIVE_MIGRATABLE(392039820),
+    /** <code>SEV_LIVE_MIGRATABLE_V2 = 168551983;</code> */
+    SEV_LIVE_MIGRATABLE_V2(168551983),
     /** <code>SEV_SNP_CAPABLE = 426919;</code> */
     SEV_SNP_CAPABLE(426919),
     /** <code>UEFI_COMPATIBLE = 195865408;</code> */
@@ -127,6 +129,8 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     public static final int SEV_CAPABLE_VALUE = 87083793;
     /** <code>SEV_LIVE_MIGRATABLE = 392039820;</code> */
     public static final int SEV_LIVE_MIGRATABLE_VALUE = 392039820;
+    /** <code>SEV_LIVE_MIGRATABLE_V2 = 168551983;</code> */
+    public static final int SEV_LIVE_MIGRATABLE_V2_VALUE = 168551983;
     /** <code>SEV_SNP_CAPABLE = 426919;</code> */
     public static final int SEV_SNP_CAPABLE_VALUE = 426919;
     /** <code>UEFI_COMPATIBLE = 195865408;</code> */
@@ -174,6 +178,8 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
           return SEV_CAPABLE;
         case 392039820:
           return SEV_LIVE_MIGRATABLE;
+        case 168551983:
+          return SEV_LIVE_MIGRATABLE_V2;
         case 426919:
           return SEV_SNP_CAPABLE;
         case 195865408:

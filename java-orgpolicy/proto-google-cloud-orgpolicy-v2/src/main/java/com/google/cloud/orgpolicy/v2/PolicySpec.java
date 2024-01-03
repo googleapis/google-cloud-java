@@ -22,8 +22,8 @@ package com.google.cloud.orgpolicy.v2;
  *
  *
  * <pre>
- * Defines a Cloud Organization `PolicySpec` which is used to specify
- * `Constraints` for configurations of Cloud Platform resources.
+ * Defines a Google Cloud policy specification which is used to specify
+ * constraints for configurations of Google Cloud resources.
  * </pre>
  *
  * Protobuf type {@code google.cloud.orgpolicy.v2.PolicySpec}
@@ -73,8 +73,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of values to be used for this PolicyRule. This field can be set
-     * only in Policies for list constraints.
+     * List of values to be used for this policy rule. This field can be set
+     * only in policies for list constraints.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
@@ -86,8 +86,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of values to be used for this PolicyRule. This field can be set
-     * only in Policies for list constraints.
+     * List of values to be used for this policy rule. This field can be set
+     * only in policies for list constraints.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
@@ -99,8 +99,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of values to be used for this PolicyRule. This field can be set
-     * only in Policies for list constraints.
+     * List of values to be used for this policy rule. This field can be set
+     * only in policies for list constraints.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
@@ -112,7 +112,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Setting this to true means that all values are allowed. This field can
-     * be set only in Policies for list constraints.
+     * be set only in policies for list constraints.
      * </pre>
      *
      * <code>bool allow_all = 2;</code>
@@ -125,7 +125,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Setting this to true means that all values are allowed. This field can
-     * be set only in Policies for list constraints.
+     * be set only in policies for list constraints.
      * </pre>
      *
      * <code>bool allow_all = 2;</code>
@@ -139,7 +139,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Setting this to true means that all values are denied. This field can
-     * be set only in Policies for list constraints.
+     * be set only in policies for list constraints.
      * </pre>
      *
      * <code>bool deny_all = 3;</code>
@@ -152,7 +152,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Setting this to true means that all values are denied. This field can
-     * be set only in Policies for list constraints.
+     * be set only in policies for list constraints.
      * </pre>
      *
      * <code>bool deny_all = 3;</code>
@@ -165,9 +165,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If `true`, then the `Policy` is enforced. If `false`, then any
+     * If `true`, then the policy is enforced. If `false`, then any
      * configuration is acceptable.
-     * This field can be set only in Policies for boolean constraints.
+     * This field can be set only in policies for boolean constraints.
      * </pre>
      *
      * <code>bool enforce = 4;</code>
@@ -179,9 +179,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If `true`, then the `Policy` is enforced. If `false`, then any
+     * If `true`, then the policy is enforced. If `false`, then any
      * configuration is acceptable.
-     * This field can be set only in Policies for boolean constraints.
+     * This field can be set only in policies for boolean constraints.
      * </pre>
      *
      * <code>bool enforce = 4;</code>
@@ -414,7 +414,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A message that holds specific allowed and denied values.
-     * This message can define specific values and subtrees of Cloud Resource
+     * This message can define specific values and subtrees of the Resource
      * Manager resource hierarchy (`Organizations`, `Folders`, `Projects`) that
      * are allowed or denied. This is achieved by using the `under:` and
      * optional `is:` prefixes.
@@ -423,9 +423,11 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * if the value contains a ":". Values prefixed with "is:" are treated the
      * same as values with no prefix.
      * Ancestry subtrees must be in one of the following formats:
-     *     - "projects/&lt;project-id&gt;", e.g. "projects/tokyo-rain-123"
-     *     - "folders/&lt;folder-id&gt;", e.g. "folders/1234"
-     *     - "organizations/&lt;organization-id&gt;", e.g. "organizations/1234"
+     *
+     * - `projects/&lt;project-id&gt;` (for example, `projects/tokyo-rain-123`)
+     * - `folders/&lt;folder-id&gt;` (for example, `folders/1234`)
+     * - `organizations/&lt;organization-id&gt;` (for example, `organizations/1234`)
+     *
      * The `supports_under` field of the associated `Constraint`  defines
      * whether ancestry prefixes can be used.
      * </pre>
@@ -787,7 +789,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A message that holds specific allowed and denied values.
-       * This message can define specific values and subtrees of Cloud Resource
+       * This message can define specific values and subtrees of the Resource
        * Manager resource hierarchy (`Organizations`, `Folders`, `Projects`) that
        * are allowed or denied. This is achieved by using the `under:` and
        * optional `is:` prefixes.
@@ -796,9 +798,11 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        * if the value contains a ":". Values prefixed with "is:" are treated the
        * same as values with no prefix.
        * Ancestry subtrees must be in one of the following formats:
-       *     - "projects/&lt;project-id&gt;", e.g. "projects/tokyo-rain-123"
-       *     - "folders/&lt;folder-id&gt;", e.g. "folders/1234"
-       *     - "organizations/&lt;organization-id&gt;", e.g. "organizations/1234"
+       *
+       * - `projects/&lt;project-id&gt;` (for example, `projects/tokyo-rain-123`)
+       * - `folders/&lt;folder-id&gt;` (for example, `folders/1234`)
+       * - `organizations/&lt;organization-id&gt;` (for example, `organizations/1234`)
+       *
        * The `supports_under` field of the associated `Constraint`  defines
        * whether ancestry prefixes can be used.
        * </pre>
@@ -1493,8 +1497,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of values to be used for this PolicyRule. This field can be set
-     * only in Policies for list constraints.
+     * List of values to be used for this policy rule. This field can be set
+     * only in policies for list constraints.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
@@ -1509,8 +1513,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of values to be used for this PolicyRule. This field can be set
-     * only in Policies for list constraints.
+     * List of values to be used for this policy rule. This field can be set
+     * only in policies for list constraints.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
@@ -1528,8 +1532,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of values to be used for this PolicyRule. This field can be set
-     * only in Policies for list constraints.
+     * List of values to be used for this policy rule. This field can be set
+     * only in policies for list constraints.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
@@ -1549,7 +1553,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Setting this to true means that all values are allowed. This field can
-     * be set only in Policies for list constraints.
+     * be set only in policies for list constraints.
      * </pre>
      *
      * <code>bool allow_all = 2;</code>
@@ -1565,7 +1569,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Setting this to true means that all values are allowed. This field can
-     * be set only in Policies for list constraints.
+     * be set only in policies for list constraints.
      * </pre>
      *
      * <code>bool allow_all = 2;</code>
@@ -1586,7 +1590,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Setting this to true means that all values are denied. This field can
-     * be set only in Policies for list constraints.
+     * be set only in policies for list constraints.
      * </pre>
      *
      * <code>bool deny_all = 3;</code>
@@ -1602,7 +1606,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Setting this to true means that all values are denied. This field can
-     * be set only in Policies for list constraints.
+     * be set only in policies for list constraints.
      * </pre>
      *
      * <code>bool deny_all = 3;</code>
@@ -1622,9 +1626,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If `true`, then the `Policy` is enforced. If `false`, then any
+     * If `true`, then the policy is enforced. If `false`, then any
      * configuration is acceptable.
-     * This field can be set only in Policies for boolean constraints.
+     * This field can be set only in policies for boolean constraints.
      * </pre>
      *
      * <code>bool enforce = 4;</code>
@@ -1639,9 +1643,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If `true`, then the `Policy` is enforced. If `false`, then any
+     * If `true`, then the policy is enforced. If `false`, then any
      * configuration is acceptable.
-     * This field can be set only in Policies for boolean constraints.
+     * This field can be set only in policies for boolean constraints.
      * </pre>
      *
      * <code>bool enforce = 4;</code>
@@ -2246,8 +2250,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
@@ -2262,8 +2266,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
@@ -2290,8 +2294,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
@@ -2314,8 +2318,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
@@ -2336,8 +2340,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
@@ -2372,8 +2376,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
@@ -2398,8 +2402,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
@@ -2412,8 +2416,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
@@ -2435,8 +2439,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.StringValues values = 1;</code>
@@ -2472,7 +2476,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Setting this to true means that all values are allowed. This field can
-       * be set only in Policies for list constraints.
+       * be set only in policies for list constraints.
        * </pre>
        *
        * <code>bool allow_all = 2;</code>
@@ -2487,7 +2491,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Setting this to true means that all values are allowed. This field can
-       * be set only in Policies for list constraints.
+       * be set only in policies for list constraints.
        * </pre>
        *
        * <code>bool allow_all = 2;</code>
@@ -2505,7 +2509,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Setting this to true means that all values are allowed. This field can
-       * be set only in Policies for list constraints.
+       * be set only in policies for list constraints.
        * </pre>
        *
        * <code>bool allow_all = 2;</code>
@@ -2525,7 +2529,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Setting this to true means that all values are allowed. This field can
-       * be set only in Policies for list constraints.
+       * be set only in policies for list constraints.
        * </pre>
        *
        * <code>bool allow_all = 2;</code>
@@ -2546,7 +2550,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Setting this to true means that all values are denied. This field can
-       * be set only in Policies for list constraints.
+       * be set only in policies for list constraints.
        * </pre>
        *
        * <code>bool deny_all = 3;</code>
@@ -2561,7 +2565,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Setting this to true means that all values are denied. This field can
-       * be set only in Policies for list constraints.
+       * be set only in policies for list constraints.
        * </pre>
        *
        * <code>bool deny_all = 3;</code>
@@ -2579,7 +2583,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Setting this to true means that all values are denied. This field can
-       * be set only in Policies for list constraints.
+       * be set only in policies for list constraints.
        * </pre>
        *
        * <code>bool deny_all = 3;</code>
@@ -2599,7 +2603,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Setting this to true means that all values are denied. This field can
-       * be set only in Policies for list constraints.
+       * be set only in policies for list constraints.
        * </pre>
        *
        * <code>bool deny_all = 3;</code>
@@ -2619,9 +2623,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If `true`, then the `Policy` is enforced. If `false`, then any
+       * If `true`, then the policy is enforced. If `false`, then any
        * configuration is acceptable.
-       * This field can be set only in Policies for boolean constraints.
+       * This field can be set only in policies for boolean constraints.
        * </pre>
        *
        * <code>bool enforce = 4;</code>
@@ -2635,9 +2639,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If `true`, then the `Policy` is enforced. If `false`, then any
+       * If `true`, then the policy is enforced. If `false`, then any
        * configuration is acceptable.
-       * This field can be set only in Policies for boolean constraints.
+       * This field can be set only in policies for boolean constraints.
        * </pre>
        *
        * <code>bool enforce = 4;</code>
@@ -2654,9 +2658,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If `true`, then the `Policy` is enforced. If `false`, then any
+       * If `true`, then the policy is enforced. If `false`, then any
        * configuration is acceptable.
-       * This field can be set only in Policies for boolean constraints.
+       * This field can be set only in policies for boolean constraints.
        * </pre>
        *
        * <code>bool enforce = 4;</code>
@@ -2675,9 +2679,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If `true`, then the `Policy` is enforced. If `false`, then any
+       * If `true`, then the policy is enforced. If `false`, then any
        * configuration is acceptable.
-       * This field can be set only in Policies for boolean constraints.
+       * This field can be set only in policies for boolean constraints.
        * </pre>
        *
        * <code>bool enforce = 4;</code>
@@ -3038,16 +3042,16 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An opaque tag indicating the current version of the `Policy`, used for
+   * An opaque tag indicating the current version of the policySpec, used for
    * concurrency control.
    *
    * This field is ignored if used in a `CreatePolicy` request.
    *
-   * When the `Policy` is returned from either a `GetPolicy` or a
+   * When the policy is returned from either a `GetPolicy` or a
    * `ListPolicies` request, this `etag` indicates the version of the
-   * current `Policy` to use when executing a read-modify-write loop.
+   * current policySpec to use when executing a read-modify-write loop.
    *
-   * When the `Policy` is returned from a `GetEffectivePolicy` request, the
+   * When the policy is returned from a `GetEffectivePolicy` request, the
    * `etag` will be unset.
    * </pre>
    *
@@ -3071,16 +3075,16 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An opaque tag indicating the current version of the `Policy`, used for
+   * An opaque tag indicating the current version of the policySpec, used for
    * concurrency control.
    *
    * This field is ignored if used in a `CreatePolicy` request.
    *
-   * When the `Policy` is returned from either a `GetPolicy` or a
+   * When the policy is returned from either a `GetPolicy` or a
    * `ListPolicies` request, this `etag` indicates the version of the
-   * current `Policy` to use when executing a read-modify-write loop.
+   * current policySpec to use when executing a read-modify-write loop.
    *
-   * When the `Policy` is returned from a `GetEffectivePolicy` request, the
+   * When the policy is returned from a `GetEffectivePolicy` request, the
    * `etag` will be unset.
    * </pre>
    *
@@ -3109,7 +3113,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The time stamp this was previously updated. This
    * represents the last time a call to `CreatePolicy` or `UpdatePolicy` was
-   * made for that `Policy`.
+   * made for that policy.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3127,7 +3131,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The time stamp this was previously updated. This
    * represents the last time a call to `CreatePolicy` or `UpdatePolicy` was
-   * made for that `Policy`.
+   * made for that policy.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3145,7 +3149,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The time stamp this was previously updated. This
    * represents the last time a call to `CreatePolicy` or `UpdatePolicy` was
-   * made for that `Policy`.
+   * made for that policy.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3164,13 +3168,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Up to 10 PolicyRules are allowed.
+   * In policies for boolean constraints, the following requirements apply:
    *
-   * In Policies for boolean constraints, the following requirements apply:
-   *   - There must be one and only one PolicyRule where condition is unset.
-   *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-   *     of the PolicyRule without a condition.
-   *   - During policy evaluation, PolicyRules with conditions that are
+   *   - There must be one and only one policy rule where condition is unset.
+   *   - Boolean policy rules with conditions must set `enforced` to the
+   *     opposite of the policy rule without a condition.
+   *   - During policy evaluation, policy rules with conditions that are
    *     true for a target resource take precedence.
    * </pre>
    *
@@ -3184,13 +3187,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Up to 10 PolicyRules are allowed.
+   * In policies for boolean constraints, the following requirements apply:
    *
-   * In Policies for boolean constraints, the following requirements apply:
-   *   - There must be one and only one PolicyRule where condition is unset.
-   *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-   *     of the PolicyRule without a condition.
-   *   - During policy evaluation, PolicyRules with conditions that are
+   *   - There must be one and only one policy rule where condition is unset.
+   *   - Boolean policy rules with conditions must set `enforced` to the
+   *     opposite of the policy rule without a condition.
+   *   - During policy evaluation, policy rules with conditions that are
    *     true for a target resource take precedence.
    * </pre>
    *
@@ -3205,13 +3207,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Up to 10 PolicyRules are allowed.
+   * In policies for boolean constraints, the following requirements apply:
    *
-   * In Policies for boolean constraints, the following requirements apply:
-   *   - There must be one and only one PolicyRule where condition is unset.
-   *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-   *     of the PolicyRule without a condition.
-   *   - During policy evaluation, PolicyRules with conditions that are
+   *   - There must be one and only one policy rule where condition is unset.
+   *   - Boolean policy rules with conditions must set `enforced` to the
+   *     opposite of the policy rule without a condition.
+   *   - During policy evaluation, policy rules with conditions that are
    *     true for a target resource take precedence.
    * </pre>
    *
@@ -3225,13 +3226,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Up to 10 PolicyRules are allowed.
+   * In policies for boolean constraints, the following requirements apply:
    *
-   * In Policies for boolean constraints, the following requirements apply:
-   *   - There must be one and only one PolicyRule where condition is unset.
-   *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-   *     of the PolicyRule without a condition.
-   *   - During policy evaluation, PolicyRules with conditions that are
+   *   - There must be one and only one policy rule where condition is unset.
+   *   - Boolean policy rules with conditions must set `enforced` to the
+   *     opposite of the policy rule without a condition.
+   *   - During policy evaluation, policy rules with conditions that are
    *     true for a target resource take precedence.
    * </pre>
    *
@@ -3245,13 +3245,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Up to 10 PolicyRules are allowed.
+   * In policies for boolean constraints, the following requirements apply:
    *
-   * In Policies for boolean constraints, the following requirements apply:
-   *   - There must be one and only one PolicyRule where condition is unset.
-   *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-   *     of the PolicyRule without a condition.
-   *   - During policy evaluation, PolicyRules with conditions that are
+   *   - There must be one and only one policy rule where condition is unset.
+   *   - Boolean policy rules with conditions must set `enforced` to the
+   *     opposite of the policy rule without a condition.
+   *   - During policy evaluation, policy rules with conditions that are
    *     true for a target resource take precedence.
    * </pre>
    *
@@ -3268,13 +3267,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Determines the inheritance behavior for this `Policy`.
+   * Determines the inheritance behavior for this policy.
    *
-   * If `inherit_from_parent` is true, PolicyRules set higher up in the
+   * If `inherit_from_parent` is true, policy rules set higher up in the
    * hierarchy (up to the closest root) are inherited and present in the
    * effective policy. If it is false, then no rules are inherited, and this
-   * Policy becomes the new root for evaluation.
-   * This field can be set only for Policies which configure list constraints.
+   * policy becomes the new root for evaluation.
+   * This field can be set only for policies which configure list constraints.
    * </pre>
    *
    * <code>bool inherit_from_parent = 4;</code>
@@ -3293,7 +3292,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Ignores policies set above this resource and restores the
-   * `constraint_default` enforcement behavior of the specific `Constraint` at
+   * `constraint_default` enforcement behavior of the specific constraint at
    * this resource.
    * This field can be set in policies for either list or boolean
    * constraints. If set, `rules` must be empty and `inherit_from_parent`
@@ -3514,8 +3513,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a Cloud Organization `PolicySpec` which is used to specify
-   * `Constraints` for configurations of Cloud Platform resources.
+   * Defines a Google Cloud policy specification which is used to specify
+   * constraints for configurations of Google Cloud resources.
    * </pre>
    *
    * Protobuf type {@code google.cloud.orgpolicy.v2.PolicySpec}
@@ -3802,16 +3801,16 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque tag indicating the current version of the `Policy`, used for
+     * An opaque tag indicating the current version of the policySpec, used for
      * concurrency control.
      *
      * This field is ignored if used in a `CreatePolicy` request.
      *
-     * When the `Policy` is returned from either a `GetPolicy` or a
+     * When the policy is returned from either a `GetPolicy` or a
      * `ListPolicies` request, this `etag` indicates the version of the
-     * current `Policy` to use when executing a read-modify-write loop.
+     * current policySpec to use when executing a read-modify-write loop.
      *
-     * When the `Policy` is returned from a `GetEffectivePolicy` request, the
+     * When the policy is returned from a `GetEffectivePolicy` request, the
      * `etag` will be unset.
      * </pre>
      *
@@ -3834,16 +3833,16 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque tag indicating the current version of the `Policy`, used for
+     * An opaque tag indicating the current version of the policySpec, used for
      * concurrency control.
      *
      * This field is ignored if used in a `CreatePolicy` request.
      *
-     * When the `Policy` is returned from either a `GetPolicy` or a
+     * When the policy is returned from either a `GetPolicy` or a
      * `ListPolicies` request, this `etag` indicates the version of the
-     * current `Policy` to use when executing a read-modify-write loop.
+     * current policySpec to use when executing a read-modify-write loop.
      *
-     * When the `Policy` is returned from a `GetEffectivePolicy` request, the
+     * When the policy is returned from a `GetEffectivePolicy` request, the
      * `etag` will be unset.
      * </pre>
      *
@@ -3866,16 +3865,16 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque tag indicating the current version of the `Policy`, used for
+     * An opaque tag indicating the current version of the policySpec, used for
      * concurrency control.
      *
      * This field is ignored if used in a `CreatePolicy` request.
      *
-     * When the `Policy` is returned from either a `GetPolicy` or a
+     * When the policy is returned from either a `GetPolicy` or a
      * `ListPolicies` request, this `etag` indicates the version of the
-     * current `Policy` to use when executing a read-modify-write loop.
+     * current policySpec to use when executing a read-modify-write loop.
      *
-     * When the `Policy` is returned from a `GetEffectivePolicy` request, the
+     * When the policy is returned from a `GetEffectivePolicy` request, the
      * `etag` will be unset.
      * </pre>
      *
@@ -3897,16 +3896,16 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque tag indicating the current version of the `Policy`, used for
+     * An opaque tag indicating the current version of the policySpec, used for
      * concurrency control.
      *
      * This field is ignored if used in a `CreatePolicy` request.
      *
-     * When the `Policy` is returned from either a `GetPolicy` or a
+     * When the policy is returned from either a `GetPolicy` or a
      * `ListPolicies` request, this `etag` indicates the version of the
-     * current `Policy` to use when executing a read-modify-write loop.
+     * current policySpec to use when executing a read-modify-write loop.
      *
-     * When the `Policy` is returned from a `GetEffectivePolicy` request, the
+     * When the policy is returned from a `GetEffectivePolicy` request, the
      * `etag` will be unset.
      * </pre>
      *
@@ -3924,16 +3923,16 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque tag indicating the current version of the `Policy`, used for
+     * An opaque tag indicating the current version of the policySpec, used for
      * concurrency control.
      *
      * This field is ignored if used in a `CreatePolicy` request.
      *
-     * When the `Policy` is returned from either a `GetPolicy` or a
+     * When the policy is returned from either a `GetPolicy` or a
      * `ListPolicies` request, this `etag` indicates the version of the
-     * current `Policy` to use when executing a read-modify-write loop.
+     * current policySpec to use when executing a read-modify-write loop.
      *
-     * When the `Policy` is returned from a `GetEffectivePolicy` request, the
+     * When the policy is returned from a `GetEffectivePolicy` request, the
      * `etag` will be unset.
      * </pre>
      *
@@ -3965,7 +3964,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The time stamp this was previously updated. This
      * represents the last time a call to `CreatePolicy` or `UpdatePolicy` was
-     * made for that `Policy`.
+     * made for that policy.
      * </pre>
      *
      * <code>
@@ -3983,7 +3982,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The time stamp this was previously updated. This
      * represents the last time a call to `CreatePolicy` or `UpdatePolicy` was
-     * made for that `Policy`.
+     * made for that policy.
      * </pre>
      *
      * <code>
@@ -4007,7 +4006,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The time stamp this was previously updated. This
      * represents the last time a call to `CreatePolicy` or `UpdatePolicy` was
-     * made for that `Policy`.
+     * made for that policy.
      * </pre>
      *
      * <code>
@@ -4033,7 +4032,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The time stamp this was previously updated. This
      * represents the last time a call to `CreatePolicy` or `UpdatePolicy` was
-     * made for that `Policy`.
+     * made for that policy.
      * </pre>
      *
      * <code>
@@ -4056,7 +4055,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The time stamp this was previously updated. This
      * represents the last time a call to `CreatePolicy` or `UpdatePolicy` was
-     * made for that `Policy`.
+     * made for that policy.
      * </pre>
      *
      * <code>
@@ -4085,7 +4084,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The time stamp this was previously updated. This
      * represents the last time a call to `CreatePolicy` or `UpdatePolicy` was
-     * made for that `Policy`.
+     * made for that policy.
      * </pre>
      *
      * <code>
@@ -4108,7 +4107,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The time stamp this was previously updated. This
      * represents the last time a call to `CreatePolicy` or `UpdatePolicy` was
-     * made for that `Policy`.
+     * made for that policy.
      * </pre>
      *
      * <code>
@@ -4126,7 +4125,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The time stamp this was previously updated. This
      * represents the last time a call to `CreatePolicy` or `UpdatePolicy` was
-     * made for that `Policy`.
+     * made for that policy.
      * </pre>
      *
      * <code>
@@ -4148,7 +4147,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The time stamp this was previously updated. This
      * represents the last time a call to `CreatePolicy` or `UpdatePolicy` was
-     * made for that `Policy`.
+     * made for that policy.
      * </pre>
      *
      * <code>
@@ -4193,13 +4192,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4216,13 +4214,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4239,13 +4236,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4262,13 +4258,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4291,13 +4286,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4318,13 +4312,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4347,13 +4340,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4376,13 +4368,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4403,13 +4394,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4430,13 +4420,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4457,13 +4446,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4483,13 +4471,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4509,13 +4496,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4528,13 +4514,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4552,13 +4537,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4576,13 +4560,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4596,13 +4579,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4617,13 +4599,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Up to 10 PolicyRules are allowed.
+     * In policies for boolean constraints, the following requirements apply:
      *
-     * In Policies for boolean constraints, the following requirements apply:
-     *   - There must be one and only one PolicyRule where condition is unset.
-     *   - BooleanPolicyRules with conditions must set `enforced` to the opposite
-     *     of the PolicyRule without a condition.
-     *   - During policy evaluation, PolicyRules with conditions that are
+     *   - There must be one and only one policy rule where condition is unset.
+     *   - Boolean policy rules with conditions must set `enforced` to the
+     *     opposite of the policy rule without a condition.
+     *   - During policy evaluation, policy rules with conditions that are
      *     true for a target resource take precedence.
      * </pre>
      *
@@ -4656,13 +4637,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Determines the inheritance behavior for this `Policy`.
+     * Determines the inheritance behavior for this policy.
      *
-     * If `inherit_from_parent` is true, PolicyRules set higher up in the
+     * If `inherit_from_parent` is true, policy rules set higher up in the
      * hierarchy (up to the closest root) are inherited and present in the
      * effective policy. If it is false, then no rules are inherited, and this
-     * Policy becomes the new root for evaluation.
-     * This field can be set only for Policies which configure list constraints.
+     * policy becomes the new root for evaluation.
+     * This field can be set only for policies which configure list constraints.
      * </pre>
      *
      * <code>bool inherit_from_parent = 4;</code>
@@ -4677,13 +4658,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Determines the inheritance behavior for this `Policy`.
+     * Determines the inheritance behavior for this policy.
      *
-     * If `inherit_from_parent` is true, PolicyRules set higher up in the
+     * If `inherit_from_parent` is true, policy rules set higher up in the
      * hierarchy (up to the closest root) are inherited and present in the
      * effective policy. If it is false, then no rules are inherited, and this
-     * Policy becomes the new root for evaluation.
-     * This field can be set only for Policies which configure list constraints.
+     * policy becomes the new root for evaluation.
+     * This field can be set only for policies which configure list constraints.
      * </pre>
      *
      * <code>bool inherit_from_parent = 4;</code>
@@ -4702,13 +4683,13 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Determines the inheritance behavior for this `Policy`.
+     * Determines the inheritance behavior for this policy.
      *
-     * If `inherit_from_parent` is true, PolicyRules set higher up in the
+     * If `inherit_from_parent` is true, policy rules set higher up in the
      * hierarchy (up to the closest root) are inherited and present in the
      * effective policy. If it is false, then no rules are inherited, and this
-     * Policy becomes the new root for evaluation.
-     * This field can be set only for Policies which configure list constraints.
+     * policy becomes the new root for evaluation.
+     * This field can be set only for policies which configure list constraints.
      * </pre>
      *
      * <code>bool inherit_from_parent = 4;</code>
@@ -4728,7 +4709,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Ignores policies set above this resource and restores the
-     * `constraint_default` enforcement behavior of the specific `Constraint` at
+     * `constraint_default` enforcement behavior of the specific constraint at
      * this resource.
      * This field can be set in policies for either list or boolean
      * constraints. If set, `rules` must be empty and `inherit_from_parent`
@@ -4748,7 +4729,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Ignores policies set above this resource and restores the
-     * `constraint_default` enforcement behavior of the specific `Constraint` at
+     * `constraint_default` enforcement behavior of the specific constraint at
      * this resource.
      * This field can be set in policies for either list or boolean
      * constraints. If set, `rules` must be empty and `inherit_from_parent`
@@ -4772,7 +4753,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Ignores policies set above this resource and restores the
-     * `constraint_default` enforcement behavior of the specific `Constraint` at
+     * `constraint_default` enforcement behavior of the specific constraint at
      * this resource.
      * This field can be set in policies for either list or boolean
      * constraints. If set, `rules` must be empty and `inherit_from_parent`

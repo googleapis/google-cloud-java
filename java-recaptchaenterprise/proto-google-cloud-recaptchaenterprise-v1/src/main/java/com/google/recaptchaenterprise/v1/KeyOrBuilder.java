@@ -27,11 +27,11 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * The resource name for the Key in the format
+   * Identifier. The resource name for the Key in the format
    * `projects/{project}/keys/{key}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -40,11 +40,11 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * The resource name for the Key in the format
+   * Identifier. The resource name for the Key in the format
    * `projects/{project}/keys/{key}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

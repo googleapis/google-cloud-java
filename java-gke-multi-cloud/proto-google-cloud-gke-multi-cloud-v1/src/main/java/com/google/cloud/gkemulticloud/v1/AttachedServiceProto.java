@@ -67,6 +67,14 @@ public final class AttachedServiceProto {
       internal_static_google_cloud_gkemulticloud_v1_GetAttachedServerConfigRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_GetAttachedServerConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_GenerateAttachedClusterAgentTokenRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_GenerateAttachedClusterAgentTokenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_GenerateAttachedClusterAgentTokenResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_GenerateAttachedClusterAgentTokenResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -82,107 +90,131 @@ public final class AttachedServiceProto {
           + "gle/api/client.proto\032\037google/api/field_b"
           + "ehavior.proto\032\031google/api/resource.proto"
           + "\0326google/cloud/gkemulticloud/v1/attached"
-          + "_resources.proto\032#google/longrunning/ope"
-          + "rations.proto\032 google/protobuf/field_mas"
-          + "k.proto\"\271\001\n-GenerateAttachedClusterInsta"
-          + "llManifestRequest\022E\n\006parent\030\001 \001(\tB5\342A\001\002\372"
-          + "A.\022,gkemulticloud.googleapis.com/Attache"
-          + "dCluster\022!\n\023attached_cluster_id\030\002 \001(\tB\004\342"
-          + "A\001\002\022\036\n\020platform_version\030\003 \001(\tB\004\342A\001\002\"B\n.G"
-          + "enerateAttachedClusterInstallManifestRes"
-          + "ponse\022\020\n\010manifest\030\001 \001(\t\"\357\001\n\034CreateAttach"
-          + "edClusterRequest\022E\n\006parent\030\001 \001(\tB5\342A\001\002\372A"
-          + ".\022,gkemulticloud.googleapis.com/Attached"
-          + "Cluster\022N\n\020attached_cluster\030\002 \001(\0132..goog"
-          + "le.cloud.gkemulticloud.v1.AttachedCluste"
-          + "rB\004\342A\001\002\022!\n\023attached_cluster_id\030\003 \001(\tB\004\342A"
-          + "\001\002\022\025\n\rvalidate_only\030\004 \001(\010\"\330\001\n\034ImportAtta"
-          + "chedClusterRequest\022E\n\006parent\030\001 \001(\tB5\342A\001\002"
-          + "\372A.\022,gkemulticloud.googleapis.com/Attach"
-          + "edCluster\022\025\n\rvalidate_only\030\002 \001(\010\022\036\n\020flee"
-          + "t_membership\030\003 \001(\tB\004\342A\001\002\022\036\n\020platform_ver"
-          + "sion\030\004 \001(\tB\004\342A\001\002\022\032\n\014distribution\030\005 \001(\tB\004"
-          + "\342A\001\002\"\274\001\n\034UpdateAttachedClusterRequest\022N\n"
-          + "\020attached_cluster\030\001 \001(\0132..google.cloud.g"
-          + "kemulticloud.v1.AttachedClusterB\004\342A\001\002\022\025\n"
-          + "\rvalidate_only\030\002 \001(\010\0225\n\013update_mask\030\003 \001("
-          + "\0132\032.google.protobuf.FieldMaskB\004\342A\001\002\"`\n\031G"
-          + "etAttachedClusterRequest\022C\n\004name\030\001 \001(\tB5"
-          + "\342A\001\002\372A.\n,gkemulticloud.googleapis.com/At"
-          + "tachedCluster\"\213\001\n\033ListAttachedClustersRe"
-          + "quest\022E\n\006parent\030\001 \001(\tB5\342A\001\002\372A.\022,gkemulti"
-          + "cloud.googleapis.com/AttachedCluster\022\021\n\t"
-          + "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\202\001\n\034"
-          + "ListAttachedClustersResponse\022I\n\021attached"
-          + "_clusters\030\001 \003(\0132..google.cloud.gkemultic"
-          + "loud.v1.AttachedCluster\022\027\n\017next_page_tok"
-          + "en\030\002 \001(\t\"\266\001\n\034DeleteAttachedClusterReques"
-          + "t\022C\n\004name\030\001 \001(\tB5\342A\001\002\372A.\n,gkemulticloud."
-          + "googleapis.com/AttachedCluster\022\025\n\rvalida"
-          + "te_only\030\002 \001(\010\022\025\n\rallow_missing\030\003 \001(\010\022\025\n\r"
-          + "ignore_errors\030\005 \001(\010\022\014\n\004etag\030\004 \001(\t\"j\n\036Get"
-          + "AttachedServerConfigRequest\022H\n\004name\030\001 \001("
-          + "\tB:\342A\001\002\372A3\n1gkemulticloud.googleapis.com"
-          + "/AttachedServerConfig2\265\020\n\020AttachedCluste"
-          + "rs\022\231\002\n\025CreateAttachedCluster\022;.google.cl"
-          + "oud.gkemulticloud.v1.CreateAttachedClust"
-          + "erRequest\032\035.google.longrunning.Operation"
-          + "\"\243\001\312A$\n\017AttachedCluster\022\021OperationMetada"
-          + "ta\332A+parent,attached_cluster,attached_cl"
-          + "uster_id\202\323\344\223\002H\"4/v1/{parent=projects/*/l"
-          + "ocations/*}/attachedClusters:\020attached_c"
-          + "luster\022\233\002\n\025UpdateAttachedCluster\022;.googl"
-          + "e.cloud.gkemulticloud.v1.UpdateAttachedC"
-          + "lusterRequest\032\035.google.longrunning.Opera"
-          + "tion\"\245\001\312A$\n\017AttachedCluster\022\021OperationMe"
-          + "tadata\332A\034attached_cluster,update_mask\202\323\344"
-          + "\223\002Y2E/v1/{attached_cluster.name=projects"
-          + "/*/locations/*/attachedClusters/*}:\020atta"
-          + "ched_cluster\022\375\001\n\025ImportAttachedCluster\022;"
-          + ".google.cloud.gkemulticloud.v1.ImportAtt"
-          + "achedClusterRequest\032\035.google.longrunning"
-          + ".Operation\"\207\001\312A$\n\017AttachedCluster\022\021Opera"
-          + "tionMetadata\332A\027parent,fleet_membership\202\323"
-          + "\344\223\002@\";/v1/{parent=projects/*/locations/*"
-          + "}/attachedClusters:import:\001*\022\303\001\n\022GetAtta"
-          + "chedCluster\0228.google.cloud.gkemulticloud"
-          + ".v1.GetAttachedClusterRequest\032..google.c"
-          + "loud.gkemulticloud.v1.AttachedCluster\"C\332"
-          + "A\004name\202\323\344\223\0026\0224/v1/{name=projects/*/locat"
-          + "ions/*/attachedClusters/*}\022\326\001\n\024ListAttac"
-          + "hedClusters\022:.google.cloud.gkemulticloud"
-          + ".v1.ListAttachedClustersRequest\032;.google"
-          + ".cloud.gkemulticloud.v1.ListAttachedClus"
-          + "tersResponse\"E\332A\006parent\202\323\344\223\0026\0224/v1/{pare"
-          + "nt=projects/*/locations/*}/attachedClust"
-          + "ers\022\345\001\n\025DeleteAttachedCluster\022;.google.c"
-          + "loud.gkemulticloud.v1.DeleteAttachedClus"
-          + "terRequest\032\035.google.longrunning.Operatio"
-          + "n\"p\312A*\n\025google.protobuf.Empty\022\021Operation"
-          + "Metadata\332A\004name\202\323\344\223\0026*4/v1/{name=project"
-          + "s/*/locations/*/attachedClusters/*}\022\324\001\n\027"
-          + "GetAttachedServerConfig\022=.google.cloud.g"
-          + "kemulticloud.v1.GetAttachedServerConfigR"
-          + "equest\0323.google.cloud.gkemulticloud.v1.A"
-          + "ttachedServerConfig\"E\332A\004name\202\323\344\223\0028\0226/v1/"
-          + "{name=projects/*/locations/*/attachedSer"
-          + "verConfig}\022\266\002\n&GenerateAttachedClusterIn"
-          + "stallManifest\022L.google.cloud.gkemulticlo"
-          + "ud.v1.GenerateAttachedClusterInstallMani"
-          + "festRequest\032M.google.cloud.gkemulticloud"
-          + ".v1.GenerateAttachedClusterInstallManife"
-          + "stResponse\"o\332A\032parent,attached_cluster_i"
-          + "d\202\323\344\223\002L\022J/v1/{parent=projects/*/location"
-          + "s/*}:generateAttachedClusterInstallManif"
-          + "est\032P\312A\034gkemulticloud.googleapis.com\322A.h"
-          + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformB\347\001\n!com.google.cloud.gkemulticloud"
-          + ".v1B\024AttachedServiceProtoP\001ZGcloud.googl"
-          + "e.com/go/gkemulticloud/apiv1/gkemulticlo"
-          + "udpb;gkemulticloudpb\252\002\035Google.Cloud.GkeM"
-          + "ultiCloud.V1\312\002\035Google\\Cloud\\GkeMultiClou"
-          + "d\\V1\352\002 Google::Cloud::GkeMultiCloud::V1b"
-          + "\006proto3"
+          + "_resources.proto\0324google/cloud/gkemultic"
+          + "loud/v1/common_resources.proto\032#google/l"
+          + "ongrunning/operations.proto\032\033google/prot"
+          + "obuf/empty.proto\032 google/protobuf/field_"
+          + "mask.proto\"\211\002\n-GenerateAttachedClusterIn"
+          + "stallManifestRequest\022E\n\006parent\030\001 \001(\tB5\342A"
+          + "\001\002\372A.\022,gkemulticloud.googleapis.com/Atta"
+          + "chedCluster\022!\n\023attached_cluster_id\030\002 \001(\t"
+          + "B\004\342A\001\002\022\036\n\020platform_version\030\003 \001(\tB\004\342A\001\002\022N"
+          + "\n\014proxy_config\030\004 \001(\01322.google.cloud.gkem"
+          + "ulticloud.v1.AttachedProxyConfigB\004\342A\001\001\"B"
+          + "\n.GenerateAttachedClusterInstallManifest"
+          + "Response\022\020\n\010manifest\030\001 \001(\t\"\357\001\n\034CreateAtt"
+          + "achedClusterRequest\022E\n\006parent\030\001 \001(\tB5\342A\001"
+          + "\002\372A.\022,gkemulticloud.googleapis.com/Attac"
+          + "hedCluster\022N\n\020attached_cluster\030\002 \001(\0132..g"
+          + "oogle.cloud.gkemulticloud.v1.AttachedClu"
+          + "sterB\004\342A\001\002\022!\n\023attached_cluster_id\030\003 \001(\tB"
+          + "\004\342A\001\002\022\025\n\rvalidate_only\030\004 \001(\010\"\250\002\n\034ImportA"
+          + "ttachedClusterRequest\022E\n\006parent\030\001 \001(\tB5\342"
+          + "A\001\002\372A.\022,gkemulticloud.googleapis.com/Att"
+          + "achedCluster\022\025\n\rvalidate_only\030\002 \001(\010\022\036\n\020f"
+          + "leet_membership\030\003 \001(\tB\004\342A\001\002\022\036\n\020platform_"
+          + "version\030\004 \001(\tB\004\342A\001\002\022\032\n\014distribution\030\005 \001("
+          + "\tB\004\342A\001\002\022N\n\014proxy_config\030\006 \001(\01322.google.c"
+          + "loud.gkemulticloud.v1.AttachedProxyConfi"
+          + "gB\004\342A\001\001\"\274\001\n\034UpdateAttachedClusterRequest"
+          + "\022N\n\020attached_cluster\030\001 \001(\0132..google.clou"
+          + "d.gkemulticloud.v1.AttachedClusterB\004\342A\001\002"
+          + "\022\025\n\rvalidate_only\030\002 \001(\010\0225\n\013update_mask\030\003"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\002\"`"
+          + "\n\031GetAttachedClusterRequest\022C\n\004name\030\001 \001("
+          + "\tB5\342A\001\002\372A.\n,gkemulticloud.googleapis.com"
+          + "/AttachedCluster\"\213\001\n\033ListAttachedCluster"
+          + "sRequest\022E\n\006parent\030\001 \001(\tB5\342A\001\002\372A.\022,gkemu"
+          + "lticloud.googleapis.com/AttachedCluster\022"
+          + "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\202"
+          + "\001\n\034ListAttachedClustersResponse\022I\n\021attac"
+          + "hed_clusters\030\001 \003(\0132..google.cloud.gkemul"
+          + "ticloud.v1.AttachedCluster\022\027\n\017next_page_"
+          + "token\030\002 \001(\t\"\266\001\n\034DeleteAttachedClusterReq"
+          + "uest\022C\n\004name\030\001 \001(\tB5\342A\001\002\372A.\n,gkemulticlo"
+          + "ud.googleapis.com/AttachedCluster\022\025\n\rval"
+          + "idate_only\030\002 \001(\010\022\025\n\rallow_missing\030\003 \001(\010\022"
+          + "\025\n\rignore_errors\030\005 \001(\010\022\014\n\004etag\030\004 \001(\t\"j\n\036"
+          + "GetAttachedServerConfigRequest\022H\n\004name\030\001"
+          + " \001(\tB:\342A\001\002\372A3\n1gkemulticloud.googleapis."
+          + "com/AttachedServerConfig\"\323\002\n(GenerateAtt"
+          + "achedClusterAgentTokenRequest\022O\n\020attache"
+          + "d_cluster\030\001 \001(\tB5\342A\001\002\372A.\n,gkemulticloud."
+          + "googleapis.com/AttachedCluster\022\033\n\rsubjec"
+          + "t_token\030\002 \001(\tB\004\342A\001\002\022 \n\022subject_token_typ"
+          + "e\030\003 \001(\tB\004\342A\001\002\022\025\n\007version\030\004 \001(\tB\004\342A\001\002\022\030\n\n"
+          + "grant_type\030\006 \001(\tB\004\342A\001\001\022\026\n\010audience\030\007 \001(\t"
+          + "B\004\342A\001\001\022\023\n\005scope\030\010 \001(\tB\004\342A\001\001\022\"\n\024requested"
+          + "_token_type\030\t \001(\tB\004\342A\001\001\022\025\n\007options\030\n \001(\t"
+          + "B\004\342A\001\001\"i\n)GenerateAttachedClusterAgentTo"
+          + "kenResponse\022\024\n\014access_token\030\001 \001(\t\022\022\n\nexp"
+          + "ires_in\030\002 \001(\005\022\022\n\ntoken_type\030\003 \001(\t2\335\022\n\020At"
+          + "tachedClusters\022\231\002\n\025CreateAttachedCluster"
+          + "\022;.google.cloud.gkemulticloud.v1.CreateA"
+          + "ttachedClusterRequest\032\035.google.longrunni"
+          + "ng.Operation\"\243\001\312A$\n\017AttachedCluster\022\021Ope"
+          + "rationMetadata\332A+parent,attached_cluster"
+          + ",attached_cluster_id\202\323\344\223\002H\"4/v1/{parent="
+          + "projects/*/locations/*}/attachedClusters"
+          + ":\020attached_cluster\022\233\002\n\025UpdateAttachedClu"
+          + "ster\022;.google.cloud.gkemulticloud.v1.Upd"
+          + "ateAttachedClusterRequest\032\035.google.longr"
+          + "unning.Operation\"\245\001\312A$\n\017AttachedCluster\022"
+          + "\021OperationMetadata\332A\034attached_cluster,up"
+          + "date_mask\202\323\344\223\002Y2E/v1/{attached_cluster.n"
+          + "ame=projects/*/locations/*/attachedClust"
+          + "ers/*}:\020attached_cluster\022\375\001\n\025ImportAttac"
+          + "hedCluster\022;.google.cloud.gkemulticloud."
+          + "v1.ImportAttachedClusterRequest\032\035.google"
+          + ".longrunning.Operation\"\207\001\312A$\n\017AttachedCl"
+          + "uster\022\021OperationMetadata\332A\027parent,fleet_"
+          + "membership\202\323\344\223\002@\";/v1/{parent=projects/*"
+          + "/locations/*}/attachedClusters:import:\001*"
+          + "\022\303\001\n\022GetAttachedCluster\0228.google.cloud.g"
+          + "kemulticloud.v1.GetAttachedClusterReques"
+          + "t\032..google.cloud.gkemulticloud.v1.Attach"
+          + "edCluster\"C\332A\004name\202\323\344\223\0026\0224/v1/{name=proj"
+          + "ects/*/locations/*/attachedClusters/*}\022\326"
+          + "\001\n\024ListAttachedClusters\022:.google.cloud.g"
+          + "kemulticloud.v1.ListAttachedClustersRequ"
+          + "est\032;.google.cloud.gkemulticloud.v1.List"
+          + "AttachedClustersResponse\"E\332A\006parent\202\323\344\223\002"
+          + "6\0224/v1/{parent=projects/*/locations/*}/a"
+          + "ttachedClusters\022\345\001\n\025DeleteAttachedCluste"
+          + "r\022;.google.cloud.gkemulticloud.v1.Delete"
+          + "AttachedClusterRequest\032\035.google.longrunn"
+          + "ing.Operation\"p\312A*\n\025google.protobuf.Empt"
+          + "y\022\021OperationMetadata\332A\004name\202\323\344\223\0026*4/v1/{"
+          + "name=projects/*/locations/*/attachedClus"
+          + "ters/*}\022\324\001\n\027GetAttachedServerConfig\022=.go"
+          + "ogle.cloud.gkemulticloud.v1.GetAttachedS"
+          + "erverConfigRequest\0323.google.cloud.gkemul"
+          + "ticloud.v1.AttachedServerConfig\"E\332A\004name"
+          + "\202\323\344\223\0028\0226/v1/{name=projects/*/locations/*"
+          + "/attachedServerConfig}\022\266\002\n&GenerateAttac"
+          + "hedClusterInstallManifest\022L.google.cloud"
+          + ".gkemulticloud.v1.GenerateAttachedCluste"
+          + "rInstallManifestRequest\032M.google.cloud.g"
+          + "kemulticloud.v1.GenerateAttachedClusterI"
+          + "nstallManifestResponse\"o\332A\032parent,attach"
+          + "ed_cluster_id\202\323\344\223\002L\022J/v1/{parent=project"
+          + "s/*/locations/*}:generateAttachedCluster"
+          + "InstallManifest\022\245\002\n!GenerateAttachedClus"
+          + "terAgentToken\022G.google.cloud.gkemulticlo"
+          + "ud.v1.GenerateAttachedClusterAgentTokenR"
+          + "equest\032H.google.cloud.gkemulticloud.v1.G"
+          + "enerateAttachedClusterAgentTokenResponse"
+          + "\"m\202\323\344\223\002g\"b/v1/{attached_cluster=projects"
+          + "/*/locations/*/attachedClusters/*}:gener"
+          + "ateAttachedClusterAgentToken:\001*\032P\312A\034gkem"
+          + "ulticloud.googleapis.com\322A.https://www.g"
+          + "oogleapis.com/auth/cloud-platformB\347\001\n!co"
+          + "m.google.cloud.gkemulticloud.v1B\024Attache"
+          + "dServiceProtoP\001ZGcloud.google.com/go/gke"
+          + "multicloud/apiv1/gkemulticloudpb;gkemult"
+          + "icloudpb\252\002\035Google.Cloud.GkeMultiCloud.V1"
+          + "\312\002\035Google\\Cloud\\GkeMultiCloud\\V1\352\002 Googl"
+          + "e::Cloud::GkeMultiCloud::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -193,7 +225,9 @@ public final class AttachedServiceProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.gkemulticloud.v1.AttachedResourcesProto.getDescriptor(),
+              com.google.cloud.gkemulticloud.v1.CommonResourcesProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_cloud_gkemulticloud_v1_GenerateAttachedClusterInstallManifestRequest_descriptor =
@@ -202,7 +236,7 @@ public final class AttachedServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_GenerateAttachedClusterInstallManifestRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "AttachedClusterId", "PlatformVersion",
+              "Parent", "AttachedClusterId", "PlatformVersion", "ProxyConfig",
             });
     internal_static_google_cloud_gkemulticloud_v1_GenerateAttachedClusterInstallManifestResponse_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -226,7 +260,12 @@ public final class AttachedServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_ImportAttachedClusterRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "ValidateOnly", "FleetMembership", "PlatformVersion", "Distribution",
+              "Parent",
+              "ValidateOnly",
+              "FleetMembership",
+              "PlatformVersion",
+              "Distribution",
+              "ProxyConfig",
             });
     internal_static_google_cloud_gkemulticloud_v1_UpdateAttachedClusterRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -276,6 +315,30 @@ public final class AttachedServiceProto {
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_gkemulticloud_v1_GenerateAttachedClusterAgentTokenRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_gkemulticloud_v1_GenerateAttachedClusterAgentTokenRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_GenerateAttachedClusterAgentTokenRequest_descriptor,
+            new java.lang.String[] {
+              "AttachedCluster",
+              "SubjectToken",
+              "SubjectTokenType",
+              "Version",
+              "GrantType",
+              "Audience",
+              "Scope",
+              "RequestedTokenType",
+              "Options",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_GenerateAttachedClusterAgentTokenResponse_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_gkemulticloud_v1_GenerateAttachedClusterAgentTokenResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_GenerateAttachedClusterAgentTokenResponse_descriptor,
+            new java.lang.String[] {
+              "AccessToken", "ExpiresIn", "TokenType",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -292,7 +355,9 @@ public final class AttachedServiceProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.gkemulticloud.v1.AttachedResourcesProto.getDescriptor();
+    com.google.cloud.gkemulticloud.v1.CommonResourcesProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
   }
 

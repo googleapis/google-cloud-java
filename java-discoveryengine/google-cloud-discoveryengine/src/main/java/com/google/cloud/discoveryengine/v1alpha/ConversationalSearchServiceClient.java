@@ -297,6 +297,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
    *           .setSummarySpec(SearchRequest.ContentSearchSpec.SummarySpec.newBuilder().build())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ConverseConversationResponse response =
    *       conversationalSearchServiceClient.converseConversation(request);
@@ -340,6 +341,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
    *           .setSummarySpec(SearchRequest.ContentSearchSpec.SummarySpec.newBuilder().build())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<ConverseConversationResponse> future =
    *       conversationalSearchServiceClient.converseConversationCallable().futureCall(request);

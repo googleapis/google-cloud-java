@@ -589,4 +589,68 @@ public interface SecurityPolicyOrBuilder
    * @return The bytes for type.
    */
   com.google.protobuf.ByteString getTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.SecurityPolicyUserDefinedField>
+      getUserDefinedFieldsList();
+  /**
+   *
+   *
+   * <pre>
+   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SecurityPolicyUserDefinedField getUserDefinedFields(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+   * </code>
+   */
+  int getUserDefinedFieldsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.SecurityPolicyUserDefinedFieldOrBuilder>
+      getUserDefinedFieldsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SecurityPolicyUserDefinedFieldOrBuilder getUserDefinedFieldsOrBuilder(
+      int index);
 }

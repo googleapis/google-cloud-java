@@ -33,7 +33,7 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
- *   BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+ *   BillingAccountName name = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]");
  *   BillingAccount response = cloudBillingClient.getBillingAccount(name);
  * }
  * }</pre>

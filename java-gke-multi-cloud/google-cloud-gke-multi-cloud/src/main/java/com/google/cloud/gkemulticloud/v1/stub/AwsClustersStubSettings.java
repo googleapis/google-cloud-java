@@ -49,7 +49,9 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkemulticloud.v1.AwsCluster;
+import com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys;
 import com.google.cloud.gkemulticloud.v1.AwsNodePool;
+import com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig;
 import com.google.cloud.gkemulticloud.v1.AwsServerConfig;
 import com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest;
@@ -57,14 +59,19 @@ import com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse;
+import com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse;
 import com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest;
+import com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest;
 import com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest;
+import com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest;
 import com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest;
 import com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest;
 import com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse;
 import com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest;
 import com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse;
 import com.google.cloud.gkemulticloud.v1.OperationMetadata;
+import com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest;
 import com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest;
 import com.google.common.collect.ImmutableList;
@@ -134,6 +141,9 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
   private final UnaryCallSettings<DeleteAwsClusterRequest, Operation> deleteAwsClusterSettings;
   private final OperationCallSettings<DeleteAwsClusterRequest, Empty, OperationMetadata>
       deleteAwsClusterOperationSettings;
+  private final UnaryCallSettings<
+          GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+      generateAwsClusterAgentTokenSettings;
   private final UnaryCallSettings<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
       generateAwsAccessTokenSettings;
   private final UnaryCallSettings<CreateAwsNodePoolRequest, Operation> createAwsNodePoolSettings;
@@ -142,6 +152,11 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
   private final UnaryCallSettings<UpdateAwsNodePoolRequest, Operation> updateAwsNodePoolSettings;
   private final OperationCallSettings<UpdateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
       updateAwsNodePoolOperationSettings;
+  private final UnaryCallSettings<RollbackAwsNodePoolUpdateRequest, Operation>
+      rollbackAwsNodePoolUpdateSettings;
+  private final OperationCallSettings<
+          RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+      rollbackAwsNodePoolUpdateOperationSettings;
   private final UnaryCallSettings<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolSettings;
   private final PagedCallSettings<
           ListAwsNodePoolsRequest, ListAwsNodePoolsResponse, ListAwsNodePoolsPagedResponse>
@@ -149,6 +164,10 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
   private final UnaryCallSettings<DeleteAwsNodePoolRequest, Operation> deleteAwsNodePoolSettings;
   private final OperationCallSettings<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
       deleteAwsNodePoolOperationSettings;
+  private final UnaryCallSettings<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+      getAwsOpenIdConfigSettings;
+  private final UnaryCallSettings<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>
+      getAwsJsonWebKeysSettings;
   private final UnaryCallSettings<GetAwsServerConfigRequest, AwsServerConfig>
       getAwsServerConfigSettings;
 
@@ -312,6 +331,13 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     return deleteAwsClusterOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to generateAwsClusterAgentToken. */
+  public UnaryCallSettings<
+          GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+      generateAwsClusterAgentTokenSettings() {
+    return generateAwsClusterAgentTokenSettings;
+  }
+
   /** Returns the object with the settings used for calls to generateAwsAccessToken. */
   public UnaryCallSettings<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
       generateAwsAccessTokenSettings() {
@@ -340,6 +366,18 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     return updateAwsNodePoolOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to rollbackAwsNodePoolUpdate. */
+  public UnaryCallSettings<RollbackAwsNodePoolUpdateRequest, Operation>
+      rollbackAwsNodePoolUpdateSettings() {
+    return rollbackAwsNodePoolUpdateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rollbackAwsNodePoolUpdate. */
+  public OperationCallSettings<RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+      rollbackAwsNodePoolUpdateOperationSettings() {
+    return rollbackAwsNodePoolUpdateOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getAwsNodePool. */
   public UnaryCallSettings<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolSettings() {
     return getAwsNodePoolSettings;
@@ -361,6 +399,17 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
   public OperationCallSettings<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
       deleteAwsNodePoolOperationSettings() {
     return deleteAwsNodePoolOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAwsOpenIdConfig. */
+  public UnaryCallSettings<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+      getAwsOpenIdConfigSettings() {
+    return getAwsOpenIdConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAwsJsonWebKeys. */
+  public UnaryCallSettings<GetAwsJsonWebKeysRequest, AwsJsonWebKeys> getAwsJsonWebKeysSettings() {
+    return getAwsJsonWebKeysSettings;
   }
 
   /** Returns the object with the settings used for calls to getAwsServerConfig. */
@@ -483,6 +532,8 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     listAwsClustersSettings = settingsBuilder.listAwsClustersSettings().build();
     deleteAwsClusterSettings = settingsBuilder.deleteAwsClusterSettings().build();
     deleteAwsClusterOperationSettings = settingsBuilder.deleteAwsClusterOperationSettings().build();
+    generateAwsClusterAgentTokenSettings =
+        settingsBuilder.generateAwsClusterAgentTokenSettings().build();
     generateAwsAccessTokenSettings = settingsBuilder.generateAwsAccessTokenSettings().build();
     createAwsNodePoolSettings = settingsBuilder.createAwsNodePoolSettings().build();
     createAwsNodePoolOperationSettings =
@@ -490,11 +541,16 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     updateAwsNodePoolSettings = settingsBuilder.updateAwsNodePoolSettings().build();
     updateAwsNodePoolOperationSettings =
         settingsBuilder.updateAwsNodePoolOperationSettings().build();
+    rollbackAwsNodePoolUpdateSettings = settingsBuilder.rollbackAwsNodePoolUpdateSettings().build();
+    rollbackAwsNodePoolUpdateOperationSettings =
+        settingsBuilder.rollbackAwsNodePoolUpdateOperationSettings().build();
     getAwsNodePoolSettings = settingsBuilder.getAwsNodePoolSettings().build();
     listAwsNodePoolsSettings = settingsBuilder.listAwsNodePoolsSettings().build();
     deleteAwsNodePoolSettings = settingsBuilder.deleteAwsNodePoolSettings().build();
     deleteAwsNodePoolOperationSettings =
         settingsBuilder.deleteAwsNodePoolOperationSettings().build();
+    getAwsOpenIdConfigSettings = settingsBuilder.getAwsOpenIdConfigSettings().build();
+    getAwsJsonWebKeysSettings = settingsBuilder.getAwsJsonWebKeysSettings().build();
     getAwsServerConfigSettings = settingsBuilder.getAwsServerConfigSettings().build();
   }
 
@@ -520,6 +576,9 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     private final OperationCallSettings.Builder<DeleteAwsClusterRequest, Empty, OperationMetadata>
         deleteAwsClusterOperationSettings;
     private final UnaryCallSettings.Builder<
+            GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+        generateAwsClusterAgentTokenSettings;
+    private final UnaryCallSettings.Builder<
             GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
         generateAwsAccessTokenSettings;
     private final UnaryCallSettings.Builder<CreateAwsNodePoolRequest, Operation>
@@ -532,6 +591,11 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     private final OperationCallSettings.Builder<
             UpdateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
         updateAwsNodePoolOperationSettings;
+    private final UnaryCallSettings.Builder<RollbackAwsNodePoolUpdateRequest, Operation>
+        rollbackAwsNodePoolUpdateSettings;
+    private final OperationCallSettings.Builder<
+            RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+        rollbackAwsNodePoolUpdateOperationSettings;
     private final UnaryCallSettings.Builder<GetAwsNodePoolRequest, AwsNodePool>
         getAwsNodePoolSettings;
     private final PagedCallSettings.Builder<
@@ -541,6 +605,10 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
         deleteAwsNodePoolSettings;
     private final OperationCallSettings.Builder<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
         deleteAwsNodePoolOperationSettings;
+    private final UnaryCallSettings.Builder<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+        getAwsOpenIdConfigSettings;
+    private final UnaryCallSettings.Builder<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>
+        getAwsJsonWebKeysSettings;
     private final UnaryCallSettings.Builder<GetAwsServerConfigRequest, AwsServerConfig>
         getAwsServerConfigSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -599,15 +667,20 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       listAwsClustersSettings = PagedCallSettings.newBuilder(LIST_AWS_CLUSTERS_PAGE_STR_FACT);
       deleteAwsClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAwsClusterOperationSettings = OperationCallSettings.newBuilder();
+      generateAwsClusterAgentTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateAwsAccessTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAwsNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAwsNodePoolOperationSettings = OperationCallSettings.newBuilder();
       updateAwsNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateAwsNodePoolOperationSettings = OperationCallSettings.newBuilder();
+      rollbackAwsNodePoolUpdateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rollbackAwsNodePoolUpdateOperationSettings = OperationCallSettings.newBuilder();
       getAwsNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAwsNodePoolsSettings = PagedCallSettings.newBuilder(LIST_AWS_NODE_POOLS_PAGE_STR_FACT);
       deleteAwsNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAwsNodePoolOperationSettings = OperationCallSettings.newBuilder();
+      getAwsOpenIdConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAwsJsonWebKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAwsServerConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -617,12 +690,16 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
               getAwsClusterSettings,
               listAwsClustersSettings,
               deleteAwsClusterSettings,
+              generateAwsClusterAgentTokenSettings,
               generateAwsAccessTokenSettings,
               createAwsNodePoolSettings,
               updateAwsNodePoolSettings,
+              rollbackAwsNodePoolUpdateSettings,
               getAwsNodePoolSettings,
               listAwsNodePoolsSettings,
               deleteAwsNodePoolSettings,
+              getAwsOpenIdConfigSettings,
+              getAwsJsonWebKeysSettings,
               getAwsServerConfigSettings);
       initDefaults(this);
     }
@@ -638,15 +715,22 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       listAwsClustersSettings = settings.listAwsClustersSettings.toBuilder();
       deleteAwsClusterSettings = settings.deleteAwsClusterSettings.toBuilder();
       deleteAwsClusterOperationSettings = settings.deleteAwsClusterOperationSettings.toBuilder();
+      generateAwsClusterAgentTokenSettings =
+          settings.generateAwsClusterAgentTokenSettings.toBuilder();
       generateAwsAccessTokenSettings = settings.generateAwsAccessTokenSettings.toBuilder();
       createAwsNodePoolSettings = settings.createAwsNodePoolSettings.toBuilder();
       createAwsNodePoolOperationSettings = settings.createAwsNodePoolOperationSettings.toBuilder();
       updateAwsNodePoolSettings = settings.updateAwsNodePoolSettings.toBuilder();
       updateAwsNodePoolOperationSettings = settings.updateAwsNodePoolOperationSettings.toBuilder();
+      rollbackAwsNodePoolUpdateSettings = settings.rollbackAwsNodePoolUpdateSettings.toBuilder();
+      rollbackAwsNodePoolUpdateOperationSettings =
+          settings.rollbackAwsNodePoolUpdateOperationSettings.toBuilder();
       getAwsNodePoolSettings = settings.getAwsNodePoolSettings.toBuilder();
       listAwsNodePoolsSettings = settings.listAwsNodePoolsSettings.toBuilder();
       deleteAwsNodePoolSettings = settings.deleteAwsNodePoolSettings.toBuilder();
       deleteAwsNodePoolOperationSettings = settings.deleteAwsNodePoolOperationSettings.toBuilder();
+      getAwsOpenIdConfigSettings = settings.getAwsOpenIdConfigSettings.toBuilder();
+      getAwsJsonWebKeysSettings = settings.getAwsJsonWebKeysSettings.toBuilder();
       getAwsServerConfigSettings = settings.getAwsServerConfigSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -656,12 +740,16 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
               getAwsClusterSettings,
               listAwsClustersSettings,
               deleteAwsClusterSettings,
+              generateAwsClusterAgentTokenSettings,
               generateAwsAccessTokenSettings,
               createAwsNodePoolSettings,
               updateAwsNodePoolSettings,
+              rollbackAwsNodePoolUpdateSettings,
               getAwsNodePoolSettings,
               listAwsNodePoolsSettings,
               deleteAwsNodePoolSettings,
+              getAwsOpenIdConfigSettings,
+              getAwsJsonWebKeysSettings,
               getAwsServerConfigSettings);
     }
 
@@ -718,6 +806,11 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .generateAwsClusterAgentTokenSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .generateAwsAccessTokenSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -729,6 +822,11 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
 
       builder
           .updateAwsNodePoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .rollbackAwsNodePoolUpdateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -746,6 +844,16 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .deleteAwsNodePoolSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getAwsOpenIdConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAwsJsonWebKeysSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getAwsServerConfigSettings()
@@ -873,6 +981,31 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
                       .build()));
 
       builder
+          .rollbackAwsNodePoolUpdateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RollbackAwsNodePoolUpdateRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AwsNodePool.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteAwsNodePoolOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -968,6 +1101,13 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       return deleteAwsClusterOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to generateAwsClusterAgentToken. */
+    public UnaryCallSettings.Builder<
+            GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+        generateAwsClusterAgentTokenSettings() {
+      return generateAwsClusterAgentTokenSettings;
+    }
+
     /** Returns the builder for the settings used for calls to generateAwsAccessToken. */
     public UnaryCallSettings.Builder<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
         generateAwsAccessTokenSettings() {
@@ -1002,6 +1142,21 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       return updateAwsNodePoolOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to rollbackAwsNodePoolUpdate. */
+    public UnaryCallSettings.Builder<RollbackAwsNodePoolUpdateRequest, Operation>
+        rollbackAwsNodePoolUpdateSettings() {
+      return rollbackAwsNodePoolUpdateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rollbackAwsNodePoolUpdate. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+        rollbackAwsNodePoolUpdateOperationSettings() {
+      return rollbackAwsNodePoolUpdateOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getAwsNodePool. */
     public UnaryCallSettings.Builder<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolSettings() {
       return getAwsNodePoolSettings;
@@ -1026,6 +1181,18 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     public OperationCallSettings.Builder<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
         deleteAwsNodePoolOperationSettings() {
       return deleteAwsNodePoolOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAwsOpenIdConfig. */
+    public UnaryCallSettings.Builder<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+        getAwsOpenIdConfigSettings() {
+      return getAwsOpenIdConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAwsJsonWebKeys. */
+    public UnaryCallSettings.Builder<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>
+        getAwsJsonWebKeysSettings() {
+      return getAwsJsonWebKeysSettings;
     }
 
     /** Returns the builder for the settings used for calls to getAwsServerConfig. */

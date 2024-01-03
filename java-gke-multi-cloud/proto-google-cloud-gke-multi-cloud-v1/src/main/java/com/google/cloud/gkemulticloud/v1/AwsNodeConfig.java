@@ -87,9 +87,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The AWS instance type.
+   * Optional. The EC2 instance type when creating on-Demand instances.
    *
-   * When unspecified, it uses a default based on the node pool's version.
+   * If unspecified during node pool creation, a default will be chosen based on
+   * the node pool version, and assigned to this field.
    * </pre>
    *
    * <code>string instance_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -112,9 +113,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The AWS instance type.
+   * Optional. The EC2 instance type when creating on-Demand instances.
    *
-   * When unspecified, it uses a default based on the node pool's version.
+   * If unspecified during node pool creation, a default will be chosen based on
+   * the node pool version, and assigned to this field.
    * </pre>
    *
    * <code>string instance_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -569,8 +571,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The OS image type to use on node pool instances.
-   * Can have a value of `ubuntu`, or `windows` if the cluster enables
-   * the Windows node pool preview feature.
+   * Can be unspecified, or have a value of `ubuntu`.
    *
    * When unspecified, it defaults to `ubuntu`.
    * </pre>
@@ -596,8 +597,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The OS image type to use on node pool instances.
-   * Can have a value of `ubuntu`, or `windows` if the cluster enables
-   * the Windows node pool preview feature.
+   * Can be unspecified, or have a value of `ubuntu`.
    *
    * When unspecified, it defaults to `ubuntu`.
    * </pre>
@@ -990,6 +990,74 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         : autoscalingMetricsCollection_;
   }
 
+  public static final int SPOT_CONFIG_FIELD_NUMBER = 16;
+  private com.google.cloud.gkemulticloud.v1.SpotConfig spotConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for provisioning EC2 Spot instances
+   *
+   * When specified, the node pool will provision Spot instances from the set
+   * of spot_config.instance_types.
+   * This field is mutually exclusive with `instance_type`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SpotConfig spot_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the spotConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpotConfig() {
+    return spotConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for provisioning EC2 Spot instances
+   *
+   * When specified, the node pool will provision Spot instances from the set
+   * of spot_config.instance_types.
+   * This field is mutually exclusive with `instance_type`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SpotConfig spot_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The spotConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.SpotConfig getSpotConfig() {
+    return spotConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.SpotConfig.getDefaultInstance()
+        : spotConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for provisioning EC2 Spot instances
+   *
+   * When specified, the node pool will provision Spot instances from the set
+   * of spot_config.instance_types.
+   * This field is mutually exclusive with `instance_type`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SpotConfig spot_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.SpotConfigOrBuilder getSpotConfigOrBuilder() {
+    return spotConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.SpotConfig.getDefaultInstance()
+        : spotConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1040,6 +1108,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (autoscalingMetricsCollection_ != null) {
       output.writeMessage(15, getAutoscalingMetricsCollection());
+    }
+    if (spotConfig_ != null) {
+      output.writeMessage(16, getSpotConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1110,6 +1181,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               15, getAutoscalingMetricsCollection());
     }
+    if (spotConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getSpotConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1157,6 +1231,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasAutoscalingMetricsCollection()) {
       if (!getAutoscalingMetricsCollection().equals(other.getAutoscalingMetricsCollection()))
         return false;
+    }
+    if (hasSpotConfig() != other.hasSpotConfig()) return false;
+    if (hasSpotConfig()) {
+      if (!getSpotConfig().equals(other.getSpotConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1214,6 +1292,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasAutoscalingMetricsCollection()) {
       hash = (37 * hash) + AUTOSCALING_METRICS_COLLECTION_FIELD_NUMBER;
       hash = (53 * hash) + getAutoscalingMetricsCollection().hashCode();
+    }
+    if (hasSpotConfig()) {
+      hash = (37 * hash) + SPOT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSpotConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1421,6 +1503,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         autoscalingMetricsCollectionBuilder_.dispose();
         autoscalingMetricsCollectionBuilder_ = null;
       }
+      spotConfig_ = null;
+      if (spotConfigBuilder_ != null) {
+        spotConfigBuilder_.dispose();
+        spotConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1517,6 +1604,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
             autoscalingMetricsCollectionBuilder_ == null
                 ? autoscalingMetricsCollection_
                 : autoscalingMetricsCollectionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.spotConfig_ = spotConfigBuilder_ == null ? spotConfig_ : spotConfigBuilder_.build();
       }
     }
 
@@ -1639,6 +1729,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasAutoscalingMetricsCollection()) {
         mergeAutoscalingMetricsCollection(other.getAutoscalingMetricsCollection());
+      }
+      if (other.hasSpotConfig()) {
+        mergeSpotConfig(other.getSpotConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1764,6 +1857,12 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 122
+            case 130:
+              {
+                input.readMessage(getSpotConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1788,9 +1887,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The AWS instance type.
+     * Optional. The EC2 instance type when creating on-Demand instances.
      *
-     * When unspecified, it uses a default based on the node pool's version.
+     * If unspecified during node pool creation, a default will be chosen based on
+     * the node pool version, and assigned to this field.
      * </pre>
      *
      * <code>string instance_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1812,9 +1912,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The AWS instance type.
+     * Optional. The EC2 instance type when creating on-Demand instances.
      *
-     * When unspecified, it uses a default based on the node pool's version.
+     * If unspecified during node pool creation, a default will be chosen based on
+     * the node pool version, and assigned to this field.
      * </pre>
      *
      * <code>string instance_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1836,9 +1937,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The AWS instance type.
+     * Optional. The EC2 instance type when creating on-Demand instances.
      *
-     * When unspecified, it uses a default based on the node pool's version.
+     * If unspecified during node pool creation, a default will be chosen based on
+     * the node pool version, and assigned to this field.
      * </pre>
      *
      * <code>string instance_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1859,9 +1961,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The AWS instance type.
+     * Optional. The EC2 instance type when creating on-Demand instances.
      *
-     * When unspecified, it uses a default based on the node pool's version.
+     * If unspecified during node pool creation, a default will be chosen based on
+     * the node pool version, and assigned to this field.
      * </pre>
      *
      * <code>string instance_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1878,9 +1981,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The AWS instance type.
+     * Optional. The EC2 instance type when creating on-Demand instances.
      *
-     * When unspecified, it uses a default based on the node pool's version.
+     * If unspecified during node pool creation, a default will be chosen based on
+     * the node pool version, and assigned to this field.
      * </pre>
      *
      * <code>string instance_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3001,8 +3105,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The OS image type to use on node pool instances.
-     * Can have a value of `ubuntu`, or `windows` if the cluster enables
-     * the Windows node pool preview feature.
+     * Can be unspecified, or have a value of `ubuntu`.
      *
      * When unspecified, it defaults to `ubuntu`.
      * </pre>
@@ -3027,8 +3130,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The OS image type to use on node pool instances.
-     * Can have a value of `ubuntu`, or `windows` if the cluster enables
-     * the Windows node pool preview feature.
+     * Can be unspecified, or have a value of `ubuntu`.
      *
      * When unspecified, it defaults to `ubuntu`.
      * </pre>
@@ -3053,8 +3155,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The OS image type to use on node pool instances.
-     * Can have a value of `ubuntu`, or `windows` if the cluster enables
-     * the Windows node pool preview feature.
+     * Can be unspecified, or have a value of `ubuntu`.
      *
      * When unspecified, it defaults to `ubuntu`.
      * </pre>
@@ -3078,8 +3179,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The OS image type to use on node pool instances.
-     * Can have a value of `ubuntu`, or `windows` if the cluster enables
-     * the Windows node pool preview feature.
+     * Can be unspecified, or have a value of `ubuntu`.
      *
      * When unspecified, it defaults to `ubuntu`.
      * </pre>
@@ -3099,8 +3199,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The OS image type to use on node pool instances.
-     * Can have a value of `ubuntu`, or `windows` if the cluster enables
-     * the Windows node pool preview feature.
+     * Can be unspecified, or have a value of `ubuntu`.
      *
      * When unspecified, it defaults to `ubuntu`.
      * </pre>
@@ -4388,6 +4487,244 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         autoscalingMetricsCollection_ = null;
       }
       return autoscalingMetricsCollectionBuilder_;
+    }
+
+    private com.google.cloud.gkemulticloud.v1.SpotConfig spotConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.SpotConfig,
+            com.google.cloud.gkemulticloud.v1.SpotConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.SpotConfigOrBuilder>
+        spotConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for provisioning EC2 Spot instances
+     *
+     * When specified, the node pool will provision Spot instances from the set
+     * of spot_config.instance_types.
+     * This field is mutually exclusive with `instance_type`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SpotConfig spot_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the spotConfig field is set.
+     */
+    public boolean hasSpotConfig() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for provisioning EC2 Spot instances
+     *
+     * When specified, the node pool will provision Spot instances from the set
+     * of spot_config.instance_types.
+     * This field is mutually exclusive with `instance_type`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SpotConfig spot_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The spotConfig.
+     */
+    public com.google.cloud.gkemulticloud.v1.SpotConfig getSpotConfig() {
+      if (spotConfigBuilder_ == null) {
+        return spotConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.SpotConfig.getDefaultInstance()
+            : spotConfig_;
+      } else {
+        return spotConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for provisioning EC2 Spot instances
+     *
+     * When specified, the node pool will provision Spot instances from the set
+     * of spot_config.instance_types.
+     * This field is mutually exclusive with `instance_type`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SpotConfig spot_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpotConfig(com.google.cloud.gkemulticloud.v1.SpotConfig value) {
+      if (spotConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spotConfig_ = value;
+      } else {
+        spotConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for provisioning EC2 Spot instances
+     *
+     * When specified, the node pool will provision Spot instances from the set
+     * of spot_config.instance_types.
+     * This field is mutually exclusive with `instance_type`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SpotConfig spot_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpotConfig(
+        com.google.cloud.gkemulticloud.v1.SpotConfig.Builder builderForValue) {
+      if (spotConfigBuilder_ == null) {
+        spotConfig_ = builderForValue.build();
+      } else {
+        spotConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for provisioning EC2 Spot instances
+     *
+     * When specified, the node pool will provision Spot instances from the set
+     * of spot_config.instance_types.
+     * This field is mutually exclusive with `instance_type`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SpotConfig spot_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSpotConfig(com.google.cloud.gkemulticloud.v1.SpotConfig value) {
+      if (spotConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && spotConfig_ != null
+            && spotConfig_ != com.google.cloud.gkemulticloud.v1.SpotConfig.getDefaultInstance()) {
+          getSpotConfigBuilder().mergeFrom(value);
+        } else {
+          spotConfig_ = value;
+        }
+      } else {
+        spotConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for provisioning EC2 Spot instances
+     *
+     * When specified, the node pool will provision Spot instances from the set
+     * of spot_config.instance_types.
+     * This field is mutually exclusive with `instance_type`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SpotConfig spot_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSpotConfig() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      spotConfig_ = null;
+      if (spotConfigBuilder_ != null) {
+        spotConfigBuilder_.dispose();
+        spotConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for provisioning EC2 Spot instances
+     *
+     * When specified, the node pool will provision Spot instances from the set
+     * of spot_config.instance_types.
+     * This field is mutually exclusive with `instance_type`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SpotConfig spot_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.SpotConfig.Builder getSpotConfigBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getSpotConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for provisioning EC2 Spot instances
+     *
+     * When specified, the node pool will provision Spot instances from the set
+     * of spot_config.instance_types.
+     * This field is mutually exclusive with `instance_type`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SpotConfig spot_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.SpotConfigOrBuilder getSpotConfigOrBuilder() {
+      if (spotConfigBuilder_ != null) {
+        return spotConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return spotConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.SpotConfig.getDefaultInstance()
+            : spotConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for provisioning EC2 Spot instances
+     *
+     * When specified, the node pool will provision Spot instances from the set
+     * of spot_config.instance_types.
+     * This field is mutually exclusive with `instance_type`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SpotConfig spot_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.SpotConfig,
+            com.google.cloud.gkemulticloud.v1.SpotConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.SpotConfigOrBuilder>
+        getSpotConfigFieldBuilder() {
+      if (spotConfigBuilder_ == null) {
+        spotConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.SpotConfig,
+                com.google.cloud.gkemulticloud.v1.SpotConfig.Builder,
+                com.google.cloud.gkemulticloud.v1.SpotConfigOrBuilder>(
+                getSpotConfig(), getParentForChildren(), isClean());
+        spotConfig_ = null;
+      }
+      return spotConfigBuilder_;
     }
 
     @java.lang.Override

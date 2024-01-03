@@ -27,7 +27,7 @@ public interface UpdatePolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. `Policy` to update.
+   * Required. Policy to update.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Policy policy = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -40,7 +40,7 @@ public interface UpdatePolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. `Policy` to update.
+   * Required. Policy to update.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Policy policy = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -53,7 +53,7 @@ public interface UpdatePolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. `Policy` to update.
+   * Required. Policy to update.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Policy policy = 1 [(.google.api.field_behavior) = REQUIRED];

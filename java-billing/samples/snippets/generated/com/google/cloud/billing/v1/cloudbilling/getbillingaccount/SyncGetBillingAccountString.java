@@ -34,7 +34,7 @@ public class SyncGetBillingAccountString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-      String name = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+      String name = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString();
       BillingAccount response = cloudBillingClient.getBillingAccount(name);
     }
   }

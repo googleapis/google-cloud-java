@@ -135,11 +135,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name for the Key in the format
+   * Identifier. The resource name for the Key in the format
    * `projects/{project}/keys/{key}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -159,11 +159,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name for the Key in the format
+   * Identifier. The resource name for the Key in the format
    * `projects/{project}/keys/{key}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1306,11 +1306,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name for the Key in the format
+     * Identifier. The resource name for the Key in the format
      * `projects/{project}/keys/{key}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1329,11 +1329,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name for the Key in the format
+     * Identifier. The resource name for the Key in the format
      * `projects/{project}/keys/{key}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1352,11 +1352,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name for the Key in the format
+     * Identifier. The resource name for the Key in the format
      * `projects/{project}/keys/{key}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1374,11 +1374,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name for the Key in the format
+     * Identifier. The resource name for the Key in the format
      * `projects/{project}/keys/{key}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1392,11 +1392,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name for the Key in the format
+     * Identifier. The resource name for the Key in the format
      * `projects/{project}/keys/{key}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

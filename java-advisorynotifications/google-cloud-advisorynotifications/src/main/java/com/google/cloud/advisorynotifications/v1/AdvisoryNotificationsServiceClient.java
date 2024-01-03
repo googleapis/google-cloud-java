@@ -47,7 +47,9 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
  *     AdvisoryNotificationsServiceClient.create()) {
- *   NotificationName name = NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]");
+ *   NotificationName name =
+ *       NotificationName.ofOrganizationLocationNotificationName(
+ *           "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]");
  *   Notification response = advisoryNotificationsServiceClient.getNotification(name);
  * }
  * }</pre>
@@ -194,7 +196,7 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
    *     AdvisoryNotificationsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   LocationName parent = LocationName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]");
    *   for (Notification element :
    *       advisoryNotificationsServiceClient.listNotifications(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -203,7 +205,8 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of notifications. Must be of the
-   *     form "organizations/{organization}/locations/{location}".
+   *     form "organizations/{organization}/locations/{location}" or
+   *     "projects/{project}/locations/{location}"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationsPagedResponse listNotifications(LocationName parent) {
@@ -228,7 +231,8 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
    *     AdvisoryNotificationsServiceClient.create()) {
-   *   String parent = LocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
+   *   String parent =
+   *       LocationName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]").toString();
    *   for (Notification element :
    *       advisoryNotificationsServiceClient.listNotifications(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -237,7 +241,8 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of notifications. Must be of the
-   *     form "organizations/{organization}/locations/{location}".
+   *     form "organizations/{organization}/locations/{location}" or
+   *     "projects/{project}/locations/{location}"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationsPagedResponse listNotifications(String parent) {
@@ -262,7 +267,9 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    *     AdvisoryNotificationsServiceClient.create()) {
    *   ListNotificationsRequest request =
    *       ListNotificationsRequest.newBuilder()
-   *           .setParent(LocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setParent(
+   *               LocationName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setView(NotificationView.forNumber(0))
@@ -298,7 +305,9 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    *     AdvisoryNotificationsServiceClient.create()) {
    *   ListNotificationsRequest request =
    *       ListNotificationsRequest.newBuilder()
-   *           .setParent(LocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setParent(
+   *               LocationName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setView(NotificationView.forNumber(0))
@@ -334,7 +343,9 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    *     AdvisoryNotificationsServiceClient.create()) {
    *   ListNotificationsRequest request =
    *       ListNotificationsRequest.newBuilder()
-   *           .setParent(LocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setParent(
+   *               LocationName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setView(NotificationView.forNumber(0))
@@ -375,13 +386,16 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
    *     AdvisoryNotificationsServiceClient.create()) {
-   *   NotificationName name = NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]");
+   *   NotificationName name =
+   *       NotificationName.ofOrganizationLocationNotificationName(
+   *           "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]");
    *   Notification response = advisoryNotificationsServiceClient.getNotification(name);
    * }
    * }</pre>
    *
    * @param name Required. A name of the notification to retrieve. Format:
-   *     organizations/{organization}/locations/{location}/notifications/{notification}.
+   *     organizations/{organization}/locations/{location}/notifications/{notification} or
+   *     projects/{projects}/locations/{location}/notifications/{notification}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Notification getNotification(NotificationName name) {
@@ -405,13 +419,16 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    * try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
    *     AdvisoryNotificationsServiceClient.create()) {
    *   String name =
-   *       NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]").toString();
+   *       NotificationName.ofOrganizationLocationNotificationName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]")
+   *           .toString();
    *   Notification response = advisoryNotificationsServiceClient.getNotification(name);
    * }
    * }</pre>
    *
    * @param name Required. A name of the notification to retrieve. Format:
-   *     organizations/{organization}/locations/{location}/notifications/{notification}.
+   *     organizations/{organization}/locations/{location}/notifications/{notification} or
+   *     projects/{projects}/locations/{location}/notifications/{notification}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Notification getNotification(String name) {
@@ -436,7 +453,9 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    *   GetNotificationRequest request =
    *       GetNotificationRequest.newBuilder()
    *           .setName(
-   *               NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]").toString())
+   *               NotificationName.ofOrganizationLocationNotificationName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]")
+   *                   .toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();
    *   Notification response = advisoryNotificationsServiceClient.getNotification(request);
@@ -467,7 +486,9 @@ public class AdvisoryNotificationsServiceClient implements BackgroundResource {
    *   GetNotificationRequest request =
    *       GetNotificationRequest.newBuilder()
    *           .setName(
-   *               NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]").toString())
+   *               NotificationName.ofOrganizationLocationNotificationName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]")
+   *                   .toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();
    *   ApiFuture<Notification> future =

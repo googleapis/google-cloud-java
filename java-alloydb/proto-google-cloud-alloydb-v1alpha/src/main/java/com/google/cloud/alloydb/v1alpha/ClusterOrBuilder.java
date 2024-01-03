@@ -502,7 +502,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=546
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=554
    * @return The network.
    */
   @java.lang.Deprecated
@@ -523,7 +523,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=546
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=554
    * @return The bytes for network.
    */
   @java.lang.Deprecated
@@ -747,7 +747,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=581
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=589
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Deprecated
@@ -762,7 +762,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=581
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=589
    * @return The sslConfig.
    */
   @java.lang.Deprecated
@@ -1036,14 +1036,71 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Reserved for future use.
+   * Output only. Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 30;</code>
+   * <code>bool satisfies_pzi = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The satisfiesPzs.
    */
   boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pscConfig field is set.
+   */
+  boolean hasPscConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pscConfig.
+   */
+  com.google.cloud.alloydb.v1alpha.Cluster.PscConfig getPscConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1alpha.Cluster.PscConfigOrBuilder getPscConfigOrBuilder();
 
   com.google.cloud.alloydb.v1alpha.Cluster.SourceCase getSourceCase();
 }

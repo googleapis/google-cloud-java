@@ -22,8 +22,8 @@ package com.google.cloud.orgpolicy.v2;
  *
  *
  * <pre>
- * Defines a Cloud Organization `Policy` which is used to specify `Constraints`
- * for configurations of Cloud Platform resources.
+ * Defines an organization policy which is used to specify constraints
+ * for configurations of Google Cloud resources.
  * </pre>
  *
  * Protobuf type {@code google.cloud.orgpolicy.v2.Policy}
@@ -40,6 +40,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
   private Policy() {
     name_ = "";
+    etag_ = "";
   }
 
   @java.lang.Override
@@ -71,14 +72,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The resource name of the Policy. Must be one of the following
-   * forms, where constraint_name is the name of the constraint which this
-   * Policy configures:
+   * Immutable. The resource name of the policy. Must be one of the following
+   * forms, where `constraint_name` is the name of the constraint which this
+   * policy configures:
+   *
    * * `projects/{project_number}/policies/{constraint_name}`
    * * `folders/{folder_id}/policies/{constraint_name}`
    * * `organizations/{organization_id}/policies/{constraint_name}`
    *
-   * For example, "projects/123/policies/compute.disableSerialPortAccess".
+   * For example, `projects/123/policies/compute.disableSerialPortAccess`.
    *
    * Note: `projects/{project_id}/policies/{constraint_name}` is also an
    * acceptable name for API requests, but responses will return the name using
@@ -105,14 +107,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The resource name of the Policy. Must be one of the following
-   * forms, where constraint_name is the name of the constraint which this
-   * Policy configures:
+   * Immutable. The resource name of the policy. Must be one of the following
+   * forms, where `constraint_name` is the name of the constraint which this
+   * policy configures:
+   *
    * * `projects/{project_number}/policies/{constraint_name}`
    * * `folders/{folder_id}/policies/{constraint_name}`
    * * `organizations/{organization_id}/policies/{constraint_name}`
    *
-   * For example, "projects/123/policies/compute.disableSerialPortAccess".
+   * For example, `projects/123/policies/compute.disableSerialPortAccess`.
    *
    * Note: `projects/{project_id}/policies/{constraint_name}` is also an
    * acceptable name for API requests, but responses will return the name using
@@ -194,7 +197,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=204
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=270
    * @return Whether the alternate field is set.
    */
   @java.lang.Override
@@ -212,7 +215,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=204
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=270
    * @return The alternate.
    */
   @java.lang.Override
@@ -245,7 +248,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * dry-run policy.
+   * Dry-run policy.
    * Audit-only policy, can be used to monitor how the policy would have
    * impacted the existing and future resources if it's enforced.
    * </pre>
@@ -262,7 +265,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * dry-run policy.
+   * Dry-run policy.
    * Audit-only policy, can be used to monitor how the policy would have
    * impacted the existing and future resources if it's enforced.
    * </pre>
@@ -281,7 +284,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * dry-run policy.
+   * Dry-run policy.
    * Audit-only policy, can be used to monitor how the policy would have
    * impacted the existing and future resources if it's enforced.
    * </pre>
@@ -293,6 +296,63 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     return dryRunSpec_ == null
         ? com.google.cloud.orgpolicy.v2.PolicySpec.getDefaultInstance()
         : dryRunSpec_;
+  }
+
+  public static final int ETAG_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An opaque tag indicating the current state of the policy, used
+   * for concurrency control. This 'etag' is computed by the server based on the
+   * value of other fields, and may be sent on update and delete requests to
+   * ensure the client has an up-to-date value before proceeding.
+   * </pre>
+   *
+   * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An opaque tag indicating the current state of the policy, used
+   * for concurrency control. This 'etag' is computed by the server based on the
+   * value of other fields, and may be sent on update and delete requests to
+   * ensure the client has an up-to-date value before proceeding.
+   * </pre>
+   *
+   * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -321,6 +381,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     if (dryRunSpec_ != null) {
       output.writeMessage(4, getDryRunSpec());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, etag_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -341,6 +404,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     }
     if (dryRunSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDryRunSpec());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, etag_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -370,6 +436,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     if (hasDryRunSpec()) {
       if (!getDryRunSpec().equals(other.getDryRunSpec())) return false;
     }
+    if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -395,6 +462,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DRY_RUN_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getDryRunSpec().hashCode();
     }
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -498,8 +567,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a Cloud Organization `Policy` which is used to specify `Constraints`
-   * for configurations of Cloud Platform resources.
+   * Defines an organization policy which is used to specify constraints
+   * for configurations of Google Cloud resources.
    * </pre>
    *
    * Protobuf type {@code google.cloud.orgpolicy.v2.Policy}
@@ -550,6 +619,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         dryRunSpecBuilder_.dispose();
         dryRunSpecBuilder_ = null;
       }
+      etag_ = "";
       return this;
     }
 
@@ -596,6 +666,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.dryRunSpec_ = dryRunSpecBuilder_ == null ? dryRunSpec_ : dryRunSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.etag_ = etag_;
       }
     }
 
@@ -658,6 +731,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDryRunSpec()) {
         mergeDryRunSpec(other.getDryRunSpec());
       }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -708,6 +786,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                etag_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -732,14 +816,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The resource name of the Policy. Must be one of the following
-     * forms, where constraint_name is the name of the constraint which this
-     * Policy configures:
+     * Immutable. The resource name of the policy. Must be one of the following
+     * forms, where `constraint_name` is the name of the constraint which this
+     * policy configures:
+     *
      * * `projects/{project_number}/policies/{constraint_name}`
      * * `folders/{folder_id}/policies/{constraint_name}`
      * * `organizations/{organization_id}/policies/{constraint_name}`
      *
-     * For example, "projects/123/policies/compute.disableSerialPortAccess".
+     * For example, `projects/123/policies/compute.disableSerialPortAccess`.
      *
      * Note: `projects/{project_id}/policies/{constraint_name}` is also an
      * acceptable name for API requests, but responses will return the name using
@@ -765,14 +850,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The resource name of the Policy. Must be one of the following
-     * forms, where constraint_name is the name of the constraint which this
-     * Policy configures:
+     * Immutable. The resource name of the policy. Must be one of the following
+     * forms, where `constraint_name` is the name of the constraint which this
+     * policy configures:
+     *
      * * `projects/{project_number}/policies/{constraint_name}`
      * * `folders/{folder_id}/policies/{constraint_name}`
      * * `organizations/{organization_id}/policies/{constraint_name}`
      *
-     * For example, "projects/123/policies/compute.disableSerialPortAccess".
+     * For example, `projects/123/policies/compute.disableSerialPortAccess`.
      *
      * Note: `projects/{project_id}/policies/{constraint_name}` is also an
      * acceptable name for API requests, but responses will return the name using
@@ -798,14 +884,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The resource name of the Policy. Must be one of the following
-     * forms, where constraint_name is the name of the constraint which this
-     * Policy configures:
+     * Immutable. The resource name of the policy. Must be one of the following
+     * forms, where `constraint_name` is the name of the constraint which this
+     * policy configures:
+     *
      * * `projects/{project_number}/policies/{constraint_name}`
      * * `folders/{folder_id}/policies/{constraint_name}`
      * * `organizations/{organization_id}/policies/{constraint_name}`
      *
-     * For example, "projects/123/policies/compute.disableSerialPortAccess".
+     * For example, `projects/123/policies/compute.disableSerialPortAccess`.
      *
      * Note: `projects/{project_id}/policies/{constraint_name}` is also an
      * acceptable name for API requests, but responses will return the name using
@@ -830,14 +917,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The resource name of the Policy. Must be one of the following
-     * forms, where constraint_name is the name of the constraint which this
-     * Policy configures:
+     * Immutable. The resource name of the policy. Must be one of the following
+     * forms, where `constraint_name` is the name of the constraint which this
+     * policy configures:
+     *
      * * `projects/{project_number}/policies/{constraint_name}`
      * * `folders/{folder_id}/policies/{constraint_name}`
      * * `organizations/{organization_id}/policies/{constraint_name}`
      *
-     * For example, "projects/123/policies/compute.disableSerialPortAccess".
+     * For example, `projects/123/policies/compute.disableSerialPortAccess`.
      *
      * Note: `projects/{project_id}/policies/{constraint_name}` is also an
      * acceptable name for API requests, but responses will return the name using
@@ -858,14 +946,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The resource name of the Policy. Must be one of the following
-     * forms, where constraint_name is the name of the constraint which this
-     * Policy configures:
+     * Immutable. The resource name of the policy. Must be one of the following
+     * forms, where `constraint_name` is the name of the constraint which this
+     * policy configures:
+     *
      * * `projects/{project_number}/policies/{constraint_name}`
      * * `folders/{folder_id}/policies/{constraint_name}`
      * * `organizations/{organization_id}/policies/{constraint_name}`
      *
-     * For example, "projects/123/policies/compute.disableSerialPortAccess".
+     * For example, `projects/123/policies/compute.disableSerialPortAccess`.
      *
      * Note: `projects/{project_id}/policies/{constraint_name}` is also an
      * acceptable name for API requests, but responses will return the name using
@@ -1088,7 +1177,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=204
+     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=270
      * @return Whether the alternate field is set.
      */
     @java.lang.Deprecated
@@ -1106,7 +1195,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=204
+     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=270
      * @return The alternate.
      */
     @java.lang.Deprecated
@@ -1287,7 +1376,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * dry-run policy.
+     * Dry-run policy.
      * Audit-only policy, can be used to monitor how the policy would have
      * impacted the existing and future resources if it's enforced.
      * </pre>
@@ -1303,7 +1392,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * dry-run policy.
+     * Dry-run policy.
      * Audit-only policy, can be used to monitor how the policy would have
      * impacted the existing and future resources if it's enforced.
      * </pre>
@@ -1325,7 +1414,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * dry-run policy.
+     * Dry-run policy.
      * Audit-only policy, can be used to monitor how the policy would have
      * impacted the existing and future resources if it's enforced.
      * </pre>
@@ -1349,7 +1438,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * dry-run policy.
+     * Dry-run policy.
      * Audit-only policy, can be used to monitor how the policy would have
      * impacted the existing and future resources if it's enforced.
      * </pre>
@@ -1370,7 +1459,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * dry-run policy.
+     * Dry-run policy.
      * Audit-only policy, can be used to monitor how the policy would have
      * impacted the existing and future resources if it's enforced.
      * </pre>
@@ -1397,7 +1486,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * dry-run policy.
+     * Dry-run policy.
      * Audit-only policy, can be used to monitor how the policy would have
      * impacted the existing and future resources if it's enforced.
      * </pre>
@@ -1418,7 +1507,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * dry-run policy.
+     * Dry-run policy.
      * Audit-only policy, can be used to monitor how the policy would have
      * impacted the existing and future resources if it's enforced.
      * </pre>
@@ -1434,7 +1523,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * dry-run policy.
+     * Dry-run policy.
      * Audit-only policy, can be used to monitor how the policy would have
      * impacted the existing and future resources if it's enforced.
      * </pre>
@@ -1454,7 +1543,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * dry-run policy.
+     * Dry-run policy.
      * Audit-only policy, can be used to monitor how the policy would have
      * impacted the existing and future resources if it's enforced.
      * </pre>
@@ -1476,6 +1565,127 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         dryRunSpec_ = null;
       }
       return dryRunSpecBuilder_;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An opaque tag indicating the current state of the policy, used
+     * for concurrency control. This 'etag' is computed by the server based on the
+     * value of other fields, and may be sent on update and delete requests to
+     * ensure the client has an up-to-date value before proceeding.
+     * </pre>
+     *
+     * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An opaque tag indicating the current state of the policy, used
+     * for concurrency control. This 'etag' is computed by the server based on the
+     * value of other fields, and may be sent on update and delete requests to
+     * ensure the client has an up-to-date value before proceeding.
+     * </pre>
+     *
+     * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An opaque tag indicating the current state of the policy, used
+     * for concurrency control. This 'etag' is computed by the server based on the
+     * value of other fields, and may be sent on update and delete requests to
+     * ensure the client has an up-to-date value before proceeding.
+     * </pre>
+     *
+     * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      etag_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An opaque tag indicating the current state of the policy, used
+     * for concurrency control. This 'etag' is computed by the server based on the
+     * value of other fields, and may be sent on update and delete requests to
+     * ensure the client has an up-to-date value before proceeding.
+     * </pre>
+     *
+     * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+      etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An opaque tag indicating the current state of the policy, used
+     * for concurrency control. This 'etag' is computed by the server based on the
+     * value of other fields, and may be sent on update and delete requests to
+     * ensure the client has an up-to-date value before proceeding.
+     * </pre>
+     *
+     * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      etag_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

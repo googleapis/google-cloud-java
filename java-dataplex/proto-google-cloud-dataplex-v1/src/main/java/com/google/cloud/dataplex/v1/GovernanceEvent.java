@@ -233,6 +233,16 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>GOVERNANCE_RULE_ERRORS = 17;</code>
      */
     GOVERNANCE_RULE_ERRORS(17),
+    /**
+     *
+     *
+     * <pre>
+     * Governance rule prcoessing Event.
+     * </pre>
+     *
+     * <code>GOVERNANCE_RULE_PROCESSING = 18;</code>
+     */
+    GOVERNANCE_RULE_PROCESSING(18),
     UNRECOGNIZED(-1),
     ;
 
@@ -396,6 +406,16 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
      * <code>GOVERNANCE_RULE_ERRORS = 17;</code>
      */
     public static final int GOVERNANCE_RULE_ERRORS_VALUE = 17;
+    /**
+     *
+     *
+     * <pre>
+     * Governance rule prcoessing Event.
+     * </pre>
+     *
+     * <code>GOVERNANCE_RULE_PROCESSING = 18;</code>
+     */
+    public static final int GOVERNANCE_RULE_PROCESSING_VALUE = 18;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -453,6 +473,8 @@ public final class GovernanceEvent extends com.google.protobuf.GeneratedMessageV
           return GOVERNANCE_RULE_SEARCH_LIMIT_EXCEEDS;
         case 17:
           return GOVERNANCE_RULE_ERRORS;
+        case 18:
+          return GOVERNANCE_RULE_PROCESSING;
         default:
           return null;
       }

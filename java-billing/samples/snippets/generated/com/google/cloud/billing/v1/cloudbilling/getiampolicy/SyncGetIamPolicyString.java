@@ -34,7 +34,7 @@ public class SyncGetIamPolicyString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-      String resource = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+      String resource = BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString();
       Policy response = cloudBillingClient.getIamPolicy(resource);
     }
   }

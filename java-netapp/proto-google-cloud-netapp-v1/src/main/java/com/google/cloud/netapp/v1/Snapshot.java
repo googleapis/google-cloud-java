@@ -329,12 +329,12 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the snapshot.
+   * Identifier. The resource name of the snapshot.
    * Format:
    * `projects/{project_id}/locations/{location}/volumes/{volume_id}/snapshots/{snapshot_id}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -354,12 +354,12 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the snapshot.
+   * Identifier. The resource name of the snapshot.
    * Format:
    * `projects/{project_id}/locations/{location}/volumes/{volume_id}/snapshots/{snapshot_id}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1214,12 +1214,12 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the snapshot.
+     * Identifier. The resource name of the snapshot.
      * Format:
      * `projects/{project_id}/locations/{location}/volumes/{volume_id}/snapshots/{snapshot_id}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1238,12 +1238,12 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the snapshot.
+     * Identifier. The resource name of the snapshot.
      * Format:
      * `projects/{project_id}/locations/{location}/volumes/{volume_id}/snapshots/{snapshot_id}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1262,12 +1262,12 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the snapshot.
+     * Identifier. The resource name of the snapshot.
      * Format:
      * `projects/{project_id}/locations/{location}/volumes/{volume_id}/snapshots/{snapshot_id}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1285,12 +1285,12 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the snapshot.
+     * Identifier. The resource name of the snapshot.
      * Format:
      * `projects/{project_id}/locations/{location}/volumes/{volume_id}/snapshots/{snapshot_id}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1304,12 +1304,12 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the snapshot.
+     * Identifier. The resource name of the snapshot.
      * Format:
      * `projects/{project_id}/locations/{location}/volumes/{volume_id}/snapshots/{snapshot_id}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

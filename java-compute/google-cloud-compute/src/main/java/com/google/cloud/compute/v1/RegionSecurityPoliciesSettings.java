@@ -76,6 +76,17 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class RegionSecurityPoliciesSettings extends ClientSettings<RegionSecurityPoliciesSettings> {
 
+  /** Returns the object with the settings used for calls to addRule. */
+  public UnaryCallSettings<AddRuleRegionSecurityPolicyRequest, Operation> addRuleSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).addRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addRule. */
+  public OperationCallSettings<AddRuleRegionSecurityPolicyRequest, Operation, Operation>
+      addRuleOperationSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).addRuleOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteRegionSecurityPolicyRequest, Operation> deleteSettings() {
     return ((RegionSecurityPoliciesStubSettings) getStubSettings()).deleteSettings();
@@ -90,6 +101,12 @@ public class RegionSecurityPoliciesSettings extends ClientSettings<RegionSecurit
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetRegionSecurityPolicyRequest, SecurityPolicy> getSettings() {
     return ((RegionSecurityPoliciesStubSettings) getStubSettings()).getSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getRule. */
+  public UnaryCallSettings<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule>
+      getRuleSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).getRuleSettings();
   }
 
   /** Returns the object with the settings used for calls to insert. */
@@ -118,6 +135,28 @@ public class RegionSecurityPoliciesSettings extends ClientSettings<RegionSecurit
   public OperationCallSettings<PatchRegionSecurityPolicyRequest, Operation, Operation>
       patchOperationSettings() {
     return ((RegionSecurityPoliciesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patchRule. */
+  public UnaryCallSettings<PatchRuleRegionSecurityPolicyRequest, Operation> patchRuleSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).patchRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patchRule. */
+  public OperationCallSettings<PatchRuleRegionSecurityPolicyRequest, Operation, Operation>
+      patchRuleOperationSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).patchRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeRule. */
+  public UnaryCallSettings<RemoveRuleRegionSecurityPolicyRequest, Operation> removeRuleSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).removeRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeRule. */
+  public OperationCallSettings<RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
+      removeRuleOperationSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).removeRuleOperationSettings();
   }
 
   public static final RegionSecurityPoliciesSettings create(RegionSecurityPoliciesStubSettings stub)
@@ -219,6 +258,18 @@ public class RegionSecurityPoliciesSettings extends ClientSettings<RegionSecurit
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to addRule. */
+    public UnaryCallSettings.Builder<AddRuleRegionSecurityPolicyRequest, Operation>
+        addRuleSettings() {
+      return getStubSettingsBuilder().addRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addRule. */
+    public OperationCallSettings.Builder<AddRuleRegionSecurityPolicyRequest, Operation, Operation>
+        addRuleOperationSettings() {
+      return getStubSettingsBuilder().addRuleOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteRegionSecurityPolicyRequest, Operation>
         deleteSettings() {
@@ -234,6 +285,12 @@ public class RegionSecurityPoliciesSettings extends ClientSettings<RegionSecurit
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetRegionSecurityPolicyRequest, SecurityPolicy> getSettings() {
       return getStubSettingsBuilder().getSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRule. */
+    public UnaryCallSettings.Builder<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule>
+        getRuleSettings() {
+      return getStubSettingsBuilder().getRuleSettings();
     }
 
     /** Returns the builder for the settings used for calls to insert. */
@@ -264,6 +321,31 @@ public class RegionSecurityPoliciesSettings extends ClientSettings<RegionSecurit
     public OperationCallSettings.Builder<PatchRegionSecurityPolicyRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchRule. */
+    public UnaryCallSettings.Builder<PatchRuleRegionSecurityPolicyRequest, Operation>
+        patchRuleSettings() {
+      return getStubSettingsBuilder().patchRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchRule. */
+    public OperationCallSettings.Builder<PatchRuleRegionSecurityPolicyRequest, Operation, Operation>
+        patchRuleOperationSettings() {
+      return getStubSettingsBuilder().patchRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeRule. */
+    public UnaryCallSettings.Builder<RemoveRuleRegionSecurityPolicyRequest, Operation>
+        removeRuleSettings() {
+      return getStubSettingsBuilder().removeRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeRule. */
+    public OperationCallSettings.Builder<
+            RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
+        removeRuleOperationSettings() {
+      return getStubSettingsBuilder().removeRuleOperationSettings();
     }
 
     @Override

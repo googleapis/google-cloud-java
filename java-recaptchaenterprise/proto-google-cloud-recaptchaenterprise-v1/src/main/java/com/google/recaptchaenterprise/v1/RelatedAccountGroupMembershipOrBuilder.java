@@ -27,12 +27,12 @@ public interface RelatedAccountGroupMembershipOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name for this membership in the format
+   * Required. Identifier. The resource name for this membership in the format
    * `projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{membership}`.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The name.
@@ -42,12 +42,12 @@ public interface RelatedAccountGroupMembershipOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name for this membership in the format
+   * Required. Identifier. The resource name for this membership in the format
    * `projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{membership}`.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for name.
@@ -58,14 +58,47 @@ public interface RelatedAccountGroupMembershipOrBuilder
    *
    *
    * <pre>
-   * The unique stable hashed user identifier of the member. The identifier
+   * The unique stable account identifier of the member. The identifier
+   * corresponds to an `account_id` provided in a previous `CreateAssessment` or
+   * `AnnotateAssessment` call.
+   * </pre>
+   *
+   * <code>string account_id = 4;</code>
+   *
+   * @return The accountId.
+   */
+  java.lang.String getAccountId();
+  /**
+   *
+   *
+   * <pre>
+   * The unique stable account identifier of the member. The identifier
+   * corresponds to an `account_id` provided in a previous `CreateAssessment` or
+   * `AnnotateAssessment` call.
+   * </pre>
+   *
+   * <code>string account_id = 4;</code>
+   *
+   * @return The bytes for accountId.
+   */
+  com.google.protobuf.ByteString getAccountIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated: use `account_id` instead.
+   * The unique stable hashed account identifier of the member. The identifier
    * corresponds to a `hashed_account_id` provided in a previous
    * `CreateAssessment` or `AnnotateAssessment` call.
    * </pre>
    *
-   * <code>bytes hashed_account_id = 2;</code>
+   * <code>bytes hashed_account_id = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMembership.hashed_account_id
+   *     is deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=1835
    * @return The hashedAccountId.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getHashedAccountId();
 }

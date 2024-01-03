@@ -39,7 +39,7 @@ public class AsyncSetIamPolicy {
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+              .setResource(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

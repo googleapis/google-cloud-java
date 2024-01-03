@@ -18,6 +18,7 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.BackendServicesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.BackendServicesClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.BackendServicesClient.ListUsablePagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -51,6 +52,7 @@ import com.google.cloud.compute.v1.BackendService;
 import com.google.cloud.compute.v1.BackendServiceAggregatedList;
 import com.google.cloud.compute.v1.BackendServiceGroupHealth;
 import com.google.cloud.compute.v1.BackendServiceList;
+import com.google.cloud.compute.v1.BackendServiceListUsable;
 import com.google.cloud.compute.v1.BackendServicesScopedList;
 import com.google.cloud.compute.v1.DeleteBackendServiceRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendServiceRequest;
@@ -59,12 +61,15 @@ import com.google.cloud.compute.v1.GetHealthBackendServiceRequest;
 import com.google.cloud.compute.v1.GetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertBackendServiceRequest;
 import com.google.cloud.compute.v1.ListBackendServicesRequest;
+import com.google.cloud.compute.v1.ListUsableBackendServicesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendServiceRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.SetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.SetSecurityPolicyBackendServiceRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsBackendServiceRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateBackendServiceRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -148,6 +153,9 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
       insertOperationSettings;
   private final PagedCallSettings<ListBackendServicesRequest, BackendServiceList, ListPagedResponse>
       listSettings;
+  private final PagedCallSettings<
+          ListUsableBackendServicesRequest, BackendServiceListUsable, ListUsablePagedResponse>
+      listUsableSettings;
   private final UnaryCallSettings<PatchBackendServiceRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchBackendServiceRequest, Operation, Operation>
       patchOperationSettings;
@@ -161,6 +169,8 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
       setSecurityPolicySettings;
   private final OperationCallSettings<SetSecurityPolicyBackendServiceRequest, Operation, Operation>
       setSecurityPolicyOperationSettings;
+  private final UnaryCallSettings<TestIamPermissionsBackendServiceRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
   private final UnaryCallSettings<UpdateBackendServiceRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateBackendServiceRequest, Operation, Operation>
       updateOperationSettings;
@@ -254,6 +264,50 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
             }
           };
 
+  private static final PagedListDescriptor<
+          ListUsableBackendServicesRequest, BackendServiceListUsable, BackendService>
+      LIST_USABLE_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListUsableBackendServicesRequest, BackendServiceListUsable, BackendService>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUsableBackendServicesRequest injectToken(
+                ListUsableBackendServicesRequest payload, String token) {
+              return ListUsableBackendServicesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListUsableBackendServicesRequest injectPageSize(
+                ListUsableBackendServicesRequest payload, int pageSize) {
+              return ListUsableBackendServicesRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUsableBackendServicesRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(BackendServiceListUsable payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackendService> extractResources(BackendServiceListUsable payload) {
+              return payload.getItemsList() == null
+                  ? ImmutableList.<BackendService>of()
+                  : payload.getItemsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           AggregatedListBackendServicesRequest,
           BackendServiceAggregatedList,
@@ -294,6 +348,27 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
               PageContext<ListBackendServicesRequest, BackendServiceList, BackendService>
                   pageContext = PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
               return ListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUsableBackendServicesRequest, BackendServiceListUsable, ListUsablePagedResponse>
+      LIST_USABLE_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUsableBackendServicesRequest,
+              BackendServiceListUsable,
+              ListUsablePagedResponse>() {
+            @Override
+            public ApiFuture<ListUsablePagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUsableBackendServicesRequest, BackendServiceListUsable> callable,
+                ListUsableBackendServicesRequest request,
+                ApiCallContext context,
+                ApiFuture<BackendServiceListUsable> futureResponse) {
+              PageContext<
+                      ListUsableBackendServicesRequest, BackendServiceListUsable, BackendService>
+                  pageContext =
+                      PageContext.create(callable, LIST_USABLE_PAGE_STR_DESC, request, context);
+              return ListUsablePagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -374,6 +449,13 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     return listSettings;
   }
 
+  /** Returns the object with the settings used for calls to listUsable. */
+  public PagedCallSettings<
+          ListUsableBackendServicesRequest, BackendServiceListUsable, ListUsablePagedResponse>
+      listUsableSettings() {
+    return listUsableSettings;
+  }
+
   /** Returns the object with the settings used for calls to patch. */
   public UnaryCallSettings<PatchBackendServiceRequest, Operation> patchSettings() {
     return patchSettings;
@@ -412,6 +494,12 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
   public OperationCallSettings<SetSecurityPolicyBackendServiceRequest, Operation, Operation>
       setSecurityPolicyOperationSettings() {
     return setSecurityPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsBackendServiceRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   /** Returns the object with the settings used for calls to update. */
@@ -515,6 +603,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    listUsableSettings = settingsBuilder.listUsableSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
     setEdgeSecurityPolicySettings = settingsBuilder.setEdgeSecurityPolicySettings().build();
@@ -524,6 +613,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     setSecurityPolicySettings = settingsBuilder.setSecurityPolicySettings().build();
     setSecurityPolicyOperationSettings =
         settingsBuilder.setSecurityPolicyOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
@@ -561,6 +651,9 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     private final PagedCallSettings.Builder<
             ListBackendServicesRequest, BackendServiceList, ListPagedResponse>
         listSettings;
+    private final PagedCallSettings.Builder<
+            ListUsableBackendServicesRequest, BackendServiceListUsable, ListUsablePagedResponse>
+        listUsableSettings;
     private final UnaryCallSettings.Builder<PatchBackendServiceRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchBackendServiceRequest, Operation, Operation>
         patchOperationSettings;
@@ -576,6 +669,9 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     private final OperationCallSettings.Builder<
             SetSecurityPolicyBackendServiceRequest, Operation, Operation>
         setSecurityPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsBackendServiceRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private final UnaryCallSettings.Builder<UpdateBackendServiceRequest, Operation> updateSettings;
     private final OperationCallSettings.Builder<UpdateBackendServiceRequest, Operation, Operation>
         updateOperationSettings;
@@ -642,6 +738,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      listUsableSettings = PagedCallSettings.newBuilder(LIST_USABLE_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
       setEdgeSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -649,6 +746,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setSecurityPolicyOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
 
@@ -663,10 +761,12 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
               getIamPolicySettings,
               insertSettings,
               listSettings,
+              listUsableSettings,
               patchSettings,
               setEdgeSecurityPolicySettings,
               setIamPolicySettings,
               setSecurityPolicySettings,
+              testIamPermissionsSettings,
               updateSettings);
       initDefaults(this);
     }
@@ -688,6 +788,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      listUsableSettings = settings.listUsableSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
       setEdgeSecurityPolicySettings = settings.setEdgeSecurityPolicySettings.toBuilder();
@@ -696,6 +797,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       setSecurityPolicySettings = settings.setSecurityPolicySettings.toBuilder();
       setSecurityPolicyOperationSettings = settings.setSecurityPolicyOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
@@ -710,10 +812,12 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
               getIamPolicySettings,
               insertSettings,
               listSettings,
+              listUsableSettings,
               patchSettings,
               setEdgeSecurityPolicySettings,
               setIamPolicySettings,
               setSecurityPolicySettings,
+              testIamPermissionsSettings,
               updateSettings);
     }
 
@@ -777,6 +881,11 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .listUsableSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .patchSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -793,6 +902,11 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
 
       builder
           .setSecurityPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1103,6 +1217,13 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
       return listSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listUsable. */
+    public PagedCallSettings.Builder<
+            ListUsableBackendServicesRequest, BackendServiceListUsable, ListUsablePagedResponse>
+        listUsableSettings() {
+      return listUsableSettings;
+    }
+
     /** Returns the builder for the settings used for calls to patch. */
     public UnaryCallSettings.Builder<PatchBackendServiceRequest, Operation> patchSettings() {
       return patchSettings;
@@ -1150,6 +1271,13 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
             SetSecurityPolicyBackendServiceRequest, Operation, Operation>
         setSecurityPolicyOperationSettings() {
       return setSecurityPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsBackendServiceRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to update. */

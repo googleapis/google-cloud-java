@@ -357,6 +357,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.netapp.v1.Volume.State)
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -365,10 +366,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Name of the volume
+   * Identifier. Name of the volume
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -388,10 +389,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Name of the volume
+   * Identifier. Name of the volume
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1792,6 +1793,56 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return hasReplication_;
   }
 
+  public static final int BACKUP_CONFIG_FIELD_NUMBER = 30;
+  private com.google.cloud.netapp.v1.BackupConfig backupConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * BackupConfig of the volume.
+   * </pre>
+   *
+   * <code>optional .google.cloud.netapp.v1.BackupConfig backup_config = 30;</code>
+   *
+   * @return Whether the backupConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasBackupConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * BackupConfig of the volume.
+   * </pre>
+   *
+   * <code>optional .google.cloud.netapp.v1.BackupConfig backup_config = 30;</code>
+   *
+   * @return The backupConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.BackupConfig getBackupConfig() {
+    return backupConfig_ == null
+        ? com.google.cloud.netapp.v1.BackupConfig.getDefaultInstance()
+        : backupConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * BackupConfig of the volume.
+   * </pre>
+   *
+   * <code>optional .google.cloud.netapp.v1.BackupConfig backup_config = 30;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.BackupConfigOrBuilder getBackupConfigOrBuilder() {
+    return backupConfig_ == null
+        ? com.google.cloud.netapp.v1.BackupConfig.getDefaultInstance()
+        : backupConfig_;
+  }
+
   public static final int RESTRICTED_ACTIONS_FIELD_NUMBER = 31;
 
   @SuppressWarnings("serial")
@@ -2014,6 +2065,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (hasReplication_ != false) {
       output.writeBool(29, hasReplication_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(30, getBackupConfig());
+    }
     if (getRestrictedActionsList().size() > 0) {
       output.writeUInt32NoTag(250);
       output.writeUInt32NoTag(restrictedActionsMemoizedSerializedSize);
@@ -2145,6 +2199,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (hasReplication_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(29, hasReplication_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, getBackupConfig());
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < restrictedActions_.size(); i++) {
@@ -2215,6 +2272,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (!getKmsConfig().equals(other.getKmsConfig())) return false;
     if (encryptionType_ != other.encryptionType_) return false;
     if (getHasReplication() != other.getHasReplication()) return false;
+    if (hasBackupConfig() != other.hasBackupConfig()) return false;
+    if (hasBackupConfig()) {
+      if (!getBackupConfig().equals(other.getBackupConfig())) return false;
+    }
     if (!restrictedActions_.equals(other.restrictedActions_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2304,6 +2365,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + encryptionType_;
     hash = (37 * hash) + HAS_REPLICATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasReplication());
+    if (hasBackupConfig()) {
+      hash = (37 * hash) + BACKUP_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getBackupConfig().hashCode();
+    }
     if (getRestrictedActionsCount() > 0) {
       hash = (37 * hash) + RESTRICTED_ACTIONS_FIELD_NUMBER;
       hash = (53 * hash) + restrictedActions_.hashCode();
@@ -2456,10 +2521,24 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.netapp.v1.Volume.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getCreateTimeFieldBuilder();
+        getExportPolicyFieldBuilder();
+        getMountOptionsFieldBuilder();
+        getSnapshotPolicyFieldBuilder();
+        getRestoreParametersFieldBuilder();
+        getBackupConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -2519,8 +2598,13 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       kmsConfig_ = "";
       encryptionType_ = 0;
       hasReplication_ = false;
+      backupConfig_ = null;
+      if (backupConfigBuilder_ != null) {
+        backupConfigBuilder_.dispose();
+        backupConfigBuilder_ = null;
+      }
       restrictedActions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       return this;
     }
 
@@ -2575,9 +2659,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.mountOptions_ = mountOptionsBuilder_.build();
       }
-      if (((bitField0_ & 0x20000000) != 0)) {
+      if (((bitField0_ & 0x40000000) != 0)) {
         restrictedActions_ = java.util.Collections.unmodifiableList(restrictedActions_);
-        bitField0_ = (bitField0_ & ~0x20000000);
+        bitField0_ = (bitField0_ & ~0x40000000);
       }
       result.restrictedActions_ = restrictedActions_;
     }
@@ -2668,6 +2752,13 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x10000000) != 0)) {
         result.hasReplication_ = hasReplication_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.backupConfig_ =
+            backupConfigBuilder_ == null ? backupConfig_ : backupConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -2859,10 +2950,13 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (other.getHasReplication() != false) {
         setHasReplication(other.getHasReplication());
       }
+      if (other.hasBackupConfig()) {
+        mergeBackupConfig(other.getBackupConfig());
+      }
       if (!other.restrictedActions_.isEmpty()) {
         if (restrictedActions_.isEmpty()) {
           restrictedActions_ = other.restrictedActions_;
-          bitField0_ = (bitField0_ & ~0x20000000);
+          bitField0_ = (bitField0_ & ~0x40000000);
         } else {
           ensureRestrictedActionsIsMutable();
           restrictedActions_.addAll(other.restrictedActions_);
@@ -3109,6 +3203,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x10000000;
                 break;
               } // case 232
+            case 242:
+              {
+                input.readMessage(getBackupConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x20000000;
+                break;
+              } // case 242
             case 248:
               {
                 int tmpRaw = input.readEnum();
@@ -3152,10 +3252,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the volume
+     * Identifier. Name of the volume
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -3174,10 +3274,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the volume
+     * Identifier. Name of the volume
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -3196,10 +3296,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the volume
+     * Identifier. Name of the volume
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3217,10 +3317,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the volume
+     * Identifier. Name of the volume
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -3234,10 +3334,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the volume
+     * Identifier. Name of the volume
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -6898,13 +6998,197 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.netapp.v1.BackupConfig backupConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.netapp.v1.BackupConfig,
+            com.google.cloud.netapp.v1.BackupConfig.Builder,
+            com.google.cloud.netapp.v1.BackupConfigOrBuilder>
+        backupConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * BackupConfig of the volume.
+     * </pre>
+     *
+     * <code>optional .google.cloud.netapp.v1.BackupConfig backup_config = 30;</code>
+     *
+     * @return Whether the backupConfig field is set.
+     */
+    public boolean hasBackupConfig() {
+      return ((bitField0_ & 0x20000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BackupConfig of the volume.
+     * </pre>
+     *
+     * <code>optional .google.cloud.netapp.v1.BackupConfig backup_config = 30;</code>
+     *
+     * @return The backupConfig.
+     */
+    public com.google.cloud.netapp.v1.BackupConfig getBackupConfig() {
+      if (backupConfigBuilder_ == null) {
+        return backupConfig_ == null
+            ? com.google.cloud.netapp.v1.BackupConfig.getDefaultInstance()
+            : backupConfig_;
+      } else {
+        return backupConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BackupConfig of the volume.
+     * </pre>
+     *
+     * <code>optional .google.cloud.netapp.v1.BackupConfig backup_config = 30;</code>
+     */
+    public Builder setBackupConfig(com.google.cloud.netapp.v1.BackupConfig value) {
+      if (backupConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        backupConfig_ = value;
+      } else {
+        backupConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BackupConfig of the volume.
+     * </pre>
+     *
+     * <code>optional .google.cloud.netapp.v1.BackupConfig backup_config = 30;</code>
+     */
+    public Builder setBackupConfig(
+        com.google.cloud.netapp.v1.BackupConfig.Builder builderForValue) {
+      if (backupConfigBuilder_ == null) {
+        backupConfig_ = builderForValue.build();
+      } else {
+        backupConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BackupConfig of the volume.
+     * </pre>
+     *
+     * <code>optional .google.cloud.netapp.v1.BackupConfig backup_config = 30;</code>
+     */
+    public Builder mergeBackupConfig(com.google.cloud.netapp.v1.BackupConfig value) {
+      if (backupConfigBuilder_ == null) {
+        if (((bitField0_ & 0x20000000) != 0)
+            && backupConfig_ != null
+            && backupConfig_ != com.google.cloud.netapp.v1.BackupConfig.getDefaultInstance()) {
+          getBackupConfigBuilder().mergeFrom(value);
+        } else {
+          backupConfig_ = value;
+        }
+      } else {
+        backupConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BackupConfig of the volume.
+     * </pre>
+     *
+     * <code>optional .google.cloud.netapp.v1.BackupConfig backup_config = 30;</code>
+     */
+    public Builder clearBackupConfig() {
+      bitField0_ = (bitField0_ & ~0x20000000);
+      backupConfig_ = null;
+      if (backupConfigBuilder_ != null) {
+        backupConfigBuilder_.dispose();
+        backupConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BackupConfig of the volume.
+     * </pre>
+     *
+     * <code>optional .google.cloud.netapp.v1.BackupConfig backup_config = 30;</code>
+     */
+    public com.google.cloud.netapp.v1.BackupConfig.Builder getBackupConfigBuilder() {
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return getBackupConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BackupConfig of the volume.
+     * </pre>
+     *
+     * <code>optional .google.cloud.netapp.v1.BackupConfig backup_config = 30;</code>
+     */
+    public com.google.cloud.netapp.v1.BackupConfigOrBuilder getBackupConfigOrBuilder() {
+      if (backupConfigBuilder_ != null) {
+        return backupConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return backupConfig_ == null
+            ? com.google.cloud.netapp.v1.BackupConfig.getDefaultInstance()
+            : backupConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BackupConfig of the volume.
+     * </pre>
+     *
+     * <code>optional .google.cloud.netapp.v1.BackupConfig backup_config = 30;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.netapp.v1.BackupConfig,
+            com.google.cloud.netapp.v1.BackupConfig.Builder,
+            com.google.cloud.netapp.v1.BackupConfigOrBuilder>
+        getBackupConfigFieldBuilder() {
+      if (backupConfigBuilder_ == null) {
+        backupConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.netapp.v1.BackupConfig,
+                com.google.cloud.netapp.v1.BackupConfig.Builder,
+                com.google.cloud.netapp.v1.BackupConfigOrBuilder>(
+                getBackupConfig(), getParentForChildren(), isClean());
+        backupConfig_ = null;
+      }
+      return backupConfigBuilder_;
+    }
+
     private java.util.List<java.lang.Integer> restrictedActions_ =
         java.util.Collections.emptyList();
 
     private void ensureRestrictedActionsIsMutable() {
-      if (!((bitField0_ & 0x20000000) != 0)) {
+      if (!((bitField0_ & 0x40000000) != 0)) {
         restrictedActions_ = new java.util.ArrayList<java.lang.Integer>(restrictedActions_);
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x40000000;
       }
     }
     /**
@@ -7044,7 +7328,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRestrictedActions() {
       restrictedActions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       onChanged();
       return this;
     }

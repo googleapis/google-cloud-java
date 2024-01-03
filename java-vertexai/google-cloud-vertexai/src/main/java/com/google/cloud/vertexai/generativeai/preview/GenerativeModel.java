@@ -212,6 +212,18 @@ public class GenerativeModel {
   }
 
   /**
+   * Count tokens in a single content.
+   *
+   * @param content a {@link com.google.cloud.vertexai.api.Content} to count tokens
+   * @return a {@link com.google.cloud.vertexai.api.CountTokensResponse} instance that contains the
+   *     total tokens and total billable characters of the given list of contents
+   * @throws IOException if an I/O error occurs while making the API call
+   */
+  public CountTokensResponse countTokens(Content content) throws IOException {
+    return countTokens(Arrays.asList(content));
+  }
+
+  /**
    * Count tokens in a list of contents.
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to count tokens

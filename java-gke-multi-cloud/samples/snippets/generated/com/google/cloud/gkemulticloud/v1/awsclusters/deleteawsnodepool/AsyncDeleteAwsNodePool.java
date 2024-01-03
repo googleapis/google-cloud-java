@@ -43,6 +43,7 @@ public class AsyncDeleteAwsNodePool {
                       .toString())
               .setValidateOnly(true)
               .setAllowMissing(true)
+              .setIgnoreErrors(true)
               .setEtag("etag3123477")
               .build();
       ApiFuture<Operation> future =

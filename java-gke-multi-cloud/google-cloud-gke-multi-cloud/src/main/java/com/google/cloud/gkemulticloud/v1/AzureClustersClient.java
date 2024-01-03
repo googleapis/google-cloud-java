@@ -1164,8 +1164,8 @@ public class AzureClustersClient implements BackgroundResource {
    *     [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
    *     <p>&#42; `description`. &#42; `azureClient`. &#42; `control_plane.version`. &#42;
    *     `control_plane.vm_size`. &#42; `annotations`. &#42; `authorization.admin_users`. &#42;
-   *     `control_plane.root_volume.size_gib`. &#42; `azure_services_authentication`. &#42;
-   *     `azure_services_authentication.tenant_id`. &#42;
+   *     `authorization.admin_groups`. &#42; `control_plane.root_volume.size_gib`. &#42;
+   *     `azure_services_authentication`. &#42; `azure_services_authentication.tenant_id`. &#42;
    *     `azure_services_authentication.application_id`. &#42; `control_plane.proxy_config`. &#42;
    *     `control_plane.proxy_config.resource_group_id`. &#42;
    *     `control_plane.proxy_config.secret_id`. &#42; `control_plane.ssh_config.authorized_key`.
@@ -1771,6 +1771,86 @@ public class AzureClustersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Generates an access token for a cluster agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   GenerateAzureClusterAgentTokenRequest request =
+   *       GenerateAzureClusterAgentTokenRequest.newBuilder()
+   *           .setAzureCluster(
+   *               AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString())
+   *           .setSubjectToken("subjectToken-1519661011")
+   *           .setSubjectTokenType("subjectTokenType1839592711")
+   *           .setVersion("version351608024")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setGrantType("grantType-1219832202")
+   *           .setAudience("audience975628804")
+   *           .setScope("scope109264468")
+   *           .setRequestedTokenType("requestedTokenType1733106949")
+   *           .setOptions("options-1249474914")
+   *           .build();
+   *   GenerateAzureClusterAgentTokenResponse response =
+   *       azureClustersClient.generateAzureClusterAgentToken(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateAzureClusterAgentTokenResponse generateAzureClusterAgentToken(
+      GenerateAzureClusterAgentTokenRequest request) {
+    return generateAzureClusterAgentTokenCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates an access token for a cluster agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   GenerateAzureClusterAgentTokenRequest request =
+   *       GenerateAzureClusterAgentTokenRequest.newBuilder()
+   *           .setAzureCluster(
+   *               AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString())
+   *           .setSubjectToken("subjectToken-1519661011")
+   *           .setSubjectTokenType("subjectTokenType1839592711")
+   *           .setVersion("version351608024")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setGrantType("grantType-1219832202")
+   *           .setAudience("audience975628804")
+   *           .setScope("scope109264468")
+   *           .setRequestedTokenType("requestedTokenType1733106949")
+   *           .setOptions("options-1249474914")
+   *           .build();
+   *   ApiFuture<GenerateAzureClusterAgentTokenResponse> future =
+   *       azureClustersClient.generateAzureClusterAgentTokenCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateAzureClusterAgentTokenResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+      generateAzureClusterAgentTokenCallable() {
+    return stub.generateAzureClusterAgentTokenCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Generates a short-lived access token to authenticate to a given
    * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
    *
@@ -1862,7 +1942,8 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param parent Required. The [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource
    *     where this node pool will be created.
-   *     <p>Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *     <p>`AzureCluster` names are formatted as
+   *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @param azureNodePool Required. The specification of the
@@ -1916,7 +1997,8 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param parent Required. The [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource
    *     where this node pool will be created.
-   *     <p>Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *     <p>`AzureCluster` names are formatted as
+   *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @param azureNodePool Required. The specification of the
@@ -2079,7 +2161,8 @@ public class AzureClustersClient implements BackgroundResource {
    *     this field. The elements of the repeated paths field can only include these fields from
    *     [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
    *     <p>&#42;. `annotations`. &#42; `version`. &#42; `autoscaling.min_node_count`. &#42;
-   *     `autoscaling.max_node_count`. &#42; `config.ssh_config.authorized_key`.
+   *     `autoscaling.max_node_count`. &#42; `config.ssh_config.authorized_key`. &#42;
+   *     `management.auto_repair`. &#42; `management`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AzureNodePool, OperationMetadata> updateAzureNodePoolAsync(
@@ -2688,6 +2771,248 @@ public class AzureClustersClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteAzureNodePoolRequest, Operation> deleteAzureNodePoolCallable() {
     return stub.deleteAzureNodePoolCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0
+   * specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   AzureClusterName azureCluster =
+   *       AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]");
+   *   AzureOpenIdConfig response = azureClustersClient.getAzureOpenIdConfig(azureCluster);
+   * }
+   * }</pre>
+   *
+   * @param azureCluster Required. The AzureCluster, which owns the OIDC discovery document. Format:
+   *     projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AzureOpenIdConfig getAzureOpenIdConfig(AzureClusterName azureCluster) {
+    GetAzureOpenIdConfigRequest request =
+        GetAzureOpenIdConfigRequest.newBuilder()
+            .setAzureCluster(azureCluster == null ? null : azureCluster.toString())
+            .build();
+    return getAzureOpenIdConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0
+   * specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   String azureCluster =
+   *       AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString();
+   *   AzureOpenIdConfig response = azureClustersClient.getAzureOpenIdConfig(azureCluster);
+   * }
+   * }</pre>
+   *
+   * @param azureCluster Required. The AzureCluster, which owns the OIDC discovery document. Format:
+   *     projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AzureOpenIdConfig getAzureOpenIdConfig(String azureCluster) {
+    GetAzureOpenIdConfigRequest request =
+        GetAzureOpenIdConfigRequest.newBuilder().setAzureCluster(azureCluster).build();
+    return getAzureOpenIdConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0
+   * specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   GetAzureOpenIdConfigRequest request =
+   *       GetAzureOpenIdConfigRequest.newBuilder()
+   *           .setAzureCluster(
+   *               AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString())
+   *           .build();
+   *   AzureOpenIdConfig response = azureClustersClient.getAzureOpenIdConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AzureOpenIdConfig getAzureOpenIdConfig(GetAzureOpenIdConfigRequest request) {
+    return getAzureOpenIdConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0
+   * specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   GetAzureOpenIdConfigRequest request =
+   *       GetAzureOpenIdConfigRequest.newBuilder()
+   *           .setAzureCluster(
+   *               AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString())
+   *           .build();
+   *   ApiFuture<AzureOpenIdConfig> future =
+   *       azureClustersClient.getAzureOpenIdConfigCallable().futureCall(request);
+   *   // Do something.
+   *   AzureOpenIdConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+      getAzureOpenIdConfigCallable() {
+    return stub.getAzureOpenIdConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the public component of the cluster signing keys in JSON Web Key format.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   AzureClusterName azureCluster =
+   *       AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]");
+   *   AzureJsonWebKeys response = azureClustersClient.getAzureJsonWebKeys(azureCluster);
+   * }
+   * }</pre>
+   *
+   * @param azureCluster Required. The AzureCluster, which owns the JsonWebKeys. Format:
+   *     projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AzureJsonWebKeys getAzureJsonWebKeys(AzureClusterName azureCluster) {
+    GetAzureJsonWebKeysRequest request =
+        GetAzureJsonWebKeysRequest.newBuilder()
+            .setAzureCluster(azureCluster == null ? null : azureCluster.toString())
+            .build();
+    return getAzureJsonWebKeys(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the public component of the cluster signing keys in JSON Web Key format.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   String azureCluster =
+   *       AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString();
+   *   AzureJsonWebKeys response = azureClustersClient.getAzureJsonWebKeys(azureCluster);
+   * }
+   * }</pre>
+   *
+   * @param azureCluster Required. The AzureCluster, which owns the JsonWebKeys. Format:
+   *     projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AzureJsonWebKeys getAzureJsonWebKeys(String azureCluster) {
+    GetAzureJsonWebKeysRequest request =
+        GetAzureJsonWebKeysRequest.newBuilder().setAzureCluster(azureCluster).build();
+    return getAzureJsonWebKeys(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the public component of the cluster signing keys in JSON Web Key format.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   GetAzureJsonWebKeysRequest request =
+   *       GetAzureJsonWebKeysRequest.newBuilder()
+   *           .setAzureCluster(
+   *               AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString())
+   *           .build();
+   *   AzureJsonWebKeys response = azureClustersClient.getAzureJsonWebKeys(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AzureJsonWebKeys getAzureJsonWebKeys(GetAzureJsonWebKeysRequest request) {
+    return getAzureJsonWebKeysCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the public component of the cluster signing keys in JSON Web Key format.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   GetAzureJsonWebKeysRequest request =
+   *       GetAzureJsonWebKeysRequest.newBuilder()
+   *           .setAzureCluster(
+   *               AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString())
+   *           .build();
+   *   ApiFuture<AzureJsonWebKeys> future =
+   *       azureClustersClient.getAzureJsonWebKeysCallable().futureCall(request);
+   *   // Do something.
+   *   AzureJsonWebKeys response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
+      getAzureJsonWebKeysCallable() {
+    return stub.getAzureJsonWebKeysCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

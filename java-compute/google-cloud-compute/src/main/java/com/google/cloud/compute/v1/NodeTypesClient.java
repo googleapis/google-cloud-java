@@ -210,6 +210,7 @@ public class NodeTypesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, NodeTypesScopedList> element :
    *       nodeTypesClient.aggregatedList(request).iterateAll()) {
@@ -247,6 +248,7 @@ public class NodeTypesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, NodeTypesScopedList>> future =
    *       nodeTypesClient.aggregatedListPagedCallable().futureCall(request);
@@ -284,6 +286,7 @@ public class NodeTypesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     NodeTypeAggregatedList response = nodeTypesClient.aggregatedListCallable().call(request);

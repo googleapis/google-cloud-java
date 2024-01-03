@@ -38,6 +38,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.stub.HttpJsonAnalyticsAdminServiceStub;
@@ -3009,6 +3010,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3059,6 +3061,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3109,6 +3112,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3119,6 +3123,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -3155,6 +3160,8 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setDeletable(true)
               .setCustom(true)
+              .setDefaultConversionValue(
+                  ConversionEvent.DefaultConversionValue.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateConversionEvent(conversionEvent, updateMask);
@@ -3173,6 +3180,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3221,6 +3229,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -10845,88 +10854,6 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
   }
 
   @Test
-  public void deleteSubpropertyEventFilterTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockService.addResponse(expectedResponse);
-
-    SubpropertyEventFilterName name =
-        SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]");
-
-    client.deleteSubpropertyEventFilter(name);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void deleteSubpropertyEventFilterExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      SubpropertyEventFilterName name =
-          SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]");
-      client.deleteSubpropertyEventFilter(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteSubpropertyEventFilterTest2() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockService.addResponse(expectedResponse);
-
-    String name = "properties/propertie-6725/subpropertyEventFilters/subpropertyEventFilter-6725";
-
-    client.deleteSubpropertyEventFilter(name);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void deleteSubpropertyEventFilterExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String name = "properties/propertie-6725/subpropertyEventFilters/subpropertyEventFilter-6725";
-      client.deleteSubpropertyEventFilter(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
   public void createSubpropertyEventFilterTest() throws Exception {
     SubpropertyEventFilter expectedResponse =
         SubpropertyEventFilter.newBuilder()
@@ -11022,6 +10949,353 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
       String parent = "properties/propertie-2024";
       SubpropertyEventFilter subpropertyEventFilter = SubpropertyEventFilter.newBuilder().build();
       client.createSubpropertyEventFilter(parent, subpropertyEventFilter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSubpropertyEventFilterTest() throws Exception {
+    SubpropertyEventFilter expectedResponse =
+        SubpropertyEventFilter.newBuilder()
+            .setName(
+                SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+                    .toString())
+            .setApplyToProperty("applyToProperty267785086")
+            .addAllFilterClauses(new ArrayList<SubpropertyEventFilterClause>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SubpropertyEventFilterName name =
+        SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]");
+
+    SubpropertyEventFilter actualResponse = client.getSubpropertyEventFilter(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSubpropertyEventFilterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SubpropertyEventFilterName name =
+          SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]");
+      client.getSubpropertyEventFilter(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSubpropertyEventFilterTest2() throws Exception {
+    SubpropertyEventFilter expectedResponse =
+        SubpropertyEventFilter.newBuilder()
+            .setName(
+                SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+                    .toString())
+            .setApplyToProperty("applyToProperty267785086")
+            .addAllFilterClauses(new ArrayList<SubpropertyEventFilterClause>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-6725/subpropertyEventFilters/subpropertyEventFilter-6725";
+
+    SubpropertyEventFilter actualResponse = client.getSubpropertyEventFilter(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSubpropertyEventFilterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-6725/subpropertyEventFilters/subpropertyEventFilter-6725";
+      client.getSubpropertyEventFilter(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSubpropertyEventFiltersTest() throws Exception {
+    SubpropertyEventFilter responsesElement = SubpropertyEventFilter.newBuilder().build();
+    ListSubpropertyEventFiltersResponse expectedResponse =
+        ListSubpropertyEventFiltersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSubpropertyEventFilters(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListSubpropertyEventFiltersPagedResponse pagedListResponse =
+        client.listSubpropertyEventFilters(parent);
+
+    List<SubpropertyEventFilter> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSubpropertyEventFiltersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSubpropertyEventFiltersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listSubpropertyEventFilters(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSubpropertyEventFiltersTest2() throws Exception {
+    SubpropertyEventFilter responsesElement = SubpropertyEventFilter.newBuilder().build();
+    ListSubpropertyEventFiltersResponse expectedResponse =
+        ListSubpropertyEventFiltersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSubpropertyEventFilters(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+
+    ListSubpropertyEventFiltersPagedResponse pagedListResponse =
+        client.listSubpropertyEventFilters(parent);
+
+    List<SubpropertyEventFilter> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSubpropertyEventFiltersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSubpropertyEventFiltersExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      client.listSubpropertyEventFilters(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSubpropertyEventFilterTest() throws Exception {
+    SubpropertyEventFilter expectedResponse =
+        SubpropertyEventFilter.newBuilder()
+            .setName(
+                SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+                    .toString())
+            .setApplyToProperty("applyToProperty267785086")
+            .addAllFilterClauses(new ArrayList<SubpropertyEventFilterClause>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SubpropertyEventFilter subpropertyEventFilter =
+        SubpropertyEventFilter.newBuilder()
+            .setName(
+                SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+                    .toString())
+            .setApplyToProperty("applyToProperty267785086")
+            .addAllFilterClauses(new ArrayList<SubpropertyEventFilterClause>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SubpropertyEventFilter actualResponse =
+        client.updateSubpropertyEventFilter(subpropertyEventFilter, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateSubpropertyEventFilterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SubpropertyEventFilter subpropertyEventFilter =
+          SubpropertyEventFilter.newBuilder()
+              .setName(
+                  SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+                      .toString())
+              .setApplyToProperty("applyToProperty267785086")
+              .addAllFilterClauses(new ArrayList<SubpropertyEventFilterClause>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSubpropertyEventFilter(subpropertyEventFilter, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSubpropertyEventFilterTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    SubpropertyEventFilterName name =
+        SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]");
+
+    client.deleteSubpropertyEventFilter(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSubpropertyEventFilterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SubpropertyEventFilterName name =
+          SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]");
+      client.deleteSubpropertyEventFilter(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSubpropertyEventFilterTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-6725/subpropertyEventFilters/subpropertyEventFilter-6725";
+
+    client.deleteSubpropertyEventFilter(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSubpropertyEventFilterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-6725/subpropertyEventFilters/subpropertyEventFilter-6725";
+      client.deleteSubpropertyEventFilter(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

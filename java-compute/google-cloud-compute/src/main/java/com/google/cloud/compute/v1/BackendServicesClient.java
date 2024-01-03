@@ -357,6 +357,7 @@ public class BackendServicesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, BackendServicesScopedList> element :
    *       backendServicesClient.aggregatedList(request).iterateAll()) {
@@ -396,6 +397,7 @@ public class BackendServicesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, BackendServicesScopedList>> future =
    *       backendServicesClient.aggregatedListPagedCallable().futureCall(request);
@@ -434,6 +436,7 @@ public class BackendServicesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     BackendServiceAggregatedList response =
@@ -1278,6 +1281,149 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Retrieves an aggregated list of all usable backend services in the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   for (BackendService element : backendServicesClient.listUsable(project).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUsablePagedResponse listUsable(String project) {
+    ListUsableBackendServicesRequest request =
+        ListUsableBackendServicesRequest.newBuilder().setProject(project).build();
+    return listUsable(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves an aggregated list of all usable backend services in the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   ListUsableBackendServicesRequest request =
+   *       ListUsableBackendServicesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (BackendService element : backendServicesClient.listUsable(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListUsablePagedResponse listUsable(ListUsableBackendServicesRequest request) {
+    return listUsablePagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves an aggregated list of all usable backend services in the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   ListUsableBackendServicesRequest request =
+   *       ListUsableBackendServicesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<BackendService> future =
+   *       backendServicesClient.listUsablePagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BackendService element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListUsableBackendServicesRequest, ListUsablePagedResponse>
+      listUsablePagedCallable() {
+    return stub.listUsablePagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves an aggregated list of all usable backend services in the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   ListUsableBackendServicesRequest request =
+   *       ListUsableBackendServicesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   while (true) {
+   *     BackendServiceListUsable response =
+   *         backendServicesClient.listUsableCallable().call(request);
+   *     for (BackendService element : response.getItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListUsableBackendServicesRequest, BackendServiceListUsable>
+      listUsableCallable() {
+    return stub.listUsableCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Patches the specified BackendService resource with the data included in the request. For more
    * information, see Backend services overview. This method supports PATCH semantics and uses the
    * JSON merge patch format and processing rules.
@@ -1802,6 +1948,107 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       backendServicesClient.testIamPermissions(
+   *           project, resource, testPermissionsRequestResource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestPermissionsResponse testIamPermissions(
+      String project, String resource, TestPermissionsRequest testPermissionsRequestResource) {
+    TestIamPermissionsBackendServiceRequest request =
+        TestIamPermissionsBackendServiceRequest.newBuilder()
+            .setProject(project)
+            .setResource(resource)
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   TestIamPermissionsBackendServiceRequest request =
+   *       TestIamPermissionsBackendServiceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   TestPermissionsResponse response = backendServicesClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestPermissionsResponse testIamPermissions(
+      TestIamPermissionsBackendServiceRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   TestIamPermissionsBackendServiceRequest request =
+   *       TestIamPermissionsBackendServiceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       backendServicesClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsBackendServiceRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Updates the specified BackendService resource with the data included in the request. For more
    * information, see Backend services overview.
    *
@@ -2132,6 +2379,87 @@ public class BackendServicesClient implements BackgroundResource {
     @Override
     protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListUsablePagedResponse
+      extends AbstractPagedListResponse<
+          ListUsableBackendServicesRequest,
+          BackendServiceListUsable,
+          BackendService,
+          ListUsablePage,
+          ListUsableFixedSizeCollection> {
+
+    public static ApiFuture<ListUsablePagedResponse> createAsync(
+        PageContext<ListUsableBackendServicesRequest, BackendServiceListUsable, BackendService>
+            context,
+        ApiFuture<BackendServiceListUsable> futureResponse) {
+      ApiFuture<ListUsablePage> futurePage =
+          ListUsablePage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListUsablePagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListUsablePagedResponse(ListUsablePage page) {
+      super(page, ListUsableFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListUsablePage
+      extends AbstractPage<
+          ListUsableBackendServicesRequest,
+          BackendServiceListUsable,
+          BackendService,
+          ListUsablePage> {
+
+    private ListUsablePage(
+        PageContext<ListUsableBackendServicesRequest, BackendServiceListUsable, BackendService>
+            context,
+        BackendServiceListUsable response) {
+      super(context, response);
+    }
+
+    private static ListUsablePage createEmptyPage() {
+      return new ListUsablePage(null, null);
+    }
+
+    @Override
+    protected ListUsablePage createPage(
+        PageContext<ListUsableBackendServicesRequest, BackendServiceListUsable, BackendService>
+            context,
+        BackendServiceListUsable response) {
+      return new ListUsablePage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListUsablePage> createPageAsync(
+        PageContext<ListUsableBackendServicesRequest, BackendServiceListUsable, BackendService>
+            context,
+        ApiFuture<BackendServiceListUsable> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListUsableFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListUsableBackendServicesRequest,
+          BackendServiceListUsable,
+          BackendService,
+          ListUsablePage,
+          ListUsableFixedSizeCollection> {
+
+    private ListUsableFixedSizeCollection(List<ListUsablePage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListUsableFixedSizeCollection createEmptyCollection() {
+      return new ListUsableFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListUsableFixedSizeCollection createCollection(
+        List<ListUsablePage> pages, int collectionSize) {
+      return new ListUsableFixedSizeCollection(pages, collectionSize);
     }
   }
 }

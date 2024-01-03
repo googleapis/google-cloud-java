@@ -116,7 +116,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The URI of the content. Only Cloud Storage URIs (e.g.
      * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-     * is 100 MB.
+     * is 2.5 MB for text-based formats, 100 MB for other formats.
      * </pre>
      *
      * <code>string uri = 3;</code>
@@ -130,7 +130,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The URI of the content. Only Cloud Storage URIs (e.g.
      * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-     * is 100 MB.
+     * is 2.5 MB for text-based formats, 100 MB for other formats.
      * </pre>
      *
      * <code>string uri = 3;</code>
@@ -144,7 +144,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The URI of the content. Only Cloud Storage URIs (e.g.
      * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-     * is 100 MB.
+     * is 2.5 MB for text-based formats, 100 MB for other formats.
      * </pre>
      *
      * <code>string uri = 3;</code>
@@ -345,7 +345,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The URI of the content. Only Cloud Storage URIs (e.g.
      * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-     * is 100 MB.
+     * is 2.5 MB for text-based formats, 100 MB for other formats.
      * </pre>
      *
      * <code>string uri = 3;</code>
@@ -361,7 +361,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The URI of the content. Only Cloud Storage URIs (e.g.
      * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-     * is 100 MB.
+     * is 2.5 MB for text-based formats, 100 MB for other formats.
      * </pre>
      *
      * <code>string uri = 3;</code>
@@ -390,7 +390,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The URI of the content. Only Cloud Storage URIs (e.g.
      * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-     * is 100 MB.
+     * is 2.5 MB for text-based formats, 100 MB for other formats.
      * </pre>
      *
      * <code>string uri = 3;</code>
@@ -1025,7 +1025,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The URI of the content. Only Cloud Storage URIs (e.g.
        * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-       * is 100 MB.
+       * is 2.5 MB for text-based formats, 100 MB for other formats.
        * </pre>
        *
        * <code>string uri = 3;</code>
@@ -1042,7 +1042,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The URI of the content. Only Cloud Storage URIs (e.g.
        * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-       * is 100 MB.
+       * is 2.5 MB for text-based formats, 100 MB for other formats.
        * </pre>
        *
        * <code>string uri = 3;</code>
@@ -1072,7 +1072,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The URI of the content. Only Cloud Storage URIs (e.g.
        * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-       * is 100 MB.
+       * is 2.5 MB for text-based formats, 100 MB for other formats.
        * </pre>
        *
        * <code>string uri = 3;</code>
@@ -1102,7 +1102,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The URI of the content. Only Cloud Storage URIs (e.g.
        * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-       * is 100 MB.
+       * is 2.5 MB for text-based formats, 100 MB for other formats.
        * </pre>
        *
        * <code>string uri = 3;</code>
@@ -1125,7 +1125,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The URI of the content. Only Cloud Storage URIs (e.g.
        * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-       * is 100 MB.
+       * is 2.5 MB for text-based formats, 100 MB for other formats.
        * </pre>
        *
        * <code>string uri = 3;</code>
@@ -1146,7 +1146,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The URI of the content. Only Cloud Storage URIs (e.g.
        * `gs://bucket-name/path/to/file`) are supported. The maximum file size
-       * is 100 MB.
+       * is 2.5 MB for text-based formats, 100 MB for other formats.
        * </pre>
        *
        * <code>string uri = 3;</code>

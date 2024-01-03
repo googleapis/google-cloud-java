@@ -27,7 +27,8 @@ public interface GetEffectivePolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The effective policy to compute. See `Policy` for naming rules.
+   * Required. The effective policy to compute. See
+   * [Policy][google.cloud.orgpolicy.v2.Policy] for naming requirements.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface GetEffectivePolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The effective policy to compute. See `Policy` for naming rules.
+   * Required. The effective policy to compute. See
+   * [Policy][google.cloud.orgpolicy.v2.Policy] for naming requirements.
    * </pre>
    *
    * <code>

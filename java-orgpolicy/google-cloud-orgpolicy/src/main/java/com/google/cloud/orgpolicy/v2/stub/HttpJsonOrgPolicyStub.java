@@ -17,6 +17,7 @@
 package com.google.cloud.orgpolicy.v2.stub;
 
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListConstraintsPagedResponse;
+import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListCustomConstraintsPagedResponse;
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListPoliciesPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -32,15 +33,22 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.orgpolicy.v2.CreateCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.CreatePolicyRequest;
+import com.google.cloud.orgpolicy.v2.CustomConstraint;
+import com.google.cloud.orgpolicy.v2.DeleteCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.DeletePolicyRequest;
+import com.google.cloud.orgpolicy.v2.GetCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.GetEffectivePolicyRequest;
 import com.google.cloud.orgpolicy.v2.GetPolicyRequest;
 import com.google.cloud.orgpolicy.v2.ListConstraintsRequest;
 import com.google.cloud.orgpolicy.v2.ListConstraintsResponse;
+import com.google.cloud.orgpolicy.v2.ListCustomConstraintsRequest;
+import com.google.cloud.orgpolicy.v2.ListCustomConstraintsResponse;
 import com.google.cloud.orgpolicy.v2.ListPoliciesRequest;
 import com.google.cloud.orgpolicy.v2.ListPoliciesResponse;
 import com.google.cloud.orgpolicy.v2.Policy;
+import com.google.cloud.orgpolicy.v2.UpdateCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.UpdatePolicyRequest;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -320,6 +328,190 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeletePolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateCustomConstraintRequest, CustomConstraint>
+      createCustomConstraintMethodDescriptor =
+          ApiMethodDescriptor.<CreateCustomConstraintRequest, CustomConstraint>newBuilder()
+              .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/CreateCustomConstraint")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateCustomConstraintRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=organizations/*}/customConstraints",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomConstraintRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomConstraintRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("customConstraint", request.getCustomConstraint(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CustomConstraint>newBuilder()
+                      .setDefaultInstance(CustomConstraint.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateCustomConstraintRequest, CustomConstraint>
+      updateCustomConstraintMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCustomConstraintRequest, CustomConstraint>newBuilder()
+              .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/UpdateCustomConstraint")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCustomConstraintRequest>newBuilder()
+                      .setPath(
+                          "/v2/{customConstraint.name=organizations/*/customConstraints/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCustomConstraintRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "customConstraint.name",
+                                request.getCustomConstraint().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCustomConstraintRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("customConstraint", request.getCustomConstraint(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CustomConstraint>newBuilder()
+                      .setDefaultInstance(CustomConstraint.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetCustomConstraintRequest, CustomConstraint>
+      getCustomConstraintMethodDescriptor =
+          ApiMethodDescriptor.<GetCustomConstraintRequest, CustomConstraint>newBuilder()
+              .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/GetCustomConstraint")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetCustomConstraintRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=organizations/*/customConstraints/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCustomConstraintRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCustomConstraintRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CustomConstraint>newBuilder()
+                      .setDefaultInstance(CustomConstraint.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListCustomConstraintsRequest, ListCustomConstraintsResponse>
+      listCustomConstraintsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListCustomConstraintsRequest, ListCustomConstraintsResponse>newBuilder()
+              .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/ListCustomConstraints")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListCustomConstraintsRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=organizations/*}/customConstraints",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCustomConstraintsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCustomConstraintsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListCustomConstraintsResponse>newBuilder()
+                      .setDefaultInstance(ListCustomConstraintsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteCustomConstraintRequest, Empty>
+      deleteCustomConstraintMethodDescriptor =
+          ApiMethodDescriptor.<DeleteCustomConstraintRequest, Empty>newBuilder()
+              .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/DeleteCustomConstraint")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteCustomConstraintRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=organizations/*/customConstraints/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCustomConstraintRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCustomConstraintRequest> serializer =
+                                ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -344,6 +536,17 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
   private final UnaryCallable<CreatePolicyRequest, Policy> createPolicyCallable;
   private final UnaryCallable<UpdatePolicyRequest, Policy> updatePolicyCallable;
   private final UnaryCallable<DeletePolicyRequest, Empty> deletePolicyCallable;
+  private final UnaryCallable<CreateCustomConstraintRequest, CustomConstraint>
+      createCustomConstraintCallable;
+  private final UnaryCallable<UpdateCustomConstraintRequest, CustomConstraint>
+      updateCustomConstraintCallable;
+  private final UnaryCallable<GetCustomConstraintRequest, CustomConstraint>
+      getCustomConstraintCallable;
+  private final UnaryCallable<ListCustomConstraintsRequest, ListCustomConstraintsResponse>
+      listCustomConstraintsCallable;
+  private final UnaryCallable<ListCustomConstraintsRequest, ListCustomConstraintsPagedResponse>
+      listCustomConstraintsPagedCallable;
+  private final UnaryCallable<DeleteCustomConstraintRequest, Empty> deleteCustomConstraintCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -464,6 +667,69 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CreateCustomConstraintRequest, CustomConstraint>
+        createCustomConstraintTransportSettings =
+            HttpJsonCallSettings.<CreateCustomConstraintRequest, CustomConstraint>newBuilder()
+                .setMethodDescriptor(createCustomConstraintMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateCustomConstraintRequest, CustomConstraint>
+        updateCustomConstraintTransportSettings =
+            HttpJsonCallSettings.<UpdateCustomConstraintRequest, CustomConstraint>newBuilder()
+                .setMethodDescriptor(updateCustomConstraintMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "custom_constraint.name",
+                          String.valueOf(request.getCustomConstraint().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetCustomConstraintRequest, CustomConstraint>
+        getCustomConstraintTransportSettings =
+            HttpJsonCallSettings.<GetCustomConstraintRequest, CustomConstraint>newBuilder()
+                .setMethodDescriptor(getCustomConstraintMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListCustomConstraintsRequest, ListCustomConstraintsResponse>
+        listCustomConstraintsTransportSettings =
+            HttpJsonCallSettings
+                .<ListCustomConstraintsRequest, ListCustomConstraintsResponse>newBuilder()
+                .setMethodDescriptor(listCustomConstraintsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteCustomConstraintRequest, Empty>
+        deleteCustomConstraintTransportSettings =
+            HttpJsonCallSettings.<DeleteCustomConstraintRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteCustomConstraintMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.listConstraintsCallable =
         callableFactory.createUnaryCallable(
@@ -494,6 +760,36 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
     this.deletePolicyCallable =
         callableFactory.createUnaryCallable(
             deletePolicyTransportSettings, settings.deletePolicySettings(), clientContext);
+    this.createCustomConstraintCallable =
+        callableFactory.createUnaryCallable(
+            createCustomConstraintTransportSettings,
+            settings.createCustomConstraintSettings(),
+            clientContext);
+    this.updateCustomConstraintCallable =
+        callableFactory.createUnaryCallable(
+            updateCustomConstraintTransportSettings,
+            settings.updateCustomConstraintSettings(),
+            clientContext);
+    this.getCustomConstraintCallable =
+        callableFactory.createUnaryCallable(
+            getCustomConstraintTransportSettings,
+            settings.getCustomConstraintSettings(),
+            clientContext);
+    this.listCustomConstraintsCallable =
+        callableFactory.createUnaryCallable(
+            listCustomConstraintsTransportSettings,
+            settings.listCustomConstraintsSettings(),
+            clientContext);
+    this.listCustomConstraintsPagedCallable =
+        callableFactory.createPagedCallable(
+            listCustomConstraintsTransportSettings,
+            settings.listCustomConstraintsSettings(),
+            clientContext);
+    this.deleteCustomConstraintCallable =
+        callableFactory.createUnaryCallable(
+            deleteCustomConstraintTransportSettings,
+            settings.deleteCustomConstraintSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -509,6 +805,11 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
     methodDescriptors.add(createPolicyMethodDescriptor);
     methodDescriptors.add(updatePolicyMethodDescriptor);
     methodDescriptors.add(deletePolicyMethodDescriptor);
+    methodDescriptors.add(createCustomConstraintMethodDescriptor);
+    methodDescriptors.add(updateCustomConstraintMethodDescriptor);
+    methodDescriptors.add(getCustomConstraintMethodDescriptor);
+    methodDescriptors.add(listCustomConstraintsMethodDescriptor);
+    methodDescriptors.add(deleteCustomConstraintMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -556,6 +857,40 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
   @Override
   public UnaryCallable<DeletePolicyRequest, Empty> deletePolicyCallable() {
     return deletePolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomConstraintRequest, CustomConstraint>
+      createCustomConstraintCallable() {
+    return createCustomConstraintCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCustomConstraintRequest, CustomConstraint>
+      updateCustomConstraintCallable() {
+    return updateCustomConstraintCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCustomConstraintRequest, CustomConstraint> getCustomConstraintCallable() {
+    return getCustomConstraintCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomConstraintsRequest, ListCustomConstraintsResponse>
+      listCustomConstraintsCallable() {
+    return listCustomConstraintsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomConstraintsRequest, ListCustomConstraintsPagedResponse>
+      listCustomConstraintsPagedCallable() {
+    return listCustomConstraintsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCustomConstraintRequest, Empty> deleteCustomConstraintCallable() {
+    return deleteCustomConstraintCallable;
   }
 
   @Override

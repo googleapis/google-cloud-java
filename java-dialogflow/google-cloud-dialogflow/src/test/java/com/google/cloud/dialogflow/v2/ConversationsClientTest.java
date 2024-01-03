@@ -822,6 +822,7 @@ public class ConversationsClientTest {
     SearchKnowledgeResponse expectedResponse =
         SearchKnowledgeResponse.newBuilder()
             .addAllAnswers(new ArrayList<SearchKnowledgeAnswer>())
+            .setRewrittenQuery("rewrittenQuery-1572767836")
             .build();
     mockConversations.addResponse(expectedResponse);
 

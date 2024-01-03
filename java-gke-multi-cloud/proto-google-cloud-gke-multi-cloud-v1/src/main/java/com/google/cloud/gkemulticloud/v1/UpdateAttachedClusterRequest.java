@@ -151,12 +151,16 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
    * fields from
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
    *
-   *  *   `description`.
    *  *   `annotations`.
-   *  *   `platform_version`.
+   *  *   `authorization.admin_groups`.
    *  *   `authorization.admin_users`.
+   *  *   `binary_authorization.evaluation_mode`.
+   *  *   `description`.
    *  *   `logging_config.component_config.enable_components`.
    *  *   `monitoring_config.managed_prometheus_config.enabled`.
+   *  *   `platform_version`.
+   *  *   `proxy_config.kubernetes_secret.name`.
+   *  *   `proxy_config.kubernetes_secret.namespace`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -177,12 +181,16 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
    * fields from
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
    *
-   *  *   `description`.
    *  *   `annotations`.
-   *  *   `platform_version`.
+   *  *   `authorization.admin_groups`.
    *  *   `authorization.admin_users`.
+   *  *   `binary_authorization.evaluation_mode`.
+   *  *   `description`.
    *  *   `logging_config.component_config.enable_components`.
    *  *   `monitoring_config.managed_prometheus_config.enabled`.
+   *  *   `platform_version`.
+   *  *   `proxy_config.kubernetes_secret.name`.
+   *  *   `proxy_config.kubernetes_secret.namespace`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -203,12 +211,16 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
    * fields from
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
    *
-   *  *   `description`.
    *  *   `annotations`.
-   *  *   `platform_version`.
+   *  *   `authorization.admin_groups`.
    *  *   `authorization.admin_users`.
+   *  *   `binary_authorization.evaluation_mode`.
+   *  *   `description`.
    *  *   `logging_config.component_config.enable_components`.
    *  *   `monitoring_config.managed_prometheus_config.enabled`.
+   *  *   `platform_version`.
+   *  *   `proxy_config.kubernetes_secret.name`.
+   *  *   `proxy_config.kubernetes_secret.namespace`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -916,12 +928,16 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
      *
-     *  *   `description`.
      *  *   `annotations`.
-     *  *   `platform_version`.
+     *  *   `authorization.admin_groups`.
      *  *   `authorization.admin_users`.
+     *  *   `binary_authorization.evaluation_mode`.
+     *  *   `description`.
      *  *   `logging_config.component_config.enable_components`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `platform_version`.
+     *  *   `proxy_config.kubernetes_secret.name`.
+     *  *   `proxy_config.kubernetes_secret.namespace`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -941,12 +957,16 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
      *
-     *  *   `description`.
      *  *   `annotations`.
-     *  *   `platform_version`.
+     *  *   `authorization.admin_groups`.
      *  *   `authorization.admin_users`.
+     *  *   `binary_authorization.evaluation_mode`.
+     *  *   `description`.
      *  *   `logging_config.component_config.enable_components`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `platform_version`.
+     *  *   `proxy_config.kubernetes_secret.name`.
+     *  *   `proxy_config.kubernetes_secret.namespace`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -972,12 +992,16 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
      *
-     *  *   `description`.
      *  *   `annotations`.
-     *  *   `platform_version`.
+     *  *   `authorization.admin_groups`.
      *  *   `authorization.admin_users`.
+     *  *   `binary_authorization.evaluation_mode`.
+     *  *   `description`.
      *  *   `logging_config.component_config.enable_components`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `platform_version`.
+     *  *   `proxy_config.kubernetes_secret.name`.
+     *  *   `proxy_config.kubernetes_secret.namespace`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1005,12 +1029,16 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
      *
-     *  *   `description`.
      *  *   `annotations`.
-     *  *   `platform_version`.
+     *  *   `authorization.admin_groups`.
      *  *   `authorization.admin_users`.
+     *  *   `binary_authorization.evaluation_mode`.
+     *  *   `description`.
      *  *   `logging_config.component_config.enable_components`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `platform_version`.
+     *  *   `proxy_config.kubernetes_secret.name`.
+     *  *   `proxy_config.kubernetes_secret.namespace`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1035,12 +1063,16 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
      *
-     *  *   `description`.
      *  *   `annotations`.
-     *  *   `platform_version`.
+     *  *   `authorization.admin_groups`.
      *  *   `authorization.admin_users`.
+     *  *   `binary_authorization.evaluation_mode`.
+     *  *   `description`.
      *  *   `logging_config.component_config.enable_components`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `platform_version`.
+     *  *   `proxy_config.kubernetes_secret.name`.
+     *  *   `proxy_config.kubernetes_secret.namespace`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1071,12 +1103,16 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
      *
-     *  *   `description`.
      *  *   `annotations`.
-     *  *   `platform_version`.
+     *  *   `authorization.admin_groups`.
      *  *   `authorization.admin_users`.
+     *  *   `binary_authorization.evaluation_mode`.
+     *  *   `description`.
      *  *   `logging_config.component_config.enable_components`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `platform_version`.
+     *  *   `proxy_config.kubernetes_secret.name`.
+     *  *   `proxy_config.kubernetes_secret.namespace`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1101,12 +1137,16 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
      *
-     *  *   `description`.
      *  *   `annotations`.
-     *  *   `platform_version`.
+     *  *   `authorization.admin_groups`.
      *  *   `authorization.admin_users`.
+     *  *   `binary_authorization.evaluation_mode`.
+     *  *   `description`.
      *  *   `logging_config.component_config.enable_components`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `platform_version`.
+     *  *   `proxy_config.kubernetes_secret.name`.
+     *  *   `proxy_config.kubernetes_secret.namespace`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1126,12 +1166,16 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
      *
-     *  *   `description`.
      *  *   `annotations`.
-     *  *   `platform_version`.
+     *  *   `authorization.admin_groups`.
      *  *   `authorization.admin_users`.
+     *  *   `binary_authorization.evaluation_mode`.
+     *  *   `description`.
      *  *   `logging_config.component_config.enable_components`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `platform_version`.
+     *  *   `proxy_config.kubernetes_secret.name`.
+     *  *   `proxy_config.kubernetes_secret.namespace`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1155,12 +1199,16 @@ public final class UpdateAttachedClusterRequest extends com.google.protobuf.Gene
      * fields from
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
      *
-     *  *   `description`.
      *  *   `annotations`.
-     *  *   `platform_version`.
+     *  *   `authorization.admin_groups`.
      *  *   `authorization.admin_users`.
+     *  *   `binary_authorization.evaluation_mode`.
+     *  *   `description`.
      *  *   `logging_config.component_config.enable_components`.
      *  *   `monitoring_config.managed_prometheus_config.enabled`.
+     *  *   `platform_version`.
+     *  *   `proxy_config.kubernetes_secret.name`.
+     *  *   `proxy_config.kubernetes_secret.namespace`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];

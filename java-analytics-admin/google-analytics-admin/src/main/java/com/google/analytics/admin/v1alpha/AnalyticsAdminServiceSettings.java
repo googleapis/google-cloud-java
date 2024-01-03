@@ -38,6 +38,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.stub.AnalyticsAdminServiceStubSettings;
@@ -946,18 +947,42 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createSubpropertySettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteSubpropertyEventFilter. */
-  public UnaryCallSettings<DeleteSubpropertyEventFilterRequest, Empty>
-      deleteSubpropertyEventFilterSettings() {
-    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
-        .deleteSubpropertyEventFilterSettings();
-  }
-
   /** Returns the object with the settings used for calls to createSubpropertyEventFilter. */
   public UnaryCallSettings<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
       createSubpropertyEventFilterSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings())
         .createSubpropertyEventFilterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSubpropertyEventFilter. */
+  public UnaryCallSettings<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      getSubpropertyEventFilterSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .getSubpropertyEventFilterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSubpropertyEventFilters. */
+  public PagedCallSettings<
+          ListSubpropertyEventFiltersRequest,
+          ListSubpropertyEventFiltersResponse,
+          ListSubpropertyEventFiltersPagedResponse>
+      listSubpropertyEventFiltersSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .listSubpropertyEventFiltersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSubpropertyEventFilter. */
+  public UnaryCallSettings<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      updateSubpropertyEventFilterSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .updateSubpropertyEventFilterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSubpropertyEventFilter. */
+  public UnaryCallSettings<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .deleteSubpropertyEventFilterSettings();
   }
 
   public static final AnalyticsAdminServiceSettings create(AnalyticsAdminServiceStubSettings stub)
@@ -1932,16 +1957,37 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return getStubSettingsBuilder().createSubpropertySettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteSubpropertyEventFilter. */
-    public UnaryCallSettings.Builder<DeleteSubpropertyEventFilterRequest, Empty>
-        deleteSubpropertyEventFilterSettings() {
-      return getStubSettingsBuilder().deleteSubpropertyEventFilterSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createSubpropertyEventFilter. */
     public UnaryCallSettings.Builder<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
         createSubpropertyEventFilterSettings() {
       return getStubSettingsBuilder().createSubpropertyEventFilterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSubpropertyEventFilter. */
+    public UnaryCallSettings.Builder<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        getSubpropertyEventFilterSettings() {
+      return getStubSettingsBuilder().getSubpropertyEventFilterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSubpropertyEventFilters. */
+    public PagedCallSettings.Builder<
+            ListSubpropertyEventFiltersRequest,
+            ListSubpropertyEventFiltersResponse,
+            ListSubpropertyEventFiltersPagedResponse>
+        listSubpropertyEventFiltersSettings() {
+      return getStubSettingsBuilder().listSubpropertyEventFiltersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSubpropertyEventFilter. */
+    public UnaryCallSettings.Builder<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        updateSubpropertyEventFilterSettings() {
+      return getStubSettingsBuilder().updateSubpropertyEventFilterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSubpropertyEventFilter. */
+    public UnaryCallSettings.Builder<DeleteSubpropertyEventFilterRequest, Empty>
+        deleteSubpropertyEventFilterSettings() {
+      return getStubSettingsBuilder().deleteSubpropertyEventFilterSettings();
     }
 
     @Override

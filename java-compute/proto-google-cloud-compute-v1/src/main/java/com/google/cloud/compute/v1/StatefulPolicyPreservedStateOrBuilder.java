@@ -95,4 +95,146 @@ public interface StatefulPolicyPreservedStateOrBuilder
    */
   com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice getDisksOrThrow(
       java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * External network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp&gt; external_i_ps = 532687245;
+   * </code>
+   */
+  int getExternalIPsCount();
+  /**
+   *
+   *
+   * <pre>
+   * External network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp&gt; external_i_ps = 532687245;
+   * </code>
+   */
+  boolean containsExternalIPs(java.lang.String key);
+  /** Use {@link #getExternalIPsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp>
+      getExternalIPs();
+  /**
+   *
+   *
+   * <pre>
+   * External network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp&gt; external_i_ps = 532687245;
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp>
+      getExternalIPsMap();
+  /**
+   *
+   *
+   * <pre>
+   * External network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp&gt; external_i_ps = 532687245;
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp getExternalIPsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * External network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp&gt; external_i_ps = 532687245;
+   * </code>
+   */
+  com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp getExternalIPsOrThrow(
+      java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Internal network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp&gt; internal_i_ps = 215731675;
+   * </code>
+   */
+  int getInternalIPsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Internal network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp&gt; internal_i_ps = 215731675;
+   * </code>
+   */
+  boolean containsInternalIPs(java.lang.String key);
+  /** Use {@link #getInternalIPsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp>
+      getInternalIPs();
+  /**
+   *
+   *
+   * <pre>
+   * Internal network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp&gt; internal_i_ps = 215731675;
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp>
+      getInternalIPsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Internal network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp&gt; internal_i_ps = 215731675;
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp getInternalIPsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Internal network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp&gt; internal_i_ps = 215731675;
+   * </code>
+   */
+  com.google.cloud.compute.v1.StatefulPolicyPreservedStateNetworkIp getInternalIPsOrThrow(
+      java.lang.String key);
 }

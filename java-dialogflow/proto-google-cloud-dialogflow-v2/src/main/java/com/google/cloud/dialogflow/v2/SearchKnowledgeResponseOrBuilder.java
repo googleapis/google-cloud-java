@@ -79,4 +79,29 @@ public interface SearchKnowledgeResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SearchKnowledgeAnswer answers = 2;</code>
    */
   com.google.cloud.dialogflow.v2.SearchKnowledgeAnswerOrBuilder getAnswersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The rewritten query used to search knowledge.
+   * </pre>
+   *
+   * <code>string rewritten_query = 3;</code>
+   *
+   * @return The rewrittenQuery.
+   */
+  java.lang.String getRewrittenQuery();
+  /**
+   *
+   *
+   * <pre>
+   * The rewritten query used to search knowledge.
+   * </pre>
+   *
+   * <code>string rewritten_query = 3;</code>
+   *
+   * @return The bytes for rewrittenQuery.
+   */
+  com.google.protobuf.ByteString getRewrittenQueryBytes();
 }

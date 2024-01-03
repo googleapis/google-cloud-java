@@ -174,6 +174,27 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     return allowMissing_;
   }
 
+  public static final int IGNORE_ERRORS_FIELD_NUMBER = 5;
+  private boolean ignoreErrors_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the deletion of
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource will
+   * succeed even if errors occur during deleting in node pool resources. Using
+   * this parameter may result in orphaned resources in the node pool.
+   * </pre>
+   *
+   * <code>bool ignore_errors = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ignoreErrors.
+   */
+  @java.lang.Override
+  public boolean getIgnoreErrors() {
+    return ignoreErrors_;
+  }
+
   public static final int ETAG_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -263,6 +284,9 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, etag_);
     }
+    if (ignoreErrors_ != false) {
+      output.writeBool(5, ignoreErrors_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -284,6 +308,9 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, etag_);
     }
+    if (ignoreErrors_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, ignoreErrors_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -303,6 +330,7 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     if (!getName().equals(other.getName())) return false;
     if (getValidateOnly() != other.getValidateOnly()) return false;
     if (getAllowMissing() != other.getAllowMissing()) return false;
+    if (getIgnoreErrors() != other.getIgnoreErrors()) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -321,6 +349,8 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
     hash = (37 * hash) + ALLOW_MISSING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowMissing());
+    hash = (37 * hash) + IGNORE_ERRORS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreErrors());
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -466,6 +496,7 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
       name_ = "";
       validateOnly_ = false;
       allowMissing_ = false;
+      ignoreErrors_ = false;
       etag_ = "";
       return this;
     }
@@ -513,6 +544,9 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
         result.allowMissing_ = allowMissing_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.ignoreErrors_ = ignoreErrors_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.etag_ = etag_;
       }
     }
@@ -574,9 +608,12 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
       if (other.getAllowMissing() != false) {
         setAllowMissing(other.getAllowMissing());
       }
+      if (other.getIgnoreErrors() != false) {
+        setIgnoreErrors(other.getIgnoreErrors());
+      }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -626,9 +663,15 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
             case 34:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
+            case 40:
+              {
+                ignoreErrors_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -923,6 +966,68 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
       return this;
     }
 
+    private boolean ignoreErrors_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the deletion of
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource will
+     * succeed even if errors occur during deleting in node pool resources. Using
+     * this parameter may result in orphaned resources in the node pool.
+     * </pre>
+     *
+     * <code>bool ignore_errors = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The ignoreErrors.
+     */
+    @java.lang.Override
+    public boolean getIgnoreErrors() {
+      return ignoreErrors_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the deletion of
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource will
+     * succeed even if errors occur during deleting in node pool resources. Using
+     * this parameter may result in orphaned resources in the node pool.
+     * </pre>
+     *
+     * <code>bool ignore_errors = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The ignoreErrors to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIgnoreErrors(boolean value) {
+
+      ignoreErrors_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the deletion of
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource will
+     * succeed even if errors occur during deleting in node pool resources. Using
+     * this parameter may result in orphaned resources in the node pool.
+     * </pre>
+     *
+     * <code>bool ignore_errors = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIgnoreErrors() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ignoreErrors_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object etag_ = "";
     /**
      *
@@ -1003,7 +1108,7 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1026,7 +1131,7 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1054,7 +1159,7 @@ public final class DeleteAwsNodePoolRequest extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

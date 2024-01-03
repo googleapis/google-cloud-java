@@ -22,7 +22,7 @@ package com.google.cloud.gkemulticloud.v1;
  *
  *
  * <pre>
- * Request message for `Clusters.DeleteAzureCluster` method.
+ * Request message for `AzureClusters.DeleteAzureCluster` method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest}
@@ -427,7 +427,7 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for `Clusters.DeleteAzureCluster` method.
+   * Request message for `AzureClusters.DeleteAzureCluster` method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest}

@@ -38,6 +38,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.AccessBinding;
@@ -150,6 +151,7 @@ import com.google.analytics.admin.v1alpha.GetPropertyRequest;
 import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
+import com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
@@ -199,6 +201,8 @@ import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasR
 import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
+import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest;
+import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
@@ -234,6 +238,7 @@ import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -1816,17 +1821,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(CreateSubpropertyResponse.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<DeleteSubpropertyEventFilterRequest, Empty>
-      deleteSubpropertyEventFilterMethodDescriptor =
-          MethodDescriptor.<DeleteSubpropertyEventFilterRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteSubpropertyEventFilter")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteSubpropertyEventFilterRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
       createSubpropertyEventFilterMethodDescriptor =
           MethodDescriptor.<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>newBuilder()
@@ -1837,6 +1831,55 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(CreateSubpropertyEventFilterRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SubpropertyEventFilter.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      getSubpropertyEventFilterMethodDescriptor =
+          MethodDescriptor.<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetSubpropertyEventFilter")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSubpropertyEventFilterRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SubpropertyEventFilter.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+      listSubpropertyEventFiltersMethodDescriptor =
+          MethodDescriptor
+              .<ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListSubpropertyEventFilters")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSubpropertyEventFiltersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSubpropertyEventFiltersResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      updateSubpropertyEventFilterMethodDescriptor =
+          MethodDescriptor.<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateSubpropertyEventFilter")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSubpropertyEventFilterRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SubpropertyEventFilter.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterMethodDescriptor =
+          MethodDescriptor.<DeleteSubpropertyEventFilterRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteSubpropertyEventFilter")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteSubpropertyEventFilterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
@@ -2125,10 +2168,20 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       deleteRollupPropertySourceLinkCallable;
   private final UnaryCallable<CreateSubpropertyRequest, CreateSubpropertyResponse>
       createSubpropertyCallable;
-  private final UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
-      deleteSubpropertyEventFilterCallable;
   private final UnaryCallable<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
       createSubpropertyEventFilterCallable;
+  private final UnaryCallable<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      getSubpropertyEventFilterCallable;
+  private final UnaryCallable<
+          ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+      listSubpropertyEventFiltersCallable;
+  private final UnaryCallable<
+          ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersPagedResponse>
+      listSubpropertyEventFiltersPagedCallable;
+  private final UnaryCallable<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      updateSubpropertyEventFilterCallable;
+  private final UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -3552,17 +3605,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings.<CreateSubpropertyRequest, CreateSubpropertyResponse>newBuilder()
                 .setMethodDescriptor(createSubpropertyMethodDescriptor)
                 .build();
-    GrpcCallSettings<DeleteSubpropertyEventFilterRequest, Empty>
-        deleteSubpropertyEventFilterTransportSettings =
-            GrpcCallSettings.<DeleteSubpropertyEventFilterRequest, Empty>newBuilder()
-                .setMethodDescriptor(deleteSubpropertyEventFilterMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
     GrpcCallSettings<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
         createSubpropertyEventFilterTransportSettings =
             GrpcCallSettings
@@ -3572,6 +3614,55 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        getSubpropertyEventFilterTransportSettings =
+            GrpcCallSettings.<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>newBuilder()
+                .setMethodDescriptor(getSubpropertyEventFilterMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+        listSubpropertyEventFiltersTransportSettings =
+            GrpcCallSettings
+                .<ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+                    newBuilder()
+                .setMethodDescriptor(listSubpropertyEventFiltersMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        updateSubpropertyEventFilterTransportSettings =
+            GrpcCallSettings
+                .<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>newBuilder()
+                .setMethodDescriptor(updateSubpropertyEventFilterMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "subproperty_event_filter.name",
+                          String.valueOf(request.getSubpropertyEventFilter().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteSubpropertyEventFilterRequest, Empty>
+        deleteSubpropertyEventFilterTransportSettings =
+            GrpcCallSettings.<DeleteSubpropertyEventFilterRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteSubpropertyEventFilterMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
                 .build();
@@ -4257,15 +4348,35 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             createSubpropertyTransportSettings,
             settings.createSubpropertySettings(),
             clientContext);
-    this.deleteSubpropertyEventFilterCallable =
-        callableFactory.createUnaryCallable(
-            deleteSubpropertyEventFilterTransportSettings,
-            settings.deleteSubpropertyEventFilterSettings(),
-            clientContext);
     this.createSubpropertyEventFilterCallable =
         callableFactory.createUnaryCallable(
             createSubpropertyEventFilterTransportSettings,
             settings.createSubpropertyEventFilterSettings(),
+            clientContext);
+    this.getSubpropertyEventFilterCallable =
+        callableFactory.createUnaryCallable(
+            getSubpropertyEventFilterTransportSettings,
+            settings.getSubpropertyEventFilterSettings(),
+            clientContext);
+    this.listSubpropertyEventFiltersCallable =
+        callableFactory.createUnaryCallable(
+            listSubpropertyEventFiltersTransportSettings,
+            settings.listSubpropertyEventFiltersSettings(),
+            clientContext);
+    this.listSubpropertyEventFiltersPagedCallable =
+        callableFactory.createPagedCallable(
+            listSubpropertyEventFiltersTransportSettings,
+            settings.listSubpropertyEventFiltersSettings(),
+            clientContext);
+    this.updateSubpropertyEventFilterCallable =
+        callableFactory.createUnaryCallable(
+            updateSubpropertyEventFilterTransportSettings,
+            settings.updateSubpropertyEventFilterSettings(),
+            clientContext);
+    this.deleteSubpropertyEventFilterCallable =
+        callableFactory.createUnaryCallable(
+            deleteSubpropertyEventFilterTransportSettings,
+            settings.deleteSubpropertyEventFilterSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -5140,15 +5251,39 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   }
 
   @Override
-  public UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
-      deleteSubpropertyEventFilterCallable() {
-    return deleteSubpropertyEventFilterCallable;
-  }
-
-  @Override
   public UnaryCallable<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
       createSubpropertyEventFilterCallable() {
     return createSubpropertyEventFilterCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      getSubpropertyEventFilterCallable() {
+    return getSubpropertyEventFilterCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+      listSubpropertyEventFiltersCallable() {
+    return listSubpropertyEventFiltersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersPagedResponse>
+      listSubpropertyEventFiltersPagedCallable() {
+    return listSubpropertyEventFiltersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      updateSubpropertyEventFilterCallable() {
+    return updateSubpropertyEventFilterCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterCallable() {
+    return deleteSubpropertyEventFilterCallable;
   }
 
   @Override

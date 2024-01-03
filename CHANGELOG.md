@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.26.0](https://github.com/googleapis/google-cloud-java/compare/v1.25.0...v1.26.0) (2023-12-12)
+
+
+### Features
+
+* [aiplatform] add Content ([#10116](https://github.com/googleapis/google-cloud-java/issues/10116)) ([b6c07b9](https://github.com/googleapis/google-cloud-java/commit/b6c07b96a10c1d1920138b8eae06385af14823f1))
+* [vertexai] Initial release of Vertex Java SDK ([#10129](https://github.com/googleapis/google-cloud-java/issues/10129)) ([91eccd5](https://github.com/googleapis/google-cloud-java/commit/91eccd5a3621cd3b112f05d3b0dd6b4aec0fe9b2))
+
 ## [1.25.0](https://github.com/googleapis/google-cloud-java/compare/v1.24.0...v1.25.0) (2023-12-04)
 
 

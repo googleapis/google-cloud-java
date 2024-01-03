@@ -800,4 +800,45 @@ public interface AwsClusterOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.MonitoringConfigOrBuilder getMonitoringConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binary Authorization configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the binaryAuthorization field is set.
+   */
+  boolean hasBinaryAuthorization();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binary Authorization configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The binaryAuthorization.
+   */
+  com.google.cloud.gkemulticloud.v1.BinaryAuthorization getBinaryAuthorization();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binary Authorization configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.BinaryAuthorizationOrBuilder getBinaryAuthorizationOrBuilder();
 }

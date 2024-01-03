@@ -170,6 +170,139 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Announces the specified PublicAdvertisedPrefix
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   String project = "project-309310695";
+   *   String publicAdvertisedPrefix = "publicAdvertisedPrefix1506440856";
+   *   Operation response =
+   *       publicAdvertisedPrefixesClient.announceAsync(project, publicAdvertisedPrefix).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param publicAdvertisedPrefix The name of the public advertised prefix. It should comply with
+   *     RFC1035.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> announceAsync(
+      String project, String publicAdvertisedPrefix) {
+    AnnouncePublicAdvertisedPrefixeRequest request =
+        AnnouncePublicAdvertisedPrefixeRequest.newBuilder()
+            .setProject(project)
+            .setPublicAdvertisedPrefix(publicAdvertisedPrefix)
+            .build();
+    return announceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Announces the specified PublicAdvertisedPrefix
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   AnnouncePublicAdvertisedPrefixeRequest request =
+   *       AnnouncePublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefix("publicAdvertisedPrefix1506440856")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response = publicAdvertisedPrefixesClient.announceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> announceAsync(
+      AnnouncePublicAdvertisedPrefixeRequest request) {
+    return announceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Announces the specified PublicAdvertisedPrefix
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   AnnouncePublicAdvertisedPrefixeRequest request =
+   *       AnnouncePublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefix("publicAdvertisedPrefix1506440856")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       publicAdvertisedPrefixesClient.announceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<AnnouncePublicAdvertisedPrefixeRequest, Operation, Operation>
+      announceOperationCallable() {
+    return stub.announceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Announces the specified PublicAdvertisedPrefix
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   AnnouncePublicAdvertisedPrefixeRequest request =
+   *       AnnouncePublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefix("publicAdvertisedPrefix1506440856")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       publicAdvertisedPrefixesClient.announceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AnnouncePublicAdvertisedPrefixeRequest, Operation> announceCallable() {
+    return stub.announceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes the specified PublicAdvertisedPrefix
    *
    * <p>Sample code:
@@ -826,6 +959,139 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    */
   public final UnaryCallable<PatchPublicAdvertisedPrefixeRequest, Operation> patchCallable() {
     return stub.patchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Withdraws the specified PublicAdvertisedPrefix
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   String project = "project-309310695";
+   *   String publicAdvertisedPrefix = "publicAdvertisedPrefix1506440856";
+   *   Operation response =
+   *       publicAdvertisedPrefixesClient.withdrawAsync(project, publicAdvertisedPrefix).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param publicAdvertisedPrefix The name of the public advertised prefix. It should comply with
+   *     RFC1035.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> withdrawAsync(
+      String project, String publicAdvertisedPrefix) {
+    WithdrawPublicAdvertisedPrefixeRequest request =
+        WithdrawPublicAdvertisedPrefixeRequest.newBuilder()
+            .setProject(project)
+            .setPublicAdvertisedPrefix(publicAdvertisedPrefix)
+            .build();
+    return withdrawAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Withdraws the specified PublicAdvertisedPrefix
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   WithdrawPublicAdvertisedPrefixeRequest request =
+   *       WithdrawPublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefix("publicAdvertisedPrefix1506440856")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response = publicAdvertisedPrefixesClient.withdrawAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> withdrawAsync(
+      WithdrawPublicAdvertisedPrefixeRequest request) {
+    return withdrawOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Withdraws the specified PublicAdvertisedPrefix
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   WithdrawPublicAdvertisedPrefixeRequest request =
+   *       WithdrawPublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefix("publicAdvertisedPrefix1506440856")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       publicAdvertisedPrefixesClient.withdrawOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<WithdrawPublicAdvertisedPrefixeRequest, Operation, Operation>
+      withdrawOperationCallable() {
+    return stub.withdrawOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Withdraws the specified PublicAdvertisedPrefix
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
+   *     PublicAdvertisedPrefixesClient.create()) {
+   *   WithdrawPublicAdvertisedPrefixeRequest request =
+   *       WithdrawPublicAdvertisedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicAdvertisedPrefix("publicAdvertisedPrefix1506440856")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       publicAdvertisedPrefixesClient.withdrawCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<WithdrawPublicAdvertisedPrefixeRequest, Operation> withdrawCallable() {
+    return stub.withdrawCallable();
   }
 
   @Override

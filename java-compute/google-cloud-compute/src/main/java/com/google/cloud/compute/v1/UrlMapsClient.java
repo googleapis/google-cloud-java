@@ -213,6 +213,7 @@ public class UrlMapsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, UrlMapsScopedList> element :
    *       urlMapsClient.aggregatedList(request).iterateAll()) {
@@ -251,6 +252,7 @@ public class UrlMapsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, UrlMapsScopedList>> future =
    *       urlMapsClient.aggregatedListPagedCallable().futureCall(request);
@@ -289,6 +291,7 @@ public class UrlMapsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     UrlMapsAggregatedList response = urlMapsClient.aggregatedListCallable().call(request);

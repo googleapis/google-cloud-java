@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/** */
+/** Iterator of the ResponseStream that holds the response chunks. */
 public class ResponseStreamIteratorWithHistory<GenerateContentResponse>
     implements Iterator<GenerateContentResponse> {
   Iterator serverStreamIterator = null;
@@ -42,17 +42,20 @@ public class ResponseStreamIteratorWithHistory<GenerateContentResponse>
   @Override
   public GenerateContentResponse next() {
     GenerateContentResponse nextItem = (GenerateContentResponse) serverStreamIterator.next();
-    // TODO: any interruption from the SDK side should go here (for example, if we decide to raise
-    // an error when the response contains prompt_feedback only, or when we found the repsonse
-    // triggered higher safety rating)
     history.add(nextItem);
     return nextItem;
   }
 
+  /** Retrieve all the chunks in a stream of responses. */
   public List<GenerateContentResponse> getHistory() {
     return history;
   }
 
+  /**
+   * Whether the whole stream has been consumed.
+   *
+   * <p>Here "consumed" means we have reached the end of the stream.
+   */
   public boolean isConsumed() {
     return consumed;
   }

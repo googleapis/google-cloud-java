@@ -213,6 +213,7 @@ public class AddressesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, AddressesScopedList> element :
    *       addressesClient.aggregatedList(request).iterateAll()) {
@@ -250,6 +251,7 @@ public class AddressesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, AddressesScopedList>> future =
    *       addressesClient.aggregatedListPagedCallable().futureCall(request);
@@ -287,6 +289,7 @@ public class AddressesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     AddressAggregatedList response = addressesClient.aggregatedListCallable().call(request);

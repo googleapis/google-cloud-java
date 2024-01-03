@@ -75,24 +75,42 @@ import javax.annotation.Generated;
  * CloudChannelReportsServiceSettings cloudChannelReportsServiceSettings =
  *     cloudChannelReportsServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class CloudChannelReportsServiceSettings
     extends ClientSettings<CloudChannelReportsServiceSettings> {
 
-  /** Returns the object with the settings used for calls to runReportJob. */
+  /**
+   * Returns the object with the settings used for calls to runReportJob.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<RunReportJobRequest, Operation> runReportJobSettings() {
     return ((CloudChannelReportsServiceStubSettings) getStubSettings()).runReportJobSettings();
   }
 
-  /** Returns the object with the settings used for calls to runReportJob. */
+  /**
+   * Returns the object with the settings used for calls to runReportJob.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<RunReportJobRequest, RunReportJobResponse, OperationMetadata>
       runReportJobOperationSettings() {
     return ((CloudChannelReportsServiceStubSettings) getStubSettings())
         .runReportJobOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to fetchReportResults. */
+  /**
+   * Returns the object with the settings used for calls to fetchReportResults.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           FetchReportResultsRequest, FetchReportResultsResponse, FetchReportResultsPagedResponse>
       fetchReportResultsSettings() {
@@ -100,7 +118,12 @@ public class CloudChannelReportsServiceSettings
         .fetchReportResultsSettings();
   }
 
-  /** Returns the object with the settings used for calls to listReports. */
+  /**
+   * Returns the object with the settings used for calls to listReports.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<ListReportsRequest, ListReportsResponse, ListReportsPagedResponse>
       listReportsSettings() {
     return ((CloudChannelReportsServiceStubSettings) getStubSettings()).listReportsSettings();
@@ -222,26 +245,46 @@ public class CloudChannelReportsServiceSettings
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to runReportJob. */
+    /**
+     * Returns the builder for the settings used for calls to runReportJob.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<RunReportJobRequest, Operation> runReportJobSettings() {
       return getStubSettingsBuilder().runReportJobSettings();
     }
 
-    /** Returns the builder for the settings used for calls to runReportJob. */
+    /**
+     * Returns the builder for the settings used for calls to runReportJob.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<
             RunReportJobRequest, RunReportJobResponse, OperationMetadata>
         runReportJobOperationSettings() {
       return getStubSettingsBuilder().runReportJobOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to fetchReportResults. */
+    /**
+     * Returns the builder for the settings used for calls to fetchReportResults.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             FetchReportResultsRequest, FetchReportResultsResponse, FetchReportResultsPagedResponse>
         fetchReportResultsSettings() {
       return getStubSettingsBuilder().fetchReportResultsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to listReports. */
+    /**
+     * Returns the builder for the settings used for calls to listReports.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListReportsRequest, ListReportsResponse, ListReportsPagedResponse>
         listReportsSettings() {

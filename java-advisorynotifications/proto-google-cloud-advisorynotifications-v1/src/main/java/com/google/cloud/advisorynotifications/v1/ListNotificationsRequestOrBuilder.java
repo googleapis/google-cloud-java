@@ -28,7 +28,8 @@ public interface ListNotificationsRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns this collection of notifications.
-   * Must be of the form "organizations/{organization}/locations/{location}".
+   * Must be of the form "organizations/{organization}/locations/{location}"
+   * or "projects/{project}/locations/{location}"
    * </pre>
    *
    * <code>
@@ -43,7 +44,8 @@ public interface ListNotificationsRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns this collection of notifications.
-   * Must be of the form "organizations/{organization}/locations/{location}".
+   * Must be of the form "organizations/{organization}/locations/{location}"
+   * or "projects/{project}/locations/{location}"
    * </pre>
    *
    * <code>
