@@ -707,3 +707,6 @@ proto-google-cloud-vertexai-v1:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-vertexai-v1beta1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-vertexai-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-vertexai-v1beta1:0.1.0:0.2.0-SNAPSHOT
+google-cloud-edgenetwork:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-edgenetwork-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-edgenetwork-v1:0.0.0:0.0.1-SNAPSHOT
