@@ -82,6 +82,7 @@ class MessageDispatcher {
   private final FlowController flowController;
 
   private AtomicBoolean exactlyOnceDeliveryEnabled = new AtomicBoolean(false);
+  private AtomicBoolean messageOrderingEnabled = new AtomicBoolean(false);
 
   private final Waiter messagesWaiter;
 
@@ -343,6 +344,11 @@ class MessageDispatcher {
     }
   }
 
+  @InternalApi
+  void setMessageOrderingEnabled(boolean messageOrderingEnabled) {
+    this.messageOrderingEnabled.set(messageOrderingEnabled);
+  }
+
   private static class OutstandingMessage {
     private final ReceivedMessage receivedMessage;
     private final AckHandler ackHandler;
@@ -506,7 +512,7 @@ class MessageDispatcher {
             }
           }
         };
-    if (message.getOrderingKey().isEmpty()) {
+    if (!messageOrderingEnabled.get() || message.getOrderingKey().isEmpty()) {
       executor.execute(deliverMessageTask);
     } else {
       sequentialExecutor.submit(message.getOrderingKey(), deliverMessageTask);

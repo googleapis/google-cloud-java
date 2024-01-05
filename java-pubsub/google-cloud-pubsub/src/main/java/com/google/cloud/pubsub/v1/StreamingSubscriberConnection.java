@@ -236,9 +236,12 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
       boolean exactlyOnceDeliveryEnabledResponse =
           response.getSubscriptionProperties().getExactlyOnceDeliveryEnabled();
+      boolean messageOrderingEnabledResponse =
+          response.getSubscriptionProperties().getMessageOrderingEnabled();
 
       setExactlyOnceDeliveryEnabled(exactlyOnceDeliveryEnabledResponse);
       messageDispatcher.setExactlyOnceDeliveryEnabled(exactlyOnceDeliveryEnabledResponse);
+      messageDispatcher.setMessageOrderingEnabled(messageOrderingEnabledResponse);
       messageDispatcher.processReceivedMessages(response.getReceivedMessagesList());
 
       // Only request more if we're not shutdown.
