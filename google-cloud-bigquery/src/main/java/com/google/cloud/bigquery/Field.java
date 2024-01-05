@@ -64,6 +64,7 @@ public final class Field implements Serializable {
   private final Long precision;
   private final String defaultValueExpression;
   private final String collation;
+  private final FieldElementType rangeElementType;
 
   /**
    * Mode for a BigQuery Table field. {@link Mode#NULLABLE} fields can be set to {@code null},
@@ -89,6 +90,7 @@ public final class Field implements Serializable {
     private Long precision;
     private String defaultValueExpression;
     private String collation;
+    private FieldElementType rangeElementType;
 
     private Builder() {}
 
@@ -104,6 +106,7 @@ public final class Field implements Serializable {
       this.precision = field.precision;
       this.defaultValueExpression = field.defaultValueExpression;
       this.collation = field.collation;
+      this.rangeElementType = field.rangeElementType;
     }
 
     /**
@@ -292,6 +295,12 @@ public final class Field implements Serializable {
       return this;
     }
 
+    /** Optional. Field range element type can be set only when the type of field is RANGE. */
+    public Builder setRangeElementType(FieldElementType rangeElementType) {
+      this.rangeElementType = rangeElementType;
+      return this;
+    }
+
     /** Creates a {@code Field} object. */
     public Field build() {
       return new Field(this);
@@ -310,6 +319,7 @@ public final class Field implements Serializable {
     this.precision = builder.precision;
     this.defaultValueExpression = builder.defaultValueExpression;
     this.collation = builder.collation;
+    this.rangeElementType = builder.rangeElementType;
   }
 
   /** Returns the field name. */
@@ -369,6 +379,11 @@ public final class Field implements Serializable {
     return collation;
   }
 
+  /** Return the range element type the field. */
+  public FieldElementType getRangeElementType() {
+    return rangeElementType;
+  }
+
   /**
    * Returns the list of sub-fields if {@link #getType()} is a {@link LegacySQLTypeName#RECORD}.
    * Returns {@code null} otherwise.
@@ -395,12 +410,13 @@ public final class Field implements Serializable {
         .add("precision", precision)
         .add("defaultValueExpression", defaultValueExpression)
         .add("collation", collation)
+        .add("rangeElementType", rangeElementType)
         .toString();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, type, mode, description, policyTags);
+    return Objects.hash(name, type, mode, description, policyTags, rangeElementType);
   }
 
   @Override
@@ -484,6 +500,9 @@ public final class Field implements Serializable {
     if (collation != null) {
       fieldSchemaPb.setCollation(collation);
     }
+    if (rangeElementType != null) {
+      fieldSchemaPb.setRangeElementType(rangeElementType.toPb());
+    }
     return fieldSchemaPb;
   }
 
@@ -518,6 +537,10 @@ public final class Field implements Serializable {
     fieldBuilder.setType(LegacySQLTypeName.valueOf(fieldSchemaPb.getType()), subFields);
     if (fieldSchemaPb.getCollation() != null) {
       fieldBuilder.setCollation(fieldSchemaPb.getCollation());
+    }
+    if (fieldSchemaPb.getRangeElementType() != null) {
+      fieldBuilder.setRangeElementType(
+          FieldElementType.fromPb(fieldSchemaPb.getRangeElementType()));
     }
     return fieldBuilder.build();
   }

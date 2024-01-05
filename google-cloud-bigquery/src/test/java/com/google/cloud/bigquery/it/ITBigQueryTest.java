@@ -72,6 +72,7 @@ import com.google.cloud.bigquery.ExternalTableDefinition;
 import com.google.cloud.bigquery.ExtractJobConfiguration;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Mode;
+import com.google.cloud.bigquery.FieldElementType;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
@@ -1241,6 +1242,25 @@ public class ITBigQueryTest {
         assertEquals("125-7 -19 0:24:12.000006", values.get(0).getValue());
         assertEquals(periodDuration, values.get(0).getPeriodDuration());
       }
+    } finally {
+      assertTrue(bigquery.delete(tableId));
+    }
+  }
+
+  @Test
+  public void testRangeType() throws InterruptedException {
+    String tableName = "test_create_table_rangetype";
+    TableId tableId = TableId.of(DATASET, tableName);
+    Schema schema =
+        Schema.of(
+            Field.newBuilder("rangeField", StandardSQLTypeName.RANGE)
+                .setRangeElementType(FieldElementType.newBuilder().setType("DATETIME").build())
+                .build());
+    StandardTableDefinition standardTableDefinition = StandardTableDefinition.of(schema);
+    try {
+      // Create a table with a RANGE column.
+      Table createdTable = bigquery.create(TableInfo.of(tableId, standardTableDefinition));
+      assertNotNull(createdTable);
     } finally {
       assertTrue(bigquery.delete(tableId));
     }
