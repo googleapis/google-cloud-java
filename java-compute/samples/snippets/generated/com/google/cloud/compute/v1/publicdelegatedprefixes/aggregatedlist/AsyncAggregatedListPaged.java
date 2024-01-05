@@ -47,6 +47,7 @@ public class AsyncAggregatedListPaged {
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
               .setReturnPartialSuccess(true)
+              .setServiceProjectNumber(-1293855239)
               .build();
       while (true) {
         PublicDelegatedPrefixAggregatedList response =

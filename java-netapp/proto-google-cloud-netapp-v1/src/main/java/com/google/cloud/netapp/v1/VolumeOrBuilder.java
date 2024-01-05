@@ -27,10 +27,10 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the volume
+   * Identifier. Name of the volume
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -39,10 +39,10 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the volume
+   * Identifier. Name of the volume
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -934,6 +934,41 @@ public interface VolumeOrBuilder
    * @return The hasReplication.
    */
   boolean getHasReplication();
+
+  /**
+   *
+   *
+   * <pre>
+   * BackupConfig of the volume.
+   * </pre>
+   *
+   * <code>optional .google.cloud.netapp.v1.BackupConfig backup_config = 30;</code>
+   *
+   * @return Whether the backupConfig field is set.
+   */
+  boolean hasBackupConfig();
+  /**
+   *
+   *
+   * <pre>
+   * BackupConfig of the volume.
+   * </pre>
+   *
+   * <code>optional .google.cloud.netapp.v1.BackupConfig backup_config = 30;</code>
+   *
+   * @return The backupConfig.
+   */
+  com.google.cloud.netapp.v1.BackupConfig getBackupConfig();
+  /**
+   *
+   *
+   * <pre>
+   * BackupConfig of the volume.
+   * </pre>
+   *
+   * <code>optional .google.cloud.netapp.v1.BackupConfig backup_config = 30;</code>
+   */
+  com.google.cloud.netapp.v1.BackupConfigOrBuilder getBackupConfigOrBuilder();
 
   /**
    *

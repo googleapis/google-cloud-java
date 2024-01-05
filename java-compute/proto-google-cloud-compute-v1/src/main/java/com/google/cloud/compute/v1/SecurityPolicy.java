@@ -48,6 +48,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     rules_ = java.util.Collections.emptyList();
     selfLink_ = "";
     type_ = "";
+    userDefinedFields_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -1177,6 +1178,92 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int USER_DEFINED_FIELDS_FIELD_NUMBER = 28312739;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.SecurityPolicyUserDefinedField>
+      userDefinedFields_;
+  /**
+   *
+   *
+   * <pre>
+   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.SecurityPolicyUserDefinedField>
+      getUserDefinedFieldsList() {
+    return userDefinedFields_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.compute.v1.SecurityPolicyUserDefinedFieldOrBuilder>
+      getUserDefinedFieldsOrBuilderList() {
+    return userDefinedFields_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+   * </code>
+   */
+  @java.lang.Override
+  public int getUserDefinedFieldsCount() {
+    return userDefinedFields_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyUserDefinedField getUserDefinedFields(
+      int index) {
+    return userDefinedFields_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyUserDefinedFieldOrBuilder
+      getUserDefinedFieldsOrBuilder(int index) {
+    return userDefinedFields_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1202,6 +1289,9 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
+    }
+    for (int i = 0; i < userDefinedFields_.size(); i++) {
+      output.writeMessage(28312739, userDefinedFields_.get(i));
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
@@ -1258,6 +1348,11 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
+    }
+    for (int i = 0; i < userDefinedFields_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              28312739, userDefinedFields_.get(i));
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
@@ -1386,6 +1481,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasType()) {
       if (!getType().equals(other.getType())) return false;
     }
+    if (!getUserDefinedFieldsList().equals(other.getUserDefinedFieldsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1460,6 +1556,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
+    }
+    if (getUserDefinedFieldsCount() > 0) {
+      hash = (37 * hash) + USER_DEFINED_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getUserDefinedFieldsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1626,6 +1726,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         getDdosProtectionConfigFieldBuilder();
         getRecaptchaOptionsConfigFieldBuilder();
         getRulesFieldBuilder();
+        getUserDefinedFieldsFieldBuilder();
       }
     }
 
@@ -1671,6 +1772,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00002000);
       selfLink_ = "";
       type_ = "";
+      if (userDefinedFieldsBuilder_ == null) {
+        userDefinedFields_ = java.util.Collections.emptyList();
+      } else {
+        userDefinedFields_ = null;
+        userDefinedFieldsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00010000);
       return this;
     }
 
@@ -1715,6 +1823,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         result.rules_ = rules_;
       } else {
         result.rules_ = rulesBuilder_.build();
+      }
+      if (userDefinedFieldsBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)) {
+          userDefinedFields_ = java.util.Collections.unmodifiableList(userDefinedFields_);
+          bitField0_ = (bitField0_ & ~0x00010000);
+        }
+        result.userDefinedFields_ = userDefinedFields_;
+      } else {
+        result.userDefinedFields_ = userDefinedFieldsBuilder_.build();
       }
     }
 
@@ -1930,6 +2047,33 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00008000;
         onChanged();
       }
+      if (userDefinedFieldsBuilder_ == null) {
+        if (!other.userDefinedFields_.isEmpty()) {
+          if (userDefinedFields_.isEmpty()) {
+            userDefinedFields_ = other.userDefinedFields_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+          } else {
+            ensureUserDefinedFieldsIsMutable();
+            userDefinedFields_.addAll(other.userDefinedFields_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.userDefinedFields_.isEmpty()) {
+          if (userDefinedFieldsBuilder_.isEmpty()) {
+            userDefinedFieldsBuilder_.dispose();
+            userDefinedFieldsBuilder_ = null;
+            userDefinedFields_ = other.userDefinedFields_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+            userDefinedFieldsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getUserDefinedFieldsFieldBuilder()
+                    : null;
+          } else {
+            userDefinedFieldsBuilder_.addAllMessages(other.userDefinedFields_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1980,6 +2124,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00008000;
                 break;
               } // case 28604882
+            case 226501914:
+              {
+                com.google.cloud.compute.v1.SecurityPolicyUserDefinedField m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.parser(),
+                        extensionRegistry);
+                if (userDefinedFieldsBuilder_ == null) {
+                  ensureUserDefinedFieldsIsMutable();
+                  userDefinedFields_.add(m);
+                } else {
+                  userDefinedFieldsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 226501914
             case 244202930:
               {
                 creationTimestamp_ = input.readStringRequireUtf8();
@@ -4378,6 +4536,413 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00008000;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.compute.v1.SecurityPolicyUserDefinedField>
+        userDefinedFields_ = java.util.Collections.emptyList();
+
+    private void ensureUserDefinedFieldsIsMutable() {
+      if (!((bitField0_ & 0x00010000) != 0)) {
+        userDefinedFields_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.SecurityPolicyUserDefinedField>(
+                userDefinedFields_);
+        bitField0_ |= 0x00010000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyUserDefinedField,
+            com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyUserDefinedFieldOrBuilder>
+        userDefinedFieldsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.SecurityPolicyUserDefinedField>
+        getUserDefinedFieldsList() {
+      if (userDefinedFieldsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(userDefinedFields_);
+      } else {
+        return userDefinedFieldsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public int getUserDefinedFieldsCount() {
+      if (userDefinedFieldsBuilder_ == null) {
+        return userDefinedFields_.size();
+      } else {
+        return userDefinedFieldsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyUserDefinedField getUserDefinedFields(
+        int index) {
+      if (userDefinedFieldsBuilder_ == null) {
+        return userDefinedFields_.get(index);
+      } else {
+        return userDefinedFieldsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public Builder setUserDefinedFields(
+        int index, com.google.cloud.compute.v1.SecurityPolicyUserDefinedField value) {
+      if (userDefinedFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUserDefinedFieldsIsMutable();
+        userDefinedFields_.set(index, value);
+        onChanged();
+      } else {
+        userDefinedFieldsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public Builder setUserDefinedFields(
+        int index,
+        com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.Builder builderForValue) {
+      if (userDefinedFieldsBuilder_ == null) {
+        ensureUserDefinedFieldsIsMutable();
+        userDefinedFields_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        userDefinedFieldsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public Builder addUserDefinedFields(
+        com.google.cloud.compute.v1.SecurityPolicyUserDefinedField value) {
+      if (userDefinedFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUserDefinedFieldsIsMutable();
+        userDefinedFields_.add(value);
+        onChanged();
+      } else {
+        userDefinedFieldsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public Builder addUserDefinedFields(
+        int index, com.google.cloud.compute.v1.SecurityPolicyUserDefinedField value) {
+      if (userDefinedFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUserDefinedFieldsIsMutable();
+        userDefinedFields_.add(index, value);
+        onChanged();
+      } else {
+        userDefinedFieldsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public Builder addUserDefinedFields(
+        com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.Builder builderForValue) {
+      if (userDefinedFieldsBuilder_ == null) {
+        ensureUserDefinedFieldsIsMutable();
+        userDefinedFields_.add(builderForValue.build());
+        onChanged();
+      } else {
+        userDefinedFieldsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public Builder addUserDefinedFields(
+        int index,
+        com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.Builder builderForValue) {
+      if (userDefinedFieldsBuilder_ == null) {
+        ensureUserDefinedFieldsIsMutable();
+        userDefinedFields_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        userDefinedFieldsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public Builder addAllUserDefinedFields(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.SecurityPolicyUserDefinedField>
+            values) {
+      if (userDefinedFieldsBuilder_ == null) {
+        ensureUserDefinedFieldsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, userDefinedFields_);
+        onChanged();
+      } else {
+        userDefinedFieldsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public Builder clearUserDefinedFields() {
+      if (userDefinedFieldsBuilder_ == null) {
+        userDefinedFields_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00010000);
+        onChanged();
+      } else {
+        userDefinedFieldsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public Builder removeUserDefinedFields(int index) {
+      if (userDefinedFieldsBuilder_ == null) {
+        ensureUserDefinedFieldsIsMutable();
+        userDefinedFields_.remove(index);
+        onChanged();
+      } else {
+        userDefinedFieldsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.Builder
+        getUserDefinedFieldsBuilder(int index) {
+      return getUserDefinedFieldsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyUserDefinedFieldOrBuilder
+        getUserDefinedFieldsOrBuilder(int index) {
+      if (userDefinedFieldsBuilder_ == null) {
+        return userDefinedFields_.get(index);
+      } else {
+        return userDefinedFieldsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.compute.v1.SecurityPolicyUserDefinedFieldOrBuilder>
+        getUserDefinedFieldsOrBuilderList() {
+      if (userDefinedFieldsBuilder_ != null) {
+        return userDefinedFieldsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(userDefinedFields_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.Builder
+        addUserDefinedFieldsBuilder() {
+      return getUserDefinedFieldsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.Builder
+        addUserDefinedFieldsBuilder(int index) {
+      return getUserDefinedFieldsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyUserDefinedField user_defined_fields = 28312739;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.Builder>
+        getUserDefinedFieldsBuilderList() {
+      return getUserDefinedFieldsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyUserDefinedField,
+            com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyUserDefinedFieldOrBuilder>
+        getUserDefinedFieldsFieldBuilder() {
+      if (userDefinedFieldsBuilder_ == null) {
+        userDefinedFieldsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.SecurityPolicyUserDefinedField,
+                com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.Builder,
+                com.google.cloud.compute.v1.SecurityPolicyUserDefinedFieldOrBuilder>(
+                userDefinedFields_,
+                ((bitField0_ & 0x00010000) != 0),
+                getParentForChildren(),
+                isClean());
+        userDefinedFields_ = null;
+      }
+      return userDefinedFieldsBuilder_;
     }
 
     @java.lang.Override

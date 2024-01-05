@@ -64,6 +64,59 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   }
 
   private int bitField0_;
+  public static final int AWS_V4_AUTHENTICATION_FIELD_NUMBER = 433993111;
+  private com.google.cloud.compute.v1.AWSV4Signature awsV4Authentication_;
+  /**
+   *
+   *
+   * <pre>
+   * The configuration needed to generate a signature for access to private storage buckets that support AWS's Signature Version 4 for authentication. Allowed only for INTERNET_IP_PORT and INTERNET_FQDN_PORT NEG backends.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.AWSV4Signature aws_v4_authentication = 433993111;
+   * </code>
+   *
+   * @return Whether the awsV4Authentication field is set.
+   */
+  @java.lang.Override
+  public boolean hasAwsV4Authentication() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration needed to generate a signature for access to private storage buckets that support AWS's Signature Version 4 for authentication. Allowed only for INTERNET_IP_PORT and INTERNET_FQDN_PORT NEG backends.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.AWSV4Signature aws_v4_authentication = 433993111;
+   * </code>
+   *
+   * @return The awsV4Authentication.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.AWSV4Signature getAwsV4Authentication() {
+    return awsV4Authentication_ == null
+        ? com.google.cloud.compute.v1.AWSV4Signature.getDefaultInstance()
+        : awsV4Authentication_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration needed to generate a signature for access to private storage buckets that support AWS's Signature Version 4 for authentication. Allowed only for INTERNET_IP_PORT and INTERNET_FQDN_PORT NEG backends.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.AWSV4Signature aws_v4_authentication = 433993111;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.AWSV4SignatureOrBuilder getAwsV4AuthenticationOrBuilder() {
+    return awsV4Authentication_ == null
+        ? com.google.cloud.compute.v1.AWSV4Signature.getDefaultInstance()
+        : awsV4Authentication_;
+  }
+
   public static final int CLIENT_TLS_POLICY_FIELD_NUMBER = 462325226;
 
   @SuppressWarnings("serial")
@@ -81,7 +134,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasClientTlsPolicy() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -213,6 +266,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
           output, 330029535, subjectAltNames_.getRaw(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(433993111, getAwsV4Authentication());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 462325226, clientTlsPolicy_);
     }
     getUnknownFields().writeTo(output);
@@ -233,6 +289,11 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       size += 5 * getSubjectAltNamesList().size();
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              433993111, getAwsV4Authentication());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(462325226, clientTlsPolicy_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -251,6 +312,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     com.google.cloud.compute.v1.SecuritySettings other =
         (com.google.cloud.compute.v1.SecuritySettings) obj;
 
+    if (hasAwsV4Authentication() != other.hasAwsV4Authentication()) return false;
+    if (hasAwsV4Authentication()) {
+      if (!getAwsV4Authentication().equals(other.getAwsV4Authentication())) return false;
+    }
     if (hasClientTlsPolicy() != other.hasClientTlsPolicy()) return false;
     if (hasClientTlsPolicy()) {
       if (!getClientTlsPolicy().equals(other.getClientTlsPolicy())) return false;
@@ -267,6 +332,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasAwsV4Authentication()) {
+      hash = (37 * hash) + AWS_V4_AUTHENTICATION_FIELD_NUMBER;
+      hash = (53 * hash) + getAwsV4Authentication().hashCode();
+    }
     if (hasClientTlsPolicy()) {
       hash = (37 * hash) + CLIENT_TLS_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getClientTlsPolicy().hashCode();
@@ -404,16 +473,30 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.compute.v1.SecuritySettings.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getAwsV4AuthenticationFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      awsV4Authentication_ = null;
+      if (awsV4AuthenticationBuilder_ != null) {
+        awsV4AuthenticationBuilder_.dispose();
+        awsV4AuthenticationBuilder_ = null;
+      }
       clientTlsPolicy_ = "";
       subjectAltNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
@@ -454,10 +537,17 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.clientTlsPolicy_ = clientTlsPolicy_;
+        result.awsV4Authentication_ =
+            awsV4AuthenticationBuilder_ == null
+                ? awsV4Authentication_
+                : awsV4AuthenticationBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clientTlsPolicy_ = clientTlsPolicy_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         subjectAltNames_.makeImmutable();
         result.subjectAltNames_ = subjectAltNames_;
       }
@@ -509,15 +599,18 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.cloud.compute.v1.SecuritySettings other) {
       if (other == com.google.cloud.compute.v1.SecuritySettings.getDefaultInstance()) return this;
+      if (other.hasAwsV4Authentication()) {
+        mergeAwsV4Authentication(other.getAwsV4Authentication());
+      }
       if (other.hasClientTlsPolicy()) {
         clientTlsPolicy_ = other.clientTlsPolicy_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.subjectAltNames_.isEmpty()) {
         if (subjectAltNames_.isEmpty()) {
           subjectAltNames_ = other.subjectAltNames_;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
         } else {
           ensureSubjectAltNamesIsMutable();
           subjectAltNames_.addAll(other.subjectAltNames_);
@@ -557,10 +650,17 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
                 subjectAltNames_.add(s);
                 break;
               } // case -1654731014
+            case -823022406:
+              {
+                input.readMessage(
+                    getAwsV4AuthenticationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -823022406
             case -596365486:
               {
                 clientTlsPolicy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case -596365486
             default:
@@ -582,6 +682,200 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
 
     private int bitField0_;
 
+    private com.google.cloud.compute.v1.AWSV4Signature awsV4Authentication_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.AWSV4Signature,
+            com.google.cloud.compute.v1.AWSV4Signature.Builder,
+            com.google.cloud.compute.v1.AWSV4SignatureOrBuilder>
+        awsV4AuthenticationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The configuration needed to generate a signature for access to private storage buckets that support AWS's Signature Version 4 for authentication. Allowed only for INTERNET_IP_PORT and INTERNET_FQDN_PORT NEG backends.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.AWSV4Signature aws_v4_authentication = 433993111;
+     * </code>
+     *
+     * @return Whether the awsV4Authentication field is set.
+     */
+    public boolean hasAwsV4Authentication() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration needed to generate a signature for access to private storage buckets that support AWS's Signature Version 4 for authentication. Allowed only for INTERNET_IP_PORT and INTERNET_FQDN_PORT NEG backends.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.AWSV4Signature aws_v4_authentication = 433993111;
+     * </code>
+     *
+     * @return The awsV4Authentication.
+     */
+    public com.google.cloud.compute.v1.AWSV4Signature getAwsV4Authentication() {
+      if (awsV4AuthenticationBuilder_ == null) {
+        return awsV4Authentication_ == null
+            ? com.google.cloud.compute.v1.AWSV4Signature.getDefaultInstance()
+            : awsV4Authentication_;
+      } else {
+        return awsV4AuthenticationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration needed to generate a signature for access to private storage buckets that support AWS's Signature Version 4 for authentication. Allowed only for INTERNET_IP_PORT and INTERNET_FQDN_PORT NEG backends.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.AWSV4Signature aws_v4_authentication = 433993111;
+     * </code>
+     */
+    public Builder setAwsV4Authentication(com.google.cloud.compute.v1.AWSV4Signature value) {
+      if (awsV4AuthenticationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        awsV4Authentication_ = value;
+      } else {
+        awsV4AuthenticationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration needed to generate a signature for access to private storage buckets that support AWS's Signature Version 4 for authentication. Allowed only for INTERNET_IP_PORT and INTERNET_FQDN_PORT NEG backends.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.AWSV4Signature aws_v4_authentication = 433993111;
+     * </code>
+     */
+    public Builder setAwsV4Authentication(
+        com.google.cloud.compute.v1.AWSV4Signature.Builder builderForValue) {
+      if (awsV4AuthenticationBuilder_ == null) {
+        awsV4Authentication_ = builderForValue.build();
+      } else {
+        awsV4AuthenticationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration needed to generate a signature for access to private storage buckets that support AWS's Signature Version 4 for authentication. Allowed only for INTERNET_IP_PORT and INTERNET_FQDN_PORT NEG backends.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.AWSV4Signature aws_v4_authentication = 433993111;
+     * </code>
+     */
+    public Builder mergeAwsV4Authentication(com.google.cloud.compute.v1.AWSV4Signature value) {
+      if (awsV4AuthenticationBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && awsV4Authentication_ != null
+            && awsV4Authentication_
+                != com.google.cloud.compute.v1.AWSV4Signature.getDefaultInstance()) {
+          getAwsV4AuthenticationBuilder().mergeFrom(value);
+        } else {
+          awsV4Authentication_ = value;
+        }
+      } else {
+        awsV4AuthenticationBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration needed to generate a signature for access to private storage buckets that support AWS's Signature Version 4 for authentication. Allowed only for INTERNET_IP_PORT and INTERNET_FQDN_PORT NEG backends.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.AWSV4Signature aws_v4_authentication = 433993111;
+     * </code>
+     */
+    public Builder clearAwsV4Authentication() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      awsV4Authentication_ = null;
+      if (awsV4AuthenticationBuilder_ != null) {
+        awsV4AuthenticationBuilder_.dispose();
+        awsV4AuthenticationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration needed to generate a signature for access to private storage buckets that support AWS's Signature Version 4 for authentication. Allowed only for INTERNET_IP_PORT and INTERNET_FQDN_PORT NEG backends.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.AWSV4Signature aws_v4_authentication = 433993111;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.AWSV4Signature.Builder getAwsV4AuthenticationBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getAwsV4AuthenticationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration needed to generate a signature for access to private storage buckets that support AWS's Signature Version 4 for authentication. Allowed only for INTERNET_IP_PORT and INTERNET_FQDN_PORT NEG backends.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.AWSV4Signature aws_v4_authentication = 433993111;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.AWSV4SignatureOrBuilder getAwsV4AuthenticationOrBuilder() {
+      if (awsV4AuthenticationBuilder_ != null) {
+        return awsV4AuthenticationBuilder_.getMessageOrBuilder();
+      } else {
+        return awsV4Authentication_ == null
+            ? com.google.cloud.compute.v1.AWSV4Signature.getDefaultInstance()
+            : awsV4Authentication_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration needed to generate a signature for access to private storage buckets that support AWS's Signature Version 4 for authentication. Allowed only for INTERNET_IP_PORT and INTERNET_FQDN_PORT NEG backends.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.AWSV4Signature aws_v4_authentication = 433993111;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.AWSV4Signature,
+            com.google.cloud.compute.v1.AWSV4Signature.Builder,
+            com.google.cloud.compute.v1.AWSV4SignatureOrBuilder>
+        getAwsV4AuthenticationFieldBuilder() {
+      if (awsV4AuthenticationBuilder_ == null) {
+        awsV4AuthenticationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.AWSV4Signature,
+                com.google.cloud.compute.v1.AWSV4Signature.Builder,
+                com.google.cloud.compute.v1.AWSV4SignatureOrBuilder>(
+                getAwsV4Authentication(), getParentForChildren(), isClean());
+        awsV4Authentication_ = null;
+      }
+      return awsV4AuthenticationBuilder_;
+    }
+
     private java.lang.Object clientTlsPolicy_ = "";
     /**
      *
@@ -595,7 +889,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * @return Whether the clientTlsPolicy field is set.
      */
     public boolean hasClientTlsPolicy() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -658,7 +952,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       clientTlsPolicy_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -675,7 +969,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearClientTlsPolicy() {
       clientTlsPolicy_ = getDefaultInstance().getClientTlsPolicy();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -697,7 +991,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       clientTlsPolicy_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -709,7 +1003,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       if (!subjectAltNames_.isModifiable()) {
         subjectAltNames_ = new com.google.protobuf.LazyStringArrayList(subjectAltNames_);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -789,7 +1083,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       }
       ensureSubjectAltNamesIsMutable();
       subjectAltNames_.set(index, value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -811,7 +1105,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       }
       ensureSubjectAltNamesIsMutable();
       subjectAltNames_.add(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -830,7 +1124,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     public Builder addAllSubjectAltNames(java.lang.Iterable<java.lang.String> values) {
       ensureSubjectAltNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subjectAltNames_);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -847,7 +1141,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSubjectAltNames() {
       subjectAltNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       ;
       onChanged();
       return this;
@@ -871,7 +1165,7 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureSubjectAltNamesIsMutable();
       subjectAltNames_.add(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

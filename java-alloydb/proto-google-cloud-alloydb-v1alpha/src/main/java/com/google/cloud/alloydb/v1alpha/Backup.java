@@ -2252,16 +2252,34 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         : expiryQuantity_;
   }
 
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 23;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   public static final int SATISFIES_PZS_FIELD_NUMBER = 21;
   private boolean satisfiesPzs_ = false;
   /**
    *
    *
    * <pre>
-   * Reserved for future use.
+   * Output only. Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 21;</code>
+   * <code>bool satisfies_pzs = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The satisfiesPzs.
    */
@@ -2393,6 +2411,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(22, databaseVersion_);
     }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(23, satisfiesPzi_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2484,6 +2505,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, databaseVersion_);
     }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(23, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2540,6 +2564,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (hasExpiryQuantity()) {
       if (!getExpiryQuantity().equals(other.getExpiryQuantity())) return false;
     }
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (databaseVersion_ != other.databaseVersion_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -2611,6 +2636,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + EXPIRY_QUANTITY_FIELD_NUMBER;
       hash = (53 * hash) + getExpiryQuantity().hashCode();
     }
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (37 * hash) + DATABASE_VERSION_FIELD_NUMBER;
@@ -2826,6 +2853,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         expiryQuantityBuilder_.dispose();
         expiryQuantityBuilder_ = null;
       }
+      satisfiesPzi_ = false;
       satisfiesPzs_ = false;
       databaseVersion_ = 0;
       return this;
@@ -2930,9 +2958,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
             expiryQuantityBuilder_ == null ? expiryQuantity_ : expiryQuantityBuilder_.build();
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
+        result.satisfiesPzi_ = satisfiesPzi_;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.databaseVersion_ = databaseVersion_;
       }
     }
@@ -3053,6 +3084,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasExpiryQuantity()) {
         mergeExpiryQuantity(other.getExpiryQuantity());
+      }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
@@ -3222,15 +3256,21 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
             case 168:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 168
             case 176:
               {
                 databaseVersion_ = input.readEnum();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 176
+            case 184:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 184
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6187,15 +6227,68 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       return expiryQuantityBuilder_;
     }
 
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean satisfiesPzs_;
     /**
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Output only. Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 21;</code>
+     * <code>bool satisfies_pzs = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The satisfiesPzs.
      */
@@ -6207,10 +6300,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Output only. Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 21;</code>
+     * <code>bool satisfies_pzs = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The satisfiesPzs to set.
      * @return This builder for chaining.
@@ -6218,7 +6311,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6226,15 +6319,15 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Output only. Reserved for future use.
      * </pre>
      *
-     * <code>bool satisfies_pzs = 21;</code>
+     * <code>bool satisfies_pzs = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -6278,7 +6371,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setDatabaseVersionValue(int value) {
       databaseVersion_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6325,7 +6418,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       databaseVersion_ = value.getNumber();
       onChanged();
       return this;
@@ -6346,7 +6439,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDatabaseVersion() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       databaseVersion_ = 0;
       onChanged();
       return this;

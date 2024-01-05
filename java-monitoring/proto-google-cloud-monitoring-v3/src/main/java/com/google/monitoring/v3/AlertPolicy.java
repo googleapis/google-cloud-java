@@ -46,6 +46,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     conditions_ = java.util.Collections.emptyList();
     combiner_ = 0;
     notificationChannels_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    severity_ = 0;
   }
 
   @java.lang.Override
@@ -272,6 +273,193 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.monitoring.v3.AlertPolicy.ConditionCombinerType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * An enumeration of possible severity level for an Alert Policy.
+   * </pre>
+   *
+   * Protobuf enum {@code google.monitoring.v3.AlertPolicy.Severity}
+   */
+  public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * No severity is specified. This is the default value.
+     * </pre>
+     *
+     * <code>SEVERITY_UNSPECIFIED = 0;</code>
+     */
+    SEVERITY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * This is the highest severity level. Use this if the problem could
+     * cause significant damage or downtime.
+     * </pre>
+     *
+     * <code>CRITICAL = 1;</code>
+     */
+    CRITICAL(1),
+    /**
+     *
+     *
+     * <pre>
+     * This is the medium severity level. Use this if the problem could
+     * cause minor damage or downtime.
+     * </pre>
+     *
+     * <code>ERROR = 2;</code>
+     */
+    ERROR(2),
+    /**
+     *
+     *
+     * <pre>
+     * This is the lowest severity level. Use this if the problem is not causing
+     * any damage or downtime, but could potentially lead to a problem in the
+     * future.
+     * </pre>
+     *
+     * <code>WARNING = 3;</code>
+     */
+    WARNING(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * No severity is specified. This is the default value.
+     * </pre>
+     *
+     * <code>SEVERITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * This is the highest severity level. Use this if the problem could
+     * cause significant damage or downtime.
+     * </pre>
+     *
+     * <code>CRITICAL = 1;</code>
+     */
+    public static final int CRITICAL_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * This is the medium severity level. Use this if the problem could
+     * cause minor damage or downtime.
+     * </pre>
+     *
+     * <code>ERROR = 2;</code>
+     */
+    public static final int ERROR_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * This is the lowest severity level. Use this if the problem is not causing
+     * any damage or downtime, but could potentially lead to a problem in the
+     * future.
+     * </pre>
+     *
+     * <code>WARNING = 3;</code>
+     */
+    public static final int WARNING_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Severity valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Severity forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SEVERITY_UNSPECIFIED;
+        case 1:
+          return CRITICAL;
+        case 2:
+          return ERROR;
+        case 3:
+          return WARNING;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Severity> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Severity> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Severity>() {
+          public Severity findValueByNumber(int number) {
+            return Severity.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.monitoring.v3.AlertPolicy.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final Severity[] VALUES = values();
+
+    public static Severity valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Severity(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.monitoring.v3.AlertPolicy.Severity)
   }
 
   public interface DocumentationOrBuilder
@@ -3503,6 +3691,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * found to violate the threshold, and the violation is observed in all
          * forecasts made for the configured `duration`, then the time series is
          * considered to be failing.
+         * The forecast horizon can range from 1 hour to 60 hours.
          * </pre>
          *
          * <code>
@@ -3521,6 +3710,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * found to violate the threshold, and the violation is observed in all
          * forecasts made for the configured `duration`, then the time series is
          * considered to be failing.
+         * The forecast horizon can range from 1 hour to 60 hours.
          * </pre>
          *
          * <code>
@@ -3539,6 +3729,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * found to violate the threshold, and the violation is observed in all
          * forecasts made for the configured `duration`, then the time series is
          * considered to be failing.
+         * The forecast horizon can range from 1 hour to 60 hours.
          * </pre>
          *
          * <code>
@@ -3604,6 +3795,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * found to violate the threshold, and the violation is observed in all
          * forecasts made for the configured `duration`, then the time series is
          * considered to be failing.
+         * The forecast horizon can range from 1 hour to 60 hours.
          * </pre>
          *
          * <code>
@@ -3625,6 +3817,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * found to violate the threshold, and the violation is observed in all
          * forecasts made for the configured `duration`, then the time series is
          * considered to be failing.
+         * The forecast horizon can range from 1 hour to 60 hours.
          * </pre>
          *
          * <code>
@@ -3648,6 +3841,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * found to violate the threshold, and the violation is observed in all
          * forecasts made for the configured `duration`, then the time series is
          * considered to be failing.
+         * The forecast horizon can range from 1 hour to 60 hours.
          * </pre>
          *
          * <code>
@@ -4070,6 +4264,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
            * found to violate the threshold, and the violation is observed in all
            * forecasts made for the configured `duration`, then the time series is
            * considered to be failing.
+           * The forecast horizon can range from 1 hour to 60 hours.
            * </pre>
            *
            * <code>
@@ -4090,6 +4285,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
            * found to violate the threshold, and the violation is observed in all
            * forecasts made for the configured `duration`, then the time series is
            * considered to be failing.
+           * The forecast horizon can range from 1 hour to 60 hours.
            * </pre>
            *
            * <code>
@@ -4116,6 +4312,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
            * found to violate the threshold, and the violation is observed in all
            * forecasts made for the configured `duration`, then the time series is
            * considered to be failing.
+           * The forecast horizon can range from 1 hour to 60 hours.
            * </pre>
            *
            * <code>
@@ -4144,6 +4341,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
            * found to violate the threshold, and the violation is observed in all
            * forecasts made for the configured `duration`, then the time series is
            * considered to be failing.
+           * The forecast horizon can range from 1 hour to 60 hours.
            * </pre>
            *
            * <code>
@@ -4169,6 +4367,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
            * found to violate the threshold, and the violation is observed in all
            * forecasts made for the configured `duration`, then the time series is
            * considered to be failing.
+           * The forecast horizon can range from 1 hour to 60 hours.
            * </pre>
            *
            * <code>
@@ -4200,6 +4399,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
            * found to violate the threshold, and the violation is observed in all
            * forecasts made for the configured `duration`, then the time series is
            * considered to be failing.
+           * The forecast horizon can range from 1 hour to 60 hours.
            * </pre>
            *
            * <code>
@@ -4225,6 +4425,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
            * found to violate the threshold, and the violation is observed in all
            * forecasts made for the configured `duration`, then the time series is
            * considered to be failing.
+           * The forecast horizon can range from 1 hour to 60 hours.
            * </pre>
            *
            * <code>
@@ -4245,6 +4446,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
            * found to violate the threshold, and the violation is observed in all
            * forecasts made for the configured `duration`, then the time series is
            * considered to be failing.
+           * The forecast horizon can range from 1 hour to 60 hours.
            * </pre>
            *
            * <code>
@@ -4269,6 +4471,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
            * found to violate the threshold, and the violation is observed in all
            * forecasts made for the configured `duration`, then the time series is
            * considered to be failing.
+           * The forecast horizon can range from 1 hour to 60 hours.
            * </pre>
            *
            * <code>
@@ -23511,6 +23714,49 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         : alertStrategy_;
   }
 
+  public static final int SEVERITY_FIELD_NUMBER = 22;
+  private int severity_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The severity of an alert policy indicates how important incidents
+   * generated by that policy are. The severity level will be displayed on the
+   * Incident detail page and in notifications.
+   * </pre>
+   *
+   * <code>
+   * .google.monitoring.v3.AlertPolicy.Severity severity = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for severity.
+   */
+  @java.lang.Override
+  public int getSeverityValue() {
+    return severity_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The severity of an alert policy indicates how important incidents
+   * generated by that policy are. The severity level will be displayed on the
+   * Incident detail page and in notifications.
+   * </pre>
+   *
+   * <code>
+   * .google.monitoring.v3.AlertPolicy.Severity severity = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The severity.
+   */
+  @java.lang.Override
+  public com.google.monitoring.v3.AlertPolicy.Severity getSeverity() {
+    com.google.monitoring.v3.AlertPolicy.Severity result =
+        com.google.monitoring.v3.AlertPolicy.Severity.forNumber(severity_);
+    return result == null ? com.google.monitoring.v3.AlertPolicy.Severity.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -23562,6 +23808,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     if (alertStrategy_ != null) {
       output.writeMessage(21, getAlertStrategy());
+    }
+    if (severity_
+        != com.google.monitoring.v3.AlertPolicy.Severity.SEVERITY_UNSPECIFIED.getNumber()) {
+      output.writeEnum(22, severity_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -23622,6 +23872,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     if (alertStrategy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getAlertStrategy());
     }
+    if (severity_
+        != com.google.monitoring.v3.AlertPolicy.Severity.SEVERITY_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, severity_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -23667,6 +23921,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasAlertStrategy()) {
       if (!getAlertStrategy().equals(other.getAlertStrategy())) return false;
     }
+    if (severity_ != other.severity_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -23720,6 +23975,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ALERT_STRATEGY_FIELD_NUMBER;
       hash = (53 * hash) + getAlertStrategy().hashCode();
     }
+    hash = (37 * hash) + SEVERITY_FIELD_NUMBER;
+    hash = (53 * hash) + severity_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -23923,6 +24180,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         alertStrategyBuilder_.dispose();
         alertStrategyBuilder_ = null;
       }
+      severity_ = 0;
       return this;
     }
 
@@ -24009,6 +24267,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.alertStrategy_ =
             alertStrategyBuilder_ == null ? alertStrategy_ : alertStrategyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.severity_ = severity_;
       }
     }
 
@@ -24127,6 +24388,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAlertStrategy()) {
         mergeAlertStrategy(other.getAlertStrategy());
       }
+      if (other.severity_ != 0) {
+        setSeverityValue(other.getSeverityValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -24239,6 +24503,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 170
+            case 176:
+              {
+                severity_ = input.readEnum();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -26854,6 +27124,116 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         alertStrategy_ = null;
       }
       return alertStrategyBuilder_;
+    }
+
+    private int severity_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The severity of an alert policy indicates how important incidents
+     * generated by that policy are. The severity level will be displayed on the
+     * Incident detail page and in notifications.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Severity severity = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for severity.
+     */
+    @java.lang.Override
+    public int getSeverityValue() {
+      return severity_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The severity of an alert policy indicates how important incidents
+     * generated by that policy are. The severity level will be displayed on the
+     * Incident detail page and in notifications.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Severity severity = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for severity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSeverityValue(int value) {
+      severity_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The severity of an alert policy indicates how important incidents
+     * generated by that policy are. The severity level will be displayed on the
+     * Incident detail page and in notifications.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Severity severity = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The severity.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.AlertPolicy.Severity getSeverity() {
+      com.google.monitoring.v3.AlertPolicy.Severity result =
+          com.google.monitoring.v3.AlertPolicy.Severity.forNumber(severity_);
+      return result == null ? com.google.monitoring.v3.AlertPolicy.Severity.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The severity of an alert policy indicates how important incidents
+     * generated by that policy are. The severity level will be displayed on the
+     * Incident detail page and in notifications.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Severity severity = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The severity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSeverity(com.google.monitoring.v3.AlertPolicy.Severity value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00001000;
+      severity_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The severity of an alert policy indicates how important incidents
+     * generated by that policy are. The severity level will be displayed on the
+     * Incident detail page and in notifications.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.v3.AlertPolicy.Severity severity = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSeverity() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      severity_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

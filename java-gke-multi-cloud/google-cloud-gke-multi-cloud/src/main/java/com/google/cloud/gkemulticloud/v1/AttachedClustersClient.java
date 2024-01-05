@@ -453,9 +453,11 @@ public class AttachedClustersClient implements BackgroundResource {
    * @param updateMask Required. Mask of fields to update. At least one path must be supplied in
    *     this field. The elements of the repeated paths field can only include these fields from
    *     [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]:
-   *     <p>&#42; `description`. &#42; `annotations`. &#42; `platform_version`. &#42;
-   *     `authorization.admin_users`. &#42; `logging_config.component_config.enable_components`.
-   *     &#42; `monitoring_config.managed_prometheus_config.enabled`.
+   *     <p>&#42; `annotations`. &#42; `authorization.admin_groups`. &#42;
+   *     `authorization.admin_users`. &#42; `binary_authorization.evaluation_mode`. &#42;
+   *     `description`. &#42; `logging_config.component_config.enable_components`. &#42;
+   *     `monitoring_config.managed_prometheus_config.enabled`. &#42; `platform_version`. &#42;
+   *     `proxy_config.kubernetes_secret.name`. &#42; `proxy_config.kubernetes_secret.namespace`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AttachedCluster, OperationMetadata> updateAttachedClusterAsync(
@@ -681,6 +683,7 @@ public class AttachedClustersClient implements BackgroundResource {
    *           .setFleetMembership("fleetMembership-665479228")
    *           .setPlatformVersion("platformVersion1848800485")
    *           .setDistribution("distribution-1580708220")
+   *           .setProxyConfig(AttachedProxyConfig.newBuilder().build())
    *           .build();
    *   AttachedCluster response = attachedClustersClient.importAttachedClusterAsync(request).get();
    * }
@@ -722,6 +725,7 @@ public class AttachedClustersClient implements BackgroundResource {
    *           .setFleetMembership("fleetMembership-665479228")
    *           .setPlatformVersion("platformVersion1848800485")
    *           .setDistribution("distribution-1580708220")
+   *           .setProxyConfig(AttachedProxyConfig.newBuilder().build())
    *           .build();
    *   OperationFuture<AttachedCluster, OperationMetadata> future =
    *       attachedClustersClient.importAttachedClusterOperationCallable().futureCall(request);
@@ -763,6 +767,7 @@ public class AttachedClustersClient implements BackgroundResource {
    *           .setFleetMembership("fleetMembership-665479228")
    *           .setPlatformVersion("platformVersion1848800485")
    *           .setDistribution("distribution-1580708220")
+   *           .setProxyConfig(AttachedProxyConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       attachedClustersClient.importAttachedClusterCallable().futureCall(request);
@@ -1519,6 +1524,7 @@ public class AttachedClustersClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setAttachedClusterId("attachedClusterId865943409")
    *           .setPlatformVersion("platformVersion1848800485")
+   *           .setProxyConfig(AttachedProxyConfig.newBuilder().build())
    *           .build();
    *   GenerateAttachedClusterInstallManifestResponse response =
    *       attachedClustersClient.generateAttachedClusterInstallManifest(request);
@@ -1552,6 +1558,7 @@ public class AttachedClustersClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setAttachedClusterId("attachedClusterId865943409")
    *           .setPlatformVersion("platformVersion1848800485")
+   *           .setProxyConfig(AttachedProxyConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<GenerateAttachedClusterInstallManifestResponse> future =
    *       attachedClustersClient
@@ -1567,6 +1574,86 @@ public class AttachedClustersClient implements BackgroundResource {
           GenerateAttachedClusterInstallManifestResponse>
       generateAttachedClusterInstallManifestCallable() {
     return stub.generateAttachedClusterInstallManifestCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates an access token for a cluster agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AttachedClustersClient attachedClustersClient = AttachedClustersClient.create()) {
+   *   GenerateAttachedClusterAgentTokenRequest request =
+   *       GenerateAttachedClusterAgentTokenRequest.newBuilder()
+   *           .setAttachedCluster(
+   *               AttachedClusterName.of("[PROJECT]", "[LOCATION]", "[ATTACHED_CLUSTER]")
+   *                   .toString())
+   *           .setSubjectToken("subjectToken-1519661011")
+   *           .setSubjectTokenType("subjectTokenType1839592711")
+   *           .setVersion("version351608024")
+   *           .setGrantType("grantType-1219832202")
+   *           .setAudience("audience975628804")
+   *           .setScope("scope109264468")
+   *           .setRequestedTokenType("requestedTokenType1733106949")
+   *           .setOptions("options-1249474914")
+   *           .build();
+   *   GenerateAttachedClusterAgentTokenResponse response =
+   *       attachedClustersClient.generateAttachedClusterAgentToken(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateAttachedClusterAgentTokenResponse generateAttachedClusterAgentToken(
+      GenerateAttachedClusterAgentTokenRequest request) {
+    return generateAttachedClusterAgentTokenCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates an access token for a cluster agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AttachedClustersClient attachedClustersClient = AttachedClustersClient.create()) {
+   *   GenerateAttachedClusterAgentTokenRequest request =
+   *       GenerateAttachedClusterAgentTokenRequest.newBuilder()
+   *           .setAttachedCluster(
+   *               AttachedClusterName.of("[PROJECT]", "[LOCATION]", "[ATTACHED_CLUSTER]")
+   *                   .toString())
+   *           .setSubjectToken("subjectToken-1519661011")
+   *           .setSubjectTokenType("subjectTokenType1839592711")
+   *           .setVersion("version351608024")
+   *           .setGrantType("grantType-1219832202")
+   *           .setAudience("audience975628804")
+   *           .setScope("scope109264468")
+   *           .setRequestedTokenType("requestedTokenType1733106949")
+   *           .setOptions("options-1249474914")
+   *           .build();
+   *   ApiFuture<GenerateAttachedClusterAgentTokenResponse> future =
+   *       attachedClustersClient.generateAttachedClusterAgentTokenCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateAttachedClusterAgentTokenResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+      generateAttachedClusterAgentTokenCallable() {
+    return stub.generateAttachedClusterAgentTokenCallable();
   }
 
   @Override

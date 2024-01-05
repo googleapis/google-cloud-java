@@ -167,6 +167,56 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
     return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
 
+  public static final int COST_IN_LOCAL_CURRENCY_FIELD_NUMBER = 3;
+  private com.google.type.Money costInLocalCurrency_;
+  /**
+   *
+   *
+   * <pre>
+   * The approximate cost savings in the billing account's local currency.
+   * </pre>
+   *
+   * <code>.google.type.Money cost_in_local_currency = 3;</code>
+   *
+   * @return Whether the costInLocalCurrency field is set.
+   */
+  @java.lang.Override
+  public boolean hasCostInLocalCurrency() {
+    return costInLocalCurrency_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The approximate cost savings in the billing account's local currency.
+   * </pre>
+   *
+   * <code>.google.type.Money cost_in_local_currency = 3;</code>
+   *
+   * @return The costInLocalCurrency.
+   */
+  @java.lang.Override
+  public com.google.type.Money getCostInLocalCurrency() {
+    return costInLocalCurrency_ == null
+        ? com.google.type.Money.getDefaultInstance()
+        : costInLocalCurrency_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The approximate cost savings in the billing account's local currency.
+   * </pre>
+   *
+   * <code>.google.type.Money cost_in_local_currency = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.type.MoneyOrBuilder getCostInLocalCurrencyOrBuilder() {
+    return costInLocalCurrency_ == null
+        ? com.google.type.Money.getDefaultInstance()
+        : costInLocalCurrency_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -187,6 +237,9 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
     if (duration_ != null) {
       output.writeMessage(2, getDuration());
     }
+    if (costInLocalCurrency_ != null) {
+      output.writeMessage(3, getCostInLocalCurrency());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -201,6 +254,9 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
     }
     if (duration_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDuration());
+    }
+    if (costInLocalCurrency_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCostInLocalCurrency());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -226,6 +282,10 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
     if (hasDuration()) {
       if (!getDuration().equals(other.getDuration())) return false;
     }
+    if (hasCostInLocalCurrency() != other.hasCostInLocalCurrency()) return false;
+    if (hasCostInLocalCurrency()) {
+      if (!getCostInLocalCurrency().equals(other.getCostInLocalCurrency())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -244,6 +304,10 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
     if (hasDuration()) {
       hash = (37 * hash) + DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getDuration().hashCode();
+    }
+    if (hasCostInLocalCurrency()) {
+      hash = (37 * hash) + COST_IN_LOCAL_CURRENCY_FIELD_NUMBER;
+      hash = (53 * hash) + getCostInLocalCurrency().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -394,6 +458,11 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
         durationBuilder_.dispose();
         durationBuilder_ = null;
       }
+      costInLocalCurrency_ = null;
+      if (costInLocalCurrencyBuilder_ != null) {
+        costInLocalCurrencyBuilder_.dispose();
+        costInLocalCurrencyBuilder_ = null;
+      }
       return this;
     }
 
@@ -435,6 +504,12 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.costInLocalCurrency_ =
+            costInLocalCurrencyBuilder_ == null
+                ? costInLocalCurrency_
+                : costInLocalCurrencyBuilder_.build();
       }
     }
 
@@ -489,6 +564,9 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDuration()) {
         mergeDuration(other.getDuration());
       }
+      if (other.hasCostInLocalCurrency()) {
+        mergeCostInLocalCurrency(other.getCostInLocalCurrency());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -527,6 +605,13 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getCostInLocalCurrencyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -942,6 +1027,185 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
         duration_ = null;
       }
       return durationBuilder_;
+    }
+
+    private com.google.type.Money costInLocalCurrency_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
+        costInLocalCurrencyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The approximate cost savings in the billing account's local currency.
+     * </pre>
+     *
+     * <code>.google.type.Money cost_in_local_currency = 3;</code>
+     *
+     * @return Whether the costInLocalCurrency field is set.
+     */
+    public boolean hasCostInLocalCurrency() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The approximate cost savings in the billing account's local currency.
+     * </pre>
+     *
+     * <code>.google.type.Money cost_in_local_currency = 3;</code>
+     *
+     * @return The costInLocalCurrency.
+     */
+    public com.google.type.Money getCostInLocalCurrency() {
+      if (costInLocalCurrencyBuilder_ == null) {
+        return costInLocalCurrency_ == null
+            ? com.google.type.Money.getDefaultInstance()
+            : costInLocalCurrency_;
+      } else {
+        return costInLocalCurrencyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The approximate cost savings in the billing account's local currency.
+     * </pre>
+     *
+     * <code>.google.type.Money cost_in_local_currency = 3;</code>
+     */
+    public Builder setCostInLocalCurrency(com.google.type.Money value) {
+      if (costInLocalCurrencyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        costInLocalCurrency_ = value;
+      } else {
+        costInLocalCurrencyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The approximate cost savings in the billing account's local currency.
+     * </pre>
+     *
+     * <code>.google.type.Money cost_in_local_currency = 3;</code>
+     */
+    public Builder setCostInLocalCurrency(com.google.type.Money.Builder builderForValue) {
+      if (costInLocalCurrencyBuilder_ == null) {
+        costInLocalCurrency_ = builderForValue.build();
+      } else {
+        costInLocalCurrencyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The approximate cost savings in the billing account's local currency.
+     * </pre>
+     *
+     * <code>.google.type.Money cost_in_local_currency = 3;</code>
+     */
+    public Builder mergeCostInLocalCurrency(com.google.type.Money value) {
+      if (costInLocalCurrencyBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && costInLocalCurrency_ != null
+            && costInLocalCurrency_ != com.google.type.Money.getDefaultInstance()) {
+          getCostInLocalCurrencyBuilder().mergeFrom(value);
+        } else {
+          costInLocalCurrency_ = value;
+        }
+      } else {
+        costInLocalCurrencyBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The approximate cost savings in the billing account's local currency.
+     * </pre>
+     *
+     * <code>.google.type.Money cost_in_local_currency = 3;</code>
+     */
+    public Builder clearCostInLocalCurrency() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      costInLocalCurrency_ = null;
+      if (costInLocalCurrencyBuilder_ != null) {
+        costInLocalCurrencyBuilder_.dispose();
+        costInLocalCurrencyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The approximate cost savings in the billing account's local currency.
+     * </pre>
+     *
+     * <code>.google.type.Money cost_in_local_currency = 3;</code>
+     */
+    public com.google.type.Money.Builder getCostInLocalCurrencyBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getCostInLocalCurrencyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The approximate cost savings in the billing account's local currency.
+     * </pre>
+     *
+     * <code>.google.type.Money cost_in_local_currency = 3;</code>
+     */
+    public com.google.type.MoneyOrBuilder getCostInLocalCurrencyOrBuilder() {
+      if (costInLocalCurrencyBuilder_ != null) {
+        return costInLocalCurrencyBuilder_.getMessageOrBuilder();
+      } else {
+        return costInLocalCurrency_ == null
+            ? com.google.type.Money.getDefaultInstance()
+            : costInLocalCurrency_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The approximate cost savings in the billing account's local currency.
+     * </pre>
+     *
+     * <code>.google.type.Money cost_in_local_currency = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
+        getCostInLocalCurrencyFieldBuilder() {
+      if (costInLocalCurrencyBuilder_ == null) {
+        costInLocalCurrencyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Money,
+                com.google.type.Money.Builder,
+                com.google.type.MoneyOrBuilder>(
+                getCostInLocalCurrency(), getParentForChildren(), isClean());
+        costInLocalCurrency_ = null;
+      }
+      return costInLocalCurrencyBuilder_;
     }
 
     @java.lang.Override

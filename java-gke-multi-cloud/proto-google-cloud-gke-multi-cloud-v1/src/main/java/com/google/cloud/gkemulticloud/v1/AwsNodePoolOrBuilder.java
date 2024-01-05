@@ -587,4 +587,86 @@ public interface AwsNodePoolOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AwsNodePoolErrorOrBuilder getErrorsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Management configuration for this node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AwsNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the management field is set.
+   */
+  boolean hasManagement();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Management configuration for this node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AwsNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The management.
+   */
+  com.google.cloud.gkemulticloud.v1.AwsNodeManagement getManagement();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Management configuration for this node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AwsNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.AwsNodeManagementOrBuilder getManagementOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Update settings control the speed and disruption of the update.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.UpdateSettings update_settings = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the updateSettings field is set.
+   */
+  boolean hasUpdateSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Update settings control the speed and disruption of the update.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.UpdateSettings update_settings = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The updateSettings.
+   */
+  com.google.cloud.gkemulticloud.v1.UpdateSettings getUpdateSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Update settings control the speed and disruption of the update.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.UpdateSettings update_settings = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.UpdateSettingsOrBuilder getUpdateSettingsOrBuilder();
 }

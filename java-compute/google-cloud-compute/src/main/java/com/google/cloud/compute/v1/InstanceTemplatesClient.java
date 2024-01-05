@@ -219,6 +219,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, InstanceTemplatesScopedList> element :
    *       instanceTemplatesClient.aggregatedList(request).iterateAll()) {
@@ -258,6 +259,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, InstanceTemplatesScopedList>> future =
    *       instanceTemplatesClient.aggregatedListPagedCallable().futureCall(request);
@@ -296,6 +298,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     InstanceTemplateAggregatedList response =

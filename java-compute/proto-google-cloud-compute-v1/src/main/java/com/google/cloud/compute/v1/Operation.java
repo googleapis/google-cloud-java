@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Operation resource. Google Compute Engine has three Operation resources: * [Global](/compute/docs/reference/rest/v1/globalOperations) * [Regional](/compute/docs/reference/rest/v1/regionOperations) * [Zonal](/compute/docs/reference/rest/v1/zoneOperations) You can use an operation resource to manage asynchronous API requests. For more information, read Handling API responses. Operations can be global, regional or zonal. - For global operations, use the `globalOperations` resource. - For regional operations, use the `regionOperations` resource. - For zonal operations, use the `zonalOperations` resource. For more information, read Global, Regional, and Zonal Resources.
+ * Represents an Operation resource. Google Compute Engine has three Operation resources: * [Global](/compute/docs/reference/rest/v1/globalOperations) * [Regional](/compute/docs/reference/rest/v1/regionOperations) * [Zonal](/compute/docs/reference/rest/v1/zoneOperations) You can use an operation resource to manage asynchronous API requests. For more information, read Handling API responses. Operations can be global, regional or zonal. - For global operations, use the `globalOperations` resource. - For regional operations, use the `regionOperations` resource. - For zonal operations, use the `zoneOperations` resource. For more information, read Global, Regional, and Zonal Resources.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Operation}
@@ -730,6 +730,47 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int INSTANCES_BULK_INSERT_OPERATION_METADATA_FIELD_NUMBER = 89146177;
+  private com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata
+      instancesBulkInsertOperationMetadata_;
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
+   * </code>
+   *
+   * @return Whether the instancesBulkInsertOperationMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstancesBulkInsertOperationMetadata() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
+   * </code>
+   *
+   * @return The instancesBulkInsertOperationMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata
+      getInstancesBulkInsertOperationMetadata() {
+    return instancesBulkInsertOperationMetadata_ == null
+        ? com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata.getDefaultInstance()
+        : instancesBulkInsertOperationMetadata_;
+  }
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadataOrBuilder
+      getInstancesBulkInsertOperationMetadataOrBuilder() {
+    return instancesBulkInsertOperationMetadata_ == null
+        ? com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata.getDefaultInstance()
+        : instancesBulkInsertOperationMetadata_;
+  }
+
   public static final int KIND_FIELD_NUMBER = 3292052;
 
   @SuppressWarnings("serial")
@@ -747,7 +788,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -813,7 +854,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -879,7 +920,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasOperationGroupId() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -945,7 +986,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasOperationType() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1009,7 +1050,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasProgress() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1044,7 +1085,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -1110,7 +1151,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    *
@@ -1159,6 +1200,67 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SET_COMMON_INSTANCE_METADATA_OPERATION_METADATA_FIELD_NUMBER = 490378980;
+  private com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata
+      setCommonInstanceMetadataOperationMetadata_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata set_common_instance_metadata_operation_metadata = 490378980;
+   * </code>
+   *
+   * @return Whether the setCommonInstanceMetadataOperationMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasSetCommonInstanceMetadataOperationMetadata() {
+    return ((bitField0_ & 0x00020000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata set_common_instance_metadata_operation_metadata = 490378980;
+   * </code>
+   *
+   * @return The setCommonInstanceMetadataOperationMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata
+      getSetCommonInstanceMetadataOperationMetadata() {
+    return setCommonInstanceMetadataOperationMetadata_ == null
+        ? com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata
+            .getDefaultInstance()
+        : setCommonInstanceMetadataOperationMetadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata set_common_instance_metadata_operation_metadata = 490378980;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadataOrBuilder
+      getSetCommonInstanceMetadataOperationMetadataOrBuilder() {
+    return setCommonInstanceMetadataOperationMetadata_ == null
+        ? com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata
+            .getDefaultInstance()
+        : setCommonInstanceMetadataOperationMetadata_;
+  }
+
   public static final int START_TIME_FIELD_NUMBER = 37467274;
 
   @SuppressWarnings("serial")
@@ -1176,7 +1278,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStartTime() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
   /**
    *
@@ -1242,7 +1344,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
   /**
    *
@@ -1298,7 +1400,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatusMessage() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
   /**
    *
@@ -1362,7 +1464,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTargetId() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
   /**
    *
@@ -1397,7 +1499,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTargetLink() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
   /**
    *
@@ -1454,7 +1556,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
+   * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
    * </pre>
    *
    * <code>optional string user = 3599307;</code>
@@ -1463,13 +1565,13 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasUser() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
   /**
    *
    *
    * <pre>
-   * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
+   * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
    * </pre>
    *
    * <code>optional string user = 3599307;</code>
@@ -1492,7 +1594,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
+   * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
    * </pre>
    *
    * <code>optional string user = 3599307;</code>
@@ -1600,7 +1702,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
   /**
    *
@@ -1666,32 +1768,35 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3599307, user_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37467274, startTime_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 40171187, operationGroupId_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 62671336, targetLink_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeInt32(72663597, progress_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(89146177, getInstancesBulkInsertOperationMetadata());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(96784904, getError());
@@ -1699,25 +1804,25 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 114938801, endTime_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 177650450, operationType_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       output.writeEnum(181260274, status_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 202521945, httpErrorMessage_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       output.writeUInt64(258165385, targetId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 297240295, clientOperationId_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 297428154, statusMessage_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1729,8 +1834,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 433722515, insertTime_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      output.writeMessage(490378980, getSetCommonInstanceMetadataOperationMetadata());
     }
     for (int i = 0; i < warnings_.size(); i++) {
       output.writeMessage(498091095, warnings_.get(i));
@@ -1747,33 +1855,38 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3599307, user_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37467274, startTime_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40171187, operationGroupId_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(62671336, targetLink_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(72663597, progress_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              89146177, getInstancesBulkInsertOperationMetadata());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(96784904, getError());
@@ -1781,27 +1894,27 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(114938801, endTime_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(177650450, operationType_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(202521945, httpErrorMessage_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(258165385, targetId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(297240295, clientOperationId_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(297428154, statusMessage_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1814,8 +1927,13 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(433722515, insertTime_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              490378980, getSetCommonInstanceMetadataOperationMetadata());
     }
     for (int i = 0; i < warnings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(498091095, warnings_.get(i));
@@ -1871,6 +1989,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (hasInsertTime()) {
       if (!getInsertTime().equals(other.getInsertTime())) return false;
     }
+    if (hasInstancesBulkInsertOperationMetadata()
+        != other.hasInstancesBulkInsertOperationMetadata()) return false;
+    if (hasInstancesBulkInsertOperationMetadata()) {
+      if (!getInstancesBulkInsertOperationMetadata()
+          .equals(other.getInstancesBulkInsertOperationMetadata())) return false;
+    }
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
       if (!getKind().equals(other.getKind())) return false;
@@ -1898,6 +2022,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasSetCommonInstanceMetadataOperationMetadata()
+        != other.hasSetCommonInstanceMetadataOperationMetadata()) return false;
+    if (hasSetCommonInstanceMetadataOperationMetadata()) {
+      if (!getSetCommonInstanceMetadataOperationMetadata()
+          .equals(other.getSetCommonInstanceMetadataOperationMetadata())) return false;
     }
     if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
@@ -1975,6 +2105,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + INSERT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getInsertTime().hashCode();
     }
+    if (hasInstancesBulkInsertOperationMetadata()) {
+      hash = (37 * hash) + INSTANCES_BULK_INSERT_OPERATION_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getInstancesBulkInsertOperationMetadata().hashCode();
+    }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
       hash = (53 * hash) + getKind().hashCode();
@@ -2002,6 +2136,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasSetCommonInstanceMetadataOperationMetadata()) {
+      hash = (37 * hash) + SET_COMMON_INSTANCE_METADATA_OPERATION_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getSetCommonInstanceMetadataOperationMetadata().hashCode();
     }
     if (hasStartTime()) {
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
@@ -2138,7 +2276,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an Operation resource. Google Compute Engine has three Operation resources: * [Global](/compute/docs/reference/rest/v1/globalOperations) * [Regional](/compute/docs/reference/rest/v1/regionOperations) * [Zonal](/compute/docs/reference/rest/v1/zoneOperations) You can use an operation resource to manage asynchronous API requests. For more information, read Handling API responses. Operations can be global, regional or zonal. - For global operations, use the `globalOperations` resource. - For regional operations, use the `regionOperations` resource. - For zonal operations, use the `zonalOperations` resource. For more information, read Global, Regional, and Zonal Resources.
+   * Represents an Operation resource. Google Compute Engine has three Operation resources: * [Global](/compute/docs/reference/rest/v1/globalOperations) * [Regional](/compute/docs/reference/rest/v1/regionOperations) * [Zonal](/compute/docs/reference/rest/v1/zoneOperations) You can use an operation resource to manage asynchronous API requests. For more information, read Handling API responses. Operations can be global, regional or zonal. - For global operations, use the `globalOperations` resource. - For regional operations, use the `regionOperations` resource. - For zonal operations, use the `zoneOperations` resource. For more information, read Global, Regional, and Zonal Resources.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Operation}
@@ -2175,6 +2313,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getErrorFieldBuilder();
+        getInstancesBulkInsertOperationMetadataFieldBuilder();
+        getSetCommonInstanceMetadataOperationMetadataFieldBuilder();
         getWarningsFieldBuilder();
       }
     }
@@ -2196,6 +2336,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       httpErrorStatusCode_ = 0;
       id_ = 0L;
       insertTime_ = "";
+      instancesBulkInsertOperationMetadata_ = null;
+      if (instancesBulkInsertOperationMetadataBuilder_ != null) {
+        instancesBulkInsertOperationMetadataBuilder_.dispose();
+        instancesBulkInsertOperationMetadataBuilder_ = null;
+      }
       kind_ = "";
       name_ = "";
       operationGroupId_ = "";
@@ -2203,6 +2348,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       progress_ = 0;
       region_ = "";
       selfLink_ = "";
+      setCommonInstanceMetadataOperationMetadata_ = null;
+      if (setCommonInstanceMetadataOperationMetadataBuilder_ != null) {
+        setCommonInstanceMetadataOperationMetadataBuilder_.dispose();
+        setCommonInstanceMetadataOperationMetadataBuilder_ = null;
+      }
       startTime_ = "";
       status_ = 0;
       statusMessage_ = "";
@@ -2215,7 +2365,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         warnings_ = null;
         warningsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       zone_ = "";
       return this;
     }
@@ -2254,9 +2404,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Operation result) {
       if (warningsBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)) {
+        if (((bitField0_ & 0x01000000) != 0)) {
           warnings_ = java.util.Collections.unmodifiableList(warnings_);
-          bitField0_ = (bitField0_ & ~0x00400000);
+          bitField0_ = (bitField0_ & ~0x01000000);
         }
         result.warnings_ = warnings_;
       } else {
@@ -2304,60 +2454,74 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.kind_ = kind_;
+        result.instancesBulkInsertOperationMetadata_ =
+            instancesBulkInsertOperationMetadataBuilder_ == null
+                ? instancesBulkInsertOperationMetadata_
+                : instancesBulkInsertOperationMetadataBuilder_.build();
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.name_ = name_;
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.operationGroupId_ = operationGroupId_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.operationType_ = operationType_;
+        result.operationGroupId_ = operationGroupId_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.progress_ = progress_;
+        result.operationType_ = operationType_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.region_ = region_;
+        result.progress_ = progress_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.startTime_ = startTime_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.status_ = status_;
+        result.setCommonInstanceMetadataOperationMetadata_ =
+            setCommonInstanceMetadataOperationMetadataBuilder_ == null
+                ? setCommonInstanceMetadataOperationMetadata_
+                : setCommonInstanceMetadataOperationMetadataBuilder_.build();
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.statusMessage_ = statusMessage_;
+        result.startTime_ = startTime_;
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.targetId_ = targetId_;
+        result.status_ = status_;
         to_bitField0_ |= 0x00080000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.targetLink_ = targetLink_;
+        result.statusMessage_ = statusMessage_;
         to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.user_ = user_;
+        result.targetId_ = targetId_;
         to_bitField0_ |= 0x00200000;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.zone_ = zone_;
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.targetLink_ = targetLink_;
         to_bitField0_ |= 0x00400000;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.user_ = user_;
+        to_bitField0_ |= 0x00800000;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.zone_ = zone_;
+        to_bitField0_ |= 0x01000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2446,24 +2610,27 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (other.hasInstancesBulkInsertOperationMetadata()) {
+        mergeInstancesBulkInsertOperationMetadata(other.getInstancesBulkInsertOperationMetadata());
+      }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasOperationGroupId()) {
         operationGroupId_ = other.operationGroupId_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasOperationType()) {
         operationType_ = other.operationType_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasProgress()) {
@@ -2471,17 +2638,21 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
+      }
+      if (other.hasSetCommonInstanceMetadataOperationMetadata()) {
+        mergeSetCommonInstanceMetadataOperationMetadata(
+            other.getSetCommonInstanceMetadataOperationMetadata());
       }
       if (other.hasStartTime()) {
         startTime_ = other.startTime_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasStatus()) {
@@ -2489,7 +2660,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasStatusMessage()) {
         statusMessage_ = other.statusMessage_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (other.hasTargetId()) {
@@ -2497,19 +2668,19 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasTargetLink()) {
         targetLink_ = other.targetLink_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (other.hasUser()) {
         user_ = other.user_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (warningsBuilder_ == null) {
         if (!other.warnings_.isEmpty()) {
           if (warnings_.isEmpty()) {
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00400000);
+            bitField0_ = (bitField0_ & ~0x01000000);
           } else {
             ensureWarningsIsMutable();
             warnings_.addAll(other.warnings_);
@@ -2522,7 +2693,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             warningsBuilder_.dispose();
             warningsBuilder_ = null;
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00400000);
+            bitField0_ = (bitField0_ & ~0x01000000);
             warningsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWarningsFieldBuilder()
@@ -2534,7 +2705,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2572,25 +2743,25 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 26989658
             case 28794458:
               {
                 user_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 28794458
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 29957474
             case 244202930:
@@ -2602,27 +2773,35 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             case 299738194:
               {
                 startTime_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 299738194
             case 321369498:
               {
                 operationGroupId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 321369498
             case 501370690:
               {
                 targetLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 501370690
             case 581308776:
               {
                 progress_ = input.readInt32();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 581308776
+            case 713169418:
+              {
+                input.readMessage(
+                    getInstancesBulkInsertOperationMetadataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 713169418
             case 774279234:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
@@ -2638,19 +2817,19 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 1111570338
             case 1421203602:
               {
                 operationType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 1421203602
             case 1450082192:
               {
                 status_ = input.readEnum();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 1450082192
             case 1620175562:
@@ -2662,7 +2841,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             case 2065323080:
               {
                 targetId_ = input.readUInt64();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 2065323080
             case -1917044934:
@@ -2674,7 +2853,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             case -1915542062:
               {
                 statusMessage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case -1915542062
             case -1796205728:
@@ -2698,9 +2877,17 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -645248918
+            case -371935454:
+              {
+                input.readMessage(
+                    getSetCommonInstanceMetadataOperationMetadataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case -371935454
             case -310238534:
               {
                 com.google.cloud.compute.v1.Warnings m =
@@ -3788,6 +3975,162 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata
+        instancesBulkInsertOperationMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata,
+            com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata.Builder,
+            com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadataOrBuilder>
+        instancesBulkInsertOperationMetadataBuilder_;
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
+     * </code>
+     *
+     * @return Whether the instancesBulkInsertOperationMetadata field is set.
+     */
+    public boolean hasInstancesBulkInsertOperationMetadata() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
+     * </code>
+     *
+     * @return The instancesBulkInsertOperationMetadata.
+     */
+    public com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata
+        getInstancesBulkInsertOperationMetadata() {
+      if (instancesBulkInsertOperationMetadataBuilder_ == null) {
+        return instancesBulkInsertOperationMetadata_ == null
+            ? com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata.getDefaultInstance()
+            : instancesBulkInsertOperationMetadata_;
+      } else {
+        return instancesBulkInsertOperationMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
+     * </code>
+     */
+    public Builder setInstancesBulkInsertOperationMetadata(
+        com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata value) {
+      if (instancesBulkInsertOperationMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instancesBulkInsertOperationMetadata_ = value;
+      } else {
+        instancesBulkInsertOperationMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
+     * </code>
+     */
+    public Builder setInstancesBulkInsertOperationMetadata(
+        com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata.Builder builderForValue) {
+      if (instancesBulkInsertOperationMetadataBuilder_ == null) {
+        instancesBulkInsertOperationMetadata_ = builderForValue.build();
+      } else {
+        instancesBulkInsertOperationMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
+     * </code>
+     */
+    public Builder mergeInstancesBulkInsertOperationMetadata(
+        com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata value) {
+      if (instancesBulkInsertOperationMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && instancesBulkInsertOperationMetadata_ != null
+            && instancesBulkInsertOperationMetadata_
+                != com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata
+                    .getDefaultInstance()) {
+          getInstancesBulkInsertOperationMetadataBuilder().mergeFrom(value);
+        } else {
+          instancesBulkInsertOperationMetadata_ = value;
+        }
+      } else {
+        instancesBulkInsertOperationMetadataBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
+     * </code>
+     */
+    public Builder clearInstancesBulkInsertOperationMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      instancesBulkInsertOperationMetadata_ = null;
+      if (instancesBulkInsertOperationMetadataBuilder_ != null) {
+        instancesBulkInsertOperationMetadataBuilder_.dispose();
+        instancesBulkInsertOperationMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata.Builder
+        getInstancesBulkInsertOperationMetadataBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getInstancesBulkInsertOperationMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadataOrBuilder
+        getInstancesBulkInsertOperationMetadataOrBuilder() {
+      if (instancesBulkInsertOperationMetadataBuilder_ != null) {
+        return instancesBulkInsertOperationMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return instancesBulkInsertOperationMetadata_ == null
+            ? com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata.getDefaultInstance()
+            : instancesBulkInsertOperationMetadata_;
+      }
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata,
+            com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata.Builder,
+            com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadataOrBuilder>
+        getInstancesBulkInsertOperationMetadataFieldBuilder() {
+      if (instancesBulkInsertOperationMetadataBuilder_ == null) {
+        instancesBulkInsertOperationMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata,
+                com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata.Builder,
+                com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadataOrBuilder>(
+                getInstancesBulkInsertOperationMetadata(), getParentForChildren(), isClean());
+        instancesBulkInsertOperationMetadata_ = null;
+      }
+      return instancesBulkInsertOperationMetadataBuilder_;
+    }
+
     private java.lang.Object kind_ = "";
     /**
      *
@@ -3801,7 +4144,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3864,7 +4207,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3881,7 +4224,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3903,7 +4246,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3921,7 +4264,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3984,7 +4327,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4001,7 +4344,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4023,7 +4366,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4041,7 +4384,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the operationGroupId field is set.
      */
     public boolean hasOperationGroupId() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4104,7 +4447,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       operationGroupId_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4121,7 +4464,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOperationGroupId() {
       operationGroupId_ = getDefaultInstance().getOperationGroupId();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4143,7 +4486,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       operationGroupId_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4161,7 +4504,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the operationType field is set.
      */
     public boolean hasOperationType() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4224,7 +4567,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       operationType_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4241,7 +4584,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOperationType() {
       operationType_ = getDefaultInstance().getOperationType();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4263,7 +4606,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       operationType_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4282,7 +4625,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasProgress() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4314,7 +4657,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public Builder setProgress(int value) {
 
       progress_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4330,7 +4673,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProgress() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       progress_ = 0;
       onChanged();
       return this;
@@ -4349,7 +4692,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4412,7 +4755,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4429,7 +4772,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4451,7 +4794,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4469,7 +4812,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4532,7 +4875,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4549,7 +4892,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4571,9 +4914,222 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata
+        setCommonInstanceMetadataOperationMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata,
+            com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata.Builder,
+            com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadataOrBuilder>
+        setCommonInstanceMetadataOperationMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata set_common_instance_metadata_operation_metadata = 490378980;
+     * </code>
+     *
+     * @return Whether the setCommonInstanceMetadataOperationMetadata field is set.
+     */
+    public boolean hasSetCommonInstanceMetadataOperationMetadata() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata set_common_instance_metadata_operation_metadata = 490378980;
+     * </code>
+     *
+     * @return The setCommonInstanceMetadataOperationMetadata.
+     */
+    public com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata
+        getSetCommonInstanceMetadataOperationMetadata() {
+      if (setCommonInstanceMetadataOperationMetadataBuilder_ == null) {
+        return setCommonInstanceMetadataOperationMetadata_ == null
+            ? com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata
+                .getDefaultInstance()
+            : setCommonInstanceMetadataOperationMetadata_;
+      } else {
+        return setCommonInstanceMetadataOperationMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata set_common_instance_metadata_operation_metadata = 490378980;
+     * </code>
+     */
+    public Builder setSetCommonInstanceMetadataOperationMetadata(
+        com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata value) {
+      if (setCommonInstanceMetadataOperationMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        setCommonInstanceMetadataOperationMetadata_ = value;
+      } else {
+        setCommonInstanceMetadataOperationMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata set_common_instance_metadata_operation_metadata = 490378980;
+     * </code>
+     */
+    public Builder setSetCommonInstanceMetadataOperationMetadata(
+        com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata.Builder
+            builderForValue) {
+      if (setCommonInstanceMetadataOperationMetadataBuilder_ == null) {
+        setCommonInstanceMetadataOperationMetadata_ = builderForValue.build();
+      } else {
+        setCommonInstanceMetadataOperationMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata set_common_instance_metadata_operation_metadata = 490378980;
+     * </code>
+     */
+    public Builder mergeSetCommonInstanceMetadataOperationMetadata(
+        com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata value) {
+      if (setCommonInstanceMetadataOperationMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && setCommonInstanceMetadataOperationMetadata_ != null
+            && setCommonInstanceMetadataOperationMetadata_
+                != com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata
+                    .getDefaultInstance()) {
+          getSetCommonInstanceMetadataOperationMetadataBuilder().mergeFrom(value);
+        } else {
+          setCommonInstanceMetadataOperationMetadata_ = value;
+        }
+      } else {
+        setCommonInstanceMetadataOperationMetadataBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata set_common_instance_metadata_operation_metadata = 490378980;
+     * </code>
+     */
+    public Builder clearSetCommonInstanceMetadataOperationMetadata() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      setCommonInstanceMetadataOperationMetadata_ = null;
+      if (setCommonInstanceMetadataOperationMetadataBuilder_ != null) {
+        setCommonInstanceMetadataOperationMetadataBuilder_.dispose();
+        setCommonInstanceMetadataOperationMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata set_common_instance_metadata_operation_metadata = 490378980;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata.Builder
+        getSetCommonInstanceMetadataOperationMetadataBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getSetCommonInstanceMetadataOperationMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata set_common_instance_metadata_operation_metadata = 490378980;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadataOrBuilder
+        getSetCommonInstanceMetadataOperationMetadataOrBuilder() {
+      if (setCommonInstanceMetadataOperationMetadataBuilder_ != null) {
+        return setCommonInstanceMetadataOperationMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return setCommonInstanceMetadataOperationMetadata_ == null
+            ? com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata
+                .getDefaultInstance()
+            : setCommonInstanceMetadataOperationMetadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata set_common_instance_metadata_operation_metadata = 490378980;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata,
+            com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata.Builder,
+            com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadataOrBuilder>
+        getSetCommonInstanceMetadataOperationMetadataFieldBuilder() {
+      if (setCommonInstanceMetadataOperationMetadataBuilder_ == null) {
+        setCommonInstanceMetadataOperationMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata,
+                com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata.Builder,
+                com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadataOrBuilder>(
+                getSetCommonInstanceMetadataOperationMetadata(), getParentForChildren(), isClean());
+        setCommonInstanceMetadataOperationMetadata_ = null;
+      }
+      return setCommonInstanceMetadataOperationMetadataBuilder_;
     }
 
     private java.lang.Object startTime_ = "";
@@ -4589,7 +5145,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -4652,7 +5208,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       startTime_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4669,7 +5225,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStartTime() {
       startTime_ = getDefaultInstance().getStartTime();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -4691,7 +5247,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       startTime_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4712,7 +5268,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -4747,7 +5303,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStatusValue(int value) {
       status_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -4788,7 +5344,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -4807,7 +5363,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       status_ = 0;
       onChanged();
       return this;
@@ -4826,7 +5382,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the statusMessage field is set.
      */
     public boolean hasStatusMessage() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -4889,7 +5445,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       statusMessage_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -4906,7 +5462,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStatusMessage() {
       statusMessage_ = getDefaultInstance().getStatusMessage();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -4928,7 +5484,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       statusMessage_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -4947,7 +5503,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTargetId() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      *
@@ -4979,7 +5535,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public Builder setTargetId(long value) {
 
       targetId_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -4995,7 +5551,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTargetId() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       targetId_ = 0L;
       onChanged();
       return this;
@@ -5014,7 +5570,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the targetLink field is set.
      */
     public boolean hasTargetLink() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -5077,7 +5633,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       targetLink_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5094,7 +5650,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTargetLink() {
       targetLink_ = getDefaultInstance().getTargetLink();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -5116,7 +5672,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       targetLink_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5126,7 +5682,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
+     * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
      * </pre>
      *
      * <code>optional string user = 3599307;</code>
@@ -5134,13 +5690,13 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the user field is set.
      */
     public boolean hasUser() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
+     * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
      * </pre>
      *
      * <code>optional string user = 3599307;</code>
@@ -5162,7 +5718,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
+     * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
      * </pre>
      *
      * <code>optional string user = 3599307;</code>
@@ -5184,7 +5740,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
+     * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
      * </pre>
      *
      * <code>optional string user = 3599307;</code>
@@ -5197,7 +5753,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       user_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5205,7 +5761,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
+     * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
      * </pre>
      *
      * <code>optional string user = 3599307;</code>
@@ -5214,7 +5770,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUser() {
       user_ = getDefaultInstance().getUser();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -5222,7 +5778,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
+     * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
      * </pre>
      *
      * <code>optional string user = 3599307;</code>
@@ -5236,7 +5792,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       user_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5245,9 +5801,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureWarningsIsMutable() {
-      if (!((bitField0_ & 0x00400000) != 0)) {
+      if (!((bitField0_ & 0x01000000) != 0)) {
         warnings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Warnings>(warnings_);
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x01000000;
       }
     }
 
@@ -5462,7 +6018,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearWarnings() {
       if (warningsBuilder_ == null) {
         warnings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         onChanged();
       } else {
         warningsBuilder_.clear();
@@ -5583,7 +6139,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.Warnings,
                 com.google.cloud.compute.v1.Warnings.Builder,
                 com.google.cloud.compute.v1.WarningsOrBuilder>(
-                warnings_, ((bitField0_ & 0x00400000) != 0), getParentForChildren(), isClean());
+                warnings_, ((bitField0_ & 0x01000000) != 0), getParentForChildren(), isClean());
         warnings_ = null;
       }
       return warningsBuilder_;
@@ -5602,7 +6158,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
@@ -5665,7 +6221,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -5682,7 +6238,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -5704,7 +6260,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }

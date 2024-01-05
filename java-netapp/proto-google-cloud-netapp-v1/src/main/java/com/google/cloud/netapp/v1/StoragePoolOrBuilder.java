@@ -27,10 +27,10 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the storage pool
+   * Identifier. Name of the storage pool
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -39,10 +39,10 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the storage pool
+   * Identifier. Name of the storage pool
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -445,26 +445,32 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Optional. Allows SO pool to access AD or DNS server from other regions.
+   * Deprecated. Used to allow SO pool to access AD or DNS server from other
+   * regions.
    * </pre>
    *
-   * <code>optional bool global_access_allowed = 17 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
+   *     google/cloud/netapp/v1/storage_pool.proto;l=222
    * @return Whether the globalAccessAllowed field is set.
    */
+  @java.lang.Deprecated
   boolean hasGlobalAccessAllowed();
   /**
    *
    *
    * <pre>
-   * Optional. Allows SO pool to access AD or DNS server from other regions.
+   * Deprecated. Used to allow SO pool to access AD or DNS server from other
+   * regions.
    * </pre>
    *
-   * <code>optional bool global_access_allowed = 17 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
+   *     google/cloud/netapp/v1/storage_pool.proto;l=222
    * @return The globalAccessAllowed.
    */
+  @java.lang.Deprecated
   boolean getGlobalAccessAllowed();
 }

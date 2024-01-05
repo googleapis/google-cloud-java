@@ -18,6 +18,7 @@ package com.google.cloud.gkemulticloud.v1.samples;
 
 // [START gkemulticloud_v1_generated_AttachedClusters_GenerateAttachedClusterInstallManifest_sync]
 import com.google.cloud.gkemulticloud.v1.AttachedClustersClient;
+import com.google.cloud.gkemulticloud.v1.AttachedProxyConfig;
 import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestResponse;
 import com.google.cloud.gkemulticloud.v1.LocationName;
@@ -40,6 +41,7 @@ public class SyncGenerateAttachedClusterInstallManifest {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setAttachedClusterId("attachedClusterId865943409")
               .setPlatformVersion("platformVersion1848800485")
+              .setProxyConfig(AttachedProxyConfig.newBuilder().build())
               .build();
       GenerateAttachedClusterInstallManifestResponse response =
           attachedClustersClient.generateAttachedClusterInstallManifest(request);

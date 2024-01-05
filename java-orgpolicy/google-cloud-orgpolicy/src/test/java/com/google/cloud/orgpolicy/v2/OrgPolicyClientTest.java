@@ -17,6 +17,7 @@
 package com.google.cloud.orgpolicy.v2;
 
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListConstraintsPagedResponse;
+import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListCustomConstraintsPagedResponse;
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListPoliciesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -29,8 +30,10 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -440,6 +443,7 @@ public class OrgPolicyClientTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -481,6 +485,7 @@ public class OrgPolicyClientTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -522,6 +527,7 @@ public class OrgPolicyClientTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -563,6 +569,7 @@ public class OrgPolicyClientTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -604,6 +611,7 @@ public class OrgPolicyClientTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -648,6 +656,7 @@ public class OrgPolicyClientTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -692,6 +701,7 @@ public class OrgPolicyClientTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -736,6 +746,7 @@ public class OrgPolicyClientTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -780,6 +791,7 @@ public class OrgPolicyClientTest {
             .setSpec(PolicySpec.newBuilder().build())
             .setAlternate(AlternatePolicySpec.newBuilder().build())
             .setDryRunSpec(PolicySpec.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockOrgPolicy.addResponse(expectedResponse);
 
@@ -875,6 +887,395 @@ public class OrgPolicyClientTest {
     try {
       String name = "name3373707";
       client.deletePolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCustomConstraintTest() throws Exception {
+    CustomConstraint expectedResponse =
+        CustomConstraint.newBuilder()
+            .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+            .addAllResourceTypes(new ArrayList<String>())
+            .addAllMethodTypes(new ArrayList<CustomConstraint.MethodType>())
+            .setCondition("condition-861311717")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockOrgPolicy.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    CustomConstraint customConstraint = CustomConstraint.newBuilder().build();
+
+    CustomConstraint actualResponse = client.createCustomConstraint(parent, customConstraint);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOrgPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateCustomConstraintRequest actualRequest =
+        ((CreateCustomConstraintRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(customConstraint, actualRequest.getCustomConstraint());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createCustomConstraintExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOrgPolicy.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      CustomConstraint customConstraint = CustomConstraint.newBuilder().build();
+      client.createCustomConstraint(parent, customConstraint);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCustomConstraintTest2() throws Exception {
+    CustomConstraint expectedResponse =
+        CustomConstraint.newBuilder()
+            .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+            .addAllResourceTypes(new ArrayList<String>())
+            .addAllMethodTypes(new ArrayList<CustomConstraint.MethodType>())
+            .setCondition("condition-861311717")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockOrgPolicy.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    CustomConstraint customConstraint = CustomConstraint.newBuilder().build();
+
+    CustomConstraint actualResponse = client.createCustomConstraint(parent, customConstraint);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOrgPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateCustomConstraintRequest actualRequest =
+        ((CreateCustomConstraintRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(customConstraint, actualRequest.getCustomConstraint());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createCustomConstraintExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOrgPolicy.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      CustomConstraint customConstraint = CustomConstraint.newBuilder().build();
+      client.createCustomConstraint(parent, customConstraint);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateCustomConstraintTest() throws Exception {
+    CustomConstraint expectedResponse =
+        CustomConstraint.newBuilder()
+            .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+            .addAllResourceTypes(new ArrayList<String>())
+            .addAllMethodTypes(new ArrayList<CustomConstraint.MethodType>())
+            .setCondition("condition-861311717")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockOrgPolicy.addResponse(expectedResponse);
+
+    CustomConstraint customConstraint = CustomConstraint.newBuilder().build();
+
+    CustomConstraint actualResponse = client.updateCustomConstraint(customConstraint);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOrgPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateCustomConstraintRequest actualRequest =
+        ((UpdateCustomConstraintRequest) actualRequests.get(0));
+
+    Assert.assertEquals(customConstraint, actualRequest.getCustomConstraint());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateCustomConstraintExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOrgPolicy.addException(exception);
+
+    try {
+      CustomConstraint customConstraint = CustomConstraint.newBuilder().build();
+      client.updateCustomConstraint(customConstraint);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCustomConstraintTest() throws Exception {
+    CustomConstraint expectedResponse =
+        CustomConstraint.newBuilder()
+            .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+            .addAllResourceTypes(new ArrayList<String>())
+            .addAllMethodTypes(new ArrayList<CustomConstraint.MethodType>())
+            .setCondition("condition-861311717")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockOrgPolicy.addResponse(expectedResponse);
+
+    CustomConstraintName name = CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]");
+
+    CustomConstraint actualResponse = client.getCustomConstraint(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOrgPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCustomConstraintRequest actualRequest = ((GetCustomConstraintRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getCustomConstraintExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOrgPolicy.addException(exception);
+
+    try {
+      CustomConstraintName name = CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]");
+      client.getCustomConstraint(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCustomConstraintTest2() throws Exception {
+    CustomConstraint expectedResponse =
+        CustomConstraint.newBuilder()
+            .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+            .addAllResourceTypes(new ArrayList<String>())
+            .addAllMethodTypes(new ArrayList<CustomConstraint.MethodType>())
+            .setCondition("condition-861311717")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockOrgPolicy.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    CustomConstraint actualResponse = client.getCustomConstraint(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOrgPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCustomConstraintRequest actualRequest = ((GetCustomConstraintRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getCustomConstraintExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOrgPolicy.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getCustomConstraint(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCustomConstraintsTest() throws Exception {
+    CustomConstraint responsesElement = CustomConstraint.newBuilder().build();
+    ListCustomConstraintsResponse expectedResponse =
+        ListCustomConstraintsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCustomConstraints(Arrays.asList(responsesElement))
+            .build();
+    mockOrgPolicy.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+
+    ListCustomConstraintsPagedResponse pagedListResponse = client.listCustomConstraints(parent);
+
+    List<CustomConstraint> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCustomConstraintsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOrgPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListCustomConstraintsRequest actualRequest =
+        ((ListCustomConstraintsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listCustomConstraintsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOrgPolicy.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      client.listCustomConstraints(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCustomConstraintsTest2() throws Exception {
+    CustomConstraint responsesElement = CustomConstraint.newBuilder().build();
+    ListCustomConstraintsResponse expectedResponse =
+        ListCustomConstraintsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCustomConstraints(Arrays.asList(responsesElement))
+            .build();
+    mockOrgPolicy.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListCustomConstraintsPagedResponse pagedListResponse = client.listCustomConstraints(parent);
+
+    List<CustomConstraint> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCustomConstraintsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOrgPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListCustomConstraintsRequest actualRequest =
+        ((ListCustomConstraintsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listCustomConstraintsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOrgPolicy.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listCustomConstraints(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCustomConstraintTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockOrgPolicy.addResponse(expectedResponse);
+
+    CustomConstraintName name = CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]");
+
+    client.deleteCustomConstraint(name);
+
+    List<AbstractMessage> actualRequests = mockOrgPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCustomConstraintRequest actualRequest =
+        ((DeleteCustomConstraintRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteCustomConstraintExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOrgPolicy.addException(exception);
+
+    try {
+      CustomConstraintName name = CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]");
+      client.deleteCustomConstraint(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCustomConstraintTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockOrgPolicy.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteCustomConstraint(name);
+
+    List<AbstractMessage> actualRequests = mockOrgPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCustomConstraintRequest actualRequest =
+        ((DeleteCustomConstraintRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteCustomConstraintExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOrgPolicy.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteCustomConstraint(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

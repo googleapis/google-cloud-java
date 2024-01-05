@@ -846,6 +846,9 @@ public class RecommenderClient implements BackgroundResource {
    *     <ul>
    *       <li>`priority`
    *     </ul>
+   *     <ul>
+   *       <li>`targetResources`
+   *     </ul>
    *     <p>Examples:
    *     <ul>
    *       <li>`stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
@@ -857,8 +860,13 @@ public class RecommenderClient implements BackgroundResource {
    *       <li>`priority = P1 OR priority = P2`
    *     </ul>
    *     <ul>
+   *       <li>`targetResources :
+   *           //compute.googleapis.com/projects/1234/zones/us-central1-a/instances/instance-1`
+   *     </ul>
+   *     <ul>
    *       <li>`stateInfo.state = ACTIVE AND (priority = P1 OR priority = P2)`
    *     </ul>
+   *     <p>The max allowed filter length is 500 characters.
    *     <p>(These expressions are based on the filter language described at
    *     https://google.aip.dev/160)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -930,6 +938,9 @@ public class RecommenderClient implements BackgroundResource {
    *     <ul>
    *       <li>`priority`
    *     </ul>
+   *     <ul>
+   *       <li>`targetResources`
+   *     </ul>
    *     <p>Examples:
    *     <ul>
    *       <li>`stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
@@ -941,8 +952,13 @@ public class RecommenderClient implements BackgroundResource {
    *       <li>`priority = P1 OR priority = P2`
    *     </ul>
    *     <ul>
+   *       <li>`targetResources :
+   *           //compute.googleapis.com/projects/1234/zones/us-central1-a/instances/instance-1`
+   *     </ul>
+   *     <ul>
    *       <li>`stateInfo.state = ACTIVE AND (priority = P1 OR priority = P2)`
    *     </ul>
+   *     <p>The max allowed filter length is 500 characters.
    *     <p>(These expressions are based on the filter language described at
    *     https://google.aip.dev/160)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

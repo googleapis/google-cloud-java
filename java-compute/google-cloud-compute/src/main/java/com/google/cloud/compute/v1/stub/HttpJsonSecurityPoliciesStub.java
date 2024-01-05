@@ -178,6 +178,12 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                                   "returnPartialSuccess",
                                   request.getReturnPartialSuccess());
                             }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -513,6 +519,10 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            if (request.hasUpdateMask()) {
+                              serializer.putQueryParam(
+                                  fields, "updateMask", request.getUpdateMask());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -568,6 +578,10 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                                 ProtoRestSerializer.create();
                             if (request.hasPriority()) {
                               serializer.putQueryParam(fields, "priority", request.getPriority());
+                            }
+                            if (request.hasUpdateMask()) {
+                              serializer.putQueryParam(
+                                  fields, "updateMask", request.getUpdateMask());
                             }
                             if (request.hasValidateOnly()) {
                               serializer.putQueryParam(

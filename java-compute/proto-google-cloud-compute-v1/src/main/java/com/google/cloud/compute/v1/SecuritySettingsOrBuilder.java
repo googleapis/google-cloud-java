@@ -27,6 +27,44 @@ public interface SecuritySettingsOrBuilder
    *
    *
    * <pre>
+   * The configuration needed to generate a signature for access to private storage buckets that support AWS's Signature Version 4 for authentication. Allowed only for INTERNET_IP_PORT and INTERNET_FQDN_PORT NEG backends.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.AWSV4Signature aws_v4_authentication = 433993111;
+   * </code>
+   *
+   * @return Whether the awsV4Authentication field is set.
+   */
+  boolean hasAwsV4Authentication();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration needed to generate a signature for access to private storage buckets that support AWS's Signature Version 4 for authentication. Allowed only for INTERNET_IP_PORT and INTERNET_FQDN_PORT NEG backends.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.AWSV4Signature aws_v4_authentication = 433993111;
+   * </code>
+   *
+   * @return The awsV4Authentication.
+   */
+  com.google.cloud.compute.v1.AWSV4Signature getAwsV4Authentication();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration needed to generate a signature for access to private storage buckets that support AWS's Signature Version 4 for authentication. Allowed only for INTERNET_IP_PORT and INTERNET_FQDN_PORT NEG backends.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.AWSV4Signature aws_v4_authentication = 433993111;
+   * </code>
+   */
+  com.google.cloud.compute.v1.AWSV4SignatureOrBuilder getAwsV4AuthenticationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A URL referring to a networksecurity.ClientTlsPolicy resource that describes how clients should authenticate with this service's backends. clientTlsPolicy only applies to a global BackendService with the loadBalancingScheme set to INTERNAL_SELF_MANAGED. If left blank, communications are not encrypted.
    * </pre>
    *

@@ -214,6 +214,7 @@ public class ReservationsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, ReservationsScopedList> element :
    *       reservationsClient.aggregatedList(request).iterateAll()) {
@@ -252,6 +253,7 @@ public class ReservationsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, ReservationsScopedList>> future =
    *       reservationsClient.aggregatedListPagedCallable().futureCall(request);
@@ -289,6 +291,7 @@ public class ReservationsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     ReservationAggregatedList response =

@@ -56,6 +56,10 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 95594102:
         return internalGetDisks();
+      case 532687245:
+        return internalGetExternalIPs();
+      case 215731675:
+        return internalGetInternalIPs();
       case 86866735:
         return internalGetMetadata();
       default:
@@ -193,6 +197,260 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int EXTERNAL_I_PS_FIELD_NUMBER = 532687245;
+
+  private static final class ExternalIPsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+                    newDefaultInstance(
+                        com.google.cloud.compute.v1.Compute
+                            .internal_static_google_cloud_compute_v1_PreservedState_ExternalIPsEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp
+                            .getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+      externalIPs_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+      internalGetExternalIPs() {
+    if (externalIPs_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(ExternalIPsDefaultEntryHolder.defaultEntry);
+    }
+    return externalIPs_;
+  }
+
+  public int getExternalIPsCount() {
+    return internalGetExternalIPs().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsExternalIPs(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetExternalIPs().getMap().containsKey(key);
+  }
+  /** Use {@link #getExternalIPsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<
+          java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+      getExternalIPs() {
+    return getExternalIPsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<
+          java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+      getExternalIPsMap() {
+    return internalGetExternalIPs().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp
+      getExternalIPsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        map = internalGetExternalIPs().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp getExternalIPsOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        map = internalGetExternalIPs().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int INTERNAL_I_PS_FIELD_NUMBER = 215731675;
+
+  private static final class InternalIPsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+                    newDefaultInstance(
+                        com.google.cloud.compute.v1.Compute
+                            .internal_static_google_cloud_compute_v1_PreservedState_InternalIPsEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp
+                            .getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+      internalIPs_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+      internalGetInternalIPs() {
+    if (internalIPs_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(InternalIPsDefaultEntryHolder.defaultEntry);
+    }
+    return internalIPs_;
+  }
+
+  public int getInternalIPsCount() {
+    return internalGetInternalIPs().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsInternalIPs(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetInternalIPs().getMap().containsKey(key);
+  }
+  /** Use {@link #getInternalIPsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<
+          java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+      getInternalIPs() {
+    return getInternalIPsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<
+          java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+      getInternalIPsMap() {
+    return internalGetInternalIPs().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp
+      getInternalIPsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        map = internalGetInternalIPs().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp getInternalIPsOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        map = internalGetInternalIPs().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int METADATA_FIELD_NUMBER = 86866735;
 
   private static final class MetadataDefaultEntryHolder {
@@ -313,6 +571,10 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
         output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 86866735);
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetDisks(), DisksDefaultEntryHolder.defaultEntry, 95594102);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetInternalIPs(), InternalIPsDefaultEntryHolder.defaultEntry, 215731675);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetExternalIPs(), ExternalIPsDefaultEntryHolder.defaultEntry, 532687245);
     getUnknownFields().writeTo(output);
   }
 
@@ -345,6 +607,32 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(95594102, disks__);
     }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        entry : internalGetInternalIPs().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+          internalIPs__ =
+              InternalIPsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(215731675, internalIPs__);
+    }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        entry : internalGetExternalIPs().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+          externalIPs__ =
+              ExternalIPsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(532687245, externalIPs__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -362,6 +650,8 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.compute.v1.PreservedState) obj;
 
     if (!internalGetDisks().equals(other.internalGetDisks())) return false;
+    if (!internalGetExternalIPs().equals(other.internalGetExternalIPs())) return false;
+    if (!internalGetInternalIPs().equals(other.internalGetInternalIPs())) return false;
     if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -377,6 +667,14 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetDisks().getMap().isEmpty()) {
       hash = (37 * hash) + DISKS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetDisks().hashCode();
+    }
+    if (!internalGetExternalIPs().getMap().isEmpty()) {
+      hash = (37 * hash) + EXTERNAL_I_PS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetExternalIPs().hashCode();
+    }
+    if (!internalGetInternalIPs().getMap().isEmpty()) {
+      hash = (37 * hash) + INTERNAL_I_PS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetInternalIPs().hashCode();
     }
     if (!internalGetMetadata().getMap().isEmpty()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
@@ -505,6 +803,10 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 95594102:
           return internalGetDisks();
+        case 532687245:
+          return internalGetExternalIPs();
+        case 215731675:
+          return internalGetInternalIPs();
         case 86866735:
           return internalGetMetadata();
         default:
@@ -517,6 +819,10 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 95594102:
           return internalGetMutableDisks();
+        case 532687245:
+          return internalGetMutableExternalIPs();
+        case 215731675:
+          return internalGetMutableInternalIPs();
         case 86866735:
           return internalGetMutableMetadata();
         default:
@@ -546,6 +852,8 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       internalGetMutableDisks().clear();
+      internalGetMutableExternalIPs().clear();
+      internalGetMutableInternalIPs().clear();
       internalGetMutableMetadata().clear();
       return this;
     }
@@ -588,6 +896,14 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
         result.disks_.makeImmutable();
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.externalIPs_ = internalGetExternalIPs();
+        result.externalIPs_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.internalIPs_ = internalGetInternalIPs();
+        result.internalIPs_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
       }
@@ -640,8 +956,12 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.compute.v1.PreservedState.getDefaultInstance()) return this;
       internalGetMutableDisks().mergeFrom(other.internalGetDisks());
       bitField0_ |= 0x00000001;
-      internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      internalGetMutableExternalIPs().mergeFrom(other.internalGetExternalIPs());
       bitField0_ |= 0x00000002;
+      internalGetMutableInternalIPs().mergeFrom(other.internalGetInternalIPs());
+      bitField0_ |= 0x00000004;
+      internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000008;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -677,7 +997,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 694933882
             case 764752818:
@@ -692,6 +1012,36 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 764752818
+            case 1725853402:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String,
+                        com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+                    internalIPs__ =
+                        input.readMessage(
+                            InternalIPsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableInternalIPs()
+                    .getMutableMap()
+                    .put(internalIPs__.getKey(), internalIPs__.getValue());
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 1725853402
+            case -33469334:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String,
+                        com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+                    externalIPs__ =
+                        input.readMessage(
+                            ExternalIPsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableExternalIPs()
+                    .getMutableMap()
+                    .put(externalIPs__.getKey(), externalIPs__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -33469334
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -902,6 +1252,402 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        externalIPs_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        internalGetExternalIPs() {
+      if (externalIPs_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExternalIPsDefaultEntryHolder.defaultEntry);
+      }
+      return externalIPs_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        internalGetMutableExternalIPs() {
+      if (externalIPs_ == null) {
+        externalIPs_ =
+            com.google.protobuf.MapField.newMapField(ExternalIPsDefaultEntryHolder.defaultEntry);
+      }
+      if (!externalIPs_.isMutable()) {
+        externalIPs_ = externalIPs_.copy();
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return externalIPs_;
+    }
+
+    public int getExternalIPsCount() {
+      return internalGetExternalIPs().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsExternalIPs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetExternalIPs().getMap().containsKey(key);
+    }
+    /** Use {@link #getExternalIPsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        getExternalIPs() {
+      return getExternalIPsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        getExternalIPsMap() {
+      return internalGetExternalIPs().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp
+        getExternalIPsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+          map = internalGetExternalIPs().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp getExternalIPsOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+          map = internalGetExternalIPs().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearExternalIPs() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      internalGetMutableExternalIPs().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+     * </code>
+     */
+    public Builder removeExternalIPs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableExternalIPs().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        getMutableExternalIPs() {
+      bitField0_ |= 0x00000002;
+      return internalGetMutableExternalIPs().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+     * </code>
+     */
+    public Builder putExternalIPs(
+        java.lang.String key, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableExternalIPs().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+     * </code>
+     */
+    public Builder putAllExternalIPs(
+        java.util.Map<
+                java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+            values) {
+      internalGetMutableExternalIPs().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        internalIPs_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        internalGetInternalIPs() {
+      if (internalIPs_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            InternalIPsDefaultEntryHolder.defaultEntry);
+      }
+      return internalIPs_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        internalGetMutableInternalIPs() {
+      if (internalIPs_ == null) {
+        internalIPs_ =
+            com.google.protobuf.MapField.newMapField(InternalIPsDefaultEntryHolder.defaultEntry);
+      }
+      if (!internalIPs_.isMutable()) {
+        internalIPs_ = internalIPs_.copy();
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalIPs_;
+    }
+
+    public int getInternalIPsCount() {
+      return internalGetInternalIPs().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsInternalIPs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetInternalIPs().getMap().containsKey(key);
+    }
+    /** Use {@link #getInternalIPsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        getInternalIPs() {
+      return getInternalIPsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        getInternalIPsMap() {
+      return internalGetInternalIPs().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp
+        getInternalIPsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+          map = internalGetInternalIPs().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp getInternalIPsOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+          map = internalGetInternalIPs().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearInternalIPs() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      internalGetMutableInternalIPs().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+     * </code>
+     */
+    public Builder removeInternalIPs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableInternalIPs().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+        getMutableInternalIPs() {
+      bitField0_ |= 0x00000004;
+      return internalGetMutableInternalIPs().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+     * </code>
+     */
+    public Builder putInternalIPs(
+        java.lang.String key, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableInternalIPs().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+     * </code>
+     */
+    public Builder putAllInternalIPs(
+        java.util.Map<
+                java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+            values) {
+      internalGetMutableInternalIPs().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -920,7 +1666,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return metadata_;
     }
@@ -1005,7 +1751,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -1028,7 +1774,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -1048,7 +1794,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableMetadata().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1062,7 +1808,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       return this;
     }
 

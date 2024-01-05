@@ -77,6 +77,17 @@ import javax.annotation.Generated;
 public class PublicAdvertisedPrefixesSettings
     extends ClientSettings<PublicAdvertisedPrefixesSettings> {
 
+  /** Returns the object with the settings used for calls to announce. */
+  public UnaryCallSettings<AnnouncePublicAdvertisedPrefixeRequest, Operation> announceSettings() {
+    return ((PublicAdvertisedPrefixesStubSettings) getStubSettings()).announceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to announce. */
+  public OperationCallSettings<AnnouncePublicAdvertisedPrefixeRequest, Operation, Operation>
+      announceOperationSettings() {
+    return ((PublicAdvertisedPrefixesStubSettings) getStubSettings()).announceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeletePublicAdvertisedPrefixeRequest, Operation> deleteSettings() {
     return ((PublicAdvertisedPrefixesStubSettings) getStubSettings()).deleteSettings();
@@ -121,6 +132,17 @@ public class PublicAdvertisedPrefixesSettings
   public OperationCallSettings<PatchPublicAdvertisedPrefixeRequest, Operation, Operation>
       patchOperationSettings() {
     return ((PublicAdvertisedPrefixesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to withdraw. */
+  public UnaryCallSettings<WithdrawPublicAdvertisedPrefixeRequest, Operation> withdrawSettings() {
+    return ((PublicAdvertisedPrefixesStubSettings) getStubSettings()).withdrawSettings();
+  }
+
+  /** Returns the object with the settings used for calls to withdraw. */
+  public OperationCallSettings<WithdrawPublicAdvertisedPrefixeRequest, Operation, Operation>
+      withdrawOperationSettings() {
+    return ((PublicAdvertisedPrefixesStubSettings) getStubSettings()).withdrawOperationSettings();
   }
 
   public static final PublicAdvertisedPrefixesSettings create(
@@ -222,6 +244,19 @@ public class PublicAdvertisedPrefixesSettings
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to announce. */
+    public UnaryCallSettings.Builder<AnnouncePublicAdvertisedPrefixeRequest, Operation>
+        announceSettings() {
+      return getStubSettingsBuilder().announceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to announce. */
+    public OperationCallSettings.Builder<
+            AnnouncePublicAdvertisedPrefixeRequest, Operation, Operation>
+        announceOperationSettings() {
+      return getStubSettingsBuilder().announceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeletePublicAdvertisedPrefixeRequest, Operation>
         deleteSettings() {
@@ -269,6 +304,19 @@ public class PublicAdvertisedPrefixesSettings
     public OperationCallSettings.Builder<PatchPublicAdvertisedPrefixeRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to withdraw. */
+    public UnaryCallSettings.Builder<WithdrawPublicAdvertisedPrefixeRequest, Operation>
+        withdrawSettings() {
+      return getStubSettingsBuilder().withdrawSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to withdraw. */
+    public OperationCallSettings.Builder<
+            WithdrawPublicAdvertisedPrefixeRequest, Operation, Operation>
+        withdrawOperationSettings() {
+      return getStubSettingsBuilder().withdrawOperationSettings();
     }
 
     @Override

@@ -381,7 +381,10 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the interconnectDiagnostics for the specified Interconnect.
+   * Returns the interconnectDiagnostics for the specified Interconnect. In the event of a global
+   * outage, do not use this API to make decisions about where to redirect your network traffic.
+   * Unlike a VLAN attachment, which is regional, a Cloud Interconnect connection is a global
+   * resource. A global outage can prevent this API from functioning properly.
    *
    * <p>Sample code:
    *
@@ -415,7 +418,10 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the interconnectDiagnostics for the specified Interconnect.
+   * Returns the interconnectDiagnostics for the specified Interconnect. In the event of a global
+   * outage, do not use this API to make decisions about where to redirect your network traffic.
+   * Unlike a VLAN attachment, which is regional, a Cloud Interconnect connection is a global
+   * resource. A global outage can prevent this API from functioning properly.
    *
    * <p>Sample code:
    *
@@ -445,7 +451,10 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the interconnectDiagnostics for the specified Interconnect.
+   * Returns the interconnectDiagnostics for the specified Interconnect. In the event of a global
+   * outage, do not use this API to make decisions about where to redirect your network traffic.
+   * Unlike a VLAN attachment, which is regional, a Cloud Interconnect connection is a global
+   * resource. A global outage can prevent this API from functioning properly.
    *
    * <p>Sample code:
    *
@@ -471,6 +480,101 @@ public class InterconnectsClient implements BackgroundResource {
   public final UnaryCallable<GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>
       getDiagnosticsCallable() {
     return stub.getDiagnosticsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the interconnectMacsecConfig for the specified Interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   String project = "project-309310695";
+   *   String interconnect = "interconnect-849140594";
+   *   InterconnectsGetMacsecConfigResponse response =
+   *       interconnectsClient.getMacsecConfig(project, interconnect);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param interconnect Name of the interconnect resource to query.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InterconnectsGetMacsecConfigResponse getMacsecConfig(
+      String project, String interconnect) {
+    GetMacsecConfigInterconnectRequest request =
+        GetMacsecConfigInterconnectRequest.newBuilder()
+            .setProject(project)
+            .setInterconnect(interconnect)
+            .build();
+    return getMacsecConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the interconnectMacsecConfig for the specified Interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   GetMacsecConfigInterconnectRequest request =
+   *       GetMacsecConfigInterconnectRequest.newBuilder()
+   *           .setInterconnect("interconnect-849140594")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   InterconnectsGetMacsecConfigResponse response = interconnectsClient.getMacsecConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InterconnectsGetMacsecConfigResponse getMacsecConfig(
+      GetMacsecConfigInterconnectRequest request) {
+    return getMacsecConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the interconnectMacsecConfig for the specified Interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   GetMacsecConfigInterconnectRequest request =
+   *       GetMacsecConfigInterconnectRequest.newBuilder()
+   *           .setInterconnect("interconnect-849140594")
+   *           .setProject("project-309310695")
+   *           .build();
+   *   ApiFuture<InterconnectsGetMacsecConfigResponse> future =
+   *       interconnectsClient.getMacsecConfigCallable().futureCall(request);
+   *   // Do something.
+   *   InterconnectsGetMacsecConfigResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+      getMacsecConfigCallable() {
+    return stub.getMacsecConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

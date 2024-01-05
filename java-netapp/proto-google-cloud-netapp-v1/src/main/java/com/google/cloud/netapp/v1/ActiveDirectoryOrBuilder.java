@@ -27,12 +27,12 @@ public interface ActiveDirectoryOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the active directory.
+   * Identifier. The resource name of the active directory.
    * Format:
    * `projects/{project_number}/locations/{location_id}/activeDirectories/{active_directory_id}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -41,12 +41,12 @@ public interface ActiveDirectoryOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the active directory.
+   * Identifier. The resource name of the active directory.
    * Format:
    * `projects/{project_number}/locations/{location_id}/activeDirectories/{active_directory_id}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

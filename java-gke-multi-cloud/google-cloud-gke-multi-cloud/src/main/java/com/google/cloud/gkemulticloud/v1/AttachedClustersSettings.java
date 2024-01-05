@@ -162,6 +162,14 @@ public class AttachedClustersSettings extends ClientSettings<AttachedClustersSet
         .generateAttachedClusterInstallManifestSettings();
   }
 
+  /** Returns the object with the settings used for calls to generateAttachedClusterAgentToken. */
+  public UnaryCallSettings<
+          GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+      generateAttachedClusterAgentTokenSettings() {
+    return ((AttachedClustersStubSettings) getStubSettings())
+        .generateAttachedClusterAgentTokenSettings();
+  }
+
   public static final AttachedClustersSettings create(AttachedClustersStubSettings stub)
       throws IOException {
     return new AttachedClustersSettings.Builder(stub.toBuilder()).build();
@@ -358,6 +366,13 @@ public class AttachedClustersSettings extends ClientSettings<AttachedClustersSet
             GenerateAttachedClusterInstallManifestResponse>
         generateAttachedClusterInstallManifestSettings() {
       return getStubSettingsBuilder().generateAttachedClusterInstallManifestSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to generateAttachedClusterAgentToken. */
+    public UnaryCallSettings.Builder<
+            GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+        generateAttachedClusterAgentTokenSettings() {
+      return getStubSettingsBuilder().generateAttachedClusterAgentTokenSettings();
     }
 
     @Override

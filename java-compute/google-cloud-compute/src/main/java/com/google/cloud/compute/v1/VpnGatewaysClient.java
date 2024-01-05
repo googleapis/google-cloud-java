@@ -214,6 +214,7 @@ public class VpnGatewaysClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, VpnGatewaysScopedList> element :
    *       vpnGatewaysClient.aggregatedList(request).iterateAll()) {
@@ -252,6 +253,7 @@ public class VpnGatewaysClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, VpnGatewaysScopedList>> future =
    *       vpnGatewaysClient.aggregatedListPagedCallable().futureCall(request);
@@ -289,6 +291,7 @@ public class VpnGatewaysClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     VpnGatewayAggregatedList response =

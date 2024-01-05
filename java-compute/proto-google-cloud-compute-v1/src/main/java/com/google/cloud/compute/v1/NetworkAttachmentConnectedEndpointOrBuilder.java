@@ -64,6 +64,43 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    *
    *
    * <pre>
+   * The IPv6 address assigned to the producer instance network interface. This is only assigned when the stack types of both the instance network interface and the consumer subnet are IPv4_IPv6.
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return Whether the ipv6Address field is set.
+   */
+  boolean hasIpv6Address();
+  /**
+   *
+   *
+   * <pre>
+   * The IPv6 address assigned to the producer instance network interface. This is only assigned when the stack types of both the instance network interface and the consumer subnet are IPv4_IPv6.
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The ipv6Address.
+   */
+  java.lang.String getIpv6Address();
+  /**
+   *
+   *
+   * <pre>
+   * The IPv6 address assigned to the producer instance network interface. This is only assigned when the stack types of both the instance network interface and the consumer subnet are IPv4_IPv6.
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The bytes for ipv6Address.
+   */
+  com.google.protobuf.ByteString getIpv6AddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The project id or number of the interface to which the IP was assigned.
    * </pre>
    *
@@ -224,4 +261,41 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    * @return The bytes for subnetwork.
    */
   com.google.protobuf.ByteString getSubnetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The CIDR range of the subnet from which the IPv4 internal IP was allocated from.
+   * </pre>
+   *
+   * <code>optional string subnetwork_cidr_range = 383249827;</code>
+   *
+   * @return Whether the subnetworkCidrRange field is set.
+   */
+  boolean hasSubnetworkCidrRange();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The CIDR range of the subnet from which the IPv4 internal IP was allocated from.
+   * </pre>
+   *
+   * <code>optional string subnetwork_cidr_range = 383249827;</code>
+   *
+   * @return The subnetworkCidrRange.
+   */
+  java.lang.String getSubnetworkCidrRange();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The CIDR range of the subnet from which the IPv4 internal IP was allocated from.
+   * </pre>
+   *
+   * <code>optional string subnetwork_cidr_range = 383249827;</code>
+   *
+   * @return The bytes for subnetworkCidrRange.
+   */
+  com.google.protobuf.ByteString getSubnetworkCidrRangeBytes();
 }

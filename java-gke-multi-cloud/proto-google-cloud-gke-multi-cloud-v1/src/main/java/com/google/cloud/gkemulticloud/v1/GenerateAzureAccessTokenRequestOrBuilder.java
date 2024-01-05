@@ -32,7 +32,7 @@ public interface GenerateAzureAccessTokenRequestOrBuilder
    * authenticate to.
    *
    * `AzureCluster` names are formatted as
-   * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/AzureClusters/&lt;cluster-id&gt;`.
+   * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
@@ -54,7 +54,7 @@ public interface GenerateAzureAccessTokenRequestOrBuilder
    * authenticate to.
    *
    * `AzureCluster` names are formatted as
-   * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/AzureClusters/&lt;cluster-id&gt;`.
+   * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.

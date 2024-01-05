@@ -107,4 +107,39 @@ public interface CostProjectionOrBuilder
    * <code>.google.protobuf.Duration duration = 2;</code>
    */
   com.google.protobuf.DurationOrBuilder getDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The approximate cost savings in the billing account's local currency.
+   * </pre>
+   *
+   * <code>.google.type.Money cost_in_local_currency = 3;</code>
+   *
+   * @return Whether the costInLocalCurrency field is set.
+   */
+  boolean hasCostInLocalCurrency();
+  /**
+   *
+   *
+   * <pre>
+   * The approximate cost savings in the billing account's local currency.
+   * </pre>
+   *
+   * <code>.google.type.Money cost_in_local_currency = 3;</code>
+   *
+   * @return The costInLocalCurrency.
+   */
+  com.google.type.Money getCostInLocalCurrency();
+  /**
+   *
+   *
+   * <pre>
+   * The approximate cost savings in the billing account's local currency.
+   * </pre>
+   *
+   * <code>.google.type.Money cost_in_local_currency = 3;</code>
+   */
+  com.google.type.MoneyOrBuilder getCostInLocalCurrencyOrBuilder();
 }

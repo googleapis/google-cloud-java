@@ -71,7 +71,8 @@ public final class GetEffectivePolicyRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The effective policy to compute. See `Policy` for naming rules.
+   * Required. The effective policy to compute. See
+   * [Policy][google.cloud.orgpolicy.v2.Policy] for naming requirements.
    * </pre>
    *
    * <code>
@@ -96,7 +97,8 @@ public final class GetEffectivePolicyRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The effective policy to compute. See `Policy` for naming rules.
+   * Required. The effective policy to compute. See
+   * [Policy][google.cloud.orgpolicy.v2.Policy] for naming requirements.
    * </pre>
    *
    * <code>
@@ -467,7 +469,8 @@ public final class GetEffectivePolicyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The effective policy to compute. See `Policy` for naming rules.
+     * Required. The effective policy to compute. See
+     * [Policy][google.cloud.orgpolicy.v2.Policy] for naming requirements.
      * </pre>
      *
      * <code>
@@ -491,7 +494,8 @@ public final class GetEffectivePolicyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The effective policy to compute. See `Policy` for naming rules.
+     * Required. The effective policy to compute. See
+     * [Policy][google.cloud.orgpolicy.v2.Policy] for naming requirements.
      * </pre>
      *
      * <code>
@@ -515,7 +519,8 @@ public final class GetEffectivePolicyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The effective policy to compute. See `Policy` for naming rules.
+     * Required. The effective policy to compute. See
+     * [Policy][google.cloud.orgpolicy.v2.Policy] for naming requirements.
      * </pre>
      *
      * <code>
@@ -538,7 +543,8 @@ public final class GetEffectivePolicyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The effective policy to compute. See `Policy` for naming rules.
+     * Required. The effective policy to compute. See
+     * [Policy][google.cloud.orgpolicy.v2.Policy] for naming requirements.
      * </pre>
      *
      * <code>
@@ -557,7 +563,8 @@ public final class GetEffectivePolicyRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The effective policy to compute. See `Policy` for naming rules.
+     * Required. The effective policy to compute. See
+     * [Policy][google.cloud.orgpolicy.v2.Policy] for naming requirements.
      * </pre>
      *
      * <code>

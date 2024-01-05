@@ -245,6 +245,8 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
    *
    * * `severity`
    *
+   * * `targetResources`
+   *
    * Examples:
    *
    * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
@@ -253,7 +255,12 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
    *
    * * `severity = CRITICAL OR severity = HIGH`
    *
+   * * `targetResources :
+   * //compute.googleapis.com/projects/1234/zones/us-central1-a/instances/instance-1`
+   *
    * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+   *
+   * The max allowed filter length is 500 characters.
    *
    * (These expressions are based on the filter language described at
    * https://google.aip.dev/160)
@@ -288,6 +295,8 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
    *
    * * `severity`
    *
+   * * `targetResources`
+   *
    * Examples:
    *
    * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
@@ -296,7 +305,12 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
    *
    * * `severity = CRITICAL OR severity = HIGH`
    *
+   * * `targetResources :
+   * //compute.googleapis.com/projects/1234/zones/us-central1-a/instances/instance-1`
+   *
    * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+   *
+   * The max allowed filter length is 500 characters.
    *
    * (These expressions are based on the filter language described at
    * https://google.aip.dev/160)
@@ -1121,6 +1135,8 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      * * `severity`
      *
+     * * `targetResources`
+     *
      * Examples:
      *
      * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
@@ -1129,7 +1145,12 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      * * `severity = CRITICAL OR severity = HIGH`
      *
+     * * `targetResources :
+     * //compute.googleapis.com/projects/1234/zones/us-central1-a/instances/instance-1`
+     *
      * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+     *
+     * The max allowed filter length is 500 characters.
      *
      * (These expressions are based on the filter language described at
      * https://google.aip.dev/160)
@@ -1163,6 +1184,8 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      * * `severity`
      *
+     * * `targetResources`
+     *
      * Examples:
      *
      * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
@@ -1171,7 +1194,12 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      * * `severity = CRITICAL OR severity = HIGH`
      *
+     * * `targetResources :
+     * //compute.googleapis.com/projects/1234/zones/us-central1-a/instances/instance-1`
+     *
      * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+     *
+     * The max allowed filter length is 500 characters.
      *
      * (These expressions are based on the filter language described at
      * https://google.aip.dev/160)
@@ -1205,6 +1233,8 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      * * `severity`
      *
+     * * `targetResources`
+     *
      * Examples:
      *
      * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
@@ -1213,7 +1243,12 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      * * `severity = CRITICAL OR severity = HIGH`
      *
+     * * `targetResources :
+     * //compute.googleapis.com/projects/1234/zones/us-central1-a/instances/instance-1`
+     *
      * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+     *
+     * The max allowed filter length is 500 characters.
      *
      * (These expressions are based on the filter language described at
      * https://google.aip.dev/160)
@@ -1246,6 +1281,8 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      * * `severity`
      *
+     * * `targetResources`
+     *
      * Examples:
      *
      * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
@@ -1254,7 +1291,12 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      * * `severity = CRITICAL OR severity = HIGH`
      *
+     * * `targetResources :
+     * //compute.googleapis.com/projects/1234/zones/us-central1-a/instances/instance-1`
+     *
      * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+     *
+     * The max allowed filter length is 500 characters.
      *
      * (These expressions are based on the filter language described at
      * https://google.aip.dev/160)
@@ -1283,6 +1325,8 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      * * `severity`
      *
+     * * `targetResources`
+     *
      * Examples:
      *
      * * `stateInfo.state = ACTIVE OR stateInfo.state = DISMISSED`
@@ -1291,7 +1335,12 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      * * `severity = CRITICAL OR severity = HIGH`
      *
+     * * `targetResources :
+     * //compute.googleapis.com/projects/1234/zones/us-central1-a/instances/instance-1`
+     *
      * * `stateInfo.state = ACTIVE AND (severity = CRITICAL OR severity = HIGH)`
+     *
+     * The max allowed filter length is 500 characters.
      *
      * (These expressions are based on the filter language described at
      * https://google.aip.dev/160)

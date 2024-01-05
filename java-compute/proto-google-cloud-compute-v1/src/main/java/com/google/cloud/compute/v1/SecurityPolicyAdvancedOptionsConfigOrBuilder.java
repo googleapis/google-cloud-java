@@ -145,4 +145,55 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    * @return The bytes for logLevel.
    */
   com.google.protobuf.ByteString getLogLevelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+   * </pre>
+   *
+   * <code>repeated string user_ip_request_headers = 421050290;</code>
+   *
+   * @return A list containing the userIpRequestHeaders.
+   */
+  java.util.List<java.lang.String> getUserIpRequestHeadersList();
+  /**
+   *
+   *
+   * <pre>
+   * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+   * </pre>
+   *
+   * <code>repeated string user_ip_request_headers = 421050290;</code>
+   *
+   * @return The count of userIpRequestHeaders.
+   */
+  int getUserIpRequestHeadersCount();
+  /**
+   *
+   *
+   * <pre>
+   * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+   * </pre>
+   *
+   * <code>repeated string user_ip_request_headers = 421050290;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The userIpRequestHeaders at the given index.
+   */
+  java.lang.String getUserIpRequestHeaders(int index);
+  /**
+   *
+   *
+   * <pre>
+   * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+   * </pre>
+   *
+   * <code>repeated string user_ip_request_headers = 421050290;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the userIpRequestHeaders at the given index.
+   */
+  com.google.protobuf.ByteString getUserIpRequestHeadersBytes(int index);
 }

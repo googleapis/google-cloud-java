@@ -38,7 +38,10 @@ import javax.annotation.Generated;
  * Base stub class for the CloudChannelReportsService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public abstract class CloudChannelReportsServiceStub implements BackgroundResource {
 
@@ -50,29 +53,35 @@ public abstract class CloudChannelReportsServiceStub implements BackgroundResour
     return null;
   }
 
+  @Deprecated
   public OperationCallable<RunReportJobRequest, RunReportJobResponse, OperationMetadata>
       runReportJobOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: runReportJobOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<RunReportJobRequest, Operation> runReportJobCallable() {
     throw new UnsupportedOperationException("Not implemented: runReportJobCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<FetchReportResultsRequest, FetchReportResultsPagedResponse>
       fetchReportResultsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: fetchReportResultsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<FetchReportResultsRequest, FetchReportResultsResponse>
       fetchReportResultsCallable() {
     throw new UnsupportedOperationException("Not implemented: fetchReportResultsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListReportsRequest, ListReportsPagedResponse> listReportsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listReportsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListReportsRequest, ListReportsResponse> listReportsCallable() {
     throw new UnsupportedOperationException("Not implemented: listReportsCallable()");
   }

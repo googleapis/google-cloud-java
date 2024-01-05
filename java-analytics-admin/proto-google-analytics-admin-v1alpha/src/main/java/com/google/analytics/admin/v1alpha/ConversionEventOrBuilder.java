@@ -179,4 +179,47 @@ public interface ConversionEventOrBuilder
    * @return The countingMethod.
    */
   com.google.analytics.admin.v1alpha.ConversionEvent.ConversionCountingMethod getCountingMethod();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines a default value/currency for a conversion event.
+   * </pre>
+   *
+   * <code>
+   * optional .google.analytics.admin.v1alpha.ConversionEvent.DefaultConversionValue default_conversion_value = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the defaultConversionValue field is set.
+   */
+  boolean hasDefaultConversionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines a default value/currency for a conversion event.
+   * </pre>
+   *
+   * <code>
+   * optional .google.analytics.admin.v1alpha.ConversionEvent.DefaultConversionValue default_conversion_value = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The defaultConversionValue.
+   */
+  com.google.analytics.admin.v1alpha.ConversionEvent.DefaultConversionValue
+      getDefaultConversionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines a default value/currency for a conversion event.
+   * </pre>
+   *
+   * <code>
+   * optional .google.analytics.admin.v1alpha.ConversionEvent.DefaultConversionValue default_conversion_value = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.analytics.admin.v1alpha.ConversionEvent.DefaultConversionValueOrBuilder
+      getDefaultConversionValueOrBuilder();
 }

@@ -87,4 +87,76 @@ public interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigOr
    * @return The bytes for ruleVisibility.
    */
   com.google.protobuf.ByteString getRuleVisibilityBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for layer7 adaptive protection for various customizable thresholds.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig threshold_configs = 60347805;
+   * </code>
+   */
+  java.util.List<
+          com.google.cloud.compute.v1
+              .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig>
+      getThresholdConfigsList();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for layer7 adaptive protection for various customizable thresholds.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig threshold_configs = 60347805;
+   * </code>
+   */
+  com.google.cloud.compute.v1
+          .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig
+      getThresholdConfigs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for layer7 adaptive protection for various customizable thresholds.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig threshold_configs = 60347805;
+   * </code>
+   */
+  int getThresholdConfigsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for layer7 adaptive protection for various customizable thresholds.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig threshold_configs = 60347805;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.compute.v1
+                  .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigOrBuilder>
+      getThresholdConfigsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for layer7 adaptive protection for various customizable thresholds.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig threshold_configs = 60347805;
+   * </code>
+   */
+  com.google.cloud.compute.v1
+          .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigOrBuilder
+      getThresholdConfigsOrBuilder(int index);
 }

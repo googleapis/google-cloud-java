@@ -27,6 +27,43 @@ public interface BulkInsertInstanceResourcePerInstancePropertiesOrBuilder
    *
    *
    * <pre>
+   * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+   * </pre>
+   *
+   * <code>optional string hostname = 237067315;</code>
+   *
+   * @return Whether the hostname field is set.
+   */
+  boolean hasHostname();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+   * </pre>
+   *
+   * <code>optional string hostname = 237067315;</code>
+   *
+   * @return The hostname.
+   */
+  java.lang.String getHostname();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+   * </pre>
+   *
+   * <code>optional string hostname = 237067315;</code>
+   *
+   * @return The bytes for hostname.
+   */
+  com.google.protobuf.ByteString getHostnameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * This field is only temporary. It will be removed. Do not use it.
    * </pre>
    *

@@ -41,6 +41,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
   private ConnectionInfo() {
     name_ = "";
     ipAddress_ = "";
+    publicIpAddress_ = "";
     pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.emptyList();
     instanceUid_ = "";
   }
@@ -176,6 +177,65 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PUBLIC_IP_ADDRESS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publicIpAddress_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The public IP addresses for the Instance. This is available
+   * ONLY when enable_public_ip is set. This is the connection endpoint for an
+   * end-user application.
+   * </pre>
+   *
+   * <code>
+   * string public_ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The publicIpAddress.
+   */
+  @java.lang.Override
+  public java.lang.String getPublicIpAddress() {
+    java.lang.Object ref = publicIpAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      publicIpAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The public IP addresses for the Instance. This is available
+   * ONLY when enable_public_ip is set. This is the connection endpoint for an
+   * end-user application.
+   * </pre>
+   *
+   * <code>
+   * string public_ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for publicIpAddress.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPublicIpAddressBytes() {
+    java.lang.Object ref = publicIpAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      publicIpAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PEM_CERTIFICATE_CHAIN_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -194,7 +254,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=918
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
    * @return A list containing the pemCertificateChain.
    */
   @java.lang.Deprecated
@@ -214,7 +274,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=918
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
    * @return The count of pemCertificateChain.
    */
   @java.lang.Deprecated
@@ -234,7 +294,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=918
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
    * @param index The index of the element to return.
    * @return The pemCertificateChain at the given index.
    */
@@ -255,7 +315,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=918
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
    * @param index The index of the value to return.
    * @return The bytes of the pemCertificateChain at the given index.
    */
@@ -341,6 +401,9 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceUid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, instanceUid_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicIpAddress_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, publicIpAddress_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -367,6 +430,9 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceUid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, instanceUid_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicIpAddress_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, publicIpAddress_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -385,6 +451,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (!getIpAddress().equals(other.getIpAddress())) return false;
+    if (!getPublicIpAddress().equals(other.getPublicIpAddress())) return false;
     if (!getPemCertificateChainList().equals(other.getPemCertificateChainList())) return false;
     if (!getInstanceUid().equals(other.getInstanceUid())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -402,6 +469,8 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
     hash = (53 * hash) + getIpAddress().hashCode();
+    hash = (37 * hash) + PUBLIC_IP_ADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getPublicIpAddress().hashCode();
     if (getPemCertificateChainCount() > 0) {
       hash = (37 * hash) + PEM_CERTIFICATE_CHAIN_FIELD_NUMBER;
       hash = (53 * hash) + getPemCertificateChainList().hashCode();
@@ -550,6 +619,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       ipAddress_ = "";
+      publicIpAddress_ = "";
       pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.emptyList();
       instanceUid_ = "";
       return this;
@@ -595,10 +665,13 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         result.ipAddress_ = ipAddress_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.publicIpAddress_ = publicIpAddress_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         pemCertificateChain_.makeImmutable();
         result.pemCertificateChain_ = pemCertificateChain_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.instanceUid_ = instanceUid_;
       }
     }
@@ -659,10 +732,15 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getPublicIpAddress().isEmpty()) {
+        publicIpAddress_ = other.publicIpAddress_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.pemCertificateChain_.isEmpty()) {
         if (pemCertificateChain_.isEmpty()) {
           pemCertificateChain_ = other.pemCertificateChain_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
         } else {
           ensurePemCertificateChainIsMutable();
           pemCertificateChain_.addAll(other.pemCertificateChain_);
@@ -671,7 +749,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getInstanceUid().isEmpty()) {
         instanceUid_ = other.instanceUid_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -722,9 +800,15 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 instanceUid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
+            case 42:
+              {
+                publicIpAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -976,6 +1060,132 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object publicIpAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The public IP addresses for the Instance. This is available
+     * ONLY when enable_public_ip is set. This is the connection endpoint for an
+     * end-user application.
+     * </pre>
+     *
+     * <code>
+     * string public_ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The publicIpAddress.
+     */
+    public java.lang.String getPublicIpAddress() {
+      java.lang.Object ref = publicIpAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        publicIpAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The public IP addresses for the Instance. This is available
+     * ONLY when enable_public_ip is set. This is the connection endpoint for an
+     * end-user application.
+     * </pre>
+     *
+     * <code>
+     * string public_ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The bytes for publicIpAddress.
+     */
+    public com.google.protobuf.ByteString getPublicIpAddressBytes() {
+      java.lang.Object ref = publicIpAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        publicIpAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The public IP addresses for the Instance. This is available
+     * ONLY when enable_public_ip is set. This is the connection endpoint for an
+     * end-user application.
+     * </pre>
+     *
+     * <code>
+     * string public_ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The publicIpAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublicIpAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      publicIpAddress_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The public IP addresses for the Instance. This is available
+     * ONLY when enable_public_ip is set. This is the connection endpoint for an
+     * end-user application.
+     * </pre>
+     *
+     * <code>
+     * string public_ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPublicIpAddress() {
+      publicIpAddress_ = getDefaultInstance().getPublicIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The public IP addresses for the Instance. This is available
+     * ONLY when enable_public_ip is set. This is the connection endpoint for an
+     * end-user application.
+     * </pre>
+     *
+     * <code>
+     * string public_ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The bytes for publicIpAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublicIpAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      publicIpAddress_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList pemCertificateChain_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -983,7 +1193,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       if (!pemCertificateChain_.isModifiable()) {
         pemCertificateChain_ = new com.google.protobuf.LazyStringArrayList(pemCertificateChain_);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -998,7 +1208,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=918
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
      * @return A list containing the pemCertificateChain.
      */
     @java.lang.Deprecated
@@ -1019,7 +1229,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=918
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
      * @return The count of pemCertificateChain.
      */
     @java.lang.Deprecated
@@ -1039,7 +1249,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=918
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
      * @param index The index of the element to return.
      * @return The pemCertificateChain at the given index.
      */
@@ -1060,7 +1270,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=918
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
      * @param index The index of the value to return.
      * @return The bytes of the pemCertificateChain at the given index.
      */
@@ -1081,7 +1291,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=918
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
      * @param index The index to set the value at.
      * @param value The pemCertificateChain to set.
      * @return This builder for chaining.
@@ -1093,7 +1303,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePemCertificateChainIsMutable();
       pemCertificateChain_.set(index, value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1110,7 +1320,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=918
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
      * @param value The pemCertificateChain to add.
      * @return This builder for chaining.
      */
@@ -1121,7 +1331,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePemCertificateChainIsMutable();
       pemCertificateChain_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1138,7 +1348,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=918
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
      * @param values The pemCertificateChain to add.
      * @return This builder for chaining.
      */
@@ -1146,7 +1356,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPemCertificateChain(java.lang.Iterable<java.lang.String> values) {
       ensurePemCertificateChainIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pemCertificateChain_);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1163,13 +1373,13 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=918
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearPemCertificateChain() {
       pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       ;
       onChanged();
       return this;
@@ -1187,7 +1397,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1alpha/resources.proto;l=918
+     *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
      * @param value The bytes of the pemCertificateChain to add.
      * @return This builder for chaining.
      */
@@ -1199,7 +1409,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePemCertificateChainIsMutable();
       pemCertificateChain_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1266,7 +1476,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       instanceUid_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1283,7 +1493,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearInstanceUid() {
       instanceUid_ = getDefaultInstance().getInstanceUid();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1305,7 +1515,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       instanceUid_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

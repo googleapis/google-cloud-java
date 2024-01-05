@@ -223,6 +223,7 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, PublicDelegatedPrefixesScopedList> element :
    *       publicDelegatedPrefixesClient.aggregatedList(request).iterateAll()) {
@@ -262,6 +263,7 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, PublicDelegatedPrefixesScopedList>> future =
    *       publicDelegatedPrefixesClient.aggregatedListPagedCallable().futureCall(request);
@@ -302,6 +304,7 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     PublicDelegatedPrefixAggregatedList response =
@@ -324,6 +327,146 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
           AggregatedListPublicDelegatedPrefixesRequest, PublicDelegatedPrefixAggregatedList>
       aggregatedListCallable() {
     return stub.aggregatedListCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Announces the specified PublicDelegatedPrefix in the given region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicDelegatedPrefixesClient publicDelegatedPrefixesClient =
+   *     PublicDelegatedPrefixesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+   *   Operation response =
+   *       publicDelegatedPrefixesClient.announceAsync(project, region, publicDelegatedPrefix).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The name of the region where the public delegated prefix is located. It should
+   *     comply with RFC1035.
+   * @param publicDelegatedPrefix The name of the public delegated prefix. It should comply with
+   *     RFC1035.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> announceAsync(
+      String project, String region, String publicDelegatedPrefix) {
+    AnnouncePublicDelegatedPrefixeRequest request =
+        AnnouncePublicDelegatedPrefixeRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setPublicDelegatedPrefix(publicDelegatedPrefix)
+            .build();
+    return announceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Announces the specified PublicDelegatedPrefix in the given region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicDelegatedPrefixesClient publicDelegatedPrefixesClient =
+   *     PublicDelegatedPrefixesClient.create()) {
+   *   AnnouncePublicDelegatedPrefixeRequest request =
+   *       AnnouncePublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefix("publicDelegatedPrefix-663003832")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response = publicDelegatedPrefixesClient.announceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> announceAsync(
+      AnnouncePublicDelegatedPrefixeRequest request) {
+    return announceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Announces the specified PublicDelegatedPrefix in the given region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicDelegatedPrefixesClient publicDelegatedPrefixesClient =
+   *     PublicDelegatedPrefixesClient.create()) {
+   *   AnnouncePublicDelegatedPrefixeRequest request =
+   *       AnnouncePublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefix("publicDelegatedPrefix-663003832")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       publicDelegatedPrefixesClient.announceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<AnnouncePublicDelegatedPrefixeRequest, Operation, Operation>
+      announceOperationCallable() {
+    return stub.announceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Announces the specified PublicDelegatedPrefix in the given region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicDelegatedPrefixesClient publicDelegatedPrefixesClient =
+   *     PublicDelegatedPrefixesClient.create()) {
+   *   AnnouncePublicDelegatedPrefixeRequest request =
+   *       AnnouncePublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefix("publicDelegatedPrefix-663003832")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       publicDelegatedPrefixesClient.announceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AnnouncePublicDelegatedPrefixeRequest, Operation> announceCallable() {
+    return stub.announceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1019,6 +1162,146 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
    */
   public final UnaryCallable<PatchPublicDelegatedPrefixeRequest, Operation> patchCallable() {
     return stub.patchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Withdraws the specified PublicDelegatedPrefix in the given region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicDelegatedPrefixesClient publicDelegatedPrefixesClient =
+   *     PublicDelegatedPrefixesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String publicDelegatedPrefix = "publicDelegatedPrefix-663003832";
+   *   Operation response =
+   *       publicDelegatedPrefixesClient.withdrawAsync(project, region, publicDelegatedPrefix).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The name of the region where the public delegated prefix is located. It should
+   *     comply with RFC1035.
+   * @param publicDelegatedPrefix The name of the public delegated prefix. It should comply with
+   *     RFC1035.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> withdrawAsync(
+      String project, String region, String publicDelegatedPrefix) {
+    WithdrawPublicDelegatedPrefixeRequest request =
+        WithdrawPublicDelegatedPrefixeRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setPublicDelegatedPrefix(publicDelegatedPrefix)
+            .build();
+    return withdrawAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Withdraws the specified PublicDelegatedPrefix in the given region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicDelegatedPrefixesClient publicDelegatedPrefixesClient =
+   *     PublicDelegatedPrefixesClient.create()) {
+   *   WithdrawPublicDelegatedPrefixeRequest request =
+   *       WithdrawPublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefix("publicDelegatedPrefix-663003832")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response = publicDelegatedPrefixesClient.withdrawAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> withdrawAsync(
+      WithdrawPublicDelegatedPrefixeRequest request) {
+    return withdrawOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Withdraws the specified PublicDelegatedPrefix in the given region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicDelegatedPrefixesClient publicDelegatedPrefixesClient =
+   *     PublicDelegatedPrefixesClient.create()) {
+   *   WithdrawPublicDelegatedPrefixeRequest request =
+   *       WithdrawPublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefix("publicDelegatedPrefix-663003832")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       publicDelegatedPrefixesClient.withdrawOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<WithdrawPublicDelegatedPrefixeRequest, Operation, Operation>
+      withdrawOperationCallable() {
+    return stub.withdrawOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Withdraws the specified PublicDelegatedPrefix in the given region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublicDelegatedPrefixesClient publicDelegatedPrefixesClient =
+   *     PublicDelegatedPrefixesClient.create()) {
+   *   WithdrawPublicDelegatedPrefixeRequest request =
+   *       WithdrawPublicDelegatedPrefixeRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setPublicDelegatedPrefix("publicDelegatedPrefix-663003832")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       publicDelegatedPrefixesClient.withdrawCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<WithdrawPublicDelegatedPrefixeRequest, Operation> withdrawCallable() {
+    return stub.withdrawCallable();
   }
 
   @Override

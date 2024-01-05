@@ -165,4 +165,45 @@ public interface ImportAttachedClusterRequestOrBuilder
    * @return The bytes for distribution.
    */
   com.google.protobuf.ByteString getDistributionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Proxy configuration for outbound HTTP(S) traffic.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the proxyConfig field is set.
+   */
+  boolean hasProxyConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Proxy configuration for outbound HTTP(S) traffic.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The proxyConfig.
+   */
+  com.google.cloud.gkemulticloud.v1.AttachedProxyConfig getProxyConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Proxy configuration for outbound HTTP(S) traffic.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.AttachedProxyConfigOrBuilder getProxyConfigOrBuilder();
 }

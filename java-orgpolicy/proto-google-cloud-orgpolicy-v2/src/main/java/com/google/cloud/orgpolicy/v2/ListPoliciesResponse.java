@@ -24,7 +24,7 @@ package com.google.cloud.orgpolicy.v2;
  * <pre>
  * The response returned from the [ListPolicies]
  * [google.cloud.orgpolicy.v2.OrgPolicy.ListPolicies] method. It will be empty
- * if no `Policies` are set on the resource.
+ * if no policies are set on the resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.orgpolicy.v2.ListPoliciesResponse}
@@ -73,8 +73,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * All `Policies` that exist on the resource. It will be empty if no
-   * `Policies` are set.
+   * All policies that exist on the resource. It will be empty if no
+   * policies are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -87,8 +87,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * All `Policies` that exist on the resource. It will be empty if no
-   * `Policies` are set.
+   * All policies that exist on the resource. It will be empty if no
+   * policies are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -102,8 +102,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * All `Policies` that exist on the resource. It will be empty if no
-   * `Policies` are set.
+   * All policies that exist on the resource. It will be empty if no
+   * policies are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -116,8 +116,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * All `Policies` that exist on the resource. It will be empty if no
-   * `Policies` are set.
+   * All policies that exist on the resource. It will be empty if no
+   * policies are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -130,8 +130,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * All `Policies` that exist on the resource. It will be empty if no
-   * `Policies` are set.
+   * All policies that exist on the resource. It will be empty if no
+   * policies are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -370,7 +370,7 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
    * <pre>
    * The response returned from the [ListPolicies]
    * [google.cloud.orgpolicy.v2.OrgPolicy.ListPolicies] method. It will be empty
-   * if no `Policies` are set on the resource.
+   * if no policies are set on the resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.orgpolicy.v2.ListPoliciesResponse}
@@ -630,8 +630,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -647,8 +647,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -664,8 +664,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -681,8 +681,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -704,8 +704,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -725,8 +725,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -748,8 +748,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -771,8 +771,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -791,8 +791,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -812,8 +812,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -833,8 +833,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -853,8 +853,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -873,8 +873,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -886,8 +886,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -903,8 +903,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -921,8 +921,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -935,8 +935,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>
@@ -949,8 +949,8 @@ public final class ListPoliciesResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * All `Policies` that exist on the resource. It will be empty if no
-     * `Policies` are set.
+     * All policies that exist on the resource. It will be empty if no
+     * policies are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.Policy policies = 1;</code>

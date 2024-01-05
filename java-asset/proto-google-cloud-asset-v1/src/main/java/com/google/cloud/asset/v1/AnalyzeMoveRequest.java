@@ -241,7 +241,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
    * (such as "projects/12345").
    * </pre>
    *
-   * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The resource.
    */
@@ -267,7 +269,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
    * (such as "projects/12345").
    * </pre>
    *
-   * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for resource.
    */
@@ -299,7 +303,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
    * "organizations/123").
    * </pre>
    *
-   * <code>string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The destinationParent.
    */
@@ -326,7 +332,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
    * "organizations/123").
    * </pre>
    *
-   * <code>string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for destinationParent.
    */
@@ -784,7 +792,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      * (such as "projects/12345").
      * </pre>
      *
-     * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The resource.
      */
@@ -809,7 +819,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      * (such as "projects/12345").
      * </pre>
      *
-     * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for resource.
      */
@@ -834,7 +846,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      * (such as "projects/12345").
      * </pre>
      *
-     * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The resource to set.
      * @return This builder for chaining.
@@ -858,7 +872,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      * (such as "projects/12345").
      * </pre>
      *
-     * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -878,7 +894,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      * (such as "projects/12345").
      * </pre>
      *
-     * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for resource to set.
      * @return This builder for chaining.
@@ -906,7 +924,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      * "organizations/123").
      * </pre>
      *
-     * <code>string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The destinationParent.
      */
@@ -932,7 +952,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      * "organizations/123").
      * </pre>
      *
-     * <code>string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for destinationParent.
      */
@@ -958,7 +980,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      * "organizations/123").
      * </pre>
      *
-     * <code>string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The destinationParent to set.
      * @return This builder for chaining.
@@ -983,7 +1007,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      * "organizations/123").
      * </pre>
      *
-     * <code>string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1004,7 +1030,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      * "organizations/123").
      * </pre>
      *
-     * <code>string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string destination_parent = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for destinationParent to set.
      * @return This builder for chaining.

@@ -18,6 +18,7 @@ package com.google.analytics.data.v1beta;
 
 import com.google.analytics.data.v1beta.BetaAnalyticsDataGrpc.BetaAnalyticsDataImplBase;
 import com.google.api.core.BetaApi;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -203,6 +204,92 @@ public class MockBetaAnalyticsDataImpl extends BetaAnalyticsDataImplBase {
                   "Unrecognized response type %s for method CheckCompatibility, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CheckCompatibilityResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAudienceExport(
+      CreateAudienceExportRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAudienceExport, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void queryAudienceExport(
+      QueryAudienceExportRequest request,
+      StreamObserver<QueryAudienceExportResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryAudienceExportResponse) {
+      requests.add(request);
+      responseObserver.onNext(((QueryAudienceExportResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method QueryAudienceExport, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryAudienceExportResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAudienceExport(
+      GetAudienceExportRequest request, StreamObserver<AudienceExport> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AudienceExport) {
+      requests.add(request);
+      responseObserver.onNext(((AudienceExport) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAudienceExport, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AudienceExport.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAudienceExports(
+      ListAudienceExportsRequest request,
+      StreamObserver<ListAudienceExportsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAudienceExportsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAudienceExportsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAudienceExports, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAudienceExportsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

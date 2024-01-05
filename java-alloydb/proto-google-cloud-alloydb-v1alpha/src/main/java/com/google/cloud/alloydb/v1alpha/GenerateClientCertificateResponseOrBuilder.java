@@ -30,10 +30,15 @@ public interface GenerateClientCertificateResponseOrBuilder
    * Output only. The pem-encoded, signed X.509 certificate.
    * </pre>
    *
-   * <code>string pem_certificate = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string pem_certificate = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.alloydb.v1alpha.GenerateClientCertificateResponse.pem_certificate is
+   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1383
    * @return The pemCertificate.
    */
+  @java.lang.Deprecated
   java.lang.String getPemCertificate();
   /**
    *
@@ -42,10 +47,15 @@ public interface GenerateClientCertificateResponseOrBuilder
    * Output only. The pem-encoded, signed X.509 certificate.
    * </pre>
    *
-   * <code>string pem_certificate = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string pem_certificate = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.alloydb.v1alpha.GenerateClientCertificateResponse.pem_certificate is
+   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1383
    * @return The bytes for pemCertificate.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getPemCertificateBytes();
 
   /**

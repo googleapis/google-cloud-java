@@ -27,8 +27,9 @@ public interface ConstraintOrBuilder
    *
    *
    * <pre>
-   * Immutable. The resource name of the Constraint. Must be in one of
+   * Immutable. The resource name of the constraint. Must be in one of
    * the following forms:
+   *
    * * `projects/{project_number}/constraints/{constraint_name}`
    * * `folders/{folder_id}/constraints/{constraint_name}`
    * * `organizations/{organization_id}/constraints/{constraint_name}`
@@ -45,8 +46,9 @@ public interface ConstraintOrBuilder
    *
    *
    * <pre>
-   * Immutable. The resource name of the Constraint. Must be in one of
+   * Immutable. The resource name of the constraint. Must be in one of
    * the following forms:
+   *
    * * `projects/{project_number}/constraints/{constraint_name}`
    * * `folders/{folder_id}/constraints/{constraint_name}`
    * * `organizations/{organization_id}/constraints/{constraint_name}`
@@ -93,7 +95,7 @@ public interface ConstraintOrBuilder
    *
    *
    * <pre>
-   * Detailed description of what this `Constraint` controls as well as how and
+   * Detailed description of what this constraint controls as well as how and
    * where it is enforced.
    *
    * Mutable.
@@ -108,7 +110,7 @@ public interface ConstraintOrBuilder
    *
    *
    * <pre>
-   * Detailed description of what this `Constraint` controls as well as how and
+   * Detailed description of what this constraint controls as well as how and
    * where it is enforced.
    *
    * Mutable.
@@ -124,7 +126,7 @@ public interface ConstraintOrBuilder
    *
    *
    * <pre>
-   * The evaluation behavior of this constraint in the absence of 'Policy'.
+   * The evaluation behavior of this constraint in the absence of a policy.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault constraint_default = 4;</code>
@@ -136,7 +138,7 @@ public interface ConstraintOrBuilder
    *
    *
    * <pre>
-   * The evaluation behavior of this constraint in the absence of 'Policy'.
+   * The evaluation behavior of this constraint in the absence of a policy.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault constraint_default = 4;</code>
@@ -215,6 +217,19 @@ public interface ConstraintOrBuilder
    */
   com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraintOrBuilder
       getBooleanConstraintOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Shows if dry run is supported for this constraint or not.
+   * </pre>
+   *
+   * <code>bool supports_dry_run = 7;</code>
+   *
+   * @return The supportsDryRun.
+   */
+  boolean getSupportsDryRun();
 
   com.google.cloud.orgpolicy.v2.Constraint.ConstraintTypeCase getConstraintTypeCase();
 }

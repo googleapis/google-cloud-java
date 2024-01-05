@@ -277,6 +277,43 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The resource URL for the security policy associated with this access config.
+   * </pre>
+   *
+   * <code>optional string security_policy = 171082513;</code>
+   *
+   * @return Whether the securityPolicy field is set.
+   */
+  boolean hasSecurityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The resource URL for the security policy associated with this access config.
+   * </pre>
+   *
+   * <code>optional string security_policy = 171082513;</code>
+   *
+   * @return The securityPolicy.
+   */
+  java.lang.String getSecurityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The resource URL for the security policy associated with this access config.
+   * </pre>
+   *
+   * <code>optional string security_policy = 171082513;</code>
+   *
+   * @return The bytes for securityPolicy.
+   */
+  com.google.protobuf.ByteString getSecurityPolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name. This field is not used in ipv6AccessConfig. A default PTR record will be created if the VM has external IPv6 range associated.
    * </pre>
    *

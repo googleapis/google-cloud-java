@@ -227,6 +227,7 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, NetworkEdgeSecurityServicesScopedList> element :
    *       networkEdgeSecurityServicesClient.aggregatedList(request).iterateAll()) {
@@ -267,6 +268,7 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, NetworkEdgeSecurityServicesScopedList>> future =
    *       networkEdgeSecurityServicesClient.aggregatedListPagedCallable().futureCall(request);
@@ -308,6 +310,7 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     NetworkEdgeSecurityServiceAggregatedList response =

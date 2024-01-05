@@ -341,6 +341,31 @@ public interface OperationOrBuilder
   com.google.protobuf.ByteString getInsertTimeBytes();
 
   /**
+   * <code>
+   * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
+   * </code>
+   *
+   * @return Whether the instancesBulkInsertOperationMetadata field is set.
+   */
+  boolean hasInstancesBulkInsertOperationMetadata();
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
+   * </code>
+   *
+   * @return The instancesBulkInsertOperationMetadata.
+   */
+  com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata
+      getInstancesBulkInsertOperationMetadata();
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadataOrBuilder
+      getInstancesBulkInsertOperationMetadataOrBuilder();
+
+  /**
    *
    *
    * <pre>
@@ -591,6 +616,49 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
+   * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata set_common_instance_metadata_operation_metadata = 490378980;
+   * </code>
+   *
+   * @return Whether the setCommonInstanceMetadataOperationMetadata field is set.
+   */
+  boolean hasSetCommonInstanceMetadataOperationMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata set_common_instance_metadata_operation_metadata = 490378980;
+   * </code>
+   *
+   * @return The setCommonInstanceMetadataOperationMetadata.
+   */
+  com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata
+      getSetCommonInstanceMetadataOperationMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata set_common_instance_metadata_operation_metadata = 490378980;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadataOrBuilder
+      getSetCommonInstanceMetadataOperationMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
    * </pre>
    *
@@ -770,7 +838,7 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
+   * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
    * </pre>
    *
    * <code>optional string user = 3599307;</code>
@@ -782,7 +850,7 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
+   * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
    * </pre>
    *
    * <code>optional string user = 3599307;</code>
@@ -794,7 +862,7 @@ public interface OperationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] User who requested the operation, for example: `user&#64;example.com`.
+   * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
    * </pre>
    *
    * <code>optional string user = 3599307;</code>

@@ -106,7 +106,7 @@ public interface ChannelGroupOrBuilder
    *
    *
    * <pre>
-   * Required. The grouping rules of channels. Maximum number of rules is 25.
+   * Required. The grouping rules of channels. Maximum number of rules is 50.
    * </pre>
    *
    * <code>
@@ -118,7 +118,7 @@ public interface ChannelGroupOrBuilder
    *
    *
    * <pre>
-   * Required. The grouping rules of channels. Maximum number of rules is 25.
+   * Required. The grouping rules of channels. Maximum number of rules is 50.
    * </pre>
    *
    * <code>
@@ -130,7 +130,7 @@ public interface ChannelGroupOrBuilder
    *
    *
    * <pre>
-   * Required. The grouping rules of channels. Maximum number of rules is 25.
+   * Required. The grouping rules of channels. Maximum number of rules is 50.
    * </pre>
    *
    * <code>
@@ -142,7 +142,7 @@ public interface ChannelGroupOrBuilder
    *
    *
    * <pre>
-   * Required. The grouping rules of channels. Maximum number of rules is 25.
+   * Required. The grouping rules of channels. Maximum number of rules is 50.
    * </pre>
    *
    * <code>
@@ -155,7 +155,7 @@ public interface ChannelGroupOrBuilder
    *
    *
    * <pre>
-   * Required. The grouping rules of channels. Maximum number of rules is 25.
+   * Required. The grouping rules of channels. Maximum number of rules is 50.
    * </pre>
    *
    * <code>
@@ -168,8 +168,9 @@ public interface ChannelGroupOrBuilder
    *
    *
    * <pre>
-   * Output only. Default Channel Group defined by Google, which cannot be
-   * updated.
+   * Output only. If true, then this channel group is the Default Channel Group
+   * predefined by Google Analytics. Display name and grouping rules cannot be
+   * updated for this channel group.
    * </pre>
    *
    * <code>bool system_defined = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

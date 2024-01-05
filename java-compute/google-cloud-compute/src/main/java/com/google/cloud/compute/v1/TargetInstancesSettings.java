@@ -118,6 +118,18 @@ public class TargetInstancesSettings extends ClientSettings<TargetInstancesSetti
     return ((TargetInstancesStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public UnaryCallSettings<SetSecurityPolicyTargetInstanceRequest, Operation>
+      setSecurityPolicySettings() {
+    return ((TargetInstancesStubSettings) getStubSettings()).setSecurityPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public OperationCallSettings<SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings() {
+    return ((TargetInstancesStubSettings) getStubSettings()).setSecurityPolicyOperationSettings();
+  }
+
   public static final TargetInstancesSettings create(TargetInstancesStubSettings stub)
       throws IOException {
     return new TargetInstancesSettings.Builder(stub.toBuilder()).build();
@@ -257,6 +269,19 @@ public class TargetInstancesSettings extends ClientSettings<TargetInstancesSetti
             ListTargetInstancesRequest, TargetInstanceList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetSecurityPolicyTargetInstanceRequest, Operation>
+        setSecurityPolicySettings() {
+      return getStubSettingsBuilder().setSecurityPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public OperationCallSettings.Builder<
+            SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings() {
+      return getStubSettingsBuilder().setSecurityPolicyOperationSettings();
     }
 
     @Override

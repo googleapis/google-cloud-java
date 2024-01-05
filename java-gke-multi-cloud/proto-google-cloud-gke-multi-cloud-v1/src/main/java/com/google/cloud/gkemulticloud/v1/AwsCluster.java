@@ -1490,6 +1490,63 @@ public final class AwsCluster extends com.google.protobuf.GeneratedMessageV3
         : monitoringConfig_;
   }
 
+  public static final int BINARY_AUTHORIZATION_FIELD_NUMBER = 22;
+  private com.google.cloud.gkemulticloud.v1.BinaryAuthorization binaryAuthorization_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binary Authorization configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the binaryAuthorization field is set.
+   */
+  @java.lang.Override
+  public boolean hasBinaryAuthorization() {
+    return binaryAuthorization_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binary Authorization configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The binaryAuthorization.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.BinaryAuthorization getBinaryAuthorization() {
+    return binaryAuthorization_ == null
+        ? com.google.cloud.gkemulticloud.v1.BinaryAuthorization.getDefaultInstance()
+        : binaryAuthorization_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binary Authorization configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.BinaryAuthorizationOrBuilder
+      getBinaryAuthorizationOrBuilder() {
+    return binaryAuthorization_ == null
+        ? com.google.cloud.gkemulticloud.v1.BinaryAuthorization.getDefaultInstance()
+        : binaryAuthorization_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1563,6 +1620,9 @@ public final class AwsCluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (monitoringConfig_ != null) {
       output.writeMessage(21, getMonitoringConfig());
+    }
+    if (binaryAuthorization_ != null) {
+      output.writeMessage(22, getBinaryAuthorization());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1642,6 +1702,10 @@ public final class AwsCluster extends com.google.protobuf.GeneratedMessageV3
     if (monitoringConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getMonitoringConfig());
     }
+    if (binaryAuthorization_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(22, getBinaryAuthorization());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1704,6 +1768,10 @@ public final class AwsCluster extends com.google.protobuf.GeneratedMessageV3
     if (hasMonitoringConfig() != other.hasMonitoringConfig()) return false;
     if (hasMonitoringConfig()) {
       if (!getMonitoringConfig().equals(other.getMonitoringConfig())) return false;
+    }
+    if (hasBinaryAuthorization() != other.hasBinaryAuthorization()) return false;
+    if (hasBinaryAuthorization()) {
+      if (!getBinaryAuthorization().equals(other.getBinaryAuthorization())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1777,6 +1845,10 @@ public final class AwsCluster extends com.google.protobuf.GeneratedMessageV3
     if (hasMonitoringConfig()) {
       hash = (37 * hash) + MONITORING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getMonitoringConfig().hashCode();
+    }
+    if (hasBinaryAuthorization()) {
+      hash = (37 * hash) + BINARY_AUTHORIZATION_FIELD_NUMBER;
+      hash = (53 * hash) + getBinaryAuthorization().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1999,6 +2071,11 @@ public final class AwsCluster extends com.google.protobuf.GeneratedMessageV3
         monitoringConfigBuilder_.dispose();
         monitoringConfigBuilder_ = null;
       }
+      binaryAuthorization_ = null;
+      if (binaryAuthorizationBuilder_ != null) {
+        binaryAuthorizationBuilder_.dispose();
+        binaryAuthorizationBuilder_ = null;
+      }
       return this;
     }
 
@@ -2112,6 +2189,12 @@ public final class AwsCluster extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.monitoringConfig_ =
             monitoringConfigBuilder_ == null ? monitoringConfig_ : monitoringConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.binaryAuthorization_ =
+            binaryAuthorizationBuilder_ == null
+                ? binaryAuthorization_
+                : binaryAuthorizationBuilder_.build();
       }
     }
 
@@ -2256,6 +2339,9 @@ public final class AwsCluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasMonitoringConfig()) {
         mergeMonitoringConfig(other.getMonitoringConfig());
+      }
+      if (other.hasBinaryAuthorization()) {
+        mergeBinaryAuthorization(other.getBinaryAuthorization());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2419,6 +2505,13 @@ public final class AwsCluster extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00080000;
                 break;
               } // case 170
+            case 178:
+              {
+                input.readMessage(
+                    getBinaryAuthorizationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5858,6 +5951,213 @@ public final class AwsCluster extends com.google.protobuf.GeneratedMessageV3
         monitoringConfig_ = null;
       }
       return monitoringConfigBuilder_;
+    }
+
+    private com.google.cloud.gkemulticloud.v1.BinaryAuthorization binaryAuthorization_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.BinaryAuthorization,
+            com.google.cloud.gkemulticloud.v1.BinaryAuthorization.Builder,
+            com.google.cloud.gkemulticloud.v1.BinaryAuthorizationOrBuilder>
+        binaryAuthorizationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the binaryAuthorization field is set.
+     */
+    public boolean hasBinaryAuthorization() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The binaryAuthorization.
+     */
+    public com.google.cloud.gkemulticloud.v1.BinaryAuthorization getBinaryAuthorization() {
+      if (binaryAuthorizationBuilder_ == null) {
+        return binaryAuthorization_ == null
+            ? com.google.cloud.gkemulticloud.v1.BinaryAuthorization.getDefaultInstance()
+            : binaryAuthorization_;
+      } else {
+        return binaryAuthorizationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBinaryAuthorization(
+        com.google.cloud.gkemulticloud.v1.BinaryAuthorization value) {
+      if (binaryAuthorizationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        binaryAuthorization_ = value;
+      } else {
+        binaryAuthorizationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBinaryAuthorization(
+        com.google.cloud.gkemulticloud.v1.BinaryAuthorization.Builder builderForValue) {
+      if (binaryAuthorizationBuilder_ == null) {
+        binaryAuthorization_ = builderForValue.build();
+      } else {
+        binaryAuthorizationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBinaryAuthorization(
+        com.google.cloud.gkemulticloud.v1.BinaryAuthorization value) {
+      if (binaryAuthorizationBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && binaryAuthorization_ != null
+            && binaryAuthorization_
+                != com.google.cloud.gkemulticloud.v1.BinaryAuthorization.getDefaultInstance()) {
+          getBinaryAuthorizationBuilder().mergeFrom(value);
+        } else {
+          binaryAuthorization_ = value;
+        }
+      } else {
+        binaryAuthorizationBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBinaryAuthorization() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      binaryAuthorization_ = null;
+      if (binaryAuthorizationBuilder_ != null) {
+        binaryAuthorizationBuilder_.dispose();
+        binaryAuthorizationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.BinaryAuthorization.Builder
+        getBinaryAuthorizationBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getBinaryAuthorizationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.BinaryAuthorizationOrBuilder
+        getBinaryAuthorizationOrBuilder() {
+      if (binaryAuthorizationBuilder_ != null) {
+        return binaryAuthorizationBuilder_.getMessageOrBuilder();
+      } else {
+        return binaryAuthorization_ == null
+            ? com.google.cloud.gkemulticloud.v1.BinaryAuthorization.getDefaultInstance()
+            : binaryAuthorization_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.BinaryAuthorization,
+            com.google.cloud.gkemulticloud.v1.BinaryAuthorization.Builder,
+            com.google.cloud.gkemulticloud.v1.BinaryAuthorizationOrBuilder>
+        getBinaryAuthorizationFieldBuilder() {
+      if (binaryAuthorizationBuilder_ == null) {
+        binaryAuthorizationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.BinaryAuthorization,
+                com.google.cloud.gkemulticloud.v1.BinaryAuthorization.Builder,
+                com.google.cloud.gkemulticloud.v1.BinaryAuthorizationOrBuilder>(
+                getBinaryAuthorization(), getParentForChildren(), isClean());
+        binaryAuthorization_ = null;
+      }
+      return binaryAuthorizationBuilder_;
     }
 
     @java.lang.Override

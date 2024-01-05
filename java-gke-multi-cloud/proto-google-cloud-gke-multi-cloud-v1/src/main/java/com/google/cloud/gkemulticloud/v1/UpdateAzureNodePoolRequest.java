@@ -152,6 +152,8 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
    *  *   `autoscaling.min_node_count`.
    *  *   `autoscaling.max_node_count`.
    *  *   `config.ssh_config.authorized_key`.
+   *  *   `management.auto_repair`.
+   *  *   `management`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -176,6 +178,8 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
    *  *   `autoscaling.min_node_count`.
    *  *   `autoscaling.max_node_count`.
    *  *   `config.ssh_config.authorized_key`.
+   *  *   `management.auto_repair`.
+   *  *   `management`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -200,6 +204,8 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
    *  *   `autoscaling.min_node_count`.
    *  *   `autoscaling.max_node_count`.
    *  *   `config.ssh_config.authorized_key`.
+   *  *   `management.auto_repair`.
+   *  *   `management`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -901,6 +907,8 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      *  *   `autoscaling.min_node_count`.
      *  *   `autoscaling.max_node_count`.
      *  *   `config.ssh_config.authorized_key`.
+     *  *   `management.auto_repair`.
+     *  *   `management`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -924,6 +932,8 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      *  *   `autoscaling.min_node_count`.
      *  *   `autoscaling.max_node_count`.
      *  *   `config.ssh_config.authorized_key`.
+     *  *   `management.auto_repair`.
+     *  *   `management`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -953,6 +963,8 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      *  *   `autoscaling.min_node_count`.
      *  *   `autoscaling.max_node_count`.
      *  *   `config.ssh_config.authorized_key`.
+     *  *   `management.auto_repair`.
+     *  *   `management`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -984,6 +996,8 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      *  *   `autoscaling.min_node_count`.
      *  *   `autoscaling.max_node_count`.
      *  *   `config.ssh_config.authorized_key`.
+     *  *   `management.auto_repair`.
+     *  *   `management`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1012,6 +1026,8 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      *  *   `autoscaling.min_node_count`.
      *  *   `autoscaling.max_node_count`.
      *  *   `config.ssh_config.authorized_key`.
+     *  *   `management.auto_repair`.
+     *  *   `management`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1046,6 +1062,8 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      *  *   `autoscaling.min_node_count`.
      *  *   `autoscaling.max_node_count`.
      *  *   `config.ssh_config.authorized_key`.
+     *  *   `management.auto_repair`.
+     *  *   `management`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1074,6 +1092,8 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      *  *   `autoscaling.min_node_count`.
      *  *   `autoscaling.max_node_count`.
      *  *   `config.ssh_config.authorized_key`.
+     *  *   `management.auto_repair`.
+     *  *   `management`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1097,6 +1117,8 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      *  *   `autoscaling.min_node_count`.
      *  *   `autoscaling.max_node_count`.
      *  *   `config.ssh_config.authorized_key`.
+     *  *   `management.auto_repair`.
+     *  *   `management`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1124,6 +1146,8 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      *  *   `autoscaling.min_node_count`.
      *  *   `autoscaling.max_node_count`.
      *  *   `config.ssh_config.authorized_key`.
+     *  *   `management.auto_repair`.
+     *  *   `management`.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];

@@ -104,7 +104,10 @@ import org.threeten.bp.Duration;
  * CloudChannelReportsServiceStubSettings cloudChannelReportsServiceSettings =
  *     cloudChannelReportsServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class CloudChannelReportsServiceStubSettings
     extends StubSettings<CloudChannelReportsServiceStubSettings> {
@@ -235,7 +238,12 @@ public class CloudChannelReportsServiceStubSettings
             }
           };
 
-  /** Returns the object with the settings used for calls to runReportJob. */
+  /**
+   * Returns the object with the settings used for calls to runReportJob.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<RunReportJobRequest, Operation> runReportJobSettings() {
     return runReportJobSettings;
   }
@@ -246,14 +254,24 @@ public class CloudChannelReportsServiceStubSettings
     return runReportJobOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to fetchReportResults. */
+  /**
+   * Returns the object with the settings used for calls to fetchReportResults.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           FetchReportResultsRequest, FetchReportResultsResponse, FetchReportResultsPagedResponse>
       fetchReportResultsSettings() {
     return fetchReportResultsSettings;
   }
 
-  /** Returns the object with the settings used for calls to listReports. */
+  /**
+   * Returns the object with the settings used for calls to listReports.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<ListReportsRequest, ListReportsResponse, ListReportsPagedResponse>
       listReportsSettings() {
     return listReportsSettings;
@@ -520,7 +538,12 @@ public class CloudChannelReportsServiceStubSettings
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to runReportJob. */
+    /**
+     * Returns the builder for the settings used for calls to runReportJob.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<RunReportJobRequest, Operation> runReportJobSettings() {
       return runReportJobSettings;
     }
@@ -534,14 +557,24 @@ public class CloudChannelReportsServiceStubSettings
       return runReportJobOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to fetchReportResults. */
+    /**
+     * Returns the builder for the settings used for calls to fetchReportResults.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             FetchReportResultsRequest, FetchReportResultsResponse, FetchReportResultsPagedResponse>
         fetchReportResultsSettings() {
       return fetchReportResultsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listReports. */
+    /**
+     * Returns the builder for the settings used for calls to listReports.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListReportsRequest, ListReportsResponse, ListReportsPagedResponse>
         listReportsSettings() {

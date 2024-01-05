@@ -21,6 +21,7 @@ import static com.google.cloud.compute.v1.PublicAdvertisedPrefixesClient.ListPag
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AnnouncePublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.DeletePublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.GetPublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.InsertPublicAdvertisedPrefixeRequest;
@@ -29,6 +30,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchPublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.PublicAdvertisedPrefix;
 import com.google.cloud.compute.v1.PublicAdvertisedPrefixList;
+import com.google.cloud.compute.v1.WithdrawPublicAdvertisedPrefixeRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -39,6 +41,15 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class PublicAdvertisedPrefixesStub implements BackgroundResource {
+
+  public OperationCallable<AnnouncePublicAdvertisedPrefixeRequest, Operation, Operation>
+      announceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: announceOperationCallable()");
+  }
+
+  public UnaryCallable<AnnouncePublicAdvertisedPrefixeRequest, Operation> announceCallable() {
+    throw new UnsupportedOperationException("Not implemented: announceCallable()");
+  }
 
   public OperationCallable<DeletePublicAdvertisedPrefixeRequest, Operation, Operation>
       deleteOperationCallable() {
@@ -78,6 +89,15 @@ public abstract class PublicAdvertisedPrefixesStub implements BackgroundResource
 
   public UnaryCallable<PatchPublicAdvertisedPrefixeRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<WithdrawPublicAdvertisedPrefixeRequest, Operation, Operation>
+      withdrawOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: withdrawOperationCallable()");
+  }
+
+  public UnaryCallable<WithdrawPublicAdvertisedPrefixeRequest, Operation> withdrawCallable() {
+    throw new UnsupportedOperationException("Not implemented: withdrawCallable()");
   }
 
   @Override

@@ -143,7 +143,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of the full names of the assets to receive updates. You must specify
    * either or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed. For
+   * specified asset_names or asset_types are exported to the feed. For
    * example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
@@ -164,7 +164,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of the full names of the assets to receive updates. You must specify
    * either or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed. For
+   * specified asset_names or asset_types are exported to the feed. For
    * example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
@@ -185,7 +185,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of the full names of the assets to receive updates. You must specify
    * either or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed. For
+   * specified asset_names or asset_types are exported to the feed. For
    * example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
@@ -207,7 +207,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of the full names of the assets to receive updates. You must specify
    * either or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed. For
+   * specified asset_names or asset_types are exported to the feed. For
    * example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
@@ -235,7 +235,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed.
+   * specified asset_names or asset_types are exported to the feed.
    * For example:
    * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
@@ -255,7 +255,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed.
+   * specified asset_names or asset_types are exported to the feed.
    * For example:
    * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
@@ -275,7 +275,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed.
+   * specified asset_names or asset_types are exported to the feed.
    * For example:
    * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
@@ -296,7 +296,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed.
+   * specified asset_names or asset_types are exported to the feed.
    * For example:
    * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
@@ -1035,7 +1035,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
+     * specified asset_names or asset_types are exported to the feed. For
      * example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
@@ -1057,7 +1057,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
+     * specified asset_names or asset_types are exported to the feed. For
      * example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
@@ -1078,7 +1078,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
+     * specified asset_names or asset_types are exported to the feed. For
      * example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
@@ -1100,7 +1100,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
+     * specified asset_names or asset_types are exported to the feed. For
      * example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
@@ -1122,7 +1122,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
+     * specified asset_names or asset_types are exported to the feed. For
      * example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
@@ -1152,7 +1152,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
+     * specified asset_names or asset_types are exported to the feed. For
      * example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
@@ -1181,7 +1181,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
+     * specified asset_names or asset_types are exported to the feed. For
      * example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
@@ -1207,7 +1207,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
+     * specified asset_names or asset_types are exported to the feed. For
      * example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
@@ -1232,7 +1232,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
+     * specified asset_names or asset_types are exported to the feed. For
      * example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
@@ -1272,7 +1272,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
+     * specified asset_names or asset_types are exported to the feed.
      * For example:
      * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
@@ -1293,7 +1293,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
+     * specified asset_names or asset_types are exported to the feed.
      * For example:
      * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
@@ -1313,7 +1313,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
+     * specified asset_names or asset_types are exported to the feed.
      * For example:
      * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
@@ -1334,7 +1334,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
+     * specified asset_names or asset_types are exported to the feed.
      * For example:
      * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
@@ -1355,7 +1355,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
+     * specified asset_names or asset_types are exported to the feed.
      * For example:
      * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
@@ -1384,7 +1384,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
+     * specified asset_names or asset_types are exported to the feed.
      * For example:
      * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
@@ -1412,7 +1412,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
+     * specified asset_names or asset_types are exported to the feed.
      * For example:
      * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
@@ -1437,7 +1437,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
+     * specified asset_names or asset_types are exported to the feed.
      * For example:
      * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
@@ -1461,7 +1461,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
+     * specified asset_names or asset_types are exported to the feed.
      * For example:
      * "compute.googleapis.com/Disk" See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)

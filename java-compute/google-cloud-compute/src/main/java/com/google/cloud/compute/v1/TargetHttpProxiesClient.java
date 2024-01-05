@@ -219,6 +219,7 @@ public class TargetHttpProxiesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, TargetHttpProxiesScopedList> element :
    *       targetHttpProxiesClient.aggregatedList(request).iterateAll()) {
@@ -258,6 +259,7 @@ public class TargetHttpProxiesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, TargetHttpProxiesScopedList>> future =
    *       targetHttpProxiesClient.aggregatedListPagedCallable().futureCall(request);
@@ -296,6 +298,7 @@ public class TargetHttpProxiesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     TargetHttpProxyAggregatedList response =

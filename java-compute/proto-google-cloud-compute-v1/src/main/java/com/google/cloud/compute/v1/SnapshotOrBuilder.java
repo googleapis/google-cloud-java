@@ -278,6 +278,58 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
+   * [Output Only] A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
+   */
+  java.util.List<com.google.cloud.compute.v1.GuestOsFeature> getGuestOsFeaturesList();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
+   */
+  com.google.cloud.compute.v1.GuestOsFeature getGuestOsFeatures(int index);
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
+   */
+  int getGuestOsFeaturesCount();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.GuestOsFeatureOrBuilder>
+      getGuestOsFeaturesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
+   */
+  com.google.cloud.compute.v1.GuestOsFeatureOrBuilder getGuestOsFeaturesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *
@@ -814,6 +866,43 @@ public interface SnapshotOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getSourceDiskEncryptionKeyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The source disk whose recovery checkpoint will be used to create this snapshot.
+   * </pre>
+   *
+   * <code>optional string source_disk_for_recovery_checkpoint = 359837950;</code>
+   *
+   * @return Whether the sourceDiskForRecoveryCheckpoint field is set.
+   */
+  boolean hasSourceDiskForRecoveryCheckpoint();
+  /**
+   *
+   *
+   * <pre>
+   * The source disk whose recovery checkpoint will be used to create this snapshot.
+   * </pre>
+   *
+   * <code>optional string source_disk_for_recovery_checkpoint = 359837950;</code>
+   *
+   * @return The sourceDiskForRecoveryCheckpoint.
+   */
+  java.lang.String getSourceDiskForRecoveryCheckpoint();
+  /**
+   *
+   *
+   * <pre>
+   * The source disk whose recovery checkpoint will be used to create this snapshot.
+   * </pre>
+   *
+   * <code>optional string source_disk_for_recovery_checkpoint = 359837950;</code>
+   *
+   * @return The bytes for sourceDiskForRecoveryCheckpoint.
+   */
+  com.google.protobuf.ByteString getSourceDiskForRecoveryCheckpointBytes();
 
   /**
    *

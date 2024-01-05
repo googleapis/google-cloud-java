@@ -354,6 +354,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, SecurityPoliciesScopedList> element :
    *       securityPoliciesClient.aggregatedList(request).iterateAll()) {
@@ -393,6 +394,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, SecurityPoliciesScopedList>> future =
    *       securityPoliciesClient.aggregatedListPagedCallable().futureCall(request);
@@ -431,6 +433,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     SecurityPoliciesAggregatedList response =
@@ -1195,6 +1198,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
    *           .build();
    *   Operation response = securityPoliciesClient.patchAsync(request).get();
    * }
@@ -1232,6 +1236,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
    *           .build();
    *   OperationFuture<Operation, Operation> future =
    *       securityPoliciesClient.patchOperationCallable().futureCall(request);
@@ -1267,6 +1272,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
    *           .build();
    *   ApiFuture<Operation> future = securityPoliciesClient.patchCallable().futureCall(request);
    *   // Do something.
@@ -1338,6 +1344,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
    *           .setValidateOnly(true)
    *           .build();
    *   Operation response = securityPoliciesClient.patchRuleAsync(request).get();
@@ -1374,6 +1381,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
    *           .setValidateOnly(true)
    *           .build();
    *   OperationFuture<Operation, Operation> future =
@@ -1408,6 +1416,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
    *           .setValidateOnly(true)
    *           .build();
    *   ApiFuture<Operation> future = securityPoliciesClient.patchRuleCallable().futureCall(request);

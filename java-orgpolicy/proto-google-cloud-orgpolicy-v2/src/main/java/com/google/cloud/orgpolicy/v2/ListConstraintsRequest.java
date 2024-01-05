@@ -72,8 +72,9 @@ public final class ListConstraintsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The Cloud resource that parents the constraint. Must be in one of
-   * the following forms:
+   * Required. The Google Cloud resource that parents the constraint. Must be in
+   * one of the following forms:
+   *
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`
@@ -102,8 +103,9 @@ public final class ListConstraintsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The Cloud resource that parents the constraint. Must be in one of
-   * the following forms:
+   * Required. The Google Cloud resource that parents the constraint. Must be in
+   * one of the following forms:
+   *
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`
@@ -596,8 +598,9 @@ public final class ListConstraintsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The Cloud resource that parents the constraint. Must be in one of
-     * the following forms:
+     * Required. The Google Cloud resource that parents the constraint. Must be in
+     * one of the following forms:
+     *
      * * `projects/{project_number}`
      * * `projects/{project_id}`
      * * `folders/{folder_id}`
@@ -625,8 +628,9 @@ public final class ListConstraintsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The Cloud resource that parents the constraint. Must be in one of
-     * the following forms:
+     * Required. The Google Cloud resource that parents the constraint. Must be in
+     * one of the following forms:
+     *
      * * `projects/{project_number}`
      * * `projects/{project_id}`
      * * `folders/{folder_id}`
@@ -654,8 +658,9 @@ public final class ListConstraintsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The Cloud resource that parents the constraint. Must be in one of
-     * the following forms:
+     * Required. The Google Cloud resource that parents the constraint. Must be in
+     * one of the following forms:
+     *
      * * `projects/{project_number}`
      * * `projects/{project_id}`
      * * `folders/{folder_id}`
@@ -682,8 +687,9 @@ public final class ListConstraintsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The Cloud resource that parents the constraint. Must be in one of
-     * the following forms:
+     * Required. The Google Cloud resource that parents the constraint. Must be in
+     * one of the following forms:
+     *
      * * `projects/{project_number}`
      * * `projects/{project_id}`
      * * `folders/{folder_id}`
@@ -706,8 +712,9 @@ public final class ListConstraintsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The Cloud resource that parents the constraint. Must be in one of
-     * the following forms:
+     * Required. The Google Cloud resource that parents the constraint. Must be in
+     * one of the following forms:
+     *
      * * `projects/{project_number}`
      * * `projects/{project_id}`
      * * `folders/{folder_id}`

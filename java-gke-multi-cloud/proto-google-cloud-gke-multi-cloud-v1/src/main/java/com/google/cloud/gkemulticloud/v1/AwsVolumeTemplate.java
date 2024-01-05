@@ -310,6 +310,27 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     return iops_;
   }
 
+  public static final int THROUGHPUT_FIELD_NUMBER = 5;
+  private int throughput_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The throughput that the volume supports, in MiB/s. Only valid if
+   * volume_type is GP3.
+   *
+   * If the volume_type is GP3 and this is not speficied, it defaults to 125.
+   * </pre>
+   *
+   * <code>int32 throughput = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The throughput.
+   */
+  @java.lang.Override
+  public int getThroughput() {
+    return throughput_;
+  }
+
   public static final int KMS_KEY_ARN_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -397,6 +418,9 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyArn_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, kmsKeyArn_);
     }
+    if (throughput_ != 0) {
+      output.writeInt32(5, throughput_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -420,6 +444,9 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyArn_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, kmsKeyArn_);
     }
+    if (throughput_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, throughput_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -439,6 +466,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     if (getSizeGib() != other.getSizeGib()) return false;
     if (volumeType_ != other.volumeType_) return false;
     if (getIops() != other.getIops()) return false;
+    if (getThroughput() != other.getThroughput()) return false;
     if (!getKmsKeyArn().equals(other.getKmsKeyArn())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -457,6 +485,8 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + volumeType_;
     hash = (37 * hash) + IOPS_FIELD_NUMBER;
     hash = (53 * hash) + getIops();
+    hash = (37 * hash) + THROUGHPUT_FIELD_NUMBER;
+    hash = (53 * hash) + getThroughput();
     hash = (37 * hash) + KMS_KEY_ARN_FIELD_NUMBER;
     hash = (53 * hash) + getKmsKeyArn().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -601,6 +631,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       sizeGib_ = 0;
       volumeType_ = 0;
       iops_ = 0;
+      throughput_ = 0;
       kmsKeyArn_ = "";
       return this;
     }
@@ -648,6 +679,9 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
         result.iops_ = iops_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.throughput_ = throughput_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.kmsKeyArn_ = kmsKeyArn_;
       }
     }
@@ -707,9 +741,12 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       if (other.getIops() != 0) {
         setIops(other.getIops());
       }
+      if (other.getThroughput() != 0) {
+        setThroughput(other.getThroughput());
+      }
       if (!other.getKmsKeyArn().isEmpty()) {
         kmsKeyArn_ = other.kmsKeyArn_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -759,9 +796,15 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
             case 34:
               {
                 kmsKeyArn_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
+            case 40:
+              {
+                throughput_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1012,6 +1055,68 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int throughput_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The throughput that the volume supports, in MiB/s. Only valid if
+     * volume_type is GP3.
+     *
+     * If the volume_type is GP3 and this is not speficied, it defaults to 125.
+     * </pre>
+     *
+     * <code>int32 throughput = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The throughput.
+     */
+    @java.lang.Override
+    public int getThroughput() {
+      return throughput_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The throughput that the volume supports, in MiB/s. Only valid if
+     * volume_type is GP3.
+     *
+     * If the volume_type is GP3 and this is not speficied, it defaults to 125.
+     * </pre>
+     *
+     * <code>int32 throughput = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The throughput to set.
+     * @return This builder for chaining.
+     */
+    public Builder setThroughput(int value) {
+
+      throughput_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The throughput that the volume supports, in MiB/s. Only valid if
+     * volume_type is GP3.
+     *
+     * If the volume_type is GP3 and this is not speficied, it defaults to 125.
+     * </pre>
+     *
+     * <code>int32 throughput = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearThroughput() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      throughput_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object kmsKeyArn_ = "";
     /**
      *
@@ -1086,7 +1191,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       kmsKeyArn_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1107,7 +1212,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearKmsKeyArn() {
       kmsKeyArn_ = getDefaultInstance().getKmsKeyArn();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1133,7 +1238,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       kmsKeyArn_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
