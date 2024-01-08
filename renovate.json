@@ -29,7 +29,7 @@
         "^owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native.*.cfg$"
       ],
       "matchStrings": ["value: \"gcr.io/cloud-devrel-public-resources/graalvm_sdk_platform.*:(?<currentValue>.*?)\""],
-      "depNameTemplate": "com.google.cloud:google-cloud-shared-dependencies",
+      "depNameTemplate": "com.google.cloud:sdk-platform-java-config",
       "datasourceTemplate": "maven"
     },
     {
