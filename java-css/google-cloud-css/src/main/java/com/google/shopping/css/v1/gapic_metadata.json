@@ -1,0 +1,78 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.shopping.css.v1",
+  "libraryPackage": "com.google.shopping.css.v1",
+  "services": {
+    "AccountsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AccountsServiceClient",
+          "rpcs": {
+            "GetAccount": {
+              "methods": ["getAccount", "getAccount", "getAccount", "getAccountCallable"]
+            },
+            "ListChildAccounts": {
+              "methods": ["listChildAccounts", "listChildAccounts", "listChildAccounts", "listChildAccountsPagedCallable", "listChildAccountsCallable"]
+            },
+            "UpdateLabels": {
+              "methods": ["updateLabels", "updateLabels", "updateLabels", "updateLabelsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "AccountLabelsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AccountLabelsServiceClient",
+          "rpcs": {
+            "CreateAccountLabel": {
+              "methods": ["createAccountLabel", "createAccountLabel", "createAccountLabel", "createAccountLabelCallable"]
+            },
+            "DeleteAccountLabel": {
+              "methods": ["deleteAccountLabel", "deleteAccountLabel", "deleteAccountLabel", "deleteAccountLabelCallable"]
+            },
+            "ListAccountLabels": {
+              "methods": ["listAccountLabels", "listAccountLabels", "listAccountLabels", "listAccountLabelsPagedCallable", "listAccountLabelsCallable"]
+            },
+            "UpdateAccountLabel": {
+              "methods": ["updateAccountLabel", "updateAccountLabel", "updateAccountLabelCallable"]
+            }
+          }
+        }
+      }
+    },
+    "CssProductInputsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CssProductInputsServiceClient",
+          "rpcs": {
+            "DeleteCssProductInput": {
+              "methods": ["deleteCssProductInput", "deleteCssProductInput", "deleteCssProductInput", "deleteCssProductInputCallable"]
+            },
+            "InsertCssProductInput": {
+              "methods": ["insertCssProductInput", "insertCssProductInputCallable"]
+            }
+          }
+        }
+      }
+    },
+    "CssProductsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CssProductsServiceClient",
+          "rpcs": {
+            "GetCssProduct": {
+              "methods": ["getCssProduct", "getCssProduct", "getCssProduct", "getCssProductCallable"]
+            },
+            "ListCssProducts": {
+              "methods": ["listCssProducts", "listCssProducts", "listCssProducts", "listCssProductsPagedCallable", "listCssProductsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
