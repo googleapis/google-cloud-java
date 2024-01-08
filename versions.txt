@@ -713,3 +713,6 @@ grpc-google-cloud-edgenetwork-v1:0.0.0:0.0.1-SNAPSHOT
 google-cloud-cloudquotas:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-cloudquotas-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-cloudquotas-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-meet:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-meet-v2beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-meet-v2beta:0.0.0:0.0.1-SNAPSHOT
