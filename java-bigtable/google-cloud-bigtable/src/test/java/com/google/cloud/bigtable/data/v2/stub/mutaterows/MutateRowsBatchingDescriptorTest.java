@@ -138,7 +138,7 @@ public class MutateRowsBatchingDescriptorTest {
 
     // Threw an exception at 1st and 3rd entry
     MutateRowsException serverError =
-        new MutateRowsException(
+        MutateRowsException.create(
             null,
             ImmutableList.of(
                 MutateRowsException.FailedMutation.create(

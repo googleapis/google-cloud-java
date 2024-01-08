@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.models;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.auto.value.AutoValue;
 import com.google.bigtable.v2.MutateRowsRequest;
@@ -53,14 +54,34 @@ public final class MutateRowsException extends ApiException {
    * applications.
    */
   @InternalApi
-  public MutateRowsException(
+  public static MutateRowsException create(
       @Nullable Throwable rpcError,
       @Nonnull List<FailedMutation> failedMutations,
       boolean retryable) {
-    super("Some mutations failed to apply", rpcError, LOCAL_STATUS, retryable);
+    ErrorDetails errorDetails = null;
+    if (rpcError instanceof ApiException) {
+      errorDetails = ((ApiException) rpcError).getErrorDetails();
+    }
+
+    return new MutateRowsException(rpcError, failedMutations, retryable, errorDetails);
+  }
+
+  private MutateRowsException(
+      @Nullable Throwable rpcError,
+      @Nonnull List<FailedMutation> failedMutations,
+      boolean retryable,
+      @Nullable ErrorDetails errorDetails) {
+    super(rpcError, LOCAL_STATUS, retryable, errorDetails);
     Preconditions.checkNotNull(failedMutations);
     Preconditions.checkArgument(!failedMutations.isEmpty(), "failedMutations can't be empty");
     this.failedMutations = failedMutations;
+  }
+
+  // TODO: remove this after we add a ctor in gax to pass in a Throwable, a message and error
+  // details.
+  @Override
+  public String getMessage() {
+    return "Some mutations failed to apply";
   }
 
   /**

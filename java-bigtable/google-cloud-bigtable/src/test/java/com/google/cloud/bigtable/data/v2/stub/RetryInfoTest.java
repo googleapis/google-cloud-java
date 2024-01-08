@@ -15,13 +15,13 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
-import static com.google.cloud.bigtable.gaxx.retrying.RetryInfoRetryAlgorithm.RETRY_INFO_KEY;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.InternalException;
 import com.google.api.gax.rpc.UnavailableException;
@@ -55,7 +55,9 @@ import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.common.base.Stopwatch;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Queues;
+import com.google.protobuf.Any;
 import com.google.rpc.RetryInfo;
 import io.grpc.Metadata;
 import io.grpc.Status;
@@ -77,13 +79,16 @@ public class RetryInfoTest {
 
   @Rule public GrpcServerRule serverRule = new GrpcServerRule();
 
+  private static final Metadata.Key<byte[]> ERROR_DETAILS_KEY =
+      Metadata.Key.of("grpc-status-details-bin", Metadata.BINARY_BYTE_MARSHALLER);
+
   private FakeBigtableService service;
   private BigtableDataClient client;
   private BigtableDataSettings.Builder settings;
 
   private AtomicInteger attemptCounter = new AtomicInteger();
   private com.google.protobuf.Duration delay =
-      com.google.protobuf.Duration.newBuilder().setSeconds(1).setNanos(0).build();
+      com.google.protobuf.Duration.newBuilder().setSeconds(2).setNanos(0).build();
 
   @Before
   public void setUp() throws IOException {
@@ -366,13 +371,18 @@ public class RetryInfoTest {
   private void enqueueRetryableExceptionWithDelay(com.google.protobuf.Duration delay) {
     Metadata trailers = new Metadata();
     RetryInfo retryInfo = RetryInfo.newBuilder().setRetryDelay(delay).build();
-    trailers.put(RETRY_INFO_KEY, retryInfo);
+    ErrorDetails errorDetails =
+        ErrorDetails.builder().setRawErrorMessages(ImmutableList.of(Any.pack(retryInfo))).build();
+    byte[] status =
+        com.google.rpc.Status.newBuilder().addDetails(Any.pack(retryInfo)).build().toByteArray();
+    trailers.put(ERROR_DETAILS_KEY, status);
 
     ApiException exception =
         new UnavailableException(
             new StatusRuntimeException(Status.UNAVAILABLE, trailers),
             GrpcStatusCode.of(Status.Code.UNAVAILABLE),
-            true);
+            true,
+            errorDetails);
 
     service.expectations.add(exception);
   }
@@ -380,13 +390,18 @@ public class RetryInfoTest {
   private ApiException enqueueNonRetryableExceptionWithDelay(com.google.protobuf.Duration delay) {
     Metadata trailers = new Metadata();
     RetryInfo retryInfo = RetryInfo.newBuilder().setRetryDelay(delay).build();
-    trailers.put(RETRY_INFO_KEY, retryInfo);
+    ErrorDetails errorDetails =
+        ErrorDetails.builder().setRawErrorMessages(ImmutableList.of(Any.pack(retryInfo))).build();
+    byte[] status =
+        com.google.rpc.Status.newBuilder().addDetails(Any.pack(retryInfo)).build().toByteArray();
+    trailers.put(ERROR_DETAILS_KEY, status);
 
     ApiException exception =
         new InternalException(
             new StatusRuntimeException(Status.INTERNAL, trailers),
             GrpcStatusCode.of(Status.Code.INTERNAL),
-            false);
+            false,
+            errorDetails);
 
     service.expectations.add(exception);
 

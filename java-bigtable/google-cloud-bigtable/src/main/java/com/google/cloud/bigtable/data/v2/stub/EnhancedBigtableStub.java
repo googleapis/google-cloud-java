@@ -784,7 +784,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
         clientContext.getDefaultCallContext(),
         withBigtableTracer,
         retryingExecutor,
-        settings.bulkMutateRowsSettings().getRetryableCodes());
+        settings.bulkMutateRowsSettings().getRetryableCodes(),
+        retryAlgorithm);
   }
 
   /**

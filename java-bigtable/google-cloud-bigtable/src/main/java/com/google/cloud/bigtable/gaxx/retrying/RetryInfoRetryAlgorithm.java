@@ -20,12 +20,8 @@ import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetryingContext;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.ApiException;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.protobuf.util.Durations;
 import com.google.rpc.RetryInfo;
-import io.grpc.Metadata;
-import io.grpc.Status;
-import io.grpc.protobuf.ProtoUtils;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.threeten.bp.Duration;
 
@@ -37,10 +33,6 @@ import org.threeten.bp.Duration;
 @InternalApi
 public class RetryInfoRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<ResponseT> {
 
-  @VisibleForTesting
-  public static final Metadata.Key<RetryInfo> RETRY_INFO_KEY =
-      ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
-
   @Override
   public TimedAttemptSettings createNextAttempt(
       Throwable prevThrowable, ResponseT prevResponse, TimedAttemptSettings prevSettings) {
@@ -50,6 +42,7 @@ public class RetryInfoRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorith
           .toBuilder()
           .setRandomizedRetryDelay(retryDelay)
           .setAttemptCount(prevSettings.getAttemptCount() + 1)
+          .setOverallAttemptCount(prevSettings.getAttemptCount() + 1)
           .build();
     }
     return null;
@@ -93,17 +86,17 @@ public class RetryInfoRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorith
     if (throwable == null) {
       return null;
     }
-    Metadata trailers = Status.trailersFromThrowable(throwable);
-    if (trailers == null) {
+    if (!(throwable instanceof ApiException)) {
       return null;
     }
-    RetryInfo retryInfo = trailers.get(RETRY_INFO_KEY);
-    if (retryInfo == null) {
+    ApiException exception = (ApiException) throwable;
+    if (exception.getErrorDetails() == null) {
       return null;
     }
-    if (!retryInfo.hasRetryDelay()) {
+    if (exception.getErrorDetails().getRetryInfo() == null) {
       return null;
     }
+    RetryInfo retryInfo = exception.getErrorDetails().getRetryInfo();
     return Duration.ofMillis(Durations.toMillis(retryInfo.getRetryDelay()));
   }
 }
