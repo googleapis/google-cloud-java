@@ -298,6 +298,16 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>DELETE = 1;</code>
      */
     DELETE(1),
+    /**
+     *
+     *
+     * <pre>
+     * The resource creation operation.
+     * </pre>
+     *
+     * <code>CREATE = 2;</code>
+     */
+    CREATE(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -321,6 +331,16 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>DELETE = 1;</code>
      */
     public static final int DELETE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The resource creation operation.
+     * </pre>
+     *
+     * <code>CREATE = 2;</code>
+     */
+    public static final int CREATE_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -350,6 +370,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           return TYPE_UNSPECIFIED;
         case 1:
           return DELETE;
+        case 2:
+          return CREATE;
         default:
           return null;
       }

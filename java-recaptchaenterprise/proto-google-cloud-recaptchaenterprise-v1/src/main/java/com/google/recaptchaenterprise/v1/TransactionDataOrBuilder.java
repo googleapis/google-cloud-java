@@ -73,7 +73,7 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * The payment method for the transaction. The allowed values are:
+   * Optional. The payment method for the transaction. The allowed values are:
    *
    * * credit-card
    * * debit-card
@@ -84,7 +84,7 @@ public interface TransactionDataOrBuilder
    * custom-crypto)
    * </pre>
    *
-   * <code>string payment_method = 1;</code>
+   * <code>string payment_method = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The paymentMethod.
    */
@@ -93,7 +93,7 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * The payment method for the transaction. The allowed values are:
+   * Optional. The payment method for the transaction. The allowed values are:
    *
    * * credit-card
    * * debit-card
@@ -104,7 +104,7 @@ public interface TransactionDataOrBuilder
    * custom-crypto)
    * </pre>
    *
-   * <code>string payment_method = 1;</code>
+   * <code>string payment_method = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for paymentMethod.
    */
@@ -114,11 +114,11 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * The Bank Identification Number - generally the first 6 or 8 digits of the
-   * card.
+   * Optional. The Bank Identification Number - generally the first 6 or 8
+   * digits of the card.
    * </pre>
    *
-   * <code>string card_bin = 2;</code>
+   * <code>string card_bin = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The cardBin.
    */
@@ -127,11 +127,11 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * The Bank Identification Number - generally the first 6 or 8 digits of the
-   * card.
+   * Optional. The Bank Identification Number - generally the first 6 or 8
+   * digits of the card.
    * </pre>
    *
-   * <code>string card_bin = 2;</code>
+   * <code>string card_bin = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for cardBin.
    */
@@ -141,10 +141,10 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * The last four digits of the card.
+   * Optional. The last four digits of the card.
    * </pre>
    *
-   * <code>string card_last_four = 3;</code>
+   * <code>string card_last_four = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The cardLastFour.
    */
@@ -153,10 +153,10 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * The last four digits of the card.
+   * Optional. The last four digits of the card.
    * </pre>
    *
-   * <code>string card_last_four = 3;</code>
+   * <code>string card_last_four = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for cardLastFour.
    */
@@ -166,10 +166,10 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * The currency code in ISO-4217 format.
+   * Optional. The currency code in ISO-4217 format.
    * </pre>
    *
-   * <code>string currency_code = 4;</code>
+   * <code>string currency_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The currencyCode.
    */
@@ -178,10 +178,10 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * The currency code in ISO-4217 format.
+   * Optional. The currency code in ISO-4217 format.
    * </pre>
    *
-   * <code>string currency_code = 4;</code>
+   * <code>string currency_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for currencyCode.
    */
@@ -191,10 +191,10 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * The decimal value of the transaction in the specified currency.
+   * Optional. The decimal value of the transaction in the specified currency.
    * </pre>
    *
-   * <code>double value = 5;</code>
+   * <code>double value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The value.
    */
@@ -204,10 +204,11 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * The value of shipping in the specified currency. 0 for free or no shipping.
+   * Optional. The value of shipping in the specified currency. 0 for free or no
+   * shipping.
    * </pre>
    *
-   * <code>double shipping_value = 12;</code>
+   * <code>double shipping_value = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The shippingValue.
    */
@@ -217,10 +218,13 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Destination address if this transaction involves shipping a physical item.
+   * Optional. Destination address if this transaction involves shipping a
+   * physical item.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the shippingAddress field is set.
    */
@@ -229,10 +233,13 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Destination address if this transaction involves shipping a physical item.
+   * Optional. Destination address if this transaction involves shipping a
+   * physical item.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The shippingAddress.
    */
@@ -241,10 +248,13 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Destination address if this transaction involves shipping a physical item.
+   * Optional. Destination address if this transaction involves shipping a
+   * physical item.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.Address shipping_address = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.recaptchaenterprise.v1.TransactionData.AddressOrBuilder getShippingAddressOrBuilder();
 
@@ -252,10 +262,12 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Address associated with the payment method when applicable.
+   * Optional. Address associated with the payment method when applicable.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the billingAddress field is set.
    */
@@ -264,10 +276,12 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Address associated with the payment method when applicable.
+   * Optional. Address associated with the payment method when applicable.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The billingAddress.
    */
@@ -276,10 +290,12 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Address associated with the payment method when applicable.
+   * Optional. Address associated with the payment method when applicable.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.Address billing_address = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.recaptchaenterprise.v1.TransactionData.AddressOrBuilder getBillingAddressOrBuilder();
 
@@ -287,10 +303,12 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Information about the user paying/initiating the transaction.
+   * Optional. Information about the user paying/initiating the transaction.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the user field is set.
    */
@@ -299,10 +317,12 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Information about the user paying/initiating the transaction.
+   * Optional. Information about the user paying/initiating the transaction.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The user.
    */
@@ -311,10 +331,12 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Information about the user paying/initiating the transaction.
+   * Optional. Information about the user paying/initiating the transaction.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.User user = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.recaptchaenterprise.v1.TransactionData.UserOrBuilder getUserOrBuilder();
 
@@ -322,40 +344,48 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Information about the user or users fulfilling the transaction.
+   * Optional. Information about the user or users fulfilling the transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.recaptchaenterprise.v1.TransactionData.User> getMerchantsList();
   /**
    *
    *
    * <pre>
-   * Information about the user or users fulfilling the transaction.
+   * Optional. Information about the user or users fulfilling the transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.recaptchaenterprise.v1.TransactionData.User getMerchants(int index);
   /**
    *
    *
    * <pre>
-   * Information about the user or users fulfilling the transaction.
+   * Optional. Information about the user or users fulfilling the transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getMerchantsCount();
   /**
    *
    *
    * <pre>
-   * Information about the user or users fulfilling the transaction.
+   * Optional. Information about the user or users fulfilling the transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.recaptchaenterprise.v1.TransactionData.UserOrBuilder>
       getMerchantsOrBuilderList();
@@ -363,10 +393,12 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Information about the user or users fulfilling the transaction.
+   * Optional. Information about the user or users fulfilling the transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.User merchants = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.recaptchaenterprise.v1.TransactionData.UserOrBuilder getMerchantsOrBuilder(int index);
 
@@ -374,40 +406,48 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Items purchased in this transaction.
+   * Optional. Items purchased in this transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.recaptchaenterprise.v1.TransactionData.Item> getItemsList();
   /**
    *
    *
    * <pre>
-   * Items purchased in this transaction.
+   * Optional. Items purchased in this transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.recaptchaenterprise.v1.TransactionData.Item getItems(int index);
   /**
    *
    *
    * <pre>
-   * Items purchased in this transaction.
+   * Optional. Items purchased in this transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getItemsCount();
   /**
    *
    *
    * <pre>
-   * Items purchased in this transaction.
+   * Optional. Items purchased in this transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.recaptchaenterprise.v1.TransactionData.ItemOrBuilder>
       getItemsOrBuilderList();
@@ -415,10 +455,12 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Items purchased in this transaction.
+   * Optional. Items purchased in this transaction.
    * </pre>
    *
-   * <code>repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14;</code>
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.TransactionData.Item items = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.recaptchaenterprise.v1.TransactionData.ItemOrBuilder getItemsOrBuilder(int index);
 
@@ -426,10 +468,12 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Information about the payment gateway's response to the transaction.
+   * Optional. Information about the payment gateway's response to the
+   * transaction.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10;
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the gatewayInfo field is set.
@@ -439,10 +483,12 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Information about the payment gateway's response to the transaction.
+   * Optional. Information about the payment gateway's response to the
+   * transaction.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10;
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The gatewayInfo.
@@ -452,10 +498,12 @@ public interface TransactionDataOrBuilder
    *
    *
    * <pre>
-   * Information about the payment gateway's response to the transaction.
+   * Optional. Information about the payment gateway's response to the
+   * transaction.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10;
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo gateway_info = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.recaptchaenterprise.v1.TransactionData.GatewayInfoOrBuilder getGatewayInfoOrBuilder();

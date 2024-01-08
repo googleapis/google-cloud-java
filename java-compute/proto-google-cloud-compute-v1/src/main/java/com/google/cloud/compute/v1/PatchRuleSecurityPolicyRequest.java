@@ -41,6 +41,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
   private PatchRuleSecurityPolicyRequest() {
     project_ = "";
     securityPolicy_ = "";
+    updateMask_ = "";
   }
 
   @java.lang.Override
@@ -261,6 +262,72 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
         : securityPolicyRuleResource_;
   }
 
+  public static final int UPDATE_MASK_FIELD_NUMBER = 500079778;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object updateMask_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Indicates fields to be cleared as part of this request.
+   * </pre>
+   *
+   * <code>optional string update_mask = 500079778;</code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates fields to be cleared as part of this request.
+   * </pre>
+   *
+   * <code>optional string update_mask = 500079778;</code>
+   *
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public java.lang.String getUpdateMask() {
+    java.lang.Object ref = updateMask_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      updateMask_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates fields to be cleared as part of this request.
+   * </pre>
+   *
+   * <code>optional string update_mask = 500079778;</code>
+   *
+   * @return The bytes for updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUpdateMaskBytes() {
+    java.lang.Object ref = updateMask_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      updateMask_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 242744629;
   private boolean validateOnly_ = false;
   /**
@@ -276,7 +343,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public boolean hasValidateOnly() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -314,7 +381,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(242744629, validateOnly_);
     }
     if (securityPolicyRuleResource_ != null) {
@@ -322,6 +389,9 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(445151652, priority_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 500079778, updateMask_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -338,7 +408,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(242744629, validateOnly_);
     }
     if (securityPolicyRuleResource_ != null) {
@@ -348,6 +418,9 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(445151652, priority_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(500079778, updateMask_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -376,6 +449,10 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       if (!getSecurityPolicyRuleResource().equals(other.getSecurityPolicyRuleResource()))
         return false;
     }
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
+    }
     if (hasValidateOnly() != other.hasValidateOnly()) return false;
     if (hasValidateOnly()) {
       if (getValidateOnly() != other.getValidateOnly()) return false;
@@ -402,6 +479,10 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     if (hasSecurityPolicyRuleResource()) {
       hash = (37 * hash) + SECURITY_POLICY_RULE_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getSecurityPolicyRuleResource().hashCode();
+    }
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
     }
     if (hasValidateOnly()) {
       hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
@@ -555,6 +636,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
         securityPolicyRuleResourceBuilder_.dispose();
         securityPolicyRuleResourceBuilder_ = null;
       }
+      updateMask_ = "";
       validateOnly_ = false;
       return this;
     }
@@ -610,8 +692,12 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
                 : securityPolicyRuleResourceBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.validateOnly_ = validateOnly_;
+        result.updateMask_ = updateMask_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.validateOnly_ = validateOnly_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -678,6 +764,11 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       if (other.hasSecurityPolicyRuleResource()) {
         mergeSecurityPolicyRuleResource(other.getSecurityPolicyRuleResource());
       }
+      if (other.hasUpdateMask()) {
+        updateMask_ = other.updateMask_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (other.hasValidateOnly()) {
         setValidateOnly(other.getValidateOnly());
       }
@@ -722,7 +813,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
             case 1941957032:
               {
                 validateOnly_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1941957032
             case -1073419750:
@@ -738,6 +829,12 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
                 bitField0_ |= 0x00000001;
                 break;
               } // case -733754080
+            case -294329070:
+              {
+                updateMask_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -294329070
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1254,6 +1351,126 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
       return securityPolicyRuleResourceBuilder_;
     }
 
+    private java.lang.Object updateMask_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Indicates fields to be cleared as part of this request.
+     * </pre>
+     *
+     * <code>optional string update_mask = 500079778;</code>
+     *
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates fields to be cleared as part of this request.
+     * </pre>
+     *
+     * <code>optional string update_mask = 500079778;</code>
+     *
+     * @return The updateMask.
+     */
+    public java.lang.String getUpdateMask() {
+      java.lang.Object ref = updateMask_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updateMask_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates fields to be cleared as part of this request.
+     * </pre>
+     *
+     * <code>optional string update_mask = 500079778;</code>
+     *
+     * @return The bytes for updateMask.
+     */
+    public com.google.protobuf.ByteString getUpdateMaskBytes() {
+      java.lang.Object ref = updateMask_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        updateMask_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates fields to be cleared as part of this request.
+     * </pre>
+     *
+     * <code>optional string update_mask = 500079778;</code>
+     *
+     * @param value The updateMask to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdateMask(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      updateMask_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates fields to be cleared as part of this request.
+     * </pre>
+     *
+     * <code>optional string update_mask = 500079778;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUpdateMask() {
+      updateMask_ = getDefaultInstance().getUpdateMask();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates fields to be cleared as part of this request.
+     * </pre>
+     *
+     * <code>optional string update_mask = 500079778;</code>
+     *
+     * @param value The bytes for updateMask to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdateMaskBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      updateMask_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private boolean validateOnly_;
     /**
      *
@@ -1268,7 +1485,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      */
     @java.lang.Override
     public boolean hasValidateOnly() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1300,7 +1517,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1316,7 +1533,7 @@ public final class PatchRuleSecurityPolicyRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       validateOnly_ = false;
       onChanged();
       return this;

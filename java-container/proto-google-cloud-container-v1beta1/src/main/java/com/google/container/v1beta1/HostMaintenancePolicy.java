@@ -240,7 +240,1420 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(enum_scope:google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval)
   }
 
+  public interface OpportunisticMaintenanceStrategyOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The amount of time that a node can remain idle (no customer owned
+     * workloads running), before triggering maintenance.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration node_idle_time_window = 1;</code>
+     *
+     * @return Whether the nodeIdleTimeWindow field is set.
+     */
+    boolean hasNodeIdleTimeWindow();
+    /**
+     *
+     *
+     * <pre>
+     * The amount of time that a node can remain idle (no customer owned
+     * workloads running), before triggering maintenance.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration node_idle_time_window = 1;</code>
+     *
+     * @return The nodeIdleTimeWindow.
+     */
+    com.google.protobuf.Duration getNodeIdleTimeWindow();
+    /**
+     *
+     *
+     * <pre>
+     * The amount of time that a node can remain idle (no customer owned
+     * workloads running), before triggering maintenance.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration node_idle_time_window = 1;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getNodeIdleTimeWindowOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The window of time that opportunistic maintenance can run. Example: A
+     * setting of 14 days implies that opportunistic maintenance can only be ran
+     * in the 2 weeks leading up to the scheduled maintenance date. Setting 28
+     * days allows opportunistic maintenance to run at any time in the scheduled
+     * maintenance window (all `PERIODIC` maintenance is set 28 days in
+     * advance).
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration maintenance_availability_window = 2;</code>
+     *
+     * @return Whether the maintenanceAvailabilityWindow field is set.
+     */
+    boolean hasMaintenanceAvailabilityWindow();
+    /**
+     *
+     *
+     * <pre>
+     * The window of time that opportunistic maintenance can run. Example: A
+     * setting of 14 days implies that opportunistic maintenance can only be ran
+     * in the 2 weeks leading up to the scheduled maintenance date. Setting 28
+     * days allows opportunistic maintenance to run at any time in the scheduled
+     * maintenance window (all `PERIODIC` maintenance is set 28 days in
+     * advance).
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration maintenance_availability_window = 2;</code>
+     *
+     * @return The maintenanceAvailabilityWindow.
+     */
+    com.google.protobuf.Duration getMaintenanceAvailabilityWindow();
+    /**
+     *
+     *
+     * <pre>
+     * The window of time that opportunistic maintenance can run. Example: A
+     * setting of 14 days implies that opportunistic maintenance can only be ran
+     * in the 2 weeks leading up to the scheduled maintenance date. Setting 28
+     * days allows opportunistic maintenance to run at any time in the scheduled
+     * maintenance window (all `PERIODIC` maintenance is set 28 days in
+     * advance).
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration maintenance_availability_window = 2;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getMaintenanceAvailabilityWindowOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The minimum nodes required to be available in a pool. Blocks maintenance
+     * if it would cause the number of running nodes to dip below this value.
+     * </pre>
+     *
+     * <code>optional int64 min_nodes_per_pool = 3;</code>
+     *
+     * @return Whether the minNodesPerPool field is set.
+     */
+    boolean hasMinNodesPerPool();
+    /**
+     *
+     *
+     * <pre>
+     * The minimum nodes required to be available in a pool. Blocks maintenance
+     * if it would cause the number of running nodes to dip below this value.
+     * </pre>
+     *
+     * <code>optional int64 min_nodes_per_pool = 3;</code>
+     *
+     * @return The minNodesPerPool.
+     */
+    long getMinNodesPerPool();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Strategy that will trigger maintenance on behalf of the customer.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy}
+   */
+  public static final class OpportunisticMaintenanceStrategy
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy)
+      OpportunisticMaintenanceStrategyOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use OpportunisticMaintenanceStrategy.newBuilder() to construct.
+    private OpportunisticMaintenanceStrategy(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private OpportunisticMaintenanceStrategy() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new OpportunisticMaintenanceStrategy();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_HostMaintenancePolicy_OpportunisticMaintenanceStrategy_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_HostMaintenancePolicy_OpportunisticMaintenanceStrategy_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+                  .class,
+              com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+                  .Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int NODE_IDLE_TIME_WINDOW_FIELD_NUMBER = 1;
+    private com.google.protobuf.Duration nodeIdleTimeWindow_;
+    /**
+     *
+     *
+     * <pre>
+     * The amount of time that a node can remain idle (no customer owned
+     * workloads running), before triggering maintenance.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration node_idle_time_window = 1;</code>
+     *
+     * @return Whether the nodeIdleTimeWindow field is set.
+     */
+    @java.lang.Override
+    public boolean hasNodeIdleTimeWindow() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The amount of time that a node can remain idle (no customer owned
+     * workloads running), before triggering maintenance.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration node_idle_time_window = 1;</code>
+     *
+     * @return The nodeIdleTimeWindow.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getNodeIdleTimeWindow() {
+      return nodeIdleTimeWindow_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : nodeIdleTimeWindow_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The amount of time that a node can remain idle (no customer owned
+     * workloads running), before triggering maintenance.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration node_idle_time_window = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getNodeIdleTimeWindowOrBuilder() {
+      return nodeIdleTimeWindow_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : nodeIdleTimeWindow_;
+    }
+
+    public static final int MAINTENANCE_AVAILABILITY_WINDOW_FIELD_NUMBER = 2;
+    private com.google.protobuf.Duration maintenanceAvailabilityWindow_;
+    /**
+     *
+     *
+     * <pre>
+     * The window of time that opportunistic maintenance can run. Example: A
+     * setting of 14 days implies that opportunistic maintenance can only be ran
+     * in the 2 weeks leading up to the scheduled maintenance date. Setting 28
+     * days allows opportunistic maintenance to run at any time in the scheduled
+     * maintenance window (all `PERIODIC` maintenance is set 28 days in
+     * advance).
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration maintenance_availability_window = 2;</code>
+     *
+     * @return Whether the maintenanceAvailabilityWindow field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaintenanceAvailabilityWindow() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The window of time that opportunistic maintenance can run. Example: A
+     * setting of 14 days implies that opportunistic maintenance can only be ran
+     * in the 2 weeks leading up to the scheduled maintenance date. Setting 28
+     * days allows opportunistic maintenance to run at any time in the scheduled
+     * maintenance window (all `PERIODIC` maintenance is set 28 days in
+     * advance).
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration maintenance_availability_window = 2;</code>
+     *
+     * @return The maintenanceAvailabilityWindow.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getMaintenanceAvailabilityWindow() {
+      return maintenanceAvailabilityWindow_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : maintenanceAvailabilityWindow_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The window of time that opportunistic maintenance can run. Example: A
+     * setting of 14 days implies that opportunistic maintenance can only be ran
+     * in the 2 weeks leading up to the scheduled maintenance date. Setting 28
+     * days allows opportunistic maintenance to run at any time in the scheduled
+     * maintenance window (all `PERIODIC` maintenance is set 28 days in
+     * advance).
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration maintenance_availability_window = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getMaintenanceAvailabilityWindowOrBuilder() {
+      return maintenanceAvailabilityWindow_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : maintenanceAvailabilityWindow_;
+    }
+
+    public static final int MIN_NODES_PER_POOL_FIELD_NUMBER = 3;
+    private long minNodesPerPool_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * The minimum nodes required to be available in a pool. Blocks maintenance
+     * if it would cause the number of running nodes to dip below this value.
+     * </pre>
+     *
+     * <code>optional int64 min_nodes_per_pool = 3;</code>
+     *
+     * @return Whether the minNodesPerPool field is set.
+     */
+    @java.lang.Override
+    public boolean hasMinNodesPerPool() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The minimum nodes required to be available in a pool. Blocks maintenance
+     * if it would cause the number of running nodes to dip below this value.
+     * </pre>
+     *
+     * <code>optional int64 min_nodes_per_pool = 3;</code>
+     *
+     * @return The minNodesPerPool.
+     */
+    @java.lang.Override
+    public long getMinNodesPerPool() {
+      return minNodesPerPool_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getNodeIdleTimeWindow());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getMaintenanceAvailabilityWindow());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeInt64(3, minNodesPerPool_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, getNodeIdleTimeWindow());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2, getMaintenanceAvailabilityWindow());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, minNodesPerPool_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy other =
+          (com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy) obj;
+
+      if (hasNodeIdleTimeWindow() != other.hasNodeIdleTimeWindow()) return false;
+      if (hasNodeIdleTimeWindow()) {
+        if (!getNodeIdleTimeWindow().equals(other.getNodeIdleTimeWindow())) return false;
+      }
+      if (hasMaintenanceAvailabilityWindow() != other.hasMaintenanceAvailabilityWindow())
+        return false;
+      if (hasMaintenanceAvailabilityWindow()) {
+        if (!getMaintenanceAvailabilityWindow().equals(other.getMaintenanceAvailabilityWindow()))
+          return false;
+      }
+      if (hasMinNodesPerPool() != other.hasMinNodesPerPool()) return false;
+      if (hasMinNodesPerPool()) {
+        if (getMinNodesPerPool() != other.getMinNodesPerPool()) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasNodeIdleTimeWindow()) {
+        hash = (37 * hash) + NODE_IDLE_TIME_WINDOW_FIELD_NUMBER;
+        hash = (53 * hash) + getNodeIdleTimeWindow().hashCode();
+      }
+      if (hasMaintenanceAvailabilityWindow()) {
+        hash = (37 * hash) + MAINTENANCE_AVAILABILITY_WINDOW_FIELD_NUMBER;
+        hash = (53 * hash) + getMaintenanceAvailabilityWindow().hashCode();
+      }
+      if (hasMinNodesPerPool()) {
+        hash = (37 * hash) + MIN_NODES_PER_POOL_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinNodesPerPool());
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategy
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategy
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategy
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategy
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategy
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategy
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategy
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategy
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategy
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategy
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategy
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategy
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Strategy that will trigger maintenance on behalf of the customer.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy)
+        com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_HostMaintenancePolicy_OpportunisticMaintenanceStrategy_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_HostMaintenancePolicy_OpportunisticMaintenanceStrategy_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+                    .class,
+                com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getNodeIdleTimeWindowFieldBuilder();
+          getMaintenanceAvailabilityWindowFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        nodeIdleTimeWindow_ = null;
+        if (nodeIdleTimeWindowBuilder_ != null) {
+          nodeIdleTimeWindowBuilder_.dispose();
+          nodeIdleTimeWindowBuilder_ = null;
+        }
+        maintenanceAvailabilityWindow_ = null;
+        if (maintenanceAvailabilityWindowBuilder_ != null) {
+          maintenanceAvailabilityWindowBuilder_.dispose();
+          maintenanceAvailabilityWindowBuilder_ = null;
+        }
+        minNodesPerPool_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_HostMaintenancePolicy_OpportunisticMaintenanceStrategy_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+          getDefaultInstanceForType() {
+        return com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+          build() {
+        com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+          buildPartial() {
+        com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy result =
+            new com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+              result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.nodeIdleTimeWindow_ =
+              nodeIdleTimeWindowBuilder_ == null
+                  ? nodeIdleTimeWindow_
+                  : nodeIdleTimeWindowBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maintenanceAvailabilityWindow_ =
+              maintenanceAvailabilityWindowBuilder_ == null
+                  ? maintenanceAvailabilityWindow_
+                  : maintenanceAvailabilityWindowBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.minNodesPerPool_ = minNodesPerPool_;
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy) {
+          return mergeFrom(
+              (com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+              other) {
+        if (other
+            == com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+                .getDefaultInstance()) return this;
+        if (other.hasNodeIdleTimeWindow()) {
+          mergeNodeIdleTimeWindow(other.getNodeIdleTimeWindow());
+        }
+        if (other.hasMaintenanceAvailabilityWindow()) {
+          mergeMaintenanceAvailabilityWindow(other.getMaintenanceAvailabilityWindow());
+        }
+        if (other.hasMinNodesPerPool()) {
+          setMinNodesPerPool(other.getMinNodesPerPool());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getNodeIdleTimeWindowFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getMaintenanceAvailabilityWindowFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 24:
+                {
+                  minNodesPerPool_ = input.readInt64();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Duration nodeIdleTimeWindow_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          nodeIdleTimeWindowBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The amount of time that a node can remain idle (no customer owned
+       * workloads running), before triggering maintenance.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration node_idle_time_window = 1;</code>
+       *
+       * @return Whether the nodeIdleTimeWindow field is set.
+       */
+      public boolean hasNodeIdleTimeWindow() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The amount of time that a node can remain idle (no customer owned
+       * workloads running), before triggering maintenance.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration node_idle_time_window = 1;</code>
+       *
+       * @return The nodeIdleTimeWindow.
+       */
+      public com.google.protobuf.Duration getNodeIdleTimeWindow() {
+        if (nodeIdleTimeWindowBuilder_ == null) {
+          return nodeIdleTimeWindow_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : nodeIdleTimeWindow_;
+        } else {
+          return nodeIdleTimeWindowBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The amount of time that a node can remain idle (no customer owned
+       * workloads running), before triggering maintenance.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration node_idle_time_window = 1;</code>
+       */
+      public Builder setNodeIdleTimeWindow(com.google.protobuf.Duration value) {
+        if (nodeIdleTimeWindowBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          nodeIdleTimeWindow_ = value;
+        } else {
+          nodeIdleTimeWindowBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The amount of time that a node can remain idle (no customer owned
+       * workloads running), before triggering maintenance.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration node_idle_time_window = 1;</code>
+       */
+      public Builder setNodeIdleTimeWindow(com.google.protobuf.Duration.Builder builderForValue) {
+        if (nodeIdleTimeWindowBuilder_ == null) {
+          nodeIdleTimeWindow_ = builderForValue.build();
+        } else {
+          nodeIdleTimeWindowBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The amount of time that a node can remain idle (no customer owned
+       * workloads running), before triggering maintenance.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration node_idle_time_window = 1;</code>
+       */
+      public Builder mergeNodeIdleTimeWindow(com.google.protobuf.Duration value) {
+        if (nodeIdleTimeWindowBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && nodeIdleTimeWindow_ != null
+              && nodeIdleTimeWindow_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getNodeIdleTimeWindowBuilder().mergeFrom(value);
+          } else {
+            nodeIdleTimeWindow_ = value;
+          }
+        } else {
+          nodeIdleTimeWindowBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The amount of time that a node can remain idle (no customer owned
+       * workloads running), before triggering maintenance.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration node_idle_time_window = 1;</code>
+       */
+      public Builder clearNodeIdleTimeWindow() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        nodeIdleTimeWindow_ = null;
+        if (nodeIdleTimeWindowBuilder_ != null) {
+          nodeIdleTimeWindowBuilder_.dispose();
+          nodeIdleTimeWindowBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The amount of time that a node can remain idle (no customer owned
+       * workloads running), before triggering maintenance.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration node_idle_time_window = 1;</code>
+       */
+      public com.google.protobuf.Duration.Builder getNodeIdleTimeWindowBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getNodeIdleTimeWindowFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The amount of time that a node can remain idle (no customer owned
+       * workloads running), before triggering maintenance.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration node_idle_time_window = 1;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getNodeIdleTimeWindowOrBuilder() {
+        if (nodeIdleTimeWindowBuilder_ != null) {
+          return nodeIdleTimeWindowBuilder_.getMessageOrBuilder();
+        } else {
+          return nodeIdleTimeWindow_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : nodeIdleTimeWindow_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The amount of time that a node can remain idle (no customer owned
+       * workloads running), before triggering maintenance.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration node_idle_time_window = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getNodeIdleTimeWindowFieldBuilder() {
+        if (nodeIdleTimeWindowBuilder_ == null) {
+          nodeIdleTimeWindowBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getNodeIdleTimeWindow(), getParentForChildren(), isClean());
+          nodeIdleTimeWindow_ = null;
+        }
+        return nodeIdleTimeWindowBuilder_;
+      }
+
+      private com.google.protobuf.Duration maintenanceAvailabilityWindow_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          maintenanceAvailabilityWindowBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The window of time that opportunistic maintenance can run. Example: A
+       * setting of 14 days implies that opportunistic maintenance can only be ran
+       * in the 2 weeks leading up to the scheduled maintenance date. Setting 28
+       * days allows opportunistic maintenance to run at any time in the scheduled
+       * maintenance window (all `PERIODIC` maintenance is set 28 days in
+       * advance).
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration maintenance_availability_window = 2;</code>
+       *
+       * @return Whether the maintenanceAvailabilityWindow field is set.
+       */
+      public boolean hasMaintenanceAvailabilityWindow() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The window of time that opportunistic maintenance can run. Example: A
+       * setting of 14 days implies that opportunistic maintenance can only be ran
+       * in the 2 weeks leading up to the scheduled maintenance date. Setting 28
+       * days allows opportunistic maintenance to run at any time in the scheduled
+       * maintenance window (all `PERIODIC` maintenance is set 28 days in
+       * advance).
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration maintenance_availability_window = 2;</code>
+       *
+       * @return The maintenanceAvailabilityWindow.
+       */
+      public com.google.protobuf.Duration getMaintenanceAvailabilityWindow() {
+        if (maintenanceAvailabilityWindowBuilder_ == null) {
+          return maintenanceAvailabilityWindow_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : maintenanceAvailabilityWindow_;
+        } else {
+          return maintenanceAvailabilityWindowBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The window of time that opportunistic maintenance can run. Example: A
+       * setting of 14 days implies that opportunistic maintenance can only be ran
+       * in the 2 weeks leading up to the scheduled maintenance date. Setting 28
+       * days allows opportunistic maintenance to run at any time in the scheduled
+       * maintenance window (all `PERIODIC` maintenance is set 28 days in
+       * advance).
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration maintenance_availability_window = 2;</code>
+       */
+      public Builder setMaintenanceAvailabilityWindow(com.google.protobuf.Duration value) {
+        if (maintenanceAvailabilityWindowBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          maintenanceAvailabilityWindow_ = value;
+        } else {
+          maintenanceAvailabilityWindowBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The window of time that opportunistic maintenance can run. Example: A
+       * setting of 14 days implies that opportunistic maintenance can only be ran
+       * in the 2 weeks leading up to the scheduled maintenance date. Setting 28
+       * days allows opportunistic maintenance to run at any time in the scheduled
+       * maintenance window (all `PERIODIC` maintenance is set 28 days in
+       * advance).
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration maintenance_availability_window = 2;</code>
+       */
+      public Builder setMaintenanceAvailabilityWindow(
+          com.google.protobuf.Duration.Builder builderForValue) {
+        if (maintenanceAvailabilityWindowBuilder_ == null) {
+          maintenanceAvailabilityWindow_ = builderForValue.build();
+        } else {
+          maintenanceAvailabilityWindowBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The window of time that opportunistic maintenance can run. Example: A
+       * setting of 14 days implies that opportunistic maintenance can only be ran
+       * in the 2 weeks leading up to the scheduled maintenance date. Setting 28
+       * days allows opportunistic maintenance to run at any time in the scheduled
+       * maintenance window (all `PERIODIC` maintenance is set 28 days in
+       * advance).
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration maintenance_availability_window = 2;</code>
+       */
+      public Builder mergeMaintenanceAvailabilityWindow(com.google.protobuf.Duration value) {
+        if (maintenanceAvailabilityWindowBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && maintenanceAvailabilityWindow_ != null
+              && maintenanceAvailabilityWindow_
+                  != com.google.protobuf.Duration.getDefaultInstance()) {
+            getMaintenanceAvailabilityWindowBuilder().mergeFrom(value);
+          } else {
+            maintenanceAvailabilityWindow_ = value;
+          }
+        } else {
+          maintenanceAvailabilityWindowBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The window of time that opportunistic maintenance can run. Example: A
+       * setting of 14 days implies that opportunistic maintenance can only be ran
+       * in the 2 weeks leading up to the scheduled maintenance date. Setting 28
+       * days allows opportunistic maintenance to run at any time in the scheduled
+       * maintenance window (all `PERIODIC` maintenance is set 28 days in
+       * advance).
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration maintenance_availability_window = 2;</code>
+       */
+      public Builder clearMaintenanceAvailabilityWindow() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maintenanceAvailabilityWindow_ = null;
+        if (maintenanceAvailabilityWindowBuilder_ != null) {
+          maintenanceAvailabilityWindowBuilder_.dispose();
+          maintenanceAvailabilityWindowBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The window of time that opportunistic maintenance can run. Example: A
+       * setting of 14 days implies that opportunistic maintenance can only be ran
+       * in the 2 weeks leading up to the scheduled maintenance date. Setting 28
+       * days allows opportunistic maintenance to run at any time in the scheduled
+       * maintenance window (all `PERIODIC` maintenance is set 28 days in
+       * advance).
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration maintenance_availability_window = 2;</code>
+       */
+      public com.google.protobuf.Duration.Builder getMaintenanceAvailabilityWindowBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getMaintenanceAvailabilityWindowFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The window of time that opportunistic maintenance can run. Example: A
+       * setting of 14 days implies that opportunistic maintenance can only be ran
+       * in the 2 weeks leading up to the scheduled maintenance date. Setting 28
+       * days allows opportunistic maintenance to run at any time in the scheduled
+       * maintenance window (all `PERIODIC` maintenance is set 28 days in
+       * advance).
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration maintenance_availability_window = 2;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getMaintenanceAvailabilityWindowOrBuilder() {
+        if (maintenanceAvailabilityWindowBuilder_ != null) {
+          return maintenanceAvailabilityWindowBuilder_.getMessageOrBuilder();
+        } else {
+          return maintenanceAvailabilityWindow_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : maintenanceAvailabilityWindow_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The window of time that opportunistic maintenance can run. Example: A
+       * setting of 14 days implies that opportunistic maintenance can only be ran
+       * in the 2 weeks leading up to the scheduled maintenance date. Setting 28
+       * days allows opportunistic maintenance to run at any time in the scheduled
+       * maintenance window (all `PERIODIC` maintenance is set 28 days in
+       * advance).
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration maintenance_availability_window = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getMaintenanceAvailabilityWindowFieldBuilder() {
+        if (maintenanceAvailabilityWindowBuilder_ == null) {
+          maintenanceAvailabilityWindowBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getMaintenanceAvailabilityWindow(), getParentForChildren(), isClean());
+          maintenanceAvailabilityWindow_ = null;
+        }
+        return maintenanceAvailabilityWindowBuilder_;
+      }
+
+      private long minNodesPerPool_;
+      /**
+       *
+       *
+       * <pre>
+       * The minimum nodes required to be available in a pool. Blocks maintenance
+       * if it would cause the number of running nodes to dip below this value.
+       * </pre>
+       *
+       * <code>optional int64 min_nodes_per_pool = 3;</code>
+       *
+       * @return Whether the minNodesPerPool field is set.
+       */
+      @java.lang.Override
+      public boolean hasMinNodesPerPool() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The minimum nodes required to be available in a pool. Blocks maintenance
+       * if it would cause the number of running nodes to dip below this value.
+       * </pre>
+       *
+       * <code>optional int64 min_nodes_per_pool = 3;</code>
+       *
+       * @return The minNodesPerPool.
+       */
+      @java.lang.Override
+      public long getMinNodesPerPool() {
+        return minNodesPerPool_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The minimum nodes required to be available in a pool. Blocks maintenance
+       * if it would cause the number of running nodes to dip below this value.
+       * </pre>
+       *
+       * <code>optional int64 min_nodes_per_pool = 3;</code>
+       *
+       * @param value The minNodesPerPool to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMinNodesPerPool(long value) {
+
+        minNodesPerPool_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The minimum nodes required to be available in a pool. Blocks maintenance
+       * if it would cause the number of running nodes to dip below this value.
+       * </pre>
+       *
+       * <code>optional int64 min_nodes_per_pool = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMinNodesPerPool() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        minNodesPerPool_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy)
+    private static final com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategy
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy();
+    }
+
+    public static com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategy
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<OpportunisticMaintenanceStrategy> PARSER =
+        new com.google.protobuf.AbstractParser<OpportunisticMaintenanceStrategy>() {
+          @java.lang.Override
+          public OpportunisticMaintenanceStrategy parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<OpportunisticMaintenanceStrategy> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OpportunisticMaintenanceStrategy> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
+  private int maintenanceStrategyCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object maintenanceStrategy_;
+
+  public enum MaintenanceStrategyCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    OPPORTUNISTIC_MAINTENANCE_STRATEGY(2),
+    MAINTENANCESTRATEGY_NOT_SET(0);
+    private final int value;
+
+    private MaintenanceStrategyCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MaintenanceStrategyCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static MaintenanceStrategyCase forNumber(int value) {
+      switch (value) {
+        case 2:
+          return OPPORTUNISTIC_MAINTENANCE_STRATEGY;
+        case 0:
+          return MAINTENANCESTRATEGY_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public MaintenanceStrategyCase getMaintenanceStrategyCase() {
+    return MaintenanceStrategyCase.forNumber(maintenanceStrategyCase_);
+  }
+
   public static final int MAINTENANCE_INTERVAL_FIELD_NUMBER = 1;
   private int maintenanceInterval_ = 0;
   /**
@@ -301,6 +1714,70 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
         : result;
   }
 
+  public static final int OPPORTUNISTIC_MAINTENANCE_STRATEGY_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Strategy that will trigger maintenance on behalf of the customer.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy opportunistic_maintenance_strategy = 2;
+   * </code>
+   *
+   * @return Whether the opportunisticMaintenanceStrategy field is set.
+   */
+  @java.lang.Override
+  public boolean hasOpportunisticMaintenanceStrategy() {
+    return maintenanceStrategyCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Strategy that will trigger maintenance on behalf of the customer.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy opportunistic_maintenance_strategy = 2;
+   * </code>
+   *
+   * @return The opportunisticMaintenanceStrategy.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+      getOpportunisticMaintenanceStrategy() {
+    if (maintenanceStrategyCase_ == 2) {
+      return (com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy)
+          maintenanceStrategy_;
+    }
+    return com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Strategy that will trigger maintenance on behalf of the customer.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy opportunistic_maintenance_strategy = 2;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.HostMaintenancePolicy
+          .OpportunisticMaintenanceStrategyOrBuilder
+      getOpportunisticMaintenanceStrategyOrBuilder() {
+    if (maintenanceStrategyCase_ == 2) {
+      return (com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy)
+          maintenanceStrategy_;
+    }
+    return com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+        .getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -318,6 +1795,12 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(1, maintenanceInterval_);
     }
+    if (maintenanceStrategyCase_ == 2) {
+      output.writeMessage(
+          2,
+          (com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy)
+              maintenanceStrategy_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -329,6 +1812,13 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, maintenanceInterval_);
+    }
+    if (maintenanceStrategyCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2,
+              (com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy)
+                  maintenanceStrategy_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -350,6 +1840,15 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     if (hasMaintenanceInterval()) {
       if (maintenanceInterval_ != other.maintenanceInterval_) return false;
     }
+    if (!getMaintenanceStrategyCase().equals(other.getMaintenanceStrategyCase())) return false;
+    switch (maintenanceStrategyCase_) {
+      case 2:
+        if (!getOpportunisticMaintenanceStrategy()
+            .equals(other.getOpportunisticMaintenanceStrategy())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -364,6 +1863,14 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     if (hasMaintenanceInterval()) {
       hash = (37 * hash) + MAINTENANCE_INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + maintenanceInterval_;
+    }
+    switch (maintenanceStrategyCase_) {
+      case 2:
+        hash = (37 * hash) + OPPORTUNISTIC_MAINTENANCE_STRATEGY_FIELD_NUMBER;
+        hash = (53 * hash) + getOpportunisticMaintenanceStrategy().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -506,6 +2013,11 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       super.clear();
       bitField0_ = 0;
       maintenanceInterval_ = 0;
+      if (opportunisticMaintenanceStrategyBuilder_ != null) {
+        opportunisticMaintenanceStrategyBuilder_.clear();
+      }
+      maintenanceStrategyCase_ = 0;
+      maintenanceStrategy_ = null;
       return this;
     }
 
@@ -536,6 +2048,7 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -548,6 +2061,14 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
         to_bitField0_ |= 0x00000001;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.container.v1beta1.HostMaintenancePolicy result) {
+      result.maintenanceStrategyCase_ = maintenanceStrategyCase_;
+      result.maintenanceStrategy_ = this.maintenanceStrategy_;
+      if (maintenanceStrategyCase_ == 2 && opportunisticMaintenanceStrategyBuilder_ != null) {
+        result.maintenanceStrategy_ = opportunisticMaintenanceStrategyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -599,6 +2120,17 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       if (other.hasMaintenanceInterval()) {
         setMaintenanceInterval(other.getMaintenanceInterval());
       }
+      switch (other.getMaintenanceStrategyCase()) {
+        case OPPORTUNISTIC_MAINTENANCE_STRATEGY:
+          {
+            mergeOpportunisticMaintenanceStrategy(other.getOpportunisticMaintenanceStrategy());
+            break;
+          }
+        case MAINTENANCESTRATEGY_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -631,6 +2163,14 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 18:
+              {
+                input.readMessage(
+                    getOpportunisticMaintenanceStrategyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                maintenanceStrategyCase_ = 2;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -645,6 +2185,20 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int maintenanceStrategyCase_ = 0;
+    private java.lang.Object maintenanceStrategy_;
+
+    public MaintenanceStrategyCase getMaintenanceStrategyCase() {
+      return MaintenanceStrategyCase.forNumber(maintenanceStrategyCase_);
+    }
+
+    public Builder clearMaintenanceStrategy() {
+      maintenanceStrategyCase_ = 0;
+      maintenanceStrategy_ = null;
+      onChanged();
       return this;
     }
 
@@ -770,6 +2324,263 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       maintenanceInterval_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy,
+            com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+                .Builder,
+            com.google.container.v1beta1.HostMaintenancePolicy
+                .OpportunisticMaintenanceStrategyOrBuilder>
+        opportunisticMaintenanceStrategyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Strategy that will trigger maintenance on behalf of the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy opportunistic_maintenance_strategy = 2;
+     * </code>
+     *
+     * @return Whether the opportunisticMaintenanceStrategy field is set.
+     */
+    @java.lang.Override
+    public boolean hasOpportunisticMaintenanceStrategy() {
+      return maintenanceStrategyCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Strategy that will trigger maintenance on behalf of the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy opportunistic_maintenance_strategy = 2;
+     * </code>
+     *
+     * @return The opportunisticMaintenanceStrategy.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+        getOpportunisticMaintenanceStrategy() {
+      if (opportunisticMaintenanceStrategyBuilder_ == null) {
+        if (maintenanceStrategyCase_ == 2) {
+          return (com.google.container.v1beta1.HostMaintenancePolicy
+                  .OpportunisticMaintenanceStrategy)
+              maintenanceStrategy_;
+        }
+        return com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+            .getDefaultInstance();
+      } else {
+        if (maintenanceStrategyCase_ == 2) {
+          return opportunisticMaintenanceStrategyBuilder_.getMessage();
+        }
+        return com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Strategy that will trigger maintenance on behalf of the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy opportunistic_maintenance_strategy = 2;
+     * </code>
+     */
+    public Builder setOpportunisticMaintenanceStrategy(
+        com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy value) {
+      if (opportunisticMaintenanceStrategyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenanceStrategy_ = value;
+        onChanged();
+      } else {
+        opportunisticMaintenanceStrategyBuilder_.setMessage(value);
+      }
+      maintenanceStrategyCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Strategy that will trigger maintenance on behalf of the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy opportunistic_maintenance_strategy = 2;
+     * </code>
+     */
+    public Builder setOpportunisticMaintenanceStrategy(
+        com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy.Builder
+            builderForValue) {
+      if (opportunisticMaintenanceStrategyBuilder_ == null) {
+        maintenanceStrategy_ = builderForValue.build();
+        onChanged();
+      } else {
+        opportunisticMaintenanceStrategyBuilder_.setMessage(builderForValue.build());
+      }
+      maintenanceStrategyCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Strategy that will trigger maintenance on behalf of the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy opportunistic_maintenance_strategy = 2;
+     * </code>
+     */
+    public Builder mergeOpportunisticMaintenanceStrategy(
+        com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy value) {
+      if (opportunisticMaintenanceStrategyBuilder_ == null) {
+        if (maintenanceStrategyCase_ == 2
+            && maintenanceStrategy_
+                != com.google.container.v1beta1.HostMaintenancePolicy
+                    .OpportunisticMaintenanceStrategy.getDefaultInstance()) {
+          maintenanceStrategy_ =
+              com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+                  .newBuilder(
+                      (com.google.container.v1beta1.HostMaintenancePolicy
+                              .OpportunisticMaintenanceStrategy)
+                          maintenanceStrategy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          maintenanceStrategy_ = value;
+        }
+        onChanged();
+      } else {
+        if (maintenanceStrategyCase_ == 2) {
+          opportunisticMaintenanceStrategyBuilder_.mergeFrom(value);
+        } else {
+          opportunisticMaintenanceStrategyBuilder_.setMessage(value);
+        }
+      }
+      maintenanceStrategyCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Strategy that will trigger maintenance on behalf of the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy opportunistic_maintenance_strategy = 2;
+     * </code>
+     */
+    public Builder clearOpportunisticMaintenanceStrategy() {
+      if (opportunisticMaintenanceStrategyBuilder_ == null) {
+        if (maintenanceStrategyCase_ == 2) {
+          maintenanceStrategyCase_ = 0;
+          maintenanceStrategy_ = null;
+          onChanged();
+        }
+      } else {
+        if (maintenanceStrategyCase_ == 2) {
+          maintenanceStrategyCase_ = 0;
+          maintenanceStrategy_ = null;
+        }
+        opportunisticMaintenanceStrategyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Strategy that will trigger maintenance on behalf of the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy opportunistic_maintenance_strategy = 2;
+     * </code>
+     */
+    public com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+            .Builder
+        getOpportunisticMaintenanceStrategyBuilder() {
+      return getOpportunisticMaintenanceStrategyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Strategy that will trigger maintenance on behalf of the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy opportunistic_maintenance_strategy = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.HostMaintenancePolicy
+            .OpportunisticMaintenanceStrategyOrBuilder
+        getOpportunisticMaintenanceStrategyOrBuilder() {
+      if ((maintenanceStrategyCase_ == 2) && (opportunisticMaintenanceStrategyBuilder_ != null)) {
+        return opportunisticMaintenanceStrategyBuilder_.getMessageOrBuilder();
+      } else {
+        if (maintenanceStrategyCase_ == 2) {
+          return (com.google.container.v1beta1.HostMaintenancePolicy
+                  .OpportunisticMaintenanceStrategy)
+              maintenanceStrategy_;
+        }
+        return com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Strategy that will trigger maintenance on behalf of the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy opportunistic_maintenance_strategy = 2;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy,
+            com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+                .Builder,
+            com.google.container.v1beta1.HostMaintenancePolicy
+                .OpportunisticMaintenanceStrategyOrBuilder>
+        getOpportunisticMaintenanceStrategyFieldBuilder() {
+      if (opportunisticMaintenanceStrategyBuilder_ == null) {
+        if (!(maintenanceStrategyCase_ == 2)) {
+          maintenanceStrategy_ =
+              com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+                  .getDefaultInstance();
+        }
+        opportunisticMaintenanceStrategyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy,
+                com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+                    .Builder,
+                com.google.container.v1beta1.HostMaintenancePolicy
+                    .OpportunisticMaintenanceStrategyOrBuilder>(
+                (com.google.container.v1beta1.HostMaintenancePolicy
+                        .OpportunisticMaintenanceStrategy)
+                    maintenanceStrategy_,
+                getParentForChildren(),
+                isClean());
+        maintenanceStrategy_ = null;
+      }
+      maintenanceStrategyCase_ = 2;
+      onChanged();
+      return opportunisticMaintenanceStrategyBuilder_;
     }
 
     @java.lang.Override

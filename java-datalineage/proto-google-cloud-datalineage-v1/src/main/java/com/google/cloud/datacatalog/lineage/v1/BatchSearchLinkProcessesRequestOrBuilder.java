@@ -27,7 +27,7 @@ public interface BatchSearchLinkProcessesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
+   * Required. The project and location where you want to search.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface BatchSearchLinkProcessesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
+   * Required. The project and location where you want to search.
    * </pre>
    *
    * <code>

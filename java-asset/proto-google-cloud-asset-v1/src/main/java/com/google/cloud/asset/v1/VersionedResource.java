@@ -141,7 +141,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
    *
    * You can find the resource definition for each supported resource type in
    * this table:
-   * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
+   * `https://cloud.google.com/asset-inventory/docs/supported-asset-types`
    * </pre>
    *
    * <code>.google.protobuf.Struct resource = 2;</code>
@@ -167,7 +167,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
    *
    * You can find the resource definition for each supported resource type in
    * this table:
-   * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
+   * `https://cloud.google.com/asset-inventory/docs/supported-asset-types`
    * </pre>
    *
    * <code>.google.protobuf.Struct resource = 2;</code>
@@ -193,7 +193,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
    *
    * You can find the resource definition for each supported resource type in
    * this table:
-   * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
+   * `https://cloud.google.com/asset-inventory/docs/supported-asset-types`
    * </pre>
    *
    * <code>.google.protobuf.Struct resource = 2;</code>
@@ -728,7 +728,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      *
      * You can find the resource definition for each supported resource type in
      * this table:
-     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
+     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types`
      * </pre>
      *
      * <code>.google.protobuf.Struct resource = 2;</code>
@@ -753,7 +753,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      *
      * You can find the resource definition for each supported resource type in
      * this table:
-     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
+     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types`
      * </pre>
      *
      * <code>.google.protobuf.Struct resource = 2;</code>
@@ -782,7 +782,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      *
      * You can find the resource definition for each supported resource type in
      * this table:
-     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
+     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types`
      * </pre>
      *
      * <code>.google.protobuf.Struct resource = 2;</code>
@@ -815,7 +815,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      *
      * You can find the resource definition for each supported resource type in
      * this table:
-     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
+     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types`
      * </pre>
      *
      * <code>.google.protobuf.Struct resource = 2;</code>
@@ -845,7 +845,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      *
      * You can find the resource definition for each supported resource type in
      * this table:
-     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
+     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types`
      * </pre>
      *
      * <code>.google.protobuf.Struct resource = 2;</code>
@@ -881,7 +881,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      *
      * You can find the resource definition for each supported resource type in
      * this table:
-     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
+     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types`
      * </pre>
      *
      * <code>.google.protobuf.Struct resource = 2;</code>
@@ -911,7 +911,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      *
      * You can find the resource definition for each supported resource type in
      * this table:
-     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
+     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types`
      * </pre>
      *
      * <code>.google.protobuf.Struct resource = 2;</code>
@@ -936,7 +936,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      *
      * You can find the resource definition for each supported resource type in
      * this table:
-     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
+     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types`
      * </pre>
      *
      * <code>.google.protobuf.Struct resource = 2;</code>
@@ -963,7 +963,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      *
      * You can find the resource definition for each supported resource type in
      * this table:
-     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
+     * `https://cloud.google.com/asset-inventory/docs/supported-asset-types`
      * </pre>
      *
      * <code>.google.protobuf.Struct resource = 2;</code>

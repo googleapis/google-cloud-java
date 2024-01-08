@@ -918,8 +918,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Turn on selection mark detector in OCR engine. Only available in OCR 2.0+
-     * processors.
+     * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+     * (and later) processors.
      * </pre>
      *
      * <code>bool enable_selection_mark_detection = 3;</code>
@@ -1002,8 +1002,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Turn on selection mark detector in OCR engine. Only available in OCR 2.0+
-     * processors.
+     * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+     * (and later) processors.
      * </pre>
      *
      * <code>bool enable_selection_mark_detection = 3;</code>
@@ -1448,8 +1448,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Turn on selection mark detector in OCR engine. Only available in OCR 2.0+
-       * processors.
+       * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+       * (and later) processors.
        * </pre>
        *
        * <code>bool enable_selection_mark_detection = 3;</code>
@@ -1464,8 +1464,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Turn on selection mark detector in OCR engine. Only available in OCR 2.0+
-       * processors.
+       * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+       * (and later) processors.
        * </pre>
        *
        * <code>bool enable_selection_mark_detection = 3;</code>
@@ -1484,8 +1484,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Turn on selection mark detector in OCR engine. Only available in OCR 2.0+
-       * processors.
+       * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+       * (and later) processors.
        * </pre>
        *
        * <code>bool enable_selection_mark_detection = 3;</code>
@@ -1895,7 +1895,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Turn off character box detector in OCR engine. Character box detection is
-   * enabled by default in OCR 2.0+ processors.
+   * enabled by default in OCR 2.0 (and later) processors.
    * </pre>
    *
    * <code>bool disable_character_boxes_detection = 10;</code>
@@ -3146,7 +3146,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Turn off character box detector in OCR engine. Character box detection is
-     * enabled by default in OCR 2.0+ processors.
+     * enabled by default in OCR 2.0 (and later) processors.
      * </pre>
      *
      * <code>bool disable_character_boxes_detection = 10;</code>
@@ -3162,7 +3162,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Turn off character box detector in OCR engine. Character box detection is
-     * enabled by default in OCR 2.0+ processors.
+     * enabled by default in OCR 2.0 (and later) processors.
      * </pre>
      *
      * <code>bool disable_character_boxes_detection = 10;</code>
@@ -3182,7 +3182,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Turn off character box detector in OCR engine. Character box detection is
-     * enabled by default in OCR 2.0+ processors.
+     * enabled by default in OCR 2.0 (and later) processors.
      * </pre>
      *
      * <code>bool disable_character_boxes_detection = 10;</code>

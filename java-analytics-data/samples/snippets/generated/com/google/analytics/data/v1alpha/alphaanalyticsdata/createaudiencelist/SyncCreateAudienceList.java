@@ -37,7 +37,7 @@ public class SyncCreateAudienceList {
     try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
       CreateAudienceListRequest request =
           CreateAudienceListRequest.newBuilder()
-              .setParent(PropertyName.of("[PROPERTYID]").toString())
+              .setParent(PropertyName.of("[PROPERTY]").toString())
               .setAudienceList(AudienceList.newBuilder().build())
               .build();
       AudienceList response = alphaAnalyticsDataClient.createAudienceListAsync(request).get();

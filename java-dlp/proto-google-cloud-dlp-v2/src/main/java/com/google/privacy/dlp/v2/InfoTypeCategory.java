@@ -177,6 +177,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in Croatia.
+     * </pre>
+     *
+     * <code>CROATIA = 42;</code>
+     */
+    CROATIA(42),
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in Denmark.
      * </pre>
      *
@@ -317,6 +327,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in New Zealand.
+     * </pre>
+     *
+     * <code>NEW_ZEALAND = 41;</code>
+     */
+    NEW_ZEALAND(41),
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in Norway.
      * </pre>
      *
@@ -407,6 +427,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in Switzerland.
+     * </pre>
+     *
+     * <code>SWITZERLAND = 43;</code>
+     */
+    SWITZERLAND(43),
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in Taiwan.
      * </pre>
      *
@@ -483,16 +513,6 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>INTERNAL = 40;</code>
      */
     INTERNAL(40),
-    /**
-     *
-     *
-     * <pre>
-     * The infoType is typically used in New Zealand.
-     * </pre>
-     *
-     * <code>NEW_ZEALAND = 41;</code>
-     */
-    NEW_ZEALAND(41),
     UNRECOGNIZED(-1),
     ;
 
@@ -597,6 +617,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>COLOMBIA = 9;</code>
      */
     public static final int COLOMBIA_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * The infoType is typically used in Croatia.
+     * </pre>
+     *
+     * <code>CROATIA = 42;</code>
+     */
+    public static final int CROATIA_VALUE = 42;
     /**
      *
      *
@@ -741,6 +771,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in New Zealand.
+     * </pre>
+     *
+     * <code>NEW_ZEALAND = 41;</code>
+     */
+    public static final int NEW_ZEALAND_VALUE = 41;
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in Norway.
      * </pre>
      *
@@ -831,6 +871,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The infoType is typically used in Switzerland.
+     * </pre>
+     *
+     * <code>SWITZERLAND = 43;</code>
+     */
+    public static final int SWITZERLAND_VALUE = 43;
+    /**
+     *
+     *
+     * <pre>
      * The infoType is typically used in Taiwan.
      * </pre>
      *
@@ -907,16 +957,6 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>INTERNAL = 40;</code>
      */
     public static final int INTERNAL_VALUE = 40;
-    /**
-     *
-     *
-     * <pre>
-     * The infoType is typically used in New Zealand.
-     * </pre>
-     *
-     * <code>NEW_ZEALAND = 41;</code>
-     */
-    public static final int NEW_ZEALAND_VALUE = 41;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -962,6 +1002,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
           return CHINA;
         case 9:
           return COLOMBIA;
+        case 42:
+          return CROATIA;
         case 10:
           return DENMARK;
         case 11:
@@ -990,6 +1032,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
           return MEXICO;
         case 23:
           return THE_NETHERLANDS;
+        case 41:
+          return NEW_ZEALAND;
         case 24:
           return NORWAY;
         case 25:
@@ -1008,6 +1052,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
           return SPAIN;
         case 32:
           return SWEDEN;
+        case 43:
+          return SWITZERLAND;
         case 33:
           return TAIWAN;
         case 34:
@@ -1024,8 +1070,6 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
           return VENEZUELA;
         case 40:
           return INTERNAL;
-        case 41:
-          return NEW_ZEALAND;
         default:
           return null;
       }

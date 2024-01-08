@@ -28,10 +28,10 @@ public interface SimulateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    * <pre>
    * Required. The relative resource name of the organization, project, or
-   * folder. See:
-   * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-   * An example is:
-   * "organizations/{organization_id}".
+   * folder. For more information about relative resource names, see [Relative
+   * Resource
+   * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+   * Example: `organizations/{organization_id}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -44,10 +44,10 @@ public interface SimulateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    * <pre>
    * Required. The relative resource name of the organization, project, or
-   * folder. See:
-   * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-   * An example is:
-   * "organizations/{organization_id}".
+   * folder. For more information about relative resource names, see [Relative
+   * Resource
+   * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+   * Example: `organizations/{organization_id}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -60,7 +60,7 @@ public interface SimulateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The user specified custom configuration to test.
+   * Required. The custom configuration that you need to test.
    * </pre>
    *
    * <code>
@@ -74,7 +74,7 @@ public interface SimulateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The user specified custom configuration to test.
+   * Required. The custom configuration that you need to test.
    * </pre>
    *
    * <code>
@@ -88,7 +88,7 @@ public interface SimulateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The user specified custom configuration to test.
+   * Required. The custom configuration that you need to test.
    * </pre>
    *
    * <code>

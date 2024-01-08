@@ -38,53 +38,6 @@ public final class EntityTypesGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest,
-          com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>
-      getListEntityTypesMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListEntityTypes",
-      requestType = com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest.class,
-      responseType = com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest,
-          com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>
-      getListEntityTypesMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest,
-            com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>
-        getListEntityTypesMethod;
-    if ((getListEntityTypesMethod = EntityTypesGrpc.getListEntityTypesMethod) == null) {
-      synchronized (EntityTypesGrpc.class) {
-        if ((getListEntityTypesMethod = EntityTypesGrpc.getListEntityTypesMethod) == null) {
-          EntityTypesGrpc.getListEntityTypesMethod =
-              getListEntityTypesMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest,
-                          com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEntityTypes"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new EntityTypesMethodDescriptorSupplier("ListEntityTypes"))
-                      .build();
-        }
-      }
-    }
-    return getListEntityTypesMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.cx.v3beta1.GetEntityTypeRequest,
           com.google.cloud.dialogflow.cx.v3beta1.EntityType>
       getGetEntityTypeMethod;
@@ -268,6 +221,53 @@ public final class EntityTypesGrpc {
     return getDeleteEntityTypeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>
+      getListEntityTypesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListEntityTypes",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>
+      getListEntityTypesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest,
+            com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>
+        getListEntityTypesMethod;
+    if ((getListEntityTypesMethod = EntityTypesGrpc.getListEntityTypesMethod) == null) {
+      synchronized (EntityTypesGrpc.class) {
+        if ((getListEntityTypesMethod = EntityTypesGrpc.getListEntityTypesMethod) == null) {
+          EntityTypesGrpc.getListEntityTypesMethod =
+              getListEntityTypesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest,
+                          com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEntityTypes"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EntityTypesMethodDescriptorSupplier("ListEntityTypes"))
+                      .build();
+        }
+      }
+    }
+    return getListEntityTypesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EntityTypesStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EntityTypesStub> factory =
@@ -317,21 +317,6 @@ public final class EntityTypesGrpc {
    * </pre>
    */
   public interface AsyncService {
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all entity types in the specified agent.
-     * </pre>
-     */
-    default void listEntityTypes(
-        com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getListEntityTypesMethod(), responseObserver);
-    }
 
     /**
      *
@@ -397,6 +382,21 @@ public final class EntityTypesGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteEntityTypeMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all entity types in the specified agent.
+     * </pre>
+     */
+    default void listEntityTypes(
+        com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListEntityTypesMethod(), responseObserver);
+    }
   }
 
   /**
@@ -433,23 +433,6 @@ public final class EntityTypesGrpc {
     @java.lang.Override
     protected EntityTypesStub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new EntityTypesStub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all entity types in the specified agent.
-     * </pre>
-     */
-    public void listEntityTypes(
-        com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListEntityTypesMethod(), getCallOptions()),
-          request,
-          responseObserver);
     }
 
     /**
@@ -524,6 +507,23 @@ public final class EntityTypesGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all entity types in the specified agent.
+     * </pre>
+     */
+    public void listEntityTypes(
+        com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListEntityTypesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -544,19 +544,6 @@ public final class EntityTypesGrpc {
     protected EntityTypesBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new EntityTypesBlockingStub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all entity types in the specified agent.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse listEntityTypes(
-        com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListEntityTypesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -616,6 +603,19 @@ public final class EntityTypesGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteEntityTypeMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all entity types in the specified agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse listEntityTypes(
+        com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEntityTypesMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -636,20 +636,6 @@ public final class EntityTypesGrpc {
     protected EntityTypesFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new EntityTypesFutureStub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all entity types in the specified agent.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>
-        listEntityTypes(com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListEntityTypesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -712,13 +698,27 @@ public final class EntityTypesGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteEntityTypeMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all entity types in the specified agent.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>
+        listEntityTypes(com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListEntityTypesMethod(), getCallOptions()), request);
+    }
   }
 
-  private static final int METHODID_LIST_ENTITY_TYPES = 0;
-  private static final int METHODID_GET_ENTITY_TYPE = 1;
-  private static final int METHODID_CREATE_ENTITY_TYPE = 2;
-  private static final int METHODID_UPDATE_ENTITY_TYPE = 3;
-  private static final int METHODID_DELETE_ENTITY_TYPE = 4;
+  private static final int METHODID_GET_ENTITY_TYPE = 0;
+  private static final int METHODID_CREATE_ENTITY_TYPE = 1;
+  private static final int METHODID_UPDATE_ENTITY_TYPE = 2;
+  private static final int METHODID_DELETE_ENTITY_TYPE = 3;
+  private static final int METHODID_LIST_ENTITY_TYPES = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -737,13 +737,6 @@ public final class EntityTypesGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_LIST_ENTITY_TYPES:
-          serviceImpl.listEntityTypes(
-              (com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>)
-                  responseObserver);
-          break;
         case METHODID_GET_ENTITY_TYPE:
           serviceImpl.getEntityType(
               (com.google.cloud.dialogflow.cx.v3beta1.GetEntityTypeRequest) request,
@@ -767,6 +760,13 @@ public final class EntityTypesGrpc {
               (com.google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
+        case METHODID_LIST_ENTITY_TYPES:
+          serviceImpl.listEntityTypes(
+              (com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -785,13 +785,6 @@ public final class EntityTypesGrpc {
 
   public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-        .addMethod(
-            getListEntityTypesMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest,
-                    com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>(
-                    service, METHODID_LIST_ENTITY_TYPES)))
         .addMethod(
             getGetEntityTypeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -819,6 +812,13 @@ public final class EntityTypesGrpc {
                 new MethodHandlers<
                     com.google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_ENTITY_TYPE)))
+        .addMethod(
+            getListEntityTypesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>(
+                    service, METHODID_LIST_ENTITY_TYPES)))
         .build();
   }
 
@@ -870,11 +870,11 @@ public final class EntityTypesGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new EntityTypesFileDescriptorSupplier())
-                      .addMethod(getListEntityTypesMethod())
                       .addMethod(getGetEntityTypeMethod())
                       .addMethod(getCreateEntityTypeMethod())
                       .addMethod(getUpdateEntityTypeMethod())
                       .addMethod(getDeleteEntityTypeMethod())
+                      .addMethod(getListEntityTypesMethod())
                       .build();
         }
       }

@@ -55,6 +55,14 @@ public final class ProfilerProto {
       internal_static_google_devtools_cloudprofiler_v2_Deployment_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_cloudprofiler_v2_Deployment_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudprofiler_v2_ListProfilesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudprofiler_v2_ListProfilesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudprofiler_v2_ListProfilesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudprofiler_v2_ListProfilesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -99,35 +107,51 @@ public final class ProfilerProto {
           + "\022H\n\006labels\030\003 \003(\01328.google.devtools.cloud"
           + "profiler.v2.Deployment.LabelsEntry\032-\n\013La"
           + "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
-          + "\001*\204\001\n\013ProfileType\022\034\n\030PROFILE_TYPE_UNSPEC"
-          + "IFIED\020\000\022\007\n\003CPU\020\001\022\010\n\004WALL\020\002\022\010\n\004HEAP\020\003\022\013\n\007"
-          + "THREADS\020\004\022\016\n\nCONTENTION\020\005\022\r\n\tPEAK_HEAP\020\006"
-          + "\022\016\n\nHEAP_ALLOC\020\0072\376\005\n\017ProfilerService\022\237\001\n"
-          + "\rCreateProfile\0226.google.devtools.cloudpr"
-          + "ofiler.v2.CreateProfileRequest\032).google."
-          + "devtools.cloudprofiler.v2.Profile\"+\202\323\344\223\002"
-          + "%\" /v2/{parent=projects/*}/profiles:\001*\022\322"
-          + "\001\n\024CreateOfflineProfile\022=.google.devtool"
-          + "s.cloudprofiler.v2.CreateOfflineProfileR"
-          + "equest\032).google.devtools.cloudprofiler.v"
-          + "2.Profile\"P\332A\016parent,profile\202\323\344\223\0029\"./v2/"
-          + "{parent=projects/*}/profiles:createOffli"
-          + "ne:\007profile\022\303\001\n\rUpdateProfile\0226.google.d"
-          + "evtools.cloudprofiler.v2.UpdateProfileRe"
-          + "quest\032).google.devtools.cloudprofiler.v2"
-          + ".Profile\"O\332A\023profile,update_mask\202\323\344\223\00232("
-          + "/v2/{profile.name=projects/*/profiles/*}"
-          + ":\007profile\032\255\001\312A\034cloudprofiler.googleapis."
-          + "com\322A\212\001https://www.googleapis.com/auth/c"
-          + "loud-platform,https://www.googleapis.com"
-          + "/auth/monitoring,https://www.googleapis."
-          + "com/auth/monitoring.writeB\332\001\n$com.google"
-          + ".devtools.cloudprofiler.v2B\rProfilerProt"
-          + "oP\001ZMgoogle.golang.org/genproto/googleap"
-          + "is/devtools/cloudprofiler/v2;cloudprofil"
-          + "er\252\002\030Google.Cloud.Profiler.V2\312\002\030Google\\C"
-          + "loud\\Profiler\\V2\352\002\033Google::Cloud::Profil"
-          + "er::V2b\006proto3"
+          + "\001\"\202\001\n\023ListProfilesRequest\022D\n\006parent\030\001 \001("
+          + "\tB4\342A\001\002\372A-\n+cloudresourcemanager.googlea"
+          + "pis.com/Project\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npa"
+          + "ge_token\030\003 \001(\t\"\206\001\n\024ListProfilesResponse\022"
+          + ";\n\010profiles\030\001 \003(\0132).google.devtools.clou"
+          + "dprofiler.v2.Profile\022\027\n\017next_page_token\030"
+          + "\002 \001(\t\022\030\n\020skipped_profiles\030\003 \001(\005*\204\001\n\013Prof"
+          + "ileType\022\034\n\030PROFILE_TYPE_UNSPECIFIED\020\000\022\007\n"
+          + "\003CPU\020\001\022\010\n\004WALL\020\002\022\010\n\004HEAP\020\003\022\013\n\007THREADS\020\004\022"
+          + "\016\n\nCONTENTION\020\005\022\r\n\tPEAK_HEAP\020\006\022\016\n\nHEAP_A"
+          + "LLOC\020\0072\376\005\n\017ProfilerService\022\237\001\n\rCreatePro"
+          + "file\0226.google.devtools.cloudprofiler.v2."
+          + "CreateProfileRequest\032).google.devtools.c"
+          + "loudprofiler.v2.Profile\"+\202\323\344\223\002%\" /v2/{pa"
+          + "rent=projects/*}/profiles:\001*\022\322\001\n\024CreateO"
+          + "fflineProfile\022=.google.devtools.cloudpro"
+          + "filer.v2.CreateOfflineProfileRequest\032).g"
+          + "oogle.devtools.cloudprofiler.v2.Profile\""
+          + "P\332A\016parent,profile\202\323\344\223\0029\"./v2/{parent=pr"
+          + "ojects/*}/profiles:createOffline:\007profil"
+          + "e\022\303\001\n\rUpdateProfile\0226.google.devtools.cl"
+          + "oudprofiler.v2.UpdateProfileRequest\032).go"
+          + "ogle.devtools.cloudprofiler.v2.Profile\"O"
+          + "\332A\023profile,update_mask\202\323\344\223\00232(/v2/{profi"
+          + "le.name=projects/*/profiles/*}:\007profile\032"
+          + "\255\001\312A\034cloudprofiler.googleapis.com\322A\212\001htt"
+          + "ps://www.googleapis.com/auth/cloud-platf"
+          + "orm,https://www.googleapis.com/auth/moni"
+          + "toring,https://www.googleapis.com/auth/m"
+          + "onitoring.write2\351\002\n\rExportService\022\247\001\n\014Li"
+          + "stProfiles\0225.google.devtools.cloudprofil"
+          + "er.v2.ListProfilesRequest\0326.google.devto"
+          + "ols.cloudprofiler.v2.ListProfilesRespons"
+          + "e\"(\202\323\344\223\002\"\022 /v2/{parent=projects/*}/profi"
+          + "les\032\255\001\312A\034cloudprofiler.googleapis.com\322A\212"
+          + "\001https://www.googleapis.com/auth/cloud-p"
+          + "latform,https://www.googleapis.com/auth/"
+          + "monitoring,https://www.googleapis.com/au"
+          + "th/monitoring.writeB\324\001\n$com.google.devto"
+          + "ols.cloudprofiler.v2B\rProfilerProtoP\001ZGc"
+          + "loud.google.com/go/cloudprofiler/apiv2/c"
+          + "loudprofilerpb;cloudprofilerpb\252\002\030Google."
+          + "Cloud.Profiler.V2\312\002\030Google\\Cloud\\Profile"
+          + "r\\V2\352\002\033Google::Cloud::Profiler::V2b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -197,6 +221,22 @@ public final class ProfilerProto {
             internal_static_google_devtools_cloudprofiler_v2_Deployment_LabelsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
+            });
+    internal_static_google_devtools_cloudprofiler_v2_ListProfilesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_devtools_cloudprofiler_v2_ListProfilesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudprofiler_v2_ListProfilesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_devtools_cloudprofiler_v2_ListProfilesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_devtools_cloudprofiler_v2_ListProfilesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudprofiler_v2_ListProfilesResponse_descriptor,
+            new java.lang.String[] {
+              "Profiles", "NextPageToken", "SkippedProfiles",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

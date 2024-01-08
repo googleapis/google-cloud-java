@@ -74,7 +74,7 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The parent collection in which the `Release` should be created.
    * Format should be
-   * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}.
+   * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * </pre>
    *
    * <code>
@@ -101,7 +101,7 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The parent collection in which the `Release` should be created.
    * Format should be
-   * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}.
+   * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * </pre>
    *
    * <code>
@@ -767,7 +767,7 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The parent collection in which the `Release` should be created.
      * Format should be
-     * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}.
+     * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
      * <code>
@@ -793,7 +793,7 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The parent collection in which the `Release` should be created.
      * Format should be
-     * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}.
+     * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
      * <code>
@@ -819,7 +819,7 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The parent collection in which the `Release` should be created.
      * Format should be
-     * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}.
+     * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
      * <code>
@@ -844,7 +844,7 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The parent collection in which the `Release` should be created.
      * Format should be
-     * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}.
+     * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
      * <code>
@@ -865,7 +865,7 @@ public final class CreateReleaseRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The parent collection in which the `Release` should be created.
      * Format should be
-     * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}.
+     * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
      * </pre>
      *
      * <code>

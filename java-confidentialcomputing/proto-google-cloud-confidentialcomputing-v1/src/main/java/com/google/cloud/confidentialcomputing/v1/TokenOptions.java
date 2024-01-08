@@ -40,6 +40,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
   private TokenOptions() {
     audience_ = "";
     nonce_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    tokenType_ = 0;
   }
 
   @java.lang.Override
@@ -188,6 +189,47 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     return nonce_.getByteString(index);
   }
 
+  public static final int TOKEN_TYPE_FIELD_NUMBER = 3;
+  private int tokenType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional token type to select what type of token to return.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenType token_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for tokenType.
+   */
+  @java.lang.Override
+  public int getTokenTypeValue() {
+    return tokenType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional token type to select what type of token to return.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenType token_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tokenType.
+   */
+  @java.lang.Override
+  public com.google.cloud.confidentialcomputing.v1.TokenType getTokenType() {
+    com.google.cloud.confidentialcomputing.v1.TokenType result =
+        com.google.cloud.confidentialcomputing.v1.TokenType.forNumber(tokenType_);
+    return result == null
+        ? com.google.cloud.confidentialcomputing.v1.TokenType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -207,6 +249,10 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < nonce_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nonce_.getRaw(i));
+    }
+    if (tokenType_
+        != com.google.cloud.confidentialcomputing.v1.TokenType.TOKEN_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(3, tokenType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -228,6 +274,10 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getNonceList().size();
     }
+    if (tokenType_
+        != com.google.cloud.confidentialcomputing.v1.TokenType.TOKEN_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, tokenType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -246,6 +296,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
 
     if (!getAudience().equals(other.getAudience())) return false;
     if (!getNonceList().equals(other.getNonceList())) return false;
+    if (tokenType_ != other.tokenType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -263,6 +314,8 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + NONCE_FIELD_NUMBER;
       hash = (53 * hash) + getNonceList().hashCode();
     }
+    hash = (37 * hash) + TOKEN_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + tokenType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -405,6 +458,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       audience_ = "";
       nonce_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      tokenType_ = 0;
       return this;
     }
 
@@ -447,6 +501,9 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         nonce_.makeImmutable();
         result.nonce_ = nonce_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.tokenType_ = tokenType_;
       }
     }
 
@@ -511,6 +568,9 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (other.tokenType_ != 0) {
+        setTokenTypeValue(other.getTokenTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -550,6 +610,12 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
                 nonce_.add(s);
                 break;
               } // case 18
+            case 24:
+              {
+                tokenType_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -868,6 +934,108 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       ensureNonceIsMutable();
       nonce_.add(value);
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private int tokenType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional token type to select what type of token to return.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenType token_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for tokenType.
+     */
+    @java.lang.Override
+    public int getTokenTypeValue() {
+      return tokenType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional token type to select what type of token to return.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenType token_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for tokenType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTokenTypeValue(int value) {
+      tokenType_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional token type to select what type of token to return.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenType token_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The tokenType.
+     */
+    @java.lang.Override
+    public com.google.cloud.confidentialcomputing.v1.TokenType getTokenType() {
+      com.google.cloud.confidentialcomputing.v1.TokenType result =
+          com.google.cloud.confidentialcomputing.v1.TokenType.forNumber(tokenType_);
+      return result == null
+          ? com.google.cloud.confidentialcomputing.v1.TokenType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional token type to select what type of token to return.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenType token_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The tokenType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTokenType(com.google.cloud.confidentialcomputing.v1.TokenType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      tokenType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional token type to select what type of token to return.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenType token_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTokenType() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      tokenType_ = 0;
       onChanged();
       return this;
     }

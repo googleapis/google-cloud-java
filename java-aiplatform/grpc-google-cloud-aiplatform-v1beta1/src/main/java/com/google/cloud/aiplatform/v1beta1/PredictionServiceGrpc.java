@@ -126,6 +126,147 @@ public final class PredictionServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DirectPredictRequest,
+          com.google.cloud.aiplatform.v1beta1.DirectPredictResponse>
+      getDirectPredictMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DirectPredict",
+      requestType = com.google.cloud.aiplatform.v1beta1.DirectPredictRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.DirectPredictResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DirectPredictRequest,
+          com.google.cloud.aiplatform.v1beta1.DirectPredictResponse>
+      getDirectPredictMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.DirectPredictRequest,
+            com.google.cloud.aiplatform.v1beta1.DirectPredictResponse>
+        getDirectPredictMethod;
+    if ((getDirectPredictMethod = PredictionServiceGrpc.getDirectPredictMethod) == null) {
+      synchronized (PredictionServiceGrpc.class) {
+        if ((getDirectPredictMethod = PredictionServiceGrpc.getDirectPredictMethod) == null) {
+          PredictionServiceGrpc.getDirectPredictMethod =
+              getDirectPredictMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.DirectPredictRequest,
+                          com.google.cloud.aiplatform.v1beta1.DirectPredictResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DirectPredict"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.DirectPredictRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.DirectPredictResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PredictionServiceMethodDescriptorSupplier("DirectPredict"))
+                      .build();
+        }
+      }
+    }
+    return getDirectPredictMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest,
+          com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse>
+      getDirectRawPredictMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DirectRawPredict",
+      requestType = com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest,
+          com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse>
+      getDirectRawPredictMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest,
+            com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse>
+        getDirectRawPredictMethod;
+    if ((getDirectRawPredictMethod = PredictionServiceGrpc.getDirectRawPredictMethod) == null) {
+      synchronized (PredictionServiceGrpc.class) {
+        if ((getDirectRawPredictMethod = PredictionServiceGrpc.getDirectRawPredictMethod) == null) {
+          PredictionServiceGrpc.getDirectRawPredictMethod =
+              getDirectRawPredictMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest,
+                          com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DirectRawPredict"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PredictionServiceMethodDescriptorSupplier("DirectRawPredict"))
+                      .build();
+        }
+      }
+    }
+    return getDirectRawPredictMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest,
+          com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse>
+      getStreamingPredictMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamingPredict",
+      requestType = com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest,
+          com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse>
+      getStreamingPredictMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest,
+            com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse>
+        getStreamingPredictMethod;
+    if ((getStreamingPredictMethod = PredictionServiceGrpc.getStreamingPredictMethod) == null) {
+      synchronized (PredictionServiceGrpc.class) {
+        if ((getStreamingPredictMethod = PredictionServiceGrpc.getStreamingPredictMethod) == null) {
+          PredictionServiceGrpc.getStreamingPredictMethod =
+              getStreamingPredictMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest,
+                          com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StreamingPredict"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PredictionServiceMethodDescriptorSupplier("StreamingPredict"))
+                      .build();
+        }
+      }
+    }
+    return getStreamingPredictMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest,
           com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse>
       getServerStreamingPredictMethod;
@@ -174,6 +315,56 @@ public final class PredictionServiceGrpc {
       }
     }
     return getServerStreamingPredictMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest,
+          com.google.cloud.aiplatform.v1beta1.StreamingRawPredictResponse>
+      getStreamingRawPredictMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamingRawPredict",
+      requestType = com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.StreamingRawPredictResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest,
+          com.google.cloud.aiplatform.v1beta1.StreamingRawPredictResponse>
+      getStreamingRawPredictMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest,
+            com.google.cloud.aiplatform.v1beta1.StreamingRawPredictResponse>
+        getStreamingRawPredictMethod;
+    if ((getStreamingRawPredictMethod = PredictionServiceGrpc.getStreamingRawPredictMethod)
+        == null) {
+      synchronized (PredictionServiceGrpc.class) {
+        if ((getStreamingRawPredictMethod = PredictionServiceGrpc.getStreamingRawPredictMethod)
+            == null) {
+          PredictionServiceGrpc.getStreamingRawPredictMethod =
+              getStreamingRawPredictMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest,
+                          com.google.cloud.aiplatform.v1beta1.StreamingRawPredictResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "StreamingRawPredict"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.StreamingRawPredictResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PredictionServiceMethodDescriptorSupplier("StreamingRawPredict"))
+                      .build();
+        }
+      }
+    }
+    return getStreamingRawPredictMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -269,6 +460,56 @@ public final class PredictionServiceGrpc {
     return getCountTokensMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GenerateContentRequest,
+          com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>
+      getStreamGenerateContentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamGenerateContent",
+      requestType = com.google.cloud.aiplatform.v1beta1.GenerateContentRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GenerateContentRequest,
+          com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>
+      getStreamGenerateContentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.GenerateContentRequest,
+            com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>
+        getStreamGenerateContentMethod;
+    if ((getStreamGenerateContentMethod = PredictionServiceGrpc.getStreamGenerateContentMethod)
+        == null) {
+      synchronized (PredictionServiceGrpc.class) {
+        if ((getStreamGenerateContentMethod = PredictionServiceGrpc.getStreamGenerateContentMethod)
+            == null) {
+          PredictionServiceGrpc.getStreamGenerateContentMethod =
+              getStreamGenerateContentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.GenerateContentRequest,
+                          com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "StreamGenerateContent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.GenerateContentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.GenerateContentResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PredictionServiceMethodDescriptorSupplier("StreamGenerateContent"))
+                      .build();
+        }
+      }
+    }
+    return getStreamGenerateContentMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static PredictionServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<PredictionServiceStub> factory =
@@ -357,6 +598,54 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
+     * Perform an unary online prediction request for Vertex first-party products
+     * and frameworks.
+     * </pre>
+     */
+    default void directPredict(
+        com.google.cloud.aiplatform.v1beta1.DirectPredictRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.DirectPredictResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDirectPredictMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform an online prediction request through gRPC.
+     * </pre>
+     */
+    default void directRawPredict(
+        com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDirectRawPredictMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a streaming online prediction request for Vertex first-party
+     * products and frameworks.
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest>
+        streamingPredict(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse>
+                responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getStreamingPredictMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Perform a server-side streaming online prediction request for Vertex
      * LLM streaming.
      * </pre>
@@ -367,6 +656,23 @@ public final class PredictionServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getServerStreamingPredictMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a streaming online prediction request through gRPC.
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<
+            com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest>
+        streamingRawPredict(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.aiplatform.v1beta1.StreamingRawPredictResponse>
+                responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getStreamingRawPredictMethod(), responseObserver);
     }
 
     /**
@@ -405,6 +711,21 @@ public final class PredictionServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCountTokensMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generate content with multimodal inputs with streaming support.
+     * </pre>
+     */
+    default void streamGenerateContent(
+        com.google.cloud.aiplatform.v1beta1.GenerateContentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStreamGenerateContentMethod(), responseObserver);
     }
   }
 
@@ -483,6 +804,58 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
+     * Perform an unary online prediction request for Vertex first-party products
+     * and frameworks.
+     * </pre>
+     */
+    public void directPredict(
+        com.google.cloud.aiplatform.v1beta1.DirectPredictRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.DirectPredictResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDirectPredictMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform an online prediction request through gRPC.
+     * </pre>
+     */
+    public void directRawPredict(
+        com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDirectRawPredictMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a streaming online prediction request for Vertex first-party
+     * products and frameworks.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest>
+        streamingPredict(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse>
+                responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getStreamingPredictMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Perform a server-side streaming online prediction request for Vertex
      * LLM streaming.
      * </pre>
@@ -495,6 +868,23 @@ public final class PredictionServiceGrpc {
           getChannel().newCall(getServerStreamingPredictMethod(), getCallOptions()),
           request,
           responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a streaming online prediction request through gRPC.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<
+            com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest>
+        streamingRawPredict(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.aiplatform.v1beta1.StreamingRawPredictResponse>
+                responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getStreamingRawPredictMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -534,6 +924,23 @@ public final class PredictionServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCountTokensMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generate content with multimodal inputs with streaming support.
+     * </pre>
+     */
+    public void streamGenerateContent(
+        com.google.cloud.aiplatform.v1beta1.GenerateContentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getStreamGenerateContentMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -596,6 +1003,33 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
+     * Perform an unary online prediction request for Vertex first-party products
+     * and frameworks.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.DirectPredictResponse directPredict(
+        com.google.cloud.aiplatform.v1beta1.DirectPredictRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDirectPredictMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform an online prediction request through gRPC.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse directRawPredict(
+        com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDirectRawPredictMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Perform a server-side streaming online prediction request for Vertex
      * LLM streaming.
      * </pre>
@@ -640,6 +1074,19 @@ public final class PredictionServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.CountTokensRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCountTokensMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generate content with multimodal inputs with streaming support.
+     * </pre>
+     */
+    public java.util.Iterator<com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>
+        streamGenerateContent(com.google.cloud.aiplatform.v1beta1.GenerateContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getStreamGenerateContentMethod(), getCallOptions(), request);
     }
   }
 
@@ -700,6 +1147,35 @@ public final class PredictionServiceGrpc {
      *
      *
      * <pre>
+     * Perform an unary online prediction request for Vertex first-party products
+     * and frameworks.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.DirectPredictResponse>
+        directPredict(com.google.cloud.aiplatform.v1beta1.DirectPredictRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDirectPredictMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform an online prediction request through gRPC.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse>
+        directRawPredict(com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDirectRawPredictMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Perform an online explanation.
      * If
      * [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id]
@@ -736,9 +1212,14 @@ public final class PredictionServiceGrpc {
 
   private static final int METHODID_PREDICT = 0;
   private static final int METHODID_RAW_PREDICT = 1;
-  private static final int METHODID_SERVER_STREAMING_PREDICT = 2;
-  private static final int METHODID_EXPLAIN = 3;
-  private static final int METHODID_COUNT_TOKENS = 4;
+  private static final int METHODID_DIRECT_PREDICT = 2;
+  private static final int METHODID_DIRECT_RAW_PREDICT = 3;
+  private static final int METHODID_SERVER_STREAMING_PREDICT = 4;
+  private static final int METHODID_EXPLAIN = 5;
+  private static final int METHODID_COUNT_TOKENS = 6;
+  private static final int METHODID_STREAM_GENERATE_CONTENT = 7;
+  private static final int METHODID_STREAMING_PREDICT = 8;
+  private static final int METHODID_STREAMING_RAW_PREDICT = 9;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -768,6 +1249,20 @@ public final class PredictionServiceGrpc {
               (com.google.cloud.aiplatform.v1beta1.RawPredictRequest) request,
               (io.grpc.stub.StreamObserver<com.google.api.HttpBody>) responseObserver);
           break;
+        case METHODID_DIRECT_PREDICT:
+          serviceImpl.directPredict(
+              (com.google.cloud.aiplatform.v1beta1.DirectPredictRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.DirectPredictResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DIRECT_RAW_PREDICT:
+          serviceImpl.directRawPredict(
+              (com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse>)
+                  responseObserver);
+          break;
         case METHODID_SERVER_STREAMING_PREDICT:
           serviceImpl.serverStreamingPredict(
               (com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest) request,
@@ -787,6 +1282,13 @@ public final class PredictionServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.CountTokensResponse>)
                   responseObserver);
           break;
+        case METHODID_STREAM_GENERATE_CONTENT:
+          serviceImpl.streamGenerateContent(
+              (com.google.cloud.aiplatform.v1beta1.GenerateContentRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -797,6 +1299,18 @@ public final class PredictionServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_STREAMING_PREDICT:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.streamingPredict(
+                  (io.grpc.stub.StreamObserver<
+                          com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse>)
+                      responseObserver);
+        case METHODID_STREAMING_RAW_PREDICT:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.streamingRawPredict(
+                  (io.grpc.stub.StreamObserver<
+                          com.google.cloud.aiplatform.v1beta1.StreamingRawPredictResponse>)
+                      responseObserver);
         default:
           throw new AssertionError();
       }
@@ -819,12 +1333,40 @@ public final class PredictionServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.RawPredictRequest, com.google.api.HttpBody>(
                     service, METHODID_RAW_PREDICT)))
         .addMethod(
+            getDirectPredictMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DirectPredictRequest,
+                    com.google.cloud.aiplatform.v1beta1.DirectPredictResponse>(
+                    service, METHODID_DIRECT_PREDICT)))
+        .addMethod(
+            getDirectRawPredictMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest,
+                    com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse>(
+                    service, METHODID_DIRECT_RAW_PREDICT)))
+        .addMethod(
+            getStreamingPredictMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest,
+                    com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse>(
+                    service, METHODID_STREAMING_PREDICT)))
+        .addMethod(
             getServerStreamingPredictMethod(),
             io.grpc.stub.ServerCalls.asyncServerStreamingCall(
                 new MethodHandlers<
                     com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest,
                     com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse>(
                     service, METHODID_SERVER_STREAMING_PREDICT)))
+        .addMethod(
+            getStreamingRawPredictMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest,
+                    com.google.cloud.aiplatform.v1beta1.StreamingRawPredictResponse>(
+                    service, METHODID_STREAMING_RAW_PREDICT)))
         .addMethod(
             getExplainMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -839,6 +1381,13 @@ public final class PredictionServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.CountTokensRequest,
                     com.google.cloud.aiplatform.v1beta1.CountTokensResponse>(
                     service, METHODID_COUNT_TOKENS)))
+        .addMethod(
+            getStreamGenerateContentMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GenerateContentRequest,
+                    com.google.cloud.aiplatform.v1beta1.GenerateContentResponse>(
+                    service, METHODID_STREAM_GENERATE_CONTENT)))
         .build();
   }
 
@@ -892,9 +1441,14 @@ public final class PredictionServiceGrpc {
                       .setSchemaDescriptor(new PredictionServiceFileDescriptorSupplier())
                       .addMethod(getPredictMethod())
                       .addMethod(getRawPredictMethod())
+                      .addMethod(getDirectPredictMethod())
+                      .addMethod(getDirectRawPredictMethod())
+                      .addMethod(getStreamingPredictMethod())
                       .addMethod(getServerStreamingPredictMethod())
+                      .addMethod(getStreamingRawPredictMethod())
                       .addMethod(getExplainMethod())
                       .addMethod(getCountTokensMethod())
+                      .addMethod(getStreamGenerateContentMethod())
                       .build();
         }
       }

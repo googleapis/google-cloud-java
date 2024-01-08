@@ -16,6 +16,8 @@
 
 package com.google.analytics.data.v1beta;
 
+import static com.google.analytics.data.v1beta.BetaAnalyticsDataClient.ListAudienceExportsPagedResponse;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -23,13 +25,19 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Any;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -561,6 +569,342 @@ public class BetaAnalyticsDataClientTest {
               .setCompatibilityFilter(Compatibility.forNumber(0))
               .build();
       client.checkCompatibility(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAudienceExportTest() throws Exception {
+    AudienceExport expectedResponse =
+        AudienceExport.newBuilder()
+            .setName(AudienceExportName.of("[PROPERTY]", "[AUDIENCE_EXPORT]").toString())
+            .setAudience("audience975628804")
+            .setAudienceDisplayName("audienceDisplayName1537141193")
+            .addAllDimensions(new ArrayList<AudienceDimension>())
+            .setBeginCreatingTime(Timestamp.newBuilder().build())
+            .setCreationQuotaTokensCharged(1232901266)
+            .setRowCount(1340416618)
+            .setErrorMessage("errorMessage1203236063")
+            .setPercentageCompleted(-1292047642)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAudienceExportTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBetaAnalyticsData.addResponse(resultOperation);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    AudienceExport audienceExport = AudienceExport.newBuilder().build();
+
+    AudienceExport actualResponse = client.createAudienceExportAsync(parent, audienceExport).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBetaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAudienceExportRequest actualRequest =
+        ((CreateAudienceExportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(audienceExport, actualRequest.getAudienceExport());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAudienceExportExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBetaAnalyticsData.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      AudienceExport audienceExport = AudienceExport.newBuilder().build();
+      client.createAudienceExportAsync(parent, audienceExport).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createAudienceExportTest2() throws Exception {
+    AudienceExport expectedResponse =
+        AudienceExport.newBuilder()
+            .setName(AudienceExportName.of("[PROPERTY]", "[AUDIENCE_EXPORT]").toString())
+            .setAudience("audience975628804")
+            .setAudienceDisplayName("audienceDisplayName1537141193")
+            .addAllDimensions(new ArrayList<AudienceDimension>())
+            .setBeginCreatingTime(Timestamp.newBuilder().build())
+            .setCreationQuotaTokensCharged(1232901266)
+            .setRowCount(1340416618)
+            .setErrorMessage("errorMessage1203236063")
+            .setPercentageCompleted(-1292047642)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAudienceExportTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBetaAnalyticsData.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    AudienceExport audienceExport = AudienceExport.newBuilder().build();
+
+    AudienceExport actualResponse = client.createAudienceExportAsync(parent, audienceExport).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBetaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAudienceExportRequest actualRequest =
+        ((CreateAudienceExportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(audienceExport, actualRequest.getAudienceExport());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAudienceExportExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBetaAnalyticsData.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      AudienceExport audienceExport = AudienceExport.newBuilder().build();
+      client.createAudienceExportAsync(parent, audienceExport).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void queryAudienceExportTest() throws Exception {
+    QueryAudienceExportResponse expectedResponse =
+        QueryAudienceExportResponse.newBuilder()
+            .setAudienceExport(AudienceExport.newBuilder().build())
+            .addAllAudienceRows(new ArrayList<AudienceRow>())
+            .setRowCount(1340416618)
+            .build();
+    mockBetaAnalyticsData.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    QueryAudienceExportResponse actualResponse = client.queryAudienceExport(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBetaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryAudienceExportRequest actualRequest = ((QueryAudienceExportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryAudienceExportExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBetaAnalyticsData.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.queryAudienceExport(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAudienceExportTest() throws Exception {
+    AudienceExport expectedResponse =
+        AudienceExport.newBuilder()
+            .setName(AudienceExportName.of("[PROPERTY]", "[AUDIENCE_EXPORT]").toString())
+            .setAudience("audience975628804")
+            .setAudienceDisplayName("audienceDisplayName1537141193")
+            .addAllDimensions(new ArrayList<AudienceDimension>())
+            .setBeginCreatingTime(Timestamp.newBuilder().build())
+            .setCreationQuotaTokensCharged(1232901266)
+            .setRowCount(1340416618)
+            .setErrorMessage("errorMessage1203236063")
+            .setPercentageCompleted(-1292047642)
+            .build();
+    mockBetaAnalyticsData.addResponse(expectedResponse);
+
+    AudienceExportName name = AudienceExportName.of("[PROPERTY]", "[AUDIENCE_EXPORT]");
+
+    AudienceExport actualResponse = client.getAudienceExport(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBetaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAudienceExportRequest actualRequest = ((GetAudienceExportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAudienceExportExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBetaAnalyticsData.addException(exception);
+
+    try {
+      AudienceExportName name = AudienceExportName.of("[PROPERTY]", "[AUDIENCE_EXPORT]");
+      client.getAudienceExport(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAudienceExportTest2() throws Exception {
+    AudienceExport expectedResponse =
+        AudienceExport.newBuilder()
+            .setName(AudienceExportName.of("[PROPERTY]", "[AUDIENCE_EXPORT]").toString())
+            .setAudience("audience975628804")
+            .setAudienceDisplayName("audienceDisplayName1537141193")
+            .addAllDimensions(new ArrayList<AudienceDimension>())
+            .setBeginCreatingTime(Timestamp.newBuilder().build())
+            .setCreationQuotaTokensCharged(1232901266)
+            .setRowCount(1340416618)
+            .setErrorMessage("errorMessage1203236063")
+            .setPercentageCompleted(-1292047642)
+            .build();
+    mockBetaAnalyticsData.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AudienceExport actualResponse = client.getAudienceExport(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBetaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAudienceExportRequest actualRequest = ((GetAudienceExportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAudienceExportExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBetaAnalyticsData.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAudienceExport(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAudienceExportsTest() throws Exception {
+    AudienceExport responsesElement = AudienceExport.newBuilder().build();
+    ListAudienceExportsResponse expectedResponse =
+        ListAudienceExportsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAudienceExports(Arrays.asList(responsesElement))
+            .build();
+    mockBetaAnalyticsData.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListAudienceExportsPagedResponse pagedListResponse = client.listAudienceExports(parent);
+
+    List<AudienceExport> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAudienceExportsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBetaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAudienceExportsRequest actualRequest = ((ListAudienceExportsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAudienceExportsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBetaAnalyticsData.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listAudienceExports(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAudienceExportsTest2() throws Exception {
+    AudienceExport responsesElement = AudienceExport.newBuilder().build();
+    ListAudienceExportsResponse expectedResponse =
+        ListAudienceExportsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAudienceExports(Arrays.asList(responsesElement))
+            .build();
+    mockBetaAnalyticsData.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAudienceExportsPagedResponse pagedListResponse = client.listAudienceExports(parent);
+
+    List<AudienceExport> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAudienceExportsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBetaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAudienceExportsRequest actualRequest = ((ListAudienceExportsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAudienceExportsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBetaAnalyticsData.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAudienceExports(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

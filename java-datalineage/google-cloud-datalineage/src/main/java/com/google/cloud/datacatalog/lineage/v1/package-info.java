@@ -35,9 +35,10 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (LineageClient lineageClient = LineageClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   Process process = Process.newBuilder().build();
- *   Process response = lineageClient.createProcess(parent, process);
+ *   String parent = "parent-995424086";
+ *   Struct openLineage = Struct.newBuilder().build();
+ *   ProcessOpenLineageRunEventResponse response =
+ *       lineageClient.processOpenLineageRunEvent(parent, openLineage);
  * }
  * }</pre>
  */

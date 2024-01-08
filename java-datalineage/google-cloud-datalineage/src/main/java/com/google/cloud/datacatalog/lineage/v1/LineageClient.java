@@ -34,6 +34,7 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -56,9 +57,10 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (LineageClient lineageClient = LineageClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   Process process = Process.newBuilder().build();
- *   Process response = lineageClient.createProcess(parent, process);
+ *   String parent = "parent-995424086";
+ *   Struct openLineage = Struct.newBuilder().build();
+ *   ProcessOpenLineageRunEventResponse response =
+ *       lineageClient.processOpenLineageRunEvent(parent, openLineage);
  * }
  * }</pre>
  *
@@ -201,6 +203,111 @@ public class LineageClient implements BackgroundResource {
   @BetaApi
   public final OperationsClient getHttpJsonOperationsClient() {
     return httpJsonOperationsClient;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new lineage events together with their parents: process and run. Updates the process
+   * and run if they already exist. Mapped from Open Lineage specification:
+   * https://github.com/OpenLineage/OpenLineage/blob/main/spec/OpenLineage.json.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineageClient lineageClient = LineageClient.create()) {
+   *   String parent = "parent-995424086";
+   *   Struct openLineage = Struct.newBuilder().build();
+   *   ProcessOpenLineageRunEventResponse response =
+   *       lineageClient.processOpenLineageRunEvent(parent, openLineage);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project and its location that should own the process,
+   *     run, and lineage event.
+   * @param openLineage Required. OpenLineage message following OpenLineage format:
+   *     https://github.com/OpenLineage/OpenLineage/blob/main/spec/OpenLineage.json
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProcessOpenLineageRunEventResponse processOpenLineageRunEvent(
+      String parent, Struct openLineage) {
+    ProcessOpenLineageRunEventRequest request =
+        ProcessOpenLineageRunEventRequest.newBuilder()
+            .setParent(parent)
+            .setOpenLineage(openLineage)
+            .build();
+    return processOpenLineageRunEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new lineage events together with their parents: process and run. Updates the process
+   * and run if they already exist. Mapped from Open Lineage specification:
+   * https://github.com/OpenLineage/OpenLineage/blob/main/spec/OpenLineage.json.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineageClient lineageClient = LineageClient.create()) {
+   *   ProcessOpenLineageRunEventRequest request =
+   *       ProcessOpenLineageRunEventRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setOpenLineage(Struct.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ProcessOpenLineageRunEventResponse response =
+   *       lineageClient.processOpenLineageRunEvent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProcessOpenLineageRunEventResponse processOpenLineageRunEvent(
+      ProcessOpenLineageRunEventRequest request) {
+    return processOpenLineageRunEventCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new lineage events together with their parents: process and run. Updates the process
+   * and run if they already exist. Mapped from Open Lineage specification:
+   * https://github.com/OpenLineage/OpenLineage/blob/main/spec/OpenLineage.json.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineageClient lineageClient = LineageClient.create()) {
+   *   ProcessOpenLineageRunEventRequest request =
+   *       ProcessOpenLineageRunEventRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setOpenLineage(Struct.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<ProcessOpenLineageRunEventResponse> future =
+   *       lineageClient.processOpenLineageRunEventCallable().futureCall(request);
+   *   // Do something.
+   *   ProcessOpenLineageRunEventResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+      processOpenLineageRunEventCallable() {
+    return stub.processOpenLineageRunEventCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -993,6 +1100,7 @@ public class LineageClient implements BackgroundResource {
    *       UpdateRunRequest.newBuilder()
    *           .setRun(Run.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAllowMissing(true)
    *           .build();
    *   Run response = lineageClient.updateRun(request);
    * }
@@ -1022,6 +1130,7 @@ public class LineageClient implements BackgroundResource {
    *       UpdateRunRequest.newBuilder()
    *           .setRun(Run.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAllowMissing(true)
    *           .build();
    *   ApiFuture<Run> future = lineageClient.updateRunCallable().futureCall(request);
    *   // Do something.

@@ -72,4 +72,39 @@ public interface CreateBillingAccountRequestOrBuilder
    * </code>
    */
   com.google.cloud.billing.v1.BillingAccountOrBuilder getBillingAccountOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parent to create a billing account from.
+   * Format:
+   *   - `organizations/{organization_id}`, for example,
+   *     `organizations/12345678`
+   *   - `billingAccounts/{billing_account_id}`, for example,
+   *      `billingAccounts/012345-567890-ABCDEF`
+   * </pre>
+   *
+   * <code>string parent = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The parent.
+   */
+  java.lang.String getParent();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parent to create a billing account from.
+   * Format:
+   *   - `organizations/{organization_id}`, for example,
+   *     `organizations/12345678`
+   *   - `billingAccounts/{billing_account_id}`, for example,
+   *      `billingAccounts/012345-567890-ABCDEF`
+   * </pre>
+   *
+   * <code>string parent = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for parent.
+   */
+  com.google.protobuf.ByteString getParentBytes();
 }

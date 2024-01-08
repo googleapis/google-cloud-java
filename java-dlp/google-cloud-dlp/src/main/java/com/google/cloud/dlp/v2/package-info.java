@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Cloud Data Loss Prevention (DLP) API
+ * A client to Cloud Data Loss Prevention (DLP)
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

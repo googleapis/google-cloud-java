@@ -151,7 +151,7 @@ public enum ContentOption implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(5);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(10);
   }
 
   private static final ContentOption[] VALUES = values();

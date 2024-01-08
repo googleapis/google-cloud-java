@@ -39,6 +39,8 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsMetadata;
+import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest;
 import com.google.devtools.artifactregistry.v1.CreateRepositoryRequest;
 import com.google.devtools.artifactregistry.v1.CreateTagRequest;
 import com.google.devtools.artifactregistry.v1.DeletePackageRequest;
@@ -348,6 +350,17 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<BatchDeleteVersionsRequest, Operation>
+      batchDeleteVersionsMethodDescriptor =
+          MethodDescriptor.<BatchDeleteVersionsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/BatchDeleteVersions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchDeleteVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListFilesRequest, ListFilesResponse>
       listFilesMethodDescriptor =
           MethodDescriptor.<ListFilesRequest, ListFilesResponse>newBuilder()
@@ -551,6 +564,9 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
   private final UnaryCallable<DeleteVersionRequest, Operation> deleteVersionCallable;
   private final OperationCallable<DeleteVersionRequest, Empty, OperationMetadata>
       deleteVersionOperationCallable;
+  private final UnaryCallable<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsCallable;
+  private final OperationCallable<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationCallable;
   private final UnaryCallable<ListFilesRequest, ListFilesResponse> listFilesCallable;
   private final UnaryCallable<ListFilesRequest, ListFilesPagedResponse> listFilesPagedCallable;
   private final UnaryCallable<GetFileRequest, File> getFileCallable;
@@ -831,6 +847,16 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsTransportSettings =
+        GrpcCallSettings.<BatchDeleteVersionsRequest, Operation>newBuilder()
+            .setMethodDescriptor(batchDeleteVersionsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
             .build();
@@ -1133,6 +1159,17 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
             settings.deleteVersionOperationSettings(),
             clientContext,
             operationsStub);
+    this.batchDeleteVersionsCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteVersionsTransportSettings,
+            settings.batchDeleteVersionsSettings(),
+            clientContext);
+    this.batchDeleteVersionsOperationCallable =
+        callableFactory.createOperationCallable(
+            batchDeleteVersionsTransportSettings,
+            settings.batchDeleteVersionsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listFilesCallable =
         callableFactory.createUnaryCallable(
             listFilesTransportSettings, settings.listFilesSettings(), clientContext);
@@ -1392,6 +1429,17 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
   public OperationCallable<DeleteVersionRequest, Empty, OperationMetadata>
       deleteVersionOperationCallable() {
     return deleteVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsCallable() {
+    return batchDeleteVersionsCallable;
+  }
+
+  @Override
+  public OperationCallable<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationCallable() {
+    return batchDeleteVersionsOperationCallable;
   }
 
   @Override

@@ -146,8 +146,7 @@ public class FeatureRegistryServiceSettings extends ClientSettings<FeatureRegist
   }
 
   /** Returns the object with the settings used for calls to createFeature. */
-  public OperationCallSettings<
-          CreateFeatureRequest, Feature, CreateRegistryFeatureOperationMetadata>
+  public OperationCallSettings<CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
       createFeatureOperationSettings() {
     return ((FeatureRegistryServiceStubSettings) getStubSettings())
         .createFeatureOperationSettings();
@@ -371,7 +370,7 @@ public class FeatureRegistryServiceSettings extends ClientSettings<FeatureRegist
 
     /** Returns the builder for the settings used for calls to createFeature. */
     public OperationCallSettings.Builder<
-            CreateFeatureRequest, Feature, CreateRegistryFeatureOperationMetadata>
+            CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
         createFeatureOperationSettings() {
       return getStubSettingsBuilder().createFeatureOperationSettings();
     }

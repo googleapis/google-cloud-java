@@ -24,10 +24,12 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteInterconnectRequest;
 import com.google.cloud.compute.v1.GetDiagnosticsInterconnectRequest;
 import com.google.cloud.compute.v1.GetInterconnectRequest;
+import com.google.cloud.compute.v1.GetMacsecConfigInterconnectRequest;
 import com.google.cloud.compute.v1.InsertInterconnectRequest;
 import com.google.cloud.compute.v1.Interconnect;
 import com.google.cloud.compute.v1.InterconnectList;
 import com.google.cloud.compute.v1.InterconnectsGetDiagnosticsResponse;
+import com.google.cloud.compute.v1.InterconnectsGetMacsecConfigResponse;
 import com.google.cloud.compute.v1.ListInterconnectsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInterconnectRequest;
@@ -59,6 +61,11 @@ public abstract class InterconnectsStub implements BackgroundResource {
   public UnaryCallable<GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>
       getDiagnosticsCallable() {
     throw new UnsupportedOperationException("Not implemented: getDiagnosticsCallable()");
+  }
+
+  public UnaryCallable<GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+      getMacsecConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getMacsecConfigCallable()");
   }
 
   public OperationCallable<InsertInterconnectRequest, Operation, Operation>

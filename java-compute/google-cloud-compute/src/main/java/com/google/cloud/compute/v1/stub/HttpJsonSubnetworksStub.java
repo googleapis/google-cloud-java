@@ -123,6 +123,12 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                                   "returnPartialSuccess",
                                   request.getReturnPartialSuccess());
                             }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

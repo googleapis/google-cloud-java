@@ -260,6 +260,262 @@ public final class DataformGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest,
+          com.google.protobuf.Empty>
+      getCommitRepositoryChangesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CommitRepositoryChanges",
+      requestType = com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest,
+          com.google.protobuf.Empty>
+      getCommitRepositoryChangesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest,
+            com.google.protobuf.Empty>
+        getCommitRepositoryChangesMethod;
+    if ((getCommitRepositoryChangesMethod = DataformGrpc.getCommitRepositoryChangesMethod)
+        == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getCommitRepositoryChangesMethod = DataformGrpc.getCommitRepositoryChangesMethod)
+            == null) {
+          DataformGrpc.getCommitRepositoryChangesMethod =
+              getCommitRepositoryChangesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CommitRepositoryChanges"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("CommitRepositoryChanges"))
+                      .build();
+        }
+      }
+    }
+    return getCommitRepositoryChangesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest,
+          com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse>
+      getReadRepositoryFileMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReadRepositoryFile",
+      requestType = com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest.class,
+      responseType = com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest,
+          com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse>
+      getReadRepositoryFileMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest,
+            com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse>
+        getReadRepositoryFileMethod;
+    if ((getReadRepositoryFileMethod = DataformGrpc.getReadRepositoryFileMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getReadRepositoryFileMethod = DataformGrpc.getReadRepositoryFileMethod) == null) {
+          DataformGrpc.getReadRepositoryFileMethod =
+              getReadRepositoryFileMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest,
+                          com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReadRepositoryFile"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("ReadRepositoryFile"))
+                      .build();
+        }
+      }
+    }
+    return getReadRepositoryFileMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest,
+          com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsResponse>
+      getQueryRepositoryDirectoryContentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "QueryRepositoryDirectoryContents",
+      requestType = com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest.class,
+      responseType =
+          com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest,
+          com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsResponse>
+      getQueryRepositoryDirectoryContentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest,
+            com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsResponse>
+        getQueryRepositoryDirectoryContentsMethod;
+    if ((getQueryRepositoryDirectoryContentsMethod =
+            DataformGrpc.getQueryRepositoryDirectoryContentsMethod)
+        == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getQueryRepositoryDirectoryContentsMethod =
+                DataformGrpc.getQueryRepositoryDirectoryContentsMethod)
+            == null) {
+          DataformGrpc.getQueryRepositoryDirectoryContentsMethod =
+              getQueryRepositoryDirectoryContentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest,
+                          com.google.cloud.dataform.v1beta1
+                              .QueryRepositoryDirectoryContentsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "QueryRepositoryDirectoryContents"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1
+                                  .QueryRepositoryDirectoryContentsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1
+                                  .QueryRepositoryDirectoryContentsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("QueryRepositoryDirectoryContents"))
+                      .build();
+        }
+      }
+    }
+    return getQueryRepositoryDirectoryContentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest,
+          com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse>
+      getFetchRepositoryHistoryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchRepositoryHistory",
+      requestType = com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest.class,
+      responseType = com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest,
+          com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse>
+      getFetchRepositoryHistoryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest,
+            com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse>
+        getFetchRepositoryHistoryMethod;
+    if ((getFetchRepositoryHistoryMethod = DataformGrpc.getFetchRepositoryHistoryMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getFetchRepositoryHistoryMethod = DataformGrpc.getFetchRepositoryHistoryMethod)
+            == null) {
+          DataformGrpc.getFetchRepositoryHistoryMethod =
+              getFetchRepositoryHistoryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest,
+                          com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchRepositoryHistory"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("FetchRepositoryHistory"))
+                      .build();
+        }
+      }
+    }
+    return getFetchRepositoryHistoryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest,
+          com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse>
+      getComputeRepositoryAccessTokenStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ComputeRepositoryAccessTokenStatus",
+      requestType =
+          com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest.class,
+      responseType =
+          com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest,
+          com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse>
+      getComputeRepositoryAccessTokenStatusMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest,
+            com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse>
+        getComputeRepositoryAccessTokenStatusMethod;
+    if ((getComputeRepositoryAccessTokenStatusMethod =
+            DataformGrpc.getComputeRepositoryAccessTokenStatusMethod)
+        == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getComputeRepositoryAccessTokenStatusMethod =
+                DataformGrpc.getComputeRepositoryAccessTokenStatusMethod)
+            == null) {
+          DataformGrpc.getComputeRepositoryAccessTokenStatusMethod =
+              getComputeRepositoryAccessTokenStatusMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest,
+                          com.google.cloud.dataform.v1beta1
+                              .ComputeRepositoryAccessTokenStatusResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ComputeRepositoryAccessTokenStatus"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1
+                                  .ComputeRepositoryAccessTokenStatusRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1
+                                  .ComputeRepositoryAccessTokenStatusResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier(
+                              "ComputeRepositoryAccessTokenStatus"))
+                      .build();
+        }
+      }
+    }
+    return getComputeRepositoryAccessTokenStatusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataform.v1beta1.FetchRemoteBranchesRequest,
           com.google.cloud.dataform.v1beta1.FetchRemoteBranchesResponse>
       getFetchRemoteBranchesMethod;
@@ -1216,6 +1472,236 @@ public final class DataformGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.ListReleaseConfigsRequest,
+          com.google.cloud.dataform.v1beta1.ListReleaseConfigsResponse>
+      getListReleaseConfigsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListReleaseConfigs",
+      requestType = com.google.cloud.dataform.v1beta1.ListReleaseConfigsRequest.class,
+      responseType = com.google.cloud.dataform.v1beta1.ListReleaseConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.ListReleaseConfigsRequest,
+          com.google.cloud.dataform.v1beta1.ListReleaseConfigsResponse>
+      getListReleaseConfigsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.ListReleaseConfigsRequest,
+            com.google.cloud.dataform.v1beta1.ListReleaseConfigsResponse>
+        getListReleaseConfigsMethod;
+    if ((getListReleaseConfigsMethod = DataformGrpc.getListReleaseConfigsMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getListReleaseConfigsMethod = DataformGrpc.getListReleaseConfigsMethod) == null) {
+          DataformGrpc.getListReleaseConfigsMethod =
+              getListReleaseConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.ListReleaseConfigsRequest,
+                          com.google.cloud.dataform.v1beta1.ListReleaseConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListReleaseConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.ListReleaseConfigsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.ListReleaseConfigsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("ListReleaseConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getListReleaseConfigsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest,
+          com.google.cloud.dataform.v1beta1.ReleaseConfig>
+      getGetReleaseConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetReleaseConfig",
+      requestType = com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest.class,
+      responseType = com.google.cloud.dataform.v1beta1.ReleaseConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest,
+          com.google.cloud.dataform.v1beta1.ReleaseConfig>
+      getGetReleaseConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest,
+            com.google.cloud.dataform.v1beta1.ReleaseConfig>
+        getGetReleaseConfigMethod;
+    if ((getGetReleaseConfigMethod = DataformGrpc.getGetReleaseConfigMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getGetReleaseConfigMethod = DataformGrpc.getGetReleaseConfigMethod) == null) {
+          DataformGrpc.getGetReleaseConfigMethod =
+              getGetReleaseConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest,
+                          com.google.cloud.dataform.v1beta1.ReleaseConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetReleaseConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.ReleaseConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(new DataformMethodDescriptorSupplier("GetReleaseConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetReleaseConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest,
+          com.google.cloud.dataform.v1beta1.ReleaseConfig>
+      getCreateReleaseConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateReleaseConfig",
+      requestType = com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest.class,
+      responseType = com.google.cloud.dataform.v1beta1.ReleaseConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest,
+          com.google.cloud.dataform.v1beta1.ReleaseConfig>
+      getCreateReleaseConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest,
+            com.google.cloud.dataform.v1beta1.ReleaseConfig>
+        getCreateReleaseConfigMethod;
+    if ((getCreateReleaseConfigMethod = DataformGrpc.getCreateReleaseConfigMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getCreateReleaseConfigMethod = DataformGrpc.getCreateReleaseConfigMethod) == null) {
+          DataformGrpc.getCreateReleaseConfigMethod =
+              getCreateReleaseConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest,
+                          com.google.cloud.dataform.v1beta1.ReleaseConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateReleaseConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.ReleaseConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("CreateReleaseConfig"))
+                      .build();
+        }
+      }
+    }
+    return getCreateReleaseConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest,
+          com.google.cloud.dataform.v1beta1.ReleaseConfig>
+      getUpdateReleaseConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateReleaseConfig",
+      requestType = com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest.class,
+      responseType = com.google.cloud.dataform.v1beta1.ReleaseConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest,
+          com.google.cloud.dataform.v1beta1.ReleaseConfig>
+      getUpdateReleaseConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest,
+            com.google.cloud.dataform.v1beta1.ReleaseConfig>
+        getUpdateReleaseConfigMethod;
+    if ((getUpdateReleaseConfigMethod = DataformGrpc.getUpdateReleaseConfigMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getUpdateReleaseConfigMethod = DataformGrpc.getUpdateReleaseConfigMethod) == null) {
+          DataformGrpc.getUpdateReleaseConfigMethod =
+              getUpdateReleaseConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest,
+                          com.google.cloud.dataform.v1beta1.ReleaseConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateReleaseConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.ReleaseConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("UpdateReleaseConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateReleaseConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest, com.google.protobuf.Empty>
+      getDeleteReleaseConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteReleaseConfig",
+      requestType = com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest, com.google.protobuf.Empty>
+      getDeleteReleaseConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest, com.google.protobuf.Empty>
+        getDeleteReleaseConfigMethod;
+    if ((getDeleteReleaseConfigMethod = DataformGrpc.getDeleteReleaseConfigMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getDeleteReleaseConfigMethod = DataformGrpc.getDeleteReleaseConfigMethod) == null) {
+          DataformGrpc.getDeleteReleaseConfigMethod =
+              getDeleteReleaseConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteReleaseConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("DeleteReleaseConfig"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteReleaseConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataform.v1beta1.ListCompilationResultsRequest,
           com.google.cloud.dataform.v1beta1.ListCompilationResultsResponse>
       getListCompilationResultsMethod;
@@ -1412,6 +1898,242 @@ public final class DataformGrpc {
       }
     }
     return getQueryCompilationResultActionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.ListWorkflowConfigsRequest,
+          com.google.cloud.dataform.v1beta1.ListWorkflowConfigsResponse>
+      getListWorkflowConfigsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListWorkflowConfigs",
+      requestType = com.google.cloud.dataform.v1beta1.ListWorkflowConfigsRequest.class,
+      responseType = com.google.cloud.dataform.v1beta1.ListWorkflowConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.ListWorkflowConfigsRequest,
+          com.google.cloud.dataform.v1beta1.ListWorkflowConfigsResponse>
+      getListWorkflowConfigsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.ListWorkflowConfigsRequest,
+            com.google.cloud.dataform.v1beta1.ListWorkflowConfigsResponse>
+        getListWorkflowConfigsMethod;
+    if ((getListWorkflowConfigsMethod = DataformGrpc.getListWorkflowConfigsMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getListWorkflowConfigsMethod = DataformGrpc.getListWorkflowConfigsMethod) == null) {
+          DataformGrpc.getListWorkflowConfigsMethod =
+              getListWorkflowConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.ListWorkflowConfigsRequest,
+                          com.google.cloud.dataform.v1beta1.ListWorkflowConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListWorkflowConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.ListWorkflowConfigsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.ListWorkflowConfigsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("ListWorkflowConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getListWorkflowConfigsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest,
+          com.google.cloud.dataform.v1beta1.WorkflowConfig>
+      getGetWorkflowConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetWorkflowConfig",
+      requestType = com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest.class,
+      responseType = com.google.cloud.dataform.v1beta1.WorkflowConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest,
+          com.google.cloud.dataform.v1beta1.WorkflowConfig>
+      getGetWorkflowConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest,
+            com.google.cloud.dataform.v1beta1.WorkflowConfig>
+        getGetWorkflowConfigMethod;
+    if ((getGetWorkflowConfigMethod = DataformGrpc.getGetWorkflowConfigMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getGetWorkflowConfigMethod = DataformGrpc.getGetWorkflowConfigMethod) == null) {
+          DataformGrpc.getGetWorkflowConfigMethod =
+              getGetWorkflowConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest,
+                          com.google.cloud.dataform.v1beta1.WorkflowConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetWorkflowConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.WorkflowConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("GetWorkflowConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetWorkflowConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest,
+          com.google.cloud.dataform.v1beta1.WorkflowConfig>
+      getCreateWorkflowConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateWorkflowConfig",
+      requestType = com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest.class,
+      responseType = com.google.cloud.dataform.v1beta1.WorkflowConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest,
+          com.google.cloud.dataform.v1beta1.WorkflowConfig>
+      getCreateWorkflowConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest,
+            com.google.cloud.dataform.v1beta1.WorkflowConfig>
+        getCreateWorkflowConfigMethod;
+    if ((getCreateWorkflowConfigMethod = DataformGrpc.getCreateWorkflowConfigMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getCreateWorkflowConfigMethod = DataformGrpc.getCreateWorkflowConfigMethod) == null) {
+          DataformGrpc.getCreateWorkflowConfigMethod =
+              getCreateWorkflowConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest,
+                          com.google.cloud.dataform.v1beta1.WorkflowConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateWorkflowConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.WorkflowConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("CreateWorkflowConfig"))
+                      .build();
+        }
+      }
+    }
+    return getCreateWorkflowConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest,
+          com.google.cloud.dataform.v1beta1.WorkflowConfig>
+      getUpdateWorkflowConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateWorkflowConfig",
+      requestType = com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest.class,
+      responseType = com.google.cloud.dataform.v1beta1.WorkflowConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest,
+          com.google.cloud.dataform.v1beta1.WorkflowConfig>
+      getUpdateWorkflowConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest,
+            com.google.cloud.dataform.v1beta1.WorkflowConfig>
+        getUpdateWorkflowConfigMethod;
+    if ((getUpdateWorkflowConfigMethod = DataformGrpc.getUpdateWorkflowConfigMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getUpdateWorkflowConfigMethod = DataformGrpc.getUpdateWorkflowConfigMethod) == null) {
+          DataformGrpc.getUpdateWorkflowConfigMethod =
+              getUpdateWorkflowConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest,
+                          com.google.cloud.dataform.v1beta1.WorkflowConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateWorkflowConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.WorkflowConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("UpdateWorkflowConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateWorkflowConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest, com.google.protobuf.Empty>
+      getDeleteWorkflowConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteWorkflowConfig",
+      requestType = com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest, com.google.protobuf.Empty>
+      getDeleteWorkflowConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest,
+            com.google.protobuf.Empty>
+        getDeleteWorkflowConfigMethod;
+    if ((getDeleteWorkflowConfigMethod = DataformGrpc.getDeleteWorkflowConfigMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getDeleteWorkflowConfigMethod = DataformGrpc.getDeleteWorkflowConfigMethod) == null) {
+          DataformGrpc.getDeleteWorkflowConfigMethod =
+              getDeleteWorkflowConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteWorkflowConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("DeleteWorkflowConfig"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteWorkflowConfigMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1841,6 +2563,87 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Applies a Git commit to a Repository. The Repository must not have a value
+     * for `git_remote_settings.url`.
+     * </pre>
+     */
+    default void commitRepositoryChanges(
+        com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCommitRepositoryChangesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the contents of a file (inside a Repository). The Repository
+     * must not have a value for `git_remote_settings.url`.
+     * </pre>
+     */
+    default void readRepositoryFile(
+        com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getReadRepositoryFileMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the contents of a given Repository directory. The Repository must
+     * not have a value for `git_remote_settings.url`.
+     * </pre>
+     */
+    default void queryRepositoryDirectoryContents(
+        com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getQueryRepositoryDirectoryContentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a Repository's history of commits.  The Repository must not have a
+     * value for `git_remote_settings.url`.
+     * </pre>
+     */
+    default void fetchRepositoryHistory(
+        com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchRepositoryHistoryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Computes a Repository's Git access token status.
+     * </pre>
+     */
+    default void computeRepositoryAccessTokenStatus(
+        com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getComputeRepositoryAccessTokenStatusMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Fetches a Repository's remote branches.
      * </pre>
      */
@@ -2145,6 +2948,80 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Lists ReleaseConfigs in a given Repository.
+     * </pre>
+     */
+    default void listReleaseConfigs(
+        com.google.cloud.dataform.v1beta1.ListReleaseConfigsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.ListReleaseConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListReleaseConfigsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a single ReleaseConfig.
+     * </pre>
+     */
+    default void getReleaseConfig(
+        com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.ReleaseConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetReleaseConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ReleaseConfig in a given Repository.
+     * </pre>
+     */
+    default void createReleaseConfig(
+        com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.ReleaseConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateReleaseConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single ReleaseConfig.
+     * </pre>
+     */
+    default void updateReleaseConfig(
+        com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.ReleaseConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateReleaseConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ReleaseConfig.
+     * </pre>
+     */
+    default void deleteReleaseConfig(
+        com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteReleaseConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists CompilationResults in a given Repository.
      * </pre>
      */
@@ -2201,6 +3078,80 @@ public final class DataformGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getQueryCompilationResultActionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists WorkflowConfigs in a given Repository.
+     * </pre>
+     */
+    default void listWorkflowConfigs(
+        com.google.cloud.dataform.v1beta1.ListWorkflowConfigsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.ListWorkflowConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListWorkflowConfigsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a single WorkflowConfig.
+     * </pre>
+     */
+    default void getWorkflowConfig(
+        com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.WorkflowConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetWorkflowConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new WorkflowConfig in a given Repository.
+     * </pre>
+     */
+    default void createWorkflowConfig(
+        com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.WorkflowConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateWorkflowConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single WorkflowConfig.
+     * </pre>
+     */
+    default void updateWorkflowConfig(
+        com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.WorkflowConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateWorkflowConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single WorkflowConfig.
+     * </pre>
+     */
+    default void deleteWorkflowConfig(
+        com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteWorkflowConfigMethod(), responseObserver);
     }
 
     /**
@@ -2408,6 +3359,97 @@ public final class DataformGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteRepositoryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Applies a Git commit to a Repository. The Repository must not have a value
+     * for `git_remote_settings.url`.
+     * </pre>
+     */
+    public void commitRepositoryChanges(
+        com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCommitRepositoryChangesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the contents of a file (inside a Repository). The Repository
+     * must not have a value for `git_remote_settings.url`.
+     * </pre>
+     */
+    public void readRepositoryFile(
+        com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReadRepositoryFileMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the contents of a given Repository directory. The Repository must
+     * not have a value for `git_remote_settings.url`.
+     * </pre>
+     */
+    public void queryRepositoryDirectoryContents(
+        com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getQueryRepositoryDirectoryContentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a Repository's history of commits.  The Repository must not have a
+     * value for `git_remote_settings.url`.
+     * </pre>
+     */
+    public void fetchRepositoryHistory(
+        com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchRepositoryHistoryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Computes a Repository's Git access token status.
+     * </pre>
+     */
+    public void computeRepositoryAccessTokenStatus(
+        com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getComputeRepositoryAccessTokenStatusMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2758,6 +3800,90 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Lists ReleaseConfigs in a given Repository.
+     * </pre>
+     */
+    public void listReleaseConfigs(
+        com.google.cloud.dataform.v1beta1.ListReleaseConfigsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.ListReleaseConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListReleaseConfigsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a single ReleaseConfig.
+     * </pre>
+     */
+    public void getReleaseConfig(
+        com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.ReleaseConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetReleaseConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ReleaseConfig in a given Repository.
+     * </pre>
+     */
+    public void createReleaseConfig(
+        com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.ReleaseConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateReleaseConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single ReleaseConfig.
+     * </pre>
+     */
+    public void updateReleaseConfig(
+        com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.ReleaseConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateReleaseConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ReleaseConfig.
+     * </pre>
+     */
+    public void deleteReleaseConfig(
+        com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteReleaseConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists CompilationResults in a given Repository.
      * </pre>
      */
@@ -2820,6 +3946,90 @@ public final class DataformGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getQueryCompilationResultActionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists WorkflowConfigs in a given Repository.
+     * </pre>
+     */
+    public void listWorkflowConfigs(
+        com.google.cloud.dataform.v1beta1.ListWorkflowConfigsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.ListWorkflowConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListWorkflowConfigsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a single WorkflowConfig.
+     * </pre>
+     */
+    public void getWorkflowConfig(
+        com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.WorkflowConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetWorkflowConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new WorkflowConfig in a given Repository.
+     * </pre>
+     */
+    public void createWorkflowConfig(
+        com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.WorkflowConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateWorkflowConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single WorkflowConfig.
+     * </pre>
+     */
+    public void updateWorkflowConfig(
+        com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.WorkflowConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateWorkflowConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single WorkflowConfig.
+     * </pre>
+     */
+    public void deleteWorkflowConfig(
+        com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteWorkflowConfigMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3009,6 +4219,77 @@ public final class DataformGrpc {
         com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Applies a Git commit to a Repository. The Repository must not have a value
+     * for `git_remote_settings.url`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty commitRepositoryChanges(
+        com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCommitRepositoryChangesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the contents of a file (inside a Repository). The Repository
+     * must not have a value for `git_remote_settings.url`.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse readRepositoryFile(
+        com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReadRepositoryFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the contents of a given Repository directory. The Repository must
+     * not have a value for `git_remote_settings.url`.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsResponse
+        queryRepositoryDirectoryContents(
+            com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryRepositoryDirectoryContentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a Repository's history of commits.  The Repository must not have a
+     * value for `git_remote_settings.url`.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse fetchRepositoryHistory(
+        com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchRepositoryHistoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Computes a Repository's Git access token status.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse
+        computeRepositoryAccessTokenStatus(
+            com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getComputeRepositoryAccessTokenStatusMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3289,6 +4570,71 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Lists ReleaseConfigs in a given Repository.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.ListReleaseConfigsResponse listReleaseConfigs(
+        com.google.cloud.dataform.v1beta1.ListReleaseConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReleaseConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a single ReleaseConfig.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.ReleaseConfig getReleaseConfig(
+        com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReleaseConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ReleaseConfig in a given Repository.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.ReleaseConfig createReleaseConfig(
+        com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReleaseConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single ReleaseConfig.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.ReleaseConfig updateReleaseConfig(
+        com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateReleaseConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ReleaseConfig.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteReleaseConfig(
+        com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteReleaseConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists CompilationResults in a given Repository.
      * </pre>
      */
@@ -3336,6 +4682,71 @@ public final class DataformGrpc {
             com.google.cloud.dataform.v1beta1.QueryCompilationResultActionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getQueryCompilationResultActionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists WorkflowConfigs in a given Repository.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.ListWorkflowConfigsResponse listWorkflowConfigs(
+        com.google.cloud.dataform.v1beta1.ListWorkflowConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWorkflowConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a single WorkflowConfig.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.WorkflowConfig getWorkflowConfig(
+        com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetWorkflowConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new WorkflowConfig in a given Repository.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.WorkflowConfig createWorkflowConfig(
+        com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateWorkflowConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single WorkflowConfig.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.WorkflowConfig updateWorkflowConfig(
+        com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateWorkflowConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single WorkflowConfig.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteWorkflowConfig(
+        com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteWorkflowConfigMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3505,6 +4916,85 @@ public final class DataformGrpc {
         deleteRepository(com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteRepositoryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Applies a Git commit to a Repository. The Repository must not have a value
+     * for `git_remote_settings.url`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        commitRepositoryChanges(
+            com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCommitRepositoryChangesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the contents of a file (inside a Repository). The Repository
+     * must not have a value for `git_remote_settings.url`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse>
+        readRepositoryFile(com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReadRepositoryFileMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the contents of a given Repository directory. The Repository must
+     * not have a value for `git_remote_settings.url`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsResponse>
+        queryRepositoryDirectoryContents(
+            com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getQueryRepositoryDirectoryContentsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a Repository's history of commits.  The Repository must not have a
+     * value for `git_remote_settings.url`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse>
+        fetchRepositoryHistory(
+            com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchRepositoryHistoryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Computes a Repository's Git access token status.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse>
+        computeRepositoryAccessTokenStatus(
+            com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getComputeRepositoryAccessTokenStatusMethod(), getCallOptions()),
+          request);
     }
 
     /**
@@ -3803,6 +5293,75 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Lists ReleaseConfigs in a given Repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.ListReleaseConfigsResponse>
+        listReleaseConfigs(com.google.cloud.dataform.v1beta1.ListReleaseConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListReleaseConfigsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a single ReleaseConfig.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.ReleaseConfig>
+        getReleaseConfig(com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetReleaseConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ReleaseConfig in a given Repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.ReleaseConfig>
+        createReleaseConfig(com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateReleaseConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single ReleaseConfig.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.ReleaseConfig>
+        updateReleaseConfig(com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateReleaseConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ReleaseConfig.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteReleaseConfig(com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteReleaseConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists CompilationResults in a given Repository.
      * </pre>
      */
@@ -3858,6 +5417,78 @@ public final class DataformGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getQueryCompilationResultActionsMethod(), getCallOptions()),
           request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists WorkflowConfigs in a given Repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.ListWorkflowConfigsResponse>
+        listWorkflowConfigs(com.google.cloud.dataform.v1beta1.ListWorkflowConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListWorkflowConfigsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a single WorkflowConfig.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.WorkflowConfig>
+        getWorkflowConfig(com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetWorkflowConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new WorkflowConfig in a given Repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.WorkflowConfig>
+        createWorkflowConfig(
+            com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateWorkflowConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single WorkflowConfig.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.WorkflowConfig>
+        updateWorkflowConfig(
+            com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateWorkflowConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single WorkflowConfig.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteWorkflowConfig(
+            com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteWorkflowConfigMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3955,37 +5586,52 @@ public final class DataformGrpc {
   private static final int METHODID_CREATE_REPOSITORY = 2;
   private static final int METHODID_UPDATE_REPOSITORY = 3;
   private static final int METHODID_DELETE_REPOSITORY = 4;
-  private static final int METHODID_FETCH_REMOTE_BRANCHES = 5;
-  private static final int METHODID_LIST_WORKSPACES = 6;
-  private static final int METHODID_GET_WORKSPACE = 7;
-  private static final int METHODID_CREATE_WORKSPACE = 8;
-  private static final int METHODID_DELETE_WORKSPACE = 9;
-  private static final int METHODID_INSTALL_NPM_PACKAGES = 10;
-  private static final int METHODID_PULL_GIT_COMMITS = 11;
-  private static final int METHODID_PUSH_GIT_COMMITS = 12;
-  private static final int METHODID_FETCH_FILE_GIT_STATUSES = 13;
-  private static final int METHODID_FETCH_GIT_AHEAD_BEHIND = 14;
-  private static final int METHODID_COMMIT_WORKSPACE_CHANGES = 15;
-  private static final int METHODID_RESET_WORKSPACE_CHANGES = 16;
-  private static final int METHODID_FETCH_FILE_DIFF = 17;
-  private static final int METHODID_QUERY_DIRECTORY_CONTENTS = 18;
-  private static final int METHODID_MAKE_DIRECTORY = 19;
-  private static final int METHODID_REMOVE_DIRECTORY = 20;
-  private static final int METHODID_MOVE_DIRECTORY = 21;
-  private static final int METHODID_READ_FILE = 22;
-  private static final int METHODID_REMOVE_FILE = 23;
-  private static final int METHODID_MOVE_FILE = 24;
-  private static final int METHODID_WRITE_FILE = 25;
-  private static final int METHODID_LIST_COMPILATION_RESULTS = 26;
-  private static final int METHODID_GET_COMPILATION_RESULT = 27;
-  private static final int METHODID_CREATE_COMPILATION_RESULT = 28;
-  private static final int METHODID_QUERY_COMPILATION_RESULT_ACTIONS = 29;
-  private static final int METHODID_LIST_WORKFLOW_INVOCATIONS = 30;
-  private static final int METHODID_GET_WORKFLOW_INVOCATION = 31;
-  private static final int METHODID_CREATE_WORKFLOW_INVOCATION = 32;
-  private static final int METHODID_DELETE_WORKFLOW_INVOCATION = 33;
-  private static final int METHODID_CANCEL_WORKFLOW_INVOCATION = 34;
-  private static final int METHODID_QUERY_WORKFLOW_INVOCATION_ACTIONS = 35;
+  private static final int METHODID_COMMIT_REPOSITORY_CHANGES = 5;
+  private static final int METHODID_READ_REPOSITORY_FILE = 6;
+  private static final int METHODID_QUERY_REPOSITORY_DIRECTORY_CONTENTS = 7;
+  private static final int METHODID_FETCH_REPOSITORY_HISTORY = 8;
+  private static final int METHODID_COMPUTE_REPOSITORY_ACCESS_TOKEN_STATUS = 9;
+  private static final int METHODID_FETCH_REMOTE_BRANCHES = 10;
+  private static final int METHODID_LIST_WORKSPACES = 11;
+  private static final int METHODID_GET_WORKSPACE = 12;
+  private static final int METHODID_CREATE_WORKSPACE = 13;
+  private static final int METHODID_DELETE_WORKSPACE = 14;
+  private static final int METHODID_INSTALL_NPM_PACKAGES = 15;
+  private static final int METHODID_PULL_GIT_COMMITS = 16;
+  private static final int METHODID_PUSH_GIT_COMMITS = 17;
+  private static final int METHODID_FETCH_FILE_GIT_STATUSES = 18;
+  private static final int METHODID_FETCH_GIT_AHEAD_BEHIND = 19;
+  private static final int METHODID_COMMIT_WORKSPACE_CHANGES = 20;
+  private static final int METHODID_RESET_WORKSPACE_CHANGES = 21;
+  private static final int METHODID_FETCH_FILE_DIFF = 22;
+  private static final int METHODID_QUERY_DIRECTORY_CONTENTS = 23;
+  private static final int METHODID_MAKE_DIRECTORY = 24;
+  private static final int METHODID_REMOVE_DIRECTORY = 25;
+  private static final int METHODID_MOVE_DIRECTORY = 26;
+  private static final int METHODID_READ_FILE = 27;
+  private static final int METHODID_REMOVE_FILE = 28;
+  private static final int METHODID_MOVE_FILE = 29;
+  private static final int METHODID_WRITE_FILE = 30;
+  private static final int METHODID_LIST_RELEASE_CONFIGS = 31;
+  private static final int METHODID_GET_RELEASE_CONFIG = 32;
+  private static final int METHODID_CREATE_RELEASE_CONFIG = 33;
+  private static final int METHODID_UPDATE_RELEASE_CONFIG = 34;
+  private static final int METHODID_DELETE_RELEASE_CONFIG = 35;
+  private static final int METHODID_LIST_COMPILATION_RESULTS = 36;
+  private static final int METHODID_GET_COMPILATION_RESULT = 37;
+  private static final int METHODID_CREATE_COMPILATION_RESULT = 38;
+  private static final int METHODID_QUERY_COMPILATION_RESULT_ACTIONS = 39;
+  private static final int METHODID_LIST_WORKFLOW_CONFIGS = 40;
+  private static final int METHODID_GET_WORKFLOW_CONFIG = 41;
+  private static final int METHODID_CREATE_WORKFLOW_CONFIG = 42;
+  private static final int METHODID_UPDATE_WORKFLOW_CONFIG = 43;
+  private static final int METHODID_DELETE_WORKFLOW_CONFIG = 44;
+  private static final int METHODID_LIST_WORKFLOW_INVOCATIONS = 45;
+  private static final int METHODID_GET_WORKFLOW_INVOCATION = 46;
+  private static final int METHODID_CREATE_WORKFLOW_INVOCATION = 47;
+  private static final int METHODID_DELETE_WORKFLOW_INVOCATION = 48;
+  private static final int METHODID_CANCEL_WORKFLOW_INVOCATION = 49;
+  private static final int METHODID_QUERY_WORKFLOW_INVOCATION_ACTIONS = 50;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4033,6 +5679,39 @@ public final class DataformGrpc {
           serviceImpl.deleteRepository(
               (com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_COMMIT_REPOSITORY_CHANGES:
+          serviceImpl.commitRepositoryChanges(
+              (com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_READ_REPOSITORY_FILE:
+          serviceImpl.readRepositoryFile(
+              (com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse>)
+                  responseObserver);
+          break;
+        case METHODID_QUERY_REPOSITORY_DIRECTORY_CONTENTS:
+          serviceImpl.queryRepositoryDirectoryContents(
+              (com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_REPOSITORY_HISTORY:
+          serviceImpl.fetchRepositoryHistory(
+              (com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse>)
+                  responseObserver);
+          break;
+        case METHODID_COMPUTE_REPOSITORY_ACCESS_TOKEN_STATUS:
+          serviceImpl.computeRepositoryAccessTokenStatus(
+              (com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse>)
+                  responseObserver);
           break;
         case METHODID_FETCH_REMOTE_BRANCHES:
           serviceImpl.fetchRemoteBranches(
@@ -4159,6 +5838,36 @@ public final class DataformGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.WriteFileResponse>)
                   responseObserver);
           break;
+        case METHODID_LIST_RELEASE_CONFIGS:
+          serviceImpl.listReleaseConfigs(
+              (com.google.cloud.dataform.v1beta1.ListReleaseConfigsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dataform.v1beta1.ListReleaseConfigsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_RELEASE_CONFIG:
+          serviceImpl.getReleaseConfig(
+              (com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.ReleaseConfig>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_RELEASE_CONFIG:
+          serviceImpl.createReleaseConfig(
+              (com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.ReleaseConfig>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_RELEASE_CONFIG:
+          serviceImpl.updateReleaseConfig(
+              (com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.ReleaseConfig>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_RELEASE_CONFIG:
+          serviceImpl.deleteReleaseConfig(
+              (com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         case METHODID_LIST_COMPILATION_RESULTS:
           serviceImpl.listCompilationResults(
               (com.google.cloud.dataform.v1beta1.ListCompilationResultsRequest) request,
@@ -4184,6 +5893,36 @@ public final class DataformGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.dataform.v1beta1.QueryCompilationResultActionsResponse>)
                   responseObserver);
+          break;
+        case METHODID_LIST_WORKFLOW_CONFIGS:
+          serviceImpl.listWorkflowConfigs(
+              (com.google.cloud.dataform.v1beta1.ListWorkflowConfigsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dataform.v1beta1.ListWorkflowConfigsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_WORKFLOW_CONFIG:
+          serviceImpl.getWorkflowConfig(
+              (com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.WorkflowConfig>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_WORKFLOW_CONFIG:
+          serviceImpl.createWorkflowConfig(
+              (com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.WorkflowConfig>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_WORKFLOW_CONFIG:
+          serviceImpl.updateWorkflowConfig(
+              (com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.WorkflowConfig>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_WORKFLOW_CONFIG:
+          serviceImpl.deleteWorkflowConfig(
+              (com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_LIST_WORKFLOW_INVOCATIONS:
           serviceImpl.listWorkflowInvocations(
@@ -4273,6 +6012,40 @@ public final class DataformGrpc {
                 new MethodHandlers<
                     com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_REPOSITORY)))
+        .addMethod(
+            getCommitRepositoryChangesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest,
+                    com.google.protobuf.Empty>(service, METHODID_COMMIT_REPOSITORY_CHANGES)))
+        .addMethod(
+            getReadRepositoryFileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest,
+                    com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse>(
+                    service, METHODID_READ_REPOSITORY_FILE)))
+        .addMethod(
+            getQueryRepositoryDirectoryContentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest,
+                    com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsResponse>(
+                    service, METHODID_QUERY_REPOSITORY_DIRECTORY_CONTENTS)))
+        .addMethod(
+            getFetchRepositoryHistoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest,
+                    com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse>(
+                    service, METHODID_FETCH_REPOSITORY_HISTORY)))
+        .addMethod(
+            getComputeRepositoryAccessTokenStatusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest,
+                    com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse>(
+                    service, METHODID_COMPUTE_REPOSITORY_ACCESS_TOKEN_STATUS)))
         .addMethod(
             getFetchRemoteBranchesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4413,6 +6186,40 @@ public final class DataformGrpc {
                     com.google.cloud.dataform.v1beta1.WriteFileResponse>(
                     service, METHODID_WRITE_FILE)))
         .addMethod(
+            getListReleaseConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.ListReleaseConfigsRequest,
+                    com.google.cloud.dataform.v1beta1.ListReleaseConfigsResponse>(
+                    service, METHODID_LIST_RELEASE_CONFIGS)))
+        .addMethod(
+            getGetReleaseConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest,
+                    com.google.cloud.dataform.v1beta1.ReleaseConfig>(
+                    service, METHODID_GET_RELEASE_CONFIG)))
+        .addMethod(
+            getCreateReleaseConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest,
+                    com.google.cloud.dataform.v1beta1.ReleaseConfig>(
+                    service, METHODID_CREATE_RELEASE_CONFIG)))
+        .addMethod(
+            getUpdateReleaseConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest,
+                    com.google.cloud.dataform.v1beta1.ReleaseConfig>(
+                    service, METHODID_UPDATE_RELEASE_CONFIG)))
+        .addMethod(
+            getDeleteReleaseConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_RELEASE_CONFIG)))
+        .addMethod(
             getListCompilationResultsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4440,6 +6247,40 @@ public final class DataformGrpc {
                     com.google.cloud.dataform.v1beta1.QueryCompilationResultActionsRequest,
                     com.google.cloud.dataform.v1beta1.QueryCompilationResultActionsResponse>(
                     service, METHODID_QUERY_COMPILATION_RESULT_ACTIONS)))
+        .addMethod(
+            getListWorkflowConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.ListWorkflowConfigsRequest,
+                    com.google.cloud.dataform.v1beta1.ListWorkflowConfigsResponse>(
+                    service, METHODID_LIST_WORKFLOW_CONFIGS)))
+        .addMethod(
+            getGetWorkflowConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest,
+                    com.google.cloud.dataform.v1beta1.WorkflowConfig>(
+                    service, METHODID_GET_WORKFLOW_CONFIG)))
+        .addMethod(
+            getCreateWorkflowConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest,
+                    com.google.cloud.dataform.v1beta1.WorkflowConfig>(
+                    service, METHODID_CREATE_WORKFLOW_CONFIG)))
+        .addMethod(
+            getUpdateWorkflowConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest,
+                    com.google.cloud.dataform.v1beta1.WorkflowConfig>(
+                    service, METHODID_UPDATE_WORKFLOW_CONFIG)))
+        .addMethod(
+            getDeleteWorkflowConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_WORKFLOW_CONFIG)))
         .addMethod(
             getListWorkflowInvocationsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4534,6 +6375,11 @@ public final class DataformGrpc {
                       .addMethod(getCreateRepositoryMethod())
                       .addMethod(getUpdateRepositoryMethod())
                       .addMethod(getDeleteRepositoryMethod())
+                      .addMethod(getCommitRepositoryChangesMethod())
+                      .addMethod(getReadRepositoryFileMethod())
+                      .addMethod(getQueryRepositoryDirectoryContentsMethod())
+                      .addMethod(getFetchRepositoryHistoryMethod())
+                      .addMethod(getComputeRepositoryAccessTokenStatusMethod())
                       .addMethod(getFetchRemoteBranchesMethod())
                       .addMethod(getListWorkspacesMethod())
                       .addMethod(getGetWorkspaceMethod())
@@ -4555,10 +6401,20 @@ public final class DataformGrpc {
                       .addMethod(getRemoveFileMethod())
                       .addMethod(getMoveFileMethod())
                       .addMethod(getWriteFileMethod())
+                      .addMethod(getListReleaseConfigsMethod())
+                      .addMethod(getGetReleaseConfigMethod())
+                      .addMethod(getCreateReleaseConfigMethod())
+                      .addMethod(getUpdateReleaseConfigMethod())
+                      .addMethod(getDeleteReleaseConfigMethod())
                       .addMethod(getListCompilationResultsMethod())
                       .addMethod(getGetCompilationResultMethod())
                       .addMethod(getCreateCompilationResultMethod())
                       .addMethod(getQueryCompilationResultActionsMethod())
+                      .addMethod(getListWorkflowConfigsMethod())
+                      .addMethod(getGetWorkflowConfigMethod())
+                      .addMethod(getCreateWorkflowConfigMethod())
+                      .addMethod(getUpdateWorkflowConfigMethod())
+                      .addMethod(getDeleteWorkflowConfigMethod())
                       .addMethod(getListWorkflowInvocationsMethod())
                       .addMethod(getGetWorkflowInvocationMethod())
                       .addMethod(getCreateWorkflowInvocationMethod())

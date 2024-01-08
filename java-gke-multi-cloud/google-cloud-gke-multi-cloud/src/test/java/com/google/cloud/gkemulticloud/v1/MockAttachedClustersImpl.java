@@ -229,4 +229,26 @@ public class MockAttachedClustersImpl extends AttachedClustersImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void generateAttachedClusterAgentToken(
+      GenerateAttachedClusterAgentTokenRequest request,
+      StreamObserver<GenerateAttachedClusterAgentTokenResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateAttachedClusterAgentTokenResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateAttachedClusterAgentTokenResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateAttachedClusterAgentToken, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateAttachedClusterAgentTokenResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

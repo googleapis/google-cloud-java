@@ -218,6 +218,7 @@ public class TargetInstancesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, TargetInstancesScopedList> element :
    *       targetInstancesClient.aggregatedList(request).iterateAll()) {
@@ -256,6 +257,7 @@ public class TargetInstancesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, TargetInstancesScopedList>> future =
    *       targetInstancesClient.aggregatedListPagedCallable().futureCall(request);
@@ -293,6 +295,7 @@ public class TargetInstancesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     TargetInstanceAggregatedList response =
@@ -821,6 +824,159 @@ public class TargetInstancesClient implements BackgroundResource {
    */
   public final UnaryCallable<ListTargetInstancesRequest, TargetInstanceList> listCallable() {
     return stub.listCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the Google Cloud Armor security policy for the specified target instance. For more
+   * information, see Google Cloud Armor Overview
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String targetInstance = "targetInstance-1036957370";
+   *   SecurityPolicyReference securityPolicyReferenceResource =
+   *       SecurityPolicyReference.newBuilder().build();
+   *   Operation response =
+   *       targetInstancesClient
+   *           .setSecurityPolicyAsync(
+   *               project, zone, targetInstance, securityPolicyReferenceResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone Name of the zone scoping this request.
+   * @param targetInstance Name of the TargetInstance resource to which the security policy should
+   *     be set. The name should conform to RFC1035.
+   * @param securityPolicyReferenceResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setSecurityPolicyAsync(
+      String project,
+      String zone,
+      String targetInstance,
+      SecurityPolicyReference securityPolicyReferenceResource) {
+    SetSecurityPolicyTargetInstanceRequest request =
+        SetSecurityPolicyTargetInstanceRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setTargetInstance(targetInstance)
+            .setSecurityPolicyReferenceResource(securityPolicyReferenceResource)
+            .build();
+    return setSecurityPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the Google Cloud Armor security policy for the specified target instance. For more
+   * information, see Google Cloud Armor Overview
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
+   *   SetSecurityPolicyTargetInstanceRequest request =
+   *       SetSecurityPolicyTargetInstanceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSecurityPolicyReferenceResource(SecurityPolicyReference.newBuilder().build())
+   *           .setTargetInstance("targetInstance-1036957370")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = targetInstancesClient.setSecurityPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setSecurityPolicyAsync(
+      SetSecurityPolicyTargetInstanceRequest request) {
+    return setSecurityPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the Google Cloud Armor security policy for the specified target instance. For more
+   * information, see Google Cloud Armor Overview
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
+   *   SetSecurityPolicyTargetInstanceRequest request =
+   *       SetSecurityPolicyTargetInstanceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSecurityPolicyReferenceResource(SecurityPolicyReference.newBuilder().build())
+   *           .setTargetInstance("targetInstance-1036957370")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       targetInstancesClient.setSecurityPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable() {
+    return stub.setSecurityPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the Google Cloud Armor security policy for the specified target instance. For more
+   * information, see Google Cloud Armor Overview
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
+   *   SetSecurityPolicyTargetInstanceRequest request =
+   *       SetSecurityPolicyTargetInstanceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setSecurityPolicyReferenceResource(SecurityPolicyReference.newBuilder().build())
+   *           .setTargetInstance("targetInstance-1036957370")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       targetInstancesClient.setSecurityPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetSecurityPolicyTargetInstanceRequest, Operation>
+      setSecurityPolicyCallable() {
+    return stub.setSecurityPolicyCallable();
   }
 
   @Override

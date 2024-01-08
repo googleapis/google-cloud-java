@@ -44,6 +44,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback;
 import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest;
@@ -52,6 +53,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.SubmitAnswerFeedbackRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -117,6 +119,8 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
   private final UnaryCallSettings<MatchIntentRequest, MatchIntentResponse> matchIntentSettings;
   private final UnaryCallSettings<FulfillIntentRequest, FulfillIntentResponse>
       fulfillIntentSettings;
+  private final UnaryCallSettings<SubmitAnswerFeedbackRequest, AnswerFeedback>
+      submitAnswerFeedbackSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -194,6 +198,12 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
   /** Returns the object with the settings used for calls to fulfillIntent. */
   public UnaryCallSettings<FulfillIntentRequest, FulfillIntentResponse> fulfillIntentSettings() {
     return fulfillIntentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to submitAnswerFeedback. */
+  public UnaryCallSettings<SubmitAnswerFeedbackRequest, AnswerFeedback>
+      submitAnswerFeedbackSettings() {
+    return submitAnswerFeedbackSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -315,6 +325,7 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     streamingDetectIntentSettings = settingsBuilder.streamingDetectIntentSettings().build();
     matchIntentSettings = settingsBuilder.matchIntentSettings().build();
     fulfillIntentSettings = settingsBuilder.fulfillIntentSettings().build();
+    submitAnswerFeedbackSettings = settingsBuilder.submitAnswerFeedbackSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -331,6 +342,8 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
         matchIntentSettings;
     private final UnaryCallSettings.Builder<FulfillIntentRequest, FulfillIntentResponse>
         fulfillIntentSettings;
+    private final UnaryCallSettings.Builder<SubmitAnswerFeedbackRequest, AnswerFeedback>
+        submitAnswerFeedbackSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -401,6 +414,7 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       streamingDetectIntentSettings = StreamingCallSettings.newBuilder();
       matchIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fulfillIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      submitAnswerFeedbackSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -409,6 +423,7 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
               detectIntentSettings,
               matchIntentSettings,
               fulfillIntentSettings,
+              submitAnswerFeedbackSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -421,6 +436,7 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       streamingDetectIntentSettings = settings.streamingDetectIntentSettings.toBuilder();
       matchIntentSettings = settings.matchIntentSettings.toBuilder();
       fulfillIntentSettings = settings.fulfillIntentSettings.toBuilder();
+      submitAnswerFeedbackSettings = settings.submitAnswerFeedbackSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -429,6 +445,7 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
               detectIntentSettings,
               matchIntentSettings,
               fulfillIntentSettings,
+              submitAnswerFeedbackSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -472,6 +489,11 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
 
       builder
           .fulfillIntentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .submitAnswerFeedbackSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -526,6 +548,12 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     public UnaryCallSettings.Builder<FulfillIntentRequest, FulfillIntentResponse>
         fulfillIntentSettings() {
       return fulfillIntentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to submitAnswerFeedback. */
+    public UnaryCallSettings.Builder<SubmitAnswerFeedbackRequest, AnswerFeedback>
+        submitAnswerFeedbackSettings() {
+      return submitAnswerFeedbackSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

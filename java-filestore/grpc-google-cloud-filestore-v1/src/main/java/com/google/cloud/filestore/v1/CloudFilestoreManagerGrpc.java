@@ -273,6 +273,49 @@ public final class CloudFilestoreManagerGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.filestore.v1.RevertInstanceRequest, com.google.longrunning.Operation>
+      getRevertInstanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RevertInstance",
+      requestType = com.google.cloud.filestore.v1.RevertInstanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.filestore.v1.RevertInstanceRequest, com.google.longrunning.Operation>
+      getRevertInstanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.filestore.v1.RevertInstanceRequest, com.google.longrunning.Operation>
+        getRevertInstanceMethod;
+    if ((getRevertInstanceMethod = CloudFilestoreManagerGrpc.getRevertInstanceMethod) == null) {
+      synchronized (CloudFilestoreManagerGrpc.class) {
+        if ((getRevertInstanceMethod = CloudFilestoreManagerGrpc.getRevertInstanceMethod) == null) {
+          CloudFilestoreManagerGrpc.getRevertInstanceMethod =
+              getRevertInstanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.filestore.v1.RevertInstanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RevertInstance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.filestore.v1.RevertInstanceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudFilestoreManagerMethodDescriptorSupplier("RevertInstance"))
+                      .build();
+        }
+      }
+    }
+    return getRevertInstanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.filestore.v1.DeleteInstanceRequest, com.google.longrunning.Operation>
       getDeleteInstanceMethod;
 
@@ -900,6 +943,20 @@ public final class CloudFilestoreManagerGrpc {
      *
      *
      * <pre>
+     * Revert an existing instance's file system to a specified snapshot.
+     * </pre>
+     */
+    default void revertInstance(
+        com.google.cloud.filestore.v1.RevertInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRevertInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes an instance.
      * </pre>
      */
@@ -1211,6 +1268,22 @@ public final class CloudFilestoreManagerGrpc {
      *
      *
      * <pre>
+     * Revert an existing instance's file system to a specified snapshot.
+     * </pre>
+     */
+    public void revertInstance(
+        com.google.cloud.filestore.v1.RevertInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRevertInstanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes an instance.
      * </pre>
      */
@@ -1497,6 +1570,19 @@ public final class CloudFilestoreManagerGrpc {
      *
      *
      * <pre>
+     * Revert an existing instance's file system to a specified snapshot.
+     * </pre>
+     */
+    public com.google.longrunning.Operation revertInstance(
+        com.google.cloud.filestore.v1.RevertInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRevertInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes an instance.
      * </pre>
      */
@@ -1753,6 +1839,19 @@ public final class CloudFilestoreManagerGrpc {
      *
      *
      * <pre>
+     * Revert an existing instance's file system to a specified snapshot.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        revertInstance(com.google.cloud.filestore.v1.RevertInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRevertInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes an instance.
      * </pre>
      */
@@ -1903,17 +2002,18 @@ public final class CloudFilestoreManagerGrpc {
   private static final int METHODID_CREATE_INSTANCE = 2;
   private static final int METHODID_UPDATE_INSTANCE = 3;
   private static final int METHODID_RESTORE_INSTANCE = 4;
-  private static final int METHODID_DELETE_INSTANCE = 5;
-  private static final int METHODID_LIST_SNAPSHOTS = 6;
-  private static final int METHODID_GET_SNAPSHOT = 7;
-  private static final int METHODID_CREATE_SNAPSHOT = 8;
-  private static final int METHODID_DELETE_SNAPSHOT = 9;
-  private static final int METHODID_UPDATE_SNAPSHOT = 10;
-  private static final int METHODID_LIST_BACKUPS = 11;
-  private static final int METHODID_GET_BACKUP = 12;
-  private static final int METHODID_CREATE_BACKUP = 13;
-  private static final int METHODID_DELETE_BACKUP = 14;
-  private static final int METHODID_UPDATE_BACKUP = 15;
+  private static final int METHODID_REVERT_INSTANCE = 5;
+  private static final int METHODID_DELETE_INSTANCE = 6;
+  private static final int METHODID_LIST_SNAPSHOTS = 7;
+  private static final int METHODID_GET_SNAPSHOT = 8;
+  private static final int METHODID_CREATE_SNAPSHOT = 9;
+  private static final int METHODID_DELETE_SNAPSHOT = 10;
+  private static final int METHODID_UPDATE_SNAPSHOT = 11;
+  private static final int METHODID_LIST_BACKUPS = 12;
+  private static final int METHODID_GET_BACKUP = 13;
+  private static final int METHODID_CREATE_BACKUP = 14;
+  private static final int METHODID_DELETE_BACKUP = 15;
+  private static final int METHODID_UPDATE_BACKUP = 16;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1957,6 +2057,11 @@ public final class CloudFilestoreManagerGrpc {
         case METHODID_RESTORE_INSTANCE:
           serviceImpl.restoreInstance(
               (com.google.cloud.filestore.v1.RestoreInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_REVERT_INSTANCE:
+          serviceImpl.revertInstance(
+              (com.google.cloud.filestore.v1.RevertInstanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_INSTANCE:
@@ -2066,6 +2171,12 @@ public final class CloudFilestoreManagerGrpc {
                 new MethodHandlers<
                     com.google.cloud.filestore.v1.RestoreInstanceRequest,
                     com.google.longrunning.Operation>(service, METHODID_RESTORE_INSTANCE)))
+        .addMethod(
+            getRevertInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.RevertInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REVERT_INSTANCE)))
         .addMethod(
             getDeleteInstanceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2190,6 +2301,7 @@ public final class CloudFilestoreManagerGrpc {
                       .addMethod(getCreateInstanceMethod())
                       .addMethod(getUpdateInstanceMethod())
                       .addMethod(getRestoreInstanceMethod())
+                      .addMethod(getRevertInstanceMethod())
                       .addMethod(getDeleteInstanceMethod())
                       .addMethod(getListSnapshotsMethod())
                       .addMethod(getGetSnapshotMethod())

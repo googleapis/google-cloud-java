@@ -993,6 +993,10 @@ public class ArtifactRegistryClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllCleanupPolicies(new HashMap<String, CleanupPolicy>())
+            .setSizeBytes(-1796325715)
+            .setSatisfiesPzs(true)
+            .setCleanupPolicyDryRun(true)
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -1036,6 +1040,10 @@ public class ArtifactRegistryClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllCleanupPolicies(new HashMap<String, CleanupPolicy>())
+            .setSizeBytes(-1796325715)
+            .setSatisfiesPzs(true)
+            .setCleanupPolicyDryRun(true)
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -1079,6 +1087,10 @@ public class ArtifactRegistryClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllCleanupPolicies(new HashMap<String, CleanupPolicy>())
+            .setSizeBytes(-1796325715)
+            .setSatisfiesPzs(true)
+            .setCleanupPolicyDryRun(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1137,6 +1149,10 @@ public class ArtifactRegistryClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllCleanupPolicies(new HashMap<String, CleanupPolicy>())
+            .setSizeBytes(-1796325715)
+            .setSatisfiesPzs(true)
+            .setCleanupPolicyDryRun(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1195,6 +1211,10 @@ public class ArtifactRegistryClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllCleanupPolicies(new HashMap<String, CleanupPolicy>())
+            .setSizeBytes(-1796325715)
+            .setSatisfiesPzs(true)
+            .setCleanupPolicyDryRun(true)
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -1619,7 +1639,9 @@ public class ArtifactRegistryClientTest {
   public void getVersionTest() throws Exception {
     Version expectedResponse =
         Version.newBuilder()
-            .setName("name3373707")
+            .setName(
+                VersionName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]", "[VERSION]")
+                    .toString())
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -1692,6 +1714,96 @@ public class ArtifactRegistryClientTest {
     try {
       String name = "name3373707";
       client.deleteVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchDeleteVersionsTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchDeleteVersionsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockArtifactRegistry.addResponse(resultOperation);
+
+    PackageName parent = PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]");
+    List<String> names = new ArrayList<>();
+
+    client.batchDeleteVersionsAsync(parent, names).get();
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchDeleteVersionsRequest actualRequest = ((BatchDeleteVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(names, actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchDeleteVersionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      PackageName parent = PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]");
+      List<String> names = new ArrayList<>();
+      client.batchDeleteVersionsAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchDeleteVersionsTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchDeleteVersionsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockArtifactRegistry.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    List<String> names = new ArrayList<>();
+
+    client.batchDeleteVersionsAsync(parent, names).get();
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchDeleteVersionsRequest actualRequest = ((BatchDeleteVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(names, actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchDeleteVersionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<String> names = new ArrayList<>();
+      client.batchDeleteVersionsAsync(parent, names).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

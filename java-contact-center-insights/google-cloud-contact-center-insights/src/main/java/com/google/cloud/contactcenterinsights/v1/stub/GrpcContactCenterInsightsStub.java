@@ -33,6 +33,9 @@ import com.google.cloud.contactcenterinsights.v1.Analysis;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsResponse;
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata;
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest;
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateStatsRequest;
@@ -230,6 +233,17 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   "google.cloud.contactcenterinsights.v1.ContactCenterInsights/BulkAnalyzeConversations")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BulkAnalyzeConversationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<BulkDeleteConversationsRequest, Operation>
+      bulkDeleteConversationsMethodDescriptor =
+          MethodDescriptor.<BulkDeleteConversationsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/BulkDeleteConversations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BulkDeleteConversationsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -543,6 +557,13 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
           BulkAnalyzeConversationsResponse,
           BulkAnalyzeConversationsMetadata>
       bulkAnalyzeConversationsOperationCallable;
+  private final UnaryCallable<BulkDeleteConversationsRequest, Operation>
+      bulkDeleteConversationsCallable;
+  private final OperationCallable<
+          BulkDeleteConversationsRequest,
+          BulkDeleteConversationsResponse,
+          BulkDeleteConversationsMetadata>
+      bulkDeleteConversationsOperationCallable;
   private final UnaryCallable<IngestConversationsRequest, Operation> ingestConversationsCallable;
   private final OperationCallable<
           IngestConversationsRequest, IngestConversationsResponse, IngestConversationsMetadata>
@@ -745,6 +766,17 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
         bulkAnalyzeConversationsTransportSettings =
             GrpcCallSettings.<BulkAnalyzeConversationsRequest, Operation>newBuilder()
                 .setMethodDescriptor(bulkAnalyzeConversationsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<BulkDeleteConversationsRequest, Operation>
+        bulkDeleteConversationsTransportSettings =
+            GrpcCallSettings.<BulkDeleteConversationsRequest, Operation>newBuilder()
+                .setMethodDescriptor(bulkDeleteConversationsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -1104,6 +1136,17 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
             settings.bulkAnalyzeConversationsOperationSettings(),
             clientContext,
             operationsStub);
+    this.bulkDeleteConversationsCallable =
+        callableFactory.createUnaryCallable(
+            bulkDeleteConversationsTransportSettings,
+            settings.bulkDeleteConversationsSettings(),
+            clientContext);
+    this.bulkDeleteConversationsOperationCallable =
+        callableFactory.createOperationCallable(
+            bulkDeleteConversationsTransportSettings,
+            settings.bulkDeleteConversationsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.ingestConversationsCallable =
         callableFactory.createUnaryCallable(
             ingestConversationsTransportSettings,
@@ -1341,6 +1384,21 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
           BulkAnalyzeConversationsMetadata>
       bulkAnalyzeConversationsOperationCallable() {
     return bulkAnalyzeConversationsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BulkDeleteConversationsRequest, Operation>
+      bulkDeleteConversationsCallable() {
+    return bulkDeleteConversationsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BulkDeleteConversationsRequest,
+          BulkDeleteConversationsResponse,
+          BulkDeleteConversationsMetadata>
+      bulkDeleteConversationsOperationCallable() {
+    return bulkDeleteConversationsOperationCallable;
   }
 
   @Override

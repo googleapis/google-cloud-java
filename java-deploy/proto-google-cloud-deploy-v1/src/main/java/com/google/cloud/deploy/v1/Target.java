@@ -98,6 +98,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     ANTHOS_CLUSTER(17),
     RUN(18),
     MULTI_TARGET(19),
+    CUSTOM_TARGET(21),
     DEPLOYMENTTARGET_NOT_SET(0);
     private final int value;
 
@@ -124,6 +125,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           return RUN;
         case 19:
           return MULTI_TARGET;
+        case 21:
+          return CUSTOM_TARGET;
         case 0:
           return DEPLOYMENTTARGET_NOT_SET;
         default:
@@ -149,7 +152,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Name of the `Target`. Format is
-   * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+   * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -173,7 +176,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Name of the `Target`. Format is
-   * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+   * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -948,6 +951,63 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.deploy.v1.MultiTarget.getDefaultInstance();
   }
 
+  public static final int CUSTOM_TARGET_FIELD_NUMBER = 21;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information specifying a Custom Target.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customTarget field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomTarget() {
+    return deploymentTargetCase_ == 21;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information specifying a Custom Target.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customTarget.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CustomTarget getCustomTarget() {
+    if (deploymentTargetCase_ == 21) {
+      return (com.google.cloud.deploy.v1.CustomTarget) deploymentTarget_;
+    }
+    return com.google.cloud.deploy.v1.CustomTarget.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information specifying a Custom Target.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CustomTargetOrBuilder getCustomTargetOrBuilder() {
+    if (deploymentTargetCase_ == 21) {
+      return (com.google.cloud.deploy.v1.CustomTarget) deploymentTarget_;
+    }
+    return com.google.cloud.deploy.v1.CustomTarget.getDefaultInstance();
+  }
+
   public static final int ETAG_FIELD_NUMBER = 12;
 
   @SuppressWarnings("serial")
@@ -1276,6 +1336,9 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetDeployParameters(), DeployParametersDefaultEntryHolder.defaultEntry, 20);
+    if (deploymentTargetCase_ == 21) {
+      output.writeMessage(21, (com.google.cloud.deploy.v1.CustomTarget) deploymentTarget_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1363,6 +1426,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, deployParameters__);
     }
+    if (deploymentTargetCase_ == 21) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21, (com.google.cloud.deploy.v1.CustomTarget) deploymentTarget_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1409,6 +1477,9 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         break;
       case 19:
         if (!getMultiTarget().equals(other.getMultiTarget())) return false;
+        break;
+      case 21:
+        if (!getCustomTarget().equals(other.getCustomTarget())) return false;
         break;
       case 0:
       default:
@@ -1476,6 +1547,10 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       case 19:
         hash = (37 * hash) + MULTI_TARGET_FIELD_NUMBER;
         hash = (53 * hash) + getMultiTarget().hashCode();
+        break;
+      case 21:
+        hash = (37 * hash) + CUSTOM_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomTarget().hashCode();
         break;
       case 0:
       default:
@@ -1678,6 +1753,9 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       if (multiTargetBuilder_ != null) {
         multiTargetBuilder_.clear();
       }
+      if (customTargetBuilder_ != null) {
+        customTargetBuilder_.clear();
+      }
       etag_ = "";
       if (executionConfigsBuilder_ == null) {
         executionConfigs_ = java.util.Collections.emptyList();
@@ -1685,7 +1763,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         executionConfigs_ = null;
         executionConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       internalGetMutableDeployParameters().clear();
       deploymentTargetCase_ = 0;
       deploymentTarget_ = null;
@@ -1726,9 +1804,9 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.deploy.v1.Target result) {
       if (executionConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           executionConfigs_ = java.util.Collections.unmodifiableList(executionConfigs_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.executionConfigs_ = executionConfigs_;
       } else {
@@ -1767,10 +1845,10 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.deployParameters_ = internalGetDeployParameters();
         result.deployParameters_.makeImmutable();
       }
@@ -1790,6 +1868,9 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       }
       if (deploymentTargetCase_ == 19 && multiTargetBuilder_ != null) {
         result.deploymentTarget_ = multiTargetBuilder_.build();
+      }
+      if (deploymentTargetCase_ == 21 && customTargetBuilder_ != null) {
+        result.deploymentTarget_ = customTargetBuilder_.build();
       }
     }
 
@@ -1873,14 +1954,14 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (executionConfigsBuilder_ == null) {
         if (!other.executionConfigs_.isEmpty()) {
           if (executionConfigs_.isEmpty()) {
             executionConfigs_ = other.executionConfigs_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureExecutionConfigsIsMutable();
             executionConfigs_.addAll(other.executionConfigs_);
@@ -1893,7 +1974,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
             executionConfigsBuilder_.dispose();
             executionConfigsBuilder_ = null;
             executionConfigs_ = other.executionConfigs_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             executionConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getExecutionConfigsFieldBuilder()
@@ -1904,7 +1985,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableDeployParameters().mergeFrom(other.internalGetDeployParameters());
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       switch (other.getDeploymentTargetCase()) {
         case GKE:
           {
@@ -1924,6 +2005,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         case MULTI_TARGET:
           {
             mergeMultiTarget(other.getMultiTarget());
+            break;
+          }
+        case CUSTOM_TARGET:
+          {
+            mergeCustomTarget(other.getCustomTarget());
             break;
           }
         case DEPLOYMENTTARGET_NOT_SET:
@@ -2020,7 +2106,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
             case 98:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 98
             case 104:
@@ -2076,9 +2162,15 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableDeployParameters()
                     .getMutableMap()
                     .put(deployParameters__.getKey(), deployParameters__.getValue());
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 162
+            case 170:
+              {
+                input.readMessage(getCustomTargetFieldBuilder().getBuilder(), extensionRegistry);
+                deploymentTargetCase_ = 21;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2118,7 +2210,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Target`. Format is
-     * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+     * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2141,7 +2233,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Target`. Format is
-     * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+     * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2164,7 +2256,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Target`. Format is
-     * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+     * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2186,7 +2278,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Target`. Format is
-     * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+     * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2204,7 +2296,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `Target`. Format is
-     * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+     * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4320,6 +4412,233 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       return multiTargetBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.CustomTarget,
+            com.google.cloud.deploy.v1.CustomTarget.Builder,
+            com.google.cloud.deploy.v1.CustomTargetOrBuilder>
+        customTargetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information specifying a Custom Target.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomTarget() {
+      return deploymentTargetCase_ == 21;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information specifying a Custom Target.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customTarget.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.CustomTarget getCustomTarget() {
+      if (customTargetBuilder_ == null) {
+        if (deploymentTargetCase_ == 21) {
+          return (com.google.cloud.deploy.v1.CustomTarget) deploymentTarget_;
+        }
+        return com.google.cloud.deploy.v1.CustomTarget.getDefaultInstance();
+      } else {
+        if (deploymentTargetCase_ == 21) {
+          return customTargetBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.CustomTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information specifying a Custom Target.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomTarget(com.google.cloud.deploy.v1.CustomTarget value) {
+      if (customTargetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deploymentTarget_ = value;
+        onChanged();
+      } else {
+        customTargetBuilder_.setMessage(value);
+      }
+      deploymentTargetCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information specifying a Custom Target.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomTarget(
+        com.google.cloud.deploy.v1.CustomTarget.Builder builderForValue) {
+      if (customTargetBuilder_ == null) {
+        deploymentTarget_ = builderForValue.build();
+        onChanged();
+      } else {
+        customTargetBuilder_.setMessage(builderForValue.build());
+      }
+      deploymentTargetCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information specifying a Custom Target.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCustomTarget(com.google.cloud.deploy.v1.CustomTarget value) {
+      if (customTargetBuilder_ == null) {
+        if (deploymentTargetCase_ == 21
+            && deploymentTarget_ != com.google.cloud.deploy.v1.CustomTarget.getDefaultInstance()) {
+          deploymentTarget_ =
+              com.google.cloud.deploy.v1.CustomTarget.newBuilder(
+                      (com.google.cloud.deploy.v1.CustomTarget) deploymentTarget_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          deploymentTarget_ = value;
+        }
+        onChanged();
+      } else {
+        if (deploymentTargetCase_ == 21) {
+          customTargetBuilder_.mergeFrom(value);
+        } else {
+          customTargetBuilder_.setMessage(value);
+        }
+      }
+      deploymentTargetCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information specifying a Custom Target.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCustomTarget() {
+      if (customTargetBuilder_ == null) {
+        if (deploymentTargetCase_ == 21) {
+          deploymentTargetCase_ = 0;
+          deploymentTarget_ = null;
+          onChanged();
+        }
+      } else {
+        if (deploymentTargetCase_ == 21) {
+          deploymentTargetCase_ = 0;
+          deploymentTarget_ = null;
+        }
+        customTargetBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information specifying a Custom Target.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.CustomTarget.Builder getCustomTargetBuilder() {
+      return getCustomTargetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information specifying a Custom Target.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.CustomTargetOrBuilder getCustomTargetOrBuilder() {
+      if ((deploymentTargetCase_ == 21) && (customTargetBuilder_ != null)) {
+        return customTargetBuilder_.getMessageOrBuilder();
+      } else {
+        if (deploymentTargetCase_ == 21) {
+          return (com.google.cloud.deploy.v1.CustomTarget) deploymentTarget_;
+        }
+        return com.google.cloud.deploy.v1.CustomTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information specifying a Custom Target.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.CustomTarget,
+            com.google.cloud.deploy.v1.CustomTarget.Builder,
+            com.google.cloud.deploy.v1.CustomTargetOrBuilder>
+        getCustomTargetFieldBuilder() {
+      if (customTargetBuilder_ == null) {
+        if (!(deploymentTargetCase_ == 21)) {
+          deploymentTarget_ = com.google.cloud.deploy.v1.CustomTarget.getDefaultInstance();
+        }
+        customTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.CustomTarget,
+                com.google.cloud.deploy.v1.CustomTarget.Builder,
+                com.google.cloud.deploy.v1.CustomTargetOrBuilder>(
+                (com.google.cloud.deploy.v1.CustomTarget) deploymentTarget_,
+                getParentForChildren(),
+                isClean());
+        deploymentTarget_ = null;
+      }
+      deploymentTargetCase_ = 21;
+      onChanged();
+      return customTargetBuilder_;
+    }
+
     private java.lang.Object etag_ = "";
     /**
      *
@@ -4388,7 +4707,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4407,7 +4726,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4431,7 +4750,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4440,10 +4759,10 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureExecutionConfigsIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         executionConfigs_ =
             new java.util.ArrayList<com.google.cloud.deploy.v1.ExecutionConfig>(executionConfigs_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -4727,7 +5046,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public Builder clearExecutionConfigs() {
       if (executionConfigsBuilder_ == null) {
         executionConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         executionConfigsBuilder_.clear();
@@ -4895,7 +5214,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.deploy.v1.ExecutionConfig.Builder,
                 com.google.cloud.deploy.v1.ExecutionConfigOrBuilder>(
                 executionConfigs_,
-                ((bitField0_ & 0x00004000) != 0),
+                ((bitField0_ & 0x00008000) != 0),
                 getParentForChildren(),
                 isClean());
         executionConfigs_ = null;
@@ -4924,7 +5243,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       if (!deployParameters_.isMutable()) {
         deployParameters_ = deployParameters_.copy();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return deployParameters_;
     }
@@ -5019,7 +5338,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearDeployParameters() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       internalGetMutableDeployParameters().getMutableMap().clear();
       return this;
     }
@@ -5044,7 +5363,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDeployParameters() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       return internalGetMutableDeployParameters().getMutableMap();
     }
     /**
@@ -5066,7 +5385,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableDeployParameters().getMutableMap().put(key, value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       return this;
     }
     /**
@@ -5083,7 +5402,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllDeployParameters(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDeployParameters().getMutableMap().putAll(values);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       return this;
     }
 

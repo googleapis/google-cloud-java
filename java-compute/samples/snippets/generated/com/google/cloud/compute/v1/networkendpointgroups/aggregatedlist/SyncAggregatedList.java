@@ -45,6 +45,7 @@ public class SyncAggregatedList {
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
               .setReturnPartialSuccess(true)
+              .setServiceProjectNumber(-1293855239)
               .build();
       for (Map.Entry<String, NetworkEndpointGroupsScopedList> element :
           networkEndpointGroupsClient.aggregatedList(request).iterateAll()) {

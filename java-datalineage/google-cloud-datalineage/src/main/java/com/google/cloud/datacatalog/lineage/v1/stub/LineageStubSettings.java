@@ -73,6 +73,8 @@ import com.google.cloud.datacatalog.lineage.v1.ListRunsResponse;
 import com.google.cloud.datacatalog.lineage.v1.OperationMetadata;
 import com.google.cloud.datacatalog.lineage.v1.Process;
 import com.google.cloud.datacatalog.lineage.v1.ProcessLinks;
+import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest;
+import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse;
 import com.google.cloud.datacatalog.lineage.v1.Run;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksResponse;
@@ -104,7 +106,7 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createProcess to 30 seconds:
+ * <p>For example, to set the total timeout of processOpenLineageRunEvent to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -114,10 +116,10 @@ import org.threeten.bp.Duration;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * LineageStubSettings.Builder lineageSettingsBuilder = LineageStubSettings.newBuilder();
  * lineageSettingsBuilder
- *     .createProcessSettings()
+ *     .processOpenLineageRunEventSettings()
  *     .setRetrySettings(
  *         lineageSettingsBuilder
- *             .createProcessSettings()
+ *             .processOpenLineageRunEventSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -131,6 +133,9 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
+  private final UnaryCallSettings<
+          ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+      processOpenLineageRunEventSettings;
   private final UnaryCallSettings<CreateProcessRequest, Process> createProcessSettings;
   private final UnaryCallSettings<UpdateProcessRequest, Process> updateProcessSettings;
   private final UnaryCallSettings<GetProcessRequest, Process> getProcessSettings;
@@ -454,6 +459,12 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
             }
           };
 
+  /** Returns the object with the settings used for calls to processOpenLineageRunEvent. */
+  public UnaryCallSettings<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+      processOpenLineageRunEventSettings() {
+    return processOpenLineageRunEventSettings;
+  }
+
   /** Returns the object with the settings used for calls to createProcess. */
   public UnaryCallSettings<CreateProcessRequest, Process> createProcessSettings() {
     return createProcessSettings;
@@ -659,6 +670,8 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
   protected LineageStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    processOpenLineageRunEventSettings =
+        settingsBuilder.processOpenLineageRunEventSettings().build();
     createProcessSettings = settingsBuilder.createProcessSettings().build();
     updateProcessSettings = settingsBuilder.updateProcessSettings().build();
     getProcessSettings = settingsBuilder.getProcessSettings().build();
@@ -682,6 +695,9 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
   /** Builder for LineageStubSettings. */
   public static class Builder extends StubSettings.Builder<LineageStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final UnaryCallSettings.Builder<
+            ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+        processOpenLineageRunEventSettings;
     private final UnaryCallSettings.Builder<CreateProcessRequest, Process> createProcessSettings;
     private final UnaryCallSettings.Builder<UpdateProcessRequest, Process> updateProcessSettings;
     private final UnaryCallSettings.Builder<GetProcessRequest, Process> getProcessSettings;
@@ -755,6 +771,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      processOpenLineageRunEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createProcessSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateProcessSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getProcessSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -777,6 +794,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              processOpenLineageRunEventSettings,
               createProcessSettings,
               updateProcessSettings,
               getProcessSettings,
@@ -799,6 +817,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
     protected Builder(LineageStubSettings settings) {
       super(settings);
 
+      processOpenLineageRunEventSettings = settings.processOpenLineageRunEventSettings.toBuilder();
       createProcessSettings = settings.createProcessSettings.toBuilder();
       updateProcessSettings = settings.updateProcessSettings.toBuilder();
       getProcessSettings = settings.getProcessSettings.toBuilder();
@@ -820,6 +839,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              processOpenLineageRunEventSettings,
               createProcessSettings,
               updateProcessSettings,
               getProcessSettings,
@@ -865,6 +885,11 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
     }
 
     private static Builder initDefaults(Builder builder) {
+      builder
+          .processOpenLineageRunEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       builder
           .createProcessSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
@@ -1008,6 +1033,13 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to processOpenLineageRunEvent. */
+    public UnaryCallSettings.Builder<
+            ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+        processOpenLineageRunEventSettings() {
+      return processOpenLineageRunEventSettings;
     }
 
     /** Returns the builder for the settings used for calls to createProcess. */

@@ -164,8 +164,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The predeploy Job. This is the predeploy job in the phase.
-   * This is the first job of the phase.
+   * Output only. The predeploy Job, which is the first job on the phase.
    * </pre>
    *
    * <code>
@@ -182,8 +181,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The predeploy Job. This is the predeploy job in the phase.
-   * This is the first job of the phase.
+   * Output only. The predeploy Job, which is the first job on the phase.
    * </pre>
    *
    * <code>
@@ -202,8 +200,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The predeploy Job. This is the predeploy job in the phase.
-   * This is the first job of the phase.
+   * Output only. The predeploy Job, which is the first job on the phase.
    * </pre>
    *
    * <code>
@@ -223,8 +220,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The postdeploy Job. This is the postdeploy job in the phase.
-   * This is the last job of the phase.
+   * Output only. The postdeploy Job, which is the last job on the phase.
    * </pre>
    *
    * <code>
@@ -241,8 +237,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The postdeploy Job. This is the postdeploy job in the phase.
-   * This is the last job of the phase.
+   * Output only. The postdeploy Job, which is the last job on the phase.
    * </pre>
    *
    * <code>
@@ -261,8 +256,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The postdeploy Job. This is the postdeploy job in the phase.
-   * This is the last job of the phase.
+   * Output only. The postdeploy Job, which is the last job on the phase.
    * </pre>
    *
    * <code>
@@ -1131,8 +1125,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The predeploy Job. This is the predeploy job in the phase.
-     * This is the first job of the phase.
+     * Output only. The predeploy Job, which is the first job on the phase.
      * </pre>
      *
      * <code>
@@ -1148,8 +1141,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The predeploy Job. This is the predeploy job in the phase.
-     * This is the first job of the phase.
+     * Output only. The predeploy Job, which is the first job on the phase.
      * </pre>
      *
      * <code>
@@ -1171,8 +1163,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The predeploy Job. This is the predeploy job in the phase.
-     * This is the first job of the phase.
+     * Output only. The predeploy Job, which is the first job on the phase.
      * </pre>
      *
      * <code>
@@ -1196,8 +1187,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The predeploy Job. This is the predeploy job in the phase.
-     * This is the first job of the phase.
+     * Output only. The predeploy Job, which is the first job on the phase.
      * </pre>
      *
      * <code>
@@ -1218,8 +1208,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The predeploy Job. This is the predeploy job in the phase.
-     * This is the first job of the phase.
+     * Output only. The predeploy Job, which is the first job on the phase.
      * </pre>
      *
      * <code>
@@ -1246,8 +1235,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The predeploy Job. This is the predeploy job in the phase.
-     * This is the first job of the phase.
+     * Output only. The predeploy Job, which is the first job on the phase.
      * </pre>
      *
      * <code>
@@ -1268,8 +1256,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The predeploy Job. This is the predeploy job in the phase.
-     * This is the first job of the phase.
+     * Output only. The predeploy Job, which is the first job on the phase.
      * </pre>
      *
      * <code>
@@ -1285,8 +1272,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The predeploy Job. This is the predeploy job in the phase.
-     * This is the first job of the phase.
+     * Output only. The predeploy Job, which is the first job on the phase.
      * </pre>
      *
      * <code>
@@ -1306,8 +1292,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The predeploy Job. This is the predeploy job in the phase.
-     * This is the first job of the phase.
+     * Output only. The predeploy Job, which is the first job on the phase.
      * </pre>
      *
      * <code>
@@ -1341,8 +1326,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The postdeploy Job. This is the postdeploy job in the phase.
-     * This is the last job of the phase.
+     * Output only. The postdeploy Job, which is the last job on the phase.
      * </pre>
      *
      * <code>
@@ -1358,8 +1342,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The postdeploy Job. This is the postdeploy job in the phase.
-     * This is the last job of the phase.
+     * Output only. The postdeploy Job, which is the last job on the phase.
      * </pre>
      *
      * <code>
@@ -1381,8 +1364,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The postdeploy Job. This is the postdeploy job in the phase.
-     * This is the last job of the phase.
+     * Output only. The postdeploy Job, which is the last job on the phase.
      * </pre>
      *
      * <code>
@@ -1406,8 +1388,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The postdeploy Job. This is the postdeploy job in the phase.
-     * This is the last job of the phase.
+     * Output only. The postdeploy Job, which is the last job on the phase.
      * </pre>
      *
      * <code>
@@ -1428,8 +1409,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The postdeploy Job. This is the postdeploy job in the phase.
-     * This is the last job of the phase.
+     * Output only. The postdeploy Job, which is the last job on the phase.
      * </pre>
      *
      * <code>
@@ -1456,8 +1436,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The postdeploy Job. This is the postdeploy job in the phase.
-     * This is the last job of the phase.
+     * Output only. The postdeploy Job, which is the last job on the phase.
      * </pre>
      *
      * <code>
@@ -1478,8 +1457,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The postdeploy Job. This is the postdeploy job in the phase.
-     * This is the last job of the phase.
+     * Output only. The postdeploy Job, which is the last job on the phase.
      * </pre>
      *
      * <code>
@@ -1495,8 +1473,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The postdeploy Job. This is the postdeploy job in the phase.
-     * This is the last job of the phase.
+     * Output only. The postdeploy Job, which is the last job on the phase.
      * </pre>
      *
      * <code>
@@ -1516,8 +1493,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The postdeploy Job. This is the postdeploy job in the phase.
-     * This is the last job of the phase.
+     * Output only. The postdeploy Job, which is the last job on the phase.
      * </pre>
      *
      * <code>

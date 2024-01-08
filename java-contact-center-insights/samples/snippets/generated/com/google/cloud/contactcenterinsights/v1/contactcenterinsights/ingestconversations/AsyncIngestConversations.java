@@ -21,6 +21,8 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.LocationName;
+import com.google.cloud.contactcenterinsights.v1.RedactionConfig;
+import com.google.cloud.contactcenterinsights.v1.SpeechConfig;
 import com.google.longrunning.Operation;
 
 public class AsyncIngestConversations {
@@ -42,6 +44,8 @@ public class AsyncIngestConversations {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setConversationConfig(
                   IngestConversationsRequest.ConversationConfig.newBuilder().build())
+              .setRedactionConfig(RedactionConfig.newBuilder().build())
+              .setSpeechConfig(SpeechConfig.newBuilder().build())
               .build();
       ApiFuture<Operation> future =
           contactCenterInsightsClient.ingestConversationsCallable().futureCall(request);

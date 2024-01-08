@@ -47,6 +47,7 @@ import com.google.cloud.filestore.v1.ListInstancesResponse;
 import com.google.cloud.filestore.v1.ListSnapshotsRequest;
 import com.google.cloud.filestore.v1.ListSnapshotsResponse;
 import com.google.cloud.filestore.v1.RestoreInstanceRequest;
+import com.google.cloud.filestore.v1.RevertInstanceRequest;
 import com.google.cloud.filestore.v1.Snapshot;
 import com.google.cloud.filestore.v1.UpdateBackupRequest;
 import com.google.cloud.filestore.v1.UpdateInstanceRequest;
@@ -114,6 +115,16 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setFullMethodName("google.cloud.filestore.v1.CloudFilestoreManager/RestoreInstance")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestoreInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RevertInstanceRequest, Operation>
+      revertInstanceMethodDescriptor =
+          MethodDescriptor.<RevertInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.filestore.v1.CloudFilestoreManager/RevertInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RevertInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -234,6 +245,9 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
   private final UnaryCallable<RestoreInstanceRequest, Operation> restoreInstanceCallable;
   private final OperationCallable<RestoreInstanceRequest, Instance, OperationMetadata>
       restoreInstanceOperationCallable;
+  private final UnaryCallable<RevertInstanceRequest, Operation> revertInstanceCallable;
+  private final OperationCallable<RevertInstanceRequest, Instance, OperationMetadata>
+      revertInstanceOperationCallable;
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable;
@@ -351,6 +365,16 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
     GrpcCallSettings<RestoreInstanceRequest, Operation> restoreInstanceTransportSettings =
         GrpcCallSettings.<RestoreInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(restoreInstanceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<RevertInstanceRequest, Operation> revertInstanceTransportSettings =
+        GrpcCallSettings.<RevertInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(revertInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -505,6 +529,15 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
             settings.restoreInstanceOperationSettings(),
             clientContext,
             operationsStub);
+    this.revertInstanceCallable =
+        callableFactory.createUnaryCallable(
+            revertInstanceTransportSettings, settings.revertInstanceSettings(), clientContext);
+    this.revertInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            revertInstanceTransportSettings,
+            settings.revertInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteInstanceCallable =
         callableFactory.createUnaryCallable(
             deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
@@ -642,6 +675,17 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
   public OperationCallable<RestoreInstanceRequest, Instance, OperationMetadata>
       restoreInstanceOperationCallable() {
     return restoreInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RevertInstanceRequest, Operation> revertInstanceCallable() {
+    return revertInstanceCallable;
+  }
+
+  @Override
+  public OperationCallable<RevertInstanceRequest, Instance, OperationMetadata>
+      revertInstanceOperationCallable() {
+    return revertInstanceOperationCallable;
   }
 
   @Override

@@ -171,4 +171,70 @@ public interface BulkAnalyzeConversationsMetadataOrBuilder
    * @return The totalRequestedAnalysesCount.
    */
   int getTotalRequestedAnalysesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Partial errors during bulk analyze operation that might cause
+   * the operation output to be incomplete.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.rpc.Status> getPartialErrorsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Partial errors during bulk analyze operation that might cause
+   * the operation output to be incomplete.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.rpc.Status getPartialErrors(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Partial errors during bulk analyze operation that might cause
+   * the operation output to be incomplete.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getPartialErrorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Partial errors during bulk analyze operation that might cause
+   * the operation output to be incomplete.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Partial errors during bulk analyze operation that might cause
+   * the operation output to be incomplete.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.rpc.StatusOrBuilder getPartialErrorsOrBuilder(int index);
 }

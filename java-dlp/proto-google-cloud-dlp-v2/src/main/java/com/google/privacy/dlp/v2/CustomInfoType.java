@@ -8285,6 +8285,68 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int SENSITIVITY_SCORE_FIELD_NUMBER = 9;
+  private com.google.privacy.dlp.v2.SensitivityScore sensitivityScore_;
+  /**
+   *
+   *
+   * <pre>
+   * Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+   * existing InfoType, the sensitivity here will take precedence over that of
+   * the original InfoType. If unset for a CustomInfoType, it will default to
+   * HIGH.
+   * This only applies to data profiling.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
+   *
+   * @return Whether the sensitivityScore field is set.
+   */
+  @java.lang.Override
+  public boolean hasSensitivityScore() {
+    return sensitivityScore_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+   * existing InfoType, the sensitivity here will take precedence over that of
+   * the original InfoType. If unset for a CustomInfoType, it will default to
+   * HIGH.
+   * This only applies to data profiling.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
+   *
+   * @return The sensitivityScore.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore() {
+    return sensitivityScore_ == null
+        ? com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()
+        : sensitivityScore_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+   * existing InfoType, the sensitivity here will take precedence over that of
+   * the original InfoType. If unset for a CustomInfoType, it will default to
+   * HIGH.
+   * This only applies to data profiling.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.SensitivityScoreOrBuilder getSensitivityScoreOrBuilder() {
+    return sensitivityScore_ == null
+        ? com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()
+        : sensitivityScore_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -8324,6 +8386,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         != com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.EXCLUSION_TYPE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(8, exclusionType_);
+    }
+    if (sensitivityScore_ != null) {
+      output.writeMessage(9, getSensitivityScore());
     }
     getUnknownFields().writeTo(output);
   }
@@ -8368,6 +8433,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, exclusionType_);
     }
+    if (sensitivityScore_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getSensitivityScore());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8390,6 +8458,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     if (likelihood_ != other.likelihood_) return false;
     if (!getDetectionRulesList().equals(other.getDetectionRulesList())) return false;
     if (exclusionType_ != other.exclusionType_) return false;
+    if (hasSensitivityScore() != other.hasSensitivityScore()) return false;
+    if (hasSensitivityScore()) {
+      if (!getSensitivityScore().equals(other.getSensitivityScore())) return false;
+    }
     if (!getTypeCase().equals(other.getTypeCase())) return false;
     switch (typeCase_) {
       case 2:
@@ -8430,6 +8502,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + EXCLUSION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + exclusionType_;
+    if (hasSensitivityScore()) {
+      hash = (37 * hash) + SENSITIVITY_SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getSensitivityScore().hashCode();
+    }
     switch (typeCase_) {
       case 2:
         hash = (37 * hash) + DICTIONARY_FIELD_NUMBER;
@@ -8616,6 +8692,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000040);
       exclusionType_ = 0;
+      sensitivityScore_ = null;
+      if (sensitivityScoreBuilder_ != null) {
+        sensitivityScoreBuilder_.dispose();
+        sensitivityScoreBuilder_ = null;
+      }
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -8676,6 +8757,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.exclusionType_ = exclusionType_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.sensitivityScore_ =
+            sensitivityScoreBuilder_ == null ? sensitivityScore_ : sensitivityScoreBuilder_.build();
       }
     }
 
@@ -8776,6 +8861,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.exclusionType_ != 0) {
         setExclusionTypeValue(other.getExclusionTypeValue());
+      }
+      if (other.hasSensitivityScore()) {
+        mergeSensitivityScore(other.getSensitivityScore());
       }
       switch (other.getTypeCase()) {
         case DICTIONARY:
@@ -8885,6 +8973,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 64
+            case 74:
+              {
+                input.readMessage(
+                    getSensitivityScoreFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10613,6 +10708,227 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       exclusionType_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.privacy.dlp.v2.SensitivityScore sensitivityScore_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.SensitivityScore,
+            com.google.privacy.dlp.v2.SensitivityScore.Builder,
+            com.google.privacy.dlp.v2.SensitivityScoreOrBuilder>
+        sensitivityScoreBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+     * existing InfoType, the sensitivity here will take precedence over that of
+     * the original InfoType. If unset for a CustomInfoType, it will default to
+     * HIGH.
+     * This only applies to data profiling.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
+     *
+     * @return Whether the sensitivityScore field is set.
+     */
+    public boolean hasSensitivityScore() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+     * existing InfoType, the sensitivity here will take precedence over that of
+     * the original InfoType. If unset for a CustomInfoType, it will default to
+     * HIGH.
+     * This only applies to data profiling.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
+     *
+     * @return The sensitivityScore.
+     */
+    public com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore() {
+      if (sensitivityScoreBuilder_ == null) {
+        return sensitivityScore_ == null
+            ? com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()
+            : sensitivityScore_;
+      } else {
+        return sensitivityScoreBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+     * existing InfoType, the sensitivity here will take precedence over that of
+     * the original InfoType. If unset for a CustomInfoType, it will default to
+     * HIGH.
+     * This only applies to data profiling.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
+     */
+    public Builder setSensitivityScore(com.google.privacy.dlp.v2.SensitivityScore value) {
+      if (sensitivityScoreBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sensitivityScore_ = value;
+      } else {
+        sensitivityScoreBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+     * existing InfoType, the sensitivity here will take precedence over that of
+     * the original InfoType. If unset for a CustomInfoType, it will default to
+     * HIGH.
+     * This only applies to data profiling.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
+     */
+    public Builder setSensitivityScore(
+        com.google.privacy.dlp.v2.SensitivityScore.Builder builderForValue) {
+      if (sensitivityScoreBuilder_ == null) {
+        sensitivityScore_ = builderForValue.build();
+      } else {
+        sensitivityScoreBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+     * existing InfoType, the sensitivity here will take precedence over that of
+     * the original InfoType. If unset for a CustomInfoType, it will default to
+     * HIGH.
+     * This only applies to data profiling.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
+     */
+    public Builder mergeSensitivityScore(com.google.privacy.dlp.v2.SensitivityScore value) {
+      if (sensitivityScoreBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && sensitivityScore_ != null
+            && sensitivityScore_
+                != com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()) {
+          getSensitivityScoreBuilder().mergeFrom(value);
+        } else {
+          sensitivityScore_ = value;
+        }
+      } else {
+        sensitivityScoreBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+     * existing InfoType, the sensitivity here will take precedence over that of
+     * the original InfoType. If unset for a CustomInfoType, it will default to
+     * HIGH.
+     * This only applies to data profiling.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
+     */
+    public Builder clearSensitivityScore() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      sensitivityScore_ = null;
+      if (sensitivityScoreBuilder_ != null) {
+        sensitivityScoreBuilder_.dispose();
+        sensitivityScoreBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+     * existing InfoType, the sensitivity here will take precedence over that of
+     * the original InfoType. If unset for a CustomInfoType, it will default to
+     * HIGH.
+     * This only applies to data profiling.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
+     */
+    public com.google.privacy.dlp.v2.SensitivityScore.Builder getSensitivityScoreBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getSensitivityScoreFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+     * existing InfoType, the sensitivity here will take precedence over that of
+     * the original InfoType. If unset for a CustomInfoType, it will default to
+     * HIGH.
+     * This only applies to data profiling.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
+     */
+    public com.google.privacy.dlp.v2.SensitivityScoreOrBuilder getSensitivityScoreOrBuilder() {
+      if (sensitivityScoreBuilder_ != null) {
+        return sensitivityScoreBuilder_.getMessageOrBuilder();
+      } else {
+        return sensitivityScore_ == null
+            ? com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()
+            : sensitivityScore_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+     * existing InfoType, the sensitivity here will take precedence over that of
+     * the original InfoType. If unset for a CustomInfoType, it will default to
+     * HIGH.
+     * This only applies to data profiling.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.SensitivityScore,
+            com.google.privacy.dlp.v2.SensitivityScore.Builder,
+            com.google.privacy.dlp.v2.SensitivityScoreOrBuilder>
+        getSensitivityScoreFieldBuilder() {
+      if (sensitivityScoreBuilder_ == null) {
+        sensitivityScoreBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.SensitivityScore,
+                com.google.privacy.dlp.v2.SensitivityScore.Builder,
+                com.google.privacy.dlp.v2.SensitivityScoreOrBuilder>(
+                getSensitivityScore(), getParentForChildren(), isClean());
+        sensitivityScore_ = null;
+      }
+      return sensitivityScoreBuilder_;
     }
 
     @java.lang.Override

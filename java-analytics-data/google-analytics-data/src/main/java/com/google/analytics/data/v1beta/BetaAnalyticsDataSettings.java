@@ -16,6 +16,8 @@
 
 package com.google.analytics.data.v1beta;
 
+import static com.google.analytics.data.v1beta.BetaAnalyticsDataClient.ListAudienceExportsPagedResponse;
+
 import com.google.analytics.data.v1beta.stub.BetaAnalyticsDataStubSettings;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -26,8 +28,11 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -110,6 +115,36 @@ public class BetaAnalyticsDataSettings extends ClientSettings<BetaAnalyticsDataS
   public UnaryCallSettings<CheckCompatibilityRequest, CheckCompatibilityResponse>
       checkCompatibilitySettings() {
     return ((BetaAnalyticsDataStubSettings) getStubSettings()).checkCompatibilitySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAudienceExport. */
+  public UnaryCallSettings<CreateAudienceExportRequest, Operation> createAudienceExportSettings() {
+    return ((BetaAnalyticsDataStubSettings) getStubSettings()).createAudienceExportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAudienceExport. */
+  public OperationCallSettings<CreateAudienceExportRequest, AudienceExport, AudienceExportMetadata>
+      createAudienceExportOperationSettings() {
+    return ((BetaAnalyticsDataStubSettings) getStubSettings())
+        .createAudienceExportOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to queryAudienceExport. */
+  public UnaryCallSettings<QueryAudienceExportRequest, QueryAudienceExportResponse>
+      queryAudienceExportSettings() {
+    return ((BetaAnalyticsDataStubSettings) getStubSettings()).queryAudienceExportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAudienceExport. */
+  public UnaryCallSettings<GetAudienceExportRequest, AudienceExport> getAudienceExportSettings() {
+    return ((BetaAnalyticsDataStubSettings) getStubSettings()).getAudienceExportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAudienceExports. */
+  public PagedCallSettings<
+          ListAudienceExportsRequest, ListAudienceExportsResponse, ListAudienceExportsPagedResponse>
+      listAudienceExportsSettings() {
+    return ((BetaAnalyticsDataStubSettings) getStubSettings()).listAudienceExportsSettings();
   }
 
   public static final BetaAnalyticsDataSettings create(BetaAnalyticsDataStubSettings stub)
@@ -265,6 +300,40 @@ public class BetaAnalyticsDataSettings extends ClientSettings<BetaAnalyticsDataS
     public UnaryCallSettings.Builder<CheckCompatibilityRequest, CheckCompatibilityResponse>
         checkCompatibilitySettings() {
       return getStubSettingsBuilder().checkCompatibilitySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAudienceExport. */
+    public UnaryCallSettings.Builder<CreateAudienceExportRequest, Operation>
+        createAudienceExportSettings() {
+      return getStubSettingsBuilder().createAudienceExportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAudienceExport. */
+    public OperationCallSettings.Builder<
+            CreateAudienceExportRequest, AudienceExport, AudienceExportMetadata>
+        createAudienceExportOperationSettings() {
+      return getStubSettingsBuilder().createAudienceExportOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryAudienceExport. */
+    public UnaryCallSettings.Builder<QueryAudienceExportRequest, QueryAudienceExportResponse>
+        queryAudienceExportSettings() {
+      return getStubSettingsBuilder().queryAudienceExportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAudienceExport. */
+    public UnaryCallSettings.Builder<GetAudienceExportRequest, AudienceExport>
+        getAudienceExportSettings() {
+      return getStubSettingsBuilder().getAudienceExportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAudienceExports. */
+    public PagedCallSettings.Builder<
+            ListAudienceExportsRequest,
+            ListAudienceExportsResponse,
+            ListAudienceExportsPagedResponse>
+        listAudienceExportsSettings() {
+      return getStubSettingsBuilder().listAudienceExportsSettings();
     }
 
     @Override

@@ -27,10 +27,10 @@ public interface WebKeySettingsOrBuilder
    *
    *
    * <pre>
-   * If set to true, it means allowed_domains will not be enforced.
+   * Optional. If set to true, it means allowed_domains will not be enforced.
    * </pre>
    *
-   * <code>bool allow_all_domains = 3;</code>
+   * <code>bool allow_all_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowAllDomains.
    */
@@ -40,13 +40,13 @@ public interface WebKeySettingsOrBuilder
    *
    *
    * <pre>
-   * Domains or subdomains of websites allowed to use the key. All subdomains
-   * of an allowed domain are automatically allowed. A valid domain requires a
-   * host and must not include any path, port, query or fragment.
+   * Optional. Domains or subdomains of websites allowed to use the key. All
+   * subdomains of an allowed domain are automatically allowed. A valid domain
+   * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
    * </pre>
    *
-   * <code>repeated string allowed_domains = 1;</code>
+   * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the allowedDomains.
    */
@@ -55,13 +55,13 @@ public interface WebKeySettingsOrBuilder
    *
    *
    * <pre>
-   * Domains or subdomains of websites allowed to use the key. All subdomains
-   * of an allowed domain are automatically allowed. A valid domain requires a
-   * host and must not include any path, port, query or fragment.
+   * Optional. Domains or subdomains of websites allowed to use the key. All
+   * subdomains of an allowed domain are automatically allowed. A valid domain
+   * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
    * </pre>
    *
-   * <code>repeated string allowed_domains = 1;</code>
+   * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of allowedDomains.
    */
@@ -70,13 +70,13 @@ public interface WebKeySettingsOrBuilder
    *
    *
    * <pre>
-   * Domains or subdomains of websites allowed to use the key. All subdomains
-   * of an allowed domain are automatically allowed. A valid domain requires a
-   * host and must not include any path, port, query or fragment.
+   * Optional. Domains or subdomains of websites allowed to use the key. All
+   * subdomains of an allowed domain are automatically allowed. A valid domain
+   * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
    * </pre>
    *
-   * <code>repeated string allowed_domains = 1;</code>
+   * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The allowedDomains at the given index.
@@ -86,13 +86,13 @@ public interface WebKeySettingsOrBuilder
    *
    *
    * <pre>
-   * Domains or subdomains of websites allowed to use the key. All subdomains
-   * of an allowed domain are automatically allowed. A valid domain requires a
-   * host and must not include any path, port, query or fragment.
+   * Optional. Domains or subdomains of websites allowed to use the key. All
+   * subdomains of an allowed domain are automatically allowed. A valid domain
+   * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
    * </pre>
    *
-   * <code>repeated string allowed_domains = 1;</code>
+   * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the allowedDomains at the given index.
@@ -103,11 +103,11 @@ public interface WebKeySettingsOrBuilder
    *
    *
    * <pre>
-   * If set to true, the key can be used on AMP (Accelerated Mobile Pages)
-   * websites. This is supported only for the SCORE integration type.
+   * Optional. If set to true, the key can be used on AMP (Accelerated Mobile
+   * Pages) websites. This is supported only for the SCORE integration type.
    * </pre>
    *
-   * <code>bool allow_amp_traffic = 2;</code>
+   * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowAmpTraffic.
    */
@@ -146,13 +146,13 @@ public interface WebKeySettingsOrBuilder
    *
    *
    * <pre>
-   * Settings for the frequency and difficulty at which this key triggers
-   * captcha challenges. This should only be specified for IntegrationTypes
-   * CHECKBOX and INVISIBLE.
+   * Optional. Settings for the frequency and difficulty at which this key
+   * triggers captcha challenges. This should only be specified for
+   * IntegrationTypes CHECKBOX and INVISIBLE.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
+   * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for challengeSecurityPreference.
@@ -162,13 +162,13 @@ public interface WebKeySettingsOrBuilder
    *
    *
    * <pre>
-   * Settings for the frequency and difficulty at which this key triggers
-   * captcha challenges. This should only be specified for IntegrationTypes
-   * CHECKBOX and INVISIBLE.
+   * Optional. Settings for the frequency and difficulty at which this key
+   * triggers captcha challenges. This should only be specified for
+   * IntegrationTypes CHECKBOX and INVISIBLE.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5;
+   * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference challenge_security_preference = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The challengeSecurityPreference.

@@ -309,7 +309,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3884
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3922
    * @return The minCpuPlatform.
    */
   @java.lang.Override
@@ -345,7 +345,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3884
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3922
    * @return The bytes for minCpuPlatform.
    */
   @java.lang.Override
@@ -1944,7 +1944,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3884
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3922
      * @return The minCpuPlatform.
      */
     @java.lang.Deprecated
@@ -1979,7 +1979,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3884
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3922
      * @return The bytes for minCpuPlatform.
      */
     @java.lang.Deprecated
@@ -2014,7 +2014,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3884
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3922
      * @param value The minCpuPlatform to set.
      * @return This builder for chaining.
      */
@@ -2048,7 +2048,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3884
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3922
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2078,7 +2078,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3884
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3922
      * @param value The bytes for minCpuPlatform to set.
      * @return This builder for chaining.
      */

@@ -75,7 +75,8 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The resource name of the notification.
    * Format:
-   * organizations/{organization}/locations/{location}/notifications/{notification}.
+   * organizations/{organization}/locations/{location}/notifications/{notification}
+   * or projects/{project}/locations/{location}/notifications/{notification}.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -100,7 +101,8 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The resource name of the notification.
    * Format:
-   * organizations/{organization}/locations/{location}/notifications/{notification}.
+   * organizations/{organization}/locations/{location}/notifications/{notification}
+   * or projects/{project}/locations/{location}/notifications/{notification}.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -840,7 +842,8 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the notification.
      * Format:
-     * organizations/{organization}/locations/{location}/notifications/{notification}.
+     * organizations/{organization}/locations/{location}/notifications/{notification}
+     * or projects/{project}/locations/{location}/notifications/{notification}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -864,7 +867,8 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the notification.
      * Format:
-     * organizations/{organization}/locations/{location}/notifications/{notification}.
+     * organizations/{organization}/locations/{location}/notifications/{notification}
+     * or projects/{project}/locations/{location}/notifications/{notification}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -888,7 +892,8 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the notification.
      * Format:
-     * organizations/{organization}/locations/{location}/notifications/{notification}.
+     * organizations/{organization}/locations/{location}/notifications/{notification}
+     * or projects/{project}/locations/{location}/notifications/{notification}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -911,7 +916,8 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the notification.
      * Format:
-     * organizations/{organization}/locations/{location}/notifications/{notification}.
+     * organizations/{organization}/locations/{location}/notifications/{notification}
+     * or projects/{project}/locations/{location}/notifications/{notification}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -930,7 +936,8 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the notification.
      * Format:
-     * organizations/{organization}/locations/{location}/notifications/{notification}.
+     * organizations/{organization}/locations/{location}/notifications/{notification}
+     * or projects/{project}/locations/{location}/notifications/{notification}.
      * </pre>
      *
      * <code>string name = 1;</code>

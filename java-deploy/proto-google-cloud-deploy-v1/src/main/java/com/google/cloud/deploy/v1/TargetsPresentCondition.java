@@ -22,7 +22,7 @@ package com.google.cloud.deploy.v1;
  *
  *
  * <pre>
- * TargetsPresentCondition contains information on any Targets defined in
+ * `TargetsPresentCondition` contains information on any Targets referenced in
  * the Delivery Pipeline that do not actually exist.
  * </pre>
  *
@@ -91,7 +91,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
    *
    * <pre>
    * The list of Target names that do not exist. For example,
-   * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * </pre>
    *
    * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -106,7 +106,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
    *
    * <pre>
    * The list of Target names that do not exist. For example,
-   * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * </pre>
    *
    * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -121,7 +121,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
    *
    * <pre>
    * The list of Target names that do not exist. For example,
-   * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * </pre>
    *
    * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -137,7 +137,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
    *
    * <pre>
    * The list of Target names that do not exist. For example,
-   * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * </pre>
    *
    * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -388,7 +388,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * TargetsPresentCondition contains information on any Targets defined in
+   * `TargetsPresentCondition` contains information on any Targets referenced in
    * the Delivery Pipeline that do not actually exist.
    * </pre>
    *
@@ -672,7 +672,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -688,7 +688,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -703,7 +703,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -719,7 +719,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -735,7 +735,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -759,7 +759,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -782,7 +782,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -802,7 +802,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -821,7 +821,7 @@ public final class TargetsPresentCondition extends com.google.protobuf.Generated
      *
      * <pre>
      * The list of Target names that do not exist. For example,
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>repeated string missing_targets = 2 [(.google.api.resource_reference) = { ... }</code>

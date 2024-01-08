@@ -27,8 +27,8 @@ public interface HybridInspectDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the job to execute a hybrid inspect on, for example
-   * `projects/dlp-test-project/dlpJob/53234423`.
+   * Required. Resource name of the job to execute a hybrid inspect on, for
+   * example `projects/dlp-test-project/dlpJob/53234423`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface HybridInspectDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the job to execute a hybrid inspect on, for example
-   * `projects/dlp-test-project/dlpJob/53234423`.
+   * Required. Resource name of the job to execute a hybrid inspect on, for
+   * example `projects/dlp-test-project/dlpJob/53234423`.
    * </pre>
    *
    * <code>

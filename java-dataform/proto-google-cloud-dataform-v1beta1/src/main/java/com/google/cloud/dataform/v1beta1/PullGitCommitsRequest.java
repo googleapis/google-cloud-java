@@ -126,8 +126,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The name of the branch in the Git remote from which to pull commits.
-   * If left unset, the repository's default branch name will be used.
+   * Optional. The name of the branch in the Git remote from which to pull
+   * commits. If left unset, the repository's default branch name will be used.
    * </pre>
    *
    * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -150,8 +150,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The name of the branch in the Git remote from which to pull commits.
-   * If left unset, the repository's default branch name will be used.
+   * Optional. The name of the branch in the Git remote from which to pull
+   * commits. If left unset, the repository's default branch name will be used.
    * </pre>
    *
    * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -177,8 +177,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The author of any merge commit which may be created as a result of merging
-   * fetched Git commits into this workspace.
+   * Required. The author of any merge commit which may be created as a result
+   * of merging fetched Git commits into this workspace.
    * </pre>
    *
    * <code>
@@ -195,8 +195,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The author of any merge commit which may be created as a result of merging
-   * fetched Git commits into this workspace.
+   * Required. The author of any merge commit which may be created as a result
+   * of merging fetched Git commits into this workspace.
    * </pre>
    *
    * <code>
@@ -215,8 +215,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The author of any merge commit which may be created as a result of merging
-   * fetched Git commits into this workspace.
+   * Required. The author of any merge commit which may be created as a result
+   * of merging fetched Git commits into this workspace.
    * </pre>
    *
    * <code>
@@ -749,8 +749,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The name of the branch in the Git remote from which to pull commits.
-     * If left unset, the repository's default branch name will be used.
+     * Optional. The name of the branch in the Git remote from which to pull
+     * commits. If left unset, the repository's default branch name will be used.
      * </pre>
      *
      * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -772,8 +772,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The name of the branch in the Git remote from which to pull commits.
-     * If left unset, the repository's default branch name will be used.
+     * Optional. The name of the branch in the Git remote from which to pull
+     * commits. If left unset, the repository's default branch name will be used.
      * </pre>
      *
      * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -795,8 +795,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The name of the branch in the Git remote from which to pull commits.
-     * If left unset, the repository's default branch name will be used.
+     * Optional. The name of the branch in the Git remote from which to pull
+     * commits. If left unset, the repository's default branch name will be used.
      * </pre>
      *
      * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -817,8 +817,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The name of the branch in the Git remote from which to pull commits.
-     * If left unset, the repository's default branch name will be used.
+     * Optional. The name of the branch in the Git remote from which to pull
+     * commits. If left unset, the repository's default branch name will be used.
      * </pre>
      *
      * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -835,8 +835,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The name of the branch in the Git remote from which to pull commits.
-     * If left unset, the repository's default branch name will be used.
+     * Optional. The name of the branch in the Git remote from which to pull
+     * commits. If left unset, the repository's default branch name will be used.
      * </pre>
      *
      * <code>string remote_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -865,8 +865,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The author of any merge commit which may be created as a result of merging
-     * fetched Git commits into this workspace.
+     * Required. The author of any merge commit which may be created as a result
+     * of merging fetched Git commits into this workspace.
      * </pre>
      *
      * <code>
@@ -882,8 +882,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The author of any merge commit which may be created as a result of merging
-     * fetched Git commits into this workspace.
+     * Required. The author of any merge commit which may be created as a result
+     * of merging fetched Git commits into this workspace.
      * </pre>
      *
      * <code>
@@ -905,8 +905,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The author of any merge commit which may be created as a result of merging
-     * fetched Git commits into this workspace.
+     * Required. The author of any merge commit which may be created as a result
+     * of merging fetched Git commits into this workspace.
      * </pre>
      *
      * <code>
@@ -930,8 +930,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The author of any merge commit which may be created as a result of merging
-     * fetched Git commits into this workspace.
+     * Required. The author of any merge commit which may be created as a result
+     * of merging fetched Git commits into this workspace.
      * </pre>
      *
      * <code>
@@ -953,8 +953,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The author of any merge commit which may be created as a result of merging
-     * fetched Git commits into this workspace.
+     * Required. The author of any merge commit which may be created as a result
+     * of merging fetched Git commits into this workspace.
      * </pre>
      *
      * <code>
@@ -981,8 +981,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The author of any merge commit which may be created as a result of merging
-     * fetched Git commits into this workspace.
+     * Required. The author of any merge commit which may be created as a result
+     * of merging fetched Git commits into this workspace.
      * </pre>
      *
      * <code>
@@ -1003,8 +1003,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The author of any merge commit which may be created as a result of merging
-     * fetched Git commits into this workspace.
+     * Required. The author of any merge commit which may be created as a result
+     * of merging fetched Git commits into this workspace.
      * </pre>
      *
      * <code>
@@ -1020,8 +1020,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The author of any merge commit which may be created as a result of merging
-     * fetched Git commits into this workspace.
+     * Required. The author of any merge commit which may be created as a result
+     * of merging fetched Git commits into this workspace.
      * </pre>
      *
      * <code>
@@ -1041,8 +1041,8 @@ public final class PullGitCommitsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The author of any merge commit which may be created as a result of merging
-     * fetched Git commits into this workspace.
+     * Required. The author of any merge commit which may be created as a result
+     * of merging fetched Git commits into this workspace.
      * </pre>
      *
      * <code>

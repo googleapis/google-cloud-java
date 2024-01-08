@@ -77,7 +77,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The type of the resource, e.g. `compute.googleapis.com/Disk`.
+     * Required. The type of the resource, for example,
+     * `compute.googleapis.com/Disk`.
      * </pre>
      *
      * <code>string resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -89,7 +90,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The type of the resource, e.g. `compute.googleapis.com/Disk`.
+     * Required. The type of the resource, for example,
+     * `compute.googleapis.com/Disk`.
      * </pre>
      *
      * <code>string resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -102,8 +104,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Optional. A representation of the GCP resource. Should match the GCP
-     * resource JSON format.
+     * Optional. A representation of the Google Cloud resource. Should match the
+     * Google Cloud resource JSON format.
      * </pre>
      *
      * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -116,8 +118,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Optional. A representation of the GCP resource. Should match the GCP
-     * resource JSON format.
+     * Optional. A representation of the Google Cloud resource. Should match the
+     * Google Cloud resource JSON format.
      * </pre>
      *
      * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -130,8 +132,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Optional. A representation of the GCP resource. Should match the GCP
-     * resource JSON format.
+     * Optional. A representation of the Google Cloud resource. Should match the
+     * Google Cloud resource JSON format.
      * </pre>
      *
      * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -181,9 +183,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * Manually constructed resource. If the custom module only evaluates against
-   * the resource data, the iam_policy_data field can be omitted, and vice
-   * versa.
+   * Manually constructed resource name. If the custom module evaluates against
+   * only the resource data, you can omit the `iam_policy_data` field. If it
+   * evaluates only the `iam_policy_data` field, you can omit the resource data.
    * </pre>
    *
    * Protobuf type {@code
@@ -234,7 +236,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The type of the resource, e.g. `compute.googleapis.com/Disk`.
+     * Required. The type of the resource, for example,
+     * `compute.googleapis.com/Disk`.
      * </pre>
      *
      * <code>string resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -257,7 +260,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The type of the resource, e.g. `compute.googleapis.com/Disk`.
+     * Required. The type of the resource, for example,
+     * `compute.googleapis.com/Disk`.
      * </pre>
      *
      * <code>string resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -283,8 +287,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Optional. A representation of the GCP resource. Should match the GCP
-     * resource JSON format.
+     * Optional. A representation of the Google Cloud resource. Should match the
+     * Google Cloud resource JSON format.
      * </pre>
      *
      * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -300,8 +304,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Optional. A representation of the GCP resource. Should match the GCP
-     * resource JSON format.
+     * Optional. A representation of the Google Cloud resource. Should match the
+     * Google Cloud resource JSON format.
      * </pre>
      *
      * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -319,8 +323,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Optional. A representation of the GCP resource. Should match the GCP
-     * resource JSON format.
+     * Optional. A representation of the Google Cloud resource. Should match the
+     * Google Cloud resource JSON format.
      * </pre>
      *
      * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -606,9 +610,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Manually constructed resource. If the custom module only evaluates against
-     * the resource data, the iam_policy_data field can be omitted, and vice
-     * versa.
+     * Manually constructed resource name. If the custom module evaluates against
+     * only the resource data, you can omit the `iam_policy_data` field. If it
+     * evaluates only the `iam_policy_data` field, you can omit the resource data.
      * </pre>
      *
      * Protobuf type {@code
@@ -862,7 +866,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Required. The type of the resource, e.g. `compute.googleapis.com/Disk`.
+       * Required. The type of the resource, for example,
+       * `compute.googleapis.com/Disk`.
        * </pre>
        *
        * <code>string resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -884,7 +889,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Required. The type of the resource, e.g. `compute.googleapis.com/Disk`.
+       * Required. The type of the resource, for example,
+       * `compute.googleapis.com/Disk`.
        * </pre>
        *
        * <code>string resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -906,7 +912,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Required. The type of the resource, e.g. `compute.googleapis.com/Disk`.
+       * Required. The type of the resource, for example,
+       * `compute.googleapis.com/Disk`.
        * </pre>
        *
        * <code>string resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -927,7 +934,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Required. The type of the resource, e.g. `compute.googleapis.com/Disk`.
+       * Required. The type of the resource, for example,
+       * `compute.googleapis.com/Disk`.
        * </pre>
        *
        * <code>string resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -944,7 +952,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Required. The type of the resource, e.g. `compute.googleapis.com/Disk`.
+       * Required. The type of the resource, for example,
+       * `compute.googleapis.com/Disk`.
        * </pre>
        *
        * <code>string resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -973,8 +982,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the GCP resource. Should match the GCP
-       * resource JSON format.
+       * Optional. A representation of the Google Cloud resource. Should match the
+       * Google Cloud resource JSON format.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -989,8 +998,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the GCP resource. Should match the GCP
-       * resource JSON format.
+       * Optional. A representation of the Google Cloud resource. Should match the
+       * Google Cloud resource JSON format.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1011,8 +1020,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the GCP resource. Should match the GCP
-       * resource JSON format.
+       * Optional. A representation of the Google Cloud resource. Should match the
+       * Google Cloud resource JSON format.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1035,8 +1044,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the GCP resource. Should match the GCP
-       * resource JSON format.
+       * Optional. A representation of the Google Cloud resource. Should match the
+       * Google Cloud resource JSON format.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1056,8 +1065,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the GCP resource. Should match the GCP
-       * resource JSON format.
+       * Optional. A representation of the Google Cloud resource. Should match the
+       * Google Cloud resource JSON format.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1083,8 +1092,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the GCP resource. Should match the GCP
-       * resource JSON format.
+       * Optional. A representation of the Google Cloud resource. Should match the
+       * Google Cloud resource JSON format.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1104,8 +1113,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the GCP resource. Should match the GCP
-       * resource JSON format.
+       * Optional. A representation of the Google Cloud resource. Should match the
+       * Google Cloud resource JSON format.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1120,8 +1129,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the GCP resource. Should match the GCP
-       * resource JSON format.
+       * Optional. A representation of the Google Cloud resource. Should match the
+       * Google Cloud resource JSON format.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1140,8 +1149,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the GCP resource. Should match the GCP
-       * resource JSON format.
+       * Optional. A representation of the Google Cloud resource. Should match the
+       * Google Cloud resource JSON format.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1437,10 +1446,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
    *
    * <pre>
    * Required. The relative resource name of the organization, project, or
-   * folder. See:
-   * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-   * An example is:
-   * "organizations/{organization_id}".
+   * folder. For more information about relative resource names, see [Relative
+   * Resource
+   * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+   * Example: `organizations/{organization_id}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1464,10 +1473,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
    *
    * <pre>
    * Required. The relative resource name of the organization, project, or
-   * folder. See:
-   * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-   * An example is:
-   * "organizations/{organization_id}".
+   * folder. For more information about relative resource names, see [Relative
+   * Resource
+   * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+   * Example: `organizations/{organization_id}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1493,7 +1502,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * Required. The user specified custom configuration to test.
+   * Required. The custom configuration that you need to test.
    * </pre>
    *
    * <code>
@@ -1510,7 +1519,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * Required. The user specified custom configuration to test.
+   * Required. The custom configuration that you need to test.
    * </pre>
    *
    * <code>
@@ -1529,7 +1538,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * Required. The user specified custom configuration to test.
+   * Required. The custom configuration that you need to test.
    * </pre>
    *
    * <code>
@@ -2061,10 +2070,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      * <pre>
      * Required. The relative resource name of the organization, project, or
-     * folder. See:
-     * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-     * An example is:
-     * "organizations/{organization_id}".
+     * folder. For more information about relative resource names, see [Relative
+     * Resource
+     * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+     * Example: `organizations/{organization_id}`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2087,10 +2096,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      * <pre>
      * Required. The relative resource name of the organization, project, or
-     * folder. See:
-     * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-     * An example is:
-     * "organizations/{organization_id}".
+     * folder. For more information about relative resource names, see [Relative
+     * Resource
+     * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+     * Example: `organizations/{organization_id}`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2113,10 +2122,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      * <pre>
      * Required. The relative resource name of the organization, project, or
-     * folder. See:
-     * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-     * An example is:
-     * "organizations/{organization_id}".
+     * folder. For more information about relative resource names, see [Relative
+     * Resource
+     * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+     * Example: `organizations/{organization_id}`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2138,10 +2147,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      * <pre>
      * Required. The relative resource name of the organization, project, or
-     * folder. See:
-     * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-     * An example is:
-     * "organizations/{organization_id}".
+     * folder. For more information about relative resource names, see [Relative
+     * Resource
+     * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+     * Example: `organizations/{organization_id}`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2159,10 +2168,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      * <pre>
      * Required. The relative resource name of the organization, project, or
-     * folder. See:
-     * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-     * An example is:
-     * "organizations/{organization_id}".
+     * folder. For more information about relative resource names, see [Relative
+     * Resource
+     * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+     * Example: `organizations/{organization_id}`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2191,7 +2200,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The user specified custom configuration to test.
+     * Required. The custom configuration that you need to test.
      * </pre>
      *
      * <code>
@@ -2207,7 +2216,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The user specified custom configuration to test.
+     * Required. The custom configuration that you need to test.
      * </pre>
      *
      * <code>
@@ -2229,7 +2238,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The user specified custom configuration to test.
+     * Required. The custom configuration that you need to test.
      * </pre>
      *
      * <code>
@@ -2253,7 +2262,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The user specified custom configuration to test.
+     * Required. The custom configuration that you need to test.
      * </pre>
      *
      * <code>
@@ -2275,7 +2284,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The user specified custom configuration to test.
+     * Required. The custom configuration that you need to test.
      * </pre>
      *
      * <code>
@@ -2303,7 +2312,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The user specified custom configuration to test.
+     * Required. The custom configuration that you need to test.
      * </pre>
      *
      * <code>
@@ -2324,7 +2333,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The user specified custom configuration to test.
+     * Required. The custom configuration that you need to test.
      * </pre>
      *
      * <code>
@@ -2340,7 +2349,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The user specified custom configuration to test.
+     * Required. The custom configuration that you need to test.
      * </pre>
      *
      * <code>
@@ -2360,7 +2369,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The user specified custom configuration to test.
+     * Required. The custom configuration that you need to test.
      * </pre>
      *
      * <code>

@@ -71,8 +71,8 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The repository in which to create the compilation result. Must be in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+   * Required. The repository in which to create the compilation result. Must be
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
    * </pre>
    *
    * <code>
@@ -97,8 +97,8 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The repository in which to create the compilation result. Must be in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+   * Required. The repository in which to create the compilation result. Must be
+   * in the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
    * </pre>
    *
    * <code>
@@ -564,8 +564,8 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The repository in which to create the compilation result. Must be in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+     * Required. The repository in which to create the compilation result. Must be
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
      * </pre>
      *
      * <code>
@@ -589,8 +589,8 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The repository in which to create the compilation result. Must be in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+     * Required. The repository in which to create the compilation result. Must be
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
      * </pre>
      *
      * <code>
@@ -614,8 +614,8 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The repository in which to create the compilation result. Must be in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+     * Required. The repository in which to create the compilation result. Must be
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
      * </pre>
      *
      * <code>
@@ -638,8 +638,8 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The repository in which to create the compilation result. Must be in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+     * Required. The repository in which to create the compilation result. Must be
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
      * </pre>
      *
      * <code>
@@ -658,8 +658,8 @@ public final class CreateCompilationResultRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The repository in which to create the compilation result. Must be in the
-     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+     * Required. The repository in which to create the compilation result. Must be
+     * in the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
      * </pre>
      *
      * <code>

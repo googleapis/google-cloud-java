@@ -88,10 +88,10 @@ public interface AutomatedAgentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Sets Dialogflow CX session life time.
+   * Optional. Configure lifetime of the Dialogflow session.
    * By default, a Dialogflow CX session remains active and its data is stored
-   * for 30 minutes after the last request is sent for the session. This value
-   * should be no longer than 1 day.
+   * for 30 minutes after the last request is sent for the session.
+   * This value should be no longer than 1 day.
    * </pre>
    *
    * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -104,10 +104,10 @@ public interface AutomatedAgentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Sets Dialogflow CX session life time.
+   * Optional. Configure lifetime of the Dialogflow session.
    * By default, a Dialogflow CX session remains active and its data is stored
-   * for 30 minutes after the last request is sent for the session. This value
-   * should be no longer than 1 day.
+   * for 30 minutes after the last request is sent for the session.
+   * This value should be no longer than 1 day.
    * </pre>
    *
    * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -120,10 +120,10 @@ public interface AutomatedAgentConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Sets Dialogflow CX session life time.
+   * Optional. Configure lifetime of the Dialogflow session.
    * By default, a Dialogflow CX session remains active and its data is stored
-   * for 30 minutes after the last request is sent for the session. This value
-   * should be no longer than 1 day.
+   * for 30 minutes after the last request is sent for the session.
+   * This value should be no longer than 1 day.
    * </pre>
    *
    * <code>.google.protobuf.Duration session_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];

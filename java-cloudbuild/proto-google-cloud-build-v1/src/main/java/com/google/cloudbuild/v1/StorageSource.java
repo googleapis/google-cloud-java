@@ -40,6 +40,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
   private StorageSource() {
     bucket_ = "";
     object_ = "";
+    sourceFetcher_ = 0;
   }
 
   @java.lang.Override
@@ -61,6 +62,163 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloudbuild.v1.StorageSource.class,
             com.google.cloudbuild.v1.StorageSource.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the tool to fetch the source file for the build.
+   * </pre>
+   *
+   * Protobuf enum {@code google.devtools.cloudbuild.v1.StorageSource.SourceFetcher}
+   */
+  public enum SourceFetcher implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified. Defaults to GSUTIL.
+     * </pre>
+     *
+     * <code>SOURCE_FETCHER_UNSPECIFIED = 0;</code>
+     */
+    SOURCE_FETCHER_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Use the "gsutil" tool to download the source file.
+     * </pre>
+     *
+     * <code>GSUTIL = 1;</code>
+     */
+    GSUTIL(1),
+    /**
+     *
+     *
+     * <pre>
+     * Use the Cloud Storage Fetcher tool to download the source file.
+     * </pre>
+     *
+     * <code>GCS_FETCHER = 2;</code>
+     */
+    GCS_FETCHER(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified. Defaults to GSUTIL.
+     * </pre>
+     *
+     * <code>SOURCE_FETCHER_UNSPECIFIED = 0;</code>
+     */
+    public static final int SOURCE_FETCHER_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Use the "gsutil" tool to download the source file.
+     * </pre>
+     *
+     * <code>GSUTIL = 1;</code>
+     */
+    public static final int GSUTIL_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Use the Cloud Storage Fetcher tool to download the source file.
+     * </pre>
+     *
+     * <code>GCS_FETCHER = 2;</code>
+     */
+    public static final int GCS_FETCHER_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SourceFetcher valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SourceFetcher forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SOURCE_FETCHER_UNSPECIFIED;
+        case 1:
+          return GSUTIL;
+        case 2:
+          return GCS_FETCHER;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SourceFetcher> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<SourceFetcher> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<SourceFetcher>() {
+          public SourceFetcher findValueByNumber(int number) {
+            return SourceFetcher.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloudbuild.v1.StorageSource.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final SourceFetcher[] VALUES = values();
+
+    public static SourceFetcher valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SourceFetcher(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.devtools.cloudbuild.v1.StorageSource.SourceFetcher)
   }
 
   public static final int BUCKET_FIELD_NUMBER = 1;
@@ -194,6 +352,47 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     return generation_;
   }
 
+  public static final int SOURCE_FETCHER_FIELD_NUMBER = 5;
+  private int sourceFetcher_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Option to specify the tool to fetch the source file for the build.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.StorageSource.SourceFetcher source_fetcher = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for sourceFetcher.
+   */
+  @java.lang.Override
+  public int getSourceFetcherValue() {
+    return sourceFetcher_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Option to specify the tool to fetch the source file for the build.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.StorageSource.SourceFetcher source_fetcher = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sourceFetcher.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.StorageSource.SourceFetcher getSourceFetcher() {
+    com.google.cloudbuild.v1.StorageSource.SourceFetcher result =
+        com.google.cloudbuild.v1.StorageSource.SourceFetcher.forNumber(sourceFetcher_);
+    return result == null
+        ? com.google.cloudbuild.v1.StorageSource.SourceFetcher.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -217,6 +416,11 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     if (generation_ != 0L) {
       output.writeInt64(3, generation_);
     }
+    if (sourceFetcher_
+        != com.google.cloudbuild.v1.StorageSource.SourceFetcher.SOURCE_FETCHER_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, sourceFetcher_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -234,6 +438,11 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     }
     if (generation_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, generation_);
+    }
+    if (sourceFetcher_
+        != com.google.cloudbuild.v1.StorageSource.SourceFetcher.SOURCE_FETCHER_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, sourceFetcher_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -253,6 +462,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     if (!getBucket().equals(other.getBucket())) return false;
     if (!getObject().equals(other.getObject())) return false;
     if (getGeneration() != other.getGeneration()) return false;
+    if (sourceFetcher_ != other.sourceFetcher_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -270,6 +480,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getObject().hashCode();
     hash = (37 * hash) + GENERATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getGeneration());
+    hash = (37 * hash) + SOURCE_FETCHER_FIELD_NUMBER;
+    hash = (53 * hash) + sourceFetcher_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -412,6 +624,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
       bucket_ = "";
       object_ = "";
       generation_ = 0L;
+      sourceFetcher_ = 0;
       return this;
     }
 
@@ -456,6 +669,9 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.generation_ = generation_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.sourceFetcher_ = sourceFetcher_;
       }
     }
 
@@ -517,6 +733,9 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
       if (other.getGeneration() != 0L) {
         setGeneration(other.getGeneration());
       }
+      if (other.sourceFetcher_ != 0) {
+        setSourceFetcherValue(other.getSourceFetcherValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -561,6 +780,12 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 40:
+              {
+                sourceFetcher_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -869,6 +1094,108 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
     public Builder clearGeneration() {
       bitField0_ = (bitField0_ & ~0x00000004);
       generation_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int sourceFetcher_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Option to specify the tool to fetch the source file for the build.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.StorageSource.SourceFetcher source_fetcher = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for sourceFetcher.
+     */
+    @java.lang.Override
+    public int getSourceFetcherValue() {
+      return sourceFetcher_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to specify the tool to fetch the source file for the build.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.StorageSource.SourceFetcher source_fetcher = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for sourceFetcher to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceFetcherValue(int value) {
+      sourceFetcher_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to specify the tool to fetch the source file for the build.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.StorageSource.SourceFetcher source_fetcher = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sourceFetcher.
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v1.StorageSource.SourceFetcher getSourceFetcher() {
+      com.google.cloudbuild.v1.StorageSource.SourceFetcher result =
+          com.google.cloudbuild.v1.StorageSource.SourceFetcher.forNumber(sourceFetcher_);
+      return result == null
+          ? com.google.cloudbuild.v1.StorageSource.SourceFetcher.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to specify the tool to fetch the source file for the build.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.StorageSource.SourceFetcher source_fetcher = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The sourceFetcher to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceFetcher(com.google.cloudbuild.v1.StorageSource.SourceFetcher value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      sourceFetcher_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Option to specify the tool to fetch the source file for the build.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.StorageSource.SourceFetcher source_fetcher = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceFetcher() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      sourceFetcher_ = 0;
       onChanged();
       return this;
     }

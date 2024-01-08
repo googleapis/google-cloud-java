@@ -84,11 +84,17 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Full resource name of the format:
+   * Required. Full resource name of a
+   * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig]:
+   * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
    * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
    *
-   * Before you can request recommendations from your model, you must create at
-   * least one serving config  for it.
+   * One default serving config is created along with your recommendation engine
+   * creation. The engine ID will be used as the ID of the default serving
+   * config. For example, for Engine
+   * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
+   * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
+   * for your [Recommend][] requests.
    * </pre>
    *
    * <code>
@@ -113,11 +119,17 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Full resource name of the format:
+   * Required. Full resource name of a
+   * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig]:
+   * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
    * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
    *
-   * Before you can request recommendations from your model, you must create at
-   * least one serving config  for it.
+   * One default serving config is created along with your recommendation engine
+   * creation. The engine ID will be used as the ID of the default serving
+   * config. For example, for Engine
+   * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
+   * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
+   * for your [Recommend][] requests.
    * </pre>
    *
    * <code>
@@ -1303,11 +1315,17 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Full resource name of the format:
+     * Required. Full resource name of a
+     * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig]:
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
      *
-     * Before you can request recommendations from your model, you must create at
-     * least one serving config  for it.
+     * One default serving config is created along with your recommendation engine
+     * creation. The engine ID will be used as the ID of the default serving
+     * config. For example, for Engine
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
+     * for your [Recommend][] requests.
      * </pre>
      *
      * <code>
@@ -1331,11 +1349,17 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Full resource name of the format:
+     * Required. Full resource name of a
+     * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig]:
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
      *
-     * Before you can request recommendations from your model, you must create at
-     * least one serving config  for it.
+     * One default serving config is created along with your recommendation engine
+     * creation. The engine ID will be used as the ID of the default serving
+     * config. For example, for Engine
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
+     * for your [Recommend][] requests.
      * </pre>
      *
      * <code>
@@ -1359,11 +1383,17 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Full resource name of the format:
+     * Required. Full resource name of a
+     * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig]:
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
      *
-     * Before you can request recommendations from your model, you must create at
-     * least one serving config  for it.
+     * One default serving config is created along with your recommendation engine
+     * creation. The engine ID will be used as the ID of the default serving
+     * config. For example, for Engine
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
+     * for your [Recommend][] requests.
      * </pre>
      *
      * <code>
@@ -1386,11 +1416,17 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Full resource name of the format:
+     * Required. Full resource name of a
+     * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig]:
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
      *
-     * Before you can request recommendations from your model, you must create at
-     * least one serving config  for it.
+     * One default serving config is created along with your recommendation engine
+     * creation. The engine ID will be used as the ID of the default serving
+     * config. For example, for Engine
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
+     * for your [Recommend][] requests.
      * </pre>
      *
      * <code>
@@ -1409,11 +1445,17 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Full resource name of the format:
+     * Required. Full resource name of a
+     * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig]:
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/&#42;&#47;servingConfigs/&#42;`, or
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;dataStores/&#42;&#47;servingConfigs/&#42;`
      *
-     * Before you can request recommendations from your model, you must create at
-     * least one serving config  for it.
+     * One default serving config is created along with your recommendation engine
+     * creation. The engine ID will be used as the ID of the default serving
+     * config. For example, for Engine
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
+     * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
+     * for your [Recommend][] requests.
      * </pre>
      *
      * <code>

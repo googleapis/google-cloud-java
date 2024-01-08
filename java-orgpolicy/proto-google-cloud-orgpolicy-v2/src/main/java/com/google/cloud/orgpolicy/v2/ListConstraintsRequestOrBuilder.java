@@ -27,8 +27,9 @@ public interface ListConstraintsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Cloud resource that parents the constraint. Must be in one of
-   * the following forms:
+   * Required. The Google Cloud resource that parents the constraint. Must be in
+   * one of the following forms:
+   *
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`
@@ -46,8 +47,9 @@ public interface ListConstraintsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Cloud resource that parents the constraint. Must be in one of
-   * the following forms:
+   * Required. The Google Cloud resource that parents the constraint. Must be in
+   * one of the following forms:
+   *
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`

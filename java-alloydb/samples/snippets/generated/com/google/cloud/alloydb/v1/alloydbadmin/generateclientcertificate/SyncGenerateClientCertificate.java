@@ -42,6 +42,7 @@ public class SyncGenerateClientCertificate {
               .setRequestId("requestId693933066")
               .setCertDuration(Duration.newBuilder().build())
               .setPublicKey("publicKey1446899510")
+              .setUseMetadataExchange(true)
               .build();
       GenerateClientCertificateResponse response =
           alloyDBAdminClient.generateClientCertificate(request);

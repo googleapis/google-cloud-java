@@ -27,11 +27,11 @@ public interface AccountDefenderAssessmentOrBuilder
    *
    *
    * <pre>
-   * Labels for this request.
+   * Output only. Labels for this request.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return A list containing the labels.
@@ -42,11 +42,11 @@ public interface AccountDefenderAssessmentOrBuilder
    *
    *
    * <pre>
-   * Labels for this request.
+   * Output only. Labels for this request.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The count of labels.
@@ -56,11 +56,11 @@ public interface AccountDefenderAssessmentOrBuilder
    *
    *
    * <pre>
-   * Labels for this request.
+   * Output only. Labels for this request.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the element to return.
@@ -72,11 +72,11 @@ public interface AccountDefenderAssessmentOrBuilder
    *
    *
    * <pre>
-   * Labels for this request.
+   * Output only. Labels for this request.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for labels.
@@ -86,11 +86,11 @@ public interface AccountDefenderAssessmentOrBuilder
    *
    *
    * <pre>
-   * Labels for this request.
+   * Output only. Labels for this request.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the value to return.

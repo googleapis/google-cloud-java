@@ -17,6 +17,7 @@
 package com.google.cloud.dlp.v2.stub;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
@@ -38,6 +39,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.CreateJobTriggerRequest;
@@ -46,13 +48,16 @@ import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
@@ -66,6 +71,8 @@ import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
@@ -82,6 +89,7 @@ import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
 import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
@@ -974,6 +982,197 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateDiscoveryConfigRequest, DiscoveryConfig>
+      createDiscoveryConfigMethodDescriptor =
+          ApiMethodDescriptor.<CreateDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/CreateDiscoveryConfig")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateDiscoveryConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/locations/*}/discoveryConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{parent=organizations/*/locations/*}/discoveryConfigs")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DiscoveryConfig>newBuilder()
+                      .setDefaultInstance(DiscoveryConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+      updateDiscoveryConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/UpdateDiscoveryConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateDiscoveryConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/discoveryConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{name=organizations/*/locations/*/discoveryConfigs/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DiscoveryConfig>newBuilder()
+                      .setDefaultInstance(DiscoveryConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetDiscoveryConfigRequest, DiscoveryConfig>
+      getDiscoveryConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/GetDiscoveryConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetDiscoveryConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/discoveryConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{name=organizations/*/locations/*/discoveryConfigs/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DiscoveryConfig>newBuilder()
+                      .setDefaultInstance(DiscoveryConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
+      listDiscoveryConfigsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/ListDiscoveryConfigs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDiscoveryConfigsRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/locations/*}/discoveryConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDiscoveryConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{parent=organizations/*/locations/*}/discoveryConfigs")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDiscoveryConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDiscoveryConfigsResponse>newBuilder()
+                      .setDefaultInstance(ListDiscoveryConfigsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteDiscoveryConfigRequest, Empty>
+      deleteDiscoveryConfigMethodDescriptor =
+          ApiMethodDescriptor.<DeleteDiscoveryConfigRequest, Empty>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/DeleteDiscoveryConfig")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteDiscoveryConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/discoveryConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{name=organizations/*/locations/*/discoveryConfigs/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<CreateDlpJobRequest, DlpJob>
       createDlpJobMethodDescriptor =
           ApiMethodDescriptor.<CreateDlpJobRequest, DlpJob>newBuilder()
@@ -1477,6 +1676,17 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
       listJobTriggersPagedCallable;
   private final UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable;
   private final UnaryCallable<ActivateJobTriggerRequest, DlpJob> activateJobTriggerCallable;
+  private final UnaryCallable<CreateDiscoveryConfigRequest, DiscoveryConfig>
+      createDiscoveryConfigCallable;
+  private final UnaryCallable<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+      updateDiscoveryConfigCallable;
+  private final UnaryCallable<GetDiscoveryConfigRequest, DiscoveryConfig>
+      getDiscoveryConfigCallable;
+  private final UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
+      listDiscoveryConfigsCallable;
+  private final UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsPagedResponse>
+      listDiscoveryConfigsPagedCallable;
+  private final UnaryCallable<DeleteDiscoveryConfigRequest, Empty> deleteDiscoveryConfigCallable;
   private final UnaryCallable<CreateDlpJobRequest, DlpJob> createDlpJobCallable;
   private final UnaryCallable<ListDlpJobsRequest, ListDlpJobsResponse> listDlpJobsCallable;
   private final UnaryCallable<ListDlpJobsRequest, ListDlpJobsPagedResponse>
@@ -1800,6 +2010,67 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CreateDiscoveryConfigRequest, DiscoveryConfig>
+        createDiscoveryConfigTransportSettings =
+            HttpJsonCallSettings.<CreateDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+                .setMethodDescriptor(createDiscoveryConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+        updateDiscoveryConfigTransportSettings =
+            HttpJsonCallSettings.<UpdateDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+                .setMethodDescriptor(updateDiscoveryConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetDiscoveryConfigRequest, DiscoveryConfig>
+        getDiscoveryConfigTransportSettings =
+            HttpJsonCallSettings.<GetDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+                .setMethodDescriptor(getDiscoveryConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
+        listDiscoveryConfigsTransportSettings =
+            HttpJsonCallSettings
+                .<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>newBuilder()
+                .setMethodDescriptor(listDiscoveryConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteDiscoveryConfigRequest, Empty>
+        deleteDiscoveryConfigTransportSettings =
+            HttpJsonCallSettings.<DeleteDiscoveryConfigRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteDiscoveryConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<CreateDlpJobRequest, DlpJob> createDlpJobTransportSettings =
         HttpJsonCallSettings.<CreateDlpJobRequest, DlpJob>newBuilder()
             .setMethodDescriptor(createDlpJobMethodDescriptor)
@@ -2046,6 +2317,36 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
             activateJobTriggerTransportSettings,
             settings.activateJobTriggerSettings(),
             clientContext);
+    this.createDiscoveryConfigCallable =
+        callableFactory.createUnaryCallable(
+            createDiscoveryConfigTransportSettings,
+            settings.createDiscoveryConfigSettings(),
+            clientContext);
+    this.updateDiscoveryConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateDiscoveryConfigTransportSettings,
+            settings.updateDiscoveryConfigSettings(),
+            clientContext);
+    this.getDiscoveryConfigCallable =
+        callableFactory.createUnaryCallable(
+            getDiscoveryConfigTransportSettings,
+            settings.getDiscoveryConfigSettings(),
+            clientContext);
+    this.listDiscoveryConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listDiscoveryConfigsTransportSettings,
+            settings.listDiscoveryConfigsSettings(),
+            clientContext);
+    this.listDiscoveryConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDiscoveryConfigsTransportSettings,
+            settings.listDiscoveryConfigsSettings(),
+            clientContext);
+    this.deleteDiscoveryConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteDiscoveryConfigTransportSettings,
+            settings.deleteDiscoveryConfigSettings(),
+            clientContext);
     this.createDlpJobCallable =
         callableFactory.createUnaryCallable(
             createDlpJobTransportSettings, settings.createDlpJobSettings(), clientContext);
@@ -2132,6 +2433,11 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
     methodDescriptors.add(listJobTriggersMethodDescriptor);
     methodDescriptors.add(deleteJobTriggerMethodDescriptor);
     methodDescriptors.add(activateJobTriggerMethodDescriptor);
+    methodDescriptors.add(createDiscoveryConfigMethodDescriptor);
+    methodDescriptors.add(updateDiscoveryConfigMethodDescriptor);
+    methodDescriptors.add(getDiscoveryConfigMethodDescriptor);
+    methodDescriptors.add(listDiscoveryConfigsMethodDescriptor);
+    methodDescriptors.add(deleteDiscoveryConfigMethodDescriptor);
     methodDescriptors.add(createDlpJobMethodDescriptor);
     methodDescriptors.add(listDlpJobsMethodDescriptor);
     methodDescriptors.add(getDlpJobMethodDescriptor);
@@ -2283,6 +2589,40 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
   @Override
   public UnaryCallable<ActivateJobTriggerRequest, DlpJob> activateJobTriggerCallable() {
     return activateJobTriggerCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDiscoveryConfigRequest, DiscoveryConfig>
+      createDiscoveryConfigCallable() {
+    return createDiscoveryConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+      updateDiscoveryConfigCallable() {
+    return updateDiscoveryConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDiscoveryConfigRequest, DiscoveryConfig> getDiscoveryConfigCallable() {
+    return getDiscoveryConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
+      listDiscoveryConfigsCallable() {
+    return listDiscoveryConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsPagedResponse>
+      listDiscoveryConfigsPagedCallable() {
+    return listDiscoveryConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDiscoveryConfigRequest, Empty> deleteDiscoveryConfigCallable() {
+    return deleteDiscoveryConfigCallable;
   }
 
   @Override

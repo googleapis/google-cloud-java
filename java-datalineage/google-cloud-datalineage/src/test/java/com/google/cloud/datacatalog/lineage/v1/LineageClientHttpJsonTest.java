@@ -37,6 +37,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import com.google.protobuf.Value;
 import java.io.IOException;
@@ -85,6 +86,55 @@ public class LineageClientHttpJsonTest {
   @After
   public void tearDown() throws Exception {
     mockService.reset();
+  }
+
+  @Test
+  public void processOpenLineageRunEventTest() throws Exception {
+    ProcessOpenLineageRunEventResponse expectedResponse =
+        ProcessOpenLineageRunEventResponse.newBuilder()
+            .setProcess(ProcessName.of("[PROJECT]", "[LOCATION]", "[PROCESS]").toString())
+            .setRun(RunName.of("[PROJECT]", "[LOCATION]", "[PROCESS]", "[RUN]").toString())
+            .addAllLineageEvents(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    Struct openLineage = Struct.newBuilder().build();
+
+    ProcessOpenLineageRunEventResponse actualResponse =
+        client.processOpenLineageRunEvent(parent, openLineage);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void processOpenLineageRunEventExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      Struct openLineage = Struct.newBuilder().build();
+      client.processOpenLineageRunEvent(parent, openLineage);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
   }
 
   @Test

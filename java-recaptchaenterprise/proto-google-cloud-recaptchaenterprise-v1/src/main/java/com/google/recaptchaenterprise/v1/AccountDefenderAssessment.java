@@ -305,11 +305,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Labels for this request.
+   * Output only. Labels for this request.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return A list containing the labels.
@@ -327,11 +327,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Labels for this request.
+   * Output only. Labels for this request.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The count of labels.
@@ -344,11 +344,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Labels for this request.
+   * Output only. Labels for this request.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the element to return.
@@ -363,11 +363,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Labels for this request.
+   * Output only. Labels for this request.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for labels.
@@ -380,11 +380,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Labels for this request.
+   * Output only. Labels for this request.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+   * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the value to return.
@@ -794,11 +794,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Labels for this request.
+     * Output only. Labels for this request.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return A list containing the labels.
@@ -815,11 +815,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Labels for this request.
+     * Output only. Labels for this request.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The count of labels.
@@ -831,11 +831,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Labels for this request.
+     * Output only. Labels for this request.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param index The index of the element to return.
@@ -849,11 +849,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Labels for this request.
+     * Output only. Labels for this request.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param index The index to set the value at.
@@ -875,11 +875,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Labels for this request.
+     * Output only. Labels for this request.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The labels to add.
@@ -899,11 +899,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Labels for this request.
+     * Output only. Labels for this request.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param values The labels to add.
@@ -927,11 +927,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Labels for this request.
+     * Output only. Labels for this request.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.
@@ -946,11 +946,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Labels for this request.
+     * Output only. Labels for this request.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return A list containing the enum numeric values on the wire for labels.
@@ -962,11 +962,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Labels for this request.
+     * Output only. Labels for this request.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param index The index of the value to return.
@@ -979,11 +979,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Labels for this request.
+     * Output only. Labels for this request.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param index The index to set the value at.
@@ -1000,11 +1000,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Labels for this request.
+     * Output only. Labels for this request.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The enum numeric value on the wire for labels to add.
@@ -1020,11 +1020,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Labels for this request.
+     * Output only. Labels for this request.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1;
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel labels = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param values The enum numeric values on the wire for labels to add.

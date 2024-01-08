@@ -16,6 +16,9 @@
 
 package com.google.cloud.deploy.v1;
 
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
@@ -148,6 +151,11 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
     return ((CloudDeployStubSettings) getStubSettings()).listTargetsSettings();
   }
 
+  /** Returns the object with the settings used for calls to rollbackTarget. */
+  public UnaryCallSettings<RollbackTargetRequest, RollbackTargetResponse> rollbackTargetSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).rollbackTargetSettings();
+  }
+
   /** Returns the object with the settings used for calls to getTarget. */
   public UnaryCallSettings<GetTargetRequest, Target> getTargetSettings() {
     return ((CloudDeployStubSettings) getStubSettings()).getTargetSettings();
@@ -184,6 +192,57 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
   public OperationCallSettings<DeleteTargetRequest, Empty, OperationMetadata>
       deleteTargetOperationSettings() {
     return ((CloudDeployStubSettings) getStubSettings()).deleteTargetOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listCustomTargetTypes. */
+  public PagedCallSettings<
+          ListCustomTargetTypesRequest,
+          ListCustomTargetTypesResponse,
+          ListCustomTargetTypesPagedResponse>
+      listCustomTargetTypesSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).listCustomTargetTypesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getCustomTargetType. */
+  public UnaryCallSettings<GetCustomTargetTypeRequest, CustomTargetType>
+      getCustomTargetTypeSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).getCustomTargetTypeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCustomTargetType. */
+  public UnaryCallSettings<CreateCustomTargetTypeRequest, Operation>
+      createCustomTargetTypeSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).createCustomTargetTypeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCustomTargetType. */
+  public OperationCallSettings<CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      createCustomTargetTypeOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).createCustomTargetTypeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomTargetType. */
+  public UnaryCallSettings<UpdateCustomTargetTypeRequest, Operation>
+      updateCustomTargetTypeSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).updateCustomTargetTypeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomTargetType. */
+  public OperationCallSettings<UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      updateCustomTargetTypeOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).updateCustomTargetTypeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomTargetType. */
+  public UnaryCallSettings<DeleteCustomTargetTypeRequest, Operation>
+      deleteCustomTargetTypeSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).deleteCustomTargetTypeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomTargetType. */
+  public OperationCallSettings<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+      deleteCustomTargetTypeOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).deleteCustomTargetTypeOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listReleases. */
@@ -280,6 +339,69 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
   /** Returns the object with the settings used for calls to getConfig. */
   public UnaryCallSettings<GetConfigRequest, Config> getConfigSettings() {
     return ((CloudDeployStubSettings) getStubSettings()).getConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAutomation. */
+  public UnaryCallSettings<CreateAutomationRequest, Operation> createAutomationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).createAutomationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAutomation. */
+  public OperationCallSettings<CreateAutomationRequest, Automation, OperationMetadata>
+      createAutomationOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).createAutomationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAutomation. */
+  public UnaryCallSettings<UpdateAutomationRequest, Operation> updateAutomationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).updateAutomationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAutomation. */
+  public OperationCallSettings<UpdateAutomationRequest, Automation, OperationMetadata>
+      updateAutomationOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).updateAutomationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAutomation. */
+  public UnaryCallSettings<DeleteAutomationRequest, Operation> deleteAutomationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).deleteAutomationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAutomation. */
+  public OperationCallSettings<DeleteAutomationRequest, Empty, OperationMetadata>
+      deleteAutomationOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).deleteAutomationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAutomation. */
+  public UnaryCallSettings<GetAutomationRequest, Automation> getAutomationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).getAutomationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAutomations. */
+  public PagedCallSettings<
+          ListAutomationsRequest, ListAutomationsResponse, ListAutomationsPagedResponse>
+      listAutomationsSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).listAutomationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAutomationRun. */
+  public UnaryCallSettings<GetAutomationRunRequest, AutomationRun> getAutomationRunSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).getAutomationRunSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAutomationRuns. */
+  public PagedCallSettings<
+          ListAutomationRunsRequest, ListAutomationRunsResponse, ListAutomationRunsPagedResponse>
+      listAutomationRunsSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).listAutomationRunsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelAutomationRun. */
+  public UnaryCallSettings<CancelAutomationRunRequest, CancelAutomationRunResponse>
+      cancelAutomationRunSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).cancelAutomationRunSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -483,6 +605,12 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
       return getStubSettingsBuilder().listTargetsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to rollbackTarget. */
+    public UnaryCallSettings.Builder<RollbackTargetRequest, RollbackTargetResponse>
+        rollbackTargetSettings() {
+      return getStubSettingsBuilder().rollbackTargetSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getTarget. */
     public UnaryCallSettings.Builder<GetTargetRequest, Target> getTargetSettings() {
       return getStubSettingsBuilder().getTargetSettings();
@@ -519,6 +647,59 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
     public OperationCallSettings.Builder<DeleteTargetRequest, Empty, OperationMetadata>
         deleteTargetOperationSettings() {
       return getStubSettingsBuilder().deleteTargetOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomTargetTypes. */
+    public PagedCallSettings.Builder<
+            ListCustomTargetTypesRequest,
+            ListCustomTargetTypesResponse,
+            ListCustomTargetTypesPagedResponse>
+        listCustomTargetTypesSettings() {
+      return getStubSettingsBuilder().listCustomTargetTypesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomTargetType. */
+    public UnaryCallSettings.Builder<GetCustomTargetTypeRequest, CustomTargetType>
+        getCustomTargetTypeSettings() {
+      return getStubSettingsBuilder().getCustomTargetTypeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomTargetType. */
+    public UnaryCallSettings.Builder<CreateCustomTargetTypeRequest, Operation>
+        createCustomTargetTypeSettings() {
+      return getStubSettingsBuilder().createCustomTargetTypeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomTargetType. */
+    public OperationCallSettings.Builder<
+            CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+        createCustomTargetTypeOperationSettings() {
+      return getStubSettingsBuilder().createCustomTargetTypeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomTargetType. */
+    public UnaryCallSettings.Builder<UpdateCustomTargetTypeRequest, Operation>
+        updateCustomTargetTypeSettings() {
+      return getStubSettingsBuilder().updateCustomTargetTypeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomTargetType. */
+    public OperationCallSettings.Builder<
+            UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+        updateCustomTargetTypeOperationSettings() {
+      return getStubSettingsBuilder().updateCustomTargetTypeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomTargetType. */
+    public UnaryCallSettings.Builder<DeleteCustomTargetTypeRequest, Operation>
+        deleteCustomTargetTypeSettings() {
+      return getStubSettingsBuilder().deleteCustomTargetTypeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomTargetType. */
+    public OperationCallSettings.Builder<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+        deleteCustomTargetTypeOperationSettings() {
+      return getStubSettingsBuilder().deleteCustomTargetTypeOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listReleases. */
@@ -622,6 +803,73 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
     /** Returns the builder for the settings used for calls to getConfig. */
     public UnaryCallSettings.Builder<GetConfigRequest, Config> getConfigSettings() {
       return getStubSettingsBuilder().getConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAutomation. */
+    public UnaryCallSettings.Builder<CreateAutomationRequest, Operation>
+        createAutomationSettings() {
+      return getStubSettingsBuilder().createAutomationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAutomation. */
+    public OperationCallSettings.Builder<CreateAutomationRequest, Automation, OperationMetadata>
+        createAutomationOperationSettings() {
+      return getStubSettingsBuilder().createAutomationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutomation. */
+    public UnaryCallSettings.Builder<UpdateAutomationRequest, Operation>
+        updateAutomationSettings() {
+      return getStubSettingsBuilder().updateAutomationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutomation. */
+    public OperationCallSettings.Builder<UpdateAutomationRequest, Automation, OperationMetadata>
+        updateAutomationOperationSettings() {
+      return getStubSettingsBuilder().updateAutomationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAutomation. */
+    public UnaryCallSettings.Builder<DeleteAutomationRequest, Operation>
+        deleteAutomationSettings() {
+      return getStubSettingsBuilder().deleteAutomationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAutomation. */
+    public OperationCallSettings.Builder<DeleteAutomationRequest, Empty, OperationMetadata>
+        deleteAutomationOperationSettings() {
+      return getStubSettingsBuilder().deleteAutomationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAutomation. */
+    public UnaryCallSettings.Builder<GetAutomationRequest, Automation> getAutomationSettings() {
+      return getStubSettingsBuilder().getAutomationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAutomations. */
+    public PagedCallSettings.Builder<
+            ListAutomationsRequest, ListAutomationsResponse, ListAutomationsPagedResponse>
+        listAutomationsSettings() {
+      return getStubSettingsBuilder().listAutomationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAutomationRun. */
+    public UnaryCallSettings.Builder<GetAutomationRunRequest, AutomationRun>
+        getAutomationRunSettings() {
+      return getStubSettingsBuilder().getAutomationRunSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAutomationRuns. */
+    public PagedCallSettings.Builder<
+            ListAutomationRunsRequest, ListAutomationRunsResponse, ListAutomationRunsPagedResponse>
+        listAutomationRunsSettings() {
+      return getStubSettingsBuilder().listAutomationRunsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelAutomationRun. */
+    public UnaryCallSettings.Builder<CancelAutomationRunRequest, CancelAutomationRunResponse>
+        cancelAutomationRunSettings() {
+      return getStubSettingsBuilder().cancelAutomationRunSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -42,6 +42,9 @@ import com.google.cloud.contactcenterinsights.v1.Analysis;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsResponse;
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata;
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest;
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateStatsRequest;
@@ -145,6 +148,8 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
           .add(ExportInsightsDataResponse.getDescriptor())
           .add(UndeployIssueModelResponse.getDescriptor())
           .add(UndeployIssueModelMetadata.getDescriptor())
+          .add(BulkDeleteConversationsMetadata.getDescriptor())
+          .add(BulkDeleteConversationsResponse.getDescriptor())
           .add(BulkAnalyzeConversationsResponse.getDescriptor())
           .build();
 
@@ -567,6 +572,47 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .build())
               .setOperationSnapshotFactory(
                   (BulkAnalyzeConversationsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<BulkDeleteConversationsRequest, Operation>
+      bulkDeleteConversationsMethodDescriptor =
+          ApiMethodDescriptor.<BulkDeleteConversationsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/BulkDeleteConversations")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BulkDeleteConversationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/conversations:bulkDelete",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkDeleteConversationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkDeleteConversationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (BulkDeleteConversationsRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -1600,6 +1646,13 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
           BulkAnalyzeConversationsResponse,
           BulkAnalyzeConversationsMetadata>
       bulkAnalyzeConversationsOperationCallable;
+  private final UnaryCallable<BulkDeleteConversationsRequest, Operation>
+      bulkDeleteConversationsCallable;
+  private final OperationCallable<
+          BulkDeleteConversationsRequest,
+          BulkDeleteConversationsResponse,
+          BulkDeleteConversationsMetadata>
+      bulkDeleteConversationsOperationCallable;
   private final UnaryCallable<IngestConversationsRequest, Operation> ingestConversationsCallable;
   private final OperationCallable<
           IngestConversationsRequest, IngestConversationsResponse, IngestConversationsMetadata>
@@ -1837,6 +1890,18 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
         bulkAnalyzeConversationsTransportSettings =
             HttpJsonCallSettings.<BulkAnalyzeConversationsRequest, Operation>newBuilder()
                 .setMethodDescriptor(bulkAnalyzeConversationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<BulkDeleteConversationsRequest, Operation>
+        bulkDeleteConversationsTransportSettings =
+            HttpJsonCallSettings.<BulkDeleteConversationsRequest, Operation>newBuilder()
+                .setMethodDescriptor(bulkDeleteConversationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -2225,6 +2290,17 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
             settings.bulkAnalyzeConversationsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.bulkDeleteConversationsCallable =
+        callableFactory.createUnaryCallable(
+            bulkDeleteConversationsTransportSettings,
+            settings.bulkDeleteConversationsSettings(),
+            clientContext);
+    this.bulkDeleteConversationsOperationCallable =
+        callableFactory.createOperationCallable(
+            bulkDeleteConversationsTransportSettings,
+            settings.bulkDeleteConversationsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.ingestConversationsCallable =
         callableFactory.createUnaryCallable(
             ingestConversationsTransportSettings,
@@ -2385,6 +2461,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
     methodDescriptors.add(listAnalysesMethodDescriptor);
     methodDescriptors.add(deleteAnalysisMethodDescriptor);
     methodDescriptors.add(bulkAnalyzeConversationsMethodDescriptor);
+    methodDescriptors.add(bulkDeleteConversationsMethodDescriptor);
     methodDescriptors.add(ingestConversationsMethodDescriptor);
     methodDescriptors.add(exportInsightsDataMethodDescriptor);
     methodDescriptors.add(createIssueModelMethodDescriptor);
@@ -2506,6 +2583,21 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
           BulkAnalyzeConversationsMetadata>
       bulkAnalyzeConversationsOperationCallable() {
     return bulkAnalyzeConversationsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BulkDeleteConversationsRequest, Operation>
+      bulkDeleteConversationsCallable() {
+    return bulkDeleteConversationsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BulkDeleteConversationsRequest,
+          BulkDeleteConversationsResponse,
+          BulkDeleteConversationsMetadata>
+      bulkDeleteConversationsOperationCallable() {
+    return bulkDeleteConversationsOperationCallable;
   }
 
   @Override

@@ -17,17 +17,25 @@
 package com.google.analytics.data.v1alpha.stub;
 
 import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListAudienceListsPagedResponse;
+import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRecurringAudienceListsPagedResponse;
 
 import com.google.analytics.data.v1alpha.AudienceList;
 import com.google.analytics.data.v1alpha.AudienceListMetadata;
 import com.google.analytics.data.v1alpha.CreateAudienceListRequest;
+import com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.GetAudienceListRequest;
+import com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.ListAudienceListsRequest;
 import com.google.analytics.data.v1alpha.ListAudienceListsResponse;
+import com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest;
+import com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse;
 import com.google.analytics.data.v1alpha.QueryAudienceListRequest;
 import com.google.analytics.data.v1alpha.QueryAudienceListResponse;
+import com.google.analytics.data.v1alpha.RecurringAudienceList;
 import com.google.analytics.data.v1alpha.RunFunnelReportRequest;
 import com.google.analytics.data.v1alpha.RunFunnelReportResponse;
+import com.google.analytics.data.v1alpha.SheetExportAudienceListRequest;
+import com.google.analytics.data.v1alpha.SheetExportAudienceListResponse;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
@@ -113,6 +121,9 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/analytics")
           .add("https://www.googleapis.com/auth/analytics.readonly")
+          .add("https://www.googleapis.com/auth/drive")
+          .add("https://www.googleapis.com/auth/drive.file")
+          .add("https://www.googleapis.com/auth/spreadsheets")
           .build();
 
   private final UnaryCallSettings<RunFunnelReportRequest, RunFunnelReportResponse>
@@ -122,10 +133,21 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       createAudienceListOperationSettings;
   private final UnaryCallSettings<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListSettings;
+  private final UnaryCallSettings<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+      sheetExportAudienceListSettings;
   private final UnaryCallSettings<GetAudienceListRequest, AudienceList> getAudienceListSettings;
   private final PagedCallSettings<
           ListAudienceListsRequest, ListAudienceListsResponse, ListAudienceListsPagedResponse>
       listAudienceListsSettings;
+  private final UnaryCallSettings<CreateRecurringAudienceListRequest, RecurringAudienceList>
+      createRecurringAudienceListSettings;
+  private final UnaryCallSettings<GetRecurringAudienceListRequest, RecurringAudienceList>
+      getRecurringAudienceListSettings;
+  private final PagedCallSettings<
+          ListRecurringAudienceListsRequest,
+          ListRecurringAudienceListsResponse,
+          ListRecurringAudienceListsPagedResponse>
+      listRecurringAudienceListsSettings;
 
   private static final PagedListDescriptor<
           ListAudienceListsRequest, ListAudienceListsResponse, AudienceList>
@@ -167,6 +189,55 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
             }
           };
 
+  private static final PagedListDescriptor<
+          ListRecurringAudienceListsRequest,
+          ListRecurringAudienceListsResponse,
+          RecurringAudienceList>
+      LIST_RECURRING_AUDIENCE_LISTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListRecurringAudienceListsRequest,
+              ListRecurringAudienceListsResponse,
+              RecurringAudienceList>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRecurringAudienceListsRequest injectToken(
+                ListRecurringAudienceListsRequest payload, String token) {
+              return ListRecurringAudienceListsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListRecurringAudienceListsRequest injectPageSize(
+                ListRecurringAudienceListsRequest payload, int pageSize) {
+              return ListRecurringAudienceListsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRecurringAudienceListsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRecurringAudienceListsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<RecurringAudienceList> extractResources(
+                ListRecurringAudienceListsResponse payload) {
+              return payload.getRecurringAudienceListsList() == null
+                  ? ImmutableList.<RecurringAudienceList>of()
+                  : payload.getRecurringAudienceListsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListAudienceListsRequest, ListAudienceListsResponse, ListAudienceListsPagedResponse>
       LIST_AUDIENCE_LISTS_PAGE_STR_FACT =
@@ -185,6 +256,34 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
                       PageContext.create(
                           callable, LIST_AUDIENCE_LISTS_PAGE_STR_DESC, request, context);
               return ListAudienceListsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRecurringAudienceListsRequest,
+          ListRecurringAudienceListsResponse,
+          ListRecurringAudienceListsPagedResponse>
+      LIST_RECURRING_AUDIENCE_LISTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRecurringAudienceListsRequest,
+              ListRecurringAudienceListsResponse,
+              ListRecurringAudienceListsPagedResponse>() {
+            @Override
+            public ApiFuture<ListRecurringAudienceListsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
+                    callable,
+                ListRecurringAudienceListsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListRecurringAudienceListsResponse> futureResponse) {
+              PageContext<
+                      ListRecurringAudienceListsRequest,
+                      ListRecurringAudienceListsResponse,
+                      RecurringAudienceList>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RECURRING_AUDIENCE_LISTS_PAGE_STR_DESC, request, context);
+              return ListRecurringAudienceListsPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -211,6 +310,12 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     return queryAudienceListSettings;
   }
 
+  /** Returns the object with the settings used for calls to sheetExportAudienceList. */
+  public UnaryCallSettings<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+      sheetExportAudienceListSettings() {
+    return sheetExportAudienceListSettings;
+  }
+
   /** Returns the object with the settings used for calls to getAudienceList. */
   public UnaryCallSettings<GetAudienceListRequest, AudienceList> getAudienceListSettings() {
     return getAudienceListSettings;
@@ -221,6 +326,27 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
           ListAudienceListsRequest, ListAudienceListsResponse, ListAudienceListsPagedResponse>
       listAudienceListsSettings() {
     return listAudienceListsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createRecurringAudienceList. */
+  public UnaryCallSettings<CreateRecurringAudienceListRequest, RecurringAudienceList>
+      createRecurringAudienceListSettings() {
+    return createRecurringAudienceListSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getRecurringAudienceList. */
+  public UnaryCallSettings<GetRecurringAudienceListRequest, RecurringAudienceList>
+      getRecurringAudienceListSettings() {
+    return getRecurringAudienceListSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listRecurringAudienceLists. */
+  public PagedCallSettings<
+          ListRecurringAudienceListsRequest,
+          ListRecurringAudienceListsResponse,
+          ListRecurringAudienceListsPagedResponse>
+      listRecurringAudienceListsSettings() {
+    return listRecurringAudienceListsSettings;
   }
 
   public AlphaAnalyticsDataStub createStub() throws IOException {
@@ -334,8 +460,14 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     createAudienceListOperationSettings =
         settingsBuilder.createAudienceListOperationSettings().build();
     queryAudienceListSettings = settingsBuilder.queryAudienceListSettings().build();
+    sheetExportAudienceListSettings = settingsBuilder.sheetExportAudienceListSettings().build();
     getAudienceListSettings = settingsBuilder.getAudienceListSettings().build();
     listAudienceListsSettings = settingsBuilder.listAudienceListsSettings().build();
+    createRecurringAudienceListSettings =
+        settingsBuilder.createRecurringAudienceListSettings().build();
+    getRecurringAudienceListSettings = settingsBuilder.getRecurringAudienceListSettings().build();
+    listRecurringAudienceListsSettings =
+        settingsBuilder.listRecurringAudienceListsSettings().build();
   }
 
   /** Builder for AlphaAnalyticsDataStubSettings. */
@@ -351,11 +483,24 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
         createAudienceListOperationSettings;
     private final UnaryCallSettings.Builder<QueryAudienceListRequest, QueryAudienceListResponse>
         queryAudienceListSettings;
+    private final UnaryCallSettings.Builder<
+            SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+        sheetExportAudienceListSettings;
     private final UnaryCallSettings.Builder<GetAudienceListRequest, AudienceList>
         getAudienceListSettings;
     private final PagedCallSettings.Builder<
             ListAudienceListsRequest, ListAudienceListsResponse, ListAudienceListsPagedResponse>
         listAudienceListsSettings;
+    private final UnaryCallSettings.Builder<
+            CreateRecurringAudienceListRequest, RecurringAudienceList>
+        createRecurringAudienceListSettings;
+    private final UnaryCallSettings.Builder<GetRecurringAudienceListRequest, RecurringAudienceList>
+        getRecurringAudienceListSettings;
+    private final PagedCallSettings.Builder<
+            ListRecurringAudienceListsRequest,
+            ListRecurringAudienceListsResponse,
+            ListRecurringAudienceListsPagedResponse>
+        listRecurringAudienceListsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -408,16 +553,25 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       createAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAudienceListOperationSettings = OperationCallSettings.newBuilder();
       queryAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      sheetExportAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAudienceListsSettings = PagedCallSettings.newBuilder(LIST_AUDIENCE_LISTS_PAGE_STR_FACT);
+      createRecurringAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getRecurringAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listRecurringAudienceListsSettings =
+          PagedCallSettings.newBuilder(LIST_RECURRING_AUDIENCE_LISTS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               runFunnelReportSettings,
               createAudienceListSettings,
               queryAudienceListSettings,
+              sheetExportAudienceListSettings,
               getAudienceListSettings,
-              listAudienceListsSettings);
+              listAudienceListsSettings,
+              createRecurringAudienceListSettings,
+              getRecurringAudienceListSettings,
+              listRecurringAudienceListsSettings);
       initDefaults(this);
     }
 
@@ -429,16 +583,25 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       createAudienceListOperationSettings =
           settings.createAudienceListOperationSettings.toBuilder();
       queryAudienceListSettings = settings.queryAudienceListSettings.toBuilder();
+      sheetExportAudienceListSettings = settings.sheetExportAudienceListSettings.toBuilder();
       getAudienceListSettings = settings.getAudienceListSettings.toBuilder();
       listAudienceListsSettings = settings.listAudienceListsSettings.toBuilder();
+      createRecurringAudienceListSettings =
+          settings.createRecurringAudienceListSettings.toBuilder();
+      getRecurringAudienceListSettings = settings.getRecurringAudienceListSettings.toBuilder();
+      listRecurringAudienceListsSettings = settings.listRecurringAudienceListsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               runFunnelReportSettings,
               createAudienceListSettings,
               queryAudienceListSettings,
+              sheetExportAudienceListSettings,
               getAudienceListSettings,
-              listAudienceListsSettings);
+              listAudienceListsSettings,
+              createRecurringAudienceListSettings,
+              getRecurringAudienceListSettings,
+              listRecurringAudienceListsSettings);
     }
 
     private static Builder createDefault() {
@@ -484,12 +647,32 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .sheetExportAudienceListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .getAudienceListSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listAudienceListsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createRecurringAudienceListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getRecurringAudienceListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listRecurringAudienceListsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -562,6 +745,13 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       return queryAudienceListSettings;
     }
 
+    /** Returns the builder for the settings used for calls to sheetExportAudienceList. */
+    public UnaryCallSettings.Builder<
+            SheetExportAudienceListRequest, SheetExportAudienceListResponse>
+        sheetExportAudienceListSettings() {
+      return sheetExportAudienceListSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getAudienceList. */
     public UnaryCallSettings.Builder<GetAudienceListRequest, AudienceList>
         getAudienceListSettings() {
@@ -573,6 +763,27 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
             ListAudienceListsRequest, ListAudienceListsResponse, ListAudienceListsPagedResponse>
         listAudienceListsSettings() {
       return listAudienceListsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createRecurringAudienceList. */
+    public UnaryCallSettings.Builder<CreateRecurringAudienceListRequest, RecurringAudienceList>
+        createRecurringAudienceListSettings() {
+      return createRecurringAudienceListSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getRecurringAudienceList. */
+    public UnaryCallSettings.Builder<GetRecurringAudienceListRequest, RecurringAudienceList>
+        getRecurringAudienceListSettings() {
+      return getRecurringAudienceListSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listRecurringAudienceLists. */
+    public PagedCallSettings.Builder<
+            ListRecurringAudienceListsRequest,
+            ListRecurringAudienceListsResponse,
+            ListRecurringAudienceListsPagedResponse>
+        listRecurringAudienceListsSettings() {
+      return listRecurringAudienceListsSettings;
     }
 
     @Override

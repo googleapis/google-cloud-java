@@ -91,6 +91,36 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      * @return The bytes for bucketUri.
      */
     com.google.protobuf.ByteString getBucketUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the type of the objects in `bucket_uri`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource.BucketObjectType bucket_object_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for bucketObjectType.
+     */
+    int getBucketObjectTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the type of the objects in `bucket_uri`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource.BucketObjectType bucket_object_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bucketObjectType.
+     */
+    com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource.BucketObjectType
+        getBucketObjectType();
   }
   /**
    *
@@ -114,6 +144,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
 
     private GcsSource() {
       bucketUri_ = "";
+      bucketObjectType_ = 0;
     }
 
     @java.lang.Override
@@ -136,6 +167,164 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
               com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource.class,
               com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource.Builder
                   .class);
+    }
+
+    /**
+     * Protobuf enum {@code
+     * google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource.BucketObjectType}
+     */
+    public enum BucketObjectType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * The object type is unspecified and will default to `TRANSCRIPT`.
+       * </pre>
+       *
+       * <code>BUCKET_OBJECT_TYPE_UNSPECIFIED = 0;</code>
+       */
+      BUCKET_OBJECT_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The object is a transcript.
+       * </pre>
+       *
+       * <code>TRANSCRIPT = 1;</code>
+       */
+      TRANSCRIPT(1),
+      /**
+       *
+       *
+       * <pre>
+       * The object is an audio file.
+       * </pre>
+       *
+       * <code>AUDIO = 2;</code>
+       */
+      AUDIO(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * The object type is unspecified and will default to `TRANSCRIPT`.
+       * </pre>
+       *
+       * <code>BUCKET_OBJECT_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int BUCKET_OBJECT_TYPE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The object is a transcript.
+       * </pre>
+       *
+       * <code>TRANSCRIPT = 1;</code>
+       */
+      public static final int TRANSCRIPT_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * The object is an audio file.
+       * </pre>
+       *
+       * <code>AUDIO = 2;</code>
+       */
+      public static final int AUDIO_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static BucketObjectType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static BucketObjectType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return BUCKET_OBJECT_TYPE_UNSPECIFIED;
+          case 1:
+            return TRANSCRIPT;
+          case 2:
+            return AUDIO;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<BucketObjectType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<BucketObjectType>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<BucketObjectType>() {
+                public BucketObjectType findValueByNumber(int number) {
+                  return BucketObjectType.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final BucketObjectType[] VALUES = values();
+
+      public static BucketObjectType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private BucketObjectType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource.BucketObjectType)
     }
 
     public static final int BUCKET_URI_FIELD_NUMBER = 1;
@@ -189,6 +378,53 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       }
     }
 
+    public static final int BUCKET_OBJECT_TYPE_FIELD_NUMBER = 2;
+    private int bucketObjectType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the type of the objects in `bucket_uri`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource.BucketObjectType bucket_object_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for bucketObjectType.
+     */
+    @java.lang.Override
+    public int getBucketObjectTypeValue() {
+      return bucketObjectType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the type of the objects in `bucket_uri`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource.BucketObjectType bucket_object_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bucketObjectType.
+     */
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource
+            .BucketObjectType
+        getBucketObjectType() {
+      com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource
+              .BucketObjectType
+          result =
+              com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource
+                  .BucketObjectType.forNumber(bucketObjectType_);
+      return result == null
+          ? com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource
+              .BucketObjectType.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -206,6 +442,12 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucketUri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bucketUri_);
       }
+      if (bucketObjectType_
+          != com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource
+              .BucketObjectType.BUCKET_OBJECT_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, bucketObjectType_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -217,6 +459,12 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucketUri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bucketUri_);
+      }
+      if (bucketObjectType_
+          != com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource
+              .BucketObjectType.BUCKET_OBJECT_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, bucketObjectType_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -237,6 +485,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
           (com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource) obj;
 
       if (!getBucketUri().equals(other.getBucketUri())) return false;
+      if (bucketObjectType_ != other.bucketObjectType_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -250,6 +499,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + BUCKET_URI_FIELD_NUMBER;
       hash = (53 * hash) + getBucketUri().hashCode();
+      hash = (37 * hash) + BUCKET_OBJECT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + bucketObjectType_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -403,6 +654,7 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         super.clear();
         bitField0_ = 0;
         bucketUri_ = "";
+        bucketObjectType_ = 0;
         return this;
       }
 
@@ -448,6 +700,9 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.bucketUri_ = bucketUri_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.bucketObjectType_ = bucketObjectType_;
         }
       }
 
@@ -510,6 +765,9 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (other.bucketObjectType_ != 0) {
+          setBucketObjectTypeValue(other.getBucketObjectTypeValue());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -542,6 +800,12 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 16:
+                {
+                  bucketObjectType_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -663,6 +927,117 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         checkByteStringIsUtf8(value);
         bucketUri_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int bucketObjectType_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the type of the objects in `bucket_uri`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource.BucketObjectType bucket_object_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for bucketObjectType.
+       */
+      @java.lang.Override
+      public int getBucketObjectTypeValue() {
+        return bucketObjectType_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the type of the objects in `bucket_uri`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource.BucketObjectType bucket_object_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for bucketObjectType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBucketObjectTypeValue(int value) {
+        bucketObjectType_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the type of the objects in `bucket_uri`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource.BucketObjectType bucket_object_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bucketObjectType.
+       */
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource
+              .BucketObjectType
+          getBucketObjectType() {
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource
+                .BucketObjectType
+            result =
+                com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource
+                    .BucketObjectType.forNumber(bucketObjectType_);
+        return result == null
+            ? com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource
+                .BucketObjectType.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the type of the objects in `bucket_uri`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource.BucketObjectType bucket_object_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bucketObjectType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBucketObjectType(
+          com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource
+                  .BucketObjectType
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        bucketObjectType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the type of the objects in `bucket_uri`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest.GcsSource.BucketObjectType bucket_object_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBucketObjectType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        bucketObjectType_ = 0;
         onChanged();
         return this;
       }
@@ -1466,6 +1841,36 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      * @return The bytes for agentId.
      */
     com.google.protobuf.ByteString getAgentIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For audio conversations, this field indicates which of the
+     * channels, 1 or 2, contains the agent. Note that this must be set for
+     * audio conversations to be properly displayed and analyzed.
+     * </pre>
+     *
+     * <code>int32 agent_channel = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The agentChannel.
+     */
+    int getAgentChannel();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For audio conversations, this field indicates which of the
+     * channels, 1 or 2, contains the customer. Note that this must be set for
+     * audio conversations to be properly displayed and analyzed.
+     * </pre>
+     *
+     * <code>int32 customer_channel = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The customerChannel.
+     */
+    int getCustomerChannel();
   }
   /**
    *
@@ -1567,6 +1972,46 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       }
     }
 
+    public static final int AGENT_CHANNEL_FIELD_NUMBER = 2;
+    private int agentChannel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For audio conversations, this field indicates which of the
+     * channels, 1 or 2, contains the agent. Note that this must be set for
+     * audio conversations to be properly displayed and analyzed.
+     * </pre>
+     *
+     * <code>int32 agent_channel = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The agentChannel.
+     */
+    @java.lang.Override
+    public int getAgentChannel() {
+      return agentChannel_;
+    }
+
+    public static final int CUSTOMER_CHANNEL_FIELD_NUMBER = 3;
+    private int customerChannel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For audio conversations, this field indicates which of the
+     * channels, 1 or 2, contains the customer. Note that this must be set for
+     * audio conversations to be properly displayed and analyzed.
+     * </pre>
+     *
+     * <code>int32 customer_channel = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The customerChannel.
+     */
+    @java.lang.Override
+    public int getCustomerChannel() {
+      return customerChannel_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1584,6 +2029,12 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, agentId_);
       }
+      if (agentChannel_ != 0) {
+        output.writeInt32(2, agentChannel_);
+      }
+      if (customerChannel_ != 0) {
+        output.writeInt32(3, customerChannel_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1595,6 +2046,12 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, agentId_);
+      }
+      if (agentChannel_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, agentChannel_);
+      }
+      if (customerChannel_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, customerChannel_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1619,6 +2076,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
                   obj;
 
       if (!getAgentId().equals(other.getAgentId())) return false;
+      if (getAgentChannel() != other.getAgentChannel()) return false;
+      if (getCustomerChannel() != other.getCustomerChannel()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1632,6 +2091,10 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + AGENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAgentId().hashCode();
+      hash = (37 * hash) + AGENT_CHANNEL_FIELD_NUMBER;
+      hash = (53 * hash) + getAgentChannel();
+      hash = (37 * hash) + CUSTOMER_CHANNEL_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomerChannel();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1799,6 +2262,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         super.clear();
         bitField0_ = 0;
         agentId_ = "";
+        agentChannel_ = 0;
+        customerChannel_ = 0;
         return this;
       }
 
@@ -1846,6 +2311,12 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.agentId_ = agentId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.agentChannel_ = agentChannel_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.customerChannel_ = customerChannel_;
         }
       }
 
@@ -1911,6 +2382,12 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (other.getAgentChannel() != 0) {
+          setAgentChannel(other.getAgentChannel());
+        }
+        if (other.getCustomerChannel() != 0) {
+          setCustomerChannel(other.getCustomerChannel());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1943,6 +2420,18 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 16:
+                {
+                  agentChannel_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  customerChannel_ = input.readInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2069,6 +2558,124 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         checkByteStringIsUtf8(value);
         agentId_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int agentChannel_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. For audio conversations, this field indicates which of the
+       * channels, 1 or 2, contains the agent. Note that this must be set for
+       * audio conversations to be properly displayed and analyzed.
+       * </pre>
+       *
+       * <code>int32 agent_channel = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The agentChannel.
+       */
+      @java.lang.Override
+      public int getAgentChannel() {
+        return agentChannel_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. For audio conversations, this field indicates which of the
+       * channels, 1 or 2, contains the agent. Note that this must be set for
+       * audio conversations to be properly displayed and analyzed.
+       * </pre>
+       *
+       * <code>int32 agent_channel = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The agentChannel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAgentChannel(int value) {
+
+        agentChannel_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. For audio conversations, this field indicates which of the
+       * channels, 1 or 2, contains the agent. Note that this must be set for
+       * audio conversations to be properly displayed and analyzed.
+       * </pre>
+       *
+       * <code>int32 agent_channel = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAgentChannel() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        agentChannel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int customerChannel_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. For audio conversations, this field indicates which of the
+       * channels, 1 or 2, contains the customer. Note that this must be set for
+       * audio conversations to be properly displayed and analyzed.
+       * </pre>
+       *
+       * <code>int32 customer_channel = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The customerChannel.
+       */
+      @java.lang.Override
+      public int getCustomerChannel() {
+        return customerChannel_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. For audio conversations, this field indicates which of the
+       * channels, 1 or 2, contains the customer. Note that this must be set for
+       * audio conversations to be properly displayed and analyzed.
+       * </pre>
+       *
+       * <code>int32 customer_channel = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The customerChannel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomerChannel(int value) {
+
+        customerChannel_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. For audio conversations, this field indicates which of the
+       * channels, 1 or 2, contains the customer. Note that this must be set for
+       * audio conversations to be properly displayed and analyzed.
+       * </pre>
+       *
+       * <code>int32 customer_channel = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCustomerChannel() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        customerChannel_ = 0;
         onChanged();
         return this;
       }
@@ -2485,6 +3092,126 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         : conversationConfig_;
   }
 
+  public static final int REDACTION_CONFIG_FIELD_NUMBER = 5;
+  private com.google.cloud.contactcenterinsights.v1.RedactionConfig redactionConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DLP settings for transcript redaction. Optional, will default to
+   * the config specified in Settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the redactionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRedactionConfig() {
+    return redactionConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DLP settings for transcript redaction. Optional, will default to
+   * the config specified in Settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The redactionConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.RedactionConfig getRedactionConfig() {
+    return redactionConfig_ == null
+        ? com.google.cloud.contactcenterinsights.v1.RedactionConfig.getDefaultInstance()
+        : redactionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DLP settings for transcript redaction. Optional, will default to
+   * the config specified in Settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.RedactionConfigOrBuilder
+      getRedactionConfigOrBuilder() {
+    return redactionConfig_ == null
+        ? com.google.cloud.contactcenterinsights.v1.RedactionConfig.getDefaultInstance()
+        : redactionConfig_;
+  }
+
+  public static final int SPEECH_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.contactcenterinsights.v1.SpeechConfig speechConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text configuration. Optional, will default to
+   * the config specified in Settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speechConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpeechConfig() {
+    return speechConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text configuration. Optional, will default to
+   * the config specified in Settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speechConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.SpeechConfig getSpeechConfig() {
+    return speechConfig_ == null
+        ? com.google.cloud.contactcenterinsights.v1.SpeechConfig.getDefaultInstance()
+        : speechConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text configuration. Optional, will default to
+   * the config specified in Settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder
+      getSpeechConfigOrBuilder() {
+    return speechConfig_ == null
+        ? com.google.cloud.contactcenterinsights.v1.SpeechConfig.getDefaultInstance()
+        : speechConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2517,6 +3244,12 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     if (conversationConfig_ != null) {
       output.writeMessage(4, getConversationConfig());
     }
+    if (redactionConfig_ != null) {
+      output.writeMessage(5, getRedactionConfig());
+    }
+    if (speechConfig_ != null) {
+      output.writeMessage(6, getSpeechConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2547,6 +3280,12 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     if (conversationConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getConversationConfig());
     }
+    if (redactionConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getRedactionConfig());
+    }
+    if (speechConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getSpeechConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2567,6 +3306,14 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     if (hasConversationConfig() != other.hasConversationConfig()) return false;
     if (hasConversationConfig()) {
       if (!getConversationConfig().equals(other.getConversationConfig())) return false;
+    }
+    if (hasRedactionConfig() != other.hasRedactionConfig()) return false;
+    if (hasRedactionConfig()) {
+      if (!getRedactionConfig().equals(other.getRedactionConfig())) return false;
+    }
+    if (hasSpeechConfig() != other.hasSpeechConfig()) return false;
+    if (hasSpeechConfig()) {
+      if (!getSpeechConfig().equals(other.getSpeechConfig())) return false;
     }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
@@ -2600,6 +3347,14 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
     if (hasConversationConfig()) {
       hash = (37 * hash) + CONVERSATION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getConversationConfig().hashCode();
+    }
+    if (hasRedactionConfig()) {
+      hash = (37 * hash) + REDACTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRedactionConfig().hashCode();
+    }
+    if (hasSpeechConfig()) {
+      hash = (37 * hash) + SPEECH_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeechConfig().hashCode();
     }
     switch (sourceCase_) {
       case 2:
@@ -2771,6 +3526,16 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         conversationConfigBuilder_.dispose();
         conversationConfigBuilder_ = null;
       }
+      redactionConfig_ = null;
+      if (redactionConfigBuilder_ != null) {
+        redactionConfigBuilder_.dispose();
+        redactionConfigBuilder_ = null;
+      }
+      speechConfig_ = null;
+      if (speechConfigBuilder_ != null) {
+        speechConfigBuilder_.dispose();
+        speechConfigBuilder_ = null;
+      }
       sourceCase_ = 0;
       source_ = null;
       objectConfigCase_ = 0;
@@ -2823,6 +3588,14 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
             conversationConfigBuilder_ == null
                 ? conversationConfig_
                 : conversationConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.redactionConfig_ =
+            redactionConfigBuilder_ == null ? redactionConfig_ : redactionConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.speechConfig_ =
+            speechConfigBuilder_ == null ? speechConfig_ : speechConfigBuilder_.build();
       }
     }
 
@@ -2896,6 +3669,12 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
       }
       if (other.hasConversationConfig()) {
         mergeConversationConfig(other.getConversationConfig());
+      }
+      if (other.hasRedactionConfig()) {
+        mergeRedactionConfig(other.getRedactionConfig());
+      }
+      if (other.hasSpeechConfig()) {
+        mergeSpeechConfig(other.getSpeechConfig());
       }
       switch (other.getSourceCase()) {
         case GCS_SOURCE:
@@ -2971,6 +3750,18 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(getRedactionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getSpeechConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3878,6 +4669,435 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
         conversationConfig_ = null;
       }
       return conversationConfigBuilder_;
+    }
+
+    private com.google.cloud.contactcenterinsights.v1.RedactionConfig redactionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.RedactionConfig,
+            com.google.cloud.contactcenterinsights.v1.RedactionConfig.Builder,
+            com.google.cloud.contactcenterinsights.v1.RedactionConfigOrBuilder>
+        redactionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DLP settings for transcript redaction. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the redactionConfig field is set.
+     */
+    public boolean hasRedactionConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DLP settings for transcript redaction. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The redactionConfig.
+     */
+    public com.google.cloud.contactcenterinsights.v1.RedactionConfig getRedactionConfig() {
+      if (redactionConfigBuilder_ == null) {
+        return redactionConfig_ == null
+            ? com.google.cloud.contactcenterinsights.v1.RedactionConfig.getDefaultInstance()
+            : redactionConfig_;
+      } else {
+        return redactionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DLP settings for transcript redaction. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRedactionConfig(
+        com.google.cloud.contactcenterinsights.v1.RedactionConfig value) {
+      if (redactionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        redactionConfig_ = value;
+      } else {
+        redactionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DLP settings for transcript redaction. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRedactionConfig(
+        com.google.cloud.contactcenterinsights.v1.RedactionConfig.Builder builderForValue) {
+      if (redactionConfigBuilder_ == null) {
+        redactionConfig_ = builderForValue.build();
+      } else {
+        redactionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DLP settings for transcript redaction. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRedactionConfig(
+        com.google.cloud.contactcenterinsights.v1.RedactionConfig value) {
+      if (redactionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && redactionConfig_ != null
+            && redactionConfig_
+                != com.google.cloud.contactcenterinsights.v1.RedactionConfig.getDefaultInstance()) {
+          getRedactionConfigBuilder().mergeFrom(value);
+        } else {
+          redactionConfig_ = value;
+        }
+      } else {
+        redactionConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DLP settings for transcript redaction. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRedactionConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      redactionConfig_ = null;
+      if (redactionConfigBuilder_ != null) {
+        redactionConfigBuilder_.dispose();
+        redactionConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DLP settings for transcript redaction. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.RedactionConfig.Builder
+        getRedactionConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getRedactionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DLP settings for transcript redaction. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.RedactionConfigOrBuilder
+        getRedactionConfigOrBuilder() {
+      if (redactionConfigBuilder_ != null) {
+        return redactionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return redactionConfig_ == null
+            ? com.google.cloud.contactcenterinsights.v1.RedactionConfig.getDefaultInstance()
+            : redactionConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DLP settings for transcript redaction. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.RedactionConfig,
+            com.google.cloud.contactcenterinsights.v1.RedactionConfig.Builder,
+            com.google.cloud.contactcenterinsights.v1.RedactionConfigOrBuilder>
+        getRedactionConfigFieldBuilder() {
+      if (redactionConfigBuilder_ == null) {
+        redactionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contactcenterinsights.v1.RedactionConfig,
+                com.google.cloud.contactcenterinsights.v1.RedactionConfig.Builder,
+                com.google.cloud.contactcenterinsights.v1.RedactionConfigOrBuilder>(
+                getRedactionConfig(), getParentForChildren(), isClean());
+        redactionConfig_ = null;
+      }
+      return redactionConfigBuilder_;
+    }
+
+    private com.google.cloud.contactcenterinsights.v1.SpeechConfig speechConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.SpeechConfig,
+            com.google.cloud.contactcenterinsights.v1.SpeechConfig.Builder,
+            com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder>
+        speechConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text configuration. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the speechConfig field is set.
+     */
+    public boolean hasSpeechConfig() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text configuration. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The speechConfig.
+     */
+    public com.google.cloud.contactcenterinsights.v1.SpeechConfig getSpeechConfig() {
+      if (speechConfigBuilder_ == null) {
+        return speechConfig_ == null
+            ? com.google.cloud.contactcenterinsights.v1.SpeechConfig.getDefaultInstance()
+            : speechConfig_;
+      } else {
+        return speechConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text configuration. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeechConfig(com.google.cloud.contactcenterinsights.v1.SpeechConfig value) {
+      if (speechConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        speechConfig_ = value;
+      } else {
+        speechConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text configuration. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeechConfig(
+        com.google.cloud.contactcenterinsights.v1.SpeechConfig.Builder builderForValue) {
+      if (speechConfigBuilder_ == null) {
+        speechConfig_ = builderForValue.build();
+      } else {
+        speechConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text configuration. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSpeechConfig(com.google.cloud.contactcenterinsights.v1.SpeechConfig value) {
+      if (speechConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && speechConfig_ != null
+            && speechConfig_
+                != com.google.cloud.contactcenterinsights.v1.SpeechConfig.getDefaultInstance()) {
+          getSpeechConfigBuilder().mergeFrom(value);
+        } else {
+          speechConfig_ = value;
+        }
+      } else {
+        speechConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text configuration. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSpeechConfig() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      speechConfig_ = null;
+      if (speechConfigBuilder_ != null) {
+        speechConfigBuilder_.dispose();
+        speechConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text configuration. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.SpeechConfig.Builder getSpeechConfigBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getSpeechConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text configuration. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder
+        getSpeechConfigOrBuilder() {
+      if (speechConfigBuilder_ != null) {
+        return speechConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return speechConfig_ == null
+            ? com.google.cloud.contactcenterinsights.v1.SpeechConfig.getDefaultInstance()
+            : speechConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text configuration. Optional, will default to
+     * the config specified in Settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.SpeechConfig,
+            com.google.cloud.contactcenterinsights.v1.SpeechConfig.Builder,
+            com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder>
+        getSpeechConfigFieldBuilder() {
+      if (speechConfigBuilder_ == null) {
+        speechConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contactcenterinsights.v1.SpeechConfig,
+                com.google.cloud.contactcenterinsights.v1.SpeechConfig.Builder,
+                com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder>(
+                getSpeechConfig(), getParentForChildren(), isClean());
+        speechConfig_ = null;
+      }
+      return speechConfigBuilder_;
     }
 
     @java.lang.Override

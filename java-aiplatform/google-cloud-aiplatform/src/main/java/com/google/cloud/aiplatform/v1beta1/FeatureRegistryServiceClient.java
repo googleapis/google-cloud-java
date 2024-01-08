@@ -991,7 +991,11 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent
+   * @param parent Required. The resource name of the EntityType or FeatureGroup to create a
+   *     Feature. Format for entity_type as parent:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @param feature Required. The Feature to create.
    * @param featureId Required. The ID to use for the Feature, which will become the final component
    *     of the Feature's resource name.
@@ -1000,7 +1004,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *     <p>The value must be unique within an EntityType/FeatureGroup.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Feature, CreateRegistryFeatureOperationMetadata> createFeatureAsync(
+  public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
       EntityTypeName parent, Feature feature, String featureId) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
@@ -1033,7 +1037,11 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent
+   * @param parent Required. The resource name of the EntityType or FeatureGroup to create a
+   *     Feature. Format for entity_type as parent:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @param feature Required. The Feature to create.
    * @param featureId Required. The ID to use for the Feature, which will become the final component
    *     of the Feature's resource name.
@@ -1042,7 +1050,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *     <p>The value must be unique within an EntityType/FeatureGroup.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Feature, CreateRegistryFeatureOperationMetadata> createFeatureAsync(
+  public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
       FeatureGroupName parent, Feature feature, String featureId) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
@@ -1077,7 +1085,11 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent
+   * @param parent Required. The resource name of the EntityType or FeatureGroup to create a
+   *     Feature. Format for entity_type as parent:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @param feature Required. The Feature to create.
    * @param featureId Required. The ID to use for the Feature, which will become the final component
    *     of the Feature's resource name.
@@ -1086,7 +1098,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *     <p>The value must be unique within an EntityType/FeatureGroup.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Feature, CreateRegistryFeatureOperationMetadata> createFeatureAsync(
+  public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
       String parent, Feature feature, String featureId) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
@@ -1126,7 +1138,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Feature, CreateRegistryFeatureOperationMetadata> createFeatureAsync(
+  public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
       CreateFeatureRequest request) {
     return createFeatureOperationCallable().futureCall(request);
   }
@@ -1153,15 +1165,14 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *           .setFeature(Feature.newBuilder().build())
    *           .setFeatureId("featureId-420503887")
    *           .build();
-   *   OperationFuture<Feature, CreateRegistryFeatureOperationMetadata> future =
+   *   OperationFuture<Feature, CreateFeatureOperationMetadata> future =
    *       featureRegistryServiceClient.createFeatureOperationCallable().futureCall(request);
    *   // Do something.
    *   Feature response = future.get();
    * }
    * }</pre>
    */
-  public final OperationCallable<
-          CreateFeatureRequest, Feature, CreateRegistryFeatureOperationMetadata>
+  public final OperationCallable<CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
       createFeatureOperationCallable() {
     return stub.createFeatureOperationCallable();
   }
@@ -1220,8 +1231,9 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the Feature resource. Format:
+   * @param name Required. The name of the Feature resource. Format for entity_type as parent:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
    *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1253,8 +1265,9 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the Feature resource. Format:
+   * @param name Required. The name of the Feature resource. Format for entity_type as parent:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
    *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1349,8 +1362,10 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the Location to list Features. Format:
+   * @param parent Required. The resource name of the Location to list Features. Format for
+   *     entity_type as parent:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
    *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1383,8 +1398,10 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the Location to list Features. Format:
+   * @param parent Required. The resource name of the Location to list Features. Format for
+   *     entity_type as parent:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
    *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1419,8 +1436,10 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the Location to list Features. Format:
+   * @param parent Required. The resource name of the Location to list Features. Format for
+   *     entity_type as parent:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
    *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1584,7 +1603,8 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *     user does not provide a mask then only the non-empty fields present in the request will be
    *     overwritten. Set the update_mask to `&#42;` to override all fields.
    *     <p>Updatable fields:
-   *     <p>&#42; `description` &#42; `labels` &#42; `disable_monitoring`
+   *     <p>&#42; `description` &#42; `labels` &#42; `disable_monitoring` (Not supported for
+   *     FeatureRegistry Feature)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, UpdateFeatureOperationMetadata> updateFeatureAsync(

@@ -68,11 +68,58 @@ public interface FeatureOnlineStoreOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the FeatureOnlineStore. Format:
+   * Contains settings for the Optimized store that will be created
+   * to serve featureValues for all FeatureViews under this
+   * FeatureOnlineStore. When choose Optimized storage type, need to set
+   * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+   * to use private endpoint. Otherwise will use public endpoint by default.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized optimized = 12;</code>
+   *
+   * @return Whether the optimized field is set.
+   */
+  boolean hasOptimized();
+  /**
+   *
+   *
+   * <pre>
+   * Contains settings for the Optimized store that will be created
+   * to serve featureValues for all FeatureViews under this
+   * FeatureOnlineStore. When choose Optimized storage type, need to set
+   * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+   * to use private endpoint. Otherwise will use public endpoint by default.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized optimized = 12;</code>
+   *
+   * @return The optimized.
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized getOptimized();
+  /**
+   *
+   *
+   * <pre>
+   * Contains settings for the Optimized store that will be created
+   * to serve featureValues for all FeatureViews under this
+   * FeatureOnlineStore. When choose Optimized storage type, need to set
+   * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+   * to use private endpoint. Otherwise will use public endpoint by default.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized optimized = 12;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.OptimizedOrBuilder getOptimizedOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifier. Name of the FeatureOnlineStore. Format:
    * `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -81,11 +128,11 @@ public interface FeatureOnlineStoreOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the FeatureOnlineStore. Format:
+   * Identifier. Name of the FeatureOnlineStore. Format:
    * `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

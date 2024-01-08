@@ -183,6 +183,44 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    *
    *
    * <pre>
+   * Describes the status of MACsec encryption on this link.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InterconnectDiagnosticsMacsecStatus macsec = 528867490;
+   * </code>
+   *
+   * @return Whether the macsec field is set.
+   */
+  boolean hasMacsec();
+  /**
+   *
+   *
+   * <pre>
+   * Describes the status of MACsec encryption on this link.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InterconnectDiagnosticsMacsecStatus macsec = 528867490;
+   * </code>
+   *
+   * @return The macsec.
+   */
+  com.google.cloud.compute.v1.InterconnectDiagnosticsMacsecStatus getMacsec();
+  /**
+   *
+   *
+   * <pre>
+   * Describes the status of MACsec encryption on this link.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InterconnectDiagnosticsMacsecStatus macsec = 528867490;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InterconnectDiagnosticsMacsecStatusOrBuilder getMacsecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The operational status of the link.
    * Check the OperationalStatus enum for the list of possible values.
    * </pre>

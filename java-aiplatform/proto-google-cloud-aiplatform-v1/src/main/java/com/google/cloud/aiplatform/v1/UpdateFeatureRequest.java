@@ -24,6 +24,8 @@ package com.google.cloud.aiplatform.v1;
  * <pre>
  * Request message for
  * [FeaturestoreService.UpdateFeature][google.cloud.aiplatform.v1.FeaturestoreService.UpdateFeature].
+ * Request message for
+ * [FeatureRegistryService.UpdateFeature][google.cloud.aiplatform.v1.FeatureRegistryService.UpdateFeature].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.UpdateFeatureRequest}
@@ -71,6 +73,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * updated.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>
@@ -91,6 +94,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * updated.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>
@@ -113,6 +117,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * updated.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>
@@ -144,7 +149,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring`
+   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -171,7 +176,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring`
+   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -198,7 +203,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *   * `description`
    *   * `labels`
-   *   * `disable_monitoring`
+   *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -392,6 +397,8 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Request message for
    * [FeaturestoreService.UpdateFeature][google.cloud.aiplatform.v1.FeaturestoreService.UpdateFeature].
+   * Request message for
+   * [FeatureRegistryService.UpdateFeature][google.cloud.aiplatform.v1.FeatureRegistryService.UpdateFeature].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.UpdateFeatureRequest}
@@ -603,6 +610,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -622,6 +630,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -647,6 +656,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -674,6 +684,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -698,6 +709,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -728,6 +740,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -752,6 +765,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -771,6 +785,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -794,6 +809,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      * updated.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
      * </pre>
      *
      * <code>
@@ -839,7 +855,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -865,7 +881,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -897,7 +913,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -931,7 +947,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -962,7 +978,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -999,7 +1015,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1030,7 +1046,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1056,7 +1072,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1086,7 +1102,7 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *   * `description`
      *   * `labels`
-     *   * `disable_monitoring`
+     *   * `disable_monitoring` (Not supported for FeatureRegistry Feature)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

@@ -521,12 +521,18 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_TYPE(0),
     /** <code>ACCELERATOR_OPTIMIZED = 280848403;</code> */
     ACCELERATOR_OPTIMIZED(280848403),
+    /** <code>ACCELERATOR_OPTIMIZED_A3 = 158574526;</code> */
+    ACCELERATOR_OPTIMIZED_A3(158574526),
     /** <code>COMPUTE_OPTIMIZED = 158349023;</code> */
     COMPUTE_OPTIMIZED(158349023),
     /** <code>COMPUTE_OPTIMIZED_C2D = 383246453;</code> */
     COMPUTE_OPTIMIZED_C2D(383246453),
     /** <code>COMPUTE_OPTIMIZED_C3 = 428004784;</code> */
     COMPUTE_OPTIMIZED_C3(428004784),
+    /** <code>COMPUTE_OPTIMIZED_C3D = 383246484;</code> */
+    COMPUTE_OPTIMIZED_C3D(383246484),
+    /** <code>COMPUTE_OPTIMIZED_H3 = 428004939;</code> */
+    COMPUTE_OPTIMIZED_H3(428004939),
     /** <code>GENERAL_PURPOSE = 299793543;</code> */
     GENERAL_PURPOSE(299793543),
     /** <code>GENERAL_PURPOSE_E2 = 301911877;</code> */
@@ -560,12 +566,18 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_TYPE_VALUE = 0;
     /** <code>ACCELERATOR_OPTIMIZED = 280848403;</code> */
     public static final int ACCELERATOR_OPTIMIZED_VALUE = 280848403;
+    /** <code>ACCELERATOR_OPTIMIZED_A3 = 158574526;</code> */
+    public static final int ACCELERATOR_OPTIMIZED_A3_VALUE = 158574526;
     /** <code>COMPUTE_OPTIMIZED = 158349023;</code> */
     public static final int COMPUTE_OPTIMIZED_VALUE = 158349023;
     /** <code>COMPUTE_OPTIMIZED_C2D = 383246453;</code> */
     public static final int COMPUTE_OPTIMIZED_C2D_VALUE = 383246453;
     /** <code>COMPUTE_OPTIMIZED_C3 = 428004784;</code> */
     public static final int COMPUTE_OPTIMIZED_C3_VALUE = 428004784;
+    /** <code>COMPUTE_OPTIMIZED_C3D = 383246484;</code> */
+    public static final int COMPUTE_OPTIMIZED_C3D_VALUE = 383246484;
+    /** <code>COMPUTE_OPTIMIZED_H3 = 428004939;</code> */
+    public static final int COMPUTE_OPTIMIZED_H3_VALUE = 428004939;
     /** <code>GENERAL_PURPOSE = 299793543;</code> */
     public static final int GENERAL_PURPOSE_VALUE = 299793543;
     /** <code>GENERAL_PURPOSE_E2 = 301911877;</code> */
@@ -613,12 +625,18 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_TYPE;
         case 280848403:
           return ACCELERATOR_OPTIMIZED;
+        case 158574526:
+          return ACCELERATOR_OPTIMIZED_A3;
         case 158349023:
           return COMPUTE_OPTIMIZED;
         case 383246453:
           return COMPUTE_OPTIMIZED_C2D;
         case 428004784:
           return COMPUTE_OPTIMIZED_C3;
+        case 383246484:
+          return COMPUTE_OPTIMIZED_C3D;
+        case 428004939:
+          return COMPUTE_OPTIMIZED_H3;
         case 299793543:
           return GENERAL_PURPOSE;
         case 301911877:
@@ -1417,7 +1435,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of reservations in this commitment.
+   * List of create-on-create reseravtions for this commitment.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -1430,7 +1448,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of reservations in this commitment.
+   * List of create-on-create reseravtions for this commitment.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -1444,7 +1462,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of reservations in this commitment.
+   * List of create-on-create reseravtions for this commitment.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -1457,7 +1475,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of reservations in this commitment.
+   * List of create-on-create reseravtions for this commitment.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -1470,7 +1488,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of reservations in this commitment.
+   * List of create-on-create reseravtions for this commitment.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4485,7 +4503,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4501,7 +4519,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4517,7 +4535,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4533,7 +4551,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4555,7 +4573,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4575,7 +4593,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4597,7 +4615,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4619,7 +4637,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4639,7 +4657,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4659,7 +4677,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4679,7 +4697,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4698,7 +4716,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4717,7 +4735,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4729,7 +4747,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4745,7 +4763,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4762,7 +4780,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4775,7 +4793,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -4788,7 +4806,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of reservations in this commitment.
+     * List of create-on-create reseravtions for this commitment.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>

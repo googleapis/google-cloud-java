@@ -28,6 +28,10 @@ public final class CommonResourcesProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_Jwk_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_Jwk_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkemulticloud_v1_WorkloadIdentityConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_WorkloadIdentityConfig_fieldAccessorTable;
@@ -63,6 +67,10 @@ public final class CommonResourcesProto {
       internal_static_google_cloud_gkemulticloud_v1_ManagedPrometheusConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_ManagedPrometheusConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_BinaryAuthorization_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_BinaryAuthorization_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -75,42 +83,50 @@ public final class CommonResourcesProto {
       "\n4google/cloud/gkemulticloud/v1/common_r"
           + "esources.proto\022\035google.cloud.gkemulticlo"
           + "ud.v1\032\037google/api/field_behavior.proto\032\037"
-          + "google/protobuf/timestamp.proto\"^\n\026Workl"
-          + "oadIdentityConfig\022\022\n\nissuer_uri\030\001 \001(\t\022\025\n"
-          + "\rworkload_pool\030\002 \001(\t\022\031\n\021identity_provide"
-          + "r\030\003 \001(\t\"4\n\021MaxPodsConstraint\022\037\n\021max_pods"
-          + "_per_node\030\001 \001(\003B\004\342A\001\002\"\207\002\n\021OperationMetad"
-          + "ata\0225\n\013create_time\030\001 \001(\0132\032.google.protob"
-          + "uf.TimestampB\004\342A\001\003\0222\n\010end_time\030\002 \001(\0132\032.g"
-          + "oogle.protobuf.TimestampB\004\342A\001\003\022\024\n\006target"
-          + "\030\003 \001(\tB\004\342A\001\003\022\033\n\rstatus_detail\030\004 \001(\tB\004\342A\001"
-          + "\003\022\032\n\014error_detail\030\005 \001(\tB\004\342A\001\003\022\022\n\004verb\030\007 "
-          + "\001(\tB\004\342A\001\003\022$\n\026requested_cancellation\030\006 \001("
-          + "\010B\004\342A\001\003\"\325\001\n\tNodeTaint\022\021\n\003key\030\001 \001(\tB\004\342A\001\002"
-          + "\022\023\n\005value\030\002 \001(\tB\004\342A\001\002\022E\n\006effect\030\003 \001(\0162/."
-          + "google.cloud.gkemulticloud.v1.NodeTaint."
-          + "EffectB\004\342A\001\002\"Y\n\006Effect\022\026\n\022EFFECT_UNSPECI"
-          + "FIED\020\000\022\017\n\013NO_SCHEDULE\020\001\022\026\n\022PREFER_NO_SCH"
-          + "EDULE\020\002\022\016\n\nNO_EXECUTE\020\003\"8\n\005Fleet\022\025\n\007proj"
-          + "ect\030\001 \001(\tB\004\342A\001\002\022\030\n\nmembership\030\002 \001(\tB\004\342A\001"
-          + "\003\"`\n\rLoggingConfig\022O\n\020component_config\030\001"
-          + " \001(\01325.google.cloud.gkemulticloud.v1.Log"
-          + "gingComponentConfig\"\302\001\n\026LoggingComponent"
-          + "Config\022Z\n\021enable_components\030\001 \003(\0162?.goog"
-          + "le.cloud.gkemulticloud.v1.LoggingCompone"
-          + "ntConfig.Component\"L\n\tComponent\022\031\n\025COMPO"
-          + "NENT_UNSPECIFIED\020\000\022\025\n\021SYSTEM_COMPONENTS\020"
-          + "\001\022\r\n\tWORKLOADS\020\002\"m\n\020MonitoringConfig\022Y\n\031"
-          + "managed_prometheus_config\030\002 \001(\01326.google"
-          + ".cloud.gkemulticloud.v1.ManagedPrometheu"
-          + "sConfig\"*\n\027ManagedPrometheusConfig\022\017\n\007en"
-          + "abled\030\001 \001(\010B\347\001\n!com.google.cloud.gkemult"
-          + "icloud.v1B\024CommonResourcesProtoP\001ZGcloud"
-          + ".google.com/go/gkemulticloud/apiv1/gkemu"
-          + "lticloudpb;gkemulticloudpb\252\002\035Google.Clou"
-          + "d.GkeMultiCloud.V1\312\002\035Google\\Cloud\\GkeMul"
-          + "tiCloud\\V1\352\002 Google::Cloud::GkeMultiClou"
-          + "d::V1b\006proto3"
+          + "google/protobuf/timestamp.proto\"r\n\003Jwk\022\013"
+          + "\n\003kty\030\001 \001(\t\022\013\n\003alg\030\002 \001(\t\022\013\n\003use\030\003 \001(\t\022\013\n"
+          + "\003kid\030\004 \001(\t\022\t\n\001n\030\005 \001(\t\022\t\n\001e\030\006 \001(\t\022\t\n\001x\030\007 "
+          + "\001(\t\022\t\n\001y\030\010 \001(\t\022\013\n\003crv\030\t \001(\t\"^\n\026WorkloadI"
+          + "dentityConfig\022\022\n\nissuer_uri\030\001 \001(\t\022\025\n\rwor"
+          + "kload_pool\030\002 \001(\t\022\031\n\021identity_provider\030\003 "
+          + "\001(\t\"4\n\021MaxPodsConstraint\022\037\n\021max_pods_per"
+          + "_node\030\001 \001(\003B\004\342A\001\002\"\207\002\n\021OperationMetadata\022"
+          + "5\n\013create_time\030\001 \001(\0132\032.google.protobuf.T"
+          + "imestampB\004\342A\001\003\0222\n\010end_time\030\002 \001(\0132\032.googl"
+          + "e.protobuf.TimestampB\004\342A\001\003\022\024\n\006target\030\003 \001"
+          + "(\tB\004\342A\001\003\022\033\n\rstatus_detail\030\004 \001(\tB\004\342A\001\003\022\032\n"
+          + "\014error_detail\030\005 \001(\tB\004\342A\001\003\022\022\n\004verb\030\007 \001(\tB"
+          + "\004\342A\001\003\022$\n\026requested_cancellation\030\006 \001(\010B\004\342"
+          + "A\001\003\"\325\001\n\tNodeTaint\022\021\n\003key\030\001 \001(\tB\004\342A\001\002\022\023\n\005"
+          + "value\030\002 \001(\tB\004\342A\001\002\022E\n\006effect\030\003 \001(\0162/.goog"
+          + "le.cloud.gkemulticloud.v1.NodeTaint.Effe"
+          + "ctB\004\342A\001\002\"Y\n\006Effect\022\026\n\022EFFECT_UNSPECIFIED"
+          + "\020\000\022\017\n\013NO_SCHEDULE\020\001\022\026\n\022PREFER_NO_SCHEDUL"
+          + "E\020\002\022\016\n\nNO_EXECUTE\020\003\"8\n\005Fleet\022\025\n\007project\030"
+          + "\001 \001(\tB\004\342A\001\002\022\030\n\nmembership\030\002 \001(\tB\004\342A\001\003\"`\n"
+          + "\rLoggingConfig\022O\n\020component_config\030\001 \001(\013"
+          + "25.google.cloud.gkemulticloud.v1.Logging"
+          + "ComponentConfig\"\302\001\n\026LoggingComponentConf"
+          + "ig\022Z\n\021enable_components\030\001 \003(\0162?.google.c"
+          + "loud.gkemulticloud.v1.LoggingComponentCo"
+          + "nfig.Component\"L\n\tComponent\022\031\n\025COMPONENT"
+          + "_UNSPECIFIED\020\000\022\025\n\021SYSTEM_COMPONENTS\020\001\022\r\n"
+          + "\tWORKLOADS\020\002\"m\n\020MonitoringConfig\022Y\n\031mana"
+          + "ged_prometheus_config\030\002 \001(\01326.google.clo"
+          + "ud.gkemulticloud.v1.ManagedPrometheusCon"
+          + "fig\"*\n\027ManagedPrometheusConfig\022\017\n\007enable"
+          + "d\030\001 \001(\010\"\330\001\n\023BinaryAuthorization\022Z\n\017evalu"
+          + "ation_mode\030\001 \001(\0162A.google.cloud.gkemulti"
+          + "cloud.v1.BinaryAuthorization.EvaluationM"
+          + "ode\"e\n\016EvaluationMode\022\037\n\033EVALUATION_MODE"
+          + "_UNSPECIFIED\020\000\022\014\n\010DISABLED\020\001\022$\n PROJECT_"
+          + "SINGLETON_POLICY_ENFORCE\020\002B\347\001\n!com.googl"
+          + "e.cloud.gkemulticloud.v1B\024CommonResource"
+          + "sProtoP\001ZGcloud.google.com/go/gkemulticl"
+          + "oud/apiv1/gkemulticloudpb;gkemulticloudp"
+          + "b\252\002\035Google.Cloud.GkeMultiCloud.V1\312\002\035Goog"
+          + "le\\Cloud\\GkeMultiCloud\\V1\352\002 Google::Clou"
+          + "d::GkeMultiCloud::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -119,8 +135,16 @@ public final class CommonResourcesProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
-    internal_static_google_cloud_gkemulticloud_v1_WorkloadIdentityConfig_descriptor =
+    internal_static_google_cloud_gkemulticloud_v1_Jwk_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_gkemulticloud_v1_Jwk_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_Jwk_descriptor,
+            new java.lang.String[] {
+              "Kty", "Alg", "Use", "Kid", "N", "E", "X", "Y", "Crv",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_WorkloadIdentityConfig_descriptor =
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_gkemulticloud_v1_WorkloadIdentityConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_WorkloadIdentityConfig_descriptor,
@@ -128,7 +152,7 @@ public final class CommonResourcesProto {
               "IssuerUri", "WorkloadPool", "IdentityProvider",
             });
     internal_static_google_cloud_gkemulticloud_v1_MaxPodsConstraint_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_gkemulticloud_v1_MaxPodsConstraint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_MaxPodsConstraint_descriptor,
@@ -136,7 +160,7 @@ public final class CommonResourcesProto {
               "MaxPodsPerNode",
             });
     internal_static_google_cloud_gkemulticloud_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_gkemulticloud_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_OperationMetadata_descriptor,
@@ -150,7 +174,7 @@ public final class CommonResourcesProto {
               "RequestedCancellation",
             });
     internal_static_google_cloud_gkemulticloud_v1_NodeTaint_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_gkemulticloud_v1_NodeTaint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_NodeTaint_descriptor,
@@ -158,7 +182,7 @@ public final class CommonResourcesProto {
               "Key", "Value", "Effect",
             });
     internal_static_google_cloud_gkemulticloud_v1_Fleet_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_gkemulticloud_v1_Fleet_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_Fleet_descriptor,
@@ -166,7 +190,7 @@ public final class CommonResourcesProto {
               "Project", "Membership",
             });
     internal_static_google_cloud_gkemulticloud_v1_LoggingConfig_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_gkemulticloud_v1_LoggingConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_LoggingConfig_descriptor,
@@ -174,7 +198,7 @@ public final class CommonResourcesProto {
               "ComponentConfig",
             });
     internal_static_google_cloud_gkemulticloud_v1_LoggingComponentConfig_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_gkemulticloud_v1_LoggingComponentConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_LoggingComponentConfig_descriptor,
@@ -182,7 +206,7 @@ public final class CommonResourcesProto {
               "EnableComponents",
             });
     internal_static_google_cloud_gkemulticloud_v1_MonitoringConfig_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_gkemulticloud_v1_MonitoringConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_MonitoringConfig_descriptor,
@@ -190,12 +214,20 @@ public final class CommonResourcesProto {
               "ManagedPrometheusConfig",
             });
     internal_static_google_cloud_gkemulticloud_v1_ManagedPrometheusConfig_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_gkemulticloud_v1_ManagedPrometheusConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_ManagedPrometheusConfig_descriptor,
             new java.lang.String[] {
               "Enabled",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_BinaryAuthorization_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_gkemulticloud_v1_BinaryAuthorization_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_BinaryAuthorization_descriptor,
+            new java.lang.String[] {
+              "EvaluationMode",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

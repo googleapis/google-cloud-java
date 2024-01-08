@@ -338,5 +338,52 @@ public interface CustomInfoTypeOrBuilder
    */
   com.google.privacy.dlp.v2.CustomInfoType.ExclusionType getExclusionType();
 
+  /**
+   *
+   *
+   * <pre>
+   * Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+   * existing InfoType, the sensitivity here will take precedence over that of
+   * the original InfoType. If unset for a CustomInfoType, it will default to
+   * HIGH.
+   * This only applies to data profiling.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
+   *
+   * @return Whether the sensitivityScore field is set.
+   */
+  boolean hasSensitivityScore();
+  /**
+   *
+   *
+   * <pre>
+   * Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+   * existing InfoType, the sensitivity here will take precedence over that of
+   * the original InfoType. If unset for a CustomInfoType, it will default to
+   * HIGH.
+   * This only applies to data profiling.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
+   *
+   * @return The sensitivityScore.
+   */
+  com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore();
+  /**
+   *
+   *
+   * <pre>
+   * Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+   * existing InfoType, the sensitivity here will take precedence over that of
+   * the original InfoType. If unset for a CustomInfoType, it will default to
+   * HIGH.
+   * This only applies to data profiling.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
+   */
+  com.google.privacy.dlp.v2.SensitivityScoreOrBuilder getSensitivityScoreOrBuilder();
+
   com.google.privacy.dlp.v2.CustomInfoType.TypeCase getTypeCase();
 }

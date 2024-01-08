@@ -171,6 +171,81 @@ public interface IndexDatapointOrBuilder
    *
    *
    * <pre>
+   * Optional. List of Restrict of the datapoint, used to perform "restricted
+   * searches" where boolean rule are used to filter the subset of the database
+   * eligible for matching. This uses numeric comparisons.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction>
+      getNumericRestrictsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Restrict of the datapoint, used to perform "restricted
+   * searches" where boolean rule are used to filter the subset of the database
+   * eligible for matching. This uses numeric comparisons.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction getNumericRestricts(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Restrict of the datapoint, used to perform "restricted
+   * searches" where boolean rule are used to filter the subset of the database
+   * eligible for matching. This uses numeric comparisons.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getNumericRestrictsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Restrict of the datapoint, used to perform "restricted
+   * searches" where boolean rule are used to filter the subset of the database
+   * eligible for matching. This uses numeric comparisons.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestrictionOrBuilder>
+      getNumericRestrictsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Restrict of the datapoint, used to perform "restricted
+   * searches" where boolean rule are used to filter the subset of the database
+   * eligible for matching. This uses numeric comparisons.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.IndexDatapoint.NumericRestriction numeric_restricts = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.IndexDatapoint.NumericRestrictionOrBuilder
+      getNumericRestrictsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. CrowdingTag of the datapoint, the number of neighbors to return
    * in each crowding can be configured during query.
    * </pre>

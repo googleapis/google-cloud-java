@@ -177,6 +177,18 @@ public class TargetPoolsSettings extends ClientSettings<TargetPoolsSettings> {
     return ((TargetPoolsStubSettings) getStubSettings()).setBackupOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public UnaryCallSettings<SetSecurityPolicyTargetPoolRequest, Operation>
+      setSecurityPolicySettings() {
+    return ((TargetPoolsStubSettings) getStubSettings()).setSecurityPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public OperationCallSettings<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings() {
+    return ((TargetPoolsStubSettings) getStubSettings()).setSecurityPolicyOperationSettings();
+  }
+
   public static final TargetPoolsSettings create(TargetPoolsStubSettings stub) throws IOException {
     return new TargetPoolsSettings.Builder(stub.toBuilder()).build();
   }
@@ -377,6 +389,18 @@ public class TargetPoolsSettings extends ClientSettings<TargetPoolsSettings> {
     public OperationCallSettings.Builder<SetBackupTargetPoolRequest, Operation, Operation>
         setBackupOperationSettings() {
       return getStubSettingsBuilder().setBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetSecurityPolicyTargetPoolRequest, Operation>
+        setSecurityPolicySettings() {
+      return getStubSettingsBuilder().setSecurityPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public OperationCallSettings.Builder<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings() {
+      return getStubSettingsBuilder().setSecurityPolicyOperationSettings();
     }
 
     @Override

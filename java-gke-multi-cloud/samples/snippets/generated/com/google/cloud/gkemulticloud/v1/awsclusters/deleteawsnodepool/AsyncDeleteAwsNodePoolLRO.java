@@ -44,6 +44,7 @@ public class AsyncDeleteAwsNodePoolLRO {
                       .toString())
               .setValidateOnly(true)
               .setAllowMissing(true)
+              .setIgnoreErrors(true)
               .setEtag("etag3123477")
               .build();
       OperationFuture<Empty, OperationMetadata> future =

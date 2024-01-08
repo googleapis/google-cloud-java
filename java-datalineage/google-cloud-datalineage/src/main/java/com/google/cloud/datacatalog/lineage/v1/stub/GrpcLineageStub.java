@@ -50,6 +50,8 @@ import com.google.cloud.datacatalog.lineage.v1.ListRunsRequest;
 import com.google.cloud.datacatalog.lineage.v1.ListRunsResponse;
 import com.google.cloud.datacatalog.lineage.v1.OperationMetadata;
 import com.google.cloud.datacatalog.lineage.v1.Process;
+import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest;
+import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse;
 import com.google.cloud.datacatalog.lineage.v1.Run;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksResponse;
@@ -72,6 +74,20 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class GrpcLineageStub extends LineageStub {
+  private static final MethodDescriptor<
+          ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+      processOpenLineageRunEventMethodDescriptor =
+          MethodDescriptor
+              .<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datacatalog.lineage.v1.Lineage/ProcessOpenLineageRunEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ProcessOpenLineageRunEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ProcessOpenLineageRunEventResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateProcessRequest, Process>
       createProcessMethodDescriptor =
           MethodDescriptor.<CreateProcessRequest, Process>newBuilder()
@@ -227,6 +243,8 @@ public class GrpcLineageStub extends LineageStub {
                   ProtoUtils.marshaller(BatchSearchLinkProcessesResponse.getDefaultInstance()))
               .build();
 
+  private final UnaryCallable<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+      processOpenLineageRunEventCallable;
   private final UnaryCallable<CreateProcessRequest, Process> createProcessCallable;
   private final UnaryCallable<UpdateProcessRequest, Process> updateProcessCallable;
   private final UnaryCallable<GetProcessRequest, Process> getProcessCallable;
@@ -299,6 +317,18 @@ public class GrpcLineageStub extends LineageStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+        processOpenLineageRunEventTransportSettings =
+            GrpcCallSettings
+                .<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>newBuilder()
+                .setMethodDescriptor(processOpenLineageRunEventMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<CreateProcessRequest, Process> createProcessTransportSettings =
         GrpcCallSettings.<CreateProcessRequest, Process>newBuilder()
             .setMethodDescriptor(createProcessMethodDescriptor)
@@ -463,6 +493,11 @@ public class GrpcLineageStub extends LineageStub {
                     })
                 .build();
 
+    this.processOpenLineageRunEventCallable =
+        callableFactory.createUnaryCallable(
+            processOpenLineageRunEventTransportSettings,
+            settings.processOpenLineageRunEventSettings(),
+            clientContext);
     this.createProcessCallable =
         callableFactory.createUnaryCallable(
             createProcessTransportSettings, settings.createProcessSettings(), clientContext);
@@ -557,6 +592,12 @@ public class GrpcLineageStub extends LineageStub {
 
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+      processOpenLineageRunEventCallable() {
+    return processOpenLineageRunEventCallable;
   }
 
   @Override

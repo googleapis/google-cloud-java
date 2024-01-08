@@ -71,7 +71,7 @@ public final class GetReleaseRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. Name of the `Release`. Format must be
-   * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}.
+   * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public final class GetReleaseRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. Name of the `Release`. Format must be
-   * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}.
+   * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
    * </pre>
    *
    * <code>
@@ -466,7 +466,7 @@ public final class GetReleaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Name of the `Release`. Format must be
-     * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}.
+     * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
      * </pre>
      *
      * <code>
@@ -491,7 +491,7 @@ public final class GetReleaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Name of the `Release`. Format must be
-     * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}.
+     * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
      * </pre>
      *
      * <code>
@@ -516,7 +516,7 @@ public final class GetReleaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Name of the `Release`. Format must be
-     * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}.
+     * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
      * </pre>
      *
      * <code>
@@ -540,7 +540,7 @@ public final class GetReleaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Name of the `Release`. Format must be
-     * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}.
+     * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
      * </pre>
      *
      * <code>
@@ -560,7 +560,7 @@ public final class GetReleaseRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. Name of the `Release`. Format must be
-     * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}.
+     * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
      * </pre>
      *
      * <code>

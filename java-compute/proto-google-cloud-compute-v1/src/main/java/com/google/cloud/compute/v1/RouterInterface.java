@@ -300,7 +300,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+   * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
    * </pre>
    *
    * <code>optional string linked_interconnect_attachment = 501085518;</code>
@@ -315,7 +315,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+   * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
    * </pre>
    *
    * <code>optional string linked_interconnect_attachment = 501085518;</code>
@@ -338,7 +338,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+   * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
    * </pre>
    *
    * <code>optional string linked_interconnect_attachment = 501085518;</code>
@@ -366,7 +366,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+   * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
    * </pre>
    *
    * <code>optional string linked_vpn_tunnel = 352296953;</code>
@@ -381,7 +381,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+   * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
    * </pre>
    *
    * <code>optional string linked_vpn_tunnel = 352296953;</code>
@@ -404,7 +404,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+   * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
    * </pre>
    *
    * <code>optional string linked_vpn_tunnel = 352296953;</code>
@@ -1446,7 +1446,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+     * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
      * </pre>
      *
      * <code>optional string linked_interconnect_attachment = 501085518;</code>
@@ -1460,7 +1460,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+     * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
      * </pre>
      *
      * <code>optional string linked_interconnect_attachment = 501085518;</code>
@@ -1482,7 +1482,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+     * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
      * </pre>
      *
      * <code>optional string linked_interconnect_attachment = 501085518;</code>
@@ -1504,7 +1504,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+     * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
      * </pre>
      *
      * <code>optional string linked_interconnect_attachment = 501085518;</code>
@@ -1525,7 +1525,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+     * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
      * </pre>
      *
      * <code>optional string linked_interconnect_attachment = 501085518;</code>
@@ -1542,7 +1542,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+     * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
      * </pre>
      *
      * <code>optional string linked_interconnect_attachment = 501085518;</code>
@@ -1566,7 +1566,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+     * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
      * </pre>
      *
      * <code>optional string linked_vpn_tunnel = 352296953;</code>
@@ -1580,7 +1580,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+     * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
      * </pre>
      *
      * <code>optional string linked_vpn_tunnel = 352296953;</code>
@@ -1602,7 +1602,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+     * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
      * </pre>
      *
      * <code>optional string linked_vpn_tunnel = 352296953;</code>
@@ -1624,7 +1624,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+     * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
      * </pre>
      *
      * <code>optional string linked_vpn_tunnel = 352296953;</code>
@@ -1645,7 +1645,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+     * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
      * </pre>
      *
      * <code>optional string linked_vpn_tunnel = 352296953;</code>
@@ -1662,7 +1662,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
+     * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
      * </pre>
      *
      * <code>optional string linked_vpn_tunnel = 352296953;</code>

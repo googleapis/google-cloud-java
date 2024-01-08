@@ -56,8 +56,8 @@ public interface MakeDirectoryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The directory's full path including directory name, relative to the
-   * workspace root.
+   * Required. The directory's full path including directory name, relative to
+   * the workspace root.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -69,8 +69,8 @@ public interface MakeDirectoryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The directory's full path including directory name, relative to the
-   * workspace root.
+   * Required. The directory's full path including directory name, relative to
+   * the workspace root.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>

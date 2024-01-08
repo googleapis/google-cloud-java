@@ -55,6 +55,17 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
         .internal_static_google_cloud_aiplatform_v1beta1_ExplainResponse_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 4:
+        return internalGetConcurrentExplanations();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -63,6 +74,1163 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
         .ensureFieldAccessorsInitialized(
             com.google.cloud.aiplatform.v1beta1.ExplainResponse.class,
             com.google.cloud.aiplatform.v1beta1.ExplainResponse.Builder.class);
+  }
+
+  public interface ConcurrentExplanationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The explanations of the Model's
+     * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     *
+     * It has the same number of elements as
+     * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+     * be explained.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+     */
+    java.util.List<com.google.cloud.aiplatform.v1beta1.Explanation> getExplanationsList();
+    /**
+     *
+     *
+     * <pre>
+     * The explanations of the Model's
+     * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     *
+     * It has the same number of elements as
+     * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+     * be explained.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+     */
+    com.google.cloud.aiplatform.v1beta1.Explanation getExplanations(int index);
+    /**
+     *
+     *
+     * <pre>
+     * The explanations of the Model's
+     * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     *
+     * It has the same number of elements as
+     * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+     * be explained.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+     */
+    int getExplanationsCount();
+    /**
+     *
+     *
+     * <pre>
+     * The explanations of the Model's
+     * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     *
+     * It has the same number of elements as
+     * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+     * be explained.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+     */
+    java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ExplanationOrBuilder>
+        getExplanationsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * The explanations of the Model's
+     * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     *
+     * It has the same number of elements as
+     * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+     * be explained.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+     */
+    com.google.cloud.aiplatform.v1beta1.ExplanationOrBuilder getExplanationsOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This message is a wrapper grouping Concurrent Explanations.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation}
+   */
+  public static final class ConcurrentExplanation extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation)
+      ConcurrentExplanationOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ConcurrentExplanation.newBuilder() to construct.
+    private ConcurrentExplanation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ConcurrentExplanation() {
+      explanations_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ConcurrentExplanation();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.PredictionServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_ExplainResponse_ConcurrentExplanation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.PredictionServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_ExplainResponse_ConcurrentExplanation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation.class,
+              com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation.Builder
+                  .class);
+    }
+
+    public static final int EXPLANATIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.Explanation> explanations_;
+    /**
+     *
+     *
+     * <pre>
+     * The explanations of the Model's
+     * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     *
+     * It has the same number of elements as
+     * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+     * be explained.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.Explanation> getExplanationsList() {
+      return explanations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The explanations of the Model's
+     * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     *
+     * It has the same number of elements as
+     * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+     * be explained.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ExplanationOrBuilder>
+        getExplanationsOrBuilderList() {
+      return explanations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The explanations of the Model's
+     * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     *
+     * It has the same number of elements as
+     * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+     * be explained.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+     */
+    @java.lang.Override
+    public int getExplanationsCount() {
+      return explanations_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The explanations of the Model's
+     * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     *
+     * It has the same number of elements as
+     * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+     * be explained.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Explanation getExplanations(int index) {
+      return explanations_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The explanations of the Model's
+     * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+     *
+     * It has the same number of elements as
+     * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+     * be explained.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ExplanationOrBuilder getExplanationsOrBuilder(
+        int index) {
+      return explanations_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < explanations_.size(); i++) {
+        output.writeMessage(1, explanations_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < explanations_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, explanations_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation other =
+          (com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation) obj;
+
+      if (!getExplanationsList().equals(other.getExplanationsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getExplanationsCount() > 0) {
+        hash = (37 * hash) + EXPLANATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getExplanationsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This message is a wrapper grouping Concurrent Explanations.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation)
+        com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.PredictionServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ExplainResponse_ConcurrentExplanation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.PredictionServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ExplainResponse_ConcurrentExplanation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation.class,
+                com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (explanationsBuilder_ == null) {
+          explanations_ = java.util.Collections.emptyList();
+        } else {
+          explanations_ = null;
+          explanationsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.PredictionServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ExplainResponse_ConcurrentExplanation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation build() {
+        com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation result =
+            new com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation result) {
+        if (explanationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            explanations_ = java.util.Collections.unmodifiableList(explanations_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.explanations_ = explanations_;
+        } else {
+          result.explanations_ = explanationsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+                .getDefaultInstance()) return this;
+        if (explanationsBuilder_ == null) {
+          if (!other.explanations_.isEmpty()) {
+            if (explanations_.isEmpty()) {
+              explanations_ = other.explanations_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureExplanationsIsMutable();
+              explanations_.addAll(other.explanations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.explanations_.isEmpty()) {
+            if (explanationsBuilder_.isEmpty()) {
+              explanationsBuilder_.dispose();
+              explanationsBuilder_ = null;
+              explanations_ = other.explanations_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              explanationsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getExplanationsFieldBuilder()
+                      : null;
+            } else {
+              explanationsBuilder_.addAllMessages(other.explanations_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.aiplatform.v1beta1.Explanation m =
+                      input.readMessage(
+                          com.google.cloud.aiplatform.v1beta1.Explanation.parser(),
+                          extensionRegistry);
+                  if (explanationsBuilder_ == null) {
+                    ensureExplanationsIsMutable();
+                    explanations_.add(m);
+                  } else {
+                    explanationsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.cloud.aiplatform.v1beta1.Explanation> explanations_ =
+          java.util.Collections.emptyList();
+
+      private void ensureExplanationsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          explanations_ =
+              new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.Explanation>(
+                  explanations_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.Explanation,
+              com.google.cloud.aiplatform.v1beta1.Explanation.Builder,
+              com.google.cloud.aiplatform.v1beta1.ExplanationOrBuilder>
+          explanationsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1beta1.Explanation> getExplanationsList() {
+        if (explanationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(explanations_);
+        } else {
+          return explanationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public int getExplanationsCount() {
+        if (explanationsBuilder_ == null) {
+          return explanations_.size();
+        } else {
+          return explanationsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.Explanation getExplanations(int index) {
+        if (explanationsBuilder_ == null) {
+          return explanations_.get(index);
+        } else {
+          return explanationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public Builder setExplanations(
+          int index, com.google.cloud.aiplatform.v1beta1.Explanation value) {
+        if (explanationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExplanationsIsMutable();
+          explanations_.set(index, value);
+          onChanged();
+        } else {
+          explanationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public Builder setExplanations(
+          int index, com.google.cloud.aiplatform.v1beta1.Explanation.Builder builderForValue) {
+        if (explanationsBuilder_ == null) {
+          ensureExplanationsIsMutable();
+          explanations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          explanationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public Builder addExplanations(com.google.cloud.aiplatform.v1beta1.Explanation value) {
+        if (explanationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExplanationsIsMutable();
+          explanations_.add(value);
+          onChanged();
+        } else {
+          explanationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public Builder addExplanations(
+          int index, com.google.cloud.aiplatform.v1beta1.Explanation value) {
+        if (explanationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExplanationsIsMutable();
+          explanations_.add(index, value);
+          onChanged();
+        } else {
+          explanationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public Builder addExplanations(
+          com.google.cloud.aiplatform.v1beta1.Explanation.Builder builderForValue) {
+        if (explanationsBuilder_ == null) {
+          ensureExplanationsIsMutable();
+          explanations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          explanationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public Builder addExplanations(
+          int index, com.google.cloud.aiplatform.v1beta1.Explanation.Builder builderForValue) {
+        if (explanationsBuilder_ == null) {
+          ensureExplanationsIsMutable();
+          explanations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          explanationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public Builder addAllExplanations(
+          java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.Explanation> values) {
+        if (explanationsBuilder_ == null) {
+          ensureExplanationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, explanations_);
+          onChanged();
+        } else {
+          explanationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public Builder clearExplanations() {
+        if (explanationsBuilder_ == null) {
+          explanations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          explanationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public Builder removeExplanations(int index) {
+        if (explanationsBuilder_ == null) {
+          ensureExplanationsIsMutable();
+          explanations_.remove(index);
+          onChanged();
+        } else {
+          explanationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.Explanation.Builder getExplanationsBuilder(
+          int index) {
+        return getExplanationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ExplanationOrBuilder getExplanationsOrBuilder(
+          int index) {
+        if (explanationsBuilder_ == null) {
+          return explanations_.get(index);
+        } else {
+          return explanationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ExplanationOrBuilder>
+          getExplanationsOrBuilderList() {
+        if (explanationsBuilder_ != null) {
+          return explanationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(explanations_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.Explanation.Builder addExplanationsBuilder() {
+        return getExplanationsFieldBuilder()
+            .addBuilder(com.google.cloud.aiplatform.v1beta1.Explanation.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.Explanation.Builder addExplanationsBuilder(
+          int index) {
+        return getExplanationsFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.aiplatform.v1beta1.Explanation.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The explanations of the Model's
+       * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+       *
+       * It has the same number of elements as
+       * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to
+       * be explained.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1beta1.Explanation.Builder>
+          getExplanationsBuilderList() {
+        return getExplanationsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.Explanation,
+              com.google.cloud.aiplatform.v1beta1.Explanation.Builder,
+              com.google.cloud.aiplatform.v1beta1.ExplanationOrBuilder>
+          getExplanationsFieldBuilder() {
+        if (explanationsBuilder_ == null) {
+          explanationsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.Explanation,
+                  com.google.cloud.aiplatform.v1beta1.Explanation.Builder,
+                  com.google.cloud.aiplatform.v1beta1.ExplanationOrBuilder>(
+                  explanations_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          explanations_ = null;
+        }
+        return explanationsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation)
+    private static final com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConcurrentExplanation> PARSER =
+        new com.google.protobuf.AbstractParser<ConcurrentExplanation>() {
+          @java.lang.Override
+          public ConcurrentExplanation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ConcurrentExplanation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConcurrentExplanation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int EXPLANATIONS_FIELD_NUMBER = 1;
@@ -160,6 +1328,148 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.aiplatform.v1beta1.ExplanationOrBuilder getExplanationsOrBuilder(
       int index) {
     return explanations_.get(index);
+  }
+
+  public static final int CONCURRENT_EXPLANATIONS_FIELD_NUMBER = 4;
+
+  private static final class ConcurrentExplanationsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String,
+                    com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+                    newDefaultInstance(
+                        com.google.cloud.aiplatform.v1beta1.PredictionServiceProto
+                            .internal_static_google_cloud_aiplatform_v1beta1_ExplainResponse_ConcurrentExplanationsEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+                            .getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String,
+          com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+      concurrentExplanations_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String,
+          com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+      internalGetConcurrentExplanations() {
+    if (concurrentExplanations_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ConcurrentExplanationsDefaultEntryHolder.defaultEntry);
+    }
+    return concurrentExplanations_;
+  }
+
+  public int getConcurrentExplanationsCount() {
+    return internalGetConcurrentExplanations().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field stores the results of the explanations run in parallel with
+   * The default explanation strategy/method.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsConcurrentExplanations(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetConcurrentExplanations().getMap().containsKey(key);
+  }
+  /** Use {@link #getConcurrentExplanationsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<
+          java.lang.String,
+          com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+      getConcurrentExplanations() {
+    return getConcurrentExplanationsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field stores the results of the explanations run in parallel with
+   * The default explanation strategy/method.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<
+          java.lang.String,
+          com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+      getConcurrentExplanationsMap() {
+    return internalGetConcurrentExplanations().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field stores the results of the explanations run in parallel with
+   * The default explanation strategy/method.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+      getConcurrentExplanationsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+        map = internalGetConcurrentExplanations().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field stores the results of the explanations run in parallel with
+   * The default explanation strategy/method.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+      getConcurrentExplanationsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+        map = internalGetConcurrentExplanations().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   public static final int DEPLOYED_MODEL_ID_FIELD_NUMBER = 2;
@@ -317,6 +1627,11 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < predictions_.size(); i++) {
       output.writeMessage(3, predictions_.get(i));
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetConcurrentExplanations(),
+        ConcurrentExplanationsDefaultEntryHolder.defaultEntry,
+        4);
     getUnknownFields().writeTo(output);
   }
 
@@ -335,6 +1650,21 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < predictions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, predictions_.get(i));
     }
+    for (java.util.Map.Entry<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+        entry : internalGetConcurrentExplanations().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String,
+              com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+          concurrentExplanations__ =
+              ConcurrentExplanationsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, concurrentExplanations__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -352,6 +1682,8 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
         (com.google.cloud.aiplatform.v1beta1.ExplainResponse) obj;
 
     if (!getExplanationsList().equals(other.getExplanationsList())) return false;
+    if (!internalGetConcurrentExplanations().equals(other.internalGetConcurrentExplanations()))
+      return false;
     if (!getDeployedModelId().equals(other.getDeployedModelId())) return false;
     if (!getPredictionsList().equals(other.getPredictionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -368,6 +1700,10 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
     if (getExplanationsCount() > 0) {
       hash = (37 * hash) + EXPLANATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getExplanationsList().hashCode();
+    }
+    if (!internalGetConcurrentExplanations().getMap().isEmpty()) {
+      hash = (37 * hash) + CONCURRENT_EXPLANATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetConcurrentExplanations().hashCode();
     }
     hash = (37 * hash) + DEPLOYED_MODEL_ID_FIELD_NUMBER;
     hash = (53 * hash) + getDeployedModelId().hashCode();
@@ -494,6 +1830,26 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
           .internal_static_google_cloud_aiplatform_v1beta1_ExplainResponse_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 4:
+          return internalGetConcurrentExplanations();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 4:
+          return internalGetMutableConcurrentExplanations();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -522,6 +1878,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
         explanationsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      internalGetMutableConcurrentExplanations().clear();
       deployedModelId_ = "";
       if (predictionsBuilder_ == null) {
         predictions_ = java.util.Collections.emptyList();
@@ -529,7 +1886,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
         predictions_ = null;
         predictionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -577,9 +1934,9 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
         result.explanations_ = explanationsBuilder_.build();
       }
       if (predictionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           predictions_ = java.util.Collections.unmodifiableList(predictions_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.predictions_ = predictions_;
       } else {
@@ -590,6 +1947,10 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ExplainResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.concurrentExplanations_ = internalGetConcurrentExplanations();
+        result.concurrentExplanations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.deployedModelId_ = deployedModelId_;
       }
     }
@@ -667,16 +2028,19 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
           }
         }
       }
+      internalGetMutableConcurrentExplanations()
+          .mergeFrom(other.internalGetConcurrentExplanations());
+      bitField0_ |= 0x00000002;
       if (!other.getDeployedModelId().isEmpty()) {
         deployedModelId_ = other.deployedModelId_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (predictionsBuilder_ == null) {
         if (!other.predictions_.isEmpty()) {
           if (predictions_.isEmpty()) {
             predictions_ = other.predictions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensurePredictionsIsMutable();
             predictions_.addAll(other.predictions_);
@@ -689,7 +2053,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
             predictionsBuilder_.dispose();
             predictionsBuilder_ = null;
             predictions_ = other.predictions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             predictionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPredictionsFieldBuilder()
@@ -742,7 +2106,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
             case 18:
               {
                 deployedModelId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
@@ -757,6 +2121,22 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
                 }
                 break;
               } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String,
+                        com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+                    concurrentExplanations__ =
+                        input.readMessage(
+                            ConcurrentExplanationsDefaultEntryHolder.defaultEntry
+                                .getParserForType(),
+                            extensionRegistry);
+                internalGetMutableConcurrentExplanations()
+                    .getMutableMap()
+                    .put(concurrentExplanations__.getKey(), concurrentExplanations__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1222,6 +2602,225 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
       return explanationsBuilder_;
     }
 
+    private com.google.protobuf.MapField<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+        concurrentExplanations_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+        internalGetConcurrentExplanations() {
+      if (concurrentExplanations_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ConcurrentExplanationsDefaultEntryHolder.defaultEntry);
+      }
+      return concurrentExplanations_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+        internalGetMutableConcurrentExplanations() {
+      if (concurrentExplanations_ == null) {
+        concurrentExplanations_ =
+            com.google.protobuf.MapField.newMapField(
+                ConcurrentExplanationsDefaultEntryHolder.defaultEntry);
+      }
+      if (!concurrentExplanations_.isMutable()) {
+        concurrentExplanations_ = concurrentExplanations_.copy();
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return concurrentExplanations_;
+    }
+
+    public int getConcurrentExplanationsCount() {
+      return internalGetConcurrentExplanations().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field stores the results of the explanations run in parallel with
+     * The default explanation strategy/method.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsConcurrentExplanations(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetConcurrentExplanations().getMap().containsKey(key);
+    }
+    /** Use {@link #getConcurrentExplanationsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+        getConcurrentExplanations() {
+      return getConcurrentExplanationsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field stores the results of the explanations run in parallel with
+     * The default explanation strategy/method.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+        getConcurrentExplanationsMap() {
+      return internalGetConcurrentExplanations().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field stores the results of the explanations run in parallel with
+     * The default explanation strategy/method.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        getConcurrentExplanationsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+                defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+          map = internalGetConcurrentExplanations().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field stores the results of the explanations run in parallel with
+     * The default explanation strategy/method.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+        getConcurrentExplanationsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+          map = internalGetConcurrentExplanations().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearConcurrentExplanations() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      internalGetMutableConcurrentExplanations().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field stores the results of the explanations run in parallel with
+     * The default explanation strategy/method.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+     * </code>
+     */
+    public Builder removeConcurrentExplanations(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableConcurrentExplanations().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+        getMutableConcurrentExplanations() {
+      bitField0_ |= 0x00000002;
+      return internalGetMutableConcurrentExplanations().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field stores the results of the explanations run in parallel with
+     * The default explanation strategy/method.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+     * </code>
+     */
+    public Builder putConcurrentExplanations(
+        java.lang.String key,
+        com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableConcurrentExplanations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field stores the results of the explanations run in parallel with
+     * The default explanation strategy/method.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+     * </code>
+     */
+    public Builder putAllConcurrentExplanations(
+        java.util.Map<
+                java.lang.String,
+                com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+            values) {
+      internalGetMutableConcurrentExplanations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+
     private java.lang.Object deployedModelId_ = "";
     /**
      *
@@ -1284,7 +2883,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       deployedModelId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1301,7 +2900,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearDeployedModelId() {
       deployedModelId_ = getDefaultInstance().getDeployedModelId();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1323,7 +2922,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       deployedModelId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1332,9 +2931,9 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensurePredictionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         predictions_ = new java.util.ArrayList<com.google.protobuf.Value>(predictions_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1569,7 +3168,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
     public Builder clearPredictions() {
       if (predictionsBuilder_ == null) {
         predictions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         predictionsBuilder_.clear();
@@ -1704,7 +3303,7 @@ public final class ExplainResponse extends com.google.protobuf.GeneratedMessageV
                 com.google.protobuf.Value,
                 com.google.protobuf.Value.Builder,
                 com.google.protobuf.ValueOrBuilder>(
-                predictions_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                predictions_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         predictions_ = null;
       }
       return predictionsBuilder_;

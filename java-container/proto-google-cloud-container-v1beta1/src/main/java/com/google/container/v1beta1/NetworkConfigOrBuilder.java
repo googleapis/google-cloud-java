@@ -407,4 +407,47 @@ public interface NetworkConfigOrBuilder
    * @return The enableFqdnNetworkPolicy.
    */
   boolean getEnableFqdnNetworkPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+   * </code>
+   *
+   * @return Whether the inTransitEncryptionConfig field is set.
+   */
+  boolean hasInTransitEncryptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for inTransitEncryptionConfig.
+   */
+  int getInTransitEncryptionConfigValue();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+   * </code>
+   *
+   * @return The inTransitEncryptionConfig.
+   */
+  com.google.container.v1beta1.InTransitEncryptionConfig getInTransitEncryptionConfig();
 }

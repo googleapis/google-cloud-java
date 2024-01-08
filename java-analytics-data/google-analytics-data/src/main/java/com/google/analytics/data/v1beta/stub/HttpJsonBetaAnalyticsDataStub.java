@@ -16,14 +16,24 @@
 
 package com.google.analytics.data.v1beta.stub;
 
+import static com.google.analytics.data.v1beta.BetaAnalyticsDataClient.ListAudienceExportsPagedResponse;
+
+import com.google.analytics.data.v1beta.AudienceExport;
+import com.google.analytics.data.v1beta.AudienceExportMetadata;
 import com.google.analytics.data.v1beta.BatchRunPivotReportsRequest;
 import com.google.analytics.data.v1beta.BatchRunPivotReportsResponse;
 import com.google.analytics.data.v1beta.BatchRunReportsRequest;
 import com.google.analytics.data.v1beta.BatchRunReportsResponse;
 import com.google.analytics.data.v1beta.CheckCompatibilityRequest;
 import com.google.analytics.data.v1beta.CheckCompatibilityResponse;
+import com.google.analytics.data.v1beta.CreateAudienceExportRequest;
+import com.google.analytics.data.v1beta.GetAudienceExportRequest;
 import com.google.analytics.data.v1beta.GetMetadataRequest;
+import com.google.analytics.data.v1beta.ListAudienceExportsRequest;
+import com.google.analytics.data.v1beta.ListAudienceExportsResponse;
 import com.google.analytics.data.v1beta.Metadata;
+import com.google.analytics.data.v1beta.QueryAudienceExportRequest;
+import com.google.analytics.data.v1beta.QueryAudienceExportResponse;
 import com.google.analytics.data.v1beta.RunPivotReportRequest;
 import com.google.analytics.data.v1beta.RunPivotReportResponse;
 import com.google.analytics.data.v1beta.RunRealtimeReportRequest;
@@ -36,13 +46,17 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -61,7 +75,11 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
-  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder()
+          .add(AudienceExportMetadata.getDescriptor())
+          .add(AudienceExport.getDescriptor())
+          .build();
 
   private static final ApiMethodDescriptor<RunReportRequest, RunReportResponse>
       runReportMethodDescriptor =
@@ -323,6 +341,156 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateAudienceExportRequest, Operation>
+      createAudienceExportMethodDescriptor =
+          ApiMethodDescriptor.<CreateAudienceExportRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.data.v1beta.BetaAnalyticsData/CreateAudienceExport")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAudienceExportRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=properties/*}/audienceExports",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAudienceExportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAudienceExportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("audienceExport", request.getAudienceExport(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateAudienceExportRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<QueryAudienceExportRequest, QueryAudienceExportResponse>
+      queryAudienceExportMethodDescriptor =
+          ApiMethodDescriptor.<QueryAudienceExportRequest, QueryAudienceExportResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.data.v1beta.BetaAnalyticsData/QueryAudienceExport")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryAudienceExportRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=properties/*/audienceExports/*}:query",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryAudienceExportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryAudienceExportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryAudienceExportResponse>newBuilder()
+                      .setDefaultInstance(QueryAudienceExportResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAudienceExportRequest, AudienceExport>
+      getAudienceExportMethodDescriptor =
+          ApiMethodDescriptor.<GetAudienceExportRequest, AudienceExport>newBuilder()
+              .setFullMethodName("google.analytics.data.v1beta.BetaAnalyticsData/GetAudienceExport")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAudienceExportRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=properties/*/audienceExports/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAudienceExportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAudienceExportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AudienceExport>newBuilder()
+                      .setDefaultInstance(AudienceExport.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListAudienceExportsRequest, ListAudienceExportsResponse>
+      listAudienceExportsMethodDescriptor =
+          ApiMethodDescriptor.<ListAudienceExportsRequest, ListAudienceExportsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.data.v1beta.BetaAnalyticsData/ListAudienceExports")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAudienceExportsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=properties/*}/audienceExports",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAudienceExportsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAudienceExportsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAudienceExportsResponse>newBuilder()
+                      .setDefaultInstance(ListAudienceExportsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable;
   private final UnaryCallable<RunPivotReportRequest, RunPivotReportResponse> runPivotReportCallable;
   private final UnaryCallable<BatchRunReportsRequest, BatchRunReportsResponse>
@@ -334,8 +502,20 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
       runRealtimeReportCallable;
   private final UnaryCallable<CheckCompatibilityRequest, CheckCompatibilityResponse>
       checkCompatibilityCallable;
+  private final UnaryCallable<CreateAudienceExportRequest, Operation> createAudienceExportCallable;
+  private final OperationCallable<
+          CreateAudienceExportRequest, AudienceExport, AudienceExportMetadata>
+      createAudienceExportOperationCallable;
+  private final UnaryCallable<QueryAudienceExportRequest, QueryAudienceExportResponse>
+      queryAudienceExportCallable;
+  private final UnaryCallable<GetAudienceExportRequest, AudienceExport> getAudienceExportCallable;
+  private final UnaryCallable<ListAudienceExportsRequest, ListAudienceExportsResponse>
+      listAudienceExportsCallable;
+  private final UnaryCallable<ListAudienceExportsRequest, ListAudienceExportsPagedResponse>
+      listAudienceExportsPagedCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonBetaAnalyticsDataStub create(BetaAnalyticsDataStubSettings settings)
@@ -376,6 +556,8 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
 
     HttpJsonCallSettings<RunReportRequest, RunReportResponse> runReportTransportSettings =
         HttpJsonCallSettings.<RunReportRequest, RunReportResponse>newBuilder()
@@ -460,6 +642,56 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CreateAudienceExportRequest, Operation>
+        createAudienceExportTransportSettings =
+            HttpJsonCallSettings.<CreateAudienceExportRequest, Operation>newBuilder()
+                .setMethodDescriptor(createAudienceExportMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<QueryAudienceExportRequest, QueryAudienceExportResponse>
+        queryAudienceExportTransportSettings =
+            HttpJsonCallSettings
+                .<QueryAudienceExportRequest, QueryAudienceExportResponse>newBuilder()
+                .setMethodDescriptor(queryAudienceExportMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetAudienceExportRequest, AudienceExport>
+        getAudienceExportTransportSettings =
+            HttpJsonCallSettings.<GetAudienceExportRequest, AudienceExport>newBuilder()
+                .setMethodDescriptor(getAudienceExportMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListAudienceExportsRequest, ListAudienceExportsResponse>
+        listAudienceExportsTransportSettings =
+            HttpJsonCallSettings
+                .<ListAudienceExportsRequest, ListAudienceExportsResponse>newBuilder()
+                .setMethodDescriptor(listAudienceExportsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.runReportCallable =
         callableFactory.createUnaryCallable(
@@ -488,6 +720,37 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
             checkCompatibilityTransportSettings,
             settings.checkCompatibilitySettings(),
             clientContext);
+    this.createAudienceExportCallable =
+        callableFactory.createUnaryCallable(
+            createAudienceExportTransportSettings,
+            settings.createAudienceExportSettings(),
+            clientContext);
+    this.createAudienceExportOperationCallable =
+        callableFactory.createOperationCallable(
+            createAudienceExportTransportSettings,
+            settings.createAudienceExportOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.queryAudienceExportCallable =
+        callableFactory.createUnaryCallable(
+            queryAudienceExportTransportSettings,
+            settings.queryAudienceExportSettings(),
+            clientContext);
+    this.getAudienceExportCallable =
+        callableFactory.createUnaryCallable(
+            getAudienceExportTransportSettings,
+            settings.getAudienceExportSettings(),
+            clientContext);
+    this.listAudienceExportsCallable =
+        callableFactory.createUnaryCallable(
+            listAudienceExportsTransportSettings,
+            settings.listAudienceExportsSettings(),
+            clientContext);
+    this.listAudienceExportsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAudienceExportsTransportSettings,
+            settings.listAudienceExportsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -503,7 +766,15 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
     methodDescriptors.add(getMetadataMethodDescriptor);
     methodDescriptors.add(runRealtimeReportMethodDescriptor);
     methodDescriptors.add(checkCompatibilityMethodDescriptor);
+    methodDescriptors.add(createAudienceExportMethodDescriptor);
+    methodDescriptors.add(queryAudienceExportMethodDescriptor);
+    methodDescriptors.add(getAudienceExportMethodDescriptor);
+    methodDescriptors.add(listAudienceExportsMethodDescriptor);
     return methodDescriptors;
+  }
+
+  public HttpJsonOperationsStub getHttpJsonOperationsStub() {
+    return httpJsonOperationsStub;
   }
 
   @Override
@@ -542,6 +813,40 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
   public UnaryCallable<CheckCompatibilityRequest, CheckCompatibilityResponse>
       checkCompatibilityCallable() {
     return checkCompatibilityCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAudienceExportRequest, Operation> createAudienceExportCallable() {
+    return createAudienceExportCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAudienceExportRequest, AudienceExport, AudienceExportMetadata>
+      createAudienceExportOperationCallable() {
+    return createAudienceExportOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryAudienceExportRequest, QueryAudienceExportResponse>
+      queryAudienceExportCallable() {
+    return queryAudienceExportCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAudienceExportRequest, AudienceExport> getAudienceExportCallable() {
+    return getAudienceExportCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAudienceExportsRequest, ListAudienceExportsResponse>
+      listAudienceExportsCallable() {
+    return listAudienceExportsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAudienceExportsRequest, ListAudienceExportsPagedResponse>
+      listAudienceExportsPagedCallable() {
+    return listAudienceExportsPagedCallable;
   }
 
   @Override

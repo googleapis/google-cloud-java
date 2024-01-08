@@ -343,15 +343,20 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Unique stable hashed user identifier for the request. The
-   * identifier must be hashed using hmac-sha256 with stable secret.
+   * Optional. Deprecated: use `user_info.account_id` instead.
+   * Unique stable hashed user identifier for the request. The identifier must
+   * be hashed using hmac-sha256 with stable secret.
    * </pre>
    *
-   * <code>bytes hashed_account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bytes hashed_account_id = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
+   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=666
    * @return The hashedAccountId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getHashedAccountId() {
     return hashedAccountId_;
   }
@@ -455,7 +460,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Optional JA3 fingerprint for SSL clients.
+   * Optional. JA3 fingerprint for SSL clients.
    * </pre>
    *
    * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -478,7 +483,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Optional JA3 fingerprint for SSL clients.
+   * Optional. JA3 fingerprint for SSL clients.
    * </pre>
    *
    * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -644,6 +649,71 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         : transactionData_;
   }
 
+  public static final int USER_INFO_FIELD_NUMBER = 15;
+  private com.google.recaptchaenterprise.v1.UserInfo userInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the user that generates this event, when they
+   * can be identified. They are often identified through the use of an account
+   * for logged-in requests or login/registration requests, or by providing user
+   * identifiers for guest actions like checkout.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.UserInfo user_info = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the userInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasUserInfo() {
+    return userInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the user that generates this event, when they
+   * can be identified. They are often identified through the use of an account
+   * for logged-in requests or login/registration requests, or by providing user
+   * identifiers for guest actions like checkout.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.UserInfo user_info = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The userInfo.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.UserInfo getUserInfo() {
+    return userInfo_ == null
+        ? com.google.recaptchaenterprise.v1.UserInfo.getDefaultInstance()
+        : userInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the user that generates this event, when they
+   * can be identified. They are often identified through the use of an account
+   * for logged-in requests or login/registration requests, or by providing user
+   * identifiers for guest actions like checkout.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.UserInfo user_info = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.UserInfoOrBuilder getUserInfoOrBuilder() {
+    return userInfo_ == null
+        ? com.google.recaptchaenterprise.v1.UserInfo.getDefaultInstance()
+        : userInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -696,6 +766,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     if (express_ != false) {
       output.writeBool(14, express_);
+    }
+    if (userInfo_ != null) {
+      output.writeMessage(15, getUserInfo());
     }
     getUnknownFields().writeTo(output);
   }
@@ -750,6 +823,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (express_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, express_);
     }
+    if (userInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getUserInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -780,6 +856,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (hasTransactionData() != other.hasTransactionData()) return false;
     if (hasTransactionData()) {
       if (!getTransactionData().equals(other.getTransactionData())) return false;
+    }
+    if (hasUserInfo() != other.hasUserInfo()) return false;
+    if (hasUserInfo()) {
+      if (!getUserInfo().equals(other.getUserInfo())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -821,6 +901,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (hasTransactionData()) {
       hash = (37 * hash) + TRANSACTION_DATA_FIELD_NUMBER;
       hash = (53 * hash) + getTransactionData().hashCode();
+    }
+    if (hasUserInfo()) {
+      hash = (37 * hash) + USER_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getUserInfo().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -978,6 +1062,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         transactionDataBuilder_.dispose();
         transactionDataBuilder_ = null;
       }
+      userInfo_ = null;
+      if (userInfoBuilder_ != null) {
+        userInfoBuilder_.dispose();
+        userInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -1054,6 +1143,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.transactionData_ =
             transactionDataBuilder_ == null ? transactionData_ : transactionDataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.userInfo_ = userInfoBuilder_ == null ? userInfo_ : userInfoBuilder_.build();
       }
     }
 
@@ -1162,6 +1254,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (other.hasTransactionData()) {
         mergeTransactionData(other.getTransactionData());
       }
+      if (other.hasUserInfo()) {
+        mergeUserInfo(other.getUserInfo());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1267,6 +1362,12 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 112
+            case 122:
+              {
+                input.readMessage(getUserInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1851,15 +1952,21 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Unique stable hashed user identifier for the request. The
-     * identifier must be hashed using hmac-sha256 with stable secret.
+     * Optional. Deprecated: use `user_info.account_id` instead.
+     * Unique stable hashed user identifier for the request. The identifier must
+     * be hashed using hmac-sha256 with stable secret.
      * </pre>
      *
-     * <code>bytes hashed_account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bytes hashed_account_id = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
+     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=666
      * @return The hashedAccountId.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getHashedAccountId() {
       return hashedAccountId_;
     }
@@ -1867,15 +1974,21 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Unique stable hashed user identifier for the request. The
-     * identifier must be hashed using hmac-sha256 with stable secret.
+     * Optional. Deprecated: use `user_info.account_id` instead.
+     * Unique stable hashed user identifier for the request. The identifier must
+     * be hashed using hmac-sha256 with stable secret.
      * </pre>
      *
-     * <code>bytes hashed_account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bytes hashed_account_id = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
+     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=666
      * @param value The hashedAccountId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setHashedAccountId(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1889,14 +2002,20 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Unique stable hashed user identifier for the request. The
-     * identifier must be hashed using hmac-sha256 with stable secret.
+     * Optional. Deprecated: use `user_info.account_id` instead.
+     * Unique stable hashed user identifier for the request. The identifier must
+     * be hashed using hmac-sha256 with stable secret.
      * </pre>
      *
-     * <code>bytes hashed_account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bytes hashed_account_id = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
+     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=666
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearHashedAccountId() {
       bitField0_ = (bitField0_ & ~0x00000020);
       hashedAccountId_ = getDefaultInstance().getHashedAccountId();
@@ -2133,7 +2252,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional JA3 fingerprint for SSL clients.
+     * Optional. JA3 fingerprint for SSL clients.
      * </pre>
      *
      * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2155,7 +2274,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional JA3 fingerprint for SSL clients.
+     * Optional. JA3 fingerprint for SSL clients.
      * </pre>
      *
      * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2177,7 +2296,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional JA3 fingerprint for SSL clients.
+     * Optional. JA3 fingerprint for SSL clients.
      * </pre>
      *
      * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2198,7 +2317,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional JA3 fingerprint for SSL clients.
+     * Optional. JA3 fingerprint for SSL clients.
      * </pre>
      *
      * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2215,7 +2334,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Optional JA3 fingerprint for SSL clients.
+     * Optional. JA3 fingerprint for SSL clients.
      * </pre>
      *
      * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2687,6 +2806,234 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         transactionData_ = null;
       }
       return transactionDataBuilder_;
+    }
+
+    private com.google.recaptchaenterprise.v1.UserInfo userInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.UserInfo,
+            com.google.recaptchaenterprise.v1.UserInfo.Builder,
+            com.google.recaptchaenterprise.v1.UserInfoOrBuilder>
+        userInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the user that generates this event, when they
+     * can be identified. They are often identified through the use of an account
+     * for logged-in requests or login/registration requests, or by providing user
+     * identifiers for guest actions like checkout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.UserInfo user_info = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the userInfo field is set.
+     */
+    public boolean hasUserInfo() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the user that generates this event, when they
+     * can be identified. They are often identified through the use of an account
+     * for logged-in requests or login/registration requests, or by providing user
+     * identifiers for guest actions like checkout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.UserInfo user_info = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The userInfo.
+     */
+    public com.google.recaptchaenterprise.v1.UserInfo getUserInfo() {
+      if (userInfoBuilder_ == null) {
+        return userInfo_ == null
+            ? com.google.recaptchaenterprise.v1.UserInfo.getDefaultInstance()
+            : userInfo_;
+      } else {
+        return userInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the user that generates this event, when they
+     * can be identified. They are often identified through the use of an account
+     * for logged-in requests or login/registration requests, or by providing user
+     * identifiers for guest actions like checkout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.UserInfo user_info = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setUserInfo(com.google.recaptchaenterprise.v1.UserInfo value) {
+      if (userInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        userInfo_ = value;
+      } else {
+        userInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the user that generates this event, when they
+     * can be identified. They are often identified through the use of an account
+     * for logged-in requests or login/registration requests, or by providing user
+     * identifiers for guest actions like checkout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.UserInfo user_info = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setUserInfo(com.google.recaptchaenterprise.v1.UserInfo.Builder builderForValue) {
+      if (userInfoBuilder_ == null) {
+        userInfo_ = builderForValue.build();
+      } else {
+        userInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the user that generates this event, when they
+     * can be identified. They are often identified through the use of an account
+     * for logged-in requests or login/registration requests, or by providing user
+     * identifiers for guest actions like checkout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.UserInfo user_info = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeUserInfo(com.google.recaptchaenterprise.v1.UserInfo value) {
+      if (userInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && userInfo_ != null
+            && userInfo_ != com.google.recaptchaenterprise.v1.UserInfo.getDefaultInstance()) {
+          getUserInfoBuilder().mergeFrom(value);
+        } else {
+          userInfo_ = value;
+        }
+      } else {
+        userInfoBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the user that generates this event, when they
+     * can be identified. They are often identified through the use of an account
+     * for logged-in requests or login/registration requests, or by providing user
+     * identifiers for guest actions like checkout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.UserInfo user_info = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearUserInfo() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      userInfo_ = null;
+      if (userInfoBuilder_ != null) {
+        userInfoBuilder_.dispose();
+        userInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the user that generates this event, when they
+     * can be identified. They are often identified through the use of an account
+     * for logged-in requests or login/registration requests, or by providing user
+     * identifiers for guest actions like checkout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.UserInfo user_info = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.UserInfo.Builder getUserInfoBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getUserInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the user that generates this event, when they
+     * can be identified. They are often identified through the use of an account
+     * for logged-in requests or login/registration requests, or by providing user
+     * identifiers for guest actions like checkout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.UserInfo user_info = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.UserInfoOrBuilder getUserInfoOrBuilder() {
+      if (userInfoBuilder_ != null) {
+        return userInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return userInfo_ == null
+            ? com.google.recaptchaenterprise.v1.UserInfo.getDefaultInstance()
+            : userInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the user that generates this event, when they
+     * can be identified. They are often identified through the use of an account
+     * for logged-in requests or login/registration requests, or by providing user
+     * identifiers for guest actions like checkout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.UserInfo user_info = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.UserInfo,
+            com.google.recaptchaenterprise.v1.UserInfo.Builder,
+            com.google.recaptchaenterprise.v1.UserInfoOrBuilder>
+        getUserInfoFieldBuilder() {
+      if (userInfoBuilder_ == null) {
+        userInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1.UserInfo,
+                com.google.recaptchaenterprise.v1.UserInfo.Builder,
+                com.google.recaptchaenterprise.v1.UserInfoOrBuilder>(
+                getUserInfo(), getParentForChildren(), isClean());
+        userInfo_ = null;
+      }
+      return userInfoBuilder_;
     }
 
     @java.lang.Override

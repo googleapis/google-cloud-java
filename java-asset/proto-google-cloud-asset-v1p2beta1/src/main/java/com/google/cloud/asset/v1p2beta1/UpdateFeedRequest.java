@@ -66,8 +66,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The new values of feed details. It must match an existing feed and the
-   * field `name` must be in the format of:
+   * Required. The new values of feed details. It must match an existing feed
+   * and the field `name` must be in the format of:
    * projects/project_number/feeds/feed_id or
    * folders/folder_number/feeds/feed_id or
    * organizations/organization_number/feeds/feed_id.
@@ -86,8 +86,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The new values of feed details. It must match an existing feed and the
-   * field `name` must be in the format of:
+   * Required. The new values of feed details. It must match an existing feed
+   * and the field `name` must be in the format of:
    * projects/project_number/feeds/feed_id or
    * folders/folder_number/feeds/feed_id or
    * organizations/organization_number/feeds/feed_id.
@@ -106,8 +106,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The new values of feed details. It must match an existing feed and the
-   * field `name` must be in the format of:
+   * Required. The new values of feed details. It must match an existing feed
+   * and the field `name` must be in the format of:
    * projects/project_number/feeds/feed_id or
    * folders/folder_number/feeds/feed_id or
    * organizations/organization_number/feeds/feed_id.
@@ -566,8 +566,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The new values of feed details. It must match an existing feed and the
-     * field `name` must be in the format of:
+     * Required. The new values of feed details. It must match an existing feed
+     * and the field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
@@ -585,8 +585,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The new values of feed details. It must match an existing feed and the
-     * field `name` must be in the format of:
+     * Required. The new values of feed details. It must match an existing feed
+     * and the field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
@@ -608,8 +608,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The new values of feed details. It must match an existing feed and the
-     * field `name` must be in the format of:
+     * Required. The new values of feed details. It must match an existing feed
+     * and the field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
@@ -635,8 +635,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The new values of feed details. It must match an existing feed and the
-     * field `name` must be in the format of:
+     * Required. The new values of feed details. It must match an existing feed
+     * and the field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
@@ -659,8 +659,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The new values of feed details. It must match an existing feed and the
-     * field `name` must be in the format of:
+     * Required. The new values of feed details. It must match an existing feed
+     * and the field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
@@ -689,8 +689,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The new values of feed details. It must match an existing feed and the
-     * field `name` must be in the format of:
+     * Required. The new values of feed details. It must match an existing feed
+     * and the field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
@@ -713,8 +713,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The new values of feed details. It must match an existing feed and the
-     * field `name` must be in the format of:
+     * Required. The new values of feed details. It must match an existing feed
+     * and the field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
@@ -732,8 +732,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The new values of feed details. It must match an existing feed and the
-     * field `name` must be in the format of:
+     * Required. The new values of feed details. It must match an existing feed
+     * and the field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.
@@ -753,8 +753,8 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The new values of feed details. It must match an existing feed and the
-     * field `name` must be in the format of:
+     * Required. The new values of feed details. It must match an existing feed
+     * and the field `name` must be in the format of:
      * projects/project_number/feeds/feed_id or
      * folders/folder_number/feeds/feed_id or
      * organizations/organization_number/feeds/feed_id.

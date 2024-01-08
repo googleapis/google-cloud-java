@@ -27,9 +27,8 @@ public interface AdvanceChildRolloutJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the `ChildRollout`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * Output only. Name of the `ChildRollout`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string rollout = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -41,9 +40,8 @@ public interface AdvanceChildRolloutJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the `ChildRollout`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * Output only. Name of the `ChildRollout`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string rollout = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

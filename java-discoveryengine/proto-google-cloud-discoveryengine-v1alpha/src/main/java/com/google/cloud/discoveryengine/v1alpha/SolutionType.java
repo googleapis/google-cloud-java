@@ -175,7 +175,7 @@ public enum SolutionType implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.discoveryengine.v1alpha.CommonProto.getDescriptor()
         .getEnumTypes()
-        .get(0);
+        .get(1);
   }
 
   private static final SolutionType[] VALUES = values();

@@ -68,10 +68,10 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * If set to true, allowed_package_names are not enforced.
+   * Optional. If set to true, allowed_package_names are not enforced.
    * </pre>
    *
-   * <code>bool allow_all_package_names = 2;</code>
+   * <code>bool allow_all_package_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowAllPackageNames.
    */
@@ -89,11 +89,12 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Android package names of apps allowed to use the key.
+   * Optional. Android package names of apps allowed to use the key.
    * Example: 'com.companyname.appname'
    * </pre>
    *
-   * <code>repeated string allowed_package_names = 1;</code>
+   * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the allowedPackageNames.
    */
@@ -104,11 +105,12 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Android package names of apps allowed to use the key.
+   * Optional. Android package names of apps allowed to use the key.
    * Example: 'com.companyname.appname'
    * </pre>
    *
-   * <code>repeated string allowed_package_names = 1;</code>
+   * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of allowedPackageNames.
    */
@@ -119,11 +121,12 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Android package names of apps allowed to use the key.
+   * Optional. Android package names of apps allowed to use the key.
    * Example: 'com.companyname.appname'
    * </pre>
    *
-   * <code>repeated string allowed_package_names = 1;</code>
+   * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The allowedPackageNames at the given index.
@@ -135,11 +138,12 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Android package names of apps allowed to use the key.
+   * Optional. Android package names of apps allowed to use the key.
    * Example: 'com.companyname.appname'
    * </pre>
    *
-   * <code>repeated string allowed_package_names = 1;</code>
+   * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the allowedPackageNames at the given index.
@@ -154,11 +158,14 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Set to true for keys that are used in an Android application that is
-   * available for download in app stores in addition to the Google Play Store.
+   * Optional. Set to true for keys that are used in an Android application that
+   * is available for download in app stores in addition to the Google Play
+   * Store.
    * </pre>
    *
-   * <code>bool support_non_google_app_store_distribution = 3;</code>
+   * <code>
+   * bool support_non_google_app_store_distribution = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The supportNonGoogleAppStoreDistribution.
    */
@@ -577,10 +584,10 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set to true, allowed_package_names are not enforced.
+     * Optional. If set to true, allowed_package_names are not enforced.
      * </pre>
      *
-     * <code>bool allow_all_package_names = 2;</code>
+     * <code>bool allow_all_package_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allowAllPackageNames.
      */
@@ -592,10 +599,10 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set to true, allowed_package_names are not enforced.
+     * Optional. If set to true, allowed_package_names are not enforced.
      * </pre>
      *
-     * <code>bool allow_all_package_names = 2;</code>
+     * <code>bool allow_all_package_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The allowAllPackageNames to set.
      * @return This builder for chaining.
@@ -611,10 +618,10 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * If set to true, allowed_package_names are not enforced.
+     * Optional. If set to true, allowed_package_names are not enforced.
      * </pre>
      *
-     * <code>bool allow_all_package_names = 2;</code>
+     * <code>bool allow_all_package_names = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -638,11 +645,12 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Android package names of apps allowed to use the key.
+     * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_package_names = 1;</code>
+     * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return A list containing the allowedPackageNames.
      */
@@ -654,11 +662,12 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Android package names of apps allowed to use the key.
+     * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_package_names = 1;</code>
+     * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The count of allowedPackageNames.
      */
@@ -669,11 +678,12 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Android package names of apps allowed to use the key.
+     * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_package_names = 1;</code>
+     * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The allowedPackageNames at the given index.
@@ -685,11 +695,12 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Android package names of apps allowed to use the key.
+     * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_package_names = 1;</code>
+     * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the allowedPackageNames at the given index.
@@ -701,11 +712,12 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Android package names of apps allowed to use the key.
+     * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_package_names = 1;</code>
+     * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The allowedPackageNames to set.
@@ -725,11 +737,12 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Android package names of apps allowed to use the key.
+     * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_package_names = 1;</code>
+     * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The allowedPackageNames to add.
      * @return This builder for chaining.
@@ -748,11 +761,12 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Android package names of apps allowed to use the key.
+     * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_package_names = 1;</code>
+     * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param values The allowedPackageNames to add.
      * @return This builder for chaining.
@@ -768,11 +782,12 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Android package names of apps allowed to use the key.
+     * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_package_names = 1;</code>
+     * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -787,11 +802,12 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Android package names of apps allowed to use the key.
+     * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
      * </pre>
      *
-     * <code>repeated string allowed_package_names = 1;</code>
+     * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes of the allowedPackageNames to add.
      * @return This builder for chaining.
@@ -813,11 +829,14 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Set to true for keys that are used in an Android application that is
-     * available for download in app stores in addition to the Google Play Store.
+     * Optional. Set to true for keys that are used in an Android application that
+     * is available for download in app stores in addition to the Google Play
+     * Store.
      * </pre>
      *
-     * <code>bool support_non_google_app_store_distribution = 3;</code>
+     * <code>
+     * bool support_non_google_app_store_distribution = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The supportNonGoogleAppStoreDistribution.
      */
@@ -829,11 +848,14 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Set to true for keys that are used in an Android application that is
-     * available for download in app stores in addition to the Google Play Store.
+     * Optional. Set to true for keys that are used in an Android application that
+     * is available for download in app stores in addition to the Google Play
+     * Store.
      * </pre>
      *
-     * <code>bool support_non_google_app_store_distribution = 3;</code>
+     * <code>
+     * bool support_non_google_app_store_distribution = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The supportNonGoogleAppStoreDistribution to set.
      * @return This builder for chaining.
@@ -849,11 +871,14 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Set to true for keys that are used in an Android application that is
-     * available for download in app stores in addition to the Google Play Store.
+     * Optional. Set to true for keys that are used in an Android application that
+     * is available for download in app stores in addition to the Google Play
+     * Store.
      * </pre>
      *
-     * <code>bool support_non_google_app_store_distribution = 3;</code>
+     * <code>
+     * bool support_non_google_app_store_distribution = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */

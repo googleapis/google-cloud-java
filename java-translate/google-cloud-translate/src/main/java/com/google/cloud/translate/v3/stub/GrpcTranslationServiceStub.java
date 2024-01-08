@@ -16,6 +16,9 @@
 
 package com.google.cloud.translate.v3.stub;
 
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtDatasetsPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtFilesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtSentencesPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossariesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -26,22 +29,39 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.translate.v3.AdaptiveMtDataset;
+import com.google.cloud.translate.v3.AdaptiveMtFile;
+import com.google.cloud.translate.v3.AdaptiveMtTranslateRequest;
+import com.google.cloud.translate.v3.AdaptiveMtTranslateResponse;
 import com.google.cloud.translate.v3.BatchTranslateDocumentMetadata;
 import com.google.cloud.translate.v3.BatchTranslateDocumentRequest;
 import com.google.cloud.translate.v3.BatchTranslateDocumentResponse;
 import com.google.cloud.translate.v3.BatchTranslateMetadata;
 import com.google.cloud.translate.v3.BatchTranslateResponse;
 import com.google.cloud.translate.v3.BatchTranslateTextRequest;
+import com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest;
 import com.google.cloud.translate.v3.CreateGlossaryMetadata;
 import com.google.cloud.translate.v3.CreateGlossaryRequest;
+import com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest;
+import com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest;
 import com.google.cloud.translate.v3.DeleteGlossaryMetadata;
 import com.google.cloud.translate.v3.DeleteGlossaryRequest;
 import com.google.cloud.translate.v3.DeleteGlossaryResponse;
 import com.google.cloud.translate.v3.DetectLanguageRequest;
 import com.google.cloud.translate.v3.DetectLanguageResponse;
+import com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest;
+import com.google.cloud.translate.v3.GetAdaptiveMtFileRequest;
 import com.google.cloud.translate.v3.GetGlossaryRequest;
 import com.google.cloud.translate.v3.GetSupportedLanguagesRequest;
 import com.google.cloud.translate.v3.Glossary;
+import com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest;
+import com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse;
+import com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest;
+import com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse;
+import com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest;
+import com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse;
+import com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest;
+import com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse;
 import com.google.cloud.translate.v3.ListGlossariesRequest;
 import com.google.cloud.translate.v3.ListGlossariesResponse;
 import com.google.cloud.translate.v3.SupportedLanguages;
@@ -51,6 +71,7 @@ import com.google.cloud.translate.v3.TranslateTextRequest;
 import com.google.cloud.translate.v3.TranslateTextResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -170,6 +191,124 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      createAdaptiveMtDatasetMethodDescriptor =
+          MethodDescriptor.<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/CreateAdaptiveMtDataset")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAdaptiveMtDatasetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AdaptiveMtDataset.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteAdaptiveMtDatasetRequest, Empty>
+      deleteAdaptiveMtDatasetMethodDescriptor =
+          MethodDescriptor.<DeleteAdaptiveMtDatasetRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/DeleteAdaptiveMtDataset")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAdaptiveMtDatasetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      getAdaptiveMtDatasetMethodDescriptor =
+          MethodDescriptor.<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/GetAdaptiveMtDataset")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAdaptiveMtDatasetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AdaptiveMtDataset.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>
+      listAdaptiveMtDatasetsMethodDescriptor =
+          MethodDescriptor
+              .<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/ListAdaptiveMtDatasets")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAdaptiveMtDatasetsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAdaptiveMtDatasetsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+      adaptiveMtTranslateMethodDescriptor =
+          MethodDescriptor.<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/AdaptiveMtTranslate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AdaptiveMtTranslateRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AdaptiveMtTranslateResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAdaptiveMtFileRequest, AdaptiveMtFile>
+      getAdaptiveMtFileMethodDescriptor =
+          MethodDescriptor.<GetAdaptiveMtFileRequest, AdaptiveMtFile>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.translation.v3.TranslationService/GetAdaptiveMtFile")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAdaptiveMtFileRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AdaptiveMtFile.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteAdaptiveMtFileRequest, Empty>
+      deleteAdaptiveMtFileMethodDescriptor =
+          MethodDescriptor.<DeleteAdaptiveMtFileRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/DeleteAdaptiveMtFile")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAdaptiveMtFileRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+      importAdaptiveMtFileMethodDescriptor =
+          MethodDescriptor.<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/ImportAdaptiveMtFile")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportAdaptiveMtFileRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ImportAdaptiveMtFileResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>
+      listAdaptiveMtFilesMethodDescriptor =
+          MethodDescriptor.<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/ListAdaptiveMtFiles")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAdaptiveMtFilesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAdaptiveMtFilesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>
+      listAdaptiveMtSentencesMethodDescriptor =
+          MethodDescriptor
+              .<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.translation.v3.TranslationService/ListAdaptiveMtSentences")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAdaptiveMtSentencesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAdaptiveMtSentencesResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<TranslateTextRequest, TranslateTextResponse> translateTextCallable;
   private final UnaryCallable<DetectLanguageRequest, DetectLanguageResponse> detectLanguageCallable;
   private final UnaryCallable<GetSupportedLanguagesRequest, SupportedLanguages>
@@ -198,6 +337,30 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
   private final OperationCallable<
           DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationCallable;
+  private final UnaryCallable<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      createAdaptiveMtDatasetCallable;
+  private final UnaryCallable<DeleteAdaptiveMtDatasetRequest, Empty>
+      deleteAdaptiveMtDatasetCallable;
+  private final UnaryCallable<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      getAdaptiveMtDatasetCallable;
+  private final UnaryCallable<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>
+      listAdaptiveMtDatasetsCallable;
+  private final UnaryCallable<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsPagedResponse>
+      listAdaptiveMtDatasetsPagedCallable;
+  private final UnaryCallable<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+      adaptiveMtTranslateCallable;
+  private final UnaryCallable<GetAdaptiveMtFileRequest, AdaptiveMtFile> getAdaptiveMtFileCallable;
+  private final UnaryCallable<DeleteAdaptiveMtFileRequest, Empty> deleteAdaptiveMtFileCallable;
+  private final UnaryCallable<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+      importAdaptiveMtFileCallable;
+  private final UnaryCallable<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>
+      listAdaptiveMtFilesCallable;
+  private final UnaryCallable<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesPagedResponse>
+      listAdaptiveMtFilesPagedCallable;
+  private final UnaryCallable<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>
+      listAdaptiveMtSentencesCallable;
+  private final UnaryCallable<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesPagedResponse>
+      listAdaptiveMtSentencesPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -348,6 +511,116 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+        createAdaptiveMtDatasetTransportSettings =
+            GrpcCallSettings.<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>newBuilder()
+                .setMethodDescriptor(createAdaptiveMtDatasetMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteAdaptiveMtDatasetRequest, Empty>
+        deleteAdaptiveMtDatasetTransportSettings =
+            GrpcCallSettings.<DeleteAdaptiveMtDatasetRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteAdaptiveMtDatasetMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+        getAdaptiveMtDatasetTransportSettings =
+            GrpcCallSettings.<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>newBuilder()
+                .setMethodDescriptor(getAdaptiveMtDatasetMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>
+        listAdaptiveMtDatasetsTransportSettings =
+            GrpcCallSettings
+                .<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>newBuilder()
+                .setMethodDescriptor(listAdaptiveMtDatasetsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+        adaptiveMtTranslateTransportSettings =
+            GrpcCallSettings.<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>newBuilder()
+                .setMethodDescriptor(adaptiveMtTranslateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetAdaptiveMtFileRequest, AdaptiveMtFile> getAdaptiveMtFileTransportSettings =
+        GrpcCallSettings.<GetAdaptiveMtFileRequest, AdaptiveMtFile>newBuilder()
+            .setMethodDescriptor(getAdaptiveMtFileMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteAdaptiveMtFileRequest, Empty> deleteAdaptiveMtFileTransportSettings =
+        GrpcCallSettings.<DeleteAdaptiveMtFileRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAdaptiveMtFileMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+        importAdaptiveMtFileTransportSettings =
+            GrpcCallSettings.<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>newBuilder()
+                .setMethodDescriptor(importAdaptiveMtFileMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>
+        listAdaptiveMtFilesTransportSettings =
+            GrpcCallSettings.<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>newBuilder()
+                .setMethodDescriptor(listAdaptiveMtFilesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>
+        listAdaptiveMtSentencesTransportSettings =
+            GrpcCallSettings
+                .<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>newBuilder()
+                .setMethodDescriptor(listAdaptiveMtSentencesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.translateTextCallable =
         callableFactory.createUnaryCallable(
@@ -414,6 +687,71 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
             settings.deleteGlossaryOperationSettings(),
             clientContext,
             operationsStub);
+    this.createAdaptiveMtDatasetCallable =
+        callableFactory.createUnaryCallable(
+            createAdaptiveMtDatasetTransportSettings,
+            settings.createAdaptiveMtDatasetSettings(),
+            clientContext);
+    this.deleteAdaptiveMtDatasetCallable =
+        callableFactory.createUnaryCallable(
+            deleteAdaptiveMtDatasetTransportSettings,
+            settings.deleteAdaptiveMtDatasetSettings(),
+            clientContext);
+    this.getAdaptiveMtDatasetCallable =
+        callableFactory.createUnaryCallable(
+            getAdaptiveMtDatasetTransportSettings,
+            settings.getAdaptiveMtDatasetSettings(),
+            clientContext);
+    this.listAdaptiveMtDatasetsCallable =
+        callableFactory.createUnaryCallable(
+            listAdaptiveMtDatasetsTransportSettings,
+            settings.listAdaptiveMtDatasetsSettings(),
+            clientContext);
+    this.listAdaptiveMtDatasetsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAdaptiveMtDatasetsTransportSettings,
+            settings.listAdaptiveMtDatasetsSettings(),
+            clientContext);
+    this.adaptiveMtTranslateCallable =
+        callableFactory.createUnaryCallable(
+            adaptiveMtTranslateTransportSettings,
+            settings.adaptiveMtTranslateSettings(),
+            clientContext);
+    this.getAdaptiveMtFileCallable =
+        callableFactory.createUnaryCallable(
+            getAdaptiveMtFileTransportSettings,
+            settings.getAdaptiveMtFileSettings(),
+            clientContext);
+    this.deleteAdaptiveMtFileCallable =
+        callableFactory.createUnaryCallable(
+            deleteAdaptiveMtFileTransportSettings,
+            settings.deleteAdaptiveMtFileSettings(),
+            clientContext);
+    this.importAdaptiveMtFileCallable =
+        callableFactory.createUnaryCallable(
+            importAdaptiveMtFileTransportSettings,
+            settings.importAdaptiveMtFileSettings(),
+            clientContext);
+    this.listAdaptiveMtFilesCallable =
+        callableFactory.createUnaryCallable(
+            listAdaptiveMtFilesTransportSettings,
+            settings.listAdaptiveMtFilesSettings(),
+            clientContext);
+    this.listAdaptiveMtFilesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAdaptiveMtFilesTransportSettings,
+            settings.listAdaptiveMtFilesSettings(),
+            clientContext);
+    this.listAdaptiveMtSentencesCallable =
+        callableFactory.createUnaryCallable(
+            listAdaptiveMtSentencesTransportSettings,
+            settings.listAdaptiveMtSentencesSettings(),
+            clientContext);
+    this.listAdaptiveMtSentencesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAdaptiveMtSentencesTransportSettings,
+            settings.listAdaptiveMtSentencesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -507,6 +845,81 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
   public OperationCallable<DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationCallable() {
     return deleteGlossaryOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      createAdaptiveMtDatasetCallable() {
+    return createAdaptiveMtDatasetCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAdaptiveMtDatasetRequest, Empty> deleteAdaptiveMtDatasetCallable() {
+    return deleteAdaptiveMtDatasetCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      getAdaptiveMtDatasetCallable() {
+    return getAdaptiveMtDatasetCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>
+      listAdaptiveMtDatasetsCallable() {
+    return listAdaptiveMtDatasetsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsPagedResponse>
+      listAdaptiveMtDatasetsPagedCallable() {
+    return listAdaptiveMtDatasetsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+      adaptiveMtTranslateCallable() {
+    return adaptiveMtTranslateCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAdaptiveMtFileRequest, AdaptiveMtFile> getAdaptiveMtFileCallable() {
+    return getAdaptiveMtFileCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAdaptiveMtFileRequest, Empty> deleteAdaptiveMtFileCallable() {
+    return deleteAdaptiveMtFileCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+      importAdaptiveMtFileCallable() {
+    return importAdaptiveMtFileCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse>
+      listAdaptiveMtFilesCallable() {
+    return listAdaptiveMtFilesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesPagedResponse>
+      listAdaptiveMtFilesPagedCallable() {
+    return listAdaptiveMtFilesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>
+      listAdaptiveMtSentencesCallable() {
+    return listAdaptiveMtSentencesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesPagedResponse>
+      listAdaptiveMtSentencesPagedCallable() {
+    return listAdaptiveMtSentencesPagedCallable;
   }
 
   @Override

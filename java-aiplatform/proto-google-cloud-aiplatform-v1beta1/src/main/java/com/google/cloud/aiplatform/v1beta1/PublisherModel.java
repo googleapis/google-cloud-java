@@ -43,6 +43,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     openSourceCategory_ = 0;
     frameworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
     launchStage_ = 0;
+    versionState_ = 0;
     publisherModelTemplate_ = "";
   }
 
@@ -504,6 +505,165 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.PublisherModel.LaunchStage)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * An enum representing the state of the PublicModelVersion.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.aiplatform.v1beta1.PublisherModel.VersionState}
+   */
+  public enum VersionState implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The version state is unspecified.
+     * </pre>
+     *
+     * <code>VERSION_STATE_UNSPECIFIED = 0;</code>
+     */
+    VERSION_STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Used to indicate the version is stable.
+     * </pre>
+     *
+     * <code>VERSION_STATE_STABLE = 1;</code>
+     */
+    VERSION_STATE_STABLE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Used to indicate the version is unstable.
+     * </pre>
+     *
+     * <code>VERSION_STATE_UNSTABLE = 2;</code>
+     */
+    VERSION_STATE_UNSTABLE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The version state is unspecified.
+     * </pre>
+     *
+     * <code>VERSION_STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int VERSION_STATE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Used to indicate the version is stable.
+     * </pre>
+     *
+     * <code>VERSION_STATE_STABLE = 1;</code>
+     */
+    public static final int VERSION_STATE_STABLE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Used to indicate the version is unstable.
+     * </pre>
+     *
+     * <code>VERSION_STATE_UNSTABLE = 2;</code>
+     */
+    public static final int VERSION_STATE_UNSTABLE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static VersionState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static VersionState forNumber(int value) {
+      switch (value) {
+        case 0:
+          return VERSION_STATE_UNSPECIFIED;
+        case 1:
+          return VERSION_STATE_STABLE;
+        case 2:
+          return VERSION_STATE_UNSTABLE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<VersionState> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<VersionState> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<VersionState>() {
+          public VersionState findValueByNumber(int number) {
+            return VersionState.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.PublisherModel.getDescriptor()
+          .getEnumTypes()
+          .get(2);
+    }
+
+    private static final VersionState[] VALUES = values();
+
+    public static VersionState valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private VersionState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.PublisherModel.VersionState)
+  }
+
   public interface ResourceReferenceOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference)
@@ -583,6 +743,80 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getResourceNameBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * Use case (CUJ) of the resource.
+     * </pre>
+     *
+     * <code>string use_case = 3;</code>
+     *
+     * @return Whether the useCase field is set.
+     */
+    boolean hasUseCase();
+    /**
+     *
+     *
+     * <pre>
+     * Use case (CUJ) of the resource.
+     * </pre>
+     *
+     * <code>string use_case = 3;</code>
+     *
+     * @return The useCase.
+     */
+    java.lang.String getUseCase();
+    /**
+     *
+     *
+     * <pre>
+     * Use case (CUJ) of the resource.
+     * </pre>
+     *
+     * <code>string use_case = 3;</code>
+     *
+     * @return The bytes for useCase.
+     */
+    com.google.protobuf.ByteString getUseCaseBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Description of the resource.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    boolean hasDescription();
+    /**
+     *
+     *
+     * <pre>
+     * Description of the resource.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     *
+     *
+     * <pre>
+     * Description of the resource.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString getDescriptionBytes();
+
     com.google.cloud.aiplatform.v1beta1.PublisherModel.ResourceReference.ReferenceCase
         getReferenceCase();
   }
@@ -639,6 +873,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       URI(1),
       RESOURCE_NAME(2),
+      USE_CASE(3),
+      DESCRIPTION(4),
       REFERENCE_NOT_SET(0);
       private final int value;
 
@@ -661,6 +897,10 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             return URI;
           case 2:
             return RESOURCE_NAME;
+          case 3:
+            return USE_CASE;
+          case 4:
+            return DESCRIPTION;
           case 0:
             return REFERENCE_NOT_SET;
           default:
@@ -817,6 +1057,146 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int USE_CASE_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Use case (CUJ) of the resource.
+     * </pre>
+     *
+     * <code>string use_case = 3;</code>
+     *
+     * @return Whether the useCase field is set.
+     */
+    public boolean hasUseCase() {
+      return referenceCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use case (CUJ) of the resource.
+     * </pre>
+     *
+     * <code>string use_case = 3;</code>
+     *
+     * @return The useCase.
+     */
+    public java.lang.String getUseCase() {
+      java.lang.Object ref = "";
+      if (referenceCase_ == 3) {
+        ref = reference_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (referenceCase_ == 3) {
+          reference_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use case (CUJ) of the resource.
+     * </pre>
+     *
+     * <code>string use_case = 3;</code>
+     *
+     * @return The bytes for useCase.
+     */
+    public com.google.protobuf.ByteString getUseCaseBytes() {
+      java.lang.Object ref = "";
+      if (referenceCase_ == 3) {
+        ref = reference_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (referenceCase_ == 3) {
+          reference_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Description of the resource.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return referenceCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Description of the resource.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = "";
+      if (referenceCase_ == 4) {
+        ref = reference_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (referenceCase_ == 4) {
+          reference_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Description of the resource.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = "";
+      if (referenceCase_ == 4) {
+        ref = reference_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (referenceCase_ == 4) {
+          reference_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -837,6 +1217,12 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (referenceCase_ == 2) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, reference_);
       }
+      if (referenceCase_ == 3) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reference_);
+      }
+      if (referenceCase_ == 4) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, reference_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -851,6 +1237,12 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
       if (referenceCase_ == 2) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, reference_);
+      }
+      if (referenceCase_ == 3) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reference_);
+      }
+      if (referenceCase_ == 4) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, reference_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -876,6 +1268,12 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         case 2:
           if (!getResourceName().equals(other.getResourceName())) return false;
           break;
+        case 3:
+          if (!getUseCase().equals(other.getUseCase())) return false;
+          break;
+        case 4:
+          if (!getDescription().equals(other.getDescription())) return false;
+          break;
         case 0:
         default:
       }
@@ -898,6 +1296,14 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         case 2:
           hash = (37 * hash) + RESOURCE_NAME_FIELD_NUMBER;
           hash = (53 * hash) + getResourceName().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + USE_CASE_FIELD_NUMBER;
+          hash = (53 * hash) + getUseCase().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+          hash = (53 * hash) + getDescription().hashCode();
           break;
         case 0:
         default:
@@ -1163,6 +1569,20 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
               onChanged();
               break;
             }
+          case USE_CASE:
+            {
+              referenceCase_ = 3;
+              reference_ = other.reference_;
+              onChanged();
+              break;
+            }
+          case DESCRIPTION:
+            {
+              referenceCase_ = 4;
+              reference_ = other.reference_;
+              onChanged();
+              break;
+            }
           case REFERENCE_NOT_SET:
             {
               break;
@@ -1208,6 +1628,20 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                   reference_ = s;
                   break;
                 } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  referenceCase_ = 3;
+                  reference_ = s;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  referenceCase_ = 4;
+                  reference_ = s;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1504,6 +1938,274 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         referenceCase_ = 2;
+        reference_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Use case (CUJ) of the resource.
+       * </pre>
+       *
+       * <code>string use_case = 3;</code>
+       *
+       * @return Whether the useCase field is set.
+       */
+      @java.lang.Override
+      public boolean hasUseCase() {
+        return referenceCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use case (CUJ) of the resource.
+       * </pre>
+       *
+       * <code>string use_case = 3;</code>
+       *
+       * @return The useCase.
+       */
+      @java.lang.Override
+      public java.lang.String getUseCase() {
+        java.lang.Object ref = "";
+        if (referenceCase_ == 3) {
+          ref = reference_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (referenceCase_ == 3) {
+            reference_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use case (CUJ) of the resource.
+       * </pre>
+       *
+       * <code>string use_case = 3;</code>
+       *
+       * @return The bytes for useCase.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getUseCaseBytes() {
+        java.lang.Object ref = "";
+        if (referenceCase_ == 3) {
+          ref = reference_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (referenceCase_ == 3) {
+            reference_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use case (CUJ) of the resource.
+       * </pre>
+       *
+       * <code>string use_case = 3;</code>
+       *
+       * @param value The useCase to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUseCase(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        referenceCase_ = 3;
+        reference_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use case (CUJ) of the resource.
+       * </pre>
+       *
+       * <code>string use_case = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUseCase() {
+        if (referenceCase_ == 3) {
+          referenceCase_ = 0;
+          reference_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use case (CUJ) of the resource.
+       * </pre>
+       *
+       * <code>string use_case = 3;</code>
+       *
+       * @param value The bytes for useCase to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUseCaseBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        referenceCase_ = 3;
+        reference_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Description of the resource.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       *
+       * @return Whether the description field is set.
+       */
+      @java.lang.Override
+      public boolean hasDescription() {
+        return referenceCase_ == 4;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Description of the resource.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       *
+       * @return The description.
+       */
+      @java.lang.Override
+      public java.lang.String getDescription() {
+        java.lang.Object ref = "";
+        if (referenceCase_ == 4) {
+          ref = reference_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (referenceCase_ == 4) {
+            reference_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Description of the resource.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       *
+       * @return The bytes for description.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDescriptionBytes() {
+        java.lang.Object ref = "";
+        if (referenceCase_ == 4) {
+          ref = reference_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (referenceCase_ == 4) {
+            reference_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Description of the resource.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       *
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        referenceCase_ = 4;
+        reference_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Description of the resource.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        if (referenceCase_ == 4) {
+          referenceCase_ = 0;
+          reference_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Description of the resource.
+       * </pre>
+       *
+       * <code>string description = 4;</code>
+       *
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        referenceCase_ = 4;
         reference_ = value;
         onChanged();
         return this;
@@ -6738,6 +7440,33 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getTitleBytes();
 
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The signed URI for ephemeral Cloud Storage access to model
+       * artifact.
+       * </pre>
+       *
+       * <code>string public_artifact_uri = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The publicArtifactUri.
+       */
+      java.lang.String getPublicArtifactUri();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The signed URI for ephemeral Cloud Storage access to model
+       * artifact.
+       * </pre>
+       *
+       * <code>string public_artifact_uri = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for publicArtifactUri.
+       */
+      com.google.protobuf.ByteString getPublicArtifactUriBytes();
+
       com.google.cloud.aiplatform.v1beta1.PublisherModel.CallToAction.Deploy.PredictionResourcesCase
           getPredictionResourcesCase();
     }
@@ -6765,6 +7494,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         modelDisplayName_ = "";
         artifactUri_ = "";
         title_ = "";
+        publicArtifactUri_ = "";
       }
 
       @java.lang.Override
@@ -7302,6 +8032,59 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int PUBLIC_ARTIFACT_URI_FIELD_NUMBER = 9;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object publicArtifactUri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The signed URI for ephemeral Cloud Storage access to model
+       * artifact.
+       * </pre>
+       *
+       * <code>string public_artifact_uri = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The publicArtifactUri.
+       */
+      @java.lang.Override
+      public java.lang.String getPublicArtifactUri() {
+        java.lang.Object ref = publicArtifactUri_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          publicArtifactUri_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The signed URI for ephemeral Cloud Storage access to model
+       * artifact.
+       * </pre>
+       *
+       * <code>string public_artifact_uri = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for publicArtifactUri.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getPublicArtifactUriBytes() {
+        java.lang.Object ref = publicArtifactUri_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          publicArtifactUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -7342,6 +8125,9 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 8, title_);
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicArtifactUri_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 9, publicArtifactUri_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -7380,6 +8166,9 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, title_);
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicArtifactUri_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, publicArtifactUri_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -7408,6 +8197,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         if (!getArtifactUri().equals(other.getArtifactUri())) return false;
         if (!getTitle().equals(other.getTitle())) return false;
+        if (!getPublicArtifactUri().equals(other.getPublicArtifactUri())) return false;
         if (!getPredictionResourcesCase().equals(other.getPredictionResourcesCase())) return false;
         switch (predictionResourcesCase_) {
           case 5:
@@ -7447,6 +8237,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getArtifactUri().hashCode();
         hash = (37 * hash) + TITLE_FIELD_NUMBER;
         hash = (53 * hash) + getTitle().hashCode();
+        hash = (37 * hash) + PUBLIC_ARTIFACT_URI_FIELD_NUMBER;
+        hash = (53 * hash) + getPublicArtifactUri().hashCode();
         switch (predictionResourcesCase_) {
           case 5:
             hash = (37 * hash) + DEDICATED_RESOURCES_FIELD_NUMBER;
@@ -7635,6 +8427,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           artifactUri_ = "";
           title_ = "";
+          publicArtifactUri_ = "";
           predictionResourcesCase_ = 0;
           predictionResources_ = null;
           return this;
@@ -7697,6 +8490,9 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           }
           if (((from_bitField0_ & 0x00000080) != 0)) {
             result.title_ = title_;
+          }
+          if (((from_bitField0_ & 0x00000100) != 0)) {
+            result.publicArtifactUri_ = publicArtifactUri_;
           }
         }
 
@@ -7783,6 +8579,11 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           if (!other.getTitle().isEmpty()) {
             title_ = other.title_;
             bitField0_ |= 0x00000080;
+            onChanged();
+          }
+          if (!other.getPublicArtifactUri().isEmpty()) {
+            publicArtifactUri_ = other.publicArtifactUri_;
+            bitField0_ |= 0x00000100;
             onChanged();
           }
           switch (other.getPredictionResourcesCase()) {
@@ -7887,6 +8688,12 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000080;
                     break;
                   } // case 66
+                case 74:
+                  {
+                    publicArtifactUri_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000100;
+                    break;
+                  } // case 74
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9271,6 +10078,117 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           title_ = value;
           bitField0_ |= 0x00000080;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object publicArtifactUri_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The signed URI for ephemeral Cloud Storage access to model
+         * artifact.
+         * </pre>
+         *
+         * <code>string public_artifact_uri = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The publicArtifactUri.
+         */
+        public java.lang.String getPublicArtifactUri() {
+          java.lang.Object ref = publicArtifactUri_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            publicArtifactUri_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The signed URI for ephemeral Cloud Storage access to model
+         * artifact.
+         * </pre>
+         *
+         * <code>string public_artifact_uri = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for publicArtifactUri.
+         */
+        public com.google.protobuf.ByteString getPublicArtifactUriBytes() {
+          java.lang.Object ref = publicArtifactUri_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            publicArtifactUri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The signed URI for ephemeral Cloud Storage access to model
+         * artifact.
+         * </pre>
+         *
+         * <code>string public_artifact_uri = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The publicArtifactUri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPublicArtifactUri(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          publicArtifactUri_ = value;
+          bitField0_ |= 0x00000100;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The signed URI for ephemeral Cloud Storage access to model
+         * artifact.
+         * </pre>
+         *
+         * <code>string public_artifact_uri = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPublicArtifactUri() {
+          publicArtifactUri_ = getDefaultInstance().getPublicArtifactUri();
+          bitField0_ = (bitField0_ & ~0x00000100);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The signed URI for ephemeral Cloud Storage access to model
+         * artifact.
+         * </pre>
+         *
+         * <code>string public_artifact_uri = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for publicArtifactUri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPublicArtifactUriBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          publicArtifactUri_ = value;
+          bitField0_ |= 0x00000100;
           onChanged();
           return this;
         }
@@ -13346,6 +14264,47 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int VERSION_STATE_FIELD_NUMBER = 37;
+  private int versionState_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates the state of the model version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PublisherModel.VersionState version_state = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for versionState.
+   */
+  @java.lang.Override
+  public int getVersionStateValue() {
+    return versionState_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates the state of the model version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PublisherModel.VersionState version_state = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The versionState.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PublisherModel.VersionState getVersionState() {
+    com.google.cloud.aiplatform.v1beta1.PublisherModel.VersionState result =
+        com.google.cloud.aiplatform.v1beta1.PublisherModel.VersionState.forNumber(versionState_);
+    return result == null
+        ? com.google.cloud.aiplatform.v1beta1.PublisherModel.VersionState.UNRECOGNIZED
+        : result;
+  }
+
   public static final int PUBLISHER_MODEL_TEMPLATE_FIELD_NUMBER = 30;
 
   @SuppressWarnings("serial")
@@ -13514,6 +14473,11 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     if (predictSchemata_ != null) {
       output.writeMessage(31, getPredictSchemata());
     }
+    if (versionState_
+        != com.google.cloud.aiplatform.v1beta1.PublisherModel.VersionState.VERSION_STATE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(37, versionState_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -13560,6 +14524,11 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     if (predictSchemata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getPredictSchemata());
     }
+    if (versionState_
+        != com.google.cloud.aiplatform.v1beta1.PublisherModel.VersionState.VERSION_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(37, versionState_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -13589,6 +14558,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getFrameworksList().equals(other.getFrameworksList())) return false;
     if (launchStage_ != other.launchStage_) return false;
+    if (versionState_ != other.versionState_) return false;
     if (!getPublisherModelTemplate().equals(other.getPublisherModelTemplate())) return false;
     if (hasPredictSchemata() != other.hasPredictSchemata()) return false;
     if (hasPredictSchemata()) {
@@ -13625,6 +14595,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + LAUNCH_STAGE_FIELD_NUMBER;
     hash = (53 * hash) + launchStage_;
+    hash = (37 * hash) + VERSION_STATE_FIELD_NUMBER;
+    hash = (53 * hash) + versionState_;
     hash = (37 * hash) + PUBLISHER_MODEL_TEMPLATE_FIELD_NUMBER;
     hash = (53 * hash) + getPublisherModelTemplate().hashCode();
     if (hasPredictSchemata()) {
@@ -13785,6 +14757,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
       frameworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       launchStage_ = 0;
+      versionState_ = 0;
       publisherModelTemplate_ = "";
       predictSchemata_ = null;
       if (predictSchemataBuilder_ != null) {
@@ -13851,9 +14824,12 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         result.launchStage_ = launchStage_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.publisherModelTemplate_ = publisherModelTemplate_;
+        result.versionState_ = versionState_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.publisherModelTemplate_ = publisherModelTemplate_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.predictSchemata_ =
             predictSchemataBuilder_ == null ? predictSchemata_ : predictSchemataBuilder_.build();
       }
@@ -13937,9 +14913,12 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (other.launchStage_ != 0) {
         setLaunchStageValue(other.getLaunchStageValue());
       }
+      if (other.versionState_ != 0) {
+        setVersionStateValue(other.getVersionStateValue());
+      }
       if (!other.getPublisherModelTemplate().isEmpty()) {
         publisherModelTemplate_ = other.publisherModelTemplate_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasPredictSchemata()) {
@@ -14018,15 +14997,21 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
             case 242:
               {
                 publisherModelTemplate_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 242
             case 250:
               {
                 input.readMessage(getPredictSchemataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 250
+            case 296:
+              {
+                versionState_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 296
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -15085,6 +16070,109 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int versionState_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the state of the model version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.VersionState version_state = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for versionState.
+     */
+    @java.lang.Override
+    public int getVersionStateValue() {
+      return versionState_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the state of the model version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.VersionState version_state = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for versionState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionStateValue(int value) {
+      versionState_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the state of the model version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.VersionState version_state = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The versionState.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PublisherModel.VersionState getVersionState() {
+      com.google.cloud.aiplatform.v1beta1.PublisherModel.VersionState result =
+          com.google.cloud.aiplatform.v1beta1.PublisherModel.VersionState.forNumber(versionState_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1beta1.PublisherModel.VersionState.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the state of the model version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.VersionState version_state = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The versionState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionState(
+        com.google.cloud.aiplatform.v1beta1.PublisherModel.VersionState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      versionState_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the state of the model version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PublisherModel.VersionState version_state = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVersionState() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      versionState_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object publisherModelTemplate_ = "";
     /**
      *
@@ -15159,7 +16247,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       publisherModelTemplate_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -15180,7 +16268,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPublisherModelTemplate() {
       publisherModelTemplate_ = getDefaultInstance().getPublisherModelTemplate();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -15206,7 +16294,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       publisherModelTemplate_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -15233,7 +16321,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the predictSchemata field is set.
      */
     public boolean hasPredictSchemata() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -15281,7 +16369,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         predictSchemataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -15305,7 +16393,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         predictSchemataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -15324,7 +16412,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePredictSchemata(com.google.cloud.aiplatform.v1beta1.PredictSchemata value) {
       if (predictSchemataBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && predictSchemata_ != null
             && predictSchemata_
                 != com.google.cloud.aiplatform.v1beta1.PredictSchemata.getDefaultInstance()) {
@@ -15335,7 +16423,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         predictSchemataBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -15353,7 +16441,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPredictSchemata() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       predictSchemata_ = null;
       if (predictSchemataBuilder_ != null) {
         predictSchemataBuilder_.dispose();
@@ -15376,7 +16464,7 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.PredictSchemata.Builder getPredictSchemataBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getPredictSchemataFieldBuilder().getBuilder();
     }

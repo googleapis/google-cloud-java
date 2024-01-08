@@ -47,6 +47,7 @@ import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DatabaseEncryption;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
+import com.google.container.v1.EnterpriseConfig;
 import com.google.container.v1.FastSocket;
 import com.google.container.v1.Fleet;
 import com.google.container.v1.GcfsConfig;
@@ -97,6 +98,7 @@ import com.google.container.v1.OperationProgress;
 import com.google.container.v1.PrivateClusterConfig;
 import com.google.container.v1.ReleaseChannel;
 import com.google.container.v1.ResourceLabels;
+import com.google.container.v1.ResourceManagerTags;
 import com.google.container.v1.ResourceUsageExportConfig;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1.SecurityPostureConfig;
@@ -331,6 +333,7 @@ public class ClusterManagerClientTest {
             .setFleet(Fleet.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .setEnableK8SBetaApis(K8sBetaAPIConfig.newBuilder().build())
+            .setEnterpriseConfig(EnterpriseConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -433,6 +436,7 @@ public class ClusterManagerClientTest {
             .setFleet(Fleet.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .setEnableK8SBetaApis(K8sBetaAPIConfig.newBuilder().build())
+            .setEnterpriseConfig(EnterpriseConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -742,6 +746,7 @@ public class ClusterManagerClientTest {
             .setMachineType("machineType-218117087")
             .setDiskType("diskType279771767")
             .setDiskSizeGb(-757478089)
+            .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -779,6 +784,7 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getMachineType(), actualRequest.getMachineType());
     Assert.assertEquals(request.getDiskType(), actualRequest.getDiskType());
     Assert.assertEquals(request.getDiskSizeGb(), actualRequest.getDiskSizeGb());
+    Assert.assertEquals(request.getResourceManagerTags(), actualRequest.getResourceManagerTags());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -820,6 +826,7 @@ public class ClusterManagerClientTest {
               .setMachineType("machineType-218117087")
               .setDiskType("diskType279771767")
               .setDiskSizeGb(-757478089)
+              .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");
@@ -2087,6 +2094,7 @@ public class ClusterManagerClientTest {
             .setPlacementPolicy(NodePool.PlacementPolicy.newBuilder().build())
             .setUpdateInfo(NodePool.UpdateInfo.newBuilder().build())
             .setEtag("etag3123477")
+            .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
             .setBestEffortProvisioning(BestEffortProvisioning.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
@@ -2143,6 +2151,7 @@ public class ClusterManagerClientTest {
             .setPlacementPolicy(NodePool.PlacementPolicy.newBuilder().build())
             .setUpdateInfo(NodePool.UpdateInfo.newBuilder().build())
             .setEtag("etag3123477")
+            .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
             .setBestEffortProvisioning(BestEffortProvisioning.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);

@@ -1661,6 +1661,50 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
+   * Stats of data used for training or evaluating the Model.
+   *
+   * Only populated when the Model is trained by a TrainingPipeline with
+   * [data_input_config][TrainingPipeline.data_input_config].
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
+   *
+   * @return Whether the dataStats field is set.
+   */
+  boolean hasDataStats();
+  /**
+   *
+   *
+   * <pre>
+   * Stats of data used for training or evaluating the Model.
+   *
+   * Only populated when the Model is trained by a TrainingPipeline with
+   * [data_input_config][TrainingPipeline.data_input_config].
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
+   *
+   * @return The dataStats.
+   */
+  com.google.cloud.aiplatform.v1.Model.DataStats getDataStats();
+  /**
+   *
+   *
+   * <pre>
+   * Stats of data used for training or evaluating the Model.
+   *
+   * Only populated when the Model is trained by a TrainingPipeline with
+   * [data_input_config][TrainingPipeline.data_input_config].
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
+   */
+  com.google.cloud.aiplatform.v1.Model.DataStatsOrBuilder getDataStatsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Customer-managed encryption key spec for a Model. If set, this
    * Model and all sub-resources of this Model will be secured by this key.
    * </pre>

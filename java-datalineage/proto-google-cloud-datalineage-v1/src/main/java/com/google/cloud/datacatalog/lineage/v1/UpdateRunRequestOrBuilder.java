@@ -116,4 +116,17 @@ public interface UpdateRunRequestOrBuilder
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set to true and the run is not found, the request creates it.
+   * </pre>
+   *
+   * <code>bool allow_missing = 3;</code>
+   *
+   * @return The allowMissing.
+   */
+  boolean getAllowMissing();
 }

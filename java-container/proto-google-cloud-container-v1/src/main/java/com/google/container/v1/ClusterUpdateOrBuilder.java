@@ -1829,4 +1829,49 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
    */
   com.google.container.v1.K8sBetaAPIConfigOrBuilder getDesiredK8SBetaApisOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired resource manager tags that apply to all auto-provisioned node
+   * pools in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+   * </code>
+   *
+   * @return Whether the desiredNodePoolAutoConfigResourceManagerTags field is set.
+   */
+  boolean hasDesiredNodePoolAutoConfigResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * The desired resource manager tags that apply to all auto-provisioned node
+   * pools in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+   * </code>
+   *
+   * @return The desiredNodePoolAutoConfigResourceManagerTags.
+   */
+  com.google.container.v1.ResourceManagerTags getDesiredNodePoolAutoConfigResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * The desired resource manager tags that apply to all auto-provisioned node
+   * pools in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+   * </code>
+   */
+  com.google.container.v1.ResourceManagerTagsOrBuilder
+      getDesiredNodePoolAutoConfigResourceManagerTagsOrBuilder();
 }

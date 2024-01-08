@@ -22,9 +22,9 @@ deep-preserve-regex:
   - "/java-iam/samples/snippets/generated"
 
 deep-copy-regex:
-  - source: "/google/iam/v2beta/google-cloud-iam-v2beta-java/gapic-google-cloud-iam-v2beta-java/src"
+  - source: "/google/iam/v2beta/.*-java/gapic-google-.*/src"
     dest: "/owl-bot-staging/java-iam/v2beta/google-iam-policy/src"
-  - source: "/google/iam/v2/google-cloud-iam-v2-java/gapic-google-cloud-iam-v2-java/src"
+  - source: "/google/iam/v2/.*-java/gapic-google-.*/src"
     dest: "/owl-bot-staging/java-iam/v2/google-iam-policy/src"
 
 api-name: iam

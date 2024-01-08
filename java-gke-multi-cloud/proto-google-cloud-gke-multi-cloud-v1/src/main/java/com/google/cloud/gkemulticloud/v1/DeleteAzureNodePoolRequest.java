@@ -22,7 +22,7 @@ package com.google.cloud.gkemulticloud.v1;
  *
  *
  * <pre>
- * Delete message for `AzureClusters.DeleteAzureNodePool` method.
+ * Request message for `AzureClusters.DeleteAzureNodePool` method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest}
@@ -429,7 +429,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Delete message for `AzureClusters.DeleteAzureNodePool` method.
+   * Request message for `AzureClusters.DeleteAzureNodePool` method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest}

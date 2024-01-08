@@ -68,6 +68,7 @@ import com.google.cloud.filestore.v1.ListInstancesResponse;
 import com.google.cloud.filestore.v1.ListSnapshotsRequest;
 import com.google.cloud.filestore.v1.ListSnapshotsResponse;
 import com.google.cloud.filestore.v1.RestoreInstanceRequest;
+import com.google.cloud.filestore.v1.RevertInstanceRequest;
 import com.google.cloud.filestore.v1.Snapshot;
 import com.google.cloud.filestore.v1.UpdateBackupRequest;
 import com.google.cloud.filestore.v1.UpdateInstanceRequest;
@@ -141,6 +142,9 @@ public class CloudFilestoreManagerStubSettings
   private final UnaryCallSettings<RestoreInstanceRequest, Operation> restoreInstanceSettings;
   private final OperationCallSettings<RestoreInstanceRequest, Instance, OperationMetadata>
       restoreInstanceOperationSettings;
+  private final UnaryCallSettings<RevertInstanceRequest, Operation> revertInstanceSettings;
+  private final OperationCallSettings<RevertInstanceRequest, Instance, OperationMetadata>
+      revertInstanceOperationSettings;
   private final UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings;
   private final OperationCallSettings<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationSettings;
@@ -373,6 +377,17 @@ public class CloudFilestoreManagerStubSettings
     return restoreInstanceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to revertInstance. */
+  public UnaryCallSettings<RevertInstanceRequest, Operation> revertInstanceSettings() {
+    return revertInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to revertInstance. */
+  public OperationCallSettings<RevertInstanceRequest, Instance, OperationMetadata>
+      revertInstanceOperationSettings() {
+    return revertInstanceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteInstance. */
   public UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings() {
     return deleteInstanceSettings;
@@ -586,6 +601,8 @@ public class CloudFilestoreManagerStubSettings
     updateInstanceOperationSettings = settingsBuilder.updateInstanceOperationSettings().build();
     restoreInstanceSettings = settingsBuilder.restoreInstanceSettings().build();
     restoreInstanceOperationSettings = settingsBuilder.restoreInstanceOperationSettings().build();
+    revertInstanceSettings = settingsBuilder.revertInstanceSettings().build();
+    revertInstanceOperationSettings = settingsBuilder.revertInstanceOperationSettings().build();
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
     listSnapshotsSettings = settingsBuilder.listSnapshotsSettings().build();
@@ -626,6 +643,10 @@ public class CloudFilestoreManagerStubSettings
         restoreInstanceSettings;
     private final OperationCallSettings.Builder<RestoreInstanceRequest, Instance, OperationMetadata>
         restoreInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<RevertInstanceRequest, Operation>
+        revertInstanceSettings;
+    private final OperationCallSettings.Builder<RevertInstanceRequest, Instance, OperationMetadata>
+        revertInstanceOperationSettings;
     private final UnaryCallSettings.Builder<DeleteInstanceRequest, Operation>
         deleteInstanceSettings;
     private final OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
@@ -672,9 +693,9 @@ public class CloudFilestoreManagerStubSettings
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -710,6 +731,8 @@ public class CloudFilestoreManagerStubSettings
               .setTotalTimeout(Duration.ofMillis(14400000L))
               .build();
       definitions.put("no_retry_2_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(600000L))
@@ -718,8 +741,6 @@ public class CloudFilestoreManagerStubSettings
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_3_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -738,6 +759,8 @@ public class CloudFilestoreManagerStubSettings
       updateInstanceOperationSettings = OperationCallSettings.newBuilder();
       restoreInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restoreInstanceOperationSettings = OperationCallSettings.newBuilder();
+      revertInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      revertInstanceOperationSettings = OperationCallSettings.newBuilder();
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
       listSnapshotsSettings = PagedCallSettings.newBuilder(LIST_SNAPSHOTS_PAGE_STR_FACT);
@@ -764,6 +787,7 @@ public class CloudFilestoreManagerStubSettings
               createInstanceSettings,
               updateInstanceSettings,
               restoreInstanceSettings,
+              revertInstanceSettings,
               deleteInstanceSettings,
               listSnapshotsSettings,
               getSnapshotSettings,
@@ -789,6 +813,8 @@ public class CloudFilestoreManagerStubSettings
       updateInstanceOperationSettings = settings.updateInstanceOperationSettings.toBuilder();
       restoreInstanceSettings = settings.restoreInstanceSettings.toBuilder();
       restoreInstanceOperationSettings = settings.restoreInstanceOperationSettings.toBuilder();
+      revertInstanceSettings = settings.revertInstanceSettings.toBuilder();
+      revertInstanceOperationSettings = settings.revertInstanceOperationSettings.toBuilder();
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
       listSnapshotsSettings = settings.listSnapshotsSettings.toBuilder();
@@ -815,6 +841,7 @@ public class CloudFilestoreManagerStubSettings
               createInstanceSettings,
               updateInstanceSettings,
               restoreInstanceSettings,
+              revertInstanceSettings,
               deleteInstanceSettings,
               listSnapshotsSettings,
               getSnapshotSettings,
@@ -879,6 +906,11 @@ public class CloudFilestoreManagerStubSettings
           .restoreInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .revertInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .deleteInstanceSettings()
@@ -990,6 +1022,30 @@ public class CloudFilestoreManagerStubSettings
                   .<RestoreInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .revertInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RevertInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
@@ -1242,6 +1298,19 @@ public class CloudFilestoreManagerStubSettings
     public OperationCallSettings.Builder<RestoreInstanceRequest, Instance, OperationMetadata>
         restoreInstanceOperationSettings() {
       return restoreInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to revertInstance. */
+    public UnaryCallSettings.Builder<RevertInstanceRequest, Operation> revertInstanceSettings() {
+      return revertInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to revertInstance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<RevertInstanceRequest, Instance, OperationMetadata>
+        revertInstanceOperationSettings() {
+      return revertInstanceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */

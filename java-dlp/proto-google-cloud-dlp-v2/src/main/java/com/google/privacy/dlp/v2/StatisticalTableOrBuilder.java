@@ -128,8 +128,8 @@ public interface StatisticalTableOrBuilder
    *
    *
    * <pre>
-   * Required. The relative frequency column must contain a floating-point number
-   * between 0 and 1 (inclusive). Null values are assumed to be zero.
+   * Required. The relative frequency column must contain a floating-point
+   * number between 0 and 1 (inclusive). Null values are assumed to be zero.
    * </pre>
    *
    * <code>
@@ -143,8 +143,8 @@ public interface StatisticalTableOrBuilder
    *
    *
    * <pre>
-   * Required. The relative frequency column must contain a floating-point number
-   * between 0 and 1 (inclusive). Null values are assumed to be zero.
+   * Required. The relative frequency column must contain a floating-point
+   * number between 0 and 1 (inclusive). Null values are assumed to be zero.
    * </pre>
    *
    * <code>
@@ -158,8 +158,8 @@ public interface StatisticalTableOrBuilder
    *
    *
    * <pre>
-   * Required. The relative frequency column must contain a floating-point number
-   * between 0 and 1 (inclusive). Null values are assumed to be zero.
+   * Required. The relative frequency column must contain a floating-point
+   * number between 0 and 1 (inclusive). Null values are assumed to be zero.
    * </pre>
    *
    * <code>

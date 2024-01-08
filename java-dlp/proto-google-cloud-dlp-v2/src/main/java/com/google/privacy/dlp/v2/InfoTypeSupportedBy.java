@@ -153,7 +153,7 @@ public enum InfoTypeSupportedBy implements com.google.protobuf.ProtocolMessageEn
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(7);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(12);
   }
 
   private static final InfoTypeSupportedBy[] VALUES = values();

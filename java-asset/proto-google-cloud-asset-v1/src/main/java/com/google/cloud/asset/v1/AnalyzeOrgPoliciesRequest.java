@@ -189,12 +189,15 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
    * <pre>
    * The expression to filter
    * [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
-   * The only supported field is `consolidated_policy.attached_resource`, and
-   * the only supported operator is `=`.
+   * Filtering is currently available for bare literal values and the following
+   * fields:
+   * * consolidated_policy.attached_resource
+   * * consolidated_policy.rules.enforce
    *
-   * Example:
+   * When filtering by a specific field, the only supported operator is `=`.
+   * For example, filtering by
    * consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
-   * will return the org policy results of"folders/001".
+   * will return all the Organization Policy results attached to "folders/001".
    * </pre>
    *
    * <code>string filter = 3;</code>
@@ -219,12 +222,15 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
    * <pre>
    * The expression to filter
    * [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
-   * The only supported field is `consolidated_policy.attached_resource`, and
-   * the only supported operator is `=`.
+   * Filtering is currently available for bare literal values and the following
+   * fields:
+   * * consolidated_policy.attached_resource
+   * * consolidated_policy.rules.enforce
    *
-   * Example:
+   * When filtering by a specific field, the only supported operator is `=`.
+   * For example, filtering by
    * consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
-   * will return the org policy results of"folders/001".
+   * will return all the Organization Policy results attached to "folders/001".
    * </pre>
    *
    * <code>string filter = 3;</code>
@@ -1021,12 +1027,15 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
      * <pre>
      * The expression to filter
      * [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
-     * The only supported field is `consolidated_policy.attached_resource`, and
-     * the only supported operator is `=`.
+     * Filtering is currently available for bare literal values and the following
+     * fields:
+     * * consolidated_policy.attached_resource
+     * * consolidated_policy.rules.enforce
      *
-     * Example:
+     * When filtering by a specific field, the only supported operator is `=`.
+     * For example, filtering by
      * consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
-     * will return the org policy results of"folders/001".
+     * will return all the Organization Policy results attached to "folders/001".
      * </pre>
      *
      * <code>string filter = 3;</code>
@@ -1050,12 +1059,15 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
      * <pre>
      * The expression to filter
      * [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
-     * The only supported field is `consolidated_policy.attached_resource`, and
-     * the only supported operator is `=`.
+     * Filtering is currently available for bare literal values and the following
+     * fields:
+     * * consolidated_policy.attached_resource
+     * * consolidated_policy.rules.enforce
      *
-     * Example:
+     * When filtering by a specific field, the only supported operator is `=`.
+     * For example, filtering by
      * consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
-     * will return the org policy results of"folders/001".
+     * will return all the Organization Policy results attached to "folders/001".
      * </pre>
      *
      * <code>string filter = 3;</code>
@@ -1079,12 +1091,15 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
      * <pre>
      * The expression to filter
      * [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
-     * The only supported field is `consolidated_policy.attached_resource`, and
-     * the only supported operator is `=`.
+     * Filtering is currently available for bare literal values and the following
+     * fields:
+     * * consolidated_policy.attached_resource
+     * * consolidated_policy.rules.enforce
      *
-     * Example:
+     * When filtering by a specific field, the only supported operator is `=`.
+     * For example, filtering by
      * consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
-     * will return the org policy results of"folders/001".
+     * will return all the Organization Policy results attached to "folders/001".
      * </pre>
      *
      * <code>string filter = 3;</code>
@@ -1107,12 +1122,15 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
      * <pre>
      * The expression to filter
      * [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
-     * The only supported field is `consolidated_policy.attached_resource`, and
-     * the only supported operator is `=`.
+     * Filtering is currently available for bare literal values and the following
+     * fields:
+     * * consolidated_policy.attached_resource
+     * * consolidated_policy.rules.enforce
      *
-     * Example:
+     * When filtering by a specific field, the only supported operator is `=`.
+     * For example, filtering by
      * consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
-     * will return the org policy results of"folders/001".
+     * will return all the Organization Policy results attached to "folders/001".
      * </pre>
      *
      * <code>string filter = 3;</code>
@@ -1131,12 +1149,15 @@ public final class AnalyzeOrgPoliciesRequest extends com.google.protobuf.Generat
      * <pre>
      * The expression to filter
      * [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
-     * The only supported field is `consolidated_policy.attached_resource`, and
-     * the only supported operator is `=`.
+     * Filtering is currently available for bare literal values and the following
+     * fields:
+     * * consolidated_policy.attached_resource
+     * * consolidated_policy.rules.enforce
      *
-     * Example:
+     * When filtering by a specific field, the only supported operator is `=`.
+     * For example, filtering by
      * consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
-     * will return the org policy results of"folders/001".
+     * will return all the Organization Policy results attached to "folders/001".
      * </pre>
      *
      * <code>string filter = 3;</code>

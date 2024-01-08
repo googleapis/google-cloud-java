@@ -39,6 +39,7 @@ public class SyncUpdateRun {
           UpdateRunRequest.newBuilder()
               .setRun(Run.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
+              .setAllowMissing(true)
               .build();
       Run response = lineageClient.updateRun(request);
     }

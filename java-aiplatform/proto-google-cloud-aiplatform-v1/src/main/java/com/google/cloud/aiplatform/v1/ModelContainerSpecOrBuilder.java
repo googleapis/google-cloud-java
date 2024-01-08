@@ -986,4 +986,246 @@ public interface ModelContainerSpecOrBuilder
    * @return The bytes for healthRoute.
    */
   com.google.protobuf.ByteString getHealthRouteBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+   * prediction requests that it receives to the first port on this list. Vertex
+   * AI also sends liveness and health checks to this port.
+   *
+   * If you do not specify this field, gRPC requests to the container will be
+   * disabled.
+   *
+   * Vertex AI does not use ports other than the first one listed. This field
+   * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1.Port> getGrpcPortsList();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+   * prediction requests that it receives to the first port on this list. Vertex
+   * AI also sends liveness and health checks to this port.
+   *
+   * If you do not specify this field, gRPC requests to the container will be
+   * disabled.
+   *
+   * Vertex AI does not use ports other than the first one listed. This field
+   * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.Port getGrpcPorts(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+   * prediction requests that it receives to the first port on this list. Vertex
+   * AI also sends liveness and health checks to this port.
+   *
+   * If you do not specify this field, gRPC requests to the container will be
+   * disabled.
+   *
+   * Vertex AI does not use ports other than the first one listed. This field
+   * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  int getGrpcPortsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+   * prediction requests that it receives to the first port on this list. Vertex
+   * AI also sends liveness and health checks to this port.
+   *
+   * If you do not specify this field, gRPC requests to the container will be
+   * disabled.
+   *
+   * Vertex AI does not use ports other than the first one listed. This field
+   * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1.PortOrBuilder>
+      getGrpcPortsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+   * prediction requests that it receives to the first port on this list. Vertex
+   * AI also sends liveness and health checks to this port.
+   *
+   * If you do not specify this field, gRPC requests to the container will be
+   * disabled.
+   *
+   * Vertex AI does not use ports other than the first one listed. This field
+   * corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Port grpc_ports = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.PortOrBuilder getGrpcPortsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Deployment timeout.
+   * Limit for deployment timeout is 2 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the deploymentTimeout field is set.
+   */
+  boolean hasDeploymentTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Deployment timeout.
+   * Limit for deployment timeout is 2 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The deploymentTimeout.
+   */
+  com.google.protobuf.Duration getDeploymentTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Deployment timeout.
+   * Limit for deployment timeout is 2 hours.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration deployment_timeout = 10 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getDeploymentTimeoutOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The amount of the VM memory to reserve as the shared memory for
+   * the model in megabytes.
+   * </pre>
+   *
+   * <code>int64 shared_memory_size_mb = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The sharedMemorySizeMb.
+   */
+  long getSharedMemorySizeMb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes startup probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the startupProbe field is set.
+   */
+  boolean hasStartupProbe();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes startup probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The startupProbe.
+   */
+  com.google.cloud.aiplatform.v1.Probe getStartupProbe();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes startup probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Probe startup_probe = 12 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ProbeOrBuilder getStartupProbeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes readiness probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the healthProbe field is set.
+   */
+  boolean hasHealthProbe();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes readiness probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The healthProbe.
+   */
+  com.google.cloud.aiplatform.v1.Probe getHealthProbe();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes readiness probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Probe health_probe = 13 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ProbeOrBuilder getHealthProbeOrBuilder();
 }

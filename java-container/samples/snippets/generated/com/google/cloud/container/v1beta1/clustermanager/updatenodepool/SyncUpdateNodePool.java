@@ -31,6 +31,7 @@ import com.google.container.v1beta1.NodePoolLoggingConfig;
 import com.google.container.v1beta1.NodeTaints;
 import com.google.container.v1beta1.Operation;
 import com.google.container.v1beta1.ResourceLabels;
+import com.google.container.v1beta1.ResourceManagerTags;
 import com.google.container.v1beta1.UpdateNodePoolRequest;
 import com.google.container.v1beta1.VirtualNIC;
 import com.google.container.v1beta1.WindowsNodeConfig;
@@ -79,6 +80,7 @@ public class SyncUpdateNodePool {
               .setMachineType("machineType-218117087")
               .setDiskType("diskType279771767")
               .setDiskSizeGb(-757478089)
+              .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
               .build();
       Operation response = clusterManagerClient.updateNodePool(request);
     }

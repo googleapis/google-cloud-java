@@ -3345,6 +3345,572 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface AnswerFeedbackSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If enabled, end users will be able to provide
+     * [answer feedback][google.cloud.dialogflow.cx.v3beta1.AnswerFeedback] to
+     * Dialogflow responses. Feature works only if interaction logging is
+     * enabled in the Dialogflow agent.
+     * </pre>
+     *
+     * <code>bool enable_answer_feedback = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableAnswerFeedback.
+     */
+    boolean getEnableAnswerFeedback();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for answer feedback collection.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings}
+   */
+  public static final class AnswerFeedbackSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings)
+      AnswerFeedbackSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AnswerFeedbackSettings.newBuilder() to construct.
+    private AnswerFeedbackSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AnswerFeedbackSettings() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AnswerFeedbackSettings();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_AnswerFeedbackSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_AnswerFeedbackSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings.class,
+              com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings.Builder.class);
+    }
+
+    public static final int ENABLE_ANSWER_FEEDBACK_FIELD_NUMBER = 1;
+    private boolean enableAnswerFeedback_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If enabled, end users will be able to provide
+     * [answer feedback][google.cloud.dialogflow.cx.v3beta1.AnswerFeedback] to
+     * Dialogflow responses. Feature works only if interaction logging is
+     * enabled in the Dialogflow agent.
+     * </pre>
+     *
+     * <code>bool enable_answer_feedback = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableAnswerFeedback.
+     */
+    @java.lang.Override
+    public boolean getEnableAnswerFeedback() {
+      return enableAnswerFeedback_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enableAnswerFeedback_ != false) {
+        output.writeBool(1, enableAnswerFeedback_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enableAnswerFeedback_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enableAnswerFeedback_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings other =
+          (com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings) obj;
+
+      if (getEnableAnswerFeedback() != other.getEnableAnswerFeedback()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLE_ANSWER_FEEDBACK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAnswerFeedback());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for answer feedback collection.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings)
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_AnswerFeedbackSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_AnswerFeedbackSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings.class,
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enableAnswerFeedback_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_AnswerFeedbackSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings build() {
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings result =
+            new com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enableAnswerFeedback_ = enableAnswerFeedback_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
+                .getDefaultInstance()) return this;
+        if (other.getEnableAnswerFeedback() != false) {
+          setEnableAnswerFeedback(other.getEnableAnswerFeedback());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enableAnswerFeedback_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enableAnswerFeedback_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If enabled, end users will be able to provide
+       * [answer feedback][google.cloud.dialogflow.cx.v3beta1.AnswerFeedback] to
+       * Dialogflow responses. Feature works only if interaction logging is
+       * enabled in the Dialogflow agent.
+       * </pre>
+       *
+       * <code>bool enable_answer_feedback = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableAnswerFeedback.
+       */
+      @java.lang.Override
+      public boolean getEnableAnswerFeedback() {
+        return enableAnswerFeedback_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If enabled, end users will be able to provide
+       * [answer feedback][google.cloud.dialogflow.cx.v3beta1.AnswerFeedback] to
+       * Dialogflow responses. Feature works only if interaction logging is
+       * enabled in the Dialogflow agent.
+       * </pre>
+       *
+       * <code>bool enable_answer_feedback = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableAnswerFeedback to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableAnswerFeedback(boolean value) {
+
+        enableAnswerFeedback_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If enabled, end users will be able to provide
+       * [answer feedback][google.cloud.dialogflow.cx.v3beta1.AnswerFeedback] to
+       * Dialogflow responses. Feature works only if interaction logging is
+       * enabled in the Dialogflow agent.
+       * </pre>
+       *
+       * <code>bool enable_answer_feedback = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableAnswerFeedback() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enableAnswerFeedback_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AnswerFeedbackSettings> PARSER =
+        new com.google.protobuf.AbstractParser<AnswerFeedbackSettings>() {
+          @java.lang.Override
+          public AnswerFeedbackSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AnswerFeedbackSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AnswerFeedbackSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -3947,7 +4513,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is deprecated.
-   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=314
+   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=323
    * @return The enableStackdriverLogging.
    */
   @java.lang.Override
@@ -4222,6 +4788,65 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         : genAppBuilderSettings_;
   }
 
+  public static final int ANSWER_FEEDBACK_SETTINGS_FIELD_NUMBER = 38;
+  private com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
+      answerFeedbackSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Answer feedback collection settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings answer_feedback_settings = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the answerFeedbackSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasAnswerFeedbackSettings() {
+    return answerFeedbackSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Answer feedback collection settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings answer_feedback_settings = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The answerFeedbackSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
+      getAnswerFeedbackSettings() {
+    return answerFeedbackSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings.getDefaultInstance()
+        : answerFeedbackSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Answer feedback collection settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings answer_feedback_settings = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettingsOrBuilder
+      getAnswerFeedbackSettingsOrBuilder() {
+    return answerFeedbackSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings.getDefaultInstance()
+        : answerFeedbackSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4287,6 +4912,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(33, getGenAppBuilderSettings());
+    }
+    if (answerFeedbackSettings_ != null) {
+      output.writeMessage(38, getAnswerFeedbackSettings());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4357,6 +4985,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(33, getGenAppBuilderSettings());
     }
+    if (answerFeedbackSettings_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(38, getAnswerFeedbackSettings());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4405,6 +5037,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (hasGenAppBuilderSettings() != other.hasGenAppBuilderSettings()) return false;
     if (hasGenAppBuilderSettings()) {
       if (!getGenAppBuilderSettings().equals(other.getGenAppBuilderSettings())) return false;
+    }
+    if (hasAnswerFeedbackSettings() != other.hasAnswerFeedbackSettings()) return false;
+    if (hasAnswerFeedbackSettings()) {
+      if (!getAnswerFeedbackSettings().equals(other.getAnswerFeedbackSettings())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -4462,6 +5098,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (hasGenAppBuilderSettings()) {
       hash = (37 * hash) + GEN_APP_BUILDER_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getGenAppBuilderSettings().hashCode();
+    }
+    if (hasAnswerFeedbackSettings()) {
+      hash = (37 * hash) + ANSWER_FEEDBACK_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAnswerFeedbackSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4620,6 +5260,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         getGitIntegrationSettingsFieldBuilder();
         getTextToSpeechSettingsFieldBuilder();
         getGenAppBuilderSettingsFieldBuilder();
+        getAnswerFeedbackSettingsFieldBuilder();
       }
     }
 
@@ -4663,6 +5304,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (genAppBuilderSettingsBuilder_ != null) {
         genAppBuilderSettingsBuilder_.dispose();
         genAppBuilderSettingsBuilder_ = null;
+      }
+      answerFeedbackSettings_ = null;
+      if (answerFeedbackSettingsBuilder_ != null) {
+        answerFeedbackSettingsBuilder_.dispose();
+        answerFeedbackSettingsBuilder_ = null;
       }
       return this;
     }
@@ -4766,6 +5412,12 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
                 ? genAppBuilderSettings_
                 : genAppBuilderSettingsBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.answerFeedbackSettings_ =
+            answerFeedbackSettingsBuilder_ == null
+                ? answerFeedbackSettings_
+                : answerFeedbackSettingsBuilder_.build();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4888,6 +5540,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasGenAppBuilderSettings()) {
         mergeGenAppBuilderSettings(other.getGenAppBuilderSettings());
+      }
+      if (other.hasAnswerFeedbackSettings()) {
+        mergeAnswerFeedbackSettings(other.getAnswerFeedbackSettings());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5023,6 +5678,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 266
+            case 306:
+              {
+                input.readMessage(
+                    getAnswerFeedbackSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 306
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6427,7 +7089,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=314
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=323
      * @return The enableStackdriverLogging.
      */
     @java.lang.Override
@@ -6448,7 +7110,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=314
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=323
      * @param value The enableStackdriverLogging to set.
      * @return This builder for chaining.
      */
@@ -6473,7 +7135,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=314
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=323
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -7426,6 +8088,219 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         genAppBuilderSettings_ = null;
       }
       return genAppBuilderSettingsBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
+        answerFeedbackSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettingsOrBuilder>
+        answerFeedbackSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Answer feedback collection settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings answer_feedback_settings = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the answerFeedbackSettings field is set.
+     */
+    public boolean hasAnswerFeedbackSettings() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Answer feedback collection settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings answer_feedback_settings = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The answerFeedbackSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
+        getAnswerFeedbackSettings() {
+      if (answerFeedbackSettingsBuilder_ == null) {
+        return answerFeedbackSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
+                .getDefaultInstance()
+            : answerFeedbackSettings_;
+      } else {
+        return answerFeedbackSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Answer feedback collection settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings answer_feedback_settings = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAnswerFeedbackSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings value) {
+      if (answerFeedbackSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        answerFeedbackSettings_ = value;
+      } else {
+        answerFeedbackSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Answer feedback collection settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings answer_feedback_settings = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAnswerFeedbackSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings.Builder
+            builderForValue) {
+      if (answerFeedbackSettingsBuilder_ == null) {
+        answerFeedbackSettings_ = builderForValue.build();
+      } else {
+        answerFeedbackSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Answer feedback collection settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings answer_feedback_settings = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAnswerFeedbackSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings value) {
+      if (answerFeedbackSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && answerFeedbackSettings_ != null
+            && answerFeedbackSettings_
+                != com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
+                    .getDefaultInstance()) {
+          getAnswerFeedbackSettingsBuilder().mergeFrom(value);
+        } else {
+          answerFeedbackSettings_ = value;
+        }
+      } else {
+        answerFeedbackSettingsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Answer feedback collection settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings answer_feedback_settings = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAnswerFeedbackSettings() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      answerFeedbackSettings_ = null;
+      if (answerFeedbackSettingsBuilder_ != null) {
+        answerFeedbackSettingsBuilder_.dispose();
+        answerFeedbackSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Answer feedback collection settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings answer_feedback_settings = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings.Builder
+        getAnswerFeedbackSettingsBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getAnswerFeedbackSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Answer feedback collection settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings answer_feedback_settings = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettingsOrBuilder
+        getAnswerFeedbackSettingsOrBuilder() {
+      if (answerFeedbackSettingsBuilder_ != null) {
+        return answerFeedbackSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return answerFeedbackSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
+                .getDefaultInstance()
+            : answerFeedbackSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Answer feedback collection settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings answer_feedback_settings = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettingsOrBuilder>
+        getAnswerFeedbackSettingsFieldBuilder() {
+      if (answerFeedbackSettingsBuilder_ == null) {
+        answerFeedbackSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings,
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettingsOrBuilder>(
+                getAnswerFeedbackSettings(), getParentForChildren(), isClean());
+        answerFeedbackSettings_ = null;
+      }
+      return answerFeedbackSettingsBuilder_;
     }
 
     @java.lang.Override

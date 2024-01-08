@@ -341,7 +341,12 @@ public class HttpJsonSchemaServiceStub extends SchemaServiceStub {
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet(
-                            "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}")
+                            "/v1alpha/{name=projects/*/locations/*/collections/*/dataConnector/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}")
+                                .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
@@ -405,7 +410,12 @@ public class HttpJsonSchemaServiceStub extends SchemaServiceStub {
                     "google.longrunning.Operations.ListOperations",
                     HttpRule.newBuilder()
                         .setGet(
-                            "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*}/operations")
+                            "/v1alpha/{name=projects/*/locations/*/collections/*/dataConnector}/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1alpha/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*}/operations")
+                                .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(

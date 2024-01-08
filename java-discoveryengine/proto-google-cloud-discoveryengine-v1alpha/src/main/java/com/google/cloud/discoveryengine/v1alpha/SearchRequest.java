@@ -45,6 +45,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     query_ = "";
     pageToken_ = "";
     filter_ = "";
+    canonicalFilter_ = "";
     orderBy_ = "";
     facetSpecs_ = java.util.Collections.emptyList();
     userPseudoId_ = "";
@@ -10975,6 +10976,54 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * If specified, the spec will be used to modify the prompt provided to
+       * the LLM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec model_prompt_spec = 5;
+       * </code>
+       *
+       * @return Whether the modelPromptSpec field is set.
+       */
+      boolean hasModelPromptSpec();
+      /**
+       *
+       *
+       * <pre>
+       * If specified, the spec will be used to modify the prompt provided to
+       * the LLM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec model_prompt_spec = 5;
+       * </code>
+       *
+       * @return The modelPromptSpec.
+       */
+      com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+              .ModelPromptSpec
+          getModelPromptSpec();
+      /**
+       *
+       *
+       * <pre>
+       * If specified, the spec will be used to modify the prompt provided to
+       * the LLM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec model_prompt_spec = 5;
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+              .ModelPromptSpecOrBuilder
+          getModelPromptSpecOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
        * Language code for Summary. Use language tags defined by
        * [BCP47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
        * Note: This is an experimental feature.
@@ -10999,6 +11048,53 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The bytes for languageCode.
        */
       com.google.protobuf.ByteString getLanguageCodeBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * If specified, the spec will be used to modify the model specification
+       * provided to the LLM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec model_spec = 7;
+       * </code>
+       *
+       * @return Whether the modelSpec field is set.
+       */
+      boolean hasModelSpec();
+      /**
+       *
+       *
+       * <pre>
+       * If specified, the spec will be used to modify the model specification
+       * provided to the LLM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec model_spec = 7;
+       * </code>
+       *
+       * @return The modelSpec.
+       */
+      com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec
+          getModelSpec();
+      /**
+       *
+       *
+       * <pre>
+       * If specified, the spec will be used to modify the model specification
+       * provided to the LLM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec model_spec = 7;
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+              .ModelSpecOrBuilder
+          getModelSpecOrBuilder();
     }
     /**
      *
@@ -11046,6 +11142,1454 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                     .class,
                 com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
                     .Builder.class);
+      }
+
+      public interface ModelPromptSpecOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Text at the beginning of the prompt that instructs the assistant.
+         * Examples are available in the user guide.
+         * </pre>
+         *
+         * <code>string preamble = 1;</code>
+         *
+         * @return The preamble.
+         */
+        java.lang.String getPreamble();
+        /**
+         *
+         *
+         * <pre>
+         * Text at the beginning of the prompt that instructs the assistant.
+         * Examples are available in the user guide.
+         * </pre>
+         *
+         * <code>string preamble = 1;</code>
+         *
+         * @return The bytes for preamble.
+         */
+        com.google.protobuf.ByteString getPreambleBytes();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specification of the prompt to use with the model.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec}
+       */
+      public static final class ModelPromptSpec extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec)
+          ModelPromptSpecOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use ModelPromptSpec.newBuilder() to construct.
+        private ModelPromptSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private ModelPromptSpec() {
+          preamble_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new ModelPromptSpec();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1alpha.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1alpha_SearchRequest_ContentSearchSpec_SummarySpec_ModelPromptSpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1alpha.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1alpha_SearchRequest_ContentSearchSpec_SummarySpec_ModelPromptSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                      .SummarySpec.ModelPromptSpec.class,
+                  com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                      .SummarySpec.ModelPromptSpec.Builder.class);
+        }
+
+        public static final int PREAMBLE_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object preamble_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Text at the beginning of the prompt that instructs the assistant.
+         * Examples are available in the user guide.
+         * </pre>
+         *
+         * <code>string preamble = 1;</code>
+         *
+         * @return The preamble.
+         */
+        @java.lang.Override
+        public java.lang.String getPreamble() {
+          java.lang.Object ref = preamble_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            preamble_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text at the beginning of the prompt that instructs the assistant.
+         * Examples are available in the user guide.
+         * </pre>
+         *
+         * <code>string preamble = 1;</code>
+         *
+         * @return The bytes for preamble.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getPreambleBytes() {
+          java.lang.Object ref = preamble_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            preamble_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preamble_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, preamble_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preamble_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, preamble_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                  .ModelPromptSpec)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                  .ModelPromptSpec
+              other =
+                  (com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                          .SummarySpec.ModelPromptSpec)
+                      obj;
+
+          if (!getPreamble().equals(other.getPreamble())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + PREAMBLE_FIELD_NUMBER;
+          hash = (53 * hash) + getPreamble().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelPromptSpec
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelPromptSpec
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelPromptSpec
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelPromptSpec
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelPromptSpec
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelPromptSpec
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelPromptSpec
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelPromptSpec
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelPromptSpec
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelPromptSpec
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelPromptSpec
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelPromptSpec
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelPromptSpec
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specification of the prompt to use with the model.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec)
+            com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelPromptSpecOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1alpha.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1alpha_SearchRequest_ContentSearchSpec_SummarySpec_ModelPromptSpec_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1alpha.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1alpha_SearchRequest_ContentSearchSpec_SummarySpec_ModelPromptSpec_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                        .SummarySpec.ModelPromptSpec.class,
+                    com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                        .SummarySpec.ModelPromptSpec.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            preamble_ = "";
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1alpha.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1alpha_SearchRequest_ContentSearchSpec_SummarySpec_ModelPromptSpec_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                  .SummarySpec.ModelPromptSpec
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelPromptSpec.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                  .SummarySpec.ModelPromptSpec
+              build() {
+            com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelPromptSpec
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                  .SummarySpec.ModelPromptSpec
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelPromptSpec
+                result =
+                    new com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                        .SummarySpec.ModelPromptSpec(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                      .ModelPromptSpec
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.preamble_ = preamble_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelPromptSpec) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                          .SummarySpec.ModelPromptSpec)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                      .ModelPromptSpec
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                    .SummarySpec.ModelPromptSpec.getDefaultInstance()) return this;
+            if (!other.getPreamble().isEmpty()) {
+              preamble_ = other.preamble_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      preamble_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object preamble_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Text at the beginning of the prompt that instructs the assistant.
+           * Examples are available in the user guide.
+           * </pre>
+           *
+           * <code>string preamble = 1;</code>
+           *
+           * @return The preamble.
+           */
+          public java.lang.String getPreamble() {
+            java.lang.Object ref = preamble_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              preamble_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Text at the beginning of the prompt that instructs the assistant.
+           * Examples are available in the user guide.
+           * </pre>
+           *
+           * <code>string preamble = 1;</code>
+           *
+           * @return The bytes for preamble.
+           */
+          public com.google.protobuf.ByteString getPreambleBytes() {
+            java.lang.Object ref = preamble_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              preamble_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Text at the beginning of the prompt that instructs the assistant.
+           * Examples are available in the user guide.
+           * </pre>
+           *
+           * <code>string preamble = 1;</code>
+           *
+           * @param value The preamble to set.
+           * @return This builder for chaining.
+           */
+          public Builder setPreamble(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            preamble_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Text at the beginning of the prompt that instructs the assistant.
+           * Examples are available in the user guide.
+           * </pre>
+           *
+           * <code>string preamble = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearPreamble() {
+            preamble_ = getDefaultInstance().getPreamble();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Text at the beginning of the prompt that instructs the assistant.
+           * Examples are available in the user guide.
+           * </pre>
+           *
+           * <code>string preamble = 1;</code>
+           *
+           * @param value The bytes for preamble to set.
+           * @return This builder for chaining.
+           */
+          public Builder setPreambleBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            preamble_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec)
+        private static final com.google.cloud.discoveryengine.v1alpha.SearchRequest
+                .ContentSearchSpec.SummarySpec.ModelPromptSpec
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                  .SummarySpec.ModelPromptSpec();
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelPromptSpec
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ModelPromptSpec> PARSER =
+            new com.google.protobuf.AbstractParser<ModelPromptSpec>() {
+              @java.lang.Override
+              public ModelPromptSpec parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<ModelPromptSpec> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ModelPromptSpec> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelPromptSpec
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface ModelSpecOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * The string format of the model version.
+         * e.g. stable, preview, etc.
+         * </pre>
+         *
+         * <code>string version = 1;</code>
+         *
+         * @return The version.
+         */
+        java.lang.String getVersion();
+        /**
+         *
+         *
+         * <pre>
+         * The string format of the model version.
+         * e.g. stable, preview, etc.
+         * </pre>
+         *
+         * <code>string version = 1;</code>
+         *
+         * @return The bytes for version.
+         */
+        com.google.protobuf.ByteString getVersionBytes();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specification of the model.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec}
+       */
+      public static final class ModelSpec extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec)
+          ModelSpecOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use ModelSpec.newBuilder() to construct.
+        private ModelSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private ModelSpec() {
+          version_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new ModelSpec();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1alpha.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1alpha_SearchRequest_ContentSearchSpec_SummarySpec_ModelSpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1alpha.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1alpha_SearchRequest_ContentSearchSpec_SummarySpec_ModelSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                      .SummarySpec.ModelSpec.class,
+                  com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                      .SummarySpec.ModelSpec.Builder.class);
+        }
+
+        public static final int VERSION_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object version_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * The string format of the model version.
+         * e.g. stable, preview, etc.
+         * </pre>
+         *
+         * <code>string version = 1;</code>
+         *
+         * @return The version.
+         */
+        @java.lang.Override
+        public java.lang.String getVersion() {
+          java.lang.Object ref = version_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            version_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The string format of the model version.
+         * e.g. stable, preview, etc.
+         * </pre>
+         *
+         * <code>string version = 1;</code>
+         *
+         * @return The bytes for version.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getVersionBytes() {
+          java.lang.Object ref = version_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            version_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, version_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, version_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                  .ModelSpec)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                  .ModelSpec
+              other =
+                  (com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                          .SummarySpec.ModelSpec)
+                      obj;
+
+          if (!getVersion().equals(other.getVersion())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + VERSION_FIELD_NUMBER;
+          hash = (53 * hash) + getVersion().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelSpec
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelSpec
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelSpec
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelSpec
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelSpec
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelSpec
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelSpec
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelSpec
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelSpec
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelSpec
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelSpec
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelSpec
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelSpec
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specification of the model.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec)
+            com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelSpecOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1alpha.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1alpha_SearchRequest_ContentSearchSpec_SummarySpec_ModelSpec_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1alpha.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1alpha_SearchRequest_ContentSearchSpec_SummarySpec_ModelSpec_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                        .SummarySpec.ModelSpec.class,
+                    com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                        .SummarySpec.ModelSpec.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            version_ = "";
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1alpha.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1alpha_SearchRequest_ContentSearchSpec_SummarySpec_ModelSpec_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                  .SummarySpec.ModelSpec
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelSpec.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                  .SummarySpec.ModelSpec
+              build() {
+            com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelSpec
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                  .SummarySpec.ModelSpec
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelSpec
+                result =
+                    new com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                        .SummarySpec.ModelSpec(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                      .ModelSpec
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.version_ = version_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelSpec) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                          .SummarySpec.ModelSpec)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                      .ModelSpec
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                    .SummarySpec.ModelSpec.getDefaultInstance()) return this;
+            if (!other.getVersion().isEmpty()) {
+              version_ = other.version_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      version_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object version_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * The string format of the model version.
+           * e.g. stable, preview, etc.
+           * </pre>
+           *
+           * <code>string version = 1;</code>
+           *
+           * @return The version.
+           */
+          public java.lang.String getVersion() {
+            java.lang.Object ref = version_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              version_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The string format of the model version.
+           * e.g. stable, preview, etc.
+           * </pre>
+           *
+           * <code>string version = 1;</code>
+           *
+           * @return The bytes for version.
+           */
+          public com.google.protobuf.ByteString getVersionBytes() {
+            java.lang.Object ref = version_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              version_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The string format of the model version.
+           * e.g. stable, preview, etc.
+           * </pre>
+           *
+           * <code>string version = 1;</code>
+           *
+           * @param value The version to set.
+           * @return This builder for chaining.
+           */
+          public Builder setVersion(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            version_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The string format of the model version.
+           * e.g. stable, preview, etc.
+           * </pre>
+           *
+           * <code>string version = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearVersion() {
+            version_ = getDefaultInstance().getVersion();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * The string format of the model version.
+           * e.g. stable, preview, etc.
+           * </pre>
+           *
+           * <code>string version = 1;</code>
+           *
+           * @param value The bytes for version to set.
+           * @return This builder for chaining.
+           */
+          public Builder setVersionBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            version_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec)
+        private static final com.google.cloud.discoveryengine.v1alpha.SearchRequest
+                .ContentSearchSpec.SummarySpec.ModelSpec
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                  .SummarySpec.ModelSpec();
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                .SummarySpec.ModelSpec
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ModelSpec> PARSER =
+            new com.google.protobuf.AbstractParser<ModelSpec>() {
+              @java.lang.Override
+              public ModelSpec parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<ModelSpec> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ModelSpec> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelSpec
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
       }
 
       public static final int SUMMARY_RESULT_COUNT_FIELD_NUMBER = 1;
@@ -11159,6 +12703,73 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return ignoreNonSummarySeekingQuery_;
       }
 
+      public static final int MODEL_PROMPT_SPEC_FIELD_NUMBER = 5;
+      private com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+              .ModelPromptSpec
+          modelPromptSpec_;
+      /**
+       *
+       *
+       * <pre>
+       * If specified, the spec will be used to modify the prompt provided to
+       * the LLM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec model_prompt_spec = 5;
+       * </code>
+       *
+       * @return Whether the modelPromptSpec field is set.
+       */
+      @java.lang.Override
+      public boolean hasModelPromptSpec() {
+        return modelPromptSpec_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, the spec will be used to modify the prompt provided to
+       * the LLM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec model_prompt_spec = 5;
+       * </code>
+       *
+       * @return The modelPromptSpec.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+              .ModelPromptSpec
+          getModelPromptSpec() {
+        return modelPromptSpec_ == null
+            ? com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelPromptSpec.getDefaultInstance()
+            : modelPromptSpec_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, the spec will be used to modify the prompt provided to
+       * the LLM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec model_prompt_spec = 5;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+              .ModelPromptSpecOrBuilder
+          getModelPromptSpecOrBuilder() {
+        return modelPromptSpec_ == null
+            ? com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelPromptSpec.getDefaultInstance()
+            : modelPromptSpec_;
+      }
+
       public static final int LANGUAGE_CODE_FIELD_NUMBER = 6;
 
       @SuppressWarnings("serial")
@@ -11214,6 +12825,73 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int MODEL_SPEC_FIELD_NUMBER = 7;
+      private com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+              .ModelSpec
+          modelSpec_;
+      /**
+       *
+       *
+       * <pre>
+       * If specified, the spec will be used to modify the model specification
+       * provided to the LLM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec model_spec = 7;
+       * </code>
+       *
+       * @return Whether the modelSpec field is set.
+       */
+      @java.lang.Override
+      public boolean hasModelSpec() {
+        return modelSpec_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, the spec will be used to modify the model specification
+       * provided to the LLM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec model_spec = 7;
+       * </code>
+       *
+       * @return The modelSpec.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+              .ModelSpec
+          getModelSpec() {
+        return modelSpec_ == null
+            ? com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelSpec.getDefaultInstance()
+            : modelSpec_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If specified, the spec will be used to modify the model specification
+       * provided to the LLM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec model_spec = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+              .ModelSpecOrBuilder
+          getModelSpecOrBuilder() {
+        return modelSpec_ == null
+            ? com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelSpec.getDefaultInstance()
+            : modelSpec_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -11240,8 +12918,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (ignoreNonSummarySeekingQuery_ != false) {
           output.writeBool(4, ignoreNonSummarySeekingQuery_);
         }
+        if (modelPromptSpec_ != null) {
+          output.writeMessage(5, getModelPromptSpec());
+        }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 6, languageCode_);
+        }
+        if (modelSpec_ != null) {
+          output.writeMessage(7, getModelSpec());
         }
         getUnknownFields().writeTo(output);
       }
@@ -11266,8 +12950,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedOutputStream.computeBoolSize(
                   4, ignoreNonSummarySeekingQuery_);
         }
+        if (modelPromptSpec_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getModelPromptSpec());
+        }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, languageCode_);
+        }
+        if (modelSpec_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getModelSpec());
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -11293,7 +12983,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (getIgnoreAdversarialQuery() != other.getIgnoreAdversarialQuery()) return false;
         if (getIgnoreNonSummarySeekingQuery() != other.getIgnoreNonSummarySeekingQuery())
           return false;
+        if (hasModelPromptSpec() != other.hasModelPromptSpec()) return false;
+        if (hasModelPromptSpec()) {
+          if (!getModelPromptSpec().equals(other.getModelPromptSpec())) return false;
+        }
         if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+        if (hasModelSpec() != other.hasModelSpec()) return false;
+        if (hasModelSpec()) {
+          if (!getModelSpec().equals(other.getModelSpec())) return false;
+        }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -11315,8 +13013,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         hash =
             (53 * hash)
                 + com.google.protobuf.Internal.hashBoolean(getIgnoreNonSummarySeekingQuery());
+        if (hasModelPromptSpec()) {
+          hash = (37 * hash) + MODEL_PROMPT_SPEC_FIELD_NUMBER;
+          hash = (53 * hash) + getModelPromptSpec().hashCode();
+        }
         hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
         hash = (53 * hash) + getLanguageCode().hashCode();
+        if (hasModelSpec()) {
+          hash = (37 * hash) + MODEL_SPEC_FIELD_NUMBER;
+          hash = (53 * hash) + getModelSpec().hashCode();
+        }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -11490,7 +13196,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           includeCitations_ = false;
           ignoreAdversarialQuery_ = false;
           ignoreNonSummarySeekingQuery_ = false;
+          modelPromptSpec_ = null;
+          if (modelPromptSpecBuilder_ != null) {
+            modelPromptSpecBuilder_.dispose();
+            modelPromptSpecBuilder_ = null;
+          }
           languageCode_ = "";
+          modelSpec_ = null;
+          if (modelSpecBuilder_ != null) {
+            modelSpecBuilder_.dispose();
+            modelSpecBuilder_ = null;
+          }
           return this;
         }
 
@@ -11549,7 +13265,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             result.ignoreNonSummarySeekingQuery_ = ignoreNonSummarySeekingQuery_;
           }
           if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.modelPromptSpec_ =
+                modelPromptSpecBuilder_ == null
+                    ? modelPromptSpec_
+                    : modelPromptSpecBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00000020) != 0)) {
             result.languageCode_ = languageCode_;
+          }
+          if (((from_bitField0_ & 0x00000040) != 0)) {
+            result.modelSpec_ = modelSpecBuilder_ == null ? modelSpec_ : modelSpecBuilder_.build();
           }
         }
 
@@ -11622,10 +13347,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           if (other.getIgnoreNonSummarySeekingQuery() != false) {
             setIgnoreNonSummarySeekingQuery(other.getIgnoreNonSummarySeekingQuery());
           }
+          if (other.hasModelPromptSpec()) {
+            mergeModelPromptSpec(other.getModelPromptSpec());
+          }
           if (!other.getLanguageCode().isEmpty()) {
             languageCode_ = other.languageCode_;
-            bitField0_ |= 0x00000010;
+            bitField0_ |= 0x00000020;
             onChanged();
+          }
+          if (other.hasModelSpec()) {
+            mergeModelSpec(other.getModelSpec());
           }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
@@ -11677,12 +13408,25 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000008;
                     break;
                   } // case 32
+                case 42:
+                  {
+                    input.readMessage(
+                        getModelPromptSpecFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 42
                 case 50:
                   {
                     languageCode_ = input.readStringRequireUtf8();
-                    bitField0_ |= 0x00000010;
+                    bitField0_ |= 0x00000020;
                     break;
                   } // case 50
+                case 58:
+                  {
+                    input.readMessage(getModelSpecFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000040;
+                    break;
+                  } // case 58
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12031,6 +13775,246 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelPromptSpec
+            modelPromptSpec_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelPromptSpec,
+                com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelPromptSpec.Builder,
+                com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelPromptSpecOrBuilder>
+            modelPromptSpecBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the prompt provided to
+         * the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec model_prompt_spec = 5;
+         * </code>
+         *
+         * @return Whether the modelPromptSpec field is set.
+         */
+        public boolean hasModelPromptSpec() {
+          return ((bitField0_ & 0x00000010) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the prompt provided to
+         * the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec model_prompt_spec = 5;
+         * </code>
+         *
+         * @return The modelPromptSpec.
+         */
+        public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelPromptSpec
+            getModelPromptSpec() {
+          if (modelPromptSpecBuilder_ == null) {
+            return modelPromptSpec_ == null
+                ? com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                    .SummarySpec.ModelPromptSpec.getDefaultInstance()
+                : modelPromptSpec_;
+          } else {
+            return modelPromptSpecBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the prompt provided to
+         * the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec model_prompt_spec = 5;
+         * </code>
+         */
+        public Builder setModelPromptSpec(
+            com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelPromptSpec
+                value) {
+          if (modelPromptSpecBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            modelPromptSpec_ = value;
+          } else {
+            modelPromptSpecBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the prompt provided to
+         * the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec model_prompt_spec = 5;
+         * </code>
+         */
+        public Builder setModelPromptSpec(
+            com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelPromptSpec.Builder
+                builderForValue) {
+          if (modelPromptSpecBuilder_ == null) {
+            modelPromptSpec_ = builderForValue.build();
+          } else {
+            modelPromptSpecBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the prompt provided to
+         * the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec model_prompt_spec = 5;
+         * </code>
+         */
+        public Builder mergeModelPromptSpec(
+            com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelPromptSpec
+                value) {
+          if (modelPromptSpecBuilder_ == null) {
+            if (((bitField0_ & 0x00000010) != 0)
+                && modelPromptSpec_ != null
+                && modelPromptSpec_
+                    != com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                        .SummarySpec.ModelPromptSpec.getDefaultInstance()) {
+              getModelPromptSpecBuilder().mergeFrom(value);
+            } else {
+              modelPromptSpec_ = value;
+            }
+          } else {
+            modelPromptSpecBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the prompt provided to
+         * the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec model_prompt_spec = 5;
+         * </code>
+         */
+        public Builder clearModelPromptSpec() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          modelPromptSpec_ = null;
+          if (modelPromptSpecBuilder_ != null) {
+            modelPromptSpecBuilder_.dispose();
+            modelPromptSpecBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the prompt provided to
+         * the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec model_prompt_spec = 5;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelPromptSpec.Builder
+            getModelPromptSpecBuilder() {
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return getModelPromptSpecFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the prompt provided to
+         * the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec model_prompt_spec = 5;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelPromptSpecOrBuilder
+            getModelPromptSpecOrBuilder() {
+          if (modelPromptSpecBuilder_ != null) {
+            return modelPromptSpecBuilder_.getMessageOrBuilder();
+          } else {
+            return modelPromptSpec_ == null
+                ? com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                    .SummarySpec.ModelPromptSpec.getDefaultInstance()
+                : modelPromptSpec_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the prompt provided to
+         * the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec model_prompt_spec = 5;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelPromptSpec,
+                com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelPromptSpec.Builder,
+                com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelPromptSpecOrBuilder>
+            getModelPromptSpecFieldBuilder() {
+          if (modelPromptSpecBuilder_ == null) {
+            modelPromptSpecBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                        .SummarySpec.ModelPromptSpec,
+                    com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                        .SummarySpec.ModelPromptSpec.Builder,
+                    com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                        .SummarySpec.ModelPromptSpecOrBuilder>(
+                    getModelPromptSpec(), getParentForChildren(), isClean());
+            modelPromptSpec_ = null;
+          }
+          return modelPromptSpecBuilder_;
+        }
+
         private java.lang.Object languageCode_ = "";
         /**
          *
@@ -12099,7 +14083,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           languageCode_ = value;
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -12118,7 +14102,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearLanguageCode() {
           languageCode_ = getDefaultInstance().getLanguageCode();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
           return this;
         }
@@ -12142,9 +14126,249 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           checkByteStringIsUtf8(value);
           languageCode_ = value;
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
+        }
+
+        private com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelSpec
+            modelSpec_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelSpec,
+                com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelSpec.Builder,
+                com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelSpecOrBuilder>
+            modelSpecBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the model specification
+         * provided to the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec model_spec = 7;
+         * </code>
+         *
+         * @return Whether the modelSpec field is set.
+         */
+        public boolean hasModelSpec() {
+          return ((bitField0_ & 0x00000040) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the model specification
+         * provided to the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec model_spec = 7;
+         * </code>
+         *
+         * @return The modelSpec.
+         */
+        public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelSpec
+            getModelSpec() {
+          if (modelSpecBuilder_ == null) {
+            return modelSpec_ == null
+                ? com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                    .SummarySpec.ModelSpec.getDefaultInstance()
+                : modelSpec_;
+          } else {
+            return modelSpecBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the model specification
+         * provided to the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec model_spec = 7;
+         * </code>
+         */
+        public Builder setModelSpec(
+            com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelSpec
+                value) {
+          if (modelSpecBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            modelSpec_ = value;
+          } else {
+            modelSpecBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the model specification
+         * provided to the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec model_spec = 7;
+         * </code>
+         */
+        public Builder setModelSpec(
+            com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelSpec.Builder
+                builderForValue) {
+          if (modelSpecBuilder_ == null) {
+            modelSpec_ = builderForValue.build();
+          } else {
+            modelSpecBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the model specification
+         * provided to the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec model_spec = 7;
+         * </code>
+         */
+        public Builder mergeModelSpec(
+            com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelSpec
+                value) {
+          if (modelSpecBuilder_ == null) {
+            if (((bitField0_ & 0x00000040) != 0)
+                && modelSpec_ != null
+                && modelSpec_
+                    != com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                        .SummarySpec.ModelSpec.getDefaultInstance()) {
+              getModelSpecBuilder().mergeFrom(value);
+            } else {
+              modelSpec_ = value;
+            }
+          } else {
+            modelSpecBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the model specification
+         * provided to the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec model_spec = 7;
+         * </code>
+         */
+        public Builder clearModelSpec() {
+          bitField0_ = (bitField0_ & ~0x00000040);
+          modelSpec_ = null;
+          if (modelSpecBuilder_ != null) {
+            modelSpecBuilder_.dispose();
+            modelSpecBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the model specification
+         * provided to the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec model_spec = 7;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelSpec.Builder
+            getModelSpecBuilder() {
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return getModelSpecFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the model specification
+         * provided to the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec model_spec = 7;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                .ModelSpecOrBuilder
+            getModelSpecOrBuilder() {
+          if (modelSpecBuilder_ != null) {
+            return modelSpecBuilder_.getMessageOrBuilder();
+          } else {
+            return modelSpec_ == null
+                ? com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                    .SummarySpec.ModelSpec.getDefaultInstance()
+                : modelSpec_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * If specified, the spec will be used to modify the model specification
+         * provided to the LLM.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec model_spec = 7;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelSpec,
+                com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelSpec.Builder,
+                com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
+                    .ModelSpecOrBuilder>
+            getModelSpecFieldBuilder() {
+          if (modelSpecBuilder_ == null) {
+            modelSpecBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                        .SummarySpec.ModelSpec,
+                    com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                        .SummarySpec.ModelSpec.Builder,
+                    com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
+                        .SummarySpec.ModelSpecOrBuilder>(
+                    getModelSpec(), getParentForChildren(), isClean());
+            modelSpec_ = null;
+          }
+          return modelSpecBuilder_;
         }
 
         @java.lang.Override
@@ -16970,6 +19194,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the Search serving config, such as
+   * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_serving_config`,
+   * or
    * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/servingConfigs/default_serving_config`.
    * This field is used to identify the serving configuration name, set
    * of models used to make the search.
@@ -16998,6 +19224,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the Search serving config, such as
+   * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_serving_config`,
+   * or
    * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/servingConfigs/default_serving_config`.
    * This field is used to identify the serving configuration name, set
    * of models used to make the search.
@@ -17309,6 +19537,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * expression is case-sensitive.
    *
    * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+   *
+   * Filtering in Vertex AI Search is done by mapping the LHS filter key to a
+   * key property defined in the Vertex AI Search backend -- this mapping is
+   * defined by the customer in their schema. For example a media customer might
+   * have a field 'name' in their schema. In this case the filter would look
+   * like this: filter --&gt; name:'ANY("king kong")'
+   *
+   * For more information about filtering including syntax and filter
+   * operators, see
+   * [Filter](https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata)
    * </pre>
    *
    * <code>string filter = 7;</code>
@@ -17336,6 +19574,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * expression is case-sensitive.
    *
    * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+   *
+   * Filtering in Vertex AI Search is done by mapping the LHS filter key to a
+   * key property defined in the Vertex AI Search backend -- this mapping is
+   * defined by the customer in their schema. For example a media customer might
+   * have a field 'name' in their schema. In this case the filter would look
+   * like this: filter --&gt; name:'ANY("king kong")'
+   *
+   * For more information about filtering including syntax and filter
+   * operators, see
+   * [Filter](https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata)
    * </pre>
    *
    * <code>string filter = 7;</code>
@@ -17355,6 +19603,79 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CANONICAL_FILTER_FIELD_NUMBER = 29;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object canonicalFilter_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The default filter that is applied when a user performs a search without
+   * checking any filters on the search page.
+   *
+   * The filter applied to every search request when quality improvement such as
+   * query expansion is needed. In the case a query does not have a sufficient
+   * amount of results this filter will be used to determine whether or not to
+   * enable the query expansion flow. The original filter will still be used for
+   * the query expanded search.
+   * This field is strongly recommended to achieve high search quality.
+   *
+   * For more information about filter syntax, see
+   * [SearchRequest.filter][google.cloud.discoveryengine.v1alpha.SearchRequest.filter].
+   * </pre>
+   *
+   * <code>string canonical_filter = 29;</code>
+   *
+   * @return The canonicalFilter.
+   */
+  @java.lang.Override
+  public java.lang.String getCanonicalFilter() {
+    java.lang.Object ref = canonicalFilter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      canonicalFilter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The default filter that is applied when a user performs a search without
+   * checking any filters on the search page.
+   *
+   * The filter applied to every search request when quality improvement such as
+   * query expansion is needed. In the case a query does not have a sufficient
+   * amount of results this filter will be used to determine whether or not to
+   * enable the query expansion flow. The original filter will still be used for
+   * the query expanded search.
+   * This field is strongly recommended to achieve high search quality.
+   *
+   * For more information about filter syntax, see
+   * [SearchRequest.filter][google.cloud.discoveryengine.v1alpha.SearchRequest.filter].
+   * </pre>
+   *
+   * <code>string canonical_filter = 29;</code>
+   *
+   * @return The bytes for canonicalFilter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCanonicalFilterBytes() {
+    java.lang.Object ref = canonicalFilter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      canonicalFilter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ORDER_BY_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
@@ -17366,7 +19687,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * The order in which documents are returned. Documents can be ordered by
    * a field in an [Document][google.cloud.discoveryengine.v1alpha.Document]
    * object. Leave it unset if ordered by relevance. `order_by` expression is
-   * case-sensitive.
+   * case-sensitive. For more information on ordering, see
+   * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
    *
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
@@ -17394,7 +19716,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * The order in which documents are returned. Documents can be ordered by
    * a field in an [Document][google.cloud.discoveryengine.v1alpha.Document]
    * object. Leave it unset if ordered by relevance. `order_by` expression is
-   * case-sensitive.
+   * case-sensitive. For more information on ordering, see
+   * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
    *
    * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
@@ -17577,6 +19900,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Boost specification to boost certain documents.
+   * For more information on boosting, see
+   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -17592,6 +19917,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Boost specification to boost certain documents.
+   * For more information on boosting, see
+   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -17609,6 +19936,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Boost specification to boost certain documents.
+   * For more information on boosting, see
+   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -17660,9 +19989,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
+   *    Example:
+   *    user_country_code: "au"
+   *
+   *    For available codes see [Country
+   *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+   *
    * * `search_type`: double. Default empty. Enables non-webpage searching
-   *   depending on the value. The only valid non-default value is 1,
-   *   which enables image searching.
+   *    depending on the value. The only valid non-default value is 1,
+   *    which enables image searching.
+   *    Example:
+   *    search_type: 1
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -17690,9 +20027,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
+   *    Example:
+   *    user_country_code: "au"
+   *
+   *    For available codes see [Country
+   *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+   *
    * * `search_type`: double. Default empty. Enables non-webpage searching
-   *   depending on the value. The only valid non-default value is 1,
-   *   which enables image searching.
+   *    depending on the value. The only valid non-default value is 1,
+   *    which enables image searching.
+   *    Example:
+   *    search_type: 1
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -17711,9 +20056,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
+   *    Example:
+   *    user_country_code: "au"
+   *
+   *    For available codes see [Country
+   *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+   *
    * * `search_type`: double. Default empty. Enables non-webpage searching
-   *   depending on the value. The only valid non-default value is 1,
-   *   which enables image searching.
+   *    depending on the value. The only valid non-default value is 1,
+   *    which enables image searching.
+   *    Example:
+   *    search_type: 1
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -17739,9 +20092,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * * `user_country_code`: string. Default empty. If set to non-empty, results
    *    are restricted or boosted based on the location provided.
+   *    Example:
+   *    user_country_code: "au"
+   *
+   *    For available codes see [Country
+   *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+   *
    * * `search_type`: double. Default empty. Enables non-webpage searching
-   *   depending on the value. The only valid non-default value is 1,
-   *   which enables image searching.
+   *    depending on the value. The only valid non-default value is 1,
+   *    which enables image searching.
+   *    Example:
+   *    search_type: 1
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -18448,6 +20809,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rankingExpression_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 26, rankingExpression_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canonicalFilter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 29, canonicalFilter_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -18535,6 +20899,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rankingExpression_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, rankingExpression_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canonicalFilter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, canonicalFilter_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -18562,6 +20929,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (getOffset() != other.getOffset()) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (!getCanonicalFilter().equals(other.getCanonicalFilter())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (hasUserInfo() != other.hasUserInfo()) return false;
     if (hasUserInfo()) {
@@ -18622,6 +20990,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getOffset();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + CANONICAL_FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getCanonicalFilter().hashCode();
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
     if (hasUserInfo()) {
@@ -18844,6 +21214,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       pageToken_ = "";
       offset_ = 0;
       filter_ = "";
+      canonicalFilter_ = "";
       orderBy_ = "";
       userInfo_ = null;
       if (userInfoBuilder_ != null) {
@@ -18856,7 +21227,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         facetSpecs_ = null;
         facetSpecsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       boostSpec_ = null;
       if (boostSpecBuilder_ != null) {
         boostSpecBuilder_.dispose();
@@ -18925,9 +21296,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialRepeatedFields(
         com.google.cloud.discoveryengine.v1alpha.SearchRequest result) {
       if (facetSpecsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           facetSpecs_ = java.util.Collections.unmodifiableList(facetSpecs_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.facetSpecs_ = facetSpecs_;
       } else {
@@ -18962,50 +21333,53 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         result.filter_ = filter_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.orderBy_ = orderBy_;
+        result.canonicalFilter_ = canonicalFilter_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.orderBy_ = orderBy_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.userInfo_ = userInfoBuilder_ == null ? userInfo_ : userInfoBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.boostSpec_ = boostSpecBuilder_ == null ? boostSpec_ : boostSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.params_ = internalGetParams();
         result.params_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.queryExpansionSpec_ =
             queryExpansionSpecBuilder_ == null
                 ? queryExpansionSpec_
                 : queryExpansionSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.spellCorrectionSpec_ =
             spellCorrectionSpecBuilder_ == null
                 ? spellCorrectionSpec_
                 : spellCorrectionSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.userPseudoId_ = userPseudoId_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.contentSearchSpec_ =
             contentSearchSpecBuilder_ == null
                 ? contentSearchSpec_
                 : contentSearchSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.embeddingSpec_ =
             embeddingSpecBuilder_ == null ? embeddingSpec_ : embeddingSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.rankingExpression_ = rankingExpression_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.safeSearch_ = safeSearch_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.userLabels_ = internalGetUserLabels();
         result.userLabels_.makeImmutable();
       }
@@ -19091,9 +21465,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (!other.getCanonicalFilter().isEmpty()) {
+        canonicalFilter_ = other.canonicalFilter_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       if (!other.getOrderBy().isEmpty()) {
         orderBy_ = other.orderBy_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasUserInfo()) {
@@ -19103,7 +21482,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (!other.facetSpecs_.isEmpty()) {
           if (facetSpecs_.isEmpty()) {
             facetSpecs_ = other.facetSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureFacetSpecsIsMutable();
             facetSpecs_.addAll(other.facetSpecs_);
@@ -19116,7 +21495,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             facetSpecsBuilder_.dispose();
             facetSpecsBuilder_ = null;
             facetSpecs_ = other.facetSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             facetSpecsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFacetSpecsFieldBuilder()
@@ -19130,7 +21509,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         mergeBoostSpec(other.getBoostSpec());
       }
       internalGetMutableParams().mergeFrom(other.internalGetParams());
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       if (other.hasQueryExpansionSpec()) {
         mergeQueryExpansionSpec(other.getQueryExpansionSpec());
       }
@@ -19139,7 +21518,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUserPseudoId().isEmpty()) {
         userPseudoId_ = other.userPseudoId_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasContentSearchSpec()) {
@@ -19150,14 +21529,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getRankingExpression().isEmpty()) {
         rankingExpression_ = other.rankingExpression_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.getSafeSearch() != false) {
         setSafeSearch(other.getSafeSearch());
       }
       internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -19229,7 +21608,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 orderBy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 66
             case 74:
@@ -19249,7 +21628,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 input.readMessage(getBoostSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 82
             case 90:
@@ -19261,27 +21640,27 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableParams()
                     .getMutableMap()
                     .put(params__.getKey(), params__.getValue());
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 90
             case 106:
               {
                 input.readMessage(
                     getQueryExpansionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(
                     getSpellCorrectionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 114
             case 122:
               {
                 userPseudoId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 122
             case 154:
@@ -19293,13 +21672,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             case 160:
               {
                 safeSearch_ = input.readBool();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 160
             case 170:
               {
                 input.readMessage(getUserInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 170
             case 178:
@@ -19311,28 +21690,34 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableUserLabels()
                     .getMutableMap()
                     .put(userLabels__.getKey(), userLabels__.getValue());
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 178
             case 186:
               {
                 input.readMessage(getEmbeddingSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 186
             case 194:
               {
                 input.readMessage(
                     getContentSearchSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 194
             case 210:
               {
                 rankingExpression_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 210
+            case 234:
+              {
+                canonicalFilter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 234
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -19358,6 +21743,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the Search serving config, such as
+     * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_serving_config`,
+     * or
      * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/servingConfigs/default_serving_config`.
      * This field is used to identify the serving configuration name, set
      * of models used to make the search.
@@ -19385,6 +21772,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the Search serving config, such as
+     * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_serving_config`,
+     * or
      * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/servingConfigs/default_serving_config`.
      * This field is used to identify the serving configuration name, set
      * of models used to make the search.
@@ -19412,6 +21801,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the Search serving config, such as
+     * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_serving_config`,
+     * or
      * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/servingConfigs/default_serving_config`.
      * This field is used to identify the serving configuration name, set
      * of models used to make the search.
@@ -19438,6 +21829,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the Search serving config, such as
+     * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_serving_config`,
+     * or
      * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/servingConfigs/default_serving_config`.
      * This field is used to identify the serving configuration name, set
      * of models used to make the search.
@@ -19460,6 +21853,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the Search serving config, such as
+     * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_serving_config`,
+     * or
      * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/default_data_store/servingConfigs/default_serving_config`.
      * This field is used to identify the serving configuration name, set
      * of models used to make the search.
@@ -20198,6 +22593,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * expression is case-sensitive.
      *
      * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+     *
+     * Filtering in Vertex AI Search is done by mapping the LHS filter key to a
+     * key property defined in the Vertex AI Search backend -- this mapping is
+     * defined by the customer in their schema. For example a media customer might
+     * have a field 'name' in their schema. In this case the filter would look
+     * like this: filter --&gt; name:'ANY("king kong")'
+     *
+     * For more information about filtering including syntax and filter
+     * operators, see
+     * [Filter](https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata)
      * </pre>
      *
      * <code>string filter = 7;</code>
@@ -20224,6 +22629,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * expression is case-sensitive.
      *
      * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+     *
+     * Filtering in Vertex AI Search is done by mapping the LHS filter key to a
+     * key property defined in the Vertex AI Search backend -- this mapping is
+     * defined by the customer in their schema. For example a media customer might
+     * have a field 'name' in their schema. In this case the filter would look
+     * like this: filter --&gt; name:'ANY("king kong")'
+     *
+     * For more information about filtering including syntax and filter
+     * operators, see
+     * [Filter](https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata)
      * </pre>
      *
      * <code>string filter = 7;</code>
@@ -20250,6 +22665,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * expression is case-sensitive.
      *
      * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+     *
+     * Filtering in Vertex AI Search is done by mapping the LHS filter key to a
+     * key property defined in the Vertex AI Search backend -- this mapping is
+     * defined by the customer in their schema. For example a media customer might
+     * have a field 'name' in their schema. In this case the filter would look
+     * like this: filter --&gt; name:'ANY("king kong")'
+     *
+     * For more information about filtering including syntax and filter
+     * operators, see
+     * [Filter](https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata)
      * </pre>
      *
      * <code>string filter = 7;</code>
@@ -20275,6 +22700,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * expression is case-sensitive.
      *
      * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+     *
+     * Filtering in Vertex AI Search is done by mapping the LHS filter key to a
+     * key property defined in the Vertex AI Search backend -- this mapping is
+     * defined by the customer in their schema. For example a media customer might
+     * have a field 'name' in their schema. In this case the filter would look
+     * like this: filter --&gt; name:'ANY("king kong")'
+     *
+     * For more information about filtering including syntax and filter
+     * operators, see
+     * [Filter](https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata)
      * </pre>
      *
      * <code>string filter = 7;</code>
@@ -20296,6 +22731,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * expression is case-sensitive.
      *
      * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+     *
+     * Filtering in Vertex AI Search is done by mapping the LHS filter key to a
+     * key property defined in the Vertex AI Search backend -- this mapping is
+     * defined by the customer in their schema. For example a media customer might
+     * have a field 'name' in their schema. In this case the filter would look
+     * like this: filter --&gt; name:'ANY("king kong")'
+     *
+     * For more information about filtering including syntax and filter
+     * operators, see
+     * [Filter](https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata)
      * </pre>
      *
      * <code>string filter = 7;</code>
@@ -20314,6 +22759,167 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object canonicalFilter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The default filter that is applied when a user performs a search without
+     * checking any filters on the search page.
+     *
+     * The filter applied to every search request when quality improvement such as
+     * query expansion is needed. In the case a query does not have a sufficient
+     * amount of results this filter will be used to determine whether or not to
+     * enable the query expansion flow. The original filter will still be used for
+     * the query expanded search.
+     * This field is strongly recommended to achieve high search quality.
+     *
+     * For more information about filter syntax, see
+     * [SearchRequest.filter][google.cloud.discoveryengine.v1alpha.SearchRequest.filter].
+     * </pre>
+     *
+     * <code>string canonical_filter = 29;</code>
+     *
+     * @return The canonicalFilter.
+     */
+    public java.lang.String getCanonicalFilter() {
+      java.lang.Object ref = canonicalFilter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        canonicalFilter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The default filter that is applied when a user performs a search without
+     * checking any filters on the search page.
+     *
+     * The filter applied to every search request when quality improvement such as
+     * query expansion is needed. In the case a query does not have a sufficient
+     * amount of results this filter will be used to determine whether or not to
+     * enable the query expansion flow. The original filter will still be used for
+     * the query expanded search.
+     * This field is strongly recommended to achieve high search quality.
+     *
+     * For more information about filter syntax, see
+     * [SearchRequest.filter][google.cloud.discoveryengine.v1alpha.SearchRequest.filter].
+     * </pre>
+     *
+     * <code>string canonical_filter = 29;</code>
+     *
+     * @return The bytes for canonicalFilter.
+     */
+    public com.google.protobuf.ByteString getCanonicalFilterBytes() {
+      java.lang.Object ref = canonicalFilter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        canonicalFilter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The default filter that is applied when a user performs a search without
+     * checking any filters on the search page.
+     *
+     * The filter applied to every search request when quality improvement such as
+     * query expansion is needed. In the case a query does not have a sufficient
+     * amount of results this filter will be used to determine whether or not to
+     * enable the query expansion flow. The original filter will still be used for
+     * the query expanded search.
+     * This field is strongly recommended to achieve high search quality.
+     *
+     * For more information about filter syntax, see
+     * [SearchRequest.filter][google.cloud.discoveryengine.v1alpha.SearchRequest.filter].
+     * </pre>
+     *
+     * <code>string canonical_filter = 29;</code>
+     *
+     * @param value The canonicalFilter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanonicalFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      canonicalFilter_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The default filter that is applied when a user performs a search without
+     * checking any filters on the search page.
+     *
+     * The filter applied to every search request when quality improvement such as
+     * query expansion is needed. In the case a query does not have a sufficient
+     * amount of results this filter will be used to determine whether or not to
+     * enable the query expansion flow. The original filter will still be used for
+     * the query expanded search.
+     * This field is strongly recommended to achieve high search quality.
+     *
+     * For more information about filter syntax, see
+     * [SearchRequest.filter][google.cloud.discoveryengine.v1alpha.SearchRequest.filter].
+     * </pre>
+     *
+     * <code>string canonical_filter = 29;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCanonicalFilter() {
+      canonicalFilter_ = getDefaultInstance().getCanonicalFilter();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The default filter that is applied when a user performs a search without
+     * checking any filters on the search page.
+     *
+     * The filter applied to every search request when quality improvement such as
+     * query expansion is needed. In the case a query does not have a sufficient
+     * amount of results this filter will be used to determine whether or not to
+     * enable the query expansion flow. The original filter will still be used for
+     * the query expanded search.
+     * This field is strongly recommended to achieve high search quality.
+     *
+     * For more information about filter syntax, see
+     * [SearchRequest.filter][google.cloud.discoveryengine.v1alpha.SearchRequest.filter].
+     * </pre>
+     *
+     * <code>string canonical_filter = 29;</code>
+     *
+     * @param value The bytes for canonicalFilter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanonicalFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      canonicalFilter_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object orderBy_ = "";
     /**
      *
@@ -20322,7 +22928,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * The order in which documents are returned. Documents can be ordered by
      * a field in an [Document][google.cloud.discoveryengine.v1alpha.Document]
      * object. Leave it unset if ordered by relevance. `order_by` expression is
-     * case-sensitive.
+     * case-sensitive. For more information on ordering, see
+     * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
      *
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
@@ -20349,7 +22956,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * The order in which documents are returned. Documents can be ordered by
      * a field in an [Document][google.cloud.discoveryengine.v1alpha.Document]
      * object. Leave it unset if ordered by relevance. `order_by` expression is
-     * case-sensitive.
+     * case-sensitive. For more information on ordering, see
+     * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
      *
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
@@ -20376,7 +22984,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * The order in which documents are returned. Documents can be ordered by
      * a field in an [Document][google.cloud.discoveryengine.v1alpha.Document]
      * object. Leave it unset if ordered by relevance. `order_by` expression is
-     * case-sensitive.
+     * case-sensitive. For more information on ordering, see
+     * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
      *
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
@@ -20391,7 +23000,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       orderBy_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -20402,7 +23011,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * The order in which documents are returned. Documents can be ordered by
      * a field in an [Document][google.cloud.discoveryengine.v1alpha.Document]
      * object. Leave it unset if ordered by relevance. `order_by` expression is
-     * case-sensitive.
+     * case-sensitive. For more information on ordering, see
+     * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
      *
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
@@ -20413,7 +23023,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOrderBy() {
       orderBy_ = getDefaultInstance().getOrderBy();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -20424,7 +23034,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * The order in which documents are returned. Documents can be ordered by
      * a field in an [Document][google.cloud.discoveryengine.v1alpha.Document]
      * object. Leave it unset if ordered by relevance. `order_by` expression is
-     * case-sensitive.
+     * case-sensitive. For more information on ordering, see
+     * [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order)
      *
      * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
      * </pre>
@@ -20440,7 +23051,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       orderBy_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -20466,7 +23077,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the userInfo field is set.
      */
     public boolean hasUserInfo() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -20512,7 +23123,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         userInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -20535,7 +23146,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         userInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -20553,7 +23164,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUserInfo(com.google.cloud.discoveryengine.v1alpha.UserInfo value) {
       if (userInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && userInfo_ != null
             && userInfo_
                 != com.google.cloud.discoveryengine.v1alpha.UserInfo.getDefaultInstance()) {
@@ -20564,7 +23175,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         userInfoBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -20581,7 +23192,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1alpha.UserInfo user_info = 21;</code>
      */
     public Builder clearUserInfo() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       userInfo_ = null;
       if (userInfoBuilder_ != null) {
         userInfoBuilder_.dispose();
@@ -20603,7 +23214,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1alpha.UserInfo user_info = 21;</code>
      */
     public com.google.cloud.discoveryengine.v1alpha.UserInfo.Builder getUserInfoBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getUserInfoFieldBuilder().getBuilder();
     }
@@ -20661,11 +23272,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         facetSpecs_ = java.util.Collections.emptyList();
 
     private void ensureFacetSpecsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         facetSpecs_ =
             new java.util.ArrayList<
                 com.google.cloud.discoveryengine.v1alpha.SearchRequest.FacetSpec>(facetSpecs_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -20934,7 +23545,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFacetSpecs() {
       if (facetSpecsBuilder_ == null) {
         facetSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         facetSpecsBuilder_.clear();
@@ -21094,7 +23705,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.discoveryengine.v1alpha.SearchRequest.FacetSpec,
                 com.google.cloud.discoveryengine.v1alpha.SearchRequest.FacetSpec.Builder,
                 com.google.cloud.discoveryengine.v1alpha.SearchRequest.FacetSpecOrBuilder>(
-                facetSpecs_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+                facetSpecs_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         facetSpecs_ = null;
       }
       return facetSpecsBuilder_;
@@ -21111,6 +23722,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Boost specification to boost certain documents.
+     * For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -21118,13 +23731,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the boostSpec field is set.
      */
     public boolean hasBoostSpec() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
      *
      * <pre>
      * Boost specification to boost certain documents.
+     * For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -21145,6 +23760,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Boost specification to boost certain documents.
+     * For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -21159,7 +23776,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         boostSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -21168,6 +23785,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Boost specification to boost certain documents.
+     * For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -21179,7 +23798,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         boostSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -21188,6 +23807,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Boost specification to boost certain documents.
+     * For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -21195,7 +23816,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeBoostSpec(
         com.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec value) {
       if (boostSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && boostSpec_ != null
             && boostSpec_
                 != com.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec
@@ -21207,7 +23828,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         boostSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -21216,12 +23837,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Boost specification to boost certain documents.
+     * For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boost_spec = 10;</code>
      */
     public Builder clearBoostSpec() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       boostSpec_ = null;
       if (boostSpecBuilder_ != null) {
         boostSpecBuilder_.dispose();
@@ -21235,13 +23858,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Boost specification to boost certain documents.
+     * For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boost_spec = 10;</code>
      */
     public com.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec.Builder
         getBoostSpecBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getBoostSpecFieldBuilder().getBuilder();
     }
@@ -21250,6 +23875,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Boost specification to boost certain documents.
+     * For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -21269,6 +23896,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Boost specification to boost certain documents.
+     * For more information on boosting, see
+     * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boost_spec = 10;</code>
@@ -21308,7 +23937,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (!params_.isMutable()) {
         params_ = params_.copy();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return params_;
     }
@@ -21326,9 +23955,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
+     *    Example:
+     *    user_country_code: "au"
+     *
+     *    For available codes see [Country
+     *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+     *
      * * `search_type`: double. Default empty. Enables non-webpage searching
-     *   depending on the value. The only valid non-default value is 1,
-     *   which enables image searching.
+     *    depending on the value. The only valid non-default value is 1,
+     *    which enables image searching.
+     *    Example:
+     *    search_type: 1
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -21356,9 +23993,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
+     *    Example:
+     *    user_country_code: "au"
+     *
+     *    For available codes see [Country
+     *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+     *
      * * `search_type`: double. Default empty. Enables non-webpage searching
-     *   depending on the value. The only valid non-default value is 1,
-     *   which enables image searching.
+     *    depending on the value. The only valid non-default value is 1,
+     *    which enables image searching.
+     *    Example:
+     *    search_type: 1
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -21377,9 +24022,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
+     *    Example:
+     *    user_country_code: "au"
+     *
+     *    For available codes see [Country
+     *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+     *
      * * `search_type`: double. Default empty. Enables non-webpage searching
-     *   depending on the value. The only valid non-default value is 1,
-     *   which enables image searching.
+     *    depending on the value. The only valid non-default value is 1,
+     *    which enables image searching.
+     *    Example:
+     *    search_type: 1
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -21405,9 +24058,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
+     *    Example:
+     *    user_country_code: "au"
+     *
+     *    For available codes see [Country
+     *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+     *
      * * `search_type`: double. Default empty. Enables non-webpage searching
-     *   depending on the value. The only valid non-default value is 1,
-     *   which enables image searching.
+     *    depending on the value. The only valid non-default value is 1,
+     *    which enables image searching.
+     *    Example:
+     *    search_type: 1
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -21425,7 +24086,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearParams() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       internalGetMutableParams().getMutableMap().clear();
       return this;
     }
@@ -21439,9 +24100,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
+     *    Example:
+     *    user_country_code: "au"
+     *
+     *    For available codes see [Country
+     *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+     *
      * * `search_type`: double. Default empty. Enables non-webpage searching
-     *   depending on the value. The only valid non-default value is 1,
-     *   which enables image searching.
+     *    depending on the value. The only valid non-default value is 1,
+     *    which enables image searching.
+     *    Example:
+     *    search_type: 1
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -21456,7 +24125,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableParams() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       return internalGetMutableParams().getMutableMap();
     }
     /**
@@ -21469,9 +24138,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
+     *    Example:
+     *    user_country_code: "au"
+     *
+     *    For available codes see [Country
+     *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+     *
      * * `search_type`: double. Default empty. Enables non-webpage searching
-     *   depending on the value. The only valid non-default value is 1,
-     *   which enables image searching.
+     *    depending on the value. The only valid non-default value is 1,
+     *    which enables image searching.
+     *    Example:
+     *    search_type: 1
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
@@ -21484,7 +24161,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableParams().getMutableMap().put(key, value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       return this;
     }
     /**
@@ -21497,16 +24174,24 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * * `user_country_code`: string. Default empty. If set to non-empty, results
      *    are restricted or boosted based on the location provided.
+     *    Example:
+     *    user_country_code: "au"
+     *
+     *    For available codes see [Country
+     *    Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes)
+     *
      * * `search_type`: double. Default empty. Enables non-webpage searching
-     *   depending on the value. The only valid non-default value is 1,
-     *   which enables image searching.
+     *    depending on the value. The only valid non-default value is 1,
+     *    which enables image searching.
+     *    Example:
+     *    search_type: 1
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 11;</code>
      */
     public Builder putAllParams(java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
       internalGetMutableParams().getMutableMap().putAll(values);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       return this;
     }
 
@@ -21532,7 +24217,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the queryExpansionSpec field is set.
      */
     public boolean hasQueryExpansionSpec() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -21581,7 +24266,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryExpansionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -21605,7 +24290,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryExpansionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -21624,7 +24309,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeQueryExpansionSpec(
         com.google.cloud.discoveryengine.v1alpha.SearchRequest.QueryExpansionSpec value) {
       if (queryExpansionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && queryExpansionSpec_ != null
             && queryExpansionSpec_
                 != com.google.cloud.discoveryengine.v1alpha.SearchRequest.QueryExpansionSpec
@@ -21636,7 +24321,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         queryExpansionSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -21653,7 +24338,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearQueryExpansionSpec() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       queryExpansionSpec_ = null;
       if (queryExpansionSpecBuilder_ != null) {
         queryExpansionSpecBuilder_.dispose();
@@ -21676,7 +24361,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1alpha.SearchRequest.QueryExpansionSpec.Builder
         getQueryExpansionSpecBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getQueryExpansionSpecFieldBuilder().getBuilder();
     }
@@ -21754,7 +24439,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the spellCorrectionSpec field is set.
      */
     public boolean hasSpellCorrectionSpec() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -21803,7 +24488,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -21827,7 +24512,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -21846,7 +24531,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSpellCorrectionSpec(
         com.google.cloud.discoveryengine.v1alpha.SearchRequest.SpellCorrectionSpec value) {
       if (spellCorrectionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && spellCorrectionSpec_ != null
             && spellCorrectionSpec_
                 != com.google.cloud.discoveryengine.v1alpha.SearchRequest.SpellCorrectionSpec
@@ -21858,7 +24543,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         spellCorrectionSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -21875,7 +24560,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSpellCorrectionSpec() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       spellCorrectionSpec_ = null;
       if (spellCorrectionSpecBuilder_ != null) {
         spellCorrectionSpecBuilder_.dispose();
@@ -21898,7 +24583,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1alpha.SearchRequest.SpellCorrectionSpec.Builder
         getSpellCorrectionSpecBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getSpellCorrectionSpecFieldBuilder().getBuilder();
     }
@@ -22056,7 +24741,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       userPseudoId_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -22086,7 +24771,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUserPseudoId() {
       userPseudoId_ = getDefaultInstance().getUserPseudoId();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -22121,7 +24806,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       userPseudoId_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -22147,7 +24832,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the contentSearchSpec field is set.
      */
     public boolean hasContentSearchSpec() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -22194,7 +24879,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         contentSearchSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -22217,7 +24902,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         contentSearchSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -22235,7 +24920,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeContentSearchSpec(
         com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec value) {
       if (contentSearchSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && contentSearchSpec_ != null
             && contentSearchSpec_
                 != com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
@@ -22247,7 +24932,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         contentSearchSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -22263,7 +24948,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearContentSearchSpec() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       contentSearchSpec_ = null;
       if (contentSearchSpecBuilder_ != null) {
         contentSearchSpecBuilder_.dispose();
@@ -22285,7 +24970,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.Builder
         getContentSearchSpecBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getContentSearchSpecFieldBuilder().getBuilder();
     }
@@ -22365,7 +25050,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the embeddingSpec field is set.
      */
     public boolean hasEmbeddingSpec() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -22423,7 +25108,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         embeddingSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -22452,7 +25137,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         embeddingSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -22476,7 +25161,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeEmbeddingSpec(
         com.google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec value) {
       if (embeddingSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && embeddingSpec_ != null
             && embeddingSpec_
                 != com.google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec
@@ -22488,7 +25173,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         embeddingSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -22510,7 +25195,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEmbeddingSpec() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       embeddingSpec_ = null;
       if (embeddingSpecBuilder_ != null) {
         embeddingSpecBuilder_.dispose();
@@ -22538,7 +25223,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec.Builder
         getEmbeddingSpecBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getEmbeddingSpecFieldBuilder().getBuilder();
     }
@@ -22723,7 +25408,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       rankingExpression_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -22759,7 +25444,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRankingExpression() {
       rankingExpression_ = getDefaultInstance().getRankingExpression();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -22800,7 +25485,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       rankingExpression_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -22838,7 +25523,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setSafeSearch(boolean value) {
 
       safeSearch_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -22855,7 +25540,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSafeSearch() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       safeSearch_ = false;
       onChanged();
       return this;
@@ -22881,7 +25566,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (!userLabels_.isMutable()) {
         userLabels_ = userLabels_.copy();
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return userLabels_;
     }
@@ -23030,7 +25715,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearUserLabels() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
@@ -23069,7 +25754,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return internalGetMutableUserLabels().getMutableMap();
     }
     /**
@@ -23105,7 +25790,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableUserLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return this;
     }
     /**
@@ -23135,7 +25820,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableUserLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return this;
     }
 

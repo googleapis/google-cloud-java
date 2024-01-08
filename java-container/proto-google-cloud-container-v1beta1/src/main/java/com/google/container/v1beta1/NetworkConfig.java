@@ -42,6 +42,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     subnetwork_ = "";
     datapathProvider_ = 0;
     privateIpv6GoogleAccess_ = 0;
+    inTransitEncryptionConfig_ = 0;
   }
 
   @java.lang.Override
@@ -1485,6 +1486,65 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     return enableFqdnNetworkPolicy_;
   }
 
+  public static final int IN_TRANSIT_ENCRYPTION_CONFIG_FIELD_NUMBER = 20;
+  private int inTransitEncryptionConfig_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+   * </code>
+   *
+   * @return Whether the inTransitEncryptionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasInTransitEncryptionConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for inTransitEncryptionConfig.
+   */
+  @java.lang.Override
+  public int getInTransitEncryptionConfigValue() {
+    return inTransitEncryptionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+   * </code>
+   *
+   * @return The inTransitEncryptionConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.InTransitEncryptionConfig getInTransitEncryptionConfig() {
+    com.google.container.v1beta1.InTransitEncryptionConfig result =
+        com.google.container.v1beta1.InTransitEncryptionConfig.forNumber(
+            inTransitEncryptionConfig_);
+    return result == null
+        ? com.google.container.v1beta1.InTransitEncryptionConfig.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1543,6 +1603,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(19, enableFqdnNetworkPolicy_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeEnum(20, inTransitEncryptionConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1600,6 +1663,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, enableFqdnNetworkPolicy_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(20, inTransitEncryptionConfig_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1646,6 +1712,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasEnableFqdnNetworkPolicy() != other.hasEnableFqdnNetworkPolicy()) return false;
     if (hasEnableFqdnNetworkPolicy()) {
       if (getEnableFqdnNetworkPolicy() != other.getEnableFqdnNetworkPolicy()) return false;
+    }
+    if (hasInTransitEncryptionConfig() != other.hasInTransitEncryptionConfig()) return false;
+    if (hasInTransitEncryptionConfig()) {
+      if (inTransitEncryptionConfig_ != other.inTransitEncryptionConfig_) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1695,6 +1765,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasEnableFqdnNetworkPolicy()) {
       hash = (37 * hash) + ENABLE_FQDN_NETWORK_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableFqdnNetworkPolicy());
+    }
+    if (hasInTransitEncryptionConfig()) {
+      hash = (37 * hash) + IN_TRANSIT_ENCRYPTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + inTransitEncryptionConfig_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1868,6 +1942,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         networkPerformanceConfigBuilder_ = null;
       }
       enableFqdnNetworkPolicy_ = false;
+      inTransitEncryptionConfig_ = 0;
       return this;
     }
 
@@ -1954,6 +2029,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.enableFqdnNetworkPolicy_ = enableFqdnNetworkPolicy_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.inTransitEncryptionConfig_ = inTransitEncryptionConfig_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2045,6 +2124,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasEnableFqdnNetworkPolicy()) {
         setEnableFqdnNetworkPolicy(other.getEnableFqdnNetworkPolicy());
+      }
+      if (other.hasInTransitEncryptionConfig()) {
+        setInTransitEncryptionConfig(other.getInTransitEncryptionConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2154,6 +2236,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 152
+            case 160:
+              {
+                inTransitEncryptionConfig_ = input.readEnum();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 160
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3854,6 +3942,127 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEnableFqdnNetworkPolicy() {
       bitField0_ = (bitField0_ & ~0x00001000);
       enableFqdnNetworkPolicy_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int inTransitEncryptionConfig_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+     * </code>
+     *
+     * @return Whether the inTransitEncryptionConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasInTransitEncryptionConfig() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for inTransitEncryptionConfig.
+     */
+    @java.lang.Override
+    public int getInTransitEncryptionConfigValue() {
+      return inTransitEncryptionConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for inTransitEncryptionConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInTransitEncryptionConfigValue(int value) {
+      inTransitEncryptionConfig_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+     * </code>
+     *
+     * @return The inTransitEncryptionConfig.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.InTransitEncryptionConfig getInTransitEncryptionConfig() {
+      com.google.container.v1beta1.InTransitEncryptionConfig result =
+          com.google.container.v1beta1.InTransitEncryptionConfig.forNumber(
+              inTransitEncryptionConfig_);
+      return result == null
+          ? com.google.container.v1beta1.InTransitEncryptionConfig.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+     * </code>
+     *
+     * @param value The inTransitEncryptionConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInTransitEncryptionConfig(
+        com.google.container.v1beta1.InTransitEncryptionConfig value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00002000;
+      inTransitEncryptionConfig_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specify the details of in-transit encryption.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.InTransitEncryptionConfig in_transit_encryption_config = 20;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInTransitEncryptionConfig() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      inTransitEncryptionConfig_ = 0;
       onChanged();
       return this;
     }

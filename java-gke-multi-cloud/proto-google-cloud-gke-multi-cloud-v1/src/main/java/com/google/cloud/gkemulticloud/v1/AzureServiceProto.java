@@ -76,6 +76,14 @@ public final class AzureServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_DeleteAzureNodePoolRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_GetAzureOpenIdConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_GetAzureOpenIdConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_GetAzureJsonWebKeysRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_GetAzureJsonWebKeysRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkemulticloud_v1_GetAzureServerConfigRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_GetAzureServerConfigRequest_fieldAccessorTable;
@@ -107,6 +115,14 @@ public final class AzureServiceProto {
       internal_static_google_cloud_gkemulticloud_v1_GenerateAzureAccessTokenResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_GenerateAzureAccessTokenResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_GenerateAzureClusterAgentTokenRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_GenerateAzureClusterAgentTokenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_GenerateAzureClusterAgentTokenResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_GenerateAzureClusterAgentTokenResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -122,183 +138,221 @@ public final class AzureServiceProto {
           + "/api/client.proto\032\037google/api/field_beha"
           + "vior.proto\032\031google/api/resource.proto\0323g"
           + "oogle/cloud/gkemulticloud/v1/azure_resou"
-          + "rces.proto\032#google/longrunning/operation"
-          + "s.proto\032 google/protobuf/field_mask.prot"
-          + "o\032\037google/protobuf/timestamp.proto\"\340\001\n\031C"
-          + "reateAzureClusterRequest\022B\n\006parent\030\001 \001(\t"
-          + "B2\342A\001\002\372A+\022)gkemulticloud.googleapis.com/"
-          + "AzureCluster\022H\n\razure_cluster\030\002 \001(\0132+.go"
-          + "ogle.cloud.gkemulticloud.v1.AzureCluster"
-          + "B\004\342A\001\002\022\036\n\020azure_cluster_id\030\003 \001(\tB\004\342A\001\002\022\025"
-          + "\n\rvalidate_only\030\004 \001(\010\"\263\001\n\031UpdateAzureClu"
-          + "sterRequest\022H\n\razure_cluster\030\001 \001(\0132+.goo"
-          + "gle.cloud.gkemulticloud.v1.AzureClusterB"
-          + "\004\342A\001\002\022\025\n\rvalidate_only\030\002 \001(\010\0225\n\013update_m"
-          + "ask\030\004 \001(\0132\032.google.protobuf.FieldMaskB\004\342"
-          + "A\001\002\"Z\n\026GetAzureClusterRequest\022@\n\004name\030\001 "
-          + "\001(\tB2\342A\001\002\372A+\n)gkemulticloud.googleapis.c"
-          + "om/AzureCluster\"\205\001\n\030ListAzureClustersReq"
-          + "uest\022B\n\006parent\030\001 \001(\tB2\342A\001\002\372A+\022)gkemultic"
-          + "loud.googleapis.com/AzureCluster\022\021\n\tpage"
-          + "_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"y\n\031ListA"
-          + "zureClustersResponse\022C\n\016azure_clusters\030\001"
-          + " \003(\0132+.google.cloud.gkemulticloud.v1.Azu"
-          + "reCluster\022\027\n\017next_page_token\030\002 \001(\t\"\231\001\n\031D"
-          + "eleteAzureClusterRequest\022@\n\004name\030\001 \001(\tB2"
-          + "\342A\001\002\372A+\n)gkemulticloud.googleapis.com/Az"
-          + "ureCluster\022\025\n\rallow_missing\030\002 \001(\010\022\025\n\rval"
-          + "idate_only\030\003 \001(\010\022\014\n\004etag\030\004 \001(\t\"\347\001\n\032Creat"
-          + "eAzureNodePoolRequest\022C\n\006parent\030\001 \001(\tB3\342"
-          + "A\001\002\372A,\022*gkemulticloud.googleapis.com/Azu"
-          + "reNodePool\022K\n\017azure_node_pool\030\002 \001(\0132,.go"
-          + "ogle.cloud.gkemulticloud.v1.AzureNodePoo"
-          + "lB\004\342A\001\002\022 \n\022azure_node_pool_id\030\003 \001(\tB\004\342A\001"
-          + "\002\022\025\n\rvalidate_only\030\004 \001(\010\"\267\001\n\032UpdateAzure"
-          + "NodePoolRequest\022K\n\017azure_node_pool\030\001 \001(\013"
-          + "2,.google.cloud.gkemulticloud.v1.AzureNo"
-          + "dePoolB\004\342A\001\002\022\025\n\rvalidate_only\030\002 \001(\010\0225\n\013u"
-          + "pdate_mask\030\003 \001(\0132\032.google.protobuf.Field"
-          + "MaskB\004\342A\001\002\"\\\n\027GetAzureNodePoolRequest\022A\n"
-          + "\004name\030\001 \001(\tB3\342A\001\002\372A,\n*gkemulticloud.goog"
-          + "leapis.com/AzureNodePool\"\207\001\n\031ListAzureNo"
-          + "dePoolsRequest\022C\n\006parent\030\001 \001(\tB3\342A\001\002\372A,\022"
-          + "*gkemulticloud.googleapis.com/AzureNodeP"
-          + "ool\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001"
-          + "(\t\"}\n\032ListAzureNodePoolsResponse\022F\n\020azur"
-          + "e_node_pools\030\001 \003(\0132,.google.cloud.gkemul"
-          + "ticloud.v1.AzureNodePool\022\027\n\017next_page_to"
-          + "ken\030\002 \001(\t\"\233\001\n\032DeleteAzureNodePoolRequest"
+          + "rces.proto\0324google/cloud/gkemulticloud/v"
+          + "1/common_resources.proto\032#google/longrun"
+          + "ning/operations.proto\032\033google/protobuf/e"
+          + "mpty.proto\032 google/protobuf/field_mask.p"
+          + "roto\032\037google/protobuf/timestamp.proto\"\340\001"
+          + "\n\031CreateAzureClusterRequest\022B\n\006parent\030\001 "
+          + "\001(\tB2\342A\001\002\372A+\022)gkemulticloud.googleapis.c"
+          + "om/AzureCluster\022H\n\razure_cluster\030\002 \001(\0132+"
+          + ".google.cloud.gkemulticloud.v1.AzureClus"
+          + "terB\004\342A\001\002\022\036\n\020azure_cluster_id\030\003 \001(\tB\004\342A\001"
+          + "\002\022\025\n\rvalidate_only\030\004 \001(\010\"\263\001\n\031UpdateAzure"
+          + "ClusterRequest\022H\n\razure_cluster\030\001 \001(\0132+."
+          + "google.cloud.gkemulticloud.v1.AzureClust"
+          + "erB\004\342A\001\002\022\025\n\rvalidate_only\030\002 \001(\010\0225\n\013updat"
+          + "e_mask\030\004 \001(\0132\032.google.protobuf.FieldMask"
+          + "B\004\342A\001\002\"Z\n\026GetAzureClusterRequest\022@\n\004name"
+          + "\030\001 \001(\tB2\342A\001\002\372A+\n)gkemulticloud.googleapi"
+          + "s.com/AzureCluster\"\205\001\n\030ListAzureClusters"
+          + "Request\022B\n\006parent\030\001 \001(\tB2\342A\001\002\372A+\022)gkemul"
+          + "ticloud.googleapis.com/AzureCluster\022\021\n\tp"
+          + "age_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"y\n\031Li"
+          + "stAzureClustersResponse\022C\n\016azure_cluster"
+          + "s\030\001 \003(\0132+.google.cloud.gkemulticloud.v1."
+          + "AzureCluster\022\027\n\017next_page_token\030\002 \001(\t\"\231\001"
+          + "\n\031DeleteAzureClusterRequest\022@\n\004name\030\001 \001("
+          + "\tB2\342A\001\002\372A+\n)gkemulticloud.googleapis.com"
+          + "/AzureCluster\022\025\n\rallow_missing\030\002 \001(\010\022\025\n\r"
+          + "validate_only\030\003 \001(\010\022\014\n\004etag\030\004 \001(\t\"\347\001\n\032Cr"
+          + "eateAzureNodePoolRequest\022C\n\006parent\030\001 \001(\t"
+          + "B3\342A\001\002\372A,\022*gkemulticloud.googleapis.com/"
+          + "AzureNodePool\022K\n\017azure_node_pool\030\002 \001(\0132,"
+          + ".google.cloud.gkemulticloud.v1.AzureNode"
+          + "PoolB\004\342A\001\002\022 \n\022azure_node_pool_id\030\003 \001(\tB\004"
+          + "\342A\001\002\022\025\n\rvalidate_only\030\004 \001(\010\"\267\001\n\032UpdateAz"
+          + "ureNodePoolRequest\022K\n\017azure_node_pool\030\001 "
+          + "\001(\0132,.google.cloud.gkemulticloud.v1.Azur"
+          + "eNodePoolB\004\342A\001\002\022\025\n\rvalidate_only\030\002 \001(\010\0225"
+          + "\n\013update_mask\030\003 \001(\0132\032.google.protobuf.Fi"
+          + "eldMaskB\004\342A\001\002\"\\\n\027GetAzureNodePoolRequest"
           + "\022A\n\004name\030\001 \001(\tB3\342A\001\002\372A,\n*gkemulticloud.g"
-          + "oogleapis.com/AzureNodePool\022\025\n\rvalidate_"
-          + "only\030\002 \001(\010\022\025\n\rallow_missing\030\003 \001(\010\022\014\n\004eta"
-          + "g\030\004 \001(\t\"d\n\033GetAzureServerConfigRequest\022E"
-          + "\n\004name\030\001 \001(\tB7\342A\001\002\372A0\n.gkemulticloud.goo"
-          + "gleapis.com/AzureServerConfig\"\333\001\n\030Create"
-          + "AzureClientRequest\022A\n\006parent\030\001 \001(\tB1\342A\001\002"
-          + "\372A*\022(gkemulticloud.googleapis.com/AzureC"
-          + "lient\022F\n\014azure_client\030\002 \001(\0132*.google.clo"
-          + "ud.gkemulticloud.v1.AzureClientB\004\342A\001\002\022\035\n"
-          + "\017azure_client_id\030\004 \001(\tB\004\342A\001\002\022\025\n\rvalidate"
-          + "_only\030\003 \001(\010\"X\n\025GetAzureClientRequest\022?\n\004"
-          + "name\030\001 \001(\tB1\342A\001\002\372A*\n(gkemulticloud.googl"
-          + "eapis.com/AzureClient\"\203\001\n\027ListAzureClien"
-          + "tsRequest\022A\n\006parent\030\001 \001(\tB1\342A\001\002\372A*\022(gkem"
-          + "ulticloud.googleapis.com/AzureClient\022\021\n\t"
-          + "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"v\n\030L"
-          + "istAzureClientsResponse\022A\n\razure_clients"
-          + "\030\001 \003(\0132*.google.cloud.gkemulticloud.v1.A"
-          + "zureClient\022\027\n\017next_page_token\030\002 \001(\t\"\211\001\n\030"
-          + "DeleteAzureClientRequest\022?\n\004name\030\001 \001(\tB1"
-          + "\342A\001\002\372A*\n(gkemulticloud.googleapis.com/Az"
-          + "ureClient\022\025\n\rallow_missing\030\002 \001(\010\022\025\n\rvali"
-          + "date_only\030\003 \001(\010\"l\n\037GenerateAzureAccessTo"
-          + "kenRequest\022I\n\razure_cluster\030\001 \001(\tB2\342A\001\002\372"
-          + "A+\n)gkemulticloud.googleapis.com/AzureCl"
-          + "uster\"y\n GenerateAzureAccessTokenRespons"
-          + "e\022\032\n\014access_token\030\001 \001(\tB\004\342A\001\003\0229\n\017expirat"
-          + "ion_time\030\002 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\004\342A\001\0032\335\035\n\rAzureClusters\022\375\001\n\021CreateAzu"
-          + "reClient\0227.google.cloud.gkemulticloud.v1"
-          + ".CreateAzureClientRequest\032\035.google.longr"
-          + "unning.Operation\"\217\001\312A \n\013AzureClient\022\021Ope"
-          + "rationMetadata\332A#parent,azure_client,azu"
-          + "re_client_id\202\323\344\223\002@\"0/v1/{parent=projects"
-          + "/*/locations/*}/azureClients:\014azure_clie"
-          + "nt\022\263\001\n\016GetAzureClient\0224.google.cloud.gke"
-          + "multicloud.v1.GetAzureClientRequest\032*.go"
-          + "ogle.cloud.gkemulticloud.v1.AzureClient\""
-          + "?\332A\004name\202\323\344\223\0022\0220/v1/{name=projects/*/loc"
-          + "ations/*/azureClients/*}\022\306\001\n\020ListAzureCl"
-          + "ients\0226.google.cloud.gkemulticloud.v1.Li"
-          + "stAzureClientsRequest\0327.google.cloud.gke"
-          + "multicloud.v1.ListAzureClientsResponse\"A"
-          + "\332A\006parent\202\323\344\223\0022\0220/v1/{parent=projects/*/"
-          + "locations/*}/azureClients\022\331\001\n\021DeleteAzur"
+          + "oogleapis.com/AzureNodePool\"\207\001\n\031ListAzur"
+          + "eNodePoolsRequest\022C\n\006parent\030\001 \001(\tB3\342A\001\002\372"
+          + "A,\022*gkemulticloud.googleapis.com/AzureNo"
+          + "dePool\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030"
+          + "\003 \001(\t\"}\n\032ListAzureNodePoolsResponse\022F\n\020a"
+          + "zure_node_pools\030\001 \003(\0132,.google.cloud.gke"
+          + "multicloud.v1.AzureNodePool\022\027\n\017next_page"
+          + "_token\030\002 \001(\t\"\233\001\n\032DeleteAzureNodePoolRequ"
+          + "est\022A\n\004name\030\001 \001(\tB3\342A\001\002\372A,\n*gkemulticlou"
+          + "d.googleapis.com/AzureNodePool\022\025\n\rvalida"
+          + "te_only\030\002 \001(\010\022\025\n\rallow_missing\030\003 \001(\010\022\014\n\004"
+          + "etag\030\004 \001(\t\"h\n\033GetAzureOpenIdConfigReques"
+          + "t\022I\n\razure_cluster\030\001 \001(\tB2\342A\001\002\372A+\n)gkemu"
+          + "lticloud.googleapis.com/AzureCluster\"g\n\032"
+          + "GetAzureJsonWebKeysRequest\022I\n\razure_clus"
+          + "ter\030\001 \001(\tB2\342A\001\002\372A+\n)gkemulticloud.google"
+          + "apis.com/AzureCluster\"d\n\033GetAzureServerC"
+          + "onfigRequest\022E\n\004name\030\001 \001(\tB7\342A\001\002\372A0\n.gke"
+          + "multicloud.googleapis.com/AzureServerCon"
+          + "fig\"\333\001\n\030CreateAzureClientRequest\022A\n\006pare"
+          + "nt\030\001 \001(\tB1\342A\001\002\372A*\022(gkemulticloud.googlea"
+          + "pis.com/AzureClient\022F\n\014azure_client\030\002 \001("
+          + "\0132*.google.cloud.gkemulticloud.v1.AzureC"
+          + "lientB\004\342A\001\002\022\035\n\017azure_client_id\030\004 \001(\tB\004\342A"
+          + "\001\002\022\025\n\rvalidate_only\030\003 \001(\010\"X\n\025GetAzureCli"
+          + "entRequest\022?\n\004name\030\001 \001(\tB1\342A\001\002\372A*\n(gkemu"
+          + "lticloud.googleapis.com/AzureClient\"\203\001\n\027"
+          + "ListAzureClientsRequest\022A\n\006parent\030\001 \001(\tB"
+          + "1\342A\001\002\372A*\022(gkemulticloud.googleapis.com/A"
+          + "zureClient\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_to"
+          + "ken\030\003 \001(\t\"v\n\030ListAzureClientsResponse\022A\n"
+          + "\razure_clients\030\001 \003(\0132*.google.cloud.gkem"
+          + "ulticloud.v1.AzureClient\022\027\n\017next_page_to"
+          + "ken\030\002 \001(\t\"\211\001\n\030DeleteAzureClientRequest\022?"
+          + "\n\004name\030\001 \001(\tB1\342A\001\002\372A*\n(gkemulticloud.goo"
+          + "gleapis.com/AzureClient\022\025\n\rallow_missing"
+          + "\030\002 \001(\010\022\025\n\rvalidate_only\030\003 \001(\010\"l\n\037Generat"
+          + "eAzureAccessTokenRequest\022I\n\razure_cluste"
+          + "r\030\001 \001(\tB2\342A\001\002\372A+\n)gkemulticloud.googleap"
+          + "is.com/AzureCluster\"y\n GenerateAzureAcce"
+          + "ssTokenResponse\022\032\n\014access_token\030\001 \001(\tB\004\342"
+          + "A\001\003\0229\n\017expiration_time\030\002 \001(\0132\032.google.pr"
+          + "otobuf.TimestampB\004\342A\001\003\"\346\002\n%GenerateAzure"
+          + "ClusterAgentTokenRequest\022I\n\razure_cluste"
+          + "r\030\001 \001(\tB2\342A\001\002\372A+\n)gkemulticloud.googleap"
+          + "is.com/AzureCluster\022\033\n\rsubject_token\030\002 \001"
+          + "(\tB\004\342A\001\002\022 \n\022subject_token_type\030\003 \001(\tB\004\342A"
+          + "\001\002\022\025\n\007version\030\004 \001(\tB\004\342A\001\002\022\032\n\014node_pool_i"
+          + "d\030\005 \001(\tB\004\342A\001\001\022\030\n\ngrant_type\030\006 \001(\tB\004\342A\001\001\022"
+          + "\026\n\010audience\030\007 \001(\tB\004\342A\001\001\022\023\n\005scope\030\010 \001(\tB\004"
+          + "\342A\001\001\022\"\n\024requested_token_type\030\t \001(\tB\004\342A\001\001"
+          + "\022\025\n\007options\030\n \001(\tB\004\342A\001\001\"f\n&GenerateAzure"
+          + "ClusterAgentTokenResponse\022\024\n\014access_toke"
+          + "n\030\001 \001(\t\022\022\n\nexpires_in\030\002 \001(\005\022\022\n\ntoken_typ"
+          + "e\030\003 \001(\t2\314#\n\rAzureClusters\022\375\001\n\021CreateAzur"
           + "eClient\0227.google.cloud.gkemulticloud.v1."
-          + "DeleteAzureClientRequest\032\035.google.longru"
-          + "nning.Operation\"l\312A*\n\025google.protobuf.Em"
-          + "pty\022\021OperationMetadata\332A\004name\202\323\344\223\0022*0/v1"
-          + "/{name=projects/*/locations/*/azureClien"
-          + "ts/*}\022\204\002\n\022CreateAzureCluster\0228.google.cl"
-          + "oud.gkemulticloud.v1.CreateAzureClusterR"
-          + "equest\032\035.google.longrunning.Operation\"\224\001"
-          + "\312A!\n\014AzureCluster\022\021OperationMetadata\332A%p"
-          + "arent,azure_cluster,azure_cluster_id\202\323\344\223"
-          + "\002B\"1/v1/{parent=projects/*/locations/*}/"
-          + "azureClusters:\razure_cluster\022\206\002\n\022UpdateA"
-          + "zureCluster\0228.google.cloud.gkemulticloud"
-          + ".v1.UpdateAzureClusterRequest\032\035.google.l"
-          + "ongrunning.Operation\"\226\001\312A!\n\014AzureCluster"
-          + "\022\021OperationMetadata\332A\031azure_cluster,upda"
-          + "te_mask\202\323\344\223\002P2?/v1/{azure_cluster.name=p"
-          + "rojects/*/locations/*/azureClusters/*}:\r"
-          + "azure_cluster\022\267\001\n\017GetAzureCluster\0225.goog"
-          + "le.cloud.gkemulticloud.v1.GetAzureCluste"
-          + "rRequest\032+.google.cloud.gkemulticloud.v1"
-          + ".AzureCluster\"@\332A\004name\202\323\344\223\0023\0221/v1/{name="
-          + "projects/*/locations/*/azureClusters/*}\022"
-          + "\312\001\n\021ListAzureClusters\0227.google.cloud.gke"
-          + "multicloud.v1.ListAzureClustersRequest\0328"
-          + ".google.cloud.gkemulticloud.v1.ListAzure"
-          + "ClustersResponse\"B\332A\006parent\202\323\344\223\0023\0221/v1/{"
-          + "parent=projects/*/locations/*}/azureClus"
-          + "ters\022\334\001\n\022DeleteAzureCluster\0228.google.clo"
-          + "ud.gkemulticloud.v1.DeleteAzureClusterRe"
-          + "quest\032\035.google.longrunning.Operation\"m\312A"
-          + "*\n\025google.protobuf.Empty\022\021OperationMetad"
-          + "ata\332A\004name\202\323\344\223\0023*1/v1/{name=projects/*/l"
-          + "ocations/*/azureClusters/*}\022\370\001\n\030Generate"
-          + "AzureAccessToken\022>.google.cloud.gkemulti"
-          + "cloud.v1.GenerateAzureAccessTokenRequest"
-          + "\032?.google.cloud.gkemulticloud.v1.Generat"
-          + "eAzureAccessTokenResponse\"[\202\323\344\223\002U\022S/v1/{"
-          + "azure_cluster=projects/*/locations/*/azu"
-          + "reClusters/*}:generateAzureAccessToken\022\236"
-          + "\002\n\023CreateAzureNodePool\0229.google.cloud.gk"
-          + "emulticloud.v1.CreateAzureNodePoolReques"
-          + "t\032\035.google.longrunning.Operation\"\254\001\312A\"\n\r"
-          + "AzureNodePool\022\021OperationMetadata\332A)paren"
-          + "t,azure_node_pool,azure_node_pool_id\202\323\344\223"
-          + "\002U\"B/v1/{parent=projects/*/locations/*/a"
-          + "zureClusters/*}/azureNodePools:\017azure_no"
-          + "de_pool\022\240\002\n\023UpdateAzureNodePool\0229.google"
-          + ".cloud.gkemulticloud.v1.UpdateAzureNodeP"
-          + "oolRequest\032\035.google.longrunning.Operatio"
-          + "n\"\256\001\312A\"\n\rAzureNodePool\022\021OperationMetadat"
-          + "a\332A\033azure_node_pool,update_mask\202\323\344\223\002e2R/"
-          + "v1/{azure_node_pool.name=projects/*/loca"
-          + "tions/*/azureClusters/*/azureNodePools/*"
-          + "}:\017azure_node_pool\022\313\001\n\020GetAzureNodePool\022"
-          + "6.google.cloud.gkemulticloud.v1.GetAzure"
-          + "NodePoolRequest\032,.google.cloud.gkemultic"
-          + "loud.v1.AzureNodePool\"Q\332A\004name\202\323\344\223\002D\022B/v"
-          + "1/{name=projects/*/locations/*/azureClus"
-          + "ters/*/azureNodePools/*}\022\336\001\n\022ListAzureNo"
-          + "dePools\0228.google.cloud.gkemulticloud.v1."
-          + "ListAzureNodePoolsRequest\0329.google.cloud"
-          + ".gkemulticloud.v1.ListAzureNodePoolsResp"
-          + "onse\"S\332A\006parent\202\323\344\223\002D\022B/v1/{parent=proje"
-          + "cts/*/locations/*/azureClusters/*}/azure"
-          + "NodePools\022\357\001\n\023DeleteAzureNodePool\0229.goog"
-          + "le.cloud.gkemulticloud.v1.DeleteAzureNod"
-          + "ePoolRequest\032\035.google.longrunning.Operat"
-          + "ion\"~\312A*\n\025google.protobuf.Empty\022\021Operati"
-          + "onMetadata\332A\004name\202\323\344\223\002D*B/v1/{name=proje"
-          + "cts/*/locations/*/azureClusters/*/azureN"
-          + "odePools/*}\022\310\001\n\024GetAzureServerConfig\022:.g"
-          + "oogle.cloud.gkemulticloud.v1.GetAzureSer"
-          + "verConfigRequest\0320.google.cloud.gkemulti"
-          + "cloud.v1.AzureServerConfig\"B\332A\004name\202\323\344\223\002"
-          + "5\0223/v1/{name=projects/*/locations/*/azur"
-          + "eServerConfig}\032P\312A\034gkemulticloud.googlea"
-          + "pis.com\322A.https://www.googleapis.com/aut"
-          + "h/cloud-platformB\344\001\n!com.google.cloud.gk"
-          + "emulticloud.v1B\021AzureServiceProtoP\001ZGclo"
-          + "ud.google.com/go/gkemulticloud/apiv1/gke"
-          + "multicloudpb;gkemulticloudpb\252\002\035Google.Cl"
-          + "oud.GkeMultiCloud.V1\312\002\035Google\\Cloud\\GkeM"
-          + "ultiCloud\\V1\352\002 Google::Cloud::GkeMultiCl"
-          + "oud::V1b\006proto3"
+          + "CreateAzureClientRequest\032\035.google.longru"
+          + "nning.Operation\"\217\001\312A \n\013AzureClient\022\021Oper"
+          + "ationMetadata\332A#parent,azure_client,azur"
+          + "e_client_id\202\323\344\223\002@\"0/v1/{parent=projects/"
+          + "*/locations/*}/azureClients:\014azure_clien"
+          + "t\022\263\001\n\016GetAzureClient\0224.google.cloud.gkem"
+          + "ulticloud.v1.GetAzureClientRequest\032*.goo"
+          + "gle.cloud.gkemulticloud.v1.AzureClient\"?"
+          + "\332A\004name\202\323\344\223\0022\0220/v1/{name=projects/*/loca"
+          + "tions/*/azureClients/*}\022\306\001\n\020ListAzureCli"
+          + "ents\0226.google.cloud.gkemulticloud.v1.Lis"
+          + "tAzureClientsRequest\0327.google.cloud.gkem"
+          + "ulticloud.v1.ListAzureClientsResponse\"A\332"
+          + "A\006parent\202\323\344\223\0022\0220/v1/{parent=projects/*/l"
+          + "ocations/*}/azureClients\022\331\001\n\021DeleteAzure"
+          + "Client\0227.google.cloud.gkemulticloud.v1.D"
+          + "eleteAzureClientRequest\032\035.google.longrun"
+          + "ning.Operation\"l\312A*\n\025google.protobuf.Emp"
+          + "ty\022\021OperationMetadata\332A\004name\202\323\344\223\0022*0/v1/"
+          + "{name=projects/*/locations/*/azureClient"
+          + "s/*}\022\204\002\n\022CreateAzureCluster\0228.google.clo"
+          + "ud.gkemulticloud.v1.CreateAzureClusterRe"
+          + "quest\032\035.google.longrunning.Operation\"\224\001\312"
+          + "A!\n\014AzureCluster\022\021OperationMetadata\332A%pa"
+          + "rent,azure_cluster,azure_cluster_id\202\323\344\223\002"
+          + "B\"1/v1/{parent=projects/*/locations/*}/a"
+          + "zureClusters:\razure_cluster\022\206\002\n\022UpdateAz"
+          + "ureCluster\0228.google.cloud.gkemulticloud."
+          + "v1.UpdateAzureClusterRequest\032\035.google.lo"
+          + "ngrunning.Operation\"\226\001\312A!\n\014AzureCluster\022"
+          + "\021OperationMetadata\332A\031azure_cluster,updat"
+          + "e_mask\202\323\344\223\002P2?/v1/{azure_cluster.name=pr"
+          + "ojects/*/locations/*/azureClusters/*}:\ra"
+          + "zure_cluster\022\267\001\n\017GetAzureCluster\0225.googl"
+          + "e.cloud.gkemulticloud.v1.GetAzureCluster"
+          + "Request\032+.google.cloud.gkemulticloud.v1."
+          + "AzureCluster\"@\332A\004name\202\323\344\223\0023\0221/v1/{name=p"
+          + "rojects/*/locations/*/azureClusters/*}\022\312"
+          + "\001\n\021ListAzureClusters\0227.google.cloud.gkem"
+          + "ulticloud.v1.ListAzureClustersRequest\0328."
+          + "google.cloud.gkemulticloud.v1.ListAzureC"
+          + "lustersResponse\"B\332A\006parent\202\323\344\223\0023\0221/v1/{p"
+          + "arent=projects/*/locations/*}/azureClust"
+          + "ers\022\334\001\n\022DeleteAzureCluster\0228.google.clou"
+          + "d.gkemulticloud.v1.DeleteAzureClusterReq"
+          + "uest\032\035.google.longrunning.Operation\"m\312A*"
+          + "\n\025google.protobuf.Empty\022\021OperationMetada"
+          + "ta\332A\004name\202\323\344\223\0023*1/v1/{name=projects/*/lo"
+          + "cations/*/azureClusters/*}\022\223\002\n\036GenerateA"
+          + "zureClusterAgentToken\022D.google.cloud.gke"
+          + "multicloud.v1.GenerateAzureClusterAgentT"
+          + "okenRequest\032E.google.cloud.gkemulticloud"
+          + ".v1.GenerateAzureClusterAgentTokenRespon"
+          + "se\"d\202\323\344\223\002^\"Y/v1/{azure_cluster=projects/"
+          + "*/locations/*/azureClusters/*}:generateA"
+          + "zureClusterAgentToken:\001*\022\370\001\n\030GenerateAzu"
+          + "reAccessToken\022>.google.cloud.gkemulticlo"
+          + "ud.v1.GenerateAzureAccessTokenRequest\032?."
+          + "google.cloud.gkemulticloud.v1.GenerateAz"
+          + "ureAccessTokenResponse\"[\202\323\344\223\002U\022S/v1/{azu"
+          + "re_cluster=projects/*/locations/*/azureC"
+          + "lusters/*}:generateAzureAccessToken\022\236\002\n\023"
+          + "CreateAzureNodePool\0229.google.cloud.gkemu"
+          + "lticloud.v1.CreateAzureNodePoolRequest\032\035"
+          + ".google.longrunning.Operation\"\254\001\312A\"\n\rAzu"
+          + "reNodePool\022\021OperationMetadata\332A)parent,a"
+          + "zure_node_pool,azure_node_pool_id\202\323\344\223\002U\""
+          + "B/v1/{parent=projects/*/locations/*/azur"
+          + "eClusters/*}/azureNodePools:\017azure_node_"
+          + "pool\022\240\002\n\023UpdateAzureNodePool\0229.google.cl"
+          + "oud.gkemulticloud.v1.UpdateAzureNodePool"
+          + "Request\032\035.google.longrunning.Operation\"\256"
+          + "\001\312A\"\n\rAzureNodePool\022\021OperationMetadata\332A"
+          + "\033azure_node_pool,update_mask\202\323\344\223\002e2R/v1/"
+          + "{azure_node_pool.name=projects/*/locatio"
+          + "ns/*/azureClusters/*/azureNodePools/*}:\017"
+          + "azure_node_pool\022\313\001\n\020GetAzureNodePool\0226.g"
+          + "oogle.cloud.gkemulticloud.v1.GetAzureNod"
+          + "ePoolRequest\032,.google.cloud.gkemulticlou"
+          + "d.v1.AzureNodePool\"Q\332A\004name\202\323\344\223\002D\022B/v1/{"
+          + "name=projects/*/locations/*/azureCluster"
+          + "s/*/azureNodePools/*}\022\336\001\n\022ListAzureNodeP"
+          + "ools\0228.google.cloud.gkemulticloud.v1.Lis"
+          + "tAzureNodePoolsRequest\0329.google.cloud.gk"
+          + "emulticloud.v1.ListAzureNodePoolsRespons"
+          + "e\"S\332A\006parent\202\323\344\223\002D\022B/v1/{parent=projects"
+          + "/*/locations/*/azureClusters/*}/azureNod"
+          + "ePools\022\357\001\n\023DeleteAzureNodePool\0229.google."
+          + "cloud.gkemulticloud.v1.DeleteAzureNodePo"
+          + "olRequest\032\035.google.longrunning.Operation"
+          + "\"~\312A*\n\025google.protobuf.Empty\022\021OperationM"
+          + "etadata\332A\004name\202\323\344\223\002D*B/v1/{name=projects"
+          + "/*/locations/*/azureClusters/*/azureNode"
+          + "Pools/*}\022\371\001\n\024GetAzureOpenIdConfig\022:.goog"
+          + "le.cloud.gkemulticloud.v1.GetAzureOpenId"
+          + "ConfigRequest\0320.google.cloud.gkemulticlo"
+          + "ud.v1.AzureOpenIdConfig\"s\332A\razure_cluste"
+          + "r\202\323\344\223\002]\022[/v1/{azure_cluster=projects/*/l"
+          + "ocations/*/azureClusters/*}/.well-known/"
+          + "openid-configuration\022\332\001\n\023GetAzureJsonWeb"
+          + "Keys\0229.google.cloud.gkemulticloud.v1.Get"
+          + "AzureJsonWebKeysRequest\032/.google.cloud.g"
+          + "kemulticloud.v1.AzureJsonWebKeys\"W\332A\razu"
+          + "re_cluster\202\323\344\223\002A\022?/v1/{azure_cluster=pro"
+          + "jects/*/locations/*/azureClusters/*}/jwk"
+          + "s\022\310\001\n\024GetAzureServerConfig\022:.google.clou"
+          + "d.gkemulticloud.v1.GetAzureServerConfigR"
+          + "equest\0320.google.cloud.gkemulticloud.v1.A"
+          + "zureServerConfig\"B\332A\004name\202\323\344\223\0025\0223/v1/{na"
+          + "me=projects/*/locations/*/azureServerCon"
+          + "fig}\032P\312A\034gkemulticloud.googleapis.com\322A."
+          + "https://www.googleapis.com/auth/cloud-pl"
+          + "atformB\344\001\n!com.google.cloud.gkemulticlou"
+          + "d.v1B\021AzureServiceProtoP\001ZGcloud.google."
+          + "com/go/gkemulticloud/apiv1/gkemulticloud"
+          + "pb;gkemulticloudpb\252\002\035Google.Cloud.GkeMul"
+          + "tiCloud.V1\312\002\035Google\\Cloud\\GkeMultiCloud\\"
+          + "V1\352\002 Google::Cloud::GkeMultiCloud::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -309,7 +363,9 @@ public final class AzureServiceProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.gkemulticloud.v1.AzureResourcesProto.getDescriptor(),
+              com.google.cloud.gkemulticloud.v1.CommonResourcesProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -409,8 +465,24 @@ public final class AzureServiceProto {
             new java.lang.String[] {
               "Name", "ValidateOnly", "AllowMissing", "Etag",
             });
-    internal_static_google_cloud_gkemulticloud_v1_GetAzureServerConfigRequest_descriptor =
+    internal_static_google_cloud_gkemulticloud_v1_GetAzureOpenIdConfigRequest_descriptor =
         getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_gkemulticloud_v1_GetAzureOpenIdConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_GetAzureOpenIdConfigRequest_descriptor,
+            new java.lang.String[] {
+              "AzureCluster",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_GetAzureJsonWebKeysRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_gkemulticloud_v1_GetAzureJsonWebKeysRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_GetAzureJsonWebKeysRequest_descriptor,
+            new java.lang.String[] {
+              "AzureCluster",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_GetAzureServerConfigRequest_descriptor =
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_gkemulticloud_v1_GetAzureServerConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_GetAzureServerConfigRequest_descriptor,
@@ -418,7 +490,7 @@ public final class AzureServiceProto {
               "Name",
             });
     internal_static_google_cloud_gkemulticloud_v1_CreateAzureClientRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_gkemulticloud_v1_CreateAzureClientRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_CreateAzureClientRequest_descriptor,
@@ -426,7 +498,7 @@ public final class AzureServiceProto {
               "Parent", "AzureClient", "AzureClientId", "ValidateOnly",
             });
     internal_static_google_cloud_gkemulticloud_v1_GetAzureClientRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_gkemulticloud_v1_GetAzureClientRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_GetAzureClientRequest_descriptor,
@@ -434,7 +506,7 @@ public final class AzureServiceProto {
               "Name",
             });
     internal_static_google_cloud_gkemulticloud_v1_ListAzureClientsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_gkemulticloud_v1_ListAzureClientsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_ListAzureClientsRequest_descriptor,
@@ -442,7 +514,7 @@ public final class AzureServiceProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_gkemulticloud_v1_ListAzureClientsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_gkemulticloud_v1_ListAzureClientsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_ListAzureClientsResponse_descriptor,
@@ -450,7 +522,7 @@ public final class AzureServiceProto {
               "AzureClients", "NextPageToken",
             });
     internal_static_google_cloud_gkemulticloud_v1_DeleteAzureClientRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_gkemulticloud_v1_DeleteAzureClientRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_DeleteAzureClientRequest_descriptor,
@@ -458,7 +530,7 @@ public final class AzureServiceProto {
               "Name", "AllowMissing", "ValidateOnly",
             });
     internal_static_google_cloud_gkemulticloud_v1_GenerateAzureAccessTokenRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_gkemulticloud_v1_GenerateAzureAccessTokenRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_GenerateAzureAccessTokenRequest_descriptor,
@@ -466,12 +538,37 @@ public final class AzureServiceProto {
               "AzureCluster",
             });
     internal_static_google_cloud_gkemulticloud_v1_GenerateAzureAccessTokenResponse_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_gkemulticloud_v1_GenerateAzureAccessTokenResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_GenerateAzureAccessTokenResponse_descriptor,
             new java.lang.String[] {
               "AccessToken", "ExpirationTime",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_GenerateAzureClusterAgentTokenRequest_descriptor =
+        getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_gkemulticloud_v1_GenerateAzureClusterAgentTokenRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_GenerateAzureClusterAgentTokenRequest_descriptor,
+            new java.lang.String[] {
+              "AzureCluster",
+              "SubjectToken",
+              "SubjectTokenType",
+              "Version",
+              "NodePoolId",
+              "GrantType",
+              "Audience",
+              "Scope",
+              "RequestedTokenType",
+              "Options",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_GenerateAzureClusterAgentTokenResponse_descriptor =
+        getDescriptor().getMessageTypes().get(23);
+    internal_static_google_cloud_gkemulticloud_v1_GenerateAzureClusterAgentTokenResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_GenerateAzureClusterAgentTokenResponse_descriptor,
+            new java.lang.String[] {
+              "AccessToken", "ExpiresIn", "TokenType",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -489,7 +586,9 @@ public final class AzureServiceProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.gkemulticloud.v1.AzureResourcesProto.getDescriptor();
+    com.google.cloud.gkemulticloud.v1.CommonResourcesProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

@@ -123,6 +123,13 @@ public class AwsClustersSettings extends ClientSettings<AwsClustersSettings> {
     return ((AwsClustersStubSettings) getStubSettings()).deleteAwsClusterOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to generateAwsClusterAgentToken. */
+  public UnaryCallSettings<
+          GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+      generateAwsClusterAgentTokenSettings() {
+    return ((AwsClustersStubSettings) getStubSettings()).generateAwsClusterAgentTokenSettings();
+  }
+
   /** Returns the object with the settings used for calls to generateAwsAccessToken. */
   public UnaryCallSettings<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
       generateAwsAccessTokenSettings() {
@@ -151,6 +158,19 @@ public class AwsClustersSettings extends ClientSettings<AwsClustersSettings> {
     return ((AwsClustersStubSettings) getStubSettings()).updateAwsNodePoolOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to rollbackAwsNodePoolUpdate. */
+  public UnaryCallSettings<RollbackAwsNodePoolUpdateRequest, Operation>
+      rollbackAwsNodePoolUpdateSettings() {
+    return ((AwsClustersStubSettings) getStubSettings()).rollbackAwsNodePoolUpdateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rollbackAwsNodePoolUpdate. */
+  public OperationCallSettings<RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+      rollbackAwsNodePoolUpdateOperationSettings() {
+    return ((AwsClustersStubSettings) getStubSettings())
+        .rollbackAwsNodePoolUpdateOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to getAwsNodePool. */
   public UnaryCallSettings<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).getAwsNodePoolSettings();
@@ -172,6 +192,17 @@ public class AwsClustersSettings extends ClientSettings<AwsClustersSettings> {
   public OperationCallSettings<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
       deleteAwsNodePoolOperationSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).deleteAwsNodePoolOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAwsOpenIdConfig. */
+  public UnaryCallSettings<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+      getAwsOpenIdConfigSettings() {
+    return ((AwsClustersStubSettings) getStubSettings()).getAwsOpenIdConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAwsJsonWebKeys. */
+  public UnaryCallSettings<GetAwsJsonWebKeysRequest, AwsJsonWebKeys> getAwsJsonWebKeysSettings() {
+    return ((AwsClustersStubSettings) getStubSettings()).getAwsJsonWebKeysSettings();
   }
 
   /** Returns the object with the settings used for calls to getAwsServerConfig. */
@@ -342,6 +373,13 @@ public class AwsClustersSettings extends ClientSettings<AwsClustersSettings> {
       return getStubSettingsBuilder().deleteAwsClusterOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to generateAwsClusterAgentToken. */
+    public UnaryCallSettings.Builder<
+            GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+        generateAwsClusterAgentTokenSettings() {
+      return getStubSettingsBuilder().generateAwsClusterAgentTokenSettings();
+    }
+
     /** Returns the builder for the settings used for calls to generateAwsAccessToken. */
     public UnaryCallSettings.Builder<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
         generateAwsAccessTokenSettings() {
@@ -372,6 +410,19 @@ public class AwsClustersSettings extends ClientSettings<AwsClustersSettings> {
       return getStubSettingsBuilder().updateAwsNodePoolOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to rollbackAwsNodePoolUpdate. */
+    public UnaryCallSettings.Builder<RollbackAwsNodePoolUpdateRequest, Operation>
+        rollbackAwsNodePoolUpdateSettings() {
+      return getStubSettingsBuilder().rollbackAwsNodePoolUpdateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rollbackAwsNodePoolUpdate. */
+    public OperationCallSettings.Builder<
+            RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+        rollbackAwsNodePoolUpdateOperationSettings() {
+      return getStubSettingsBuilder().rollbackAwsNodePoolUpdateOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getAwsNodePool. */
     public UnaryCallSettings.Builder<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolSettings() {
       return getStubSettingsBuilder().getAwsNodePoolSettings();
@@ -394,6 +445,18 @@ public class AwsClustersSettings extends ClientSettings<AwsClustersSettings> {
     public OperationCallSettings.Builder<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
         deleteAwsNodePoolOperationSettings() {
       return getStubSettingsBuilder().deleteAwsNodePoolOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAwsOpenIdConfig. */
+    public UnaryCallSettings.Builder<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+        getAwsOpenIdConfigSettings() {
+      return getStubSettingsBuilder().getAwsOpenIdConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAwsJsonWebKeys. */
+    public UnaryCallSettings.Builder<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>
+        getAwsJsonWebKeysSettings() {
+      return getStubSettingsBuilder().getAwsJsonWebKeysSettings();
     }
 
     /** Returns the builder for the settings used for calls to getAwsServerConfig. */

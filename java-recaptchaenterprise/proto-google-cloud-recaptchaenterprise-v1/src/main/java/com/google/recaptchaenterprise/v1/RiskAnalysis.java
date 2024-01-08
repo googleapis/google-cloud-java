@@ -343,12 +343,12 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Legitimate event score from 0.0 to 1.0.
+   * Output only. Legitimate event score from 0.0 to 1.0.
    * (1.0 means very likely legitimate traffic while 0.0 means very likely
    * non-legitimate traffic).
    * </pre>
    *
-   * <code>float score = 1;</code>
+   * <code>float score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The score.
    */
@@ -382,11 +382,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reasons contributing to the risk analysis verdict.
+   * Output only. Reasons contributing to the risk analysis verdict.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return A list containing the reasons.
@@ -402,11 +402,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reasons contributing to the risk analysis verdict.
+   * Output only. Reasons contributing to the risk analysis verdict.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The count of reasons.
@@ -419,11 +419,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reasons contributing to the risk analysis verdict.
+   * Output only. Reasons contributing to the risk analysis verdict.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the element to return.
@@ -437,11 +437,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reasons contributing to the risk analysis verdict.
+   * Output only. Reasons contributing to the risk analysis verdict.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for reasons.
@@ -454,11 +454,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reasons contributing to the risk analysis verdict.
+   * Output only. Reasons contributing to the risk analysis verdict.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the value to return.
@@ -480,11 +480,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Extended verdict reasons to be used for experimentation only. The set of
-   * possible reasons is subject to change.
+   * Output only. Extended verdict reasons to be used for experimentation only.
+   * The set of possible reasons is subject to change.
    * </pre>
    *
-   * <code>repeated string extended_verdict_reasons = 3;</code>
+   * <code>
+   * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return A list containing the extendedVerdictReasons.
    */
@@ -495,11 +497,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Extended verdict reasons to be used for experimentation only. The set of
-   * possible reasons is subject to change.
+   * Output only. Extended verdict reasons to be used for experimentation only.
+   * The set of possible reasons is subject to change.
    * </pre>
    *
-   * <code>repeated string extended_verdict_reasons = 3;</code>
+   * <code>
+   * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The count of extendedVerdictReasons.
    */
@@ -510,11 +514,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Extended verdict reasons to be used for experimentation only. The set of
-   * possible reasons is subject to change.
+   * Output only. Extended verdict reasons to be used for experimentation only.
+   * The set of possible reasons is subject to change.
    * </pre>
    *
-   * <code>repeated string extended_verdict_reasons = 3;</code>
+   * <code>
+   * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The extendedVerdictReasons at the given index.
@@ -526,11 +532,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Extended verdict reasons to be used for experimentation only. The set of
-   * possible reasons is subject to change.
+   * Output only. Extended verdict reasons to be used for experimentation only.
+   * The set of possible reasons is subject to change.
    * </pre>
    *
-   * <code>repeated string extended_verdict_reasons = 3;</code>
+   * <code>
+   * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the extendedVerdictReasons at the given index.
@@ -989,12 +997,12 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Legitimate event score from 0.0 to 1.0.
+     * Output only. Legitimate event score from 0.0 to 1.0.
      * (1.0 means very likely legitimate traffic while 0.0 means very likely
      * non-legitimate traffic).
      * </pre>
      *
-     * <code>float score = 1;</code>
+     * <code>float score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The score.
      */
@@ -1006,12 +1014,12 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Legitimate event score from 0.0 to 1.0.
+     * Output only. Legitimate event score from 0.0 to 1.0.
      * (1.0 means very likely legitimate traffic while 0.0 means very likely
      * non-legitimate traffic).
      * </pre>
      *
-     * <code>float score = 1;</code>
+     * <code>float score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The score to set.
      * @return This builder for chaining.
@@ -1027,12 +1035,12 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Legitimate event score from 0.0 to 1.0.
+     * Output only. Legitimate event score from 0.0 to 1.0.
      * (1.0 means very likely legitimate traffic while 0.0 means very likely
      * non-legitimate traffic).
      * </pre>
      *
-     * <code>float score = 1;</code>
+     * <code>float score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1055,11 +1063,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reasons contributing to the risk analysis verdict.
+     * Output only. Reasons contributing to the risk analysis verdict.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return A list containing the reasons.
@@ -1074,11 +1082,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reasons contributing to the risk analysis verdict.
+     * Output only. Reasons contributing to the risk analysis verdict.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The count of reasons.
@@ -1090,11 +1098,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reasons contributing to the risk analysis verdict.
+     * Output only. Reasons contributing to the risk analysis verdict.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param index The index of the element to return.
@@ -1108,11 +1116,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reasons contributing to the risk analysis verdict.
+     * Output only. Reasons contributing to the risk analysis verdict.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param index The index to set the value at.
@@ -1133,11 +1141,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reasons contributing to the risk analysis verdict.
+     * Output only. Reasons contributing to the risk analysis verdict.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The reasons to add.
@@ -1157,11 +1165,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reasons contributing to the risk analysis verdict.
+     * Output only. Reasons contributing to the risk analysis verdict.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param values The reasons to add.
@@ -1182,11 +1190,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reasons contributing to the risk analysis verdict.
+     * Output only. Reasons contributing to the risk analysis verdict.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.
@@ -1201,11 +1209,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reasons contributing to the risk analysis verdict.
+     * Output only. Reasons contributing to the risk analysis verdict.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return A list containing the enum numeric values on the wire for reasons.
@@ -1217,11 +1225,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reasons contributing to the risk analysis verdict.
+     * Output only. Reasons contributing to the risk analysis verdict.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param index The index of the value to return.
@@ -1234,11 +1242,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reasons contributing to the risk analysis verdict.
+     * Output only. Reasons contributing to the risk analysis verdict.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param index The index to set the value at.
@@ -1255,11 +1263,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reasons contributing to the risk analysis verdict.
+     * Output only. Reasons contributing to the risk analysis verdict.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The enum numeric value on the wire for reasons to add.
@@ -1275,11 +1283,11 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reasons contributing to the risk analysis verdict.
+     * Output only. Reasons contributing to the risk analysis verdict.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+     * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param values The enum numeric values on the wire for reasons to add.
@@ -1308,11 +1316,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Extended verdict reasons to be used for experimentation only. The set of
-     * possible reasons is subject to change.
+     * Output only. Extended verdict reasons to be used for experimentation only.
+     * The set of possible reasons is subject to change.
      * </pre>
      *
-     * <code>repeated string extended_verdict_reasons = 3;</code>
+     * <code>
+     * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return A list containing the extendedVerdictReasons.
      */
@@ -1324,11 +1334,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Extended verdict reasons to be used for experimentation only. The set of
-     * possible reasons is subject to change.
+     * Output only. Extended verdict reasons to be used for experimentation only.
+     * The set of possible reasons is subject to change.
      * </pre>
      *
-     * <code>repeated string extended_verdict_reasons = 3;</code>
+     * <code>
+     * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The count of extendedVerdictReasons.
      */
@@ -1339,11 +1351,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Extended verdict reasons to be used for experimentation only. The set of
-     * possible reasons is subject to change.
+     * Output only. Extended verdict reasons to be used for experimentation only.
+     * The set of possible reasons is subject to change.
      * </pre>
      *
-     * <code>repeated string extended_verdict_reasons = 3;</code>
+     * <code>
+     * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The extendedVerdictReasons at the given index.
@@ -1355,11 +1369,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Extended verdict reasons to be used for experimentation only. The set of
-     * possible reasons is subject to change.
+     * Output only. Extended verdict reasons to be used for experimentation only.
+     * The set of possible reasons is subject to change.
      * </pre>
      *
-     * <code>repeated string extended_verdict_reasons = 3;</code>
+     * <code>
+     * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the extendedVerdictReasons at the given index.
@@ -1371,11 +1387,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Extended verdict reasons to be used for experimentation only. The set of
-     * possible reasons is subject to change.
+     * Output only. Extended verdict reasons to be used for experimentation only.
+     * The set of possible reasons is subject to change.
      * </pre>
      *
-     * <code>repeated string extended_verdict_reasons = 3;</code>
+     * <code>
+     * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The extendedVerdictReasons to set.
@@ -1395,11 +1413,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Extended verdict reasons to be used for experimentation only. The set of
-     * possible reasons is subject to change.
+     * Output only. Extended verdict reasons to be used for experimentation only.
+     * The set of possible reasons is subject to change.
      * </pre>
      *
-     * <code>repeated string extended_verdict_reasons = 3;</code>
+     * <code>
+     * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The extendedVerdictReasons to add.
      * @return This builder for chaining.
@@ -1418,11 +1438,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Extended verdict reasons to be used for experimentation only. The set of
-     * possible reasons is subject to change.
+     * Output only. Extended verdict reasons to be used for experimentation only.
+     * The set of possible reasons is subject to change.
      * </pre>
      *
-     * <code>repeated string extended_verdict_reasons = 3;</code>
+     * <code>
+     * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param values The extendedVerdictReasons to add.
      * @return This builder for chaining.
@@ -1438,11 +1460,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Extended verdict reasons to be used for experimentation only. The set of
-     * possible reasons is subject to change.
+     * Output only. Extended verdict reasons to be used for experimentation only.
+     * The set of possible reasons is subject to change.
      * </pre>
      *
-     * <code>repeated string extended_verdict_reasons = 3;</code>
+     * <code>
+     * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1457,11 +1481,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Extended verdict reasons to be used for experimentation only. The set of
-     * possible reasons is subject to change.
+     * Output only. Extended verdict reasons to be used for experimentation only.
+     * The set of possible reasons is subject to change.
      * </pre>
      *
-     * <code>repeated string extended_verdict_reasons = 3;</code>
+     * <code>
+     * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The bytes of the extendedVerdictReasons to add.
      * @return This builder for chaining.

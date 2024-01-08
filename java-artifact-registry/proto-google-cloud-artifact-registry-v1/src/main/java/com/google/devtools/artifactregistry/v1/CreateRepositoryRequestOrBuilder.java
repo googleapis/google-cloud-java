@@ -58,7 +58,7 @@ public interface CreateRepositoryRequestOrBuilder
    *
    *
    * <pre>
-   * The repository id to use for this repository.
+   * Required. The repository id to use for this repository.
    * </pre>
    *
    * <code>string repository_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -70,7 +70,7 @@ public interface CreateRepositoryRequestOrBuilder
    *
    *
    * <pre>
-   * The repository id to use for this repository.
+   * Required. The repository id to use for this repository.
    * </pre>
    *
    * <code>string repository_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -83,7 +83,7 @@ public interface CreateRepositoryRequestOrBuilder
    *
    *
    * <pre>
-   * The repository to be created.
+   * Required. The repository to be created.
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public interface CreateRepositoryRequestOrBuilder
    *
    *
    * <pre>
-   * The repository to be created.
+   * Required. The repository to be created.
    * </pre>
    *
    * <code>
@@ -111,7 +111,7 @@ public interface CreateRepositoryRequestOrBuilder
    *
    *
    * <pre>
-   * The repository to be created.
+   * Required. The repository to be created.
    * </pre>
    *
    * <code>

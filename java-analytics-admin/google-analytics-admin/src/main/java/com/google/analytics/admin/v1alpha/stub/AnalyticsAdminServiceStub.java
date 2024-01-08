@@ -38,6 +38,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.AccessBinding;
@@ -150,6 +151,7 @@ import com.google.analytics.admin.v1alpha.GetPropertyRequest;
 import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
+import com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
@@ -199,6 +201,8 @@ import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasR
 import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
+import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest;
+import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
@@ -234,6 +238,7 @@ import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -1004,16 +1009,39 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createSubpropertyCallable()");
   }
 
-  public UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
-      deleteSubpropertyEventFilterCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: deleteSubpropertyEventFilterCallable()");
-  }
-
   public UnaryCallable<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
       createSubpropertyEventFilterCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: createSubpropertyEventFilterCallable()");
+  }
+
+  public UnaryCallable<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      getSubpropertyEventFilterCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSubpropertyEventFilterCallable()");
+  }
+
+  public UnaryCallable<ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersPagedResponse>
+      listSubpropertyEventFiltersPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSubpropertyEventFiltersPagedCallable()");
+  }
+
+  public UnaryCallable<ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+      listSubpropertyEventFiltersCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSubpropertyEventFiltersCallable()");
+  }
+
+  public UnaryCallable<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      updateSubpropertyEventFilterCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateSubpropertyEventFilterCallable()");
+  }
+
+  public UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteSubpropertyEventFilterCallable()");
   }
 
   @Override

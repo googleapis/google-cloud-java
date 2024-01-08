@@ -560,7 +560,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Use with CategoryType.RELAIBILITY
+   * Use with CategoryType.RELIABILITY
    * </pre>
    *
    * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
@@ -575,7 +575,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Use with CategoryType.RELAIBILITY
+   * Use with CategoryType.RELIABILITY
    * </pre>
    *
    * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
@@ -593,7 +593,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Use with CategoryType.RELAIBILITY
+   * Use with CategoryType.RELIABILITY
    * </pre>
    *
    * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
@@ -1862,7 +1862,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use with CategoryType.RELAIBILITY
+     * Use with CategoryType.RELIABILITY
      * </pre>
      *
      * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
@@ -1877,7 +1877,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use with CategoryType.RELAIBILITY
+     * Use with CategoryType.RELIABILITY
      * </pre>
      *
      * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
@@ -1902,7 +1902,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use with CategoryType.RELAIBILITY
+     * Use with CategoryType.RELIABILITY
      * </pre>
      *
      * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
@@ -1925,7 +1925,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use with CategoryType.RELAIBILITY
+     * Use with CategoryType.RELIABILITY
      * </pre>
      *
      * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
@@ -1945,7 +1945,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use with CategoryType.RELAIBILITY
+     * Use with CategoryType.RELIABILITY
      * </pre>
      *
      * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
@@ -1979,7 +1979,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use with CategoryType.RELAIBILITY
+     * Use with CategoryType.RELIABILITY
      * </pre>
      *
      * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
@@ -2004,7 +2004,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use with CategoryType.RELAIBILITY
+     * Use with CategoryType.RELIABILITY
      * </pre>
      *
      * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
@@ -2017,7 +2017,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use with CategoryType.RELAIBILITY
+     * Use with CategoryType.RELIABILITY
      * </pre>
      *
      * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
@@ -2038,7 +2038,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use with CategoryType.RELAIBILITY
+     * Use with CategoryType.RELIABILITY
      * </pre>
      *
      * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>

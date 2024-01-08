@@ -654,7 +654,10 @@ public class DatasetServiceClientTest {
   @Test
   public void exportDataTest() throws Exception {
     ExportDataResponse expectedResponse =
-        ExportDataResponse.newBuilder().addAllExportedFiles(new ArrayList<String>()).build();
+        ExportDataResponse.newBuilder()
+            .addAllExportedFiles(new ArrayList<String>())
+            .setDataStats(Model.DataStats.newBuilder().build())
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("exportDataTest")
@@ -701,7 +704,10 @@ public class DatasetServiceClientTest {
   @Test
   public void exportDataTest2() throws Exception {
     ExportDataResponse expectedResponse =
-        ExportDataResponse.newBuilder().addAllExportedFiles(new ArrayList<String>()).build();
+        ExportDataResponse.newBuilder()
+            .addAllExportedFiles(new ArrayList<String>())
+            .setDataStats(Model.DataStats.newBuilder().build())
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("exportDataTest")

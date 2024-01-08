@@ -28,7 +28,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Name of the `Target`. Format is
-   * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+   * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41,7 +41,7 @@ public interface TargetOrBuilder
    *
    * <pre>
    * Optional. Name of the `Target`. Format is
-   * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+   * `projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -560,6 +560,47 @@ public interface TargetOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.MultiTargetOrBuilder getMultiTargetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information specifying a Custom Target.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customTarget field is set.
+   */
+  boolean hasCustomTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information specifying a Custom Target.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customTarget.
+   */
+  com.google.cloud.deploy.v1.CustomTarget getCustomTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information specifying a Custom Target.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomTarget custom_target = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.CustomTargetOrBuilder getCustomTargetOrBuilder();
 
   /**
    *

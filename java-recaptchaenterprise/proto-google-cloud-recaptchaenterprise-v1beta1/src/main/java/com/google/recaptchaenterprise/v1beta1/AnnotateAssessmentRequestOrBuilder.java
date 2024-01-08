@@ -91,8 +91,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Reasons for the annotation that are assigned to the event.
    * </pre>
    *
    * <code>
@@ -107,8 +106,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Reasons for the annotation that are assigned to the event.
    * </pre>
    *
    * <code>
@@ -122,8 +120,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Reasons for the annotation that are assigned to the event.
    * </pre>
    *
    * <code>
@@ -138,8 +135,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Reasons for the annotation that are assigned to the event.
    * </pre>
    *
    * <code>
@@ -153,8 +149,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Reasons for the annotation that are assigned to the event.
    * </pre>
    *
    * <code>
@@ -170,11 +165,11 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional unique stable hashed user identifier to apply to the
-   * assessment. This is an alternative to setting the hashed_account_id in
-   * CreateAssessment, for example when the account identifier is not yet known
-   * in the initial request. It is recommended that the identifier is hashed
-   * using hmac-sha256 with stable secret.
+   * Optional. Unique stable hashed user identifier to apply to the assessment.
+   * This is an alternative to setting the `hashed_account_id` in
+   * `CreateAssessment`, for example, when the account identifier is not yet
+   * known in the initial request. It is recommended that the identifier is
+   * hashed using hmac-sha256 with stable secret.
    * </pre>
    *
    * <code>bytes hashed_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

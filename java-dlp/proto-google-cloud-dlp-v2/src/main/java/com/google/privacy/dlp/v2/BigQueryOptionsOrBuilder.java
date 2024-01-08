@@ -182,6 +182,9 @@ public interface BigQueryOptionsOrBuilder
    * <pre>
    * References to fields excluded from scanning. This allows you to skip
    * inspection of entire columns which you know have no findings.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -193,6 +196,9 @@ public interface BigQueryOptionsOrBuilder
    * <pre>
    * References to fields excluded from scanning. This allows you to skip
    * inspection of entire columns which you know have no findings.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -204,6 +210,9 @@ public interface BigQueryOptionsOrBuilder
    * <pre>
    * References to fields excluded from scanning. This allows you to skip
    * inspection of entire columns which you know have no findings.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -215,6 +224,9 @@ public interface BigQueryOptionsOrBuilder
    * <pre>
    * References to fields excluded from scanning. This allows you to skip
    * inspection of entire columns which you know have no findings.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -227,6 +239,9 @@ public interface BigQueryOptionsOrBuilder
    * <pre>
    * References to fields excluded from scanning. This allows you to skip
    * inspection of entire columns which you know have no findings.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
@@ -238,6 +253,9 @@ public interface BigQueryOptionsOrBuilder
    *
    * <pre>
    * Limit scanning only to these fields.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -248,6 +266,9 @@ public interface BigQueryOptionsOrBuilder
    *
    * <pre>
    * Limit scanning only to these fields.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -258,6 +279,9 @@ public interface BigQueryOptionsOrBuilder
    *
    * <pre>
    * Limit scanning only to these fields.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -268,6 +292,9 @@ public interface BigQueryOptionsOrBuilder
    *
    * <pre>
    * Limit scanning only to these fields.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>
@@ -279,6 +306,9 @@ public interface BigQueryOptionsOrBuilder
    *
    * <pre>
    * Limit scanning only to these fields.
+   * When inspecting a table, we recommend that you inspect all columns.
+   * Otherwise, findings might be affected because hints from excluded columns
+   * will not be used.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId included_fields = 7;</code>

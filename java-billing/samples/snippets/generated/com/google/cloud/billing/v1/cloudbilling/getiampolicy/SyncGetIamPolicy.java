@@ -38,7 +38,7 @@ public class SyncGetIamPolicy {
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+              .setResource(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       Policy response = cloudBillingClient.getIamPolicy(request);

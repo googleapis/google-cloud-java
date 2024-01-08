@@ -42,6 +42,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     format_ = 0;
     description_ = "";
     kmsKeyName_ = "";
+    mode_ = 0;
   }
 
   @java.lang.Override
@@ -61,6 +62,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 4:
         return internalGetLabels();
+      case 12:
+        return internalGetCleanupPolicies();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -156,6 +159,26 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>PYTHON = 8;</code>
      */
     PYTHON(8),
+    /**
+     *
+     *
+     * <pre>
+     * Kubeflow Pipelines package format.
+     * </pre>
+     *
+     * <code>KFP = 9;</code>
+     */
+    KFP(9),
+    /**
+     *
+     *
+     * <pre>
+     * Go package format.
+     * </pre>
+     *
+     * <code>GO = 10;</code>
+     */
+    GO(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -229,6 +252,26 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>PYTHON = 8;</code>
      */
     public static final int PYTHON_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Kubeflow Pipelines package format.
+     * </pre>
+     *
+     * <code>KFP = 9;</code>
+     */
+    public static final int KFP_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * Go package format.
+     * </pre>
+     *
+     * <code>GO = 10;</code>
+     */
+    public static final int GO_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -268,6 +311,10 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return YUM;
         case 8:
           return PYTHON;
+        case 9:
+          return KFP;
+        case 10:
+          return GO;
         default:
           return null;
       }
@@ -321,6 +368,188 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.devtools.artifactregistry.v1.Repository.Format)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The mode configures the repository to serve artifacts from different
+   * sources.
+   * </pre>
+   *
+   * Protobuf enum {@code google.devtools.artifactregistry.v1.Repository.Mode}
+   */
+  public enum Mode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified mode.
+     * </pre>
+     *
+     * <code>MODE_UNSPECIFIED = 0;</code>
+     */
+    MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * A standard repository storing artifacts.
+     * </pre>
+     *
+     * <code>STANDARD_REPOSITORY = 1;</code>
+     */
+    STANDARD_REPOSITORY(1),
+    /**
+     *
+     *
+     * <pre>
+     * A virtual repository to serve artifacts from one or more sources.
+     * </pre>
+     *
+     * <code>VIRTUAL_REPOSITORY = 2;</code>
+     */
+    VIRTUAL_REPOSITORY(2),
+    /**
+     *
+     *
+     * <pre>
+     * A remote repository to serve artifacts from a remote source.
+     * </pre>
+     *
+     * <code>REMOTE_REPOSITORY = 3;</code>
+     */
+    REMOTE_REPOSITORY(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified mode.
+     * </pre>
+     *
+     * <code>MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * A standard repository storing artifacts.
+     * </pre>
+     *
+     * <code>STANDARD_REPOSITORY = 1;</code>
+     */
+    public static final int STANDARD_REPOSITORY_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * A virtual repository to serve artifacts from one or more sources.
+     * </pre>
+     *
+     * <code>VIRTUAL_REPOSITORY = 2;</code>
+     */
+    public static final int VIRTUAL_REPOSITORY_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * A remote repository to serve artifacts from a remote source.
+     * </pre>
+     *
+     * <code>REMOTE_REPOSITORY = 3;</code>
+     */
+    public static final int REMOTE_REPOSITORY_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Mode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Mode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MODE_UNSPECIFIED;
+        case 1:
+          return STANDARD_REPOSITORY;
+        case 2:
+          return VIRTUAL_REPOSITORY;
+        case 3:
+          return REMOTE_REPOSITORY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Mode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Mode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Mode>() {
+          public Mode findValueByNumber(int number) {
+            return Mode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.devtools.artifactregistry.v1.Repository.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final Mode[] VALUES = values();
+
+    public static Mode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Mode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.devtools.artifactregistry.v1.Repository.Mode)
   }
 
   public interface MavenRepositoryConfigOrBuilder
@@ -1275,6 +1504,583 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface DockerRepositoryConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The repository which enabled this flag prevents all tags from being
+     * modified, moved or deleted. This does not prevent tags from being
+     * created.
+     * </pre>
+     *
+     * <code>bool immutable_tags = 1;</code>
+     *
+     * @return The immutableTags.
+     */
+    boolean getImmutableTags();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * DockerRepositoryConfig is docker related repository details.
+   * Provides additional configuration details for repositories of the docker
+   * format type.
+   * </pre>
+   *
+   * Protobuf type {@code google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig}
+   */
+  public static final class DockerRepositoryConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig)
+      DockerRepositoryConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DockerRepositoryConfig.newBuilder() to construct.
+    private DockerRepositoryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DockerRepositoryConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DockerRepositoryConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.devtools.artifactregistry.v1.RepositoryProto
+          .internal_static_google_devtools_artifactregistry_v1_Repository_DockerRepositoryConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.devtools.artifactregistry.v1.RepositoryProto
+          .internal_static_google_devtools_artifactregistry_v1_Repository_DockerRepositoryConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig.class,
+              com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig.Builder
+                  .class);
+    }
+
+    public static final int IMMUTABLE_TAGS_FIELD_NUMBER = 1;
+    private boolean immutableTags_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * The repository which enabled this flag prevents all tags from being
+     * modified, moved or deleted. This does not prevent tags from being
+     * created.
+     * </pre>
+     *
+     * <code>bool immutable_tags = 1;</code>
+     *
+     * @return The immutableTags.
+     */
+    @java.lang.Override
+    public boolean getImmutableTags() {
+      return immutableTags_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (immutableTags_ != false) {
+        output.writeBool(1, immutableTags_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (immutableTags_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, immutableTags_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig)) {
+        return super.equals(obj);
+      }
+      com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig other =
+          (com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig) obj;
+
+      if (getImmutableTags() != other.getImmutableTags()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + IMMUTABLE_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getImmutableTags());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DockerRepositoryConfig is docker related repository details.
+     * Provides additional configuration details for repositories of the docker
+     * format type.
+     * </pre>
+     *
+     * Protobuf type {@code google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig)
+        com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_Repository_DockerRepositoryConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_Repository_DockerRepositoryConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig.class,
+                com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        immutableTags_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_Repository_DockerRepositoryConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+          getDefaultInstanceForType() {
+        return com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig build() {
+        com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+          buildPartial() {
+        com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig result =
+            new com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.immutableTags_ = immutableTags_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig) {
+          return mergeFrom(
+              (com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig other) {
+        if (other
+            == com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+                .getDefaultInstance()) return this;
+        if (other.getImmutableTags() != false) {
+          setImmutableTags(other.getImmutableTags());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  immutableTags_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean immutableTags_;
+      /**
+       *
+       *
+       * <pre>
+       * The repository which enabled this flag prevents all tags from being
+       * modified, moved or deleted. This does not prevent tags from being
+       * created.
+       * </pre>
+       *
+       * <code>bool immutable_tags = 1;</code>
+       *
+       * @return The immutableTags.
+       */
+      @java.lang.Override
+      public boolean getImmutableTags() {
+        return immutableTags_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The repository which enabled this flag prevents all tags from being
+       * modified, moved or deleted. This does not prevent tags from being
+       * created.
+       * </pre>
+       *
+       * <code>bool immutable_tags = 1;</code>
+       *
+       * @param value The immutableTags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImmutableTags(boolean value) {
+
+        immutableTags_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The repository which enabled this flag prevents all tags from being
+       * modified, moved or deleted. This does not prevent tags from being
+       * created.
+       * </pre>
+       *
+       * <code>bool immutable_tags = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearImmutableTags() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        immutableTags_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig)
+    private static final com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig();
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DockerRepositoryConfig> PARSER =
+        new com.google.protobuf.AbstractParser<DockerRepositoryConfig>() {
+          @java.lang.Override
+          public DockerRepositoryConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DockerRepositoryConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DockerRepositoryConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int formatConfigCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -1285,6 +2091,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     MAVEN_CONFIG(9),
+    DOCKER_CONFIG(17),
     FORMATCONFIG_NOT_SET(0);
     private final int value;
 
@@ -1305,6 +2112,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 9:
           return MAVEN_CONFIG;
+        case 17:
+          return DOCKER_CONFIG;
         case 0:
           return FORMATCONFIG_NOT_SET;
         default:
@@ -1319,6 +2128,55 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   public FormatConfigCase getFormatConfigCase() {
     return FormatConfigCase.forNumber(formatConfigCase_);
+  }
+
+  private int modeConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object modeConfig_;
+
+  public enum ModeConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    VIRTUAL_REPOSITORY_CONFIG(14),
+    REMOTE_REPOSITORY_CONFIG(15),
+    MODECONFIG_NOT_SET(0);
+    private final int value;
+
+    private ModeConfigCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ModeConfigCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ModeConfigCase forNumber(int value) {
+      switch (value) {
+        case 14:
+          return VIRTUAL_REPOSITORY_CONFIG;
+        case 15:
+          return REMOTE_REPOSITORY_CONFIG;
+        case 0:
+          return MODECONFIG_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ModeConfigCase getModeConfigCase() {
+    return ModeConfigCase.forNumber(modeConfigCase_);
   }
 
   public static final int MAVEN_CONFIG_FIELD_NUMBER = 9;
@@ -1383,6 +2241,190 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         .getDefaultInstance();
   }
 
+  public static final int DOCKER_CONFIG_FIELD_NUMBER = 17;
+  /**
+   *
+   *
+   * <pre>
+   * Docker repository config contains repository level configuration
+   * for the repositories of docker type.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig docker_config = 17;
+   * </code>
+   *
+   * @return Whether the dockerConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDockerConfig() {
+    return formatConfigCase_ == 17;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Docker repository config contains repository level configuration
+   * for the repositories of docker type.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig docker_config = 17;
+   * </code>
+   *
+   * @return The dockerConfig.
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+      getDockerConfig() {
+    if (formatConfigCase_ == 17) {
+      return (com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig)
+          formatConfig_;
+    }
+    return com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Docker repository config contains repository level configuration
+   * for the repositories of docker type.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig docker_config = 17;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfigOrBuilder
+      getDockerConfigOrBuilder() {
+    if (formatConfigCase_ == 17) {
+      return (com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig)
+          formatConfig_;
+    }
+    return com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        .getDefaultInstance();
+  }
+
+  public static final int VIRTUAL_REPOSITORY_CONFIG_FIELD_NUMBER = 14;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration specific for a Virtual Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.VirtualRepositoryConfig virtual_repository_config = 14;
+   * </code>
+   *
+   * @return Whether the virtualRepositoryConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasVirtualRepositoryConfig() {
+    return modeConfigCase_ == 14;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration specific for a Virtual Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.VirtualRepositoryConfig virtual_repository_config = 14;
+   * </code>
+   *
+   * @return The virtualRepositoryConfig.
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig
+      getVirtualRepositoryConfig() {
+    if (modeConfigCase_ == 14) {
+      return (com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig) modeConfig_;
+    }
+    return com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration specific for a Virtual Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.VirtualRepositoryConfig virtual_repository_config = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.VirtualRepositoryConfigOrBuilder
+      getVirtualRepositoryConfigOrBuilder() {
+    if (modeConfigCase_ == 14) {
+      return (com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig) modeConfig_;
+    }
+    return com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.getDefaultInstance();
+  }
+
+  public static final int REMOTE_REPOSITORY_CONFIG_FIELD_NUMBER = 15;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration specific for a Remote Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig remote_repository_config = 15;
+   * </code>
+   *
+   * @return Whether the remoteRepositoryConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRemoteRepositoryConfig() {
+    return modeConfigCase_ == 15;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration specific for a Remote Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig remote_repository_config = 15;
+   * </code>
+   *
+   * @return The remoteRepositoryConfig.
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+      getRemoteRepositoryConfig() {
+    if (modeConfigCase_ == 15) {
+      return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig) modeConfig_;
+    }
+    return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration specific for a Remote Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig remote_repository_config = 15;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfigOrBuilder
+      getRemoteRepositoryConfigOrBuilder() {
+    if (modeConfigCase_ == 15) {
+      return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig) modeConfig_;
+    }
+    return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1392,7 +2434,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the repository, for example:
-   * "projects/p1/locations/us-central1/repositories/repo1".
+   * `projects/p1/locations/us-central1/repositories/repo1`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1416,7 +2458,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the repository, for example:
-   * "projects/p1/locations/us-central1/repositories/repo1".
+   * `projects/p1/locations/us-central1/repositories/repo1`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1442,10 +2484,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The format of packages that are stored in the repository.
+   * Optional. The format of packages that are stored in the repository.
    * </pre>
    *
-   * <code>.google.devtools.artifactregistry.v1.Repository.Format format = 2;</code>
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.Format format = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for format.
    */
@@ -1457,10 +2501,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The format of packages that are stored in the repository.
+   * Optional. The format of packages that are stored in the repository.
    * </pre>
    *
-   * <code>.google.devtools.artifactregistry.v1.Repository.Format format = 2;</code>
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.Format format = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The format.
    */
@@ -1648,10 +2694,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the repository was created.
+   * Output only. The time when the repository was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -1663,10 +2710,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the repository was created.
+   * Output only. The time when the repository was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -1678,10 +2726,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the repository was created.
+   * Output only. The time when the repository was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -1694,10 +2743,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the repository was last updated.
+   * Output only. The time when the repository was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -1709,10 +2759,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the repository was last updated.
+   * Output only. The time when the repository was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
@@ -1724,10 +2775,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the repository was last updated.
+   * Output only. The time when the repository was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
@@ -1791,6 +2843,241 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int MODE_FIELD_NUMBER = 10;
+  private int mode_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mode of the repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.Mode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for mode.
+   */
+  @java.lang.Override
+  public int getModeValue() {
+    return mode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mode of the repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.Mode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mode.
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.Repository.Mode getMode() {
+    com.google.devtools.artifactregistry.v1.Repository.Mode result =
+        com.google.devtools.artifactregistry.v1.Repository.Mode.forNumber(mode_);
+    return result == null
+        ? com.google.devtools.artifactregistry.v1.Repository.Mode.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int CLEANUP_POLICIES_FIELD_NUMBER = 12;
+
+  private static final class CleanupPoliciesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+                    newDefaultInstance(
+                        com.google.devtools.artifactregistry.v1.RepositoryProto
+                            .internal_static_google_devtools_artifactregistry_v1_Repository_CleanupPoliciesEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.devtools.artifactregistry.v1.CleanupPolicy.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+      cleanupPolicies_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+      internalGetCleanupPolicies() {
+    if (cleanupPolicies_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          CleanupPoliciesDefaultEntryHolder.defaultEntry);
+    }
+    return cleanupPolicies_;
+  }
+
+  public int getCleanupPoliciesCount() {
+    return internalGetCleanupPolicies().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cleanup policies for this repository. Cleanup policies indicate
+   * when certain package versions can be automatically deleted. Map keys are
+   * policy IDs supplied by users during policy creation. They must unique
+   * within a repository and be under 128 characters in length.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsCleanupPolicies(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetCleanupPolicies().getMap().containsKey(key);
+  }
+  /** Use {@link #getCleanupPoliciesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+      getCleanupPolicies() {
+    return getCleanupPoliciesMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cleanup policies for this repository. Cleanup policies indicate
+   * when certain package versions can be automatically deleted. Map keys are
+   * policy IDs supplied by users during policy creation. They must unique
+   * within a repository and be under 128 characters in length.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+      getCleanupPoliciesMap() {
+    return internalGetCleanupPolicies().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cleanup policies for this repository. Cleanup policies indicate
+   * when certain package versions can be automatically deleted. Map keys are
+   * policy IDs supplied by users during policy creation. They must unique
+   * within a repository and be under 128 characters in length.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.devtools.artifactregistry.v1.CleanupPolicy
+      getCleanupPoliciesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.devtools.artifactregistry.v1.CleanupPolicy defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy> map =
+        internalGetCleanupPolicies().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cleanup policies for this repository. Cleanup policies indicate
+   * when certain package versions can be automatically deleted. Map keys are
+   * policy IDs supplied by users during policy creation. They must unique
+   * within a repository and be under 128 characters in length.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.CleanupPolicy getCleanupPoliciesOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy> map =
+        internalGetCleanupPolicies().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int SIZE_BYTES_FIELD_NUMBER = 13;
+  private long sizeBytes_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The size, in bytes, of all artifact storage in this
+   * repository. Repositories that are generally available or in public preview
+   *  use this to calculate storage costs.
+   * </pre>
+   *
+   * <code>int64 size_bytes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The sizeBytes.
+   */
+  @java.lang.Override
+  public long getSizeBytes() {
+    return sizeBytes_;
+  }
+
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 16;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If set, the repository satisfies physical zone separation.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int CLEANUP_POLICY_DRY_RUN_FIELD_NUMBER = 18;
+  private boolean cleanupPolicyDryRun_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the cleanup pipeline is prevented from deleting versions
+   * in this repository.
+   * </pre>
+   *
+   * <code>bool cleanup_policy_dry_run = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The cleanupPolicyDryRun.
+   */
+  @java.lang.Override
+  public boolean getCleanupPolicyDryRun() {
+    return cleanupPolicyDryRun_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1831,6 +3118,35 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           9,
           (com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig) formatConfig_);
+    }
+    if (mode_
+        != com.google.devtools.artifactregistry.v1.Repository.Mode.MODE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(10, mode_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetCleanupPolicies(), CleanupPoliciesDefaultEntryHolder.defaultEntry, 12);
+    if (sizeBytes_ != 0L) {
+      output.writeInt64(13, sizeBytes_);
+    }
+    if (modeConfigCase_ == 14) {
+      output.writeMessage(
+          14, (com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig) modeConfig_);
+    }
+    if (modeConfigCase_ == 15) {
+      output.writeMessage(
+          15, (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig) modeConfig_);
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(16, satisfiesPzs_);
+    }
+    if (formatConfigCase_ == 17) {
+      output.writeMessage(
+          17,
+          (com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig)
+              formatConfig_);
+    }
+    if (cleanupPolicyDryRun_ != false) {
+      output.writeBool(18, cleanupPolicyDryRun_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1878,6 +3194,49 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
               (com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
                   formatConfig_);
     }
+    if (mode_
+        != com.google.devtools.artifactregistry.v1.Repository.Mode.MODE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, mode_);
+    }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+        entry : internalGetCleanupPolicies().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+          cleanupPolicies__ =
+              CleanupPoliciesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, cleanupPolicies__);
+    }
+    if (sizeBytes_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(13, sizeBytes_);
+    }
+    if (modeConfigCase_ == 14) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, (com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig) modeConfig_);
+    }
+    if (modeConfigCase_ == 15) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig) modeConfig_);
+    }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, satisfiesPzs_);
+    }
+    if (formatConfigCase_ == 17) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17,
+              (com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig)
+                  formatConfig_);
+    }
+    if (cleanupPolicyDryRun_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, cleanupPolicyDryRun_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1907,10 +3266,29 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
+    if (mode_ != other.mode_) return false;
+    if (!internalGetCleanupPolicies().equals(other.internalGetCleanupPolicies())) return false;
+    if (getSizeBytes() != other.getSizeBytes()) return false;
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (getCleanupPolicyDryRun() != other.getCleanupPolicyDryRun()) return false;
     if (!getFormatConfigCase().equals(other.getFormatConfigCase())) return false;
     switch (formatConfigCase_) {
       case 9:
         if (!getMavenConfig().equals(other.getMavenConfig())) return false;
+        break;
+      case 17:
+        if (!getDockerConfig().equals(other.getDockerConfig())) return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getModeConfigCase().equals(other.getModeConfigCase())) return false;
+    switch (modeConfigCase_) {
+      case 14:
+        if (!getVirtualRepositoryConfig().equals(other.getVirtualRepositoryConfig())) return false;
+        break;
+      case 15:
+        if (!getRemoteRepositoryConfig().equals(other.getRemoteRepositoryConfig())) return false;
         break;
       case 0:
       default:
@@ -1946,10 +3324,38 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getKmsKeyName().hashCode();
+    hash = (37 * hash) + MODE_FIELD_NUMBER;
+    hash = (53 * hash) + mode_;
+    if (!internalGetCleanupPolicies().getMap().isEmpty()) {
+      hash = (37 * hash) + CLEANUP_POLICIES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetCleanupPolicies().hashCode();
+    }
+    hash = (37 * hash) + SIZE_BYTES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSizeBytes());
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + CLEANUP_POLICY_DRY_RUN_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCleanupPolicyDryRun());
     switch (formatConfigCase_) {
       case 9:
         hash = (37 * hash) + MAVEN_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getMavenConfig().hashCode();
+        break;
+      case 17:
+        hash = (37 * hash) + DOCKER_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getDockerConfig().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (modeConfigCase_) {
+      case 14:
+        hash = (37 * hash) + VIRTUAL_REPOSITORY_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getVirtualRepositoryConfig().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + REMOTE_REPOSITORY_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getRemoteRepositoryConfig().hashCode();
         break;
       case 0:
       default:
@@ -2077,6 +3483,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 4:
           return internalGetLabels();
+        case 12:
+          return internalGetCleanupPolicies();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2087,6 +3495,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 4:
           return internalGetMutableLabels();
+        case 12:
+          return internalGetMutableCleanupPolicies();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2116,6 +3526,15 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       if (mavenConfigBuilder_ != null) {
         mavenConfigBuilder_.clear();
       }
+      if (dockerConfigBuilder_ != null) {
+        dockerConfigBuilder_.clear();
+      }
+      if (virtualRepositoryConfigBuilder_ != null) {
+        virtualRepositoryConfigBuilder_.clear();
+      }
+      if (remoteRepositoryConfigBuilder_ != null) {
+        remoteRepositoryConfigBuilder_.clear();
+      }
       name_ = "";
       format_ = 0;
       description_ = "";
@@ -2131,8 +3550,15 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_ = null;
       }
       kmsKeyName_ = "";
+      mode_ = 0;
+      internalGetMutableCleanupPolicies().clear();
+      sizeBytes_ = 0L;
+      satisfiesPzs_ = false;
+      cleanupPolicyDryRun_ = false;
       formatConfigCase_ = 0;
       formatConfig_ = null;
+      modeConfigCase_ = 0;
+      modeConfig_ = null;
       return this;
     }
 
@@ -2170,27 +3596,43 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.devtools.artifactregistry.v1.Repository result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.format_ = format_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.kmsKeyName_ = kmsKeyName_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.mode_ = mode_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.cleanupPolicies_ = internalGetCleanupPolicies();
+        result.cleanupPolicies_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.sizeBytes_ = sizeBytes_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.cleanupPolicyDryRun_ = cleanupPolicyDryRun_;
       }
     }
 
@@ -2199,6 +3641,17 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       result.formatConfig_ = this.formatConfig_;
       if (formatConfigCase_ == 9 && mavenConfigBuilder_ != null) {
         result.formatConfig_ = mavenConfigBuilder_.build();
+      }
+      if (formatConfigCase_ == 17 && dockerConfigBuilder_ != null) {
+        result.formatConfig_ = dockerConfigBuilder_.build();
+      }
+      result.modeConfigCase_ = modeConfigCase_;
+      result.modeConfig_ = this.modeConfig_;
+      if (modeConfigCase_ == 14 && virtualRepositoryConfigBuilder_ != null) {
+        result.modeConfig_ = virtualRepositoryConfigBuilder_.build();
+      }
+      if (modeConfigCase_ == 15 && remoteRepositoryConfigBuilder_ != null) {
+        result.modeConfig_ = remoteRepositoryConfigBuilder_.build();
       }
     }
 
@@ -2250,7 +3703,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.format_ != 0) {
@@ -2258,11 +3711,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -2271,8 +3724,22 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000400;
         onChanged();
+      }
+      if (other.mode_ != 0) {
+        setModeValue(other.getModeValue());
+      }
+      internalGetMutableCleanupPolicies().mergeFrom(other.internalGetCleanupPolicies());
+      bitField0_ |= 0x00001000;
+      if (other.getSizeBytes() != 0L) {
+        setSizeBytes(other.getSizeBytes());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.getCleanupPolicyDryRun() != false) {
+        setCleanupPolicyDryRun(other.getCleanupPolicyDryRun());
       }
       switch (other.getFormatConfigCase()) {
         case MAVEN_CONFIG:
@@ -2280,7 +3747,28 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             mergeMavenConfig(other.getMavenConfig());
             break;
           }
+        case DOCKER_CONFIG:
+          {
+            mergeDockerConfig(other.getDockerConfig());
+            break;
+          }
         case FORMATCONFIG_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getModeConfigCase()) {
+        case VIRTUAL_REPOSITORY_CONFIG:
+          {
+            mergeVirtualRepositoryConfig(other.getVirtualRepositoryConfig());
+            break;
+          }
+        case REMOTE_REPOSITORY_CONFIG:
+          {
+            mergeRemoteRepositoryConfig(other.getRemoteRepositoryConfig());
+            break;
+          }
+        case MODECONFIG_NOT_SET:
           {
             break;
           }
@@ -2314,19 +3802,19 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 16:
               {
                 format_ = input.readEnum();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 16
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26
             case 34:
@@ -2338,25 +3826,25 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 50
             case 66:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 66
             case 74:
@@ -2365,6 +3853,64 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
                 formatConfigCase_ = 9;
                 break;
               } // case 74
+            case 80:
+              {
+                mode_ = input.readEnum();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 80
+            case 98:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+                    cleanupPolicies__ =
+                        input.readMessage(
+                            CleanupPoliciesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableCleanupPolicies()
+                    .getMutableMap()
+                    .put(cleanupPolicies__.getKey(), cleanupPolicies__.getValue());
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 98
+            case 104:
+              {
+                sizeBytes_ = input.readInt64();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 104
+            case 114:
+              {
+                input.readMessage(
+                    getVirtualRepositoryConfigFieldBuilder().getBuilder(), extensionRegistry);
+                modeConfigCase_ = 14;
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    getRemoteRepositoryConfigFieldBuilder().getBuilder(), extensionRegistry);
+                modeConfigCase_ = 15;
+                break;
+              } // case 122
+            case 128:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 128
+            case 138:
+              {
+                input.readMessage(getDockerConfigFieldBuilder().getBuilder(), extensionRegistry);
+                formatConfigCase_ = 17;
+                break;
+              } // case 138
+            case 144:
+              {
+                cleanupPolicyDryRun_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 144
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2392,6 +3938,20 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFormatConfig() {
       formatConfigCase_ = 0;
       formatConfig_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int modeConfigCase_ = 0;
+    private java.lang.Object modeConfig_;
+
+    public ModeConfigCase getModeConfigCase() {
+      return ModeConfigCase.forNumber(modeConfigCase_);
+    }
+
+    public Builder clearModeConfig() {
+      modeConfigCase_ = 0;
+      modeConfig_ = null;
       onChanged();
       return this;
     }
@@ -2642,13 +4202,736 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       return mavenConfigBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig,
+            com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig.Builder,
+            com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfigOrBuilder>
+        dockerConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Docker repository config contains repository level configuration
+     * for the repositories of docker type.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig docker_config = 17;
+     * </code>
+     *
+     * @return Whether the dockerConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasDockerConfig() {
+      return formatConfigCase_ == 17;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Docker repository config contains repository level configuration
+     * for the repositories of docker type.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig docker_config = 17;
+     * </code>
+     *
+     * @return The dockerConfig.
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+        getDockerConfig() {
+      if (dockerConfigBuilder_ == null) {
+        if (formatConfigCase_ == 17) {
+          return (com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig)
+              formatConfig_;
+        }
+        return com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+            .getDefaultInstance();
+      } else {
+        if (formatConfigCase_ == 17) {
+          return dockerConfigBuilder_.getMessage();
+        }
+        return com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Docker repository config contains repository level configuration
+     * for the repositories of docker type.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig docker_config = 17;
+     * </code>
+     */
+    public Builder setDockerConfig(
+        com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig value) {
+      if (dockerConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        formatConfig_ = value;
+        onChanged();
+      } else {
+        dockerConfigBuilder_.setMessage(value);
+      }
+      formatConfigCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Docker repository config contains repository level configuration
+     * for the repositories of docker type.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig docker_config = 17;
+     * </code>
+     */
+    public Builder setDockerConfig(
+        com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig.Builder
+            builderForValue) {
+      if (dockerConfigBuilder_ == null) {
+        formatConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        dockerConfigBuilder_.setMessage(builderForValue.build());
+      }
+      formatConfigCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Docker repository config contains repository level configuration
+     * for the repositories of docker type.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig docker_config = 17;
+     * </code>
+     */
+    public Builder mergeDockerConfig(
+        com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig value) {
+      if (dockerConfigBuilder_ == null) {
+        if (formatConfigCase_ == 17
+            && formatConfig_
+                != com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+                    .getDefaultInstance()) {
+          formatConfig_ =
+              com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig.newBuilder(
+                      (com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig)
+                          formatConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          formatConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (formatConfigCase_ == 17) {
+          dockerConfigBuilder_.mergeFrom(value);
+        } else {
+          dockerConfigBuilder_.setMessage(value);
+        }
+      }
+      formatConfigCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Docker repository config contains repository level configuration
+     * for the repositories of docker type.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig docker_config = 17;
+     * </code>
+     */
+    public Builder clearDockerConfig() {
+      if (dockerConfigBuilder_ == null) {
+        if (formatConfigCase_ == 17) {
+          formatConfigCase_ = 0;
+          formatConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (formatConfigCase_ == 17) {
+          formatConfigCase_ = 0;
+          formatConfig_ = null;
+        }
+        dockerConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Docker repository config contains repository level configuration
+     * for the repositories of docker type.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig docker_config = 17;
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig.Builder
+        getDockerConfigBuilder() {
+      return getDockerConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Docker repository config contains repository level configuration
+     * for the repositories of docker type.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig docker_config = 17;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfigOrBuilder
+        getDockerConfigOrBuilder() {
+      if ((formatConfigCase_ == 17) && (dockerConfigBuilder_ != null)) {
+        return dockerConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (formatConfigCase_ == 17) {
+          return (com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig)
+              formatConfig_;
+        }
+        return com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Docker repository config contains repository level configuration
+     * for the repositories of docker type.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig docker_config = 17;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig,
+            com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig.Builder,
+            com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfigOrBuilder>
+        getDockerConfigFieldBuilder() {
+      if (dockerConfigBuilder_ == null) {
+        if (!(formatConfigCase_ == 17)) {
+          formatConfig_ =
+              com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
+                  .getDefaultInstance();
+        }
+        dockerConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig,
+                com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig.Builder,
+                com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfigOrBuilder>(
+                (com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig)
+                    formatConfig_,
+                getParentForChildren(),
+                isClean());
+        formatConfig_ = null;
+      }
+      formatConfigCase_ = 17;
+      onChanged();
+      return dockerConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig,
+            com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.Builder,
+            com.google.devtools.artifactregistry.v1.VirtualRepositoryConfigOrBuilder>
+        virtualRepositoryConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Virtual Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.VirtualRepositoryConfig virtual_repository_config = 14;
+     * </code>
+     *
+     * @return Whether the virtualRepositoryConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasVirtualRepositoryConfig() {
+      return modeConfigCase_ == 14;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Virtual Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.VirtualRepositoryConfig virtual_repository_config = 14;
+     * </code>
+     *
+     * @return The virtualRepositoryConfig.
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig
+        getVirtualRepositoryConfig() {
+      if (virtualRepositoryConfigBuilder_ == null) {
+        if (modeConfigCase_ == 14) {
+          return (com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig) modeConfig_;
+        }
+        return com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.getDefaultInstance();
+      } else {
+        if (modeConfigCase_ == 14) {
+          return virtualRepositoryConfigBuilder_.getMessage();
+        }
+        return com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Virtual Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.VirtualRepositoryConfig virtual_repository_config = 14;
+     * </code>
+     */
+    public Builder setVirtualRepositoryConfig(
+        com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig value) {
+      if (virtualRepositoryConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modeConfig_ = value;
+        onChanged();
+      } else {
+        virtualRepositoryConfigBuilder_.setMessage(value);
+      }
+      modeConfigCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Virtual Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.VirtualRepositoryConfig virtual_repository_config = 14;
+     * </code>
+     */
+    public Builder setVirtualRepositoryConfig(
+        com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.Builder builderForValue) {
+      if (virtualRepositoryConfigBuilder_ == null) {
+        modeConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        virtualRepositoryConfigBuilder_.setMessage(builderForValue.build());
+      }
+      modeConfigCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Virtual Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.VirtualRepositoryConfig virtual_repository_config = 14;
+     * </code>
+     */
+    public Builder mergeVirtualRepositoryConfig(
+        com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig value) {
+      if (virtualRepositoryConfigBuilder_ == null) {
+        if (modeConfigCase_ == 14
+            && modeConfig_
+                != com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig
+                    .getDefaultInstance()) {
+          modeConfig_ =
+              com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.newBuilder(
+                      (com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig) modeConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modeConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (modeConfigCase_ == 14) {
+          virtualRepositoryConfigBuilder_.mergeFrom(value);
+        } else {
+          virtualRepositoryConfigBuilder_.setMessage(value);
+        }
+      }
+      modeConfigCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Virtual Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.VirtualRepositoryConfig virtual_repository_config = 14;
+     * </code>
+     */
+    public Builder clearVirtualRepositoryConfig() {
+      if (virtualRepositoryConfigBuilder_ == null) {
+        if (modeConfigCase_ == 14) {
+          modeConfigCase_ = 0;
+          modeConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (modeConfigCase_ == 14) {
+          modeConfigCase_ = 0;
+          modeConfig_ = null;
+        }
+        virtualRepositoryConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Virtual Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.VirtualRepositoryConfig virtual_repository_config = 14;
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.Builder
+        getVirtualRepositoryConfigBuilder() {
+      return getVirtualRepositoryConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Virtual Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.VirtualRepositoryConfig virtual_repository_config = 14;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.VirtualRepositoryConfigOrBuilder
+        getVirtualRepositoryConfigOrBuilder() {
+      if ((modeConfigCase_ == 14) && (virtualRepositoryConfigBuilder_ != null)) {
+        return virtualRepositoryConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (modeConfigCase_ == 14) {
+          return (com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig) modeConfig_;
+        }
+        return com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Virtual Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.VirtualRepositoryConfig virtual_repository_config = 14;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig,
+            com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.Builder,
+            com.google.devtools.artifactregistry.v1.VirtualRepositoryConfigOrBuilder>
+        getVirtualRepositoryConfigFieldBuilder() {
+      if (virtualRepositoryConfigBuilder_ == null) {
+        if (!(modeConfigCase_ == 14)) {
+          modeConfig_ =
+              com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.getDefaultInstance();
+        }
+        virtualRepositoryConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig,
+                com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.Builder,
+                com.google.devtools.artifactregistry.v1.VirtualRepositoryConfigOrBuilder>(
+                (com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig) modeConfig_,
+                getParentForChildren(),
+                isClean());
+        modeConfig_ = null;
+      }
+      modeConfigCase_ = 14;
+      onChanged();
+      return virtualRepositoryConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig,
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.Builder,
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfigOrBuilder>
+        remoteRepositoryConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Remote Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig remote_repository_config = 15;
+     * </code>
+     *
+     * @return Whether the remoteRepositoryConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasRemoteRepositoryConfig() {
+      return modeConfigCase_ == 15;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Remote Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig remote_repository_config = 15;
+     * </code>
+     *
+     * @return The remoteRepositoryConfig.
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+        getRemoteRepositoryConfig() {
+      if (remoteRepositoryConfigBuilder_ == null) {
+        if (modeConfigCase_ == 15) {
+          return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig) modeConfig_;
+        }
+        return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.getDefaultInstance();
+      } else {
+        if (modeConfigCase_ == 15) {
+          return remoteRepositoryConfigBuilder_.getMessage();
+        }
+        return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Remote Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig remote_repository_config = 15;
+     * </code>
+     */
+    public Builder setRemoteRepositoryConfig(
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig value) {
+      if (remoteRepositoryConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modeConfig_ = value;
+        onChanged();
+      } else {
+        remoteRepositoryConfigBuilder_.setMessage(value);
+      }
+      modeConfigCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Remote Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig remote_repository_config = 15;
+     * </code>
+     */
+    public Builder setRemoteRepositoryConfig(
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.Builder builderForValue) {
+      if (remoteRepositoryConfigBuilder_ == null) {
+        modeConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        remoteRepositoryConfigBuilder_.setMessage(builderForValue.build());
+      }
+      modeConfigCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Remote Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig remote_repository_config = 15;
+     * </code>
+     */
+    public Builder mergeRemoteRepositoryConfig(
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig value) {
+      if (remoteRepositoryConfigBuilder_ == null) {
+        if (modeConfigCase_ == 15
+            && modeConfig_
+                != com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                    .getDefaultInstance()) {
+          modeConfig_ =
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.newBuilder(
+                      (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig) modeConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modeConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (modeConfigCase_ == 15) {
+          remoteRepositoryConfigBuilder_.mergeFrom(value);
+        } else {
+          remoteRepositoryConfigBuilder_.setMessage(value);
+        }
+      }
+      modeConfigCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Remote Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig remote_repository_config = 15;
+     * </code>
+     */
+    public Builder clearRemoteRepositoryConfig() {
+      if (remoteRepositoryConfigBuilder_ == null) {
+        if (modeConfigCase_ == 15) {
+          modeConfigCase_ = 0;
+          modeConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (modeConfigCase_ == 15) {
+          modeConfigCase_ = 0;
+          modeConfig_ = null;
+        }
+        remoteRepositoryConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Remote Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig remote_repository_config = 15;
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.Builder
+        getRemoteRepositoryConfigBuilder() {
+      return getRemoteRepositoryConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Remote Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig remote_repository_config = 15;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfigOrBuilder
+        getRemoteRepositoryConfigOrBuilder() {
+      if ((modeConfigCase_ == 15) && (remoteRepositoryConfigBuilder_ != null)) {
+        return remoteRepositoryConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (modeConfigCase_ == 15) {
+          return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig) modeConfig_;
+        }
+        return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific for a Remote Repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig remote_repository_config = 15;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig,
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.Builder,
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfigOrBuilder>
+        getRemoteRepositoryConfigFieldBuilder() {
+      if (remoteRepositoryConfigBuilder_ == null) {
+        if (!(modeConfigCase_ == 15)) {
+          modeConfig_ =
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.getDefaultInstance();
+        }
+        remoteRepositoryConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig,
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.Builder,
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfigOrBuilder>(
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig) modeConfig_,
+                getParentForChildren(),
+                isClean());
+        modeConfig_ = null;
+      }
+      modeConfigCase_ = 15;
+      onChanged();
+      return remoteRepositoryConfigBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
      *
      * <pre>
      * The name of the repository, for example:
-     * "projects/p1/locations/us-central1/repositories/repo1".
+     * `projects/p1/locations/us-central1/repositories/repo1`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2671,7 +4954,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the repository, for example:
-     * "projects/p1/locations/us-central1/repositories/repo1".
+     * `projects/p1/locations/us-central1/repositories/repo1`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2694,7 +4977,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the repository, for example:
-     * "projects/p1/locations/us-central1/repositories/repo1".
+     * `projects/p1/locations/us-central1/repositories/repo1`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2707,7 +4990,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2716,7 +4999,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the repository, for example:
-     * "projects/p1/locations/us-central1/repositories/repo1".
+     * `projects/p1/locations/us-central1/repositories/repo1`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2725,7 +5008,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2734,7 +5017,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the repository, for example:
-     * "projects/p1/locations/us-central1/repositories/repo1".
+     * `projects/p1/locations/us-central1/repositories/repo1`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2748,7 +5031,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2758,10 +5041,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The format of packages that are stored in the repository.
+     * Optional. The format of packages that are stored in the repository.
      * </pre>
      *
-     * <code>.google.devtools.artifactregistry.v1.Repository.Format format = 2;</code>
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.Format format = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for format.
      */
@@ -2773,17 +5058,19 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The format of packages that are stored in the repository.
+     * Optional. The format of packages that are stored in the repository.
      * </pre>
      *
-     * <code>.google.devtools.artifactregistry.v1.Repository.Format format = 2;</code>
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.Format format = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for format to set.
      * @return This builder for chaining.
      */
     public Builder setFormatValue(int value) {
       format_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2791,10 +5078,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The format of packages that are stored in the repository.
+     * Optional. The format of packages that are stored in the repository.
      * </pre>
      *
-     * <code>.google.devtools.artifactregistry.v1.Repository.Format format = 2;</code>
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.Format format = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The format.
      */
@@ -2810,10 +5099,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The format of packages that are stored in the repository.
+     * Optional. The format of packages that are stored in the repository.
      * </pre>
      *
-     * <code>.google.devtools.artifactregistry.v1.Repository.Format format = 2;</code>
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.Format format = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The format to set.
      * @return This builder for chaining.
@@ -2822,7 +5113,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       format_ = value.getNumber();
       onChanged();
       return this;
@@ -2831,15 +5122,17 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The format of packages that are stored in the repository.
+     * Optional. The format of packages that are stored in the repository.
      * </pre>
      *
-     * <code>.google.devtools.artifactregistry.v1.Repository.Format format = 2;</code>
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.Format format = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearFormat() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       format_ = 0;
       onChanged();
       return this;
@@ -2907,7 +5200,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2924,7 +5217,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2946,7 +5239,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2968,7 +5261,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return labels_;
     }
@@ -3069,7 +5362,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3096,7 +5389,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3120,7 +5413,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -3138,7 +5431,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -3152,24 +5445,28 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was created.
+     * Output only. The time when the repository was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The time when the repository was created.
+     * Output only. The time when the repository was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -3186,10 +5483,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was created.
+     * Output only. The time when the repository was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -3200,7 +5499,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3208,10 +5507,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was created.
+     * Output only. The time when the repository was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -3219,7 +5520,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3227,14 +5528,16 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was created.
+     * Output only. The time when the repository was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -3244,7 +5547,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3252,13 +5555,15 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was created.
+     * Output only. The time when the repository was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000100);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -3271,13 +5576,15 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was created.
+     * Output only. The time when the repository was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3285,10 +5592,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was created.
+     * Output only. The time when the repository was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -3303,10 +5612,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was created.
+     * Output only. The time when the repository was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -3335,24 +5646,28 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was last updated.
+     * Output only. The time when the repository was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The time when the repository was last updated.
+     * Output only. The time when the repository was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The updateTime.
      */
@@ -3369,10 +5684,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was last updated.
+     * Output only. The time when the repository was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -3383,7 +5700,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3391,10 +5708,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was last updated.
+     * Output only. The time when the repository was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
@@ -3402,7 +5721,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3410,14 +5729,16 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was last updated.
+     * Output only. The time when the repository was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -3427,7 +5748,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3435,13 +5756,15 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was last updated.
+     * Output only. The time when the repository was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000200);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -3454,13 +5777,15 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was last updated.
+     * Output only. The time when the repository was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3468,10 +5793,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was last updated.
+     * Output only. The time when the repository was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -3486,10 +5813,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the repository was last updated.
+     * Output only. The time when the repository was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -3579,7 +5908,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       kmsKeyName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3599,7 +5928,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKmsKeyName() {
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3624,7 +5953,493 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       kmsKeyName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private int mode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mode of the repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.Mode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for mode.
+     */
+    @java.lang.Override
+    public int getModeValue() {
+      return mode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mode of the repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.Mode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for mode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModeValue(int value) {
+      mode_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mode of the repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.Mode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The mode.
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.Repository.Mode getMode() {
+      com.google.devtools.artifactregistry.v1.Repository.Mode result =
+          com.google.devtools.artifactregistry.v1.Repository.Mode.forNumber(mode_);
+      return result == null
+          ? com.google.devtools.artifactregistry.v1.Repository.Mode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mode of the repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.Mode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The mode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMode(com.google.devtools.artifactregistry.v1.Repository.Mode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000800;
+      mode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mode of the repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.Mode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMode() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      mode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+        cleanupPolicies_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+        internalGetCleanupPolicies() {
+      if (cleanupPolicies_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            CleanupPoliciesDefaultEntryHolder.defaultEntry);
+      }
+      return cleanupPolicies_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+        internalGetMutableCleanupPolicies() {
+      if (cleanupPolicies_ == null) {
+        cleanupPolicies_ =
+            com.google.protobuf.MapField.newMapField(
+                CleanupPoliciesDefaultEntryHolder.defaultEntry);
+      }
+      if (!cleanupPolicies_.isMutable()) {
+        cleanupPolicies_ = cleanupPolicies_.copy();
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return cleanupPolicies_;
+    }
+
+    public int getCleanupPoliciesCount() {
+      return internalGetCleanupPolicies().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cleanup policies for this repository. Cleanup policies indicate
+     * when certain package versions can be automatically deleted. Map keys are
+     * policy IDs supplied by users during policy creation. They must unique
+     * within a repository and be under 128 characters in length.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsCleanupPolicies(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetCleanupPolicies().getMap().containsKey(key);
+    }
+    /** Use {@link #getCleanupPoliciesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+        getCleanupPolicies() {
+      return getCleanupPoliciesMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cleanup policies for this repository. Cleanup policies indicate
+     * when certain package versions can be automatically deleted. Map keys are
+     * policy IDs supplied by users during policy creation. They must unique
+     * within a repository and be under 128 characters in length.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+        getCleanupPoliciesMap() {
+      return internalGetCleanupPolicies().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cleanup policies for this repository. Cleanup policies indicate
+     * when certain package versions can be automatically deleted. Map keys are
+     * policy IDs supplied by users during policy creation. They must unique
+     * within a repository and be under 128 characters in length.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.devtools.artifactregistry.v1.CleanupPolicy
+        getCleanupPoliciesOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.devtools.artifactregistry.v1.CleanupPolicy defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy> map =
+          internalGetCleanupPolicies().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cleanup policies for this repository. Cleanup policies indicate
+     * when certain package versions can be automatically deleted. Map keys are
+     * policy IDs supplied by users during policy creation. They must unique
+     * within a repository and be under 128 characters in length.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.CleanupPolicy getCleanupPoliciesOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy> map =
+          internalGetCleanupPolicies().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearCleanupPolicies() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      internalGetMutableCleanupPolicies().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cleanup policies for this repository. Cleanup policies indicate
+     * when certain package versions can be automatically deleted. Map keys are
+     * policy IDs supplied by users during policy creation. They must unique
+     * within a repository and be under 128 characters in length.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeCleanupPolicies(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableCleanupPolicies().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+        getMutableCleanupPolicies() {
+      bitField0_ |= 0x00001000;
+      return internalGetMutableCleanupPolicies().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cleanup policies for this repository. Cleanup policies indicate
+     * when certain package versions can be automatically deleted. Map keys are
+     * policy IDs supplied by users during policy creation. They must unique
+     * within a repository and be under 128 characters in length.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putCleanupPolicies(
+        java.lang.String key, com.google.devtools.artifactregistry.v1.CleanupPolicy value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableCleanupPolicies().getMutableMap().put(key, value);
+      bitField0_ |= 0x00001000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cleanup policies for this repository. Cleanup policies indicate
+     * when certain package versions can be automatically deleted. Map keys are
+     * policy IDs supplied by users during policy creation. They must unique
+     * within a repository and be under 128 characters in length.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllCleanupPolicies(
+        java.util.Map<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+            values) {
+      internalGetMutableCleanupPolicies().getMutableMap().putAll(values);
+      bitField0_ |= 0x00001000;
+      return this;
+    }
+
+    private long sizeBytes_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The size, in bytes, of all artifact storage in this
+     * repository. Repositories that are generally available or in public preview
+     *  use this to calculate storage costs.
+     * </pre>
+     *
+     * <code>int64 size_bytes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The sizeBytes.
+     */
+    @java.lang.Override
+    public long getSizeBytes() {
+      return sizeBytes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The size, in bytes, of all artifact storage in this
+     * repository. Repositories that are generally available or in public preview
+     *  use this to calculate storage costs.
+     * </pre>
+     *
+     * <code>int64 size_bytes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The sizeBytes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSizeBytes(long value) {
+
+      sizeBytes_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The size, in bytes, of all artifact storage in this
+     * repository. Repositories that are generally available or in public preview
+     *  use this to calculate storage costs.
+     * </pre>
+     *
+     * <code>int64 size_bytes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSizeBytes() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      sizeBytes_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set, the repository satisfies physical zone separation.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set, the repository satisfies physical zone separation.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set, the repository satisfies physical zone separation.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean cleanupPolicyDryRun_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the cleanup pipeline is prevented from deleting versions
+     * in this repository.
+     * </pre>
+     *
+     * <code>bool cleanup_policy_dry_run = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The cleanupPolicyDryRun.
+     */
+    @java.lang.Override
+    public boolean getCleanupPolicyDryRun() {
+      return cleanupPolicyDryRun_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the cleanup pipeline is prevented from deleting versions
+     * in this repository.
+     * </pre>
+     *
+     * <code>bool cleanup_policy_dry_run = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The cleanupPolicyDryRun to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCleanupPolicyDryRun(boolean value) {
+
+      cleanupPolicyDryRun_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the cleanup pipeline is prevented from deleting versions
+     * in this repository.
+     * </pre>
+     *
+     * <code>bool cleanup_policy_dry_run = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCleanupPolicyDryRun() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      cleanupPolicyDryRun_ = false;
       onChanged();
       return this;
     }

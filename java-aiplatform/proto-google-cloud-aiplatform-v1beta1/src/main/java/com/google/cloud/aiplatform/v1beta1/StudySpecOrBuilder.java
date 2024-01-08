@@ -122,7 +122,7 @@ public interface StudySpecOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=625
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=693
    * @return Whether the convexStopConfig field is set.
    */
   @java.lang.Deprecated
@@ -140,7 +140,7 @@ public interface StudySpecOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=625
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=693
    * @return The convexStopConfig.
    */
   @java.lang.Deprecated
@@ -457,6 +457,51 @@ public interface StudySpecOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder
       getTransferLearningConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Conditions for automated stopping of a Study. Enable automated stopping by
+   * configuring at least one condition.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+   * </code>
+   *
+   * @return Whether the studyStoppingConfig field is set.
+   */
+  boolean hasStudyStoppingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Conditions for automated stopping of a Study. Enable automated stopping by
+   * configuring at least one condition.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+   * </code>
+   *
+   * @return The studyStoppingConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig getStudyStoppingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Conditions for automated stopping of a Study. Enable automated stopping by
+   * configuring at least one condition.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfig study_stopping_config = 11;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.StudySpec.StudyStoppingConfigOrBuilder
+      getStudyStoppingConfigOrBuilder();
 
   com.google.cloud.aiplatform.v1beta1.StudySpec.AutomatedStoppingSpecCase
       getAutomatedStoppingSpecCase();

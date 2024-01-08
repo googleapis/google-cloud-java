@@ -27,12 +27,12 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Legitimate event score from 0.0 to 1.0.
+   * Output only. Legitimate event score from 0.0 to 1.0.
    * (1.0 means very likely legitimate traffic while 0.0 means very likely
    * non-legitimate traffic).
    * </pre>
    *
-   * <code>float score = 1;</code>
+   * <code>float score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The score.
    */
@@ -42,11 +42,11 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Reasons contributing to the risk analysis verdict.
+   * Output only. Reasons contributing to the risk analysis verdict.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return A list containing the reasons.
@@ -57,11 +57,11 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Reasons contributing to the risk analysis verdict.
+   * Output only. Reasons contributing to the risk analysis verdict.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The count of reasons.
@@ -71,11 +71,11 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Reasons contributing to the risk analysis verdict.
+   * Output only. Reasons contributing to the risk analysis verdict.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the element to return.
@@ -86,11 +86,11 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Reasons contributing to the risk analysis verdict.
+   * Output only. Reasons contributing to the risk analysis verdict.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for reasons.
@@ -100,11 +100,11 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Reasons contributing to the risk analysis verdict.
+   * Output only. Reasons contributing to the risk analysis verdict.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2;
+   * repeated .google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason reasons = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the value to return.
@@ -116,11 +116,13 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Extended verdict reasons to be used for experimentation only. The set of
-   * possible reasons is subject to change.
+   * Output only. Extended verdict reasons to be used for experimentation only.
+   * The set of possible reasons is subject to change.
    * </pre>
    *
-   * <code>repeated string extended_verdict_reasons = 3;</code>
+   * <code>
+   * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return A list containing the extendedVerdictReasons.
    */
@@ -129,11 +131,13 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Extended verdict reasons to be used for experimentation only. The set of
-   * possible reasons is subject to change.
+   * Output only. Extended verdict reasons to be used for experimentation only.
+   * The set of possible reasons is subject to change.
    * </pre>
    *
-   * <code>repeated string extended_verdict_reasons = 3;</code>
+   * <code>
+   * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The count of extendedVerdictReasons.
    */
@@ -142,11 +146,13 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Extended verdict reasons to be used for experimentation only. The set of
-   * possible reasons is subject to change.
+   * Output only. Extended verdict reasons to be used for experimentation only.
+   * The set of possible reasons is subject to change.
    * </pre>
    *
-   * <code>repeated string extended_verdict_reasons = 3;</code>
+   * <code>
+   * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The extendedVerdictReasons at the given index.
@@ -156,11 +162,13 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Extended verdict reasons to be used for experimentation only. The set of
-   * possible reasons is subject to change.
+   * Output only. Extended verdict reasons to be used for experimentation only.
+   * The set of possible reasons is subject to change.
    * </pre>
    *
-   * <code>repeated string extended_verdict_reasons = 3;</code>
+   * <code>
+   * repeated string extended_verdict_reasons = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the extendedVerdictReasons at the given index.

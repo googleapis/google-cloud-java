@@ -27,12 +27,12 @@ public interface FraudPreventionAssessmentOrBuilder
    *
    *
    * <pre>
-   * Probability of this transaction being fraudulent. Summarizes the combined
-   * risk of attack vectors below.
-   * Values are from 0.0 (lowest) to 1.0 (highest).
+   * Output only. Probability of this transaction being fraudulent. Summarizes
+   * the combined risk of attack vectors below. Values are from 0.0 (lowest)
+   * to 1.0 (highest).
    * </pre>
    *
-   * <code>float transaction_risk = 1;</code>
+   * <code>float transaction_risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The transactionRisk.
    */
@@ -42,11 +42,12 @@ public interface FraudPreventionAssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment of this transaction for risk of a stolen instrument.
+   * Output only. Assessment of this transaction for risk of a stolen
+   * instrument.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2;
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the stolenInstrumentVerdict field is set.
@@ -56,11 +57,12 @@ public interface FraudPreventionAssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment of this transaction for risk of a stolen instrument.
+   * Output only. Assessment of this transaction for risk of a stolen
+   * instrument.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2;
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The stolenInstrumentVerdict.
@@ -71,11 +73,12 @@ public interface FraudPreventionAssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment of this transaction for risk of a stolen instrument.
+   * Output only. Assessment of this transaction for risk of a stolen
+   * instrument.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2;
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.recaptchaenterprise.v1.FraudPreventionAssessment.StolenInstrumentVerdictOrBuilder
@@ -85,12 +88,12 @@ public interface FraudPreventionAssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment of this transaction for risk of being part of a card testing
-   * attack.
+   * Output only. Assessment of this transaction for risk of being part of a
+   * card testing attack.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3;
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the cardTestingVerdict field is set.
@@ -100,12 +103,12 @@ public interface FraudPreventionAssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment of this transaction for risk of being part of a card testing
-   * attack.
+   * Output only. Assessment of this transaction for risk of being part of a
+   * card testing attack.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3;
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The cardTestingVerdict.
@@ -116,12 +119,12 @@ public interface FraudPreventionAssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment of this transaction for risk of being part of a card testing
-   * attack.
+   * Output only. Assessment of this transaction for risk of being part of a
+   * card testing attack.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3;
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.recaptchaenterprise.v1.FraudPreventionAssessment.CardTestingVerdictOrBuilder
@@ -131,11 +134,11 @@ public interface FraudPreventionAssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment of this transaction for behavioral trust.
+   * Output only. Assessment of this transaction for behavioral trust.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the behavioralTrustVerdict field is set.
@@ -145,11 +148,11 @@ public interface FraudPreventionAssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment of this transaction for behavioral trust.
+   * Output only. Assessment of this transaction for behavioral trust.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The behavioralTrustVerdict.
@@ -160,11 +163,11 @@ public interface FraudPreventionAssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment of this transaction for behavioral trust.
+   * Output only. Assessment of this transaction for behavioral trust.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.recaptchaenterprise.v1.FraudPreventionAssessment.BehavioralTrustVerdictOrBuilder

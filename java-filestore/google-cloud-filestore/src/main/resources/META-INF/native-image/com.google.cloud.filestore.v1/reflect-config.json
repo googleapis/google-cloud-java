@@ -846,6 +846,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.filestore.v1.RevertInstanceRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.filestore.v1.RevertInstanceRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.filestore.v1.Snapshot",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

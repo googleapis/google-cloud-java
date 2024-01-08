@@ -27,7 +27,9 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the parent resource whose tags will be listed.
+   * The name of the parent package whose tags will be listed.
+   * For example:
+   * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -39,7 +41,9 @@ public interface ListTagsRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the parent resource whose tags will be listed.
+   * The name of the parent package whose tags will be listed.
+   * For example:
+   * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
    * </pre>
    *
    * <code>string parent = 1;</code>

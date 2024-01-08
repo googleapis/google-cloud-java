@@ -205,6 +205,7 @@ public class AgentsClientTest {
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
+            .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -261,6 +262,7 @@ public class AgentsClientTest {
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
+            .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -317,6 +319,7 @@ public class AgentsClientTest {
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
+            .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -376,6 +379,7 @@ public class AgentsClientTest {
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
+            .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -435,6 +439,7 @@ public class AgentsClientTest {
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
+            .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 

@@ -104,6 +104,87 @@ public interface ExplainResponseOrBuilder
    *
    *
    * <pre>
+   * This field stores the results of the explanations run in parallel with
+   * The default explanation strategy/method.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+   * </code>
+   */
+  int getConcurrentExplanationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * This field stores the results of the explanations run in parallel with
+   * The default explanation strategy/method.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+   * </code>
+   */
+  boolean containsConcurrentExplanations(java.lang.String key);
+  /** Use {@link #getConcurrentExplanationsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<
+          java.lang.String,
+          com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+      getConcurrentExplanations();
+  /**
+   *
+   *
+   * <pre>
+   * This field stores the results of the explanations run in parallel with
+   * The default explanation strategy/method.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+   * </code>
+   */
+  java.util.Map<
+          java.lang.String,
+          com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation>
+      getConcurrentExplanationsMap();
+  /**
+   *
+   *
+   * <pre>
+   * This field stores the results of the explanations run in parallel with
+   * The default explanation strategy/method.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+      getConcurrentExplanationsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * This field stores the results of the explanations run in parallel with
+   * The default explanation strategy/method.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation&gt; concurrent_explanations = 4;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ExplainResponse.ConcurrentExplanation
+      getConcurrentExplanationsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
    * ID of the Endpoint's DeployedModel that served this explanation.
    * </pre>
    *

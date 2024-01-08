@@ -42,6 +42,8 @@ package com.google.cloud.speech.v2;
  * * OGG_OPUS: Opus audio frames in an Ogg container.
  *
  * * WEBM_OPUS: Opus audio frames in a WebM container.
+ *
+ * * M4A: M4A audio format.
  * </pre>
  *
  * Protobuf type {@code google.cloud.speech.v2.AutoDetectDecodingConfig}
@@ -253,6 +255,8 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
    * * OGG_OPUS: Opus audio frames in an Ogg container.
    *
    * * WEBM_OPUS: Opus audio frames in a WebM container.
+   *
+   * * M4A: M4A audio format.
    * </pre>
    *
    * Protobuf type {@code google.cloud.speech.v2.AutoDetectDecodingConfig}

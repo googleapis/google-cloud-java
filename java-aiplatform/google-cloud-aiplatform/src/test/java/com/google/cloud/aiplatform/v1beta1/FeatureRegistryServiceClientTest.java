@@ -559,6 +559,7 @@ public class FeatureRegistryServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -625,6 +626,7 @@ public class FeatureRegistryServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -689,6 +691,7 @@ public class FeatureRegistryServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -753,6 +756,7 @@ public class FeatureRegistryServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
             .build();
     mockFeatureRegistryService.addResponse(expectedResponse);
 
@@ -807,6 +811,7 @@ public class FeatureRegistryServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
             .build();
     mockFeatureRegistryService.addResponse(expectedResponse);
 
@@ -991,6 +996,7 @@ public class FeatureRegistryServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -42,6 +42,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     serviceAccount_ = "";
     network_ = "";
     reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    protectedArtifactLocationId_ = "";
     tensorboard_ = "";
     experiment_ = "";
     experimentRun_ = "";
@@ -550,6 +551,63 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         : baseOutputDirectory_;
   }
 
+  public static final int PROTECTED_ARTIFACT_LOCATION_ID_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object protectedArtifactLocationId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the location to store protected artifacts. e.g. us-central1.
+   * Populate only when the location is different than CustomJob location.
+   * List of supported locations:
+   * https://cloud.google.com/vertex-ai/docs/general/locations
+   * </pre>
+   *
+   * <code>string protected_artifact_location_id = 19;</code>
+   *
+   * @return The protectedArtifactLocationId.
+   */
+  @java.lang.Override
+  public java.lang.String getProtectedArtifactLocationId() {
+    java.lang.Object ref = protectedArtifactLocationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      protectedArtifactLocationId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the location to store protected artifacts. e.g. us-central1.
+   * Populate only when the location is different than CustomJob location.
+   * List of supported locations:
+   * https://cloud.google.com/vertex-ai/docs/general/locations
+   * </pre>
+   *
+   * <code>string protected_artifact_location_id = 19;</code>
+   *
+   * @return The bytes for protectedArtifactLocationId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getProtectedArtifactLocationIdBytes() {
+    java.lang.Object ref = protectedArtifactLocationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      protectedArtifactLocationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int TENSORBOARD_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
@@ -831,6 +889,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(experimentRun_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, experimentRun_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(protectedArtifactLocationId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, protectedArtifactLocationId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -878,6 +939,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(experimentRun_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, experimentRun_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(protectedArtifactLocationId_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              19, protectedArtifactLocationId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -906,6 +972,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     if (hasBaseOutputDirectory()) {
       if (!getBaseOutputDirectory().equals(other.getBaseOutputDirectory())) return false;
     }
+    if (!getProtectedArtifactLocationId().equals(other.getProtectedArtifactLocationId()))
+      return false;
     if (!getTensorboard().equals(other.getTensorboard())) return false;
     if (getEnableWebAccess() != other.getEnableWebAccess()) return false;
     if (getEnableDashboardAccess() != other.getEnableDashboardAccess()) return false;
@@ -942,6 +1010,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + BASE_OUTPUT_DIRECTORY_FIELD_NUMBER;
       hash = (53 * hash) + getBaseOutputDirectory().hashCode();
     }
+    hash = (37 * hash) + PROTECTED_ARTIFACT_LOCATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getProtectedArtifactLocationId().hashCode();
     hash = (37 * hash) + TENSORBOARD_FIELD_NUMBER;
     hash = (53 * hash) + getTensorboard().hashCode();
     hash = (37 * hash) + ENABLE_WEB_ACCESS_FIELD_NUMBER;
@@ -1111,6 +1181,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         baseOutputDirectoryBuilder_.dispose();
         baseOutputDirectoryBuilder_ = null;
       }
+      protectedArtifactLocationId_ = "";
       tensorboard_ = "";
       enableWebAccess_ = false;
       enableDashboardAccess_ = false;
@@ -1185,18 +1256,21 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
                 : baseOutputDirectoryBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.tensorboard_ = tensorboard_;
+        result.protectedArtifactLocationId_ = protectedArtifactLocationId_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.enableWebAccess_ = enableWebAccess_;
+        result.tensorboard_ = tensorboard_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.enableDashboardAccess_ = enableDashboardAccess_;
+        result.enableWebAccess_ = enableWebAccess_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.experiment_ = experiment_;
+        result.enableDashboardAccess_ = enableDashboardAccess_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.experiment_ = experiment_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.experimentRun_ = experimentRun_;
       }
     }
@@ -1299,9 +1373,14 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       if (other.hasBaseOutputDirectory()) {
         mergeBaseOutputDirectory(other.getBaseOutputDirectory());
       }
+      if (!other.getProtectedArtifactLocationId().isEmpty()) {
+        protectedArtifactLocationId_ = other.protectedArtifactLocationId_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       if (!other.getTensorboard().isEmpty()) {
         tensorboard_ = other.tensorboard_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.getEnableWebAccess() != false) {
@@ -1312,12 +1391,12 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getExperiment().isEmpty()) {
         experiment_ = other.experiment_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getExperimentRun().isEmpty()) {
         experimentRun_ = other.experimentRun_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1387,13 +1466,13 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 tensorboard_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 80:
               {
                 enableWebAccess_ = input.readBool();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 80
             case 106:
@@ -1406,21 +1485,27 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
             case 128:
               {
                 enableDashboardAccess_ = input.readBool();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 128
             case 138:
               {
                 experiment_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 138
             case 146:
               {
                 experimentRun_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 146
+            case 154:
+              {
+                protectedArtifactLocationId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2970,6 +3055,127 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       return baseOutputDirectoryBuilder_;
     }
 
+    private java.lang.Object protectedArtifactLocationId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the location to store protected artifacts. e.g. us-central1.
+     * Populate only when the location is different than CustomJob location.
+     * List of supported locations:
+     * https://cloud.google.com/vertex-ai/docs/general/locations
+     * </pre>
+     *
+     * <code>string protected_artifact_location_id = 19;</code>
+     *
+     * @return The protectedArtifactLocationId.
+     */
+    public java.lang.String getProtectedArtifactLocationId() {
+      java.lang.Object ref = protectedArtifactLocationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        protectedArtifactLocationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the location to store protected artifacts. e.g. us-central1.
+     * Populate only when the location is different than CustomJob location.
+     * List of supported locations:
+     * https://cloud.google.com/vertex-ai/docs/general/locations
+     * </pre>
+     *
+     * <code>string protected_artifact_location_id = 19;</code>
+     *
+     * @return The bytes for protectedArtifactLocationId.
+     */
+    public com.google.protobuf.ByteString getProtectedArtifactLocationIdBytes() {
+      java.lang.Object ref = protectedArtifactLocationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        protectedArtifactLocationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the location to store protected artifacts. e.g. us-central1.
+     * Populate only when the location is different than CustomJob location.
+     * List of supported locations:
+     * https://cloud.google.com/vertex-ai/docs/general/locations
+     * </pre>
+     *
+     * <code>string protected_artifact_location_id = 19;</code>
+     *
+     * @param value The protectedArtifactLocationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtectedArtifactLocationId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      protectedArtifactLocationId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the location to store protected artifacts. e.g. us-central1.
+     * Populate only when the location is different than CustomJob location.
+     * List of supported locations:
+     * https://cloud.google.com/vertex-ai/docs/general/locations
+     * </pre>
+     *
+     * <code>string protected_artifact_location_id = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProtectedArtifactLocationId() {
+      protectedArtifactLocationId_ = getDefaultInstance().getProtectedArtifactLocationId();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the location to store protected artifacts. e.g. us-central1.
+     * Populate only when the location is different than CustomJob location.
+     * List of supported locations:
+     * https://cloud.google.com/vertex-ai/docs/general/locations
+     * </pre>
+     *
+     * <code>string protected_artifact_location_id = 19;</code>
+     *
+     * @param value The bytes for protectedArtifactLocationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtectedArtifactLocationIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      protectedArtifactLocationId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object tensorboard_ = "";
     /**
      *
@@ -3047,7 +3253,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       tensorboard_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3069,7 +3275,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTensorboard() {
       tensorboard_ = getDefaultInstance().getTensorboard();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3096,7 +3302,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       tensorboard_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3152,7 +3358,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableWebAccess(boolean value) {
 
       enableWebAccess_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3178,7 +3384,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableWebAccess() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       enableWebAccess_ = false;
       onChanged();
       return this;
@@ -3233,7 +3439,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableDashboardAccess(boolean value) {
 
       enableDashboardAccess_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3258,7 +3464,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableDashboardAccess() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       enableDashboardAccess_ = false;
       onChanged();
       return this;
@@ -3338,7 +3544,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       experiment_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3359,7 +3565,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearExperiment() {
       experiment_ = getDefaultInstance().getExperiment();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3385,7 +3591,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       experiment_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3464,7 +3670,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       experimentRun_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3485,7 +3691,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearExperimentRun() {
       experimentRun_ = getDefaultInstance().getExperimentRun();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3511,7 +3717,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       experimentRun_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

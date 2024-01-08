@@ -5592,10 +5592,11 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The relative resource name of the organization, project, or folder.
-   *     See: https://cloud.google.com/apis/design/resource_names#relative_resource_name An example
-   *     is: "organizations/{organization_id}".
-   * @param customConfig Required. The user specified custom configuration to test.
+   * @param parent Required. The relative resource name of the organization, project, or folder. For
+   *     more information about relative resource names, see [Relative Resource
+   *     Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) Example:
+   *     `organizations/{organization_id}`
+   * @param customConfig Required. The custom configuration that you need to test.
    * @param resource Required. Resource data to simulate custom module against.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

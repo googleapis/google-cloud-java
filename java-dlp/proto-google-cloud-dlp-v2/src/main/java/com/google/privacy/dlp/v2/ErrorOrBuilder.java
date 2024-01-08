@@ -62,7 +62,8 @@ public interface ErrorOrBuilder
    *
    *
    * <pre>
-   * The times the error occurred.
+   * The times the error occurred. List includes the oldest timestamp and the
+   * last 9 timestamps.
    * </pre>
    *
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
@@ -72,7 +73,8 @@ public interface ErrorOrBuilder
    *
    *
    * <pre>
-   * The times the error occurred.
+   * The times the error occurred. List includes the oldest timestamp and the
+   * last 9 timestamps.
    * </pre>
    *
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
@@ -82,7 +84,8 @@ public interface ErrorOrBuilder
    *
    *
    * <pre>
-   * The times the error occurred.
+   * The times the error occurred. List includes the oldest timestamp and the
+   * last 9 timestamps.
    * </pre>
    *
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
@@ -92,7 +95,8 @@ public interface ErrorOrBuilder
    *
    *
    * <pre>
-   * The times the error occurred.
+   * The times the error occurred. List includes the oldest timestamp and the
+   * last 9 timestamps.
    * </pre>
    *
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
@@ -102,7 +106,8 @@ public interface ErrorOrBuilder
    *
    *
    * <pre>
-   * The times the error occurred.
+   * The times the error occurred. List includes the oldest timestamp and the
+   * last 9 timestamps.
    * </pre>
    *
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>

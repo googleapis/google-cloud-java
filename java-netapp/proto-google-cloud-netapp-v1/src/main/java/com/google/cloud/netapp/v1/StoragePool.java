@@ -360,10 +360,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Name of the storage pool
+   * Identifier. Name of the storage pool
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -383,10 +383,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Name of the storage pool
+   * Identifier. Name of the storage pool
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1063,15 +1063,18 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Allows SO pool to access AD or DNS server from other regions.
+   * Deprecated. Used to allow SO pool to access AD or DNS server from other
+   * regions.
    * </pre>
    *
-   * <code>optional bool global_access_allowed = 17 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
+   *     google/cloud/netapp/v1/storage_pool.proto;l=222
    * @return Whether the globalAccessAllowed field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasGlobalAccessAllowed() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -1079,15 +1082,18 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Allows SO pool to access AD or DNS server from other regions.
+   * Deprecated. Used to allow SO pool to access AD or DNS server from other
+   * regions.
    * </pre>
    *
-   * <code>optional bool global_access_allowed = 17 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
+   *     google/cloud/netapp/v1/storage_pool.proto;l=222
    * @return The globalAccessAllowed.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getGlobalAccessAllowed() {
     return globalAccessAllowed_;
   }
@@ -1858,10 +1864,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the storage pool
+     * Identifier. Name of the storage pool
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1880,10 +1886,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the storage pool
+     * Identifier. Name of the storage pool
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1902,10 +1908,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the storage pool
+     * Identifier. Name of the storage pool
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1923,10 +1929,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the storage pool
+     * Identifier. Name of the storage pool
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1940,10 +1946,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the storage pool
+     * Identifier. Name of the storage pool
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3496,15 +3502,18 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Allows SO pool to access AD or DNS server from other regions.
+     * Deprecated. Used to allow SO pool to access AD or DNS server from other
+     * regions.
      * </pre>
      *
-     * <code>optional bool global_access_allowed = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
+     *     google/cloud/netapp/v1/storage_pool.proto;l=222
      * @return Whether the globalAccessAllowed field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasGlobalAccessAllowed() {
       return ((bitField0_ & 0x00010000) != 0);
     }
@@ -3512,15 +3521,18 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Allows SO pool to access AD or DNS server from other regions.
+     * Deprecated. Used to allow SO pool to access AD or DNS server from other
+     * regions.
      * </pre>
      *
-     * <code>optional bool global_access_allowed = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
+     *     google/cloud/netapp/v1/storage_pool.proto;l=222
      * @return The globalAccessAllowed.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getGlobalAccessAllowed() {
       return globalAccessAllowed_;
     }
@@ -3528,15 +3540,18 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Allows SO pool to access AD or DNS server from other regions.
+     * Deprecated. Used to allow SO pool to access AD or DNS server from other
+     * regions.
      * </pre>
      *
-     * <code>optional bool global_access_allowed = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
+     *     google/cloud/netapp/v1/storage_pool.proto;l=222
      * @param value The globalAccessAllowed to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setGlobalAccessAllowed(boolean value) {
 
       globalAccessAllowed_ = value;
@@ -3548,14 +3563,17 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Allows SO pool to access AD or DNS server from other regions.
+     * Deprecated. Used to allow SO pool to access AD or DNS server from other
+     * regions.
      * </pre>
      *
-     * <code>optional bool global_access_allowed = 17 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional bool global_access_allowed = 17 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.netapp.v1.StoragePool.global_access_allowed is deprecated. See
+     *     google/cloud/netapp/v1/storage_pool.proto;l=222
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearGlobalAccessAllowed() {
       bitField0_ = (bitField0_ & ~0x00010000);
       globalAccessAllowed_ = false;

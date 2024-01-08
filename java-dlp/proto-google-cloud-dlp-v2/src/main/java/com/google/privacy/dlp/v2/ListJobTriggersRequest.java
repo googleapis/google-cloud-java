@@ -160,7 +160,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from the previous call
    * to ListJobTriggers. `order_by` field must not
    * change for subsequent calls.
    * </pre>
@@ -185,7 +185,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from the previous call
    * to ListJobTriggers. `order_by` field must not
    * change for subsequent calls.
    * </pre>
@@ -213,7 +213,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Size of the page, can be limited by a server.
+   * Size of the page. This value can be limited by a server.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
@@ -234,8 +234,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Comma separated list of triggeredJob fields to order by,
-   * followed by `asc` or `desc` postfix. This list is case-insensitive,
-   * default sorting order is ascending, redundant space characters are
+   * followed by `asc` or `desc` postfix. This list is case insensitive. The
+   * default sorting order is ascending. Redundant space characters are
    * insignificant.
    *
    * Example: `name asc,update_time, create_time desc`
@@ -271,8 +271,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Comma separated list of triggeredJob fields to order by,
-   * followed by `asc` or `desc` postfix. This list is case-insensitive,
-   * default sorting order is ascending, redundant space characters are
+   * followed by `asc` or `desc` postfix. This list is case insensitive. The
+   * default sorting order is ascending. Redundant space characters are
    * insignificant.
    *
    * Example: `name asc,update_time, create_time desc`
@@ -1165,7 +1165,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from the previous call
      * to ListJobTriggers. `order_by` field must not
      * change for subsequent calls.
      * </pre>
@@ -1189,7 +1189,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from the previous call
      * to ListJobTriggers. `order_by` field must not
      * change for subsequent calls.
      * </pre>
@@ -1213,7 +1213,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from the previous call
      * to ListJobTriggers. `order_by` field must not
      * change for subsequent calls.
      * </pre>
@@ -1236,7 +1236,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from the previous call
      * to ListJobTriggers. `order_by` field must not
      * change for subsequent calls.
      * </pre>
@@ -1255,7 +1255,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Page token to continue retrieval. Comes from previous call
+     * Page token to continue retrieval. Comes from the previous call
      * to ListJobTriggers. `order_by` field must not
      * change for subsequent calls.
      * </pre>
@@ -1281,7 +1281,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Size of the page, can be limited by a server.
+     * Size of the page. This value can be limited by a server.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1296,7 +1296,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Size of the page, can be limited by a server.
+     * Size of the page. This value can be limited by a server.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1315,7 +1315,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Size of the page, can be limited by a server.
+     * Size of the page. This value can be limited by a server.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1335,8 +1335,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Comma separated list of triggeredJob fields to order by,
-     * followed by `asc` or `desc` postfix. This list is case-insensitive,
-     * default sorting order is ascending, redundant space characters are
+     * followed by `asc` or `desc` postfix. This list is case insensitive. The
+     * default sorting order is ascending. Redundant space characters are
      * insignificant.
      *
      * Example: `name asc,update_time, create_time desc`
@@ -1371,8 +1371,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Comma separated list of triggeredJob fields to order by,
-     * followed by `asc` or `desc` postfix. This list is case-insensitive,
-     * default sorting order is ascending, redundant space characters are
+     * followed by `asc` or `desc` postfix. This list is case insensitive. The
+     * default sorting order is ascending. Redundant space characters are
      * insignificant.
      *
      * Example: `name asc,update_time, create_time desc`
@@ -1407,8 +1407,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Comma separated list of triggeredJob fields to order by,
-     * followed by `asc` or `desc` postfix. This list is case-insensitive,
-     * default sorting order is ascending, redundant space characters are
+     * followed by `asc` or `desc` postfix. This list is case insensitive. The
+     * default sorting order is ascending. Redundant space characters are
      * insignificant.
      *
      * Example: `name asc,update_time, create_time desc`
@@ -1442,8 +1442,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Comma separated list of triggeredJob fields to order by,
-     * followed by `asc` or `desc` postfix. This list is case-insensitive,
-     * default sorting order is ascending, redundant space characters are
+     * followed by `asc` or `desc` postfix. This list is case insensitive. The
+     * default sorting order is ascending. Redundant space characters are
      * insignificant.
      *
      * Example: `name asc,update_time, create_time desc`
@@ -1473,8 +1473,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Comma separated list of triggeredJob fields to order by,
-     * followed by `asc` or `desc` postfix. This list is case-insensitive,
-     * default sorting order is ascending, redundant space characters are
+     * followed by `asc` or `desc` postfix. This list is case insensitive. The
+     * default sorting order is ascending. Redundant space characters are
      * insignificant.
      *
      * Example: `name asc,update_time, create_time desc`

@@ -270,6 +270,43 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+   * </pre>
+   *
+   * <code>optional string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+   * </pre>
+   *
+   * <code>optional string name = 3373707;</code>
+   *
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+   * </pre>
+   *
+   * <code>optional string name = 3373707;</code>
+   *
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Preserved state applied from per-instance config for this instance.
    * </pre>
    *

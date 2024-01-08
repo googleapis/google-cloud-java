@@ -38,7 +38,7 @@ public class SyncDeleteFeature {
       DeleteFeatureRequest request =
           DeleteFeatureRequest.newBuilder()
               .setName(
-                  FeatureName.of(
+                  FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
                           "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
                       .toString())
               .build();

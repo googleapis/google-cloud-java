@@ -28,7 +28,7 @@ public interface GetDeliveryPipelineRequestOrBuilder
    *
    * <pre>
    * Required. Name of the `DeliveryPipeline`. Format must be
-   * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}.
+   * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface GetDeliveryPipelineRequestOrBuilder
    *
    * <pre>
    * Required. Name of the `DeliveryPipeline`. Format must be
-   * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}.
+   * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * </pre>
    *
    * <code>

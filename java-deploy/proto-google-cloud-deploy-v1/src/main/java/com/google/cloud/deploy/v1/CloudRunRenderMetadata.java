@@ -72,7 +72,7 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Output only. The name of the Cloud Run Service in the rendered manifest.
-   * Format is projects/{project}/locations/{location}/services/{service}.
+   * Format is `projects/{project}/locations/{location}/services/{service}`.
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Output only. The name of the Cloud Run Service in the rendered manifest.
-   * Format is projects/{project}/locations/{location}/services/{service}.
+   * Format is `projects/{project}/locations/{location}/services/{service}`.
    * </pre>
    *
    * <code>
@@ -469,7 +469,7 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Output only. The name of the Cloud Run Service in the rendered manifest.
-     * Format is projects/{project}/locations/{location}/services/{service}.
+     * Format is `projects/{project}/locations/{location}/services/{service}`.
      * </pre>
      *
      * <code>
@@ -494,7 +494,7 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Output only. The name of the Cloud Run Service in the rendered manifest.
-     * Format is projects/{project}/locations/{location}/services/{service}.
+     * Format is `projects/{project}/locations/{location}/services/{service}`.
      * </pre>
      *
      * <code>
@@ -519,7 +519,7 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Output only. The name of the Cloud Run Service in the rendered manifest.
-     * Format is projects/{project}/locations/{location}/services/{service}.
+     * Format is `projects/{project}/locations/{location}/services/{service}`.
      * </pre>
      *
      * <code>
@@ -543,7 +543,7 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Output only. The name of the Cloud Run Service in the rendered manifest.
-     * Format is projects/{project}/locations/{location}/services/{service}.
+     * Format is `projects/{project}/locations/{location}/services/{service}`.
      * </pre>
      *
      * <code>
@@ -563,7 +563,7 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Output only. The name of the Cloud Run Service in the rendered manifest.
-     * Format is projects/{project}/locations/{location}/services/{service}.
+     * Format is `projects/{project}/locations/{location}/services/{service}`.
      * </pre>
      *
      * <code>

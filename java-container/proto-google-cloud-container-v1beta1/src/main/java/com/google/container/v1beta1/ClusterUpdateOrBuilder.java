@@ -1650,7 +1650,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2524
+   *     google/container/v1beta1/cluster_service.proto;l=2598
    * @return Whether the desiredProtectConfig field is set.
    */
   @java.lang.Deprecated
@@ -1668,7 +1668,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2524
+   *     google/container/v1beta1/cluster_service.proto;l=2598
    * @return The desiredProtectConfig.
    */
   @java.lang.Deprecated
@@ -2205,4 +2205,93 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1beta1.HostMaintenancePolicyOrBuilder
       getDesiredHostMaintenancePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired resource manager tags that apply to all auto-provisioned node
+   * pools in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+   * </code>
+   *
+   * @return Whether the desiredNodePoolAutoConfigResourceManagerTags field is set.
+   */
+  boolean hasDesiredNodePoolAutoConfigResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * The desired resource manager tags that apply to all auto-provisioned node
+   * pools in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+   * </code>
+   *
+   * @return The desiredNodePoolAutoConfigResourceManagerTags.
+   */
+  com.google.container.v1beta1.ResourceManagerTags
+      getDesiredNodePoolAutoConfigResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * The desired resource manager tags that apply to all auto-provisioned node
+   * pools in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+   * </code>
+   */
+  com.google.container.v1beta1.ResourceManagerTagsOrBuilder
+      getDesiredNodePoolAutoConfigResourceManagerTagsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+   * </code>
+   *
+   * @return Whether the desiredInTransitEncryptionConfig field is set.
+   */
+  boolean hasDesiredInTransitEncryptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for desiredInTransitEncryptionConfig.
+   */
+  int getDesiredInTransitEncryptionConfigValue();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the details of in-transit encryption.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.InTransitEncryptionConfig desired_in_transit_encryption_config = 137;
+   * </code>
+   *
+   * @return The desiredInTransitEncryptionConfig.
+   */
+  com.google.container.v1beta1.InTransitEncryptionConfig getDesiredInTransitEncryptionConfig();
 }

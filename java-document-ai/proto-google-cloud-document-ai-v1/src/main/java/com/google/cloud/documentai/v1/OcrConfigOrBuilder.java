@@ -199,7 +199,7 @@ public interface OcrConfigOrBuilder
    *
    * <pre>
    * Turn off character box detector in OCR engine. Character box detection is
-   * enabled by default in OCR 2.0+ processors.
+   * enabled by default in OCR 2.0 (and later) processors.
    * </pre>
    *
    * <code>bool disable_character_boxes_detection = 10;</code>

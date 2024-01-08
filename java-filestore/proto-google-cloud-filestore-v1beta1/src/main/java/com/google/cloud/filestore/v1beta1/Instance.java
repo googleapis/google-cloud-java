@@ -523,6 +523,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>ZONAL = 8;</code>
      */
     ZONAL(8),
+    /**
+     *
+     *
+     * <pre>
+     * REGIONAL instances offer the features and availability needed for
+     * mission-critical workloads.
+     * </pre>
+     *
+     * <code>REGIONAL = 9;</code>
+     */
+    REGIONAL(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -613,6 +624,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>ZONAL = 8;</code>
      */
     public static final int ZONAL_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * REGIONAL instances offer the features and availability needed for
+     * mission-critical workloads.
+     * </pre>
+     *
+     * <code>REGIONAL = 9;</code>
+     */
+    public static final int REGIONAL_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -654,6 +676,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return ENTERPRISE;
         case 8:
           return ZONAL;
+        case 9:
+          return REGIONAL;
         default:
           return null;
       }
@@ -1645,6 +1669,24 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         : satisfiesPzs_;
   }
 
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 26;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 14;
 
   @SuppressWarnings("serial")
@@ -2087,6 +2129,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (directoryServices_ != null) {
       output.writeMessage(24, getDirectoryServices());
     }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(26, satisfiesPzi_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2175,6 +2220,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (directoryServices_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getDirectoryServices());
     }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(26, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2208,6 +2256,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasSatisfiesPzs()) {
       if (!getSatisfiesPzs().equals(other.getSatisfiesPzs())) return false;
     }
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
     if (!suspensionReasons_.equals(other.suspensionReasons_)) return false;
     if (getMaxCapacityGb() != other.getMaxCapacityGb()) return false;
@@ -2263,6 +2312,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
       hash = (53 * hash) + getSatisfiesPzs().hashCode();
     }
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getKmsKeyName().hashCode();
     if (getSuspensionReasonsCount() > 0) {
@@ -2475,9 +2526,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         satisfiesPzsBuilder_.dispose();
         satisfiesPzsBuilder_ = null;
       }
+      satisfiesPzi_ = false;
       kmsKeyName_ = "";
       suspensionReasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       maxCapacityGb_ = 0L;
       capacityStepSizeGb_ = 0L;
       maxShareCount_ = 0L;
@@ -2543,9 +2595,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.networks_ = networksBuilder_.build();
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         suspensionReasons_ = java.util.Collections.unmodifiableList(suspensionReasons_);
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
       }
       result.suspensionReasons_ = suspensionReasons_;
     }
@@ -2582,27 +2634,30 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             satisfiesPzsBuilder_ == null ? satisfiesPzs_ : satisfiesPzsBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.kmsKeyName_ = kmsKeyName_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.maxCapacityGb_ = maxCapacityGb_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.capacityStepSizeGb_ = capacityStepSizeGb_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.maxShareCount_ = maxShareCount_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.capacityGb_ = capacityGb_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.multiShareEnabled_ = multiShareEnabled_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.protocol_ = protocol_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.directoryServices_ =
             directoryServicesBuilder_ == null
                 ? directoryServices_
@@ -2743,15 +2798,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSatisfiesPzs()) {
         mergeSatisfiesPzs(other.getSatisfiesPzs());
       }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.suspensionReasons_.isEmpty()) {
         if (suspensionReasons_.isEmpty()) {
           suspensionReasons_ = other.suspensionReasons_;
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         } else {
           ensureSuspensionReasonsIsMutable();
           suspensionReasons_.addAll(other.suspensionReasons_);
@@ -2896,7 +2954,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case 114:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 114
             case 120:
@@ -2921,46 +2979,52 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case 128:
               {
                 maxCapacityGb_ = input.readInt64();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 128
             case 136:
               {
                 capacityStepSizeGb_ = input.readInt64();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 136
             case 144:
               {
                 maxShareCount_ = input.readInt64();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 144
             case 152:
               {
                 capacityGb_ = input.readInt64();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 152
             case 160:
               {
                 multiShareEnabled_ = input.readBool();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 160
             case 168:
               {
                 protocol_ = input.readEnum();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 168
             case 194:
               {
                 input.readMessage(
                     getDirectoryServicesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 194
+            case 208:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 208
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4919,6 +4983,59 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return satisfiesPzsBuilder_;
     }
 
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object kmsKeyName_ = "";
     /**
      *
@@ -4981,7 +5098,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       kmsKeyName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4998,7 +5115,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKmsKeyName() {
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -5020,7 +5137,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       kmsKeyName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5029,9 +5146,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSuspensionReasonsIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         suspensionReasons_ = new java.util.ArrayList<java.lang.Integer>(suspensionReasons_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
     /**
@@ -5182,7 +5299,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSuspensionReasons() {
       suspensionReasons_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -5319,7 +5436,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxCapacityGb(long value) {
 
       maxCapacityGb_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5335,7 +5452,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxCapacityGb() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       maxCapacityGb_ = 0L;
       onChanged();
       return this;
@@ -5372,7 +5489,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setCapacityStepSizeGb(long value) {
 
       capacityStepSizeGb_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5388,7 +5505,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCapacityStepSizeGb() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       capacityStepSizeGb_ = 0L;
       onChanged();
       return this;
@@ -5425,7 +5542,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxShareCount(long value) {
 
       maxShareCount_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5441,7 +5558,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxShareCount() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       maxShareCount_ = 0L;
       onChanged();
       return this;
@@ -5482,7 +5599,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setCapacityGb(long value) {
 
       capacityGb_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5500,7 +5617,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCapacityGb() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       capacityGb_ = 0L;
       onChanged();
       return this;
@@ -5541,7 +5658,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setMultiShareEnabled(boolean value) {
 
       multiShareEnabled_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5559,7 +5676,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMultiShareEnabled() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       multiShareEnabled_ = false;
       onChanged();
       return this;
@@ -5603,7 +5720,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setProtocolValue(int value) {
       protocol_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5650,7 +5767,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       protocol_ = value.getNumber();
       onChanged();
       return this;
@@ -5671,7 +5788,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProtocol() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       protocol_ = 0;
       onChanged();
       return this;
@@ -5696,7 +5813,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the directoryServices field is set.
      */
     public boolean hasDirectoryServices() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -5739,7 +5856,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         directoryServicesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5760,7 +5877,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         directoryServicesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5777,7 +5894,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDirectoryServices(
         com.google.cloud.filestore.v1beta1.DirectoryServicesConfig value) {
       if (directoryServicesBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && directoryServices_ != null
             && directoryServices_
                 != com.google.cloud.filestore.v1beta1.DirectoryServicesConfig
@@ -5789,7 +5906,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         directoryServicesBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5804,7 +5921,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
      */
     public Builder clearDirectoryServices() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       directoryServices_ = null;
       if (directoryServicesBuilder_ != null) {
         directoryServicesBuilder_.dispose();
@@ -5825,7 +5942,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.filestore.v1beta1.DirectoryServicesConfig.Builder
         getDirectoryServicesBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getDirectoryServicesFieldBuilder().getBuilder();
     }

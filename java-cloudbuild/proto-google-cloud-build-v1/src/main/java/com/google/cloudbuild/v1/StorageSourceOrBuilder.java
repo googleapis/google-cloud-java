@@ -96,4 +96,33 @@ public interface StorageSourceOrBuilder
    * @return The generation.
    */
   long getGeneration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Option to specify the tool to fetch the source file for the build.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.StorageSource.SourceFetcher source_fetcher = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for sourceFetcher.
+   */
+  int getSourceFetcherValue();
+  /**
+   *
+   *
+   * <pre>
+   * Option to specify the tool to fetch the source file for the build.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.StorageSource.SourceFetcher source_fetcher = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sourceFetcher.
+   */
+  com.google.cloudbuild.v1.StorageSource.SourceFetcher getSourceFetcher();
 }

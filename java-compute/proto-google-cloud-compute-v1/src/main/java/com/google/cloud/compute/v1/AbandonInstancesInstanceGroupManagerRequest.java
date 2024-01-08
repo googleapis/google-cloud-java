@@ -22,9 +22,6 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- *
- * Messages
- *
  * A request message for InstanceGroupManagers.AbandonInstances. See the method description for details.
  * </pre>
  *
@@ -579,9 +576,6 @@ public final class AbandonInstancesInstanceGroupManagerRequest
    *
    *
    * <pre>
-   *
-   * Messages
-   *
    * A request message for InstanceGroupManagers.AbandonInstances. See the method description for details.
    * </pre>
    *

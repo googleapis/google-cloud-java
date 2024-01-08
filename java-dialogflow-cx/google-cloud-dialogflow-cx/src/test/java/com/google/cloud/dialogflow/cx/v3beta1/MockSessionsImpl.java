@@ -157,4 +157,25 @@ public class MockSessionsImpl extends SessionsImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void submitAnswerFeedback(
+      SubmitAnswerFeedbackRequest request, StreamObserver<AnswerFeedback> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AnswerFeedback) {
+      requests.add(request);
+      responseObserver.onNext(((AnswerFeedback) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SubmitAnswerFeedback, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AnswerFeedback.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

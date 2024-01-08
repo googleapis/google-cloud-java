@@ -215,6 +215,7 @@ public class HealthChecksClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, HealthChecksScopedList> element :
    *       healthChecksClient.aggregatedList(request).iterateAll()) {
@@ -254,6 +255,7 @@ public class HealthChecksClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, HealthChecksScopedList>> future =
    *       healthChecksClient.aggregatedListPagedCallable().futureCall(request);
@@ -292,6 +294,7 @@ public class HealthChecksClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     HealthChecksAggregatedList response =

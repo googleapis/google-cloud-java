@@ -70,8 +70,8 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. Resource name of the job to execute a hybrid inspect on, for example
-   * `projects/dlp-test-project/dlpJob/53234423`.
+   * Required. Resource name of the job to execute a hybrid inspect on, for
+   * example `projects/dlp-test-project/dlpJob/53234423`.
    * </pre>
    *
    * <code>
@@ -96,8 +96,8 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. Resource name of the job to execute a hybrid inspect on, for example
-   * `projects/dlp-test-project/dlpJob/53234423`.
+   * Required. Resource name of the job to execute a hybrid inspect on, for
+   * example `projects/dlp-test-project/dlpJob/53234423`.
    * </pre>
    *
    * <code>
@@ -547,8 +547,8 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Resource name of the job to execute a hybrid inspect on, for example
-     * `projects/dlp-test-project/dlpJob/53234423`.
+     * Required. Resource name of the job to execute a hybrid inspect on, for
+     * example `projects/dlp-test-project/dlpJob/53234423`.
      * </pre>
      *
      * <code>
@@ -572,8 +572,8 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Resource name of the job to execute a hybrid inspect on, for example
-     * `projects/dlp-test-project/dlpJob/53234423`.
+     * Required. Resource name of the job to execute a hybrid inspect on, for
+     * example `projects/dlp-test-project/dlpJob/53234423`.
      * </pre>
      *
      * <code>
@@ -597,8 +597,8 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Resource name of the job to execute a hybrid inspect on, for example
-     * `projects/dlp-test-project/dlpJob/53234423`.
+     * Required. Resource name of the job to execute a hybrid inspect on, for
+     * example `projects/dlp-test-project/dlpJob/53234423`.
      * </pre>
      *
      * <code>
@@ -621,8 +621,8 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Resource name of the job to execute a hybrid inspect on, for example
-     * `projects/dlp-test-project/dlpJob/53234423`.
+     * Required. Resource name of the job to execute a hybrid inspect on, for
+     * example `projects/dlp-test-project/dlpJob/53234423`.
      * </pre>
      *
      * <code>
@@ -641,8 +641,8 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Resource name of the job to execute a hybrid inspect on, for example
-     * `projects/dlp-test-project/dlpJob/53234423`.
+     * Required. Resource name of the job to execute a hybrid inspect on, for
+     * example `projects/dlp-test-project/dlpJob/53234423`.
      * </pre>
      *
      * <code>

@@ -212,12 +212,12 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The beginning of the transformation which resulted in this
+   * Required. The beginning of the transformation which resulted in this
    * lineage event. For streaming scenarios, it should be the beginning of the
    * period from which the lineage is being reported.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the startTime field is set.
@@ -230,12 +230,12 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The beginning of the transformation which resulted in this
+   * Required. The beginning of the transformation which resulted in this
    * lineage event. For streaming scenarios, it should be the beginning of the
    * period from which the lineage is being reported.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The startTime.
@@ -248,12 +248,12 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The beginning of the transformation which resulted in this
+   * Required. The beginning of the transformation which resulted in this
    * lineage event. For streaming scenarios, it should be the beginning of the
    * period from which the lineage is being reported.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1319,12 +1319,12 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The beginning of the transformation which resulted in this
+     * Required. The beginning of the transformation which resulted in this
      * lineage event. For streaming scenarios, it should be the beginning of the
      * period from which the lineage is being reported.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the startTime field is set.
@@ -1336,12 +1336,12 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The beginning of the transformation which resulted in this
+     * Required. The beginning of the transformation which resulted in this
      * lineage event. For streaming scenarios, it should be the beginning of the
      * period from which the lineage is being reported.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The startTime.
@@ -1357,12 +1357,12 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The beginning of the transformation which resulted in this
+     * Required. The beginning of the transformation which resulted in this
      * lineage event. For streaming scenarios, it should be the beginning of the
      * period from which the lineage is being reported.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setStartTime(com.google.protobuf.Timestamp value) {
@@ -1382,12 +1382,12 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The beginning of the transformation which resulted in this
+     * Required. The beginning of the transformation which resulted in this
      * lineage event. For streaming scenarios, it should be the beginning of the
      * period from which the lineage is being reported.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1404,12 +1404,12 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The beginning of the transformation which resulted in this
+     * Required. The beginning of the transformation which resulted in this
      * lineage event. For streaming scenarios, it should be the beginning of the
      * period from which the lineage is being reported.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
@@ -1432,12 +1432,12 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The beginning of the transformation which resulted in this
+     * Required. The beginning of the transformation which resulted in this
      * lineage event. For streaming scenarios, it should be the beginning of the
      * period from which the lineage is being reported.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearStartTime() {
@@ -1454,12 +1454,12 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The beginning of the transformation which resulted in this
+     * Required. The beginning of the transformation which resulted in this
      * lineage event. For streaming scenarios, it should be the beginning of the
      * period from which the lineage is being reported.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
@@ -1471,12 +1471,12 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The beginning of the transformation which resulted in this
+     * Required. The beginning of the transformation which resulted in this
      * lineage event. For streaming scenarios, it should be the beginning of the
      * period from which the lineage is being reported.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
@@ -1490,12 +1490,12 @@ public final class LineageEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The beginning of the transformation which resulted in this
+     * Required. The beginning of the transformation which resulted in this
      * lineage event. For streaming scenarios, it should be the beginning of the
      * period from which the lineage is being reported.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>.google.protobuf.Timestamp start_time = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

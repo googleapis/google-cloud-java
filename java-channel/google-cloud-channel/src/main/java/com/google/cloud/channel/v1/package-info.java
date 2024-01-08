@@ -25,6 +25,9 @@
  * retrieve and combine a variety of data in Cloud Channel for multiple products (Google Cloud,
  * Google Voice, and Google Workspace.)
  *
+ * <p>Deprecated: This service is being deprecated. Please use [Export Channel Services data to
+ * BigQuery](https://cloud.google.com/channel/docs/rebilling/export-data-to-bigquery) instead.
+ *
  * <p>Sample for CloudChannelReportsServiceClient:
  *
  * <pre>{@code

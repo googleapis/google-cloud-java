@@ -396,7 +396,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+   * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -409,7 +409,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+   * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -423,7 +423,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+   * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -436,7 +436,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+   * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -449,7 +449,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+   * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -2777,7 +2777,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -2793,7 +2793,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -2809,7 +2809,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -2825,7 +2825,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -2847,7 +2847,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -2867,7 +2867,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -2889,7 +2889,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -2911,7 +2911,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -2931,7 +2931,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -2951,7 +2951,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -2971,7 +2971,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -2990,7 +2990,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3009,7 +3009,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3021,7 +3021,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3037,7 +3037,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3054,7 +3054,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3067,7 +3067,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3080,7 +3080,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. Each interface requires either one linked resource, (for example, linkedVpnTunnel), or IP address and IP address range (for example, ipRange), or both.
+     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>

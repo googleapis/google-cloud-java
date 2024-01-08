@@ -23,7 +23,7 @@ package com.google.analytics.data.v1alpha;
  *
  * <pre>
  * If funnel report results are
- * [sampled](https://support.google.com/analytics/answer/2637192), this
+ * [sampled](https://support.google.com/analytics/answer/13331292), this
  * metadata describes what percentage of events were used in this funnel
  * report for a date range. Sampling is the practice of analyzing a subset of
  * all data in order to uncover the meaningful information in the larger data
@@ -282,7 +282,7 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * If funnel report results are
-   * [sampled](https://support.google.com/analytics/answer/2637192), this
+   * [sampled](https://support.google.com/analytics/answer/13331292), this
    * metadata describes what percentage of events were used in this funnel
    * report for a date range. Sampling is the practice of analyzing a subset of
    * all data in order to uncover the meaningful information in the larger data

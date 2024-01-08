@@ -69,6 +69,49 @@ public interface BlueGreenSettingsOrBuilder
    *
    *
    * <pre>
+   * Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
+   * </code>
+   *
+   * @return Whether the autoscaledRolloutPolicy field is set.
+   */
+  boolean hasAutoscaledRolloutPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
+   * </code>
+   *
+   * @return The autoscaledRolloutPolicy.
+   */
+  com.google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy
+      getAutoscaledRolloutPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Autoscaled policy for cluster autoscaler enabled blue-green upgrade.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicy autoscaled_rollout_policy = 3;
+   * </code>
+   */
+  com.google.container.v1beta1.BlueGreenSettings.AutoscaledRolloutPolicyOrBuilder
+      getAutoscaledRolloutPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Time needed after draining entire blue pool. After this period, blue pool
    * will be cleaned up.
    * </pre>

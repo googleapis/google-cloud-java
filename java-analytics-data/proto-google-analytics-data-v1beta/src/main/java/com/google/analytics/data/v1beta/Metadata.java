@@ -22,7 +22,8 @@ package com.google.analytics.data.v1beta;
  *
  *
  * <pre>
- * The dimensions and metrics currently accepted in reporting methods.
+ * The dimensions, metrics and comparisons currently accepted in reporting
+ * methods.
  * </pre>
  *
  * Protobuf type {@code google.analytics.data.v1beta.Metadata}
@@ -443,7 +444,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The dimensions and metrics currently accepted in reporting methods.
+   * The dimensions, metrics and comparisons currently accepted in reporting
+   * methods.
    * </pre>
    *
    * Protobuf type {@code google.analytics.data.v1beta.Metadata}

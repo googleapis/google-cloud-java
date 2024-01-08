@@ -39,7 +39,9 @@ public class SyncGetNotification {
       GetNotificationRequest request =
           GetNotificationRequest.newBuilder()
               .setName(
-                  NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]").toString())
+                  NotificationName.ofOrganizationLocationNotificationName(
+                          "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]")
+                      .toString())
               .setLanguageCode("languageCode-2092349083")
               .build();
       Notification response = advisoryNotificationsServiceClient.getNotification(request);

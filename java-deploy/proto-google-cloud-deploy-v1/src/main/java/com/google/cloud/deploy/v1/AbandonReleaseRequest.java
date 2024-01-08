@@ -71,8 +71,7 @@ public final class AbandonReleaseRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Name of the Release. Format is
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
    * </pre>
    *
    * <code>
@@ -98,8 +97,7 @@ public final class AbandonReleaseRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Name of the Release. Format is
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
    * </pre>
    *
    * <code>
@@ -469,8 +467,7 @@ public final class AbandonReleaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of the Release. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
      * </pre>
      *
      * <code>
@@ -495,8 +492,7 @@ public final class AbandonReleaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of the Release. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
      * </pre>
      *
      * <code>
@@ -521,8 +517,7 @@ public final class AbandonReleaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of the Release. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
      * </pre>
      *
      * <code>
@@ -546,8 +541,7 @@ public final class AbandonReleaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of the Release. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
      * </pre>
      *
      * <code>
@@ -567,8 +561,7 @@ public final class AbandonReleaseRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of the Release. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
      * </pre>
      *
      * <code>

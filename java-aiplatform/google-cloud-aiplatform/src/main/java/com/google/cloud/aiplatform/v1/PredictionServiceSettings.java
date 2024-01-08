@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.aiplatform.v1.stub.PredictionServiceStubSettings;
@@ -95,15 +96,44 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     return ((PredictionServiceStubSettings) getStubSettings()).rawPredictSettings();
   }
 
+  /** Returns the object with the settings used for calls to directPredict. */
+  public UnaryCallSettings<DirectPredictRequest, DirectPredictResponse> directPredictSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).directPredictSettings();
+  }
+
+  /** Returns the object with the settings used for calls to directRawPredict. */
+  public UnaryCallSettings<DirectRawPredictRequest, DirectRawPredictResponse>
+      directRawPredictSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).directRawPredictSettings();
+  }
+
+  /** Returns the object with the settings used for calls to streamingPredict. */
+  public StreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
+      streamingPredictSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).streamingPredictSettings();
+  }
+
   /** Returns the object with the settings used for calls to serverStreamingPredict. */
   public ServerStreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
       serverStreamingPredictSettings() {
     return ((PredictionServiceStubSettings) getStubSettings()).serverStreamingPredictSettings();
   }
 
+  /** Returns the object with the settings used for calls to streamingRawPredict. */
+  public StreamingCallSettings<StreamingRawPredictRequest, StreamingRawPredictResponse>
+      streamingRawPredictSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).streamingRawPredictSettings();
+  }
+
   /** Returns the object with the settings used for calls to explain. */
   public UnaryCallSettings<ExplainRequest, ExplainResponse> explainSettings() {
     return ((PredictionServiceStubSettings) getStubSettings()).explainSettings();
+  }
+
+  /** Returns the object with the settings used for calls to streamGenerateContent. */
+  public ServerStreamingCallSettings<GenerateContentRequest, GenerateContentResponse>
+      streamGenerateContentSettings() {
+    return ((PredictionServiceStubSettings) getStubSettings()).streamGenerateContentSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -240,15 +270,45 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
       return getStubSettingsBuilder().rawPredictSettings();
     }
 
+    /** Returns the builder for the settings used for calls to directPredict. */
+    public UnaryCallSettings.Builder<DirectPredictRequest, DirectPredictResponse>
+        directPredictSettings() {
+      return getStubSettingsBuilder().directPredictSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to directRawPredict. */
+    public UnaryCallSettings.Builder<DirectRawPredictRequest, DirectRawPredictResponse>
+        directRawPredictSettings() {
+      return getStubSettingsBuilder().directRawPredictSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to streamingPredict. */
+    public StreamingCallSettings.Builder<StreamingPredictRequest, StreamingPredictResponse>
+        streamingPredictSettings() {
+      return getStubSettingsBuilder().streamingPredictSettings();
+    }
+
     /** Returns the builder for the settings used for calls to serverStreamingPredict. */
     public ServerStreamingCallSettings.Builder<StreamingPredictRequest, StreamingPredictResponse>
         serverStreamingPredictSettings() {
       return getStubSettingsBuilder().serverStreamingPredictSettings();
     }
 
+    /** Returns the builder for the settings used for calls to streamingRawPredict. */
+    public StreamingCallSettings.Builder<StreamingRawPredictRequest, StreamingRawPredictResponse>
+        streamingRawPredictSettings() {
+      return getStubSettingsBuilder().streamingRawPredictSettings();
+    }
+
     /** Returns the builder for the settings used for calls to explain. */
     public UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings() {
       return getStubSettingsBuilder().explainSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to streamGenerateContent. */
+    public ServerStreamingCallSettings.Builder<GenerateContentRequest, GenerateContentResponse>
+        streamGenerateContentSettings() {
+      return getStubSettingsBuilder().streamGenerateContentSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

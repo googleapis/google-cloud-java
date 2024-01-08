@@ -135,11 +135,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name for the Key in the format
+   * Identifier. The resource name for the Key in the format
    * `projects/{project}/keys/{key}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -159,11 +159,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name for the Key in the format
+   * Identifier. The resource name for the Key in the format
    * `projects/{project}/keys/{key}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -188,10 +188,10 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Human-readable display name of this key. Modifiable by user.
+   * Required. Human-readable display name of this key. Modifiable by user.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -211,10 +211,10 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Human-readable display name of this key. Modifiable by user.
+   * Required. Human-readable display name of this key. Modifiable by user.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -415,11 +415,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -438,11 +438,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -452,11 +452,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -473,11 +473,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See [Creating and managing labels]
+   * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -546,10 +546,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Options for user acceptance testing.
+   * Optional. Options for user acceptance testing.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the testingOptions field is set.
    */
@@ -561,10 +563,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Options for user acceptance testing.
+   * Optional. Options for user acceptance testing.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The testingOptions.
    */
@@ -578,10 +582,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Options for user acceptance testing.
+   * Optional. Options for user acceptance testing.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.TestingOptionsOrBuilder getTestingOptionsOrBuilder() {
@@ -596,10 +602,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings for WAF
+   * Optional. Settings for WAF
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the wafSettings field is set.
    */
@@ -611,10 +619,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings for WAF
+   * Optional. Settings for WAF
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The wafSettings.
    */
@@ -628,10 +638,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Settings for WAF
+   * Optional. Settings for WAF
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.recaptchaenterprise.v1.WafSettingsOrBuilder getWafSettingsOrBuilder() {
@@ -1294,11 +1306,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name for the Key in the format
+     * Identifier. The resource name for the Key in the format
      * `projects/{project}/keys/{key}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1317,11 +1329,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name for the Key in the format
+     * Identifier. The resource name for the Key in the format
      * `projects/{project}/keys/{key}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1340,11 +1352,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name for the Key in the format
+     * Identifier. The resource name for the Key in the format
      * `projects/{project}/keys/{key}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1362,11 +1374,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name for the Key in the format
+     * Identifier. The resource name for the Key in the format
      * `projects/{project}/keys/{key}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1380,11 +1392,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name for the Key in the format
+     * Identifier. The resource name for the Key in the format
      * `projects/{project}/keys/{key}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1405,10 +1417,10 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable display name of this key. Modifiable by user.
+     * Required. Human-readable display name of this key. Modifiable by user.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The displayName.
      */
@@ -1427,10 +1439,10 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable display name of this key. Modifiable by user.
+     * Required. Human-readable display name of this key. Modifiable by user.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for displayName.
      */
@@ -1449,10 +1461,10 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable display name of this key. Modifiable by user.
+     * Required. Human-readable display name of this key. Modifiable by user.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -1470,10 +1482,10 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable display name of this key. Modifiable by user.
+     * Required. Human-readable display name of this key. Modifiable by user.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1487,10 +1499,10 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable display name of this key. Modifiable by user.
+     * Required. Human-readable display name of this key. Modifiable by user.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -2169,11 +2181,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -2192,11 +2204,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -2206,11 +2218,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -2227,11 +2239,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -2254,11 +2266,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -2277,11 +2289,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2298,11 +2310,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See [Creating and managing labels]
+     * Optional. See [Creating and managing labels]
      * (https://cloud.google.com/recaptcha-enterprise/docs/labels).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 6;</code>
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -2521,10 +2533,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Options for user acceptance testing.
+     * Optional. Options for user acceptance testing.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the testingOptions field is set.
      */
@@ -2535,10 +2549,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Options for user acceptance testing.
+     * Optional. Options for user acceptance testing.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The testingOptions.
      */
@@ -2555,10 +2571,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Options for user acceptance testing.
+     * Optional. Options for user acceptance testing.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTestingOptions(com.google.recaptchaenterprise.v1.TestingOptions value) {
       if (testingOptionsBuilder_ == null) {
@@ -2577,10 +2595,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Options for user acceptance testing.
+     * Optional. Options for user acceptance testing.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTestingOptions(
         com.google.recaptchaenterprise.v1.TestingOptions.Builder builderForValue) {
@@ -2597,10 +2617,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Options for user acceptance testing.
+     * Optional. Options for user acceptance testing.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeTestingOptions(com.google.recaptchaenterprise.v1.TestingOptions value) {
       if (testingOptionsBuilder_ == null) {
@@ -2623,10 +2645,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Options for user acceptance testing.
+     * Optional. Options for user acceptance testing.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearTestingOptions() {
       bitField0_ = (bitField0_ & ~0x00000080);
@@ -2642,10 +2666,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Options for user acceptance testing.
+     * Optional. Options for user acceptance testing.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.TestingOptions.Builder getTestingOptionsBuilder() {
       bitField0_ |= 0x00000080;
@@ -2656,10 +2682,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Options for user acceptance testing.
+     * Optional. Options for user acceptance testing.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.TestingOptionsOrBuilder getTestingOptionsOrBuilder() {
       if (testingOptionsBuilder_ != null) {
@@ -2674,10 +2702,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Options for user acceptance testing.
+     * Optional. Options for user acceptance testing.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.recaptchaenterprise.v1.TestingOptions,
@@ -2706,10 +2736,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for WAF
+     * Optional. Settings for WAF
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the wafSettings field is set.
      */
@@ -2720,10 +2752,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for WAF
+     * Optional. Settings for WAF
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The wafSettings.
      */
@@ -2740,10 +2774,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for WAF
+     * Optional. Settings for WAF
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setWafSettings(com.google.recaptchaenterprise.v1.WafSettings value) {
       if (wafSettingsBuilder_ == null) {
@@ -2762,10 +2798,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for WAF
+     * Optional. Settings for WAF
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setWafSettings(
         com.google.recaptchaenterprise.v1.WafSettings.Builder builderForValue) {
@@ -2782,10 +2820,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for WAF
+     * Optional. Settings for WAF
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeWafSettings(com.google.recaptchaenterprise.v1.WafSettings value) {
       if (wafSettingsBuilder_ == null) {
@@ -2807,10 +2847,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for WAF
+     * Optional. Settings for WAF
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearWafSettings() {
       bitField0_ = (bitField0_ & ~0x00000100);
@@ -2826,10 +2868,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for WAF
+     * Optional. Settings for WAF
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.WafSettings.Builder getWafSettingsBuilder() {
       bitField0_ |= 0x00000100;
@@ -2840,10 +2884,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for WAF
+     * Optional. Settings for WAF
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.recaptchaenterprise.v1.WafSettingsOrBuilder getWafSettingsOrBuilder() {
       if (wafSettingsBuilder_ != null) {
@@ -2858,10 +2904,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Settings for WAF
+     * Optional. Settings for WAF
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.recaptchaenterprise.v1.WafSettings,

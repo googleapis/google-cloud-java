@@ -24,6 +24,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.BatchDeletePipelineJobsRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchDeletePipelineJobsResponse;
 import com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest;
 import com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest;
@@ -127,6 +129,18 @@ public abstract class PipelineServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeletePipelineJobRequest, Operation> deletePipelineJobCallable() {
     throw new UnsupportedOperationException("Not implemented: deletePipelineJobCallable()");
+  }
+
+  public OperationCallable<
+          BatchDeletePipelineJobsRequest, BatchDeletePipelineJobsResponse, DeleteOperationMetadata>
+      batchDeletePipelineJobsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeletePipelineJobsOperationCallable()");
+  }
+
+  public UnaryCallable<BatchDeletePipelineJobsRequest, Operation>
+      batchDeletePipelineJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeletePipelineJobsCallable()");
   }
 
   public UnaryCallable<CancelPipelineJobRequest, Empty> cancelPipelineJobCallable() {

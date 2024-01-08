@@ -321,14 +321,14 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Whether the provided user response token is valid. When valid = false, the
-   * reason could be specified in invalid_reason or it could also be due to
-   * a user failing to solve a challenge or a sitekey mismatch (i.e the sitekey
-   * used to generate the token was different than the one specified in the
-   * assessment).
+   * Output only. Whether the provided user response token is valid. When valid
+   * = false, the reason could be specified in invalid_reason or it could also
+   * be due to a user failing to solve a challenge or a sitekey mismatch (i.e
+   * the sitekey used to generate the token was different than the one specified
+   * in the assessment).
    * </pre>
    *
-   * <code>bool valid = 1;</code>
+   * <code>bool valid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The valid.
    */
@@ -343,10 +343,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Reason associated with the response when valid = false.
+   * Output only. Reason associated with the response when valid = false.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason invalid_reason = 2;
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason invalid_reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The enum numeric value on the wire for invalidReason.
@@ -359,10 +360,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Reason associated with the response when valid = false.
+   * Output only. Reason associated with the response when valid = false.
    * </pre>
    *
-   * <code>.google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason invalid_reason = 2;
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason invalid_reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The invalidReason.
@@ -382,10 +384,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The timestamp corresponding to the generation of the token.
+   * Output only. The timestamp corresponding to the generation of the token.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -397,10 +400,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The timestamp corresponding to the generation of the token.
+   * Output only. The timestamp corresponding to the generation of the token.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -412,10 +416,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The timestamp corresponding to the generation of the token.
+   * Output only. The timestamp corresponding to the generation of the token.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 3;</code>
+   * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -430,10 +435,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The hostname of the page on which the token was generated (Web keys only).
+   * Output only. The hostname of the page on which the token was generated (Web
+   * keys only).
    * </pre>
    *
-   * <code>string hostname = 4;</code>
+   * <code>string hostname = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The hostname.
    */
@@ -453,10 +459,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The hostname of the page on which the token was generated (Web keys only).
+   * Output only. The hostname of the page on which the token was generated (Web
+   * keys only).
    * </pre>
    *
-   * <code>string hostname = 4;</code>
+   * <code>string hostname = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for hostname.
    */
@@ -481,11 +488,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name of the Android package with which the token was generated (Android
-   * keys only).
+   * Output only. The name of the Android package with which the token was
+   * generated (Android keys only).
    * </pre>
    *
-   * <code>string android_package_name = 8;</code>
+   * <code>string android_package_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The androidPackageName.
    */
@@ -505,11 +512,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name of the Android package with which the token was generated (Android
-   * keys only).
+   * Output only. The name of the Android package with which the token was
+   * generated (Android keys only).
    * </pre>
    *
-   * <code>string android_package_name = 8;</code>
+   * <code>string android_package_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for androidPackageName.
    */
@@ -534,11 +541,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The ID of the iOS bundle with which the token was generated (iOS keys
-   * only).
+   * Output only. The ID of the iOS bundle with which the token was generated
+   * (iOS keys only).
    * </pre>
    *
-   * <code>string ios_bundle_id = 9;</code>
+   * <code>string ios_bundle_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The iosBundleId.
    */
@@ -558,11 +565,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The ID of the iOS bundle with which the token was generated (iOS keys
-   * only).
+   * Output only. The ID of the iOS bundle with which the token was generated
+   * (iOS keys only).
    * </pre>
    *
-   * <code>string ios_bundle_id = 9;</code>
+   * <code>string ios_bundle_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for iosBundleId.
    */
@@ -587,10 +594,10 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Action name provided at token generation.
+   * Output only. Action name provided at token generation.
    * </pre>
    *
-   * <code>string action = 5;</code>
+   * <code>string action = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The action.
    */
@@ -610,10 +617,10 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Action name provided at token generation.
+   * Output only. Action name provided at token generation.
    * </pre>
    *
-   * <code>string action = 5;</code>
+   * <code>string action = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for action.
    */
@@ -1130,14 +1137,14 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether the provided user response token is valid. When valid = false, the
-     * reason could be specified in invalid_reason or it could also be due to
-     * a user failing to solve a challenge or a sitekey mismatch (i.e the sitekey
-     * used to generate the token was different than the one specified in the
-     * assessment).
+     * Output only. Whether the provided user response token is valid. When valid
+     * = false, the reason could be specified in invalid_reason or it could also
+     * be due to a user failing to solve a challenge or a sitekey mismatch (i.e
+     * the sitekey used to generate the token was different than the one specified
+     * in the assessment).
      * </pre>
      *
-     * <code>bool valid = 1;</code>
+     * <code>bool valid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The valid.
      */
@@ -1149,14 +1156,14 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether the provided user response token is valid. When valid = false, the
-     * reason could be specified in invalid_reason or it could also be due to
-     * a user failing to solve a challenge or a sitekey mismatch (i.e the sitekey
-     * used to generate the token was different than the one specified in the
-     * assessment).
+     * Output only. Whether the provided user response token is valid. When valid
+     * = false, the reason could be specified in invalid_reason or it could also
+     * be due to a user failing to solve a challenge or a sitekey mismatch (i.e
+     * the sitekey used to generate the token was different than the one specified
+     * in the assessment).
      * </pre>
      *
-     * <code>bool valid = 1;</code>
+     * <code>bool valid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The valid to set.
      * @return This builder for chaining.
@@ -1172,14 +1179,14 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether the provided user response token is valid. When valid = false, the
-     * reason could be specified in invalid_reason or it could also be due to
-     * a user failing to solve a challenge or a sitekey mismatch (i.e the sitekey
-     * used to generate the token was different than the one specified in the
-     * assessment).
+     * Output only. Whether the provided user response token is valid. When valid
+     * = false, the reason could be specified in invalid_reason or it could also
+     * be due to a user failing to solve a challenge or a sitekey mismatch (i.e
+     * the sitekey used to generate the token was different than the one specified
+     * in the assessment).
      * </pre>
      *
-     * <code>bool valid = 1;</code>
+     * <code>bool valid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1195,10 +1202,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Reason associated with the response when valid = false.
+     * Output only. Reason associated with the response when valid = false.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason invalid_reason = 2;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason invalid_reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The enum numeric value on the wire for invalidReason.
@@ -1211,10 +1219,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Reason associated with the response when valid = false.
+     * Output only. Reason associated with the response when valid = false.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason invalid_reason = 2;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason invalid_reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The enum numeric value on the wire for invalidReason to set.
@@ -1230,10 +1239,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Reason associated with the response when valid = false.
+     * Output only. Reason associated with the response when valid = false.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason invalid_reason = 2;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason invalid_reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The invalidReason.
@@ -1250,10 +1260,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Reason associated with the response when valid = false.
+     * Output only. Reason associated with the response when valid = false.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason invalid_reason = 2;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason invalid_reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The invalidReason to set.
@@ -1273,10 +1284,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Reason associated with the response when valid = false.
+     * Output only. Reason associated with the response when valid = false.
      * </pre>
      *
-     * <code>.google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason invalid_reason = 2;
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason invalid_reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.
@@ -1298,10 +1310,12 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The timestamp corresponding to the generation of the token.
+     * Output only. The timestamp corresponding to the generation of the token.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -1312,10 +1326,12 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The timestamp corresponding to the generation of the token.
+     * Output only. The timestamp corresponding to the generation of the token.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -1332,10 +1348,12 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The timestamp corresponding to the generation of the token.
+     * Output only. The timestamp corresponding to the generation of the token.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1354,10 +1372,12 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The timestamp corresponding to the generation of the token.
+     * Output only. The timestamp corresponding to the generation of the token.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -1373,10 +1393,12 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The timestamp corresponding to the generation of the token.
+     * Output only. The timestamp corresponding to the generation of the token.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1398,10 +1420,12 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The timestamp corresponding to the generation of the token.
+     * Output only. The timestamp corresponding to the generation of the token.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1417,10 +1441,12 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The timestamp corresponding to the generation of the token.
+     * Output only. The timestamp corresponding to the generation of the token.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       bitField0_ |= 0x00000004;
@@ -1431,10 +1457,12 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The timestamp corresponding to the generation of the token.
+     * Output only. The timestamp corresponding to the generation of the token.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -1449,10 +1477,12 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The timestamp corresponding to the generation of the token.
+     * Output only. The timestamp corresponding to the generation of the token.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1476,10 +1506,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The hostname of the page on which the token was generated (Web keys only).
+     * Output only. The hostname of the page on which the token was generated (Web
+     * keys only).
      * </pre>
      *
-     * <code>string hostname = 4;</code>
+     * <code>string hostname = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The hostname.
      */
@@ -1498,10 +1529,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The hostname of the page on which the token was generated (Web keys only).
+     * Output only. The hostname of the page on which the token was generated (Web
+     * keys only).
      * </pre>
      *
-     * <code>string hostname = 4;</code>
+     * <code>string hostname = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for hostname.
      */
@@ -1520,10 +1552,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The hostname of the page on which the token was generated (Web keys only).
+     * Output only. The hostname of the page on which the token was generated (Web
+     * keys only).
      * </pre>
      *
-     * <code>string hostname = 4;</code>
+     * <code>string hostname = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The hostname to set.
      * @return This builder for chaining.
@@ -1541,10 +1574,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The hostname of the page on which the token was generated (Web keys only).
+     * Output only. The hostname of the page on which the token was generated (Web
+     * keys only).
      * </pre>
      *
-     * <code>string hostname = 4;</code>
+     * <code>string hostname = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1558,10 +1592,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The hostname of the page on which the token was generated (Web keys only).
+     * Output only. The hostname of the page on which the token was generated (Web
+     * keys only).
      * </pre>
      *
-     * <code>string hostname = 4;</code>
+     * <code>string hostname = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for hostname to set.
      * @return This builder for chaining.
@@ -1582,11 +1617,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the Android package with which the token was generated (Android
-     * keys only).
+     * Output only. The name of the Android package with which the token was
+     * generated (Android keys only).
      * </pre>
      *
-     * <code>string android_package_name = 8;</code>
+     * <code>string android_package_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The androidPackageName.
      */
@@ -1605,11 +1640,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the Android package with which the token was generated (Android
-     * keys only).
+     * Output only. The name of the Android package with which the token was
+     * generated (Android keys only).
      * </pre>
      *
-     * <code>string android_package_name = 8;</code>
+     * <code>string android_package_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for androidPackageName.
      */
@@ -1628,11 +1663,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the Android package with which the token was generated (Android
-     * keys only).
+     * Output only. The name of the Android package with which the token was
+     * generated (Android keys only).
      * </pre>
      *
-     * <code>string android_package_name = 8;</code>
+     * <code>string android_package_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The androidPackageName to set.
      * @return This builder for chaining.
@@ -1650,11 +1685,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the Android package with which the token was generated (Android
-     * keys only).
+     * Output only. The name of the Android package with which the token was
+     * generated (Android keys only).
      * </pre>
      *
-     * <code>string android_package_name = 8;</code>
+     * <code>string android_package_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1668,11 +1703,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the Android package with which the token was generated (Android
-     * keys only).
+     * Output only. The name of the Android package with which the token was
+     * generated (Android keys only).
      * </pre>
      *
-     * <code>string android_package_name = 8;</code>
+     * <code>string android_package_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for androidPackageName to set.
      * @return This builder for chaining.
@@ -1693,11 +1728,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The ID of the iOS bundle with which the token was generated (iOS keys
-     * only).
+     * Output only. The ID of the iOS bundle with which the token was generated
+     * (iOS keys only).
      * </pre>
      *
-     * <code>string ios_bundle_id = 9;</code>
+     * <code>string ios_bundle_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The iosBundleId.
      */
@@ -1716,11 +1751,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The ID of the iOS bundle with which the token was generated (iOS keys
-     * only).
+     * Output only. The ID of the iOS bundle with which the token was generated
+     * (iOS keys only).
      * </pre>
      *
-     * <code>string ios_bundle_id = 9;</code>
+     * <code>string ios_bundle_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for iosBundleId.
      */
@@ -1739,11 +1774,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The ID of the iOS bundle with which the token was generated (iOS keys
-     * only).
+     * Output only. The ID of the iOS bundle with which the token was generated
+     * (iOS keys only).
      * </pre>
      *
-     * <code>string ios_bundle_id = 9;</code>
+     * <code>string ios_bundle_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The iosBundleId to set.
      * @return This builder for chaining.
@@ -1761,11 +1796,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The ID of the iOS bundle with which the token was generated (iOS keys
-     * only).
+     * Output only. The ID of the iOS bundle with which the token was generated
+     * (iOS keys only).
      * </pre>
      *
-     * <code>string ios_bundle_id = 9;</code>
+     * <code>string ios_bundle_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1779,11 +1814,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The ID of the iOS bundle with which the token was generated (iOS keys
-     * only).
+     * Output only. The ID of the iOS bundle with which the token was generated
+     * (iOS keys only).
      * </pre>
      *
-     * <code>string ios_bundle_id = 9;</code>
+     * <code>string ios_bundle_id = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for iosBundleId to set.
      * @return This builder for chaining.
@@ -1804,10 +1839,10 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Action name provided at token generation.
+     * Output only. Action name provided at token generation.
      * </pre>
      *
-     * <code>string action = 5;</code>
+     * <code>string action = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The action.
      */
@@ -1826,10 +1861,10 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Action name provided at token generation.
+     * Output only. Action name provided at token generation.
      * </pre>
      *
-     * <code>string action = 5;</code>
+     * <code>string action = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for action.
      */
@@ -1848,10 +1883,10 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Action name provided at token generation.
+     * Output only. Action name provided at token generation.
      * </pre>
      *
-     * <code>string action = 5;</code>
+     * <code>string action = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The action to set.
      * @return This builder for chaining.
@@ -1869,10 +1904,10 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Action name provided at token generation.
+     * Output only. Action name provided at token generation.
      * </pre>
      *
-     * <code>string action = 5;</code>
+     * <code>string action = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1886,10 +1921,10 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Action name provided at token generation.
+     * Output only. Action name provided at token generation.
      * </pre>
      *
-     * <code>string action = 5;</code>
+     * <code>string action = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for action to set.
      * @return This builder for chaining.

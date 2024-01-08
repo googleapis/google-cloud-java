@@ -2235,6 +2235,56 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         : soleTenantConfig_;
   }
 
+  public static final int RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 45;
+  private com.google.container.v1.ResourceManagerTags resourceManagerTags_;
+  /**
+   *
+   *
+   * <pre>
+   * A map of resource manager tag keys and values to be attached to the nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+   *
+   * @return Whether the resourceManagerTags field is set.
+   */
+  @java.lang.Override
+  public boolean hasResourceManagerTags() {
+    return resourceManagerTags_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map of resource manager tag keys and values to be attached to the nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+   *
+   * @return The resourceManagerTags.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ResourceManagerTags getResourceManagerTags() {
+    return resourceManagerTags_ == null
+        ? com.google.container.v1.ResourceManagerTags.getDefaultInstance()
+        : resourceManagerTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map of resource manager tag keys and values to be attached to the nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ResourceManagerTagsOrBuilder getResourceManagerTagsOrBuilder() {
+    return resourceManagerTags_ == null
+        ? com.google.container.v1.ResourceManagerTags.getDefaultInstance()
+        : resourceManagerTags_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2347,6 +2397,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (soleTenantConfig_ != null) {
       output.writeMessage(42, getSoleTenantConfig());
+    }
+    if (resourceManagerTags_ != null) {
+      output.writeMessage(45, getResourceManagerTags());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2499,6 +2552,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (soleTenantConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(42, getSoleTenantConfig());
     }
+    if (resourceManagerTags_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(45, getResourceManagerTags());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2597,6 +2654,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasSoleTenantConfig() != other.hasSoleTenantConfig()) return false;
     if (hasSoleTenantConfig()) {
       if (!getSoleTenantConfig().equals(other.getSoleTenantConfig())) return false;
+    }
+    if (hasResourceManagerTags() != other.hasResourceManagerTags()) return false;
+    if (hasResourceManagerTags()) {
+      if (!getResourceManagerTags().equals(other.getResourceManagerTags())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2722,6 +2783,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasSoleTenantConfig()) {
       hash = (37 * hash) + SOLE_TENANT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSoleTenantConfig().hashCode();
+    }
+    if (hasResourceManagerTags()) {
+      hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceManagerTags().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2913,6 +2978,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         getLocalNvmeSsdBlockConfigFieldBuilder();
         getEphemeralStorageLocalSsdConfigFieldBuilder();
         getSoleTenantConfigFieldBuilder();
+        getResourceManagerTagsFieldBuilder();
       }
     }
 
@@ -3030,6 +3096,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (soleTenantConfigBuilder_ != null) {
         soleTenantConfigBuilder_.dispose();
         soleTenantConfigBuilder_ = null;
+      }
+      resourceManagerTags_ = null;
+      if (resourceManagerTagsBuilder_ != null) {
+        resourceManagerTagsBuilder_.dispose();
+        resourceManagerTagsBuilder_ = null;
       }
       return this;
     }
@@ -3227,6 +3298,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField1_ & 0x00000002) != 0)) {
         result.soleTenantConfig_ =
             soleTenantConfigBuilder_ == null ? soleTenantConfig_ : soleTenantConfigBuilder_.build();
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.resourceManagerTags_ =
+            resourceManagerTagsBuilder_ == null
+                ? resourceManagerTags_
+                : resourceManagerTagsBuilder_.build();
       }
     }
 
@@ -3449,6 +3526,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSoleTenantConfig()) {
         mergeSoleTenantConfig(other.getSoleTenantConfig());
+      }
+      if (other.hasResourceManagerTags()) {
+        mergeResourceManagerTags(other.getResourceManagerTags());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3724,6 +3804,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000002;
                 break;
               } // case 338
+            case 362:
+              {
+                input.readMessage(
+                    getResourceManagerTagsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000004;
+                break;
+              } // case 362
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9940,6 +10027,191 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         soleTenantConfig_ = null;
       }
       return soleTenantConfigBuilder_;
+    }
+
+    private com.google.container.v1.ResourceManagerTags resourceManagerTags_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ResourceManagerTags,
+            com.google.container.v1.ResourceManagerTags.Builder,
+            com.google.container.v1.ResourceManagerTagsOrBuilder>
+        resourceManagerTagsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+     *
+     * @return Whether the resourceManagerTags field is set.
+     */
+    public boolean hasResourceManagerTags() {
+      return ((bitField1_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+     *
+     * @return The resourceManagerTags.
+     */
+    public com.google.container.v1.ResourceManagerTags getResourceManagerTags() {
+      if (resourceManagerTagsBuilder_ == null) {
+        return resourceManagerTags_ == null
+            ? com.google.container.v1.ResourceManagerTags.getDefaultInstance()
+            : resourceManagerTags_;
+      } else {
+        return resourceManagerTagsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+     */
+    public Builder setResourceManagerTags(com.google.container.v1.ResourceManagerTags value) {
+      if (resourceManagerTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resourceManagerTags_ = value;
+      } else {
+        resourceManagerTagsBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+     */
+    public Builder setResourceManagerTags(
+        com.google.container.v1.ResourceManagerTags.Builder builderForValue) {
+      if (resourceManagerTagsBuilder_ == null) {
+        resourceManagerTags_ = builderForValue.build();
+      } else {
+        resourceManagerTagsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+     */
+    public Builder mergeResourceManagerTags(com.google.container.v1.ResourceManagerTags value) {
+      if (resourceManagerTagsBuilder_ == null) {
+        if (((bitField1_ & 0x00000004) != 0)
+            && resourceManagerTags_ != null
+            && resourceManagerTags_
+                != com.google.container.v1.ResourceManagerTags.getDefaultInstance()) {
+          getResourceManagerTagsBuilder().mergeFrom(value);
+        } else {
+          resourceManagerTags_ = value;
+        }
+      } else {
+        resourceManagerTagsBuilder_.mergeFrom(value);
+      }
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+     */
+    public Builder clearResourceManagerTags() {
+      bitField1_ = (bitField1_ & ~0x00000004);
+      resourceManagerTags_ = null;
+      if (resourceManagerTagsBuilder_ != null) {
+        resourceManagerTagsBuilder_.dispose();
+        resourceManagerTagsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+     */
+    public com.google.container.v1.ResourceManagerTags.Builder getResourceManagerTagsBuilder() {
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return getResourceManagerTagsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+     */
+    public com.google.container.v1.ResourceManagerTagsOrBuilder getResourceManagerTagsOrBuilder() {
+      if (resourceManagerTagsBuilder_ != null) {
+        return resourceManagerTagsBuilder_.getMessageOrBuilder();
+      } else {
+        return resourceManagerTags_ == null
+            ? com.google.container.v1.ResourceManagerTags.getDefaultInstance()
+            : resourceManagerTags_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ResourceManagerTags,
+            com.google.container.v1.ResourceManagerTags.Builder,
+            com.google.container.v1.ResourceManagerTagsOrBuilder>
+        getResourceManagerTagsFieldBuilder() {
+      if (resourceManagerTagsBuilder_ == null) {
+        resourceManagerTagsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ResourceManagerTags,
+                com.google.container.v1.ResourceManagerTags.Builder,
+                com.google.container.v1.ResourceManagerTagsOrBuilder>(
+                getResourceManagerTags(), getParentForChildren(), isClean());
+        resourceManagerTags_ = null;
+      }
+      return resourceManagerTagsBuilder_;
     }
 
     @java.lang.Override

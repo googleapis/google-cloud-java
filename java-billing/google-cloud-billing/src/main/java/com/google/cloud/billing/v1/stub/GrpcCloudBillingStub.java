@@ -34,6 +34,7 @@ import com.google.cloud.billing.v1.ListBillingAccountsRequest;
 import com.google.cloud.billing.v1.ListBillingAccountsResponse;
 import com.google.cloud.billing.v1.ListProjectBillingInfoRequest;
 import com.google.cloud.billing.v1.ListProjectBillingInfoResponse;
+import com.google.cloud.billing.v1.MoveBillingAccountRequest;
 import com.google.cloud.billing.v1.ProjectBillingInfo;
 import com.google.cloud.billing.v1.UpdateBillingAccountRequest;
 import com.google.cloud.billing.v1.UpdateProjectBillingInfoRequest;
@@ -158,6 +159,16 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<MoveBillingAccountRequest, BillingAccount>
+      moveBillingAccountMethodDescriptor =
+          MethodDescriptor.<MoveBillingAccountRequest, BillingAccount>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.billing.v1.CloudBilling/MoveBillingAccount")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(MoveBillingAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(BillingAccount.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetBillingAccountRequest, BillingAccount> getBillingAccountCallable;
   private final UnaryCallable<ListBillingAccountsRequest, ListBillingAccountsResponse>
       listBillingAccountsCallable;
@@ -179,6 +190,7 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<MoveBillingAccountRequest, BillingAccount> moveBillingAccountCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -236,6 +248,12 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
         listBillingAccountsTransportSettings =
             GrpcCallSettings.<ListBillingAccountsRequest, ListBillingAccountsResponse>newBuilder()
                 .setMethodDescriptor(listBillingAccountsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     GrpcCallSettings<UpdateBillingAccountRequest, BillingAccount>
         updateBillingAccountTransportSettings =
@@ -252,6 +270,12 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
         createBillingAccountTransportSettings =
             GrpcCallSettings.<CreateBillingAccountRequest, BillingAccount>newBuilder()
                 .setMethodDescriptor(createBillingAccountMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     GrpcCallSettings<ListProjectBillingInfoRequest, ListProjectBillingInfoResponse>
         listProjectBillingInfoTransportSettings =
@@ -318,6 +342,19 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<MoveBillingAccountRequest, BillingAccount>
+        moveBillingAccountTransportSettings =
+            GrpcCallSettings.<MoveBillingAccountRequest, BillingAccount>newBuilder()
+                .setMethodDescriptor(moveBillingAccountMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "destination_parent", String.valueOf(request.getDestinationParent()));
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getBillingAccountCallable =
         callableFactory.createUnaryCallable(
@@ -374,6 +411,11 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
+            clientContext);
+    this.moveBillingAccountCallable =
+        callableFactory.createUnaryCallable(
+            moveBillingAccountTransportSettings,
+            settings.moveBillingAccountSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -449,6 +491,11 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<MoveBillingAccountRequest, BillingAccount> moveBillingAccountCallable() {
+    return moveBillingAccountCallable;
   }
 
   @Override

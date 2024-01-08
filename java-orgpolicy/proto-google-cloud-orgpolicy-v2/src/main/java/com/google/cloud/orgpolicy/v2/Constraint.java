@@ -22,20 +22,20 @@ package com.google.cloud.orgpolicy.v2;
  *
  *
  * <pre>
- * A `constraint` describes a way to restrict resource's configuration. For
- * example, you could enforce a constraint that controls which cloud services
- * can be activated across an organization, or whether a Compute Engine instance
- * can have serial port connections established. `Constraints` can be configured
- * by the organization's policy administrator to fit the needs of the
- * organization by setting a `policy` that includes `constraints` at different
+ * A constraint describes a way to restrict resource's configuration. For
+ * example, you could enforce a constraint that controls which Google Cloud
+ * services can be activated across an organization, or whether a Compute Engine
+ * instance can have serial port connections established. Constraints can be
+ * configured by the organization policy administrator to fit the needs of the
+ * organization by setting a policy that includes constraints at different
  * locations in the organization's resource hierarchy. Policies are inherited
  * down the resource hierarchy from higher levels, but can also be overridden.
  * For details about the inheritance rules please read about
  * [`policies`][google.cloud.OrgPolicy.v2.Policy].
  *
- * `Constraints` have a default behavior determined by the `constraint_default`
+ * Constraints have a default behavior determined by the `constraint_default`
  * field, which is the enforcement behavior that is used in the absence of a
- * `policy` being defined or inherited for the resource in question.
+ * policy being defined or inherited for the resource in question.
  * </pre>
  *
  * Protobuf type {@code google.cloud.orgpolicy.v2.Constraint}
@@ -82,8 +82,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the default behavior in the absence of any `Policy` for the
-   * `Constraint`. This must not be `CONSTRAINT_DEFAULT_UNSPECIFIED`.
+   * Specifies the default behavior in the absence of any policy for the
+   * constraint. This must not be `CONSTRAINT_DEFAULT_UNSPECIFIED`.
    *
    * Immutable after creation.
    * </pre>
@@ -271,7 +271,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether subtrees of Cloud Resource Manager resource hierarchy
+     * Indicates whether subtrees of the Resource Manager resource hierarchy
      * can be used in `Policy.allowed_values` and `Policy.denied_values`. For
      * example, `"under:folders/123"` would match any resource under the
      * 'folders/123' folder.
@@ -287,8 +287,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A `Constraint` that allows or disallows a list of string values, which are
-   * configured by an Organization's policy administrator with a `Policy`.
+   * A constraint that allows or disallows a list of string values, which are
+   * configured by an Organization Policy administrator with a policy.
    * </pre>
    *
    * Protobuf type {@code google.cloud.orgpolicy.v2.Constraint.ListConstraint}
@@ -352,7 +352,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether subtrees of Cloud Resource Manager resource hierarchy
+     * Indicates whether subtrees of the Resource Manager resource hierarchy
      * can be used in `Policy.allowed_values` and `Policy.denied_values`. For
      * example, `"under:folders/123"` would match any resource under the
      * 'folders/123' folder.
@@ -541,8 +541,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A `Constraint` that allows or disallows a list of string values, which are
-     * configured by an Organization's policy administrator with a `Policy`.
+     * A constraint that allows or disallows a list of string values, which are
+     * configured by an Organization Policy administrator with a policy.
      * </pre>
      *
      * Protobuf type {@code google.cloud.orgpolicy.v2.Constraint.ListConstraint}
@@ -799,7 +799,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicates whether subtrees of Cloud Resource Manager resource hierarchy
+       * Indicates whether subtrees of the Resource Manager resource hierarchy
        * can be used in `Policy.allowed_values` and `Policy.denied_values`. For
        * example, `"under:folders/123"` would match any resource under the
        * 'folders/123' folder.
@@ -817,7 +817,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicates whether subtrees of Cloud Resource Manager resource hierarchy
+       * Indicates whether subtrees of the Resource Manager resource hierarchy
        * can be used in `Policy.allowed_values` and `Policy.denied_values`. For
        * example, `"under:folders/123"` would match any resource under the
        * 'folders/123' folder.
@@ -839,7 +839,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicates whether subtrees of Cloud Resource Manager resource hierarchy
+       * Indicates whether subtrees of the Resource Manager resource hierarchy
        * can be used in `Policy.allowed_values` and `Policy.denied_values`. For
        * example, `"under:folders/123"` would match any resource under the
        * 'folders/123' folder.
@@ -928,9 +928,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A `Constraint` that is either enforced or not.
+   * A constraint that is either enforced or not.
    *
-   * For example a constraint `constraints/compute.disableSerialPortAccess`.
+   * For example, a constraint `constraints/compute.disableSerialPortAccess`.
    * If it is enforced on a VM instance, serial port connections will not be
    * opened to that instance.
    * </pre>
@@ -1126,9 +1126,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A `Constraint` that is either enforced or not.
+     * A constraint that is either enforced or not.
      *
-     * For example a constraint `constraints/compute.disableSerialPortAccess`.
+     * For example, a constraint `constraints/compute.disableSerialPortAccess`.
      * If it is enforced on a VM instance, serial port connections will not be
      * opened to that instance.
      * </pre>
@@ -1411,8 +1411,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The resource name of the Constraint. Must be in one of
+   * Immutable. The resource name of the constraint. Must be in one of
    * the following forms:
+   *
    * * `projects/{project_number}/constraints/{constraint_name}`
    * * `folders/{folder_id}/constraints/{constraint_name}`
    * * `organizations/{organization_id}/constraints/{constraint_name}`
@@ -1440,8 +1441,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The resource name of the Constraint. Must be in one of
+   * Immutable. The resource name of the constraint. Must be in one of
    * the following forms:
+   *
    * * `projects/{project_number}/constraints/{constraint_name}`
    * * `folders/{folder_id}/constraints/{constraint_name}`
    * * `organizations/{organization_id}/constraints/{constraint_name}`
@@ -1529,7 +1531,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Detailed description of what this `Constraint` controls as well as how and
+   * Detailed description of what this constraint controls as well as how and
    * where it is enforced.
    *
    * Mutable.
@@ -1555,7 +1557,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Detailed description of what this `Constraint` controls as well as how and
+   * Detailed description of what this constraint controls as well as how and
    * where it is enforced.
    *
    * Mutable.
@@ -1584,7 +1586,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The evaluation behavior of this constraint in the absence of 'Policy'.
+   * The evaluation behavior of this constraint in the absence of a policy.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault constraint_default = 4;</code>
@@ -1599,7 +1601,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The evaluation behavior of this constraint in the absence of 'Policy'.
+   * The evaluation behavior of this constraint in the absence of a policy.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault constraint_default = 4;</code>
@@ -1719,6 +1721,24 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint.getDefaultInstance();
   }
 
+  public static final int SUPPORTS_DRY_RUN_FIELD_NUMBER = 7;
+  private boolean supportsDryRun_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Shows if dry run is supported for this constraint or not.
+   * </pre>
+   *
+   * <code>bool supports_dry_run = 7;</code>
+   *
+   * @return The supportsDryRun.
+   */
+  @java.lang.Override
+  public boolean getSupportsDryRun() {
+    return supportsDryRun_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1755,6 +1775,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           6, (com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint) constraintType_);
     }
+    if (supportsDryRun_ != false) {
+      output.writeBool(7, supportsDryRun_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1788,6 +1811,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint) constraintType_);
     }
+    if (supportsDryRun_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, supportsDryRun_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1807,6 +1833,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (constraintDefault_ != other.constraintDefault_) return false;
+    if (getSupportsDryRun() != other.getSupportsDryRun()) return false;
     if (!getConstraintTypeCase().equals(other.getConstraintTypeCase())) return false;
     switch (constraintTypeCase_) {
       case 5:
@@ -1837,6 +1864,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + CONSTRAINT_DEFAULT_FIELD_NUMBER;
     hash = (53 * hash) + constraintDefault_;
+    hash = (37 * hash) + SUPPORTS_DRY_RUN_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSupportsDryRun());
     switch (constraintTypeCase_) {
       case 5:
         hash = (37 * hash) + LIST_CONSTRAINT_FIELD_NUMBER;
@@ -1953,20 +1982,20 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A `constraint` describes a way to restrict resource's configuration. For
-   * example, you could enforce a constraint that controls which cloud services
-   * can be activated across an organization, or whether a Compute Engine instance
-   * can have serial port connections established. `Constraints` can be configured
-   * by the organization's policy administrator to fit the needs of the
-   * organization by setting a `policy` that includes `constraints` at different
+   * A constraint describes a way to restrict resource's configuration. For
+   * example, you could enforce a constraint that controls which Google Cloud
+   * services can be activated across an organization, or whether a Compute Engine
+   * instance can have serial port connections established. Constraints can be
+   * configured by the organization policy administrator to fit the needs of the
+   * organization by setting a policy that includes constraints at different
    * locations in the organization's resource hierarchy. Policies are inherited
    * down the resource hierarchy from higher levels, but can also be overridden.
    * For details about the inheritance rules please read about
    * [`policies`][google.cloud.OrgPolicy.v2.Policy].
    *
-   * `Constraints` have a default behavior determined by the `constraint_default`
+   * Constraints have a default behavior determined by the `constraint_default`
    * field, which is the enforcement behavior that is used in the absence of a
-   * `policy` being defined or inherited for the resource in question.
+   * policy being defined or inherited for the resource in question.
    * </pre>
    *
    * Protobuf type {@code google.cloud.orgpolicy.v2.Constraint}
@@ -2011,6 +2040,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       if (booleanConstraintBuilder_ != null) {
         booleanConstraintBuilder_.clear();
       }
+      supportsDryRun_ = false;
       constraintTypeCase_ = 0;
       constraintType_ = null;
       return this;
@@ -2061,6 +2091,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.constraintDefault_ = constraintDefault_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.supportsDryRun_ = supportsDryRun_;
       }
     }
 
@@ -2137,6 +2170,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.constraintDefault_ != 0) {
         setConstraintDefaultValue(other.getConstraintDefaultValue());
+      }
+      if (other.getSupportsDryRun() != false) {
+        setSupportsDryRun(other.getSupportsDryRun());
       }
       switch (other.getConstraintTypeCase()) {
         case LIST_CONSTRAINT:
@@ -2217,6 +2253,12 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
                 constraintTypeCase_ = 6;
                 break;
               } // case 50
+            case 56:
+              {
+                supportsDryRun_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2255,8 +2297,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The resource name of the Constraint. Must be in one of
+     * Immutable. The resource name of the constraint. Must be in one of
      * the following forms:
+     *
      * * `projects/{project_number}/constraints/{constraint_name}`
      * * `folders/{folder_id}/constraints/{constraint_name}`
      * * `organizations/{organization_id}/constraints/{constraint_name}`
@@ -2283,8 +2326,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The resource name of the Constraint. Must be in one of
+     * Immutable. The resource name of the constraint. Must be in one of
      * the following forms:
+     *
      * * `projects/{project_number}/constraints/{constraint_name}`
      * * `folders/{folder_id}/constraints/{constraint_name}`
      * * `organizations/{organization_id}/constraints/{constraint_name}`
@@ -2311,8 +2355,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The resource name of the Constraint. Must be in one of
+     * Immutable. The resource name of the constraint. Must be in one of
      * the following forms:
+     *
      * * `projects/{project_number}/constraints/{constraint_name}`
      * * `folders/{folder_id}/constraints/{constraint_name}`
      * * `organizations/{organization_id}/constraints/{constraint_name}`
@@ -2338,8 +2383,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The resource name of the Constraint. Must be in one of
+     * Immutable. The resource name of the constraint. Must be in one of
      * the following forms:
+     *
      * * `projects/{project_number}/constraints/{constraint_name}`
      * * `folders/{folder_id}/constraints/{constraint_name}`
      * * `organizations/{organization_id}/constraints/{constraint_name}`
@@ -2361,8 +2407,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The resource name of the Constraint. Must be in one of
+     * Immutable. The resource name of the constraint. Must be in one of
      * the following forms:
+     *
      * * `projects/{project_number}/constraints/{constraint_name}`
      * * `folders/{folder_id}/constraints/{constraint_name}`
      * * `organizations/{organization_id}/constraints/{constraint_name}`
@@ -2507,7 +2554,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed description of what this `Constraint` controls as well as how and
+     * Detailed description of what this constraint controls as well as how and
      * where it is enforced.
      *
      * Mutable.
@@ -2532,7 +2579,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed description of what this `Constraint` controls as well as how and
+     * Detailed description of what this constraint controls as well as how and
      * where it is enforced.
      *
      * Mutable.
@@ -2557,7 +2604,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed description of what this `Constraint` controls as well as how and
+     * Detailed description of what this constraint controls as well as how and
      * where it is enforced.
      *
      * Mutable.
@@ -2581,7 +2628,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed description of what this `Constraint` controls as well as how and
+     * Detailed description of what this constraint controls as well as how and
      * where it is enforced.
      *
      * Mutable.
@@ -2601,7 +2648,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed description of what this `Constraint` controls as well as how and
+     * Detailed description of what this constraint controls as well as how and
      * where it is enforced.
      *
      * Mutable.
@@ -2628,7 +2675,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The evaluation behavior of this constraint in the absence of 'Policy'.
+     * The evaluation behavior of this constraint in the absence of a policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault constraint_default = 4;</code>
@@ -2643,7 +2690,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The evaluation behavior of this constraint in the absence of 'Policy'.
+     * The evaluation behavior of this constraint in the absence of a policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault constraint_default = 4;</code>
@@ -2661,7 +2708,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The evaluation behavior of this constraint in the absence of 'Policy'.
+     * The evaluation behavior of this constraint in the absence of a policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault constraint_default = 4;</code>
@@ -2680,7 +2727,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The evaluation behavior of this constraint in the absence of 'Policy'.
+     * The evaluation behavior of this constraint in the absence of a policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault constraint_default = 4;</code>
@@ -2702,7 +2749,7 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The evaluation behavior of this constraint in the absence of 'Policy'.
+     * The evaluation behavior of this constraint in the absence of a policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.Constraint.ConstraintDefault constraint_default = 4;</code>
@@ -3145,6 +3192,59 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       constraintTypeCase_ = 6;
       onChanged();
       return booleanConstraintBuilder_;
+    }
+
+    private boolean supportsDryRun_;
+    /**
+     *
+     *
+     * <pre>
+     * Shows if dry run is supported for this constraint or not.
+     * </pre>
+     *
+     * <code>bool supports_dry_run = 7;</code>
+     *
+     * @return The supportsDryRun.
+     */
+    @java.lang.Override
+    public boolean getSupportsDryRun() {
+      return supportsDryRun_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shows if dry run is supported for this constraint or not.
+     * </pre>
+     *
+     * <code>bool supports_dry_run = 7;</code>
+     *
+     * @param value The supportsDryRun to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportsDryRun(boolean value) {
+
+      supportsDryRun_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shows if dry run is supported for this constraint or not.
+     * </pre>
+     *
+     * <code>bool supports_dry_run = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSupportsDryRun() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      supportsDryRun_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

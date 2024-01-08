@@ -28,6 +28,10 @@ public interface OriginOrBuilder
    *
    * <pre>
    * Type of the source.
+   *
+   * Use of a source_type other than `CUSTOM` for process creation
+   * or updating is highly discouraged, and may be restricted in the future
+   * without notice.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -40,6 +44,10 @@ public interface OriginOrBuilder
    *
    * <pre>
    * Type of the source.
+   *
+   * Use of a source_type other than `CUSTOM` for process creation
+   * or updating is highly discouraged, and may be restricted in the future
+   * without notice.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>

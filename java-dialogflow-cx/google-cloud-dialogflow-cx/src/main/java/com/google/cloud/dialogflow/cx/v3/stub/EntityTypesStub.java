@@ -44,15 +44,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class EntityTypesStub implements BackgroundResource {
 
-  public UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
-      listEntityTypesPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listEntityTypesPagedCallable()");
-  }
-
-  public UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse> listEntityTypesCallable() {
-    throw new UnsupportedOperationException("Not implemented: listEntityTypesCallable()");
-  }
-
   public UnaryCallable<GetEntityTypeRequest, EntityType> getEntityTypeCallable() {
     throw new UnsupportedOperationException("Not implemented: getEntityTypeCallable()");
   }
@@ -67,6 +58,15 @@ public abstract class EntityTypesStub implements BackgroundResource {
 
   public UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteEntityTypeCallable()");
+  }
+
+  public UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
+      listEntityTypesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEntityTypesPagedCallable()");
+  }
+
+  public UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse> listEntityTypesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEntityTypesCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

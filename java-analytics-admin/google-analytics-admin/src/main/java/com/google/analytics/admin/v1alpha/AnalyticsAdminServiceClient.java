@@ -10056,8 +10056,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Returns a customized report of data access records. The report provides records of each time a
    * user reads Google Analytics reporting data. Access records are retained for up to 2 years.
    *
-   * <p>Data Access Reports can be requested for a property. The property must be in Google
-   * Analytics 360. This method is only available to Administrators.
+   * <p>Data Access Reports can be requested for a property. Reports may be requested for any
+   * property, but dimensions that aren't related to quota can only be requested on Google Analytics
+   * 360 properties. This method is only available to Administrators.
    *
    * <p>These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and
    * other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a
@@ -10107,8 +10108,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Returns a customized report of data access records. The report provides records of each time a
    * user reads Google Analytics reporting data. Access records are retained for up to 2 years.
    *
-   * <p>Data Access Reports can be requested for a property. The property must be in Google
-   * Analytics 360. This method is only available to Administrators.
+   * <p>Data Access Reports can be requested for a property. Reports may be requested for any
+   * property, but dimensions that aren't related to quota can only be requested on Google Analytics
+   * 360 properties. This method is only available to Administrators.
    *
    * <p>These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and
    * other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a
@@ -15432,133 +15434,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a subproperty event filter.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   SubpropertyEventFilterName name =
-   *       SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]");
-   *   analyticsAdminServiceClient.deleteSubpropertyEventFilter(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Resource name of the subproperty event filter to delete. Format:
-   *     properties/property_id/subpropertyEventFilters/subproperty_event_filter Example:
-   *     properties/123/subpropertyEventFilters/456
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteSubpropertyEventFilter(SubpropertyEventFilterName name) {
-    DeleteSubpropertyEventFilterRequest request =
-        DeleteSubpropertyEventFilterRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteSubpropertyEventFilter(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a subproperty event filter.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   String name =
-   *       SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]").toString();
-   *   analyticsAdminServiceClient.deleteSubpropertyEventFilter(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Resource name of the subproperty event filter to delete. Format:
-   *     properties/property_id/subpropertyEventFilters/subproperty_event_filter Example:
-   *     properties/123/subpropertyEventFilters/456
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteSubpropertyEventFilter(String name) {
-    DeleteSubpropertyEventFilterRequest request =
-        DeleteSubpropertyEventFilterRequest.newBuilder().setName(name).build();
-    deleteSubpropertyEventFilter(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a subproperty event filter.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   DeleteSubpropertyEventFilterRequest request =
-   *       DeleteSubpropertyEventFilterRequest.newBuilder()
-   *           .setName(
-   *               SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
-   *                   .toString())
-   *           .build();
-   *   analyticsAdminServiceClient.deleteSubpropertyEventFilter(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteSubpropertyEventFilter(DeleteSubpropertyEventFilterRequest request) {
-    deleteSubpropertyEventFilterCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a subproperty event filter.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   DeleteSubpropertyEventFilterRequest request =
-   *       DeleteSubpropertyEventFilterRequest.newBuilder()
-   *           .setName(
-   *               SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<Empty> future =
-   *       analyticsAdminServiceClient.deleteSubpropertyEventFilterCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
-      deleteSubpropertyEventFilterCallable() {
-    return stub.deleteSubpropertyEventFilterCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Creates a subproperty Event Filter.
    *
    * <p>Sample code:
@@ -15690,6 +15565,544 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   public final UnaryCallable<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
       createSubpropertyEventFilterCallable() {
     return stub.createSubpropertyEventFilterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubpropertyEventFilterName name =
+   *       SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]");
+   *   SubpropertyEventFilter response = analyticsAdminServiceClient.getSubpropertyEventFilter(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subproperty event filter to lookup. Format:
+   *     properties/property_id/subpropertyEventFilters/subproperty_event_filter Example:
+   *     properties/123/subpropertyEventFilters/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertyEventFilter getSubpropertyEventFilter(SubpropertyEventFilterName name) {
+    GetSubpropertyEventFilterRequest request =
+        GetSubpropertyEventFilterRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getSubpropertyEventFilter(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]").toString();
+   *   SubpropertyEventFilter response = analyticsAdminServiceClient.getSubpropertyEventFilter(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subproperty event filter to lookup. Format:
+   *     properties/property_id/subpropertyEventFilters/subproperty_event_filter Example:
+   *     properties/123/subpropertyEventFilters/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertyEventFilter getSubpropertyEventFilter(String name) {
+    GetSubpropertyEventFilterRequest request =
+        GetSubpropertyEventFilterRequest.newBuilder().setName(name).build();
+    return getSubpropertyEventFilter(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetSubpropertyEventFilterRequest request =
+   *       GetSubpropertyEventFilterRequest.newBuilder()
+   *           .setName(
+   *               SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+   *                   .toString())
+   *           .build();
+   *   SubpropertyEventFilter response =
+   *       analyticsAdminServiceClient.getSubpropertyEventFilter(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertyEventFilter getSubpropertyEventFilter(
+      GetSubpropertyEventFilterRequest request) {
+    return getSubpropertyEventFilterCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetSubpropertyEventFilterRequest request =
+   *       GetSubpropertyEventFilterRequest.newBuilder()
+   *           .setName(
+   *               SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<SubpropertyEventFilter> future =
+   *       analyticsAdminServiceClient.getSubpropertyEventFilterCallable().futureCall(request);
+   *   // Do something.
+   *   SubpropertyEventFilter response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      getSubpropertyEventFilterCallable() {
+    return stub.getSubpropertyEventFilterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all subproperty Event Filters on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (SubpropertyEventFilter element :
+   *       analyticsAdminServiceClient.listSubpropertyEventFilters(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the ordinary property. Format: properties/property_id
+   *     Example: properties/123
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubpropertyEventFiltersPagedResponse listSubpropertyEventFilters(
+      PropertyName parent) {
+    ListSubpropertyEventFiltersRequest request =
+        ListSubpropertyEventFiltersRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSubpropertyEventFilters(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all subproperty Event Filters on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (SubpropertyEventFilter element :
+   *       analyticsAdminServiceClient.listSubpropertyEventFilters(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the ordinary property. Format: properties/property_id
+   *     Example: properties/123
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubpropertyEventFiltersPagedResponse listSubpropertyEventFilters(String parent) {
+    ListSubpropertyEventFiltersRequest request =
+        ListSubpropertyEventFiltersRequest.newBuilder().setParent(parent).build();
+    return listSubpropertyEventFilters(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all subproperty Event Filters on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSubpropertyEventFiltersRequest request =
+   *       ListSubpropertyEventFiltersRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SubpropertyEventFilter element :
+   *       analyticsAdminServiceClient.listSubpropertyEventFilters(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubpropertyEventFiltersPagedResponse listSubpropertyEventFilters(
+      ListSubpropertyEventFiltersRequest request) {
+    return listSubpropertyEventFiltersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all subproperty Event Filters on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSubpropertyEventFiltersRequest request =
+   *       ListSubpropertyEventFiltersRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SubpropertyEventFilter> future =
+   *       analyticsAdminServiceClient
+   *           .listSubpropertyEventFiltersPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (SubpropertyEventFilter element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersPagedResponse>
+      listSubpropertyEventFiltersPagedCallable() {
+    return stub.listSubpropertyEventFiltersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all subproperty Event Filters on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSubpropertyEventFiltersRequest request =
+   *       ListSubpropertyEventFiltersRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSubpropertyEventFiltersResponse response =
+   *         analyticsAdminServiceClient.listSubpropertyEventFiltersCallable().call(request);
+   *     for (SubpropertyEventFilter element : response.getSubpropertyEventFiltersList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+      listSubpropertyEventFiltersCallable() {
+    return stub.listSubpropertyEventFiltersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubpropertyEventFilter subpropertyEventFilter = SubpropertyEventFilter.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SubpropertyEventFilter response =
+   *       analyticsAdminServiceClient.updateSubpropertyEventFilter(
+   *           subpropertyEventFilter, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param subpropertyEventFilter Required. The subproperty event filter to update.
+   * @param updateMask Required. The list of fields to update. Field names must be in snake case
+   *     (for example, "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertyEventFilter updateSubpropertyEventFilter(
+      SubpropertyEventFilter subpropertyEventFilter, FieldMask updateMask) {
+    UpdateSubpropertyEventFilterRequest request =
+        UpdateSubpropertyEventFilterRequest.newBuilder()
+            .setSubpropertyEventFilter(subpropertyEventFilter)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSubpropertyEventFilter(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateSubpropertyEventFilterRequest request =
+   *       UpdateSubpropertyEventFilterRequest.newBuilder()
+   *           .setSubpropertyEventFilter(SubpropertyEventFilter.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   SubpropertyEventFilter response =
+   *       analyticsAdminServiceClient.updateSubpropertyEventFilter(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertyEventFilter updateSubpropertyEventFilter(
+      UpdateSubpropertyEventFilterRequest request) {
+    return updateSubpropertyEventFilterCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateSubpropertyEventFilterRequest request =
+   *       UpdateSubpropertyEventFilterRequest.newBuilder()
+   *           .setSubpropertyEventFilter(SubpropertyEventFilter.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SubpropertyEventFilter> future =
+   *       analyticsAdminServiceClient.updateSubpropertyEventFilterCallable().futureCall(request);
+   *   // Do something.
+   *   SubpropertyEventFilter response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      updateSubpropertyEventFilterCallable() {
+    return stub.updateSubpropertyEventFilterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subproperty event filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubpropertyEventFilterName name =
+   *       SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]");
+   *   analyticsAdminServiceClient.deleteSubpropertyEventFilter(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subproperty event filter to delete. Format:
+   *     properties/property_id/subpropertyEventFilters/subproperty_event_filter Example:
+   *     properties/123/subpropertyEventFilters/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSubpropertyEventFilter(SubpropertyEventFilterName name) {
+    DeleteSubpropertyEventFilterRequest request =
+        DeleteSubpropertyEventFilterRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteSubpropertyEventFilter(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subproperty event filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]").toString();
+   *   analyticsAdminServiceClient.deleteSubpropertyEventFilter(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subproperty event filter to delete. Format:
+   *     properties/property_id/subpropertyEventFilters/subproperty_event_filter Example:
+   *     properties/123/subpropertyEventFilters/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSubpropertyEventFilter(String name) {
+    DeleteSubpropertyEventFilterRequest request =
+        DeleteSubpropertyEventFilterRequest.newBuilder().setName(name).build();
+    deleteSubpropertyEventFilter(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subproperty event filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteSubpropertyEventFilterRequest request =
+   *       DeleteSubpropertyEventFilterRequest.newBuilder()
+   *           .setName(
+   *               SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+   *                   .toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteSubpropertyEventFilter(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSubpropertyEventFilter(DeleteSubpropertyEventFilterRequest request) {
+    deleteSubpropertyEventFilterCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subproperty event filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteSubpropertyEventFilterRequest request =
+   *       DeleteSubpropertyEventFilterRequest.newBuilder()
+   *           .setName(
+   *               SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteSubpropertyEventFilterCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterCallable() {
+    return stub.deleteSubpropertyEventFilterCallable();
   }
 
   @Override
@@ -17673,6 +18086,103 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListRollupPropertySourceLinksFixedSizeCollection createCollection(
         List<ListRollupPropertySourceLinksPage> pages, int collectionSize) {
       return new ListRollupPropertySourceLinksFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSubpropertyEventFiltersPagedResponse
+      extends AbstractPagedListResponse<
+          ListSubpropertyEventFiltersRequest,
+          ListSubpropertyEventFiltersResponse,
+          SubpropertyEventFilter,
+          ListSubpropertyEventFiltersPage,
+          ListSubpropertyEventFiltersFixedSizeCollection> {
+
+    public static ApiFuture<ListSubpropertyEventFiltersPagedResponse> createAsync(
+        PageContext<
+                ListSubpropertyEventFiltersRequest,
+                ListSubpropertyEventFiltersResponse,
+                SubpropertyEventFilter>
+            context,
+        ApiFuture<ListSubpropertyEventFiltersResponse> futureResponse) {
+      ApiFuture<ListSubpropertyEventFiltersPage> futurePage =
+          ListSubpropertyEventFiltersPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSubpropertyEventFiltersPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSubpropertyEventFiltersPagedResponse(ListSubpropertyEventFiltersPage page) {
+      super(page, ListSubpropertyEventFiltersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSubpropertyEventFiltersPage
+      extends AbstractPage<
+          ListSubpropertyEventFiltersRequest,
+          ListSubpropertyEventFiltersResponse,
+          SubpropertyEventFilter,
+          ListSubpropertyEventFiltersPage> {
+
+    private ListSubpropertyEventFiltersPage(
+        PageContext<
+                ListSubpropertyEventFiltersRequest,
+                ListSubpropertyEventFiltersResponse,
+                SubpropertyEventFilter>
+            context,
+        ListSubpropertyEventFiltersResponse response) {
+      super(context, response);
+    }
+
+    private static ListSubpropertyEventFiltersPage createEmptyPage() {
+      return new ListSubpropertyEventFiltersPage(null, null);
+    }
+
+    @Override
+    protected ListSubpropertyEventFiltersPage createPage(
+        PageContext<
+                ListSubpropertyEventFiltersRequest,
+                ListSubpropertyEventFiltersResponse,
+                SubpropertyEventFilter>
+            context,
+        ListSubpropertyEventFiltersResponse response) {
+      return new ListSubpropertyEventFiltersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSubpropertyEventFiltersPage> createPageAsync(
+        PageContext<
+                ListSubpropertyEventFiltersRequest,
+                ListSubpropertyEventFiltersResponse,
+                SubpropertyEventFilter>
+            context,
+        ApiFuture<ListSubpropertyEventFiltersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSubpropertyEventFiltersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSubpropertyEventFiltersRequest,
+          ListSubpropertyEventFiltersResponse,
+          SubpropertyEventFilter,
+          ListSubpropertyEventFiltersPage,
+          ListSubpropertyEventFiltersFixedSizeCollection> {
+
+    private ListSubpropertyEventFiltersFixedSizeCollection(
+        List<ListSubpropertyEventFiltersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSubpropertyEventFiltersFixedSizeCollection createEmptyCollection() {
+      return new ListSubpropertyEventFiltersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSubpropertyEventFiltersFixedSizeCollection createCollection(
+        List<ListSubpropertyEventFiltersPage> pages, int collectionSize) {
+      return new ListSubpropertyEventFiltersFixedSizeCollection(pages, collectionSize);
     }
   }
 }
