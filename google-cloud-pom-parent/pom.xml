@@ -14,8 +14,8 @@
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.6.1</version>
+    <artifactId>sdk-platform-java-config</artifactId>
+    <version>3.21.0</version>
     <relativePath/>
   </parent>
 
