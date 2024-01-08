@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.18.0](https://github.com/googleapis/java-datastore/compare/v2.17.6...v2.18.0) (2024-01-08)
+
+
+### Features
+
+* Remove `@BetaApi` annotations from get/setDatabaseId methods ([#1272](https://github.com/googleapis/java-datastore/issues/1272)) ([2bd9a51](https://github.com/googleapis/java-datastore/commit/2bd9a51122248ee242bbcd4914e219d9d5e435bb))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.21.0 ([#1280](https://github.com/googleapis/java-datastore/issues/1280)) ([ac253dc](https://github.com/googleapis/java-datastore/commit/ac253dca1add844124ca03039a996196e09a1759))
+* Update dependency com.google.errorprone:error_prone_core to v2.24.1 ([#1274](https://github.com/googleapis/java-datastore/issues/1274)) ([86cd785](https://github.com/googleapis/java-datastore/commit/86cd7856463c5039601afc10fecc1b28727d4906))
+
 ## [2.17.6](https://github.com/googleapis/java-datastore/compare/v2.17.5...v2.17.6) (2023-11-30)
 
 
