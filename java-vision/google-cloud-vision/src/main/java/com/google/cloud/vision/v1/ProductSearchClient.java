@@ -77,19 +77,459 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the ProductSearchClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    <tr>
+ *      <td>CreateProductSet</td>
+ *      <td><p> Creates and returns a new ProductSet resource.
+ * <p>  Possible errors:
+ * <ul>
+ * <li>  Returns INVALID_ARGUMENT if display_name is missing, or is longer than   4096 characters.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createProductSet(CreateProductSetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>createProductSet(LocationName parent, ProductSet productSet, String productSetId)
+ *           <li>createProductSet(String parent, ProductSet productSet, String productSetId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createProductSetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListProductSets</td>
+ *      <td><p> Lists ProductSets in an unspecified order.
+ * <p>  Possible errors:
+ * <ul>
+ * <li>  Returns INVALID_ARGUMENT if page_size is greater than 100, or less   than 1.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listProductSets(ListProductSetsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listProductSets(LocationName parent)
+ *           <li>listProductSets(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listProductSetsPagedCallable()
+ *           <li>listProductSetsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetProductSet</td>
+ *      <td><p> Gets information associated with a ProductSet.
+ * <p>  Possible errors:
+ * <ul>
+ * <li>  Returns NOT_FOUND if the ProductSet does not exist.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getProductSet(GetProductSetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getProductSet(ProductSetName name)
+ *           <li>getProductSet(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getProductSetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateProductSet</td>
+ *      <td><p> Makes changes to a ProductSet resource. Only display_name can be updated currently.
+ * <p>  Possible errors:
+ * <ul>
+ * <li>  Returns NOT_FOUND if the ProductSet does not exist.
+ * <li>  Returns INVALID_ARGUMENT if display_name is present in update_mask but   missing from the request or longer than 4096 characters.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateProductSet(UpdateProductSetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>updateProductSet(ProductSet productSet, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateProductSetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteProductSet</td>
+ *      <td><p> Permanently deletes a ProductSet. Products and ReferenceImages in the ProductSet are not deleted.
+ * <p>  The actual image files are not deleted from Google Cloud Storage.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteProductSet(DeleteProductSetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>deleteProductSet(ProductSetName name)
+ *           <li>deleteProductSet(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteProductSetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateProduct</td>
+ *      <td><p> Creates and returns a new product resource.
+ * <p>  Possible errors:
+ * <ul>
+ * <li>  Returns INVALID_ARGUMENT if display_name is missing or longer than 4096   characters.
+ * <li>  Returns INVALID_ARGUMENT if description is longer than 4096 characters.
+ * <li>  Returns INVALID_ARGUMENT if product_category is missing or invalid.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createProduct(CreateProductRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>createProduct(LocationName parent, Product product, String productId)
+ *           <li>createProduct(String parent, Product product, String productId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createProductCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListProducts</td>
+ *      <td><p> Lists products in an unspecified order.
+ * <p>  Possible errors:
+ * <ul>
+ * <li>  Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listProducts(ListProductsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listProducts(LocationName parent)
+ *           <li>listProducts(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listProductsPagedCallable()
+ *           <li>listProductsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetProduct</td>
+ *      <td><p> Gets information associated with a Product.
+ * <p>  Possible errors:
+ * <ul>
+ * <li>  Returns NOT_FOUND if the Product does not exist.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getProduct(GetProductRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getProduct(ProductName name)
+ *           <li>getProduct(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getProductCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateProduct</td>
+ *      <td><p> Makes changes to a Product resource. Only the `display_name`, `description`, and `labels` fields can be updated right now.
+ * <p>  If labels are updated, the change will not be reflected in queries until the next index time.
+ * <p>  Possible errors:
+ * <ul>
+ * <li>  Returns NOT_FOUND if the Product does not exist.
+ * <li>  Returns INVALID_ARGUMENT if display_name is present in update_mask but is   missing from the request or longer than 4096 characters.
+ * <li>  Returns INVALID_ARGUMENT if description is present in update_mask but is   longer than 4096 characters.
+ * <li>  Returns INVALID_ARGUMENT if product_category is present in update_mask.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateProduct(UpdateProductRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>updateProduct(Product product, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateProductCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteProduct</td>
+ *      <td><p> Permanently deletes a product and its reference images.
+ * <p>  Metadata of the product and all its images will be deleted right away, but search queries against ProductSets containing the product may still work until all related caches are refreshed.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteProduct(DeleteProductRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>deleteProduct(ProductName name)
+ *           <li>deleteProduct(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteProductCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateReferenceImage</td>
+ *      <td><p> Creates and returns a new ReferenceImage resource.
+ * <p>  The `bounding_poly` field is optional. If `bounding_poly` is not specified, the system will try to detect regions of interest in the image that are compatible with the product_category on the parent product. If it is specified, detection is ALWAYS skipped. The system converts polygons into non-rotated rectangles.
+ * <p>  Note that the pipeline will resize the image if the image resolution is too large to process (above 50MP).
+ * <p>  Possible errors:
+ * <ul>
+ * <li>  Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096   characters.
+ * <li>  Returns INVALID_ARGUMENT if the product does not exist.
+ * <li>  Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing   compatible with the parent product's product_category is detected.
+ * <li>  Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createReferenceImage(CreateReferenceImageRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>createReferenceImage(ProductName parent, ReferenceImage referenceImage, String referenceImageId)
+ *           <li>createReferenceImage(String parent, ReferenceImage referenceImage, String referenceImageId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createReferenceImageCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteReferenceImage</td>
+ *      <td><p> Permanently deletes a reference image.
+ * <p>  The image metadata will be deleted right away, but search queries against ProductSets containing the image may still work until all related caches are refreshed.
+ * <p>  The actual image files are not deleted from Google Cloud Storage.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteReferenceImage(DeleteReferenceImageRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>deleteReferenceImage(ReferenceImageName name)
+ *           <li>deleteReferenceImage(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteReferenceImageCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListReferenceImages</td>
+ *      <td><p> Lists reference images.
+ * <p>  Possible errors:
+ * <ul>
+ * <li>  Returns NOT_FOUND if the parent product does not exist.
+ * <li>  Returns INVALID_ARGUMENT if the page_size is greater than 100, or less   than 1.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listReferenceImages(ListReferenceImagesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listReferenceImages(ProductName parent)
+ *           <li>listReferenceImages(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listReferenceImagesPagedCallable()
+ *           <li>listReferenceImagesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetReferenceImage</td>
+ *      <td><p> Gets information associated with a ReferenceImage.
+ * <p>  Possible errors:
+ * <ul>
+ * <li>  Returns NOT_FOUND if the specified image does not exist.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getReferenceImage(GetReferenceImageRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getReferenceImage(ReferenceImageName name)
+ *           <li>getReferenceImage(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getReferenceImageCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>AddProductToProductSet</td>
+ *      <td><p> Adds a Product to the specified ProductSet. If the Product is already present, no change is made.
+ * <p>  One Product can be added to at most 100 ProductSets.
+ * <p>  Possible errors:
+ * <ul>
+ * <li>  Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>addProductToProductSet(AddProductToProductSetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>addProductToProductSet(ProductSetName name, ProductName product)
+ *           <li>addProductToProductSet(ProductSetName name, String product)
+ *           <li>addProductToProductSet(String name, ProductName product)
+ *           <li>addProductToProductSet(String name, String product)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>addProductToProductSetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>RemoveProductFromProductSet</td>
+ *      <td><p> Removes a Product from the specified ProductSet.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>removeProductFromProductSet(RemoveProductFromProductSetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>removeProductFromProductSet(ProductSetName name, ProductName product)
+ *           <li>removeProductFromProductSet(ProductSetName name, String product)
+ *           <li>removeProductFromProductSet(String name, ProductName product)
+ *           <li>removeProductFromProductSet(String name, String product)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>removeProductFromProductSetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListProductsInProductSet</td>
+ *      <td><p> Lists the Products in a ProductSet, in an unspecified order. If the ProductSet does not exist, the products field of the response will be empty.
+ * <p>  Possible errors:
+ * <ul>
+ * <li>  Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listProductsInProductSet(ListProductsInProductSetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listProductsInProductSet(ProductSetName name)
+ *           <li>listProductsInProductSet(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listProductsInProductSetPagedCallable()
+ *           <li>listProductsInProductSetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ImportProductSets</td>
+ *      <td><p> Asynchronous API that imports a list of reference images to specified product sets based on a list of image information.
+ * <p>  The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the progress and results of the request. `Operation.metadata` contains `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`. (results)
+ * <p>  The input source of this method is a csv file on Google Cloud Storage. For the format of the csv file please see [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1.ImportProductSetsGcsSource.csv_file_uri].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>importProductSetsAsync(ImportProductSetsRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>importProductSetsAsync(LocationName parent, ImportProductSetsInputConfig inputConfig)
+ *           <li>importProductSetsAsync(String parent, ImportProductSetsInputConfig inputConfig)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>importProductSetsOperationCallable()
+ *           <li>importProductSetsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>PurgeProducts</td>
+ *      <td><p> Asynchronous API to delete all Products in a ProductSet or all Products that are in no ProductSet.
+ * <p>  If a Product is a member of the specified ProductSet in addition to other ProductSets, the Product will still be deleted.
+ * <p>  It is recommended to not delete the specified ProductSet until after this operation has completed. It is also recommended to not add any of the Products involved in the batch delete to a new ProductSet while this operation is running because those Products may still end up deleted.
+ * <p>  It's not possible to undo the PurgeProducts operation. Therefore, it is recommended to keep the csv files used in ImportProductSets (if that was how you originally built the Product Set) before starting PurgeProducts, in case you need to re-import the data after deletion.
+ * <p>  If the plan is to purge all of the Products from a ProductSet and then re-use the empty ProductSet to re-import new Products into the empty ProductSet, you must wait until the PurgeProducts operation has finished for that ProductSet.
+ * <p>  The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the progress and results of the request. `Operation.metadata` contains `BatchOperationMetadata`. (progress)</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>purgeProductsAsync(PurgeProductsRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>purgeProductsAsync(LocationName parent)
+ *           <li>purgeProductsAsync(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>purgeProductsOperationCallable()
+ *           <li>purgeProductsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
