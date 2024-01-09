@@ -22,7 +22,7 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
 option csharp_namespace = "Google.Cloud.CloudQuotas.V1";
-option go_package = "google.golang.org/genproto/googleapis/api/cloudquotas/v1;cloudquotas";
+option go_package = "cloud.google.com/go/cloudquotas/apiv1/cloudquotaspb;cloudquotaspb";
 option java_multiple_files = true;
 option java_outer_classname = "ResourcesProto";
 option java_package = "com.google.api.cloudquotas.v1";
@@ -36,11 +36,11 @@ enum QuotaSafetyCheck {
 
   // Validates that a quota mutation would not cause the consumer's effective
   // limit to be lower than the consumer's quota usage.
-  LIMIT_DECREASE_BELOW_USAGE = 1;
+  QUOTA_DECREASE_BELOW_USAGE = 1;
 
   // Validates that a quota mutation would not cause the consumer's effective
   // limit to decrease by more than 10 percent.
-  LIMIT_DECREASE_PERCENTAGE_TOO_HIGH = 2;
+  QUOTA_DECREASE_PERCENTAGE_TOO_HIGH = 2;
 }
 
 // QuotaInfo represents information about a particular quota for a given
@@ -93,7 +93,7 @@ message QuotaInfo {
 
   // The reset time interval for the quota. Refresh interval applies to rate
   // quota only.
-  // Example: “minute” for per minute, “day” for per day, or “10 seconds” for
+  // Example: "minute" for per minute, "day" for per day, or "10 seconds" for
   // every 10 seconds.
   string refresh_interval = 6;
 
@@ -109,7 +109,7 @@ message QuotaInfo {
   // The display name of the quota.
   string quota_display_name = 10;
 
-  // The unit in which the metric value is reported, e.g., “MByte”.
+  // The unit in which the metric value is reported, e.g., "MByte".
   string metric_unit = 11;
 
   // Whether it is eligible to request a higher quota value for this quota.
@@ -146,11 +146,11 @@ message QuotaIncreaseEligibility {
     // Default value when is_eligible is true.
     INELIGIBILITY_REASON_UNSPECIFIED = 0;
 
-    // The container is not linked with a billing account.
-    NO_BILLING_ACCOUNT = 2;
+    // The container is not linked with a valid billing account.
+    NO_VALID_BILLING_ACCOUNT = 1;
 
     // Other reasons.
-    OTHER = 3;
+    OTHER = 2;
   }
 
   // Whether a higher quota value can be requested for the quota.
@@ -181,7 +181,7 @@ message QuotaPreference {
   string name = 1;
 
   // The dimensions that this quota preference applies to. The key of the map
-  // entry is the name of a dimension, such as "region", "zone", “network_id”,
+  // entry is the name of a dimension, such as "region", "zone", "network_id",
   // and the value of the map entry is the dimension value.
   //
   // If a dimension is missing from the map of dimensions, the quota preference
@@ -220,11 +220,24 @@ message QuotaPreference {
   // quota name is unique in the service. Example: `CpusPerProjectPerRegion`
   string quota_id = 8 [(google.api.field_behavior) = REQUIRED];
 
-  // Output only. Is the quota preference pending GCP approval and fulfillment.
+  // Output only. Is the quota preference pending Google Cloud approval and
+  // fulfillment.
   bool reconciling = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // The reason / justification for this quota preference.
   string justification = 11;
+
+  // Required. Input only. An email address that can be used for quota related
+  // communication between the Google Cloud and the user in case the Google
+  // Cloud needs further information to make a decision on whether the user
+  // preferred quota can be granted.
+  //
+  // The Google account for the email address must have quota update permission
+  // for the project, folder or organization this quota preference is for.
+  string contact_email = 12 [
+    (google.api.field_behavior) = INPUT_ONLY,
+    (google.api.field_behavior) = REQUIRED
+  ];
 }
 
 // The preferred quota configuration.
@@ -252,10 +265,10 @@ message QuotaConfig {
   google.protobuf.Int64Value granted_value = 3
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The trace id that the GCP uses to provision the requested
-  // quota. This trace id may be used by the client to contact Cloud support to
-  // track the state of a quota preference request. The trace id is only
-  // produced for increase requests and is unique for each request. The
+  // Output only. The trace id that the Google Cloud uses to provision the
+  // requested quota. This trace id may be used by the client to contact Cloud
+  // support to track the state of a quota preference request. The trace id is
+  // only produced for increase requests and is unique for each request. The
   // quota decrease requests do not have a trace id.
   string trace_id = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
 

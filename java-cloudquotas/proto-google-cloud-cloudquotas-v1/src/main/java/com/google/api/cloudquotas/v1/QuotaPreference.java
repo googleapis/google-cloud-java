@@ -45,6 +45,7 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
     service_ = "";
     quotaId_ = "";
     justification_ = "";
+    contactEmail_ = "";
   }
 
   @java.lang.Override
@@ -169,7 +170,7 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", “network_id”,
+   * entry is the name of a dimension, such as "region", "zone", "network_id",
    * and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
@@ -204,7 +205,7 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", “network_id”,
+   * entry is the name of a dimension, such as "region", "zone", "network_id",
    * and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
@@ -230,7 +231,7 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", “network_id”,
+   * entry is the name of a dimension, such as "region", "zone", "network_id",
    * and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
@@ -263,7 +264,7 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", “network_id”,
+   * entry is the name of a dimension, such as "region", "zone", "network_id",
    * and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
@@ -613,7 +614,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. Is the quota preference pending GCP approval and fulfillment.
+   * Output only. Is the quota preference pending Google Cloud approval and
+   * fulfillment.
    * </pre>
    *
    * <code>bool reconciling = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -676,6 +678,73 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int CONTACT_EMAIL_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object contactEmail_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Required. Input only. An email address that can be used for quota related
+   * communication between the Google Cloud and the user in case the Google
+   * Cloud needs further information to make a decision on whether the user
+   * preferred quota can be granted.
+   *
+   * The Google account for the email address must have quota update permission
+   * for the project, folder or organization this quota preference is for.
+   * </pre>
+   *
+   * <code>
+   * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The contactEmail.
+   */
+  @java.lang.Override
+  public java.lang.String getContactEmail() {
+    java.lang.Object ref = contactEmail_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      contactEmail_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Input only. An email address that can be used for quota related
+   * communication between the Google Cloud and the user in case the Google
+   * Cloud needs further information to make a decision on whether the user
+   * preferred quota can be granted.
+   *
+   * The Google account for the email address must have quota update permission
+   * for the project, folder or organization this quota preference is for.
+   * </pre>
+   *
+   * <code>
+   * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for contactEmail.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getContactEmailBytes() {
+    java.lang.Object ref = contactEmail_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      contactEmail_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -718,6 +787,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(justification_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, justification_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contactEmail_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, contactEmail_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -765,6 +837,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(justification_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, justification_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contactEmail_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, contactEmail_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -800,6 +875,7 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
     if (!getQuotaId().equals(other.getQuotaId())) return false;
     if (getReconciling() != other.getReconciling()) return false;
     if (!getJustification().equals(other.getJustification())) return false;
+    if (!getContactEmail().equals(other.getContactEmail())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -839,6 +915,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReconciling());
     hash = (37 * hash) + JUSTIFICATION_FIELD_NUMBER;
     hash = (53 * hash) + getJustification().hashCode();
+    hash = (37 * hash) + CONTACT_EMAIL_FIELD_NUMBER;
+    hash = (53 * hash) + getContactEmail().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1022,6 +1100,7 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
       quotaId_ = "";
       reconciling_ = false;
       justification_ = "";
+      contactEmail_ = "";
       return this;
     }
 
@@ -1089,6 +1168,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.justification_ = justification_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.contactEmail_ = contactEmail_;
       }
     }
 
@@ -1174,6 +1256,11 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
       if (!other.getJustification().isEmpty()) {
         justification_ = other.justification_;
         bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (!other.getContactEmail().isEmpty()) {
+        contactEmail_ = other.contactEmail_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1268,6 +1355,12 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000200;
                 break;
               } // case 90
+            case 98:
+              {
+                contactEmail_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1446,7 +1539,7 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", “network_id”,
+     * entry is the name of a dimension, such as "region", "zone", "network_id",
      * and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
@@ -1481,7 +1574,7 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", “network_id”,
+     * entry is the name of a dimension, such as "region", "zone", "network_id",
      * and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
@@ -1507,7 +1600,7 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", “network_id”,
+     * entry is the name of a dimension, such as "region", "zone", "network_id",
      * and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
@@ -1540,7 +1633,7 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", “network_id”,
+     * entry is the name of a dimension, such as "region", "zone", "network_id",
      * and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
@@ -1579,7 +1672,7 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", “network_id”,
+     * entry is the name of a dimension, such as "region", "zone", "network_id",
      * and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
@@ -1614,7 +1707,7 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", “network_id”,
+     * entry is the name of a dimension, such as "region", "zone", "network_id",
      * and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
@@ -1647,7 +1740,7 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", “network_id”,
+     * entry is the name of a dimension, such as "region", "zone", "network_id",
      * and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
@@ -2617,7 +2710,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Is the quota preference pending GCP approval and fulfillment.
+     * Output only. Is the quota preference pending Google Cloud approval and
+     * fulfillment.
      * </pre>
      *
      * <code>bool reconciling = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2632,7 +2726,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Is the quota preference pending GCP approval and fulfillment.
+     * Output only. Is the quota preference pending Google Cloud approval and
+     * fulfillment.
      * </pre>
      *
      * <code>bool reconciling = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2651,7 +2746,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Is the quota preference pending GCP approval and fulfillment.
+     * Output only. Is the quota preference pending Google Cloud approval and
+     * fulfillment.
      * </pre>
      *
      * <code>bool reconciling = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2767,6 +2863,152 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       justification_ = value;
       bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object contactEmail_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. An email address that can be used for quota related
+     * communication between the Google Cloud and the user in case the Google
+     * Cloud needs further information to make a decision on whether the user
+     * preferred quota can be granted.
+     *
+     * The Google account for the email address must have quota update permission
+     * for the project, folder or organization this quota preference is for.
+     * </pre>
+     *
+     * <code>
+     * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The contactEmail.
+     */
+    public java.lang.String getContactEmail() {
+      java.lang.Object ref = contactEmail_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contactEmail_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. An email address that can be used for quota related
+     * communication between the Google Cloud and the user in case the Google
+     * Cloud needs further information to make a decision on whether the user
+     * preferred quota can be granted.
+     *
+     * The Google account for the email address must have quota update permission
+     * for the project, folder or organization this quota preference is for.
+     * </pre>
+     *
+     * <code>
+     * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for contactEmail.
+     */
+    public com.google.protobuf.ByteString getContactEmailBytes() {
+      java.lang.Object ref = contactEmail_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        contactEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. An email address that can be used for quota related
+     * communication between the Google Cloud and the user in case the Google
+     * Cloud needs further information to make a decision on whether the user
+     * preferred quota can be granted.
+     *
+     * The Google account for the email address must have quota update permission
+     * for the project, folder or organization this quota preference is for.
+     * </pre>
+     *
+     * <code>
+     * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The contactEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContactEmail(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      contactEmail_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. An email address that can be used for quota related
+     * communication between the Google Cloud and the user in case the Google
+     * Cloud needs further information to make a decision on whether the user
+     * preferred quota can be granted.
+     *
+     * The Google account for the email address must have quota update permission
+     * for the project, folder or organization this quota preference is for.
+     * </pre>
+     *
+     * <code>
+     * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearContactEmail() {
+      contactEmail_ = getDefaultInstance().getContactEmail();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. An email address that can be used for quota related
+     * communication between the Google Cloud and the user in case the Google
+     * Cloud needs further information to make a decision on whether the user
+     * preferred quota can be granted.
+     *
+     * The Google account for the email address must have quota update permission
+     * for the project, folder or organization this quota preference is for.
+     * </pre>
+     *
+     * <code>
+     * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The bytes for contactEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContactEmailBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      contactEmail_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
