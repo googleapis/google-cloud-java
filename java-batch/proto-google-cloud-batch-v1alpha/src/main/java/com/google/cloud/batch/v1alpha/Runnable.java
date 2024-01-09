@@ -384,11 +384,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Not yet implemented.
-     * If set to true, container will run with Image streaming.
+     * Optional. If set to true, container will run with Image streaming.
      * The container runtime will be changed to containerd
      * instead of docker. Currently, only imageUri, commands, entrypoint
      * and volumes are supported and any other fields will be ignored.
+     * Please refer
+     * [here](https://github.com/GoogleCloudPlatform/batch-samples/tree/main/api-samples/image-streaming)
+     * for the feature requirements and limitations.
      * </pre>
      *
      * <code>bool enable_image_streaming = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -915,11 +917,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Not yet implemented.
-     * If set to true, container will run with Image streaming.
+     * Optional. If set to true, container will run with Image streaming.
      * The container runtime will be changed to containerd
      * instead of docker. Currently, only imageUri, commands, entrypoint
      * and volumes are supported and any other fields will be ignored.
+     * Please refer
+     * [here](https://github.com/GoogleCloudPlatform/batch-samples/tree/main/api-samples/image-streaming)
+     * for the feature requirements and limitations.
      * </pre>
      *
      * <code>bool enable_image_streaming = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2571,11 +2575,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Not yet implemented.
-       * If set to true, container will run with Image streaming.
+       * Optional. If set to true, container will run with Image streaming.
        * The container runtime will be changed to containerd
        * instead of docker. Currently, only imageUri, commands, entrypoint
        * and volumes are supported and any other fields will be ignored.
+       * Please refer
+       * [here](https://github.com/GoogleCloudPlatform/batch-samples/tree/main/api-samples/image-streaming)
+       * for the feature requirements and limitations.
        * </pre>
        *
        * <code>bool enable_image_streaming = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2590,11 +2596,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Not yet implemented.
-       * If set to true, container will run with Image streaming.
+       * Optional. If set to true, container will run with Image streaming.
        * The container runtime will be changed to containerd
        * instead of docker. Currently, only imageUri, commands, entrypoint
        * and volumes are supported and any other fields will be ignored.
+       * Please refer
+       * [here](https://github.com/GoogleCloudPlatform/batch-samples/tree/main/api-samples/image-streaming)
+       * for the feature requirements and limitations.
        * </pre>
        *
        * <code>bool enable_image_streaming = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2613,11 +2621,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Not yet implemented.
-       * If set to true, container will run with Image streaming.
+       * Optional. If set to true, container will run with Image streaming.
        * The container runtime will be changed to containerd
        * instead of docker. Currently, only imageUri, commands, entrypoint
        * and volumes are supported and any other fields will be ignored.
+       * Please refer
+       * [here](https://github.com/GoogleCloudPlatform/batch-samples/tree/main/api-samples/image-streaming)
+       * for the feature requirements and limitations.
        * </pre>
        *
        * <code>bool enable_image_streaming = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
