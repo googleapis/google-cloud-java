@@ -15,6 +15,8 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.readrows;
 
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.InternalException;
 import com.google.bigtable.v2.ReadRowsResponse.CellChunk;
 import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter.RowBuilder;
@@ -22,6 +24,7 @@ import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.EvictingQueue;
 import com.google.protobuf.ByteString;
+import io.grpc.Status;
 import java.util.List;
 
 /**
@@ -252,6 +255,21 @@ final class StateMachine<RowT> {
       new State() {
         @Override
         State handleLastScannedRow(ByteString rowKey) {
+          if (lastCompleteRowKey != null) {
+            int cmp = ByteStringComparator.INSTANCE.compare(lastCompleteRowKey, rowKey);
+            String direction = "increasing";
+            if (reversed) {
+              cmp *= -1;
+              direction = "decreasing";
+            }
+
+            validate(
+                cmp < 0,
+                "AWAITING_NEW_ROW: last scanned key must be strictly "
+                    + direction
+                    + ". New last scanned key="
+                    + rowKey);
+          }
           completeRow = adapter.createScanMarkerRow(rowKey);
           lastCompleteRowKey = rowKey;
           return AWAITING_ROW_CONSUME;
@@ -468,9 +486,9 @@ final class StateMachine<RowT> {
     }
   }
 
-  static class InvalidInputException extends RuntimeException {
+  static class InvalidInputException extends InternalException {
     InvalidInputException(String message) {
-      super(message);
+      super(message, null, GrpcStatusCode.of(Status.Code.INTERNAL), false);
     }
   }
 }
