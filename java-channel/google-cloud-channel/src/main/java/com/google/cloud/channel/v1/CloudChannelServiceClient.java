@@ -77,19 +77,1243 @@ import javax.annotation.Generated;
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    <tr>
+ *      <td>ListCustomers</td>
+ *      <td><p> List [Customer][google.cloud.channel.v1.Customer]s.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * </ul>
+ * <p>  Return value: List of [Customer][google.cloud.channel.v1.Customer]s, or an empty list if there are no customers.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listCustomers(ListCustomersRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listCustomersPagedCallable()
+ *           <li>listCustomersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetCustomer</td>
+ *      <td><p> Returns the requested [Customer][google.cloud.channel.v1.Customer] resource.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  NOT_FOUND: The customer resource doesn't exist. Usually the result of an invalid name parameter.
+ * </ul>
+ * <p>  Return value: The [Customer][google.cloud.channel.v1.Customer] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getCustomer(GetCustomerRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getCustomer(CustomerName name)
+ *           <li>getCustomer(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getCustomerCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CheckCloudIdentityAccountsExist</td>
+ *      <td><p> Confirms the existence of Cloud Identity accounts based on the domain and if the Cloud Identity accounts are owned by the reseller.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  INVALID_VALUE: Invalid domain value in the request.
+ * </ul>
+ * <p>  Return value: A list of [CloudIdentityCustomerAccount][google.cloud.channel.v1.CloudIdentityCustomerAccount] resources for the domain (may be empty)
+ * <p>  Note: in the v1alpha1 version of the API, a NOT_FOUND error returns if no [CloudIdentityCustomerAccount][google.cloud.channel.v1.CloudIdentityCustomerAccount] resources match the domain.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>checkCloudIdentityAccountsExist(CheckCloudIdentityAccountsExistRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>checkCloudIdentityAccountsExistCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateCustomer</td>
+ *      <td><p> Creates a new [Customer][google.cloud.channel.v1.Customer] resource under the reseller or distributor account.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED:     &#42; The reseller account making the request is different from the     reseller account in the API request.     &#42; You are not authorized to create a customer. See     https://support.google.com/channelservices/answer/9759265
+ * <li>  INVALID_ARGUMENT:     &#42; Required request parameters are missing or invalid.     &#42; Domain field value doesn't match the primary email domain.
+ * </ul>
+ * <p>  Return value: The newly created [Customer][google.cloud.channel.v1.Customer] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createCustomer(CreateCustomerRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createCustomerCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateCustomer</td>
+ *      <td><p> Updates an existing [Customer][google.cloud.channel.v1.Customer] resource for the reseller or distributor.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  NOT_FOUND: No [Customer][google.cloud.channel.v1.Customer] resource found for the name in the request.
+ * </ul>
+ * <p>  Return value: The updated [Customer][google.cloud.channel.v1.Customer] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateCustomer(UpdateCustomerRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateCustomerCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteCustomer</td>
+ *      <td><p> Deletes the given [Customer][google.cloud.channel.v1.Customer] permanently.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The account making the request does not own this customer.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  FAILED_PRECONDITION: The customer has existing entitlements.
+ * <li>  NOT_FOUND: No [Customer][google.cloud.channel.v1.Customer] resource found for the name in the request.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteCustomer(DeleteCustomerRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>deleteCustomer(CustomerName name)
+ *           <li>deleteCustomer(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteCustomerCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ImportCustomer</td>
+ *      <td><p> Imports a [Customer][google.cloud.channel.v1.Customer] from the Cloud Identity associated with the provided Cloud Identity ID or domain before a TransferEntitlements call. If a linked Customer already exists and overwrite_if_exists is true, it will update that Customer's data.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED:     &#42; The reseller account making the request is different from the     reseller account in the API request.     &#42; You are not authorized to import the customer. See     https://support.google.com/channelservices/answer/9759265
+ * <li>  NOT_FOUND: Cloud Identity doesn't exist or was deleted.
+ * <li>  INVALID_ARGUMENT: Required parameters are missing, or the auth_token is expired or invalid.
+ * <li>  ALREADY_EXISTS: A customer already exists and has conflicting critical fields. Requires an overwrite.
+ * </ul>
+ * <p>  Return value: The [Customer][google.cloud.channel.v1.Customer].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>importCustomer(ImportCustomerRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>importCustomerCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ProvisionCloudIdentity</td>
+ *      <td><p> Creates a Cloud Identity for the given customer using the customer's information, or the information provided here.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>   PERMISSION_DENIED:      &#42; The customer doesn't belong to the reseller.      &#42; You are not authorized to provision cloud identity id. See      https://support.google.com/channelservices/answer/9759265
+ * <li>   INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>   NOT_FOUND: The customer was not found.
+ * <li>   ALREADY_EXISTS: The customer's primary email already exists. Retry    after changing the customer's primary contact email.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: The ID of a long-running operation.
+ * <p>  To get the results of the operation, call the GetOperation method of CloudChannelOperationsService. The Operation metadata contains an instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>provisionCloudIdentityAsync(ProvisionCloudIdentityRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>provisionCloudIdentityOperationCallable()
+ *           <li>provisionCloudIdentityCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListEntitlements</td>
+ *      <td><p> Lists [Entitlement][google.cloud.channel.v1.Entitlement]s belonging to a customer.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The customer doesn't belong to the reseller.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * </ul>
+ * <p>  Return value: A list of the customer's [Entitlement][google.cloud.channel.v1.Entitlement]s.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listEntitlements(ListEntitlementsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listEntitlementsPagedCallable()
+ *           <li>listEntitlementsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListTransferableSkus</td>
+ *      <td><p> List [TransferableSku][google.cloud.channel.v1.TransferableSku]s of a customer based on the Cloud Identity ID or Customer Name in the request.
+ * <p>  Use this method to list the entitlements information of an unowned customer. You should provide the customer's Cloud Identity ID or Customer Name.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED:     &#42; The customer doesn't belong to the reseller and has no auth token.     &#42; The supplied auth token is invalid.     &#42; The reseller account making the request is different     from the reseller account in the query.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * </ul>
+ * <p>  Return value: A list of the customer's [TransferableSku][google.cloud.channel.v1.TransferableSku].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listTransferableSkus(ListTransferableSkusRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listTransferableSkusPagedCallable()
+ *           <li>listTransferableSkusCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListTransferableOffers</td>
+ *      <td><p> List [TransferableOffer][google.cloud.channel.v1.TransferableOffer]s of a customer based on Cloud Identity ID or Customer Name in the request.
+ * <p>  Use this method when a reseller gets the entitlement information of an unowned customer. The reseller should provide the customer's Cloud Identity ID or Customer Name.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED:     &#42; The customer doesn't belong to the reseller and has no auth token.     &#42; The customer provided incorrect reseller information when generating     auth token.     &#42; The reseller account making the request is different     from the reseller account in the query.     &#42; The reseller is not authorized to transact on this Product. See     https://support.google.com/channelservices/answer/9759265
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * </ul>
+ * <p>  Return value: List of [TransferableOffer][google.cloud.channel.v1.TransferableOffer] for the given customer and SKU.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listTransferableOffers(ListTransferableOffersRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listTransferableOffersPagedCallable()
+ *           <li>listTransferableOffersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetEntitlement</td>
+ *      <td><p> Returns the requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The customer doesn't belong to the reseller.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  NOT_FOUND: The customer entitlement was not found.
+ * </ul>
+ * <p>  Return value: The requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getEntitlement(GetEntitlementRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getEntitlementCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateEntitlement</td>
+ *      <td><p> Creates an entitlement for a customer.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED:     &#42; The customer doesn't belong to the reseller.     &#42; The reseller is not authorized to transact on this Product. See     https://support.google.com/channelservices/answer/9759265
+ * <li>  INVALID_ARGUMENT:     &#42; Required request parameters are missing or invalid.     &#42; There is already a customer entitlement for a SKU from the same     product family.
+ * <li>  INVALID_VALUE: Make sure the OfferId is valid. If it is, contact Google Channel support for further troubleshooting.
+ * <li>  NOT_FOUND: The customer or offer resource was not found.
+ * <li>  ALREADY_EXISTS:     &#42; The SKU was already purchased for the customer.     &#42; The customer's primary email already exists. Retry     after changing the customer's primary contact email.
+ * <li>  CONDITION_NOT_MET or FAILED_PRECONDITION:     &#42; The domain required for purchasing a SKU has not been verified.     &#42; A pre-requisite SKU required to purchase an Add-On SKU is missing.     For example, Google Workspace Business Starter is required to purchase     Vault or Drive.     &#42; (Developer accounts only) Reseller and resold domain must meet the     following naming requirements:         &#42; Domain names must start with goog-test.         &#42; Domain names must include the reseller domain.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: The ID of a long-running operation.
+ * <p>  To get the results of the operation, call the GetOperation method of CloudChannelOperationsService. The Operation metadata will contain an instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createEntitlementAsync(CreateEntitlementRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createEntitlementOperationCallable()
+ *           <li>createEntitlementCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ChangeParameters</td>
+ *      <td><p> Change parameters of the entitlement.
+ * <p>  An entitlement update is a long-running operation and it updates the entitlement as a result of fulfillment.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The customer doesn't belong to the reseller.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid. For example, the number of seats being changed is greater than the allowed number of max seats, or decreasing seats for a commitment based plan.
+ * <li>  NOT_FOUND: Entitlement resource not found.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: The ID of a long-running operation.
+ * <p>  To get the results of the operation, call the GetOperation method of CloudChannelOperationsService. The Operation metadata will contain an instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>changeParametersAsync(ChangeParametersRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>changeParametersOperationCallable()
+ *           <li>changeParametersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ChangeRenewalSettings</td>
+ *      <td><p> Updates the renewal settings for an existing customer entitlement.
+ * <p>  An entitlement update is a long-running operation and it updates the entitlement as a result of fulfillment.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The customer doesn't belong to the reseller.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  NOT_FOUND: Entitlement resource not found.
+ * <li>  NOT_COMMITMENT_PLAN: Renewal Settings are only applicable for a commitment plan. Can't enable or disable renewals for non-commitment plans.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend.   Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: The ID of a long-running operation.
+ * <p>  To get the results of the operation, call the GetOperation method of CloudChannelOperationsService. The Operation metadata will contain an instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>changeRenewalSettingsAsync(ChangeRenewalSettingsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>changeRenewalSettingsOperationCallable()
+ *           <li>changeRenewalSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ChangeOffer</td>
+ *      <td><p> Updates the Offer for an existing customer entitlement.
+ * <p>  An entitlement update is a long-running operation and it updates the entitlement as a result of fulfillment.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The customer doesn't belong to the reseller.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  NOT_FOUND: Offer or Entitlement resource not found.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: The ID of a long-running operation.
+ * <p>  To get the results of the operation, call the GetOperation method of CloudChannelOperationsService. The Operation metadata will contain an instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>changeOfferAsync(ChangeOfferRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>changeOfferOperationCallable()
+ *           <li>changeOfferCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>StartPaidService</td>
+ *      <td><p> Starts paid service for a trial entitlement.
+ * <p>  Starts paid service for a trial entitlement immediately. This method is only applicable if a plan is set up for a trial entitlement but has some trial days remaining.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The customer doesn't belong to the reseller.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  NOT_FOUND: Entitlement resource not found.
+ * <li>  FAILED_PRECONDITION/NOT_IN_TRIAL: This method only works for entitlement on trial plans.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: The ID of a long-running operation.
+ * <p>  To get the results of the operation, call the GetOperation method of CloudChannelOperationsService. The Operation metadata will contain an instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>startPaidServiceAsync(StartPaidServiceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>startPaidServiceOperationCallable()
+ *           <li>startPaidServiceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>SuspendEntitlement</td>
+ *      <td><p> Suspends a previously fulfilled entitlement.
+ * <p>  An entitlement suspension is a long-running operation.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The customer doesn't belong to the reseller.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  NOT_FOUND: Entitlement resource not found.
+ * <li>  NOT_ACTIVE: Entitlement is not active.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: The ID of a long-running operation.
+ * <p>  To get the results of the operation, call the GetOperation method of CloudChannelOperationsService. The Operation metadata will contain an instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>suspendEntitlementAsync(SuspendEntitlementRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>suspendEntitlementOperationCallable()
+ *           <li>suspendEntitlementCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CancelEntitlement</td>
+ *      <td><p> Cancels a previously fulfilled entitlement.
+ * <p>  An entitlement cancellation is a long-running operation.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request.
+ * <li>  FAILED_PRECONDITION: There are Google Cloud projects linked to the Google Cloud entitlement's Cloud Billing subaccount.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  NOT_FOUND: Entitlement resource not found.
+ * <li>  DELETION_TYPE_NOT_ALLOWED: Cancel is only allowed for Google Workspace add-ons, or entitlements for Google Cloud's development platform.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: The ID of a long-running operation.
+ * <p>  To get the results of the operation, call the GetOperation method of CloudChannelOperationsService. The response will contain google.protobuf.Empty on success. The Operation metadata will contain an instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>cancelEntitlementAsync(CancelEntitlementRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>cancelEntitlementOperationCallable()
+ *           <li>cancelEntitlementCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ActivateEntitlement</td>
+ *      <td><p> Activates a previously suspended entitlement. Entitlements suspended for pending ToS acceptance can't be activated using this method.
+ * <p>  An entitlement activation is a long-running operation and it updates the state of the customer entitlement.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  NOT_FOUND: Entitlement resource not found.
+ * <li>  SUSPENSION_NOT_RESELLER_INITIATED: Can only activate reseller-initiated suspensions and entitlements that have accepted the TOS.
+ * <li>  NOT_SUSPENDED: Can only activate suspended entitlements not in an ACTIVE state.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: The ID of a long-running operation.
+ * <p>  To get the results of the operation, call the GetOperation method of CloudChannelOperationsService. The Operation metadata will contain an instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>activateEntitlementAsync(ActivateEntitlementRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>activateEntitlementOperationCallable()
+ *           <li>activateEntitlementCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>TransferEntitlements</td>
+ *      <td><p> Transfers customer entitlements to new reseller.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED:     &#42; The customer doesn't belong to the reseller.     &#42; The reseller is not authorized to transact on this Product. See     https://support.google.com/channelservices/answer/9759265
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  NOT_FOUND: The customer or offer resource was not found.
+ * <li>  ALREADY_EXISTS: The SKU was already transferred for the customer.
+ * <li>  CONDITION_NOT_MET or FAILED_PRECONDITION:     &#42; The SKU requires domain verification to transfer, but the domain is     not verified.     &#42; An Add-On SKU (example, Vault or Drive) is missing the     pre-requisite SKU (example, G Suite Basic).     &#42; (Developer accounts only) Reseller and resold domain must meet the     following naming requirements:         &#42; Domain names must start with goog-test.         &#42; Domain names must include the reseller domain.     &#42; Specify all transferring entitlements.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: The ID of a long-running operation.
+ * <p>  To get the results of the operation, call the GetOperation method of CloudChannelOperationsService. The Operation metadata will contain an instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>transferEntitlementsAsync(TransferEntitlementsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>transferEntitlementsOperationCallable()
+ *           <li>transferEntitlementsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>TransferEntitlementsToGoogle</td>
+ *      <td><p> Transfers customer entitlements from their current reseller to Google.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The customer doesn't belong to the reseller.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  NOT_FOUND: The customer or offer resource was not found.
+ * <li>  ALREADY_EXISTS: The SKU was already transferred for the customer.
+ * <li>  CONDITION_NOT_MET or FAILED_PRECONDITION:     &#42; The SKU requires domain verification to transfer, but the domain is     not verified.     &#42; An Add-On SKU (example, Vault or Drive) is missing the     pre-requisite SKU (example, G Suite Basic).     &#42; (Developer accounts only) Reseller and resold domain must meet the     following naming requirements:         &#42; Domain names must start with goog-test.         &#42; Domain names must include the reseller domain.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: The ID of a long-running operation.
+ * <p>  To get the results of the operation, call the GetOperation method of CloudChannelOperationsService. The response will contain google.protobuf.Empty on success. The Operation metadata will contain an instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>transferEntitlementsToGoogleAsync(TransferEntitlementsToGoogleRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>transferEntitlementsToGoogleOperationCallable()
+ *           <li>transferEntitlementsToGoogleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListChannelPartnerLinks</td>
+ *      <td><p> List [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]s belonging to a distributor. You must be a distributor to call this method.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * </ul>
+ * <p>  Return value: The list of the distributor account's [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resources.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listChannelPartnerLinks(ListChannelPartnerLinksRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listChannelPartnerLinksPagedCallable()
+ *           <li>listChannelPartnerLinksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetChannelPartnerLink</td>
+ *      <td><p> Returns the requested [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource. You must be a distributor to call this method.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  NOT_FOUND: ChannelPartnerLink resource not found because of an invalid channel partner link name.
+ * </ul>
+ * <p>  Return value: The [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getChannelPartnerLink(GetChannelPartnerLinkRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getChannelPartnerLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateChannelPartnerLink</td>
+ *      <td><p> Initiates a channel partner link between a distributor and a reseller, or between resellers in an n-tier reseller channel. Invited partners need to follow the invite_link_uri provided in the response to accept. After accepting the invitation, a link is set up between the two parties. You must be a distributor to call this method.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  ALREADY_EXISTS: The ChannelPartnerLink sent in the request already exists.
+ * <li>  NOT_FOUND: No Cloud Identity customer exists for provided domain.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: The new [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createChannelPartnerLink(CreateChannelPartnerLinkRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createChannelPartnerLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateChannelPartnerLink</td>
+ *      <td><p> Updates a channel partner link. Distributors call this method to change a link's status. For example, to suspend a partner link. You must be a distributor to call this method.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The reseller account making the request is different from the reseller account in the API request.
+ * <li>  INVALID_ARGUMENT:     &#42; Required request parameters are missing or invalid.     &#42; Link state cannot change from invited to active or suspended.     &#42; Cannot send reseller_cloud_identity_id, invite_url, or name in update     mask.
+ * <li>  NOT_FOUND: ChannelPartnerLink resource not found.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: The updated [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateChannelPartnerLink(UpdateChannelPartnerLinkRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateChannelPartnerLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetCustomerRepricingConfig</td>
+ *      <td><p> Gets information about how a Reseller modifies their bill before sending it to a Customer.
+ * <p>  Possible Error Codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: If the account making the request and the account being queried are different.
+ * <li>  NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] was not found.
+ * <li>  INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support.
+ * </ul>
+ * <p>  Return Value: If successful, the [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise returns an error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getCustomerRepricingConfig(GetCustomerRepricingConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getCustomerRepricingConfig(CustomerRepricingConfigName name)
+ *           <li>getCustomerRepricingConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getCustomerRepricingConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListCustomerRepricingConfigs</td>
+ *      <td><p> Lists information about how a Reseller modifies their bill before sending it to a Customer.
+ * <p>  Possible Error Codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: If the account making the request and the account being queried are different.
+ * <li>  NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] specified does not exist or is not associated with the given account.
+ * <li>  INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support.
+ * </ul>
+ * <p>  Return Value: If successful, the [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resources. The data for each resource is displayed in the ascending order of:
+ * <ul>
+ * <li>  Customer ID
+ * <li>  [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+ * <li>  [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+ * <li>  [CustomerRepricingConfig.update_time][google.cloud.channel.v1.CustomerRepricingConfig.update_time]
+ * </ul>
+ * <p>  If unsuccessful, returns an error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listCustomerRepricingConfigs(ListCustomerRepricingConfigsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listCustomerRepricingConfigs(CustomerName parent)
+ *           <li>listCustomerRepricingConfigs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listCustomerRepricingConfigsPagedCallable()
+ *           <li>listCustomerRepricingConfigsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateCustomerRepricingConfig</td>
+ *      <td><p> Creates a CustomerRepricingConfig. Call this method to set modifications for a specific customer's bill. You can only create configs if the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a future month. If needed, you can create a config for the current month, with some restrictions.
+ * <p>  When creating a config for a future month, make sure there are no existing configs for that [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+ * <p>  The following restrictions are for creating configs in the current month.
+ * <ul>
+ * <li>  This functionality is reserved for recovering from an erroneous config, and should not be used for regular business cases.
+ * <li>  The new config will not modify exports used with other configs. Changes to the config may be immediate, but may take up to 24 hours.
+ * <li>  There is a limit of ten configs for any [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement], for any [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+ * <li>  The contained [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config] value must be different from the value used in the current config for a [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+ * </ul>
+ * <p>  Possible Error Codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: If the account making the request and the account being queried are different.
+ * <li>  INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if the updated config is for the current month or past months.
+ * <li>  NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] specified does not exist or is not associated with the given account.
+ * <li>  INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support.
+ * </ul>
+ * <p>  Return Value: If successful, the updated [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise returns an error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createCustomerRepricingConfig(CreateCustomerRepricingConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>createCustomerRepricingConfig(CustomerName parent, CustomerRepricingConfig customerRepricingConfig)
+ *           <li>createCustomerRepricingConfig(String parent, CustomerRepricingConfig customerRepricingConfig)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createCustomerRepricingConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateCustomerRepricingConfig</td>
+ *      <td><p> Updates a CustomerRepricingConfig. Call this method to set modifications for a specific customer's bill. This method overwrites the existing CustomerRepricingConfig.
+ * <p>  You can only update configs if the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a future month. To make changes to configs for the current month, use [CreateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateCustomerRepricingConfig], taking note of its restrictions. You cannot update the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+ * <p>  When updating a config in the future:
+ * <ul>
+ * <li>  This config must already exist.
+ * </ul>
+ * <p>  Possible Error Codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: If the account making the request and the account being queried are different.
+ * <li>  INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if the updated config is for the current month or past months.
+ * <li>  NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] specified does not exist or is not associated with the given account.
+ * <li>  INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support.
+ * </ul>
+ * <p>  Return Value: If successful, the updated [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise returns an error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateCustomerRepricingConfig(UpdateCustomerRepricingConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>updateCustomerRepricingConfig(CustomerRepricingConfig customerRepricingConfig)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateCustomerRepricingConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteCustomerRepricingConfig</td>
+ *      <td><p> Deletes the given [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] permanently. You can only delete configs if their [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is set to a date after the current month.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The account making the request does not own this customer.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  FAILED_PRECONDITION: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] is active or in the past.
+ * <li>  NOT_FOUND: No [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] found for the name in the request.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteCustomerRepricingConfig(DeleteCustomerRepricingConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>deleteCustomerRepricingConfig(CustomerRepricingConfigName name)
+ *           <li>deleteCustomerRepricingConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteCustomerRepricingConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetChannelPartnerRepricingConfig</td>
+ *      <td><p> Gets information about how a Distributor modifies their bill before sending it to a ChannelPartner.
+ * <p>  Possible Error Codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: If the account making the request and the account being queried are different.
+ * <li>  NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] was not found.
+ * <li>  INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support.
+ * </ul>
+ * <p>  Return Value: If successful, the [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resource, otherwise returns an error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getChannelPartnerRepricingConfig(GetChannelPartnerRepricingConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getChannelPartnerRepricingConfig(ChannelPartnerRepricingConfigName name)
+ *           <li>getChannelPartnerRepricingConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getChannelPartnerRepricingConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListChannelPartnerRepricingConfigs</td>
+ *      <td><p> Lists information about how a Reseller modifies their bill before sending it to a ChannelPartner.
+ * <p>  Possible Error Codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: If the account making the request and the account being queried are different.
+ * <li>  NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] specified does not exist or is not associated with the given account.
+ * <li>  INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support.
+ * </ul>
+ * <p>  Return Value: If successful, the [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resources. The data for each resource is displayed in the ascending order of:
+ * <ul>
+ * <li>  Channel Partner ID
+ * <li>  [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+ * <li>  [ChannelPartnerRepricingConfig.update_time][google.cloud.channel.v1.ChannelPartnerRepricingConfig.update_time]
+ * </ul>
+ * <p>  If unsuccessful, returns an error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listChannelPartnerRepricingConfigs(ListChannelPartnerRepricingConfigsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listChannelPartnerRepricingConfigs(ChannelPartnerLinkName parent)
+ *           <li>listChannelPartnerRepricingConfigs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listChannelPartnerRepricingConfigsPagedCallable()
+ *           <li>listChannelPartnerRepricingConfigsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateChannelPartnerRepricingConfig</td>
+ *      <td><p> Creates a ChannelPartnerRepricingConfig. Call this method to set modifications for a specific ChannelPartner's bill. You can only create configs if the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a future month. If needed, you can create a config for the current month, with some restrictions.
+ * <p>  When creating a config for a future month, make sure there are no existing configs for that [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+ * <p>  The following restrictions are for creating configs in the current month.
+ * <ul>
+ * <li>  This functionality is reserved for recovering from an erroneous config, and should not be used for regular business cases.
+ * <li>  The new config will not modify exports used with other configs. Changes to the config may be immediate, but may take up to 24 hours.
+ * <li>  There is a limit of ten configs for any ChannelPartner or [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement], for any [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+ * <li>  The contained [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config] value must be different from the value used in the current config for a ChannelPartner.
+ * </ul>
+ * <p>  Possible Error Codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: If the account making the request and the account being queried are different.
+ * <li>  INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if the updated config is for the current month or past months.
+ * <li>  NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] specified does not exist or is not associated with the given account.
+ * <li>  INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support.
+ * </ul>
+ * <p>  Return Value: If successful, the updated [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resource, otherwise returns an error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createChannelPartnerRepricingConfig(CreateChannelPartnerRepricingConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>createChannelPartnerRepricingConfig(ChannelPartnerLinkName parent, ChannelPartnerRepricingConfig channelPartnerRepricingConfig)
+ *           <li>createChannelPartnerRepricingConfig(String parent, ChannelPartnerRepricingConfig channelPartnerRepricingConfig)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createChannelPartnerRepricingConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateChannelPartnerRepricingConfig</td>
+ *      <td><p> Updates a ChannelPartnerRepricingConfig. Call this method to set modifications for a specific ChannelPartner's bill. This method overwrites the existing CustomerRepricingConfig.
+ * <p>  You can only update configs if the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a future month. To make changes to configs for the current month, use [CreateChannelPartnerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateChannelPartnerRepricingConfig], taking note of its restrictions. You cannot update the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+ * <p>  When updating a config in the future:
+ * <ul>
+ * <li>  This config must already exist.
+ * </ul>
+ * <p>  Possible Error Codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: If the account making the request and the account being queried are different.
+ * <li>  INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if the updated config is for the current month or past months.
+ * <li>  NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] specified does not exist or is not associated with the given account.
+ * <li>  INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support.
+ * </ul>
+ * <p>  Return Value: If successful, the updated [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resource, otherwise returns an error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateChannelPartnerRepricingConfig(UpdateChannelPartnerRepricingConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>updateChannelPartnerRepricingConfig(ChannelPartnerRepricingConfig channelPartnerRepricingConfig)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateChannelPartnerRepricingConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteChannelPartnerRepricingConfig</td>
+ *      <td><p> Deletes the given [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] permanently. You can only delete configs if their [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is set to a date after the current month.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The account making the request does not own this customer.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  FAILED_PRECONDITION: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] is active or in the past.
+ * <li>  NOT_FOUND: No [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] found for the name in the request.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteChannelPartnerRepricingConfig(DeleteChannelPartnerRepricingConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>deleteChannelPartnerRepricingConfig(ChannelPartnerRepricingConfigName name)
+ *           <li>deleteChannelPartnerRepricingConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteChannelPartnerRepricingConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListSkuGroups</td>
+ *      <td><p> Lists the Rebilling supported SKU groups the account is authorized to sell. Reference: https://cloud.google.com/skus/sku-groups
+ * <p>  Possible Error Codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: If the account making the request and the account being queried are different, or the account doesn't exist.
+ * <li>  INTERNAL: Any non-user error related to technical issues in the backend. In this case, contact Cloud Channel support.
+ * </ul>
+ * <p>  Return Value: If successful, the [SkuGroup][google.cloud.channel.v1.SkuGroup] resources. The data for each resource is displayed in the alphabetical order of SKU group display name. The data for each resource is displayed in the ascending order of [SkuGroup.display_name][google.cloud.channel.v1.SkuGroup.display_name]
+ * <p>  If unsuccessful, returns an error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listSkuGroups(ListSkuGroupsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listSkuGroups(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listSkuGroupsPagedCallable()
+ *           <li>listSkuGroupsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListSkuGroupBillableSkus</td>
+ *      <td><p> Lists the Billable SKUs in a given SKU group.
+ * <p>  Possible error codes: PERMISSION_DENIED: If the account making the request and the account being queried for are different, or the account doesn't exist. INVALID_ARGUMENT: Missing or invalid required parameters in the request. INTERNAL: Any non-user error related to technical issue in the backend. In this case, contact cloud channel support.
+ * <p>  Return Value: If successful, the [BillableSku][google.cloud.channel.v1.BillableSku] resources. The data for each resource is displayed in the ascending order of:
+ * <ul>
+ * <li>  [BillableSku.service_display_name][google.cloud.channel.v1.BillableSku.service_display_name]
+ * <li>  [BillableSku.sku_display_name][google.cloud.channel.v1.BillableSku.sku_display_name]
+ * </ul>
+ * <p>  If unsuccessful, returns an error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listSkuGroupBillableSkus(ListSkuGroupBillableSkusRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listSkuGroupBillableSkus(SkuGroupName parent)
+ *           <li>listSkuGroupBillableSkus(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listSkuGroupBillableSkusPagedCallable()
+ *           <li>listSkuGroupBillableSkusCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>LookupOffer</td>
+ *      <td><p> Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The entitlement doesn't belong to the reseller.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  NOT_FOUND: Entitlement or offer was not found.
+ * </ul>
+ * <p>  Return value: The [Offer][google.cloud.channel.v1.Offer] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>lookupOffer(LookupOfferRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>lookupOfferCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListProducts</td>
+ *      <td><p> Lists the Products the reseller is authorized to sell.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listProducts(ListProductsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listProductsPagedCallable()
+ *           <li>listProductsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListSkus</td>
+ *      <td><p> Lists the SKUs for a product the reseller is authorized to sell.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listSkus(ListSkusRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listSkusPagedCallable()
+ *           <li>listSkusCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListOffers</td>
+ *      <td><p> Lists the Offers the reseller can sell.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listOffers(ListOffersRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listOffersPagedCallable()
+ *           <li>listOffersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListPurchasableSkus</td>
+ *      <td><p> Lists the following:
+ * <ul>
+ * <li>  SKUs that you can purchase for a customer
+ * <li>  SKUs that you can upgrade or downgrade for an entitlement.
+ * </ul>
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The customer doesn't belong to the reseller.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listPurchasableSkus(ListPurchasableSkusRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listPurchasableSkusPagedCallable()
+ *           <li>listPurchasableSkusCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListPurchasableOffers</td>
+ *      <td><p> Lists the following:
+ * <ul>
+ * <li>  Offers that you can purchase for a customer.
+ * <li>  Offers that you can change for an entitlement.
+ * </ul>
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED:     &#42; The customer doesn't belong to the reseller     &#42; The reseller is not authorized to transact on this Product. See     https://support.google.com/channelservices/answer/9759265
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listPurchasableOffers(ListPurchasableOffersRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listPurchasableOffersPagedCallable()
+ *           <li>listPurchasableOffersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>QueryEligibleBillingAccounts</td>
+ *      <td><p> Lists the billing accounts that are eligible to purchase particular SKUs for a given customer.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The customer doesn't belong to the reseller.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * </ul>
+ * <p>  Return value: Based on the provided list of SKUs, returns a list of SKU groups that must be purchased using the same billing account and the billing accounts eligible to purchase each SKU group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>queryEligibleBillingAccounts(QueryEligibleBillingAccountsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>queryEligibleBillingAccountsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>RegisterSubscriber</td>
+ *      <td><p> Registers a service account with subscriber privileges on the Cloud Pub/Sub topic for this Channel Services account. After you create a subscriber, you get the events through [SubscriberEvent][google.cloud.channel.v1.SubscriberEvent]
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The reseller account making the request and the provided reseller account are different, or the impersonated user is not a super admin.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: The topic name with the registered service email address.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>registerSubscriber(RegisterSubscriberRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>registerSubscriberCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UnregisterSubscriber</td>
+ *      <td><p> Unregisters a service account with subscriber privileges on the Cloud Pub/Sub topic created for this Channel Services account. If there are no service accounts left with subscriber privileges, this deletes the topic. You can call ListSubscribers to check for these accounts.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The reseller account making the request and the provided reseller account are different, or the impersonated user is not a super admin.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  NOT_FOUND: The topic resource doesn't exist.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: The topic name that unregistered the service email address. Returns a success response if the service email address wasn't registered with the topic.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>unregisterSubscriber(UnregisterSubscriberRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>unregisterSubscriberCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListSubscribers</td>
+ *      <td><p> Lists service accounts with subscriber privileges on the Cloud Pub/Sub topic created for this Channel Services account.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The reseller account making the request and the provided reseller account are different, or the impersonated user is not a super admin.
+ * <li>  INVALID_ARGUMENT: Required request parameters are missing or invalid.
+ * <li>  NOT_FOUND: The topic resource doesn't exist.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: A list of service email addresses.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listSubscribers(ListSubscribersRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listSubscribersPagedCallable()
+ *           <li>listSubscribersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListEntitlementChanges</td>
+ *      <td><p> List entitlement history.
+ * <p>  Possible error codes:
+ * <ul>
+ * <li>  PERMISSION_DENIED: The reseller account making the request and the provided reseller account are different.
+ * <li>  INVALID_ARGUMENT: Missing or invalid required fields in the request.
+ * <li>  NOT_FOUND: The parent resource doesn't exist. Usually the result of an invalid name parameter.
+ * <li>  INTERNAL: Any non-user error related to a technical issue in the backend. In this case, contact CloudChannel support.
+ * <li>  UNKNOWN: Any non-user error related to a technical issue in the backend. In this case, contact Cloud Channel support.
+ * </ul>
+ * <p>  Return value: List of [EntitlementChange][google.cloud.channel.v1.EntitlementChange]s.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listEntitlementChanges(ListEntitlementChangesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listEntitlementChanges(EntitlementName parent)
+ *           <li>listEntitlementChanges(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listEntitlementChangesPagedCallable()
+ *           <li>listEntitlementChangesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
