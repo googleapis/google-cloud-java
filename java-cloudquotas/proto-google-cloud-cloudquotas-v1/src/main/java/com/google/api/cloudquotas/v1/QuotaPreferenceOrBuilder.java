@@ -61,7 +61,7 @@ public interface QuotaPreferenceOrBuilder
    *
    * <pre>
    * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", “network_id”,
+   * entry is the name of a dimension, such as "region", "zone", "network_id",
    * and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
@@ -84,7 +84,7 @@ public interface QuotaPreferenceOrBuilder
    *
    * <pre>
    * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", “network_id”,
+   * entry is the name of a dimension, such as "region", "zone", "network_id",
    * and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
@@ -110,7 +110,7 @@ public interface QuotaPreferenceOrBuilder
    *
    * <pre>
    * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", “network_id”,
+   * entry is the name of a dimension, such as "region", "zone", "network_id",
    * and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
@@ -133,7 +133,7 @@ public interface QuotaPreferenceOrBuilder
    *
    * <pre>
    * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", “network_id”,
+   * entry is the name of a dimension, such as "region", "zone", "network_id",
    * and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
@@ -160,7 +160,7 @@ public interface QuotaPreferenceOrBuilder
    *
    * <pre>
    * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", “network_id”,
+   * entry is the name of a dimension, such as "region", "zone", "network_id",
    * and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
@@ -383,7 +383,8 @@ public interface QuotaPreferenceOrBuilder
    *
    *
    * <pre>
-   * Output only. Is the quota preference pending GCP approval and fulfillment.
+   * Output only. Is the quota preference pending Google Cloud approval and
+   * fulfillment.
    * </pre>
    *
    * <code>bool reconciling = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -416,4 +417,45 @@ public interface QuotaPreferenceOrBuilder
    * @return The bytes for justification.
    */
   com.google.protobuf.ByteString getJustificationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Input only. An email address that can be used for quota related
+   * communication between the Google Cloud and the user in case the Google
+   * Cloud needs further information to make a decision on whether the user
+   * preferred quota can be granted.
+   *
+   * The Google account for the email address must have quota update permission
+   * for the project, folder or organization this quota preference is for.
+   * </pre>
+   *
+   * <code>
+   * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The contactEmail.
+   */
+  java.lang.String getContactEmail();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Input only. An email address that can be used for quota related
+   * communication between the Google Cloud and the user in case the Google
+   * Cloud needs further information to make a decision on whether the user
+   * preferred quota can be granted.
+   *
+   * The Google account for the email address must have quota update permission
+   * for the project, folder or organization this quota preference is for.
+   * </pre>
+   *
+   * <code>
+   * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bytes for contactEmail.
+   */
+  com.google.protobuf.ByteString getContactEmailBytes();
 }

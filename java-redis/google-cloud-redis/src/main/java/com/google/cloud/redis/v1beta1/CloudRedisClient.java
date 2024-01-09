@@ -82,19 +82,241 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the CloudRedisClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    <tr>
+ *      <td>ListInstances</td>
+ *      <td><p> Lists all Redis instances owned by a project in either the specified location (region) or all locations.
+ * <p>  The location should have the following format:
+ * <ul>
+ * <li>  `projects/{project_id}/locations/{location_id}`
+ * </ul>
+ * <p>  If `location_id` is specified as `-` (wildcard), then all regions available to the project are queried, and the results are aggregated.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listInstances(ListInstancesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listInstances(LocationName parent)
+ *           <li>listInstances(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listInstancesPagedCallable()
+ *           <li>listInstancesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetInstance</td>
+ *      <td><p> Gets the details of a specific Redis instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getInstance(GetInstanceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getInstance(InstanceName name)
+ *           <li>getInstance(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetInstanceAuthString</td>
+ *      <td><p> Gets the AUTH string for a Redis instance. If AUTH is not enabled for the instance the response will be empty. This information is not included in the details returned to GetInstance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getInstanceAuthString(GetInstanceAuthStringRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getInstanceAuthString(InstanceName name)
+ *           <li>getInstanceAuthString(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getInstanceAuthStringCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateInstance</td>
+ *      <td><p> Creates a Redis instance based on the specified tier and memory size.
+ * <p>  By default, the instance is accessible from the project's [default network](https://cloud.google.com/vpc/docs/vpc).
+ * <p>  The creation is executed asynchronously and callers may check the returned operation to track its progress. Once the operation is completed the Redis instance will be fully functional. The completed longrunning.Operation will contain the new instance object in the response field.
+ * <p>  The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createInstanceAsync(CreateInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createInstanceAsync(LocationName parent, String instanceId, Instance instance)
+ *           <li>createInstanceAsync(String parent, String instanceId, Instance instance)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createInstanceOperationCallable()
+ *           <li>createInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateInstance</td>
+ *      <td><p> Updates the metadata and configuration of a specific Redis instance.
+ * <p>  Completed longrunning.Operation will contain the new instance object in the response field. The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateInstanceAsync(UpdateInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateInstanceAsync(FieldMask updateMask, Instance instance)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateInstanceOperationCallable()
+ *           <li>updateInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpgradeInstance</td>
+ *      <td><p> Upgrades Redis instance to the newer Redis version specified in the request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>upgradeInstanceAsync(UpgradeInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>upgradeInstanceAsync(InstanceName name, String redisVersion)
+ *           <li>upgradeInstanceAsync(String name, String redisVersion)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>upgradeInstanceOperationCallable()
+ *           <li>upgradeInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ImportInstance</td>
+ *      <td><p> Import a Redis RDB snapshot file from Cloud Storage into a Redis instance.
+ * <p>  Redis may stop serving during this operation. Instance state will be IMPORTING for entire operation. When complete, the instance will contain only data from the imported file.
+ * <p>  The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>importInstanceAsync(ImportInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>importInstanceAsync(String name, InputConfig inputConfig)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>importInstanceOperationCallable()
+ *           <li>importInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ExportInstance</td>
+ *      <td><p> Export Redis instance data into a Redis RDB format file in Cloud Storage.
+ * <p>  Redis will continue serving during this operation.
+ * <p>  The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>exportInstanceAsync(ExportInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>exportInstanceAsync(String name, OutputConfig outputConfig)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>exportInstanceOperationCallable()
+ *           <li>exportInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>FailoverInstance</td>
+ *      <td><p> Initiates a failover of the primary node to current replica node for a specific STANDARD tier Cloud Memorystore for Redis instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>failoverInstanceAsync(FailoverInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>failoverInstanceAsync(InstanceName name, FailoverInstanceRequest.DataProtectionMode dataProtectionMode)
+ *           <li>failoverInstanceAsync(String name, FailoverInstanceRequest.DataProtectionMode dataProtectionMode)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>failoverInstanceOperationCallable()
+ *           <li>failoverInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteInstance</td>
+ *      <td><p> Deletes a specific Redis instance.  Instance stops serving and data is deleted.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteInstanceAsync(DeleteInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteInstanceAsync(InstanceName name)
+ *           <li>deleteInstanceAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteInstanceOperationCallable()
+ *           <li>deleteInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>RescheduleMaintenance</td>
+ *      <td><p> Reschedule maintenance for a given instance in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>rescheduleMaintenanceAsync(RescheduleMaintenanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>rescheduleMaintenanceAsync(InstanceName name, RescheduleMaintenanceRequest.RescheduleType rescheduleType, Timestamp scheduleTime)
+ *           <li>rescheduleMaintenanceAsync(String name, RescheduleMaintenanceRequest.RescheduleType rescheduleType, Timestamp scheduleTime)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>rescheduleMaintenanceOperationCallable()
+ *           <li>rescheduleMaintenanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *

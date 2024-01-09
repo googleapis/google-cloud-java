@@ -41,6 +41,8 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
 
   private ReleaseNotificationEvent() {
     message_ = "";
+    pipelineUid_ = "";
+    releaseUid_ = "";
     release_ = "";
     type_ = 0;
   }
@@ -111,6 +113,108 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       message_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PIPELINE_UID_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pipelineUid_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier of the `DeliveryPipeline`.
+   * </pre>
+   *
+   * <code>string pipeline_uid = 4;</code>
+   *
+   * @return The pipelineUid.
+   */
+  @java.lang.Override
+  public java.lang.String getPipelineUid() {
+    java.lang.Object ref = pipelineUid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pipelineUid_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier of the `DeliveryPipeline`.
+   * </pre>
+   *
+   * <code>string pipeline_uid = 4;</code>
+   *
+   * @return The bytes for pipelineUid.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPipelineUidBytes() {
+    java.lang.Object ref = pipelineUid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pipelineUid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RELEASE_UID_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object releaseUid_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier of the `Release`.
+   * </pre>
+   *
+   * <code>string release_uid = 5;</code>
+   *
+   * @return The releaseUid.
+   */
+  @java.lang.Override
+  public java.lang.String getReleaseUid() {
+    java.lang.Object ref = releaseUid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      releaseUid_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier of the `Release`.
+   * </pre>
+   *
+   * <code>string release_uid = 5;</code>
+   *
+   * @return The bytes for releaseUid.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getReleaseUidBytes() {
+    java.lang.Object ref = releaseUid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      releaseUid_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -225,6 +329,12 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
     if (type_ != com.google.cloud.deploy.v1.Type.TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, type_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineUid_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pipelineUid_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(releaseUid_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, releaseUid_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -243,6 +353,12 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
     if (type_ != com.google.cloud.deploy.v1.Type.TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, type_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineUid_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pipelineUid_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(releaseUid_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, releaseUid_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -260,6 +376,8 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
         (com.google.cloud.deploy.v1.ReleaseNotificationEvent) obj;
 
     if (!getMessage().equals(other.getMessage())) return false;
+    if (!getPipelineUid().equals(other.getPipelineUid())) return false;
+    if (!getReleaseUid().equals(other.getReleaseUid())) return false;
     if (!getRelease().equals(other.getRelease())) return false;
     if (type_ != other.type_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -275,6 +393,10 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
+    hash = (37 * hash) + PIPELINE_UID_FIELD_NUMBER;
+    hash = (53 * hash) + getPipelineUid().hashCode();
+    hash = (37 * hash) + RELEASE_UID_FIELD_NUMBER;
+    hash = (53 * hash) + getReleaseUid().hashCode();
     hash = (37 * hash) + RELEASE_FIELD_NUMBER;
     hash = (53 * hash) + getRelease().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -421,6 +543,8 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       super.clear();
       bitField0_ = 0;
       message_ = "";
+      pipelineUid_ = "";
+      releaseUid_ = "";
       release_ = "";
       type_ = 0;
       return this;
@@ -463,9 +587,15 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
         result.message_ = message_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.release_ = release_;
+        result.pipelineUid_ = pipelineUid_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.releaseUid_ = releaseUid_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.release_ = release_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.type_ = type_;
       }
     }
@@ -521,9 +651,19 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getPipelineUid().isEmpty()) {
+        pipelineUid_ = other.pipelineUid_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (!other.getReleaseUid().isEmpty()) {
+        releaseUid_ = other.releaseUid_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.getRelease().isEmpty()) {
         release_ = other.release_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -564,15 +704,27 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
             case 18:
               {
                 release_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 24:
               {
                 type_ = input.readEnum();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 24
+            case 34:
+              {
+                pipelineUid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
+            case 42:
+              {
+                releaseUid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -698,6 +850,218 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       return this;
     }
 
+    private java.lang.Object pipelineUid_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier of the `DeliveryPipeline`.
+     * </pre>
+     *
+     * <code>string pipeline_uid = 4;</code>
+     *
+     * @return The pipelineUid.
+     */
+    public java.lang.String getPipelineUid() {
+      java.lang.Object ref = pipelineUid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pipelineUid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier of the `DeliveryPipeline`.
+     * </pre>
+     *
+     * <code>string pipeline_uid = 4;</code>
+     *
+     * @return The bytes for pipelineUid.
+     */
+    public com.google.protobuf.ByteString getPipelineUidBytes() {
+      java.lang.Object ref = pipelineUid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pipelineUid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier of the `DeliveryPipeline`.
+     * </pre>
+     *
+     * <code>string pipeline_uid = 4;</code>
+     *
+     * @param value The pipelineUid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPipelineUid(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pipelineUid_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier of the `DeliveryPipeline`.
+     * </pre>
+     *
+     * <code>string pipeline_uid = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPipelineUid() {
+      pipelineUid_ = getDefaultInstance().getPipelineUid();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier of the `DeliveryPipeline`.
+     * </pre>
+     *
+     * <code>string pipeline_uid = 4;</code>
+     *
+     * @param value The bytes for pipelineUid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPipelineUidBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pipelineUid_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object releaseUid_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier of the `Release`.
+     * </pre>
+     *
+     * <code>string release_uid = 5;</code>
+     *
+     * @return The releaseUid.
+     */
+    public java.lang.String getReleaseUid() {
+      java.lang.Object ref = releaseUid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        releaseUid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier of the `Release`.
+     * </pre>
+     *
+     * <code>string release_uid = 5;</code>
+     *
+     * @return The bytes for releaseUid.
+     */
+    public com.google.protobuf.ByteString getReleaseUidBytes() {
+      java.lang.Object ref = releaseUid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        releaseUid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier of the `Release`.
+     * </pre>
+     *
+     * <code>string release_uid = 5;</code>
+     *
+     * @param value The releaseUid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReleaseUid(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      releaseUid_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier of the `Release`.
+     * </pre>
+     *
+     * <code>string release_uid = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReleaseUid() {
+      releaseUid_ = getDefaultInstance().getReleaseUid();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier of the `Release`.
+     * </pre>
+     *
+     * <code>string release_uid = 5;</code>
+     *
+     * @param value The bytes for releaseUid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReleaseUidBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      releaseUid_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object release_ = "";
     /**
      *
@@ -760,7 +1124,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       release_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -777,7 +1141,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
      */
     public Builder clearRelease() {
       release_ = getDefaultInstance().getRelease();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -799,7 +1163,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       release_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -834,7 +1198,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
      */
     public Builder setTypeValue(int value) {
       type_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -870,7 +1234,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -887,7 +1251,7 @@ public final class ReleaseNotificationEvent extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       type_ = 0;
       onChanged();
       return this;

@@ -62,19 +62,382 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the AzureClustersClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    <tr>
+ *      <td>CreateAzureClient</td>
+ *      <td><p> Creates a new [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource on a given Google Cloud project and region.
+ * <p>  `AzureClient` resources hold client authentication information needed by the Anthos Multicloud API to manage Azure resources on your Azure subscription on your behalf.
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createAzureClientAsync(CreateAzureClientRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createAzureClientAsync(LocationName parent, AzureClient azureClient, String azureClientId)
+ *           <li>createAzureClientAsync(String parent, AzureClient azureClient, String azureClientId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createAzureClientOperationCallable()
+ *           <li>createAzureClientCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAzureClient</td>
+ *      <td><p> Describes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAzureClient(GetAzureClientRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAzureClient(AzureClientName name)
+ *           <li>getAzureClient(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAzureClientCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListAzureClients</td>
+ *      <td><p> Lists all [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources on a given Google Cloud project and region.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listAzureClients(ListAzureClientsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listAzureClients(LocationName parent)
+ *           <li>listAzureClients(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listAzureClientsPagedCallable()
+ *           <li>listAzureClientsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteAzureClient</td>
+ *      <td><p> Deletes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
+ * <p>  If the client is used by one or more clusters, deletion will fail and a `FAILED_PRECONDITION` error will be returned.
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteAzureClientAsync(DeleteAzureClientRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteAzureClientAsync(AzureClientName name)
+ *           <li>deleteAzureClientAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteAzureClientOperationCallable()
+ *           <li>deleteAzureClientCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateAzureCluster</td>
+ *      <td><p> Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource on a given Google Cloud Platform project and region.
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createAzureClusterAsync(CreateAzureClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createAzureClusterAsync(LocationName parent, AzureCluster azureCluster, String azureClusterId)
+ *           <li>createAzureClusterAsync(String parent, AzureCluster azureCluster, String azureClusterId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createAzureClusterOperationCallable()
+ *           <li>createAzureClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateAzureCluster</td>
+ *      <td><p> Updates an [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateAzureClusterAsync(UpdateAzureClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateAzureClusterAsync(AzureCluster azureCluster, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateAzureClusterOperationCallable()
+ *           <li>updateAzureClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAzureCluster</td>
+ *      <td><p> Describes a specific [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAzureCluster(GetAzureClusterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAzureCluster(AzureClusterName name)
+ *           <li>getAzureCluster(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAzureClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListAzureClusters</td>
+ *      <td><p> Lists all [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resources on a given Google Cloud project and region.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listAzureClusters(ListAzureClustersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listAzureClusters(LocationName parent)
+ *           <li>listAzureClusters(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listAzureClustersPagedCallable()
+ *           <li>listAzureClustersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteAzureCluster</td>
+ *      <td><p> Deletes a specific [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
+ * <p>  Fails if the cluster has one or more associated [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources.
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteAzureClusterAsync(DeleteAzureClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteAzureClusterAsync(AzureClusterName name)
+ *           <li>deleteAzureClusterAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteAzureClusterOperationCallable()
+ *           <li>deleteAzureClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GenerateAzureClusterAgentToken</td>
+ *      <td><p> Generates an access token for a cluster agent.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>generateAzureClusterAgentToken(GenerateAzureClusterAgentTokenRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>generateAzureClusterAgentTokenCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GenerateAzureAccessToken</td>
+ *      <td><p> Generates a short-lived access token to authenticate to a given [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>generateAzureAccessToken(GenerateAzureAccessTokenRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>generateAzureAccessTokenCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateAzureNodePool</td>
+ *      <td><p> Creates a new [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool], attached to a given [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createAzureNodePoolAsync(CreateAzureNodePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createAzureNodePoolAsync(AzureClusterName parent, AzureNodePool azureNodePool, String azureNodePoolId)
+ *           <li>createAzureNodePoolAsync(String parent, AzureNodePool azureNodePool, String azureNodePoolId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createAzureNodePoolOperationCallable()
+ *           <li>createAzureNodePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateAzureNodePool</td>
+ *      <td><p> Updates an [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateAzureNodePoolAsync(UpdateAzureNodePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateAzureNodePoolAsync(AzureNodePool azureNodePool, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateAzureNodePoolOperationCallable()
+ *           <li>updateAzureNodePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAzureNodePool</td>
+ *      <td><p> Describes a specific [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAzureNodePool(GetAzureNodePoolRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAzureNodePool(AzureNodePoolName name)
+ *           <li>getAzureNodePool(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAzureNodePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListAzureNodePools</td>
+ *      <td><p> Lists all [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources on a given [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listAzureNodePools(ListAzureNodePoolsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listAzureNodePools(AzureClusterName parent)
+ *           <li>listAzureNodePools(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listAzureNodePoolsPagedCallable()
+ *           <li>listAzureNodePoolsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteAzureNodePool</td>
+ *      <td><p> Deletes a specific [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteAzureNodePoolAsync(DeleteAzureNodePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteAzureNodePoolAsync(AzureNodePoolName name)
+ *           <li>deleteAzureNodePoolAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteAzureNodePoolOperationCallable()
+ *           <li>deleteAzureNodePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAzureOpenIdConfig</td>
+ *      <td><p> Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0 specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAzureOpenIdConfig(GetAzureOpenIdConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAzureOpenIdConfig(AzureClusterName azureCluster)
+ *           <li>getAzureOpenIdConfig(String azureCluster)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAzureOpenIdConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAzureJsonWebKeys</td>
+ *      <td><p> Gets the public component of the cluster signing keys in JSON Web Key format.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAzureJsonWebKeys(GetAzureJsonWebKeysRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAzureJsonWebKeys(AzureClusterName azureCluster)
+ *           <li>getAzureJsonWebKeys(String azureCluster)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAzureJsonWebKeysCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAzureServerConfig</td>
+ *      <td><p> Returns information, such as supported Azure regions and Kubernetes versions, on a given Google Cloud location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAzureServerConfig(GetAzureServerConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAzureServerConfig(AzureServerConfigName name)
+ *           <li>getAzureServerConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAzureServerConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *

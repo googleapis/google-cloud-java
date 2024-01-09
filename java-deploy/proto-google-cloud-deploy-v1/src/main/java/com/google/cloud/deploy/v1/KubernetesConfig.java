@@ -188,6 +188,56 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     com.google.protobuf.DurationOrBuilder getRouteUpdateWaitTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time to migrate traffic back from the canary
+     * Service to the original Service during the stable phase deployment. If
+     * specified, must be between 15s and 3600s. If unspecified, there is no
+     * cutback time.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration stable_cutback_duration = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the stableCutbackDuration field is set.
+     */
+    boolean hasStableCutbackDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time to migrate traffic back from the canary
+     * Service to the original Service during the stable phase deployment. If
+     * specified, must be between 15s and 3600s. If unspecified, there is no
+     * cutback time.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration stable_cutback_duration = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The stableCutbackDuration.
+     */
+    com.google.protobuf.Duration getStableCutbackDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time to migrate traffic back from the canary
+     * Service to the original Service during the stable phase deployment. If
+     * specified, must be between 15s and 3600s. If unspecified, there is no
+     * cutback time.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration stable_cutback_duration = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.DurationOrBuilder getStableCutbackDurationOrBuilder();
   }
   /**
    *
@@ -452,6 +502,71 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           : routeUpdateWaitTime_;
     }
 
+    public static final int STABLE_CUTBACK_DURATION_FIELD_NUMBER = 5;
+    private com.google.protobuf.Duration stableCutbackDuration_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time to migrate traffic back from the canary
+     * Service to the original Service during the stable phase deployment. If
+     * specified, must be between 15s and 3600s. If unspecified, there is no
+     * cutback time.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration stable_cutback_duration = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the stableCutbackDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasStableCutbackDuration() {
+      return stableCutbackDuration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time to migrate traffic back from the canary
+     * Service to the original Service during the stable phase deployment. If
+     * specified, must be between 15s and 3600s. If unspecified, there is no
+     * cutback time.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration stable_cutback_duration = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The stableCutbackDuration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getStableCutbackDuration() {
+      return stableCutbackDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : stableCutbackDuration_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time to migrate traffic back from the canary
+     * Service to the original Service during the stable phase deployment. If
+     * specified, must be between 15s and 3600s. If unspecified, there is no
+     * cutback time.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration stable_cutback_duration = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getStableCutbackDurationOrBuilder() {
+      return stableCutbackDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : stableCutbackDuration_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -478,6 +593,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (routeUpdateWaitTime_ != null) {
         output.writeMessage(4, getRouteUpdateWaitTime());
       }
+      if (stableCutbackDuration_ != null) {
+        output.writeMessage(5, getStableCutbackDuration());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -499,6 +617,10 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (routeUpdateWaitTime_ != null) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(4, getRouteUpdateWaitTime());
+      }
+      if (stableCutbackDuration_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(5, getStableCutbackDuration());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -523,6 +645,10 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (hasRouteUpdateWaitTime()) {
         if (!getRouteUpdateWaitTime().equals(other.getRouteUpdateWaitTime())) return false;
       }
+      if (hasStableCutbackDuration() != other.hasStableCutbackDuration()) return false;
+      if (hasStableCutbackDuration()) {
+        if (!getStableCutbackDuration().equals(other.getStableCutbackDuration())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -543,6 +669,10 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (hasRouteUpdateWaitTime()) {
         hash = (37 * hash) + ROUTE_UPDATE_WAIT_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getRouteUpdateWaitTime().hashCode();
+      }
+      if (hasStableCutbackDuration()) {
+        hash = (37 * hash) + STABLE_CUTBACK_DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getStableCutbackDuration().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -694,6 +824,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           routeUpdateWaitTimeBuilder_.dispose();
           routeUpdateWaitTimeBuilder_ = null;
         }
+        stableCutbackDuration_ = null;
+        if (stableCutbackDurationBuilder_ != null) {
+          stableCutbackDurationBuilder_.dispose();
+          stableCutbackDurationBuilder_ = null;
+        }
         return this;
       }
 
@@ -746,6 +881,12 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
               routeUpdateWaitTimeBuilder_ == null
                   ? routeUpdateWaitTime_
                   : routeUpdateWaitTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.stableCutbackDuration_ =
+              stableCutbackDurationBuilder_ == null
+                  ? stableCutbackDuration_
+                  : stableCutbackDurationBuilder_.build();
         }
       }
 
@@ -817,6 +958,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         if (other.hasRouteUpdateWaitTime()) {
           mergeRouteUpdateWaitTime(other.getRouteUpdateWaitTime());
         }
+        if (other.hasStableCutbackDuration()) {
+          mergeStableCutbackDuration(other.getStableCutbackDuration());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -868,6 +1012,13 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 42:
+                {
+                  input.readMessage(
+                      getStableCutbackDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1427,6 +1578,235 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           routeUpdateWaitTime_ = null;
         }
         return routeUpdateWaitTimeBuilder_;
+      }
+
+      private com.google.protobuf.Duration stableCutbackDuration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          stableCutbackDurationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to migrate traffic back from the canary
+       * Service to the original Service during the stable phase deployment. If
+       * specified, must be between 15s and 3600s. If unspecified, there is no
+       * cutback time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration stable_cutback_duration = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the stableCutbackDuration field is set.
+       */
+      public boolean hasStableCutbackDuration() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to migrate traffic back from the canary
+       * Service to the original Service during the stable phase deployment. If
+       * specified, must be between 15s and 3600s. If unspecified, there is no
+       * cutback time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration stable_cutback_duration = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The stableCutbackDuration.
+       */
+      public com.google.protobuf.Duration getStableCutbackDuration() {
+        if (stableCutbackDurationBuilder_ == null) {
+          return stableCutbackDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : stableCutbackDuration_;
+        } else {
+          return stableCutbackDurationBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to migrate traffic back from the canary
+       * Service to the original Service during the stable phase deployment. If
+       * specified, must be between 15s and 3600s. If unspecified, there is no
+       * cutback time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration stable_cutback_duration = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setStableCutbackDuration(com.google.protobuf.Duration value) {
+        if (stableCutbackDurationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          stableCutbackDuration_ = value;
+        } else {
+          stableCutbackDurationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to migrate traffic back from the canary
+       * Service to the original Service during the stable phase deployment. If
+       * specified, must be between 15s and 3600s. If unspecified, there is no
+       * cutback time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration stable_cutback_duration = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setStableCutbackDuration(
+          com.google.protobuf.Duration.Builder builderForValue) {
+        if (stableCutbackDurationBuilder_ == null) {
+          stableCutbackDuration_ = builderForValue.build();
+        } else {
+          stableCutbackDurationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to migrate traffic back from the canary
+       * Service to the original Service during the stable phase deployment. If
+       * specified, must be between 15s and 3600s. If unspecified, there is no
+       * cutback time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration stable_cutback_duration = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeStableCutbackDuration(com.google.protobuf.Duration value) {
+        if (stableCutbackDurationBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && stableCutbackDuration_ != null
+              && stableCutbackDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getStableCutbackDurationBuilder().mergeFrom(value);
+          } else {
+            stableCutbackDuration_ = value;
+          }
+        } else {
+          stableCutbackDurationBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to migrate traffic back from the canary
+       * Service to the original Service during the stable phase deployment. If
+       * specified, must be between 15s and 3600s. If unspecified, there is no
+       * cutback time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration stable_cutback_duration = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearStableCutbackDuration() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        stableCutbackDuration_ = null;
+        if (stableCutbackDurationBuilder_ != null) {
+          stableCutbackDurationBuilder_.dispose();
+          stableCutbackDurationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to migrate traffic back from the canary
+       * Service to the original Service during the stable phase deployment. If
+       * specified, must be between 15s and 3600s. If unspecified, there is no
+       * cutback time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration stable_cutback_duration = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Duration.Builder getStableCutbackDurationBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getStableCutbackDurationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to migrate traffic back from the canary
+       * Service to the original Service during the stable phase deployment. If
+       * specified, must be between 15s and 3600s. If unspecified, there is no
+       * cutback time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration stable_cutback_duration = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.DurationOrBuilder getStableCutbackDurationOrBuilder() {
+        if (stableCutbackDurationBuilder_ != null) {
+          return stableCutbackDurationBuilder_.getMessageOrBuilder();
+        } else {
+          return stableCutbackDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : stableCutbackDuration_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to migrate traffic back from the canary
+       * Service to the original Service during the stable phase deployment. If
+       * specified, must be between 15s and 3600s. If unspecified, there is no
+       * cutback time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration stable_cutback_duration = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getStableCutbackDurationFieldBuilder() {
+        if (stableCutbackDurationBuilder_ == null) {
+          stableCutbackDurationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getStableCutbackDuration(), getParentForChildren(), isClean());
+          stableCutbackDuration_ = null;
+        }
+        return stableCutbackDurationBuilder_;
       }
 
       @java.lang.Override

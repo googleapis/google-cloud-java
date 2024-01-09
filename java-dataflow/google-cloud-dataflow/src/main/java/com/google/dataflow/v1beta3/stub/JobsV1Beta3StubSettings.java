@@ -284,6 +284,12 @@ public class JobsV1Beta3StubSettings extends StubSettings<JobsV1Beta3StubSetting
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "dataflow";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();

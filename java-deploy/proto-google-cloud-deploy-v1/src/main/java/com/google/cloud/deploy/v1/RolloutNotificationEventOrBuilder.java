@@ -102,6 +102,56 @@ public interface RolloutNotificationEventOrBuilder
    *
    *
    * <pre>
+   * The name of the `Release`.
+   * </pre>
+   *
+   * <code>string release = 7;</code>
+   *
+   * @return The release.
+   */
+  java.lang.String getRelease();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the `Release`.
+   * </pre>
+   *
+   * <code>string release = 7;</code>
+   *
+   * @return The bytes for release.
+   */
+  com.google.protobuf.ByteString getReleaseBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier of the `Rollout`.
+   * </pre>
+   *
+   * <code>string rollout_uid = 8;</code>
+   *
+   * @return The rolloutUid.
+   */
+  java.lang.String getRolloutUid();
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier of the `Rollout`.
+   * </pre>
+   *
+   * <code>string rollout_uid = 8;</code>
+   *
+   * @return The bytes for rolloutUid.
+   */
+  com.google.protobuf.ByteString getRolloutUidBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The name of the `Rollout`.
    * </pre>
    *
@@ -127,31 +177,6 @@ public interface RolloutNotificationEventOrBuilder
    *
    *
    * <pre>
-   * Type of this notification, e.g. for a Pub/Sub failure.
-   * </pre>
-   *
-   * <code>.google.cloud.deploy.v1.Type type = 5;</code>
-   *
-   * @return The enum numeric value on the wire for type.
-   */
-  int getTypeValue();
-  /**
-   *
-   *
-   * <pre>
-   * Type of this notification, e.g. for a Pub/Sub failure.
-   * </pre>
-   *
-   * <code>.google.cloud.deploy.v1.Type type = 5;</code>
-   *
-   * @return The type.
-   */
-  com.google.cloud.deploy.v1.Type getType();
-
-  /**
-   *
-   *
-   * <pre>
    * ID of the `Target` that the rollout is deployed to.
    * </pre>
    *
@@ -172,4 +197,29 @@ public interface RolloutNotificationEventOrBuilder
    * @return The bytes for targetId.
    */
   com.google.protobuf.ByteString getTargetIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of this notification, e.g. for a Pub/Sub failure.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Type type = 5;</code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Type of this notification, e.g. for a Pub/Sub failure.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Type type = 5;</code>
+   *
+   * @return The type.
+   */
+  com.google.cloud.deploy.v1.Type getType();
 }

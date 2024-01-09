@@ -258,6 +258,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                             ProtoRestSerializer<ImportSshPublicKeyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "projectId", request.getProjectId());
+                            serializer.putQueryParam(fields, "regions", request.getRegionsList());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

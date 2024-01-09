@@ -46,9 +46,9 @@ public enum QuotaSafetyCheck implements com.google.protobuf.ProtocolMessageEnum 
    * limit to be lower than the consumer's quota usage.
    * </pre>
    *
-   * <code>LIMIT_DECREASE_BELOW_USAGE = 1;</code>
+   * <code>QUOTA_DECREASE_BELOW_USAGE = 1;</code>
    */
-  LIMIT_DECREASE_BELOW_USAGE(1),
+  QUOTA_DECREASE_BELOW_USAGE(1),
   /**
    *
    *
@@ -57,9 +57,9 @@ public enum QuotaSafetyCheck implements com.google.protobuf.ProtocolMessageEnum 
    * limit to decrease by more than 10 percent.
    * </pre>
    *
-   * <code>LIMIT_DECREASE_PERCENTAGE_TOO_HIGH = 2;</code>
+   * <code>QUOTA_DECREASE_PERCENTAGE_TOO_HIGH = 2;</code>
    */
-  LIMIT_DECREASE_PERCENTAGE_TOO_HIGH(2),
+  QUOTA_DECREASE_PERCENTAGE_TOO_HIGH(2),
   UNRECOGNIZED(-1),
   ;
 
@@ -81,9 +81,9 @@ public enum QuotaSafetyCheck implements com.google.protobuf.ProtocolMessageEnum 
    * limit to be lower than the consumer's quota usage.
    * </pre>
    *
-   * <code>LIMIT_DECREASE_BELOW_USAGE = 1;</code>
+   * <code>QUOTA_DECREASE_BELOW_USAGE = 1;</code>
    */
-  public static final int LIMIT_DECREASE_BELOW_USAGE_VALUE = 1;
+  public static final int QUOTA_DECREASE_BELOW_USAGE_VALUE = 1;
   /**
    *
    *
@@ -92,9 +92,9 @@ public enum QuotaSafetyCheck implements com.google.protobuf.ProtocolMessageEnum 
    * limit to decrease by more than 10 percent.
    * </pre>
    *
-   * <code>LIMIT_DECREASE_PERCENTAGE_TOO_HIGH = 2;</code>
+   * <code>QUOTA_DECREASE_PERCENTAGE_TOO_HIGH = 2;</code>
    */
-  public static final int LIMIT_DECREASE_PERCENTAGE_TOO_HIGH_VALUE = 2;
+  public static final int QUOTA_DECREASE_PERCENTAGE_TOO_HIGH_VALUE = 2;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -123,9 +123,9 @@ public enum QuotaSafetyCheck implements com.google.protobuf.ProtocolMessageEnum 
       case 0:
         return QUOTA_SAFETY_CHECK_UNSPECIFIED;
       case 1:
-        return LIMIT_DECREASE_BELOW_USAGE;
+        return QUOTA_DECREASE_BELOW_USAGE;
       case 2:
-        return LIMIT_DECREASE_PERCENTAGE_TOO_HIGH;
+        return QUOTA_DECREASE_PERCENTAGE_TOO_HIGH;
       default:
         return null;
     }

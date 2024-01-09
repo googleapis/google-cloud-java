@@ -68,7 +68,7 @@ public interface RenderMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined render operation.
+   * Output only. Custom metadata provided by user-defined render operation.
    * </pre>
    *
    * <code>
@@ -82,7 +82,7 @@ public interface RenderMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined render operation.
+   * Output only. Custom metadata provided by user-defined render operation.
    * </pre>
    *
    * <code>
@@ -96,7 +96,7 @@ public interface RenderMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined render operation.
+   * Output only. Custom metadata provided by user-defined render operation.
    * </pre>
    *
    * <code>

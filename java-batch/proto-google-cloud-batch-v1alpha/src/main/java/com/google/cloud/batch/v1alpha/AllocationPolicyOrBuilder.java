@@ -565,4 +565,71 @@ public interface AllocationPolicyOrBuilder
    * <code>.google.cloud.batch.v1alpha.AllocationPolicy.PlacementPolicy placement = 10;</code>
    */
   com.google.cloud.batch.v1alpha.AllocationPolicy.PlacementPolicyOrBuilder getPlacementOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tags applied to the VM instances.
+   *
+   * The tags identify valid sources or targets for network firewalls.
+   * Each tag must be 1-63 characters long, and comply with
+   * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * </pre>
+   *
+   * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the tags.
+   */
+  java.util.List<java.lang.String> getTagsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tags applied to the VM instances.
+   *
+   * The tags identify valid sources or targets for network firewalls.
+   * Each tag must be 1-63 characters long, and comply with
+   * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * </pre>
+   *
+   * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of tags.
+   */
+  int getTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tags applied to the VM instances.
+   *
+   * The tags identify valid sources or targets for network firewalls.
+   * Each tag must be 1-63 characters long, and comply with
+   * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * </pre>
+   *
+   * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
+   */
+  java.lang.String getTags(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tags applied to the VM instances.
+   *
+   * The tags identify valid sources or targets for network firewalls.
+   * Each tag must be 1-63 characters long, and comply with
+   * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * </pre>
+   *
+   * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
+   */
+  com.google.protobuf.ByteString getTagsBytes(int index);
 }

@@ -394,6 +394,7 @@ public class CloudQuotasClientTest {
             .setQuotaId("quotaId664373683")
             .setReconciling(true)
             .setJustification("justification1864993522")
+            .setContactEmail("contactEmail1253690204")
             .build();
     mockCloudQuotas.addResponse(expectedResponse);
 
@@ -448,6 +449,7 @@ public class CloudQuotasClientTest {
             .setQuotaId("quotaId664373683")
             .setReconciling(true)
             .setJustification("justification1864993522")
+            .setContactEmail("contactEmail1253690204")
             .build();
     mockCloudQuotas.addResponse(expectedResponse);
 
@@ -498,6 +500,7 @@ public class CloudQuotasClientTest {
             .setQuotaId("quotaId664373683")
             .setReconciling(true)
             .setJustification("justification1864993522")
+            .setContactEmail("contactEmail1253690204")
             .build();
     mockCloudQuotas.addResponse(expectedResponse);
 
@@ -552,6 +555,7 @@ public class CloudQuotasClientTest {
             .setQuotaId("quotaId664373683")
             .setReconciling(true)
             .setJustification("justification1864993522")
+            .setContactEmail("contactEmail1253690204")
             .build();
     mockCloudQuotas.addResponse(expectedResponse);
 
@@ -606,6 +610,7 @@ public class CloudQuotasClientTest {
             .setQuotaId("quotaId664373683")
             .setReconciling(true)
             .setJustification("justification1864993522")
+            .setContactEmail("contactEmail1253690204")
             .build();
     mockCloudQuotas.addResponse(expectedResponse);
 
@@ -664,6 +669,7 @@ public class CloudQuotasClientTest {
             .setQuotaId("quotaId664373683")
             .setReconciling(true)
             .setJustification("justification1864993522")
+            .setContactEmail("contactEmail1253690204")
             .build();
     mockCloudQuotas.addResponse(expectedResponse);
 
@@ -722,6 +728,7 @@ public class CloudQuotasClientTest {
             .setQuotaId("quotaId664373683")
             .setReconciling(true)
             .setJustification("justification1864993522")
+            .setContactEmail("contactEmail1253690204")
             .build();
     mockCloudQuotas.addResponse(expectedResponse);
 

@@ -115,7 +115,7 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined `Rollout` operations.
+   * Output only. Custom metadata provided by user-defined `Rollout` operations.
    * </pre>
    *
    * <code>
@@ -129,7 +129,7 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined `Rollout` operations.
+   * Output only. Custom metadata provided by user-defined `Rollout` operations.
    * </pre>
    *
    * <code>
@@ -143,7 +143,7 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined `Rollout` operations.
+   * Output only. Custom metadata provided by user-defined `Rollout` operations.
    * </pre>
    *
    * <code>

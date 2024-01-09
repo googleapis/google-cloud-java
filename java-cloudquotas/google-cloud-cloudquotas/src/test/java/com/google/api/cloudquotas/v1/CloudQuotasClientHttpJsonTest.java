@@ -427,6 +427,7 @@ public class CloudQuotasClientHttpJsonTest {
             .setQuotaId("quotaId664373683")
             .setReconciling(true)
             .setJustification("justification1864993522")
+            .setContactEmail("contactEmail1253690204")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -487,6 +488,7 @@ public class CloudQuotasClientHttpJsonTest {
             .setQuotaId("quotaId664373683")
             .setReconciling(true)
             .setJustification("justification1864993522")
+            .setContactEmail("contactEmail1253690204")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -545,6 +547,7 @@ public class CloudQuotasClientHttpJsonTest {
             .setQuotaId("quotaId664373683")
             .setReconciling(true)
             .setJustification("justification1864993522")
+            .setContactEmail("contactEmail1253690204")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -603,6 +606,7 @@ public class CloudQuotasClientHttpJsonTest {
             .setQuotaId("quotaId664373683")
             .setReconciling(true)
             .setJustification("justification1864993522")
+            .setContactEmail("contactEmail1253690204")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -661,6 +665,7 @@ public class CloudQuotasClientHttpJsonTest {
             .setQuotaId("quotaId664373683")
             .setReconciling(true)
             .setJustification("justification1864993522")
+            .setContactEmail("contactEmail1253690204")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -722,6 +727,7 @@ public class CloudQuotasClientHttpJsonTest {
             .setQuotaId("quotaId664373683")
             .setReconciling(true)
             .setJustification("justification1864993522")
+            .setContactEmail("contactEmail1253690204")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -783,6 +789,7 @@ public class CloudQuotasClientHttpJsonTest {
             .setQuotaId("quotaId664373683")
             .setReconciling(true)
             .setJustification("justification1864993522")
+            .setContactEmail("contactEmail1253690204")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -801,6 +808,7 @@ public class CloudQuotasClientHttpJsonTest {
             .setQuotaId("quotaId664373683")
             .setReconciling(true)
             .setJustification("justification1864993522")
+            .setContactEmail("contactEmail1253690204")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -845,6 +853,7 @@ public class CloudQuotasClientHttpJsonTest {
               .setQuotaId("quotaId664373683")
               .setReconciling(true)
               .setJustification("justification1864993522")
+              .setContactEmail("contactEmail1253690204")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateQuotaPreference(quotaPreference, updateMask);

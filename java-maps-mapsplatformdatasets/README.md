@@ -45,20 +45,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-mapsplatformdatasets</artifactId>
-  <version>0.21.0</version>
+  <version>0.20.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.maps:google-maps-mapsplatformdatasets:0.21.0'
+implementation 'com.google.maps:google-maps-mapsplatformdatasets:0.20.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.maps" % "google-maps-mapsplatformdatasets" % "0.21.0"
+libraryDependencies += "com.google.maps" % "google-maps-mapsplatformdatasets" % "0.20.0"
 ```
 <!-- {x-version-update-end} -->
 
@@ -202,7 +202,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-mapsplatformdatasets/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.maps/google-maps-mapsplatformdatasets.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.maps/google-maps-mapsplatformdatasets/0.18.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.maps/google-maps-mapsplatformdatasets/0.20.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

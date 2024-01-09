@@ -184,7 +184,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined `Rollout` operations.
+   * Output only. Custom metadata provided by user-defined `Rollout` operations.
    * </pre>
    *
    * <code>
@@ -201,7 +201,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined `Rollout` operations.
+   * Output only. Custom metadata provided by user-defined `Rollout` operations.
    * </pre>
    *
    * <code>
@@ -220,7 +220,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined `Rollout` operations.
+   * Output only. Custom metadata provided by user-defined `Rollout` operations.
    * </pre>
    *
    * <code>
@@ -1074,7 +1074,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * Output only. Custom metadata provided by user-defined `Rollout` operations.
      * </pre>
      *
      * <code>
@@ -1090,7 +1090,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * Output only. Custom metadata provided by user-defined `Rollout` operations.
      * </pre>
      *
      * <code>
@@ -1112,7 +1112,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * Output only. Custom metadata provided by user-defined `Rollout` operations.
      * </pre>
      *
      * <code>
@@ -1136,7 +1136,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * Output only. Custom metadata provided by user-defined `Rollout` operations.
      * </pre>
      *
      * <code>
@@ -1157,7 +1157,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * Output only. Custom metadata provided by user-defined `Rollout` operations.
      * </pre>
      *
      * <code>
@@ -1184,7 +1184,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * Output only. Custom metadata provided by user-defined `Rollout` operations.
      * </pre>
      *
      * <code>
@@ -1205,7 +1205,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * Output only. Custom metadata provided by user-defined `Rollout` operations.
      * </pre>
      *
      * <code>
@@ -1221,7 +1221,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * Output only. Custom metadata provided by user-defined `Rollout` operations.
      * </pre>
      *
      * <code>
@@ -1241,7 +1241,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined `Rollout` operations.
+     * Output only. Custom metadata provided by user-defined `Rollout` operations.
      * </pre>
      *
      * <code>
