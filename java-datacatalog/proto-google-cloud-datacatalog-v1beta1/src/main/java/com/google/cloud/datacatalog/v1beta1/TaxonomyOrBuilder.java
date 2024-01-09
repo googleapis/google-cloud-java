@@ -27,11 +27,11 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of this taxonomy, whose format is:
+   * Identifier. Resource name of this taxonomy, whose format is:
    * "projects/{project_number}/locations/{location_id}/taxonomies/{id}".
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -40,11 +40,11 @@ public interface TaxonomyOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of this taxonomy, whose format is:
+   * Identifier. Resource name of this taxonomy, whose format is:
    * "projects/{project_number}/locations/{location_id}/taxonomies/{id}".
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
