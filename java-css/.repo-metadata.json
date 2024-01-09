@@ -1,0 +1,16 @@
+{
+  "api_shortname": "css",
+  "name_pretty": "CSS API",
+  "product_documentation": "https://developers.google.com/comparison-shopping-services/api",
+  "api_description": "The CSS API is used to manage your CSS and control your CSS Products portfolio",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-css/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-css",
+  "repo_short": "java-css",
+  "distribution_name": "com.google.cloud:google-cloud-css",
+  "api_id": "css.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
