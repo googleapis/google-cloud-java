@@ -156,6 +156,7 @@
     <module>java-service-management</module>
     <module>java-service-usage</module>
     <module>java-shell</module>
+    <module>java-shopping-css</module>
     <module>java-shopping-merchant-inventories</module>
     <module>java-shopping-merchant-reports</module>
     <module>java-speech</module>
