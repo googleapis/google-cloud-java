@@ -22,7 +22,7 @@ package com.google.cloud.deploy.v1;
  *
  *
  * <pre>
- * CustomMetadata contains information from a user defined operation.
+ * CustomMetadata contains information from a user-defined operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.deploy.v1.CustomMetadata}
@@ -101,7 +101,7 @@ public final class CustomMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Key-value pairs provided by the user defined operation.
+   * Output only. Key-value pairs provided by the user-defined operation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -123,7 +123,7 @@ public final class CustomMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Key-value pairs provided by the user defined operation.
+   * Output only. Key-value pairs provided by the user-defined operation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -136,7 +136,7 @@ public final class CustomMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Key-value pairs provided by the user defined operation.
+   * Output only. Key-value pairs provided by the user-defined operation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -156,7 +156,7 @@ public final class CustomMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Key-value pairs provided by the user defined operation.
+   * Output only. Key-value pairs provided by the user-defined operation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -344,7 +344,7 @@ public final class CustomMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * CustomMetadata contains information from a user defined operation.
+   * CustomMetadata contains information from a user-defined operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.deploy.v1.CustomMetadata}
@@ -575,7 +575,7 @@ public final class CustomMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Key-value pairs provided by the user defined operation.
+     * Output only. Key-value pairs provided by the user-defined operation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -598,7 +598,7 @@ public final class CustomMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Key-value pairs provided by the user defined operation.
+     * Output only. Key-value pairs provided by the user-defined operation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -612,7 +612,7 @@ public final class CustomMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Key-value pairs provided by the user defined operation.
+     * Output only. Key-value pairs provided by the user-defined operation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -633,7 +633,7 @@ public final class CustomMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Key-value pairs provided by the user defined operation.
+     * Output only. Key-value pairs provided by the user-defined operation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -660,7 +660,7 @@ public final class CustomMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Key-value pairs provided by the user defined operation.
+     * Output only. Key-value pairs provided by the user-defined operation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -683,7 +683,7 @@ public final class CustomMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Key-value pairs provided by the user defined operation.
+     * Output only. Key-value pairs provided by the user-defined operation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -704,7 +704,7 @@ public final class CustomMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Key-value pairs provided by the user defined operation.
+     * Output only. Key-value pairs provided by the user-defined operation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];

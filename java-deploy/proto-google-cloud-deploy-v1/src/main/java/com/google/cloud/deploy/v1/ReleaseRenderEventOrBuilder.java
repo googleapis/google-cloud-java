@@ -54,7 +54,34 @@ public interface ReleaseRenderEventOrBuilder
    *
    *
    * <pre>
+   * Unique identifier of the `DeliveryPipeline`.
+   * </pre>
+   *
+   * <code>string pipeline_uid = 4;</code>
+   *
+   * @return The pipelineUid.
+   */
+  java.lang.String getPipelineUid();
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier of the `DeliveryPipeline`.
+   * </pre>
+   *
+   * <code>string pipeline_uid = 4;</code>
+   *
+   * @return The bytes for pipelineUid.
+   */
+  com.google.protobuf.ByteString getPipelineUidBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The name of the release.
+   * release_uid is not in this log message because we write some of these log
+   * messages at release creation time, before we've generated the uid.
    * </pre>
    *
    * <code>string release = 2;</code>
@@ -67,6 +94,8 @@ public interface ReleaseRenderEventOrBuilder
    *
    * <pre>
    * The name of the release.
+   * release_uid is not in this log message because we write some of these log
+   * messages at release creation time, before we've generated the uid.
    * </pre>
    *
    * <code>string release = 2;</code>
@@ -74,6 +103,31 @@ public interface ReleaseRenderEventOrBuilder
    * @return The bytes for release.
    */
   com.google.protobuf.ByteString getReleaseBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of this notification, e.g. for a release render state change event.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Type type = 5;</code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Type of this notification, e.g. for a release render state change event.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Type type = 5;</code>
+   *
+   * @return The type.
+   */
+  com.google.cloud.deploy.v1.Type getType();
 
   /**
    *

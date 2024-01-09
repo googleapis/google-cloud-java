@@ -25,8 +25,8 @@ package com.google.cloud.deploy.v1;
  * A `CustomTargetType` resource in the Cloud Deploy API.
  *
  * A `CustomTargetType` defines a type of custom target that can be referenced
- * in a `Target` in order to facilitate deploying to a runtime that does not
- * have a 1P integration with Cloud Deploy.
+ * in a `Target` in order to facilitate deploying to other systems besides the
+ * supported runtimes.
  * </pre>
  *
  * Protobuf type {@code google.cloud.deploy.v1.CustomTargetType}
@@ -1094,8 +1094,8 @@ public final class CustomTargetType extends com.google.protobuf.GeneratedMessage
    * A `CustomTargetType` resource in the Cloud Deploy API.
    *
    * A `CustomTargetType` defines a type of custom target that can be referenced
-   * in a `Target` in order to facilitate deploying to a runtime that does not
-   * have a 1P integration with Cloud Deploy.
+   * in a `Target` in order to facilitate deploying to other systems besides the
+   * supported runtimes.
    * </pre>
    *
    * Protobuf type {@code google.cloud.deploy.v1.CustomTargetType}

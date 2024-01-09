@@ -43,12 +43,13 @@ public final class ReleaseNotificationPayloadProto {
       "\n9google/cloud/deploy/v1/release_notific"
           + "ation_payload.proto\022\026google.cloud.deploy"
           + ".v1\032&google/cloud/deploy/v1/log_enums.pr"
-          + "oto\"h\n\030ReleaseNotificationEvent\022\017\n\007messa"
-          + "ge\030\001 \001(\t\022\017\n\007release\030\002 \001(\t\022*\n\004type\030\003 \001(\0162"
-          + "\034.google.cloud.deploy.v1.TypeBs\n\032com.goo"
-          + "gle.cloud.deploy.v1B\037ReleaseNotification"
-          + "PayloadProtoP\001Z2cloud.google.com/go/depl"
-          + "oy/apiv1/deploypb;deploypbb\006proto3"
+          + "oto\"\223\001\n\030ReleaseNotificationEvent\022\017\n\007mess"
+          + "age\030\001 \001(\t\022\024\n\014pipeline_uid\030\004 \001(\t\022\023\n\013relea"
+          + "se_uid\030\005 \001(\t\022\017\n\007release\030\002 \001(\t\022*\n\004type\030\003 "
+          + "\001(\0162\034.google.cloud.deploy.v1.TypeBs\n\032com"
+          + ".google.cloud.deploy.v1B\037ReleaseNotifica"
+          + "tionPayloadProtoP\001Z2cloud.google.com/go/"
+          + "deploy/apiv1/deploypb;deploypbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -62,7 +63,7 @@ public final class ReleaseNotificationPayloadProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ReleaseNotificationEvent_descriptor,
             new java.lang.String[] {
-              "Message", "Release", "Type",
+              "Message", "PipelineUid", "ReleaseUid", "Release", "Type",
             });
     com.google.cloud.deploy.v1.LogEnumsProto.getDescriptor();
   }

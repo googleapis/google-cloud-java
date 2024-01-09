@@ -43,14 +43,15 @@ public final class JobRunNotificationPayloadProto {
       "\n8google/cloud/deploy/v1/jobrun_notifica"
           + "tion_payload.proto\022\026google.cloud.deploy."
           + "v1\032&google/cloud/deploy/v1/log_enums.pro"
-          + "to\"\272\001\n\027JobRunNotificationEvent\022\017\n\007messag"
+          + "to\"\334\001\n\027JobRunNotificationEvent\022\017\n\007messag"
           + "e\030\001 \001(\t\022\017\n\007job_run\030\002 \001(\t\022\024\n\014pipeline_uid"
-          + "\030\003 \001(\t\022\023\n\013release_uid\030\004 \001(\t\022\023\n\013rollout_u"
-          + "id\030\005 \001(\t\022\021\n\ttarget_id\030\006 \001(\t\022*\n\004type\030\007 \001("
-          + "\0162\034.google.cloud.deploy.v1.TypeBr\n\032com.g"
-          + "oogle.cloud.deploy.v1B\036JobRunNotificatio"
-          + "nPayloadProtoP\001Z2cloud.google.com/go/dep"
-          + "loy/apiv1/deploypb;deploypbb\006proto3"
+          + "\030\003 \001(\t\022\023\n\013release_uid\030\004 \001(\t\022\017\n\007release\030\010"
+          + " \001(\t\022\023\n\013rollout_uid\030\005 \001(\t\022\017\n\007rollout\030\t \001"
+          + "(\t\022\021\n\ttarget_id\030\006 \001(\t\022*\n\004type\030\007 \001(\0162\034.go"
+          + "ogle.cloud.deploy.v1.TypeBr\n\032com.google."
+          + "cloud.deploy.v1B\036JobRunNotificationPaylo"
+          + "adProtoP\001Z2cloud.google.com/go/deploy/ap"
+          + "iv1/deploypb;deploypbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -64,7 +65,15 @@ public final class JobRunNotificationPayloadProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_JobRunNotificationEvent_descriptor,
             new java.lang.String[] {
-              "Message", "JobRun", "PipelineUid", "ReleaseUid", "RolloutUid", "TargetId", "Type",
+              "Message",
+              "JobRun",
+              "PipelineUid",
+              "ReleaseUid",
+              "Release",
+              "RolloutUid",
+              "Rollout",
+              "TargetId",
+              "Type",
             });
     com.google.cloud.deploy.v1.LogEnumsProto.getDescriptor();
   }

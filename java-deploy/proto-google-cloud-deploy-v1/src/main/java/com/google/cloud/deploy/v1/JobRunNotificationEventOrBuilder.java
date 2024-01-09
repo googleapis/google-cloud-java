@@ -127,6 +127,31 @@ public interface JobRunNotificationEventOrBuilder
    *
    *
    * <pre>
+   * The name of the `Release`.
+   * </pre>
+   *
+   * <code>string release = 8;</code>
+   *
+   * @return The release.
+   */
+  java.lang.String getRelease();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the `Release`.
+   * </pre>
+   *
+   * <code>string release = 8;</code>
+   *
+   * @return The bytes for release.
+   */
+  com.google.protobuf.ByteString getReleaseBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Unique identifier of the `Rollout`.
    * </pre>
    *
@@ -147,6 +172,31 @@ public interface JobRunNotificationEventOrBuilder
    * @return The bytes for rolloutUid.
    */
   com.google.protobuf.ByteString getRolloutUidBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The name of the `Rollout`.
+   * </pre>
+   *
+   * <code>string rollout = 9;</code>
+   *
+   * @return The rollout.
+   */
+  java.lang.String getRollout();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the `Rollout`.
+   * </pre>
+   *
+   * <code>string rollout = 9;</code>
+   *
+   * @return The bytes for rollout.
+   */
+  com.google.protobuf.ByteString getRolloutBytes();
 
   /**
    *

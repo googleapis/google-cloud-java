@@ -122,7 +122,7 @@ public final class RenderMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined render operation.
+   * Output only. Custom metadata provided by user-defined render operation.
    * </pre>
    *
    * <code>
@@ -139,7 +139,7 @@ public final class RenderMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined render operation.
+   * Output only. Custom metadata provided by user-defined render operation.
    * </pre>
    *
    * <code>
@@ -158,7 +158,7 @@ public final class RenderMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined render operation.
+   * Output only. Custom metadata provided by user-defined render operation.
    * </pre>
    *
    * <code>
@@ -764,7 +764,7 @@ public final class RenderMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined render operation.
+     * Output only. Custom metadata provided by user-defined render operation.
      * </pre>
      *
      * <code>
@@ -780,7 +780,7 @@ public final class RenderMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined render operation.
+     * Output only. Custom metadata provided by user-defined render operation.
      * </pre>
      *
      * <code>
@@ -802,7 +802,7 @@ public final class RenderMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined render operation.
+     * Output only. Custom metadata provided by user-defined render operation.
      * </pre>
      *
      * <code>
@@ -826,7 +826,7 @@ public final class RenderMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined render operation.
+     * Output only. Custom metadata provided by user-defined render operation.
      * </pre>
      *
      * <code>
@@ -847,7 +847,7 @@ public final class RenderMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined render operation.
+     * Output only. Custom metadata provided by user-defined render operation.
      * </pre>
      *
      * <code>
@@ -874,7 +874,7 @@ public final class RenderMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined render operation.
+     * Output only. Custom metadata provided by user-defined render operation.
      * </pre>
      *
      * <code>
@@ -895,7 +895,7 @@ public final class RenderMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined render operation.
+     * Output only. Custom metadata provided by user-defined render operation.
      * </pre>
      *
      * <code>
@@ -911,7 +911,7 @@ public final class RenderMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined render operation.
+     * Output only. Custom metadata provided by user-defined render operation.
      * </pre>
      *
      * <code>
@@ -931,7 +931,7 @@ public final class RenderMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined render operation.
+     * Output only. Custom metadata provided by user-defined render operation.
      * </pre>
      *
      * <code>

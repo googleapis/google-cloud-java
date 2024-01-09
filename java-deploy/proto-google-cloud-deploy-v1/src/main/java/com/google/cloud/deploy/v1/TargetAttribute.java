@@ -22,10 +22,7 @@ package com.google.cloud.deploy.v1;
  *
  *
  * <pre>
- * Contains criteria for selecting Targets. Attributes provided must match the
- * target resource in order for policy restrictions to apply. E.g. if id "prod"
- * and labels "foo: bar" are given the target resource must match both that id
- * and have that label in order to be selected.
+ * Contains criteria for selecting Targets.
  * </pre>
  *
  * Protobuf type {@code google.cloud.deploy.v1.TargetAttribute}
@@ -417,10 +414,7 @@ public final class TargetAttribute extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Contains criteria for selecting Targets. Attributes provided must match the
-   * target resource in order for policy restrictions to apply. E.g. if id "prod"
-   * and labels "foo: bar" are given the target resource must match both that id
-   * and have that label in order to be selected.
+   * Contains criteria for selecting Targets.
    * </pre>
    *
    * Protobuf type {@code google.cloud.deploy.v1.TargetAttribute}

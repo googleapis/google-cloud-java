@@ -182,7 +182,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined deploy operation.
+   * Output only. Custom metadata provided by user-defined deploy operation.
    * </pre>
    *
    * <code>
@@ -199,7 +199,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined deploy operation.
+   * Output only. Custom metadata provided by user-defined deploy operation.
    * </pre>
    *
    * <code>
@@ -218,7 +218,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined deploy operation.
+   * Output only. Custom metadata provided by user-defined deploy operation.
    * </pre>
    *
    * <code>
@@ -1070,7 +1070,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined deploy operation.
+     * Output only. Custom metadata provided by user-defined deploy operation.
      * </pre>
      *
      * <code>
@@ -1086,7 +1086,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined deploy operation.
+     * Output only. Custom metadata provided by user-defined deploy operation.
      * </pre>
      *
      * <code>
@@ -1108,7 +1108,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined deploy operation.
+     * Output only. Custom metadata provided by user-defined deploy operation.
      * </pre>
      *
      * <code>
@@ -1132,7 +1132,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined deploy operation.
+     * Output only. Custom metadata provided by user-defined deploy operation.
      * </pre>
      *
      * <code>
@@ -1153,7 +1153,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined deploy operation.
+     * Output only. Custom metadata provided by user-defined deploy operation.
      * </pre>
      *
      * <code>
@@ -1180,7 +1180,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined deploy operation.
+     * Output only. Custom metadata provided by user-defined deploy operation.
      * </pre>
      *
      * <code>
@@ -1201,7 +1201,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined deploy operation.
+     * Output only. Custom metadata provided by user-defined deploy operation.
      * </pre>
      *
      * <code>
@@ -1217,7 +1217,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined deploy operation.
+     * Output only. Custom metadata provided by user-defined deploy operation.
      * </pre>
      *
      * <code>
@@ -1237,7 +1237,7 @@ public final class DeployJobRunMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Custom metadata provided by user defined deploy operation.
+     * Output only. Custom metadata provided by user-defined deploy operation.
      * </pre>
      *
      * <code>
