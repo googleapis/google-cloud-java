@@ -64,19 +64,247 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the ProductServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    <tr>
+ *      <td>CreateProduct</td>
+ *      <td><p> Creates a [Product][google.cloud.retail.v2.Product].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createProduct(CreateProductRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>createProduct(BranchName parent, Product product, String productId)
+ *           <li>createProduct(String parent, Product product, String productId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createProductCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetProduct</td>
+ *      <td><p> Gets a [Product][google.cloud.retail.v2.Product].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getProduct(GetProductRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getProduct(ProductName name)
+ *           <li>getProduct(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getProductCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListProducts</td>
+ *      <td><p> Gets a list of [Product][google.cloud.retail.v2.Product]s.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listProducts(ListProductsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listProducts(BranchName parent)
+ *           <li>listProducts(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listProductsPagedCallable()
+ *           <li>listProductsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateProduct</td>
+ *      <td><p> Updates a [Product][google.cloud.retail.v2.Product].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateProduct(UpdateProductRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>updateProduct(Product product, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateProductCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteProduct</td>
+ *      <td><p> Deletes a [Product][google.cloud.retail.v2.Product].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteProduct(DeleteProductRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>deleteProduct(ProductName name)
+ *           <li>deleteProduct(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteProductCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ImportProducts</td>
+ *      <td><p> Bulk import of multiple [Product][google.cloud.retail.v2.Product]s.
+ * <p>  Request processing may be synchronous. Non-existing items are created.
+ * <p>  Note that it is possible for a subset of the [Product][google.cloud.retail.v2.Product]s to be successfully updated.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>importProductsAsync(ImportProductsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>importProductsOperationCallable()
+ *           <li>importProductsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>SetInventory</td>
+ *      <td><p> Updates inventory information for a [Product][google.cloud.retail.v2.Product] while respecting the last update timestamps of each inventory field.
+ * <p>  This process is asynchronous and does not require the [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If the request is valid, the update is enqueued and processed downstream. As a consequence, when a response is returned, updates are not immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+ * <p>  When inventory is updated with [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the specified inventory field value(s) overwrite any existing value(s) while ignoring the last update time for this field. Furthermore, the last update times for the specified inventory fields are overwritten by the times of the [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] request.
+ * <p>  If no inventory fields are set in [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product], then any pre-existing inventory information for this product is used.
+ * <p>  If no inventory fields are set in [SetInventoryRequest.set_mask][google.cloud.retail.v2.SetInventoryRequest.set_mask], then any existing inventory information is preserved.
+ * <p>  Pre-existing inventory information can only be updated with [ProductService.SetInventory][google.cloud.retail.v2.ProductService.SetInventory], [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces], and [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+ * <p>  The returned [Operation][google.longrunning.Operation]s is obsolete after one day, and the [GetOperation][google.longrunning.Operations.GetOperation] API returns `NOT_FOUND` afterwards.
+ * <p>  If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated with the stale updates are not marked as [done][google.longrunning.Operation.done] until they are obsolete.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>setInventoryAsync(SetInventoryRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>setInventoryAsync(Product inventory, FieldMask setMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>setInventoryOperationCallable()
+ *           <li>setInventoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>AddFulfillmentPlaces</td>
+ *      <td><p> It is recommended to use the [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories] method instead of [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces]. [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories] achieves the same results but provides more fine-grained control over ingesting local inventory data.
+ * <p>  Incrementally adds place IDs to [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+ * <p>  This process is asynchronous and does not require the [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the added place IDs are not immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+ * <p>  The returned [Operation][google.longrunning.Operation]s will be obsolete after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation] API will return NOT_FOUND afterwards.
+ * <p>  If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated with the stale updates will not be marked as [done][google.longrunning.Operation.done] until being obsolete.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>addFulfillmentPlacesAsync(AddFulfillmentPlacesRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>addFulfillmentPlacesAsync(ProductName product)
+ *           <li>addFulfillmentPlacesAsync(String product)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>addFulfillmentPlacesOperationCallable()
+ *           <li>addFulfillmentPlacesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>RemoveFulfillmentPlaces</td>
+ *      <td><p> It is recommended to use the [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories] method instead of [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces]. [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories] achieves the same results but provides more fine-grained control over ingesting local inventory data.
+ * <p>  Incrementally removes place IDs from a [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+ * <p>  This process is asynchronous and does not require the [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the removed place IDs are not immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+ * <p>  The returned [Operation][google.longrunning.Operation]s will be obsolete after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation] API will return NOT_FOUND afterwards.
+ * <p>  If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated with the stale updates will not be marked as [done][google.longrunning.Operation.done] until being obsolete.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>removeFulfillmentPlacesAsync(RemoveFulfillmentPlacesRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>removeFulfillmentPlacesAsync(ProductName product)
+ *           <li>removeFulfillmentPlacesAsync(String product)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>removeFulfillmentPlacesOperationCallable()
+ *           <li>removeFulfillmentPlacesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>AddLocalInventories</td>
+ *      <td><p> Updates local inventory information for a [Product][google.cloud.retail.v2.Product] at a list of places, while respecting the last update timestamps of each inventory field.
+ * <p>  This process is asynchronous and does not require the [Product][google.cloud.retail.v2.Product] to exist before updating inventory information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, updates are not immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+ * <p>  Local inventory information can only be modified using this method. [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local inventories.
+ * <p>  The returned [Operation][google.longrunning.Operation]s will be obsolete after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation] API will return NOT_FOUND afterwards.
+ * <p>  If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated with the stale updates will not be marked as [done][google.longrunning.Operation.done] until being obsolete.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>addLocalInventoriesAsync(AddLocalInventoriesRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>addLocalInventoriesAsync(ProductName product)
+ *           <li>addLocalInventoriesAsync(String product)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>addLocalInventoriesOperationCallable()
+ *           <li>addLocalInventoriesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>RemoveLocalInventories</td>
+ *      <td><p> Remove local inventory information for a [Product][google.cloud.retail.v2.Product] at a list of places at a removal timestamp.
+ * <p>  This process is asynchronous. If the request is valid, the removal will be enqueued and processed downstream. As a consequence, when a response is returned, removals are not immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+ * <p>  Local inventory information can only be removed using this method. [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local inventories.
+ * <p>  The returned [Operation][google.longrunning.Operation]s will be obsolete after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation] API will return NOT_FOUND afterwards.
+ * <p>  If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated with the stale updates will not be marked as [done][google.longrunning.Operation.done] until being obsolete.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>removeLocalInventoriesAsync(RemoveLocalInventoriesRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>removeLocalInventoriesAsync(ProductName product)
+ *           <li>removeLocalInventoriesAsync(String product)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>removeLocalInventoriesOperationCallable()
+ *           <li>removeLocalInventoriesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
