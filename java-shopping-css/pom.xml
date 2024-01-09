@@ -50,4 +50,5 @@
     <module>proto-google-shopping-css-v1</module>
     <module>google-shopping-css-bom</module>
   </modules>
-</project>
+
+  </project>
