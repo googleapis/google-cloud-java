@@ -34,6 +34,12 @@
         <className>com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStub</className>
         <method>*</method>
     </difference>
+    <difference>
+        <!-- method name change is ok because EnhancedBigtableStub is InternalApi -->
+        <differenceType>7002</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStub</className>
+        <method>*</method>
+    </difference>
     <!-- InternalApi that was renamed -->
     <difference>
         <differenceType>8001</differenceType>

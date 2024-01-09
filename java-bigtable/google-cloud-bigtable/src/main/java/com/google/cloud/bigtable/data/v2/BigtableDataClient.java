@@ -25,6 +25,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.ApiExceptions;
+import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
@@ -163,6 +164,18 @@ public class BigtableDataClient implements AutoCloseable {
    */
   public static BigtableDataClient create(BigtableDataSettings settings) throws IOException {
     EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.getStubSettings());
+    return new BigtableDataClient(stub);
+  }
+
+  /**
+   * Constructs an instance of BigtableDataClient with the provided client context. This is used by
+   * {@link BigtableDataClientFactory} and the client context will not be closed unless {@link
+   * BigtableDataClientFactory#close()} is called.
+   */
+  static BigtableDataClient createWithClientContext(
+      BigtableDataSettings settings, ClientContext context) throws IOException {
+    EnhancedBigtableStub stub =
+        EnhancedBigtableStub.createWithClientContext(settings.getStubSettings(), context);
     return new BigtableDataClient(stub);
   }
 

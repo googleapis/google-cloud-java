@@ -17,13 +17,8 @@ package com.google.cloud.bigtable.data.v2;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.core.FixedCredentialsProvider;
-import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.FixedHeaderProvider;
-import com.google.api.gax.rpc.FixedTransportChannelProvider;
-import com.google.api.gax.rpc.FixedWatchdogProvider;
-import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import java.io.IOException;
 import javax.annotation.Nonnull;
 
@@ -78,7 +73,8 @@ public final class BigtableDataClientFactory implements AutoCloseable {
    */
   public static BigtableDataClientFactory create(BigtableDataSettings defaultSettings)
       throws IOException {
-    ClientContext sharedClientContext = ClientContext.create(defaultSettings.getStubSettings());
+    ClientContext sharedClientContext =
+        EnhancedBigtableStub.createClientContext(defaultSettings.getStubSettings());
     return new BigtableDataClientFactory(sharedClientContext, defaultSettings);
   }
 
@@ -110,12 +106,16 @@ public final class BigtableDataClientFactory implements AutoCloseable {
    * release all resources, first close all of the created clients and then this factory instance.
    */
   public BigtableDataClient createDefault() {
-    BigtableDataSettings.Builder settingsBuilder = defaultSettings.toBuilder();
-    patchStubSettings(settingsBuilder.stubSettings());
-    BigtableDataSettings settings = settingsBuilder.build();
-
     try {
-      return BigtableDataClient.create(settings);
+      ClientContext clientContext =
+          sharedClientContext
+              .toBuilder()
+              .setTracerFactory(
+                  EnhancedBigtableStub.createBigtableTracerFactory(
+                      defaultSettings.getStubSettings()))
+              .build();
+
+      return BigtableDataClient.createWithClientContext(defaultSettings, clientContext);
     } catch (IOException e) {
       // Should never happen because the connection has been established already
       throw new RuntimeException(
@@ -133,12 +133,16 @@ public final class BigtableDataClientFactory implements AutoCloseable {
    * release all resources, first close all of the created clients and then this factory instance.
    */
   public BigtableDataClient createForAppProfile(@Nonnull String appProfileId) throws IOException {
-    BigtableDataSettings.Builder settingsBuilder =
-        defaultSettings.toBuilder().setAppProfileId(appProfileId);
+    BigtableDataSettings settings =
+        defaultSettings.toBuilder().setAppProfileId(appProfileId).build();
 
-    patchStubSettings(settingsBuilder.stubSettings());
-
-    return BigtableDataClient.create(settingsBuilder.build());
+    ClientContext clientContext =
+        sharedClientContext
+            .toBuilder()
+            .setTracerFactory(
+                EnhancedBigtableStub.createBigtableTracerFactory(settings.getStubSettings()))
+            .build();
+    return BigtableDataClient.createWithClientContext(settings, clientContext);
   }
 
   /**
@@ -152,16 +156,22 @@ public final class BigtableDataClientFactory implements AutoCloseable {
    */
   public BigtableDataClient createForInstance(@Nonnull String projectId, @Nonnull String instanceId)
       throws IOException {
-    BigtableDataSettings.Builder settingsBuilder =
+    BigtableDataSettings settings =
         defaultSettings
             .toBuilder()
             .setProjectId(projectId)
             .setInstanceId(instanceId)
-            .setDefaultAppProfileId();
+            .setDefaultAppProfileId()
+            .build();
 
-    patchStubSettings(settingsBuilder.stubSettings());
+    ClientContext clientContext =
+        sharedClientContext
+            .toBuilder()
+            .setTracerFactory(
+                EnhancedBigtableStub.createBigtableTracerFactory(settings.getStubSettings()))
+            .build();
 
-    return BigtableDataClient.create(settingsBuilder.build());
+    return BigtableDataClient.createWithClientContext(settings, clientContext);
   }
 
   /**
@@ -176,32 +186,19 @@ public final class BigtableDataClientFactory implements AutoCloseable {
   public BigtableDataClient createForInstance(
       @Nonnull String projectId, @Nonnull String instanceId, @Nonnull String appProfileId)
       throws IOException {
-    BigtableDataSettings.Builder settingsBuilder =
+    BigtableDataSettings settings =
         defaultSettings
             .toBuilder()
             .setProjectId(projectId)
             .setInstanceId(instanceId)
-            .setAppProfileId(appProfileId);
-
-    patchStubSettings(settingsBuilder.stubSettings());
-
-    return BigtableDataClient.create(settingsBuilder.build());
-  }
-
-  // Update stub settings to use shared resources in this factory
-  private void patchStubSettings(EnhancedBigtableStubSettings.Builder stubSettings) {
-    stubSettings
-        // Channel refreshing will be configured in the shared ClientContext. Derivative clients
-        // won't be able to reconfigure the refreshing logic
-        .setRefreshingChannel(false)
-        .setTransportChannelProvider(
-            FixedTransportChannelProvider.create(sharedClientContext.getTransportChannel()))
-        .setCredentialsProvider(
-            FixedCredentialsProvider.create(sharedClientContext.getCredentials()))
-        .setExecutorProvider(FixedExecutorProvider.create(sharedClientContext.getExecutor()))
-        .setStreamWatchdogProvider(
-            FixedWatchdogProvider.create(sharedClientContext.getStreamWatchdog()))
-        .setHeaderProvider(FixedHeaderProvider.create(sharedClientContext.getHeaders()))
-        .setClock(sharedClientContext.getClock());
+            .setAppProfileId(appProfileId)
+            .build();
+    ClientContext clientContext =
+        sharedClientContext
+            .toBuilder()
+            .setTracerFactory(
+                EnhancedBigtableStub.createBigtableTracerFactory(settings.getStubSettings()))
+            .build();
+    return BigtableDataClient.createWithClientContext(settings, clientContext);
   }
 }

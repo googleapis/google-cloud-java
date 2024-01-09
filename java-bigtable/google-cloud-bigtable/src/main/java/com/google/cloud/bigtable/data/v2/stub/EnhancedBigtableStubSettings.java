@@ -22,7 +22,6 @@ import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
-import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -33,7 +32,6 @@ import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.auth.Credentials;
 import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.PingAndWarmRequest;
 import com.google.cloud.bigtable.Version;
@@ -1023,26 +1021,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     public EnhancedBigtableStubSettings build() {
       Preconditions.checkState(projectId != null, "Project id must be set");
       Preconditions.checkState(instanceId != null, "Instance id must be set");
-      if (isRefreshingChannel) {
-        Preconditions.checkArgument(
-            getTransportChannelProvider() instanceof InstantiatingGrpcChannelProvider,
-            "refreshingChannel only works with InstantiatingGrpcChannelProviders");
-        InstantiatingGrpcChannelProvider.Builder channelProviderBuilder =
-            ((InstantiatingGrpcChannelProvider) getTransportChannelProvider()).toBuilder();
-        Credentials credentials = null;
-        if (getCredentialsProvider() != null) {
-          try {
-            credentials = getCredentialsProvider().getCredentials();
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
-        }
-        // Use shared credentials
-        this.setCredentialsProvider(FixedCredentialsProvider.create(credentials));
-        channelProviderBuilder.setChannelPrimer(
-            BigtableChannelPrimer.create(credentials, projectId, instanceId, appProfileId));
-        this.setTransportChannelProvider(channelProviderBuilder.build());
-      }
 
       if (this.bulkMutateRowsSettings().isServerInitiatedFlowControlEnabled()) {
         // only set mutate rows feature flag when this feature is enabled

@@ -126,8 +126,13 @@ public class BigtableTracerCallableTest {
             .setAppProfileId(APP_PROFILE_ID)
             .build();
     EnhancedBigtableStubSettings stubSettings =
-        EnhancedBigtableStub.finalizeSettings(
-            settings.getStubSettings(), Tags.getTagger(), localStats.getStatsRecorder());
+        settings
+            .getStubSettings()
+            .toBuilder()
+            .setTracerFactory(
+                EnhancedBigtableStub.createBigtableTracerFactory(
+                    settings.getStubSettings(), Tags.getTagger(), localStats.getStatsRecorder()))
+            .build();
     attempts = stubSettings.readRowsSettings().getRetrySettings().getMaxAttempts();
     stub = new EnhancedBigtableStub(stubSettings, ClientContext.create(stubSettings));
 
@@ -142,8 +147,15 @@ public class BigtableTracerCallableTest {
             .setAppProfileId(APP_PROFILE_ID)
             .build();
     EnhancedBigtableStubSettings noHeaderStubSettings =
-        EnhancedBigtableStub.finalizeSettings(
-            noHeaderSettings.getStubSettings(), Tags.getTagger(), localStats.getStatsRecorder());
+        noHeaderSettings
+            .getStubSettings()
+            .toBuilder()
+            .setTracerFactory(
+                EnhancedBigtableStub.createBigtableTracerFactory(
+                    noHeaderSettings.getStubSettings(),
+                    Tags.getTagger(),
+                    localStats.getStatsRecorder()))
+            .build();
     noHeaderStub =
         new EnhancedBigtableStub(noHeaderStubSettings, ClientContext.create(noHeaderStubSettings));
   }

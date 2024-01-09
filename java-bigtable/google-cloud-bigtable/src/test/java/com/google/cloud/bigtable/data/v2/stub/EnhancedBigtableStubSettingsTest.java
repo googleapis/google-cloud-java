@@ -20,7 +20,6 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
@@ -958,16 +957,6 @@ public class EnhancedBigtableStubSettingsTest {
             .setRefreshingChannel(true)
             .setCredentialsProvider(credentialsProvider);
     assertThat(builder.isRefreshingChannel()).isTrue();
-    // Verify that isRefreshing setting is not lost and stubSettings will always return the same
-    // credential
-    EnhancedBigtableStubSettings stubSettings = builder.build();
-    assertThat(stubSettings.isRefreshingChannel()).isTrue();
-    assertThat(stubSettings.getCredentialsProvider()).isInstanceOf(FixedCredentialsProvider.class);
-    assertThat(stubSettings.getCredentialsProvider().getCredentials())
-        .isEqualTo(expectedCredentials);
-    assertThat(stubSettings.toBuilder().isRefreshingChannel()).isTrue();
-    assertThat(stubSettings.toBuilder().getCredentialsProvider().getCredentials())
-        .isEqualTo(expectedCredentials);
   }
 
   private static class FakeCredentials extends Credentials {

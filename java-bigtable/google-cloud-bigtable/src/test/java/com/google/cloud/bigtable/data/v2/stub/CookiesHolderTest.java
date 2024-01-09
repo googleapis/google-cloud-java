@@ -39,6 +39,7 @@ import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.bigtable.v2.StreamContinuationToken;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
+import com.google.cloud.bigtable.data.v2.BigtableDataClientFactory;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
@@ -554,6 +555,54 @@ public class CookiesHolderTest {
     methods.add("PingAndWarm");
 
     assertThat(methods).containsExactlyElementsIn(expected);
+  }
+
+  @Test
+  public void testCookieSetWithBigtableClientFactory() throws Exception {
+    try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(settings.build())) {
+      BigtableDataClient client1 = factory.createDefault();
+      BigtableDataClient client2 = factory.createForAppProfile("app-profile");
+
+      client1.readRows(Query.create("fake-table")).iterator().hasNext();
+
+      assertThat(fakeService.count.get()).isGreaterThan(1);
+      assertThat(serverMetadata).hasSize(fakeService.count.get());
+
+      Metadata lastMetadata = serverMetadata.get(fakeService.count.get() - 1);
+
+      assertThat(lastMetadata)
+          .containsAtLeast(
+              ROUTING_COOKIE_1.name(),
+              "readRows",
+              ROUTING_COOKIE_2.name(),
+              testCookie,
+              ROUTING_COOKIE_HEADER.name(),
+              testHeaderCookie);
+      assertThat(lastMetadata).doesNotContainKeys(BAD_KEY.name());
+
+      // Reset fake service status
+      fakeService.count.set(0);
+      serverMetadata.clear();
+
+      client2.readRows(Query.create("fake-table")).iterator().hasNext();
+
+      assertThat(fakeService.count.get()).isGreaterThan(1);
+      assertThat(serverMetadata).hasSize(fakeService.count.get());
+
+      lastMetadata = serverMetadata.get(fakeService.count.get() - 1);
+
+      assertThat(lastMetadata)
+          .containsAtLeast(
+              ROUTING_COOKIE_1.name(),
+              "readRows",
+              ROUTING_COOKIE_2.name(),
+              testCookie,
+              ROUTING_COOKIE_HEADER.name(),
+              testHeaderCookie);
+      assertThat(lastMetadata).doesNotContainKeys(BAD_KEY.name());
+
+      serverMetadata.clear();
+    }
   }
 
   @Test
