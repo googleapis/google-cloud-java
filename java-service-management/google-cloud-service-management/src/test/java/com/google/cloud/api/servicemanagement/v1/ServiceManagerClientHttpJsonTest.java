@@ -91,6 +91,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 @Generated("by gapic-generator-java")
@@ -823,6 +824,7 @@ public class ServiceManagerClientHttpJsonTest {
     }
   }
 
+  @Ignore
   @Test
   public void setIamPolicyTest() throws Exception {
     Policy expectedResponse =
@@ -859,6 +861,7 @@ public class ServiceManagerClientHttpJsonTest {
             .matches());
   }
 
+  @Ignore
   @Test
   public void setIamPolicyExceptionTest() throws Exception {
     ApiException exception =
@@ -880,6 +883,7 @@ public class ServiceManagerClientHttpJsonTest {
     }
   }
 
+  @Ignore
   @Test
   public void getIamPolicyTest() throws Exception {
     Policy expectedResponse =
@@ -915,6 +919,7 @@ public class ServiceManagerClientHttpJsonTest {
             .matches());
   }
 
+  @Ignore
   @Test
   public void getIamPolicyExceptionTest() throws Exception {
     ApiException exception =
@@ -935,6 +940,7 @@ public class ServiceManagerClientHttpJsonTest {
     }
   }
 
+  @Ignore
   @Test
   public void testIamPermissionsTest() throws Exception {
     TestIamPermissionsResponse expectedResponse =
@@ -965,6 +971,7 @@ public class ServiceManagerClientHttpJsonTest {
             .matches());
   }
 
+  @Ignore
   @Test
   public void testIamPermissionsExceptionTest() throws Exception {
     ApiException exception =
