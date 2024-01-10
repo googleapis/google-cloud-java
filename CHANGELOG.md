@@ -1,6 +1,15 @@
 # Changelog
 
 
+## [0.130.29-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.130.28-alpha...v0.130.29-alpha) (2024-01-10)
+
+
+### Dependencies
+
+* Update dependency ch.qos.logback:logback-classic to v1.2.13 [security] ([#1216](https://github.com/googleapis/java-logging-logback/issues/1216)) ([024527f](https://github.com/googleapis/java-logging-logback/commit/024527f66b72363f7b49c3037fe7e460008632a9))
+* Update dependency ch.qos.logback:logback-core to v1.2.13 [security] ([#1217](https://github.com/googleapis/java-logging-logback/issues/1217)) ([40bca11](https://github.com/googleapis/java-logging-logback/commit/40bca117740abadcd31726a70be13bdeb7d092df))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.21.0 ([#1236](https://github.com/googleapis/java-logging-logback/issues/1236)) ([b90ef6c](https://github.com/googleapis/java-logging-logback/commit/b90ef6c624cad01bd116cdc2662e98b5a7e9ad47))
+
 ## [0.130.28-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.130.27-alpha...v0.130.28-alpha) (2023-12-01)
 
 
