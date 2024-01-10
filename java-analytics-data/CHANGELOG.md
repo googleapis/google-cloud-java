@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.44.0 (2024-01-10)
+
+### Features
+
+* add `CreateAudienceExport`, `QueryAudienceExport`, `GetAudienceExport`, `ListAudienceExports` methods to the Data API v1 beta ([#10133](https://github.com/googleapis/google-cloud-java/issues/10133)) ([3ef3b0a](https://github.com/googleapis/google-cloud-java/commit/3ef3b0ada0c385e89a1fbda8faa1772b86acabf6))
+
+
+
 ## 0.43.0 (2023-12-12)
 
 * No change

@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.37.0 (2024-01-10)
+
+### Features
+
+* Clarify Properties documentation ([#10145](https://github.com/googleapis/google-cloud-java/issues/10145)) ([e95f706](https://github.com/googleapis/google-cloud-java/commit/e95f7060a9175a5570578c70b17586e80629c2fc))
+
+
+
 ## 2.36.0 (2023-12-12)
 
 * No change

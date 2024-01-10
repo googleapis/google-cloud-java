@@ -1,5 +1,66 @@
 # Changelog
 
+## [1.27.0](https://github.com/googleapis/google-cloud-java/compare/v1.26.0...v1.27.0) (2024-01-10)
+
+
+### Features
+
+* [advisorynotifications] adding project level methods to advisorynotifications.googleapis.com ([#10123](https://github.com/googleapis/google-cloud-java/issues/10123)) ([1b5a49d](https://github.com/googleapis/google-cloud-java/commit/1b5a49dd2691f47b9a8d4bc8001d863008be78de))
+* [alloydb] added PSC config, PSC interface config, PSC instance config ([#10166](https://github.com/googleapis/google-cloud-java/issues/10166)) ([24577d1](https://github.com/googleapis/google-cloud-java/commit/24577d17a6b547fe10993d8ad4ec5e1b83c6ba30))
+* [analyticsadmin] add `GetSubpropertyEventFilter`, `ListSubpropertyEventFilters` methods to the Admin API v1 alpha ([#10152](https://github.com/googleapis/google-cloud-java/issues/10152)) ([ea758cf](https://github.com/googleapis/google-cloud-java/commit/ea758cf21b8358a7b54b10d0c3c68371e6523e05))
+* [analyticsadmin] add `GetSubpropertyEventFilter`, `ListSubpropertyEventFilters` methods to the Admin API v1 alpha ([#10153](https://github.com/googleapis/google-cloud-java/issues/10153)) ([2e1425f](https://github.com/googleapis/google-cloud-java/commit/2e1425fb52d88d6d507bcea172533274b542c945))
+* [analyticsdata] add `CreateAudienceExport`, `QueryAudienceExport`, `GetAudienceExport`, `ListAudienceExports` methods to the Data API v1 beta ([#10133](https://github.com/googleapis/google-cloud-java/issues/10133)) ([3ef3b0a](https://github.com/googleapis/google-cloud-java/commit/3ef3b0ada0c385e89a1fbda8faa1772b86acabf6))
+* [batch] Add `tags` field in Job's AllocationPolicy field in v1alpha ([#10206](https://github.com/googleapis/google-cloud-java/issues/10206)) ([4bcdc24](https://github.com/googleapis/google-cloud-java/commit/4bcdc24592c9195de73d65deed36585c0e82db22))
+* [cloudasset] added new resource references to fields in AnalyzeMoveRequest ([#10138](https://github.com/googleapis/google-cloud-java/issues/10138)) ([66f99c3](https://github.com/googleapis/google-cloud-java/commit/66f99c324e85cea549f008a2a22cc3e137dcabf0))
+* [cloudbilling] added the MoveBillingAccount method, which allows changing which organization a billing account belongs to ([#10115](https://github.com/googleapis/google-cloud-java/issues/10115)) ([615854d](https://github.com/googleapis/google-cloud-java/commit/615854db385e9e0808dbbdd32b35428a49773794))
+* [clouddeploy] Add custom target type support ([#10109](https://github.com/googleapis/google-cloud-java/issues/10109)) ([003e683](https://github.com/googleapis/google-cloud-java/commit/003e6836ac05d50e4ace00c6bf42958468ce3407))
+* [cloudprofiler] add `ListProfiles` RPC to `ExportService` ([#10150](https://github.com/googleapis/google-cloud-java/issues/10150)) ([6e725ff](https://github.com/googleapis/google-cloud-java/commit/6e725ffa4b75175f63158a9426d29f27f3df624e))
+* [cloudquotas] new module for cloudquotas ([#9991](https://github.com/googleapis/google-cloud-java/issues/9991)) ([0a11aac](https://github.com/googleapis/google-cloud-java/commit/0a11aac775a1427f4ca7c1aa9b0b1dba051b6528))
+* [compute] Update Compute Engine API to revision 20231110 ([#868](https://github.com/googleapis/google-cloud-java/issues/868)) ([#10120](https://github.com/googleapis/google-cloud-java/issues/10120)) ([e25f733](https://github.com/googleapis/google-cloud-java/commit/e25f733a6e263872bd5954104851fd2394d2bbee))
+* [container] Add autoscaled node pool upgrade strategy ([#10167](https://github.com/googleapis/google-cloud-java/issues/10167)) ([041bc40](https://github.com/googleapis/google-cloud-java/commit/041bc40b6a8ebf409024b0fd12a483e8c17262bc))
+* [css] new module for css ([#10212](https://github.com/googleapis/google-cloud-java/issues/10212)) ([618344a](https://github.com/googleapis/google-cloud-java/commit/618344ae9fcdedf10ac62236ed3ad47537ce36dd))
+* [dialogflow] add sections field to HumanAgentAssistantConfig.SuggestionQueryConfig ([#10158](https://github.com/googleapis/google-cloud-java/issues/10158)) ([16f75a7](https://github.com/googleapis/google-cloud-java/commit/16f75a72f8e9901fd1edcb7efbe273d40a018a4e))
+* [discoveryengine] add site search engine service ([#10149](https://github.com/googleapis/google-cloud-java/issues/10149)) ([ebfda8b](https://github.com/googleapis/google-cloud-java/commit/ebfda8bd48f56684dcbb8b910dc54471038180db))
+* [edgenetwork] new module for edgenetwork ([#10136](https://github.com/googleapis/google-cloud-java/issues/10136)) ([e4107b2](https://github.com/googleapis/google-cloud-java/commit/e4107b2bc4f018119ae62c1af63484a52a1d37e1))
+* [gke-multi-cloud] added proxy support for Attached Clusters ([#10161](https://github.com/googleapis/google-cloud-java/issues/10161)) ([b8cd6a3](https://github.com/googleapis/google-cloud-java/commit/b8cd6a352909cfad6f66567069629290313f841c))
+* [monitoring] Added support for severity in AlertPolicy ([#10137](https://github.com/googleapis/google-cloud-java/issues/10137)) ([bfc8e3c](https://github.com/googleapis/google-cloud-java/commit/bfc8e3cd3979f7e08753362265480dc9a959d742))
+* [netapp] Enable Backup, Backup Vault, and Backup Policy ([#10173](https://github.com/googleapis/google-cloud-java/issues/10173)) ([1e65292](https://github.com/googleapis/google-cloud-java/commit/1e65292a5e4009ac58a261dcabe234d077bd3fee))
+* [orgpolicy] Add custom constraints CRUD APIs, proper etag support in Org Policy Update/Delete API ([#10163](https://github.com/googleapis/google-cloud-java/issues/10163)) ([04b5953](https://github.com/googleapis/google-cloud-java/commit/04b5953ee19ade4cd42bdfaf8d5220c2df5c361f))
+* [oslogin] add regions field to ImportSshPublicKeyRequest ([#10205](https://github.com/googleapis/google-cloud-java/issues/10205)) ([96c4cd6](https://github.com/googleapis/google-cloud-java/commit/96c4cd668af57839c3964345f5500a7c5910d263))
+* [recaptchaenterprise] added stable account identifier to related group membership resources, and deprecated hashed identifier field ([#10121](https://github.com/googleapis/google-cloud-java/issues/10121)) ([5ea5bee](https://github.com/googleapis/google-cloud-java/commit/5ea5bee4bdb43ca4ad81cac29222ecdd49425fc8))
+* [recommender] Support cost_in_local_currency field in the cost projection ([#10140](https://github.com/googleapis/google-cloud-java/issues/10140)) ([ab29b60](https://github.com/googleapis/google-cloud-java/commit/ab29b608cfd33328412606afb38c244e5f15ae07))
+* [securitycentermanagement] new module for securitycentermanagement ([#10193](https://github.com/googleapis/google-cloud-java/issues/10193)) ([f75c9a9](https://github.com/googleapis/google-cloud-java/commit/f75c9a9a209d6f09dde5c71f529481521d071aa5))
+* [translate] Add Adaptive MT API ([#10157](https://github.com/googleapis/google-cloud-java/issues/10157)) ([b1f9213](https://github.com/googleapis/google-cloud-java/commit/b1f9213cbeded32e2086b3fb5c933bebb0ed0819))
+* update new client generation to include rest/rpc documentation … ([#10078](https://github.com/googleapis/google-cloud-java/issues/10078)) ([120f75d](https://github.com/googleapis/google-cloud-java/commit/120f75dc2b3da1ef96f60c969562732aa7c533b2))
+
+
+### Bug Fixes
+
+* [texttospeech] correct long audio synthesis HTTP binding ([#10185](https://github.com/googleapis/google-cloud-java/issues/10185)) ([cb5168c](https://github.com/googleapis/google-cloud-java/commit/cb5168c3a46184b41ef153849541d57106f65ca2))
+* [vertexai] Use default scopes from Prediction Service to create application default credentials if scopes are empty. ([#10169](https://github.com/googleapis/google-cloud-java/issues/10169)) ([081f276](https://github.com/googleapis/google-cloud-java/commit/081f276ba6be9fe980d3ecdcf4ea2c3edbc24fe9))
+* **deps:** [clouddeploy] Update the Java code generator (gapic-generator-java) to 2.31.0 ([#10192](https://github.com/googleapis/google-cloud-java/issues/10192)) ([ccb8866](https://github.com/googleapis/google-cloud-java/commit/ccb8866d0122e077abcc35b4c06ce5218f59bad3))
+* **deps:** [datacatalog] Update the Java code generator (gapic-generator-java) to 2.31.0 ([#10190](https://github.com/googleapis/google-cloud-java/issues/10190)) ([4e23220](https://github.com/googleapis/google-cloud-java/commit/4e232204e656216435c79ae93ded144ca04e0463))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.31.0 ([#10194](https://github.com/googleapis/google-cloud-java/issues/10194)) ([c12ae4a](https://github.com/googleapis/google-cloud-java/commit/c12ae4aacc597161211d53f15c60d6ab904d19d2))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.31.0 ([#10195](https://github.com/googleapis/google-cloud-java/issues/10195)) ([e56e666](https://github.com/googleapis/google-cloud-java/commit/e56e666bca2aa7ba5e1f22e76f57a6bfd3f74454))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.31.0 ([#10196](https://github.com/googleapis/google-cloud-java/issues/10196)) ([8c03be2](https://github.com/googleapis/google-cloud-java/commit/8c03be28f3688f1d3b000e09351ead08b9bf2ce4))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.31.0 ([#10197](https://github.com/googleapis/google-cloud-java/issues/10197)) ([41b6664](https://github.com/googleapis/google-cloud-java/commit/41b666489e067d7c5a6306eab78a3278b6c50fc1))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.31.0 ([#10199](https://github.com/googleapis/google-cloud-java/issues/10199)) ([5ddca4d](https://github.com/googleapis/google-cloud-java/commit/5ddca4dff07330a4833e1b41af98b8deb915f5ad))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.31.0 ([#10200](https://github.com/googleapis/google-cloud-java/issues/10200)) ([8578789](https://github.com/googleapis/google-cloud-java/commit/8578789c0b7c9edd9a7e358b80ed3f456b243989))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.31.0 ([#10201](https://github.com/googleapis/google-cloud-java/issues/10201)) ([d228ec1](https://github.com/googleapis/google-cloud-java/commit/d228ec126a086f7b707eee485942d6c1a5b301eb))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.31.0 ([#10202](https://github.com/googleapis/google-cloud-java/issues/10202)) ([16e399f](https://github.com/googleapis/google-cloud-java/commit/16e399f53787c0500ef269f8e9c65c713d7848a1))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.31.0 ([#10203](https://github.com/googleapis/google-cloud-java/issues/10203)) ([89c017e](https://github.com/googleapis/google-cloud-java/commit/89c017eceb7cac1049bf4ec2e1a9f5a75c6da515))
+* **deps:** update dependency com.google.apis:google-api-services-dns to v1-rev20231218-2.0.0 ([#10207](https://github.com/googleapis/google-cloud-java/issues/10207)) ([1f51cee](https://github.com/googleapis/google-cloud-java/commit/1f51cee2922b3713cd0bbdc6e145d643885059d2))
+
+
+### Documentation
+
+* [cloudchannel] A comment for service `CloudChannelReportsService` is changed ([#10175](https://github.com/googleapis/google-cloud-java/issues/10175)) ([8675fa6](https://github.com/googleapis/google-cloud-java/commit/8675fa61de7f399b60b1dff9bcdadefa2925b84e))
+* [dataplex] Fix the comment for `ignore_null` field to clarify its applicability on data quality rules ([#10162](https://github.com/googleapis/google-cloud-java/issues/10162)) ([e1a95a3](https://github.com/googleapis/google-cloud-java/commit/e1a95a3fd6f6882d893b5f7704126193eaa8de3a))
+* [dialogflow-cx] Fix formatting due to unclosed backtick ([#10209](https://github.com/googleapis/google-cloud-java/issues/10209)) ([12a328f](https://github.com/googleapis/google-cloud-java/commit/12a328f470335542fcd18312ffff728c3c38ddf9))
+* [documentai] Clarify Properties documentation ([#10145](https://github.com/googleapis/google-cloud-java/issues/10145)) ([e95f706](https://github.com/googleapis/google-cloud-java/commit/e95f7060a9175a5570578c70b17586e80629c2fc))
+* [maps-places] change comments for some fields in Places API ([#10124](https://github.com/googleapis/google-cloud-java/issues/10124)) ([f2f275e](https://github.com/googleapis/google-cloud-java/commit/f2f275e3acaf6031f6666ab9346a5854755310e2))
+* update new client generation instructions ([#9931](https://github.com/googleapis/google-cloud-java/issues/9931)) ([233e9c4](https://github.com/googleapis/google-cloud-java/commit/233e9c41a51f420289506ec298dd4e7fa24437cf))
+
 ## [1.26.0](https://github.com/googleapis/google-cloud-java/compare/v1.25.0...v1.26.0) (2023-12-12)
 
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.34.0 (2024-01-10)
+
+### Features
+
+* Added support for severity in AlertPolicy ([#10137](https://github.com/googleapis/google-cloud-java/issues/10137)) ([bfc8e3c](https://github.com/googleapis/google-cloud-java/commit/bfc8e3cd3979f7e08753362265480dc9a959d742))
+
+
+
 ## 3.33.0 (2023-12-12)
 
 * No change
