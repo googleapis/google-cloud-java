@@ -1057,6 +1057,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    *           .setParent(UserName.of("[USER]").toString())
    *           .setSshPublicKey(OsLoginProto.SshPublicKey.newBuilder().build())
    *           .setProjectId("projectId-894832108")
+   *           .addAllRegions(new ArrayList<String>())
    *           .build();
    *   ImportSshPublicKeyResponse response = osLoginServiceClient.importSshPublicKey(request);
    * }
@@ -1088,6 +1089,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    *           .setParent(UserName.of("[USER]").toString())
    *           .setSshPublicKey(OsLoginProto.SshPublicKey.newBuilder().build())
    *           .setProjectId("projectId-894832108")
+   *           .addAllRegions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<ImportSshPublicKeyResponse> future =
    *       osLoginServiceClient.importSshPublicKeyCallable().futureCall(request);

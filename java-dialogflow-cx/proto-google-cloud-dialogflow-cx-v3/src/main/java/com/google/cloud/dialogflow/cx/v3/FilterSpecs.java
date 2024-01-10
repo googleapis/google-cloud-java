@@ -75,7 +75,7 @@ public final class FilterSpecs extends com.google.protobuf.GeneratedMessageV3
    * Optional. Data Stores where the boosting configuration is applied. The full
    * names of the referenced data stores. Formats:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
-   * `projects/{project}/locations/{location}/dataStores/{data_store}
+   * `projects/{project}/locations/{location}/dataStores/{data_store}`
    * </pre>
    *
    * <code>
@@ -94,7 +94,7 @@ public final class FilterSpecs extends com.google.protobuf.GeneratedMessageV3
    * Optional. Data Stores where the boosting configuration is applied. The full
    * names of the referenced data stores. Formats:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
-   * `projects/{project}/locations/{location}/dataStores/{data_store}
+   * `projects/{project}/locations/{location}/dataStores/{data_store}`
    * </pre>
    *
    * <code>
@@ -113,7 +113,7 @@ public final class FilterSpecs extends com.google.protobuf.GeneratedMessageV3
    * Optional. Data Stores where the boosting configuration is applied. The full
    * names of the referenced data stores. Formats:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
-   * `projects/{project}/locations/{location}/dataStores/{data_store}
+   * `projects/{project}/locations/{location}/dataStores/{data_store}`
    * </pre>
    *
    * <code>
@@ -133,7 +133,7 @@ public final class FilterSpecs extends com.google.protobuf.GeneratedMessageV3
    * Optional. Data Stores where the boosting configuration is applied. The full
    * names of the referenced data stores. Formats:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
-   * `projects/{project}/locations/{location}/dataStores/{data_store}
+   * `projects/{project}/locations/{location}/dataStores/{data_store}`
    * </pre>
    *
    * <code>
@@ -597,7 +597,7 @@ public final class FilterSpecs extends com.google.protobuf.GeneratedMessageV3
      * Optional. Data Stores where the boosting configuration is applied. The full
      * names of the referenced data stores. Formats:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
-     * `projects/{project}/locations/{location}/dataStores/{data_store}
+     * `projects/{project}/locations/{location}/dataStores/{data_store}`
      * </pre>
      *
      * <code>
@@ -617,7 +617,7 @@ public final class FilterSpecs extends com.google.protobuf.GeneratedMessageV3
      * Optional. Data Stores where the boosting configuration is applied. The full
      * names of the referenced data stores. Formats:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
-     * `projects/{project}/locations/{location}/dataStores/{data_store}
+     * `projects/{project}/locations/{location}/dataStores/{data_store}`
      * </pre>
      *
      * <code>
@@ -636,7 +636,7 @@ public final class FilterSpecs extends com.google.protobuf.GeneratedMessageV3
      * Optional. Data Stores where the boosting configuration is applied. The full
      * names of the referenced data stores. Formats:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
-     * `projects/{project}/locations/{location}/dataStores/{data_store}
+     * `projects/{project}/locations/{location}/dataStores/{data_store}`
      * </pre>
      *
      * <code>
@@ -656,7 +656,7 @@ public final class FilterSpecs extends com.google.protobuf.GeneratedMessageV3
      * Optional. Data Stores where the boosting configuration is applied. The full
      * names of the referenced data stores. Formats:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
-     * `projects/{project}/locations/{location}/dataStores/{data_store}
+     * `projects/{project}/locations/{location}/dataStores/{data_store}`
      * </pre>
      *
      * <code>
@@ -676,7 +676,7 @@ public final class FilterSpecs extends com.google.protobuf.GeneratedMessageV3
      * Optional. Data Stores where the boosting configuration is applied. The full
      * names of the referenced data stores. Formats:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
-     * `projects/{project}/locations/{location}/dataStores/{data_store}
+     * `projects/{project}/locations/{location}/dataStores/{data_store}`
      * </pre>
      *
      * <code>
@@ -704,7 +704,7 @@ public final class FilterSpecs extends com.google.protobuf.GeneratedMessageV3
      * Optional. Data Stores where the boosting configuration is applied. The full
      * names of the referenced data stores. Formats:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
-     * `projects/{project}/locations/{location}/dataStores/{data_store}
+     * `projects/{project}/locations/{location}/dataStores/{data_store}`
      * </pre>
      *
      * <code>
@@ -731,7 +731,7 @@ public final class FilterSpecs extends com.google.protobuf.GeneratedMessageV3
      * Optional. Data Stores where the boosting configuration is applied. The full
      * names of the referenced data stores. Formats:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
-     * `projects/{project}/locations/{location}/dataStores/{data_store}
+     * `projects/{project}/locations/{location}/dataStores/{data_store}`
      * </pre>
      *
      * <code>
@@ -755,7 +755,7 @@ public final class FilterSpecs extends com.google.protobuf.GeneratedMessageV3
      * Optional. Data Stores where the boosting configuration is applied. The full
      * names of the referenced data stores. Formats:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
-     * `projects/{project}/locations/{location}/dataStores/{data_store}
+     * `projects/{project}/locations/{location}/dataStores/{data_store}`
      * </pre>
      *
      * <code>
@@ -778,7 +778,7 @@ public final class FilterSpecs extends com.google.protobuf.GeneratedMessageV3
      * Optional. Data Stores where the boosting configuration is applied. The full
      * names of the referenced data stores. Formats:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
-     * `projects/{project}/locations/{location}/dataStores/{data_store}
+     * `projects/{project}/locations/{location}/dataStores/{data_store}`
      * </pre>
      *
      * <code>

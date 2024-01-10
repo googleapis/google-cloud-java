@@ -148,6 +148,7 @@
     <module>java-scheduler</module>
     <module>java-secretmanager</module>
     <module>java-securesourcemanager</module>
+    <module>java-securitycentermanagement</module>
     <module>java-securitycenter</module>
     <module>java-securitycenter-settings</module>
     <module>java-security-private-ca</module>
