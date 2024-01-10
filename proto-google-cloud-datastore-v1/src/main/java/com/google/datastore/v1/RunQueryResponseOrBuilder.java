@@ -111,4 +111,48 @@ public interface RunQueryResponseOrBuilder
    * @return The transaction.
    */
   com.google.protobuf.ByteString getTransaction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Query plan and execution statistics. Note that the returned stats are
+   * subject to change as Firestore evolves.
+   *
+   * This is only present when the request specifies a mode other than `NORMAL`.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
+   *
+   * @return Whether the stats field is set.
+   */
+  boolean hasStats();
+  /**
+   *
+   *
+   * <pre>
+   * Query plan and execution statistics. Note that the returned stats are
+   * subject to change as Firestore evolves.
+   *
+   * This is only present when the request specifies a mode other than `NORMAL`.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
+   *
+   * @return The stats.
+   */
+  com.google.datastore.v1.ResultSetStats getStats();
+  /**
+   *
+   *
+   * <pre>
+   * Query plan and execution statistics. Note that the returned stats are
+   * subject to change as Firestore evolves.
+   *
+   * This is only present when the request specifies a mode other than `NORMAL`.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.ResultSetStats stats = 6;</code>
+   */
+  com.google.datastore.v1.ResultSetStatsOrBuilder getStatsOrBuilder();
 }

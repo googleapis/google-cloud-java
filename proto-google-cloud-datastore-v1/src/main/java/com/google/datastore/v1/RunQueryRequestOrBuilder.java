@@ -228,5 +228,36 @@ public interface RunQueryRequestOrBuilder
    */
   com.google.datastore.v1.GqlQueryOrBuilder getGqlQueryOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mode in which the query request is processed. This field is
+   * optional, and when not provided, it defaults to `NORMAL` mode where no
+   * additional statistics will be returned with the query results.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.QueryMode mode = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for mode.
+   */
+  int getModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mode in which the query request is processed. This field is
+   * optional, and when not provided, it defaults to `NORMAL` mode where no
+   * additional statistics will be returned with the query results.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.QueryMode mode = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mode.
+   */
+  com.google.datastore.v1.QueryMode getMode();
+
   com.google.datastore.v1.RunQueryRequest.QueryTypeCase getQueryTypeCase();
 }
