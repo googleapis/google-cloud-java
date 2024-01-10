@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.31.0 (2024-01-10)
+
+### Features
+
+* Add custom target type support ([#10109](https://github.com/googleapis/google-cloud-java/issues/10109)) ([003e683](https://github.com/googleapis/google-cloud-java/commit/003e6836ac05d50e4ace00c6bf42958468ce3407))
+* Update the Java code generator (gapic-generator-java) to 2.31.0 ([#10192](https://github.com/googleapis/google-cloud-java/issues/10192)) ([ccb8866](https://github.com/googleapis/google-cloud-java/commit/ccb8866d0122e077abcc35b4c06ce5218f59bad3))
+
+
+
 ## 1.30.0 (2023-12-12)
 
 * No change

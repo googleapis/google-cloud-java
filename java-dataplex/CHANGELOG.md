@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.31.0 (2024-01-10)
+
+### Features
+
+* Fix the comment for `ignore_null` field to clarify its applicability on data quality rules ([#10162](https://github.com/googleapis/google-cloud-java/issues/10162)) ([e1a95a3](https://github.com/googleapis/google-cloud-java/commit/e1a95a3fd6f6882d893b5f7704126193eaa8de3a))
+
+
+
 ## 1.30.0 (2023-12-12)
 
 * No change

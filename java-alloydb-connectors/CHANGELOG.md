@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.11.0 (2024-01-10)
+
+### Features
+
+* added PSC config, PSC interface config, PSC instance config ([#10166](https://github.com/googleapis/google-cloud-java/issues/10166)) ([24577d1](https://github.com/googleapis/google-cloud-java/commit/24577d17a6b547fe10993d8ad4ec5e1b83c6ba30))
+
+
+
 ## 0.10.0 (2023-12-12)
 
 * No change

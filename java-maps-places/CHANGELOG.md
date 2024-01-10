@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0 (2024-01-10)
+
+### Features
+
+* change comments for some fields in Places API ([#10124](https://github.com/googleapis/google-cloud-java/issues/10124)) ([f2f275e](https://github.com/googleapis/google-cloud-java/commit/f2f275e3acaf6031f6666ab9346a5854755310e2))
+
+
+
 ## 0.3.0 (2023-12-12)
 
 * No change

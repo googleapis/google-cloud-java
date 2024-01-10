@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.33.0 (2024-01-10)
+
+### Features
+
+* Add custom constraints CRUD APIs, proper etag support in Org Policy Update/Delete API ([#10163](https://github.com/googleapis/google-cloud-java/issues/10163)) ([04b5953](https://github.com/googleapis/google-cloud-java/commit/04b5953ee19ade4cd42bdfaf8d5220c2df5c361f))
+
+
+
 ## 2.32.0 (2023-12-12)
 
 * No change

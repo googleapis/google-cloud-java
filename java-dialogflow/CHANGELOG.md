@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.39.0 (2024-01-10)
+
+### Features
+
+* add sections field to HumanAgentAssistantConfig.SuggestionQueryConfig ([#10158](https://github.com/googleapis/google-cloud-java/issues/10158)) ([16f75a7](https://github.com/googleapis/google-cloud-java/commit/16f75a72f8e9901fd1edcb7efbe273d40a018a4e))
+
+
+
 ## 4.38.0 (2023-12-12)
 
 * No change

@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.30.0 (2024-01-10)
+
+### Features
+
+* added stable account identifier to related group membership resources, and deprecated hashed identifier field ([#10121](https://github.com/googleapis/google-cloud-java/issues/10121)) ([5ea5bee](https://github.com/googleapis/google-cloud-java/commit/5ea5bee4bdb43ca4ad81cac29222ecdd49425fc8))
+
+
+
 ## 3.29.0 (2023-12-12)
 
 * No change

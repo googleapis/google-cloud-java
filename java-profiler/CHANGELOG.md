@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.33.0 (2024-01-10)
+
+### Features
+
+* add `ListProfiles` RPC to `ExportService` ([#10150](https://github.com/googleapis/google-cloud-java/issues/10150)) ([6e725ff](https://github.com/googleapis/google-cloud-java/commit/6e725ffa4b75175f63158a9426d29f27f3df624e))
+
+
+
 ## 2.32.0 (2023-12-12)
 
 * No change

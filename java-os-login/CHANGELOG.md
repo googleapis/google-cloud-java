@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.32.0 (2024-01-10)
+
+### Features
+
+* add regions field to ImportSshPublicKeyRequest ([#10205](https://github.com/googleapis/google-cloud-java/issues/10205)) ([96c4cd6](https://github.com/googleapis/google-cloud-java/commit/96c4cd668af57839c3964345f5500a7c5910d263))
+
+
+
 ## 2.31.0 (2023-12-12)
 
 * No change

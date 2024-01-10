@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.33.0 (2024-01-10)
+
+### Features
+
+* added the MoveBillingAccount method, which allows changing which organization a billing account belongs to ([#10115](https://github.com/googleapis/google-cloud-java/issues/10115)) ([615854d](https://github.com/googleapis/google-cloud-java/commit/615854db385e9e0808dbbdd32b35428a49773794))
+
+
+
 ## 2.32.0 (2023-12-12)
 
 * No change

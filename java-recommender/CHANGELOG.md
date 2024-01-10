@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.35.0 (2024-01-10)
+
+### Features
+
+* Support cost_in_local_currency field in the cost projection ([#10140](https://github.com/googleapis/google-cloud-java/issues/10140)) ([ab29b60](https://github.com/googleapis/google-cloud-java/commit/ab29b608cfd33328412606afb38c244e5f15ae07))
+
+
+
 ## 2.34.0 (2023-12-12)
 
 * No change
