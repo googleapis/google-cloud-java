@@ -23,6 +23,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.protobuf.Descriptors;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Map;
 import org.json.JSONArray;
 
@@ -191,6 +192,16 @@ public class JsonStreamWriter implements AutoCloseable {
   public static Builder newBuilder(String streamOrTableName, BigQueryWriteClient client) {
     return new Builder(
         SchemaAwareStreamWriter.newBuilder(streamOrTableName, client, JsonToProtoMessage.INSTANCE));
+  }
+
+  /**
+   * Sets the maximum time a request is allowed to be waiting in request waiting queue. Under very
+   * low chance, it's possible for append request to be waiting indefintely for request callback
+   * when Google networking SDK does not detect the networking breakage. The default timeout is 15
+   * minutes. We are investigating the root cause for callback not triggered by networking SDK.
+   */
+  public static void setMaxRequestCallbackWaitTime(Duration waitTime) {
+    ConnectionWorker.MAXIMUM_REQUEST_CALLBACK_WAIT_TIME = waitTime;
   }
 
   @Override
