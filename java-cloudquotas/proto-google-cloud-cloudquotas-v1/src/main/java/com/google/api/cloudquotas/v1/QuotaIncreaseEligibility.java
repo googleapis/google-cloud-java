@@ -87,12 +87,12 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The container is not linked with a billing account.
+     * The container is not linked with a valid billing account.
      * </pre>
      *
-     * <code>NO_BILLING_ACCOUNT = 2;</code>
+     * <code>NO_VALID_BILLING_ACCOUNT = 1;</code>
      */
-    NO_BILLING_ACCOUNT(2),
+    NO_VALID_BILLING_ACCOUNT(1),
     /**
      *
      *
@@ -100,9 +100,9 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
      * Other reasons.
      * </pre>
      *
-     * <code>OTHER = 3;</code>
+     * <code>OTHER = 2;</code>
      */
-    OTHER(3),
+    OTHER(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -120,12 +120,12 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The container is not linked with a billing account.
+     * The container is not linked with a valid billing account.
      * </pre>
      *
-     * <code>NO_BILLING_ACCOUNT = 2;</code>
+     * <code>NO_VALID_BILLING_ACCOUNT = 1;</code>
      */
-    public static final int NO_BILLING_ACCOUNT_VALUE = 2;
+    public static final int NO_VALID_BILLING_ACCOUNT_VALUE = 1;
     /**
      *
      *
@@ -133,9 +133,9 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
      * Other reasons.
      * </pre>
      *
-     * <code>OTHER = 3;</code>
+     * <code>OTHER = 2;</code>
      */
-    public static final int OTHER_VALUE = 3;
+    public static final int OTHER_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -163,9 +163,9 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
       switch (value) {
         case 0:
           return INELIGIBILITY_REASON_UNSPECIFIED;
+        case 1:
+          return NO_VALID_BILLING_ACCOUNT;
         case 2:
-          return NO_BILLING_ACCOUNT;
-        case 3:
           return OTHER;
         default:
           return null;

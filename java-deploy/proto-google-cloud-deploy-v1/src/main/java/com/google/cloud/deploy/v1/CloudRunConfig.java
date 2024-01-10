@@ -95,7 +95,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags that are added to the canary revision while the
-   * canary deployment is in progress.
+   * canary phase is in progress.
    * </pre>
    *
    * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -111,7 +111,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags that are added to the canary revision while the
-   * canary deployment is in progress.
+   * canary phase is in progress.
    * </pre>
    *
    * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -127,7 +127,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags that are added to the canary revision while the
-   * canary deployment is in progress.
+   * canary phase is in progress.
    * </pre>
    *
    * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -144,7 +144,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags that are added to the canary revision while the
-   * canary deployment is in progress.
+   * canary phase is in progress.
    * </pre>
    *
    * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -167,7 +167,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags that are added to the prior revision while the
-   * canary deployment is in progress.
+   * canary phase is in progress.
    * </pre>
    *
    * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -182,7 +182,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags that are added to the prior revision while the
-   * canary deployment is in progress.
+   * canary phase is in progress.
    * </pre>
    *
    * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -197,7 +197,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags that are added to the prior revision while the
-   * canary deployment is in progress.
+   * canary phase is in progress.
    * </pre>
    *
    * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -213,7 +213,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags that are added to the prior revision while the
-   * canary deployment is in progress.
+   * canary phase is in progress.
    * </pre>
    *
    * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -234,8 +234,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of tags that are added to the final stable revision after
-   * the canary deployment is completed.
+   * Optional. A list of tags that are added to the final stable revision when
+   * the stable phase is applied.
    * </pre>
    *
    * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -250,8 +250,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of tags that are added to the final stable revision after
-   * the canary deployment is completed.
+   * Optional. A list of tags that are added to the final stable revision when
+   * the stable phase is applied.
    * </pre>
    *
    * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -266,8 +266,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of tags that are added to the final stable revision after
-   * the canary deployment is completed.
+   * Optional. A list of tags that are added to the final stable revision when
+   * the stable phase is applied.
    * </pre>
    *
    * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -283,8 +283,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of tags that are added to the final stable revision after
-   * the canary deployment is completed.
+   * Optional. A list of tags that are added to the final stable revision when
+   * the stable phase is applied.
    * </pre>
    *
    * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -826,7 +826,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the canary revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -843,7 +843,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the canary revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -859,7 +859,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the canary revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -876,7 +876,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the canary revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -893,7 +893,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the canary revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -918,7 +918,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the canary revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -942,7 +942,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the canary revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -963,7 +963,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the canary revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -983,7 +983,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the canary revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1018,7 +1018,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the prior revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1035,7 +1035,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the prior revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1051,7 +1051,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the prior revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1068,7 +1068,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the prior revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1085,7 +1085,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the prior revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1110,7 +1110,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the prior revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1134,7 +1134,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the prior revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1155,7 +1155,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the prior revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1175,7 +1175,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags that are added to the prior revision while the
-     * canary deployment is in progress.
+     * canary phase is in progress.
      * </pre>
      *
      * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1209,8 +1209,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of tags that are added to the final stable revision after
-     * the canary deployment is completed.
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
      * </pre>
      *
      * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1226,8 +1226,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of tags that are added to the final stable revision after
-     * the canary deployment is completed.
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
      * </pre>
      *
      * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1242,8 +1242,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of tags that are added to the final stable revision after
-     * the canary deployment is completed.
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
      * </pre>
      *
      * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1259,8 +1259,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of tags that are added to the final stable revision after
-     * the canary deployment is completed.
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
      * </pre>
      *
      * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1276,8 +1276,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of tags that are added to the final stable revision after
-     * the canary deployment is completed.
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
      * </pre>
      *
      * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1301,8 +1301,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of tags that are added to the final stable revision after
-     * the canary deployment is completed.
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
      * </pre>
      *
      * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1325,8 +1325,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of tags that are added to the final stable revision after
-     * the canary deployment is completed.
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
      * </pre>
      *
      * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1346,8 +1346,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of tags that are added to the final stable revision after
-     * the canary deployment is completed.
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
      * </pre>
      *
      * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1366,8 +1366,8 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of tags that are added to the final stable revision after
-     * the canary deployment is completed.
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
      * </pre>
      *
      * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];

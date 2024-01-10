@@ -115,6 +115,12 @@ public class QuotaControllerStubSettings extends StubSettings<QuotaControllerStu
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "servicecontrol";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();

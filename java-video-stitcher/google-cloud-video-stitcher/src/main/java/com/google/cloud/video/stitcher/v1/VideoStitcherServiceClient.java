@@ -65,19 +65,481 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    <tr>
+ *      <td>CreateCdnKey</td>
+ *      <td><p> Creates a new CDN key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createCdnKeyAsync(CreateCdnKeyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createCdnKeyAsync(LocationName parent, CdnKey cdnKey, String cdnKeyId)
+ *           <li>createCdnKeyAsync(String parent, CdnKey cdnKey, String cdnKeyId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createCdnKeyOperationCallable()
+ *           <li>createCdnKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListCdnKeys</td>
+ *      <td><p> Lists all CDN keys in the specified project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listCdnKeys(ListCdnKeysRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listCdnKeys(LocationName parent)
+ *           <li>listCdnKeys(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listCdnKeysPagedCallable()
+ *           <li>listCdnKeysCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetCdnKey</td>
+ *      <td><p> Returns the specified CDN key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getCdnKey(GetCdnKeyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getCdnKey(CdnKeyName name)
+ *           <li>getCdnKey(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getCdnKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteCdnKey</td>
+ *      <td><p> Deletes the specified CDN key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteCdnKeyAsync(DeleteCdnKeyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteCdnKeyAsync(CdnKeyName name)
+ *           <li>deleteCdnKeyAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteCdnKeyOperationCallable()
+ *           <li>deleteCdnKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateCdnKey</td>
+ *      <td><p> Updates the specified CDN key. Only update fields specified in the call method body.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateCdnKeyAsync(UpdateCdnKeyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateCdnKeyAsync(CdnKey cdnKey, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateCdnKeyOperationCallable()
+ *           <li>updateCdnKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateVodSession</td>
+ *      <td><p> Creates a client side playback VOD session and returns the full tracking and playback metadata of the session.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createVodSession(CreateVodSessionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>createVodSession(LocationName parent, VodSession vodSession)
+ *           <li>createVodSession(String parent, VodSession vodSession)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createVodSessionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetVodSession</td>
+ *      <td><p> Returns the full tracking, playback metadata, and relevant ad-ops logs for the specified VOD session.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getVodSession(GetVodSessionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getVodSession(VodSessionName name)
+ *           <li>getVodSession(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getVodSessionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListVodStitchDetails</td>
+ *      <td><p> Returns a list of detailed stitching information of the specified VOD session.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listVodStitchDetails(ListVodStitchDetailsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listVodStitchDetails(VodSessionName parent)
+ *           <li>listVodStitchDetails(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listVodStitchDetailsPagedCallable()
+ *           <li>listVodStitchDetailsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetVodStitchDetail</td>
+ *      <td><p> Returns the specified stitching information for the specified VOD session.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getVodStitchDetail(GetVodStitchDetailRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getVodStitchDetail(VodStitchDetailName name)
+ *           <li>getVodStitchDetail(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getVodStitchDetailCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListVodAdTagDetails</td>
+ *      <td><p> Return the list of ad tag details for the specified VOD session.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listVodAdTagDetails(ListVodAdTagDetailsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listVodAdTagDetails(VodSessionName parent)
+ *           <li>listVodAdTagDetails(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listVodAdTagDetailsPagedCallable()
+ *           <li>listVodAdTagDetailsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetVodAdTagDetail</td>
+ *      <td><p> Returns the specified ad tag detail for the specified VOD session.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getVodAdTagDetail(GetVodAdTagDetailRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getVodAdTagDetail(VodAdTagDetailName name)
+ *           <li>getVodAdTagDetail(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getVodAdTagDetailCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListLiveAdTagDetails</td>
+ *      <td><p> Return the list of ad tag details for the specified live session.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listLiveAdTagDetails(ListLiveAdTagDetailsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listLiveAdTagDetails(LiveSessionName parent)
+ *           <li>listLiveAdTagDetails(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listLiveAdTagDetailsPagedCallable()
+ *           <li>listLiveAdTagDetailsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetLiveAdTagDetail</td>
+ *      <td><p> Returns the specified ad tag detail for the specified live session.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getLiveAdTagDetail(GetLiveAdTagDetailRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getLiveAdTagDetail(LiveAdTagDetailName name)
+ *           <li>getLiveAdTagDetail(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getLiveAdTagDetailCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateSlate</td>
+ *      <td><p> Creates a slate.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createSlateAsync(CreateSlateRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createSlateAsync(LocationName parent, Slate slate, String slateId)
+ *           <li>createSlateAsync(String parent, Slate slate, String slateId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createSlateOperationCallable()
+ *           <li>createSlateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListSlates</td>
+ *      <td><p> Lists all slates in the specified project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listSlates(ListSlatesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listSlates(LocationName parent)
+ *           <li>listSlates(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listSlatesPagedCallable()
+ *           <li>listSlatesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetSlate</td>
+ *      <td><p> Returns the specified slate.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getSlate(GetSlateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getSlate(SlateName name)
+ *           <li>getSlate(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getSlateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateSlate</td>
+ *      <td><p> Updates the specified slate.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateSlateAsync(UpdateSlateRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateSlateAsync(Slate slate, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateSlateOperationCallable()
+ *           <li>updateSlateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteSlate</td>
+ *      <td><p> Deletes the specified slate.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteSlateAsync(DeleteSlateRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteSlateAsync(SlateName name)
+ *           <li>deleteSlateAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteSlateOperationCallable()
+ *           <li>deleteSlateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateLiveSession</td>
+ *      <td><p> Creates a new live session.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createLiveSession(CreateLiveSessionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>createLiveSession(LocationName parent, LiveSession liveSession)
+ *           <li>createLiveSession(String parent, LiveSession liveSession)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createLiveSessionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetLiveSession</td>
+ *      <td><p> Returns the details for the specified live session.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getLiveSession(GetLiveSessionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getLiveSession(LiveSessionName name)
+ *           <li>getLiveSession(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getLiveSessionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateLiveConfig</td>
+ *      <td><p> Registers the live config with the provided unique ID in the specified region.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createLiveConfigAsync(CreateLiveConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createLiveConfigAsync(LocationName parent, LiveConfig liveConfig, String liveConfigId)
+ *           <li>createLiveConfigAsync(String parent, LiveConfig liveConfig, String liveConfigId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createLiveConfigOperationCallable()
+ *           <li>createLiveConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListLiveConfigs</td>
+ *      <td><p> Lists all live configs managed by the Video Stitcher that belong to the specified project and region.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listLiveConfigs(ListLiveConfigsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listLiveConfigs(LocationName parent)
+ *           <li>listLiveConfigs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listLiveConfigsPagedCallable()
+ *           <li>listLiveConfigsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetLiveConfig</td>
+ *      <td><p> Returns the specified live config managed by the Video Stitcher service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getLiveConfig(GetLiveConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getLiveConfig(LiveConfigName name)
+ *           <li>getLiveConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getLiveConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteLiveConfig</td>
+ *      <td><p> Deletes the specified live config.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteLiveConfigAsync(DeleteLiveConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteLiveConfigAsync(LiveConfigName name)
+ *           <li>deleteLiveConfigAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteLiveConfigOperationCallable()
+ *           <li>deleteLiveConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *

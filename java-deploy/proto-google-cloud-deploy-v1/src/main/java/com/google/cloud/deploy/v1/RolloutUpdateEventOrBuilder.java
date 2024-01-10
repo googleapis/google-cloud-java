@@ -27,6 +27,31 @@ public interface RolloutUpdateEventOrBuilder
    *
    *
    * <pre>
+   * Debug message for when a rollout update event occurs.
+   * </pre>
+   *
+   * <code>string message = 6;</code>
+   *
+   * @return The message.
+   */
+  java.lang.String getMessage();
+  /**
+   *
+   *
+   * <pre>
+   * Debug message for when a rollout update event occurs.
+   * </pre>
+   *
+   * <code>string message = 6;</code>
+   *
+   * @return The bytes for message.
+   */
+  com.google.protobuf.ByteString getMessageBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Unique identifier of the pipeline.
    * </pre>
    *
@@ -77,7 +102,34 @@ public interface RolloutUpdateEventOrBuilder
    *
    *
    * <pre>
+   * The name of the `Release`.
+   * </pre>
+   *
+   * <code>string release = 8;</code>
+   *
+   * @return The release.
+   */
+  java.lang.String getRelease();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the `Release`.
+   * </pre>
+   *
+   * <code>string release = 8;</code>
+   *
+   * @return The bytes for release.
+   */
+  com.google.protobuf.ByteString getReleaseBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The name of the rollout.
+   * rollout_uid is not in this log message because we write some of these log
+   * messages at rollout creation time, before we've generated the uid.
    * </pre>
    *
    * <code>string rollout = 3;</code>
@@ -90,6 +142,8 @@ public interface RolloutUpdateEventOrBuilder
    *
    * <pre>
    * The name of the rollout.
+   * rollout_uid is not in this log message because we write some of these log
+   * messages at rollout creation time, before we've generated the uid.
    * </pre>
    *
    * <code>string rollout = 3;</code>
@@ -127,6 +181,31 @@ public interface RolloutUpdateEventOrBuilder
    *
    *
    * <pre>
+   * Type of this notification, e.g. for a rollout update event.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Type type = 7;</code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Type of this notification, e.g. for a rollout update event.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Type type = 7;</code>
+   *
+   * @return The type.
+   */
+  com.google.cloud.deploy.v1.Type getType();
+
+  /**
+   *
+   *
+   * <pre>
    * The type of the rollout update.
    * </pre>
    *
@@ -149,54 +228,4 @@ public interface RolloutUpdateEventOrBuilder
    * @return The rolloutUpdateType.
    */
   com.google.cloud.deploy.v1.RolloutUpdateEvent.RolloutUpdateType getRolloutUpdateType();
-
-  /**
-   *
-   *
-   * <pre>
-   * Debug message for when a rollout update event occurs.
-   * </pre>
-   *
-   * <code>string message = 6;</code>
-   *
-   * @return The message.
-   */
-  java.lang.String getMessage();
-  /**
-   *
-   *
-   * <pre>
-   * Debug message for when a rollout update event occurs.
-   * </pre>
-   *
-   * <code>string message = 6;</code>
-   *
-   * @return The bytes for message.
-   */
-  com.google.protobuf.ByteString getMessageBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Type of this notification, e.g. for a rollout update event.
-   * </pre>
-   *
-   * <code>.google.cloud.deploy.v1.Type type = 7;</code>
-   *
-   * @return The enum numeric value on the wire for type.
-   */
-  int getTypeValue();
-  /**
-   *
-   *
-   * <pre>
-   * Type of this notification, e.g. for a rollout update event.
-   * </pre>
-   *
-   * <code>.google.cloud.deploy.v1.Type type = 7;</code>
-   *
-   * @return The type.
-   */
-  com.google.cloud.deploy.v1.Type getType();
 }

@@ -112,7 +112,7 @@ public interface DeployJobRunMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined deploy operation.
+   * Output only. Custom metadata provided by user-defined deploy operation.
    * </pre>
    *
    * <code>
@@ -126,7 +126,7 @@ public interface DeployJobRunMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined deploy operation.
+   * Output only. Custom metadata provided by user-defined deploy operation.
    * </pre>
    *
    * <code>
@@ -140,7 +140,7 @@ public interface DeployJobRunMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Custom metadata provided by user defined deploy operation.
+   * Output only. Custom metadata provided by user-defined deploy operation.
    * </pre>
    *
    * <code>

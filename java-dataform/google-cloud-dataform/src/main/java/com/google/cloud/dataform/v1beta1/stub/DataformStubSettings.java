@@ -1481,6 +1481,12 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "dataform";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();

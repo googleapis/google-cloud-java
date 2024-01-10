@@ -157,7 +157,7 @@ public interface QuotaInfoOrBuilder
    * <pre>
    * The reset time interval for the quota. Refresh interval applies to rate
    * quota only.
-   * Example: “minute” for per minute, “day” for per day, or “10 seconds” for
+   * Example: "minute" for per minute, "day" for per day, or "10 seconds" for
    * every 10 seconds.
    * </pre>
    *
@@ -172,7 +172,7 @@ public interface QuotaInfoOrBuilder
    * <pre>
    * The reset time interval for the quota. Refresh interval applies to rate
    * quota only.
-   * Example: “minute” for per minute, “day” for per day, or “10 seconds” for
+   * Example: "minute" for per minute, "day" for per day, or "10 seconds" for
    * every 10 seconds.
    * </pre>
    *
@@ -312,7 +312,7 @@ public interface QuotaInfoOrBuilder
    *
    *
    * <pre>
-   * The unit in which the metric value is reported, e.g., “MByte”.
+   * The unit in which the metric value is reported, e.g., "MByte".
    * </pre>
    *
    * <code>string metric_unit = 11;</code>
@@ -324,7 +324,7 @@ public interface QuotaInfoOrBuilder
    *
    *
    * <pre>
-   * The unit in which the metric value is reported, e.g., “MByte”.
+   * The unit in which the metric value is reported, e.g., "MByte".
    * </pre>
    *
    * <code>string metric_unit = 11;</code>

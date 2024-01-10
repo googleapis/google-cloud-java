@@ -27,7 +27,7 @@ public interface CustomMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Key-value pairs provided by the user defined operation.
+   * Output only. Key-value pairs provided by the user-defined operation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -37,7 +37,7 @@ public interface CustomMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Key-value pairs provided by the user defined operation.
+   * Output only. Key-value pairs provided by the user-defined operation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -50,7 +50,7 @@ public interface CustomMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Key-value pairs provided by the user defined operation.
+   * Output only. Key-value pairs provided by the user-defined operation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -60,7 +60,7 @@ public interface CustomMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Key-value pairs provided by the user defined operation.
+   * Output only. Key-value pairs provided by the user-defined operation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -74,7 +74,7 @@ public interface CustomMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Key-value pairs provided by the user defined operation.
+   * Output only. Key-value pairs provided by the user-defined operation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; values = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

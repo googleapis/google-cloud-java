@@ -117,4 +117,63 @@ public interface ImportSshPublicKeyRequestOrBuilder
    * @return The bytes for projectId.
    */
   com.google.protobuf.ByteString getProjectIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The regions to which to assert that the key was written.
+   * If unspecified, defaults to all regions.
+   * Regions are listed at https://cloud.google.com/about/locations#region.
+   * </pre>
+   *
+   * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the regions.
+   */
+  java.util.List<java.lang.String> getRegionsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The regions to which to assert that the key was written.
+   * If unspecified, defaults to all regions.
+   * Regions are listed at https://cloud.google.com/about/locations#region.
+   * </pre>
+   *
+   * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of regions.
+   */
+  int getRegionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The regions to which to assert that the key was written.
+   * If unspecified, defaults to all regions.
+   * Regions are listed at https://cloud.google.com/about/locations#region.
+   * </pre>
+   *
+   * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The regions at the given index.
+   */
+  java.lang.String getRegions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The regions to which to assert that the key was written.
+   * If unspecified, defaults to all regions.
+   * Regions are listed at https://cloud.google.com/about/locations#region.
+   * </pre>
+   *
+   * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the regions at the given index.
+   */
+  com.google.protobuf.ByteString getRegionsBytes(int index);
 }

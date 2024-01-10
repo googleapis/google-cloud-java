@@ -582,6 +582,12 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "datalineage";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();

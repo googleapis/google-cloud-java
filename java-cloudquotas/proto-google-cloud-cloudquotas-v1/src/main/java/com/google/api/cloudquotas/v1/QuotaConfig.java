@@ -366,10 +366,10 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The trace id that the GCP uses to provision the requested
-   * quota. This trace id may be used by the client to contact Cloud support to
-   * track the state of a quota preference request. The trace id is only
-   * produced for increase requests and is unique for each request. The
+   * Output only. The trace id that the Google Cloud uses to provision the
+   * requested quota. This trace id may be used by the client to contact Cloud
+   * support to track the state of a quota preference request. The trace id is
+   * only produced for increase requests and is unique for each request. The
    * quota decrease requests do not have a trace id.
    * </pre>
    *
@@ -393,10 +393,10 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The trace id that the GCP uses to provision the requested
-   * quota. This trace id may be used by the client to contact Cloud support to
-   * track the state of a quota preference request. The trace id is only
-   * produced for increase requests and is unique for each request. The
+   * Output only. The trace id that the Google Cloud uses to provision the
+   * requested quota. This trace id may be used by the client to contact Cloud
+   * support to track the state of a quota preference request. The trace id is
+   * only produced for increase requests and is unique for each request. The
    * quota decrease requests do not have a trace id.
    * </pre>
    *
@@ -1434,10 +1434,10 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The trace id that the GCP uses to provision the requested
-     * quota. This trace id may be used by the client to contact Cloud support to
-     * track the state of a quota preference request. The trace id is only
-     * produced for increase requests and is unique for each request. The
+     * Output only. The trace id that the Google Cloud uses to provision the
+     * requested quota. This trace id may be used by the client to contact Cloud
+     * support to track the state of a quota preference request. The trace id is
+     * only produced for increase requests and is unique for each request. The
      * quota decrease requests do not have a trace id.
      * </pre>
      *
@@ -1460,10 +1460,10 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The trace id that the GCP uses to provision the requested
-     * quota. This trace id may be used by the client to contact Cloud support to
-     * track the state of a quota preference request. The trace id is only
-     * produced for increase requests and is unique for each request. The
+     * Output only. The trace id that the Google Cloud uses to provision the
+     * requested quota. This trace id may be used by the client to contact Cloud
+     * support to track the state of a quota preference request. The trace id is
+     * only produced for increase requests and is unique for each request. The
      * quota decrease requests do not have a trace id.
      * </pre>
      *
@@ -1486,10 +1486,10 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The trace id that the GCP uses to provision the requested
-     * quota. This trace id may be used by the client to contact Cloud support to
-     * track the state of a quota preference request. The trace id is only
-     * produced for increase requests and is unique for each request. The
+     * Output only. The trace id that the Google Cloud uses to provision the
+     * requested quota. This trace id may be used by the client to contact Cloud
+     * support to track the state of a quota preference request. The trace id is
+     * only produced for increase requests and is unique for each request. The
      * quota decrease requests do not have a trace id.
      * </pre>
      *
@@ -1511,10 +1511,10 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The trace id that the GCP uses to provision the requested
-     * quota. This trace id may be used by the client to contact Cloud support to
-     * track the state of a quota preference request. The trace id is only
-     * produced for increase requests and is unique for each request. The
+     * Output only. The trace id that the Google Cloud uses to provision the
+     * requested quota. This trace id may be used by the client to contact Cloud
+     * support to track the state of a quota preference request. The trace id is
+     * only produced for increase requests and is unique for each request. The
      * quota decrease requests do not have a trace id.
      * </pre>
      *
@@ -1532,10 +1532,10 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The trace id that the GCP uses to provision the requested
-     * quota. This trace id may be used by the client to contact Cloud support to
-     * track the state of a quota preference request. The trace id is only
-     * produced for increase requests and is unique for each request. The
+     * Output only. The trace id that the Google Cloud uses to provision the
+     * requested quota. This trace id may be used by the client to contact Cloud
+     * support to track the state of a quota preference request. The trace id is
+     * only produced for increase requests and is unique for each request. The
      * quota decrease requests do not have a trace id.
      * </pre>
      *
