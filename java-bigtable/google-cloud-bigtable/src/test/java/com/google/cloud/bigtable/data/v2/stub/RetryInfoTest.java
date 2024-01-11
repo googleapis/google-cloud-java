@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GrpcStatusCode;
@@ -133,6 +134,20 @@ public class RetryInfoTest {
   }
 
   @Test
+  public void testReadRowServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(() -> client.readRow("table", "row"), true);
+  }
+
+  @Test
+  public void testReadRowServerNotReturningRetryInfoClientDisabledHandling() throws IOException {
+    settings.stubSettings().setEnableRetryInfo(false);
+
+    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
+      verifyNoRetryInfo(() -> newClient.readRow("table", "row"), true);
+    }
+  }
+
+  @Test
   public void testReadRows() {
     verifyRetryInfoIsUsed(() -> client.readRows(Query.create("table")).iterator().hasNext(), true);
   }
@@ -149,6 +164,20 @@ public class RetryInfoTest {
     try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
       verifyRetryInfoCanBeDisabled(
           () -> newClient.readRows(Query.create("table")).iterator().hasNext());
+    }
+  }
+
+  @Test
+  public void testReadRowsServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(() -> client.readRows(Query.create("table")).iterator().hasNext(), true);
+  }
+
+  @Test
+  public void testReadRowsServerNotReturningRetryInfoClientDisabledHandling() throws IOException {
+    settings.stubSettings().setEnableRetryInfo(false);
+
+    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
+      verifyNoRetryInfo(() -> newClient.readRows(Query.create("table")).iterator().hasNext(), true);
     }
   }
 
@@ -186,6 +215,30 @@ public class RetryInfoTest {
   }
 
   @Test
+  public void testMutateRowsServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(
+        () ->
+            client.bulkMutateRows(
+                BulkMutation.create("fake-table")
+                    .add(RowMutationEntry.create("row-key-1").setCell("cf", "q", "v"))),
+        true);
+  }
+
+  @Test
+  public void testMutateRowsServerNotReturningRetryInfoClientDisabledHandling() throws IOException {
+    settings.stubSettings().setEnableRetryInfo(false);
+
+    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
+      verifyNoRetryInfo(
+          () ->
+              newClient.bulkMutateRows(
+                  BulkMutation.create("fake-table")
+                      .add(RowMutationEntry.create("row-key-1").setCell("cf", "q", "v"))),
+          true);
+    }
+  }
+
+  @Test
   public void testMutateRow() {
     verifyRetryInfoIsUsed(
         () -> client.mutateRow(RowMutation.create("table", "key").setCell("cf", "q", "v")), true);
@@ -209,6 +262,23 @@ public class RetryInfoTest {
   }
 
   @Test
+  public void testMutateRowServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(
+        () -> client.mutateRow(RowMutation.create("table", "key").setCell("cf", "q", "v")), true);
+  }
+
+  @Test
+  public void testMutateRowServerNotReturningRetryInfoClientDisabledHandling() throws IOException {
+    settings.stubSettings().setEnableRetryInfo(false);
+
+    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
+      verifyNoRetryInfo(
+          () -> newClient.mutateRow(RowMutation.create("table", "key").setCell("cf", "q", "v")),
+          true);
+    }
+  }
+
+  @Test
   public void testSampleRowKeys() {
     verifyRetryInfoIsUsed(() -> client.sampleRowKeys("table"), true);
   }
@@ -224,6 +294,21 @@ public class RetryInfoTest {
 
     try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
       verifyRetryInfoCanBeDisabled(() -> newClient.sampleRowKeys("table"));
+    }
+  }
+
+  @Test
+  public void testSampleRowKeysServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(() -> client.sampleRowKeys("table"), true);
+  }
+
+  @Test
+  public void testSampleRowKeysServerNotReturningRetryInfoClientDisabledHandling()
+      throws IOException {
+    settings.stubSettings().setEnableRetryInfo(false);
+
+    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
+      verifyNoRetryInfo(() -> newClient.sampleRowKeys("table"), true);
     }
   }
 
@@ -257,6 +342,33 @@ public class RetryInfoTest {
   }
 
   @Test
+  public void testCheckAndMutateServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(
+        () ->
+            client.checkAndMutateRow(
+                ConditionalRowMutation.create("table", "key")
+                    .condition(Filters.FILTERS.value().regex("old-value"))
+                    .then(Mutation.create().setCell("cf", "q", "v"))),
+        false);
+  }
+
+  @Test
+  public void testCheckAndMutateServerNotReturningRetryInfoClientDisabledHandling()
+      throws IOException {
+    settings.stubSettings().setEnableRetryInfo(false);
+
+    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
+      verifyNoRetryInfo(
+          () ->
+              newClient.checkAndMutateRow(
+                  ConditionalRowMutation.create("table", "key")
+                      .condition(Filters.FILTERS.value().regex("old-value"))
+                      .then(Mutation.create().setCell("cf", "q", "v"))),
+          false);
+    }
+  }
+
+  @Test
   public void testReadModifyWrite() {
     verifyRetryInfoIsUsed(
         () ->
@@ -277,6 +389,28 @@ public class RetryInfoTest {
         assertThat(e.getStatusCode()).isEqualTo(exception.getStatusCode());
       }
       assertThat(attemptCounter.get()).isEqualTo(1);
+    }
+  }
+
+  @Test
+  public void testReadModifyWriteServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(
+        () ->
+            client.readModifyWriteRow(
+                ReadModifyWriteRow.create("table", "row").append("cf", "q", "v")),
+        false);
+  }
+
+  @Test
+  public void testReadModifyWriteNotReturningRetryInfoClientDisabledHandling() throws IOException {
+    settings.stubSettings().setEnableRetryInfo(false);
+
+    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
+      verifyNoRetryInfo(
+          () ->
+              newClient.readModifyWriteRow(
+                  ReadModifyWriteRow.create("table", "row").append("cf", "q", "v")),
+          false);
     }
   }
 
@@ -309,6 +443,28 @@ public class RetryInfoTest {
   }
 
   @Test
+  public void testReadChangeStreamServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(
+        () -> client.readChangeStream(ReadChangeStreamQuery.create("table")).iterator().hasNext(),
+        true);
+  }
+
+  @Test
+  public void testReadChangeStreamNotReturningRetryInfoClientDisabledHandling() throws IOException {
+    settings.stubSettings().setEnableRetryInfo(false);
+
+    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
+      verifyNoRetryInfo(
+          () ->
+              newClient
+                  .readChangeStream(ReadChangeStreamQuery.create("table"))
+                  .iterator()
+                  .hasNext(),
+          true);
+    }
+  }
+
+  @Test
   public void testGenerateInitialChangeStreamPartition() {
     verifyRetryInfoIsUsed(
         () -> client.generateInitialChangeStreamPartitions("table").iterator().hasNext(), true);
@@ -330,6 +486,25 @@ public class RetryInfoTest {
     }
   }
 
+  @Test
+  public void testGenerateInitialChangeStreamServerNotReturningRetryInfo() {
+    verifyNoRetryInfo(
+        () -> client.generateInitialChangeStreamPartitions("table").iterator().hasNext(), true);
+  }
+
+  @Test
+  public void testGenerateInitialChangeStreamServerNotReturningRetryInfoClientDisabledHandling()
+      throws IOException {
+    settings.stubSettings().setEnableRetryInfo(false);
+
+    try (BigtableDataClient newClient = BigtableDataClient.create(settings.build())) {
+      verifyNoRetryInfo(
+          () -> newClient.generateInitialChangeStreamPartitions("table").iterator().hasNext(),
+          true);
+    }
+  }
+
+  // Test the case where server returns retry info and client enables handling of retry info
   private void verifyRetryInfoIsUsed(Runnable runnable, boolean retryableError) {
     if (retryableError) {
       enqueueRetryableExceptionWithDelay(delay);
@@ -344,6 +519,7 @@ public class RetryInfoTest {
     assertThat(stopwatch.elapsed()).isAtLeast(Duration.ofSeconds(delay.getSeconds()));
   }
 
+  // Test the case where server returns retry info but client disabled handling of retry info
   private void verifyRetryInfoCanBeDisabled(Runnable runnable) {
     enqueueRetryableExceptionWithDelay(delay);
     Stopwatch stopwatch = Stopwatch.createStarted();
@@ -354,17 +530,58 @@ public class RetryInfoTest {
     assertThat(stopwatch.elapsed()).isLessThan(Duration.ofSeconds(delay.getSeconds()));
 
     attemptCounter.set(0);
-    ApiException exception = enqueueNonRetryableExceptionWithDelay(delay);
-    try {
-      runnable.run();
-    } catch (ApiException e) {
-      if (e instanceof MutateRowsException) {
-        assertThat(((MutateRowsException) e).getFailedMutations().get(0).getError().getStatusCode())
-            .isEqualTo(exception.getStatusCode());
-      } else {
-        assertThat(e.getStatusCode()).isEqualTo(exception.getStatusCode());
-      }
+    ApiException expectedApiException = enqueueNonRetryableExceptionWithDelay(delay);
+    ApiException actualException =
+        assertThrows("non retryable operations should fail", ApiException.class, runnable::run);
+    if (actualException instanceof MutateRowsException) {
+      assertThat(
+              ((MutateRowsException) actualException)
+                  .getFailedMutations()
+                  .get(0)
+                  .getError()
+                  .getStatusCode())
+          .isEqualTo(expectedApiException.getStatusCode());
+    } else {
+      assertThat(actualException.getStatusCode()).isEqualTo(expectedApiException.getStatusCode());
     }
+    assertThat(attemptCounter.get()).isEqualTo(1);
+  }
+
+  // Test the case where server does not return retry info
+  private void verifyNoRetryInfo(Runnable runnable, boolean operationRetryable) {
+    enqueueRetryableExceptionNoRetryInfo();
+
+    if (!operationRetryable) {
+      assertThrows("non retryable operation should fail", ApiException.class, runnable::run);
+      assertThat(attemptCounter.get()).isEqualTo(1);
+    } else {
+      Stopwatch stopwatch = Stopwatch.createStarted();
+      runnable.run();
+      stopwatch.stop();
+
+      assertThat(attemptCounter.get()).isEqualTo(2);
+      assertThat(stopwatch.elapsed()).isLessThan(Duration.ofSeconds(delay.getSeconds()));
+    }
+
+    attemptCounter.set(0);
+
+    ApiException expectedApiException = enqueueNonRetryableExceptionNoRetryInfo();
+
+    ApiException actualApiException =
+        assertThrows("non retryable error should fail", ApiException.class, runnable::run);
+    if (actualApiException instanceof MutateRowsException) {
+      assertThat(
+              ((MutateRowsException) actualApiException)
+                  .getFailedMutations()
+                  .get(0)
+                  .getError()
+                  .getStatusCode())
+          .isEqualTo(expectedApiException.getStatusCode());
+    } else {
+      assertThat(actualApiException.getStatusCode())
+          .isEqualTo(expectedApiException.getStatusCode());
+    }
+
     assertThat(attemptCounter.get()).isEqualTo(1);
   }
 
@@ -402,6 +619,27 @@ public class RetryInfoTest {
             GrpcStatusCode.of(Status.Code.INTERNAL),
             false,
             errorDetails);
+
+    service.expectations.add(exception);
+
+    return exception;
+  }
+
+  private void enqueueRetryableExceptionNoRetryInfo() {
+    ApiException exception =
+        new UnavailableException(
+            new StatusRuntimeException(Status.UNAVAILABLE),
+            GrpcStatusCode.of(Status.Code.UNAVAILABLE),
+            true);
+    service.expectations.add(exception);
+  }
+
+  private ApiException enqueueNonRetryableExceptionNoRetryInfo() {
+    ApiException exception =
+        new InternalException(
+            new StatusRuntimeException(Status.INTERNAL),
+            GrpcStatusCode.of(Status.Code.INTERNAL),
+            false);
 
     service.expectations.add(exception);
 
