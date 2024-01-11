@@ -310,10 +310,20 @@ Options:
 
 Sometimes, a library generation requires special handling for
 Maven coordinates or API ID, especially when the library is not
-specific to Google Cloud. Refer to the following command example when we
-generated Google Maps Routes API Java client library.
+specific to Google Cloud. The table below is the summary of the
+special cases:
 
-**Note that for `maps` clients, include `maps` as a prefix to the `api_shortname`.**
+| API paths         | `--api_shortname`           | `--distribution-name`                                  |
+|-------------------|-----------------------------|--------------------------------------------------------|
+| google/shopping/* | `shopping-<API short name>` | `com.google.shipping:google-shopping-<API short name>` |
+| google/maps/*     | `maps-<API short name>`     | `com.google.maps:google-maps-<API short name>`         |
+
+where `<API short name>` is the value from Cloud Drop file.
+
+For example, the following command example was when we generated Google Maps Routes
+API Java client library.
+Notice `maps` as a  prefix to the `--api_shortname` and it specifies `com.google.maps` group ID in
+`--distribution-name`, while keeping `--api-id` with the value in Cloud Drop page.
 
 ```
 ~/google-cloud-java$ python3.9 generation/new_client/new-client.py generate \
@@ -327,6 +337,7 @@ generated Google Maps Routes API Java client library.
   --requires-billing=true \
   --distribution-name="com.google.maps:google-maps-routing"
 ```
+
 ### Example with duplicate api_short_name
 
 Let's say you get a new library request where the Cloud Drop value for `api_short_name` is `maps-routing`.
@@ -356,12 +367,13 @@ Let's say that after some discussion, `maps-routing-gps` is selected as a suitab
 # Principles
 
 The script should finish creating a pull request even when the newly created
-module fails to compile. This gives the user flexibility to fix things in the
+module fails to compile. This gives the user (release manager) some flexibility to fix things in the
 created pull request.
 
 # Common Errors
 
 ## Unable to clone googleapis-gen
+
 ```
 Creating a new module /usr/local/google/home/lawrenceqiu/IdeaProjects/google-cloud-java/java-vmwareengine
 gcr.io/cloud-devrel-public-resources/owlbot-java:latest
@@ -390,11 +402,14 @@ Traceback (most recent call last):
     raise CalledProcessError(retcode, cmd)
 subprocess.CalledProcessError: Command '['git', 'clone', '-q', 'https://github.com/googleapis/googleapis-gen.git', './gen/googleapis-gen']' returned non-zero exit status 128.
 ```
+
 ### Solution
+
 Run `gh auth login` and choose to authenticate with HTTPS. You may already be authenticated with SSH.
 ![img.png](img.png)
 
 ## Owl-bot Staging Directory Not Found
+
 ```
 Removing googleapis-gen...
 mv: cannot stat 'owl-bot-staging': No such file or directory
@@ -419,9 +434,11 @@ subprocess.CalledProcessError: Command '['mv', 'owl-bot-staging', '../']' return
 ```
 
 ### Solution
+
 The proto path is incorrect. See the `Proto Path` section to find the correct path.
 
 ## Python3.9 is not Installed
+
 ```
 pyenv: version `3.9.13' is not installed (set by /workspace/.python-version)
 Traceback (most recent call last):
@@ -445,6 +462,7 @@ subprocess.CalledProcessError: Command '['docker', 'run', '--rm', '-v', '/usr/lo
 ```
 
 ### Solution
+
 You have run the `pyenv local 3.9.13` in the `google-cloud-java` repo.
 1. Remove the `.python-version` file in `google-cloud-java`.
 2. `cd ..` out to the parent directory and run `pyenv local 3.9.13` there
