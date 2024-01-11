@@ -208,6 +208,9 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
             .setInstanceId(request.getInstanceId())
             .setAppProfileId(request.getAppProfileId());
 
+    settingsBuilder.stubSettings().setEnableRoutingCookie(false);
+    settingsBuilder.stubSettings().setEnableRetryInfo(false);
+
     if (request.hasPerOperationTimeout()) {
       Duration newTimeout = Duration.ofMillis(Durations.toMillis(request.getPerOperationTimeout()));
       settingsBuilder = overrideTimeoutSetting(newTimeout, settingsBuilder);
@@ -231,6 +234,8 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
         }
       }
       settingsBuilder.stubSettings().bulkMutateRowsSettings().setServerInitiatedFlowControl(true);
+      settingsBuilder.stubSettings().setEnableRoutingCookie(true);
+      settingsBuilder.stubSettings().setEnableRetryInfo(true);
     }
 
     // Create and store CbtClient for later use

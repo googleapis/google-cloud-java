@@ -60,7 +60,9 @@ do
     configFlag="--enable_features_all"
   else
     echo "Testing the client with default settings for optional features..."
-    configFlag=""
+    # skipping routing cookie and retry info tests. When the feature is disabled, these
+    # tests are expected to fail
+    configFlag="-skip _Retry_WithRoutingCookie\|_Retry_WithRetryInfo"
   fi
 
   pushd .
