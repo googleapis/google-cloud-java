@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.15.15](https://github.com/googleapis/java-logging/compare/v3.15.14...v3.15.15) (2024-01-10)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.31.0 ([#1502](https://github.com/googleapis/java-logging/issues/1502)) ([c7a20de](https://github.com/googleapis/java-logging/commit/c7a20de29bf6fae079f8d73e3062025a79c220c9))
+* Replace internal Structs class with google-cloud-core version ([#1501](https://github.com/googleapis/java-logging/issues/1501)) ([21e1929](https://github.com/googleapis/java-logging/commit/21e19295923a33759229e2e992d003409ab1feb3))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.21.0 ([#1500](https://github.com/googleapis/java-logging/issues/1500)) ([6cce3c9](https://github.com/googleapis/java-logging/commit/6cce3c9bbe051180789c7ff4fbdde4c45fe46888))
+
 ## [3.15.14](https://github.com/googleapis/java-logging/compare/v3.15.13...v3.15.14) (2023-12-01)
 
 
