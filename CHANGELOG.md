@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.36.0](https://github.com/googleapis/java-bigquery/compare/v2.35.0...v2.36.0) (2024-01-10)
+
+
+### Features
+
+* Support RANGE schema ([#3043](https://github.com/googleapis/java-bigquery/issues/3043)) ([febfc1f](https://github.com/googleapis/java-bigquery/commit/febfc1fdb026a0d07ab24159437633cfb7f44c5d))
+* Use location in BigQueryOption as the default for query ([#3047](https://github.com/googleapis/java-bigquery/issues/3047)) ([270f866](https://github.com/googleapis/java-bigquery/commit/270f8665a4973be6091697bc8101bee76e26ff1d))
+
+
+### Bug Fixes
+
+* Bigquery.create NullPointerException when job already exists ([#3035](https://github.com/googleapis/java-bigquery/issues/3035)) ([38191b1](https://github.com/googleapis/java-bigquery/commit/38191b10a3c2f3ed89351e095c9fc1983bb301ea))
+
+
+### Dependencies
+
+* Update actions/upload-artifact action to v4 ([#3055](https://github.com/googleapis/java-bigquery/issues/3055)) ([7d76100](https://github.com/googleapis/java-bigquery/commit/7d761006b4a7f549bf254b03f67989c9b41cd7b1))
+* Update arrow.version to v14.0.2 ([#3050](https://github.com/googleapis/java-bigquery/issues/3050)) ([b0dc33a](https://github.com/googleapis/java-bigquery/commit/b0dc33ad4e004edcfbee131edb5745159f9e6af3))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.34.0 ([#3033](https://github.com/googleapis/java-bigquery/issues/3033)) ([a710632](https://github.com/googleapis/java-bigquery/commit/a7106325b0f688fc36b1b93ecb7001e45b54a454))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.21.0 ([#3060](https://github.com/googleapis/java-bigquery/issues/3060)) ([78995c4](https://github.com/googleapis/java-bigquery/commit/78995c47ba33019e1007f98d152016ffc3184bd4))
+* Update github/codeql-action action to v2.22.11 ([#3002](https://github.com/googleapis/java-bigquery/issues/3002)) ([52d5e97](https://github.com/googleapis/java-bigquery/commit/52d5e97bdb9fa58c9fbee06cc1b41d58feeae379))
+
 ## [2.35.0](https://github.com/googleapis/java-bigquery/compare/v2.34.2...v2.35.0) (2023-12-01)
 
 
