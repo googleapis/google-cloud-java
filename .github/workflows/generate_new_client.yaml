@@ -74,14 +74,15 @@ jobs:
         run: pip install --require-hashes -r generation/new_client/requirements.txt
       - run: echo 'a message'
       - name: Generate
+        if: generation
         run: |
           set -x
           arguments="--api_shortname=\"${API_SHORTNAME}\" \
-                     --proto-path=\"${PROTO_PATH}\" \
-                     --name-pretty=\"${NAME_PRETTY}\" \
-                     --product-docs=\"${PRODUCT_DOCS}\" \
-                     --api-description=\"${API_DESCRIPTION}\" \
-                     --googleapis-gen-url=\"${GOOGLEAPIS_GEN_URL}\""
+          --proto-path=\"${PROTO_PATH}\" \
+          --name-pretty=\"${NAME_PRETTY}\" \
+          --product-docs=\"${PRODUCT_DOCS}\" \
+          --api-description=\"${API_DESCRIPTION}\" \
+          --googleapis-gen-url=\"${GOOGLEAPIS_GEN_URL}\""
 
           # helper function that appends a python argument only if specified in the GH action inputs
           append_argument() {
@@ -99,6 +100,7 @@ jobs:
           for python_argument in "${optional_args[@]}"; do
             append_argument "${python_argument}"
           done
+          echo "::set-output name=new_library_args::${arguments}"
           echo "${arguments}" | xargs python generation/new_client/new-client.py generate
         env:
           GOOGLEAPIS_GEN_URL: https://yoshi-approver:${{ secrets.YOSHI_APPROVER_PRIVATE_TOKEN }}@github.com/googleapis/googleapis-gen.git
@@ -112,4 +114,24 @@ jobs:
           TRANSPORT: ${{ github.event.inputs.transport }}
           CLOUD_API: ${{ github.event.inputs.CLOUD_API }}
           GROUP_ID: ${{ github.event.inputs.group_id }}
+      - name: Push to branch
+        run: |
+          [ -z "`git config user.email`" ] && git config --global user.email "${USERNAME:-script}@google.com"
+          [ -z "`git config user.name`" ] && git config --global user.name "${USERNAME:-script}"
+
+          # create and push to branch in origin
+          branch_name="new-library/${{ github.event.inputs.api_shortname }}"
+          git checkout -b "${branch_name}"
+          git add --all
+          git commit -m "feat: [${API_SHORTNAME}] new module for ${API_SHORT_NAME}\n\n\
+          \`\`\`${GENERATION_ARGUMENTS}\`\`\`"
+          git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+          git fetch -q --unshallow monorepo
+          git push -f monorepo "${branch_name}"
+
+          # create PR
+          gh pr create --fill
+        env:
+          API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
+          GENERATION_ARGUMENTS: ${{ steps.generation.outputs.new_library_args }}
 
