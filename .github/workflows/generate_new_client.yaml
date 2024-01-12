@@ -5,7 +5,7 @@ on:
         api_shortname:
           required: true
           type: string
-          description: `api_shortname`: Name for the new directory name and (default) artifact name
+          description: "`api_shortname`: Name for the new directory name and (default) artifact name"
         name_pretty:
           required: true
           type: string
