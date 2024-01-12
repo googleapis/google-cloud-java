@@ -134,4 +134,5 @@ jobs:
         env:
           API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
           GENERATION_ARGUMENTS: ${{ steps.generation.outputs.new_library_args }}
+          GH_TOKEN: ${{ secrets.YOSHI_APPROVER_PRIVATE_TOKEN }}
 
