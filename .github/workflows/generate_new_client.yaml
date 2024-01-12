@@ -39,6 +39,7 @@ on:
         transport:
           required: false
           type: choice
+          default: grpc
           options:
             - grpc
             - http
@@ -46,6 +47,7 @@ on:
           description: "`transport`: A label that appears in repo-metadata.json"
         cloud_api:
           required: false
+          default: true
           type: boolean
           description: |
             `cloud_api`: If true, the artifact ID of the library is 'google-cloud-'
