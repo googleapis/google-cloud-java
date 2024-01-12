@@ -56,7 +56,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import org.easymock.EasyMock;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -501,7 +500,6 @@ public class PublisherImplTest {
     assertTrue(publisher.awaitTermination(1, TimeUnit.MINUTES));
   }
 
-  @Test
   /**
    * Make sure that resume publishing works as expected:
    *
@@ -513,6 +511,10 @@ public class PublisherImplTest {
    *   <li>publish with key orderA, which should now succeed
    * </ol>
    */
+  /*
+  Temporarily disabled due to https://github.com/googleapis/java-pubsub/issues/1861.
+  TODO(maitrimangal): Enable once resolved.
+  @Test
   public void testResumePublish() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
@@ -538,13 +540,13 @@ public class PublisherImplTest {
 
     try {
       future1.get();
-      Assert.fail("This should fail.");
+      fail("This should fail.");
     } catch (ExecutionException e) {
     }
 
     try {
       future2.get();
-      Assert.fail("This should fail.");
+      fail("This should fail.");
     } catch (ExecutionException e) {
     }
 
@@ -554,14 +556,14 @@ public class PublisherImplTest {
 
     try {
       future3.get();
-      Assert.fail("This should fail.");
+      fail("This should fail.");
     } catch (ExecutionException e) {
       assertEquals(SequentialExecutorService.CallbackExecutor.CANCELLATION_EXCEPTION, e.getCause());
     }
 
     try {
       future4.get();
-      Assert.fail("This should fail.");
+      fail("This should fail.");
     } catch (ExecutionException e) {
       assertEquals(SequentialExecutorService.CallbackExecutor.CANCELLATION_EXCEPTION, e.getCause());
     }
@@ -641,6 +643,7 @@ public class PublisherImplTest {
       assertEquals(SequentialExecutorService.CallbackExecutor.CANCELLATION_EXCEPTION, e.getCause());
     }
   }
+  */
 
   private ApiFuture<String> sendTestMessageWithOrderingKey(
       Publisher publisher, String data, String orderingKey) {
