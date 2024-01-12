@@ -5,36 +5,36 @@ on:
         api_shortname:
           required: true
           type: string
-          description: Name for the new directory name and (default) artifact name
+          description: `api_shortname`: Name for the new directory name and (default) artifact name
         name_pretty:
           required: true
           type: string
-          description: The human-friendly name that appears in README.md
+          description: `name_pretty`: The human-friendly name that appears in README.md
         proto_path:
           required: true
           type: string
           description: |
-            Path to proto file from the root of the googleapis repository to the
+            `proto_path`: Path to proto file from the root of the googleapis repository to the
             directory that contains the proto files (without the version).
             For example, to generate the library for 'google/maps/routing/v2',
             then you specify this value as 'google/maps/routing'
         product_docs:
           required: true
           type: string
-          description: Documentation URL that appears in README.md
+          description: `product_docs`: Documentation URL that appears in README.md
         rest_docs:
           required: false
           type: string
           description: |
-            If it exists, link to the REST Documentation for a service
+            `rest_docs`: If it exists, link to the REST Documentation for a service
         rpc_docs:
           required: false
           type: string
           description: |
-            If it exists, link to the RPC Documentation for a service
+            `rpc_docs`: If it exists, link to the RPC Documentation for a service
         api_description:
           required: true
-          description: Description that appears in README.md
+          description: `api_description`: Description that appears in README.md
         release_level:
           required: false
           type: choice
@@ -42,7 +42,7 @@ on:
             - stable
             - preview
           description: |
-            A label that appears in repo-metadata.json.
+            `release_level`: A label that appears in repo-metadata.json.
             The first library generation is always 'preview'.
         transport:
           required: false
@@ -51,7 +51,7 @@ on:
             - grpc
             - http
             - both
-          description: A label that appears in repo-metadata.json
+          description: `transport`: A label that appears in repo-metadata.json
         language:
           required: false
           type: string
@@ -60,46 +60,46 @@ on:
           required: false
           type: string
           description: |
-            Maven coordinates of the generated library. By default it's
+            `distribution_name`: Maven coordinates of the generated library. By default it's
             "com.google.cloud:google-cloud-<api_shortname>"
         api_id:
           required: false
           type: string
           description: |
-            The value of the apiid parameter used in README.md It has link to
+            `api_id`: The value of the apiid parameter used in README.md It has link to
             "https://console.cloud.google.com/flows/enableapi?apiid=<api_id>"
         requires_billling:
           required: false
           type: boolean
           description: |
-            Based on this value, README.md explains whether billing setup is
-            "needed or not."
+            `requires_billling`: Based on this value, README.md explains whether billing setup is
+            needed or not.
         destination_name:
           required: false
           type: string
           description: |
-            The directory name of the new library. By default it's
-            "java-<api_shortname>"
+            `destination_name`: The directory name of the new library. By default it's
+            java-<api_shortname>
         cloud_api:
           required: false
           type: boolean
           description: |
-            If true, the artifact ID of the library is 'google-cloud-'
+            `cloud_api`: If true, the artifact ID of the library is 'google-cloud-'
             otherwise 'google-'
         group_id:
           required: false
           type: string
           description: |
-            The group ID of the artifact when distribution name is not set
+            `group_id`: The group ID of the artifact when distribution name is not set
         owlbot_image:
           required: false
           type: string
-          description: The owlbot container image used in OwlBot.yaml
+          description: `owlbot_image`: The owlbot container image used in OwlBot.yaml
         library_type:
           required: false
           type: string
           description: |
-            A label that appear in repo-metadata.json to tell how the library is
+            `library_type`: A label that appear in repo-metadata.json to tell how the library is
             maintained or generated
 
 jobs:
