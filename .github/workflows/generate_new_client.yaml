@@ -76,12 +76,12 @@ jobs:
       - name: Generate
         run: |
           set -x
-          arguments="--api_shortname=${API_SHORTNAME} \
-                     --proto_path=${PROTO_PATH} \
-                     --name-pretty=${NAME_PRETTY} \
-                     --product-docs=${PRODUCT_DOCS} \
-                     --api_description=${API_DESCRIPTION} |
-                     --googleapis-gen-url=${GOOGLEAPIS_GEN_URL}"
+          arguments="--api_shortname=\"${API_SHORTNAME}\" \
+                     --proto_path=\"${PROTO_PATH}\" \
+                     --name-pretty=\"${NAME_PRETTY}\" \
+                     --product-docs=\"${PRODUCT_DOCS}\" \
+                     --api_description=\"${API_DESCRIPTION}\" \
+                     --googleapis-gen-url=\"${GOOGLEAPIS_GEN_URL}\""
 
           # helper function that appends a python argument only if specified in the GH action inputs
           append_argument() {
@@ -90,18 +90,16 @@ jobs:
             env_name=$(echo "${py_arg}" | sed 's/-/_/g' | sed -e 's/\([a-z]\)/\U\1/g')
             if [[ -n "${!env_name}" ]]; then
               # $(echo) is redundant but it works around a syntax highlighting problem in vim
-              arguments=$(echo "${arguments} --${py_arg}=${!env_name}")
+              arguments=$(echo "${arguments} --${py_arg}=\"${!env_name}\"")
             fi
           }
 
-          declare -a optional_args=('release-level' 'transport' 'distribution-name' 'api-id'
-          'requires-billing' 'destination-name' 'cloud-api' 'group-id' 'owlbot-image'
-          'library-type' 'rest-docs' 'rpc-docs')
+          declare -a optional_args=('transport' 'cloud-api' 'group-id' 'rest-docs' 'rpc-docs')
 
           for python_argument in "${optional_args[@]}"; do
             append_argument "${python_argument}"
           done
-          echo "${arguments}" | xargs -0 python generation/new_client/new-client.py generate
+          echo "${arguments}" | xargs python generation/new_client/new-client.py generate
         env:
           GOOGLEAPIS_GEN_URL: https://yoshi-approver:${{ secrets.YOSHI_APPROVER_PRIVATE_TOKEN }}@github.com/googleapis/googleapis-gen.git
           API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
@@ -110,16 +108,8 @@ jobs:
           PRODUCT_DOCS: ${{ github.event.inputs.product_docs }}
           REST_DOCS: ${{ github.event.inputs.rest_docs }}
           RPC_DOCS: ${{ github.event.inputs.rpc_docs }}
-          API_DESCRIPTION: ${{ github.event.inputs.api_description }}
-          RELEASE_LEVEL: ${{ github.event.inputs.release_level }}
           TRANSPORT: ${{ github.event.inputs.transport }}
-          LANGUAGE: ${{ github.event.inputs.language }}
-          DISTRIBUTION_NAME: ${{ github.event.inputs.distribution_name }}
-          API_ID: ${{ github.event.inputs.api_id }}
-          REQUIRES_BILLING: ${{ github.event.inputs.requires_billing }}
-          DESTINATION_NAME: ${{ github.event.inputs.destination_name }}
-          CLOUD_API: ${{ github.event.inputs.cloud_api }}
+          API_DESCRIPTION: ${{ github.event.inputs.api_description }}
+          TRANSPORT: ${{ github.event.inputs.transport }}
           GROUP_ID: ${{ github.event.inputs.group_id }}
-          OWLBOT_IMAGE: ${{ github.event.inputs.owlbot_image }}
-          LIBRARY_TYPE: ${{ github.event.inputs.library_type }}
 
