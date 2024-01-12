@@ -77,10 +77,10 @@ jobs:
         run: |
           set -x
           arguments="--api_shortname=\"${API_SHORTNAME}\" \
-                     --proto_path=\"${PROTO_PATH}\" \
+                     --proto-path=\"${PROTO_PATH}\" \
                      --name-pretty=\"${NAME_PRETTY}\" \
                      --product-docs=\"${PRODUCT_DOCS}\" \
-                     --api_description=\"${API_DESCRIPTION}\" \
+                     --api-description=\"${API_DESCRIPTION}\" \
                      --googleapis-gen-url=\"${GOOGLEAPIS_GEN_URL}\""
 
           # helper function that appends a python argument only if specified in the GH action inputs
