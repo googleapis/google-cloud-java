@@ -60,7 +60,7 @@ on:
 
 jobs:
   generate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
@@ -70,21 +70,12 @@ jobs:
       - name: Get current week within the year
         id: date
         run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
-      - uses: actions/setup-java@v3
-        with:
-          distribution: zulu
-          java-version: 11
-      - run: java -version
-      - uses: actions/cache@v3
-        id: mvn-cache
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
       - name: Install new-client.py dependencies
         run: pip install --require-hashes -r generation/new_client/requirements.txt
       - run: echo 'a message'
       - name: Generate
         run: |
+          set -x
           arguments="--api_shortname=${API_SHORTNAME} \
                      --proto_path=${PROTO_PATH} \
                      --name-pretty=${NAME_PRETTY} \
