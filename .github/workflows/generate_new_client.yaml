@@ -74,7 +74,7 @@ jobs:
         run: pip install --require-hashes -r generation/new_client/requirements.txt
       - run: echo 'a message'
       - name: Generate
-        if: generation
+        id: generation
         run: |
           set -x
           arguments="--api_shortname=\"${API_SHORTNAME}\" \
