@@ -277,6 +277,10 @@ final class StateMachine<RowT> {
 
         @Override
         State handleChunk(CellChunk chunk) {
+          // Make sure to populate the rowKey before validations so that validation failures include
+          // the new key
+          rowKey = chunk.getRowKey();
+
           validate(!chunk.getResetRow(), "AWAITING_NEW_ROW: can't reset");
           validate(!chunk.getRowKey().isEmpty(), "AWAITING_NEW_ROW: rowKey missing");
           validate(chunk.hasFamilyName(), "AWAITING_NEW_ROW: family missing");
