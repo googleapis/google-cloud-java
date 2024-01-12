@@ -51,7 +51,9 @@ public class SimpleQueryIT {
 
   @Test
   public void testSimpleQuery() {
-    String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+    String query =
+        "SELECT corpus, count(*) as corpus_count "
+            + "FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
 
     SimpleQuery.simpleQuery(query);
     assertThat(bout.toString()).contains("Query ran successfully");
