@@ -77,7 +77,9 @@ public class TableInfo implements Serializable {
   private final BigInteger numRows;
   private final TableDefinition definition;
   private final EncryptionConfiguration encryptionConfiguration;
-  private final Labels labels;
+  private final Annotations labels;
+
+  private final Annotations resourceTags;
   private final Boolean requirePartitionFilter;
   private final String defaultCollation;
 
@@ -152,6 +154,9 @@ public class TableInfo implements Serializable {
     @BetaApi
     public abstract Builder setLabels(Map<String, String> labels);
 
+    /** Sets the resource tags applied to this table. */
+    public abstract Builder setResourceTags(Map<String, String> resourceTags);
+
     /** Creates a {@code TableInfo} object. */
     public abstract TableInfo build();
 
@@ -191,7 +196,9 @@ public class TableInfo implements Serializable {
     private BigInteger numRows;
     private TableDefinition definition;
     private EncryptionConfiguration encryptionConfiguration;
-    private Labels labels = Labels.ZERO;
+    private Annotations labels = Annotations.ZERO;
+
+    private Annotations resourceTags = Annotations.ZERO;
     private Boolean requirePartitionFilter;
     private String defaultCollation;
     private CloneDefinition cloneDefinition;
@@ -222,6 +229,7 @@ public class TableInfo implements Serializable {
       this.definition = tableInfo.definition;
       this.encryptionConfiguration = tableInfo.encryptionConfiguration;
       this.labels = tableInfo.labels;
+      this.resourceTags = tableInfo.resourceTags;
       this.requirePartitionFilter = tableInfo.requirePartitionFilter;
       this.defaultCollation = tableInfo.defaultCollation;
       this.cloneDefinition = tableInfo.cloneDefinition;
@@ -255,7 +263,8 @@ public class TableInfo implements Serializable {
         this.encryptionConfiguration =
             new EncryptionConfiguration.Builder(tablePb.getEncryptionConfiguration()).build();
       }
-      this.labels = Labels.fromPb(tablePb.getLabels());
+      this.labels = Annotations.fromPb(tablePb.getLabels());
+      this.resourceTags = Annotations.fromPb(tablePb.getResourceTags());
       this.requirePartitionFilter = tablePb.getRequirePartitionFilter();
       this.defaultCollation = tablePb.getDefaultCollation();
       if (tablePb.getCloneDefinition() != null) {
@@ -394,7 +403,13 @@ public class TableInfo implements Serializable {
 
     @Override
     public Builder setLabels(Map<String, String> labels) {
-      this.labels = Labels.fromUser(labels);
+      this.labels = Annotations.fromUser(labels);
+      return this;
+    }
+
+    @Override
+    public Builder setResourceTags(Map<String, String> resourceTags) {
+      this.resourceTags = Annotations.fromUser(resourceTags);
       return this;
     }
 
@@ -449,6 +464,7 @@ public class TableInfo implements Serializable {
     this.definition = builder.definition;
     this.encryptionConfiguration = builder.encryptionConfiguration;
     this.labels = builder.labels;
+    this.resourceTags = builder.resourceTags;
     this.requirePartitionFilter = builder.requirePartitionFilter;
     this.defaultCollation = builder.defaultCollation;
     this.cloneDefinition = builder.cloneDefinition;
@@ -610,6 +626,11 @@ public class TableInfo implements Serializable {
     return labels.userMap();
   }
 
+  /** Return a map for resource tags applied to the table. */
+  public Map<String, String> getResourceTags() {
+    return resourceTags.userMap();
+  }
+
   /**
    * Returns true if a partition filter (that can be used for partition elimination) is required for
    * queries over this table.
@@ -660,6 +681,7 @@ public class TableInfo implements Serializable {
         .add("definition", definition)
         .add("encryptionConfiguration", encryptionConfiguration)
         .add("labels", labels)
+        .add("resourceTags", resourceTags)
         .add("requirePartitionFilter", requirePartitionFilter)
         .add("defaultCollation", defaultCollation)
         .add("cloneDefinition", cloneDefinition)
@@ -724,6 +746,7 @@ public class TableInfo implements Serializable {
       tablePb.setEncryptionConfiguration(encryptionConfiguration.toPb());
     }
     tablePb.setLabels(labels.toPb());
+    tablePb.setResourceTags(resourceTags.toPb());
     tablePb.setRequirePartitionFilter(requirePartitionFilter);
     if (defaultCollation != null) {
       tablePb.setDefaultCollation(defaultCollation);

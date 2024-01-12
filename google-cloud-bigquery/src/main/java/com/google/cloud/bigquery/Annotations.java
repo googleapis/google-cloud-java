@@ -28,9 +28,9 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 @AutoValue
-abstract class Labels implements Serializable {
+abstract class Annotations implements Serializable {
   private static final long serialVersionUID = 1L;
-  static final Labels ZERO = of(Collections.<String, String>emptyMap());
+  static final Annotations ZERO = of(Collections.<String, String>emptyMap());
 
   @Nullable
   abstract Map<String, String> userMap();
@@ -59,13 +59,13 @@ abstract class Labels implements Serializable {
     return Collections.unmodifiableMap(pbMap);
   }
 
-  private static Labels of(Map<String, String> userMap) {
+  private static Annotations of(Map<String, String> userMap) {
     Preconditions.checkArgument(
         userMap == null || !userMap.containsKey(null), "null keys are not supported");
-    return new AutoValue_Labels(userMap);
+    return new AutoValue_Annotations(userMap);
   }
 
-  static Labels fromUser(Map<String, String> map) {
+  static Annotations fromUser(Map<String, String> map) {
     if (map == null || map instanceof ImmutableMap) {
       return of(map);
     }
@@ -73,7 +73,7 @@ abstract class Labels implements Serializable {
     return of(Collections.unmodifiableMap(new HashMap<>(map)));
   }
 
-  static Labels fromPb(Map<String, String> pb) {
+  static Annotations fromPb(Map<String, String> pb) {
     if (Data.isNull(pb)) {
       return of(null);
     }

@@ -25,50 +25,50 @@ import java.util.HashMap;
 import java.util.Map;
 import org.junit.Test;
 
-public class LabelsTest {
+public class AnnotationsTest {
   @Test
   public void testFromUser() {
-    assertThat(Labels.fromUser(null).userMap()).isNull();
+    assertThat(Annotations.fromUser(null).userMap()).isNull();
 
     HashMap<String, String> user = new HashMap<>();
-    assertThat(Labels.fromUser(user).userMap()).isEmpty();
+    assertThat(Annotations.fromUser(user).userMap()).isEmpty();
 
     user.put("a", "b");
-    Labels labels = Labels.fromUser(user);
-    assertThat(labels.userMap()).containsExactly("a", "b");
+    Annotations annotations = Annotations.fromUser(user);
+    assertThat(annotations.userMap()).containsExactly("a", "b");
 
-    // Changing map afterwards does not change the labels.
+    // Changing map afterwards does not change the annotation.
     user.put("c", "d");
-    assertThat(labels.userMap()).containsExactly("a", "b");
+    assertThat(annotations.userMap()).containsExactly("a", "b");
   }
 
   @Test
   public void testFromToPb() {
-    assertThat(Labels.fromPb(null).toPb()).isNull();
+    assertThat(Annotations.fromPb(null).toPb()).isNull();
 
     HashMap<String, String> pb = new HashMap<>();
-    assertThat(Labels.fromPb(pb).toPb()).isNull();
+    assertThat(Annotations.fromPb(pb).toPb()).isNull();
 
     pb.put("a", "b");
-    assertThat(Labels.fromPb(pb).toPb()).isEqualTo(pb);
+    assertThat(Annotations.fromPb(pb).toPb()).isEqualTo(pb);
 
     pb.put("c", Data.NULL_STRING);
-    assertThat(Labels.fromPb(pb).toPb()).isEqualTo(pb);
+    assertThat(Annotations.fromPb(pb).toPb()).isEqualTo(pb);
 
     Map<String, String> jsonNullMap = Data.nullOf(HashMap.class);
-    assertThat(Data.isNull(Labels.fromPb(jsonNullMap).toPb())).isTrue();
+    assertThat(Data.isNull(Annotations.fromPb(jsonNullMap).toPb())).isTrue();
   }
 
   @Test
   public void testNullKey() {
     try {
-      Labels.fromUser(Collections.singletonMap((String) null, "foo"));
+      Annotations.fromUser(Collections.singletonMap((String) null, "foo"));
       fail("null key shouldn't work");
     } catch (IllegalArgumentException e) {
     }
 
     try {
-      Labels.fromPb(Collections.singletonMap((String) null, "foo"));
+      Annotations.fromPb(Collections.singletonMap((String) null, "foo"));
       fail("null key shouldn't work");
     } catch (IllegalArgumentException e) {
     }

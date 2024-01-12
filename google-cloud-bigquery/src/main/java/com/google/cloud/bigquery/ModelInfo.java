@@ -67,7 +67,7 @@ public class ModelInfo implements Serializable {
   private final Long creationTime;
   private final Long lastModifiedTime;
   private final Long expirationTime;
-  private final Labels labels;
+  private final Annotations labels;
   private final String location;
   private final ImmutableList<TrainingRun> trainingRunList;
   private final ImmutableList<StandardSQLField> featureColumnList;
@@ -132,7 +132,7 @@ public class ModelInfo implements Serializable {
     private Long creationTime;
     private Long lastModifiedTime;
     private Long expirationTime;
-    private Labels labels = Labels.ZERO;
+    private Annotations labels = Annotations.ZERO;
     private String location;
     private List<TrainingRun> trainingRunList = Collections.emptyList();
     private List<StandardSQLField> labelColumnList = Collections.emptyList();
@@ -169,7 +169,7 @@ public class ModelInfo implements Serializable {
       this.creationTime = modelPb.getCreationTime();
       this.lastModifiedTime = modelPb.getLastModifiedTime();
       this.expirationTime = modelPb.getExpirationTime();
-      this.labels = Labels.fromPb(modelPb.getLabels());
+      this.labels = Annotations.fromPb(modelPb.getLabels());
       this.location = modelPb.getLocation();
       if (modelPb.getTrainingRuns() != null) {
         this.trainingRunList = modelPb.getTrainingRuns();
@@ -238,7 +238,7 @@ public class ModelInfo implements Serializable {
 
     @Override
     public Builder setLabels(Map<String, String> labels) {
-      this.labels = Labels.fromUser(labels);
+      this.labels = Annotations.fromUser(labels);
       return this;
     }
 

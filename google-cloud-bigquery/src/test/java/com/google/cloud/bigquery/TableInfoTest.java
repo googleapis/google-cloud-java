@@ -126,6 +126,7 @@ public class TableInfoTest {
           .setNumRows(BigInteger.valueOf(NUM_ROWS))
           .setSelfLink(SELF_LINK)
           .setLabels(Collections.singletonMap("a", "b"))
+          .setResourceTags(Collections.singletonMap("resourceTagA", "resourceTagB"))
           .setRequirePartitionFilter(REQUIRE_PARTITION_FILTER)
           .build();
   private static final TableInfo VIEW_INFO =
@@ -309,6 +310,7 @@ public class TableInfoTest {
     assertEquals(expected.getNumRows(), value.getNumRows());
     assertEquals(expected.getSelfLink(), value.getSelfLink());
     assertEquals(expected.getLabels(), value.getLabels());
+    assertEquals(expected.getResourceTags(), value.getResourceTags());
     assertEquals(expected.getRequirePartitionFilter(), value.getRequirePartitionFilter());
     assertEquals(expected.toString(), value.toString());
     assertEquals(expected.hashCode(), value.hashCode());

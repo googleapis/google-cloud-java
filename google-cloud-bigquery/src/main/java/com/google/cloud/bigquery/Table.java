@@ -193,6 +193,12 @@ public class Table extends TableInfo {
     }
 
     @Override
+    public Builder setResourceTags(Map<String, String> resourceTags) {
+      infoBuilder.setResourceTags(resourceTags);
+      return this;
+    }
+
+    @Override
     public Builder setRequirePartitionFilter(Boolean requirePartitionFilter) {
       infoBuilder.setRequirePartitionFilter(requirePartitionFilter);
       return this;

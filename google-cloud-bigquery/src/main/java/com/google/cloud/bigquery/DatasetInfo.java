@@ -69,7 +69,7 @@ public class DatasetInfo implements Serializable {
   private final Long lastModified;
   private final String location;
   private final String selfLink;
-  private final Labels labels;
+  private final Annotations labels;
   private final EncryptionConfiguration defaultEncryptionConfiguration;
   private final Long defaultPartitionExpirationMs;
   private final String defaultCollation;
@@ -194,7 +194,7 @@ public class DatasetInfo implements Serializable {
     private Long lastModified;
     private String location;
     private String selfLink;
-    private Labels labels = Labels.ZERO;
+    private Annotations labels = Annotations.ZERO;
     private EncryptionConfiguration defaultEncryptionConfiguration;
     private Long defaultPartitionExpirationMs;
     private String defaultCollation;
@@ -247,7 +247,7 @@ public class DatasetInfo implements Serializable {
       this.lastModified = datasetPb.getLastModifiedTime();
       this.location = datasetPb.getLocation();
       this.selfLink = datasetPb.getSelfLink();
-      this.labels = Labels.fromPb(datasetPb.getLabels());
+      this.labels = Annotations.fromPb(datasetPb.getLabels());
       if (datasetPb.getDefaultEncryptionConfiguration() != null) {
         this.defaultEncryptionConfiguration =
             new EncryptionConfiguration.Builder(datasetPb.getDefaultEncryptionConfiguration())
@@ -337,7 +337,7 @@ public class DatasetInfo implements Serializable {
      */
     @Override
     public Builder setLabels(Map<String, String> labels) {
-      this.labels = Labels.fromUser(labels);
+      this.labels = Annotations.fromUser(labels);
       return this;
     }
 
