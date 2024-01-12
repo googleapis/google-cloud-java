@@ -1,5 +1,34 @@
 # Changelog
 
+## [3.0.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.47.0...v3.0.0) (2024-01-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* use table name create default write stream issue fix ([#2119](https://github.com/googleapis/java-bigquerystorage/issues/2119))
+
+### Features
+
+* Add configuration in json steam writer to configure the timeout in request waiting queue ([#2362](https://github.com/googleapis/java-bigquerystorage/issues/2362)) ([db527be](https://github.com/googleapis/java-bigquerystorage/commit/db527be024cd0e8c36d3b22e0b8f5c185c56f74f))
+* Adding deprecated message to v1beta2 manual client ([#2098](https://github.com/googleapis/java-bigquerystorage/issues/2098)) ([f150780](https://github.com/googleapis/java-bigquerystorage/commit/f150780454a29770781e3bdd1a21718efe92de56))
+* Exponentially backoff on INTERNAL errors for Default streams ([#2358](https://github.com/googleapis/java-bigquerystorage/issues/2358)) ([472a36f](https://github.com/googleapis/java-bigquerystorage/commit/472a36f214ea586c51a2e93ba8e4944892bbcb8c))
+* Use table name create default write stream issue fix ([#2119](https://github.com/googleapis/java-bigquerystorage/issues/2119)) ([91a2bec](https://github.com/googleapis/java-bigquerystorage/commit/91a2becf7a296b1fd33fe880f7a3b710eab4783c))
+
+
+### Bug Fixes
+
+* Add a e2e json test ([#2062](https://github.com/googleapis/java-bigquerystorage/issues/2062)) ([1893b3f](https://github.com/googleapis/java-bigquerystorage/commit/1893b3f6091972f99226dd28626bd1e638bef597))
+* Do not use regexp for BigQuerySchemaUtil#isProtoCompatible ([#2226](https://github.com/googleapis/java-bigquerystorage/issues/2226)) ([1741166](https://github.com/googleapis/java-bigquerystorage/commit/1741166d3aa6a3bab8dd8cb74b3be8f7b4ac4ac3))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.35.0 ([#2348](https://github.com/googleapis/java-bigquerystorage/issues/2348)) ([3395649](https://github.com/googleapis/java-bigquerystorage/commit/33956494008446fe194fed93cbc2136f4e9383be))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.21.0 ([#2361](https://github.com/googleapis/java-bigquerystorage/issues/2361)) ([95d4214](https://github.com/googleapis/java-bigquerystorage/commit/95d4214ae26468fa63fd101eeb0bb8d5ec656a75))
+* Update dependency com.google.truth:truth to v1.2.0 ([#2360](https://github.com/googleapis/java-bigquerystorage/issues/2360)) ([38a285f](https://github.com/googleapis/java-bigquerystorage/commit/38a285f33fa83d16637ec275d965e8f3ff880bd9))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.28 ([#2349](https://github.com/googleapis/java-bigquerystorage/issues/2349)) ([6910035](https://github.com/googleapis/java-bigquerystorage/commit/69100356eb0bb920fcffb7b4e92c74722e84f8b1))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.10.1 ([#2350](https://github.com/googleapis/java-bigquerystorage/issues/2350)) ([91caf73](https://github.com/googleapis/java-bigquerystorage/commit/91caf73f1896553a2a3ba4c8109cbbb93ba47f34))
+
 ## [2.47.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.46.0...v2.47.0) (2023-12-01)
 
 
