@@ -9,7 +9,7 @@ on:
         name_pretty:
           required: true
           type: string
-          description: `name_pretty`: The human-friendly name that appears in README.md
+          description: "`name_pretty`: The human-friendly name that appears in README.md"
         proto_path:
           required: true
           type: string
@@ -21,7 +21,7 @@ on:
         product_docs:
           required: true
           type: string
-          description: `product_docs`: Documentation URL that appears in README.md
+          description: "`product_docs`: Documentation URL that appears in README.md"
         rest_docs:
           required: false
           type: string
@@ -34,7 +34,7 @@ on:
             `rpc_docs`: If it exists, link to the RPC Documentation for a service
         api_description:
           required: true
-          description: `api_description`: Description that appears in README.md
+          description: "`api_description`: Description that appears in README.md"
         release_level:
           required: false
           type: choice
@@ -51,7 +51,7 @@ on:
             - grpc
             - http
             - both
-          description: `transport`: A label that appears in repo-metadata.json
+          description: "`transport`: A label that appears in repo-metadata.json"
         language:
           required: false
           type: string
@@ -94,7 +94,7 @@ on:
         owlbot_image:
           required: false
           type: string
-          description: `owlbot_image`: The owlbot container image used in OwlBot.yaml
+          description: "`owlbot_image`: The owlbot container image used in OwlBot.yaml"
         library_type:
           required: false
           type: string
