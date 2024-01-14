@@ -52,12 +52,12 @@ on:
           description: |
             `cloud_api`: If true, the artifact ID of the library is 'google-cloud-'
             otherwise 'google-'
-        group_id:
+        distribution_name:
           required: false
           type: string
           description: |
-            `group_id`: The group ID of the artifact when distribution name is not set
-
+            `distribution_name`: Maven coordinates of the generated library. By default it's
+            com.google.cloud:google-cloud-<api_shortname>
 jobs:
   generate:
     runs-on: ubuntu-22.04
@@ -114,7 +114,7 @@ jobs:
           TRANSPORT: ${{ github.event.inputs.transport }}
           CLOUD_API: ${{ github.event.inputs.CLOUD_API }}
           GROUP_ID: ${{ github.event.inputs.group_id }}
-      - name: Push to branch
+      - name: Push to branch and create PR
         run: |
           [ -z "`git config user.email`" ] && git config --global user.email "${USERNAME:-script}@google.com"
           [ -z "`git config user.name`" ] && git config --global user.name "${USERNAME:-script}"
