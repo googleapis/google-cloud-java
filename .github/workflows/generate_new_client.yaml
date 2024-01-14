@@ -128,7 +128,7 @@ jobs:
           \`\`\`${GENERATION_ARGUMENTS}\`\`\`"
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
           git fetch -q --unshallow monorepo
-          git push --head -f monorepo "${branch_name}"
+          git push -f monorepo "${branch_name}"
 
           # create PR
           gh pr create --fill
