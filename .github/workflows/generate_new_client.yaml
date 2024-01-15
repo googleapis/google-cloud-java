@@ -120,7 +120,7 @@ jobs:
 
           # create and push to branch in origin
           # random_id allows multiple runs of this workflow
-          random_id=(tr -dc A-Za-z0-9 </dev/urandom | head -c 5; echo)
+          random_id=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 5; echo)
           branch_name="new-library/${{ github.event.inputs.api_shortname }}-${random_id}"
           git checkout -b "${branch_name}"
           git add --all
