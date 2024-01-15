@@ -93,7 +93,7 @@ jobs:
             fi
           }
 
-          declare -a optional_args=('transport' 'cloud-api' 'group-id' 'rest-docs' 'rpc-docs')
+          declare -a optional_args=('transport' 'destination-name' 'group-id' 'rest-docs' 'rpc-docs')
 
           for python_argument in "${optional_args[@]}"; do
             append_argument "${python_argument}"
