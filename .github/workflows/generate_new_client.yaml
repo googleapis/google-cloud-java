@@ -81,8 +81,7 @@ jobs:
           --proto-path=\"${PROTO_PATH}\" \
           --name-pretty=\"${NAME_PRETTY}\" \
           --product-docs=\"${PRODUCT_DOCS}\" \
-          --api-description=\"${API_DESCRIPTION}\" \
-          --googleapis-gen-url=\"${GOOGLEAPIS_GEN_URL}\""
+          --api-description=\"${API_DESCRIPTION}\""
 
           # helper function that appends a python argument only if specified in the GH action inputs
           append_argument() {
@@ -101,7 +100,7 @@ jobs:
             append_argument "${python_argument}"
           done
           echo "::set-output name=new_library_args::${arguments}"
-          echo "${arguments}" | xargs python generation/new_client/new-client.py generate
+          echo "${arguments} --googleapis-gen-url=\"${GOOGLEAPIS_GEN_URL}\"" | xargs python generation/new_client/new-client.py generate
         env:
           GOOGLEAPIS_GEN_URL: https://yoshi-approver:${{ secrets.YOSHI_CODE_BOT_TOKEN }}@github.com/googleapis/googleapis-gen.git
           API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
