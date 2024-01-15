@@ -123,7 +123,9 @@ jobs:
           branch_name="new-library/${{ github.event.inputs.api_shortname }}"
           git checkout -b "${branch_name}"
           git add --all
-          git commit -m "feat: [${API_SHORTNAME}] new module for ${API_SHORT_NAME}\\n\\n\
+          git commit -m "feat: [${API_SHORTNAME}] new module for ${API_SHORTNAME}
+
+
           \`\`\`${GENERATION_ARGUMENTS}\`\`\`"
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
           git fetch -q --unshallow monorepo
