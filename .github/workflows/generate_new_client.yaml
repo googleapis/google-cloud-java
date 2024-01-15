@@ -71,7 +71,6 @@ jobs:
         run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
       - name: Install new-client.py dependencies
         run: pip install --require-hashes -r generation/new_client/requirements.txt
-      - run: echo 'a message'
       - name: Generate
         id: generation
         run: |
