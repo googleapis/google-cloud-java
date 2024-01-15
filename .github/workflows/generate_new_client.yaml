@@ -119,7 +119,9 @@ jobs:
           [ -z "`git config user.name`" ] && git config --global user.name "${USERNAME:-script}"
 
           # create and push to branch in origin
-          branch_name="new-library/${{ github.event.inputs.api_shortname }}"
+          # random_id allows multiple runs of this workflow
+          random_id=(tr -dc A-Za-z0-9 </dev/urandom | head -c 5; echo)
+          branch_name="new-library/${{ github.event.inputs.api_shortname }}-${random_id}"
           git checkout -b "${branch_name}"
           git add --all
           git commit -m "feat: [${API_SHORTNAME}] new module for ${API_SHORTNAME}
