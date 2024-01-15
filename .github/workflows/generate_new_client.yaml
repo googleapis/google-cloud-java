@@ -110,8 +110,8 @@ jobs:
           RPC_DOCS: ${{ github.event.inputs.rpc_docs }}
           API_DESCRIPTION: ${{ github.event.inputs.api_description }}
           TRANSPORT: ${{ github.event.inputs.transport }}
-          CLOUD_API: ${{ github.event.inputs.CLOUD_API }}
-          GROUP_ID: ${{ github.event.inputs.group_id }}
+          DESTINATION_NAME: ${{ github.event.inputs.destination_name }}
+          DISTRIBUTION_NAME: ${{ github.event.inputs.distribution_name }}
       - name: Push to branch and create PR
         run: |
           set -x
