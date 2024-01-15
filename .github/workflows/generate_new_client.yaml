@@ -136,6 +136,7 @@ jobs:
           # create PR
           gh pr create --fill --head "${branch_name}"
         env:
+          USERNAME: ${{ github.actor }}
           API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
           GENERATION_ARGUMENTS: ${{ steps.generation.outputs.new_library_args }}
           GH_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
