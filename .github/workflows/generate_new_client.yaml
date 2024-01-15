@@ -45,13 +45,12 @@ on:
             - http
             - both
           description: "`transport`: A label that appears in repo-metadata.json"
-        cloud_api:
+        destination_name:
           required: false
-          default: true
-          type: boolean
+          type: string
           description: |
-            `cloud_api`: If true, the artifact ID of the library is 'google-cloud-'
-            otherwise 'google-'
+            `destination_name`: The directory name of the new library. By default it's
+            java-<api_shortname>
         distribution_name:
           required: false
           type: string
