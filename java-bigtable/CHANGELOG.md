@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.31.0](https://github.com/googleapis/java-bigtable/compare/v2.30.0...v2.31.0) (2024-01-12)
+
+
+### Features
+
+* Add a flag to add / remove routing cookie from callable chain ([#2032](https://github.com/googleapis/java-bigtable/issues/2032)) ([201e631](https://github.com/googleapis/java-bigtable/commit/201e631f893b1edacdd5760c1d180b212dc9e38a))
+* Adding feature flags for routing cookie and retry info ([#2031](https://github.com/googleapis/java-bigtable/issues/2031)) ([08c5bf1](https://github.com/googleapis/java-bigtable/commit/08c5bf1fd76258387135c8c3abe75f13bcdcc1f6))
+* Count row merging errors as internal errors ([#2045](https://github.com/googleapis/java-bigtable/issues/2045)) ([fc7845b](https://github.com/googleapis/java-bigtable/commit/fc7845bd4cefca05bccc4dc3a9f727fd20f5adf6))
+* Enable feature flag when setting is enabled ([#2043](https://github.com/googleapis/java-bigtable/issues/2043)) ([e0d90db](https://github.com/googleapis/java-bigtable/commit/e0d90db67b3ea52d833f7d6bcd78e3f7e91ff301))
+* Handle retry info so client respect the delay server sets ([#2026](https://github.com/googleapis/java-bigtable/issues/2026)) ([f1b7fc7](https://github.com/googleapis/java-bigtable/commit/f1b7fc79ad3fd9006e430e48430331b360bb22e3))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.31.0 ([#2044](https://github.com/googleapis/java-bigtable/issues/2044)) ([d9042a5](https://github.com/googleapis/java-bigtable/commit/d9042a567f284424efb4af69f757883c9781dce3))
+* Fix RetryInfo algorithm and tests ([#2041](https://github.com/googleapis/java-bigtable/issues/2041)) ([dad7517](https://github.com/googleapis/java-bigtable/commit/dad751736112323c578b3c90d9587fc182105747))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:gapic-libraries-bom to v1.27.0 ([#2030](https://github.com/googleapis/java-bigtable/issues/2030)) ([a492d02](https://github.com/googleapis/java-bigtable/commit/a492d02bdc52cb81d8804a4d7cd363b5807bdd47))
+* Update dependency com.google.truth.extensions:truth-proto-extension to v1.2.0 ([#2035](https://github.com/googleapis/java-bigtable/issues/2035)) ([46e1e03](https://github.com/googleapis/java-bigtable/commit/46e1e0335f9969fa1b60acdf17e9b8abbc312ca2))
+
 ## [2.30.0](https://github.com/googleapis/java-bigtable/compare/v2.29.1...v2.30.0) (2023-12-05)
 
 
