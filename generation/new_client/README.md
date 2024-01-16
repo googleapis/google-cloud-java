@@ -30,6 +30,14 @@ The arguments currently supported by the workflow are:
 - [`destination_name`](#advanced-options)
 - [`distribution_name`](#advanced-options)
 
+### Accessing the generated PR
+
+The workflow automatically creates a PR for you.
+Once the workflow has run successfully, you can check the action logs
+and see the **last line** of the _"Push to branch and create PR"_ step to
+find a link to the generated pull
+request.
+
 ## Prerequisites (for GH action and local environment)
 
 ### Ensure no Release Please "snapshot" pull request open
