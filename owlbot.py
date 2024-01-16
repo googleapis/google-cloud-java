@@ -24,8 +24,7 @@ java.common_templates(excludes=[
     '.github/blunderbuss.yml',
     'CONTRIBUTING.md',
     '.github/auto-label.yaml',
-    ".github/release-please.yml",
-    ".kokoro/build.sh"
+    ".github/release-please.yml"
 ])
 
 # --------------------------------------------------------------------------
