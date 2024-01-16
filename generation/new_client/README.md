@@ -5,10 +5,10 @@ google-cloud-java monorepo.
 
 **This tool is for repository maintainers only. Not for library users.**
 
-## Run via github action
+## Run via Github Action
 
 You can save the time to setup the environment by calling the
-[`generate_new_client.yaml` github action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml) directly. You can jump to
+[`generate_new_client.yaml` Github Action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml) directly. You can jump to
 [this section](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#run-client-generation-script)
 to find workflow arguments.
 
@@ -38,9 +38,9 @@ and see the **last line** of the _"Push to branch and create PR"_ step to
 find a link to the generated pull
 request.
 
-## Prerequisites (for GH action and local environment)
+## Prerequisites (both for Github Action and local environment)
 
-### Ensure no Release Please "snapshot" pull request open
+### Ensure no Release Please "SNAPSHOT" pull request open
 
 Ensure google-cloud-java repository does not have [a pull request with "autorelease: snapshot" label](
 https://github.com/googleapis/google-cloud-java/pulls?q=is%3Apr+is%3Aopen+label%3A%22autorelease%3A+snapshot%22).
@@ -57,9 +57,9 @@ the repository has "-SNAPSHOT" versions too.
 
 Some languages require a new request when a new version of a service is created, but Java manages all versions of the service as a single package, so the client library will automatically be updated to include new versions.
 
-## Run client generation script
+## Execute the workflow (either locally or via Github Action)
 
-You will run new-client.py script or [github action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml) with the following parameters.
+You will run new-client.py script or the [Github Action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml) with the following parameters.
 These parameters will be available in the Cloud Drop link (a YAML file) included in the buganizer request.
 The example in this README uses AlloyDB's [Cloud Drop](https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1/alloydb_v1.yaml) file as an example.
 
@@ -148,7 +148,7 @@ For the explanation of the available parameters, run:
 `python3.9 generation/new_client/new-client.py generate  --help`.
 
 :warning: **Note: The advanced options other than `transport`, `destination-name` and
-`distribution-name` cannot be specified in the [GH action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml), you will have to run
+`distribution-name` cannot be specified in the [Github Action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml), you will have to run
 the script locally (refer to the Prerequisites (for local environment) section
 below) if you need to specify any of these**
 
@@ -265,7 +265,7 @@ created pull request.
 ## Prerequisites (for local environment)
 
 This section is only needed for the first _local_ run of this script. If it's already
-done, go to "Run client generation script" section.
+done, go to the "Execute the workflow (either locally or via Github Action)" section.
 
 ### Environment
 
