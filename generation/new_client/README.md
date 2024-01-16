@@ -133,37 +133,6 @@ Example:
  ```
 
 
-### Example arguments
-
-Run `new-client.py` with the arguments above:
-
-```
-$ python3.9 generation/new_client/new-client.py generate \
-  --api_shortname=alloydb \
-  --proto-path=google/cloud/alloydb \
-  --name-pretty="AlloyDB API" \
-  --product-docs="https://cloud.google.com/alloydb/docs" \
-  --api-description="AlloyDB for PostgreSQL is an open source-compatible database service that
-    provides a powerful option for migrating, modernizing, or building
-    commercial-grade applications."
-```
-
-The command creates changes for
-the new module in the monorepo. At the end (~ 10 minutes), it tells you to
-create a pull request in the monorepo:
-
-```
-...
-Please create a pull request:
-  $ git checkout -b new_module_java-alloydb
-  $ git add .
-  $ git commit -m 'feat: [alloydb] new module for alloydb'
-  $ gh pr create --title 'feat: [alloydb] new module for alloydb'
-```
-
-Create a pull request from the change.
-In the description, record the `python3.9 generation/new_client/new-client.py generate ...`
-command you ran above.
 
 ## Advanced Options
 
@@ -390,6 +359,38 @@ Install the GitHub CLI and login, if needed (may help with `Common Errors` below
 $ sudo apt-get install gh
 $ gh auth login
 ```
+
+## Example arguments for local call
+
+Run `new-client.py` with the arguments above:
+
+```
+$ python3.9 generation/new_client/new-client.py generate \
+  --api_shortname=alloydb \
+  --proto-path=google/cloud/alloydb \
+  --name-pretty="AlloyDB API" \
+  --product-docs="https://cloud.google.com/alloydb/docs" \
+  --api-description="AlloyDB for PostgreSQL is an open source-compatible database service that
+    provides a powerful option for migrating, modernizing, or building
+    commercial-grade applications."
+```
+
+The command creates changes for
+the new module in the monorepo. At the end (~ 10 minutes), it tells you to
+create a pull request in the monorepo:
+
+```
+...
+Please create a pull request:
+  $ git checkout -b new_module_java-alloydb
+  $ git add .
+  $ git commit -m 'feat: [alloydb] new module for alloydb'
+  $ gh pr create --title 'feat: [alloydb] new module for alloydb'
+```
+
+Create a pull request from the change.
+In the description, record the `python3.9 generation/new_client/new-client.py generate ...`
+command you ran above.
 
 # Common Errors
 
