@@ -51,7 +51,7 @@ Some languages require a new request when a new version of a service is created,
 
 ## Run client generation script
 
-You will run new-client.py script or github action with the following parameters.
+You will run new-client.py script or [github action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml) with the following parameters.
 These parameters will be available in the Cloud Drop link (a YAML file) included in the buganizer request.
 The example in this README uses AlloyDB's [Cloud Drop](https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1/alloydb_v1.yaml) file as an example.
 
@@ -140,7 +140,7 @@ For the explanation of the available parameters, run:
 `python3.9 generation/new_client/new-client.py generate  --help`.
 
 **Note: The advanced options other than `transport`, `destination-name` and
-`distribution-name` cannot be specified in the GH action, you will have to run
+`distribution-name` cannot be specified in the [GH action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml), you will have to run
 the script locally (refer to the Prerequisites (for local environment) section
 below) if you need to specify any of these**
 
