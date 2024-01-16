@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.126.0](https://github.com/googleapis/java-pubsub/compare/v1.125.13...v1.126.0) (2024-01-13)
+
+
+### Features
+
+* Add `use_table_schema` field to BigQueryConfig ([#1838](https://github.com/googleapis/java-pubsub/issues/1838)) ([8653f4f](https://github.com/googleapis/java-pubsub/commit/8653f4f3dbd61466b8ea05b342c5f66c9e536cf1))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.31.0 ([#1855](https://github.com/googleapis/java-pubsub/issues/1855)) ([7e733d2](https://github.com/googleapis/java-pubsub/commit/7e733d20093e0cd492758dd1ff3efc3a72eb1e0c))
+* Swap writer and reader schema to correct places in sample ([#1849](https://github.com/googleapis/java-pubsub/issues/1849)) ([1c79ad7](https://github.com/googleapis/java-pubsub/commit/1c79ad7336f51ffd4e177be5c2f2a7de902b47b8))
+* Temporarily remove publisher tests causing timeouts ([#1860](https://github.com/googleapis/java-pubsub/issues/1860)) ([a8fa24d](https://github.com/googleapis/java-pubsub/commit/a8fa24d7185d5345e746f8e2563afffe08f3bd6e))
+* Use message ordering enabled property that comes with streaming pull responses ([#1851](https://github.com/googleapis/java-pubsub/issues/1851)) ([d816138](https://github.com/googleapis/java-pubsub/commit/d8161380e232fd4be408e6298827423907a027fb))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.21.0 ([#1854](https://github.com/googleapis/java-pubsub/issues/1854)) ([b36825b](https://github.com/googleapis/java-pubsub/commit/b36825bf476f8bf83a7ca594932e03d06bc05f07))
+* Update dependency com.google.cloud:google-cloud-storage to v2.30.1 ([#1841](https://github.com/googleapis/java-pubsub/issues/1841)) ([d6f1352](https://github.com/googleapis/java-pubsub/commit/d6f1352ec3debe106ba238343c0c05b9278dc964))
+
 ## [1.125.13](https://github.com/googleapis/java-pubsub/compare/v1.125.12...v1.125.13) (2023-11-30)
 
 
