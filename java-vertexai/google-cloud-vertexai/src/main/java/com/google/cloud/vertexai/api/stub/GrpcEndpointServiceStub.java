@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,7 +75,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
       createEndpointMethodDescriptor =
           MethodDescriptor.<CreateEndpointRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/CreateEndpoint")
+              .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/CreateEndpoint")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -84,7 +84,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
   private static final MethodDescriptor<GetEndpointRequest, Endpoint> getEndpointMethodDescriptor =
       MethodDescriptor.<GetEndpointRequest, Endpoint>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/GetEndpoint")
+          .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/GetEndpoint")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEndpointRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
           .build();
@@ -93,7 +93,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
       listEndpointsMethodDescriptor =
           MethodDescriptor.<ListEndpointsRequest, ListEndpointsResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/ListEndpoints")
+              .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/ListEndpoints")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ListEndpointsRequest.getDefaultInstance()))
               .setResponseMarshaller(
@@ -104,7 +104,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
       updateEndpointMethodDescriptor =
           MethodDescriptor.<UpdateEndpointRequest, Endpoint>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/UpdateEndpoint")
+              .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/UpdateEndpoint")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
@@ -114,7 +114,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
       deleteEndpointMethodDescriptor =
           MethodDescriptor.<DeleteEndpointRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/DeleteEndpoint")
+              .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/DeleteEndpoint")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -123,7 +123,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
   private static final MethodDescriptor<DeployModelRequest, Operation> deployModelMethodDescriptor =
       MethodDescriptor.<DeployModelRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/DeployModel")
+          .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/DeployModel")
           .setRequestMarshaller(ProtoUtils.marshaller(DeployModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
@@ -132,7 +132,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
       undeployModelMethodDescriptor =
           MethodDescriptor.<UndeployModelRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/UndeployModel")
+              .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/UndeployModel")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeployModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -142,8 +142,7 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
       mutateDeployedModelMethodDescriptor =
           MethodDescriptor.<MutateDeployedModelRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.aiplatform.v1beta1.EndpointService/MutateDeployedModel")
+              .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/MutateDeployedModel")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MutateDeployedModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))

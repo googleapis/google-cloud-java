@@ -43,7 +43,7 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-vertexai-v1beta1</artifactId>
+      <artifactId>proto-google-cloud-vertexai-v1</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -97,7 +97,7 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-vertexai-v1beta1</artifactId>
+      <artifactId>grpc-google-cloud-vertexai-v1</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->

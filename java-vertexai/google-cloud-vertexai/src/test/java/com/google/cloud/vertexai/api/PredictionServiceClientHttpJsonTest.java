@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -445,8 +445,6 @@ public class PredictionServiceClientHttpJsonTest {
     ExplainResponse expectedResponse =
         ExplainResponse.newBuilder()
             .addAllExplanations(new ArrayList<Explanation>())
-            .putAllConcurrentExplanations(
-                new HashMap<String, ExplainResponse.ConcurrentExplanation>())
             .setDeployedModelId("deployedModelId-1817547906")
             .addAllPredictions(new ArrayList<Value>())
             .build();
@@ -502,8 +500,6 @@ public class PredictionServiceClientHttpJsonTest {
     ExplainResponse expectedResponse =
         ExplainResponse.newBuilder()
             .addAllExplanations(new ArrayList<Explanation>())
-            .putAllConcurrentExplanations(
-                new HashMap<String, ExplainResponse.ConcurrentExplanation>())
             .setDeployedModelId("deployedModelId-1817547906")
             .addAllPredictions(new ArrayList<Value>())
             .build();
@@ -546,102 +542,6 @@ public class PredictionServiceClientHttpJsonTest {
       Value parameters = Value.newBuilder().setBoolValue(true).build();
       String deployedModelId = "deployedModelId-1817547906";
       client.explain(endpoint, instances, parameters, deployedModelId);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void countTokensTest() throws Exception {
-    CountTokensResponse expectedResponse =
-        CountTokensResponse.newBuilder()
-            .setTotalTokens(730673909)
-            .setTotalBillableCharacters(1242495501)
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    EndpointName endpoint =
-        EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-    List<Value> instances = new ArrayList<>();
-
-    CountTokensResponse actualResponse = client.countTokens(endpoint, instances);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void countTokensExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      EndpointName endpoint =
-          EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-      List<Value> instances = new ArrayList<>();
-      client.countTokens(endpoint, instances);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void countTokensTest2() throws Exception {
-    CountTokensResponse expectedResponse =
-        CountTokensResponse.newBuilder()
-            .setTotalTokens(730673909)
-            .setTotalBillableCharacters(1242495501)
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String endpoint = "projects/project-6526/locations/location-6526/endpoints/endpoint-6526";
-    List<Value> instances = new ArrayList<>();
-
-    CountTokensResponse actualResponse = client.countTokens(endpoint, instances);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void countTokensExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String endpoint = "projects/project-6526/locations/location-6526/endpoints/endpoint-6526";
-      List<Value> instances = new ArrayList<>();
-      client.countTokens(endpoint, instances);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

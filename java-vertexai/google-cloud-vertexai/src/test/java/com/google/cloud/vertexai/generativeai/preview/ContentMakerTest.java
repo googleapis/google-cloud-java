@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import com.google.protobuf.ByteString;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -66,14 +65,11 @@ public final class ContentMakerTest {
     String mimeTypeForBytes = "application/octet-stream";
     byte[] bytesInput = new byte[] {1, 2, 3};
 
-    String mimeTypeForURLinString = "image/jpeg";
-    String fileUrlInString = "https://example.com/image.jpg";
-
-    String mimeTypeForURL = "image/png";
-    URL fileUrl = new URL("https://example.com/image.png");
+    String mimeTypeForURIinString = "image/jpeg";
+    String fileUriInString = "gs://my-bucket/image.jpg";
 
     String mimeTypeForURI = "image/gif";
-    URI fileUri = new URI("https://example.com/image.gif");
+    URI fileUri = new URI("gs://my-bucket/image.gif");
 
     String mimeTypeForByteString = "image/gif";
     ByteString byteString = ByteString.copyFrom(bytesInput);
@@ -82,8 +78,7 @@ public final class ContentMakerTest {
         ContentMaker.fromMultiModalData(
             stringInput,
             PartMaker.fromMimeTypeAndData(mimeTypeForBytes, bytesInput),
-            PartMaker.fromMimeTypeAndData(mimeTypeForURLinString, fileUrlInString),
-            PartMaker.fromMimeTypeAndData(mimeTypeForURL, fileUrl),
+            PartMaker.fromMimeTypeAndData(mimeTypeForURIinString, fileUriInString),
             PartMaker.fromMimeTypeAndData(mimeTypeForURI, fileUri),
             PartMaker.fromMimeTypeAndData(mimeTypeForByteString, byteString));
 
@@ -97,15 +92,12 @@ public final class ContentMakerTest {
         .isEqualTo(ByteString.copyFrom(bytesInput));
 
     assertThat(content.getParts(2).getFileData().getMimeType()).isEqualTo("image/jpeg");
-    assertThat(content.getParts(2).getFileData().getFileUri()).isEqualTo(fileUrlInString);
+    assertThat(content.getParts(2).getFileData().getFileUri()).isEqualTo(fileUriInString);
 
-    assertThat(content.getParts(3).getFileData().getMimeType()).isEqualTo("image/png");
-    assertThat(content.getParts(3).getFileData().getFileUri()).isEqualTo(fileUrl.toString());
+    assertThat(content.getParts(3).getFileData().getMimeType()).isEqualTo("image/gif");
+    assertThat(content.getParts(3).getFileData().getFileUri()).isEqualTo(fileUri.toString());
 
-    assertThat(content.getParts(4).getFileData().getMimeType()).isEqualTo("image/gif");
-    assertThat(content.getParts(4).getFileData().getFileUri()).isEqualTo(fileUri.toString());
-
-    assertThat(content.getParts(5).getInlineData().getMimeType()).isEqualTo("image/gif");
-    assertThat(content.getParts(5).getInlineData().getData()).isEqualTo(byteString);
+    assertThat(content.getParts(4).getInlineData().getMimeType()).isEqualTo("image/gif");
+    assertThat(content.getParts(4).getInlineData().getData()).isEqualTo(byteString);
   }
 }

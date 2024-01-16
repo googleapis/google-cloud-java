@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,19 @@
 
 package com.google.cloud.vertexai;
 
+import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
-import com.google.auth.oauth2.GoogleCredentials;
+import com.google.api.gax.core.GaxProperties;
+import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.rpc.FixedHeaderProvider;
+import com.google.api.gax.rpc.HeaderProvider;
+import com.google.auth.Credentials;
+import com.google.cloud.vertexai.api.LlmUtilityServiceClient;
+import com.google.cloud.vertexai.api.LlmUtilityServiceSettings;
 import com.google.cloud.vertexai.api.PredictionServiceClient;
 import com.google.cloud.vertexai.api.PredictionServiceSettings;
-import com.google.cloud.vertexai.api.stub.PredictionServiceStubSettings;
 import java.io.IOException;
-import java.util.List;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -44,11 +50,14 @@ public class VertexAI implements AutoCloseable {
 
   private final String projectId;
   private final String location;
-  private final GoogleCredentials credentials;
+  private String apiEndpoint;
+  private CredentialsProvider credentialsProvider = null;
   private Transport transport = Transport.GRPC;
   // The clients will be instantiated lazily
   private PredictionServiceClient predictionServiceClient = null;
   private PredictionServiceClient predictionServiceRestClient = null;
+  private LlmUtilityServiceClient llmUtilityClient = null;
+  private LlmUtilityServiceClient llmUtilityRestClient = null;
 
   /**
    * Construct a VertexAI instance with custom credentials.
@@ -57,10 +66,11 @@ public class VertexAI implements AutoCloseable {
    * @param location the default location to use when making API calls
    * @param credentials the custom credentials to use when making API calls
    */
-  public VertexAI(String projectId, String location, GoogleCredentials credentials) {
+  public VertexAI(String projectId, String location, Credentials credentials) {
     this.projectId = projectId;
     this.location = location;
-    this.credentials = credentials;
+    this.apiEndpoint = String.format("%s-aiplatform.googleapis.com", this.location);
+    this.credentialsProvider = FixedCredentialsProvider.create(credentials);
   }
 
   /**
@@ -71,8 +81,7 @@ public class VertexAI implements AutoCloseable {
    * @param transport the default {@link Transport} layer to use to send API requests
    * @param credentials the default custom credentials to use when making API calls
    */
-  public VertexAI(
-      String projectId, String location, Transport transport, GoogleCredentials credentials) {
+  public VertexAI(String projectId, String location, Transport transport, Credentials credentials) {
     this(projectId, location, credentials);
     this.transport = transport;
   }
@@ -82,24 +91,22 @@ public class VertexAI implements AutoCloseable {
    *
    * @param projectId the default project to use when making API calls
    * @param location the default location to use when making API calls
-   * @param scopes collection of scopes in the default credentials
+   * @param scopes collection of scopes in the default credentials. Make sure you have specified
+   *     "https://www.googleapis.com/auth/cloud-platform" scope to access resources on Vertex AI.
    */
   public VertexAI(String projectId, String location, String... scopes) throws IOException {
-    // Disable the warning message logged in getApplicationDefault
-    Logger logger = Logger.getLogger("com.google.auth.oauth2.DefaultCredentialsProvider");
-    Level previousLevel = logger.getLevel();
-    logger.setLevel(Level.SEVERE);
-    List<String> defaultScopes =
-        PredictionServiceStubSettings.defaultCredentialsProviderBuilder().getScopesToApply();
-    GoogleCredentials credentials =
+    CredentialsProvider credentialsProvider =
         scopes.length == 0
-            ? GoogleCredentials.getApplicationDefault().createScoped(defaultScopes)
-            : GoogleCredentials.getApplicationDefault().createScoped(scopes);
-    logger.setLevel(previousLevel);
+            ? null
+            : GoogleCredentialsProvider.newBuilder()
+                .setScopesToApply(Arrays.asList(scopes))
+                .setUseJwtAccessWithScope(true)
+                .build();
 
     this.projectId = projectId;
     this.location = location;
-    this.credentials = credentials;
+    this.apiEndpoint = String.format("%s-aiplatform.googleapis.com", this.location);
+    this.credentialsProvider = credentialsProvider;
   }
 
   /**
@@ -131,14 +138,44 @@ public class VertexAI implements AutoCloseable {
     return this.location;
   }
 
+  /** Returns the default endpoint to use when making API calls. */
+  public String getApiEndpoint() {
+    return this.apiEndpoint;
+  }
+
   /** Returns the default credentials to use when making API calls. */
-  public GoogleCredentials getCredentials() {
-    return credentials;
+  public Credentials getCredentials() throws IOException {
+    return credentialsProvider.getCredentials();
   }
 
   /** Sets the value for {@link #getTransport()}. */
   public void setTransport(Transport transport) {
     this.transport = transport;
+  }
+
+  /** Sets the value for {@link #getApiEndpoint()}. */
+  public void setApiEndpoint(String apiEndpoint) {
+    this.apiEndpoint = apiEndpoint;
+
+    if (this.predictionServiceClient != null) {
+      this.predictionServiceClient.close();
+      this.predictionServiceClient = null;
+    }
+
+    if (this.predictionServiceRestClient != null) {
+      this.predictionServiceRestClient.close();
+      this.predictionServiceRestClient = null;
+    }
+
+    if (this.llmUtilityClient != null) {
+      this.llmUtilityClient.close();
+      this.llmUtilityClient = null;
+    }
+
+    if (this.llmUtilityRestClient != null) {
+      this.llmUtilityRestClient.close();
+      this.llmUtilityRestClient = null;
+    }
   }
 
   /**
@@ -147,12 +184,26 @@ public class VertexAI implements AutoCloseable {
    */
   public PredictionServiceClient getPredictionServiceClient() throws IOException {
     if (predictionServiceClient == null) {
-      PredictionServiceSettings settings =
-          PredictionServiceSettings.newBuilder()
-              .setEndpoint(String.format("%s-aiplatform.googleapis.com:443", this.location))
-              .setCredentialsProvider(FixedCredentialsProvider.create(this.credentials))
-              .build();
-      predictionServiceClient = PredictionServiceClient.create(settings);
+      PredictionServiceSettings.Builder settingsBuilder = PredictionServiceSettings.newBuilder();
+      settingsBuilder.setEndpoint(String.format("%s:443", this.apiEndpoint));
+      if (this.credentialsProvider != null) {
+        settingsBuilder.setCredentialsProvider(this.credentialsProvider);
+      }
+      HeaderProvider headerProvider =
+          FixedHeaderProvider.create(
+              "user-agent",
+              String.format(
+                  "%s/%s",
+                  Constants.USER_AGENT_HEADER,
+                  GaxProperties.getLibraryVersion(PredictionServiceSettings.class)));
+      settingsBuilder.setHeaderProvider(headerProvider);
+      // Disable the warning message logged in getApplicationDefault
+      Logger defaultCredentialsProviderLogger =
+          Logger.getLogger("com.google.auth.oauth2.DefaultCredentialsProvider");
+      Level previousLevel = defaultCredentialsProviderLogger.getLevel();
+      defaultCredentialsProviderLogger.setLevel(Level.SEVERE);
+      predictionServiceClient = PredictionServiceClient.create(settingsBuilder.build());
+      defaultCredentialsProviderLogger.setLevel(previousLevel);
     }
     return predictionServiceClient;
   }
@@ -163,14 +214,90 @@ public class VertexAI implements AutoCloseable {
    */
   public PredictionServiceClient getPredictionServiceRestClient() throws IOException {
     if (predictionServiceRestClient == null) {
-      PredictionServiceSettings settings =
-          PredictionServiceSettings.newHttpJsonBuilder()
-              .setEndpoint(String.format("%s-aiplatform.googleapis.com:443", this.location))
-              .setCredentialsProvider(FixedCredentialsProvider.create(this.credentials))
-              .build();
-      predictionServiceRestClient = PredictionServiceClient.create(settings);
+      PredictionServiceSettings.Builder settingsBuilder =
+          PredictionServiceSettings.newHttpJsonBuilder();
+      settingsBuilder.setEndpoint(String.format("%s:443", this.apiEndpoint));
+      if (this.credentialsProvider != null) {
+        settingsBuilder.setCredentialsProvider(this.credentialsProvider);
+      }
+      HeaderProvider headerProvider =
+          FixedHeaderProvider.create(
+              "user-agent",
+              String.format(
+                  "%s/%s",
+                  Constants.USER_AGENT_HEADER,
+                  GaxProperties.getLibraryVersion(PredictionServiceSettings.class)));
+      settingsBuilder.setHeaderProvider(headerProvider);
+      // Disable the warning message logged in getApplicationDefault
+      Logger defaultCredentialsProviderLogger =
+          Logger.getLogger("com.google.auth.oauth2.DefaultCredentialsProvider");
+      Level previousLevel = defaultCredentialsProviderLogger.getLevel();
+      defaultCredentialsProviderLogger.setLevel(Level.SEVERE);
+      predictionServiceRestClient = PredictionServiceClient.create(settingsBuilder.build());
+      defaultCredentialsProviderLogger.setLevel(previousLevel);
     }
     return predictionServiceRestClient;
+  }
+
+  /**
+   * Returns the {@link PredictionServiceClient} with GRPC. The client will be instantiated when the
+   * first prediction API call is made.
+   */
+  public LlmUtilityServiceClient getLlmUtilityClient() throws IOException {
+    if (llmUtilityClient == null) {
+      LlmUtilityServiceSettings.Builder settingsBuilder = LlmUtilityServiceSettings.newBuilder();
+      settingsBuilder.setEndpoint(String.format("%s-aiplatform.googleapis.com:443", this.location));
+      if (this.credentialsProvider != null) {
+        settingsBuilder.setCredentialsProvider(this.credentialsProvider);
+      }
+      HeaderProvider headerProvider =
+          FixedHeaderProvider.create(
+              "user-agent",
+              String.format(
+                  "%s/%s",
+                  Constants.USER_AGENT_HEADER,
+                  GaxProperties.getLibraryVersion(LlmUtilityServiceSettings.class)));
+      settingsBuilder.setHeaderProvider(headerProvider);
+      // Disable the warning message logged in getApplicationDefault
+      Logger defaultCredentialsProviderLogger =
+          Logger.getLogger("com.google.auth.oauth2.DefaultCredentialsProvider");
+      Level previousLevel = defaultCredentialsProviderLogger.getLevel();
+      defaultCredentialsProviderLogger.setLevel(Level.SEVERE);
+      llmUtilityClient = LlmUtilityServiceClient.create(settingsBuilder.build());
+      defaultCredentialsProviderLogger.setLevel(previousLevel);
+    }
+    return llmUtilityClient;
+  }
+
+  /**
+   * Returns the {@link PredictionServiceClient} with GRPC. The client will be instantiated when the
+   * first prediction API call is made.
+   */
+  public LlmUtilityServiceClient getLlmUtilityRestClient() throws IOException {
+    if (llmUtilityRestClient == null) {
+      LlmUtilityServiceSettings.Builder settingsBuilder =
+          LlmUtilityServiceSettings.newHttpJsonBuilder();
+      settingsBuilder.setEndpoint(String.format("%s-aiplatform.googleapis.com:443", this.location));
+      if (this.credentialsProvider != null) {
+        settingsBuilder.setCredentialsProvider(this.credentialsProvider);
+      }
+      HeaderProvider headerProvider =
+          FixedHeaderProvider.create(
+              "user-agent",
+              String.format(
+                  "%s/%s",
+                  Constants.USER_AGENT_HEADER,
+                  GaxProperties.getLibraryVersion(LlmUtilityServiceSettings.class)));
+      settingsBuilder.setHeaderProvider(headerProvider);
+      // Disable the warning message logged in getApplicationDefault
+      Logger defaultCredentialsProviderLogger =
+          Logger.getLogger("com.google.auth.oauth2.DefaultCredentialsProvider");
+      Level previousLevel = defaultCredentialsProviderLogger.getLevel();
+      defaultCredentialsProviderLogger.setLevel(Level.SEVERE);
+      llmUtilityRestClient = LlmUtilityServiceClient.create(settingsBuilder.build());
+      defaultCredentialsProviderLogger.setLevel(previousLevel);
+    }
+    return llmUtilityRestClient;
   }
 
   /** Closes the VertexAI instance together with all its instantiated clients. */
@@ -181,6 +308,12 @@ public class VertexAI implements AutoCloseable {
     }
     if (predictionServiceRestClient != null) {
       predictionServiceRestClient.close();
+    }
+    if (llmUtilityClient != null) {
+      llmUtilityClient.close();
+    }
+    if (llmUtilityRestClient != null) {
+      llmUtilityRestClient.close();
     }
   }
 }

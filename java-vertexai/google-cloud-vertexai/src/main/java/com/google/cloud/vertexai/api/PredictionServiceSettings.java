@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,11 +129,6 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
   /** Returns the object with the settings used for calls to explain. */
   public UnaryCallSettings<ExplainRequest, ExplainResponse> explainSettings() {
     return ((PredictionServiceStubSettings) getStubSettings()).explainSettings();
-  }
-
-  /** Returns the object with the settings used for calls to countTokens. */
-  public UnaryCallSettings<CountTokensRequest, CountTokensResponse> countTokensSettings() {
-    return ((PredictionServiceStubSettings) getStubSettings()).countTokensSettings();
   }
 
   /** Returns the object with the settings used for calls to streamGenerateContent. */
@@ -327,12 +322,6 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
     /** Returns the builder for the settings used for calls to explain. */
     public UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings() {
       return getStubSettingsBuilder().explainSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to countTokens. */
-    public UnaryCallSettings.Builder<CountTokensRequest, CountTokensResponse>
-        countTokensSettings() {
-      return getStubSettingsBuilder().countTokensSettings();
     }
 
     /** Returns the builder for the settings used for calls to streamGenerateContent. */

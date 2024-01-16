@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,10 @@ public class GenerativeModel {
   /**
    * Construct a GenerativeModel instance.
    *
-   * @param modelName the name of the generative model. See {@link Constants#GENERATIVE_MODEL_NAMES}
-   *     for all the available names
+   * @param modelName the name of the generative model. Supported format: "gemini-pro",
+   *     "models/gemini-pro", "publishers/google/models/gemini-pro", where "gemini-pro" is the model
+   *     name. Valid model names can be found at
+   *     https://cloud.google.com/vertex-ai/docs/generative-ai/learn/models#gemini-models
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
    *     for the generative model
    */
@@ -57,8 +59,8 @@ public class GenerativeModel {
   /**
    * Construct a GenerativeModel instance.
    *
-   * @param modelName the name of the generative model. See {@link Constants#GENERATIVE_MODEL_NAMES}
-   *     for all the available names
+   * @param modelName the name of the generative model. Supported format: "gemini-pro",
+   *     "models/gemini-pro", "publishers/google/models/gemini-pro"
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
    *     for the generative model
    * @param transport the {@link Transport} layer for API calls in the generative model. It
@@ -71,8 +73,8 @@ public class GenerativeModel {
   /**
    * Construct a GenerativeModel instance with default generation config.
    *
-   * @param modelName the name of the generative model. See {@link Constants#GENERATIVE_MODEL_NAMES}
-   *     for all the available names
+   * @param modelName the name of the generative model. Supported format: "gemini-pro",
+   *     "models/gemini-pro", "publishers/google/models/gemini-pro"
    * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance that
    *     will be used by default for generating response
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
@@ -85,8 +87,8 @@ public class GenerativeModel {
   /**
    * Construct a GenerativeModel instance with default generation config.
    *
-   * @param modelName the name of the generative model. See {@link Constants#GENERATIVE_MODEL_NAMES}
-   *     for all the available names
+   * @param modelName the name of the generative model. Supported format: "gemini-pro",
+   *     "models/gemini-pro", "publishers/google/models/gemini-pro"
    * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance that
    *     will be used by default for generating response
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
@@ -102,8 +104,8 @@ public class GenerativeModel {
   /**
    * Construct a GenerativeModel instance with default safety settings.
    *
-   * @param modelName the name of the generative model. See {@link Constants#GENERATIVE_MODEL_NAMES}
-   *     for all the available names
+   * @param modelName the name of the generative model. Supported format: "gemini-pro",
+   *     "models/gemini-pro", "publishers/google/models/gemini-pro"
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} instances
    *     that will be used by default for generating response
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
@@ -116,8 +118,8 @@ public class GenerativeModel {
   /**
    * Construct a GenerativeModel instance with default safety settings.
    *
-   * @param modelName the name of the generative model. See {@link Constants#GENERATIVE_MODEL_NAMES}
-   *     for all the available names
+   * @param modelName the name of the generative model. Supported format: "gemini-pro",
+   *     "models/gemini-pro", "publishers/google/models/gemini-pro"
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} instances
    *     that will be used by default for generating response
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
@@ -136,8 +138,8 @@ public class GenerativeModel {
   /**
    * Construct a GenerativeModel instance with default generation config and safety settings.
    *
-   * @param modelName the name of the generative model. See {@link Constants#GENERATIVE_MODEL_NAMES}
-   *     for all the available names
+   * @param modelName the name of the generative model. Supported format: "gemini-pro",
+   *     "models/gemini-pro", "publishers/google/models/gemini-pro"
    * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance that
    *     will be used by default for generating response
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} instances
@@ -156,8 +158,8 @@ public class GenerativeModel {
   /**
    * Construct a GenerativeModel instance with default generation config and safety settings.
    *
-   * @param modelName the name of the generative model. See {@link Constants#GENERATIVE_MODEL_NAMES}
-   *     for all the available names
+   * @param modelName the name of the generative model. Supported format: "gemini-pro",
+   *     "models/gemini-pro", "publishers/google/models/gemini-pro"
    * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance that
    *     will be used by default for generating response
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} instances
@@ -173,7 +175,7 @@ public class GenerativeModel {
       List<SafetySetting> safetySettings,
       VertexAI vertexAi,
       Transport transport) {
-    validateModelName(modelName);
+    modelName = validateModelName(modelName);
     this.modelName = modelName;
     this.resourceName =
         String.format(
@@ -251,9 +253,9 @@ public class GenerativeModel {
     CountTokensRequest request =
         requestBuilder.setEndpoint(this.resourceName).setModel(this.resourceName).build();
     if (this.transport == Transport.REST) {
-      return vertexAi.getPredictionServiceRestClient().countTokens(request);
+      return vertexAi.getLlmUtilityRestClient().countTokens(request);
     } else {
-      return vertexAi.getPredictionServiceClient().countTokens(request);
+      return vertexAi.getLlmUtilityClient().countTokens(request);
     }
   }
 
@@ -678,8 +680,7 @@ public class GenerativeModel {
    */
   private ResponseStream<GenerateContentResponse> generateContentStream(Builder requestBuilder)
       throws IOException {
-    GenerateContentRequest request =
-        requestBuilder.setEndpoint(this.resourceName).setModel(this.resourceName).build();
+    GenerateContentRequest request = requestBuilder.setModel(this.resourceName).build();
     ResponseStream<GenerateContentResponse> responseStream = null;
     if (this.transport == Transport.REST) {
       responseStream =
@@ -763,13 +764,20 @@ public class GenerativeModel {
     return new ChatSession(this);
   }
 
-  /** Checks if the model name is valid. */
-  private static void validateModelName(String modelName) {
+  /** Checks if the model name is valid and returns the model name. */
+  private static String validateModelName(String modelName) {
+    for (String prefix : Constants.MODEL_NAME_PREFIXES) {
+      if (modelName.startsWith(prefix)) {
+        modelName = modelName.substring(prefix.length());
+        break;
+      }
+    }
     if (!Constants.GENERATIVE_MODEL_NAMES.contains(modelName)) {
       throw new IllegalArgumentException(
           String.format(
               "Invalid model name: %s. Please choose from: %s",
               modelName, Constants.GENERATIVE_MODEL_NAMES));
     }
+    return modelName;
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,8 +32,6 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.cloud.vertexai.api.CountTokensRequest;
-import com.google.cloud.vertexai.api.CountTokensResponse;
 import com.google.cloud.vertexai.api.DirectPredictRequest;
 import com.google.cloud.vertexai.api.DirectPredictResponse;
 import com.google.cloud.vertexai.api.DirectRawPredictRequest;
@@ -72,7 +70,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   private static final MethodDescriptor<PredictRequest, PredictResponse> predictMethodDescriptor =
       MethodDescriptor.<PredictRequest, PredictResponse>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/Predict")
+          .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/Predict")
           .setRequestMarshaller(ProtoUtils.marshaller(PredictRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(PredictResponse.getDefaultInstance()))
           .build();
@@ -80,7 +78,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   private static final MethodDescriptor<RawPredictRequest, HttpBody> rawPredictMethodDescriptor =
       MethodDescriptor.<RawPredictRequest, HttpBody>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/RawPredict")
+          .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/RawPredict")
           .setRequestMarshaller(ProtoUtils.marshaller(RawPredictRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
           .build();
@@ -89,7 +87,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
       directPredictMethodDescriptor =
           MethodDescriptor.<DirectPredictRequest, DirectPredictResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/DirectPredict")
+              .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/DirectPredict")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DirectPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
@@ -100,8 +98,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
       directRawPredictMethodDescriptor =
           MethodDescriptor.<DirectRawPredictRequest, DirectRawPredictResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.aiplatform.v1beta1.PredictionService/DirectRawPredict")
+              .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/DirectRawPredict")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DirectRawPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
@@ -112,8 +109,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
       streamingPredictMethodDescriptor =
           MethodDescriptor.<StreamingPredictRequest, StreamingPredictResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
-              .setFullMethodName(
-                  "google.cloud.aiplatform.v1beta1.PredictionService/StreamingPredict")
+              .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/StreamingPredict")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StreamingPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
@@ -125,7 +121,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           MethodDescriptor.<StreamingPredictRequest, StreamingPredictResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(
-                  "google.cloud.aiplatform.v1beta1.PredictionService/ServerStreamingPredict")
+                  "google.cloud.aiplatform.v1.PredictionService/ServerStreamingPredict")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StreamingPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
@@ -136,8 +132,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
       streamingRawPredictMethodDescriptor =
           MethodDescriptor.<StreamingRawPredictRequest, StreamingRawPredictResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
-              .setFullMethodName(
-                  "google.cloud.aiplatform.v1beta1.PredictionService/StreamingRawPredict")
+              .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/StreamingRawPredict")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StreamingRawPredictRequest.getDefaultInstance()))
               .setResponseMarshaller(
@@ -147,27 +142,17 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   private static final MethodDescriptor<ExplainRequest, ExplainResponse> explainMethodDescriptor =
       MethodDescriptor.<ExplainRequest, ExplainResponse>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/Explain")
+          .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/Explain")
           .setRequestMarshaller(ProtoUtils.marshaller(ExplainRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ExplainResponse.getDefaultInstance()))
           .build();
-
-  private static final MethodDescriptor<CountTokensRequest, CountTokensResponse>
-      countTokensMethodDescriptor =
-          MethodDescriptor.<CountTokensRequest, CountTokensResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/CountTokens")
-              .setRequestMarshaller(ProtoUtils.marshaller(CountTokensRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(CountTokensResponse.getDefaultInstance()))
-              .build();
 
   private static final MethodDescriptor<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentMethodDescriptor =
           MethodDescriptor.<GenerateContentRequest, GenerateContentResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(
-                  "google.cloud.aiplatform.v1beta1.PredictionService/StreamGenerateContent")
+                  "google.cloud.aiplatform.v1.PredictionService/StreamGenerateContent")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GenerateContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
@@ -232,7 +217,6 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   private final BidiStreamingCallable<StreamingRawPredictRequest, StreamingRawPredictResponse>
       streamingRawPredictCallable;
   private final UnaryCallable<ExplainRequest, ExplainResponse> explainCallable;
-  private final UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable;
   private final ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
@@ -360,16 +344,6 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   return builder.build();
                 })
             .build();
-    GrpcCallSettings<CountTokensRequest, CountTokensResponse> countTokensTransportSettings =
-        GrpcCallSettings.<CountTokensRequest, CountTokensResponse>newBuilder()
-            .setMethodDescriptor(countTokensMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("endpoint", String.valueOf(request.getEndpoint()));
-                  return builder.build();
-                })
-            .build();
     GrpcCallSettings<GenerateContentRequest, GenerateContentResponse>
         streamGenerateContentTransportSettings =
             GrpcCallSettings.<GenerateContentRequest, GenerateContentResponse>newBuilder()
@@ -461,9 +435,6 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
     this.explainCallable =
         callableFactory.createUnaryCallable(
             explainTransportSettings, settings.explainSettings(), clientContext);
-    this.countTokensCallable =
-        callableFactory.createUnaryCallable(
-            countTokensTransportSettings, settings.countTokensSettings(), clientContext);
     this.streamGenerateContentCallable =
         callableFactory.createServerStreamingCallable(
             streamGenerateContentTransportSettings,
@@ -540,11 +511,6 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   @Override
   public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     return explainCallable;
-  }
-
-  @Override
-  public UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable() {
-    return countTokensCallable;
   }
 
   @Override

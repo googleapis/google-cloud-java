@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,8 +50,6 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.cloud.vertexai.api.CountTokensRequest;
-import com.google.cloud.vertexai.api.CountTokensResponse;
 import com.google.cloud.vertexai.api.DirectPredictRequest;
 import com.google.cloud.vertexai.api.DirectPredictResponse;
 import com.google.cloud.vertexai.api.DirectRawPredictRequest;
@@ -79,7 +77,6 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -138,7 +135,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
   private final StreamingCallSettings<StreamingRawPredictRequest, StreamingRawPredictResponse>
       streamingRawPredictSettings;
   private final UnaryCallSettings<ExplainRequest, ExplainResponse> explainSettings;
-  private final UnaryCallSettings<CountTokensRequest, CountTokensResponse> countTokensSettings;
   private final ServerStreamingCallSettings<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentSettings;
   private final PagedCallSettings<
@@ -245,11 +241,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
   /** Returns the object with the settings used for calls to explain. */
   public UnaryCallSettings<ExplainRequest, ExplainResponse> explainSettings() {
     return explainSettings;
-  }
-
-  /** Returns the object with the settings used for calls to countTokens. */
-  public UnaryCallSettings<CountTokensRequest, CountTokensResponse> countTokensSettings() {
-    return countTokensSettings;
   }
 
   /** Returns the object with the settings used for calls to streamGenerateContent. */
@@ -399,7 +390,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     serverStreamingPredictSettings = settingsBuilder.serverStreamingPredictSettings().build();
     streamingRawPredictSettings = settingsBuilder.streamingRawPredictSettings().build();
     explainSettings = settingsBuilder.explainSettings().build();
-    countTokensSettings = settingsBuilder.countTokensSettings().build();
     streamGenerateContentSettings = settingsBuilder.streamGenerateContentSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
@@ -426,8 +416,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
             StreamingRawPredictRequest, StreamingRawPredictResponse>
         streamingRawPredictSettings;
     private final UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings;
-    private final UnaryCallSettings.Builder<CountTokensRequest, CountTokensResponse>
-        countTokensSettings;
     private final ServerStreamingCallSettings.Builder<
             GenerateContentRequest, GenerateContentResponse>
         streamGenerateContentSettings;
@@ -445,8 +433,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put(
-          "no_retry_9_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -456,14 +442,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
-              .build();
-      definitions.put("no_retry_9_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -484,7 +462,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       serverStreamingPredictSettings = ServerStreamingCallSettings.newBuilder();
       streamingRawPredictSettings = StreamingCallSettings.newBuilder();
       explainSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      countTokensSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       streamGenerateContentSettings = ServerStreamingCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -499,7 +476,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
               directPredictSettings,
               directRawPredictSettings,
               explainSettings,
-              countTokensSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -519,7 +495,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       serverStreamingPredictSettings = settings.serverStreamingPredictSettings.toBuilder();
       streamingRawPredictSettings = settings.streamingRawPredictSettings.toBuilder();
       explainSettings = settings.explainSettings.toBuilder();
-      countTokensSettings = settings.countTokensSettings.toBuilder();
       streamGenerateContentSettings = settings.streamGenerateContentSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
@@ -534,7 +509,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
               directPredictSettings,
               directRawPredictSettings,
               explainSettings,
-              countTokensSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -571,8 +545,8 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     private static Builder initDefaults(Builder builder) {
       builder
           .predictSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_9_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_9_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .rawPredictSettings()
@@ -596,11 +570,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       builder
           .explainSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_9_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_9_params"));
-
-      builder
-          .countTokensSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -695,12 +664,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     /** Returns the builder for the settings used for calls to explain. */
     public UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings() {
       return explainSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to countTokens. */
-    public UnaryCallSettings.Builder<CountTokensRequest, CountTokensResponse>
-        countTokensSettings() {
-      return countTokensSettings;
     }
 
     /** Returns the builder for the settings used for calls to streamGenerateContent. */

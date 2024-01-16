@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -592,8 +592,6 @@ public class PredictionServiceClientTest {
     ExplainResponse expectedResponse =
         ExplainResponse.newBuilder()
             .addAllExplanations(new ArrayList<Explanation>())
-            .putAllConcurrentExplanations(
-                new HashMap<String, ExplainResponse.ConcurrentExplanation>())
             .setDeployedModelId("deployedModelId-1817547906")
             .addAllPredictions(new ArrayList<Value>())
             .build();
@@ -646,8 +644,6 @@ public class PredictionServiceClientTest {
     ExplainResponse expectedResponse =
         ExplainResponse.newBuilder()
             .addAllExplanations(new ArrayList<Explanation>())
-            .putAllConcurrentExplanations(
-                new HashMap<String, ExplainResponse.ConcurrentExplanation>())
             .setDeployedModelId("deployedModelId-1817547906")
             .addAllPredictions(new ArrayList<Value>())
             .build();
@@ -694,92 +690,6 @@ public class PredictionServiceClientTest {
   }
 
   @Test
-  public void countTokensTest() throws Exception {
-    CountTokensResponse expectedResponse =
-        CountTokensResponse.newBuilder()
-            .setTotalTokens(730673909)
-            .setTotalBillableCharacters(1242495501)
-            .build();
-    mockPredictionService.addResponse(expectedResponse);
-
-    EndpointName endpoint =
-        EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-    List<Value> instances = new ArrayList<>();
-
-    CountTokensResponse actualResponse = client.countTokens(endpoint, instances);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockPredictionService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CountTokensRequest actualRequest = ((CountTokensRequest) actualRequests.get(0));
-
-    Assert.assertEquals(endpoint.toString(), actualRequest.getEndpoint());
-    Assert.assertEquals(instances, actualRequest.getInstancesList());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void countTokensExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPredictionService.addException(exception);
-
-    try {
-      EndpointName endpoint =
-          EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-      List<Value> instances = new ArrayList<>();
-      client.countTokens(endpoint, instances);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void countTokensTest2() throws Exception {
-    CountTokensResponse expectedResponse =
-        CountTokensResponse.newBuilder()
-            .setTotalTokens(730673909)
-            .setTotalBillableCharacters(1242495501)
-            .build();
-    mockPredictionService.addResponse(expectedResponse);
-
-    String endpoint = "endpoint1741102485";
-    List<Value> instances = new ArrayList<>();
-
-    CountTokensResponse actualResponse = client.countTokens(endpoint, instances);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockPredictionService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CountTokensRequest actualRequest = ((CountTokensRequest) actualRequests.get(0));
-
-    Assert.assertEquals(endpoint, actualRequest.getEndpoint());
-    Assert.assertEquals(instances, actualRequest.getInstancesList());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void countTokensExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPredictionService.addException(exception);
-
-    try {
-      String endpoint = "endpoint1741102485";
-      List<Value> instances = new ArrayList<>();
-      client.countTokens(endpoint, instances);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
   public void streamGenerateContentTest() throws Exception {
     GenerateContentResponse expectedResponse =
         GenerateContentResponse.newBuilder()
@@ -790,9 +700,6 @@ public class PredictionServiceClientTest {
     mockPredictionService.addResponse(expectedResponse);
     GenerateContentRequest request =
         GenerateContentRequest.newBuilder()
-            .setEndpoint(
-                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
-                    .toString())
             .setModel("model104069929")
             .addAllContents(new ArrayList<Content>())
             .addAllTools(new ArrayList<Tool>())
@@ -817,9 +724,6 @@ public class PredictionServiceClientTest {
     mockPredictionService.addException(exception);
     GenerateContentRequest request =
         GenerateContentRequest.newBuilder()
-            .setEndpoint(
-                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
-                    .toString())
             .setModel("model104069929")
             .addAllContents(new ArrayList<Content>())
             .addAllTools(new ArrayList<Tool>())

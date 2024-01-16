@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -219,14 +219,14 @@ public class PredictionServiceClient implements BackgroundResource {
    *     and when it is exceeded the prediction call errors in case of AutoML Models, or, in case of
    *     customer created Models, the behaviour is as documented by that Model. The schema of any
    *     single instance may be specified via Endpoint's DeployedModels'
-   *     [Model's][google.cloud.vertexai.v1beta1.DeployedModel.model]
-   *     [PredictSchemata's][google.cloud.vertexai.v1beta1.Model.predict_schemata]
-   *     [instance_schema_uri][google.cloud.vertexai.v1beta1.PredictSchemata.instance_schema_uri].
+   *     [Model's][google.cloud.aiplatform.v1.DeployedModel.model]
+   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+   *     [instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri].
    * @param parameters The parameters that govern the prediction. The schema of the parameters may
    *     be specified via Endpoint's DeployedModels' [Model's
-   *     ][google.cloud.vertexai.v1beta1.DeployedModel.model]
-   *     [PredictSchemata's][google.cloud.vertexai.v1beta1.Model.predict_schemata]
-   *     [parameters_schema_uri][google.cloud.vertexai.v1beta1.PredictSchemata.parameters_schema_uri].
+   *     ][google.cloud.aiplatform.v1.DeployedModel.model]
+   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+   *     [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PredictResponse predict(
@@ -269,14 +269,14 @@ public class PredictionServiceClient implements BackgroundResource {
    *     and when it is exceeded the prediction call errors in case of AutoML Models, or, in case of
    *     customer created Models, the behaviour is as documented by that Model. The schema of any
    *     single instance may be specified via Endpoint's DeployedModels'
-   *     [Model's][google.cloud.vertexai.v1beta1.DeployedModel.model]
-   *     [PredictSchemata's][google.cloud.vertexai.v1beta1.Model.predict_schemata]
-   *     [instance_schema_uri][google.cloud.vertexai.v1beta1.PredictSchemata.instance_schema_uri].
+   *     [Model's][google.cloud.aiplatform.v1.DeployedModel.model]
+   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+   *     [instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri].
    * @param parameters The parameters that govern the prediction. The schema of the parameters may
    *     be specified via Endpoint's DeployedModels' [Model's
-   *     ][google.cloud.vertexai.v1beta1.DeployedModel.model]
-   *     [PredictSchemata's][google.cloud.vertexai.v1beta1.Model.predict_schemata]
-   *     [parameters_schema_uri][google.cloud.vertexai.v1beta1.PredictSchemata.parameters_schema_uri].
+   *     ][google.cloud.aiplatform.v1.DeployedModel.model]
+   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+   *     [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PredictResponse predict(String endpoint, List<Value> instances, Value parameters) {
@@ -362,13 +362,13 @@ public class PredictionServiceClient implements BackgroundResource {
    * <p>The response includes the following HTTP headers:
    *
    * <ul>
-   *   <li>`X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.vertexai.v1beta1.Endpoint]
-   *       that served this prediction.
+   *   <li>`X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.aiplatform.v1.Endpoint] that
+   *       served this prediction.
    * </ul>
    *
    * <ul>
    *   <li>`X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's
-   *       [DeployedModel][google.cloud.vertexai.v1beta1.DeployedModel] that served this prediction.
+   *       [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] that served this prediction.
    * </ul>
    *
    * <p>Sample code:
@@ -390,16 +390,16 @@ public class PredictionServiceClient implements BackgroundResource {
    * @param endpoint Required. The name of the Endpoint requested to serve the prediction. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * @param httpBody The prediction input. Supports HTTP headers and arbitrary data payload.
-   *     <p>A [DeployedModel][google.cloud.vertexai.v1beta1.DeployedModel] may have an upper limit
-   *     on the number of instances it supports per request. When this limit it is exceeded for an
-   *     AutoML model, the [RawPredict][google.cloud.vertexai.v1beta1.PredictionService.RawPredict]
+   *     <p>A [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] may have an upper limit on
+   *     the number of instances it supports per request. When this limit it is exceeded for an
+   *     AutoML model, the [RawPredict][google.cloud.aiplatform.v1.PredictionService.RawPredict]
    *     method returns an error. When this limit is exceeded for a custom-trained model, the
    *     behavior varies depending on the model.
    *     <p>You can specify the schema for each instance in the
-   *     [predict_schemata.instance_schema_uri][google.cloud.vertexai.v1beta1.PredictSchemata.instance_schema_uri]
-   *     field when you create a [Model][google.cloud.vertexai.v1beta1.Model]. This schema applies
-   *     when you deploy the `Model` as a `DeployedModel` to an
-   *     [Endpoint][google.cloud.vertexai.v1beta1.Endpoint] and use the `RawPredict` method.
+   *     [predict_schemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
+   *     field when you create a [Model][google.cloud.aiplatform.v1.Model]. This schema applies when
+   *     you deploy the `Model` as a `DeployedModel` to an
+   *     [Endpoint][google.cloud.aiplatform.v1.Endpoint] and use the `RawPredict` method.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HttpBody rawPredict(EndpointName endpoint, HttpBody httpBody) {
@@ -418,13 +418,13 @@ public class PredictionServiceClient implements BackgroundResource {
    * <p>The response includes the following HTTP headers:
    *
    * <ul>
-   *   <li>`X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.vertexai.v1beta1.Endpoint]
-   *       that served this prediction.
+   *   <li>`X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.aiplatform.v1.Endpoint] that
+   *       served this prediction.
    * </ul>
    *
    * <ul>
    *   <li>`X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's
-   *       [DeployedModel][google.cloud.vertexai.v1beta1.DeployedModel] that served this prediction.
+   *       [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] that served this prediction.
    * </ul>
    *
    * <p>Sample code:
@@ -447,16 +447,16 @@ public class PredictionServiceClient implements BackgroundResource {
    * @param endpoint Required. The name of the Endpoint requested to serve the prediction. Format:
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * @param httpBody The prediction input. Supports HTTP headers and arbitrary data payload.
-   *     <p>A [DeployedModel][google.cloud.vertexai.v1beta1.DeployedModel] may have an upper limit
-   *     on the number of instances it supports per request. When this limit it is exceeded for an
-   *     AutoML model, the [RawPredict][google.cloud.vertexai.v1beta1.PredictionService.RawPredict]
+   *     <p>A [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] may have an upper limit on
+   *     the number of instances it supports per request. When this limit it is exceeded for an
+   *     AutoML model, the [RawPredict][google.cloud.aiplatform.v1.PredictionService.RawPredict]
    *     method returns an error. When this limit is exceeded for a custom-trained model, the
    *     behavior varies depending on the model.
    *     <p>You can specify the schema for each instance in the
-   *     [predict_schemata.instance_schema_uri][google.cloud.vertexai.v1beta1.PredictSchemata.instance_schema_uri]
-   *     field when you create a [Model][google.cloud.vertexai.v1beta1.Model]. This schema applies
-   *     when you deploy the `Model` as a `DeployedModel` to an
-   *     [Endpoint][google.cloud.vertexai.v1beta1.Endpoint] and use the `RawPredict` method.
+   *     [predict_schemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
+   *     field when you create a [Model][google.cloud.aiplatform.v1.Model]. This schema applies when
+   *     you deploy the `Model` as a `DeployedModel` to an
+   *     [Endpoint][google.cloud.aiplatform.v1.Endpoint] and use the `RawPredict` method.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HttpBody rawPredict(String endpoint, HttpBody httpBody) {
@@ -472,13 +472,13 @@ public class PredictionServiceClient implements BackgroundResource {
    * <p>The response includes the following HTTP headers:
    *
    * <ul>
-   *   <li>`X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.vertexai.v1beta1.Endpoint]
-   *       that served this prediction.
+   *   <li>`X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.aiplatform.v1.Endpoint] that
+   *       served this prediction.
    * </ul>
    *
    * <ul>
    *   <li>`X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's
-   *       [DeployedModel][google.cloud.vertexai.v1beta1.DeployedModel] that served this prediction.
+   *       [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] that served this prediction.
    * </ul>
    *
    * <p>Sample code:
@@ -516,13 +516,13 @@ public class PredictionServiceClient implements BackgroundResource {
    * <p>The response includes the following HTTP headers:
    *
    * <ul>
-   *   <li>`X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.vertexai.v1beta1.Endpoint]
-   *       that served this prediction.
+   *   <li>`X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.aiplatform.v1.Endpoint] that
+   *       served this prediction.
    * </ul>
    *
    * <ul>
    *   <li>`X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's
-   *       [DeployedModel][google.cloud.vertexai.v1beta1.DeployedModel] that served this prediction.
+   *       [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] that served this prediction.
    * </ul>
    *
    * <p>Sample code:
@@ -796,12 +796,12 @@ public class PredictionServiceClient implements BackgroundResource {
   /**
    * Perform an online explanation.
    *
-   * <p>If [deployed_model_id][google.cloud.vertexai.v1beta1.ExplainRequest.deployed_model_id] is
+   * <p>If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is
    * specified, the corresponding DeployModel must have
-   * [explanation_spec][google.cloud.vertexai.v1beta1.DeployedModel.explanation_spec] populated. If
-   * [deployed_model_id][google.cloud.vertexai.v1beta1.ExplainRequest.deployed_model_id] is not
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. If
+   * [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is not
    * specified, all DeployedModels must have
-   * [explanation_spec][google.cloud.vertexai.v1beta1.DeployedModel.explanation_spec] populated.
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated.
    *
    * <p>Sample code:
    *
@@ -829,17 +829,17 @@ public class PredictionServiceClient implements BackgroundResource {
    *     and when it is exceeded the explanation call errors in case of AutoML Models, or, in case
    *     of customer created Models, the behaviour is as documented by that Model. The schema of any
    *     single instance may be specified via Endpoint's DeployedModels'
-   *     [Model's][google.cloud.vertexai.v1beta1.DeployedModel.model]
-   *     [PredictSchemata's][google.cloud.vertexai.v1beta1.Model.predict_schemata]
-   *     [instance_schema_uri][google.cloud.vertexai.v1beta1.PredictSchemata.instance_schema_uri].
+   *     [Model's][google.cloud.aiplatform.v1.DeployedModel.model]
+   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+   *     [instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri].
    * @param parameters The parameters that govern the prediction. The schema of the parameters may
    *     be specified via Endpoint's DeployedModels' [Model's
-   *     ][google.cloud.vertexai.v1beta1.DeployedModel.model]
-   *     [PredictSchemata's][google.cloud.vertexai.v1beta1.Model.predict_schemata]
-   *     [parameters_schema_uri][google.cloud.vertexai.v1beta1.PredictSchemata.parameters_schema_uri].
+   *     ][google.cloud.aiplatform.v1.DeployedModel.model]
+   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+   *     [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
    * @param deployedModelId If specified, this ExplainRequest will be served by the chosen
    *     DeployedModel, overriding
-   *     [Endpoint.traffic_split][google.cloud.vertexai.v1beta1.Endpoint.traffic_split].
+   *     [Endpoint.traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ExplainResponse explain(
@@ -858,12 +858,12 @@ public class PredictionServiceClient implements BackgroundResource {
   /**
    * Perform an online explanation.
    *
-   * <p>If [deployed_model_id][google.cloud.vertexai.v1beta1.ExplainRequest.deployed_model_id] is
+   * <p>If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is
    * specified, the corresponding DeployModel must have
-   * [explanation_spec][google.cloud.vertexai.v1beta1.DeployedModel.explanation_spec] populated. If
-   * [deployed_model_id][google.cloud.vertexai.v1beta1.ExplainRequest.deployed_model_id] is not
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. If
+   * [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is not
    * specified, all DeployedModels must have
-   * [explanation_spec][google.cloud.vertexai.v1beta1.DeployedModel.explanation_spec] populated.
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated.
    *
    * <p>Sample code:
    *
@@ -892,17 +892,17 @@ public class PredictionServiceClient implements BackgroundResource {
    *     and when it is exceeded the explanation call errors in case of AutoML Models, or, in case
    *     of customer created Models, the behaviour is as documented by that Model. The schema of any
    *     single instance may be specified via Endpoint's DeployedModels'
-   *     [Model's][google.cloud.vertexai.v1beta1.DeployedModel.model]
-   *     [PredictSchemata's][google.cloud.vertexai.v1beta1.Model.predict_schemata]
-   *     [instance_schema_uri][google.cloud.vertexai.v1beta1.PredictSchemata.instance_schema_uri].
+   *     [Model's][google.cloud.aiplatform.v1.DeployedModel.model]
+   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+   *     [instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri].
    * @param parameters The parameters that govern the prediction. The schema of the parameters may
    *     be specified via Endpoint's DeployedModels' [Model's
-   *     ][google.cloud.vertexai.v1beta1.DeployedModel.model]
-   *     [PredictSchemata's][google.cloud.vertexai.v1beta1.Model.predict_schemata]
-   *     [parameters_schema_uri][google.cloud.vertexai.v1beta1.PredictSchemata.parameters_schema_uri].
+   *     ][google.cloud.aiplatform.v1.DeployedModel.model]
+   *     [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+   *     [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
    * @param deployedModelId If specified, this ExplainRequest will be served by the chosen
    *     DeployedModel, overriding
-   *     [Endpoint.traffic_split][google.cloud.vertexai.v1beta1.Endpoint.traffic_split].
+   *     [Endpoint.traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ExplainResponse explain(
@@ -921,12 +921,12 @@ public class PredictionServiceClient implements BackgroundResource {
   /**
    * Perform an online explanation.
    *
-   * <p>If [deployed_model_id][google.cloud.vertexai.v1beta1.ExplainRequest.deployed_model_id] is
+   * <p>If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is
    * specified, the corresponding DeployModel must have
-   * [explanation_spec][google.cloud.vertexai.v1beta1.DeployedModel.explanation_spec] populated. If
-   * [deployed_model_id][google.cloud.vertexai.v1beta1.ExplainRequest.deployed_model_id] is not
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. If
+   * [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is not
    * specified, all DeployedModels must have
-   * [explanation_spec][google.cloud.vertexai.v1beta1.DeployedModel.explanation_spec] populated.
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated.
    *
    * <p>Sample code:
    *
@@ -946,8 +946,6 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .addAllInstances(new ArrayList<Value>())
    *           .setParameters(Value.newBuilder().setBoolValue(true).build())
    *           .setExplanationSpecOverride(ExplanationSpecOverride.newBuilder().build())
-   *           .putAllConcurrentExplanationSpecOverride(
-   *               new HashMap<String, ExplanationSpecOverride>())
    *           .setDeployedModelId("deployedModelId-1817547906")
    *           .build();
    *   ExplainResponse response = predictionServiceClient.explain(request);
@@ -965,12 +963,12 @@ public class PredictionServiceClient implements BackgroundResource {
   /**
    * Perform an online explanation.
    *
-   * <p>If [deployed_model_id][google.cloud.vertexai.v1beta1.ExplainRequest.deployed_model_id] is
+   * <p>If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is
    * specified, the corresponding DeployModel must have
-   * [explanation_spec][google.cloud.vertexai.v1beta1.DeployedModel.explanation_spec] populated. If
-   * [deployed_model_id][google.cloud.vertexai.v1beta1.ExplainRequest.deployed_model_id] is not
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. If
+   * [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is not
    * specified, all DeployedModels must have
-   * [explanation_spec][google.cloud.vertexai.v1beta1.DeployedModel.explanation_spec] populated.
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated.
    *
    * <p>Sample code:
    *
@@ -990,8 +988,6 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .addAllInstances(new ArrayList<Value>())
    *           .setParameters(Value.newBuilder().setBoolValue(true).build())
    *           .setExplanationSpecOverride(ExplanationSpecOverride.newBuilder().build())
-   *           .putAllConcurrentExplanationSpecOverride(
-   *               new HashMap<String, ExplanationSpecOverride>())
    *           .setDeployedModelId("deployedModelId-1817547906")
    *           .build();
    *   ApiFuture<ExplainResponse> future =
@@ -1003,142 +999,6 @@ public class PredictionServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     return stub.explainCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Perform a token counting.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   EndpointName endpoint =
-   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-   *   List<Value> instances = new ArrayList<>();
-   *   CountTokensResponse response = predictionServiceClient.countTokens(endpoint, instances);
-   * }
-   * }</pre>
-   *
-   * @param endpoint Required. The name of the Endpoint requested to perform token counting. Format:
-   *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   * @param instances Required. The instances that are the input to token counting call. Schema is
-   *     identical to the prediction schema of the underlying model.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CountTokensResponse countTokens(EndpointName endpoint, List<Value> instances) {
-    CountTokensRequest request =
-        CountTokensRequest.newBuilder()
-            .setEndpoint(endpoint == null ? null : endpoint.toString())
-            .addAllInstances(instances)
-            .build();
-    return countTokens(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Perform a token counting.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   String endpoint =
-   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
-   *           .toString();
-   *   List<Value> instances = new ArrayList<>();
-   *   CountTokensResponse response = predictionServiceClient.countTokens(endpoint, instances);
-   * }
-   * }</pre>
-   *
-   * @param endpoint Required. The name of the Endpoint requested to perform token counting. Format:
-   *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   * @param instances Required. The instances that are the input to token counting call. Schema is
-   *     identical to the prediction schema of the underlying model.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CountTokensResponse countTokens(String endpoint, List<Value> instances) {
-    CountTokensRequest request =
-        CountTokensRequest.newBuilder().setEndpoint(endpoint).addAllInstances(instances).build();
-    return countTokens(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Perform a token counting.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   CountTokensRequest request =
-   *       CountTokensRequest.newBuilder()
-   *           .setEndpoint(
-   *               EndpointName.ofProjectLocationEndpointName(
-   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
-   *                   .toString())
-   *           .setModel("model104069929")
-   *           .addAllInstances(new ArrayList<Value>())
-   *           .addAllContents(new ArrayList<Content>())
-   *           .build();
-   *   CountTokensResponse response = predictionServiceClient.countTokens(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CountTokensResponse countTokens(CountTokensRequest request) {
-    return countTokensCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Perform a token counting.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
-   *   CountTokensRequest request =
-   *       CountTokensRequest.newBuilder()
-   *           .setEndpoint(
-   *               EndpointName.ofProjectLocationEndpointName(
-   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
-   *                   .toString())
-   *           .setModel("model104069929")
-   *           .addAllInstances(new ArrayList<Value>())
-   *           .addAllContents(new ArrayList<Content>())
-   *           .build();
-   *   ApiFuture<CountTokensResponse> future =
-   *       predictionServiceClient.countTokensCallable().futureCall(request);
-   *   // Do something.
-   *   CountTokensResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable() {
-    return stub.countTokensCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1156,10 +1016,6 @@ public class PredictionServiceClient implements BackgroundResource {
    * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
    *   GenerateContentRequest request =
    *       GenerateContentRequest.newBuilder()
-   *           .setEndpoint(
-   *               EndpointName.ofProjectLocationEndpointName(
-   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
-   *                   .toString())
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
    *           .addAllTools(new ArrayList<Tool>())

@@ -31,13 +31,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-vertexai-v1beta1</artifactId>
-        <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vertexai-v1beta1:current} -->
+        <artifactId>grpc-google-cloud-vertexai-v1</artifactId>
+        <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vertexai-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-vertexai-v1beta1</artifactId>
-        <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vertexai-v1beta1:current} -->
+        <artifactId>proto-google-cloud-vertexai-v1</artifactId>
+        <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vertexai-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

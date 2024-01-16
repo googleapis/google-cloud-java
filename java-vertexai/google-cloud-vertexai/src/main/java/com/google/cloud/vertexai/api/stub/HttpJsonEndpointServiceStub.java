@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,13 +101,13 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
   private static final ApiMethodDescriptor<CreateEndpointRequest, Operation>
       createEndpointMethodDescriptor =
           ApiMethodDescriptor.<CreateEndpointRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/CreateEndpoint")
+              .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/CreateEndpoint")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<CreateEndpointRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{parent=projects/*/locations/*}/endpoints",
+                          "/v1/{parent=projects/*/locations/*}/endpoints",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<CreateEndpointRequest> serializer =
@@ -141,13 +141,13 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
   private static final ApiMethodDescriptor<GetEndpointRequest, Endpoint>
       getEndpointMethodDescriptor =
           ApiMethodDescriptor.<GetEndpointRequest, Endpoint>newBuilder()
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/GetEndpoint")
+              .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/GetEndpoint")
               .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetEndpointRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{name=projects/*/locations/*/endpoints/*}",
+                          "/v1/{name=projects/*/locations/*/endpoints/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<GetEndpointRequest> serializer =
@@ -174,13 +174,13 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
   private static final ApiMethodDescriptor<ListEndpointsRequest, ListEndpointsResponse>
       listEndpointsMethodDescriptor =
           ApiMethodDescriptor.<ListEndpointsRequest, ListEndpointsResponse>newBuilder()
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/ListEndpoints")
+              .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/ListEndpoints")
               .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListEndpointsRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{parent=projects/*/locations/*}/endpoints",
+                          "/v1/{parent=projects/*/locations/*}/endpoints",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<ListEndpointsRequest> serializer =
@@ -194,6 +194,7 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             ProtoRestSerializer<ListEndpointsRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "readMask", request.getReadMask());
@@ -211,13 +212,13 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
   private static final ApiMethodDescriptor<UpdateEndpointRequest, Endpoint>
       updateEndpointMethodDescriptor =
           ApiMethodDescriptor.<UpdateEndpointRequest, Endpoint>newBuilder()
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/UpdateEndpoint")
+              .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/UpdateEndpoint")
               .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateEndpointRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{endpoint.name=projects/*/locations/*/endpoints/*}",
+                          "/v1/{endpoint.name=projects/*/locations/*/endpoints/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateEndpointRequest> serializer =
@@ -249,13 +250,13 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
   private static final ApiMethodDescriptor<DeleteEndpointRequest, Operation>
       deleteEndpointMethodDescriptor =
           ApiMethodDescriptor.<DeleteEndpointRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/DeleteEndpoint")
+              .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/DeleteEndpoint")
               .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteEndpointRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{name=projects/*/locations/*/endpoints/*}",
+                          "/v1/{name=projects/*/locations/*/endpoints/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteEndpointRequest> serializer =
@@ -285,13 +286,13 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
   private static final ApiMethodDescriptor<DeployModelRequest, Operation>
       deployModelMethodDescriptor =
           ApiMethodDescriptor.<DeployModelRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/DeployModel")
+              .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/DeployModel")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeployModelRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{endpoint=projects/*/locations/*/endpoints/*}:deployModel",
+                          "/v1/{endpoint=projects/*/locations/*/endpoints/*}:deployModel",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<DeployModelRequest> serializer =
@@ -324,13 +325,13 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
   private static final ApiMethodDescriptor<UndeployModelRequest, Operation>
       undeployModelMethodDescriptor =
           ApiMethodDescriptor.<UndeployModelRequest, Operation>newBuilder()
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.EndpointService/UndeployModel")
+              .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/UndeployModel")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UndeployModelRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{endpoint=projects/*/locations/*/endpoints/*}:undeployModel",
+                          "/v1/{endpoint=projects/*/locations/*/endpoints/*}:undeployModel",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<UndeployModelRequest> serializer =
@@ -363,14 +364,13 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
   private static final ApiMethodDescriptor<MutateDeployedModelRequest, Operation>
       mutateDeployedModelMethodDescriptor =
           ApiMethodDescriptor.<MutateDeployedModelRequest, Operation>newBuilder()
-              .setFullMethodName(
-                  "google.cloud.aiplatform.v1beta1.EndpointService/MutateDeployedModel")
+              .setFullMethodName("google.cloud.aiplatform.v1.EndpointService/MutateDeployedModel")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<MutateDeployedModelRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{endpoint=projects/*/locations/*/endpoints/*}:mutateDeployedModel",
+                          "/v1/{endpoint=projects/*/locations/*/endpoints/*}:mutateDeployedModel",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<MutateDeployedModelRequest> serializer =
@@ -417,7 +417,7 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
-                      .setAdditionalPaths("/v1beta1/{name=projects/*}/locations")
+                      .setAdditionalPaths("/v1/{name=projects/*}/locations")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -451,7 +451,7 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
-                      .setAdditionalPaths("/v1beta1/{name=projects/*/locations/*}")
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -477,7 +477,7 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{resource=projects/*/locations/*/featurestores/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featurestores/*}:setIamPolicy",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
@@ -486,10 +486,8 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
-                          "/v1beta1/{resource=projects/*/locations/*/models/*}:setIamPolicy",
-                          "/v1beta1/{resource=projects/*/locations/*/endpoints/*}:setIamPolicy",
-                          "/v1beta1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/models/*}:setIamPolicy",
@@ -523,7 +521,7 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{resource=projects/*/locations/*/featurestores/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featurestores/*}:getIamPolicy",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
@@ -532,15 +530,14 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
-                          "/v1beta1/{resource=projects/*/locations/*/models/*}:getIamPolicy",
-                          "/v1beta1/{resource=projects/*/locations/*/endpoints/*}:getIamPolicy",
-                          "/v1beta1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/models/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/endpoints/*}:getIamPolicy",
-                          "/ui/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy")
+                          "/ui/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy",
+                          "/ui/{resource=projects/*/locations/*/publishers/*/models/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -548,10 +545,7 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                                 ProtoRestSerializer.create();
                             return fields;
                           })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -569,7 +563,7 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{resource=projects/*/locations/*/featurestores/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/featurestores/*}:testIamPermissions",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
@@ -578,10 +572,8 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
-                          "/v1beta1/{resource=projects/*/locations/*/models/*}:testIamPermissions",
-                          "/v1beta1/{resource=projects/*/locations/*/endpoints/*}:testIamPermissions",
-                          "/v1beta1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/models/*}:testIamPermissions",
@@ -594,10 +586,7 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                                 ProtoRestSerializer.create();
                             return fields;
                           })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
@@ -859,183 +848,152 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
-                                .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/operations/*}:cancel")
+                                .setPost("/v1/{name=projects/*/locations/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/dataItems/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/savedQueries/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/savedQueries/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/annotationSpecs/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/annotationSpecs/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/deploymentResourcePools/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/deploymentResourcePools/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/edgeDevices/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/endpoints/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/endpoints/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/featurestores/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/extensionControllers/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/extensions/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/features/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/extensions/*/deployments/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/customJobs/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/featurestores/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/dataLabelingJobs/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/hyperparameterTuningJobs/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/features/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/indexes/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/customJobs/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/indexEndpoints/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/dataLabelingJobs/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/hyperparameterTuningJobs/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/migratableResources/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/indexes/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/models/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/indexEndpoints/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/models/*/evaluations/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/studies/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/modelMonitors/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/studies/*/trials/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/migratableResources/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/trainingPipelines/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/models/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/pipelineJobs/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/models/*/evaluations/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/schedules/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/persistentResources/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/specialistPools/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/studies/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/studies/*/trials/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/experiments/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/trainingPipelines/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/pipelineJobs/*/operations/*}:cancel")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/schedules/*/operations/*}:cancel")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/specialistPools/*/operations/*}:cancel")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/operations/*}:cancel")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*/operations/*}:cancel")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/operations/*}:cancel")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*/operations/*}:cancel")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*/operations/*}:cancel")
                                 .build())
                         .build())
                 .put(
@@ -1229,207 +1187,172 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
-                                .setDelete("/v1beta1/{name=projects/*/locations/*/operations/*}")
+                                .setDelete("/v1/{name=projects/*/locations/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/dataItems/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/savedQueries/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/savedQueries/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/annotationSpecs/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/annotationSpecs/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/deploymentResourcePools/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/deploymentResourcePools/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/edgeDevices/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/endpoints/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/endpoints/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/featurestores/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/featurestores/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/features/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/features/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/customJobs/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/customJobs/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/dataLabelingJobs/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/dataLabelingJobs/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/hyperparameterTuningJobs/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/extensionControllers/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/indexes/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/extensions/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/indexEndpoints/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/extensions/*/deployments/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/hyperparameterTuningJobs/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/migratableResources/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/indexes/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/models/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/indexEndpoints/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/models/*/evaluations/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/studies/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/modelMonitors/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/studies/*/trials/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/migratableResources/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/trainingPipelines/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/models/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/pipelineJobs/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/models/*/evaluations/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/schedules/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/persistentResources/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/specialistPools/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/solvers/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/studies/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/experiments/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/studies/*/trials/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/trainingPipelines/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/pipelineJobs/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/featureOnlineStores/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/schedules/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/featureGroups/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/specialistPools/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/featureGroups/*/features/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/featureOnlineStores/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/featureGroups/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/featureGroups/*/features/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setDelete(
-                                    "/v1beta1/{name=projects/*/locations/*/featureOnlineStores/*/featureViews/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/featureOnlineStores/*/featureViews/*/operations/*}")
                                 .build())
                         .build())
                 .put(
@@ -1624,207 +1547,168 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
-                                .setGet("/v1beta1/{name=projects/*/locations/*/operations/*}")
+                                .setGet("/v1/{name=projects/*/locations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*/datasets/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/dataItems/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/savedQueries/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/savedQueries/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/annotationSpecs/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/annotationSpecs/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/deploymentResourcePools/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/deploymentResourcePools/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/endpoints/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/edgeDevices/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/featurestores/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/endpoints/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/extensionControllers/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/features/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/extensions/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/customJobs/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/extensions/*/deployments/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/dataLabelingJobs/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/featurestores/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/hyperparameterTuningJobs/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*/indexes/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/indexEndpoints/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/features/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/customJobs/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/migratableResources/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*/models/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/dataLabelingJobs/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/models/*/evaluations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*/studies/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/hyperparameterTuningJobs/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/studies/*/trials/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/indexes/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/trainingPipelines/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/indexEndpoints/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/pipelineJobs/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/schedules/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/modelMonitors/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/specialistPools/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/migratableResources/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/models/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/experiments/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/models/*/evaluations/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/persistentResources/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/solvers/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/featureOnlineStores/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/studies/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/featureOnlineStores/*/featureViews/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/studies/*/trials/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/featureGroups/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/trainingPipelines/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/pipelineJobs/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/schedules/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/specialistPools/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/featureOnlineStores/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/featureOnlineStores/*/featureViews/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/featureGroups/*/operations/*}")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/featureGroups/*/features/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/featureGroups/*/features/*/operations/*}")
                                 .build())
                         .build())
                 .put(
@@ -2010,207 +1894,165 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
-                                .setGet("/v1beta1/{name=projects/*/locations/*}/operations")
+                                .setGet("/v1/{name=projects/*/locations/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*/datasets/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/dataItems/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/savedQueries/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/savedQueries/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/annotationSpecs/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/annotationSpecs/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/deploymentResourcePools/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*/endpoints/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/deploymentResourcePools/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/featurestores/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/edgeDevices/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/featurestores/*/entityTypes/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/endpoints/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/features/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*/customJobs/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/extensionControllers/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/dataLabelingJobs/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/extensions/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/hyperparameterTuningJobs/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*/indexes/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/extensions/*/deployments/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/indexEndpoints/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/featurestores/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/featurestores/*/entityTypes/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/migratableResources/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*/models/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/features/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/models/*/evaluations/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*/studies/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/customJobs/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/studies/*/trials/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/dataLabelingJobs/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/trainingPipelines/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/hyperparameterTuningJobs/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/pipelineJobs/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*/schedules/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/indexes/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/specialistPools/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/indexEndpoints/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/experiments/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/modelMonitors/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/migratableResources/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/models/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/featureOnlineStores/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/models/*/evaluations/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/featureOnlineStores/*/featureViews/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/persistentResources/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/featureGroups/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/solvers/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/studies/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/studies/*/trials/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/trainingPipelines/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/pipelineJobs/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/schedules/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/specialistPools/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/featureOnlineStores/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/featureOnlineStores/*/featureViews/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/featureGroups/*}/operations")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setGet(
-                                    "/v1beta1/{name=projects/*/locations/*/featureGroups/*/features/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/featureGroups/*/features/*/operations/*}:wait")
                                 .build())
                         .build())
                 .put(
@@ -2404,202 +2246,172 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
-                                .setPost("/v1beta1/{name=projects/*/locations/*/operations/*}:wait")
+                                .setPost("/v1/{name=projects/*/locations/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/dataItems/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/savedQueries/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/savedQueries/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/annotationSpecs/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/annotationSpecs/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/deploymentResourcePools/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/deploymentResourcePools/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/edgeDevices/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/endpoints/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/endpoints/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/featurestores/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/extensionControllers/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/extensions/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/features/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/extensions/*/deployments/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/customJobs/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/featurestores/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/dataLabelingJobs/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/hyperparameterTuningJobs/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/featurestores/*/entityTypes/*/features/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/indexes/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/customJobs/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/indexEndpoints/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/dataLabelingJobs/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/hyperparameterTuningJobs/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/migratableResources/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/indexes/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/models/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/indexEndpoints/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/models/*/evaluations/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/studies/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/modelMonitors/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/studies/*/trials/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/migratableResources/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/trainingPipelines/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/models/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/pipelineJobs/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/models/*/evaluations/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/schedules/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/persistentResources/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/specialistPools/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/studies/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/studies/*/trials/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/experiments/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/trainingPipelines/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/pipelineJobs/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/schedules/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/featureOnlineStores/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/specialistPools/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/featureOnlineStores/*/featureViews/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/featureGroups/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*/operations/*}:wait")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/operations/*}:wait")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*/operations/*}:wait")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/featureOnlineStores/*/operations/*}:wait")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/featureOnlineStores/*/featureViews/*/operations/*}:wait")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/featureGroups/*/operations/*}:wait")
-                                .build())
-                        .addAdditionalBindings(
-                            HttpRule.newBuilder()
-                                .setPost(
-                                    "/v1beta1/{name=projects/*/locations/*/featureGroups/*/features/*/operations/*}:wait")
+                                    "/v1/{name=projects/*/locations/*/featureGroups/*/features/*/operations/*}:wait")
                                 .build())
                         .build())
                 .build());

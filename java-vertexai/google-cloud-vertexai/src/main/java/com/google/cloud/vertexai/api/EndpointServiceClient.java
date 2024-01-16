@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -669,6 +669,7 @@ public class EndpointServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   for (Endpoint element : endpointServiceClient.listEndpoints(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -703,6 +704,7 @@ public class EndpointServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   ApiFuture<Endpoint> future =
    *       endpointServiceClient.listEndpointsPagedCallable().futureCall(request);
@@ -738,6 +740,7 @@ public class EndpointServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   while (true) {
    *     ListEndpointsResponse response =
@@ -1026,19 +1029,18 @@ public class EndpointServiceClient implements BackgroundResource {
    * @param endpoint Required. The name of the Endpoint resource into which to deploy a Model.
    *     Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * @param deployedModel Required. The DeployedModel to be created within the Endpoint. Note that
-   *     [Endpoint.traffic_split][google.cloud.vertexai.v1beta1.Endpoint.traffic_split] must be
-   *     updated for the DeployedModel to start receiving traffic, either as part of this call, or
-   *     via
-   *     [EndpointService.UpdateEndpoint][google.cloud.vertexai.v1beta1.EndpointService.UpdateEndpoint].
+   *     [Endpoint.traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] must be updated
+   *     for the DeployedModel to start receiving traffic, either as part of this call, or via
+   *     [EndpointService.UpdateEndpoint][google.cloud.aiplatform.v1.EndpointService.UpdateEndpoint].
    * @param trafficSplit A map from a DeployedModel's ID to the percentage of this Endpoint's
    *     traffic that should be forwarded to that DeployedModel.
    *     <p>If this field is non-empty, then the Endpoint's
-   *     [traffic_split][google.cloud.vertexai.v1beta1.Endpoint.traffic_split] will be overwritten
-   *     with it. To refer to the ID of the just being deployed Model, a "0" should be used, and the
+   *     [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be overwritten with
+   *     it. To refer to the ID of the just being deployed Model, a "0" should be used, and the
    *     actual ID of the new DeployedModel will be filled in its place by this method. The traffic
    *     percentage values must add up to 100.
    *     <p>If this field is empty, then the Endpoint's
-   *     [traffic_split][google.cloud.vertexai.v1beta1.Endpoint.traffic_split] is not updated.
+   *     [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] is not updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DeployModelResponse, DeployModelOperationMetadata> deployModelAsync(
@@ -1078,19 +1080,18 @@ public class EndpointServiceClient implements BackgroundResource {
    * @param endpoint Required. The name of the Endpoint resource into which to deploy a Model.
    *     Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * @param deployedModel Required. The DeployedModel to be created within the Endpoint. Note that
-   *     [Endpoint.traffic_split][google.cloud.vertexai.v1beta1.Endpoint.traffic_split] must be
-   *     updated for the DeployedModel to start receiving traffic, either as part of this call, or
-   *     via
-   *     [EndpointService.UpdateEndpoint][google.cloud.vertexai.v1beta1.EndpointService.UpdateEndpoint].
+   *     [Endpoint.traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] must be updated
+   *     for the DeployedModel to start receiving traffic, either as part of this call, or via
+   *     [EndpointService.UpdateEndpoint][google.cloud.aiplatform.v1.EndpointService.UpdateEndpoint].
    * @param trafficSplit A map from a DeployedModel's ID to the percentage of this Endpoint's
    *     traffic that should be forwarded to that DeployedModel.
    *     <p>If this field is non-empty, then the Endpoint's
-   *     [traffic_split][google.cloud.vertexai.v1beta1.Endpoint.traffic_split] will be overwritten
-   *     with it. To refer to the ID of the just being deployed Model, a "0" should be used, and the
+   *     [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be overwritten with
+   *     it. To refer to the ID of the just being deployed Model, a "0" should be used, and the
    *     actual ID of the new DeployedModel will be filled in its place by this method. The traffic
    *     percentage values must add up to 100.
    *     <p>If this field is empty, then the Endpoint's
-   *     [traffic_split][google.cloud.vertexai.v1beta1.Endpoint.traffic_split] is not updated.
+   *     [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] is not updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DeployModelResponse, DeployModelOperationMetadata> deployModelAsync(
@@ -1233,8 +1234,8 @@ public class EndpointServiceClient implements BackgroundResource {
    * @param deployedModelId Required. The ID of the DeployedModel to be undeployed from the
    *     Endpoint.
    * @param trafficSplit If this field is provided, then the Endpoint's
-   *     [traffic_split][google.cloud.vertexai.v1beta1.Endpoint.traffic_split] will be overwritten
-   *     with it. If last DeployedModel is being undeployed from the Endpoint, the
+   *     [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be overwritten with
+   *     it. If last DeployedModel is being undeployed from the Endpoint, the
    *     [Endpoint.traffic_split] will always end up empty when this call returns. A DeployedModel
    *     will be successfully undeployed only if it doesn't have any traffic assigned to it when
    *     this method executes, or if this field unassigns any traffic to it.
@@ -1281,8 +1282,8 @@ public class EndpointServiceClient implements BackgroundResource {
    * @param deployedModelId Required. The ID of the DeployedModel to be undeployed from the
    *     Endpoint.
    * @param trafficSplit If this field is provided, then the Endpoint's
-   *     [traffic_split][google.cloud.vertexai.v1beta1.Endpoint.traffic_split] will be overwritten
-   *     with it. If last DeployedModel is being undeployed from the Endpoint, the
+   *     [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be overwritten with
+   *     it. If last DeployedModel is being undeployed from the Endpoint, the
    *     [Endpoint.traffic_split] will always end up empty when this call returns. A DeployedModel
    *     will be successfully undeployed only if it doesn't have any traffic assigned to it when
    *     this method executes, or if this field unassigns any traffic to it.
@@ -1435,12 +1436,12 @@ public class EndpointServiceClient implements BackgroundResource {
    *     following fields can be mutated:
    *     <ul>
    *       <li>`min_replica_count` in either
-   *           [DedicatedResources][google.cloud.vertexai.v1beta1.DedicatedResources] or
-   *           [AutomaticResources][google.cloud.vertexai.v1beta1.AutomaticResources]
+   *           [DedicatedResources][google.cloud.aiplatform.v1.DedicatedResources] or
+   *           [AutomaticResources][google.cloud.aiplatform.v1.AutomaticResources]
    *       <li>`max_replica_count` in either
-   *           [DedicatedResources][google.cloud.vertexai.v1beta1.DedicatedResources] or
-   *           [AutomaticResources][google.cloud.vertexai.v1beta1.AutomaticResources]
-   *       <li>[autoscaling_metric_specs][google.cloud.vertexai.v1beta1.DedicatedResources.autoscaling_metric_specs]
+   *           [DedicatedResources][google.cloud.aiplatform.v1.DedicatedResources] or
+   *           [AutomaticResources][google.cloud.aiplatform.v1.AutomaticResources]
+   *       <li>[autoscaling_metric_specs][google.cloud.aiplatform.v1.DedicatedResources.autoscaling_metric_specs]
    *       <li>`disable_container_logging` (v1 only)
    *       <li>`enable_container_logging` (v1beta1 only)
    *     </ul>
@@ -1492,12 +1493,12 @@ public class EndpointServiceClient implements BackgroundResource {
    *     following fields can be mutated:
    *     <ul>
    *       <li>`min_replica_count` in either
-   *           [DedicatedResources][google.cloud.vertexai.v1beta1.DedicatedResources] or
-   *           [AutomaticResources][google.cloud.vertexai.v1beta1.AutomaticResources]
+   *           [DedicatedResources][google.cloud.aiplatform.v1.DedicatedResources] or
+   *           [AutomaticResources][google.cloud.aiplatform.v1.AutomaticResources]
    *       <li>`max_replica_count` in either
-   *           [DedicatedResources][google.cloud.vertexai.v1beta1.DedicatedResources] or
-   *           [AutomaticResources][google.cloud.vertexai.v1beta1.AutomaticResources]
-   *       <li>[autoscaling_metric_specs][google.cloud.vertexai.v1beta1.DedicatedResources.autoscaling_metric_specs]
+   *           [DedicatedResources][google.cloud.aiplatform.v1.DedicatedResources] or
+   *           [AutomaticResources][google.cloud.aiplatform.v1.AutomaticResources]
+   *       <li>[autoscaling_metric_specs][google.cloud.aiplatform.v1.DedicatedResources.autoscaling_metric_specs]
    *       <li>`disable_container_logging` (v1 only)
    *       <li>`enable_container_logging` (v1beta1 only)
    *     </ul>

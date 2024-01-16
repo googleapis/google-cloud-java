@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,13 @@ import com.google.common.collect.ImmutableSet;
 /** A class that holds all constants for vertexai/generativeai. */
 public final class Constants {
   // Constants for GenerativeModel class
+  // Models supported in Gemini API are listed at
+  // https://cloud.google.com/vertex-ai/docs/generative-ai/learn/models#gemini-models
   public static final ImmutableSet<String> GENERATIVE_MODEL_NAMES =
       ImmutableSet.of("gemini-pro", "gemini-pro-vision", "gemini-ultra", "gemini-ultra-vision");
+
+  public static final ImmutableSet<String> MODEL_NAME_PREFIXES =
+      ImmutableSet.of("publishers/google/models/", "models/");
 
   private Constants() {}
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,8 +38,6 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.cloud.vertexai.api.CountTokensRequest;
-import com.google.cloud.vertexai.api.CountTokensResponse;
 import com.google.cloud.vertexai.api.DirectPredictRequest;
 import com.google.cloud.vertexai.api.DirectPredictResponse;
 import com.google.cloud.vertexai.api.DirectRawPredictRequest;
@@ -83,13 +81,13 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
   private static final ApiMethodDescriptor<PredictRequest, PredictResponse>
       predictMethodDescriptor =
           ApiMethodDescriptor.<PredictRequest, PredictResponse>newBuilder()
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/Predict")
+              .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/Predict")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PredictRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{endpoint=projects/*/locations/*/endpoints/*}:predict",
+                          "/v1/{endpoint=projects/*/locations/*/endpoints/*}:predict",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<PredictRequest> serializer =
@@ -98,7 +96,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta1/{endpoint=projects/*/locations/*/publishers/*/models/*}:predict")
+                          "/v1/{endpoint=projects/*/locations/*/publishers/*/models/*}:predict")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -120,13 +118,13 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
 
   private static final ApiMethodDescriptor<RawPredictRequest, HttpBody> rawPredictMethodDescriptor =
       ApiMethodDescriptor.<RawPredictRequest, HttpBody>newBuilder()
-          .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/RawPredict")
+          .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/RawPredict")
           .setHttpMethod("POST")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<RawPredictRequest>newBuilder()
                   .setPath(
-                      "/v1beta1/{endpoint=projects/*/locations/*/endpoints/*}:rawPredict",
+                      "/v1/{endpoint=projects/*/locations/*/endpoints/*}:rawPredict",
                       request -> {
                         Map<String, String> fields = new HashMap<>();
                         ProtoRestSerializer<RawPredictRequest> serializer =
@@ -135,7 +133,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                         return fields;
                       })
                   .setAdditionalPaths(
-                      "/v1beta1/{endpoint=projects/*/locations/*/publishers/*/models/*}:rawPredict")
+                      "/v1/{endpoint=projects/*/locations/*/publishers/*/models/*}:rawPredict")
                   .setQueryParamsExtractor(
                       request -> {
                         Map<String, List<String>> fields = new HashMap<>();
@@ -158,13 +156,13 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
   private static final ApiMethodDescriptor<DirectPredictRequest, DirectPredictResponse>
       directPredictMethodDescriptor =
           ApiMethodDescriptor.<DirectPredictRequest, DirectPredictResponse>newBuilder()
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/DirectPredict")
+              .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/DirectPredict")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DirectPredictRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{endpoint=projects/*/locations/*/endpoints/*}:directPredict",
+                          "/v1/{endpoint=projects/*/locations/*/endpoints/*}:directPredict",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<DirectPredictRequest> serializer =
@@ -194,14 +192,13 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
   private static final ApiMethodDescriptor<DirectRawPredictRequest, DirectRawPredictResponse>
       directRawPredictMethodDescriptor =
           ApiMethodDescriptor.<DirectRawPredictRequest, DirectRawPredictResponse>newBuilder()
-              .setFullMethodName(
-                  "google.cloud.aiplatform.v1beta1.PredictionService/DirectRawPredict")
+              .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/DirectRawPredict")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DirectRawPredictRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{endpoint=projects/*/locations/*/endpoints/*}:directRawPredict",
+                          "/v1/{endpoint=projects/*/locations/*/endpoints/*}:directRawPredict",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<DirectRawPredictRequest> serializer =
@@ -232,13 +229,13 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
       serverStreamingPredictMethodDescriptor =
           ApiMethodDescriptor.<StreamingPredictRequest, StreamingPredictResponse>newBuilder()
               .setFullMethodName(
-                  "google.cloud.aiplatform.v1beta1.PredictionService/ServerStreamingPredict")
+                  "google.cloud.aiplatform.v1.PredictionService/ServerStreamingPredict")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.SERVER_STREAMING)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<StreamingPredictRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{endpoint=projects/*/locations/*/endpoints/*}:serverStreamingPredict",
+                          "/v1/{endpoint=projects/*/locations/*/endpoints/*}:serverStreamingPredict",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<StreamingPredictRequest> serializer =
@@ -247,7 +244,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta1/{endpoint=projects/*/locations/*/publishers/*/models/*}:serverStreamingPredict")
+                          "/v1/{endpoint=projects/*/locations/*/publishers/*/models/*}:serverStreamingPredict")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -270,13 +267,13 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
   private static final ApiMethodDescriptor<ExplainRequest, ExplainResponse>
       explainMethodDescriptor =
           ApiMethodDescriptor.<ExplainRequest, ExplainResponse>newBuilder()
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/Explain")
+              .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/Explain")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ExplainRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{endpoint=projects/*/locations/*/endpoints/*}:explain",
+                          "/v1/{endpoint=projects/*/locations/*/endpoints/*}:explain",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<ExplainRequest> serializer =
@@ -303,55 +300,17 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<CountTokensRequest, CountTokensResponse>
-      countTokensMethodDescriptor =
-          ApiMethodDescriptor.<CountTokensRequest, CountTokensResponse>newBuilder()
-              .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/CountTokens")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<CountTokensRequest>newBuilder()
-                      .setPath(
-                          "/v1beta1/{endpoint=projects/*/locations/*/endpoints/*}:countTokens",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<CountTokensRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "endpoint", request.getEndpoint());
-                            return fields;
-                          })
-                      .setAdditionalPaths(
-                          "/v1beta1/{endpoint=projects/*/locations/*/publishers/*/models/*}:countTokens")
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<CountTokensRequest> serializer =
-                                ProtoRestSerializer.create();
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearEndpoint().build(), false))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<CountTokensResponse>newBuilder()
-                      .setDefaultInstance(CountTokensResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
   private static final ApiMethodDescriptor<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentMethodDescriptor =
           ApiMethodDescriptor.<GenerateContentRequest, GenerateContentResponse>newBuilder()
               .setFullMethodName(
-                  "google.cloud.aiplatform.v1beta1.PredictionService/StreamGenerateContent")
+                  "google.cloud.aiplatform.v1.PredictionService/StreamGenerateContent")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.SERVER_STREAMING)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GenerateContentRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{model=projects/*/locations/*/endpoints/*}:streamGenerateContent",
+                          "/v1/{model=projects/*/locations/*/endpoints/*}:streamGenerateContent",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<GenerateContentRequest> serializer =
@@ -360,7 +319,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta1/{model=projects/*/locations/*/publishers/*/models/*}:streamGenerateContent")
+                          "/v1/{model=projects/*/locations/*/publishers/*/models/*}:streamGenerateContent")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -397,7 +356,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
-                      .setAdditionalPaths("/v1beta1/{name=projects/*}/locations")
+                      .setAdditionalPaths("/v1/{name=projects/*}/locations")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -431,7 +390,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
-                      .setAdditionalPaths("/v1beta1/{name=projects/*/locations/*}")
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -457,7 +416,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{resource=projects/*/locations/*/featurestores/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featurestores/*}:setIamPolicy",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
@@ -466,10 +425,8 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
-                          "/v1beta1/{resource=projects/*/locations/*/models/*}:setIamPolicy",
-                          "/v1beta1/{resource=projects/*/locations/*/endpoints/*}:setIamPolicy",
-                          "/v1beta1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/models/*}:setIamPolicy",
@@ -503,7 +460,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{resource=projects/*/locations/*/featurestores/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featurestores/*}:getIamPolicy",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
@@ -512,15 +469,14 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
-                          "/v1beta1/{resource=projects/*/locations/*/models/*}:getIamPolicy",
-                          "/v1beta1/{resource=projects/*/locations/*/endpoints/*}:getIamPolicy",
-                          "/v1beta1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/models/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/endpoints/*}:getIamPolicy",
-                          "/ui/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy")
+                          "/ui/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy",
+                          "/ui/{resource=projects/*/locations/*/publishers/*/models/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -528,10 +484,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                                 ProtoRestSerializer.create();
                             return fields;
                           })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -549,7 +502,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsRequest>newBuilder()
                       .setPath(
-                          "/v1beta1/{resource=projects/*/locations/*/featurestores/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/featurestores/*}:testIamPermissions",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
@@ -558,10 +511,8 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
-                          "/v1beta1/{resource=projects/*/locations/*/models/*}:testIamPermissions",
-                          "/v1beta1/{resource=projects/*/locations/*/endpoints/*}:testIamPermissions",
-                          "/v1beta1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featurestores/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/models/*}:testIamPermissions",
@@ -574,10 +525,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                                 ProtoRestSerializer.create();
                             return fields;
                           })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                      .setRequestBodyExtractor(request -> null)
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
@@ -594,7 +542,6 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
   private final ServerStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
       serverStreamingPredictCallable;
   private final UnaryCallable<ExplainRequest, ExplainResponse> explainCallable;
-  private final UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable;
   private final ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
@@ -717,17 +664,6 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                   return builder.build();
                 })
             .build();
-    HttpJsonCallSettings<CountTokensRequest, CountTokensResponse> countTokensTransportSettings =
-        HttpJsonCallSettings.<CountTokensRequest, CountTokensResponse>newBuilder()
-            .setMethodDescriptor(countTokensMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("endpoint", String.valueOf(request.getEndpoint()));
-                  return builder.build();
-                })
-            .build();
     HttpJsonCallSettings<GenerateContentRequest, GenerateContentResponse>
         streamGenerateContentTransportSettings =
             HttpJsonCallSettings.<GenerateContentRequest, GenerateContentResponse>newBuilder()
@@ -818,9 +754,6 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
     this.explainCallable =
         callableFactory.createUnaryCallable(
             explainTransportSettings, settings.explainSettings(), clientContext);
-    this.countTokensCallable =
-        callableFactory.createUnaryCallable(
-            countTokensTransportSettings, settings.countTokensSettings(), clientContext);
     this.streamGenerateContentCallable =
         callableFactory.createServerStreamingCallable(
             streamGenerateContentTransportSettings,
@@ -860,7 +793,6 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
     methodDescriptors.add(directRawPredictMethodDescriptor);
     methodDescriptors.add(serverStreamingPredictMethodDescriptor);
     methodDescriptors.add(explainMethodDescriptor);
-    methodDescriptors.add(countTokensMethodDescriptor);
     methodDescriptors.add(streamGenerateContentMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
@@ -900,11 +832,6 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
   @Override
   public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     return explainCallable;
-  }
-
-  @Override
-  public UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable() {
-    return countTokensCallable;
   }
 
   @Override
