@@ -57,12 +57,12 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
   private static final String GCLOUD_CMD_TEXT = "gcloud beta emulators datastore start";
   private static final String GCLOUD_CMD_PORT_FLAG = "--host-port=";
   private static final String VERSION_PREFIX = "cloud-datastore-emulator ";
-  private static final String MIN_VERSION = "1.2.0";
+  private static final String MIN_VERSION = "2.0.2";
 
   // Downloadable emulator settings
   private static final String BIN_NAME = "cloud-datastore-emulator/cloud_datastore_emulator";
   private static final String FILENAME = "cloud-datastore-emulator-" + MIN_VERSION + ".zip";
-  private static final String MD5_CHECKSUM = "ec2237a0f0ac54964c6bd95e12c73720";
+  private static final String MD5_CHECKSUM = "e0d1170519cf52e2e5f9f93892cdf70c";
   private static final String BIN_CMD_PORT_FLAG = "--port=";
   private static final URL EMULATOR_URL;
   private static final String EMULATOR_URL_ENV_VAR = "DATASTORE_EMULATOR_URL";
