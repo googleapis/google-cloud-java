@@ -139,7 +139,7 @@ Example:
 For the explanation of the available parameters, run:
 `python3.9 generation/new_client/new-client.py generate  --help`.
 
-**Note: The advanced options other than `transport`, `destination-name` and
+:warning: **Note: The advanced options other than `transport`, `destination-name` and
 `distribution-name` cannot be specified in the [GH action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml), you will have to run
 the script locally (refer to the Prerequisites (for local environment) section
 below) if you need to specify any of these**
