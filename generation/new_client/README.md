@@ -12,23 +12,23 @@ You can save the time to setup the environment by calling the
 [this section](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#run-client-generation-script)
 to find workflow arguments.
 
-> ![IMPORTANT]
-> Not all the `new-client.py` arguments are available in the Github Action.
-> Please refer to
-> [this
-> section](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#advanced-options)
-> for more arguments (it requires to setup a local environment).
-> The arguments currently supported by the workflow are:
-> - [API short Name (`api_shortname`)](#api-short-name)
-> - [Proto path (`proto_path`)](#proto-path)
-> - [Name pretty (`name_pretty`)](#name-pretty)
-> - [Product Docs (`product_docs`)](#product-docs)
-> - [REST Docs (`rest_docs`)](#rest-docs)
-> - [RPC Docs (`rpc_docs`)](#rpc-docs)
-> - [API description (`api_description`)](#api-description)
-> - [`transport`](#advanced-options)
-> - [`destination_name`](#advanced-options)
-> - [`distribution_name`](#advanced-options)
+:warning: **IMPORTANT:**
+Not all the `new-client.py` arguments are available in the Github Action.
+Please refer to
+[this
+section](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#advanced-options)
+for more arguments (it requires to setup a local environment).
+The arguments currently supported by the workflow are:
+- [API short Name (`api_shortname`)](#api-short-name)
+- [Proto path (`proto_path`)](#proto-path)
+- [Name pretty (`name_pretty`)](#name-pretty)
+- [Product Docs (`product_docs`)](#product-docs)
+- [REST Docs (`rest_docs`)](#rest-docs)
+- [RPC Docs (`rpc_docs`)](#rpc-docs)
+- [API description (`api_description`)](#api-description)
+- [`transport`](#advanced-options)
+- [`destination_name`](#advanced-options)
+- [`distribution_name`](#advanced-options)
 
 ## Prerequisites (for GH action and local environment)
 
