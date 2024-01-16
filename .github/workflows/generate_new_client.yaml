@@ -126,7 +126,7 @@ jobs:
           git commit -m "feat: [${API_SHORTNAME}] new module for ${API_SHORTNAME}
 
 
-          Generated with `.github/workflows/generate_new_client.yaml`
+          Generated with https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml
 
           Command used:
 
