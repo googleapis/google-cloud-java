@@ -126,6 +126,10 @@ jobs:
           git commit -m "feat: [${API_SHORTNAME}] new module for ${API_SHORTNAME}
 
 
+          Generated with `.github/workflows/generate_new_client.yaml`
+
+          Command used:
+
           \`\`\`
           python generation/new_client/new-client.py generate ${GENERATION_ARGUMENTS}
           \`\`\`"
