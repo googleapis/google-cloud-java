@@ -5,11 +5,36 @@ google-cloud-java monorepo.
 
 **This tool is for repository maintainers only. Not for library users.**
 
-## Prerequisites
+## Run via github action
 
-This section is only needed for the first run of this script. If it's already
+You can save the time to setup the environment by calling the
+[`generate_new_client.yaml` github action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml) directly. You can jump to
+[this section](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#run-client-generation-script)
+to find workflow arguments.
+
+> ![IMPORTANT]
+> Not all the `new-client.py` arguments are available in the Github Action.
+> Please refer to
+> [this
+> section](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#advanced-options)
+> for more arguments (it requires to setup a local environment).
+> The arguments currently supported by the workflow are:
+> - [API short Name (`api_shortname`)](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#api-short-name)
+> - [Proto path (`proto_path`)](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#proto-path)
+> - [Name pretty (`name_pretty`)](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#name-pretty)
+> - [Product Docs (`product_docs`)](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#product-docs)
+> - [REST Docs (`rest_docs`)](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#rest-docs)
+> - [RPC Docs (`rpc_docs`)](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#rpc-docs)
+> - [API description (`api_description`)](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#api-description)
+> - [`transport`](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#advanced-options)
+> - [`destination_name`](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#advanced-options)
+> - [`distribution_name`](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#advanced-options)
+
+
+## Prerequisites (for local environment)
+
+This section is only needed for the first _local_ run of this script. If it's already
 done, go to "Run client generation script" section.
-
 
 ### Environment
 
