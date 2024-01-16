@@ -12,7 +12,7 @@ You can save the time to setup the environment by calling the
 [this section](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#run-client-generation-script)
 to find workflow arguments.
 
-> ![IMPORTANT]
+![IMPORTANT]
 > Not all the `new-client.py` arguments are available in the Github Action.
 > Please refer to
 > [this
@@ -30,17 +30,7 @@ to find workflow arguments.
 > - [`destination_name`](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#advanced-options)
 > - [`distribution_name`](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#advanced-options)
 
-
-## Prerequisites (for local environment)
-
-This section is only needed for the first _local_ run of this script. If it's already
-done, go to "Run client generation script" section.
-
-### Environment
-
-Use Linux environment.
-
-Install Docker.
+## Prerequisites (for GH action and local environment)
 
 ### Ensure no Release Please "snapshot" pull request open
 
@@ -55,107 +45,13 @@ Background: This new client library generation process creates pom.xml files wit
 a "-SNAPSHOT" version. To have consistency with other modules, ensure the pom.xml files in
 the repository has "-SNAPSHOT" versions too.
 
-
-### Checkout google-cloud-java repository
-
-```
-$ git clone https://github.com/googleapis/google-cloud-java
-$ git checkout main
-$ git pull
-```
-
-### Install pyenv
-
-Install pyenv
-
-```
-curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer \
-| bash
-```
-
-Append the following lines to `$HOME/.bashrc`.
-
-```
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-```
-
-Logout the shell and login again. You should be at the home directory.
-
-Assuming you have the following folder structure:
-```
-~ (Home)
-    -> IdeaProjects/
-        -> google-cloud-java
-    -> ...
-```
-You can run these next commands in the home directory (or IdeaProjects). Otherwise, run it at `google-cloud-java`'s parent directory.
-
-Confirm pyenv installation succeeded:
-
-```
-~$ pyenv
-pyenv 2.3.4
-Usage: pyenv <command> [<args>]
-
-Some useful pyenv commands are:
-   activate    Activate virtual environment
-   commands    List all available pyenv commands
-   deactivate   Deactivate virtual environment
-...
-```
-
-### Install Python 3.9 via pyenv
-
-```
-~$ pyenv install 3.9.13
-Downloading Python-3.9.13.tar.xz...
--> https://www.python.org/ftp/python/3.9.13/Python-3.9.13.tar.xz
-Installing Python-3.9.13...
-WARNING: The Python sqlite3 extension was not compiled. Missing the SQLite3 lib?
-Installed Python-3.9.13 to /usr/local/google/home/suztomo/.pyenv/versions/3.9.13
-```
-
-### Install Python v3.9.13 locally
-
-Run this command
-
-```
-$ pyenv local 3.9.13
-```
-
-Confirm `python3.9` is installed:
-```
-$ which python3.9
-/usr/local/google/home/suztomo/.pyenv/shims/python3.9
-```
-
-### Install Python packages
-
-At the root of google-cloud-java repository clone, run:
-
-```
-$ python3.9 -m pip install -r generation/new_client/requirements.txt
-```
-
-### Install GitHub CLI (Optional)
-
-Install the GitHub CLI and login, if needed (may help with `Common Errors` below):
-
-```
-$ sudo apt-get install gh
-$ gh auth login
-```
-
 ## Double check that the library does not already exist within `google-cloud-java`!
 
 Some languages require a new request when a new version of a service is created, but Java manages all versions of the service as a single package, so the client library will automatically be updated to include new versions.
 
 ## Run client generation script
 
-You will run new-client.py script with the following parameters.
+You will run new-client.py script or github action with the following parameters.
 These parameters will be available in the Cloud Drop link (a YAML file) included in the buganizer request.
 The example in this README uses AlloyDB's [Cloud Drop](https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1/alloydb_v1.yaml) file as an example.
 
@@ -383,6 +279,112 @@ Let's say that after some discussion, `maps-routing-gps` is selected as a suitab
 The script should finish creating a pull request even when the newly created
 module fails to compile. This gives the user flexibility to fix things in the
 created pull request.
+
+## Prerequisites (for local environment)
+
+This section is only needed for the first _local_ run of this script. If it's already
+done, go to "Run client generation script" section.
+
+### Environment
+
+Use Linux environment.
+
+Install Docker.
+
+
+
+### Checkout google-cloud-java repository
+
+```
+$ git clone https://github.com/googleapis/google-cloud-java
+$ git checkout main
+$ git pull
+```
+
+### Install pyenv
+
+Install pyenv
+
+```
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer \
+| bash
+```
+
+Append the following lines to `$HOME/.bashrc`.
+
+```
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
+Logout the shell and login again. You should be at the home directory.
+
+Assuming you have the following folder structure:
+```
+~ (Home)
+    -> IdeaProjects/
+        -> google-cloud-java
+    -> ...
+```
+You can run these next commands in the home directory (or IdeaProjects). Otherwise, run it at `google-cloud-java`'s parent directory.
+
+Confirm pyenv installation succeeded:
+
+```
+~$ pyenv
+pyenv 2.3.4
+Usage: pyenv <command> [<args>]
+
+Some useful pyenv commands are:
+   activate    Activate virtual environment
+   commands    List all available pyenv commands
+   deactivate   Deactivate virtual environment
+...
+```
+
+### Install Python 3.9 via pyenv
+
+```
+~$ pyenv install 3.9.13
+Downloading Python-3.9.13.tar.xz...
+-> https://www.python.org/ftp/python/3.9.13/Python-3.9.13.tar.xz
+Installing Python-3.9.13...
+WARNING: The Python sqlite3 extension was not compiled. Missing the SQLite3 lib?
+Installed Python-3.9.13 to /usr/local/google/home/suztomo/.pyenv/versions/3.9.13
+```
+
+### Install Python v3.9.13 locally
+
+Run this command
+
+```
+$ pyenv local 3.9.13
+```
+
+Confirm `python3.9` is installed:
+```
+$ which python3.9
+/usr/local/google/home/suztomo/.pyenv/shims/python3.9
+```
+
+### Install Python packages
+
+At the root of google-cloud-java repository clone, run:
+
+```
+$ python3.9 -m pip install -r generation/new_client/requirements.txt
+```
+
+### Install GitHub CLI (Optional)
+
+Install the GitHub CLI and login, if needed (may help with `Common Errors` below):
+
+```
+$ sudo apt-get install gh
+$ gh auth login
+```
 
 # Common Errors
 
