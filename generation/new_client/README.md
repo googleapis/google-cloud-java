@@ -170,6 +170,11 @@ command you ran above.
 For the explanation of the available parameters, run:
 `python3.9 generation/new_client/new-client.py generate  --help`.
 
+**Note: The advanced options other than `transport`, `destination-name` and
+`distribution-name` cannot be specified in the GH action, you will have to run
+the script locally (refer to the Prerequisites (for local environment) section
+below)**
+
 ```
 ~/google-cloud-java$ python3.9 generation/new_client/new-client.py generate  --help
 /usr/local/google/home/suztomo/google-cloud-java/generation/new_client
