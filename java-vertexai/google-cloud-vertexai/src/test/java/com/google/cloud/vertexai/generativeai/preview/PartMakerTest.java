@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,10 +20,8 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.vertexai.api.Part;
 import com.google.protobuf.ByteString;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -55,34 +53,23 @@ public final class PartMakerTest {
 
   @Test
   public void fromMimeTypeAndData_dataInString() {
-    String mimeTypeForURLinString = "image/jpeg";
-    String fileUrlInString = "https://example.com/image.jpg";
+    String mimeTypeForURIinString = "image/jpeg";
+    String fileUriInString = "gs://my-bucket/image.jpg";
 
-    Part part = PartMaker.fromMimeTypeAndData(mimeTypeForURLinString, fileUrlInString);
+    Part part = PartMaker.fromMimeTypeAndData(mimeTypeForURIinString, fileUriInString);
 
     assertThat(part.getFileData().getMimeType()).isEqualTo("image/jpeg");
-    assertThat(part.getFileData().getFileUri()).isEqualTo(fileUrlInString);
+    assertThat(part.getFileData().getFileUri()).isEqualTo(fileUriInString);
   }
 
   @Test
   public void fromMimeTypeAndData_dataInURI() throws URISyntaxException {
 
     String mimeTypeForURI = "image/png";
-    URI fileUri = new URI("https://example.com/image.png");
+    URI fileUri = new URI("gs://my-bucket/image.png");
     Part part = PartMaker.fromMimeTypeAndData(mimeTypeForURI, fileUri);
 
     assertThat(part.getFileData().getMimeType()).isEqualTo("image/png");
     assertThat(part.getFileData().getFileUri()).isEqualTo(fileUri.toString());
-  }
-
-  @Test
-  public void fromMimeTypeAndData_dataInURL() throws MalformedURLException {
-    String mimeTypeForUrl = "image/gif";
-    URL fileUrl = new URL("https://example.com/image.gif");
-
-    Part part = PartMaker.fromMimeTypeAndData(mimeTypeForUrl, fileUrl);
-
-    assertThat(part.getFileData().getMimeType()).isEqualTo("image/gif");
-    assertThat(part.getFileData().getFileUri()).isEqualTo(fileUrl.toString());
   }
 }

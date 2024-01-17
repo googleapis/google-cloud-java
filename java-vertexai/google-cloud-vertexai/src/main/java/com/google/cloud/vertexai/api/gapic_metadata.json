@@ -2,7 +2,7 @@
   "schema": "1.0",
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "java",
-  "protoPackage": "google.cloud.vertexai.v1beta1",
+  "protoPackage": "google.cloud.vertexai.v1",
   "libraryPackage": "com.google.cloud.vertexai.api",
   "services": {
     "EndpointService": {
@@ -53,14 +53,41 @@
         }
       }
     },
+    "LlmUtilityService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LlmUtilityServiceClient",
+          "rpcs": {
+            "ComputeTokens": {
+              "methods": ["computeTokens", "computeTokens", "computeTokens", "computeTokensCallable"]
+            },
+            "CountTokens": {
+              "methods": ["countTokens", "countTokens", "countTokens", "countTokensCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "PredictionService": {
       "clients": {
         "grpc": {
           "libraryClient": "PredictionServiceClient",
           "rpcs": {
-            "CountTokens": {
-              "methods": ["countTokens", "countTokens", "countTokens", "countTokensCallable"]
-            },
             "DirectPredict": {
               "methods": ["directPredict", "directPredictCallable"]
             },

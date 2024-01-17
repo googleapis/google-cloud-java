@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.cloud.vertexai.api.GenerateContentRequest;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.GenerationConfig;
 import com.google.cloud.vertexai.api.HarmCategory;
+import com.google.cloud.vertexai.api.LlmUtilityServiceClient;
 import com.google.cloud.vertexai.api.Part;
 import com.google.cloud.vertexai.api.PredictionServiceClient;
 import com.google.cloud.vertexai.api.SafetySetting;
@@ -58,6 +59,8 @@ public final class GenerativeModelTest {
   private static final String PROJECT = "test_project";
   private static final String LOCATION = "test_location";
   private static final String MODEL_NAME = "gemini-pro";
+  private static final String MODEL_NAME_2 = "models/gemini-pro";
+  private static final String MODEL_NAME_3 = "publishers/google/models/gemini-pro";
   private static final String INVALID_MODEL_NAME = "invalid name";
   private static final GenerationConfig GENERATION_CONFIG =
       GenerationConfig.newBuilder().setCandidateCount(1).build();
@@ -86,6 +89,7 @@ public final class GenerativeModelTest {
   @Mock private GoogleCredentials mockGoogleCredentials;
 
   @Mock private PredictionServiceClient mockPredictionServiceClient;
+  @Mock private LlmUtilityServiceClient mockLlmUtilityServiceClient;
 
   @Mock
   private ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
@@ -111,7 +115,7 @@ public final class GenerativeModelTest {
 
   @Test
   public void testInstantiateGenerativeModelWithGenerationConfig() {
-    model = new GenerativeModel(MODEL_NAME, GENERATION_CONFIG, vertexAi);
+    model = new GenerativeModel(MODEL_NAME_2, GENERATION_CONFIG, vertexAi);
     assertThat(model.getModelName()).isEqualTo(MODEL_NAME);
     assertThat(model.getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
     assertThat(model.getSafetySettings()).isNull();
@@ -127,7 +131,7 @@ public final class GenerativeModelTest {
 
   @Test
   public void testInstantiateGenerativeModelwithGenerationConfigAndSafetySettings() {
-    model = new GenerativeModel(MODEL_NAME, GENERATION_CONFIG, safetySettings, vertexAi);
+    model = new GenerativeModel(MODEL_NAME_3, GENERATION_CONFIG, safetySettings, vertexAi);
     assertThat(model.getModelName()).isEqualTo(MODEL_NAME);
     assertThat(model.getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
     assertThat(model.getSafetySettings()).isEqualTo(safetySettings);
@@ -166,15 +170,32 @@ public final class GenerativeModelTest {
   public void testCountTokenswithText() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
 
-    Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
+    Field field = VertexAI.class.getDeclaredField("llmUtilityClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, mockLlmUtilityServiceClient);
 
     CountTokensResponse unused = model.countTokens(TEXT);
 
     ArgumentCaptor<CountTokensRequest> request = ArgumentCaptor.forClass(CountTokensRequest.class);
-    verify(mockPredictionServiceClient).countTokens(request.capture());
+    verify(mockLlmUtilityServiceClient).countTokens(request.capture());
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
+  }
+
+  @Ignore("need to make the test compatible with Mockito 4.x")
+  @Test
+  public void testCountTokenswithContent() throws Exception {
+    model = new GenerativeModel(MODEL_NAME, vertexAi);
+
+    Field field = VertexAI.class.getDeclaredField("llmUtilityClient");
+    field.setAccessible(true);
+    field.set(vertexAi, mockLlmUtilityServiceClient);
+
+    Content content = ContentMaker.fromString(TEXT);
+    CountTokensResponse unused = model.countTokens(content);
+
+    ArgumentCaptor<CountTokensRequest> request = ArgumentCaptor.forClass(CountTokensRequest.class);
+    verify(mockLlmUtilityServiceClient).countTokens(request.capture());
+    assertThat(request.getValue().getContents(0)).isEqualTo(content);
   }
 
   @Ignore("need to make the test compatible with Mockito 4.x")
@@ -182,15 +203,15 @@ public final class GenerativeModelTest {
   public void testCountTokenswithContents() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
 
-    Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
+    Field field = VertexAI.class.getDeclaredField("llmUtilityClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, mockLlmUtilityServiceClient);
 
     Content content = ContentMaker.fromString(TEXT);
     CountTokensResponse unused = model.countTokens(Arrays.asList(content));
 
     ArgumentCaptor<CountTokensRequest> request = ArgumentCaptor.forClass(CountTokensRequest.class);
-    verify(mockPredictionServiceClient).countTokens(request.capture());
+    verify(mockLlmUtilityServiceClient).countTokens(request.capture());
     assertThat(request.getValue().getContents(0)).isEqualTo(content);
   }
 

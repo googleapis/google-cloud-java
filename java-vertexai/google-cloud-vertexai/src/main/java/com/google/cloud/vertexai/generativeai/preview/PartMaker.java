@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import com.google.cloud.vertexai.api.FileData;
 import com.google.cloud.vertexai.api.Part;
 import com.google.protobuf.ByteString;
 import java.net.URI;
-import java.net.URL;
 
 /** Helper class to create {@link com.google.cloud.vertexai.api.Part} */
 public class PartMaker {
@@ -35,10 +34,9 @@ public class PartMaker {
    *     "video/mpeg", "video/quicktime", "video/x-msvideo", "video/x-ms-wmv", "video/x-flv"
    * @param partData the following types can be accepted.
    *     <ul>
-   *       <li>a String representing the url of the data. Resulting Part will have fileData field
+   *       <li>a String representing the uri of the data. Resulting Part will have fileData field
    *           set.
-   *       <li>a URI object. Resulting Part will have fileData field set.
-   *       <li>a URL object. Resulting Part will have fileData field set.
+   *       <li>a GCS URI object. Resulting Part will have fileData field set.
    *       <li>byte arrays that represents the actual data. Resulting Part will have inlineData
    *           field set.
    *       <li>com.google.protobuf.ByteString that represents the actual data. Resulting Part will
@@ -55,19 +53,11 @@ public class PartMaker {
               .setInlineData(Blob.newBuilder().setMimeType(mimeType).setData(byteData))
               .build();
     } else if (partData instanceof String) {
-      String url = (String) partData;
+      String uri = (String) partData;
       part =
           Part.newBuilder()
-              .setFileData(FileData.newBuilder().setMimeType(mimeType).setFileUri(url))
+              .setFileData(FileData.newBuilder().setMimeType(mimeType).setFileUri(uri))
               .build();
-    } else if (partData instanceof URL) {
-      URL url = (URL) partData;
-      part =
-          Part.newBuilder()
-              .setFileData(
-                  FileData.newBuilder().setMimeType(mimeType).setFileUri(partData.toString()))
-              .build();
-
     } else if (partData instanceof URI) {
       URI uri = (URI) partData;
       part =
@@ -83,7 +73,7 @@ public class PartMaker {
     } else {
       throw new IllegalArgumentException(
           "The second element of the input List can only be one of the following format:"
-              + " byte[], String, URL, URI, ByteString");
+              + " byte[], String, URI, ByteString");
     }
     return part;
   }

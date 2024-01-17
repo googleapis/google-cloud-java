@@ -192,8 +192,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-  private static final String PROJECT_ID = "cloud-llm-preview1";
-  private static final String LOCATION = "us-central1";
+  private static final String PROJECT_ID = <your project id>;
+  private static final String LOCATION = <location>;
   private static final String MODEL_NAME = "gemini-pro";
 
   public static void main(String[] args) throws IOException {

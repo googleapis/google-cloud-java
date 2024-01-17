@@ -468,7 +468,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.AcceleratorType",
+    "name": "com.google.cloud.vertexai.api.AcceleratorType",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -477,7 +477,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Attribution",
+    "name": "com.google.cloud.vertexai.api.Attribution",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -486,7 +486,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Attribution$Builder",
+    "name": "com.google.cloud.vertexai.api.Attribution$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -495,7 +495,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.AutomaticResources",
+    "name": "com.google.cloud.vertexai.api.AutomaticResources",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -504,7 +504,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.AutomaticResources$Builder",
+    "name": "com.google.cloud.vertexai.api.AutomaticResources$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -513,7 +513,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.AutoscalingMetricSpec",
+    "name": "com.google.cloud.vertexai.api.AutoscalingMetricSpec",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -522,7 +522,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.AutoscalingMetricSpec$Builder",
+    "name": "com.google.cloud.vertexai.api.AutoscalingMetricSpec$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -531,7 +531,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.AvroSource",
+    "name": "com.google.cloud.vertexai.api.AvroSource",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -540,7 +540,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.AvroSource$Builder",
+    "name": "com.google.cloud.vertexai.api.AvroSource$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -549,7 +549,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.BatchDedicatedResources",
+    "name": "com.google.cloud.vertexai.api.BatchDedicatedResources",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -558,7 +558,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.BatchDedicatedResources$Builder",
+    "name": "com.google.cloud.vertexai.api.BatchDedicatedResources$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -567,7 +567,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.BigQueryDestination",
+    "name": "com.google.cloud.vertexai.api.BigQueryDestination",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -576,7 +576,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.BigQueryDestination$Builder",
+    "name": "com.google.cloud.vertexai.api.BigQueryDestination$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -585,7 +585,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.BigQuerySource",
+    "name": "com.google.cloud.vertexai.api.BigQuerySource",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -594,7 +594,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.BigQuerySource$Builder",
+    "name": "com.google.cloud.vertexai.api.BigQuerySource$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -603,7 +603,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Blob",
+    "name": "com.google.cloud.vertexai.api.Blob",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -612,7 +612,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Blob$Builder",
+    "name": "com.google.cloud.vertexai.api.Blob$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -621,7 +621,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.BlurBaselineConfig",
+    "name": "com.google.cloud.vertexai.api.BlurBaselineConfig",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -630,7 +630,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.BlurBaselineConfig$Builder",
+    "name": "com.google.cloud.vertexai.api.BlurBaselineConfig$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -639,7 +639,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.BoolArray",
+    "name": "com.google.cloud.vertexai.api.BoolArray",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -648,7 +648,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.BoolArray$Builder",
+    "name": "com.google.cloud.vertexai.api.BoolArray$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -657,7 +657,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Candidate",
+    "name": "com.google.cloud.vertexai.api.Candidate",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -666,7 +666,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Candidate$Builder",
+    "name": "com.google.cloud.vertexai.api.Candidate$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -675,7 +675,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Candidate$FinishReason",
+    "name": "com.google.cloud.vertexai.api.Candidate$FinishReason",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -684,7 +684,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Citation",
+    "name": "com.google.cloud.vertexai.api.Citation",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -693,7 +693,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Citation$Builder",
+    "name": "com.google.cloud.vertexai.api.Citation$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -702,7 +702,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.CitationMetadata",
+    "name": "com.google.cloud.vertexai.api.CitationMetadata",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -711,7 +711,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.CitationMetadata$Builder",
+    "name": "com.google.cloud.vertexai.api.CitationMetadata$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -720,7 +720,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ContainerRegistryDestination",
+    "name": "com.google.cloud.vertexai.api.ContainerRegistryDestination",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -729,7 +729,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ContainerRegistryDestination$Builder",
+    "name": "com.google.cloud.vertexai.api.ContainerRegistryDestination$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -738,7 +738,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Content",
+    "name": "com.google.cloud.vertexai.api.Content",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -747,7 +747,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Content$Builder",
+    "name": "com.google.cloud.vertexai.api.Content$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -756,7 +756,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.CountTokensRequest",
+    "name": "com.google.cloud.vertexai.api.CountTokensRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -765,7 +765,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.CountTokensRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.CountTokensRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -774,7 +774,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.CountTokensResponse",
+    "name": "com.google.cloud.vertexai.api.CountTokensResponse",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -783,7 +783,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.CountTokensResponse$Builder",
+    "name": "com.google.cloud.vertexai.api.CountTokensResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -792,7 +792,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.CreateEndpointOperationMetadata",
+    "name": "com.google.cloud.vertexai.api.CreateEndpointOperationMetadata",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -801,7 +801,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.CreateEndpointOperationMetadata$Builder",
+    "name": "com.google.cloud.vertexai.api.CreateEndpointOperationMetadata$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -810,7 +810,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.CreateEndpointRequest",
+    "name": "com.google.cloud.vertexai.api.CreateEndpointRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -819,7 +819,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.CreateEndpointRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.CreateEndpointRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -828,7 +828,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.CsvDestination",
+    "name": "com.google.cloud.vertexai.api.CsvDestination",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -837,7 +837,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.CsvDestination$Builder",
+    "name": "com.google.cloud.vertexai.api.CsvDestination$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -846,7 +846,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.CsvSource",
+    "name": "com.google.cloud.vertexai.api.CsvSource",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -855,7 +855,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.CsvSource$Builder",
+    "name": "com.google.cloud.vertexai.api.CsvSource$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -864,7 +864,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DedicatedResources",
+    "name": "com.google.cloud.vertexai.api.DedicatedResources",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -873,7 +873,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DedicatedResources$Builder",
+    "name": "com.google.cloud.vertexai.api.DedicatedResources$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -882,7 +882,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DeleteEndpointRequest",
+    "name": "com.google.cloud.vertexai.api.DeleteEndpointRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -891,7 +891,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DeleteEndpointRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.DeleteEndpointRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -900,7 +900,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DeleteOperationMetadata",
+    "name": "com.google.cloud.vertexai.api.DeleteOperationMetadata",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -909,7 +909,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DeleteOperationMetadata$Builder",
+    "name": "com.google.cloud.vertexai.api.DeleteOperationMetadata$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -918,7 +918,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DeployModelOperationMetadata",
+    "name": "com.google.cloud.vertexai.api.DeployModelOperationMetadata",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -927,7 +927,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DeployModelOperationMetadata$Builder",
+    "name": "com.google.cloud.vertexai.api.DeployModelOperationMetadata$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -936,7 +936,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DeployModelRequest",
+    "name": "com.google.cloud.vertexai.api.DeployModelRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -945,7 +945,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DeployModelRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.DeployModelRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -954,7 +954,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DeployModelResponse",
+    "name": "com.google.cloud.vertexai.api.DeployModelResponse",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -963,7 +963,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DeployModelResponse$Builder",
+    "name": "com.google.cloud.vertexai.api.DeployModelResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -972,7 +972,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DeployedModel",
+    "name": "com.google.cloud.vertexai.api.DeployedModel",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -981,7 +981,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DeployedModel$Builder",
+    "name": "com.google.cloud.vertexai.api.DeployedModel$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -990,7 +990,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DirectPredictRequest",
+    "name": "com.google.cloud.vertexai.api.DirectPredictRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -999,7 +999,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DirectPredictRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.DirectPredictRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1008,7 +1008,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DirectPredictResponse",
+    "name": "com.google.cloud.vertexai.api.DirectPredictResponse",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1017,7 +1017,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DirectPredictResponse$Builder",
+    "name": "com.google.cloud.vertexai.api.DirectPredictResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1026,7 +1026,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DirectRawPredictRequest",
+    "name": "com.google.cloud.vertexai.api.DirectRawPredictRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1035,7 +1035,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DirectRawPredictRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.DirectRawPredictRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1044,7 +1044,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DirectRawPredictResponse",
+    "name": "com.google.cloud.vertexai.api.DirectRawPredictResponse",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1053,7 +1053,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DirectRawPredictResponse$Builder",
+    "name": "com.google.cloud.vertexai.api.DirectRawPredictResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1062,7 +1062,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DiskSpec",
+    "name": "com.google.cloud.vertexai.api.DiskSpec",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1071,7 +1071,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DiskSpec$Builder",
+    "name": "com.google.cloud.vertexai.api.DiskSpec$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1080,7 +1080,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DoubleArray",
+    "name": "com.google.cloud.vertexai.api.DoubleArray",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1089,7 +1089,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.DoubleArray$Builder",
+    "name": "com.google.cloud.vertexai.api.DoubleArray$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1098,7 +1098,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.EncryptionSpec",
+    "name": "com.google.cloud.vertexai.api.EncryptionSpec",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1107,7 +1107,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.EncryptionSpec$Builder",
+    "name": "com.google.cloud.vertexai.api.EncryptionSpec$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1116,7 +1116,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Endpoint",
+    "name": "com.google.cloud.vertexai.api.Endpoint",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1125,7 +1125,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Endpoint$Builder",
+    "name": "com.google.cloud.vertexai.api.Endpoint$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1134,7 +1134,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Examples",
+    "name": "com.google.cloud.vertexai.api.Examples",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1143,7 +1143,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Examples$Builder",
+    "name": "com.google.cloud.vertexai.api.Examples$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1152,7 +1152,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Examples$ExampleGcsSource",
+    "name": "com.google.cloud.vertexai.api.Examples$ExampleGcsSource",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1161,7 +1161,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Examples$ExampleGcsSource$Builder",
+    "name": "com.google.cloud.vertexai.api.Examples$ExampleGcsSource$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1170,7 +1170,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Examples$ExampleGcsSource$DataFormat",
+    "name": "com.google.cloud.vertexai.api.Examples$ExampleGcsSource$DataFormat",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1179,7 +1179,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExamplesOverride",
+    "name": "com.google.cloud.vertexai.api.ExamplesOverride",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1188,7 +1188,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExamplesOverride$Builder",
+    "name": "com.google.cloud.vertexai.api.ExamplesOverride$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1197,7 +1197,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExamplesOverride$DataFormat",
+    "name": "com.google.cloud.vertexai.api.ExamplesOverride$DataFormat",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1206,7 +1206,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExamplesRestrictionsNamespace",
+    "name": "com.google.cloud.vertexai.api.ExamplesRestrictionsNamespace",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1215,7 +1215,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExamplesRestrictionsNamespace$Builder",
+    "name": "com.google.cloud.vertexai.api.ExamplesRestrictionsNamespace$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1224,7 +1224,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplainRequest",
+    "name": "com.google.cloud.vertexai.api.ExplainRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1233,7 +1233,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplainRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.ExplainRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1242,7 +1242,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplainResponse",
+    "name": "com.google.cloud.vertexai.api.ExplainResponse",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1251,7 +1251,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplainResponse$Builder",
+    "name": "com.google.cloud.vertexai.api.ExplainResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1260,7 +1260,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplainResponse$ConcurrentExplanation",
+    "name": "com.google.cloud.vertexai.api.ExplainResponse$ConcurrentExplanation",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1269,7 +1269,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplainResponse$ConcurrentExplanation$Builder",
+    "name": "com.google.cloud.vertexai.api.ExplainResponse$ConcurrentExplanation$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1278,7 +1278,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Explanation",
+    "name": "com.google.cloud.vertexai.api.Explanation",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1287,7 +1287,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Explanation$Builder",
+    "name": "com.google.cloud.vertexai.api.Explanation$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1296,7 +1296,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadata",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadata",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1305,7 +1305,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadata$Builder",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadata$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1314,7 +1314,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadata$InputMetadata",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadata$InputMetadata",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1323,7 +1323,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadata$InputMetadata$Builder",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadata$InputMetadata$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1332,7 +1332,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadata$InputMetadata$Encoding",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadata$InputMetadata$Encoding",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1341,7 +1341,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadata$InputMetadata$FeatureValueDomain",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadata$InputMetadata$FeatureValueDomain",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1350,7 +1350,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadata$InputMetadata$FeatureValueDomain$Builder",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadata$InputMetadata$FeatureValueDomain$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1359,7 +1359,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadata$InputMetadata$Visualization",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadata$InputMetadata$Visualization",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1368,7 +1368,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadata$InputMetadata$Visualization$Builder",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadata$InputMetadata$Visualization$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1377,7 +1377,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadata$InputMetadata$Visualization$ColorMap",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadata$InputMetadata$Visualization$ColorMap",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1386,7 +1386,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadata$InputMetadata$Visualization$OverlayType",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadata$InputMetadata$Visualization$OverlayType",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1395,7 +1395,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadata$InputMetadata$Visualization$Polarity",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadata$InputMetadata$Visualization$Polarity",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1404,7 +1404,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadata$InputMetadata$Visualization$Type",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadata$InputMetadata$Visualization$Type",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1413,7 +1413,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadata$OutputMetadata",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadata$OutputMetadata",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1422,7 +1422,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadata$OutputMetadata$Builder",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadata$OutputMetadata$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1431,7 +1431,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadataOverride",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadataOverride",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1440,7 +1440,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadataOverride$Builder",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadataOverride$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1449,7 +1449,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadataOverride$InputMetadataOverride",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadataOverride$InputMetadataOverride",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1458,7 +1458,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationMetadataOverride$InputMetadataOverride$Builder",
+    "name": "com.google.cloud.vertexai.api.ExplanationMetadataOverride$InputMetadataOverride$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1467,7 +1467,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationParameters",
+    "name": "com.google.cloud.vertexai.api.ExplanationParameters",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1476,7 +1476,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationParameters$Builder",
+    "name": "com.google.cloud.vertexai.api.ExplanationParameters$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1485,7 +1485,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationSpec",
+    "name": "com.google.cloud.vertexai.api.ExplanationSpec",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1494,7 +1494,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationSpec$Builder",
+    "name": "com.google.cloud.vertexai.api.ExplanationSpec$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1503,7 +1503,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationSpecOverride",
+    "name": "com.google.cloud.vertexai.api.ExplanationSpecOverride",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1512,7 +1512,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ExplanationSpecOverride$Builder",
+    "name": "com.google.cloud.vertexai.api.ExplanationSpecOverride$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1521,7 +1521,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.FeatureNoiseSigma",
+    "name": "com.google.cloud.vertexai.api.FeatureNoiseSigma",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1530,7 +1530,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.FeatureNoiseSigma$Builder",
+    "name": "com.google.cloud.vertexai.api.FeatureNoiseSigma$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1539,7 +1539,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.FeatureNoiseSigma$NoiseSigmaForFeature",
+    "name": "com.google.cloud.vertexai.api.FeatureNoiseSigma$NoiseSigmaForFeature",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1548,7 +1548,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.FeatureNoiseSigma$NoiseSigmaForFeature$Builder",
+    "name": "com.google.cloud.vertexai.api.FeatureNoiseSigma$NoiseSigmaForFeature$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1557,7 +1557,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.FileData",
+    "name": "com.google.cloud.vertexai.api.FileData",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1566,7 +1566,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.FileData$Builder",
+    "name": "com.google.cloud.vertexai.api.FileData$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1575,7 +1575,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.FunctionCall",
+    "name": "com.google.cloud.vertexai.api.FunctionCall",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1584,7 +1584,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.FunctionCall$Builder",
+    "name": "com.google.cloud.vertexai.api.FunctionCall$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1593,7 +1593,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.FunctionDeclaration",
+    "name": "com.google.cloud.vertexai.api.FunctionDeclaration",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1602,7 +1602,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.FunctionDeclaration$Builder",
+    "name": "com.google.cloud.vertexai.api.FunctionDeclaration$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1611,7 +1611,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.FunctionResponse",
+    "name": "com.google.cloud.vertexai.api.FunctionResponse",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1620,7 +1620,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.FunctionResponse$Builder",
+    "name": "com.google.cloud.vertexai.api.FunctionResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1629,7 +1629,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GcsDestination",
+    "name": "com.google.cloud.vertexai.api.GcsDestination",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1638,7 +1638,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GcsDestination$Builder",
+    "name": "com.google.cloud.vertexai.api.GcsDestination$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1647,7 +1647,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GcsSource",
+    "name": "com.google.cloud.vertexai.api.GcsSource",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1656,7 +1656,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GcsSource$Builder",
+    "name": "com.google.cloud.vertexai.api.GcsSource$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1665,7 +1665,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GenerateContentRequest",
+    "name": "com.google.cloud.vertexai.api.GenerateContentRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1674,7 +1674,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GenerateContentRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.GenerateContentRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1683,7 +1683,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GenerateContentResponse",
+    "name": "com.google.cloud.vertexai.api.GenerateContentResponse",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1692,7 +1692,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GenerateContentResponse$Builder",
+    "name": "com.google.cloud.vertexai.api.GenerateContentResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1701,7 +1701,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GenerateContentResponse$PromptFeedback",
+    "name": "com.google.cloud.vertexai.api.GenerateContentResponse$PromptFeedback",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1710,7 +1710,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GenerateContentResponse$PromptFeedback$BlockedReason",
+    "name": "com.google.cloud.vertexai.api.GenerateContentResponse$PromptFeedback$BlockedReason",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1719,7 +1719,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GenerateContentResponse$PromptFeedback$Builder",
+    "name": "com.google.cloud.vertexai.api.GenerateContentResponse$PromptFeedback$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1728,7 +1728,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GenerateContentResponse$UsageMetadata",
+    "name": "com.google.cloud.vertexai.api.GenerateContentResponse$UsageMetadata",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1737,7 +1737,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GenerateContentResponse$UsageMetadata$Builder",
+    "name": "com.google.cloud.vertexai.api.GenerateContentResponse$UsageMetadata$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1746,7 +1746,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GenerationConfig",
+    "name": "com.google.cloud.vertexai.api.GenerationConfig",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1755,7 +1755,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GenerationConfig$Builder",
+    "name": "com.google.cloud.vertexai.api.GenerationConfig$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1764,7 +1764,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GenericOperationMetadata",
+    "name": "com.google.cloud.vertexai.api.GenericOperationMetadata",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1773,7 +1773,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GenericOperationMetadata$Builder",
+    "name": "com.google.cloud.vertexai.api.GenericOperationMetadata$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1782,7 +1782,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GetEndpointRequest",
+    "name": "com.google.cloud.vertexai.api.GetEndpointRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1791,7 +1791,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.GetEndpointRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.GetEndpointRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1800,7 +1800,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.HarmCategory",
+    "name": "com.google.cloud.vertexai.api.HarmCategory",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1809,7 +1809,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Int64Array",
+    "name": "com.google.cloud.vertexai.api.Int64Array",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1818,7 +1818,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Int64Array$Builder",
+    "name": "com.google.cloud.vertexai.api.Int64Array$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1827,7 +1827,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.IntegratedGradientsAttribution",
+    "name": "com.google.cloud.vertexai.api.IntegratedGradientsAttribution",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1836,7 +1836,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.IntegratedGradientsAttribution$Builder",
+    "name": "com.google.cloud.vertexai.api.IntegratedGradientsAttribution$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1845,7 +1845,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ListEndpointsRequest",
+    "name": "com.google.cloud.vertexai.api.ListEndpointsRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1854,7 +1854,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ListEndpointsRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.ListEndpointsRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1863,7 +1863,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ListEndpointsResponse",
+    "name": "com.google.cloud.vertexai.api.ListEndpointsResponse",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1872,7 +1872,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ListEndpointsResponse$Builder",
+    "name": "com.google.cloud.vertexai.api.ListEndpointsResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1881,7 +1881,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.MachineSpec",
+    "name": "com.google.cloud.vertexai.api.MachineSpec",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1890,7 +1890,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.MachineSpec$Builder",
+    "name": "com.google.cloud.vertexai.api.MachineSpec$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1899,7 +1899,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ModelExplanation",
+    "name": "com.google.cloud.vertexai.api.ModelExplanation",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1908,7 +1908,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ModelExplanation$Builder",
+    "name": "com.google.cloud.vertexai.api.ModelExplanation$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1917,7 +1917,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.MutateDeployedModelOperationMetadata",
+    "name": "com.google.cloud.vertexai.api.MutateDeployedModelOperationMetadata",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1926,7 +1926,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.MutateDeployedModelOperationMetadata$Builder",
+    "name": "com.google.cloud.vertexai.api.MutateDeployedModelOperationMetadata$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1935,7 +1935,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.MutateDeployedModelRequest",
+    "name": "com.google.cloud.vertexai.api.MutateDeployedModelRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1944,7 +1944,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.MutateDeployedModelRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.MutateDeployedModelRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1953,7 +1953,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.MutateDeployedModelResponse",
+    "name": "com.google.cloud.vertexai.api.MutateDeployedModelResponse",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1962,7 +1962,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.MutateDeployedModelResponse$Builder",
+    "name": "com.google.cloud.vertexai.api.MutateDeployedModelResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1971,7 +1971,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Neighbor",
+    "name": "com.google.cloud.vertexai.api.Neighbor",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1980,7 +1980,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Neighbor$Builder",
+    "name": "com.google.cloud.vertexai.api.Neighbor$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1989,7 +1989,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.NfsMount",
+    "name": "com.google.cloud.vertexai.api.NfsMount",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1998,7 +1998,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.NfsMount$Builder",
+    "name": "com.google.cloud.vertexai.api.NfsMount$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2007,7 +2007,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Part",
+    "name": "com.google.cloud.vertexai.api.Part",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2016,7 +2016,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Part$Builder",
+    "name": "com.google.cloud.vertexai.api.Part$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2025,7 +2025,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.PersistentDiskSpec",
+    "name": "com.google.cloud.vertexai.api.PersistentDiskSpec",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2034,7 +2034,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.PersistentDiskSpec$Builder",
+    "name": "com.google.cloud.vertexai.api.PersistentDiskSpec$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2043,7 +2043,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.PredictRequest",
+    "name": "com.google.cloud.vertexai.api.PredictRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2052,7 +2052,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.PredictRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.PredictRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2061,7 +2061,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.PredictRequestResponseLoggingConfig",
+    "name": "com.google.cloud.vertexai.api.PredictRequestResponseLoggingConfig",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2070,7 +2070,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.PredictRequestResponseLoggingConfig$Builder",
+    "name": "com.google.cloud.vertexai.api.PredictRequestResponseLoggingConfig$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2079,7 +2079,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.PredictResponse",
+    "name": "com.google.cloud.vertexai.api.PredictResponse",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2088,7 +2088,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.PredictResponse$Builder",
+    "name": "com.google.cloud.vertexai.api.PredictResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2097,7 +2097,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Presets",
+    "name": "com.google.cloud.vertexai.api.Presets",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2106,7 +2106,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Presets$Builder",
+    "name": "com.google.cloud.vertexai.api.Presets$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2115,7 +2115,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Presets$Modality",
+    "name": "com.google.cloud.vertexai.api.Presets$Modality",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2124,7 +2124,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Presets$Query",
+    "name": "com.google.cloud.vertexai.api.Presets$Query",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2133,7 +2133,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.PrivateEndpoints",
+    "name": "com.google.cloud.vertexai.api.PrivateEndpoints",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2142,7 +2142,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.PrivateEndpoints$Builder",
+    "name": "com.google.cloud.vertexai.api.PrivateEndpoints$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2151,7 +2151,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.RawPredictRequest",
+    "name": "com.google.cloud.vertexai.api.RawPredictRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2160,7 +2160,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.RawPredictRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.RawPredictRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2169,7 +2169,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ResourcesConsumed",
+    "name": "com.google.cloud.vertexai.api.ResourcesConsumed",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2178,7 +2178,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.ResourcesConsumed$Builder",
+    "name": "com.google.cloud.vertexai.api.ResourcesConsumed$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2187,7 +2187,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.SafetyRating",
+    "name": "com.google.cloud.vertexai.api.SafetyRating",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2196,7 +2196,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.SafetyRating$Builder",
+    "name": "com.google.cloud.vertexai.api.SafetyRating$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2205,7 +2205,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.SafetyRating$HarmProbability",
+    "name": "com.google.cloud.vertexai.api.SafetyRating$HarmProbability",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2214,7 +2214,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.SafetySetting",
+    "name": "com.google.cloud.vertexai.api.SafetySetting",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2223,7 +2223,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.SafetySetting$Builder",
+    "name": "com.google.cloud.vertexai.api.SafetySetting$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2232,7 +2232,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.SafetySetting$HarmBlockThreshold",
+    "name": "com.google.cloud.vertexai.api.SafetySetting$HarmBlockThreshold",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2241,7 +2241,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.SampledShapleyAttribution",
+    "name": "com.google.cloud.vertexai.api.SampledShapleyAttribution",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2250,7 +2250,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.SampledShapleyAttribution$Builder",
+    "name": "com.google.cloud.vertexai.api.SampledShapleyAttribution$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2259,7 +2259,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Schema",
+    "name": "com.google.cloud.vertexai.api.Schema",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2268,7 +2268,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Schema$Builder",
+    "name": "com.google.cloud.vertexai.api.Schema$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2277,7 +2277,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.SmoothGradConfig",
+    "name": "com.google.cloud.vertexai.api.SmoothGradConfig",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2286,7 +2286,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.SmoothGradConfig$Builder",
+    "name": "com.google.cloud.vertexai.api.SmoothGradConfig$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2295,7 +2295,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.StreamingPredictRequest",
+    "name": "com.google.cloud.vertexai.api.StreamingPredictRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2304,7 +2304,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.StreamingPredictRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.StreamingPredictRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2313,7 +2313,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.StreamingPredictResponse",
+    "name": "com.google.cloud.vertexai.api.StreamingPredictResponse",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2322,7 +2322,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.StreamingPredictResponse$Builder",
+    "name": "com.google.cloud.vertexai.api.StreamingPredictResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2331,7 +2331,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.StreamingRawPredictRequest",
+    "name": "com.google.cloud.vertexai.api.StreamingRawPredictRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2340,7 +2340,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.StreamingRawPredictRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.StreamingRawPredictRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2349,7 +2349,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.StreamingRawPredictResponse",
+    "name": "com.google.cloud.vertexai.api.StreamingRawPredictResponse",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2358,7 +2358,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.StreamingRawPredictResponse$Builder",
+    "name": "com.google.cloud.vertexai.api.StreamingRawPredictResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2367,7 +2367,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.StringArray",
+    "name": "com.google.cloud.vertexai.api.StringArray",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2376,7 +2376,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.StringArray$Builder",
+    "name": "com.google.cloud.vertexai.api.StringArray$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2385,7 +2385,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.TFRecordDestination",
+    "name": "com.google.cloud.vertexai.api.TFRecordDestination",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2394,7 +2394,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.TFRecordDestination$Builder",
+    "name": "com.google.cloud.vertexai.api.TFRecordDestination$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2403,7 +2403,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Tensor",
+    "name": "com.google.cloud.vertexai.api.Tensor",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2412,7 +2412,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Tensor$Builder",
+    "name": "com.google.cloud.vertexai.api.Tensor$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2421,7 +2421,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Tensor$DataType",
+    "name": "com.google.cloud.vertexai.api.Tensor$DataType",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2430,7 +2430,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Tool",
+    "name": "com.google.cloud.vertexai.api.Tool",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2439,7 +2439,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Tool$Builder",
+    "name": "com.google.cloud.vertexai.api.Tool$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2448,7 +2448,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.Type",
+    "name": "com.google.cloud.vertexai.api.Type",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2457,7 +2457,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.UndeployModelOperationMetadata",
+    "name": "com.google.cloud.vertexai.api.UndeployModelOperationMetadata",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2466,7 +2466,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.UndeployModelOperationMetadata$Builder",
+    "name": "com.google.cloud.vertexai.api.UndeployModelOperationMetadata$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2475,7 +2475,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.UndeployModelRequest",
+    "name": "com.google.cloud.vertexai.api.UndeployModelRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2484,7 +2484,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.UndeployModelRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.UndeployModelRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2493,7 +2493,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.UndeployModelResponse",
+    "name": "com.google.cloud.vertexai.api.UndeployModelResponse",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2502,7 +2502,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.UndeployModelResponse$Builder",
+    "name": "com.google.cloud.vertexai.api.UndeployModelResponse$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2511,7 +2511,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.UpdateEndpointRequest",
+    "name": "com.google.cloud.vertexai.api.UpdateEndpointRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2520,7 +2520,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.UpdateEndpointRequest$Builder",
+    "name": "com.google.cloud.vertexai.api.UpdateEndpointRequest$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2529,7 +2529,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.VideoMetadata",
+    "name": "com.google.cloud.vertexai.api.VideoMetadata",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2538,7 +2538,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.VideoMetadata$Builder",
+    "name": "com.google.cloud.vertexai.api.VideoMetadata$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2547,7 +2547,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.XraiAttribution",
+    "name": "com.google.cloud.vertexai.api.XraiAttribution",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -2556,7 +2556,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.cloud.vertexai.v1beta1.XraiAttribution$Builder",
+    "name": "com.google.cloud.vertexai.api.XraiAttribution$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,

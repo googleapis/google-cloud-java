@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,6 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.cloud.vertexai.api.CountTokensRequest;
-import com.google.cloud.vertexai.api.CountTokensResponse;
 import com.google.cloud.vertexai.api.DirectPredictRequest;
 import com.google.cloud.vertexai.api.DirectPredictResponse;
 import com.google.cloud.vertexai.api.DirectRawPredictRequest;
@@ -94,10 +92,6 @@ public abstract class PredictionServiceStub implements BackgroundResource {
 
   public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     throw new UnsupportedOperationException("Not implemented: explainCallable()");
-  }
-
-  public UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable() {
-    throw new UnsupportedOperationException("Not implemented: countTokensCallable()");
   }
 
   public ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
