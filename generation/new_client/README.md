@@ -144,16 +144,16 @@ Example:
 
 ### Transport (`transport`)
 
-This is a label that represents the type of requests the library will make to
+This variable represents the type of requests the library will make to
 its corresponding service. It can be `grpc` (default), `http` or `both`. In
-practice, it is mainly used to create a `.repo-metadata.json` file
+practice, it is mainly used to create a `.repo-metadata.json` file.
 
 ### Destination Name (`destination_name`)
 
 This variable represents the folder name to be created in the root of the
 monorepo. For example, if it is `java-example-library`, then a new folder
 with the generated library will be created in
-`google-cloud-java/java-example/library`
+`google-cloud-java/java-example/library`.
 
 ### Distribution Name (`distribution_name`)
 
