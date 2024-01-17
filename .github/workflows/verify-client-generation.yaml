@@ -38,7 +38,7 @@ jobs:
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
-      - name: Install dependencies
+      - name: Install new-client.py dependencies
         run: pip install --require-hashes -r generation/new_client/requirements.txt
       - name: Remove Client
         run: |
