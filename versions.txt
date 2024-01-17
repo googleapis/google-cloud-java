@@ -719,3 +719,6 @@ grpc-google-cloud-securitycentermanagement-v1:0.1.0:0.2.0-SNAPSHOT
 google-shopping-css:0.1.0:0.2.0-SNAPSHOT
 proto-google-shopping-css-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-shopping-css-v1:0.1.0:0.2.0-SNAPSHOT
+google-cloud-meet:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-meet-v2beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-meet-v2beta:0.0.0:0.0.1-SNAPSHOT
