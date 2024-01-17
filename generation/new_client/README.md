@@ -26,9 +26,9 @@ The arguments currently supported by the Github Action are:
 - [REST Docs (`rest_docs`)](#rest-docs)
 - [RPC Docs (`rpc_docs`)](#rpc-docs)
 - [API description (`api_description`)](#api-description)
-- [`transport`](#advanced-options)
-- [`destination_name`](#advanced-options)
-- [`distribution_name`](#advanced-options)
+- [Transport (`transport`)](#transport)
+- [Destination Name (`destination_name`)](#destination-name)
+- [Distribution Name (`distribution_name`)](#distribution-name)
 
 ### Accessing the generated PR
 
@@ -59,7 +59,9 @@ Some languages require a new request when a new version of a service is created,
 
 ## Execute the Github Action
 
-You will run new-client.py script or the [Github Action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml) with the following parameters.
+You in order to run
+[Github Action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml)
+, you need to specify a few parameters.
 These parameters will be available in the Cloud Drop link (a YAML file) included in the buganizer request.
 The example in this README uses AlloyDB's [Cloud Drop](https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1/alloydb_v1.yaml) file as an example.
 
