@@ -123,22 +123,21 @@ jobs:
           branch_name="new-library/${{ github.event.inputs.api_shortname }}-${random_id}"
           git checkout -b "${branch_name}"
           git add --all
-          git commit -m "feat: [${API_SHORTNAME}] new module for ${API_SHORTNAME}
+          commit_message="feat: [${API_SHORTNAME}] new module for ${API_SHORTNAME}"
+          git commit -m "${commit_message}"
+          git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+          git fetch -q --unshallow monorepo
+          git push -f monorepo "${branch_name}"
 
-
-          Generated with https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml
+          # create PR
+          pr_body="Generated with https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml
 
           Command used:
 
           \`\`\`
           python generation/new_client/new-client.py generate ${GENERATION_ARGUMENTS}
           \`\`\`"
-          git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
-          git fetch -q --unshallow monorepo
-          git push -f monorepo "${branch_name}"
-
-          # create PR
-          gh pr create --fill --head "${branch_name}"
+          gh pr create --title "${commit_message}" --body "${pr_body}" --head "${branch_name}"
         env:
           USERNAME: ${{ github.actor }}
           API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
