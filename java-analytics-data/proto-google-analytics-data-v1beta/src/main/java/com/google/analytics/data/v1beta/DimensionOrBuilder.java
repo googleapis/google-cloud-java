@@ -29,7 +29,16 @@ public interface DimensionOrBuilder
    * <pre>
    * The name of the dimension. See the [API
    * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#dimensions)
-   * for the list of dimension names.
+   * for the list of dimension names supported by core reporting methods such
+   * as `runReport` and `batchRunReports`. See
+   * [Realtime
+   * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-api-schema#dimensions)
+   * for the list of dimension names supported by the `runRealtimeReport`
+   * method. See
+   * [Funnel
+   * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/exploration-api-schema#dimensions)
+   * for the list of dimension names supported by the `runFunnelReport`
+   * method.
    *
    * If `dimensionExpression` is specified, `name` can be any string that you
    * would like within the allowed character set. For example if a
@@ -52,7 +61,16 @@ public interface DimensionOrBuilder
    * <pre>
    * The name of the dimension. See the [API
    * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#dimensions)
-   * for the list of dimension names.
+   * for the list of dimension names supported by core reporting methods such
+   * as `runReport` and `batchRunReports`. See
+   * [Realtime
+   * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-api-schema#dimensions)
+   * for the list of dimension names supported by the `runRealtimeReport`
+   * method. See
+   * [Funnel
+   * Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/exploration-api-schema#dimensions)
+   * for the list of dimension names supported by the `runFunnelReport`
+   * method.
    *
    * If `dimensionExpression` is specified, `name` can be any string that you
    * would like within the allowed character set. For example if a

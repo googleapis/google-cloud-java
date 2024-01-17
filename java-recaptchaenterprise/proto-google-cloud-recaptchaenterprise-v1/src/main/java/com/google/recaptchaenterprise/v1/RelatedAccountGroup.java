@@ -70,12 +70,13 @@ public final class RelatedAccountGroup extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The resource name for the related account group in the format
+   * Required. Identifier. The resource name for the related account group in
+   * the format
    * `projects/{project}/relatedaccountgroups/{related_account_group}`.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The name.
@@ -96,12 +97,13 @@ public final class RelatedAccountGroup extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The resource name for the related account group in the format
+   * Required. Identifier. The resource name for the related account group in
+   * the format
    * `projects/{project}/relatedaccountgroups/{related_account_group}`.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for name.
@@ -467,12 +469,13 @@ public final class RelatedAccountGroup extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name for the related account group in the format
+     * Required. Identifier. The resource name for the related account group in
+     * the format
      * `projects/{project}/relatedaccountgroups/{related_account_group}`.
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The name.
@@ -492,12 +495,13 @@ public final class RelatedAccountGroup extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name for the related account group in the format
+     * Required. Identifier. The resource name for the related account group in
+     * the format
      * `projects/{project}/relatedaccountgroups/{related_account_group}`.
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for name.
@@ -517,12 +521,13 @@ public final class RelatedAccountGroup extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name for the related account group in the format
+     * Required. Identifier. The resource name for the related account group in
+     * the format
      * `projects/{project}/relatedaccountgroups/{related_account_group}`.
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The name to set.
@@ -541,12 +546,13 @@ public final class RelatedAccountGroup extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name for the related account group in the format
+     * Required. Identifier. The resource name for the related account group in
+     * the format
      * `projects/{project}/relatedaccountgroups/{related_account_group}`.
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -561,12 +567,13 @@ public final class RelatedAccountGroup extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name for the related account group in the format
+     * Required. Identifier. The resource name for the related account group in
+     * the format
      * `projects/{project}/relatedaccountgroups/{related_account_group}`.
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for name to set.

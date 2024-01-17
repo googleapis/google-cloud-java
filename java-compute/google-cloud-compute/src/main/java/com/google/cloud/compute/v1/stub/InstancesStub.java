@@ -66,6 +66,7 @@ import com.google.cloud.compute.v1.SetMetadataInstanceRequest;
 import com.google.cloud.compute.v1.SetMinCpuPlatformInstanceRequest;
 import com.google.cloud.compute.v1.SetNameInstanceRequest;
 import com.google.cloud.compute.v1.SetSchedulingInstanceRequest;
+import com.google.cloud.compute.v1.SetSecurityPolicyInstanceRequest;
 import com.google.cloud.compute.v1.SetServiceAccountInstanceRequest;
 import com.google.cloud.compute.v1.SetShieldedInstanceIntegrityPolicyInstanceRequest;
 import com.google.cloud.compute.v1.SetTagsInstanceRequest;
@@ -349,6 +350,16 @@ public abstract class InstancesStub implements BackgroundResource {
 
   public UnaryCallable<SetSchedulingInstanceRequest, Operation> setSchedulingCallable() {
     throw new UnsupportedOperationException("Not implemented: setSchedulingCallable()");
+  }
+
+  public OperationCallable<SetSecurityPolicyInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setSecurityPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<SetSecurityPolicyInstanceRequest, Operation> setSecurityPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setSecurityPolicyCallable()");
   }
 
   public OperationCallable<SetServiceAccountInstanceRequest, Operation, Operation>

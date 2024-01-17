@@ -92,6 +92,148 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
+   * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+   * </code>
+   */
+  int getExternalIPsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+   * </code>
+   */
+  boolean containsExternalIPs(java.lang.String key);
+  /** Use {@link #getExternalIPsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+      getExternalIPs();
+  /**
+   *
+   *
+   * <pre>
+   * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+      getExternalIPsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp getExternalIPsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; external_i_ps = 532687245;
+   * </code>
+   */
+  com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp getExternalIPsOrThrow(
+      java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+   * </code>
+   */
+  int getInternalIPsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+   * </code>
+   */
+  boolean containsInternalIPs(java.lang.String key);
+  /** Use {@link #getInternalIPsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+      getInternalIPs();
+  /**
+   *
+   *
+   * <pre>
+   * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp>
+      getInternalIPsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp getInternalIPsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedNetworkIp&gt; internal_i_ps = 215731675;
+   * </code>
+   */
+  com.google.cloud.compute.v1.PreservedStatePreservedNetworkIp getInternalIPsOrThrow(
+      java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
    * Preserved metadata defined for this instance.
    * </pre>
    *

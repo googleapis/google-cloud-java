@@ -89,7 +89,7 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The answer is from FAQ doucments.
+     * The answer is from FAQ documents.
      * </pre>
      *
      * <code>FAQ = 1;</code>
@@ -105,6 +105,16 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * <code>GENERATIVE = 2;</code>
      */
     GENERATIVE(2),
+    /**
+     *
+     *
+     * <pre>
+     * The answer is from intent matching.
+     * </pre>
+     *
+     * <code>INTENT = 3;</code>
+     */
+    INTENT(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -122,7 +132,7 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The answer is from FAQ doucments.
+     * The answer is from FAQ documents.
      * </pre>
      *
      * <code>FAQ = 1;</code>
@@ -138,6 +148,16 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * <code>GENERATIVE = 2;</code>
      */
     public static final int GENERATIVE_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The answer is from intent matching.
+     * </pre>
+     *
+     * <code>INTENT = 3;</code>
+     */
+    public static final int INTENT_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -169,6 +189,8 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
           return FAQ;
         case 2:
           return GENERATIVE;
+        case 3:
+          return INTENT;
         default:
           return null;
       }

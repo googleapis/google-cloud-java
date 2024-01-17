@@ -41,22 +41,17 @@ public final class AttributionProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\'google/maps/places/v1/attribution.prot"
-          + "o\022\025google.maps.places.v1\032\037google/api/fie"
-          + "ld_behavior.proto\"[\n\021AuthorAttribution\022\032"
-          + "\n\014display_name\030\001 \001(\tB\004\342A\001\003\022\021\n\003uri\030\002 \001(\tB"
-          + "\004\342A\001\003\022\027\n\tphoto_uri\030\003 \001(\tB\004\342A\001\003B\244\001\n\031com.g"
-          + "oogle.maps.places.v1B\020AttributionProtoP\001"
-          + "Z7cloud.google.com/go/maps/places/apiv1/"
-          + "placespb;placespb\370\001\001\242\002\006GMPSV1\252\002\025Google.M"
-          + "aps.Places.V1\312\002\025Google\\Maps\\Places\\V1b\006p"
-          + "roto3"
+          + "o\022\025google.maps.places.v1\"I\n\021AuthorAttrib"
+          + "ution\022\024\n\014display_name\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t"
+          + "\022\021\n\tphoto_uri\030\003 \001(\tB\244\001\n\031com.google.maps."
+          + "places.v1B\020AttributionProtoP\001Z7cloud.goo"
+          + "gle.com/go/maps/places/apiv1/placespb;pl"
+          + "acespb\370\001\001\242\002\006GMPSV1\252\002\025Google.Maps.Places."
+          + "V1\312\002\025Google\\Maps\\Places\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.FieldBehaviorProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_maps_places_v1_AuthorAttribution_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_maps_places_v1_AuthorAttribution_fieldAccessorTable =
@@ -65,12 +60,6 @@ public final class AttributionProto {
             new java.lang.String[] {
               "DisplayName", "Uri", "PhotoUri",
             });
-    com.google.protobuf.ExtensionRegistry registry =
-        com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
-    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
-        descriptor, registry);
-    com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

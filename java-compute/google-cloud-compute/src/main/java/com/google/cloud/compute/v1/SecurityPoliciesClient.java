@@ -60,19 +60,238 @@ import javax.annotation.Generated;
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    <tr>
+ *      <td>AddRule</td>
+ *      <td><p> Inserts a rule into a security policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>addRuleAsync(AddRuleSecurityPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>addRuleAsync(String project, String securityPolicy, SecurityPolicyRule securityPolicyRuleResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>addRuleOperationCallable()
+ *           <li>addRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>AggregatedList</td>
+ *      <td><p> Retrieves the list of all SecurityPolicy resources, regional and global, available to the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>aggregatedList(AggregatedListSecurityPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>aggregatedList(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>aggregatedListPagedCallable()
+ *           <li>aggregatedListCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>Delete</td>
+ *      <td><p> Deletes the specified policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteAsync(DeleteSecurityPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteAsync(String project, String securityPolicy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteOperationCallable()
+ *           <li>deleteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>Get</td>
+ *      <td><p> List all of the ordered rules present in a single specified policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>get(GetSecurityPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>get(String project, String securityPolicy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetRule</td>
+ *      <td><p> Gets a rule at the specified priority.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getRule(GetRuleSecurityPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getRule(String project, String securityPolicy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>Insert</td>
+ *      <td><p> Creates a new policy in the specified project using the data included in the request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>insertAsync(InsertSecurityPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>insertAsync(String project, SecurityPolicy securityPolicyResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>insertOperationCallable()
+ *           <li>insertCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>List</td>
+ *      <td><p> List all the policies that have been configured for the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>list(ListSecurityPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>list(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listPagedCallable()
+ *           <li>listCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListPreconfiguredExpressionSets</td>
+ *      <td><p> Gets the current list of preconfigured Web Application Firewall (WAF) expressions.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listPreconfiguredExpressionSets(ListPreconfiguredExpressionSetsSecurityPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listPreconfiguredExpressionSets(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listPreconfiguredExpressionSetsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>Patch</td>
+ *      <td><p> Patches the specified policy with the data included in the request. To clear fields in the policy, leave the fields empty and specify them in the updateMask. This cannot be used to be update the rules in the policy. Please use the per rule methods like addRule, patchRule, and removeRule instead.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>patchAsync(PatchSecurityPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>patchAsync(String project, String securityPolicy, SecurityPolicy securityPolicyResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>patchOperationCallable()
+ *           <li>patchCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>PatchRule</td>
+ *      <td><p> Patches a rule at the specified priority. To clear fields in the rule, leave the fields empty and specify them in the updateMask.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>patchRuleAsync(PatchRuleSecurityPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>patchRuleAsync(String project, String securityPolicy, SecurityPolicyRule securityPolicyRuleResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>patchRuleOperationCallable()
+ *           <li>patchRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>RemoveRule</td>
+ *      <td><p> Deletes a rule at the specified priority.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>removeRuleAsync(RemoveRuleSecurityPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>removeRuleAsync(String project, String securityPolicy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>removeRuleOperationCallable()
+ *           <li>removeRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>SetLabels</td>
+ *      <td><p> Sets the labels on a security policy. To learn more about labels, read the Labeling Resources documentation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>setLabelsAsync(SetLabelsSecurityPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>setLabelsAsync(String project, String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>setLabelsOperationCallable()
+ *           <li>setLabelsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -354,6 +573,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, SecurityPoliciesScopedList> element :
    *       securityPoliciesClient.aggregatedList(request).iterateAll()) {
@@ -393,6 +613,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, SecurityPoliciesScopedList>> future =
    *       securityPoliciesClient.aggregatedListPagedCallable().futureCall(request);
@@ -431,6 +652,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     SecurityPoliciesAggregatedList response =
@@ -1195,6 +1417,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
    *           .build();
    *   Operation response = securityPoliciesClient.patchAsync(request).get();
    * }
@@ -1232,6 +1455,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
    *           .build();
    *   OperationFuture<Operation, Operation> future =
    *       securityPoliciesClient.patchOperationCallable().futureCall(request);
@@ -1267,6 +1491,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setRequestId("requestId693933066")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
    *           .build();
    *   ApiFuture<Operation> future = securityPoliciesClient.patchCallable().futureCall(request);
    *   // Do something.
@@ -1338,6 +1563,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
    *           .setValidateOnly(true)
    *           .build();
    *   Operation response = securityPoliciesClient.patchRuleAsync(request).get();
@@ -1374,6 +1600,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
    *           .setValidateOnly(true)
    *           .build();
    *   OperationFuture<Operation, Operation> future =
@@ -1408,6 +1635,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setUpdateMask("updateMask-296147115")
    *           .setValidateOnly(true)
    *           .build();
    *   ApiFuture<Operation> future = securityPoliciesClient.patchRuleCallable().futureCall(request);

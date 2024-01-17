@@ -38,6 +38,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.AccessBinding;
@@ -152,6 +153,7 @@ import com.google.analytics.admin.v1alpha.GetPropertyRequest;
 import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
+import com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
@@ -201,6 +203,8 @@ import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasR
 import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
+import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest;
+import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
@@ -236,6 +240,7 @@ import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
@@ -613,10 +618,19 @@ public class AnalyticsAdminServiceStubSettings
       deleteRollupPropertySourceLinkSettings;
   private final UnaryCallSettings<CreateSubpropertyRequest, CreateSubpropertyResponse>
       createSubpropertySettings;
-  private final UnaryCallSettings<DeleteSubpropertyEventFilterRequest, Empty>
-      deleteSubpropertyEventFilterSettings;
   private final UnaryCallSettings<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
       createSubpropertyEventFilterSettings;
+  private final UnaryCallSettings<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      getSubpropertyEventFilterSettings;
+  private final PagedCallSettings<
+          ListSubpropertyEventFiltersRequest,
+          ListSubpropertyEventFiltersResponse,
+          ListSubpropertyEventFiltersPagedResponse>
+      listSubpropertyEventFiltersSettings;
+  private final UnaryCallSettings<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      updateSubpropertyEventFilterSettings;
+  private final UnaryCallSettings<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -1585,6 +1599,55 @@ public class AnalyticsAdminServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          ListSubpropertyEventFiltersRequest,
+          ListSubpropertyEventFiltersResponse,
+          SubpropertyEventFilter>
+      LIST_SUBPROPERTY_EVENT_FILTERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSubpropertyEventFiltersRequest,
+              ListSubpropertyEventFiltersResponse,
+              SubpropertyEventFilter>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSubpropertyEventFiltersRequest injectToken(
+                ListSubpropertyEventFiltersRequest payload, String token) {
+              return ListSubpropertyEventFiltersRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListSubpropertyEventFiltersRequest injectPageSize(
+                ListSubpropertyEventFiltersRequest payload, int pageSize) {
+              return ListSubpropertyEventFiltersRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSubpropertyEventFiltersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSubpropertyEventFiltersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SubpropertyEventFilter> extractResources(
+                ListSubpropertyEventFiltersResponse payload) {
+              return payload.getSubpropertyEventFiltersList() == null
+                  ? ImmutableList.<SubpropertyEventFilter>of()
+                  : payload.getSubpropertyEventFiltersList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListAccountsRequest, ListAccountsResponse, ListAccountsPagedResponse>
       LIST_ACCOUNTS_PAGE_STR_FACT =
@@ -2132,6 +2195,35 @@ public class AnalyticsAdminServiceStubSettings
                           request,
                           context);
               return ListRollupPropertySourceLinksPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSubpropertyEventFiltersRequest,
+          ListSubpropertyEventFiltersResponse,
+          ListSubpropertyEventFiltersPagedResponse>
+      LIST_SUBPROPERTY_EVENT_FILTERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSubpropertyEventFiltersRequest,
+              ListSubpropertyEventFiltersResponse,
+              ListSubpropertyEventFiltersPagedResponse>() {
+            @Override
+            public ApiFuture<ListSubpropertyEventFiltersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+                    callable,
+                ListSubpropertyEventFiltersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSubpropertyEventFiltersResponse> futureResponse) {
+              PageContext<
+                      ListSubpropertyEventFiltersRequest,
+                      ListSubpropertyEventFiltersResponse,
+                      SubpropertyEventFilter>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SUBPROPERTY_EVENT_FILTERS_PAGE_STR_DESC, request, context);
+              return ListSubpropertyEventFiltersPagedResponse.createAsync(
                   pageContext, futureResponse);
             }
           };
@@ -2939,16 +3031,37 @@ public class AnalyticsAdminServiceStubSettings
     return createSubpropertySettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteSubpropertyEventFilter. */
-  public UnaryCallSettings<DeleteSubpropertyEventFilterRequest, Empty>
-      deleteSubpropertyEventFilterSettings() {
-    return deleteSubpropertyEventFilterSettings;
-  }
-
   /** Returns the object with the settings used for calls to createSubpropertyEventFilter. */
   public UnaryCallSettings<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
       createSubpropertyEventFilterSettings() {
     return createSubpropertyEventFilterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSubpropertyEventFilter. */
+  public UnaryCallSettings<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      getSubpropertyEventFilterSettings() {
+    return getSubpropertyEventFilterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSubpropertyEventFilters. */
+  public PagedCallSettings<
+          ListSubpropertyEventFiltersRequest,
+          ListSubpropertyEventFiltersResponse,
+          ListSubpropertyEventFiltersPagedResponse>
+      listSubpropertyEventFiltersSettings() {
+    return listSubpropertyEventFiltersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSubpropertyEventFilter. */
+  public UnaryCallSettings<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      updateSubpropertyEventFilterSettings() {
+    return updateSubpropertyEventFilterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSubpropertyEventFilter. */
+  public UnaryCallSettings<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterSettings() {
+    return deleteSubpropertyEventFilterSettings;
   }
 
   public AnalyticsAdminServiceStub createStub() throws IOException {
@@ -2965,6 +3078,12 @@ public class AnalyticsAdminServiceStubSettings
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "analyticsadmin";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -3216,10 +3335,15 @@ public class AnalyticsAdminServiceStubSettings
     deleteRollupPropertySourceLinkSettings =
         settingsBuilder.deleteRollupPropertySourceLinkSettings().build();
     createSubpropertySettings = settingsBuilder.createSubpropertySettings().build();
-    deleteSubpropertyEventFilterSettings =
-        settingsBuilder.deleteSubpropertyEventFilterSettings().build();
     createSubpropertyEventFilterSettings =
         settingsBuilder.createSubpropertyEventFilterSettings().build();
+    getSubpropertyEventFilterSettings = settingsBuilder.getSubpropertyEventFilterSettings().build();
+    listSubpropertyEventFiltersSettings =
+        settingsBuilder.listSubpropertyEventFiltersSettings().build();
+    updateSubpropertyEventFilterSettings =
+        settingsBuilder.updateSubpropertyEventFilterSettings().build();
+    deleteSubpropertyEventFilterSettings =
+        settingsBuilder.deleteSubpropertyEventFilterSettings().build();
   }
 
   /** Builder for AnalyticsAdminServiceStubSettings. */
@@ -3549,11 +3673,22 @@ public class AnalyticsAdminServiceStubSettings
         deleteRollupPropertySourceLinkSettings;
     private final UnaryCallSettings.Builder<CreateSubpropertyRequest, CreateSubpropertyResponse>
         createSubpropertySettings;
-    private final UnaryCallSettings.Builder<DeleteSubpropertyEventFilterRequest, Empty>
-        deleteSubpropertyEventFilterSettings;
     private final UnaryCallSettings.Builder<
             CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
         createSubpropertyEventFilterSettings;
+    private final UnaryCallSettings.Builder<
+            GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        getSubpropertyEventFilterSettings;
+    private final PagedCallSettings.Builder<
+            ListSubpropertyEventFiltersRequest,
+            ListSubpropertyEventFiltersResponse,
+            ListSubpropertyEventFiltersPagedResponse>
+        listSubpropertyEventFiltersSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        updateSubpropertyEventFilterSettings;
+    private final UnaryCallSettings.Builder<DeleteSubpropertyEventFilterRequest, Empty>
+        deleteSubpropertyEventFilterSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -3753,8 +3888,12 @@ public class AnalyticsAdminServiceStubSettings
       createRollupPropertySourceLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteRollupPropertySourceLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createSubpropertySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      deleteSubpropertyEventFilterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createSubpropertyEventFilterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSubpropertyEventFilterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSubpropertyEventFiltersSettings =
+          PagedCallSettings.newBuilder(LIST_SUBPROPERTY_EVENT_FILTERS_PAGE_STR_FACT);
+      updateSubpropertyEventFilterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSubpropertyEventFilterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -3884,8 +4023,11 @@ public class AnalyticsAdminServiceStubSettings
               createRollupPropertySourceLinkSettings,
               deleteRollupPropertySourceLinkSettings,
               createSubpropertySettings,
-              deleteSubpropertyEventFilterSettings,
-              createSubpropertyEventFilterSettings);
+              createSubpropertyEventFilterSettings,
+              getSubpropertyEventFilterSettings,
+              listSubpropertyEventFiltersSettings,
+              updateSubpropertyEventFilterSettings,
+              deleteSubpropertyEventFilterSettings);
       initDefaults(this);
     }
 
@@ -4051,10 +4193,15 @@ public class AnalyticsAdminServiceStubSettings
       deleteRollupPropertySourceLinkSettings =
           settings.deleteRollupPropertySourceLinkSettings.toBuilder();
       createSubpropertySettings = settings.createSubpropertySettings.toBuilder();
-      deleteSubpropertyEventFilterSettings =
-          settings.deleteSubpropertyEventFilterSettings.toBuilder();
       createSubpropertyEventFilterSettings =
           settings.createSubpropertyEventFilterSettings.toBuilder();
+      getSubpropertyEventFilterSettings = settings.getSubpropertyEventFilterSettings.toBuilder();
+      listSubpropertyEventFiltersSettings =
+          settings.listSubpropertyEventFiltersSettings.toBuilder();
+      updateSubpropertyEventFilterSettings =
+          settings.updateSubpropertyEventFilterSettings.toBuilder();
+      deleteSubpropertyEventFilterSettings =
+          settings.deleteSubpropertyEventFilterSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -4184,8 +4331,11 @@ public class AnalyticsAdminServiceStubSettings
               createRollupPropertySourceLinkSettings,
               deleteRollupPropertySourceLinkSettings,
               createSubpropertySettings,
-              deleteSubpropertyEventFilterSettings,
-              createSubpropertyEventFilterSettings);
+              createSubpropertyEventFilterSettings,
+              getSubpropertyEventFilterSettings,
+              listSubpropertyEventFiltersSettings,
+              updateSubpropertyEventFilterSettings,
+              deleteSubpropertyEventFilterSettings);
     }
 
     private static Builder createDefault() {
@@ -4846,12 +4996,27 @@ public class AnalyticsAdminServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .deleteSubpropertyEventFilterSettings()
+          .createSubpropertyEventFilterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .createSubpropertyEventFilterSettings()
+          .getSubpropertyEventFilterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSubpropertyEventFiltersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSubpropertyEventFilterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteSubpropertyEventFilterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -5729,16 +5894,37 @@ public class AnalyticsAdminServiceStubSettings
       return createSubpropertySettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteSubpropertyEventFilter. */
-    public UnaryCallSettings.Builder<DeleteSubpropertyEventFilterRequest, Empty>
-        deleteSubpropertyEventFilterSettings() {
-      return deleteSubpropertyEventFilterSettings;
-    }
-
     /** Returns the builder for the settings used for calls to createSubpropertyEventFilter. */
     public UnaryCallSettings.Builder<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
         createSubpropertyEventFilterSettings() {
       return createSubpropertyEventFilterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSubpropertyEventFilter. */
+    public UnaryCallSettings.Builder<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        getSubpropertyEventFilterSettings() {
+      return getSubpropertyEventFilterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSubpropertyEventFilters. */
+    public PagedCallSettings.Builder<
+            ListSubpropertyEventFiltersRequest,
+            ListSubpropertyEventFiltersResponse,
+            ListSubpropertyEventFiltersPagedResponse>
+        listSubpropertyEventFiltersSettings() {
+      return listSubpropertyEventFiltersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSubpropertyEventFilter. */
+    public UnaryCallSettings.Builder<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        updateSubpropertyEventFilterSettings() {
+      return updateSubpropertyEventFilterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSubpropertyEventFilter. */
+    public UnaryCallSettings.Builder<DeleteSubpropertyEventFilterRequest, Empty>
+        deleteSubpropertyEventFilterSettings() {
+      return deleteSubpropertyEventFilterSettings;
     }
 
     @Override

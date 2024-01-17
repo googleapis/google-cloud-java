@@ -18,6 +18,7 @@ package com.google.cloud.deploy.v1;
 
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
@@ -191,6 +192,57 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
   public OperationCallSettings<DeleteTargetRequest, Empty, OperationMetadata>
       deleteTargetOperationSettings() {
     return ((CloudDeployStubSettings) getStubSettings()).deleteTargetOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listCustomTargetTypes. */
+  public PagedCallSettings<
+          ListCustomTargetTypesRequest,
+          ListCustomTargetTypesResponse,
+          ListCustomTargetTypesPagedResponse>
+      listCustomTargetTypesSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).listCustomTargetTypesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getCustomTargetType. */
+  public UnaryCallSettings<GetCustomTargetTypeRequest, CustomTargetType>
+      getCustomTargetTypeSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).getCustomTargetTypeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCustomTargetType. */
+  public UnaryCallSettings<CreateCustomTargetTypeRequest, Operation>
+      createCustomTargetTypeSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).createCustomTargetTypeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCustomTargetType. */
+  public OperationCallSettings<CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      createCustomTargetTypeOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).createCustomTargetTypeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomTargetType. */
+  public UnaryCallSettings<UpdateCustomTargetTypeRequest, Operation>
+      updateCustomTargetTypeSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).updateCustomTargetTypeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomTargetType. */
+  public OperationCallSettings<UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      updateCustomTargetTypeOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).updateCustomTargetTypeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomTargetType. */
+  public UnaryCallSettings<DeleteCustomTargetTypeRequest, Operation>
+      deleteCustomTargetTypeSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).deleteCustomTargetTypeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomTargetType. */
+  public OperationCallSettings<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+      deleteCustomTargetTypeOperationSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).deleteCustomTargetTypeOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listReleases. */
@@ -595,6 +647,59 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
     public OperationCallSettings.Builder<DeleteTargetRequest, Empty, OperationMetadata>
         deleteTargetOperationSettings() {
       return getStubSettingsBuilder().deleteTargetOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomTargetTypes. */
+    public PagedCallSettings.Builder<
+            ListCustomTargetTypesRequest,
+            ListCustomTargetTypesResponse,
+            ListCustomTargetTypesPagedResponse>
+        listCustomTargetTypesSettings() {
+      return getStubSettingsBuilder().listCustomTargetTypesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomTargetType. */
+    public UnaryCallSettings.Builder<GetCustomTargetTypeRequest, CustomTargetType>
+        getCustomTargetTypeSettings() {
+      return getStubSettingsBuilder().getCustomTargetTypeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomTargetType. */
+    public UnaryCallSettings.Builder<CreateCustomTargetTypeRequest, Operation>
+        createCustomTargetTypeSettings() {
+      return getStubSettingsBuilder().createCustomTargetTypeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomTargetType. */
+    public OperationCallSettings.Builder<
+            CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+        createCustomTargetTypeOperationSettings() {
+      return getStubSettingsBuilder().createCustomTargetTypeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomTargetType. */
+    public UnaryCallSettings.Builder<UpdateCustomTargetTypeRequest, Operation>
+        updateCustomTargetTypeSettings() {
+      return getStubSettingsBuilder().updateCustomTargetTypeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomTargetType. */
+    public OperationCallSettings.Builder<
+            UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+        updateCustomTargetTypeOperationSettings() {
+      return getStubSettingsBuilder().updateCustomTargetTypeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomTargetType. */
+    public UnaryCallSettings.Builder<DeleteCustomTargetTypeRequest, Operation>
+        deleteCustomTargetTypeSettings() {
+      return getStubSettingsBuilder().deleteCustomTargetTypeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomTargetType. */
+    public OperationCallSettings.Builder<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+        deleteCustomTargetTypeOperationSettings() {
+      return getStubSettingsBuilder().deleteCustomTargetTypeOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listReleases. */

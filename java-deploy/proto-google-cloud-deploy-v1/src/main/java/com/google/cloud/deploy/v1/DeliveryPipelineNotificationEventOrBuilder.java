@@ -52,6 +52,31 @@ public interface DeliveryPipelineNotificationEventOrBuilder
    *
    *
    * <pre>
+   * Unique identifier of the `DeliveryPipeline`.
+   * </pre>
+   *
+   * <code>string pipeline_uid = 4;</code>
+   *
+   * @return The pipelineUid.
+   */
+  java.lang.String getPipelineUid();
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier of the `DeliveryPipeline`.
+   * </pre>
+   *
+   * <code>string pipeline_uid = 4;</code>
+   *
+   * @return The bytes for pipelineUid.
+   */
+  com.google.protobuf.ByteString getPipelineUidBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The name of the `Delivery Pipeline`.
    * </pre>
    *

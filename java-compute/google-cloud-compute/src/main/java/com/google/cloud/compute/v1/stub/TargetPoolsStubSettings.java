@@ -57,6 +57,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.RemoveHealthCheckTargetPoolRequest;
 import com.google.cloud.compute.v1.RemoveInstanceTargetPoolRequest;
 import com.google.cloud.compute.v1.SetBackupTargetPoolRequest;
+import com.google.cloud.compute.v1.SetSecurityPolicyTargetPoolRequest;
 import com.google.cloud.compute.v1.TargetPool;
 import com.google.cloud.compute.v1.TargetPoolAggregatedList;
 import com.google.cloud.compute.v1.TargetPoolInstanceHealth;
@@ -151,6 +152,10 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
   private final UnaryCallSettings<SetBackupTargetPoolRequest, Operation> setBackupSettings;
   private final OperationCallSettings<SetBackupTargetPoolRequest, Operation, Operation>
       setBackupOperationSettings;
+  private final UnaryCallSettings<SetSecurityPolicyTargetPoolRequest, Operation>
+      setSecurityPolicySettings;
+  private final OperationCallSettings<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListTargetPoolsRequest,
@@ -381,6 +386,18 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     return setBackupOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public UnaryCallSettings<SetSecurityPolicyTargetPoolRequest, Operation>
+      setSecurityPolicySettings() {
+    return setSecurityPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public OperationCallSettings<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings() {
+    return setSecurityPolicyOperationSettings;
+  }
+
   public TargetPoolsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -390,6 +407,12 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "compute";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -476,6 +499,9 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     removeInstanceOperationSettings = settingsBuilder.removeInstanceOperationSettings().build();
     setBackupSettings = settingsBuilder.setBackupSettings().build();
     setBackupOperationSettings = settingsBuilder.setBackupOperationSettings().build();
+    setSecurityPolicySettings = settingsBuilder.setSecurityPolicySettings().build();
+    setSecurityPolicyOperationSettings =
+        settingsBuilder.setSecurityPolicyOperationSettings().build();
   }
 
   /** Builder for TargetPoolsStubSettings. */
@@ -519,6 +545,11 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
         setBackupSettings;
     private final OperationCallSettings.Builder<SetBackupTargetPoolRequest, Operation, Operation>
         setBackupOperationSettings;
+    private final UnaryCallSettings.Builder<SetSecurityPolicyTargetPoolRequest, Operation>
+        setSecurityPolicySettings;
+    private final OperationCallSettings.Builder<
+            SetSecurityPolicyTargetPoolRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -587,6 +618,8 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
       removeInstanceOperationSettings = OperationCallSettings.newBuilder();
       setBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setBackupOperationSettings = OperationCallSettings.newBuilder();
+      setSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setSecurityPolicyOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -600,7 +633,8 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
               listSettings,
               removeHealthCheckSettings,
               removeInstanceSettings,
-              setBackupSettings);
+              setBackupSettings,
+              setSecurityPolicySettings);
       initDefaults(this);
     }
 
@@ -625,6 +659,8 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
       removeInstanceOperationSettings = settings.removeInstanceOperationSettings.toBuilder();
       setBackupSettings = settings.setBackupSettings.toBuilder();
       setBackupOperationSettings = settings.setBackupOperationSettings.toBuilder();
+      setSecurityPolicySettings = settings.setSecurityPolicySettings.toBuilder();
+      setSecurityPolicyOperationSettings = settings.setSecurityPolicyOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -638,7 +674,8 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
               listSettings,
               removeHealthCheckSettings,
               removeInstanceSettings,
-              setBackupSettings);
+              setBackupSettings,
+              setSecurityPolicySettings);
     }
 
     private static Builder createDefault() {
@@ -707,6 +744,11 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
 
       builder
           .setBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setSecurityPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -879,6 +921,31 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
                       .setTotalTimeout(Duration.ofMillis(600000L))
                       .build()));
 
+      builder
+          .setSecurityPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetSecurityPolicyTargetPoolRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1014,6 +1081,20 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     public OperationCallSettings.Builder<SetBackupTargetPoolRequest, Operation, Operation>
         setBackupOperationSettings() {
       return setBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetSecurityPolicyTargetPoolRequest, Operation>
+        setSecurityPolicySettings() {
+      return setSecurityPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings() {
+      return setSecurityPolicyOperationSettings;
     }
 
     @Override

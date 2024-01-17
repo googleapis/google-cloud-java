@@ -1022,7 +1022,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
+   * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of a PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
    * </pre>
    *
    * <code>optional string pairing_key = 439695464;</code>
@@ -1034,7 +1034,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
+   * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of a PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
    * </pre>
    *
    * <code>optional string pairing_key = 439695464;</code>
@@ -1046,7 +1046,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
+   * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of a PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
    * </pre>
    *
    * <code>optional string pairing_key = 439695464;</code>
@@ -1084,7 +1084,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * Informational metadata about Partner attachments from Partners to display to customers. Output only for for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED.
+   * Informational metadata about Partner attachments from Partners to display to customers. Output only for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED.
    * </pre>
    *
    * <code>
@@ -1098,7 +1098,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * Informational metadata about Partner attachments from Partners to display to customers. Output only for for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED.
+   * Informational metadata about Partner attachments from Partners to display to customers. Output only for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED.
    * </pre>
    *
    * <code>
@@ -1112,7 +1112,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * Informational metadata about Partner attachments from Partners to display to customers. Output only for for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED.
+   * Informational metadata about Partner attachments from Partners to display to customers. Output only for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED.
    * </pre>
    *
    * <code>

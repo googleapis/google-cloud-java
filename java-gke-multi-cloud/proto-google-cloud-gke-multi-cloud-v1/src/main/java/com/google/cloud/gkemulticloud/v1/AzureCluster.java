@@ -581,6 +581,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    * authentication configuration for how the Anthos Multi-Cloud API connects to
    * Azure APIs.
    *
+   * Either azure_client or azure_services_authentication should be provided.
+   *
    * The `AzureClient` resource must reside on the same Google Cloud Platform
    * project and region as the `AzureCluster`.
    *
@@ -615,6 +617,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
    * authentication configuration for how the Anthos Multi-Cloud API connects to
    * Azure APIs.
+   *
+   * Either azure_client or azure_services_authentication should be provided.
    *
    * The `AzureClient` resource must reside on the same Google Cloud Platform
    * project and region as the `AzureCluster`.
@@ -820,6 +824,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Authentication configuration for management of Azure resources.
+   *
+   * Either azure_client or azure_services_authentication should be provided.
    * </pre>
    *
    * <code>
@@ -837,6 +843,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Authentication configuration for management of Azure resources.
+   *
+   * Either azure_client or azure_services_authentication should be provided.
    * </pre>
    *
    * <code>
@@ -857,6 +865,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Authentication configuration for management of Azure resources.
+   *
+   * Either azure_client or azure_services_authentication should be provided.
    * </pre>
    *
    * <code>
@@ -3311,6 +3321,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      * authentication configuration for how the Anthos Multi-Cloud API connects to
      * Azure APIs.
      *
+     * Either azure_client or azure_services_authentication should be provided.
+     *
      * The `AzureClient` resource must reside on the same Google Cloud Platform
      * project and region as the `AzureCluster`.
      *
@@ -3344,6 +3356,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
      * authentication configuration for how the Anthos Multi-Cloud API connects to
      * Azure APIs.
+     *
+     * Either azure_client or azure_services_authentication should be provided.
      *
      * The `AzureClient` resource must reside on the same Google Cloud Platform
      * project and region as the `AzureCluster`.
@@ -3379,6 +3393,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      * authentication configuration for how the Anthos Multi-Cloud API connects to
      * Azure APIs.
      *
+     * Either azure_client or azure_services_authentication should be provided.
+     *
      * The `AzureClient` resource must reside on the same Google Cloud Platform
      * project and region as the `AzureCluster`.
      *
@@ -3412,6 +3428,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      * authentication configuration for how the Anthos Multi-Cloud API connects to
      * Azure APIs.
      *
+     * Either azure_client or azure_services_authentication should be provided.
+     *
      * The `AzureClient` resource must reside on the same Google Cloud Platform
      * project and region as the `AzureCluster`.
      *
@@ -3440,6 +3458,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
      * authentication configuration for how the Anthos Multi-Cloud API connects to
      * Azure APIs.
+     *
+     * Either azure_client or azure_services_authentication should be provided.
      *
      * The `AzureClient` resource must reside on the same Google Cloud Platform
      * project and region as the `AzureCluster`.
@@ -4090,6 +4110,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Authentication configuration for management of Azure resources.
+     *
+     * Either azure_client or azure_services_authentication should be provided.
      * </pre>
      *
      * <code>
@@ -4106,6 +4128,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Authentication configuration for management of Azure resources.
+     *
+     * Either azure_client or azure_services_authentication should be provided.
      * </pre>
      *
      * <code>
@@ -4129,6 +4153,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Authentication configuration for management of Azure resources.
+     *
+     * Either azure_client or azure_services_authentication should be provided.
      * </pre>
      *
      * <code>
@@ -4154,6 +4180,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Authentication configuration for management of Azure resources.
+     *
+     * Either azure_client or azure_services_authentication should be provided.
      * </pre>
      *
      * <code>
@@ -4176,6 +4204,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Authentication configuration for management of Azure resources.
+     *
+     * Either azure_client or azure_services_authentication should be provided.
      * </pre>
      *
      * <code>
@@ -4206,6 +4236,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Authentication configuration for management of Azure resources.
+     *
+     * Either azure_client or azure_services_authentication should be provided.
      * </pre>
      *
      * <code>
@@ -4227,6 +4259,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Authentication configuration for management of Azure resources.
+     *
+     * Either azure_client or azure_services_authentication should be provided.
      * </pre>
      *
      * <code>
@@ -4244,6 +4278,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Authentication configuration for management of Azure resources.
+     *
+     * Either azure_client or azure_services_authentication should be provided.
      * </pre>
      *
      * <code>
@@ -4265,6 +4301,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Authentication configuration for management of Azure resources.
+     *
+     * Either azure_client or azure_services_authentication should be provided.
      * </pre>
      *
      * <code>

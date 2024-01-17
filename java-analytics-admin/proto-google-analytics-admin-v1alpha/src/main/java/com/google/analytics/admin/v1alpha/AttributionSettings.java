@@ -476,83 +476,6 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Starting in June 2023, new properties can no longer use this model.
-     * See
-     * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320#040623)
-     * for more details.
-     * Starting in September 2023, we will sunset this model for all properties.
-     *
-     * Gives all credit for the conversion to the first channel that a customer
-     * clicked (or engaged view through for YouTube) before converting.
-     * Previously CROSS_CHANNEL_FIRST_CLICK
-     * </pre>
-     *
-     * <code>PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK = 3;</code>
-     */
-    PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK(3),
-    /**
-     *
-     *
-     * <pre>
-     * Starting in June 2023, new properties can no longer use this model.
-     * See
-     * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320#040623)
-     * for more details.
-     * Starting in September 2023, we will sunset this model for all properties.
-     *
-     * Distributes the credit for the conversion equally across all the channels
-     * a customer clicked (or engaged view through for YouTube) before
-     * converting.
-     * Previously CROSS_CHANNEL_LINEAR
-     * </pre>
-     *
-     * <code>PAID_AND_ORGANIC_CHANNELS_LINEAR = 4;</code>
-     */
-    PAID_AND_ORGANIC_CHANNELS_LINEAR(4),
-    /**
-     *
-     *
-     * <pre>
-     * Starting in June 2023, new properties can no longer use this model.
-     * See
-     * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320#040623)
-     * for more details.
-     * Starting in September 2023, we will sunset this model for all properties.
-     *
-     * Attributes 40% credit to the first and last interaction, and the
-     * remaining 20% credit is distributed evenly to the middle interactions.
-     * Previously CROSS_CHANNEL_POSITION_BASED
-     * </pre>
-     *
-     * <code>PAID_AND_ORGANIC_CHANNELS_POSITION_BASED = 5;</code>
-     */
-    PAID_AND_ORGANIC_CHANNELS_POSITION_BASED(5),
-    /**
-     *
-     *
-     * <pre>
-     * Starting in June 2023, new properties can no longer use this model.
-     * See
-     * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320#040623)
-     * for more details.
-     * Starting in September 2023, we will sunset this model for all properties.
-     *
-     * Gives more credit to the touchpoints that happened closer in time to
-     * the conversion.
-     * Previously CROSS_CHANNEL_TIME_DECAY
-     * </pre>
-     *
-     * <code>PAID_AND_ORGANIC_CHANNELS_TIME_DECAY = 6;</code>
-     */
-    PAID_AND_ORGANIC_CHANNELS_TIME_DECAY(6),
-    /**
-     *
-     *
-     * <pre>
      * Attributes 100% of the conversion value to the last Google Paid channel
      * that the customer clicked through before converting.
      * Previously ADS_PREFERRED_LAST_CLICK
@@ -604,83 +527,6 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Starting in June 2023, new properties can no longer use this model.
-     * See
-     * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320#040623)
-     * for more details.
-     * Starting in September 2023, we will sunset this model for all properties.
-     *
-     * Gives all credit for the conversion to the first channel that a customer
-     * clicked (or engaged view through for YouTube) before converting.
-     * Previously CROSS_CHANNEL_FIRST_CLICK
-     * </pre>
-     *
-     * <code>PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK = 3;</code>
-     */
-    public static final int PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK_VALUE = 3;
-    /**
-     *
-     *
-     * <pre>
-     * Starting in June 2023, new properties can no longer use this model.
-     * See
-     * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320#040623)
-     * for more details.
-     * Starting in September 2023, we will sunset this model for all properties.
-     *
-     * Distributes the credit for the conversion equally across all the channels
-     * a customer clicked (or engaged view through for YouTube) before
-     * converting.
-     * Previously CROSS_CHANNEL_LINEAR
-     * </pre>
-     *
-     * <code>PAID_AND_ORGANIC_CHANNELS_LINEAR = 4;</code>
-     */
-    public static final int PAID_AND_ORGANIC_CHANNELS_LINEAR_VALUE = 4;
-    /**
-     *
-     *
-     * <pre>
-     * Starting in June 2023, new properties can no longer use this model.
-     * See
-     * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320#040623)
-     * for more details.
-     * Starting in September 2023, we will sunset this model for all properties.
-     *
-     * Attributes 40% credit to the first and last interaction, and the
-     * remaining 20% credit is distributed evenly to the middle interactions.
-     * Previously CROSS_CHANNEL_POSITION_BASED
-     * </pre>
-     *
-     * <code>PAID_AND_ORGANIC_CHANNELS_POSITION_BASED = 5;</code>
-     */
-    public static final int PAID_AND_ORGANIC_CHANNELS_POSITION_BASED_VALUE = 5;
-    /**
-     *
-     *
-     * <pre>
-     * Starting in June 2023, new properties can no longer use this model.
-     * See
-     * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320#040623)
-     * for more details.
-     * Starting in September 2023, we will sunset this model for all properties.
-     *
-     * Gives more credit to the touchpoints that happened closer in time to
-     * the conversion.
-     * Previously CROSS_CHANNEL_TIME_DECAY
-     * </pre>
-     *
-     * <code>PAID_AND_ORGANIC_CHANNELS_TIME_DECAY = 6;</code>
-     */
-    public static final int PAID_AND_ORGANIC_CHANNELS_TIME_DECAY_VALUE = 6;
-    /**
-     *
-     *
-     * <pre>
      * Attributes 100% of the conversion value to the last Google Paid channel
      * that the customer clicked through before converting.
      * Previously ADS_PREFERRED_LAST_CLICK
@@ -720,14 +566,6 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
           return PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN;
         case 2:
           return PAID_AND_ORGANIC_CHANNELS_LAST_CLICK;
-        case 3:
-          return PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK;
-        case 4:
-          return PAID_AND_ORGANIC_CHANNELS_LINEAR;
-        case 5:
-          return PAID_AND_ORGANIC_CHANNELS_POSITION_BASED;
-        case 6:
-          return PAID_AND_ORGANIC_CHANNELS_TIME_DECAY;
         case 7:
           return GOOGLE_PAID_CHANNELS_LAST_CLICK;
         default:

@@ -17,6 +17,7 @@
 package com.google.cloud.orgpolicy.v2.stub;
 
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListConstraintsPagedResponse;
+import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListCustomConstraintsPagedResponse;
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListPoliciesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -26,15 +27,22 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.orgpolicy.v2.CreateCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.CreatePolicyRequest;
+import com.google.cloud.orgpolicy.v2.CustomConstraint;
+import com.google.cloud.orgpolicy.v2.DeleteCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.DeletePolicyRequest;
+import com.google.cloud.orgpolicy.v2.GetCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.GetEffectivePolicyRequest;
 import com.google.cloud.orgpolicy.v2.GetPolicyRequest;
 import com.google.cloud.orgpolicy.v2.ListConstraintsRequest;
 import com.google.cloud.orgpolicy.v2.ListConstraintsResponse;
+import com.google.cloud.orgpolicy.v2.ListCustomConstraintsRequest;
+import com.google.cloud.orgpolicy.v2.ListCustomConstraintsResponse;
 import com.google.cloud.orgpolicy.v2.ListPoliciesRequest;
 import com.google.cloud.orgpolicy.v2.ListPoliciesResponse;
 import com.google.cloud.orgpolicy.v2.Policy;
+import com.google.cloud.orgpolicy.v2.UpdateCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.UpdatePolicyRequest;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -115,6 +123,57 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<CreateCustomConstraintRequest, CustomConstraint>
+      createCustomConstraintMethodDescriptor =
+          MethodDescriptor.<CreateCustomConstraintRequest, CustomConstraint>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/CreateCustomConstraint")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateCustomConstraintRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CustomConstraint.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateCustomConstraintRequest, CustomConstraint>
+      updateCustomConstraintMethodDescriptor =
+          MethodDescriptor.<UpdateCustomConstraintRequest, CustomConstraint>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/UpdateCustomConstraint")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateCustomConstraintRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CustomConstraint.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetCustomConstraintRequest, CustomConstraint>
+      getCustomConstraintMethodDescriptor =
+          MethodDescriptor.<GetCustomConstraintRequest, CustomConstraint>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/GetCustomConstraint")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetCustomConstraintRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CustomConstraint.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListCustomConstraintsRequest, ListCustomConstraintsResponse>
+      listCustomConstraintsMethodDescriptor =
+          MethodDescriptor.<ListCustomConstraintsRequest, ListCustomConstraintsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/ListCustomConstraints")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListCustomConstraintsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListCustomConstraintsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteCustomConstraintRequest, Empty>
+      deleteCustomConstraintMethodDescriptor =
+          MethodDescriptor.<DeleteCustomConstraintRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.orgpolicy.v2.OrgPolicy/DeleteCustomConstraint")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteCustomConstraintRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListConstraintsRequest, ListConstraintsResponse>
       listConstraintsCallable;
   private final UnaryCallable<ListConstraintsRequest, ListConstraintsPagedResponse>
@@ -127,6 +186,17 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
   private final UnaryCallable<CreatePolicyRequest, Policy> createPolicyCallable;
   private final UnaryCallable<UpdatePolicyRequest, Policy> updatePolicyCallable;
   private final UnaryCallable<DeletePolicyRequest, Empty> deletePolicyCallable;
+  private final UnaryCallable<CreateCustomConstraintRequest, CustomConstraint>
+      createCustomConstraintCallable;
+  private final UnaryCallable<UpdateCustomConstraintRequest, CustomConstraint>
+      updateCustomConstraintCallable;
+  private final UnaryCallable<GetCustomConstraintRequest, CustomConstraint>
+      getCustomConstraintCallable;
+  private final UnaryCallable<ListCustomConstraintsRequest, ListCustomConstraintsResponse>
+      listCustomConstraintsCallable;
+  private final UnaryCallable<ListCustomConstraintsRequest, ListCustomConstraintsPagedResponse>
+      listCustomConstraintsPagedCallable;
+  private final UnaryCallable<DeleteCustomConstraintRequest, Empty> deleteCustomConstraintCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -240,6 +310,63 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateCustomConstraintRequest, CustomConstraint>
+        createCustomConstraintTransportSettings =
+            GrpcCallSettings.<CreateCustomConstraintRequest, CustomConstraint>newBuilder()
+                .setMethodDescriptor(createCustomConstraintMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateCustomConstraintRequest, CustomConstraint>
+        updateCustomConstraintTransportSettings =
+            GrpcCallSettings.<UpdateCustomConstraintRequest, CustomConstraint>newBuilder()
+                .setMethodDescriptor(updateCustomConstraintMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "custom_constraint.name",
+                          String.valueOf(request.getCustomConstraint().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetCustomConstraintRequest, CustomConstraint>
+        getCustomConstraintTransportSettings =
+            GrpcCallSettings.<GetCustomConstraintRequest, CustomConstraint>newBuilder()
+                .setMethodDescriptor(getCustomConstraintMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListCustomConstraintsRequest, ListCustomConstraintsResponse>
+        listCustomConstraintsTransportSettings =
+            GrpcCallSettings
+                .<ListCustomConstraintsRequest, ListCustomConstraintsResponse>newBuilder()
+                .setMethodDescriptor(listCustomConstraintsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteCustomConstraintRequest, Empty> deleteCustomConstraintTransportSettings =
+        GrpcCallSettings.<DeleteCustomConstraintRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteCustomConstraintMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.listConstraintsCallable =
         callableFactory.createUnaryCallable(
@@ -270,6 +397,36 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
     this.deletePolicyCallable =
         callableFactory.createUnaryCallable(
             deletePolicyTransportSettings, settings.deletePolicySettings(), clientContext);
+    this.createCustomConstraintCallable =
+        callableFactory.createUnaryCallable(
+            createCustomConstraintTransportSettings,
+            settings.createCustomConstraintSettings(),
+            clientContext);
+    this.updateCustomConstraintCallable =
+        callableFactory.createUnaryCallable(
+            updateCustomConstraintTransportSettings,
+            settings.updateCustomConstraintSettings(),
+            clientContext);
+    this.getCustomConstraintCallable =
+        callableFactory.createUnaryCallable(
+            getCustomConstraintTransportSettings,
+            settings.getCustomConstraintSettings(),
+            clientContext);
+    this.listCustomConstraintsCallable =
+        callableFactory.createUnaryCallable(
+            listCustomConstraintsTransportSettings,
+            settings.listCustomConstraintsSettings(),
+            clientContext);
+    this.listCustomConstraintsPagedCallable =
+        callableFactory.createPagedCallable(
+            listCustomConstraintsTransportSettings,
+            settings.listCustomConstraintsSettings(),
+            clientContext);
+    this.deleteCustomConstraintCallable =
+        callableFactory.createUnaryCallable(
+            deleteCustomConstraintTransportSettings,
+            settings.deleteCustomConstraintSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -323,6 +480,40 @@ public class GrpcOrgPolicyStub extends OrgPolicyStub {
   @Override
   public UnaryCallable<DeletePolicyRequest, Empty> deletePolicyCallable() {
     return deletePolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomConstraintRequest, CustomConstraint>
+      createCustomConstraintCallable() {
+    return createCustomConstraintCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCustomConstraintRequest, CustomConstraint>
+      updateCustomConstraintCallable() {
+    return updateCustomConstraintCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCustomConstraintRequest, CustomConstraint> getCustomConstraintCallable() {
+    return getCustomConstraintCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomConstraintsRequest, ListCustomConstraintsResponse>
+      listCustomConstraintsCallable() {
+    return listCustomConstraintsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomConstraintsRequest, ListCustomConstraintsPagedResponse>
+      listCustomConstraintsPagedCallable() {
+    return listCustomConstraintsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCustomConstraintRequest, Empty> deleteCustomConstraintCallable() {
+    return deleteCustomConstraintCallable;
   }
 
   @Override

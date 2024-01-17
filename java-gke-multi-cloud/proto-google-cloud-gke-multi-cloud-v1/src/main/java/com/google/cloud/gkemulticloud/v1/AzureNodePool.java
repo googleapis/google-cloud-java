@@ -1217,6 +1217,62 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
     return errors_.get(index);
   }
 
+  public static final int MANAGEMENT_FIELD_NUMBER = 30;
+  private com.google.cloud.gkemulticloud.v1.AzureNodeManagement management_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Management configuration for this node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AzureNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the management field is set.
+   */
+  @java.lang.Override
+  public boolean hasManagement() {
+    return management_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Management configuration for this node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AzureNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The management.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AzureNodeManagement getManagement() {
+    return management_ == null
+        ? com.google.cloud.gkemulticloud.v1.AzureNodeManagement.getDefaultInstance()
+        : management_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Management configuration for this node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AzureNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AzureNodeManagementOrBuilder getManagementOrBuilder() {
+    return management_ == null
+        ? com.google.cloud.gkemulticloud.v1.AzureNodeManagement.getDefaultInstance()
+        : management_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1275,6 +1331,9 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < errors_.size(); i++) {
       output.writeMessage(29, errors_.get(i));
+    }
+    if (management_ != null) {
+      output.writeMessage(30, getManagement());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1338,6 +1397,9 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < errors_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, errors_.get(i));
     }
+    if (management_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, getManagement());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1384,6 +1446,10 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getAzureAvailabilityZone().equals(other.getAzureAvailabilityZone())) return false;
     if (!getErrorsList().equals(other.getErrorsList())) return false;
+    if (hasManagement() != other.hasManagement()) return false;
+    if (hasManagement()) {
+      if (!getManagement().equals(other.getManagement())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1438,6 +1504,10 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
     if (getErrorsCount() > 0) {
       hash = (37 * hash) + ERRORS_FIELD_NUMBER;
       hash = (53 * hash) + getErrorsList().hashCode();
+    }
+    if (hasManagement()) {
+      hash = (37 * hash) + MANAGEMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getManagement().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1639,6 +1709,11 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
         errorsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00004000);
+      management_ = null;
+      if (managementBuilder_ != null) {
+        managementBuilder_.dispose();
+        managementBuilder_ = null;
+      }
       return this;
     }
 
@@ -1735,6 +1810,9 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.azureAvailabilityZone_ = azureAvailabilityZone_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.management_ = managementBuilder_ == null ? management_ : managementBuilder_.build();
       }
     }
 
@@ -1863,6 +1941,9 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
             errorsBuilder_.addAllMessages(other.errors_);
           }
         }
+      }
+      if (other.hasManagement()) {
+        mergeManagement(other.getManagement());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1995,6 +2076,12 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 234
+            case 242:
+              {
+                input.readMessage(getManagementFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 242
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4525,6 +4612,209 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
         errors_ = null;
       }
       return errorsBuilder_;
+    }
+
+    private com.google.cloud.gkemulticloud.v1.AzureNodeManagement management_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AzureNodeManagement,
+            com.google.cloud.gkemulticloud.v1.AzureNodeManagement.Builder,
+            com.google.cloud.gkemulticloud.v1.AzureNodeManagementOrBuilder>
+        managementBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AzureNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the management field is set.
+     */
+    public boolean hasManagement() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AzureNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The management.
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureNodeManagement getManagement() {
+      if (managementBuilder_ == null) {
+        return management_ == null
+            ? com.google.cloud.gkemulticloud.v1.AzureNodeManagement.getDefaultInstance()
+            : management_;
+      } else {
+        return managementBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AzureNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setManagement(com.google.cloud.gkemulticloud.v1.AzureNodeManagement value) {
+      if (managementBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        management_ = value;
+      } else {
+        managementBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AzureNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setManagement(
+        com.google.cloud.gkemulticloud.v1.AzureNodeManagement.Builder builderForValue) {
+      if (managementBuilder_ == null) {
+        management_ = builderForValue.build();
+      } else {
+        managementBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AzureNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeManagement(com.google.cloud.gkemulticloud.v1.AzureNodeManagement value) {
+      if (managementBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && management_ != null
+            && management_
+                != com.google.cloud.gkemulticloud.v1.AzureNodeManagement.getDefaultInstance()) {
+          getManagementBuilder().mergeFrom(value);
+        } else {
+          management_ = value;
+        }
+      } else {
+        managementBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AzureNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearManagement() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      management_ = null;
+      if (managementBuilder_ != null) {
+        managementBuilder_.dispose();
+        managementBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AzureNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureNodeManagement.Builder getManagementBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getManagementFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AzureNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureNodeManagementOrBuilder getManagementOrBuilder() {
+      if (managementBuilder_ != null) {
+        return managementBuilder_.getMessageOrBuilder();
+      } else {
+        return management_ == null
+            ? com.google.cloud.gkemulticloud.v1.AzureNodeManagement.getDefaultInstance()
+            : management_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AzureNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AzureNodeManagement,
+            com.google.cloud.gkemulticloud.v1.AzureNodeManagement.Builder,
+            com.google.cloud.gkemulticloud.v1.AzureNodeManagementOrBuilder>
+        getManagementFieldBuilder() {
+      if (managementBuilder_ == null) {
+        managementBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.AzureNodeManagement,
+                com.google.cloud.gkemulticloud.v1.AzureNodeManagement.Builder,
+                com.google.cloud.gkemulticloud.v1.AzureNodeManagementOrBuilder>(
+                getManagement(), getParentForChildren(), isClean());
+        management_ = null;
+      }
+      return managementBuilder_;
     }
 
     @java.lang.Override

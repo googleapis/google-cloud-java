@@ -19,8 +19,20 @@
             "CheckCompatibility": {
               "methods": ["checkCompatibility", "checkCompatibilityCallable"]
             },
+            "CreateAudienceExport": {
+              "methods": ["createAudienceExportAsync", "createAudienceExportAsync", "createAudienceExportAsync", "createAudienceExportOperationCallable", "createAudienceExportCallable"]
+            },
+            "GetAudienceExport": {
+              "methods": ["getAudienceExport", "getAudienceExport", "getAudienceExport", "getAudienceExportCallable"]
+            },
             "GetMetadata": {
               "methods": ["getMetadata", "getMetadata", "getMetadata", "getMetadataCallable"]
+            },
+            "ListAudienceExports": {
+              "methods": ["listAudienceExports", "listAudienceExports", "listAudienceExports", "listAudienceExportsPagedCallable", "listAudienceExportsCallable"]
+            },
+            "QueryAudienceExport": {
+              "methods": ["queryAudienceExport", "queryAudienceExport", "queryAudienceExportCallable"]
             },
             "RunPivotReport": {
               "methods": ["runPivotReport", "runPivotReportCallable"]

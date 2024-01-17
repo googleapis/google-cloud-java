@@ -37,7 +37,11 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private CloudRunConfig() {}
+  private CloudRunConfig() {
+    canaryRevisionTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    priorRevisionTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    stableRevisionTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -81,6 +85,218 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     return automaticTrafficControl_;
   }
 
+  public static final int CANARY_REVISION_TAGS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList canaryRevisionTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags that are added to the canary revision while the
+   * canary phase is in progress.
+   * </pre>
+   *
+   * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the canaryRevisionTags.
+   */
+  public com.google.protobuf.ProtocolStringList getCanaryRevisionTagsList() {
+    return canaryRevisionTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags that are added to the canary revision while the
+   * canary phase is in progress.
+   * </pre>
+   *
+   * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of canaryRevisionTags.
+   */
+  public int getCanaryRevisionTagsCount() {
+    return canaryRevisionTags_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags that are added to the canary revision while the
+   * canary phase is in progress.
+   * </pre>
+   *
+   * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The canaryRevisionTags at the given index.
+   */
+  public java.lang.String getCanaryRevisionTags(int index) {
+    return canaryRevisionTags_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags that are added to the canary revision while the
+   * canary phase is in progress.
+   * </pre>
+   *
+   * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the canaryRevisionTags at the given index.
+   */
+  public com.google.protobuf.ByteString getCanaryRevisionTagsBytes(int index) {
+    return canaryRevisionTags_.getByteString(index);
+  }
+
+  public static final int PRIOR_REVISION_TAGS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList priorRevisionTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags that are added to the prior revision while the
+   * canary phase is in progress.
+   * </pre>
+   *
+   * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the priorRevisionTags.
+   */
+  public com.google.protobuf.ProtocolStringList getPriorRevisionTagsList() {
+    return priorRevisionTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags that are added to the prior revision while the
+   * canary phase is in progress.
+   * </pre>
+   *
+   * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of priorRevisionTags.
+   */
+  public int getPriorRevisionTagsCount() {
+    return priorRevisionTags_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags that are added to the prior revision while the
+   * canary phase is in progress.
+   * </pre>
+   *
+   * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The priorRevisionTags at the given index.
+   */
+  public java.lang.String getPriorRevisionTags(int index) {
+    return priorRevisionTags_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags that are added to the prior revision while the
+   * canary phase is in progress.
+   * </pre>
+   *
+   * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the priorRevisionTags at the given index.
+   */
+  public com.google.protobuf.ByteString getPriorRevisionTagsBytes(int index) {
+    return priorRevisionTags_.getByteString(index);
+  }
+
+  public static final int STABLE_REVISION_TAGS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList stableRevisionTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags that are added to the final stable revision when
+   * the stable phase is applied.
+   * </pre>
+   *
+   * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the stableRevisionTags.
+   */
+  public com.google.protobuf.ProtocolStringList getStableRevisionTagsList() {
+    return stableRevisionTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags that are added to the final stable revision when
+   * the stable phase is applied.
+   * </pre>
+   *
+   * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of stableRevisionTags.
+   */
+  public int getStableRevisionTagsCount() {
+    return stableRevisionTags_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags that are added to the final stable revision when
+   * the stable phase is applied.
+   * </pre>
+   *
+   * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The stableRevisionTags at the given index.
+   */
+  public java.lang.String getStableRevisionTags(int index) {
+    return stableRevisionTags_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags that are added to the final stable revision when
+   * the stable phase is applied.
+   * </pre>
+   *
+   * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the stableRevisionTags at the given index.
+   */
+  public com.google.protobuf.ByteString getStableRevisionTagsBytes(int index) {
+    return stableRevisionTags_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -98,6 +314,15 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     if (automaticTrafficControl_ != false) {
       output.writeBool(1, automaticTrafficControl_);
     }
+    for (int i = 0; i < canaryRevisionTags_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, canaryRevisionTags_.getRaw(i));
+    }
+    for (int i = 0; i < priorRevisionTags_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, priorRevisionTags_.getRaw(i));
+    }
+    for (int i = 0; i < stableRevisionTags_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, stableRevisionTags_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -109,6 +334,30 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (automaticTrafficControl_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, automaticTrafficControl_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < canaryRevisionTags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(canaryRevisionTags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getCanaryRevisionTagsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < priorRevisionTags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(priorRevisionTags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getPriorRevisionTagsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < stableRevisionTags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(stableRevisionTags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getStableRevisionTagsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -127,6 +376,9 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.deploy.v1.CloudRunConfig) obj;
 
     if (getAutomaticTrafficControl() != other.getAutomaticTrafficControl()) return false;
+    if (!getCanaryRevisionTagsList().equals(other.getCanaryRevisionTagsList())) return false;
+    if (!getPriorRevisionTagsList().equals(other.getPriorRevisionTagsList())) return false;
+    if (!getStableRevisionTagsList().equals(other.getStableRevisionTagsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -140,6 +392,18 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + AUTOMATIC_TRAFFIC_CONTROL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutomaticTrafficControl());
+    if (getCanaryRevisionTagsCount() > 0) {
+      hash = (37 * hash) + CANARY_REVISION_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getCanaryRevisionTagsList().hashCode();
+    }
+    if (getPriorRevisionTagsCount() > 0) {
+      hash = (37 * hash) + PRIOR_REVISION_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getPriorRevisionTagsList().hashCode();
+    }
+    if (getStableRevisionTagsCount() > 0) {
+      hash = (37 * hash) + STABLE_REVISION_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getStableRevisionTagsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -280,6 +544,9 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       automaticTrafficControl_ = false;
+      canaryRevisionTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      priorRevisionTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      stableRevisionTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -318,6 +585,18 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.automaticTrafficControl_ = automaticTrafficControl_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        canaryRevisionTags_.makeImmutable();
+        result.canaryRevisionTags_ = canaryRevisionTags_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        priorRevisionTags_.makeImmutable();
+        result.priorRevisionTags_ = priorRevisionTags_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        stableRevisionTags_.makeImmutable();
+        result.stableRevisionTags_ = stableRevisionTags_;
       }
     }
 
@@ -369,6 +648,36 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.getAutomaticTrafficControl() != false) {
         setAutomaticTrafficControl(other.getAutomaticTrafficControl());
       }
+      if (!other.canaryRevisionTags_.isEmpty()) {
+        if (canaryRevisionTags_.isEmpty()) {
+          canaryRevisionTags_ = other.canaryRevisionTags_;
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureCanaryRevisionTagsIsMutable();
+          canaryRevisionTags_.addAll(other.canaryRevisionTags_);
+        }
+        onChanged();
+      }
+      if (!other.priorRevisionTags_.isEmpty()) {
+        if (priorRevisionTags_.isEmpty()) {
+          priorRevisionTags_ = other.priorRevisionTags_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensurePriorRevisionTagsIsMutable();
+          priorRevisionTags_.addAll(other.priorRevisionTags_);
+        }
+        onChanged();
+      }
+      if (!other.stableRevisionTags_.isEmpty()) {
+        if (stableRevisionTags_.isEmpty()) {
+          stableRevisionTags_ = other.stableRevisionTags_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureStableRevisionTagsIsMutable();
+          stableRevisionTags_.addAll(other.stableRevisionTags_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -401,6 +710,27 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureCanaryRevisionTagsIsMutable();
+                canaryRevisionTags_.add(s);
+                break;
+              } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePriorRevisionTagsIsMutable();
+                priorRevisionTags_.add(s);
+                break;
+              } // case 26
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureStableRevisionTagsIsMutable();
+                stableRevisionTags_.add(s);
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -478,6 +808,582 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAutomaticTrafficControl() {
       bitField0_ = (bitField0_ & ~0x00000001);
       automaticTrafficControl_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList canaryRevisionTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureCanaryRevisionTagsIsMutable() {
+      if (!canaryRevisionTags_.isModifiable()) {
+        canaryRevisionTags_ = new com.google.protobuf.LazyStringArrayList(canaryRevisionTags_);
+      }
+      bitField0_ |= 0x00000002;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the canary revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the canaryRevisionTags.
+     */
+    public com.google.protobuf.ProtocolStringList getCanaryRevisionTagsList() {
+      canaryRevisionTags_.makeImmutable();
+      return canaryRevisionTags_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the canary revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of canaryRevisionTags.
+     */
+    public int getCanaryRevisionTagsCount() {
+      return canaryRevisionTags_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the canary revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The canaryRevisionTags at the given index.
+     */
+    public java.lang.String getCanaryRevisionTags(int index) {
+      return canaryRevisionTags_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the canary revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the canaryRevisionTags at the given index.
+     */
+    public com.google.protobuf.ByteString getCanaryRevisionTagsBytes(int index) {
+      return canaryRevisionTags_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the canary revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The canaryRevisionTags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanaryRevisionTags(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCanaryRevisionTagsIsMutable();
+      canaryRevisionTags_.set(index, value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the canary revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The canaryRevisionTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCanaryRevisionTags(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCanaryRevisionTagsIsMutable();
+      canaryRevisionTags_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the canary revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The canaryRevisionTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCanaryRevisionTags(java.lang.Iterable<java.lang.String> values) {
+      ensureCanaryRevisionTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, canaryRevisionTags_);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the canary revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCanaryRevisionTags() {
+      canaryRevisionTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the canary revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string canary_revision_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the canaryRevisionTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCanaryRevisionTagsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureCanaryRevisionTagsIsMutable();
+      canaryRevisionTags_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList priorRevisionTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensurePriorRevisionTagsIsMutable() {
+      if (!priorRevisionTags_.isModifiable()) {
+        priorRevisionTags_ = new com.google.protobuf.LazyStringArrayList(priorRevisionTags_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the prior revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the priorRevisionTags.
+     */
+    public com.google.protobuf.ProtocolStringList getPriorRevisionTagsList() {
+      priorRevisionTags_.makeImmutable();
+      return priorRevisionTags_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the prior revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of priorRevisionTags.
+     */
+    public int getPriorRevisionTagsCount() {
+      return priorRevisionTags_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the prior revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The priorRevisionTags at the given index.
+     */
+    public java.lang.String getPriorRevisionTags(int index) {
+      return priorRevisionTags_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the prior revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the priorRevisionTags at the given index.
+     */
+    public com.google.protobuf.ByteString getPriorRevisionTagsBytes(int index) {
+      return priorRevisionTags_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the prior revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The priorRevisionTags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriorRevisionTags(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePriorRevisionTagsIsMutable();
+      priorRevisionTags_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the prior revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The priorRevisionTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPriorRevisionTags(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePriorRevisionTagsIsMutable();
+      priorRevisionTags_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the prior revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The priorRevisionTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPriorRevisionTags(java.lang.Iterable<java.lang.String> values) {
+      ensurePriorRevisionTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, priorRevisionTags_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the prior revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPriorRevisionTags() {
+      priorRevisionTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the prior revision while the
+     * canary phase is in progress.
+     * </pre>
+     *
+     * <code>repeated string prior_revision_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the priorRevisionTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPriorRevisionTagsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensurePriorRevisionTagsIsMutable();
+      priorRevisionTags_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList stableRevisionTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureStableRevisionTagsIsMutable() {
+      if (!stableRevisionTags_.isModifiable()) {
+        stableRevisionTags_ = new com.google.protobuf.LazyStringArrayList(stableRevisionTags_);
+      }
+      bitField0_ |= 0x00000008;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
+     * </pre>
+     *
+     * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the stableRevisionTags.
+     */
+    public com.google.protobuf.ProtocolStringList getStableRevisionTagsList() {
+      stableRevisionTags_.makeImmutable();
+      return stableRevisionTags_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
+     * </pre>
+     *
+     * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of stableRevisionTags.
+     */
+    public int getStableRevisionTagsCount() {
+      return stableRevisionTags_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
+     * </pre>
+     *
+     * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The stableRevisionTags at the given index.
+     */
+    public java.lang.String getStableRevisionTags(int index) {
+      return stableRevisionTags_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
+     * </pre>
+     *
+     * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the stableRevisionTags at the given index.
+     */
+    public com.google.protobuf.ByteString getStableRevisionTagsBytes(int index) {
+      return stableRevisionTags_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
+     * </pre>
+     *
+     * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The stableRevisionTags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStableRevisionTags(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureStableRevisionTagsIsMutable();
+      stableRevisionTags_.set(index, value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
+     * </pre>
+     *
+     * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The stableRevisionTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addStableRevisionTags(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureStableRevisionTagsIsMutable();
+      stableRevisionTags_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
+     * </pre>
+     *
+     * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The stableRevisionTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllStableRevisionTags(java.lang.Iterable<java.lang.String> values) {
+      ensureStableRevisionTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, stableRevisionTags_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
+     * </pre>
+     *
+     * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStableRevisionTags() {
+      stableRevisionTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags that are added to the final stable revision when
+     * the stable phase is applied.
+     * </pre>
+     *
+     * <code>repeated string stable_revision_tags = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the stableRevisionTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addStableRevisionTagsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureStableRevisionTagsIsMutable();
+      stableRevisionTags_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -16,7 +16,9 @@
 
 package com.google.cloud.advisorynotifications.v1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,22 +34,39 @@ public class NotificationName implements ResourceName {
   private static final PathTemplate ORGANIZATION_LOCATION_NOTIFICATION =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/locations/{location}/notifications/{notification}");
+  private static final PathTemplate PROJECT_LOCATION_NOTIFICATION =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/notifications/{notification}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String organization;
   private final String location;
   private final String notification;
+  private final String project;
 
   @Deprecated
   protected NotificationName() {
     organization = null;
     location = null;
     notification = null;
+    project = null;
   }
 
   private NotificationName(Builder builder) {
     organization = Preconditions.checkNotNull(builder.getOrganization());
     location = Preconditions.checkNotNull(builder.getLocation());
     notification = Preconditions.checkNotNull(builder.getNotification());
+    project = null;
+    pathTemplate = ORGANIZATION_LOCATION_NOTIFICATION;
+  }
+
+  private NotificationName(ProjectLocationNotificationBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    notification = Preconditions.checkNotNull(builder.getNotification());
+    organization = null;
+    pathTemplate = PROJECT_LOCATION_NOTIFICATION;
   }
 
   public String getOrganization() {
@@ -62,8 +81,22 @@ public class NotificationName implements ResourceName {
     return notification;
   }
 
+  public String getProject() {
+    return project;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newOrganizationLocationNotificationBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationNotificationBuilder newProjectLocationNotificationBuilder() {
+    return new ProjectLocationNotificationBuilder();
   }
 
   public Builder toBuilder() {
@@ -78,9 +111,51 @@ public class NotificationName implements ResourceName {
         .build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static NotificationName ofOrganizationLocationNotificationName(
+      String organization, String location, String notification) {
+    return newBuilder()
+        .setOrganization(organization)
+        .setLocation(location)
+        .setNotification(notification)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static NotificationName ofProjectLocationNotificationName(
+      String project, String location, String notification) {
+    return newProjectLocationNotificationBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setNotification(notification)
+        .build();
+  }
+
   public static String format(String organization, String location, String notification) {
     return newBuilder()
         .setOrganization(organization)
+        .setLocation(location)
+        .setNotification(notification)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatOrganizationLocationNotificationName(
+      String organization, String location, String notification) {
+    return newBuilder()
+        .setOrganization(organization)
+        .setLocation(location)
+        .setNotification(notification)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationNotificationName(
+      String project, String location, String notification) {
+    return newProjectLocationNotificationBuilder()
+        .setProject(project)
         .setLocation(location)
         .setNotification(notification)
         .build()
@@ -91,10 +166,16 @@ public class NotificationName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        ORGANIZATION_LOCATION_NOTIFICATION.validatedMatch(
-            formattedString, "NotificationName.parse: formattedString not in valid format");
-    return of(matchMap.get("organization"), matchMap.get("location"), matchMap.get("notification"));
+    if (ORGANIZATION_LOCATION_NOTIFICATION.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_LOCATION_NOTIFICATION.match(formattedString);
+      return ofOrganizationLocationNotificationName(
+          matchMap.get("organization"), matchMap.get("location"), matchMap.get("notification"));
+    } else if (PROJECT_LOCATION_NOTIFICATION.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_NOTIFICATION.match(formattedString);
+      return ofProjectLocationNotificationName(
+          matchMap.get("project"), matchMap.get("location"), matchMap.get("notification"));
+    }
+    throw new ValidationException("NotificationName.parse: formattedString not in valid format");
   }
 
   public static List<NotificationName> parseList(List<String> formattedStrings) {
@@ -118,7 +199,8 @@ public class NotificationName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return ORGANIZATION_LOCATION_NOTIFICATION.matches(formattedString);
+    return ORGANIZATION_LOCATION_NOTIFICATION.matches(formattedString)
+        || PROJECT_LOCATION_NOTIFICATION.matches(formattedString);
   }
 
   @Override
@@ -136,6 +218,9 @@ public class NotificationName implements ResourceName {
           if (notification != null) {
             fieldMapBuilder.put("notification", notification);
           }
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -149,8 +234,7 @@ public class NotificationName implements ResourceName {
 
   @Override
   public String toString() {
-    return ORGANIZATION_LOCATION_NOTIFICATION.instantiate(
-        "organization", organization, "location", location, "notification", notification);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -162,7 +246,8 @@ public class NotificationName implements ResourceName {
       NotificationName that = ((NotificationName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.location, that.location)
-          && Objects.equals(this.notification, that.notification);
+          && Objects.equals(this.notification, that.notification)
+          && Objects.equals(this.project, that.project);
     }
     return false;
   }
@@ -171,11 +256,15 @@ public class NotificationName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(organization);
     h *= 1000003;
     h ^= Objects.hashCode(location);
     h *= 1000003;
     h ^= Objects.hashCode(notification);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
     return h;
   }
 
@@ -215,9 +304,53 @@ public class NotificationName implements ResourceName {
     }
 
     private Builder(NotificationName notificationName) {
+      Preconditions.checkArgument(
+          Objects.equals(notificationName.pathTemplate, ORGANIZATION_LOCATION_NOTIFICATION),
+          "toBuilder is only supported when NotificationName has the pattern of organizations/{organization}/locations/{location}/notifications/{notification}");
       this.organization = notificationName.organization;
       this.location = notificationName.location;
       this.notification = notificationName.notification;
+    }
+
+    public NotificationName build() {
+      return new NotificationName(this);
+    }
+  }
+
+  /** Builder for projects/{project}/locations/{location}/notifications/{notification}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationNotificationBuilder {
+    private String project;
+    private String location;
+    private String notification;
+
+    protected ProjectLocationNotificationBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getNotification() {
+      return notification;
+    }
+
+    public ProjectLocationNotificationBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationNotificationBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationNotificationBuilder setNotification(String notification) {
+      this.notification = notification;
+      return this;
     }
 
     public NotificationName build() {

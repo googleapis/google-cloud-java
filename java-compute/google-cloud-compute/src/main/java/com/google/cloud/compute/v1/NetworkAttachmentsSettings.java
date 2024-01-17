@@ -124,6 +124,17 @@ public class NetworkAttachmentsSettings extends ClientSettings<NetworkAttachment
     return ((NetworkAttachmentsStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public UnaryCallSettings<PatchNetworkAttachmentRequest, Operation> patchSettings() {
+    return ((NetworkAttachmentsStubSettings) getStubSettings()).patchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchNetworkAttachmentRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((NetworkAttachmentsStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyNetworkAttachmentRequest, Policy> setIamPolicySettings() {
     return ((NetworkAttachmentsStubSettings) getStubSettings()).setIamPolicySettings();
@@ -280,6 +291,17 @@ public class NetworkAttachmentsSettings extends ClientSettings<NetworkAttachment
             ListNetworkAttachmentsRequest, NetworkAttachmentList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public UnaryCallSettings.Builder<PatchNetworkAttachmentRequest, Operation> patchSettings() {
+      return getStubSettingsBuilder().patchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchNetworkAttachmentRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

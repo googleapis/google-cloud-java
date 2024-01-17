@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.33.0 (2024-01-10)
+
+### Features
+
+* Add `tags` field in Job's AllocationPolicy field in v1alpha ([#10206](https://github.com/googleapis/google-cloud-java/issues/10206)) ([4bcdc24](https://github.com/googleapis/google-cloud-java/commit/4bcdc24592c9195de73d65deed36585c0e82db22))
+
+
+
 ## 0.32.0 (2023-12-12)
 
 * No change

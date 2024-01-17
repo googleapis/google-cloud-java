@@ -27,7 +27,7 @@ public interface BackendServiceIAPOrBuilder
    *
    *
    * <pre>
-   * Whether the serving infrastructure will authenticate and authorize all incoming requests. If true, the oauth2ClientId and oauth2ClientSecret fields must be non-empty.
+   * Whether the serving infrastructure will authenticate and authorize all incoming requests.
    * </pre>
    *
    * <code>optional bool enabled = 1018689;</code>
@@ -39,7 +39,7 @@ public interface BackendServiceIAPOrBuilder
    *
    *
    * <pre>
-   * Whether the serving infrastructure will authenticate and authorize all incoming requests. If true, the oauth2ClientId and oauth2ClientSecret fields must be non-empty.
+   * Whether the serving infrastructure will authenticate and authorize all incoming requests.
    * </pre>
    *
    * <code>optional bool enabled = 1018689;</code>

@@ -35,7 +35,8 @@ public class SyncListNotificationsString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
         AdvisoryNotificationsServiceClient.create()) {
-      String parent = LocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
+      String parent =
+          LocationName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]").toString();
       for (Notification element :
           advisoryNotificationsServiceClient.listNotifications(parent).iterateAll()) {
         // doThingsWith(element);

@@ -27,9 +27,10 @@ public interface AwsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The AWS instance type.
+   * Optional. The EC2 instance type when creating on-Demand instances.
    *
-   * When unspecified, it uses a default based on the node pool's version.
+   * If unspecified during node pool creation, a default will be chosen based on
+   * the node pool version, and assigned to this field.
    * </pre>
    *
    * <code>string instance_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41,9 +42,10 @@ public interface AwsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The AWS instance type.
+   * Optional. The EC2 instance type when creating on-Demand instances.
    *
-   * When unspecified, it uses a default based on the node pool's version.
+   * If unspecified during node pool creation, a default will be chosen based on
+   * the node pool version, and assigned to this field.
    * </pre>
    *
    * <code>string instance_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -340,8 +342,7 @@ public interface AwsNodeConfigOrBuilder
    *
    * <pre>
    * Optional. The OS image type to use on node pool instances.
-   * Can have a value of `ubuntu`, or `windows` if the cluster enables
-   * the Windows node pool preview feature.
+   * Can be unspecified, or have a value of `ubuntu`.
    *
    * When unspecified, it defaults to `ubuntu`.
    * </pre>
@@ -356,8 +357,7 @@ public interface AwsNodeConfigOrBuilder
    *
    * <pre>
    * Optional. The OS image type to use on node pool instances.
-   * Can have a value of `ubuntu`, or `windows` if the cluster enables
-   * the Windows node pool preview feature.
+   * Can be unspecified, or have a value of `ubuntu`.
    *
    * When unspecified, it defaults to `ubuntu`.
    * </pre>
@@ -645,4 +645,57 @@ public interface AwsNodeConfigOrBuilder
    */
   com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollectionOrBuilder
       getAutoscalingMetricsCollectionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for provisioning EC2 Spot instances
+   *
+   * When specified, the node pool will provision Spot instances from the set
+   * of spot_config.instance_types.
+   * This field is mutually exclusive with `instance_type`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SpotConfig spot_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the spotConfig field is set.
+   */
+  boolean hasSpotConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for provisioning EC2 Spot instances
+   *
+   * When specified, the node pool will provision Spot instances from the set
+   * of spot_config.instance_types.
+   * This field is mutually exclusive with `instance_type`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SpotConfig spot_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The spotConfig.
+   */
+  com.google.cloud.gkemulticloud.v1.SpotConfig getSpotConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for provisioning EC2 Spot instances
+   *
+   * When specified, the node pool will provision Spot instances from the set
+   * of spot_config.instance_types.
+   * This field is mutually exclusive with `instance_type`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SpotConfig spot_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.SpotConfigOrBuilder getSpotConfigOrBuilder();
 }

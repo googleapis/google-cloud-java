@@ -137,7 +137,7 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Name used to identify the key. Must be unique within a router. Must be referenced by at least one bgpPeer. Must comply with RFC1035.
+   * Name used to identify the key. Must be unique within a router. Must be referenced by exactly one bgpPeer. Must comply with RFC1035.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -152,7 +152,7 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Name used to identify the key. Must be unique within a router. Must be referenced by at least one bgpPeer. Must comply with RFC1035.
+   * Name used to identify the key. Must be unique within a router. Must be referenced by exactly one bgpPeer. Must comply with RFC1035.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -175,7 +175,7 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Name used to identify the key. Must be unique within a router. Must be referenced by at least one bgpPeer. Must comply with RFC1035.
+   * Name used to identify the key. Must be unique within a router. Must be referenced by exactly one bgpPeer. Must comply with RFC1035.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -700,7 +700,7 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name used to identify the key. Must be unique within a router. Must be referenced by at least one bgpPeer. Must comply with RFC1035.
+     * Name used to identify the key. Must be unique within a router. Must be referenced by exactly one bgpPeer. Must comply with RFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -714,7 +714,7 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name used to identify the key. Must be unique within a router. Must be referenced by at least one bgpPeer. Must comply with RFC1035.
+     * Name used to identify the key. Must be unique within a router. Must be referenced by exactly one bgpPeer. Must comply with RFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -736,7 +736,7 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name used to identify the key. Must be unique within a router. Must be referenced by at least one bgpPeer. Must comply with RFC1035.
+     * Name used to identify the key. Must be unique within a router. Must be referenced by exactly one bgpPeer. Must comply with RFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -758,7 +758,7 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name used to identify the key. Must be unique within a router. Must be referenced by at least one bgpPeer. Must comply with RFC1035.
+     * Name used to identify the key. Must be unique within a router. Must be referenced by exactly one bgpPeer. Must comply with RFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -779,7 +779,7 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name used to identify the key. Must be unique within a router. Must be referenced by at least one bgpPeer. Must comply with RFC1035.
+     * Name used to identify the key. Must be unique within a router. Must be referenced by exactly one bgpPeer. Must comply with RFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -796,7 +796,7 @@ public final class RouterMd5AuthenticationKey extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name used to identify the key. Must be unique within a router. Must be referenced by at least one bgpPeer. Must comply with RFC1035.
+     * Name used to identify the key. Must be unique within a router. Must be referenced by exactly one bgpPeer. Must comply with RFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>

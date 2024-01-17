@@ -44,6 +44,7 @@ public class AsyncPatch {
               .setRequestId("requestId693933066")
               .setSecurityPolicy("securityPolicy-788621166")
               .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+              .setUpdateMask("updateMask-296147115")
               .build();
       ApiFuture<Operation> future =
           regionSecurityPoliciesClient.patchCallable().futureCall(request);

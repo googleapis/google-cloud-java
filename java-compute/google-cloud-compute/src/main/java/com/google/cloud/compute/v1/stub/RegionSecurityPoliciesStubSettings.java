@@ -44,14 +44,19 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AddRuleRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.DeleteRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.GetRegionSecurityPolicyRequest;
+import com.google.cloud.compute.v1.GetRuleRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.InsertRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.ListRegionSecurityPoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionSecurityPolicyRequest;
+import com.google.cloud.compute.v1.PatchRuleRegionSecurityPolicyRequest;
+import com.google.cloud.compute.v1.RemoveRuleRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
+import com.google.cloud.compute.v1.SecurityPolicyRule;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -109,10 +114,15 @@ public class RegionSecurityPoliciesStubSettings
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
+  private final UnaryCallSettings<AddRuleRegionSecurityPolicyRequest, Operation> addRuleSettings;
+  private final OperationCallSettings<AddRuleRegionSecurityPolicyRequest, Operation, Operation>
+      addRuleOperationSettings;
   private final UnaryCallSettings<DeleteRegionSecurityPolicyRequest, Operation> deleteSettings;
   private final OperationCallSettings<DeleteRegionSecurityPolicyRequest, Operation, Operation>
       deleteOperationSettings;
   private final UnaryCallSettings<GetRegionSecurityPolicyRequest, SecurityPolicy> getSettings;
+  private final UnaryCallSettings<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule>
+      getRuleSettings;
   private final UnaryCallSettings<InsertRegionSecurityPolicyRequest, Operation> insertSettings;
   private final OperationCallSettings<InsertRegionSecurityPolicyRequest, Operation, Operation>
       insertOperationSettings;
@@ -122,6 +132,14 @@ public class RegionSecurityPoliciesStubSettings
   private final UnaryCallSettings<PatchRegionSecurityPolicyRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchRegionSecurityPolicyRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<PatchRuleRegionSecurityPolicyRequest, Operation>
+      patchRuleSettings;
+  private final OperationCallSettings<PatchRuleRegionSecurityPolicyRequest, Operation, Operation>
+      patchRuleOperationSettings;
+  private final UnaryCallSettings<RemoveRuleRegionSecurityPolicyRequest, Operation>
+      removeRuleSettings;
+  private final OperationCallSettings<RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
+      removeRuleOperationSettings;
 
   private static final PagedListDescriptor<
           ListRegionSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy>
@@ -184,6 +202,17 @@ public class RegionSecurityPoliciesStubSettings
             }
           };
 
+  /** Returns the object with the settings used for calls to addRule. */
+  public UnaryCallSettings<AddRuleRegionSecurityPolicyRequest, Operation> addRuleSettings() {
+    return addRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addRule. */
+  public OperationCallSettings<AddRuleRegionSecurityPolicyRequest, Operation, Operation>
+      addRuleOperationSettings() {
+    return addRuleOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteRegionSecurityPolicyRequest, Operation> deleteSettings() {
     return deleteSettings;
@@ -198,6 +227,12 @@ public class RegionSecurityPoliciesStubSettings
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetRegionSecurityPolicyRequest, SecurityPolicy> getSettings() {
     return getSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getRule. */
+  public UnaryCallSettings<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule>
+      getRuleSettings() {
+    return getRuleSettings;
   }
 
   /** Returns the object with the settings used for calls to insert. */
@@ -228,6 +263,28 @@ public class RegionSecurityPoliciesStubSettings
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to patchRule. */
+  public UnaryCallSettings<PatchRuleRegionSecurityPolicyRequest, Operation> patchRuleSettings() {
+    return patchRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patchRule. */
+  public OperationCallSettings<PatchRuleRegionSecurityPolicyRequest, Operation, Operation>
+      patchRuleOperationSettings() {
+    return patchRuleOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeRule. */
+  public UnaryCallSettings<RemoveRuleRegionSecurityPolicyRequest, Operation> removeRuleSettings() {
+    return removeRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeRule. */
+  public OperationCallSettings<RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
+      removeRuleOperationSettings() {
+    return removeRuleOperationSettings;
+  }
+
   public RegionSecurityPoliciesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -237,6 +294,12 @@ public class RegionSecurityPoliciesStubSettings
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "compute";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -304,20 +367,32 @@ public class RegionSecurityPoliciesStubSettings
   protected RegionSecurityPoliciesStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    addRuleSettings = settingsBuilder.addRuleSettings().build();
+    addRuleOperationSettings = settingsBuilder.addRuleOperationSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
+    getRuleSettings = settingsBuilder.getRuleSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    patchRuleSettings = settingsBuilder.patchRuleSettings().build();
+    patchRuleOperationSettings = settingsBuilder.patchRuleOperationSettings().build();
+    removeRuleSettings = settingsBuilder.removeRuleSettings().build();
+    removeRuleOperationSettings = settingsBuilder.removeRuleOperationSettings().build();
   }
 
   /** Builder for RegionSecurityPoliciesStubSettings. */
   public static class Builder
       extends StubSettings.Builder<RegionSecurityPoliciesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final UnaryCallSettings.Builder<AddRuleRegionSecurityPolicyRequest, Operation>
+        addRuleSettings;
+    private final OperationCallSettings.Builder<
+            AddRuleRegionSecurityPolicyRequest, Operation, Operation>
+        addRuleOperationSettings;
     private final UnaryCallSettings.Builder<DeleteRegionSecurityPolicyRequest, Operation>
         deleteSettings;
     private final OperationCallSettings.Builder<
@@ -325,6 +400,8 @@ public class RegionSecurityPoliciesStubSettings
         deleteOperationSettings;
     private final UnaryCallSettings.Builder<GetRegionSecurityPolicyRequest, SecurityPolicy>
         getSettings;
+    private final UnaryCallSettings.Builder<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule>
+        getRuleSettings;
     private final UnaryCallSettings.Builder<InsertRegionSecurityPolicyRequest, Operation>
         insertSettings;
     private final OperationCallSettings.Builder<
@@ -338,6 +415,16 @@ public class RegionSecurityPoliciesStubSettings
     private final OperationCallSettings.Builder<
             PatchRegionSecurityPolicyRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<PatchRuleRegionSecurityPolicyRequest, Operation>
+        patchRuleSettings;
+    private final OperationCallSettings.Builder<
+            PatchRuleRegionSecurityPolicyRequest, Operation, Operation>
+        patchRuleOperationSettings;
+    private final UnaryCallSettings.Builder<RemoveRuleRegionSecurityPolicyRequest, Operation>
+        removeRuleSettings;
+    private final OperationCallSettings.Builder<
+            RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
+        removeRuleOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -388,36 +475,66 @@ public class RegionSecurityPoliciesStubSettings
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      addRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addRuleOperationSettings = OperationCallSettings.newBuilder();
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      patchRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      patchRuleOperationSettings = OperationCallSettings.newBuilder();
+      removeRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removeRuleOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSettings, getSettings, insertSettings, listSettings, patchSettings);
+              addRuleSettings,
+              deleteSettings,
+              getSettings,
+              getRuleSettings,
+              insertSettings,
+              listSettings,
+              patchSettings,
+              patchRuleSettings,
+              removeRuleSettings);
       initDefaults(this);
     }
 
     protected Builder(RegionSecurityPoliciesStubSettings settings) {
       super(settings);
 
+      addRuleSettings = settings.addRuleSettings.toBuilder();
+      addRuleOperationSettings = settings.addRuleOperationSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
+      getRuleSettings = settings.getRuleSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      patchRuleSettings = settings.patchRuleSettings.toBuilder();
+      patchRuleOperationSettings = settings.patchRuleOperationSettings.toBuilder();
+      removeRuleSettings = settings.removeRuleSettings.toBuilder();
+      removeRuleOperationSettings = settings.removeRuleOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSettings, getSettings, insertSettings, listSettings, patchSettings);
+              addRuleSettings,
+              deleteSettings,
+              getSettings,
+              getRuleSettings,
+              insertSettings,
+              listSettings,
+              patchSettings,
+              patchRuleSettings,
+              removeRuleSettings);
     }
 
     private static Builder createDefault() {
@@ -435,12 +552,22 @@ public class RegionSecurityPoliciesStubSettings
 
     private static Builder initDefaults(Builder builder) {
       builder
+          .addRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getRuleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -458,6 +585,41 @@ public class RegionSecurityPoliciesStubSettings
           .patchSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .patchRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .removeRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .addRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AddRuleRegionSecurityPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
 
       builder
           .deleteOperationSettings()
@@ -534,6 +696,56 @@ public class RegionSecurityPoliciesStubSettings
                       .setTotalTimeout(Duration.ofMillis(600000L))
                       .build()));
 
+      builder
+          .patchRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PatchRuleRegionSecurityPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .removeRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RemoveRuleRegionSecurityPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -550,6 +762,20 @@ public class RegionSecurityPoliciesStubSettings
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to addRule. */
+    public UnaryCallSettings.Builder<AddRuleRegionSecurityPolicyRequest, Operation>
+        addRuleSettings() {
+      return addRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addRule. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<AddRuleRegionSecurityPolicyRequest, Operation, Operation>
+        addRuleOperationSettings() {
+      return addRuleOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to delete. */
@@ -569,6 +795,12 @@ public class RegionSecurityPoliciesStubSettings
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetRegionSecurityPolicyRequest, SecurityPolicy> getSettings() {
       return getSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getRule. */
+    public UnaryCallSettings.Builder<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule>
+        getRuleSettings() {
+      return getRuleSettings;
     }
 
     /** Returns the builder for the settings used for calls to insert. */
@@ -603,6 +835,35 @@ public class RegionSecurityPoliciesStubSettings
     public OperationCallSettings.Builder<PatchRegionSecurityPolicyRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchRule. */
+    public UnaryCallSettings.Builder<PatchRuleRegionSecurityPolicyRequest, Operation>
+        patchRuleSettings() {
+      return patchRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchRule. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<PatchRuleRegionSecurityPolicyRequest, Operation, Operation>
+        patchRuleOperationSettings() {
+      return patchRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeRule. */
+    public UnaryCallSettings.Builder<RemoveRuleRegionSecurityPolicyRequest, Operation>
+        removeRuleSettings() {
+      return removeRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeRule. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
+        removeRuleOperationSettings() {
+      return removeRuleOperationSettings;
     }
 
     @Override

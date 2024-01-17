@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.29.0 (2024-01-10)
+
+### Features
+
+* add site search engine service ([#10149](https://github.com/googleapis/google-cloud-java/issues/10149)) ([ebfda8b](https://github.com/googleapis/google-cloud-java/commit/ebfda8bd48f56684dcbb8b910dc54471038180db))
+
+
+
 ## 0.28.0 (2023-12-12)
 
 * No change

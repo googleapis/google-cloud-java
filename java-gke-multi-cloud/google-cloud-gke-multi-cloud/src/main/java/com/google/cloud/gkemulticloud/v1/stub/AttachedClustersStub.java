@@ -25,6 +25,8 @@ import com.google.cloud.gkemulticloud.v1.AttachedCluster;
 import com.google.cloud.gkemulticloud.v1.AttachedServerConfig;
 import com.google.cloud.gkemulticloud.v1.CreateAttachedClusterRequest;
 import com.google.cloud.gkemulticloud.v1.DeleteAttachedClusterRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse;
 import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestResponse;
 import com.google.cloud.gkemulticloud.v1.GetAttachedClusterRequest;
@@ -121,6 +123,13 @@ public abstract class AttachedClustersStub implements BackgroundResource {
       generateAttachedClusterInstallManifestCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: generateAttachedClusterInstallManifestCallable()");
+  }
+
+  public UnaryCallable<
+          GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+      generateAttachedClusterAgentTokenCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: generateAttachedClusterAgentTokenCallable()");
   }
 
   @Override

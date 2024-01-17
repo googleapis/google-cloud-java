@@ -54,6 +54,7 @@
     <module>java-channel</module>
     <module>java-cloudbuild</module>
     <module>java-cloudcommerceconsumerprocurement</module>
+    <module>java-cloudquotas</module>
     <module>java-cloudsupport</module>
     <module>java-compute</module>
     <module>java-confidentialcomputing</module>
@@ -82,6 +83,7 @@
     <module>java-dns</module>
     <module>java-document-ai</module>
     <module>java-domains</module>
+    <module>java-edgenetwork</module>
     <module>java-enterpriseknowledgegraph</module>
     <module>java-errorreporting</module>
     <module>java-essential-contacts</module>
@@ -146,6 +148,7 @@
     <module>java-scheduler</module>
     <module>java-secretmanager</module>
     <module>java-securesourcemanager</module>
+    <module>java-securitycentermanagement</module>
     <module>java-securitycenter</module>
     <module>java-securitycenter-settings</module>
     <module>java-security-private-ca</module>
@@ -154,6 +157,7 @@
     <module>java-service-management</module>
     <module>java-service-usage</module>
     <module>java-shell</module>
+    <module>java-shopping-css</module>
     <module>java-shopping-merchant-inventories</module>
     <module>java-shopping-merchant-reports</module>
     <module>java-speech</module>

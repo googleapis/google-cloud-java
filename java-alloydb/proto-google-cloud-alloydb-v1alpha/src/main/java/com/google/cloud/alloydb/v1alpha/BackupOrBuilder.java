@@ -733,10 +733,23 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Reserved for future use.
+   * Output only. Reserved for future use.
    * </pre>
    *
-   * <code>bool satisfies_pzs = 21;</code>
+   * <code>bool satisfies_pzi = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The satisfiesPzs.
    */

@@ -900,6 +900,7 @@ public class ConversationsClientHttpJsonTest {
     SearchKnowledgeResponse expectedResponse =
         SearchKnowledgeResponse.newBuilder()
             .addAllAnswers(new ArrayList<SearchKnowledgeAnswer>())
+            .setRewrittenQuery("rewrittenQuery-1572767836")
             .build();
     mockService.addResponse(expectedResponse);
 

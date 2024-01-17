@@ -290,6 +290,53 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * The default filter that is applied when a user performs a search without
+   * checking any filters on the search page.
+   *
+   * The filter applied to every search request when quality improvement such as
+   * query expansion is needed. In the case a query does not have a sufficient
+   * amount of results this filter will be used to determine whether or not to
+   * enable the query expansion flow. The original filter will still be used for
+   * the query expanded search.
+   * This field is strongly recommended to achieve high search quality.
+   *
+   * For more information about filter syntax, see
+   * [SearchRequest.filter][google.cloud.discoveryengine.v1alpha.SearchRequest.filter].
+   * </pre>
+   *
+   * <code>string canonical_filter = 29;</code>
+   *
+   * @return The canonicalFilter.
+   */
+  java.lang.String getCanonicalFilter();
+  /**
+   *
+   *
+   * <pre>
+   * The default filter that is applied when a user performs a search without
+   * checking any filters on the search page.
+   *
+   * The filter applied to every search request when quality improvement such as
+   * query expansion is needed. In the case a query does not have a sufficient
+   * amount of results this filter will be used to determine whether or not to
+   * enable the query expansion flow. The original filter will still be used for
+   * the query expanded search.
+   * This field is strongly recommended to achieve high search quality.
+   *
+   * For more information about filter syntax, see
+   * [SearchRequest.filter][google.cloud.discoveryengine.v1alpha.SearchRequest.filter].
+   * </pre>
+   *
+   * <code>string canonical_filter = 29;</code>
+   *
+   * @return The bytes for canonicalFilter.
+   */
+  com.google.protobuf.ByteString getCanonicalFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The order in which documents are returned. Documents can be ordered by
    * a field in an [Document][google.cloud.discoveryengine.v1alpha.Document]
    * object. Leave it unset if ordered by relevance. `order_by` expression is

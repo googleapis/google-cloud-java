@@ -41,9 +41,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     id_ = "";
     types_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    primaryType_ = "";
     nationalPhoneNumber_ = "";
     internationalPhoneNumber_ = "";
     formattedAddress_ = "";
+    shortFormattedAddress_ = "";
     addressComponents_ = java.util.Collections.emptyList();
     googleMapsUri_ = "";
     websiteUri_ = "";
@@ -268,12 +270,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The full text description or name of the address component.
-     * For example, an address component for the country Australia may have a
-     * long_name of "Australia".
+     * The full text description or name of the address component. For example,
+     * an address component for the country Australia may have a long_name of
+     * "Australia".
      * </pre>
      *
-     * <code>string long_text = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string long_text = 1;</code>
      *
      * @return The longText.
      */
@@ -282,12 +284,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The full text description or name of the address component.
-     * For example, an address component for the country Australia may have a
-     * long_name of "Australia".
+     * The full text description or name of the address component. For example,
+     * an address component for the country Australia may have a long_name of
+     * "Australia".
      * </pre>
      *
-     * <code>string long_text = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string long_text = 1;</code>
      *
      * @return The bytes for longText.
      */
@@ -297,12 +299,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An abbreviated textual name for the address component, if
-     * available. For example, an address component for the country of Australia
-     * may have a short_name of "AU".
+     * An abbreviated textual name for the address component, if available. For
+     * example, an address component for the country of Australia may have a
+     * short_name of "AU".
      * </pre>
      *
-     * <code>string short_text = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string short_text = 2;</code>
      *
      * @return The shortText.
      */
@@ -311,12 +313,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An abbreviated textual name for the address component, if
-     * available. For example, an address component for the country of Australia
-     * may have a short_name of "AU".
+     * An abbreviated textual name for the address component, if available. For
+     * example, an address component for the country of Australia may have a
+     * short_name of "AU".
      * </pre>
      *
-     * <code>string short_text = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string short_text = 2;</code>
      *
      * @return The bytes for shortText.
      */
@@ -326,10 +328,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An array indicating the type(s) of the address component.
+     * An array indicating the type(s) of the address component.
      * </pre>
      *
-     * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 3;</code>
      *
      * @return A list containing the types.
      */
@@ -338,10 +340,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An array indicating the type(s) of the address component.
+     * An array indicating the type(s) of the address component.
      * </pre>
      *
-     * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 3;</code>
      *
      * @return The count of types.
      */
@@ -350,10 +352,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An array indicating the type(s) of the address component.
+     * An array indicating the type(s) of the address component.
      * </pre>
      *
-     * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 3;</code>
      *
      * @param index The index of the element to return.
      * @return The types at the given index.
@@ -363,10 +365,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An array indicating the type(s) of the address component.
+     * An array indicating the type(s) of the address component.
      * </pre>
      *
-     * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 3;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the types at the given index.
@@ -377,11 +379,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The language used to format this components, in CLDR
-     * notation.
+     * The language used to format this components, in CLDR notation.
      * </pre>
      *
-     * <code>string language_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string language_code = 4;</code>
      *
      * @return The languageCode.
      */
@@ -390,11 +391,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The language used to format this components, in CLDR
-     * notation.
+     * The language used to format this components, in CLDR notation.
      * </pre>
      *
-     * <code>string language_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string language_code = 4;</code>
      *
      * @return The bytes for languageCode.
      */
@@ -456,12 +456,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The full text description or name of the address component.
-     * For example, an address component for the country Australia may have a
-     * long_name of "Australia".
+     * The full text description or name of the address component. For example,
+     * an address component for the country Australia may have a long_name of
+     * "Australia".
      * </pre>
      *
-     * <code>string long_text = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string long_text = 1;</code>
      *
      * @return The longText.
      */
@@ -481,12 +481,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The full text description or name of the address component.
-     * For example, an address component for the country Australia may have a
-     * long_name of "Australia".
+     * The full text description or name of the address component. For example,
+     * an address component for the country Australia may have a long_name of
+     * "Australia".
      * </pre>
      *
-     * <code>string long_text = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string long_text = 1;</code>
      *
      * @return The bytes for longText.
      */
@@ -511,12 +511,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An abbreviated textual name for the address component, if
-     * available. For example, an address component for the country of Australia
-     * may have a short_name of "AU".
+     * An abbreviated textual name for the address component, if available. For
+     * example, an address component for the country of Australia may have a
+     * short_name of "AU".
      * </pre>
      *
-     * <code>string short_text = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string short_text = 2;</code>
      *
      * @return The shortText.
      */
@@ -536,12 +536,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An abbreviated textual name for the address component, if
-     * available. For example, an address component for the country of Australia
-     * may have a short_name of "AU".
+     * An abbreviated textual name for the address component, if available. For
+     * example, an address component for the country of Australia may have a
+     * short_name of "AU".
      * </pre>
      *
-     * <code>string short_text = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string short_text = 2;</code>
      *
      * @return The bytes for shortText.
      */
@@ -567,10 +567,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An array indicating the type(s) of the address component.
+     * An array indicating the type(s) of the address component.
      * </pre>
      *
-     * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 3;</code>
      *
      * @return A list containing the types.
      */
@@ -581,10 +581,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An array indicating the type(s) of the address component.
+     * An array indicating the type(s) of the address component.
      * </pre>
      *
-     * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 3;</code>
      *
      * @return The count of types.
      */
@@ -595,10 +595,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An array indicating the type(s) of the address component.
+     * An array indicating the type(s) of the address component.
      * </pre>
      *
-     * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 3;</code>
      *
      * @param index The index of the element to return.
      * @return The types at the given index.
@@ -610,10 +610,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An array indicating the type(s) of the address component.
+     * An array indicating the type(s) of the address component.
      * </pre>
      *
-     * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 3;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the types at the given index.
@@ -630,11 +630,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The language used to format this components, in CLDR
-     * notation.
+     * The language used to format this components, in CLDR notation.
      * </pre>
      *
-     * <code>string language_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string language_code = 4;</code>
      *
      * @return The languageCode.
      */
@@ -654,11 +653,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The language used to format this components, in CLDR
-     * notation.
+     * The language used to format this components, in CLDR notation.
      * </pre>
      *
-     * <code>string language_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string language_code = 4;</code>
      *
      * @return The bytes for languageCode.
      */
@@ -1113,12 +1111,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The full text description or name of the address component.
-       * For example, an address component for the country Australia may have a
-       * long_name of "Australia".
+       * The full text description or name of the address component. For example,
+       * an address component for the country Australia may have a long_name of
+       * "Australia".
        * </pre>
        *
-       * <code>string long_text = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string long_text = 1;</code>
        *
        * @return The longText.
        */
@@ -1137,12 +1135,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The full text description or name of the address component.
-       * For example, an address component for the country Australia may have a
-       * long_name of "Australia".
+       * The full text description or name of the address component. For example,
+       * an address component for the country Australia may have a long_name of
+       * "Australia".
        * </pre>
        *
-       * <code>string long_text = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string long_text = 1;</code>
        *
        * @return The bytes for longText.
        */
@@ -1161,12 +1159,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The full text description or name of the address component.
-       * For example, an address component for the country Australia may have a
-       * long_name of "Australia".
+       * The full text description or name of the address component. For example,
+       * an address component for the country Australia may have a long_name of
+       * "Australia".
        * </pre>
        *
-       * <code>string long_text = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string long_text = 1;</code>
        *
        * @param value The longText to set.
        * @return This builder for chaining.
@@ -1184,12 +1182,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The full text description or name of the address component.
-       * For example, an address component for the country Australia may have a
-       * long_name of "Australia".
+       * The full text description or name of the address component. For example,
+       * an address component for the country Australia may have a long_name of
+       * "Australia".
        * </pre>
        *
-       * <code>string long_text = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string long_text = 1;</code>
        *
        * @return This builder for chaining.
        */
@@ -1203,12 +1201,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The full text description or name of the address component.
-       * For example, an address component for the country Australia may have a
-       * long_name of "Australia".
+       * The full text description or name of the address component. For example,
+       * an address component for the country Australia may have a long_name of
+       * "Australia".
        * </pre>
        *
-       * <code>string long_text = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string long_text = 1;</code>
        *
        * @param value The bytes for longText to set.
        * @return This builder for chaining.
@@ -1229,12 +1227,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. An abbreviated textual name for the address component, if
-       * available. For example, an address component for the country of Australia
-       * may have a short_name of "AU".
+       * An abbreviated textual name for the address component, if available. For
+       * example, an address component for the country of Australia may have a
+       * short_name of "AU".
        * </pre>
        *
-       * <code>string short_text = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string short_text = 2;</code>
        *
        * @return The shortText.
        */
@@ -1253,12 +1251,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. An abbreviated textual name for the address component, if
-       * available. For example, an address component for the country of Australia
-       * may have a short_name of "AU".
+       * An abbreviated textual name for the address component, if available. For
+       * example, an address component for the country of Australia may have a
+       * short_name of "AU".
        * </pre>
        *
-       * <code>string short_text = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string short_text = 2;</code>
        *
        * @return The bytes for shortText.
        */
@@ -1277,12 +1275,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. An abbreviated textual name for the address component, if
-       * available. For example, an address component for the country of Australia
-       * may have a short_name of "AU".
+       * An abbreviated textual name for the address component, if available. For
+       * example, an address component for the country of Australia may have a
+       * short_name of "AU".
        * </pre>
        *
-       * <code>string short_text = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string short_text = 2;</code>
        *
        * @param value The shortText to set.
        * @return This builder for chaining.
@@ -1300,12 +1298,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. An abbreviated textual name for the address component, if
-       * available. For example, an address component for the country of Australia
-       * may have a short_name of "AU".
+       * An abbreviated textual name for the address component, if available. For
+       * example, an address component for the country of Australia may have a
+       * short_name of "AU".
        * </pre>
        *
-       * <code>string short_text = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string short_text = 2;</code>
        *
        * @return This builder for chaining.
        */
@@ -1319,12 +1317,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. An abbreviated textual name for the address component, if
-       * available. For example, an address component for the country of Australia
-       * may have a short_name of "AU".
+       * An abbreviated textual name for the address component, if available. For
+       * example, an address component for the country of Australia may have a
+       * short_name of "AU".
        * </pre>
        *
-       * <code>string short_text = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string short_text = 2;</code>
        *
        * @param value The bytes for shortText to set.
        * @return This builder for chaining.
@@ -1353,10 +1351,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. An array indicating the type(s) of the address component.
+       * An array indicating the type(s) of the address component.
        * </pre>
        *
-       * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>repeated string types = 3;</code>
        *
        * @return A list containing the types.
        */
@@ -1368,10 +1366,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. An array indicating the type(s) of the address component.
+       * An array indicating the type(s) of the address component.
        * </pre>
        *
-       * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>repeated string types = 3;</code>
        *
        * @return The count of types.
        */
@@ -1382,10 +1380,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. An array indicating the type(s) of the address component.
+       * An array indicating the type(s) of the address component.
        * </pre>
        *
-       * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>repeated string types = 3;</code>
        *
        * @param index The index of the element to return.
        * @return The types at the given index.
@@ -1397,10 +1395,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. An array indicating the type(s) of the address component.
+       * An array indicating the type(s) of the address component.
        * </pre>
        *
-       * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>repeated string types = 3;</code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the types at the given index.
@@ -1412,10 +1410,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. An array indicating the type(s) of the address component.
+       * An array indicating the type(s) of the address component.
        * </pre>
        *
-       * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>repeated string types = 3;</code>
        *
        * @param index The index to set the value at.
        * @param value The types to set.
@@ -1435,10 +1433,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. An array indicating the type(s) of the address component.
+       * An array indicating the type(s) of the address component.
        * </pre>
        *
-       * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>repeated string types = 3;</code>
        *
        * @param value The types to add.
        * @return This builder for chaining.
@@ -1457,10 +1455,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. An array indicating the type(s) of the address component.
+       * An array indicating the type(s) of the address component.
        * </pre>
        *
-       * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>repeated string types = 3;</code>
        *
        * @param values The types to add.
        * @return This builder for chaining.
@@ -1476,10 +1474,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. An array indicating the type(s) of the address component.
+       * An array indicating the type(s) of the address component.
        * </pre>
        *
-       * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>repeated string types = 3;</code>
        *
        * @return This builder for chaining.
        */
@@ -1494,10 +1492,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. An array indicating the type(s) of the address component.
+       * An array indicating the type(s) of the address component.
        * </pre>
        *
-       * <code>repeated string types = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>repeated string types = 3;</code>
        *
        * @param value The bytes of the types to add.
        * @return This builder for chaining.
@@ -1519,11 +1517,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The language used to format this components, in CLDR
-       * notation.
+       * The language used to format this components, in CLDR notation.
        * </pre>
        *
-       * <code>string language_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string language_code = 4;</code>
        *
        * @return The languageCode.
        */
@@ -1542,11 +1539,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The language used to format this components, in CLDR
-       * notation.
+       * The language used to format this components, in CLDR notation.
        * </pre>
        *
-       * <code>string language_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string language_code = 4;</code>
        *
        * @return The bytes for languageCode.
        */
@@ -1565,11 +1561,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The language used to format this components, in CLDR
-       * notation.
+       * The language used to format this components, in CLDR notation.
        * </pre>
        *
-       * <code>string language_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string language_code = 4;</code>
        *
        * @param value The languageCode to set.
        * @return This builder for chaining.
@@ -1587,11 +1582,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The language used to format this components, in CLDR
-       * notation.
+       * The language used to format this components, in CLDR notation.
        * </pre>
        *
-       * <code>string language_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string language_code = 4;</code>
        *
        * @return This builder for chaining.
        */
@@ -1605,11 +1599,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The language used to format this components, in CLDR
-       * notation.
+       * The language used to format this components, in CLDR notation.
        * </pre>
        *
-       * <code>string language_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string language_code = 4;</code>
        *
        * @param value The bytes for languageCode to set.
        * @return This builder for chaining.
@@ -1698,11 +1691,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place's global (full) code, such as "9FWM33GV+HQ",
-     * representing an 1/8000 by 1/8000 degree area (~14 by 14 meters).
+     * Place's global (full) code, such as "9FWM33GV+HQ", representing an
+     * 1/8000 by 1/8000 degree area (~14 by 14 meters).
      * </pre>
      *
-     * <code>string global_code = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string global_code = 1;</code>
      *
      * @return The globalCode.
      */
@@ -1711,11 +1704,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place's global (full) code, such as "9FWM33GV+HQ",
-     * representing an 1/8000 by 1/8000 degree area (~14 by 14 meters).
+     * Place's global (full) code, such as "9FWM33GV+HQ", representing an
+     * 1/8000 by 1/8000 degree area (~14 by 14 meters).
      * </pre>
      *
-     * <code>string global_code = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string global_code = 1;</code>
      *
      * @return The bytes for globalCode.
      */
@@ -1725,12 +1718,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place's compound code, such as "33GV+HQ, Ramberg, Norway",
-     * containing the suffix of the global code and replacing the prefix with a
-     * formatted name of a reference entity.
+     * Place's compound code, such as "33GV+HQ, Ramberg, Norway", containing
+     * the suffix of the global code and replacing the prefix with a formatted
+     * name of a reference entity.
      * </pre>
      *
-     * <code>string compound_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string compound_code = 2;</code>
      *
      * @return The compoundCode.
      */
@@ -1739,12 +1732,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place's compound code, such as "33GV+HQ, Ramberg, Norway",
-     * containing the suffix of the global code and replacing the prefix with a
-     * formatted name of a reference entity.
+     * Place's compound code, such as "33GV+HQ, Ramberg, Norway", containing
+     * the suffix of the global code and replacing the prefix with a formatted
+     * name of a reference entity.
      * </pre>
      *
-     * <code>string compound_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string compound_code = 2;</code>
      *
      * @return The bytes for compoundCode.
      */
@@ -1805,11 +1798,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place's global (full) code, such as "9FWM33GV+HQ",
-     * representing an 1/8000 by 1/8000 degree area (~14 by 14 meters).
+     * Place's global (full) code, such as "9FWM33GV+HQ", representing an
+     * 1/8000 by 1/8000 degree area (~14 by 14 meters).
      * </pre>
      *
-     * <code>string global_code = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string global_code = 1;</code>
      *
      * @return The globalCode.
      */
@@ -1829,11 +1822,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place's global (full) code, such as "9FWM33GV+HQ",
-     * representing an 1/8000 by 1/8000 degree area (~14 by 14 meters).
+     * Place's global (full) code, such as "9FWM33GV+HQ", representing an
+     * 1/8000 by 1/8000 degree area (~14 by 14 meters).
      * </pre>
      *
-     * <code>string global_code = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string global_code = 1;</code>
      *
      * @return The bytes for globalCode.
      */
@@ -1858,12 +1851,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place's compound code, such as "33GV+HQ, Ramberg, Norway",
-     * containing the suffix of the global code and replacing the prefix with a
-     * formatted name of a reference entity.
+     * Place's compound code, such as "33GV+HQ, Ramberg, Norway", containing
+     * the suffix of the global code and replacing the prefix with a formatted
+     * name of a reference entity.
      * </pre>
      *
-     * <code>string compound_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string compound_code = 2;</code>
      *
      * @return The compoundCode.
      */
@@ -1883,12 +1876,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place's compound code, such as "33GV+HQ, Ramberg, Norway",
-     * containing the suffix of the global code and replacing the prefix with a
-     * formatted name of a reference entity.
+     * Place's compound code, such as "33GV+HQ, Ramberg, Norway", containing
+     * the suffix of the global code and replacing the prefix with a formatted
+     * name of a reference entity.
      * </pre>
      *
-     * <code>string compound_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string compound_code = 2;</code>
      *
      * @return The bytes for compoundCode.
      */
@@ -2281,11 +2274,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Place's global (full) code, such as "9FWM33GV+HQ",
-       * representing an 1/8000 by 1/8000 degree area (~14 by 14 meters).
+       * Place's global (full) code, such as "9FWM33GV+HQ", representing an
+       * 1/8000 by 1/8000 degree area (~14 by 14 meters).
        * </pre>
        *
-       * <code>string global_code = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string global_code = 1;</code>
        *
        * @return The globalCode.
        */
@@ -2304,11 +2297,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Place's global (full) code, such as "9FWM33GV+HQ",
-       * representing an 1/8000 by 1/8000 degree area (~14 by 14 meters).
+       * Place's global (full) code, such as "9FWM33GV+HQ", representing an
+       * 1/8000 by 1/8000 degree area (~14 by 14 meters).
        * </pre>
        *
-       * <code>string global_code = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string global_code = 1;</code>
        *
        * @return The bytes for globalCode.
        */
@@ -2327,11 +2320,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Place's global (full) code, such as "9FWM33GV+HQ",
-       * representing an 1/8000 by 1/8000 degree area (~14 by 14 meters).
+       * Place's global (full) code, such as "9FWM33GV+HQ", representing an
+       * 1/8000 by 1/8000 degree area (~14 by 14 meters).
        * </pre>
        *
-       * <code>string global_code = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string global_code = 1;</code>
        *
        * @param value The globalCode to set.
        * @return This builder for chaining.
@@ -2349,11 +2342,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Place's global (full) code, such as "9FWM33GV+HQ",
-       * representing an 1/8000 by 1/8000 degree area (~14 by 14 meters).
+       * Place's global (full) code, such as "9FWM33GV+HQ", representing an
+       * 1/8000 by 1/8000 degree area (~14 by 14 meters).
        * </pre>
        *
-       * <code>string global_code = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string global_code = 1;</code>
        *
        * @return This builder for chaining.
        */
@@ -2367,11 +2360,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Place's global (full) code, such as "9FWM33GV+HQ",
-       * representing an 1/8000 by 1/8000 degree area (~14 by 14 meters).
+       * Place's global (full) code, such as "9FWM33GV+HQ", representing an
+       * 1/8000 by 1/8000 degree area (~14 by 14 meters).
        * </pre>
        *
-       * <code>string global_code = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string global_code = 1;</code>
        *
        * @param value The bytes for globalCode to set.
        * @return This builder for chaining.
@@ -2392,12 +2385,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Place's compound code, such as "33GV+HQ, Ramberg, Norway",
-       * containing the suffix of the global code and replacing the prefix with a
-       * formatted name of a reference entity.
+       * Place's compound code, such as "33GV+HQ, Ramberg, Norway", containing
+       * the suffix of the global code and replacing the prefix with a formatted
+       * name of a reference entity.
        * </pre>
        *
-       * <code>string compound_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string compound_code = 2;</code>
        *
        * @return The compoundCode.
        */
@@ -2416,12 +2409,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Place's compound code, such as "33GV+HQ, Ramberg, Norway",
-       * containing the suffix of the global code and replacing the prefix with a
-       * formatted name of a reference entity.
+       * Place's compound code, such as "33GV+HQ, Ramberg, Norway", containing
+       * the suffix of the global code and replacing the prefix with a formatted
+       * name of a reference entity.
        * </pre>
        *
-       * <code>string compound_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string compound_code = 2;</code>
        *
        * @return The bytes for compoundCode.
        */
@@ -2440,12 +2433,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Place's compound code, such as "33GV+HQ, Ramberg, Norway",
-       * containing the suffix of the global code and replacing the prefix with a
-       * formatted name of a reference entity.
+       * Place's compound code, such as "33GV+HQ, Ramberg, Norway", containing
+       * the suffix of the global code and replacing the prefix with a formatted
+       * name of a reference entity.
        * </pre>
        *
-       * <code>string compound_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string compound_code = 2;</code>
        *
        * @param value The compoundCode to set.
        * @return This builder for chaining.
@@ -2463,12 +2456,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Place's compound code, such as "33GV+HQ, Ramberg, Norway",
-       * containing the suffix of the global code and replacing the prefix with a
-       * formatted name of a reference entity.
+       * Place's compound code, such as "33GV+HQ, Ramberg, Norway", containing
+       * the suffix of the global code and replacing the prefix with a formatted
+       * name of a reference entity.
        * </pre>
        *
-       * <code>string compound_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string compound_code = 2;</code>
        *
        * @return This builder for chaining.
        */
@@ -2482,12 +2475,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Place's compound code, such as "33GV+HQ, Ramberg, Norway",
-       * containing the suffix of the global code and replacing the prefix with a
-       * formatted name of a reference entity.
+       * Place's compound code, such as "33GV+HQ, Ramberg, Norway", containing
+       * the suffix of the global code and replacing the prefix with a formatted
+       * name of a reference entity.
        * </pre>
        *
-       * <code>string compound_code = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string compound_code = 2;</code>
        *
        * @param value The bytes for compoundCode to set.
        * @return This builder for chaining.
@@ -2576,11 +2569,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Is this place open right now?  Always present unless we lack
-     * time-of-day or timezone data for these opening hours.
+     * Is this place open right now?  Always present unless we lack time-of-day
+     * or timezone data for these opening hours.
      * </pre>
      *
-     * <code>optional bool open_now = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool open_now = 1;</code>
      *
      * @return Whether the openNow field is set.
      */
@@ -2589,11 +2582,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Is this place open right now?  Always present unless we lack
-     * time-of-day or timezone data for these opening hours.
+     * Is this place open right now?  Always present unless we lack time-of-day
+     * or timezone data for these opening hours.
      * </pre>
      *
-     * <code>optional bool open_now = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool open_now = 1;</code>
      *
      * @return The openNow.
      */
@@ -2603,64 +2596,52 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The periods that this place is open during the week. The
-     * periods are in chronological order, starting with Sunday in the
-     * place-local timezone. An empty (but not absent) value indicates a place
-     * that is never open, e.g. because it is closed temporarily for
-     * renovations.
+     * The periods that this place is open during the week. The periods are in
+     * chronological order, starting with Sunday in the place-local timezone. An
+     * empty (but not absent) value indicates a place that is never open, e.g.
+     * because it is closed temporarily for renovations.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
      */
     java.util.List<com.google.maps.places.v1.Place.OpeningHours.Period> getPeriodsList();
     /**
      *
      *
      * <pre>
-     * Output only. The periods that this place is open during the week. The
-     * periods are in chronological order, starting with Sunday in the
-     * place-local timezone. An empty (but not absent) value indicates a place
-     * that is never open, e.g. because it is closed temporarily for
-     * renovations.
+     * The periods that this place is open during the week. The periods are in
+     * chronological order, starting with Sunday in the place-local timezone. An
+     * empty (but not absent) value indicates a place that is never open, e.g.
+     * because it is closed temporarily for renovations.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
      */
     com.google.maps.places.v1.Place.OpeningHours.Period getPeriods(int index);
     /**
      *
      *
      * <pre>
-     * Output only. The periods that this place is open during the week. The
-     * periods are in chronological order, starting with Sunday in the
-     * place-local timezone. An empty (but not absent) value indicates a place
-     * that is never open, e.g. because it is closed temporarily for
-     * renovations.
+     * The periods that this place is open during the week. The periods are in
+     * chronological order, starting with Sunday in the place-local timezone. An
+     * empty (but not absent) value indicates a place that is never open, e.g.
+     * because it is closed temporarily for renovations.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
      */
     int getPeriodsCount();
     /**
      *
      *
      * <pre>
-     * Output only. The periods that this place is open during the week. The
-     * periods are in chronological order, starting with Sunday in the
-     * place-local timezone. An empty (but not absent) value indicates a place
-     * that is never open, e.g. because it is closed temporarily for
-     * renovations.
+     * The periods that this place is open during the week. The periods are in
+     * chronological order, starting with Sunday in the place-local timezone. An
+     * empty (but not absent) value indicates a place that is never open, e.g.
+     * because it is closed temporarily for renovations.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
      */
     java.util.List<? extends com.google.maps.places.v1.Place.OpeningHours.PeriodOrBuilder>
         getPeriodsOrBuilderList();
@@ -2668,16 +2649,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The periods that this place is open during the week. The
-     * periods are in chronological order, starting with Sunday in the
-     * place-local timezone. An empty (but not absent) value indicates a place
-     * that is never open, e.g. because it is closed temporarily for
-     * renovations.
+     * The periods that this place is open during the week. The periods are in
+     * chronological order, starting with Sunday in the place-local timezone. An
+     * empty (but not absent) value indicates a place that is never open, e.g.
+     * because it is closed temporarily for renovations.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
      */
     com.google.maps.places.v1.Place.OpeningHours.PeriodOrBuilder getPeriodsOrBuilder(int index);
 
@@ -2685,14 +2663,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Localized strings describing the opening hours of this
-     * place, one string for each day of the week.  Will be empty if the hours
-     * are unknown or could not be converted to localized text. Example: "Sun:
-     * 18:00–06:00"
+     * Localized strings describing the opening hours of this place, one string
+     * for each day of the week.  Will be empty if the hours are unknown or
+     * could not be converted to localized text. Example: "Sun: 18:00–06:00"
      * </pre>
      *
-     * <code>repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string weekday_descriptions = 3;</code>
      *
      * @return A list containing the weekdayDescriptions.
      */
@@ -2701,14 +2677,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Localized strings describing the opening hours of this
-     * place, one string for each day of the week.  Will be empty if the hours
-     * are unknown or could not be converted to localized text. Example: "Sun:
-     * 18:00–06:00"
+     * Localized strings describing the opening hours of this place, one string
+     * for each day of the week.  Will be empty if the hours are unknown or
+     * could not be converted to localized text. Example: "Sun: 18:00–06:00"
      * </pre>
      *
-     * <code>repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string weekday_descriptions = 3;</code>
      *
      * @return The count of weekdayDescriptions.
      */
@@ -2717,14 +2691,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Localized strings describing the opening hours of this
-     * place, one string for each day of the week.  Will be empty if the hours
-     * are unknown or could not be converted to localized text. Example: "Sun:
-     * 18:00–06:00"
+     * Localized strings describing the opening hours of this place, one string
+     * for each day of the week.  Will be empty if the hours are unknown or
+     * could not be converted to localized text. Example: "Sun: 18:00–06:00"
      * </pre>
      *
-     * <code>repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string weekday_descriptions = 3;</code>
      *
      * @param index The index of the element to return.
      * @return The weekdayDescriptions at the given index.
@@ -2734,14 +2706,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Localized strings describing the opening hours of this
-     * place, one string for each day of the week.  Will be empty if the hours
-     * are unknown or could not be converted to localized text. Example: "Sun:
-     * 18:00–06:00"
+     * Localized strings describing the opening hours of this place, one string
+     * for each day of the week.  Will be empty if the hours are unknown or
+     * could not be converted to localized text. Example: "Sun: 18:00–06:00"
      * </pre>
      *
-     * <code>repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string weekday_descriptions = 3;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the weekdayDescriptions at the given index.
@@ -2752,11 +2722,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A type string used to identify the type of secondary hours.
+     * A type string used to identify the type of secondary hours.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>.google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4;
      * </code>
      *
      * @return The enum numeric value on the wire for secondaryHoursType.
@@ -2766,11 +2735,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A type string used to identify the type of secondary hours.
+     * A type string used to identify the type of secondary hours.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>.google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4;
      * </code>
      *
      * @return The secondaryHoursType.
@@ -2781,64 +2749,56 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Structured information for special days that fall within the
-     * period that the returned opening hours cover. Special days are days that
-     * could impact the business hours of a place, e.g. Christmas day. Set for
+     * Structured information for special days that fall within the period that
+     * the returned opening hours cover. Special days are days that could impact
+     * the business hours of a place, e.g. Christmas day. Set for
      * current_opening_hours and current_secondary_opening_hours if there are
      * exceptional hours.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;</code>
      */
     java.util.List<com.google.maps.places.v1.Place.OpeningHours.SpecialDay> getSpecialDaysList();
     /**
      *
      *
      * <pre>
-     * Output only. Structured information for special days that fall within the
-     * period that the returned opening hours cover. Special days are days that
-     * could impact the business hours of a place, e.g. Christmas day. Set for
+     * Structured information for special days that fall within the period that
+     * the returned opening hours cover. Special days are days that could impact
+     * the business hours of a place, e.g. Christmas day. Set for
      * current_opening_hours and current_secondary_opening_hours if there are
      * exceptional hours.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;</code>
      */
     com.google.maps.places.v1.Place.OpeningHours.SpecialDay getSpecialDays(int index);
     /**
      *
      *
      * <pre>
-     * Output only. Structured information for special days that fall within the
-     * period that the returned opening hours cover. Special days are days that
-     * could impact the business hours of a place, e.g. Christmas day. Set for
+     * Structured information for special days that fall within the period that
+     * the returned opening hours cover. Special days are days that could impact
+     * the business hours of a place, e.g. Christmas day. Set for
      * current_opening_hours and current_secondary_opening_hours if there are
      * exceptional hours.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;</code>
      */
     int getSpecialDaysCount();
     /**
      *
      *
      * <pre>
-     * Output only. Structured information for special days that fall within the
-     * period that the returned opening hours cover. Special days are days that
-     * could impact the business hours of a place, e.g. Christmas day. Set for
+     * Structured information for special days that fall within the period that
+     * the returned opening hours cover. Special days are days that could impact
+     * the business hours of a place, e.g. Christmas day. Set for
      * current_opening_hours and current_secondary_opening_hours if there are
      * exceptional hours.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;</code>
      */
     java.util.List<? extends com.google.maps.places.v1.Place.OpeningHours.SpecialDayOrBuilder>
         getSpecialDaysOrBuilderList();
@@ -2846,16 +2806,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Structured information for special days that fall within the
-     * period that the returned opening hours cover. Special days are days that
-     * could impact the business hours of a place, e.g. Christmas day. Set for
+     * Structured information for special days that fall within the period that
+     * the returned opening hours cover. Special days are days that could impact
+     * the business hours of a place, e.g. Christmas day. Set for
      * current_opening_hours and current_secondary_opening_hours if there are
      * exceptional hours.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;</code>
      */
     com.google.maps.places.v1.Place.OpeningHours.SpecialDayOrBuilder getSpecialDaysOrBuilder(
         int index);
@@ -3318,12 +3276,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The time that the place starts to be open.
+       * The time that the place starts to be open.
        * </pre>
        *
-       * <code>
-       * .google.maps.places.v1.Place.OpeningHours.Period.Point open = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point open = 1;</code>
        *
        * @return Whether the open field is set.
        */
@@ -3332,12 +3288,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The time that the place starts to be open.
+       * The time that the place starts to be open.
        * </pre>
        *
-       * <code>
-       * .google.maps.places.v1.Place.OpeningHours.Period.Point open = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point open = 1;</code>
        *
        * @return The open.
        */
@@ -3346,12 +3300,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The time that the place starts to be open.
+       * The time that the place starts to be open.
        * </pre>
        *
-       * <code>
-       * .google.maps.places.v1.Place.OpeningHours.Period.Point open = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point open = 1;</code>
        */
       com.google.maps.places.v1.Place.OpeningHours.Period.PointOrBuilder getOpenOrBuilder();
 
@@ -3359,12 +3311,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The time that the place starts to be closed.
+       * The time that the place starts to be closed.
        * </pre>
        *
-       * <code>
-       * .google.maps.places.v1.Place.OpeningHours.Period.Point close = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point close = 2;</code>
        *
        * @return Whether the close field is set.
        */
@@ -3373,12 +3323,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The time that the place starts to be closed.
+       * The time that the place starts to be closed.
        * </pre>
        *
-       * <code>
-       * .google.maps.places.v1.Place.OpeningHours.Period.Point close = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point close = 2;</code>
        *
        * @return The close.
        */
@@ -3387,12 +3335,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The time that the place starts to be closed.
+       * The time that the place starts to be closed.
        * </pre>
        *
-       * <code>
-       * .google.maps.places.v1.Place.OpeningHours.Period.Point close = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point close = 2;</code>
        */
       com.google.maps.places.v1.Place.OpeningHours.Period.PointOrBuilder getCloseOrBuilder();
     }
@@ -3447,11 +3393,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. A day of the week, as an integer in the range 0-6.  0 is
-         * Sunday, 1 is Monday, etc.
+         * A day of the week, as an integer in the range 0-6.  0 is Sunday, 1 is
+         * Monday, etc.
          * </pre>
          *
-         * <code>optional int32 day = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int32 day = 1;</code>
          *
          * @return Whether the day field is set.
          */
@@ -3460,11 +3406,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. A day of the week, as an integer in the range 0-6.  0 is
-         * Sunday, 1 is Monday, etc.
+         * A day of the week, as an integer in the range 0-6.  0 is Sunday, 1 is
+         * Monday, etc.
          * </pre>
          *
-         * <code>optional int32 day = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int32 day = 1;</code>
          *
          * @return The day.
          */
@@ -3474,10 +3420,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The hour in 2 digits. Ranges from 00 to 23.
+         * The hour in 2 digits. Ranges from 00 to 23.
          * </pre>
          *
-         * <code>optional int32 hour = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int32 hour = 2;</code>
          *
          * @return Whether the hour field is set.
          */
@@ -3486,10 +3432,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The hour in 2 digits. Ranges from 00 to 23.
+         * The hour in 2 digits. Ranges from 00 to 23.
          * </pre>
          *
-         * <code>optional int32 hour = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int32 hour = 2;</code>
          *
          * @return The hour.
          */
@@ -3499,10 +3445,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The minute in 2 digits. Ranges from 00 to 59.
+         * The minute in 2 digits. Ranges from 00 to 59.
          * </pre>
          *
-         * <code>optional int32 minute = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int32 minute = 3;</code>
          *
          * @return Whether the minute field is set.
          */
@@ -3511,10 +3457,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The minute in 2 digits. Ranges from 00 to 59.
+         * The minute in 2 digits. Ranges from 00 to 59.
          * </pre>
          *
-         * <code>optional int32 minute = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int32 minute = 3;</code>
          *
          * @return The minute.
          */
@@ -3524,10 +3470,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Date in the local timezone for the place.
+         * Date in the local timezone for the place.
          * </pre>
          *
-         * <code>.google.type.Date date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>.google.type.Date date = 6;</code>
          *
          * @return Whether the date field is set.
          */
@@ -3536,10 +3482,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Date in the local timezone for the place.
+         * Date in the local timezone for the place.
          * </pre>
          *
-         * <code>.google.type.Date date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>.google.type.Date date = 6;</code>
          *
          * @return The date.
          */
@@ -3548,10 +3494,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Date in the local timezone for the place.
+         * Date in the local timezone for the place.
          * </pre>
          *
-         * <code>.google.type.Date date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>.google.type.Date date = 6;</code>
          */
         com.google.type.DateOrBuilder getDateOrBuilder();
 
@@ -3559,14 +3505,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Whether or not this endpoint was truncated. Truncation
-         * occurs when the real hours are outside the times we are willing to
-         * return hours between, so we truncate the hours back to these
-         * boundaries. This ensures that at most 24 * 7 hours from midnight of
-         * the day of the request are returned.
+         * Whether or not this endpoint was truncated. Truncation occurs when
+         * the real hours are outside the times we are willing to return hours
+         * between, so we truncate the hours back to these boundaries. This
+         * ensures that at most 24 * 7 hours from midnight of the day of the
+         * request are returned.
          * </pre>
          *
-         * <code>bool truncated = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>bool truncated = 5;</code>
          *
          * @return The truncated.
          */
@@ -3621,11 +3567,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. A day of the week, as an integer in the range 0-6.  0 is
-         * Sunday, 1 is Monday, etc.
+         * A day of the week, as an integer in the range 0-6.  0 is Sunday, 1 is
+         * Monday, etc.
          * </pre>
          *
-         * <code>optional int32 day = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int32 day = 1;</code>
          *
          * @return Whether the day field is set.
          */
@@ -3637,11 +3583,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. A day of the week, as an integer in the range 0-6.  0 is
-         * Sunday, 1 is Monday, etc.
+         * A day of the week, as an integer in the range 0-6.  0 is Sunday, 1 is
+         * Monday, etc.
          * </pre>
          *
-         * <code>optional int32 day = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int32 day = 1;</code>
          *
          * @return The day.
          */
@@ -3656,10 +3602,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The hour in 2 digits. Ranges from 00 to 23.
+         * The hour in 2 digits. Ranges from 00 to 23.
          * </pre>
          *
-         * <code>optional int32 hour = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int32 hour = 2;</code>
          *
          * @return Whether the hour field is set.
          */
@@ -3671,10 +3617,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The hour in 2 digits. Ranges from 00 to 23.
+         * The hour in 2 digits. Ranges from 00 to 23.
          * </pre>
          *
-         * <code>optional int32 hour = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int32 hour = 2;</code>
          *
          * @return The hour.
          */
@@ -3689,10 +3635,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The minute in 2 digits. Ranges from 00 to 59.
+         * The minute in 2 digits. Ranges from 00 to 59.
          * </pre>
          *
-         * <code>optional int32 minute = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int32 minute = 3;</code>
          *
          * @return Whether the minute field is set.
          */
@@ -3704,10 +3650,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The minute in 2 digits. Ranges from 00 to 59.
+         * The minute in 2 digits. Ranges from 00 to 59.
          * </pre>
          *
-         * <code>optional int32 minute = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int32 minute = 3;</code>
          *
          * @return The minute.
          */
@@ -3722,10 +3668,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Date in the local timezone for the place.
+         * Date in the local timezone for the place.
          * </pre>
          *
-         * <code>.google.type.Date date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>.google.type.Date date = 6;</code>
          *
          * @return Whether the date field is set.
          */
@@ -3737,10 +3683,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Date in the local timezone for the place.
+         * Date in the local timezone for the place.
          * </pre>
          *
-         * <code>.google.type.Date date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>.google.type.Date date = 6;</code>
          *
          * @return The date.
          */
@@ -3752,10 +3698,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Date in the local timezone for the place.
+         * Date in the local timezone for the place.
          * </pre>
          *
-         * <code>.google.type.Date date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>.google.type.Date date = 6;</code>
          */
         @java.lang.Override
         public com.google.type.DateOrBuilder getDateOrBuilder() {
@@ -3768,14 +3714,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Whether or not this endpoint was truncated. Truncation
-         * occurs when the real hours are outside the times we are willing to
-         * return hours between, so we truncate the hours back to these
-         * boundaries. This ensures that at most 24 * 7 hours from midnight of
-         * the day of the request are returned.
+         * Whether or not this endpoint was truncated. Truncation occurs when
+         * the real hours are outside the times we are willing to return hours
+         * between, so we truncate the hours back to these boundaries. This
+         * ensures that at most 24 * 7 hours from midnight of the day of the
+         * request are returned.
          * </pre>
          *
-         * <code>bool truncated = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>bool truncated = 5;</code>
          *
          * @return The truncated.
          */
@@ -4257,11 +4203,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. A day of the week, as an integer in the range 0-6.  0 is
-           * Sunday, 1 is Monday, etc.
+           * A day of the week, as an integer in the range 0-6.  0 is Sunday, 1 is
+           * Monday, etc.
            * </pre>
            *
-           * <code>optional int32 day = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>optional int32 day = 1;</code>
            *
            * @return Whether the day field is set.
            */
@@ -4273,11 +4219,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. A day of the week, as an integer in the range 0-6.  0 is
-           * Sunday, 1 is Monday, etc.
+           * A day of the week, as an integer in the range 0-6.  0 is Sunday, 1 is
+           * Monday, etc.
            * </pre>
            *
-           * <code>optional int32 day = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>optional int32 day = 1;</code>
            *
            * @return The day.
            */
@@ -4289,11 +4235,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. A day of the week, as an integer in the range 0-6.  0 is
-           * Sunday, 1 is Monday, etc.
+           * A day of the week, as an integer in the range 0-6.  0 is Sunday, 1 is
+           * Monday, etc.
            * </pre>
            *
-           * <code>optional int32 day = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>optional int32 day = 1;</code>
            *
            * @param value The day to set.
            * @return This builder for chaining.
@@ -4309,11 +4255,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. A day of the week, as an integer in the range 0-6.  0 is
-           * Sunday, 1 is Monday, etc.
+           * A day of the week, as an integer in the range 0-6.  0 is Sunday, 1 is
+           * Monday, etc.
            * </pre>
            *
-           * <code>optional int32 day = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>optional int32 day = 1;</code>
            *
            * @return This builder for chaining.
            */
@@ -4329,10 +4275,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. The hour in 2 digits. Ranges from 00 to 23.
+           * The hour in 2 digits. Ranges from 00 to 23.
            * </pre>
            *
-           * <code>optional int32 hour = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>optional int32 hour = 2;</code>
            *
            * @return Whether the hour field is set.
            */
@@ -4344,10 +4290,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. The hour in 2 digits. Ranges from 00 to 23.
+           * The hour in 2 digits. Ranges from 00 to 23.
            * </pre>
            *
-           * <code>optional int32 hour = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>optional int32 hour = 2;</code>
            *
            * @return The hour.
            */
@@ -4359,10 +4305,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. The hour in 2 digits. Ranges from 00 to 23.
+           * The hour in 2 digits. Ranges from 00 to 23.
            * </pre>
            *
-           * <code>optional int32 hour = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>optional int32 hour = 2;</code>
            *
            * @param value The hour to set.
            * @return This builder for chaining.
@@ -4378,10 +4324,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. The hour in 2 digits. Ranges from 00 to 23.
+           * The hour in 2 digits. Ranges from 00 to 23.
            * </pre>
            *
-           * <code>optional int32 hour = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>optional int32 hour = 2;</code>
            *
            * @return This builder for chaining.
            */
@@ -4397,10 +4343,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. The minute in 2 digits. Ranges from 00 to 59.
+           * The minute in 2 digits. Ranges from 00 to 59.
            * </pre>
            *
-           * <code>optional int32 minute = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>optional int32 minute = 3;</code>
            *
            * @return Whether the minute field is set.
            */
@@ -4412,10 +4358,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. The minute in 2 digits. Ranges from 00 to 59.
+           * The minute in 2 digits. Ranges from 00 to 59.
            * </pre>
            *
-           * <code>optional int32 minute = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>optional int32 minute = 3;</code>
            *
            * @return The minute.
            */
@@ -4427,10 +4373,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. The minute in 2 digits. Ranges from 00 to 59.
+           * The minute in 2 digits. Ranges from 00 to 59.
            * </pre>
            *
-           * <code>optional int32 minute = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>optional int32 minute = 3;</code>
            *
            * @param value The minute to set.
            * @return This builder for chaining.
@@ -4446,10 +4392,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. The minute in 2 digits. Ranges from 00 to 59.
+           * The minute in 2 digits. Ranges from 00 to 59.
            * </pre>
            *
-           * <code>optional int32 minute = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>optional int32 minute = 3;</code>
            *
            * @return This builder for chaining.
            */
@@ -4468,10 +4414,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. Date in the local timezone for the place.
+           * Date in the local timezone for the place.
            * </pre>
            *
-           * <code>.google.type.Date date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>.google.type.Date date = 6;</code>
            *
            * @return Whether the date field is set.
            */
@@ -4482,10 +4428,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. Date in the local timezone for the place.
+           * Date in the local timezone for the place.
            * </pre>
            *
-           * <code>.google.type.Date date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>.google.type.Date date = 6;</code>
            *
            * @return The date.
            */
@@ -4500,10 +4446,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. Date in the local timezone for the place.
+           * Date in the local timezone for the place.
            * </pre>
            *
-           * <code>.google.type.Date date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>.google.type.Date date = 6;</code>
            */
           public Builder setDate(com.google.type.Date value) {
             if (dateBuilder_ == null) {
@@ -4522,10 +4468,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. Date in the local timezone for the place.
+           * Date in the local timezone for the place.
            * </pre>
            *
-           * <code>.google.type.Date date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>.google.type.Date date = 6;</code>
            */
           public Builder setDate(com.google.type.Date.Builder builderForValue) {
             if (dateBuilder_ == null) {
@@ -4541,10 +4487,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. Date in the local timezone for the place.
+           * Date in the local timezone for the place.
            * </pre>
            *
-           * <code>.google.type.Date date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>.google.type.Date date = 6;</code>
            */
           public Builder mergeDate(com.google.type.Date value) {
             if (dateBuilder_ == null) {
@@ -4566,10 +4512,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. Date in the local timezone for the place.
+           * Date in the local timezone for the place.
            * </pre>
            *
-           * <code>.google.type.Date date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>.google.type.Date date = 6;</code>
            */
           public Builder clearDate() {
             bitField0_ = (bitField0_ & ~0x00000008);
@@ -4585,10 +4531,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. Date in the local timezone for the place.
+           * Date in the local timezone for the place.
            * </pre>
            *
-           * <code>.google.type.Date date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>.google.type.Date date = 6;</code>
            */
           public com.google.type.Date.Builder getDateBuilder() {
             bitField0_ |= 0x00000008;
@@ -4599,10 +4545,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. Date in the local timezone for the place.
+           * Date in the local timezone for the place.
            * </pre>
            *
-           * <code>.google.type.Date date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>.google.type.Date date = 6;</code>
            */
           public com.google.type.DateOrBuilder getDateOrBuilder() {
             if (dateBuilder_ != null) {
@@ -4615,10 +4561,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. Date in the local timezone for the place.
+           * Date in the local timezone for the place.
            * </pre>
            *
-           * <code>.google.type.Date date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>.google.type.Date date = 6;</code>
            */
           private com.google.protobuf.SingleFieldBuilderV3<
                   com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
@@ -4639,14 +4585,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. Whether or not this endpoint was truncated. Truncation
-           * occurs when the real hours are outside the times we are willing to
-           * return hours between, so we truncate the hours back to these
-           * boundaries. This ensures that at most 24 * 7 hours from midnight of
-           * the day of the request are returned.
+           * Whether or not this endpoint was truncated. Truncation occurs when
+           * the real hours are outside the times we are willing to return hours
+           * between, so we truncate the hours back to these boundaries. This
+           * ensures that at most 24 * 7 hours from midnight of the day of the
+           * request are returned.
            * </pre>
            *
-           * <code>bool truncated = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>bool truncated = 5;</code>
            *
            * @return The truncated.
            */
@@ -4658,14 +4604,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. Whether or not this endpoint was truncated. Truncation
-           * occurs when the real hours are outside the times we are willing to
-           * return hours between, so we truncate the hours back to these
-           * boundaries. This ensures that at most 24 * 7 hours from midnight of
-           * the day of the request are returned.
+           * Whether or not this endpoint was truncated. Truncation occurs when
+           * the real hours are outside the times we are willing to return hours
+           * between, so we truncate the hours back to these boundaries. This
+           * ensures that at most 24 * 7 hours from midnight of the day of the
+           * request are returned.
            * </pre>
            *
-           * <code>bool truncated = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>bool truncated = 5;</code>
            *
            * @param value The truncated to set.
            * @return This builder for chaining.
@@ -4681,14 +4627,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Output only. Whether or not this endpoint was truncated. Truncation
-           * occurs when the real hours are outside the times we are willing to
-           * return hours between, so we truncate the hours back to these
-           * boundaries. This ensures that at most 24 * 7 hours from midnight of
-           * the day of the request are returned.
+           * Whether or not this endpoint was truncated. Truncation occurs when
+           * the real hours are outside the times we are willing to return hours
+           * between, so we truncate the hours back to these boundaries. This
+           * ensures that at most 24 * 7 hours from midnight of the day of the
+           * request are returned.
            * </pre>
            *
-           * <code>bool truncated = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           * <code>bool truncated = 5;</code>
            *
            * @return This builder for chaining.
            */
@@ -4772,12 +4718,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The time that the place starts to be open.
+       * The time that the place starts to be open.
        * </pre>
        *
-       * <code>
-       * .google.maps.places.v1.Place.OpeningHours.Period.Point open = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point open = 1;</code>
        *
        * @return Whether the open field is set.
        */
@@ -4789,12 +4733,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The time that the place starts to be open.
+       * The time that the place starts to be open.
        * </pre>
        *
-       * <code>
-       * .google.maps.places.v1.Place.OpeningHours.Period.Point open = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point open = 1;</code>
        *
        * @return The open.
        */
@@ -4808,12 +4750,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The time that the place starts to be open.
+       * The time that the place starts to be open.
        * </pre>
        *
-       * <code>
-       * .google.maps.places.v1.Place.OpeningHours.Period.Point open = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point open = 1;</code>
        */
       @java.lang.Override
       public com.google.maps.places.v1.Place.OpeningHours.Period.PointOrBuilder getOpenOrBuilder() {
@@ -4828,12 +4768,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The time that the place starts to be closed.
+       * The time that the place starts to be closed.
        * </pre>
        *
-       * <code>
-       * .google.maps.places.v1.Place.OpeningHours.Period.Point close = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point close = 2;</code>
        *
        * @return Whether the close field is set.
        */
@@ -4845,12 +4783,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The time that the place starts to be closed.
+       * The time that the place starts to be closed.
        * </pre>
        *
-       * <code>
-       * .google.maps.places.v1.Place.OpeningHours.Period.Point close = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point close = 2;</code>
        *
        * @return The close.
        */
@@ -4864,12 +4800,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The time that the place starts to be closed.
+       * The time that the place starts to be closed.
        * </pre>
        *
-       * <code>
-       * .google.maps.places.v1.Place.OpeningHours.Period.Point close = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point close = 2;</code>
        */
       @java.lang.Override
       public com.google.maps.places.v1.Place.OpeningHours.Period.PointOrBuilder
@@ -5274,12 +5208,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be open.
+         * The time that the place starts to be open.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point open = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point open = 1;</code>
          *
          * @return Whether the open field is set.
          */
@@ -5290,12 +5222,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be open.
+         * The time that the place starts to be open.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point open = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point open = 1;</code>
          *
          * @return The open.
          */
@@ -5312,12 +5242,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be open.
+         * The time that the place starts to be open.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point open = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point open = 1;</code>
          */
         public Builder setOpen(com.google.maps.places.v1.Place.OpeningHours.Period.Point value) {
           if (openBuilder_ == null) {
@@ -5336,12 +5264,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be open.
+         * The time that the place starts to be open.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point open = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point open = 1;</code>
          */
         public Builder setOpen(
             com.google.maps.places.v1.Place.OpeningHours.Period.Point.Builder builderForValue) {
@@ -5358,12 +5284,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be open.
+         * The time that the place starts to be open.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point open = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point open = 1;</code>
          */
         public Builder mergeOpen(com.google.maps.places.v1.Place.OpeningHours.Period.Point value) {
           if (openBuilder_ == null) {
@@ -5387,12 +5311,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be open.
+         * The time that the place starts to be open.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point open = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point open = 1;</code>
          */
         public Builder clearOpen() {
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -5408,12 +5330,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be open.
+         * The time that the place starts to be open.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point open = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point open = 1;</code>
          */
         public com.google.maps.places.v1.Place.OpeningHours.Period.Point.Builder getOpenBuilder() {
           bitField0_ |= 0x00000001;
@@ -5424,12 +5344,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be open.
+         * The time that the place starts to be open.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point open = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point open = 1;</code>
          */
         public com.google.maps.places.v1.Place.OpeningHours.Period.PointOrBuilder
             getOpenOrBuilder() {
@@ -5445,12 +5363,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be open.
+         * The time that the place starts to be open.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point open = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point open = 1;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.maps.places.v1.Place.OpeningHours.Period.Point,
@@ -5479,12 +5395,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be closed.
+         * The time that the place starts to be closed.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point close = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point close = 2;</code>
          *
          * @return Whether the close field is set.
          */
@@ -5495,12 +5409,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be closed.
+         * The time that the place starts to be closed.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point close = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point close = 2;</code>
          *
          * @return The close.
          */
@@ -5517,12 +5429,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be closed.
+         * The time that the place starts to be closed.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point close = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point close = 2;</code>
          */
         public Builder setClose(com.google.maps.places.v1.Place.OpeningHours.Period.Point value) {
           if (closeBuilder_ == null) {
@@ -5541,12 +5451,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be closed.
+         * The time that the place starts to be closed.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point close = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point close = 2;</code>
          */
         public Builder setClose(
             com.google.maps.places.v1.Place.OpeningHours.Period.Point.Builder builderForValue) {
@@ -5563,12 +5471,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be closed.
+         * The time that the place starts to be closed.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point close = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point close = 2;</code>
          */
         public Builder mergeClose(com.google.maps.places.v1.Place.OpeningHours.Period.Point value) {
           if (closeBuilder_ == null) {
@@ -5592,12 +5498,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be closed.
+         * The time that the place starts to be closed.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point close = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point close = 2;</code>
          */
         public Builder clearClose() {
           bitField0_ = (bitField0_ & ~0x00000002);
@@ -5613,12 +5517,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be closed.
+         * The time that the place starts to be closed.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point close = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point close = 2;</code>
          */
         public com.google.maps.places.v1.Place.OpeningHours.Period.Point.Builder getCloseBuilder() {
           bitField0_ |= 0x00000002;
@@ -5629,12 +5531,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be closed.
+         * The time that the place starts to be closed.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point close = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point close = 2;</code>
          */
         public com.google.maps.places.v1.Place.OpeningHours.Period.PointOrBuilder
             getCloseOrBuilder() {
@@ -5650,12 +5550,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The time that the place starts to be closed.
+         * The time that the place starts to be closed.
          * </pre>
          *
-         * <code>
-         * .google.maps.places.v1.Place.OpeningHours.Period.Point close = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-         * </code>
+         * <code>.google.maps.places.v1.Place.OpeningHours.Period.Point close = 2;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.maps.places.v1.Place.OpeningHours.Period.Point,
@@ -5747,10 +5645,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The date of this special day.
+       * The date of this special day.
        * </pre>
        *
-       * <code>.google.type.Date date = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>.google.type.Date date = 1;</code>
        *
        * @return Whether the date field is set.
        */
@@ -5759,10 +5657,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The date of this special day.
+       * The date of this special day.
        * </pre>
        *
-       * <code>.google.type.Date date = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>.google.type.Date date = 1;</code>
        *
        * @return The date.
        */
@@ -5771,10 +5669,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The date of this special day.
+       * The date of this special day.
        * </pre>
        *
-       * <code>.google.type.Date date = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>.google.type.Date date = 1;</code>
        */
       com.google.type.DateOrBuilder getDateOrBuilder();
     }
@@ -5828,10 +5726,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The date of this special day.
+       * The date of this special day.
        * </pre>
        *
-       * <code>.google.type.Date date = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>.google.type.Date date = 1;</code>
        *
        * @return Whether the date field is set.
        */
@@ -5843,10 +5741,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The date of this special day.
+       * The date of this special day.
        * </pre>
        *
-       * <code>.google.type.Date date = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>.google.type.Date date = 1;</code>
        *
        * @return The date.
        */
@@ -5858,10 +5756,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The date of this special day.
+       * The date of this special day.
        * </pre>
        *
-       * <code>.google.type.Date date = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>.google.type.Date date = 1;</code>
        */
       @java.lang.Override
       public com.google.type.DateOrBuilder getDateOrBuilder() {
@@ -6232,10 +6130,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The date of this special day.
+         * The date of this special day.
          * </pre>
          *
-         * <code>.google.type.Date date = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>.google.type.Date date = 1;</code>
          *
          * @return Whether the date field is set.
          */
@@ -6246,10 +6144,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The date of this special day.
+         * The date of this special day.
          * </pre>
          *
-         * <code>.google.type.Date date = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>.google.type.Date date = 1;</code>
          *
          * @return The date.
          */
@@ -6264,10 +6162,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The date of this special day.
+         * The date of this special day.
          * </pre>
          *
-         * <code>.google.type.Date date = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>.google.type.Date date = 1;</code>
          */
         public Builder setDate(com.google.type.Date value) {
           if (dateBuilder_ == null) {
@@ -6286,10 +6184,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The date of this special day.
+         * The date of this special day.
          * </pre>
          *
-         * <code>.google.type.Date date = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>.google.type.Date date = 1;</code>
          */
         public Builder setDate(com.google.type.Date.Builder builderForValue) {
           if (dateBuilder_ == null) {
@@ -6305,10 +6203,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The date of this special day.
+         * The date of this special day.
          * </pre>
          *
-         * <code>.google.type.Date date = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>.google.type.Date date = 1;</code>
          */
         public Builder mergeDate(com.google.type.Date value) {
           if (dateBuilder_ == null) {
@@ -6330,10 +6228,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The date of this special day.
+         * The date of this special day.
          * </pre>
          *
-         * <code>.google.type.Date date = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>.google.type.Date date = 1;</code>
          */
         public Builder clearDate() {
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -6349,10 +6247,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The date of this special day.
+         * The date of this special day.
          * </pre>
          *
-         * <code>.google.type.Date date = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>.google.type.Date date = 1;</code>
          */
         public com.google.type.Date.Builder getDateBuilder() {
           bitField0_ |= 0x00000001;
@@ -6363,10 +6261,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The date of this special day.
+         * The date of this special day.
          * </pre>
          *
-         * <code>.google.type.Date date = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>.google.type.Date date = 1;</code>
          */
         public com.google.type.DateOrBuilder getDateOrBuilder() {
           if (dateBuilder_ != null) {
@@ -6379,10 +6277,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. The date of this special day.
+         * The date of this special day.
          * </pre>
          *
-         * <code>.google.type.Date date = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>.google.type.Date date = 1;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
@@ -6469,11 +6367,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Is this place open right now?  Always present unless we lack
-     * time-of-day or timezone data for these opening hours.
+     * Is this place open right now?  Always present unless we lack time-of-day
+     * or timezone data for these opening hours.
      * </pre>
      *
-     * <code>optional bool open_now = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool open_now = 1;</code>
      *
      * @return Whether the openNow field is set.
      */
@@ -6485,11 +6383,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Is this place open right now?  Always present unless we lack
-     * time-of-day or timezone data for these opening hours.
+     * Is this place open right now?  Always present unless we lack time-of-day
+     * or timezone data for these opening hours.
      * </pre>
      *
-     * <code>optional bool open_now = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool open_now = 1;</code>
      *
      * @return The openNow.
      */
@@ -6506,16 +6404,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The periods that this place is open during the week. The
-     * periods are in chronological order, starting with Sunday in the
-     * place-local timezone. An empty (but not absent) value indicates a place
-     * that is never open, e.g. because it is closed temporarily for
-     * renovations.
+     * The periods that this place is open during the week. The periods are in
+     * chronological order, starting with Sunday in the place-local timezone. An
+     * empty (but not absent) value indicates a place that is never open, e.g.
+     * because it is closed temporarily for renovations.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
      */
     @java.lang.Override
     public java.util.List<com.google.maps.places.v1.Place.OpeningHours.Period> getPeriodsList() {
@@ -6525,16 +6420,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The periods that this place is open during the week. The
-     * periods are in chronological order, starting with Sunday in the
-     * place-local timezone. An empty (but not absent) value indicates a place
-     * that is never open, e.g. because it is closed temporarily for
-     * renovations.
+     * The periods that this place is open during the week. The periods are in
+     * chronological order, starting with Sunday in the place-local timezone. An
+     * empty (but not absent) value indicates a place that is never open, e.g.
+     * because it is closed temporarily for renovations.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.google.maps.places.v1.Place.OpeningHours.PeriodOrBuilder>
@@ -6545,16 +6437,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The periods that this place is open during the week. The
-     * periods are in chronological order, starting with Sunday in the
-     * place-local timezone. An empty (but not absent) value indicates a place
-     * that is never open, e.g. because it is closed temporarily for
-     * renovations.
+     * The periods that this place is open during the week. The periods are in
+     * chronological order, starting with Sunday in the place-local timezone. An
+     * empty (but not absent) value indicates a place that is never open, e.g.
+     * because it is closed temporarily for renovations.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
      */
     @java.lang.Override
     public int getPeriodsCount() {
@@ -6564,16 +6453,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The periods that this place is open during the week. The
-     * periods are in chronological order, starting with Sunday in the
-     * place-local timezone. An empty (but not absent) value indicates a place
-     * that is never open, e.g. because it is closed temporarily for
-     * renovations.
+     * The periods that this place is open during the week. The periods are in
+     * chronological order, starting with Sunday in the place-local timezone. An
+     * empty (but not absent) value indicates a place that is never open, e.g.
+     * because it is closed temporarily for renovations.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
      */
     @java.lang.Override
     public com.google.maps.places.v1.Place.OpeningHours.Period getPeriods(int index) {
@@ -6583,16 +6469,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The periods that this place is open during the week. The
-     * periods are in chronological order, starting with Sunday in the
-     * place-local timezone. An empty (but not absent) value indicates a place
-     * that is never open, e.g. because it is closed temporarily for
-     * renovations.
+     * The periods that this place is open during the week. The periods are in
+     * chronological order, starting with Sunday in the place-local timezone. An
+     * empty (but not absent) value indicates a place that is never open, e.g.
+     * because it is closed temporarily for renovations.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
      */
     @java.lang.Override
     public com.google.maps.places.v1.Place.OpeningHours.PeriodOrBuilder getPeriodsOrBuilder(
@@ -6609,14 +6492,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Localized strings describing the opening hours of this
-     * place, one string for each day of the week.  Will be empty if the hours
-     * are unknown or could not be converted to localized text. Example: "Sun:
-     * 18:00–06:00"
+     * Localized strings describing the opening hours of this place, one string
+     * for each day of the week.  Will be empty if the hours are unknown or
+     * could not be converted to localized text. Example: "Sun: 18:00–06:00"
      * </pre>
      *
-     * <code>repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string weekday_descriptions = 3;</code>
      *
      * @return A list containing the weekdayDescriptions.
      */
@@ -6627,14 +6508,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Localized strings describing the opening hours of this
-     * place, one string for each day of the week.  Will be empty if the hours
-     * are unknown or could not be converted to localized text. Example: "Sun:
-     * 18:00–06:00"
+     * Localized strings describing the opening hours of this place, one string
+     * for each day of the week.  Will be empty if the hours are unknown or
+     * could not be converted to localized text. Example: "Sun: 18:00–06:00"
      * </pre>
      *
-     * <code>repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string weekday_descriptions = 3;</code>
      *
      * @return The count of weekdayDescriptions.
      */
@@ -6645,14 +6524,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Localized strings describing the opening hours of this
-     * place, one string for each day of the week.  Will be empty if the hours
-     * are unknown or could not be converted to localized text. Example: "Sun:
-     * 18:00–06:00"
+     * Localized strings describing the opening hours of this place, one string
+     * for each day of the week.  Will be empty if the hours are unknown or
+     * could not be converted to localized text. Example: "Sun: 18:00–06:00"
      * </pre>
      *
-     * <code>repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string weekday_descriptions = 3;</code>
      *
      * @param index The index of the element to return.
      * @return The weekdayDescriptions at the given index.
@@ -6664,14 +6541,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Localized strings describing the opening hours of this
-     * place, one string for each day of the week.  Will be empty if the hours
-     * are unknown or could not be converted to localized text. Example: "Sun:
-     * 18:00–06:00"
+     * Localized strings describing the opening hours of this place, one string
+     * for each day of the week.  Will be empty if the hours are unknown or
+     * could not be converted to localized text. Example: "Sun: 18:00–06:00"
      * </pre>
      *
-     * <code>repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated string weekday_descriptions = 3;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the weekdayDescriptions at the given index.
@@ -6686,11 +6561,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A type string used to identify the type of secondary hours.
+     * A type string used to identify the type of secondary hours.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>.google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4;
      * </code>
      *
      * @return The enum numeric value on the wire for secondaryHoursType.
@@ -6703,11 +6577,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A type string used to identify the type of secondary hours.
+     * A type string used to identify the type of secondary hours.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>.google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4;
      * </code>
      *
      * @return The secondaryHoursType.
@@ -6730,16 +6603,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Structured information for special days that fall within the
-     * period that the returned opening hours cover. Special days are days that
-     * could impact the business hours of a place, e.g. Christmas day. Set for
+     * Structured information for special days that fall within the period that
+     * the returned opening hours cover. Special days are days that could impact
+     * the business hours of a place, e.g. Christmas day. Set for
      * current_opening_hours and current_secondary_opening_hours if there are
      * exceptional hours.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;</code>
      */
     @java.lang.Override
     public java.util.List<com.google.maps.places.v1.Place.OpeningHours.SpecialDay>
@@ -6750,16 +6621,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Structured information for special days that fall within the
-     * period that the returned opening hours cover. Special days are days that
-     * could impact the business hours of a place, e.g. Christmas day. Set for
+     * Structured information for special days that fall within the period that
+     * the returned opening hours cover. Special days are days that could impact
+     * the business hours of a place, e.g. Christmas day. Set for
      * current_opening_hours and current_secondary_opening_hours if there are
      * exceptional hours.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;</code>
      */
     @java.lang.Override
     public java.util.List<
@@ -6771,16 +6640,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Structured information for special days that fall within the
-     * period that the returned opening hours cover. Special days are days that
-     * could impact the business hours of a place, e.g. Christmas day. Set for
+     * Structured information for special days that fall within the period that
+     * the returned opening hours cover. Special days are days that could impact
+     * the business hours of a place, e.g. Christmas day. Set for
      * current_opening_hours and current_secondary_opening_hours if there are
      * exceptional hours.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;</code>
      */
     @java.lang.Override
     public int getSpecialDaysCount() {
@@ -6790,16 +6657,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Structured information for special days that fall within the
-     * period that the returned opening hours cover. Special days are days that
-     * could impact the business hours of a place, e.g. Christmas day. Set for
+     * Structured information for special days that fall within the period that
+     * the returned opening hours cover. Special days are days that could impact
+     * the business hours of a place, e.g. Christmas day. Set for
      * current_opening_hours and current_secondary_opening_hours if there are
      * exceptional hours.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;</code>
      */
     @java.lang.Override
     public com.google.maps.places.v1.Place.OpeningHours.SpecialDay getSpecialDays(int index) {
@@ -6809,16 +6674,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Structured information for special days that fall within the
-     * period that the returned opening hours cover. Special days are days that
-     * could impact the business hours of a place, e.g. Christmas day. Set for
+     * Structured information for special days that fall within the period that
+     * the returned opening hours cover. Special days are days that could impact
+     * the business hours of a place, e.g. Christmas day. Set for
      * current_opening_hours and current_secondary_opening_hours if there are
      * exceptional hours.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;</code>
      */
     @java.lang.Override
     public com.google.maps.places.v1.Place.OpeningHours.SpecialDayOrBuilder getSpecialDaysOrBuilder(
@@ -7389,11 +7252,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Is this place open right now?  Always present unless we lack
-       * time-of-day or timezone data for these opening hours.
+       * Is this place open right now?  Always present unless we lack time-of-day
+       * or timezone data for these opening hours.
        * </pre>
        *
-       * <code>optional bool open_now = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional bool open_now = 1;</code>
        *
        * @return Whether the openNow field is set.
        */
@@ -7405,11 +7268,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Is this place open right now?  Always present unless we lack
-       * time-of-day or timezone data for these opening hours.
+       * Is this place open right now?  Always present unless we lack time-of-day
+       * or timezone data for these opening hours.
        * </pre>
        *
-       * <code>optional bool open_now = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional bool open_now = 1;</code>
        *
        * @return The openNow.
        */
@@ -7421,11 +7284,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Is this place open right now?  Always present unless we lack
-       * time-of-day or timezone data for these opening hours.
+       * Is this place open right now?  Always present unless we lack time-of-day
+       * or timezone data for these opening hours.
        * </pre>
        *
-       * <code>optional bool open_now = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional bool open_now = 1;</code>
        *
        * @param value The openNow to set.
        * @return This builder for chaining.
@@ -7441,11 +7304,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Is this place open right now?  Always present unless we lack
-       * time-of-day or timezone data for these opening hours.
+       * Is this place open right now?  Always present unless we lack time-of-day
+       * or timezone data for these opening hours.
        * </pre>
        *
-       * <code>optional bool open_now = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional bool open_now = 1;</code>
        *
        * @return This builder for chaining.
        */
@@ -7478,16 +7341,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public java.util.List<com.google.maps.places.v1.Place.OpeningHours.Period> getPeriodsList() {
         if (periodsBuilder_ == null) {
@@ -7500,16 +7360,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public int getPeriodsCount() {
         if (periodsBuilder_ == null) {
@@ -7522,16 +7379,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public com.google.maps.places.v1.Place.OpeningHours.Period getPeriods(int index) {
         if (periodsBuilder_ == null) {
@@ -7544,16 +7398,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public Builder setPeriods(
           int index, com.google.maps.places.v1.Place.OpeningHours.Period value) {
@@ -7573,16 +7424,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public Builder setPeriods(
           int index, com.google.maps.places.v1.Place.OpeningHours.Period.Builder builderForValue) {
@@ -7599,16 +7447,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public Builder addPeriods(com.google.maps.places.v1.Place.OpeningHours.Period value) {
         if (periodsBuilder_ == null) {
@@ -7627,16 +7472,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public Builder addPeriods(
           int index, com.google.maps.places.v1.Place.OpeningHours.Period value) {
@@ -7656,16 +7498,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public Builder addPeriods(
           com.google.maps.places.v1.Place.OpeningHours.Period.Builder builderForValue) {
@@ -7682,16 +7521,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public Builder addPeriods(
           int index, com.google.maps.places.v1.Place.OpeningHours.Period.Builder builderForValue) {
@@ -7708,16 +7544,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public Builder addAllPeriods(
           java.lang.Iterable<? extends com.google.maps.places.v1.Place.OpeningHours.Period>
@@ -7735,16 +7568,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public Builder clearPeriods() {
         if (periodsBuilder_ == null) {
@@ -7760,16 +7590,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public Builder removePeriods(int index) {
         if (periodsBuilder_ == null) {
@@ -7785,16 +7612,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public com.google.maps.places.v1.Place.OpeningHours.Period.Builder getPeriodsBuilder(
           int index) {
@@ -7804,16 +7628,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public com.google.maps.places.v1.Place.OpeningHours.PeriodOrBuilder getPeriodsOrBuilder(
           int index) {
@@ -7827,16 +7648,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public java.util.List<? extends com.google.maps.places.v1.Place.OpeningHours.PeriodOrBuilder>
           getPeriodsOrBuilderList() {
@@ -7850,16 +7668,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public com.google.maps.places.v1.Place.OpeningHours.Period.Builder addPeriodsBuilder() {
         return getPeriodsFieldBuilder()
@@ -7869,16 +7684,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public com.google.maps.places.v1.Place.OpeningHours.Period.Builder addPeriodsBuilder(
           int index) {
@@ -7890,16 +7702,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The periods that this place is open during the week. The
-       * periods are in chronological order, starting with Sunday in the
-       * place-local timezone. An empty (but not absent) value indicates a place
-       * that is never open, e.g. because it is closed temporarily for
-       * renovations.
+       * The periods that this place is open during the week. The periods are in
+       * chronological order, starting with Sunday in the place-local timezone. An
+       * empty (but not absent) value indicates a place that is never open, e.g.
+       * because it is closed temporarily for renovations.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.Period periods = 2;</code>
        */
       public java.util.List<com.google.maps.places.v1.Place.OpeningHours.Period.Builder>
           getPeriodsBuilderList() {
@@ -7936,15 +7745,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Localized strings describing the opening hours of this
-       * place, one string for each day of the week.  Will be empty if the hours
-       * are unknown or could not be converted to localized text. Example: "Sun:
-       * 18:00–06:00"
+       * Localized strings describing the opening hours of this place, one string
+       * for each day of the week.  Will be empty if the hours are unknown or
+       * could not be converted to localized text. Example: "Sun: 18:00–06:00"
        * </pre>
        *
-       * <code>
-       * repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated string weekday_descriptions = 3;</code>
        *
        * @return A list containing the weekdayDescriptions.
        */
@@ -7956,15 +7762,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Localized strings describing the opening hours of this
-       * place, one string for each day of the week.  Will be empty if the hours
-       * are unknown or could not be converted to localized text. Example: "Sun:
-       * 18:00–06:00"
+       * Localized strings describing the opening hours of this place, one string
+       * for each day of the week.  Will be empty if the hours are unknown or
+       * could not be converted to localized text. Example: "Sun: 18:00–06:00"
        * </pre>
        *
-       * <code>
-       * repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated string weekday_descriptions = 3;</code>
        *
        * @return The count of weekdayDescriptions.
        */
@@ -7975,15 +7778,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Localized strings describing the opening hours of this
-       * place, one string for each day of the week.  Will be empty if the hours
-       * are unknown or could not be converted to localized text. Example: "Sun:
-       * 18:00–06:00"
+       * Localized strings describing the opening hours of this place, one string
+       * for each day of the week.  Will be empty if the hours are unknown or
+       * could not be converted to localized text. Example: "Sun: 18:00–06:00"
        * </pre>
        *
-       * <code>
-       * repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated string weekday_descriptions = 3;</code>
        *
        * @param index The index of the element to return.
        * @return The weekdayDescriptions at the given index.
@@ -7995,15 +7795,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Localized strings describing the opening hours of this
-       * place, one string for each day of the week.  Will be empty if the hours
-       * are unknown or could not be converted to localized text. Example: "Sun:
-       * 18:00–06:00"
+       * Localized strings describing the opening hours of this place, one string
+       * for each day of the week.  Will be empty if the hours are unknown or
+       * could not be converted to localized text. Example: "Sun: 18:00–06:00"
        * </pre>
        *
-       * <code>
-       * repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated string weekday_descriptions = 3;</code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the weekdayDescriptions at the given index.
@@ -8015,15 +7812,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Localized strings describing the opening hours of this
-       * place, one string for each day of the week.  Will be empty if the hours
-       * are unknown or could not be converted to localized text. Example: "Sun:
-       * 18:00–06:00"
+       * Localized strings describing the opening hours of this place, one string
+       * for each day of the week.  Will be empty if the hours are unknown or
+       * could not be converted to localized text. Example: "Sun: 18:00–06:00"
        * </pre>
        *
-       * <code>
-       * repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated string weekday_descriptions = 3;</code>
        *
        * @param index The index to set the value at.
        * @param value The weekdayDescriptions to set.
@@ -8043,15 +7837,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Localized strings describing the opening hours of this
-       * place, one string for each day of the week.  Will be empty if the hours
-       * are unknown or could not be converted to localized text. Example: "Sun:
-       * 18:00–06:00"
+       * Localized strings describing the opening hours of this place, one string
+       * for each day of the week.  Will be empty if the hours are unknown or
+       * could not be converted to localized text. Example: "Sun: 18:00–06:00"
        * </pre>
        *
-       * <code>
-       * repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated string weekday_descriptions = 3;</code>
        *
        * @param value The weekdayDescriptions to add.
        * @return This builder for chaining.
@@ -8070,15 +7861,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Localized strings describing the opening hours of this
-       * place, one string for each day of the week.  Will be empty if the hours
-       * are unknown or could not be converted to localized text. Example: "Sun:
-       * 18:00–06:00"
+       * Localized strings describing the opening hours of this place, one string
+       * for each day of the week.  Will be empty if the hours are unknown or
+       * could not be converted to localized text. Example: "Sun: 18:00–06:00"
        * </pre>
        *
-       * <code>
-       * repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated string weekday_descriptions = 3;</code>
        *
        * @param values The weekdayDescriptions to add.
        * @return This builder for chaining.
@@ -8094,15 +7882,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Localized strings describing the opening hours of this
-       * place, one string for each day of the week.  Will be empty if the hours
-       * are unknown or could not be converted to localized text. Example: "Sun:
-       * 18:00–06:00"
+       * Localized strings describing the opening hours of this place, one string
+       * for each day of the week.  Will be empty if the hours are unknown or
+       * could not be converted to localized text. Example: "Sun: 18:00–06:00"
        * </pre>
        *
-       * <code>
-       * repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated string weekday_descriptions = 3;</code>
        *
        * @return This builder for chaining.
        */
@@ -8117,15 +7902,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Localized strings describing the opening hours of this
-       * place, one string for each day of the week.  Will be empty if the hours
-       * are unknown or could not be converted to localized text. Example: "Sun:
-       * 18:00–06:00"
+       * Localized strings describing the opening hours of this place, one string
+       * for each day of the week.  Will be empty if the hours are unknown or
+       * could not be converted to localized text. Example: "Sun: 18:00–06:00"
        * </pre>
        *
-       * <code>
-       * repeated string weekday_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-       * </code>
+       * <code>repeated string weekday_descriptions = 3;</code>
        *
        * @param value The bytes of the weekdayDescriptions to add.
        * @return This builder for chaining.
@@ -8147,11 +7929,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. A type string used to identify the type of secondary hours.
+       * A type string used to identify the type of secondary hours.
        * </pre>
        *
        * <code>
-       * .google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * .google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4;
        * </code>
        *
        * @return The enum numeric value on the wire for secondaryHoursType.
@@ -8164,11 +7946,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. A type string used to identify the type of secondary hours.
+       * A type string used to identify the type of secondary hours.
        * </pre>
        *
        * <code>
-       * .google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * .google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4;
        * </code>
        *
        * @param value The enum numeric value on the wire for secondaryHoursType to set.
@@ -8184,11 +7966,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. A type string used to identify the type of secondary hours.
+       * A type string used to identify the type of secondary hours.
        * </pre>
        *
        * <code>
-       * .google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * .google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4;
        * </code>
        *
        * @return The secondaryHoursType.
@@ -8207,11 +7989,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. A type string used to identify the type of secondary hours.
+       * A type string used to identify the type of secondary hours.
        * </pre>
        *
        * <code>
-       * .google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * .google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4;
        * </code>
        *
        * @param value The secondaryHoursType to set.
@@ -8231,11 +8013,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. A type string used to identify the type of secondary hours.
+       * A type string used to identify the type of secondary hours.
        * </pre>
        *
        * <code>
-       * .google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * .google.maps.places.v1.Place.OpeningHours.SecondaryHoursType secondary_hours_type = 4;
        * </code>
        *
        * @return This builder for chaining.
@@ -8269,15 +8051,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public java.util.List<com.google.maps.places.v1.Place.OpeningHours.SpecialDay>
@@ -8292,15 +8073,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public int getSpecialDaysCount() {
@@ -8314,15 +8094,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public com.google.maps.places.v1.Place.OpeningHours.SpecialDay getSpecialDays(int index) {
@@ -8336,15 +8115,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public Builder setSpecialDays(
@@ -8365,15 +8143,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public Builder setSpecialDays(
@@ -8392,15 +8169,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public Builder addSpecialDays(com.google.maps.places.v1.Place.OpeningHours.SpecialDay value) {
@@ -8420,15 +8196,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public Builder addSpecialDays(
@@ -8449,15 +8224,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public Builder addSpecialDays(
@@ -8475,15 +8249,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public Builder addSpecialDays(
@@ -8502,15 +8275,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public Builder addAllSpecialDays(
@@ -8529,15 +8301,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public Builder clearSpecialDays() {
@@ -8554,15 +8325,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public Builder removeSpecialDays(int index) {
@@ -8579,15 +8349,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public com.google.maps.places.v1.Place.OpeningHours.SpecialDay.Builder getSpecialDaysBuilder(
@@ -8598,15 +8367,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public com.google.maps.places.v1.Place.OpeningHours.SpecialDayOrBuilder
@@ -8621,15 +8389,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public java.util.List<
@@ -8645,15 +8412,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public com.google.maps.places.v1.Place.OpeningHours.SpecialDay.Builder
@@ -8666,15 +8432,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public com.google.maps.places.v1.Place.OpeningHours.SpecialDay.Builder addSpecialDaysBuilder(
@@ -8688,15 +8453,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Structured information for special days that fall within the
-       * period that the returned opening hours cover. Special days are days that
-       * could impact the business hours of a place, e.g. Christmas day. Set for
+       * Structured information for special days that fall within the period that
+       * the returned opening hours cover. Special days are days that could impact
+       * the business hours of a place, e.g. Christmas day. Set for
        * current_opening_hours and current_secondary_opening_hours if there are
        * exceptional hours.
        * </pre>
        *
-       * <code>
-       * repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>repeated .google.maps.places.v1.Place.OpeningHours.SpecialDay special_days = 5;
        * </code>
        */
       public java.util.List<com.google.maps.places.v1.Place.OpeningHours.SpecialDay.Builder>
@@ -8797,10 +8561,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the Place's data provider.
+     * Name of the Place's data provider.
      * </pre>
      *
-     * <code>string provider = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string provider = 1;</code>
      *
      * @return The provider.
      */
@@ -8809,10 +8573,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the Place's data provider.
+     * Name of the Place's data provider.
      * </pre>
      *
-     * <code>string provider = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string provider = 1;</code>
      *
      * @return The bytes for provider.
      */
@@ -8822,10 +8586,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI to the Place's data provider.
+     * URI to the Place's data provider.
      * </pre>
      *
-     * <code>string provider_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string provider_uri = 2;</code>
      *
      * @return The providerUri.
      */
@@ -8834,10 +8598,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI to the Place's data provider.
+     * URI to the Place's data provider.
      * </pre>
      *
-     * <code>string provider_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string provider_uri = 2;</code>
      *
      * @return The bytes for providerUri.
      */
@@ -8896,10 +8660,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the Place's data provider.
+     * Name of the Place's data provider.
      * </pre>
      *
-     * <code>string provider = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string provider = 1;</code>
      *
      * @return The provider.
      */
@@ -8919,10 +8683,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the Place's data provider.
+     * Name of the Place's data provider.
      * </pre>
      *
-     * <code>string provider = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string provider = 1;</code>
      *
      * @return The bytes for provider.
      */
@@ -8947,10 +8711,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI to the Place's data provider.
+     * URI to the Place's data provider.
      * </pre>
      *
-     * <code>string provider_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string provider_uri = 2;</code>
      *
      * @return The providerUri.
      */
@@ -8970,10 +8734,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI to the Place's data provider.
+     * URI to the Place's data provider.
      * </pre>
      *
-     * <code>string provider_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string provider_uri = 2;</code>
      *
      * @return The bytes for providerUri.
      */
@@ -9364,10 +9128,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Name of the Place's data provider.
+       * Name of the Place's data provider.
        * </pre>
        *
-       * <code>string provider = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string provider = 1;</code>
        *
        * @return The provider.
        */
@@ -9386,10 +9150,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Name of the Place's data provider.
+       * Name of the Place's data provider.
        * </pre>
        *
-       * <code>string provider = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string provider = 1;</code>
        *
        * @return The bytes for provider.
        */
@@ -9408,10 +9172,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Name of the Place's data provider.
+       * Name of the Place's data provider.
        * </pre>
        *
-       * <code>string provider = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string provider = 1;</code>
        *
        * @param value The provider to set.
        * @return This builder for chaining.
@@ -9429,10 +9193,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Name of the Place's data provider.
+       * Name of the Place's data provider.
        * </pre>
        *
-       * <code>string provider = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string provider = 1;</code>
        *
        * @return This builder for chaining.
        */
@@ -9446,10 +9210,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Name of the Place's data provider.
+       * Name of the Place's data provider.
        * </pre>
        *
-       * <code>string provider = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string provider = 1;</code>
        *
        * @param value The bytes for provider to set.
        * @return This builder for chaining.
@@ -9470,10 +9234,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. URI to the Place's data provider.
+       * URI to the Place's data provider.
        * </pre>
        *
-       * <code>string provider_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string provider_uri = 2;</code>
        *
        * @return The providerUri.
        */
@@ -9492,10 +9256,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. URI to the Place's data provider.
+       * URI to the Place's data provider.
        * </pre>
        *
-       * <code>string provider_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string provider_uri = 2;</code>
        *
        * @return The bytes for providerUri.
        */
@@ -9514,10 +9278,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. URI to the Place's data provider.
+       * URI to the Place's data provider.
        * </pre>
        *
-       * <code>string provider_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string provider_uri = 2;</code>
        *
        * @param value The providerUri to set.
        * @return This builder for chaining.
@@ -9535,10 +9299,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. URI to the Place's data provider.
+       * URI to the Place's data provider.
        * </pre>
        *
-       * <code>string provider_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string provider_uri = 2;</code>
        *
        * @return This builder for chaining.
        */
@@ -9552,10 +9316,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. URI to the Place's data provider.
+       * URI to the Place's data provider.
        * </pre>
        *
-       * <code>string provider_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>string provider_uri = 2;</code>
        *
        * @param value The bytes for providerUri to set.
        * @return This builder for chaining.
@@ -13070,6 +12834,31 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Place offers wheelchair accessible parking.
+     * </pre>
+     *
+     * <code>optional bool wheelchair_accessible_parking = 1;</code>
+     *
+     * @return Whether the wheelchairAccessibleParking field is set.
+     */
+    boolean hasWheelchairAccessibleParking();
+    /**
+     *
+     *
+     * <pre>
+     * Place offers wheelchair accessible parking.
+     * </pre>
+     *
+     * <code>optional bool wheelchair_accessible_parking = 1;</code>
+     *
+     * @return The wheelchairAccessibleParking.
+     */
+    boolean getWheelchairAccessibleParking();
+
+    /**
+     *
+     *
+     * <pre>
      * Places has wheelchair accessible entrance.
      * </pre>
      *
@@ -13090,6 +12879,56 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      * @return The wheelchairAccessibleEntrance.
      */
     boolean getWheelchairAccessibleEntrance();
+
+    /**
+     *
+     *
+     * <pre>
+     * Place has wheelchair accessible restroom.
+     * </pre>
+     *
+     * <code>optional bool wheelchair_accessible_restroom = 3;</code>
+     *
+     * @return Whether the wheelchairAccessibleRestroom field is set.
+     */
+    boolean hasWheelchairAccessibleRestroom();
+    /**
+     *
+     *
+     * <pre>
+     * Place has wheelchair accessible restroom.
+     * </pre>
+     *
+     * <code>optional bool wheelchair_accessible_restroom = 3;</code>
+     *
+     * @return The wheelchairAccessibleRestroom.
+     */
+    boolean getWheelchairAccessibleRestroom();
+
+    /**
+     *
+     *
+     * <pre>
+     * Place has wheelchair accessible seating.
+     * </pre>
+     *
+     * <code>optional bool wheelchair_accessible_seating = 4;</code>
+     *
+     * @return Whether the wheelchairAccessibleSeating field is set.
+     */
+    boolean hasWheelchairAccessibleSeating();
+    /**
+     *
+     *
+     * <pre>
+     * Place has wheelchair accessible seating.
+     * </pre>
+     *
+     * <code>optional bool wheelchair_accessible_seating = 4;</code>
+     *
+     * @return The wheelchairAccessibleSeating.
+     */
+    boolean getWheelchairAccessibleSeating();
   }
   /**
    *
@@ -13134,6 +12973,39 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+    public static final int WHEELCHAIR_ACCESSIBLE_PARKING_FIELD_NUMBER = 1;
+    private boolean wheelchairAccessibleParking_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Place offers wheelchair accessible parking.
+     * </pre>
+     *
+     * <code>optional bool wheelchair_accessible_parking = 1;</code>
+     *
+     * @return Whether the wheelchairAccessibleParking field is set.
+     */
+    @java.lang.Override
+    public boolean hasWheelchairAccessibleParking() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Place offers wheelchair accessible parking.
+     * </pre>
+     *
+     * <code>optional bool wheelchair_accessible_parking = 1;</code>
+     *
+     * @return The wheelchairAccessibleParking.
+     */
+    @java.lang.Override
+    public boolean getWheelchairAccessibleParking() {
+      return wheelchairAccessibleParking_;
+    }
+
     public static final int WHEELCHAIR_ACCESSIBLE_ENTRANCE_FIELD_NUMBER = 2;
     private boolean wheelchairAccessibleEntrance_ = false;
     /**
@@ -13149,7 +13021,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasWheelchairAccessibleEntrance() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -13167,6 +13039,72 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       return wheelchairAccessibleEntrance_;
     }
 
+    public static final int WHEELCHAIR_ACCESSIBLE_RESTROOM_FIELD_NUMBER = 3;
+    private boolean wheelchairAccessibleRestroom_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Place has wheelchair accessible restroom.
+     * </pre>
+     *
+     * <code>optional bool wheelchair_accessible_restroom = 3;</code>
+     *
+     * @return Whether the wheelchairAccessibleRestroom field is set.
+     */
+    @java.lang.Override
+    public boolean hasWheelchairAccessibleRestroom() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Place has wheelchair accessible restroom.
+     * </pre>
+     *
+     * <code>optional bool wheelchair_accessible_restroom = 3;</code>
+     *
+     * @return The wheelchairAccessibleRestroom.
+     */
+    @java.lang.Override
+    public boolean getWheelchairAccessibleRestroom() {
+      return wheelchairAccessibleRestroom_;
+    }
+
+    public static final int WHEELCHAIR_ACCESSIBLE_SEATING_FIELD_NUMBER = 4;
+    private boolean wheelchairAccessibleSeating_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Place has wheelchair accessible seating.
+     * </pre>
+     *
+     * <code>optional bool wheelchair_accessible_seating = 4;</code>
+     *
+     * @return Whether the wheelchairAccessibleSeating field is set.
+     */
+    @java.lang.Override
+    public boolean hasWheelchairAccessibleSeating() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Place has wheelchair accessible seating.
+     * </pre>
+     *
+     * <code>optional bool wheelchair_accessible_seating = 4;</code>
+     *
+     * @return The wheelchairAccessibleSeating.
+     */
+    @java.lang.Override
+    public boolean getWheelchairAccessibleSeating() {
+      return wheelchairAccessibleSeating_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -13182,7 +13120,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeBool(1, wheelchairAccessibleParking_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeBool(2, wheelchairAccessibleEntrance_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeBool(3, wheelchairAccessibleRestroom_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeBool(4, wheelchairAccessibleSeating_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -13195,7 +13142,19 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(1, wheelchairAccessibleParking_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
             com.google.protobuf.CodedOutputStream.computeBoolSize(2, wheelchairAccessibleEntrance_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(3, wheelchairAccessibleRestroom_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(4, wheelchairAccessibleSeating_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -13213,10 +13172,26 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       com.google.maps.places.v1.Place.AccessibilityOptions other =
           (com.google.maps.places.v1.Place.AccessibilityOptions) obj;
 
+      if (hasWheelchairAccessibleParking() != other.hasWheelchairAccessibleParking()) return false;
+      if (hasWheelchairAccessibleParking()) {
+        if (getWheelchairAccessibleParking() != other.getWheelchairAccessibleParking())
+          return false;
+      }
       if (hasWheelchairAccessibleEntrance() != other.hasWheelchairAccessibleEntrance())
         return false;
       if (hasWheelchairAccessibleEntrance()) {
         if (getWheelchairAccessibleEntrance() != other.getWheelchairAccessibleEntrance())
+          return false;
+      }
+      if (hasWheelchairAccessibleRestroom() != other.hasWheelchairAccessibleRestroom())
+        return false;
+      if (hasWheelchairAccessibleRestroom()) {
+        if (getWheelchairAccessibleRestroom() != other.getWheelchairAccessibleRestroom())
+          return false;
+      }
+      if (hasWheelchairAccessibleSeating() != other.hasWheelchairAccessibleSeating()) return false;
+      if (hasWheelchairAccessibleSeating()) {
+        if (getWheelchairAccessibleSeating() != other.getWheelchairAccessibleSeating())
           return false;
       }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -13230,11 +13205,29 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasWheelchairAccessibleParking()) {
+        hash = (37 * hash) + WHEELCHAIR_ACCESSIBLE_PARKING_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashBoolean(getWheelchairAccessibleParking());
+      }
       if (hasWheelchairAccessibleEntrance()) {
         hash = (37 * hash) + WHEELCHAIR_ACCESSIBLE_ENTRANCE_FIELD_NUMBER;
         hash =
             (53 * hash)
                 + com.google.protobuf.Internal.hashBoolean(getWheelchairAccessibleEntrance());
+      }
+      if (hasWheelchairAccessibleRestroom()) {
+        hash = (37 * hash) + WHEELCHAIR_ACCESSIBLE_RESTROOM_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashBoolean(getWheelchairAccessibleRestroom());
+      }
+      if (hasWheelchairAccessibleSeating()) {
+        hash = (37 * hash) + WHEELCHAIR_ACCESSIBLE_SEATING_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashBoolean(getWheelchairAccessibleSeating());
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -13378,7 +13371,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        wheelchairAccessibleParking_ = false;
         wheelchairAccessibleEntrance_ = false;
+        wheelchairAccessibleRestroom_ = false;
+        wheelchairAccessibleSeating_ = false;
         return this;
       }
 
@@ -13417,8 +13413,20 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.wheelchairAccessibleEntrance_ = wheelchairAccessibleEntrance_;
+          result.wheelchairAccessibleParking_ = wheelchairAccessibleParking_;
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.wheelchairAccessibleEntrance_ = wheelchairAccessibleEntrance_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.wheelchairAccessibleRestroom_ = wheelchairAccessibleRestroom_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.wheelchairAccessibleSeating_ = wheelchairAccessibleSeating_;
+          to_bitField0_ |= 0x00000008;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -13471,8 +13479,17 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeFrom(com.google.maps.places.v1.Place.AccessibilityOptions other) {
         if (other == com.google.maps.places.v1.Place.AccessibilityOptions.getDefaultInstance())
           return this;
+        if (other.hasWheelchairAccessibleParking()) {
+          setWheelchairAccessibleParking(other.getWheelchairAccessibleParking());
+        }
         if (other.hasWheelchairAccessibleEntrance()) {
           setWheelchairAccessibleEntrance(other.getWheelchairAccessibleEntrance());
+        }
+        if (other.hasWheelchairAccessibleRestroom()) {
+          setWheelchairAccessibleRestroom(other.getWheelchairAccessibleRestroom());
+        }
+        if (other.hasWheelchairAccessibleSeating()) {
+          setWheelchairAccessibleSeating(other.getWheelchairAccessibleSeating());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -13500,12 +13517,30 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
               case 0:
                 done = true;
                 break;
+              case 8:
+                {
+                  wheelchairAccessibleParking_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
               case 16:
                 {
                   wheelchairAccessibleEntrance_ = input.readBool();
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 24:
+                {
+                  wheelchairAccessibleRestroom_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  wheelchairAccessibleSeating_ = input.readBool();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13525,6 +13560,74 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
+      private boolean wheelchairAccessibleParking_;
+      /**
+       *
+       *
+       * <pre>
+       * Place offers wheelchair accessible parking.
+       * </pre>
+       *
+       * <code>optional bool wheelchair_accessible_parking = 1;</code>
+       *
+       * @return Whether the wheelchairAccessibleParking field is set.
+       */
+      @java.lang.Override
+      public boolean hasWheelchairAccessibleParking() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Place offers wheelchair accessible parking.
+       * </pre>
+       *
+       * <code>optional bool wheelchair_accessible_parking = 1;</code>
+       *
+       * @return The wheelchairAccessibleParking.
+       */
+      @java.lang.Override
+      public boolean getWheelchairAccessibleParking() {
+        return wheelchairAccessibleParking_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Place offers wheelchair accessible parking.
+       * </pre>
+       *
+       * <code>optional bool wheelchair_accessible_parking = 1;</code>
+       *
+       * @param value The wheelchairAccessibleParking to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWheelchairAccessibleParking(boolean value) {
+
+        wheelchairAccessibleParking_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Place offers wheelchair accessible parking.
+       * </pre>
+       *
+       * <code>optional bool wheelchair_accessible_parking = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearWheelchairAccessibleParking() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        wheelchairAccessibleParking_ = false;
+        onChanged();
+        return this;
+      }
+
       private boolean wheelchairAccessibleEntrance_;
       /**
        *
@@ -13539,7 +13642,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public boolean hasWheelchairAccessibleEntrance() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -13571,7 +13674,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       public Builder setWheelchairAccessibleEntrance(boolean value) {
 
         wheelchairAccessibleEntrance_ = value;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -13587,8 +13690,144 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearWheelchairAccessibleEntrance() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         wheelchairAccessibleEntrance_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean wheelchairAccessibleRestroom_;
+      /**
+       *
+       *
+       * <pre>
+       * Place has wheelchair accessible restroom.
+       * </pre>
+       *
+       * <code>optional bool wheelchair_accessible_restroom = 3;</code>
+       *
+       * @return Whether the wheelchairAccessibleRestroom field is set.
+       */
+      @java.lang.Override
+      public boolean hasWheelchairAccessibleRestroom() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Place has wheelchair accessible restroom.
+       * </pre>
+       *
+       * <code>optional bool wheelchair_accessible_restroom = 3;</code>
+       *
+       * @return The wheelchairAccessibleRestroom.
+       */
+      @java.lang.Override
+      public boolean getWheelchairAccessibleRestroom() {
+        return wheelchairAccessibleRestroom_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Place has wheelchair accessible restroom.
+       * </pre>
+       *
+       * <code>optional bool wheelchair_accessible_restroom = 3;</code>
+       *
+       * @param value The wheelchairAccessibleRestroom to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWheelchairAccessibleRestroom(boolean value) {
+
+        wheelchairAccessibleRestroom_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Place has wheelchair accessible restroom.
+       * </pre>
+       *
+       * <code>optional bool wheelchair_accessible_restroom = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearWheelchairAccessibleRestroom() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        wheelchairAccessibleRestroom_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean wheelchairAccessibleSeating_;
+      /**
+       *
+       *
+       * <pre>
+       * Place has wheelchair accessible seating.
+       * </pre>
+       *
+       * <code>optional bool wheelchair_accessible_seating = 4;</code>
+       *
+       * @return Whether the wheelchairAccessibleSeating field is set.
+       */
+      @java.lang.Override
+      public boolean hasWheelchairAccessibleSeating() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Place has wheelchair accessible seating.
+       * </pre>
+       *
+       * <code>optional bool wheelchair_accessible_seating = 4;</code>
+       *
+       * @return The wheelchairAccessibleSeating.
+       */
+      @java.lang.Override
+      public boolean getWheelchairAccessibleSeating() {
+        return wheelchairAccessibleSeating_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Place has wheelchair accessible seating.
+       * </pre>
+       *
+       * <code>optional bool wheelchair_accessible_seating = 4;</code>
+       *
+       * @param value The wheelchairAccessibleSeating to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWheelchairAccessibleSeating(boolean value) {
+
+        wheelchairAccessibleSeating_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Place has wheelchair accessible seating.
+       * </pre>
+       *
+       * <code>optional bool wheelchair_accessible_seating = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearWheelchairAccessibleSeating() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        wheelchairAccessibleSeating_ = false;
         onChanged();
         return this;
       }
@@ -13666,11 +13905,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. An ID representing this place which may be used to look up
-   * this place again (a.k.a. the API "resource" name: places/&lt;place_id&gt;).
+   * An ID representing this place which may be used to look up this place
+   * again (a.k.a. the API "resource" name: places/place_id).
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The name.
    */
@@ -13690,11 +13929,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. An ID representing this place which may be used to look up
-   * this place again (a.k.a. the API "resource" name: places/&lt;place_id&gt;).
+   * An ID representing this place which may be used to look up this place
+   * again (a.k.a. the API "resource" name: places/place_id).
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The bytes for name.
    */
@@ -13719,10 +13958,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The unique identifier of a place.
+   * The unique identifier of a place.
    * </pre>
    *
-   * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string id = 2;</code>
    *
    * @return The id.
    */
@@ -13742,10 +13981,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The unique identifier of a place.
+   * The unique identifier of a place.
    * </pre>
    *
-   * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string id = 2;</code>
    *
    * @return The bytes for id.
    */
@@ -13768,14 +14007,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The localized name of the place, suitable as a short
-   * human-readable description. For example, "Google Sydney", "Starbucks",
-   * "Pyrmont", etc.
+   * The localized name of the place, suitable as a short human-readable
+   * description. For example, "Google Sydney", "Starbucks", "Pyrmont", etc.
    * </pre>
    *
-   * <code>
-   * .google.type.LocalizedText display_name = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.type.LocalizedText display_name = 31;</code>
    *
    * @return Whether the displayName field is set.
    */
@@ -13787,14 +14023,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The localized name of the place, suitable as a short
-   * human-readable description. For example, "Google Sydney", "Starbucks",
-   * "Pyrmont", etc.
+   * The localized name of the place, suitable as a short human-readable
+   * description. For example, "Google Sydney", "Starbucks", "Pyrmont", etc.
    * </pre>
    *
-   * <code>
-   * .google.type.LocalizedText display_name = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.type.LocalizedText display_name = 31;</code>
    *
    * @return The displayName.
    */
@@ -13806,14 +14039,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The localized name of the place, suitable as a short
-   * human-readable description. For example, "Google Sydney", "Starbucks",
-   * "Pyrmont", etc.
+   * The localized name of the place, suitable as a short human-readable
+   * description. For example, "Google Sydney", "Starbucks", "Pyrmont", etc.
    * </pre>
    *
-   * <code>
-   * .google.type.LocalizedText display_name = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.type.LocalizedText display_name = 31;</code>
    */
   @java.lang.Override
   public com.google.type.LocalizedTextOrBuilder getDisplayNameOrBuilder() {
@@ -13829,11 +14059,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A set of type tags for this result. For example, "political"
-   * and "locality".
+   * A set of type tags for this result. For example, "political" and
+   * "locality".  For the complete list of possible values, see Table A and
+   * Table B at
+   * https://developers.google.com/maps/documentation/places/web-service/place-types
    * </pre>
    *
-   * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string types = 5;</code>
    *
    * @return A list containing the types.
    */
@@ -13844,11 +14076,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A set of type tags for this result. For example, "political"
-   * and "locality".
+   * A set of type tags for this result. For example, "political" and
+   * "locality".  For the complete list of possible values, see Table A and
+   * Table B at
+   * https://developers.google.com/maps/documentation/places/web-service/place-types
    * </pre>
    *
-   * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string types = 5;</code>
    *
    * @return The count of types.
    */
@@ -13859,11 +14093,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A set of type tags for this result. For example, "political"
-   * and "locality".
+   * A set of type tags for this result. For example, "political" and
+   * "locality".  For the complete list of possible values, see Table A and
+   * Table B at
+   * https://developers.google.com/maps/documentation/places/web-service/place-types
    * </pre>
    *
-   * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string types = 5;</code>
    *
    * @param index The index of the element to return.
    * @return The types at the given index.
@@ -13875,17 +14111,137 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A set of type tags for this result. For example, "political"
-   * and "locality".
+   * A set of type tags for this result. For example, "political" and
+   * "locality".  For the complete list of possible values, see Table A and
+   * Table B at
+   * https://developers.google.com/maps/documentation/places/web-service/place-types
    * </pre>
    *
-   * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated string types = 5;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the types at the given index.
    */
   public com.google.protobuf.ByteString getTypesBytes(int index) {
     return types_.getByteString(index);
+  }
+
+  public static final int PRIMARY_TYPE_FIELD_NUMBER = 50;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object primaryType_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The primary type of the given result. This type must one of the Places API
+   * supported types. For example, "restaurant", "cafe", "airport", etc.  A
+   * place can only have a single primary type.  For the complete list of
+   * possible values, see Table A and Table B at
+   * https://developers.google.com/maps/documentation/places/web-service/place-types
+   * </pre>
+   *
+   * <code>string primary_type = 50;</code>
+   *
+   * @return The primaryType.
+   */
+  @java.lang.Override
+  public java.lang.String getPrimaryType() {
+    java.lang.Object ref = primaryType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      primaryType_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The primary type of the given result. This type must one of the Places API
+   * supported types. For example, "restaurant", "cafe", "airport", etc.  A
+   * place can only have a single primary type.  For the complete list of
+   * possible values, see Table A and Table B at
+   * https://developers.google.com/maps/documentation/places/web-service/place-types
+   * </pre>
+   *
+   * <code>string primary_type = 50;</code>
+   *
+   * @return The bytes for primaryType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPrimaryTypeBytes() {
+    java.lang.Object ref = primaryType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      primaryType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PRIMARY_TYPE_DISPLAY_NAME_FIELD_NUMBER = 32;
+  private com.google.type.LocalizedText primaryTypeDisplayName_;
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the primary type, localized to the request language if
+   * applicable.  For the complete list of possible values, see Table A and
+   * Table B at
+   * https://developers.google.com/maps/documentation/places/web-service/place-types
+   * </pre>
+   *
+   * <code>.google.type.LocalizedText primary_type_display_name = 32;</code>
+   *
+   * @return Whether the primaryTypeDisplayName field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrimaryTypeDisplayName() {
+    return primaryTypeDisplayName_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the primary type, localized to the request language if
+   * applicable.  For the complete list of possible values, see Table A and
+   * Table B at
+   * https://developers.google.com/maps/documentation/places/web-service/place-types
+   * </pre>
+   *
+   * <code>.google.type.LocalizedText primary_type_display_name = 32;</code>
+   *
+   * @return The primaryTypeDisplayName.
+   */
+  @java.lang.Override
+  public com.google.type.LocalizedText getPrimaryTypeDisplayName() {
+    return primaryTypeDisplayName_ == null
+        ? com.google.type.LocalizedText.getDefaultInstance()
+        : primaryTypeDisplayName_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the primary type, localized to the request language if
+   * applicable.  For the complete list of possible values, see Table A and
+   * Table B at
+   * https://developers.google.com/maps/documentation/places/web-service/place-types
+   * </pre>
+   *
+   * <code>.google.type.LocalizedText primary_type_display_name = 32;</code>
+   */
+  @java.lang.Override
+  public com.google.type.LocalizedTextOrBuilder getPrimaryTypeDisplayNameOrBuilder() {
+    return primaryTypeDisplayName_ == null
+        ? com.google.type.LocalizedText.getDefaultInstance()
+        : primaryTypeDisplayName_;
   }
 
   public static final int NATIONAL_PHONE_NUMBER_FIELD_NUMBER = 7;
@@ -13896,11 +14252,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A human-readable phone number for the place, in national
-   * format.
+   * A human-readable phone number for the place, in national format.
    * </pre>
    *
-   * <code>string national_phone_number = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string national_phone_number = 7;</code>
    *
    * @return The nationalPhoneNumber.
    */
@@ -13920,11 +14275,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A human-readable phone number for the place, in national
-   * format.
+   * A human-readable phone number for the place, in national format.
    * </pre>
    *
-   * <code>string national_phone_number = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string national_phone_number = 7;</code>
    *
    * @return The bytes for nationalPhoneNumber.
    */
@@ -13949,12 +14303,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A human-readable phone number for the place, in international
-   * format.
+   * A human-readable phone number for the place, in international format.
    * </pre>
    *
-   * <code>string international_phone_number = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>string international_phone_number = 8;</code>
    *
    * @return The internationalPhoneNumber.
    */
@@ -13974,12 +14326,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A human-readable phone number for the place, in international
-   * format.
+   * A human-readable phone number for the place, in international format.
    * </pre>
    *
-   * <code>string international_phone_number = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>string international_phone_number = 8;</code>
    *
    * @return The bytes for internationalPhoneNumber.
    */
@@ -14004,10 +14354,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A full, human-readable address for this place.
+   * A full, human-readable address for this place.
    * </pre>
    *
-   * <code>string formatted_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string formatted_address = 9;</code>
    *
    * @return The formattedAddress.
    */
@@ -14027,10 +14377,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A full, human-readable address for this place.
+   * A full, human-readable address for this place.
    * </pre>
    *
-   * <code>string formatted_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string formatted_address = 9;</code>
    *
    * @return The bytes for formattedAddress.
    */
@@ -14047,6 +14397,57 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SHORT_FORMATTED_ADDRESS_FIELD_NUMBER = 51;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object shortFormattedAddress_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * A short, human-readable address for this place.
+   * </pre>
+   *
+   * <code>string short_formatted_address = 51;</code>
+   *
+   * @return The shortFormattedAddress.
+   */
+  @java.lang.Override
+  public java.lang.String getShortFormattedAddress() {
+    java.lang.Object ref = shortFormattedAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      shortFormattedAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A short, human-readable address for this place.
+   * </pre>
+   *
+   * <code>string short_formatted_address = 51;</code>
+   *
+   * @return The bytes for shortFormattedAddress.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getShortFormattedAddressBytes() {
+    java.lang.Object ref = shortFormattedAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      shortFormattedAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ADDRESS_COMPONENTS_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
@@ -14055,12 +14456,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Repeated components for each locality level.
+   * Repeated components for each locality level.
+   * Note the following facts about the address_components[] array:
+   * - The array of address components may contain more components than the
+   * formatted_address.
+   * - The array does not necessarily include all the political entities that
+   * contain an address, apart from those included in the formatted_address. To
+   * retrieve all the political entities that contain a specific address, you
+   * should use reverse geocoding, passing the latitude/longitude of the address
+   * as a parameter to the request.
+   * - The format of the response is not guaranteed to remain the same between
+   * requests. In particular, the number of address_components varies based on
+   * the address requested and can change over time for the same address. A
+   * component can change position in the array. The type of the component can
+   * change. A particular component may be missing in a later response.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.maps.places.v1.Place.AddressComponent>
@@ -14071,12 +14483,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Repeated components for each locality level.
+   * Repeated components for each locality level.
+   * Note the following facts about the address_components[] array:
+   * - The array of address components may contain more components than the
+   * formatted_address.
+   * - The array does not necessarily include all the political entities that
+   * contain an address, apart from those included in the formatted_address. To
+   * retrieve all the political entities that contain a specific address, you
+   * should use reverse geocoding, passing the latitude/longitude of the address
+   * as a parameter to the request.
+   * - The format of the response is not guaranteed to remain the same between
+   * requests. In particular, the number of address_components varies based on
+   * the address requested and can change over time for the same address. A
+   * component can change position in the array. The type of the component can
+   * change. A particular component may be missing in a later response.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.maps.places.v1.Place.AddressComponentOrBuilder>
@@ -14087,12 +14510,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Repeated components for each locality level.
+   * Repeated components for each locality level.
+   * Note the following facts about the address_components[] array:
+   * - The array of address components may contain more components than the
+   * formatted_address.
+   * - The array does not necessarily include all the political entities that
+   * contain an address, apart from those included in the formatted_address. To
+   * retrieve all the political entities that contain a specific address, you
+   * should use reverse geocoding, passing the latitude/longitude of the address
+   * as a parameter to the request.
+   * - The format of the response is not guaranteed to remain the same between
+   * requests. In particular, the number of address_components varies based on
+   * the address requested and can change over time for the same address. A
+   * component can change position in the array. The type of the component can
+   * change. A particular component may be missing in a later response.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
    */
   @java.lang.Override
   public int getAddressComponentsCount() {
@@ -14102,12 +14536,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Repeated components for each locality level.
+   * Repeated components for each locality level.
+   * Note the following facts about the address_components[] array:
+   * - The array of address components may contain more components than the
+   * formatted_address.
+   * - The array does not necessarily include all the political entities that
+   * contain an address, apart from those included in the formatted_address. To
+   * retrieve all the political entities that contain a specific address, you
+   * should use reverse geocoding, passing the latitude/longitude of the address
+   * as a parameter to the request.
+   * - The format of the response is not guaranteed to remain the same between
+   * requests. In particular, the number of address_components varies based on
+   * the address requested and can change over time for the same address. A
+   * component can change position in the array. The type of the component can
+   * change. A particular component may be missing in a later response.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.Place.AddressComponent getAddressComponents(int index) {
@@ -14117,12 +14562,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Repeated components for each locality level.
+   * Repeated components for each locality level.
+   * Note the following facts about the address_components[] array:
+   * - The array of address components may contain more components than the
+   * formatted_address.
+   * - The array does not necessarily include all the political entities that
+   * contain an address, apart from those included in the formatted_address. To
+   * retrieve all the political entities that contain a specific address, you
+   * should use reverse geocoding, passing the latitude/longitude of the address
+   * as a parameter to the request.
+   * - The format of the response is not guaranteed to remain the same between
+   * requests. In particular, the number of address_components varies based on
+   * the address requested and can change over time for the same address. A
+   * component can change position in the array. The type of the component can
+   * change. A particular component may be missing in a later response.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.Place.AddressComponentOrBuilder getAddressComponentsOrBuilder(
@@ -14136,12 +14592,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Plus code of the place location lat/long.
+   * Plus code of the place location lat/long.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.Place.PlusCode plus_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.Place.PlusCode plus_code = 11;</code>
    *
    * @return Whether the plusCode field is set.
    */
@@ -14153,12 +14607,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Plus code of the place location lat/long.
+   * Plus code of the place location lat/long.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.Place.PlusCode plus_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.Place.PlusCode plus_code = 11;</code>
    *
    * @return The plusCode.
    */
@@ -14172,12 +14624,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Plus code of the place location lat/long.
+   * Plus code of the place location lat/long.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.Place.PlusCode plus_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.Place.PlusCode plus_code = 11;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.Place.PlusCodeOrBuilder getPlusCodeOrBuilder() {
@@ -14192,10 +14642,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The position of this place.
+   * The position of this place.
    * </pre>
    *
-   * <code>.google.type.LatLng location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.type.LatLng location = 12;</code>
    *
    * @return Whether the location field is set.
    */
@@ -14207,10 +14657,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The position of this place.
+   * The position of this place.
    * </pre>
    *
-   * <code>.google.type.LatLng location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.type.LatLng location = 12;</code>
    *
    * @return The location.
    */
@@ -14222,10 +14672,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The position of this place.
+   * The position of this place.
    * </pre>
    *
-   * <code>.google.type.LatLng location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.type.LatLng location = 12;</code>
    */
   @java.lang.Override
   public com.google.type.LatLngOrBuilder getLocationOrBuilder() {
@@ -14238,12 +14688,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A viewport suitable for displaying the place on an
-   * average-sized map.
+   * A viewport suitable for displaying the place on an average-sized map.
    * </pre>
    *
-   * <code>.google.geo.type.Viewport viewport = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.geo.type.Viewport viewport = 13;</code>
    *
    * @return Whether the viewport field is set.
    */
@@ -14255,12 +14703,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A viewport suitable for displaying the place on an
-   * average-sized map.
+   * A viewport suitable for displaying the place on an average-sized map.
    * </pre>
    *
-   * <code>.google.geo.type.Viewport viewport = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.geo.type.Viewport viewport = 13;</code>
    *
    * @return The viewport.
    */
@@ -14272,12 +14718,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A viewport suitable for displaying the place on an
-   * average-sized map.
+   * A viewport suitable for displaying the place on an average-sized map.
    * </pre>
    *
-   * <code>.google.geo.type.Viewport viewport = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.geo.type.Viewport viewport = 13;</code>
    */
   @java.lang.Override
   public com.google.geo.type.ViewportOrBuilder getViewportOrBuilder() {
@@ -14290,11 +14734,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A rating between 1.0 and 5.0, based on user reviews of this
-   * place.
+   * A rating between 1.0 and 5.0, based on user reviews of this place.
    * </pre>
    *
-   * <code>double rating = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>double rating = 14;</code>
    *
    * @return The rating.
    */
@@ -14311,10 +14754,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A URL providing more information about this place.
+   * A URL providing more information about this place.
    * </pre>
    *
-   * <code>string google_maps_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string google_maps_uri = 15;</code>
    *
    * @return The googleMapsUri.
    */
@@ -14334,10 +14777,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A URL providing more information about this place.
+   * A URL providing more information about this place.
    * </pre>
    *
-   * <code>string google_maps_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string google_maps_uri = 15;</code>
    *
    * @return The bytes for googleMapsUri.
    */
@@ -14362,13 +14805,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The authoritative website for this place, e.g. a business'
-   * homepage. Note that for places that are part of a chain (e.g. an IKEA
-   * store), this will usually be the website for the individual store, not the
-   * overall chain.
+   * The authoritative website for this place, e.g. a business' homepage.
+   * Note that for places that are part of a chain (e.g. an IKEA store), this
+   * will usually be the website for the individual store, not the overall
+   * chain.
    * </pre>
    *
-   * <code>string website_uri = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string website_uri = 16;</code>
    *
    * @return The websiteUri.
    */
@@ -14388,13 +14831,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The authoritative website for this place, e.g. a business'
-   * homepage. Note that for places that are part of a chain (e.g. an IKEA
-   * store), this will usually be the website for the individual store, not the
-   * overall chain.
+   * The authoritative website for this place, e.g. a business' homepage.
+   * Note that for places that are part of a chain (e.g. an IKEA store), this
+   * will usually be the website for the individual store, not the overall
+   * chain.
    * </pre>
    *
-   * <code>string website_uri = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string website_uri = 16;</code>
    *
    * @return The bytes for websiteUri.
    */
@@ -14419,12 +14862,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. List of reviews about this place.
+   * List of reviews about this place, sorted by relevance.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.maps.places.v1.Review> getReviewsList() {
@@ -14434,12 +14875,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. List of reviews about this place.
+   * List of reviews about this place, sorted by relevance.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.maps.places.v1.ReviewOrBuilder>
@@ -14450,12 +14889,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. List of reviews about this place.
+   * List of reviews about this place, sorted by relevance.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
    */
   @java.lang.Override
   public int getReviewsCount() {
@@ -14465,12 +14902,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. List of reviews about this place.
+   * List of reviews about this place, sorted by relevance.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.Review getReviews(int index) {
@@ -14480,12 +14915,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. List of reviews about this place.
+   * List of reviews about this place, sorted by relevance.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.ReviewOrBuilder getReviewsOrBuilder(int index) {
@@ -14498,12 +14931,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The regular hours of operation.
+   * The regular hours of operation.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
    *
    * @return Whether the regularOpeningHours field is set.
    */
@@ -14515,12 +14946,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The regular hours of operation.
+   * The regular hours of operation.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
    *
    * @return The regularOpeningHours.
    */
@@ -14534,12 +14963,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The regular hours of operation.
+   * The regular hours of operation.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.Place.OpeningHoursOrBuilder getRegularOpeningHoursOrBuilder() {
@@ -14554,13 +14981,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Number of minutes this place's timezone is currently offset
-   * from UTC. This is expressed in minutes to support timezones that are offset
-   * by fractions of an hour, e.g. X hours and 15 minutes.
+   * Number of minutes this place's timezone is currently offset from UTC.
+   * This is expressed in minutes to support timezones that are offset by
+   * fractions of an hour, e.g. X hours and 15 minutes.
    * </pre>
    *
-   * <code>optional int32 utc_offset_minutes = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>optional int32 utc_offset_minutes = 22;</code>
    *
    * @return Whether the utcOffsetMinutes field is set.
    */
@@ -14572,13 +14998,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Number of minutes this place's timezone is currently offset
-   * from UTC. This is expressed in minutes to support timezones that are offset
-   * by fractions of an hour, e.g. X hours and 15 minutes.
+   * Number of minutes this place's timezone is currently offset from UTC.
+   * This is expressed in minutes to support timezones that are offset by
+   * fractions of an hour, e.g. X hours and 15 minutes.
    * </pre>
    *
-   * <code>optional int32 utc_offset_minutes = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>optional int32 utc_offset_minutes = 22;</code>
    *
    * @return The utcOffsetMinutes.
    */
@@ -14595,12 +15020,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information (including references) about photos of this place.
+   * Information (including references) about photos of this place.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.maps.places.v1.Photo> getPhotosList() {
@@ -14610,12 +15033,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information (including references) about photos of this place.
+   * Information (including references) about photos of this place.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.maps.places.v1.PhotoOrBuilder>
@@ -14626,12 +15047,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information (including references) about photos of this place.
+   * Information (including references) about photos of this place.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
    */
   @java.lang.Override
   public int getPhotosCount() {
@@ -14641,12 +15060,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information (including references) about photos of this place.
+   * Information (including references) about photos of this place.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.Photo getPhotos(int index) {
@@ -14656,12 +15073,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information (including references) about photos of this place.
+   * Information (including references) about photos of this place.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.PhotoOrBuilder getPhotosOrBuilder(int index) {
@@ -14676,11 +15091,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The place's address in adr microformat:
-   * http://microformats.org/wiki/adr.
+   * The place's address in adr microformat: http://microformats.org/wiki/adr.
    * </pre>
    *
-   * <code>string adr_format_address = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string adr_format_address = 24;</code>
    *
    * @return The adrFormatAddress.
    */
@@ -14700,11 +15114,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The place's address in adr microformat:
-   * http://microformats.org/wiki/adr.
+   * The place's address in adr microformat: http://microformats.org/wiki/adr.
    * </pre>
    *
-   * <code>string adr_format_address = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string adr_format_address = 24;</code>
    *
    * @return The bytes for adrFormatAddress.
    */
@@ -14727,12 +15140,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The business status for the place.
+   * The business status for the place.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.Place.BusinessStatus business_status = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
    *
    * @return The enum numeric value on the wire for businessStatus.
    */
@@ -14744,12 +15155,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The business status for the place.
+   * The business status for the place.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.Place.BusinessStatus business_status = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
    *
    * @return The businessStatus.
    */
@@ -14766,12 +15175,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Price level of the place.
+   * Price level of the place.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.PriceLevel price_level = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.PriceLevel price_level = 26;</code>
    *
    * @return The enum numeric value on the wire for priceLevel.
    */
@@ -14783,12 +15190,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Price level of the place.
+   * Price level of the place.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.PriceLevel price_level = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.PriceLevel price_level = 26;</code>
    *
    * @return The priceLevel.
    */
@@ -14807,12 +15212,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A set of data provider that must be shown with this result.
+   * A set of data provider that must be shown with this result.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.maps.places.v1.Place.Attribution> getAttributionsList() {
@@ -14822,12 +15225,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A set of data provider that must be shown with this result.
+   * A set of data provider that must be shown with this result.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.maps.places.v1.Place.AttributionOrBuilder>
@@ -14838,12 +15239,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A set of data provider that must be shown with this result.
+   * A set of data provider that must be shown with this result.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
    */
   @java.lang.Override
   public int getAttributionsCount() {
@@ -14853,12 +15252,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A set of data provider that must be shown with this result.
+   * A set of data provider that must be shown with this result.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.Place.Attribution getAttributions(int index) {
@@ -14868,12 +15265,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A set of data provider that must be shown with this result.
+   * A set of data provider that must be shown with this result.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.Place.AttributionOrBuilder getAttributionsOrBuilder(int index) {
@@ -14886,12 +15281,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The total number of reviews (with or without text) for this
-   * place.
+   * The total number of reviews (with or without text) for this place.
    * </pre>
    *
-   * <code>optional int32 user_rating_count = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>optional int32 user_rating_count = 28;</code>
    *
    * @return Whether the userRatingCount field is set.
    */
@@ -14903,12 +15296,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The total number of reviews (with or without text) for this
-   * place.
+   * The total number of reviews (with or without text) for this place.
    * </pre>
    *
-   * <code>optional int32 user_rating_count = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>optional int32 user_rating_count = 28;</code>
    *
    * @return The userRatingCount.
    */
@@ -14925,11 +15316,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A truncated URL to an v2 icon mask. User can access different
-   * icon type by appending type suffix to the end (eg, ".svg" or ".png").
+   * A truncated URL to an icon mask. User can access different icon type by
+   * appending type suffix to the end (eg, ".svg" or ".png").
    * </pre>
    *
-   * <code>string icon_mask_base_uri = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string icon_mask_base_uri = 29;</code>
    *
    * @return The iconMaskBaseUri.
    */
@@ -14949,11 +15340,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A truncated URL to an v2 icon mask. User can access different
-   * icon type by appending type suffix to the end (eg, ".svg" or ".png").
+   * A truncated URL to an icon mask. User can access different icon type by
+   * appending type suffix to the end (eg, ".svg" or ".png").
    * </pre>
    *
-   * <code>string icon_mask_base_uri = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string icon_mask_base_uri = 29;</code>
    *
    * @return The bytes for iconMaskBaseUri.
    */
@@ -14978,10 +15369,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Background color for icon_mask in hex format, e.g. #909CE1.
+   * Background color for icon_mask in hex format, e.g. #909CE1.
    * </pre>
    *
-   * <code>string icon_background_color = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string icon_background_color = 30;</code>
    *
    * @return The iconBackgroundColor.
    */
@@ -15001,10 +15392,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Background color for icon_mask in hex format, e.g. #909CE1.
+   * Background color for icon_mask in hex format, e.g. #909CE1.
    * </pre>
    *
-   * <code>string icon_background_color = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string icon_background_color = 30;</code>
    *
    * @return The bytes for iconBackgroundColor.
    */
@@ -15027,10 +15418,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the business supports takeout.
+   * Specifies if the business supports takeout.
    * </pre>
    *
-   * <code>optional bool takeout = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool takeout = 33;</code>
    *
    * @return Whether the takeout field is set.
    */
@@ -15042,10 +15433,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the business supports takeout.
+   * Specifies if the business supports takeout.
    * </pre>
    *
-   * <code>optional bool takeout = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool takeout = 33;</code>
    *
    * @return The takeout.
    */
@@ -15060,10 +15451,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the business supports delivery.
+   * Specifies if the business supports delivery.
    * </pre>
    *
-   * <code>optional bool delivery = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool delivery = 34;</code>
    *
    * @return Whether the delivery field is set.
    */
@@ -15075,10 +15466,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the business supports delivery.
+   * Specifies if the business supports delivery.
    * </pre>
    *
-   * <code>optional bool delivery = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool delivery = 34;</code>
    *
    * @return The delivery.
    */
@@ -15093,11 +15484,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the business supports indoor or outdoor seating
-   * options.
+   * Specifies if the business supports indoor or outdoor seating options.
    * </pre>
    *
-   * <code>optional bool dine_in = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool dine_in = 35;</code>
    *
    * @return Whether the dineIn field is set.
    */
@@ -15109,11 +15499,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the business supports indoor or outdoor seating
-   * options.
+   * Specifies if the business supports indoor or outdoor seating options.
    * </pre>
    *
-   * <code>optional bool dine_in = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool dine_in = 35;</code>
    *
    * @return The dineIn.
    */
@@ -15128,10 +15517,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the business supports curbside pickup.
+   * Specifies if the business supports curbside pickup.
    * </pre>
    *
-   * <code>optional bool curbside_pickup = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool curbside_pickup = 36;</code>
    *
    * @return Whether the curbsidePickup field is set.
    */
@@ -15143,10 +15532,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the business supports curbside pickup.
+   * Specifies if the business supports curbside pickup.
    * </pre>
    *
-   * <code>optional bool curbside_pickup = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool curbside_pickup = 36;</code>
    *
    * @return The curbsidePickup.
    */
@@ -15161,10 +15550,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place supports reservations.
+   * Specifies if the place supports reservations.
    * </pre>
    *
-   * <code>optional bool reservable = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool reservable = 38;</code>
    *
    * @return Whether the reservable field is set.
    */
@@ -15176,10 +15565,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place supports reservations.
+   * Specifies if the place supports reservations.
    * </pre>
    *
-   * <code>optional bool reservable = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool reservable = 38;</code>
    *
    * @return The reservable.
    */
@@ -15194,10 +15583,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place serves breakfast.
+   * Specifies if the place serves breakfast.
    * </pre>
    *
-   * <code>optional bool serves_breakfast = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_breakfast = 39;</code>
    *
    * @return Whether the servesBreakfast field is set.
    */
@@ -15209,10 +15598,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place serves breakfast.
+   * Specifies if the place serves breakfast.
    * </pre>
    *
-   * <code>optional bool serves_breakfast = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_breakfast = 39;</code>
    *
    * @return The servesBreakfast.
    */
@@ -15227,10 +15616,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place serves lunch.
+   * Specifies if the place serves lunch.
    * </pre>
    *
-   * <code>optional bool serves_lunch = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_lunch = 40;</code>
    *
    * @return Whether the servesLunch field is set.
    */
@@ -15242,10 +15631,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place serves lunch.
+   * Specifies if the place serves lunch.
    * </pre>
    *
-   * <code>optional bool serves_lunch = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_lunch = 40;</code>
    *
    * @return The servesLunch.
    */
@@ -15260,10 +15649,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place serves dinner.
+   * Specifies if the place serves dinner.
    * </pre>
    *
-   * <code>optional bool serves_dinner = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_dinner = 41;</code>
    *
    * @return Whether the servesDinner field is set.
    */
@@ -15275,10 +15664,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place serves dinner.
+   * Specifies if the place serves dinner.
    * </pre>
    *
-   * <code>optional bool serves_dinner = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_dinner = 41;</code>
    *
    * @return The servesDinner.
    */
@@ -15293,10 +15682,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place serves beer.
+   * Specifies if the place serves beer.
    * </pre>
    *
-   * <code>optional bool serves_beer = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_beer = 42;</code>
    *
    * @return Whether the servesBeer field is set.
    */
@@ -15308,10 +15697,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place serves beer.
+   * Specifies if the place serves beer.
    * </pre>
    *
-   * <code>optional bool serves_beer = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_beer = 42;</code>
    *
    * @return The servesBeer.
    */
@@ -15326,10 +15715,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place serves wine.
+   * Specifies if the place serves wine.
    * </pre>
    *
-   * <code>optional bool serves_wine = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_wine = 43;</code>
    *
    * @return Whether the servesWine field is set.
    */
@@ -15341,10 +15730,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place serves wine.
+   * Specifies if the place serves wine.
    * </pre>
    *
-   * <code>optional bool serves_wine = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_wine = 43;</code>
    *
    * @return The servesWine.
    */
@@ -15359,10 +15748,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place serves brunch.
+   * Specifies if the place serves brunch.
    * </pre>
    *
-   * <code>optional bool serves_brunch = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_brunch = 44;</code>
    *
    * @return Whether the servesBrunch field is set.
    */
@@ -15374,10 +15763,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place serves brunch.
+   * Specifies if the place serves brunch.
    * </pre>
    *
-   * <code>optional bool serves_brunch = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_brunch = 44;</code>
    *
    * @return The servesBrunch.
    */
@@ -15392,11 +15781,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place serves vegetarian food.
+   * Specifies if the place serves vegetarian food.
    * </pre>
    *
-   * <code>optional bool serves_vegetarian_food = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>optional bool serves_vegetarian_food = 45;</code>
    *
    * @return Whether the servesVegetarianFood field is set.
    */
@@ -15408,11 +15796,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies if the place serves vegetarian food.
+   * Specifies if the place serves vegetarian food.
    * </pre>
    *
-   * <code>optional bool serves_vegetarian_food = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>optional bool serves_vegetarian_food = 45;</code>
    *
    * @return The servesVegetarianFood.
    */
@@ -15427,15 +15814,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The hours of operation for the next seven days (including
-   * today). The time period starts at midnight on the date of the request and
-   * ends at 11:59 pm six days later. This field includes the special_days
-   * subfield of all hours, set for dates that have exceptional hours.
+   * The hours of operation for the next seven days (including today). The time
+   * period starts at midnight on the date of the request and ends at 11:59 pm
+   * six days later. This field includes the special_days subfield of all hours,
+   * set for dates that have exceptional hours.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.Place.OpeningHours current_opening_hours = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
    *
    * @return Whether the currentOpeningHours field is set.
    */
@@ -15447,15 +15832,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The hours of operation for the next seven days (including
-   * today). The time period starts at midnight on the date of the request and
-   * ends at 11:59 pm six days later. This field includes the special_days
-   * subfield of all hours, set for dates that have exceptional hours.
+   * The hours of operation for the next seven days (including today). The time
+   * period starts at midnight on the date of the request and ends at 11:59 pm
+   * six days later. This field includes the special_days subfield of all hours,
+   * set for dates that have exceptional hours.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.Place.OpeningHours current_opening_hours = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
    *
    * @return The currentOpeningHours.
    */
@@ -15469,15 +15852,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The hours of operation for the next seven days (including
-   * today). The time period starts at midnight on the date of the request and
-   * ends at 11:59 pm six days later. This field includes the special_days
-   * subfield of all hours, set for dates that have exceptional hours.
+   * The hours of operation for the next seven days (including today). The time
+   * period starts at midnight on the date of the request and ends at 11:59 pm
+   * six days later. This field includes the special_days subfield of all hours,
+   * set for dates that have exceptional hours.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.Place.OpeningHours current_opening_hours = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.Place.OpeningHoursOrBuilder getCurrentOpeningHoursOrBuilder() {
@@ -15495,18 +15876,17 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains an array of entries for the next seven days including
-   * information about secondary hours of a business. Secondary hours are
-   * different from a business's main hours. For example, a restaurant can
-   * specify drive through hours or delivery hours as its secondary hours. This
-   * field populates the type subfield, which draws from a predefined list of
-   * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-   * the types of the place. This field includes the special_days subfield of
-   * all hours, set for dates that have exceptional hours.
+   * Contains an array of entries for the next seven days including information
+   * about secondary hours of a business. Secondary hours are different from a
+   * business's main hours. For example, a restaurant can specify drive through
+   * hours or delivery hours as its secondary hours. This field populates the
+   * type subfield, which draws from a predefined list of opening hours types
+   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+   * place. This field includes the special_days subfield of all hours, set for
+   * dates that have exceptional hours.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
    * </code>
    */
   @java.lang.Override
@@ -15518,18 +15898,17 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains an array of entries for the next seven days including
-   * information about secondary hours of a business. Secondary hours are
-   * different from a business's main hours. For example, a restaurant can
-   * specify drive through hours or delivery hours as its secondary hours. This
-   * field populates the type subfield, which draws from a predefined list of
-   * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-   * the types of the place. This field includes the special_days subfield of
-   * all hours, set for dates that have exceptional hours.
+   * Contains an array of entries for the next seven days including information
+   * about secondary hours of a business. Secondary hours are different from a
+   * business's main hours. For example, a restaurant can specify drive through
+   * hours or delivery hours as its secondary hours. This field populates the
+   * type subfield, which draws from a predefined list of opening hours types
+   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+   * place. This field includes the special_days subfield of all hours, set for
+   * dates that have exceptional hours.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
    * </code>
    */
   @java.lang.Override
@@ -15541,18 +15920,17 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains an array of entries for the next seven days including
-   * information about secondary hours of a business. Secondary hours are
-   * different from a business's main hours. For example, a restaurant can
-   * specify drive through hours or delivery hours as its secondary hours. This
-   * field populates the type subfield, which draws from a predefined list of
-   * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-   * the types of the place. This field includes the special_days subfield of
-   * all hours, set for dates that have exceptional hours.
+   * Contains an array of entries for the next seven days including information
+   * about secondary hours of a business. Secondary hours are different from a
+   * business's main hours. For example, a restaurant can specify drive through
+   * hours or delivery hours as its secondary hours. This field populates the
+   * type subfield, which draws from a predefined list of opening hours types
+   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+   * place. This field includes the special_days subfield of all hours, set for
+   * dates that have exceptional hours.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
    * </code>
    */
   @java.lang.Override
@@ -15563,18 +15941,17 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains an array of entries for the next seven days including
-   * information about secondary hours of a business. Secondary hours are
-   * different from a business's main hours. For example, a restaurant can
-   * specify drive through hours or delivery hours as its secondary hours. This
-   * field populates the type subfield, which draws from a predefined list of
-   * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-   * the types of the place. This field includes the special_days subfield of
-   * all hours, set for dates that have exceptional hours.
+   * Contains an array of entries for the next seven days including information
+   * about secondary hours of a business. Secondary hours are different from a
+   * business's main hours. For example, a restaurant can specify drive through
+   * hours or delivery hours as its secondary hours. This field populates the
+   * type subfield, which draws from a predefined list of opening hours types
+   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+   * place. This field includes the special_days subfield of all hours, set for
+   * dates that have exceptional hours.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
    * </code>
    */
   @java.lang.Override
@@ -15585,18 +15962,17 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains an array of entries for the next seven days including
-   * information about secondary hours of a business. Secondary hours are
-   * different from a business's main hours. For example, a restaurant can
-   * specify drive through hours or delivery hours as its secondary hours. This
-   * field populates the type subfield, which draws from a predefined list of
-   * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-   * the types of the place. This field includes the special_days subfield of
-   * all hours, set for dates that have exceptional hours.
+   * Contains an array of entries for the next seven days including information
+   * about secondary hours of a business. Secondary hours are different from a
+   * business's main hours. For example, a restaurant can specify drive through
+   * hours or delivery hours as its secondary hours. This field populates the
+   * type subfield, which draws from a predefined list of opening hours types
+   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+   * place. This field includes the special_days subfield of all hours, set for
+   * dates that have exceptional hours.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
    * </code>
    */
   @java.lang.Override
@@ -15614,17 +15990,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains an array of entries for information about regular
-   * secondary hours of a business. Secondary hours are different from a
-   * business's main hours. For example, a restaurant can specify drive through
-   * hours or delivery hours as its secondary hours. This field populates the
-   * type subfield, which draws from a predefined list of opening hours types
-   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-   * place.
+   * Contains an array of entries for information about regular secondary hours
+   * of a business. Secondary hours are different from a business's main hours.
+   * For example, a restaurant can specify drive through hours or delivery hours
+   * as its secondary hours. This field populates the type subfield, which draws
+   * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+   * PICKUP, or TAKEOUT) based on the types of the place.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
    * </code>
    */
   @java.lang.Override
@@ -15636,17 +16010,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains an array of entries for information about regular
-   * secondary hours of a business. Secondary hours are different from a
-   * business's main hours. For example, a restaurant can specify drive through
-   * hours or delivery hours as its secondary hours. This field populates the
-   * type subfield, which draws from a predefined list of opening hours types
-   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-   * place.
+   * Contains an array of entries for information about regular secondary hours
+   * of a business. Secondary hours are different from a business's main hours.
+   * For example, a restaurant can specify drive through hours or delivery hours
+   * as its secondary hours. This field populates the type subfield, which draws
+   * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+   * PICKUP, or TAKEOUT) based on the types of the place.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
    * </code>
    */
   @java.lang.Override
@@ -15658,17 +16030,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains an array of entries for information about regular
-   * secondary hours of a business. Secondary hours are different from a
-   * business's main hours. For example, a restaurant can specify drive through
-   * hours or delivery hours as its secondary hours. This field populates the
-   * type subfield, which draws from a predefined list of opening hours types
-   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-   * place.
+   * Contains an array of entries for information about regular secondary hours
+   * of a business. Secondary hours are different from a business's main hours.
+   * For example, a restaurant can specify drive through hours or delivery hours
+   * as its secondary hours. This field populates the type subfield, which draws
+   * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+   * PICKUP, or TAKEOUT) based on the types of the place.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
    * </code>
    */
   @java.lang.Override
@@ -15679,17 +16049,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains an array of entries for information about regular
-   * secondary hours of a business. Secondary hours are different from a
-   * business's main hours. For example, a restaurant can specify drive through
-   * hours or delivery hours as its secondary hours. This field populates the
-   * type subfield, which draws from a predefined list of opening hours types
-   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-   * place.
+   * Contains an array of entries for information about regular secondary hours
+   * of a business. Secondary hours are different from a business's main hours.
+   * For example, a restaurant can specify drive through hours or delivery hours
+   * as its secondary hours. This field populates the type subfield, which draws
+   * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+   * PICKUP, or TAKEOUT) based on the types of the place.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
    * </code>
    */
   @java.lang.Override
@@ -15700,17 +16068,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains an array of entries for information about regular
-   * secondary hours of a business. Secondary hours are different from a
-   * business's main hours. For example, a restaurant can specify drive through
-   * hours or delivery hours as its secondary hours. This field populates the
-   * type subfield, which draws from a predefined list of opening hours types
-   * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-   * place.
+   * Contains an array of entries for information about regular secondary hours
+   * of a business. Secondary hours are different from a business's main hours.
+   * For example, a restaurant can specify drive through hours or delivery hours
+   * as its secondary hours. This field populates the type subfield, which draws
+   * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+   * PICKUP, or TAKEOUT) based on the types of the place.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
    * </code>
    */
   @java.lang.Override
@@ -15725,15 +16091,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains a summary of the place. A summary is comprised of a
-   * textual overview, and also includes the language code for these if
-   * applicable. Summary text must be presented as-is and can not be modified or
-   * altered.
+   * Contains a summary of the place. A summary is comprised of a textual
+   * overview, and also includes the language code for these if applicable.
+   * Summary text must be presented as-is and can not be modified or altered.
    * </pre>
    *
-   * <code>
-   * .google.type.LocalizedText editorial_summary = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.type.LocalizedText editorial_summary = 52;</code>
    *
    * @return Whether the editorialSummary field is set.
    */
@@ -15745,15 +16108,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains a summary of the place. A summary is comprised of a
-   * textual overview, and also includes the language code for these if
-   * applicable. Summary text must be presented as-is and can not be modified or
-   * altered.
+   * Contains a summary of the place. A summary is comprised of a textual
+   * overview, and also includes the language code for these if applicable.
+   * Summary text must be presented as-is and can not be modified or altered.
    * </pre>
    *
-   * <code>
-   * .google.type.LocalizedText editorial_summary = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.type.LocalizedText editorial_summary = 52;</code>
    *
    * @return The editorialSummary.
    */
@@ -15767,15 +16127,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains a summary of the place. A summary is comprised of a
-   * textual overview, and also includes the language code for these if
-   * applicable. Summary text must be presented as-is and can not be modified or
-   * altered.
+   * Contains a summary of the place. A summary is comprised of a textual
+   * overview, and also includes the language code for these if applicable.
+   * Summary text must be presented as-is and can not be modified or altered.
    * </pre>
    *
-   * <code>
-   * .google.type.LocalizedText editorial_summary = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.type.LocalizedText editorial_summary = 52;</code>
    */
   @java.lang.Override
   public com.google.type.LocalizedTextOrBuilder getEditorialSummaryOrBuilder() {
@@ -15790,10 +16147,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place provides outdoor seating.
+   * Place provides outdoor seating.
    * </pre>
    *
-   * <code>optional bool outdoor_seating = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool outdoor_seating = 55;</code>
    *
    * @return Whether the outdoorSeating field is set.
    */
@@ -15805,10 +16162,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place provides outdoor seating.
+   * Place provides outdoor seating.
    * </pre>
    *
-   * <code>optional bool outdoor_seating = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool outdoor_seating = 55;</code>
    *
    * @return The outdoorSeating.
    */
@@ -15823,10 +16180,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place provides live music.
+   * Place provides live music.
    * </pre>
    *
-   * <code>optional bool live_music = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool live_music = 56;</code>
    *
    * @return Whether the liveMusic field is set.
    */
@@ -15838,10 +16195,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place provides live music.
+   * Place provides live music.
    * </pre>
    *
-   * <code>optional bool live_music = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool live_music = 56;</code>
    *
    * @return The liveMusic.
    */
@@ -15856,10 +16213,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place has a children's menu.
+   * Place has a children's menu.
    * </pre>
    *
-   * <code>optional bool menu_for_children = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool menu_for_children = 57;</code>
    *
    * @return Whether the menuForChildren field is set.
    */
@@ -15871,10 +16228,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place has a children's menu.
+   * Place has a children's menu.
    * </pre>
    *
-   * <code>optional bool menu_for_children = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool menu_for_children = 57;</code>
    *
    * @return The menuForChildren.
    */
@@ -15889,10 +16246,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place serves cocktails.
+   * Place serves cocktails.
    * </pre>
    *
-   * <code>optional bool serves_cocktails = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_cocktails = 58;</code>
    *
    * @return Whether the servesCocktails field is set.
    */
@@ -15904,10 +16261,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place serves cocktails.
+   * Place serves cocktails.
    * </pre>
    *
-   * <code>optional bool serves_cocktails = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_cocktails = 58;</code>
    *
    * @return The servesCocktails.
    */
@@ -15922,10 +16279,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place serves dessert.
+   * Place serves dessert.
    * </pre>
    *
-   * <code>optional bool serves_dessert = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_dessert = 59;</code>
    *
    * @return Whether the servesDessert field is set.
    */
@@ -15937,10 +16294,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place serves dessert.
+   * Place serves dessert.
    * </pre>
    *
-   * <code>optional bool serves_dessert = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_dessert = 59;</code>
    *
    * @return The servesDessert.
    */
@@ -15955,10 +16312,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place serves coffee.
+   * Place serves coffee.
    * </pre>
    *
-   * <code>optional bool serves_coffee = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_coffee = 60;</code>
    *
    * @return Whether the servesCoffee field is set.
    */
@@ -15970,10 +16327,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place serves coffee.
+   * Place serves coffee.
    * </pre>
    *
-   * <code>optional bool serves_coffee = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool serves_coffee = 60;</code>
    *
    * @return The servesCoffee.
    */
@@ -15988,10 +16345,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place is good for children.
+   * Place is good for children.
    * </pre>
    *
-   * <code>optional bool good_for_children = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool good_for_children = 62;</code>
    *
    * @return Whether the goodForChildren field is set.
    */
@@ -16003,10 +16360,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place is good for children.
+   * Place is good for children.
    * </pre>
    *
-   * <code>optional bool good_for_children = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool good_for_children = 62;</code>
    *
    * @return The goodForChildren.
    */
@@ -16021,10 +16378,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place allows dogs.
+   * Place allows dogs.
    * </pre>
    *
-   * <code>optional bool allows_dogs = 63 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool allows_dogs = 63;</code>
    *
    * @return Whether the allowsDogs field is set.
    */
@@ -16036,10 +16393,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place allows dogs.
+   * Place allows dogs.
    * </pre>
    *
-   * <code>optional bool allows_dogs = 63 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool allows_dogs = 63;</code>
    *
    * @return The allowsDogs.
    */
@@ -16054,10 +16411,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place has restroom.
+   * Place has restroom.
    * </pre>
    *
-   * <code>optional bool restroom = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool restroom = 64;</code>
    *
    * @return Whether the restroom field is set.
    */
@@ -16069,10 +16426,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place has restroom.
+   * Place has restroom.
    * </pre>
    *
-   * <code>optional bool restroom = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool restroom = 64;</code>
    *
    * @return The restroom.
    */
@@ -16087,10 +16444,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place accommodates groups.
+   * Place accommodates groups.
    * </pre>
    *
-   * <code>optional bool good_for_groups = 65 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool good_for_groups = 65;</code>
    *
    * @return Whether the goodForGroups field is set.
    */
@@ -16102,10 +16459,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place accommodates groups.
+   * Place accommodates groups.
    * </pre>
    *
-   * <code>optional bool good_for_groups = 65 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool good_for_groups = 65;</code>
    *
    * @return The goodForGroups.
    */
@@ -16120,11 +16477,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place is suitable for watching sports.
+   * Place is suitable for watching sports.
    * </pre>
    *
-   * <code>optional bool good_for_watching_sports = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>optional bool good_for_watching_sports = 66;</code>
    *
    * @return Whether the goodForWatchingSports field is set.
    */
@@ -16136,11 +16492,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Place is suitable for watching sports.
+   * Place is suitable for watching sports.
    * </pre>
    *
-   * <code>optional bool good_for_watching_sports = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>optional bool good_for_watching_sports = 66;</code>
    *
    * @return The goodForWatchingSports.
    */
@@ -16152,9 +16507,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
   public static final int PAYMENT_OPTIONS_FIELD_NUMBER = 67;
   private com.google.maps.places.v1.Place.PaymentOptions paymentOptions_;
   /**
-   * <code>
-   * .google.maps.places.v1.Place.PaymentOptions payment_options = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   *
+   *
+   * <pre>
+   * Payment options the place accepts. If a payment option data is not
+   * available, the payment option field will be unset.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.PaymentOptions payment_options = 67;</code>
    *
    * @return Whether the paymentOptions field is set.
    */
@@ -16163,9 +16523,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     return paymentOptions_ != null;
   }
   /**
-   * <code>
-   * .google.maps.places.v1.Place.PaymentOptions payment_options = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   *
+   *
+   * <pre>
+   * Payment options the place accepts. If a payment option data is not
+   * available, the payment option field will be unset.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.PaymentOptions payment_options = 67;</code>
    *
    * @return The paymentOptions.
    */
@@ -16176,9 +16541,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         : paymentOptions_;
   }
   /**
-   * <code>
-   * .google.maps.places.v1.Place.PaymentOptions payment_options = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   *
+   *
+   * <pre>
+   * Payment options the place accepts. If a payment option data is not
+   * available, the payment option field will be unset.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.PaymentOptions payment_options = 67;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.Place.PaymentOptionsOrBuilder getPaymentOptionsOrBuilder() {
@@ -16193,12 +16563,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Options of parking provided by the place.
+   * Options of parking provided by the place.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.Place.ParkingOptions parking_options = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.Place.ParkingOptions parking_options = 70;</code>
    *
    * @return Whether the parkingOptions field is set.
    */
@@ -16210,12 +16578,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Options of parking provided by the place.
+   * Options of parking provided by the place.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.Place.ParkingOptions parking_options = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.Place.ParkingOptions parking_options = 70;</code>
    *
    * @return The parkingOptions.
    */
@@ -16229,12 +16595,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Options of parking provided by the place.
+   * Options of parking provided by the place.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.Place.ParkingOptions parking_options = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.Place.ParkingOptions parking_options = 70;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.Place.ParkingOptionsOrBuilder getParkingOptionsOrBuilder() {
@@ -16251,12 +16615,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of sub destinations related to the place.
+   * A list of sub destinations related to the place.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.maps.places.v1.Place.SubDestination> getSubDestinationsList() {
@@ -16266,12 +16628,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of sub destinations related to the place.
+   * A list of sub destinations related to the place.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.maps.places.v1.Place.SubDestinationOrBuilder>
@@ -16282,12 +16642,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of sub destinations related to the place.
+   * A list of sub destinations related to the place.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
    */
   @java.lang.Override
   public int getSubDestinationsCount() {
@@ -16297,12 +16655,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of sub destinations related to the place.
+   * A list of sub destinations related to the place.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.Place.SubDestination getSubDestinations(int index) {
@@ -16312,12 +16668,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of sub destinations related to the place.
+   * A list of sub destinations related to the place.
    * </pre>
    *
-   * <code>
-   * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.Place.SubDestinationOrBuilder getSubDestinationsOrBuilder(
@@ -16331,11 +16685,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information about the accessibility options a place offers.
+   * Information about the accessibility options a place offers.
    * </pre>
    *
-   * <code>
-   * optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72;
    * </code>
    *
    * @return Whether the accessibilityOptions field is set.
@@ -16348,11 +16701,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information about the accessibility options a place offers.
+   * Information about the accessibility options a place offers.
    * </pre>
    *
-   * <code>
-   * optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72;
    * </code>
    *
    * @return The accessibilityOptions.
@@ -16367,11 +16719,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information about the accessibility options a place offers.
+   * Information about the accessibility options a place offers.
    * </pre>
    *
-   * <code>
-   * optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72;
    * </code>
    */
   @java.lang.Override
@@ -16388,13 +16739,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The most recent information about fuel options in a gas
-   * station. This information is updated regularly.
+   * The most recent information about fuel options in a gas station. This
+   * information is updated regularly.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.FuelOptions fuel_options = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.FuelOptions fuel_options = 78;</code>
    *
    * @return Whether the fuelOptions field is set.
    */
@@ -16406,13 +16755,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The most recent information about fuel options in a gas
-   * station. This information is updated regularly.
+   * The most recent information about fuel options in a gas station. This
+   * information is updated regularly.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.FuelOptions fuel_options = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.FuelOptions fuel_options = 78;</code>
    *
    * @return The fuelOptions.
    */
@@ -16426,13 +16773,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The most recent information about fuel options in a gas
-   * station. This information is updated regularly.
+   * The most recent information about fuel options in a gas station. This
+   * information is updated regularly.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.FuelOptions fuel_options = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.FuelOptions fuel_options = 78;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.FuelOptionsOrBuilder getFuelOptionsOrBuilder() {
@@ -16447,12 +16792,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information of ev charging options.
+   * Information of ev charging options.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.EVChargeOptions ev_charge_options = 79 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.EVChargeOptions ev_charge_options = 79;</code>
    *
    * @return Whether the evChargeOptions field is set.
    */
@@ -16464,12 +16807,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information of ev charging options.
+   * Information of ev charging options.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.EVChargeOptions ev_charge_options = 79 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.EVChargeOptions ev_charge_options = 79;</code>
    *
    * @return The evChargeOptions.
    */
@@ -16483,12 +16824,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information of ev charging options.
+   * Information of ev charging options.
    * </pre>
    *
-   * <code>
-   * .google.maps.places.v1.EVChargeOptions ev_charge_options = 79 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.maps.places.v1.EVChargeOptions ev_charge_options = 79;</code>
    */
   @java.lang.Override
   public com.google.maps.places.v1.EVChargeOptionsOrBuilder getEvChargeOptionsOrBuilder() {
@@ -16581,6 +16920,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     if (displayName_ != null) {
       output.writeMessage(31, getDisplayName());
     }
+    if (primaryTypeDisplayName_ != null) {
+      output.writeMessage(32, getPrimaryTypeDisplayName());
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(33, takeout_);
     }
@@ -16625,6 +16967,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < regularSecondaryOpeningHours_.size(); i++) {
       output.writeMessage(49, regularSecondaryOpeningHours_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 50, primaryType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shortFormattedAddress_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 51, shortFormattedAddress_);
     }
     if (editorialSummary_ != null) {
       output.writeMessage(52, getEditorialSummary());
@@ -16773,6 +17121,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     if (displayName_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getDisplayName());
     }
+    if (primaryTypeDisplayName_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(32, getPrimaryTypeDisplayName());
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(33, takeout_);
     }
@@ -16822,6 +17174,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               49, regularSecondaryOpeningHours_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(50, primaryType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shortFormattedAddress_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(51, shortFormattedAddress_);
     }
     if (editorialSummary_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(52, getEditorialSummary());
@@ -16906,9 +17264,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       if (!getDisplayName().equals(other.getDisplayName())) return false;
     }
     if (!getTypesList().equals(other.getTypesList())) return false;
+    if (!getPrimaryType().equals(other.getPrimaryType())) return false;
+    if (hasPrimaryTypeDisplayName() != other.hasPrimaryTypeDisplayName()) return false;
+    if (hasPrimaryTypeDisplayName()) {
+      if (!getPrimaryTypeDisplayName().equals(other.getPrimaryTypeDisplayName())) return false;
+    }
     if (!getNationalPhoneNumber().equals(other.getNationalPhoneNumber())) return false;
     if (!getInternationalPhoneNumber().equals(other.getInternationalPhoneNumber())) return false;
     if (!getFormattedAddress().equals(other.getFormattedAddress())) return false;
+    if (!getShortFormattedAddress().equals(other.getShortFormattedAddress())) return false;
     if (!getAddressComponentsList().equals(other.getAddressComponentsList())) return false;
     if (hasPlusCode() != other.hasPlusCode()) return false;
     if (hasPlusCode()) {
@@ -17094,12 +17458,20 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TYPES_FIELD_NUMBER;
       hash = (53 * hash) + getTypesList().hashCode();
     }
+    hash = (37 * hash) + PRIMARY_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getPrimaryType().hashCode();
+    if (hasPrimaryTypeDisplayName()) {
+      hash = (37 * hash) + PRIMARY_TYPE_DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPrimaryTypeDisplayName().hashCode();
+    }
     hash = (37 * hash) + NATIONAL_PHONE_NUMBER_FIELD_NUMBER;
     hash = (53 * hash) + getNationalPhoneNumber().hashCode();
     hash = (37 * hash) + INTERNATIONAL_PHONE_NUMBER_FIELD_NUMBER;
     hash = (53 * hash) + getInternationalPhoneNumber().hashCode();
     hash = (37 * hash) + FORMATTED_ADDRESS_FIELD_NUMBER;
     hash = (53 * hash) + getFormattedAddress().hashCode();
+    hash = (37 * hash) + SHORT_FORMATTED_ADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getShortFormattedAddress().hashCode();
     if (getAddressComponentsCount() > 0) {
       hash = (37 * hash) + ADDRESS_COMPONENTS_FIELD_NUMBER;
       hash = (53 * hash) + getAddressComponentsList().hashCode();
@@ -17429,6 +17801,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getDisplayNameFieldBuilder();
+        getPrimaryTypeDisplayNameFieldBuilder();
         getAddressComponentsFieldBuilder();
         getPlusCodeFieldBuilder();
         getLocationFieldBuilder();
@@ -17463,16 +17836,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         displayNameBuilder_ = null;
       }
       types_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      primaryType_ = "";
+      primaryTypeDisplayName_ = null;
+      if (primaryTypeDisplayNameBuilder_ != null) {
+        primaryTypeDisplayNameBuilder_.dispose();
+        primaryTypeDisplayNameBuilder_ = null;
+      }
       nationalPhoneNumber_ = "";
       internationalPhoneNumber_ = "";
       formattedAddress_ = "";
+      shortFormattedAddress_ = "";
       if (addressComponentsBuilder_ == null) {
         addressComponents_ = java.util.Collections.emptyList();
       } else {
         addressComponents_ = null;
         addressComponentsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000400);
       plusCode_ = null;
       if (plusCodeBuilder_ != null) {
         plusCodeBuilder_.dispose();
@@ -17497,7 +17877,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         reviews_ = null;
         reviewsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       regularOpeningHours_ = null;
       if (regularOpeningHoursBuilder_ != null) {
         regularOpeningHoursBuilder_.dispose();
@@ -17510,7 +17890,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         photos_ = null;
         photosBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       adrFormatAddress_ = "";
       businessStatus_ = 0;
       priceLevel_ = 0;
@@ -17520,7 +17900,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         attributions_ = null;
         attributionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       userRatingCount_ = 0;
       iconMaskBaseUri_ = "";
       iconBackgroundColor_ = "";
@@ -17547,14 +17927,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         currentSecondaryOpeningHours_ = null;
         currentSecondaryOpeningHoursBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000040);
+      bitField1_ = (bitField1_ & ~0x00000200);
       if (regularSecondaryOpeningHoursBuilder_ == null) {
         regularSecondaryOpeningHours_ = java.util.Collections.emptyList();
       } else {
         regularSecondaryOpeningHours_ = null;
         regularSecondaryOpeningHoursBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000080);
+      bitField1_ = (bitField1_ & ~0x00000400);
       editorialSummary_ = null;
       if (editorialSummaryBuilder_ != null) {
         editorialSummaryBuilder_.dispose();
@@ -17587,7 +17967,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         subDestinations_ = null;
         subDestinationsBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00400000);
+      bitField1_ = (bitField1_ & ~0x02000000);
       accessibilityOptions_ = null;
       if (accessibilityOptionsBuilder_ != null) {
         accessibilityOptionsBuilder_.dispose();
@@ -17642,65 +18022,65 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.maps.places.v1.Place result) {
       if (addressComponentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           addressComponents_ = java.util.Collections.unmodifiableList(addressComponents_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.addressComponents_ = addressComponents_;
       } else {
         result.addressComponents_ = addressComponentsBuilder_.build();
       }
       if (reviewsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00020000) != 0)) {
           reviews_ = java.util.Collections.unmodifiableList(reviews_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00020000);
         }
         result.reviews_ = reviews_;
       } else {
         result.reviews_ = reviewsBuilder_.build();
       }
       if (photosBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)) {
+        if (((bitField0_ & 0x00100000) != 0)) {
           photos_ = java.util.Collections.unmodifiableList(photos_);
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00100000);
         }
         result.photos_ = photos_;
       } else {
         result.photos_ = photosBuilder_.build();
       }
       if (attributionsBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)) {
+        if (((bitField0_ & 0x01000000) != 0)) {
           attributions_ = java.util.Collections.unmodifiableList(attributions_);
-          bitField0_ = (bitField0_ & ~0x00200000);
+          bitField0_ = (bitField0_ & ~0x01000000);
         }
         result.attributions_ = attributions_;
       } else {
         result.attributions_ = attributionsBuilder_.build();
       }
       if (currentSecondaryOpeningHoursBuilder_ == null) {
-        if (((bitField1_ & 0x00000040) != 0)) {
+        if (((bitField1_ & 0x00000200) != 0)) {
           currentSecondaryOpeningHours_ =
               java.util.Collections.unmodifiableList(currentSecondaryOpeningHours_);
-          bitField1_ = (bitField1_ & ~0x00000040);
+          bitField1_ = (bitField1_ & ~0x00000200);
         }
         result.currentSecondaryOpeningHours_ = currentSecondaryOpeningHours_;
       } else {
         result.currentSecondaryOpeningHours_ = currentSecondaryOpeningHoursBuilder_.build();
       }
       if (regularSecondaryOpeningHoursBuilder_ == null) {
-        if (((bitField1_ & 0x00000080) != 0)) {
+        if (((bitField1_ & 0x00000400) != 0)) {
           regularSecondaryOpeningHours_ =
               java.util.Collections.unmodifiableList(regularSecondaryOpeningHours_);
-          bitField1_ = (bitField1_ & ~0x00000080);
+          bitField1_ = (bitField1_ & ~0x00000400);
         }
         result.regularSecondaryOpeningHours_ = regularSecondaryOpeningHours_;
       } else {
         result.regularSecondaryOpeningHours_ = regularSecondaryOpeningHoursBuilder_.build();
       }
       if (subDestinationsBuilder_ == null) {
-        if (((bitField1_ & 0x00400000) != 0)) {
+        if (((bitField1_ & 0x02000000) != 0)) {
           subDestinations_ = java.util.Collections.unmodifiableList(subDestinations_);
-          bitField1_ = (bitField1_ & ~0x00400000);
+          bitField1_ = (bitField1_ & ~0x02000000);
         }
         result.subDestinations_ = subDestinations_;
       } else {
@@ -17725,89 +18105,89 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         result.types_ = types_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.nationalPhoneNumber_ = nationalPhoneNumber_;
+        result.primaryType_ = primaryType_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.internationalPhoneNumber_ = internationalPhoneNumber_;
+        result.primaryTypeDisplayName_ =
+            primaryTypeDisplayNameBuilder_ == null
+                ? primaryTypeDisplayName_
+                : primaryTypeDisplayNameBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.formattedAddress_ = formattedAddress_;
+        result.nationalPhoneNumber_ = nationalPhoneNumber_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.internationalPhoneNumber_ = internationalPhoneNumber_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.plusCode_ = plusCodeBuilder_ == null ? plusCode_ : plusCodeBuilder_.build();
+        result.formattedAddress_ = formattedAddress_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.location_ = locationBuilder_ == null ? location_ : locationBuilder_.build();
-      }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.viewport_ = viewportBuilder_ == null ? viewport_ : viewportBuilder_.build();
+        result.shortFormattedAddress_ = shortFormattedAddress_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.rating_ = rating_;
+        result.plusCode_ = plusCodeBuilder_ == null ? plusCode_ : plusCodeBuilder_.build();
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.googleMapsUri_ = googleMapsUri_;
+        result.location_ = locationBuilder_ == null ? location_ : locationBuilder_.build();
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.websiteUri_ = websiteUri_;
+        result.viewport_ = viewportBuilder_ == null ? viewport_ : viewportBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.rating_ = rating_;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.googleMapsUri_ = googleMapsUri_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.websiteUri_ = websiteUri_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.regularOpeningHours_ =
             regularOpeningHoursBuilder_ == null
                 ? regularOpeningHours_
                 : regularOpeningHoursBuilder_.build();
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.utcOffsetMinutes_ = utcOffsetMinutes_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.adrFormatAddress_ = adrFormatAddress_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.businessStatus_ = businessStatus_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.priceLevel_ = priceLevel_;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.userRatingCount_ = userRatingCount_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.iconMaskBaseUri_ = iconMaskBaseUri_;
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.iconBackgroundColor_ = iconBackgroundColor_;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.takeout_ = takeout_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.delivery_ = delivery_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x40000000) != 0)) {
         result.dineIn_ = dineIn_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x80000000) != 0)) {
         result.curbsidePickup_ = curbsidePickup_;
         to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
-        result.reservable_ = reservable_;
-        to_bitField0_ |= 0x00000040;
-      }
-      if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.servesBreakfast_ = servesBreakfast_;
-        to_bitField0_ |= 0x00000080;
-      }
-      if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.servesLunch_ = servesLunch_;
-        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -17816,99 +18196,111 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.reservable_ = reservable_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.servesBreakfast_ = servesBreakfast_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.servesLunch_ = servesLunch_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
         result.servesDinner_ = servesDinner_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField1_ & 0x00000002) != 0)) {
+      if (((from_bitField1_ & 0x00000010) != 0)) {
         result.servesBeer_ = servesBeer_;
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField1_ & 0x00000004) != 0)) {
+      if (((from_bitField1_ & 0x00000020) != 0)) {
         result.servesWine_ = servesWine_;
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField1_ & 0x00000008) != 0)) {
+      if (((from_bitField1_ & 0x00000040) != 0)) {
         result.servesBrunch_ = servesBrunch_;
         to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField1_ & 0x00000010) != 0)) {
+      if (((from_bitField1_ & 0x00000080) != 0)) {
         result.servesVegetarianFood_ = servesVegetarianFood_;
         to_bitField0_ |= 0x00002000;
       }
-      if (((from_bitField1_ & 0x00000020) != 0)) {
+      if (((from_bitField1_ & 0x00000100) != 0)) {
         result.currentOpeningHours_ =
             currentOpeningHoursBuilder_ == null
                 ? currentOpeningHours_
                 : currentOpeningHoursBuilder_.build();
       }
-      if (((from_bitField1_ & 0x00000100) != 0)) {
+      if (((from_bitField1_ & 0x00000800) != 0)) {
         result.editorialSummary_ =
             editorialSummaryBuilder_ == null ? editorialSummary_ : editorialSummaryBuilder_.build();
       }
-      if (((from_bitField1_ & 0x00000200) != 0)) {
+      if (((from_bitField1_ & 0x00001000) != 0)) {
         result.outdoorSeating_ = outdoorSeating_;
         to_bitField0_ |= 0x00004000;
       }
-      if (((from_bitField1_ & 0x00000400) != 0)) {
+      if (((from_bitField1_ & 0x00002000) != 0)) {
         result.liveMusic_ = liveMusic_;
         to_bitField0_ |= 0x00008000;
       }
-      if (((from_bitField1_ & 0x00000800) != 0)) {
+      if (((from_bitField1_ & 0x00004000) != 0)) {
         result.menuForChildren_ = menuForChildren_;
         to_bitField0_ |= 0x00010000;
       }
-      if (((from_bitField1_ & 0x00001000) != 0)) {
+      if (((from_bitField1_ & 0x00008000) != 0)) {
         result.servesCocktails_ = servesCocktails_;
         to_bitField0_ |= 0x00020000;
       }
-      if (((from_bitField1_ & 0x00002000) != 0)) {
+      if (((from_bitField1_ & 0x00010000) != 0)) {
         result.servesDessert_ = servesDessert_;
         to_bitField0_ |= 0x00040000;
       }
-      if (((from_bitField1_ & 0x00004000) != 0)) {
+      if (((from_bitField1_ & 0x00020000) != 0)) {
         result.servesCoffee_ = servesCoffee_;
         to_bitField0_ |= 0x00080000;
       }
-      if (((from_bitField1_ & 0x00008000) != 0)) {
+      if (((from_bitField1_ & 0x00040000) != 0)) {
         result.goodForChildren_ = goodForChildren_;
         to_bitField0_ |= 0x00100000;
       }
-      if (((from_bitField1_ & 0x00010000) != 0)) {
+      if (((from_bitField1_ & 0x00080000) != 0)) {
         result.allowsDogs_ = allowsDogs_;
         to_bitField0_ |= 0x00200000;
       }
-      if (((from_bitField1_ & 0x00020000) != 0)) {
+      if (((from_bitField1_ & 0x00100000) != 0)) {
         result.restroom_ = restroom_;
         to_bitField0_ |= 0x00400000;
       }
-      if (((from_bitField1_ & 0x00040000) != 0)) {
+      if (((from_bitField1_ & 0x00200000) != 0)) {
         result.goodForGroups_ = goodForGroups_;
         to_bitField0_ |= 0x00800000;
       }
-      if (((from_bitField1_ & 0x00080000) != 0)) {
+      if (((from_bitField1_ & 0x00400000) != 0)) {
         result.goodForWatchingSports_ = goodForWatchingSports_;
         to_bitField0_ |= 0x01000000;
       }
-      if (((from_bitField1_ & 0x00100000) != 0)) {
+      if (((from_bitField1_ & 0x00800000) != 0)) {
         result.paymentOptions_ =
             paymentOptionsBuilder_ == null ? paymentOptions_ : paymentOptionsBuilder_.build();
       }
-      if (((from_bitField1_ & 0x00200000) != 0)) {
+      if (((from_bitField1_ & 0x01000000) != 0)) {
         result.parkingOptions_ =
             parkingOptionsBuilder_ == null ? parkingOptions_ : parkingOptionsBuilder_.build();
       }
-      if (((from_bitField1_ & 0x00800000) != 0)) {
+      if (((from_bitField1_ & 0x04000000) != 0)) {
         result.accessibilityOptions_ =
             accessibilityOptionsBuilder_ == null
                 ? accessibilityOptions_
                 : accessibilityOptionsBuilder_.build();
         to_bitField0_ |= 0x02000000;
       }
-      if (((from_bitField1_ & 0x01000000) != 0)) {
+      if (((from_bitField1_ & 0x08000000) != 0)) {
         result.fuelOptions_ =
             fuelOptionsBuilder_ == null ? fuelOptions_ : fuelOptionsBuilder_.build();
       }
-      if (((from_bitField1_ & 0x02000000) != 0)) {
+      if (((from_bitField1_ & 0x10000000) != 0)) {
         result.evChargeOptions_ =
             evChargeOptionsBuilder_ == null ? evChargeOptions_ : evChargeOptionsBuilder_.build();
       }
@@ -17983,26 +18375,39 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (!other.getPrimaryType().isEmpty()) {
+        primaryType_ = other.primaryType_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (other.hasPrimaryTypeDisplayName()) {
+        mergePrimaryTypeDisplayName(other.getPrimaryTypeDisplayName());
+      }
       if (!other.getNationalPhoneNumber().isEmpty()) {
         nationalPhoneNumber_ = other.nationalPhoneNumber_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getInternationalPhoneNumber().isEmpty()) {
         internationalPhoneNumber_ = other.internationalPhoneNumber_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getFormattedAddress().isEmpty()) {
         formattedAddress_ = other.formattedAddress_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (!other.getShortFormattedAddress().isEmpty()) {
+        shortFormattedAddress_ = other.shortFormattedAddress_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (addressComponentsBuilder_ == null) {
         if (!other.addressComponents_.isEmpty()) {
           if (addressComponents_.isEmpty()) {
             addressComponents_ = other.addressComponents_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureAddressComponentsIsMutable();
             addressComponents_.addAll(other.addressComponents_);
@@ -18015,7 +18420,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
             addressComponentsBuilder_.dispose();
             addressComponentsBuilder_ = null;
             addressComponents_ = other.addressComponents_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000400);
             addressComponentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAddressComponentsFieldBuilder()
@@ -18039,19 +18444,19 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getGoogleMapsUri().isEmpty()) {
         googleMapsUri_ = other.googleMapsUri_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (!other.getWebsiteUri().isEmpty()) {
         websiteUri_ = other.websiteUri_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (reviewsBuilder_ == null) {
         if (!other.reviews_.isEmpty()) {
           if (reviews_.isEmpty()) {
             reviews_ = other.reviews_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00020000);
           } else {
             ensureReviewsIsMutable();
             reviews_.addAll(other.reviews_);
@@ -18064,7 +18469,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
             reviewsBuilder_.dispose();
             reviewsBuilder_ = null;
             reviews_ = other.reviews_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00020000);
             reviewsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getReviewsFieldBuilder()
@@ -18084,7 +18489,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         if (!other.photos_.isEmpty()) {
           if (photos_.isEmpty()) {
             photos_ = other.photos_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00100000);
           } else {
             ensurePhotosIsMutable();
             photos_.addAll(other.photos_);
@@ -18097,7 +18502,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
             photosBuilder_.dispose();
             photosBuilder_ = null;
             photos_ = other.photos_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00100000);
             photosBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPhotosFieldBuilder()
@@ -18109,7 +18514,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getAdrFormatAddress().isEmpty()) {
         adrFormatAddress_ = other.adrFormatAddress_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.businessStatus_ != 0) {
@@ -18122,7 +18527,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         if (!other.attributions_.isEmpty()) {
           if (attributions_.isEmpty()) {
             attributions_ = other.attributions_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x01000000);
           } else {
             ensureAttributionsIsMutable();
             attributions_.addAll(other.attributions_);
@@ -18135,7 +18540,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
             attributionsBuilder_.dispose();
             attributionsBuilder_ = null;
             attributions_ = other.attributions_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x01000000);
             attributionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAttributionsFieldBuilder()
@@ -18150,12 +18555,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getIconMaskBaseUri().isEmpty()) {
         iconMaskBaseUri_ = other.iconMaskBaseUri_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       if (!other.getIconBackgroundColor().isEmpty()) {
         iconBackgroundColor_ = other.iconBackgroundColor_;
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       if (other.hasTakeout()) {
@@ -18201,7 +18606,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         if (!other.currentSecondaryOpeningHours_.isEmpty()) {
           if (currentSecondaryOpeningHours_.isEmpty()) {
             currentSecondaryOpeningHours_ = other.currentSecondaryOpeningHours_;
-            bitField1_ = (bitField1_ & ~0x00000040);
+            bitField1_ = (bitField1_ & ~0x00000200);
           } else {
             ensureCurrentSecondaryOpeningHoursIsMutable();
             currentSecondaryOpeningHours_.addAll(other.currentSecondaryOpeningHours_);
@@ -18214,7 +18619,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
             currentSecondaryOpeningHoursBuilder_.dispose();
             currentSecondaryOpeningHoursBuilder_ = null;
             currentSecondaryOpeningHours_ = other.currentSecondaryOpeningHours_;
-            bitField1_ = (bitField1_ & ~0x00000040);
+            bitField1_ = (bitField1_ & ~0x00000200);
             currentSecondaryOpeningHoursBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCurrentSecondaryOpeningHoursFieldBuilder()
@@ -18229,7 +18634,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         if (!other.regularSecondaryOpeningHours_.isEmpty()) {
           if (regularSecondaryOpeningHours_.isEmpty()) {
             regularSecondaryOpeningHours_ = other.regularSecondaryOpeningHours_;
-            bitField1_ = (bitField1_ & ~0x00000080);
+            bitField1_ = (bitField1_ & ~0x00000400);
           } else {
             ensureRegularSecondaryOpeningHoursIsMutable();
             regularSecondaryOpeningHours_.addAll(other.regularSecondaryOpeningHours_);
@@ -18242,7 +18647,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
             regularSecondaryOpeningHoursBuilder_.dispose();
             regularSecondaryOpeningHoursBuilder_ = null;
             regularSecondaryOpeningHours_ = other.regularSecondaryOpeningHours_;
-            bitField1_ = (bitField1_ & ~0x00000080);
+            bitField1_ = (bitField1_ & ~0x00000400);
             regularSecondaryOpeningHoursBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRegularSecondaryOpeningHoursFieldBuilder()
@@ -18299,7 +18704,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         if (!other.subDestinations_.isEmpty()) {
           if (subDestinations_.isEmpty()) {
             subDestinations_ = other.subDestinations_;
-            bitField1_ = (bitField1_ & ~0x00400000);
+            bitField1_ = (bitField1_ & ~0x02000000);
           } else {
             ensureSubDestinationsIsMutable();
             subDestinations_.addAll(other.subDestinations_);
@@ -18312,7 +18717,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
             subDestinationsBuilder_.dispose();
             subDestinationsBuilder_ = null;
             subDestinations_ = other.subDestinations_;
-            bitField1_ = (bitField1_ & ~0x00400000);
+            bitField1_ = (bitField1_ & ~0x02000000);
             subDestinationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSubDestinationsFieldBuilder()
@@ -18379,19 +18784,19 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 nationalPhoneNumber_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 internationalPhoneNumber_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 formattedAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
@@ -18411,68 +18816,68 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 input.readMessage(getPlusCodeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getLocationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getViewportFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 113:
               {
                 rating_ = input.readDouble();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 113
             case 122:
               {
                 googleMapsUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 122
             case 130:
               {
                 websiteUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 130
             case 170:
               {
                 input.readMessage(
                     getRegularOpeningHoursFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 170
             case 176:
               {
                 utcOffsetMinutes_ = input.readInt32();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 176
             case 194:
               {
                 adrFormatAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 194
             case 200:
               {
                 businessStatus_ = input.readEnum();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 200
             case 208:
               {
                 priceLevel_ = input.readEnum();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 208
             case 218:
@@ -18491,19 +18896,19 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
             case 224:
               {
                 userRatingCount_ = input.readInt32();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 224
             case 234:
               {
                 iconMaskBaseUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 234
             case 242:
               {
                 iconBackgroundColor_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 242
             case 250:
@@ -18512,83 +18917,90 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 250
+            case 258:
+              {
+                input.readMessage(
+                    getPrimaryTypeDisplayNameFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 258
             case 264:
               {
                 takeout_ = input.readBool();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 264
             case 272:
               {
                 delivery_ = input.readBool();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 272
             case 280:
               {
                 dineIn_ = input.readBool();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 280
             case 288:
               {
                 curbsidePickup_ = input.readBool();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 288
             case 304:
               {
                 reservable_ = input.readBool();
-                bitField0_ |= 0x20000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 304
             case 312:
               {
                 servesBreakfast_ = input.readBool();
-                bitField0_ |= 0x40000000;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 312
             case 320:
               {
                 servesLunch_ = input.readBool();
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000004;
                 break;
               } // case 320
             case 328:
               {
                 servesDinner_ = input.readBool();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000008;
                 break;
               } // case 328
             case 336:
               {
                 servesBeer_ = input.readBool();
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000010;
                 break;
               } // case 336
             case 344:
               {
                 servesWine_ = input.readBool();
-                bitField1_ |= 0x00000004;
+                bitField1_ |= 0x00000020;
                 break;
               } // case 344
             case 352:
               {
                 servesBrunch_ = input.readBool();
-                bitField1_ |= 0x00000008;
+                bitField1_ |= 0x00000040;
                 break;
               } // case 352
             case 360:
               {
                 servesVegetarianFood_ = input.readBool();
-                bitField1_ |= 0x00000010;
+                bitField1_ |= 0x00000080;
                 break;
               } // case 360
             case 370:
               {
                 input.readMessage(
                     getCurrentOpeningHoursFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000020;
+                bitField1_ |= 0x00000100;
                 break;
               } // case 370
             case 378:
@@ -18617,11 +19029,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 394
+            case 402:
+              {
+                primaryType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 402
+            case 410:
+              {
+                shortFormattedAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 410
             case 418:
               {
                 input.readMessage(
                     getEditorialSummaryFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000100;
+                bitField1_ |= 0x00000800;
                 break;
               } // case 418
             case 426:
@@ -18651,79 +19075,79 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
             case 440:
               {
                 outdoorSeating_ = input.readBool();
-                bitField1_ |= 0x00000200;
+                bitField1_ |= 0x00001000;
                 break;
               } // case 440
             case 448:
               {
                 liveMusic_ = input.readBool();
-                bitField1_ |= 0x00000400;
+                bitField1_ |= 0x00002000;
                 break;
               } // case 448
             case 456:
               {
                 menuForChildren_ = input.readBool();
-                bitField1_ |= 0x00000800;
+                bitField1_ |= 0x00004000;
                 break;
               } // case 456
             case 464:
               {
                 servesCocktails_ = input.readBool();
-                bitField1_ |= 0x00001000;
+                bitField1_ |= 0x00008000;
                 break;
               } // case 464
             case 472:
               {
                 servesDessert_ = input.readBool();
-                bitField1_ |= 0x00002000;
+                bitField1_ |= 0x00010000;
                 break;
               } // case 472
             case 480:
               {
                 servesCoffee_ = input.readBool();
-                bitField1_ |= 0x00004000;
+                bitField1_ |= 0x00020000;
                 break;
               } // case 480
             case 496:
               {
                 goodForChildren_ = input.readBool();
-                bitField1_ |= 0x00008000;
+                bitField1_ |= 0x00040000;
                 break;
               } // case 496
             case 504:
               {
                 allowsDogs_ = input.readBool();
-                bitField1_ |= 0x00010000;
+                bitField1_ |= 0x00080000;
                 break;
               } // case 504
             case 512:
               {
                 restroom_ = input.readBool();
-                bitField1_ |= 0x00020000;
+                bitField1_ |= 0x00100000;
                 break;
               } // case 512
             case 520:
               {
                 goodForGroups_ = input.readBool();
-                bitField1_ |= 0x00040000;
+                bitField1_ |= 0x00200000;
                 break;
               } // case 520
             case 528:
               {
                 goodForWatchingSports_ = input.readBool();
-                bitField1_ |= 0x00080000;
+                bitField1_ |= 0x00400000;
                 break;
               } // case 528
             case 538:
               {
                 input.readMessage(getPaymentOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00100000;
+                bitField1_ |= 0x00800000;
                 break;
               } // case 538
             case 562:
               {
                 input.readMessage(getParkingOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00200000;
+                bitField1_ |= 0x01000000;
                 break;
               } // case 562
             case 570:
@@ -18743,19 +19167,19 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getAccessibilityOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00800000;
+                bitField1_ |= 0x04000000;
                 break;
               } // case 578
             case 626:
               {
                 input.readMessage(getFuelOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x01000000;
+                bitField1_ |= 0x08000000;
                 break;
               } // case 626
             case 634:
               {
                 input.readMessage(getEvChargeOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x02000000;
+                bitField1_ |= 0x10000000;
                 break;
               } // case 634
             default:
@@ -18783,11 +19207,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An ID representing this place which may be used to look up
-     * this place again (a.k.a. the API "resource" name: places/&lt;place_id&gt;).
+     * An ID representing this place which may be used to look up this place
+     * again (a.k.a. the API "resource" name: places/place_id).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @return The name.
      */
@@ -18806,11 +19230,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An ID representing this place which may be used to look up
-     * this place again (a.k.a. the API "resource" name: places/&lt;place_id&gt;).
+     * An ID representing this place which may be used to look up this place
+     * again (a.k.a. the API "resource" name: places/place_id).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @return The bytes for name.
      */
@@ -18829,11 +19253,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An ID representing this place which may be used to look up
-     * this place again (a.k.a. the API "resource" name: places/&lt;place_id&gt;).
+     * An ID representing this place which may be used to look up this place
+     * again (a.k.a. the API "resource" name: places/place_id).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -18851,11 +19275,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An ID representing this place which may be used to look up
-     * this place again (a.k.a. the API "resource" name: places/&lt;place_id&gt;).
+     * An ID representing this place which may be used to look up this place
+     * again (a.k.a. the API "resource" name: places/place_id).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -18869,11 +19293,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An ID representing this place which may be used to look up
-     * this place again (a.k.a. the API "resource" name: places/&lt;place_id&gt;).
+     * An ID representing this place which may be used to look up this place
+     * again (a.k.a. the API "resource" name: places/place_id).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -18894,10 +19318,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The unique identifier of a place.
+     * The unique identifier of a place.
      * </pre>
      *
-     * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string id = 2;</code>
      *
      * @return The id.
      */
@@ -18916,10 +19340,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The unique identifier of a place.
+     * The unique identifier of a place.
      * </pre>
      *
-     * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string id = 2;</code>
      *
      * @return The bytes for id.
      */
@@ -18938,10 +19362,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The unique identifier of a place.
+     * The unique identifier of a place.
      * </pre>
      *
-     * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string id = 2;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -18959,10 +19383,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The unique identifier of a place.
+     * The unique identifier of a place.
      * </pre>
      *
-     * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string id = 2;</code>
      *
      * @return This builder for chaining.
      */
@@ -18976,10 +19400,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The unique identifier of a place.
+     * The unique identifier of a place.
      * </pre>
      *
-     * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string id = 2;</code>
      *
      * @param value The bytes for id to set.
      * @return This builder for chaining.
@@ -19005,14 +19429,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized name of the place, suitable as a short
-     * human-readable description. For example, "Google Sydney", "Starbucks",
-     * "Pyrmont", etc.
+     * The localized name of the place, suitable as a short human-readable
+     * description. For example, "Google Sydney", "Starbucks", "Pyrmont", etc.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText display_name = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText display_name = 31;</code>
      *
      * @return Whether the displayName field is set.
      */
@@ -19023,14 +19444,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized name of the place, suitable as a short
-     * human-readable description. For example, "Google Sydney", "Starbucks",
-     * "Pyrmont", etc.
+     * The localized name of the place, suitable as a short human-readable
+     * description. For example, "Google Sydney", "Starbucks", "Pyrmont", etc.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText display_name = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText display_name = 31;</code>
      *
      * @return The displayName.
      */
@@ -19047,14 +19465,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized name of the place, suitable as a short
-     * human-readable description. For example, "Google Sydney", "Starbucks",
-     * "Pyrmont", etc.
+     * The localized name of the place, suitable as a short human-readable
+     * description. For example, "Google Sydney", "Starbucks", "Pyrmont", etc.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText display_name = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText display_name = 31;</code>
      */
     public Builder setDisplayName(com.google.type.LocalizedText value) {
       if (displayNameBuilder_ == null) {
@@ -19073,14 +19488,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized name of the place, suitable as a short
-     * human-readable description. For example, "Google Sydney", "Starbucks",
-     * "Pyrmont", etc.
+     * The localized name of the place, suitable as a short human-readable
+     * description. For example, "Google Sydney", "Starbucks", "Pyrmont", etc.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText display_name = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText display_name = 31;</code>
      */
     public Builder setDisplayName(com.google.type.LocalizedText.Builder builderForValue) {
       if (displayNameBuilder_ == null) {
@@ -19096,14 +19508,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized name of the place, suitable as a short
-     * human-readable description. For example, "Google Sydney", "Starbucks",
-     * "Pyrmont", etc.
+     * The localized name of the place, suitable as a short human-readable
+     * description. For example, "Google Sydney", "Starbucks", "Pyrmont", etc.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText display_name = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText display_name = 31;</code>
      */
     public Builder mergeDisplayName(com.google.type.LocalizedText value) {
       if (displayNameBuilder_ == null) {
@@ -19125,14 +19534,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized name of the place, suitable as a short
-     * human-readable description. For example, "Google Sydney", "Starbucks",
-     * "Pyrmont", etc.
+     * The localized name of the place, suitable as a short human-readable
+     * description. For example, "Google Sydney", "Starbucks", "Pyrmont", etc.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText display_name = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText display_name = 31;</code>
      */
     public Builder clearDisplayName() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -19148,14 +19554,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized name of the place, suitable as a short
-     * human-readable description. For example, "Google Sydney", "Starbucks",
-     * "Pyrmont", etc.
+     * The localized name of the place, suitable as a short human-readable
+     * description. For example, "Google Sydney", "Starbucks", "Pyrmont", etc.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText display_name = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText display_name = 31;</code>
      */
     public com.google.type.LocalizedText.Builder getDisplayNameBuilder() {
       bitField0_ |= 0x00000004;
@@ -19166,14 +19569,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized name of the place, suitable as a short
-     * human-readable description. For example, "Google Sydney", "Starbucks",
-     * "Pyrmont", etc.
+     * The localized name of the place, suitable as a short human-readable
+     * description. For example, "Google Sydney", "Starbucks", "Pyrmont", etc.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText display_name = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText display_name = 31;</code>
      */
     public com.google.type.LocalizedTextOrBuilder getDisplayNameOrBuilder() {
       if (displayNameBuilder_ != null) {
@@ -19188,14 +19588,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The localized name of the place, suitable as a short
-     * human-readable description. For example, "Google Sydney", "Starbucks",
-     * "Pyrmont", etc.
+     * The localized name of the place, suitable as a short human-readable
+     * description. For example, "Google Sydney", "Starbucks", "Pyrmont", etc.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText display_name = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText display_name = 31;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LocalizedText,
@@ -19227,11 +19624,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of type tags for this result. For example, "political"
-     * and "locality".
+     * A set of type tags for this result. For example, "political" and
+     * "locality".  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
-     * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 5;</code>
      *
      * @return A list containing the types.
      */
@@ -19243,11 +19642,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of type tags for this result. For example, "political"
-     * and "locality".
+     * A set of type tags for this result. For example, "political" and
+     * "locality".  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
-     * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 5;</code>
      *
      * @return The count of types.
      */
@@ -19258,11 +19659,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of type tags for this result. For example, "political"
-     * and "locality".
+     * A set of type tags for this result. For example, "political" and
+     * "locality".  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
-     * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 5;</code>
      *
      * @param index The index of the element to return.
      * @return The types at the given index.
@@ -19274,11 +19677,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of type tags for this result. For example, "political"
-     * and "locality".
+     * A set of type tags for this result. For example, "political" and
+     * "locality".  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
-     * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 5;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the types at the given index.
@@ -19290,11 +19695,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of type tags for this result. For example, "political"
-     * and "locality".
+     * A set of type tags for this result. For example, "political" and
+     * "locality".  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
-     * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 5;</code>
      *
      * @param index The index to set the value at.
      * @param value The types to set.
@@ -19314,11 +19721,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of type tags for this result. For example, "political"
-     * and "locality".
+     * A set of type tags for this result. For example, "political" and
+     * "locality".  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
-     * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 5;</code>
      *
      * @param value The types to add.
      * @return This builder for chaining.
@@ -19337,11 +19746,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of type tags for this result. For example, "political"
-     * and "locality".
+     * A set of type tags for this result. For example, "political" and
+     * "locality".  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
-     * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 5;</code>
      *
      * @param values The types to add.
      * @return This builder for chaining.
@@ -19357,11 +19768,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of type tags for this result. For example, "political"
-     * and "locality".
+     * A set of type tags for this result. For example, "political" and
+     * "locality".  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
-     * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 5;</code>
      *
      * @return This builder for chaining.
      */
@@ -19376,11 +19789,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of type tags for this result. For example, "political"
-     * and "locality".
+     * A set of type tags for this result. For example, "political" and
+     * "locality".  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
-     * <code>repeated string types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated string types = 5;</code>
      *
      * @param value The bytes of the types to add.
      * @return This builder for chaining.
@@ -19397,16 +19812,352 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object primaryType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The primary type of the given result. This type must one of the Places API
+     * supported types. For example, "restaurant", "cafe", "airport", etc.  A
+     * place can only have a single primary type.  For the complete list of
+     * possible values, see Table A and Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
+     * </pre>
+     *
+     * <code>string primary_type = 50;</code>
+     *
+     * @return The primaryType.
+     */
+    public java.lang.String getPrimaryType() {
+      java.lang.Object ref = primaryType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        primaryType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The primary type of the given result. This type must one of the Places API
+     * supported types. For example, "restaurant", "cafe", "airport", etc.  A
+     * place can only have a single primary type.  For the complete list of
+     * possible values, see Table A and Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
+     * </pre>
+     *
+     * <code>string primary_type = 50;</code>
+     *
+     * @return The bytes for primaryType.
+     */
+    public com.google.protobuf.ByteString getPrimaryTypeBytes() {
+      java.lang.Object ref = primaryType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        primaryType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The primary type of the given result. This type must one of the Places API
+     * supported types. For example, "restaurant", "cafe", "airport", etc.  A
+     * place can only have a single primary type.  For the complete list of
+     * possible values, see Table A and Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
+     * </pre>
+     *
+     * <code>string primary_type = 50;</code>
+     *
+     * @param value The primaryType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrimaryType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      primaryType_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The primary type of the given result. This type must one of the Places API
+     * supported types. For example, "restaurant", "cafe", "airport", etc.  A
+     * place can only have a single primary type.  For the complete list of
+     * possible values, see Table A and Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
+     * </pre>
+     *
+     * <code>string primary_type = 50;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrimaryType() {
+      primaryType_ = getDefaultInstance().getPrimaryType();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The primary type of the given result. This type must one of the Places API
+     * supported types. For example, "restaurant", "cafe", "airport", etc.  A
+     * place can only have a single primary type.  For the complete list of
+     * possible values, see Table A and Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
+     * </pre>
+     *
+     * <code>string primary_type = 50;</code>
+     *
+     * @param value The bytes for primaryType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrimaryTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      primaryType_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private com.google.type.LocalizedText primaryTypeDisplayName_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.LocalizedText,
+            com.google.type.LocalizedText.Builder,
+            com.google.type.LocalizedTextOrBuilder>
+        primaryTypeDisplayNameBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the primary type, localized to the request language if
+     * applicable.  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText primary_type_display_name = 32;</code>
+     *
+     * @return Whether the primaryTypeDisplayName field is set.
+     */
+    public boolean hasPrimaryTypeDisplayName() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the primary type, localized to the request language if
+     * applicable.  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText primary_type_display_name = 32;</code>
+     *
+     * @return The primaryTypeDisplayName.
+     */
+    public com.google.type.LocalizedText getPrimaryTypeDisplayName() {
+      if (primaryTypeDisplayNameBuilder_ == null) {
+        return primaryTypeDisplayName_ == null
+            ? com.google.type.LocalizedText.getDefaultInstance()
+            : primaryTypeDisplayName_;
+      } else {
+        return primaryTypeDisplayNameBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the primary type, localized to the request language if
+     * applicable.  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText primary_type_display_name = 32;</code>
+     */
+    public Builder setPrimaryTypeDisplayName(com.google.type.LocalizedText value) {
+      if (primaryTypeDisplayNameBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        primaryTypeDisplayName_ = value;
+      } else {
+        primaryTypeDisplayNameBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the primary type, localized to the request language if
+     * applicable.  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText primary_type_display_name = 32;</code>
+     */
+    public Builder setPrimaryTypeDisplayName(
+        com.google.type.LocalizedText.Builder builderForValue) {
+      if (primaryTypeDisplayNameBuilder_ == null) {
+        primaryTypeDisplayName_ = builderForValue.build();
+      } else {
+        primaryTypeDisplayNameBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the primary type, localized to the request language if
+     * applicable.  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText primary_type_display_name = 32;</code>
+     */
+    public Builder mergePrimaryTypeDisplayName(com.google.type.LocalizedText value) {
+      if (primaryTypeDisplayNameBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && primaryTypeDisplayName_ != null
+            && primaryTypeDisplayName_ != com.google.type.LocalizedText.getDefaultInstance()) {
+          getPrimaryTypeDisplayNameBuilder().mergeFrom(value);
+        } else {
+          primaryTypeDisplayName_ = value;
+        }
+      } else {
+        primaryTypeDisplayNameBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the primary type, localized to the request language if
+     * applicable.  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText primary_type_display_name = 32;</code>
+     */
+    public Builder clearPrimaryTypeDisplayName() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      primaryTypeDisplayName_ = null;
+      if (primaryTypeDisplayNameBuilder_ != null) {
+        primaryTypeDisplayNameBuilder_.dispose();
+        primaryTypeDisplayNameBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the primary type, localized to the request language if
+     * applicable.  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText primary_type_display_name = 32;</code>
+     */
+    public com.google.type.LocalizedText.Builder getPrimaryTypeDisplayNameBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getPrimaryTypeDisplayNameFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the primary type, localized to the request language if
+     * applicable.  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText primary_type_display_name = 32;</code>
+     */
+    public com.google.type.LocalizedTextOrBuilder getPrimaryTypeDisplayNameOrBuilder() {
+      if (primaryTypeDisplayNameBuilder_ != null) {
+        return primaryTypeDisplayNameBuilder_.getMessageOrBuilder();
+      } else {
+        return primaryTypeDisplayName_ == null
+            ? com.google.type.LocalizedText.getDefaultInstance()
+            : primaryTypeDisplayName_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the primary type, localized to the request language if
+     * applicable.  For the complete list of possible values, see Table A and
+     * Table B at
+     * https://developers.google.com/maps/documentation/places/web-service/place-types
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText primary_type_display_name = 32;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.LocalizedText,
+            com.google.type.LocalizedText.Builder,
+            com.google.type.LocalizedTextOrBuilder>
+        getPrimaryTypeDisplayNameFieldBuilder() {
+      if (primaryTypeDisplayNameBuilder_ == null) {
+        primaryTypeDisplayNameBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.LocalizedText,
+                com.google.type.LocalizedText.Builder,
+                com.google.type.LocalizedTextOrBuilder>(
+                getPrimaryTypeDisplayName(), getParentForChildren(), isClean());
+        primaryTypeDisplayName_ = null;
+      }
+      return primaryTypeDisplayNameBuilder_;
+    }
+
     private java.lang.Object nationalPhoneNumber_ = "";
     /**
      *
      *
      * <pre>
-     * Output only. A human-readable phone number for the place, in national
-     * format.
+     * A human-readable phone number for the place, in national format.
      * </pre>
      *
-     * <code>string national_phone_number = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string national_phone_number = 7;</code>
      *
      * @return The nationalPhoneNumber.
      */
@@ -19425,11 +20176,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human-readable phone number for the place, in national
-     * format.
+     * A human-readable phone number for the place, in national format.
      * </pre>
      *
-     * <code>string national_phone_number = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string national_phone_number = 7;</code>
      *
      * @return The bytes for nationalPhoneNumber.
      */
@@ -19448,11 +20198,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human-readable phone number for the place, in national
-     * format.
+     * A human-readable phone number for the place, in national format.
      * </pre>
      *
-     * <code>string national_phone_number = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string national_phone_number = 7;</code>
      *
      * @param value The nationalPhoneNumber to set.
      * @return This builder for chaining.
@@ -19462,7 +20211,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       nationalPhoneNumber_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -19470,17 +20219,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human-readable phone number for the place, in national
-     * format.
+     * A human-readable phone number for the place, in national format.
      * </pre>
      *
-     * <code>string national_phone_number = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string national_phone_number = 7;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNationalPhoneNumber() {
       nationalPhoneNumber_ = getDefaultInstance().getNationalPhoneNumber();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -19488,11 +20236,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human-readable phone number for the place, in national
-     * format.
+     * A human-readable phone number for the place, in national format.
      * </pre>
      *
-     * <code>string national_phone_number = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string national_phone_number = 7;</code>
      *
      * @param value The bytes for nationalPhoneNumber to set.
      * @return This builder for chaining.
@@ -19503,7 +20250,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       nationalPhoneNumber_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -19513,12 +20260,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human-readable phone number for the place, in international
-     * format.
+     * A human-readable phone number for the place, in international format.
      * </pre>
      *
-     * <code>string international_phone_number = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string international_phone_number = 8;</code>
      *
      * @return The internationalPhoneNumber.
      */
@@ -19537,12 +20282,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human-readable phone number for the place, in international
-     * format.
+     * A human-readable phone number for the place, in international format.
      * </pre>
      *
-     * <code>string international_phone_number = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string international_phone_number = 8;</code>
      *
      * @return The bytes for internationalPhoneNumber.
      */
@@ -19561,12 +20304,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human-readable phone number for the place, in international
-     * format.
+     * A human-readable phone number for the place, in international format.
      * </pre>
      *
-     * <code>string international_phone_number = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string international_phone_number = 8;</code>
      *
      * @param value The internationalPhoneNumber to set.
      * @return This builder for chaining.
@@ -19576,7 +20317,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       internationalPhoneNumber_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -19584,18 +20325,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human-readable phone number for the place, in international
-     * format.
+     * A human-readable phone number for the place, in international format.
      * </pre>
      *
-     * <code>string international_phone_number = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string international_phone_number = 8;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearInternationalPhoneNumber() {
       internationalPhoneNumber_ = getDefaultInstance().getInternationalPhoneNumber();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -19603,12 +20342,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A human-readable phone number for the place, in international
-     * format.
+     * A human-readable phone number for the place, in international format.
      * </pre>
      *
-     * <code>string international_phone_number = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string international_phone_number = 8;</code>
      *
      * @param value The bytes for internationalPhoneNumber to set.
      * @return This builder for chaining.
@@ -19619,7 +20356,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       internationalPhoneNumber_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -19629,10 +20366,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A full, human-readable address for this place.
+     * A full, human-readable address for this place.
      * </pre>
      *
-     * <code>string formatted_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string formatted_address = 9;</code>
      *
      * @return The formattedAddress.
      */
@@ -19651,10 +20388,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A full, human-readable address for this place.
+     * A full, human-readable address for this place.
      * </pre>
      *
-     * <code>string formatted_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string formatted_address = 9;</code>
      *
      * @return The bytes for formattedAddress.
      */
@@ -19673,10 +20410,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A full, human-readable address for this place.
+     * A full, human-readable address for this place.
      * </pre>
      *
-     * <code>string formatted_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string formatted_address = 9;</code>
      *
      * @param value The formattedAddress to set.
      * @return This builder for chaining.
@@ -19686,7 +20423,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       formattedAddress_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -19694,16 +20431,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A full, human-readable address for this place.
+     * A full, human-readable address for this place.
      * </pre>
      *
-     * <code>string formatted_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string formatted_address = 9;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearFormattedAddress() {
       formattedAddress_ = getDefaultInstance().getFormattedAddress();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -19711,10 +20448,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A full, human-readable address for this place.
+     * A full, human-readable address for this place.
      * </pre>
      *
-     * <code>string formatted_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string formatted_address = 9;</code>
      *
      * @param value The bytes for formattedAddress to set.
      * @return This builder for chaining.
@@ -19725,7 +20462,113 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       formattedAddress_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object shortFormattedAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A short, human-readable address for this place.
+     * </pre>
+     *
+     * <code>string short_formatted_address = 51;</code>
+     *
+     * @return The shortFormattedAddress.
+     */
+    public java.lang.String getShortFormattedAddress() {
+      java.lang.Object ref = shortFormattedAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shortFormattedAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A short, human-readable address for this place.
+     * </pre>
+     *
+     * <code>string short_formatted_address = 51;</code>
+     *
+     * @return The bytes for shortFormattedAddress.
+     */
+    public com.google.protobuf.ByteString getShortFormattedAddressBytes() {
+      java.lang.Object ref = shortFormattedAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        shortFormattedAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A short, human-readable address for this place.
+     * </pre>
+     *
+     * <code>string short_formatted_address = 51;</code>
+     *
+     * @param value The shortFormattedAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShortFormattedAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      shortFormattedAddress_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A short, human-readable address for this place.
+     * </pre>
+     *
+     * <code>string short_formatted_address = 51;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearShortFormattedAddress() {
+      shortFormattedAddress_ = getDefaultInstance().getShortFormattedAddress();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A short, human-readable address for this place.
+     * </pre>
+     *
+     * <code>string short_formatted_address = 51;</code>
+     *
+     * @param value The bytes for shortFormattedAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShortFormattedAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      shortFormattedAddress_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -19734,11 +20577,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAddressComponentsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         addressComponents_ =
             new java.util.ArrayList<com.google.maps.places.v1.Place.AddressComponent>(
                 addressComponents_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -19752,12 +20595,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public java.util.List<com.google.maps.places.v1.Place.AddressComponent>
         getAddressComponentsList() {
@@ -19771,12 +20625,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public int getAddressComponentsCount() {
       if (addressComponentsBuilder_ == null) {
@@ -19789,12 +20654,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public com.google.maps.places.v1.Place.AddressComponent getAddressComponents(int index) {
       if (addressComponentsBuilder_ == null) {
@@ -19807,12 +20683,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public Builder setAddressComponents(
         int index, com.google.maps.places.v1.Place.AddressComponent value) {
@@ -19832,12 +20719,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public Builder setAddressComponents(
         int index, com.google.maps.places.v1.Place.AddressComponent.Builder builderForValue) {
@@ -19854,12 +20752,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public Builder addAddressComponents(com.google.maps.places.v1.Place.AddressComponent value) {
       if (addressComponentsBuilder_ == null) {
@@ -19878,12 +20787,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public Builder addAddressComponents(
         int index, com.google.maps.places.v1.Place.AddressComponent value) {
@@ -19903,12 +20823,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public Builder addAddressComponents(
         com.google.maps.places.v1.Place.AddressComponent.Builder builderForValue) {
@@ -19925,12 +20856,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public Builder addAddressComponents(
         int index, com.google.maps.places.v1.Place.AddressComponent.Builder builderForValue) {
@@ -19947,12 +20889,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public Builder addAllAddressComponents(
         java.lang.Iterable<? extends com.google.maps.places.v1.Place.AddressComponent> values) {
@@ -19969,17 +20922,28 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public Builder clearAddressComponents() {
       if (addressComponentsBuilder_ == null) {
         addressComponents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         addressComponentsBuilder_.clear();
@@ -19990,12 +20954,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public Builder removeAddressComponents(int index) {
       if (addressComponentsBuilder_ == null) {
@@ -20011,12 +20986,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public com.google.maps.places.v1.Place.AddressComponent.Builder getAddressComponentsBuilder(
         int index) {
@@ -20026,12 +21012,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public com.google.maps.places.v1.Place.AddressComponentOrBuilder getAddressComponentsOrBuilder(
         int index) {
@@ -20045,12 +21042,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public java.util.List<? extends com.google.maps.places.v1.Place.AddressComponentOrBuilder>
         getAddressComponentsOrBuilderList() {
@@ -20064,12 +21072,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public com.google.maps.places.v1.Place.AddressComponent.Builder addAddressComponentsBuilder() {
       return getAddressComponentsFieldBuilder()
@@ -20079,12 +21098,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public com.google.maps.places.v1.Place.AddressComponent.Builder addAddressComponentsBuilder(
         int index) {
@@ -20095,12 +21125,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Repeated components for each locality level.
+     * Repeated components for each locality level.
+     * Note the following facts about the address_components[] array:
+     * - The array of address components may contain more components than the
+     * formatted_address.
+     * - The array does not necessarily include all the political entities that
+     * contain an address, apart from those included in the formatted_address. To
+     * retrieve all the political entities that contain a specific address, you
+     * should use reverse geocoding, passing the latitude/longitude of the address
+     * as a parameter to the request.
+     * - The format of the response is not guaranteed to remain the same between
+     * requests. In particular, the number of address_components varies based on
+     * the address requested and can change over time for the same address. A
+     * component can change position in the array. The type of the component can
+     * change. A particular component may be missing in a later response.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.AddressComponent address_components = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.AddressComponent address_components = 10;</code>
      */
     public java.util.List<com.google.maps.places.v1.Place.AddressComponent.Builder>
         getAddressComponentsBuilderList() {
@@ -20119,7 +21160,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.places.v1.Place.AddressComponent.Builder,
                 com.google.maps.places.v1.Place.AddressComponentOrBuilder>(
                 addressComponents_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         addressComponents_ = null;
@@ -20137,28 +21178,24 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Plus code of the place location lat/long.
+     * Plus code of the place location lat/long.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.PlusCode plus_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.PlusCode plus_code = 11;</code>
      *
      * @return Whether the plusCode field is set.
      */
     public boolean hasPlusCode() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Plus code of the place location lat/long.
+     * Plus code of the place location lat/long.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.PlusCode plus_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.PlusCode plus_code = 11;</code>
      *
      * @return The plusCode.
      */
@@ -20175,12 +21212,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Plus code of the place location lat/long.
+     * Plus code of the place location lat/long.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.PlusCode plus_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.PlusCode plus_code = 11;</code>
      */
     public Builder setPlusCode(com.google.maps.places.v1.Place.PlusCode value) {
       if (plusCodeBuilder_ == null) {
@@ -20191,7 +21226,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         plusCodeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -20199,12 +21234,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Plus code of the place location lat/long.
+     * Plus code of the place location lat/long.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.PlusCode plus_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.PlusCode plus_code = 11;</code>
      */
     public Builder setPlusCode(com.google.maps.places.v1.Place.PlusCode.Builder builderForValue) {
       if (plusCodeBuilder_ == null) {
@@ -20212,7 +21245,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         plusCodeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -20220,16 +21253,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Plus code of the place location lat/long.
+     * Plus code of the place location lat/long.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.PlusCode plus_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.PlusCode plus_code = 11;</code>
      */
     public Builder mergePlusCode(com.google.maps.places.v1.Place.PlusCode value) {
       if (plusCodeBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && plusCode_ != null
             && plusCode_ != com.google.maps.places.v1.Place.PlusCode.getDefaultInstance()) {
           getPlusCodeBuilder().mergeFrom(value);
@@ -20239,7 +21270,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         plusCodeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -20247,15 +21278,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Plus code of the place location lat/long.
+     * Plus code of the place location lat/long.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.PlusCode plus_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.PlusCode plus_code = 11;</code>
      */
     public Builder clearPlusCode() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000800);
       plusCode_ = null;
       if (plusCodeBuilder_ != null) {
         plusCodeBuilder_.dispose();
@@ -20268,15 +21297,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Plus code of the place location lat/long.
+     * Plus code of the place location lat/long.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.PlusCode plus_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.PlusCode plus_code = 11;</code>
      */
     public com.google.maps.places.v1.Place.PlusCode.Builder getPlusCodeBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getPlusCodeFieldBuilder().getBuilder();
     }
@@ -20284,12 +21311,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Plus code of the place location lat/long.
+     * Plus code of the place location lat/long.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.PlusCode plus_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.PlusCode plus_code = 11;</code>
      */
     public com.google.maps.places.v1.Place.PlusCodeOrBuilder getPlusCodeOrBuilder() {
       if (plusCodeBuilder_ != null) {
@@ -20304,12 +21329,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Plus code of the place location lat/long.
+     * Plus code of the place location lat/long.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.PlusCode plus_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.PlusCode plus_code = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.maps.places.v1.Place.PlusCode,
@@ -20336,24 +21359,24 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The position of this place.
+     * The position of this place.
      * </pre>
      *
-     * <code>.google.type.LatLng location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.type.LatLng location = 12;</code>
      *
      * @return Whether the location field is set.
      */
     public boolean hasLocation() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. The position of this place.
+     * The position of this place.
      * </pre>
      *
-     * <code>.google.type.LatLng location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.type.LatLng location = 12;</code>
      *
      * @return The location.
      */
@@ -20368,10 +21391,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The position of this place.
+     * The position of this place.
      * </pre>
      *
-     * <code>.google.type.LatLng location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.type.LatLng location = 12;</code>
      */
     public Builder setLocation(com.google.type.LatLng value) {
       if (locationBuilder_ == null) {
@@ -20382,7 +21405,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         locationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -20390,10 +21413,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The position of this place.
+     * The position of this place.
      * </pre>
      *
-     * <code>.google.type.LatLng location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.type.LatLng location = 12;</code>
      */
     public Builder setLocation(com.google.type.LatLng.Builder builderForValue) {
       if (locationBuilder_ == null) {
@@ -20401,7 +21424,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         locationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -20409,14 +21432,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The position of this place.
+     * The position of this place.
      * </pre>
      *
-     * <code>.google.type.LatLng location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.type.LatLng location = 12;</code>
      */
     public Builder mergeLocation(com.google.type.LatLng value) {
       if (locationBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && location_ != null
             && location_ != com.google.type.LatLng.getDefaultInstance()) {
           getLocationBuilder().mergeFrom(value);
@@ -20426,7 +21449,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         locationBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -20434,13 +21457,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The position of this place.
+     * The position of this place.
      * </pre>
      *
-     * <code>.google.type.LatLng location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.type.LatLng location = 12;</code>
      */
     public Builder clearLocation() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00001000);
       location_ = null;
       if (locationBuilder_ != null) {
         locationBuilder_.dispose();
@@ -20453,13 +21476,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The position of this place.
+     * The position of this place.
      * </pre>
      *
-     * <code>.google.type.LatLng location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.type.LatLng location = 12;</code>
      */
     public com.google.type.LatLng.Builder getLocationBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
@@ -20467,10 +21490,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The position of this place.
+     * The position of this place.
      * </pre>
      *
-     * <code>.google.type.LatLng location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.type.LatLng location = 12;</code>
      */
     public com.google.type.LatLngOrBuilder getLocationOrBuilder() {
       if (locationBuilder_ != null) {
@@ -20483,10 +21506,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The position of this place.
+     * The position of this place.
      * </pre>
      *
-     * <code>.google.type.LatLng location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.type.LatLng location = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
@@ -20512,28 +21535,24 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A viewport suitable for displaying the place on an
-     * average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map.
      * </pre>
      *
-     * <code>.google.geo.type.Viewport viewport = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.geo.type.Viewport viewport = 13;</code>
      *
      * @return Whether the viewport field is set.
      */
     public boolean hasViewport() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. A viewport suitable for displaying the place on an
-     * average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map.
      * </pre>
      *
-     * <code>.google.geo.type.Viewport viewport = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.geo.type.Viewport viewport = 13;</code>
      *
      * @return The viewport.
      */
@@ -20548,12 +21567,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A viewport suitable for displaying the place on an
-     * average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map.
      * </pre>
      *
-     * <code>.google.geo.type.Viewport viewport = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.geo.type.Viewport viewport = 13;</code>
      */
     public Builder setViewport(com.google.geo.type.Viewport value) {
       if (viewportBuilder_ == null) {
@@ -20564,7 +21581,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         viewportBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -20572,12 +21589,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A viewport suitable for displaying the place on an
-     * average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map.
      * </pre>
      *
-     * <code>.google.geo.type.Viewport viewport = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.geo.type.Viewport viewport = 13;</code>
      */
     public Builder setViewport(com.google.geo.type.Viewport.Builder builderForValue) {
       if (viewportBuilder_ == null) {
@@ -20585,7 +21600,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         viewportBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -20593,16 +21608,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A viewport suitable for displaying the place on an
-     * average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map.
      * </pre>
      *
-     * <code>.google.geo.type.Viewport viewport = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.geo.type.Viewport viewport = 13;</code>
      */
     public Builder mergeViewport(com.google.geo.type.Viewport value) {
       if (viewportBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && viewport_ != null
             && viewport_ != com.google.geo.type.Viewport.getDefaultInstance()) {
           getViewportBuilder().mergeFrom(value);
@@ -20612,7 +21625,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         viewportBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -20620,15 +21633,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A viewport suitable for displaying the place on an
-     * average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map.
      * </pre>
      *
-     * <code>.google.geo.type.Viewport viewport = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.geo.type.Viewport viewport = 13;</code>
      */
     public Builder clearViewport() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00002000);
       viewport_ = null;
       if (viewportBuilder_ != null) {
         viewportBuilder_.dispose();
@@ -20641,15 +21652,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A viewport suitable for displaying the place on an
-     * average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map.
      * </pre>
      *
-     * <code>.google.geo.type.Viewport viewport = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.geo.type.Viewport viewport = 13;</code>
      */
     public com.google.geo.type.Viewport.Builder getViewportBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getViewportFieldBuilder().getBuilder();
     }
@@ -20657,12 +21666,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A viewport suitable for displaying the place on an
-     * average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map.
      * </pre>
      *
-     * <code>.google.geo.type.Viewport viewport = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.geo.type.Viewport viewport = 13;</code>
      */
     public com.google.geo.type.ViewportOrBuilder getViewportOrBuilder() {
       if (viewportBuilder_ != null) {
@@ -20675,12 +21682,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A viewport suitable for displaying the place on an
-     * average-sized map.
+     * A viewport suitable for displaying the place on an average-sized map.
      * </pre>
      *
-     * <code>.google.geo.type.Viewport viewport = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.geo.type.Viewport viewport = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.geo.type.Viewport,
@@ -20704,11 +21709,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A rating between 1.0 and 5.0, based on user reviews of this
-     * place.
+     * A rating between 1.0 and 5.0, based on user reviews of this place.
      * </pre>
      *
-     * <code>double rating = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>double rating = 14;</code>
      *
      * @return The rating.
      */
@@ -20720,11 +21724,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A rating between 1.0 and 5.0, based on user reviews of this
-     * place.
+     * A rating between 1.0 and 5.0, based on user reviews of this place.
      * </pre>
      *
-     * <code>double rating = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>double rating = 14;</code>
      *
      * @param value The rating to set.
      * @return This builder for chaining.
@@ -20732,7 +21735,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setRating(double value) {
 
       rating_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -20740,16 +21743,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A rating between 1.0 and 5.0, based on user reviews of this
-     * place.
+     * A rating between 1.0 and 5.0, based on user reviews of this place.
      * </pre>
      *
-     * <code>double rating = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>double rating = 14;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearRating() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00004000);
       rating_ = 0D;
       onChanged();
       return this;
@@ -20760,10 +21762,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A URL providing more information about this place.
+     * A URL providing more information about this place.
      * </pre>
      *
-     * <code>string google_maps_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string google_maps_uri = 15;</code>
      *
      * @return The googleMapsUri.
      */
@@ -20782,10 +21784,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A URL providing more information about this place.
+     * A URL providing more information about this place.
      * </pre>
      *
-     * <code>string google_maps_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string google_maps_uri = 15;</code>
      *
      * @return The bytes for googleMapsUri.
      */
@@ -20804,10 +21806,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A URL providing more information about this place.
+     * A URL providing more information about this place.
      * </pre>
      *
-     * <code>string google_maps_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string google_maps_uri = 15;</code>
      *
      * @param value The googleMapsUri to set.
      * @return This builder for chaining.
@@ -20817,7 +21819,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       googleMapsUri_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -20825,16 +21827,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A URL providing more information about this place.
+     * A URL providing more information about this place.
      * </pre>
      *
-     * <code>string google_maps_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string google_maps_uri = 15;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearGoogleMapsUri() {
       googleMapsUri_ = getDefaultInstance().getGoogleMapsUri();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -20842,10 +21844,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A URL providing more information about this place.
+     * A URL providing more information about this place.
      * </pre>
      *
-     * <code>string google_maps_uri = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string google_maps_uri = 15;</code>
      *
      * @param value The bytes for googleMapsUri to set.
      * @return This builder for chaining.
@@ -20856,7 +21858,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       googleMapsUri_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -20866,13 +21868,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The authoritative website for this place, e.g. a business'
-     * homepage. Note that for places that are part of a chain (e.g. an IKEA
-     * store), this will usually be the website for the individual store, not the
-     * overall chain.
+     * The authoritative website for this place, e.g. a business' homepage.
+     * Note that for places that are part of a chain (e.g. an IKEA store), this
+     * will usually be the website for the individual store, not the overall
+     * chain.
      * </pre>
      *
-     * <code>string website_uri = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string website_uri = 16;</code>
      *
      * @return The websiteUri.
      */
@@ -20891,13 +21893,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The authoritative website for this place, e.g. a business'
-     * homepage. Note that for places that are part of a chain (e.g. an IKEA
-     * store), this will usually be the website for the individual store, not the
-     * overall chain.
+     * The authoritative website for this place, e.g. a business' homepage.
+     * Note that for places that are part of a chain (e.g. an IKEA store), this
+     * will usually be the website for the individual store, not the overall
+     * chain.
      * </pre>
      *
-     * <code>string website_uri = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string website_uri = 16;</code>
      *
      * @return The bytes for websiteUri.
      */
@@ -20916,13 +21918,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The authoritative website for this place, e.g. a business'
-     * homepage. Note that for places that are part of a chain (e.g. an IKEA
-     * store), this will usually be the website for the individual store, not the
-     * overall chain.
+     * The authoritative website for this place, e.g. a business' homepage.
+     * Note that for places that are part of a chain (e.g. an IKEA store), this
+     * will usually be the website for the individual store, not the overall
+     * chain.
      * </pre>
      *
-     * <code>string website_uri = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string website_uri = 16;</code>
      *
      * @param value The websiteUri to set.
      * @return This builder for chaining.
@@ -20932,7 +21934,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       websiteUri_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -20940,19 +21942,19 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The authoritative website for this place, e.g. a business'
-     * homepage. Note that for places that are part of a chain (e.g. an IKEA
-     * store), this will usually be the website for the individual store, not the
-     * overall chain.
+     * The authoritative website for this place, e.g. a business' homepage.
+     * Note that for places that are part of a chain (e.g. an IKEA store), this
+     * will usually be the website for the individual store, not the overall
+     * chain.
      * </pre>
      *
-     * <code>string website_uri = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string website_uri = 16;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearWebsiteUri() {
       websiteUri_ = getDefaultInstance().getWebsiteUri();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -20960,13 +21962,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The authoritative website for this place, e.g. a business'
-     * homepage. Note that for places that are part of a chain (e.g. an IKEA
-     * store), this will usually be the website for the individual store, not the
-     * overall chain.
+     * The authoritative website for this place, e.g. a business' homepage.
+     * Note that for places that are part of a chain (e.g. an IKEA store), this
+     * will usually be the website for the individual store, not the overall
+     * chain.
      * </pre>
      *
-     * <code>string website_uri = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string website_uri = 16;</code>
      *
      * @param value The bytes for websiteUri to set.
      * @return This builder for chaining.
@@ -20977,7 +21979,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       websiteUri_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -20986,9 +21988,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureReviewsIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         reviews_ = new java.util.ArrayList<com.google.maps.places.v1.Review>(reviews_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00020000;
       }
     }
 
@@ -21002,12 +22004,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public java.util.List<com.google.maps.places.v1.Review> getReviewsList() {
       if (reviewsBuilder_ == null) {
@@ -21020,12 +22020,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public int getReviewsCount() {
       if (reviewsBuilder_ == null) {
@@ -21038,12 +22036,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public com.google.maps.places.v1.Review getReviews(int index) {
       if (reviewsBuilder_ == null) {
@@ -21056,12 +22052,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public Builder setReviews(int index, com.google.maps.places.v1.Review value) {
       if (reviewsBuilder_ == null) {
@@ -21080,12 +22074,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public Builder setReviews(int index, com.google.maps.places.v1.Review.Builder builderForValue) {
       if (reviewsBuilder_ == null) {
@@ -21101,12 +22093,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public Builder addReviews(com.google.maps.places.v1.Review value) {
       if (reviewsBuilder_ == null) {
@@ -21125,12 +22115,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public Builder addReviews(int index, com.google.maps.places.v1.Review value) {
       if (reviewsBuilder_ == null) {
@@ -21149,12 +22137,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public Builder addReviews(com.google.maps.places.v1.Review.Builder builderForValue) {
       if (reviewsBuilder_ == null) {
@@ -21170,12 +22156,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public Builder addReviews(int index, com.google.maps.places.v1.Review.Builder builderForValue) {
       if (reviewsBuilder_ == null) {
@@ -21191,12 +22175,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public Builder addAllReviews(
         java.lang.Iterable<? extends com.google.maps.places.v1.Review> values) {
@@ -21213,17 +22195,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public Builder clearReviews() {
       if (reviewsBuilder_ == null) {
         reviews_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
       } else {
         reviewsBuilder_.clear();
@@ -21234,12 +22214,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public Builder removeReviews(int index) {
       if (reviewsBuilder_ == null) {
@@ -21255,12 +22233,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public com.google.maps.places.v1.Review.Builder getReviewsBuilder(int index) {
       return getReviewsFieldBuilder().getBuilder(index);
@@ -21269,12 +22245,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public com.google.maps.places.v1.ReviewOrBuilder getReviewsOrBuilder(int index) {
       if (reviewsBuilder_ == null) {
@@ -21287,12 +22261,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public java.util.List<? extends com.google.maps.places.v1.ReviewOrBuilder>
         getReviewsOrBuilderList() {
@@ -21306,12 +22278,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public com.google.maps.places.v1.Review.Builder addReviewsBuilder() {
       return getReviewsFieldBuilder()
@@ -21321,12 +22291,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public com.google.maps.places.v1.Review.Builder addReviewsBuilder(int index) {
       return getReviewsFieldBuilder()
@@ -21336,12 +22304,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of reviews about this place.
+     * List of reviews about this place, sorted by relevance.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Review reviews = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
      */
     public java.util.List<com.google.maps.places.v1.Review.Builder> getReviewsBuilderList() {
       return getReviewsFieldBuilder().getBuilderList();
@@ -21358,7 +22324,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.places.v1.Review,
                 com.google.maps.places.v1.Review.Builder,
                 com.google.maps.places.v1.ReviewOrBuilder>(
-                reviews_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
+                reviews_, ((bitField0_ & 0x00020000) != 0), getParentForChildren(), isClean());
         reviews_ = null;
       }
       return reviewsBuilder_;
@@ -21374,28 +22340,24 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The regular hours of operation.
+     * The regular hours of operation.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
      *
      * @return Whether the regularOpeningHours field is set.
      */
     public boolean hasRegularOpeningHours() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. The regular hours of operation.
+     * The regular hours of operation.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
      *
      * @return The regularOpeningHours.
      */
@@ -21412,12 +22374,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The regular hours of operation.
+     * The regular hours of operation.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
      */
     public Builder setRegularOpeningHours(com.google.maps.places.v1.Place.OpeningHours value) {
       if (regularOpeningHoursBuilder_ == null) {
@@ -21428,7 +22388,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         regularOpeningHoursBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -21436,12 +22396,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The regular hours of operation.
+     * The regular hours of operation.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
      */
     public Builder setRegularOpeningHours(
         com.google.maps.places.v1.Place.OpeningHours.Builder builderForValue) {
@@ -21450,7 +22408,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         regularOpeningHoursBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -21458,16 +22416,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The regular hours of operation.
+     * The regular hours of operation.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
      */
     public Builder mergeRegularOpeningHours(com.google.maps.places.v1.Place.OpeningHours value) {
       if (regularOpeningHoursBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && regularOpeningHours_ != null
             && regularOpeningHours_
                 != com.google.maps.places.v1.Place.OpeningHours.getDefaultInstance()) {
@@ -21478,7 +22434,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         regularOpeningHoursBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -21486,15 +22442,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The regular hours of operation.
+     * The regular hours of operation.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
      */
     public Builder clearRegularOpeningHours() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       regularOpeningHours_ = null;
       if (regularOpeningHoursBuilder_ != null) {
         regularOpeningHoursBuilder_.dispose();
@@ -21507,15 +22461,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The regular hours of operation.
+     * The regular hours of operation.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
      */
     public com.google.maps.places.v1.Place.OpeningHours.Builder getRegularOpeningHoursBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getRegularOpeningHoursFieldBuilder().getBuilder();
     }
@@ -21523,12 +22475,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The regular hours of operation.
+     * The regular hours of operation.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
      */
     public com.google.maps.places.v1.Place.OpeningHoursOrBuilder getRegularOpeningHoursOrBuilder() {
       if (regularOpeningHoursBuilder_ != null) {
@@ -21543,12 +22493,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The regular hours of operation.
+     * The regular hours of operation.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.maps.places.v1.Place.OpeningHours,
@@ -21572,31 +22520,29 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Number of minutes this place's timezone is currently offset
-     * from UTC. This is expressed in minutes to support timezones that are offset
-     * by fractions of an hour, e.g. X hours and 15 minutes.
+     * Number of minutes this place's timezone is currently offset from UTC.
+     * This is expressed in minutes to support timezones that are offset by
+     * fractions of an hour, e.g. X hours and 15 minutes.
      * </pre>
      *
-     * <code>optional int32 utc_offset_minutes = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional int32 utc_offset_minutes = 22;</code>
      *
      * @return Whether the utcOffsetMinutes field is set.
      */
     @java.lang.Override
     public boolean hasUtcOffsetMinutes() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Number of minutes this place's timezone is currently offset
-     * from UTC. This is expressed in minutes to support timezones that are offset
-     * by fractions of an hour, e.g. X hours and 15 minutes.
+     * Number of minutes this place's timezone is currently offset from UTC.
+     * This is expressed in minutes to support timezones that are offset by
+     * fractions of an hour, e.g. X hours and 15 minutes.
      * </pre>
      *
-     * <code>optional int32 utc_offset_minutes = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional int32 utc_offset_minutes = 22;</code>
      *
      * @return The utcOffsetMinutes.
      */
@@ -21608,13 +22554,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Number of minutes this place's timezone is currently offset
-     * from UTC. This is expressed in minutes to support timezones that are offset
-     * by fractions of an hour, e.g. X hours and 15 minutes.
+     * Number of minutes this place's timezone is currently offset from UTC.
+     * This is expressed in minutes to support timezones that are offset by
+     * fractions of an hour, e.g. X hours and 15 minutes.
      * </pre>
      *
-     * <code>optional int32 utc_offset_minutes = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional int32 utc_offset_minutes = 22;</code>
      *
      * @param value The utcOffsetMinutes to set.
      * @return This builder for chaining.
@@ -21622,7 +22567,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setUtcOffsetMinutes(int value) {
 
       utcOffsetMinutes_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -21630,18 +22575,17 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Number of minutes this place's timezone is currently offset
-     * from UTC. This is expressed in minutes to support timezones that are offset
-     * by fractions of an hour, e.g. X hours and 15 minutes.
+     * Number of minutes this place's timezone is currently offset from UTC.
+     * This is expressed in minutes to support timezones that are offset by
+     * fractions of an hour, e.g. X hours and 15 minutes.
      * </pre>
      *
-     * <code>optional int32 utc_offset_minutes = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional int32 utc_offset_minutes = 22;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearUtcOffsetMinutes() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       utcOffsetMinutes_ = 0;
       onChanged();
       return this;
@@ -21651,9 +22595,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePhotosIsMutable() {
-      if (!((bitField0_ & 0x00020000) != 0)) {
+      if (!((bitField0_ & 0x00100000) != 0)) {
         photos_ = new java.util.ArrayList<com.google.maps.places.v1.Photo>(photos_);
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00100000;
       }
     }
 
@@ -21667,12 +22611,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public java.util.List<com.google.maps.places.v1.Photo> getPhotosList() {
       if (photosBuilder_ == null) {
@@ -21685,12 +22627,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public int getPhotosCount() {
       if (photosBuilder_ == null) {
@@ -21703,12 +22643,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public com.google.maps.places.v1.Photo getPhotos(int index) {
       if (photosBuilder_ == null) {
@@ -21721,12 +22659,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public Builder setPhotos(int index, com.google.maps.places.v1.Photo value) {
       if (photosBuilder_ == null) {
@@ -21745,12 +22681,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public Builder setPhotos(int index, com.google.maps.places.v1.Photo.Builder builderForValue) {
       if (photosBuilder_ == null) {
@@ -21766,12 +22700,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public Builder addPhotos(com.google.maps.places.v1.Photo value) {
       if (photosBuilder_ == null) {
@@ -21790,12 +22722,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public Builder addPhotos(int index, com.google.maps.places.v1.Photo value) {
       if (photosBuilder_ == null) {
@@ -21814,12 +22744,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public Builder addPhotos(com.google.maps.places.v1.Photo.Builder builderForValue) {
       if (photosBuilder_ == null) {
@@ -21835,12 +22763,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public Builder addPhotos(int index, com.google.maps.places.v1.Photo.Builder builderForValue) {
       if (photosBuilder_ == null) {
@@ -21856,12 +22782,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public Builder addAllPhotos(
         java.lang.Iterable<? extends com.google.maps.places.v1.Photo> values) {
@@ -21878,17 +22802,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public Builder clearPhotos() {
       if (photosBuilder_ == null) {
         photos_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         onChanged();
       } else {
         photosBuilder_.clear();
@@ -21899,12 +22821,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public Builder removePhotos(int index) {
       if (photosBuilder_ == null) {
@@ -21920,12 +22840,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public com.google.maps.places.v1.Photo.Builder getPhotosBuilder(int index) {
       return getPhotosFieldBuilder().getBuilder(index);
@@ -21934,12 +22852,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public com.google.maps.places.v1.PhotoOrBuilder getPhotosOrBuilder(int index) {
       if (photosBuilder_ == null) {
@@ -21952,12 +22868,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public java.util.List<? extends com.google.maps.places.v1.PhotoOrBuilder>
         getPhotosOrBuilderList() {
@@ -21971,12 +22885,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public com.google.maps.places.v1.Photo.Builder addPhotosBuilder() {
       return getPhotosFieldBuilder()
@@ -21986,12 +22898,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public com.google.maps.places.v1.Photo.Builder addPhotosBuilder(int index) {
       return getPhotosFieldBuilder()
@@ -22001,12 +22911,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information (including references) about photos of this place.
+     * Information (including references) about photos of this place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Photo photos = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
      */
     public java.util.List<com.google.maps.places.v1.Photo.Builder> getPhotosBuilderList() {
       return getPhotosFieldBuilder().getBuilderList();
@@ -22023,7 +22931,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.places.v1.Photo,
                 com.google.maps.places.v1.Photo.Builder,
                 com.google.maps.places.v1.PhotoOrBuilder>(
-                photos_, ((bitField0_ & 0x00020000) != 0), getParentForChildren(), isClean());
+                photos_, ((bitField0_ & 0x00100000) != 0), getParentForChildren(), isClean());
         photos_ = null;
       }
       return photosBuilder_;
@@ -22034,11 +22942,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The place's address in adr microformat:
-     * http://microformats.org/wiki/adr.
+     * The place's address in adr microformat: http://microformats.org/wiki/adr.
      * </pre>
      *
-     * <code>string adr_format_address = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string adr_format_address = 24;</code>
      *
      * @return The adrFormatAddress.
      */
@@ -22057,11 +22964,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The place's address in adr microformat:
-     * http://microformats.org/wiki/adr.
+     * The place's address in adr microformat: http://microformats.org/wiki/adr.
      * </pre>
      *
-     * <code>string adr_format_address = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string adr_format_address = 24;</code>
      *
      * @return The bytes for adrFormatAddress.
      */
@@ -22080,11 +22986,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The place's address in adr microformat:
-     * http://microformats.org/wiki/adr.
+     * The place's address in adr microformat: http://microformats.org/wiki/adr.
      * </pre>
      *
-     * <code>string adr_format_address = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string adr_format_address = 24;</code>
      *
      * @param value The adrFormatAddress to set.
      * @return This builder for chaining.
@@ -22094,7 +22999,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       adrFormatAddress_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -22102,17 +23007,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The place's address in adr microformat:
-     * http://microformats.org/wiki/adr.
+     * The place's address in adr microformat: http://microformats.org/wiki/adr.
      * </pre>
      *
-     * <code>string adr_format_address = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string adr_format_address = 24;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAdrFormatAddress() {
       adrFormatAddress_ = getDefaultInstance().getAdrFormatAddress();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -22120,11 +23024,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The place's address in adr microformat:
-     * http://microformats.org/wiki/adr.
+     * The place's address in adr microformat: http://microformats.org/wiki/adr.
      * </pre>
      *
-     * <code>string adr_format_address = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string adr_format_address = 24;</code>
      *
      * @param value The bytes for adrFormatAddress to set.
      * @return This builder for chaining.
@@ -22135,7 +23038,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       adrFormatAddress_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -22145,12 +23048,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The business status for the place.
+     * The business status for the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.BusinessStatus business_status = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
      *
      * @return The enum numeric value on the wire for businessStatus.
      */
@@ -22162,19 +23063,17 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The business status for the place.
+     * The business status for the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.BusinessStatus business_status = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
      *
      * @param value The enum numeric value on the wire for businessStatus to set.
      * @return This builder for chaining.
      */
     public Builder setBusinessStatusValue(int value) {
       businessStatus_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -22182,12 +23081,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The business status for the place.
+     * The business status for the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.BusinessStatus business_status = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
      *
      * @return The businessStatus.
      */
@@ -22201,12 +23098,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The business status for the place.
+     * The business status for the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.BusinessStatus business_status = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
      *
      * @param value The businessStatus to set.
      * @return This builder for chaining.
@@ -22215,7 +23110,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00400000;
       businessStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -22224,17 +23119,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The business status for the place.
+     * The business status for the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.BusinessStatus business_status = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearBusinessStatus() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       businessStatus_ = 0;
       onChanged();
       return this;
@@ -22245,12 +23138,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Price level of the place.
+     * Price level of the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.PriceLevel price_level = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.PriceLevel price_level = 26;</code>
      *
      * @return The enum numeric value on the wire for priceLevel.
      */
@@ -22262,19 +23153,17 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Price level of the place.
+     * Price level of the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.PriceLevel price_level = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.PriceLevel price_level = 26;</code>
      *
      * @param value The enum numeric value on the wire for priceLevel to set.
      * @return This builder for chaining.
      */
     public Builder setPriceLevelValue(int value) {
       priceLevel_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -22282,12 +23171,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Price level of the place.
+     * Price level of the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.PriceLevel price_level = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.PriceLevel price_level = 26;</code>
      *
      * @return The priceLevel.
      */
@@ -22301,12 +23188,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Price level of the place.
+     * Price level of the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.PriceLevel price_level = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.PriceLevel price_level = 26;</code>
      *
      * @param value The priceLevel to set.
      * @return This builder for chaining.
@@ -22315,7 +23200,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00800000;
       priceLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -22324,17 +23209,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Price level of the place.
+     * Price level of the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.PriceLevel price_level = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.PriceLevel price_level = 26;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPriceLevel() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       priceLevel_ = 0;
       onChanged();
       return this;
@@ -22344,10 +23227,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAttributionsIsMutable() {
-      if (!((bitField0_ & 0x00200000) != 0)) {
+      if (!((bitField0_ & 0x01000000) != 0)) {
         attributions_ =
             new java.util.ArrayList<com.google.maps.places.v1.Place.Attribution>(attributions_);
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x01000000;
       }
     }
 
@@ -22361,12 +23244,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public java.util.List<com.google.maps.places.v1.Place.Attribution> getAttributionsList() {
       if (attributionsBuilder_ == null) {
@@ -22379,12 +23260,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public int getAttributionsCount() {
       if (attributionsBuilder_ == null) {
@@ -22397,12 +23276,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public com.google.maps.places.v1.Place.Attribution getAttributions(int index) {
       if (attributionsBuilder_ == null) {
@@ -22415,12 +23292,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public Builder setAttributions(int index, com.google.maps.places.v1.Place.Attribution value) {
       if (attributionsBuilder_ == null) {
@@ -22439,12 +23314,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public Builder setAttributions(
         int index, com.google.maps.places.v1.Place.Attribution.Builder builderForValue) {
@@ -22461,12 +23334,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public Builder addAttributions(com.google.maps.places.v1.Place.Attribution value) {
       if (attributionsBuilder_ == null) {
@@ -22485,12 +23356,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public Builder addAttributions(int index, com.google.maps.places.v1.Place.Attribution value) {
       if (attributionsBuilder_ == null) {
@@ -22509,12 +23378,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public Builder addAttributions(
         com.google.maps.places.v1.Place.Attribution.Builder builderForValue) {
@@ -22531,12 +23398,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public Builder addAttributions(
         int index, com.google.maps.places.v1.Place.Attribution.Builder builderForValue) {
@@ -22553,12 +23418,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public Builder addAllAttributions(
         java.lang.Iterable<? extends com.google.maps.places.v1.Place.Attribution> values) {
@@ -22575,17 +23438,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public Builder clearAttributions() {
       if (attributionsBuilder_ == null) {
         attributions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         onChanged();
       } else {
         attributionsBuilder_.clear();
@@ -22596,12 +23457,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public Builder removeAttributions(int index) {
       if (attributionsBuilder_ == null) {
@@ -22617,12 +23476,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public com.google.maps.places.v1.Place.Attribution.Builder getAttributionsBuilder(int index) {
       return getAttributionsFieldBuilder().getBuilder(index);
@@ -22631,12 +23488,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public com.google.maps.places.v1.Place.AttributionOrBuilder getAttributionsOrBuilder(
         int index) {
@@ -22650,12 +23505,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public java.util.List<? extends com.google.maps.places.v1.Place.AttributionOrBuilder>
         getAttributionsOrBuilderList() {
@@ -22669,12 +23522,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public com.google.maps.places.v1.Place.Attribution.Builder addAttributionsBuilder() {
       return getAttributionsFieldBuilder()
@@ -22684,12 +23535,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public com.google.maps.places.v1.Place.Attribution.Builder addAttributionsBuilder(int index) {
       return getAttributionsFieldBuilder()
@@ -22699,12 +23548,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A set of data provider that must be shown with this result.
+     * A set of data provider that must be shown with this result.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.Attribution attributions = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.Attribution attributions = 27;</code>
      */
     public java.util.List<com.google.maps.places.v1.Place.Attribution.Builder>
         getAttributionsBuilderList() {
@@ -22722,7 +23569,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.places.v1.Place.Attribution,
                 com.google.maps.places.v1.Place.Attribution.Builder,
                 com.google.maps.places.v1.Place.AttributionOrBuilder>(
-                attributions_, ((bitField0_ & 0x00200000) != 0), getParentForChildren(), isClean());
+                attributions_, ((bitField0_ & 0x01000000) != 0), getParentForChildren(), isClean());
         attributions_ = null;
       }
       return attributionsBuilder_;
@@ -22733,29 +23580,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The total number of reviews (with or without text) for this
-     * place.
+     * The total number of reviews (with or without text) for this place.
      * </pre>
      *
-     * <code>optional int32 user_rating_count = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional int32 user_rating_count = 28;</code>
      *
      * @return Whether the userRatingCount field is set.
      */
     @java.lang.Override
     public boolean hasUserRatingCount() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. The total number of reviews (with or without text) for this
-     * place.
+     * The total number of reviews (with or without text) for this place.
      * </pre>
      *
-     * <code>optional int32 user_rating_count = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional int32 user_rating_count = 28;</code>
      *
      * @return The userRatingCount.
      */
@@ -22767,12 +23610,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The total number of reviews (with or without text) for this
-     * place.
+     * The total number of reviews (with or without text) for this place.
      * </pre>
      *
-     * <code>optional int32 user_rating_count = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional int32 user_rating_count = 28;</code>
      *
      * @param value The userRatingCount to set.
      * @return This builder for chaining.
@@ -22780,7 +23621,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setUserRatingCount(int value) {
 
       userRatingCount_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -22788,17 +23629,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The total number of reviews (with or without text) for this
-     * place.
+     * The total number of reviews (with or without text) for this place.
      * </pre>
      *
-     * <code>optional int32 user_rating_count = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional int32 user_rating_count = 28;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearUserRatingCount() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       userRatingCount_ = 0;
       onChanged();
       return this;
@@ -22809,11 +23648,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A truncated URL to an v2 icon mask. User can access different
-     * icon type by appending type suffix to the end (eg, ".svg" or ".png").
+     * A truncated URL to an icon mask. User can access different icon type by
+     * appending type suffix to the end (eg, ".svg" or ".png").
      * </pre>
      *
-     * <code>string icon_mask_base_uri = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string icon_mask_base_uri = 29;</code>
      *
      * @return The iconMaskBaseUri.
      */
@@ -22832,11 +23671,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A truncated URL to an v2 icon mask. User can access different
-     * icon type by appending type suffix to the end (eg, ".svg" or ".png").
+     * A truncated URL to an icon mask. User can access different icon type by
+     * appending type suffix to the end (eg, ".svg" or ".png").
      * </pre>
      *
-     * <code>string icon_mask_base_uri = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string icon_mask_base_uri = 29;</code>
      *
      * @return The bytes for iconMaskBaseUri.
      */
@@ -22855,11 +23694,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A truncated URL to an v2 icon mask. User can access different
-     * icon type by appending type suffix to the end (eg, ".svg" or ".png").
+     * A truncated URL to an icon mask. User can access different icon type by
+     * appending type suffix to the end (eg, ".svg" or ".png").
      * </pre>
      *
-     * <code>string icon_mask_base_uri = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string icon_mask_base_uri = 29;</code>
      *
      * @param value The iconMaskBaseUri to set.
      * @return This builder for chaining.
@@ -22869,7 +23708,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       iconMaskBaseUri_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -22877,17 +23716,17 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A truncated URL to an v2 icon mask. User can access different
-     * icon type by appending type suffix to the end (eg, ".svg" or ".png").
+     * A truncated URL to an icon mask. User can access different icon type by
+     * appending type suffix to the end (eg, ".svg" or ".png").
      * </pre>
      *
-     * <code>string icon_mask_base_uri = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string icon_mask_base_uri = 29;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIconMaskBaseUri() {
       iconMaskBaseUri_ = getDefaultInstance().getIconMaskBaseUri();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       onChanged();
       return this;
     }
@@ -22895,11 +23734,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A truncated URL to an v2 icon mask. User can access different
-     * icon type by appending type suffix to the end (eg, ".svg" or ".png").
+     * A truncated URL to an icon mask. User can access different icon type by
+     * appending type suffix to the end (eg, ".svg" or ".png").
      * </pre>
      *
-     * <code>string icon_mask_base_uri = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string icon_mask_base_uri = 29;</code>
      *
      * @param value The bytes for iconMaskBaseUri to set.
      * @return This builder for chaining.
@@ -22910,7 +23749,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       iconMaskBaseUri_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -22920,10 +23759,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Background color for icon_mask in hex format, e.g. #909CE1.
+     * Background color for icon_mask in hex format, e.g. #909CE1.
      * </pre>
      *
-     * <code>string icon_background_color = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string icon_background_color = 30;</code>
      *
      * @return The iconBackgroundColor.
      */
@@ -22942,10 +23781,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Background color for icon_mask in hex format, e.g. #909CE1.
+     * Background color for icon_mask in hex format, e.g. #909CE1.
      * </pre>
      *
-     * <code>string icon_background_color = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string icon_background_color = 30;</code>
      *
      * @return The bytes for iconBackgroundColor.
      */
@@ -22964,10 +23803,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Background color for icon_mask in hex format, e.g. #909CE1.
+     * Background color for icon_mask in hex format, e.g. #909CE1.
      * </pre>
      *
-     * <code>string icon_background_color = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string icon_background_color = 30;</code>
      *
      * @param value The iconBackgroundColor to set.
      * @return This builder for chaining.
@@ -22977,7 +23816,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       iconBackgroundColor_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -22985,16 +23824,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Background color for icon_mask in hex format, e.g. #909CE1.
+     * Background color for icon_mask in hex format, e.g. #909CE1.
      * </pre>
      *
-     * <code>string icon_background_color = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string icon_background_color = 30;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIconBackgroundColor() {
       iconBackgroundColor_ = getDefaultInstance().getIconBackgroundColor();
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -23002,10 +23841,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Background color for icon_mask in hex format, e.g. #909CE1.
+     * Background color for icon_mask in hex format, e.g. #909CE1.
      * </pre>
      *
-     * <code>string icon_background_color = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string icon_background_color = 30;</code>
      *
      * @param value The bytes for iconBackgroundColor to set.
      * @return This builder for chaining.
@@ -23016,7 +23855,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       iconBackgroundColor_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -23026,25 +23865,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports takeout.
+     * Specifies if the business supports takeout.
      * </pre>
      *
-     * <code>optional bool takeout = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool takeout = 33;</code>
      *
      * @return Whether the takeout field is set.
      */
     @java.lang.Override
     public boolean hasTakeout() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports takeout.
+     * Specifies if the business supports takeout.
      * </pre>
      *
-     * <code>optional bool takeout = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool takeout = 33;</code>
      *
      * @return The takeout.
      */
@@ -23056,10 +23895,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports takeout.
+     * Specifies if the business supports takeout.
      * </pre>
      *
-     * <code>optional bool takeout = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool takeout = 33;</code>
      *
      * @param value The takeout to set.
      * @return This builder for chaining.
@@ -23067,7 +23906,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setTakeout(boolean value) {
 
       takeout_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -23075,15 +23914,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports takeout.
+     * Specifies if the business supports takeout.
      * </pre>
      *
-     * <code>optional bool takeout = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool takeout = 33;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearTakeout() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       takeout_ = false;
       onChanged();
       return this;
@@ -23094,25 +23933,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports delivery.
+     * Specifies if the business supports delivery.
      * </pre>
      *
-     * <code>optional bool delivery = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool delivery = 34;</code>
      *
      * @return Whether the delivery field is set.
      */
     @java.lang.Override
     public boolean hasDelivery() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports delivery.
+     * Specifies if the business supports delivery.
      * </pre>
      *
-     * <code>optional bool delivery = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool delivery = 34;</code>
      *
      * @return The delivery.
      */
@@ -23124,10 +23963,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports delivery.
+     * Specifies if the business supports delivery.
      * </pre>
      *
-     * <code>optional bool delivery = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool delivery = 34;</code>
      *
      * @param value The delivery to set.
      * @return This builder for chaining.
@@ -23135,7 +23974,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setDelivery(boolean value) {
 
       delivery_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -23143,15 +23982,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports delivery.
+     * Specifies if the business supports delivery.
      * </pre>
      *
-     * <code>optional bool delivery = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool delivery = 34;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDelivery() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       delivery_ = false;
       onChanged();
       return this;
@@ -23162,27 +24001,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports indoor or outdoor seating
-     * options.
+     * Specifies if the business supports indoor or outdoor seating options.
      * </pre>
      *
-     * <code>optional bool dine_in = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool dine_in = 35;</code>
      *
      * @return Whether the dineIn field is set.
      */
     @java.lang.Override
     public boolean hasDineIn() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports indoor or outdoor seating
-     * options.
+     * Specifies if the business supports indoor or outdoor seating options.
      * </pre>
      *
-     * <code>optional bool dine_in = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool dine_in = 35;</code>
      *
      * @return The dineIn.
      */
@@ -23194,11 +24031,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports indoor or outdoor seating
-     * options.
+     * Specifies if the business supports indoor or outdoor seating options.
      * </pre>
      *
-     * <code>optional bool dine_in = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool dine_in = 35;</code>
      *
      * @param value The dineIn to set.
      * @return This builder for chaining.
@@ -23206,7 +24042,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setDineIn(boolean value) {
 
       dineIn_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -23214,16 +24050,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports indoor or outdoor seating
-     * options.
+     * Specifies if the business supports indoor or outdoor seating options.
      * </pre>
      *
-     * <code>optional bool dine_in = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool dine_in = 35;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDineIn() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       dineIn_ = false;
       onChanged();
       return this;
@@ -23234,25 +24069,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports curbside pickup.
+     * Specifies if the business supports curbside pickup.
      * </pre>
      *
-     * <code>optional bool curbside_pickup = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool curbside_pickup = 36;</code>
      *
      * @return Whether the curbsidePickup field is set.
      */
     @java.lang.Override
     public boolean hasCurbsidePickup() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports curbside pickup.
+     * Specifies if the business supports curbside pickup.
      * </pre>
      *
-     * <code>optional bool curbside_pickup = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool curbside_pickup = 36;</code>
      *
      * @return The curbsidePickup.
      */
@@ -23264,10 +24099,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports curbside pickup.
+     * Specifies if the business supports curbside pickup.
      * </pre>
      *
-     * <code>optional bool curbside_pickup = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool curbside_pickup = 36;</code>
      *
      * @param value The curbsidePickup to set.
      * @return This builder for chaining.
@@ -23275,7 +24110,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setCurbsidePickup(boolean value) {
 
       curbsidePickup_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -23283,15 +24118,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the business supports curbside pickup.
+     * Specifies if the business supports curbside pickup.
      * </pre>
      *
-     * <code>optional bool curbside_pickup = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool curbside_pickup = 36;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCurbsidePickup() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       curbsidePickup_ = false;
       onChanged();
       return this;
@@ -23302,25 +24137,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place supports reservations.
+     * Specifies if the place supports reservations.
      * </pre>
      *
-     * <code>optional bool reservable = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool reservable = 38;</code>
      *
      * @return Whether the reservable field is set.
      */
     @java.lang.Override
     public boolean hasReservable() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Specifies if the place supports reservations.
+     * Specifies if the place supports reservations.
      * </pre>
      *
-     * <code>optional bool reservable = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool reservable = 38;</code>
      *
      * @return The reservable.
      */
@@ -23332,10 +24167,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place supports reservations.
+     * Specifies if the place supports reservations.
      * </pre>
      *
-     * <code>optional bool reservable = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool reservable = 38;</code>
      *
      * @param value The reservable to set.
      * @return This builder for chaining.
@@ -23343,7 +24178,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setReservable(boolean value) {
 
       reservable_ = value;
-      bitField0_ |= 0x20000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -23351,15 +24186,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place supports reservations.
+     * Specifies if the place supports reservations.
      * </pre>
      *
-     * <code>optional bool reservable = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool reservable = 38;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearReservable() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       reservable_ = false;
       onChanged();
       return this;
@@ -23370,27 +24205,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves breakfast.
+     * Specifies if the place serves breakfast.
      * </pre>
      *
-     * <code>optional bool serves_breakfast = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool serves_breakfast = 39;</code>
      *
      * @return Whether the servesBreakfast field is set.
      */
     @java.lang.Override
     public boolean hasServesBreakfast() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves breakfast.
+     * Specifies if the place serves breakfast.
      * </pre>
      *
-     * <code>optional bool serves_breakfast = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool serves_breakfast = 39;</code>
      *
      * @return The servesBreakfast.
      */
@@ -23402,11 +24235,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves breakfast.
+     * Specifies if the place serves breakfast.
      * </pre>
      *
-     * <code>optional bool serves_breakfast = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool serves_breakfast = 39;</code>
      *
      * @param value The servesBreakfast to set.
      * @return This builder for chaining.
@@ -23414,7 +24246,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setServesBreakfast(boolean value) {
 
       servesBreakfast_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -23422,16 +24254,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves breakfast.
+     * Specifies if the place serves breakfast.
      * </pre>
      *
-     * <code>optional bool serves_breakfast = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool serves_breakfast = 39;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearServesBreakfast() {
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x00000002);
       servesBreakfast_ = false;
       onChanged();
       return this;
@@ -23442,25 +24273,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves lunch.
+     * Specifies if the place serves lunch.
      * </pre>
      *
-     * <code>optional bool serves_lunch = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_lunch = 40;</code>
      *
      * @return Whether the servesLunch field is set.
      */
     @java.lang.Override
     public boolean hasServesLunch() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves lunch.
+     * Specifies if the place serves lunch.
      * </pre>
      *
-     * <code>optional bool serves_lunch = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_lunch = 40;</code>
      *
      * @return The servesLunch.
      */
@@ -23472,10 +24303,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves lunch.
+     * Specifies if the place serves lunch.
      * </pre>
      *
-     * <code>optional bool serves_lunch = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_lunch = 40;</code>
      *
      * @param value The servesLunch to set.
      * @return This builder for chaining.
@@ -23483,7 +24314,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setServesLunch(boolean value) {
 
       servesLunch_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -23491,15 +24322,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves lunch.
+     * Specifies if the place serves lunch.
      * </pre>
      *
-     * <code>optional bool serves_lunch = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_lunch = 40;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearServesLunch() {
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000004);
       servesLunch_ = false;
       onChanged();
       return this;
@@ -23510,25 +24341,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves dinner.
+     * Specifies if the place serves dinner.
      * </pre>
      *
-     * <code>optional bool serves_dinner = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_dinner = 41;</code>
      *
      * @return Whether the servesDinner field is set.
      */
     @java.lang.Override
     public boolean hasServesDinner() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves dinner.
+     * Specifies if the place serves dinner.
      * </pre>
      *
-     * <code>optional bool serves_dinner = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_dinner = 41;</code>
      *
      * @return The servesDinner.
      */
@@ -23540,10 +24371,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves dinner.
+     * Specifies if the place serves dinner.
      * </pre>
      *
-     * <code>optional bool serves_dinner = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_dinner = 41;</code>
      *
      * @param value The servesDinner to set.
      * @return This builder for chaining.
@@ -23551,7 +24382,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setServesDinner(boolean value) {
 
       servesDinner_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -23559,15 +24390,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves dinner.
+     * Specifies if the place serves dinner.
      * </pre>
      *
-     * <code>optional bool serves_dinner = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_dinner = 41;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearServesDinner() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000008);
       servesDinner_ = false;
       onChanged();
       return this;
@@ -23578,25 +24409,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves beer.
+     * Specifies if the place serves beer.
      * </pre>
      *
-     * <code>optional bool serves_beer = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_beer = 42;</code>
      *
      * @return Whether the servesBeer field is set.
      */
     @java.lang.Override
     public boolean hasServesBeer() {
-      return ((bitField1_ & 0x00000002) != 0);
+      return ((bitField1_ & 0x00000010) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves beer.
+     * Specifies if the place serves beer.
      * </pre>
      *
-     * <code>optional bool serves_beer = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_beer = 42;</code>
      *
      * @return The servesBeer.
      */
@@ -23608,10 +24439,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves beer.
+     * Specifies if the place serves beer.
      * </pre>
      *
-     * <code>optional bool serves_beer = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_beer = 42;</code>
      *
      * @param value The servesBeer to set.
      * @return This builder for chaining.
@@ -23619,7 +24450,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setServesBeer(boolean value) {
 
       servesBeer_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -23627,15 +24458,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves beer.
+     * Specifies if the place serves beer.
      * </pre>
      *
-     * <code>optional bool serves_beer = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_beer = 42;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearServesBeer() {
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000010);
       servesBeer_ = false;
       onChanged();
       return this;
@@ -23646,25 +24477,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves wine.
+     * Specifies if the place serves wine.
      * </pre>
      *
-     * <code>optional bool serves_wine = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_wine = 43;</code>
      *
      * @return Whether the servesWine field is set.
      */
     @java.lang.Override
     public boolean hasServesWine() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000020) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves wine.
+     * Specifies if the place serves wine.
      * </pre>
      *
-     * <code>optional bool serves_wine = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_wine = 43;</code>
      *
      * @return The servesWine.
      */
@@ -23676,10 +24507,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves wine.
+     * Specifies if the place serves wine.
      * </pre>
      *
-     * <code>optional bool serves_wine = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_wine = 43;</code>
      *
      * @param value The servesWine to set.
      * @return This builder for chaining.
@@ -23687,7 +24518,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setServesWine(boolean value) {
 
       servesWine_ = value;
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -23695,15 +24526,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves wine.
+     * Specifies if the place serves wine.
      * </pre>
      *
-     * <code>optional bool serves_wine = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_wine = 43;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearServesWine() {
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000020);
       servesWine_ = false;
       onChanged();
       return this;
@@ -23714,25 +24545,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves brunch.
+     * Specifies if the place serves brunch.
      * </pre>
      *
-     * <code>optional bool serves_brunch = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_brunch = 44;</code>
      *
      * @return Whether the servesBrunch field is set.
      */
     @java.lang.Override
     public boolean hasServesBrunch() {
-      return ((bitField1_ & 0x00000008) != 0);
+      return ((bitField1_ & 0x00000040) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves brunch.
+     * Specifies if the place serves brunch.
      * </pre>
      *
-     * <code>optional bool serves_brunch = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_brunch = 44;</code>
      *
      * @return The servesBrunch.
      */
@@ -23744,10 +24575,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves brunch.
+     * Specifies if the place serves brunch.
      * </pre>
      *
-     * <code>optional bool serves_brunch = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_brunch = 44;</code>
      *
      * @param value The servesBrunch to set.
      * @return This builder for chaining.
@@ -23755,7 +24586,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setServesBrunch(boolean value) {
 
       servesBrunch_ = value;
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -23763,15 +24594,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves brunch.
+     * Specifies if the place serves brunch.
      * </pre>
      *
-     * <code>optional bool serves_brunch = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_brunch = 44;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearServesBrunch() {
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000040);
       servesBrunch_ = false;
       onChanged();
       return this;
@@ -23782,27 +24613,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves vegetarian food.
+     * Specifies if the place serves vegetarian food.
      * </pre>
      *
-     * <code>optional bool serves_vegetarian_food = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool serves_vegetarian_food = 45;</code>
      *
      * @return Whether the servesVegetarianFood field is set.
      */
     @java.lang.Override
     public boolean hasServesVegetarianFood() {
-      return ((bitField1_ & 0x00000010) != 0);
+      return ((bitField1_ & 0x00000080) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves vegetarian food.
+     * Specifies if the place serves vegetarian food.
      * </pre>
      *
-     * <code>optional bool serves_vegetarian_food = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool serves_vegetarian_food = 45;</code>
      *
      * @return The servesVegetarianFood.
      */
@@ -23814,11 +24643,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves vegetarian food.
+     * Specifies if the place serves vegetarian food.
      * </pre>
      *
-     * <code>optional bool serves_vegetarian_food = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool serves_vegetarian_food = 45;</code>
      *
      * @param value The servesVegetarianFood to set.
      * @return This builder for chaining.
@@ -23826,7 +24654,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setServesVegetarianFood(boolean value) {
 
       servesVegetarianFood_ = value;
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -23834,16 +24662,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies if the place serves vegetarian food.
+     * Specifies if the place serves vegetarian food.
      * </pre>
      *
-     * <code>optional bool serves_vegetarian_food = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool serves_vegetarian_food = 45;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearServesVegetarianFood() {
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000080);
       servesVegetarianFood_ = false;
       onChanged();
       return this;
@@ -23859,34 +24686,30 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The hours of operation for the next seven days (including
-     * today). The time period starts at midnight on the date of the request and
-     * ends at 11:59 pm six days later. This field includes the special_days
-     * subfield of all hours, set for dates that have exceptional hours.
+     * The hours of operation for the next seven days (including today). The time
+     * period starts at midnight on the date of the request and ends at 11:59 pm
+     * six days later. This field includes the special_days subfield of all hours,
+     * set for dates that have exceptional hours.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours current_opening_hours = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
      *
      * @return Whether the currentOpeningHours field is set.
      */
     public boolean hasCurrentOpeningHours() {
-      return ((bitField1_ & 0x00000020) != 0);
+      return ((bitField1_ & 0x00000100) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. The hours of operation for the next seven days (including
-     * today). The time period starts at midnight on the date of the request and
-     * ends at 11:59 pm six days later. This field includes the special_days
-     * subfield of all hours, set for dates that have exceptional hours.
+     * The hours of operation for the next seven days (including today). The time
+     * period starts at midnight on the date of the request and ends at 11:59 pm
+     * six days later. This field includes the special_days subfield of all hours,
+     * set for dates that have exceptional hours.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours current_opening_hours = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
      *
      * @return The currentOpeningHours.
      */
@@ -23903,15 +24726,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The hours of operation for the next seven days (including
-     * today). The time period starts at midnight on the date of the request and
-     * ends at 11:59 pm six days later. This field includes the special_days
-     * subfield of all hours, set for dates that have exceptional hours.
+     * The hours of operation for the next seven days (including today). The time
+     * period starts at midnight on the date of the request and ends at 11:59 pm
+     * six days later. This field includes the special_days subfield of all hours,
+     * set for dates that have exceptional hours.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours current_opening_hours = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
      */
     public Builder setCurrentOpeningHours(com.google.maps.places.v1.Place.OpeningHours value) {
       if (currentOpeningHoursBuilder_ == null) {
@@ -23922,7 +24743,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         currentOpeningHoursBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -23930,15 +24751,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The hours of operation for the next seven days (including
-     * today). The time period starts at midnight on the date of the request and
-     * ends at 11:59 pm six days later. This field includes the special_days
-     * subfield of all hours, set for dates that have exceptional hours.
+     * The hours of operation for the next seven days (including today). The time
+     * period starts at midnight on the date of the request and ends at 11:59 pm
+     * six days later. This field includes the special_days subfield of all hours,
+     * set for dates that have exceptional hours.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours current_opening_hours = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
      */
     public Builder setCurrentOpeningHours(
         com.google.maps.places.v1.Place.OpeningHours.Builder builderForValue) {
@@ -23947,7 +24766,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         currentOpeningHoursBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -23955,19 +24774,17 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The hours of operation for the next seven days (including
-     * today). The time period starts at midnight on the date of the request and
-     * ends at 11:59 pm six days later. This field includes the special_days
-     * subfield of all hours, set for dates that have exceptional hours.
+     * The hours of operation for the next seven days (including today). The time
+     * period starts at midnight on the date of the request and ends at 11:59 pm
+     * six days later. This field includes the special_days subfield of all hours,
+     * set for dates that have exceptional hours.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours current_opening_hours = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
      */
     public Builder mergeCurrentOpeningHours(com.google.maps.places.v1.Place.OpeningHours value) {
       if (currentOpeningHoursBuilder_ == null) {
-        if (((bitField1_ & 0x00000020) != 0)
+        if (((bitField1_ & 0x00000100) != 0)
             && currentOpeningHours_ != null
             && currentOpeningHours_
                 != com.google.maps.places.v1.Place.OpeningHours.getDefaultInstance()) {
@@ -23978,7 +24795,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         currentOpeningHoursBuilder_.mergeFrom(value);
       }
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -23986,18 +24803,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The hours of operation for the next seven days (including
-     * today). The time period starts at midnight on the date of the request and
-     * ends at 11:59 pm six days later. This field includes the special_days
-     * subfield of all hours, set for dates that have exceptional hours.
+     * The hours of operation for the next seven days (including today). The time
+     * period starts at midnight on the date of the request and ends at 11:59 pm
+     * six days later. This field includes the special_days subfield of all hours,
+     * set for dates that have exceptional hours.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours current_opening_hours = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
      */
     public Builder clearCurrentOpeningHours() {
-      bitField1_ = (bitField1_ & ~0x00000020);
+      bitField1_ = (bitField1_ & ~0x00000100);
       currentOpeningHours_ = null;
       if (currentOpeningHoursBuilder_ != null) {
         currentOpeningHoursBuilder_.dispose();
@@ -24010,18 +24825,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The hours of operation for the next seven days (including
-     * today). The time period starts at midnight on the date of the request and
-     * ends at 11:59 pm six days later. This field includes the special_days
-     * subfield of all hours, set for dates that have exceptional hours.
+     * The hours of operation for the next seven days (including today). The time
+     * period starts at midnight on the date of the request and ends at 11:59 pm
+     * six days later. This field includes the special_days subfield of all hours,
+     * set for dates that have exceptional hours.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours current_opening_hours = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
      */
     public com.google.maps.places.v1.Place.OpeningHours.Builder getCurrentOpeningHoursBuilder() {
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000100;
       onChanged();
       return getCurrentOpeningHoursFieldBuilder().getBuilder();
     }
@@ -24029,15 +24842,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The hours of operation for the next seven days (including
-     * today). The time period starts at midnight on the date of the request and
-     * ends at 11:59 pm six days later. This field includes the special_days
-     * subfield of all hours, set for dates that have exceptional hours.
+     * The hours of operation for the next seven days (including today). The time
+     * period starts at midnight on the date of the request and ends at 11:59 pm
+     * six days later. This field includes the special_days subfield of all hours,
+     * set for dates that have exceptional hours.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours current_opening_hours = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
      */
     public com.google.maps.places.v1.Place.OpeningHoursOrBuilder getCurrentOpeningHoursOrBuilder() {
       if (currentOpeningHoursBuilder_ != null) {
@@ -24052,15 +24863,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The hours of operation for the next seven days (including
-     * today). The time period starts at midnight on the date of the request and
-     * ends at 11:59 pm six days later. This field includes the special_days
-     * subfield of all hours, set for dates that have exceptional hours.
+     * The hours of operation for the next seven days (including today). The time
+     * period starts at midnight on the date of the request and ends at 11:59 pm
+     * six days later. This field includes the special_days subfield of all hours,
+     * set for dates that have exceptional hours.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.OpeningHours current_opening_hours = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.OpeningHours current_opening_hours = 46;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.maps.places.v1.Place.OpeningHours,
@@ -24083,11 +24892,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         currentSecondaryOpeningHours_ = java.util.Collections.emptyList();
 
     private void ensureCurrentSecondaryOpeningHoursIsMutable() {
-      if (!((bitField1_ & 0x00000040) != 0)) {
+      if (!((bitField1_ & 0x00000200) != 0)) {
         currentSecondaryOpeningHours_ =
             new java.util.ArrayList<com.google.maps.places.v1.Place.OpeningHours>(
                 currentSecondaryOpeningHours_);
-        bitField1_ |= 0x00000040;
+        bitField1_ |= 0x00000200;
       }
     }
 
@@ -24101,18 +24910,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public java.util.List<com.google.maps.places.v1.Place.OpeningHours>
@@ -24127,18 +24936,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public int getCurrentSecondaryOpeningHoursCount() {
@@ -24152,18 +24961,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public com.google.maps.places.v1.Place.OpeningHours getCurrentSecondaryOpeningHours(int index) {
@@ -24177,18 +24986,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public Builder setCurrentSecondaryOpeningHours(
@@ -24209,18 +25018,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public Builder setCurrentSecondaryOpeningHours(
@@ -24238,18 +25047,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public Builder addCurrentSecondaryOpeningHours(
@@ -24270,18 +25079,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public Builder addCurrentSecondaryOpeningHours(
@@ -24302,18 +25111,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public Builder addCurrentSecondaryOpeningHours(
@@ -24331,18 +25140,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public Builder addCurrentSecondaryOpeningHours(
@@ -24360,18 +25169,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public Builder addAllCurrentSecondaryOpeningHours(
@@ -24390,24 +25199,24 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public Builder clearCurrentSecondaryOpeningHours() {
       if (currentSecondaryOpeningHoursBuilder_ == null) {
         currentSecondaryOpeningHours_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000040);
+        bitField1_ = (bitField1_ & ~0x00000200);
         onChanged();
       } else {
         currentSecondaryOpeningHoursBuilder_.clear();
@@ -24418,18 +25227,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public Builder removeCurrentSecondaryOpeningHours(int index) {
@@ -24446,18 +25255,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public com.google.maps.places.v1.Place.OpeningHours.Builder
@@ -24468,18 +25277,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public com.google.maps.places.v1.Place.OpeningHoursOrBuilder
@@ -24494,18 +25303,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public java.util.List<? extends com.google.maps.places.v1.Place.OpeningHoursOrBuilder>
@@ -24520,18 +25329,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public com.google.maps.places.v1.Place.OpeningHours.Builder
@@ -24543,18 +25352,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public com.google.maps.places.v1.Place.OpeningHours.Builder
@@ -24566,18 +25375,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for the next seven days including
-     * information about secondary hours of a business. Secondary hours are
-     * different from a business's main hours. For example, a restaurant can
-     * specify drive through hours or delivery hours as its secondary hours. This
-     * field populates the type subfield, which draws from a predefined list of
-     * opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on
-     * the types of the place. This field includes the special_days subfield of
-     * all hours, set for dates that have exceptional hours.
+     * Contains an array of entries for the next seven days including information
+     * about secondary hours of a business. Secondary hours are different from a
+     * business's main hours. For example, a restaurant can specify drive through
+     * hours or delivery hours as its secondary hours. This field populates the
+     * type subfield, which draws from a predefined list of opening hours types
+     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
+     * place. This field includes the special_days subfield of all hours, set for
+     * dates that have exceptional hours.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours current_secondary_opening_hours = 47;
      * </code>
      */
     public java.util.List<com.google.maps.places.v1.Place.OpeningHours.Builder>
@@ -24597,7 +25406,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.places.v1.Place.OpeningHours.Builder,
                 com.google.maps.places.v1.Place.OpeningHoursOrBuilder>(
                 currentSecondaryOpeningHours_,
-                ((bitField1_ & 0x00000040) != 0),
+                ((bitField1_ & 0x00000200) != 0),
                 getParentForChildren(),
                 isClean());
         currentSecondaryOpeningHours_ = null;
@@ -24609,11 +25418,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         regularSecondaryOpeningHours_ = java.util.Collections.emptyList();
 
     private void ensureRegularSecondaryOpeningHoursIsMutable() {
-      if (!((bitField1_ & 0x00000080) != 0)) {
+      if (!((bitField1_ & 0x00000400) != 0)) {
         regularSecondaryOpeningHours_ =
             new java.util.ArrayList<com.google.maps.places.v1.Place.OpeningHours>(
                 regularSecondaryOpeningHours_);
-        bitField1_ |= 0x00000080;
+        bitField1_ |= 0x00000400;
       }
     }
 
@@ -24627,17 +25436,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public java.util.List<com.google.maps.places.v1.Place.OpeningHours>
@@ -24652,17 +25460,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public int getRegularSecondaryOpeningHoursCount() {
@@ -24676,17 +25483,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public com.google.maps.places.v1.Place.OpeningHours getRegularSecondaryOpeningHours(int index) {
@@ -24700,17 +25506,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public Builder setRegularSecondaryOpeningHours(
@@ -24731,17 +25536,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public Builder setRegularSecondaryOpeningHours(
@@ -24759,17 +25563,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public Builder addRegularSecondaryOpeningHours(
@@ -24790,17 +25593,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public Builder addRegularSecondaryOpeningHours(
@@ -24821,17 +25623,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public Builder addRegularSecondaryOpeningHours(
@@ -24849,17 +25650,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public Builder addRegularSecondaryOpeningHours(
@@ -24877,17 +25677,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public Builder addAllRegularSecondaryOpeningHours(
@@ -24906,23 +25705,22 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public Builder clearRegularSecondaryOpeningHours() {
       if (regularSecondaryOpeningHoursBuilder_ == null) {
         regularSecondaryOpeningHours_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000080);
+        bitField1_ = (bitField1_ & ~0x00000400);
         onChanged();
       } else {
         regularSecondaryOpeningHoursBuilder_.clear();
@@ -24933,17 +25731,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public Builder removeRegularSecondaryOpeningHours(int index) {
@@ -24960,17 +25757,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public com.google.maps.places.v1.Place.OpeningHours.Builder
@@ -24981,17 +25777,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public com.google.maps.places.v1.Place.OpeningHoursOrBuilder
@@ -25006,17 +25801,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public java.util.List<? extends com.google.maps.places.v1.Place.OpeningHoursOrBuilder>
@@ -25031,17 +25825,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public com.google.maps.places.v1.Place.OpeningHours.Builder
@@ -25053,17 +25846,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public com.google.maps.places.v1.Place.OpeningHours.Builder
@@ -25075,17 +25867,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains an array of entries for information about regular
-     * secondary hours of a business. Secondary hours are different from a
-     * business's main hours. For example, a restaurant can specify drive through
-     * hours or delivery hours as its secondary hours. This field populates the
-     * type subfield, which draws from a predefined list of opening hours types
-     * (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the
-     * place.
+     * Contains an array of entries for information about regular secondary hours
+     * of a business. Secondary hours are different from a business's main hours.
+     * For example, a restaurant can specify drive through hours or delivery hours
+     * as its secondary hours. This field populates the type subfield, which draws
+     * from a predefined list of opening hours types (such as DRIVE_THROUGH,
+     * PICKUP, or TAKEOUT) based on the types of the place.
      * </pre>
      *
      * <code>
-     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.maps.places.v1.Place.OpeningHours regular_secondary_opening_hours = 49;
      * </code>
      */
     public java.util.List<com.google.maps.places.v1.Place.OpeningHours.Builder>
@@ -25105,7 +25896,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.places.v1.Place.OpeningHours.Builder,
                 com.google.maps.places.v1.Place.OpeningHoursOrBuilder>(
                 regularSecondaryOpeningHours_,
-                ((bitField1_ & 0x00000080) != 0),
+                ((bitField1_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         regularSecondaryOpeningHours_ = null;
@@ -25123,34 +25914,28 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a summary of the place. A summary is comprised of a
-     * textual overview, and also includes the language code for these if
-     * applicable. Summary text must be presented as-is and can not be modified or
-     * altered.
+     * Contains a summary of the place. A summary is comprised of a textual
+     * overview, and also includes the language code for these if applicable.
+     * Summary text must be presented as-is and can not be modified or altered.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText editorial_summary = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText editorial_summary = 52;</code>
      *
      * @return Whether the editorialSummary field is set.
      */
     public boolean hasEditorialSummary() {
-      return ((bitField1_ & 0x00000100) != 0);
+      return ((bitField1_ & 0x00000800) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Contains a summary of the place. A summary is comprised of a
-     * textual overview, and also includes the language code for these if
-     * applicable. Summary text must be presented as-is and can not be modified or
-     * altered.
+     * Contains a summary of the place. A summary is comprised of a textual
+     * overview, and also includes the language code for these if applicable.
+     * Summary text must be presented as-is and can not be modified or altered.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText editorial_summary = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText editorial_summary = 52;</code>
      *
      * @return The editorialSummary.
      */
@@ -25167,15 +25952,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a summary of the place. A summary is comprised of a
-     * textual overview, and also includes the language code for these if
-     * applicable. Summary text must be presented as-is and can not be modified or
-     * altered.
+     * Contains a summary of the place. A summary is comprised of a textual
+     * overview, and also includes the language code for these if applicable.
+     * Summary text must be presented as-is and can not be modified or altered.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText editorial_summary = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText editorial_summary = 52;</code>
      */
     public Builder setEditorialSummary(com.google.type.LocalizedText value) {
       if (editorialSummaryBuilder_ == null) {
@@ -25186,7 +25968,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         editorialSummaryBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -25194,15 +25976,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a summary of the place. A summary is comprised of a
-     * textual overview, and also includes the language code for these if
-     * applicable. Summary text must be presented as-is and can not be modified or
-     * altered.
+     * Contains a summary of the place. A summary is comprised of a textual
+     * overview, and also includes the language code for these if applicable.
+     * Summary text must be presented as-is and can not be modified or altered.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText editorial_summary = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText editorial_summary = 52;</code>
      */
     public Builder setEditorialSummary(com.google.type.LocalizedText.Builder builderForValue) {
       if (editorialSummaryBuilder_ == null) {
@@ -25210,7 +25989,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         editorialSummaryBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -25218,19 +25997,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a summary of the place. A summary is comprised of a
-     * textual overview, and also includes the language code for these if
-     * applicable. Summary text must be presented as-is and can not be modified or
-     * altered.
+     * Contains a summary of the place. A summary is comprised of a textual
+     * overview, and also includes the language code for these if applicable.
+     * Summary text must be presented as-is and can not be modified or altered.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText editorial_summary = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText editorial_summary = 52;</code>
      */
     public Builder mergeEditorialSummary(com.google.type.LocalizedText value) {
       if (editorialSummaryBuilder_ == null) {
-        if (((bitField1_ & 0x00000100) != 0)
+        if (((bitField1_ & 0x00000800) != 0)
             && editorialSummary_ != null
             && editorialSummary_ != com.google.type.LocalizedText.getDefaultInstance()) {
           getEditorialSummaryBuilder().mergeFrom(value);
@@ -25240,7 +26016,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         editorialSummaryBuilder_.mergeFrom(value);
       }
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -25248,18 +26024,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a summary of the place. A summary is comprised of a
-     * textual overview, and also includes the language code for these if
-     * applicable. Summary text must be presented as-is and can not be modified or
-     * altered.
+     * Contains a summary of the place. A summary is comprised of a textual
+     * overview, and also includes the language code for these if applicable.
+     * Summary text must be presented as-is and can not be modified or altered.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText editorial_summary = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText editorial_summary = 52;</code>
      */
     public Builder clearEditorialSummary() {
-      bitField1_ = (bitField1_ & ~0x00000100);
+      bitField1_ = (bitField1_ & ~0x00000800);
       editorialSummary_ = null;
       if (editorialSummaryBuilder_ != null) {
         editorialSummaryBuilder_.dispose();
@@ -25272,18 +26045,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a summary of the place. A summary is comprised of a
-     * textual overview, and also includes the language code for these if
-     * applicable. Summary text must be presented as-is and can not be modified or
-     * altered.
+     * Contains a summary of the place. A summary is comprised of a textual
+     * overview, and also includes the language code for these if applicable.
+     * Summary text must be presented as-is and can not be modified or altered.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText editorial_summary = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText editorial_summary = 52;</code>
      */
     public com.google.type.LocalizedText.Builder getEditorialSummaryBuilder() {
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000800;
       onChanged();
       return getEditorialSummaryFieldBuilder().getBuilder();
     }
@@ -25291,15 +26061,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a summary of the place. A summary is comprised of a
-     * textual overview, and also includes the language code for these if
-     * applicable. Summary text must be presented as-is and can not be modified or
-     * altered.
+     * Contains a summary of the place. A summary is comprised of a textual
+     * overview, and also includes the language code for these if applicable.
+     * Summary text must be presented as-is and can not be modified or altered.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText editorial_summary = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText editorial_summary = 52;</code>
      */
     public com.google.type.LocalizedTextOrBuilder getEditorialSummaryOrBuilder() {
       if (editorialSummaryBuilder_ != null) {
@@ -25314,15 +26081,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a summary of the place. A summary is comprised of a
-     * textual overview, and also includes the language code for these if
-     * applicable. Summary text must be presented as-is and can not be modified or
-     * altered.
+     * Contains a summary of the place. A summary is comprised of a textual
+     * overview, and also includes the language code for these if applicable.
+     * Summary text must be presented as-is and can not be modified or altered.
      * </pre>
      *
-     * <code>
-     * .google.type.LocalizedText editorial_summary = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.type.LocalizedText editorial_summary = 52;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LocalizedText,
@@ -25346,25 +26110,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place provides outdoor seating.
+     * Place provides outdoor seating.
      * </pre>
      *
-     * <code>optional bool outdoor_seating = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool outdoor_seating = 55;</code>
      *
      * @return Whether the outdoorSeating field is set.
      */
     @java.lang.Override
     public boolean hasOutdoorSeating() {
-      return ((bitField1_ & 0x00000200) != 0);
+      return ((bitField1_ & 0x00001000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Place provides outdoor seating.
+     * Place provides outdoor seating.
      * </pre>
      *
-     * <code>optional bool outdoor_seating = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool outdoor_seating = 55;</code>
      *
      * @return The outdoorSeating.
      */
@@ -25376,10 +26140,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place provides outdoor seating.
+     * Place provides outdoor seating.
      * </pre>
      *
-     * <code>optional bool outdoor_seating = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool outdoor_seating = 55;</code>
      *
      * @param value The outdoorSeating to set.
      * @return This builder for chaining.
@@ -25387,7 +26151,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setOutdoorSeating(boolean value) {
 
       outdoorSeating_ = value;
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -25395,15 +26159,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place provides outdoor seating.
+     * Place provides outdoor seating.
      * </pre>
      *
-     * <code>optional bool outdoor_seating = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool outdoor_seating = 55;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearOutdoorSeating() {
-      bitField1_ = (bitField1_ & ~0x00000200);
+      bitField1_ = (bitField1_ & ~0x00001000);
       outdoorSeating_ = false;
       onChanged();
       return this;
@@ -25414,25 +26178,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place provides live music.
+     * Place provides live music.
      * </pre>
      *
-     * <code>optional bool live_music = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool live_music = 56;</code>
      *
      * @return Whether the liveMusic field is set.
      */
     @java.lang.Override
     public boolean hasLiveMusic() {
-      return ((bitField1_ & 0x00000400) != 0);
+      return ((bitField1_ & 0x00002000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Place provides live music.
+     * Place provides live music.
      * </pre>
      *
-     * <code>optional bool live_music = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool live_music = 56;</code>
      *
      * @return The liveMusic.
      */
@@ -25444,10 +26208,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place provides live music.
+     * Place provides live music.
      * </pre>
      *
-     * <code>optional bool live_music = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool live_music = 56;</code>
      *
      * @param value The liveMusic to set.
      * @return This builder for chaining.
@@ -25455,7 +26219,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setLiveMusic(boolean value) {
 
       liveMusic_ = value;
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -25463,15 +26227,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place provides live music.
+     * Place provides live music.
      * </pre>
      *
-     * <code>optional bool live_music = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool live_music = 56;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearLiveMusic() {
-      bitField1_ = (bitField1_ & ~0x00000400);
+      bitField1_ = (bitField1_ & ~0x00002000);
       liveMusic_ = false;
       onChanged();
       return this;
@@ -25482,27 +26246,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place has a children's menu.
+     * Place has a children's menu.
      * </pre>
      *
-     * <code>optional bool menu_for_children = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool menu_for_children = 57;</code>
      *
      * @return Whether the menuForChildren field is set.
      */
     @java.lang.Override
     public boolean hasMenuForChildren() {
-      return ((bitField1_ & 0x00000800) != 0);
+      return ((bitField1_ & 0x00004000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Place has a children's menu.
+     * Place has a children's menu.
      * </pre>
      *
-     * <code>optional bool menu_for_children = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool menu_for_children = 57;</code>
      *
      * @return The menuForChildren.
      */
@@ -25514,11 +26276,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place has a children's menu.
+     * Place has a children's menu.
      * </pre>
      *
-     * <code>optional bool menu_for_children = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool menu_for_children = 57;</code>
      *
      * @param value The menuForChildren to set.
      * @return This builder for chaining.
@@ -25526,7 +26287,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setMenuForChildren(boolean value) {
 
       menuForChildren_ = value;
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -25534,16 +26295,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place has a children's menu.
+     * Place has a children's menu.
      * </pre>
      *
-     * <code>optional bool menu_for_children = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool menu_for_children = 57;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearMenuForChildren() {
-      bitField1_ = (bitField1_ & ~0x00000800);
+      bitField1_ = (bitField1_ & ~0x00004000);
       menuForChildren_ = false;
       onChanged();
       return this;
@@ -25554,27 +26314,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place serves cocktails.
+     * Place serves cocktails.
      * </pre>
      *
-     * <code>optional bool serves_cocktails = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool serves_cocktails = 58;</code>
      *
      * @return Whether the servesCocktails field is set.
      */
     @java.lang.Override
     public boolean hasServesCocktails() {
-      return ((bitField1_ & 0x00001000) != 0);
+      return ((bitField1_ & 0x00008000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Place serves cocktails.
+     * Place serves cocktails.
      * </pre>
      *
-     * <code>optional bool serves_cocktails = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool serves_cocktails = 58;</code>
      *
      * @return The servesCocktails.
      */
@@ -25586,11 +26344,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place serves cocktails.
+     * Place serves cocktails.
      * </pre>
      *
-     * <code>optional bool serves_cocktails = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool serves_cocktails = 58;</code>
      *
      * @param value The servesCocktails to set.
      * @return This builder for chaining.
@@ -25598,7 +26355,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setServesCocktails(boolean value) {
 
       servesCocktails_ = value;
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -25606,16 +26363,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place serves cocktails.
+     * Place serves cocktails.
      * </pre>
      *
-     * <code>optional bool serves_cocktails = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool serves_cocktails = 58;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearServesCocktails() {
-      bitField1_ = (bitField1_ & ~0x00001000);
+      bitField1_ = (bitField1_ & ~0x00008000);
       servesCocktails_ = false;
       onChanged();
       return this;
@@ -25626,25 +26382,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place serves dessert.
+     * Place serves dessert.
      * </pre>
      *
-     * <code>optional bool serves_dessert = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_dessert = 59;</code>
      *
      * @return Whether the servesDessert field is set.
      */
     @java.lang.Override
     public boolean hasServesDessert() {
-      return ((bitField1_ & 0x00002000) != 0);
+      return ((bitField1_ & 0x00010000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Place serves dessert.
+     * Place serves dessert.
      * </pre>
      *
-     * <code>optional bool serves_dessert = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_dessert = 59;</code>
      *
      * @return The servesDessert.
      */
@@ -25656,10 +26412,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place serves dessert.
+     * Place serves dessert.
      * </pre>
      *
-     * <code>optional bool serves_dessert = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_dessert = 59;</code>
      *
      * @param value The servesDessert to set.
      * @return This builder for chaining.
@@ -25667,7 +26423,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setServesDessert(boolean value) {
 
       servesDessert_ = value;
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -25675,15 +26431,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place serves dessert.
+     * Place serves dessert.
      * </pre>
      *
-     * <code>optional bool serves_dessert = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_dessert = 59;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearServesDessert() {
-      bitField1_ = (bitField1_ & ~0x00002000);
+      bitField1_ = (bitField1_ & ~0x00010000);
       servesDessert_ = false;
       onChanged();
       return this;
@@ -25694,25 +26450,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place serves coffee.
+     * Place serves coffee.
      * </pre>
      *
-     * <code>optional bool serves_coffee = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_coffee = 60;</code>
      *
      * @return Whether the servesCoffee field is set.
      */
     @java.lang.Override
     public boolean hasServesCoffee() {
-      return ((bitField1_ & 0x00004000) != 0);
+      return ((bitField1_ & 0x00020000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Place serves coffee.
+     * Place serves coffee.
      * </pre>
      *
-     * <code>optional bool serves_coffee = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_coffee = 60;</code>
      *
      * @return The servesCoffee.
      */
@@ -25724,10 +26480,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place serves coffee.
+     * Place serves coffee.
      * </pre>
      *
-     * <code>optional bool serves_coffee = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_coffee = 60;</code>
      *
      * @param value The servesCoffee to set.
      * @return This builder for chaining.
@@ -25735,7 +26491,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setServesCoffee(boolean value) {
 
       servesCoffee_ = value;
-      bitField1_ |= 0x00004000;
+      bitField1_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -25743,15 +26499,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place serves coffee.
+     * Place serves coffee.
      * </pre>
      *
-     * <code>optional bool serves_coffee = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool serves_coffee = 60;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearServesCoffee() {
-      bitField1_ = (bitField1_ & ~0x00004000);
+      bitField1_ = (bitField1_ & ~0x00020000);
       servesCoffee_ = false;
       onChanged();
       return this;
@@ -25762,27 +26518,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place is good for children.
+     * Place is good for children.
      * </pre>
      *
-     * <code>optional bool good_for_children = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool good_for_children = 62;</code>
      *
      * @return Whether the goodForChildren field is set.
      */
     @java.lang.Override
     public boolean hasGoodForChildren() {
-      return ((bitField1_ & 0x00008000) != 0);
+      return ((bitField1_ & 0x00040000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Place is good for children.
+     * Place is good for children.
      * </pre>
      *
-     * <code>optional bool good_for_children = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool good_for_children = 62;</code>
      *
      * @return The goodForChildren.
      */
@@ -25794,11 +26548,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place is good for children.
+     * Place is good for children.
      * </pre>
      *
-     * <code>optional bool good_for_children = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool good_for_children = 62;</code>
      *
      * @param value The goodForChildren to set.
      * @return This builder for chaining.
@@ -25806,7 +26559,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setGoodForChildren(boolean value) {
 
       goodForChildren_ = value;
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -25814,16 +26567,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place is good for children.
+     * Place is good for children.
      * </pre>
      *
-     * <code>optional bool good_for_children = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool good_for_children = 62;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearGoodForChildren() {
-      bitField1_ = (bitField1_ & ~0x00008000);
+      bitField1_ = (bitField1_ & ~0x00040000);
       goodForChildren_ = false;
       onChanged();
       return this;
@@ -25834,25 +26586,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place allows dogs.
+     * Place allows dogs.
      * </pre>
      *
-     * <code>optional bool allows_dogs = 63 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool allows_dogs = 63;</code>
      *
      * @return Whether the allowsDogs field is set.
      */
     @java.lang.Override
     public boolean hasAllowsDogs() {
-      return ((bitField1_ & 0x00010000) != 0);
+      return ((bitField1_ & 0x00080000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Place allows dogs.
+     * Place allows dogs.
      * </pre>
      *
-     * <code>optional bool allows_dogs = 63 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool allows_dogs = 63;</code>
      *
      * @return The allowsDogs.
      */
@@ -25864,10 +26616,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place allows dogs.
+     * Place allows dogs.
      * </pre>
      *
-     * <code>optional bool allows_dogs = 63 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool allows_dogs = 63;</code>
      *
      * @param value The allowsDogs to set.
      * @return This builder for chaining.
@@ -25875,7 +26627,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setAllowsDogs(boolean value) {
 
       allowsDogs_ = value;
-      bitField1_ |= 0x00010000;
+      bitField1_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -25883,15 +26635,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place allows dogs.
+     * Place allows dogs.
      * </pre>
      *
-     * <code>optional bool allows_dogs = 63 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool allows_dogs = 63;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAllowsDogs() {
-      bitField1_ = (bitField1_ & ~0x00010000);
+      bitField1_ = (bitField1_ & ~0x00080000);
       allowsDogs_ = false;
       onChanged();
       return this;
@@ -25902,25 +26654,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place has restroom.
+     * Place has restroom.
      * </pre>
      *
-     * <code>optional bool restroom = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool restroom = 64;</code>
      *
      * @return Whether the restroom field is set.
      */
     @java.lang.Override
     public boolean hasRestroom() {
-      return ((bitField1_ & 0x00020000) != 0);
+      return ((bitField1_ & 0x00100000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Place has restroom.
+     * Place has restroom.
      * </pre>
      *
-     * <code>optional bool restroom = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool restroom = 64;</code>
      *
      * @return The restroom.
      */
@@ -25932,10 +26684,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place has restroom.
+     * Place has restroom.
      * </pre>
      *
-     * <code>optional bool restroom = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool restroom = 64;</code>
      *
      * @param value The restroom to set.
      * @return This builder for chaining.
@@ -25943,7 +26695,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setRestroom(boolean value) {
 
       restroom_ = value;
-      bitField1_ |= 0x00020000;
+      bitField1_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -25951,15 +26703,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place has restroom.
+     * Place has restroom.
      * </pre>
      *
-     * <code>optional bool restroom = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool restroom = 64;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearRestroom() {
-      bitField1_ = (bitField1_ & ~0x00020000);
+      bitField1_ = (bitField1_ & ~0x00100000);
       restroom_ = false;
       onChanged();
       return this;
@@ -25970,25 +26722,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place accommodates groups.
+     * Place accommodates groups.
      * </pre>
      *
-     * <code>optional bool good_for_groups = 65 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool good_for_groups = 65;</code>
      *
      * @return Whether the goodForGroups field is set.
      */
     @java.lang.Override
     public boolean hasGoodForGroups() {
-      return ((bitField1_ & 0x00040000) != 0);
+      return ((bitField1_ & 0x00200000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Place accommodates groups.
+     * Place accommodates groups.
      * </pre>
      *
-     * <code>optional bool good_for_groups = 65 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool good_for_groups = 65;</code>
      *
      * @return The goodForGroups.
      */
@@ -26000,10 +26752,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place accommodates groups.
+     * Place accommodates groups.
      * </pre>
      *
-     * <code>optional bool good_for_groups = 65 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool good_for_groups = 65;</code>
      *
      * @param value The goodForGroups to set.
      * @return This builder for chaining.
@@ -26011,7 +26763,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setGoodForGroups(boolean value) {
 
       goodForGroups_ = value;
-      bitField1_ |= 0x00040000;
+      bitField1_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -26019,15 +26771,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place accommodates groups.
+     * Place accommodates groups.
      * </pre>
      *
-     * <code>optional bool good_for_groups = 65 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool good_for_groups = 65;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearGoodForGroups() {
-      bitField1_ = (bitField1_ & ~0x00040000);
+      bitField1_ = (bitField1_ & ~0x00200000);
       goodForGroups_ = false;
       onChanged();
       return this;
@@ -26038,29 +26790,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place is suitable for watching sports.
+     * Place is suitable for watching sports.
      * </pre>
      *
-     * <code>
-     * optional bool good_for_watching_sports = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool good_for_watching_sports = 66;</code>
      *
      * @return Whether the goodForWatchingSports field is set.
      */
     @java.lang.Override
     public boolean hasGoodForWatchingSports() {
-      return ((bitField1_ & 0x00080000) != 0);
+      return ((bitField1_ & 0x00400000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Place is suitable for watching sports.
+     * Place is suitable for watching sports.
      * </pre>
      *
-     * <code>
-     * optional bool good_for_watching_sports = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool good_for_watching_sports = 66;</code>
      *
      * @return The goodForWatchingSports.
      */
@@ -26072,12 +26820,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place is suitable for watching sports.
+     * Place is suitable for watching sports.
      * </pre>
      *
-     * <code>
-     * optional bool good_for_watching_sports = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool good_for_watching_sports = 66;</code>
      *
      * @param value The goodForWatchingSports to set.
      * @return This builder for chaining.
@@ -26085,7 +26831,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setGoodForWatchingSports(boolean value) {
 
       goodForWatchingSports_ = value;
-      bitField1_ |= 0x00080000;
+      bitField1_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -26093,17 +26839,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Place is suitable for watching sports.
+     * Place is suitable for watching sports.
      * </pre>
      *
-     * <code>
-     * optional bool good_for_watching_sports = 66 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional bool good_for_watching_sports = 66;</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearGoodForWatchingSports() {
-      bitField1_ = (bitField1_ & ~0x00080000);
+      bitField1_ = (bitField1_ & ~0x00400000);
       goodForWatchingSports_ = false;
       onChanged();
       return this;
@@ -26116,19 +26860,29 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.places.v1.Place.PaymentOptionsOrBuilder>
         paymentOptionsBuilder_;
     /**
-     * <code>
-     * .google.maps.places.v1.Place.PaymentOptions payment_options = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     *
+     *
+     * <pre>
+     * Payment options the place accepts. If a payment option data is not
+     * available, the payment option field will be unset.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.PaymentOptions payment_options = 67;</code>
      *
      * @return Whether the paymentOptions field is set.
      */
     public boolean hasPaymentOptions() {
-      return ((bitField1_ & 0x00100000) != 0);
+      return ((bitField1_ & 0x00800000) != 0);
     }
     /**
-     * <code>
-     * .google.maps.places.v1.Place.PaymentOptions payment_options = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     *
+     *
+     * <pre>
+     * Payment options the place accepts. If a payment option data is not
+     * available, the payment option field will be unset.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.PaymentOptions payment_options = 67;</code>
      *
      * @return The paymentOptions.
      */
@@ -26142,9 +26896,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>
-     * .google.maps.places.v1.Place.PaymentOptions payment_options = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     *
+     *
+     * <pre>
+     * Payment options the place accepts. If a payment option data is not
+     * available, the payment option field will be unset.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.PaymentOptions payment_options = 67;</code>
      */
     public Builder setPaymentOptions(com.google.maps.places.v1.Place.PaymentOptions value) {
       if (paymentOptionsBuilder_ == null) {
@@ -26155,14 +26914,19 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         paymentOptionsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00100000;
+      bitField1_ |= 0x00800000;
       onChanged();
       return this;
     }
     /**
-     * <code>
-     * .google.maps.places.v1.Place.PaymentOptions payment_options = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     *
+     *
+     * <pre>
+     * Payment options the place accepts. If a payment option data is not
+     * available, the payment option field will be unset.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.PaymentOptions payment_options = 67;</code>
      */
     public Builder setPaymentOptions(
         com.google.maps.places.v1.Place.PaymentOptions.Builder builderForValue) {
@@ -26171,18 +26935,23 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         paymentOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00100000;
+      bitField1_ |= 0x00800000;
       onChanged();
       return this;
     }
     /**
-     * <code>
-     * .google.maps.places.v1.Place.PaymentOptions payment_options = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     *
+     *
+     * <pre>
+     * Payment options the place accepts. If a payment option data is not
+     * available, the payment option field will be unset.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.PaymentOptions payment_options = 67;</code>
      */
     public Builder mergePaymentOptions(com.google.maps.places.v1.Place.PaymentOptions value) {
       if (paymentOptionsBuilder_ == null) {
-        if (((bitField1_ & 0x00100000) != 0)
+        if (((bitField1_ & 0x00800000) != 0)
             && paymentOptions_ != null
             && paymentOptions_
                 != com.google.maps.places.v1.Place.PaymentOptions.getDefaultInstance()) {
@@ -26193,17 +26962,22 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         paymentOptionsBuilder_.mergeFrom(value);
       }
-      bitField1_ |= 0x00100000;
+      bitField1_ |= 0x00800000;
       onChanged();
       return this;
     }
     /**
-     * <code>
-     * .google.maps.places.v1.Place.PaymentOptions payment_options = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     *
+     *
+     * <pre>
+     * Payment options the place accepts. If a payment option data is not
+     * available, the payment option field will be unset.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.PaymentOptions payment_options = 67;</code>
      */
     public Builder clearPaymentOptions() {
-      bitField1_ = (bitField1_ & ~0x00100000);
+      bitField1_ = (bitField1_ & ~0x00800000);
       paymentOptions_ = null;
       if (paymentOptionsBuilder_ != null) {
         paymentOptionsBuilder_.dispose();
@@ -26213,19 +26987,29 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>
-     * .google.maps.places.v1.Place.PaymentOptions payment_options = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     *
+     *
+     * <pre>
+     * Payment options the place accepts. If a payment option data is not
+     * available, the payment option field will be unset.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.PaymentOptions payment_options = 67;</code>
      */
     public com.google.maps.places.v1.Place.PaymentOptions.Builder getPaymentOptionsBuilder() {
-      bitField1_ |= 0x00100000;
+      bitField1_ |= 0x00800000;
       onChanged();
       return getPaymentOptionsFieldBuilder().getBuilder();
     }
     /**
-     * <code>
-     * .google.maps.places.v1.Place.PaymentOptions payment_options = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     *
+     *
+     * <pre>
+     * Payment options the place accepts. If a payment option data is not
+     * available, the payment option field will be unset.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.PaymentOptions payment_options = 67;</code>
      */
     public com.google.maps.places.v1.Place.PaymentOptionsOrBuilder getPaymentOptionsOrBuilder() {
       if (paymentOptionsBuilder_ != null) {
@@ -26237,9 +27021,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>
-     * .google.maps.places.v1.Place.PaymentOptions payment_options = 67 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     *
+     *
+     * <pre>
+     * Payment options the place accepts. If a payment option data is not
+     * available, the payment option field will be unset.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.PaymentOptions payment_options = 67;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.maps.places.v1.Place.PaymentOptions,
@@ -26268,28 +27057,24 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Options of parking provided by the place.
+     * Options of parking provided by the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.ParkingOptions parking_options = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.ParkingOptions parking_options = 70;</code>
      *
      * @return Whether the parkingOptions field is set.
      */
     public boolean hasParkingOptions() {
-      return ((bitField1_ & 0x00200000) != 0);
+      return ((bitField1_ & 0x01000000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Options of parking provided by the place.
+     * Options of parking provided by the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.ParkingOptions parking_options = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.ParkingOptions parking_options = 70;</code>
      *
      * @return The parkingOptions.
      */
@@ -26306,12 +27091,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Options of parking provided by the place.
+     * Options of parking provided by the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.ParkingOptions parking_options = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.ParkingOptions parking_options = 70;</code>
      */
     public Builder setParkingOptions(com.google.maps.places.v1.Place.ParkingOptions value) {
       if (parkingOptionsBuilder_ == null) {
@@ -26322,7 +27105,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         parkingOptionsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00200000;
+      bitField1_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -26330,12 +27113,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Options of parking provided by the place.
+     * Options of parking provided by the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.ParkingOptions parking_options = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.ParkingOptions parking_options = 70;</code>
      */
     public Builder setParkingOptions(
         com.google.maps.places.v1.Place.ParkingOptions.Builder builderForValue) {
@@ -26344,7 +27125,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         parkingOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00200000;
+      bitField1_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -26352,16 +27133,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Options of parking provided by the place.
+     * Options of parking provided by the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.ParkingOptions parking_options = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.ParkingOptions parking_options = 70;</code>
      */
     public Builder mergeParkingOptions(com.google.maps.places.v1.Place.ParkingOptions value) {
       if (parkingOptionsBuilder_ == null) {
-        if (((bitField1_ & 0x00200000) != 0)
+        if (((bitField1_ & 0x01000000) != 0)
             && parkingOptions_ != null
             && parkingOptions_
                 != com.google.maps.places.v1.Place.ParkingOptions.getDefaultInstance()) {
@@ -26372,7 +27151,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         parkingOptionsBuilder_.mergeFrom(value);
       }
-      bitField1_ |= 0x00200000;
+      bitField1_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -26380,15 +27159,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Options of parking provided by the place.
+     * Options of parking provided by the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.ParkingOptions parking_options = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.ParkingOptions parking_options = 70;</code>
      */
     public Builder clearParkingOptions() {
-      bitField1_ = (bitField1_ & ~0x00200000);
+      bitField1_ = (bitField1_ & ~0x01000000);
       parkingOptions_ = null;
       if (parkingOptionsBuilder_ != null) {
         parkingOptionsBuilder_.dispose();
@@ -26401,15 +27178,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Options of parking provided by the place.
+     * Options of parking provided by the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.ParkingOptions parking_options = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.ParkingOptions parking_options = 70;</code>
      */
     public com.google.maps.places.v1.Place.ParkingOptions.Builder getParkingOptionsBuilder() {
-      bitField1_ |= 0x00200000;
+      bitField1_ |= 0x01000000;
       onChanged();
       return getParkingOptionsFieldBuilder().getBuilder();
     }
@@ -26417,12 +27192,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Options of parking provided by the place.
+     * Options of parking provided by the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.ParkingOptions parking_options = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.ParkingOptions parking_options = 70;</code>
      */
     public com.google.maps.places.v1.Place.ParkingOptionsOrBuilder getParkingOptionsOrBuilder() {
       if (parkingOptionsBuilder_ != null) {
@@ -26437,12 +27210,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Options of parking provided by the place.
+     * Options of parking provided by the place.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.Place.ParkingOptions parking_options = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.Place.ParkingOptions parking_options = 70;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.maps.places.v1.Place.ParkingOptions,
@@ -26465,11 +27236,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSubDestinationsIsMutable() {
-      if (!((bitField1_ & 0x00400000) != 0)) {
+      if (!((bitField1_ & 0x02000000) != 0)) {
         subDestinations_ =
             new java.util.ArrayList<com.google.maps.places.v1.Place.SubDestination>(
                 subDestinations_);
-        bitField1_ |= 0x00400000;
+        bitField1_ |= 0x02000000;
       }
     }
 
@@ -26483,12 +27254,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public java.util.List<com.google.maps.places.v1.Place.SubDestination> getSubDestinationsList() {
       if (subDestinationsBuilder_ == null) {
@@ -26501,12 +27270,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public int getSubDestinationsCount() {
       if (subDestinationsBuilder_ == null) {
@@ -26519,12 +27286,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public com.google.maps.places.v1.Place.SubDestination getSubDestinations(int index) {
       if (subDestinationsBuilder_ == null) {
@@ -26537,12 +27302,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public Builder setSubDestinations(
         int index, com.google.maps.places.v1.Place.SubDestination value) {
@@ -26562,12 +27325,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public Builder setSubDestinations(
         int index, com.google.maps.places.v1.Place.SubDestination.Builder builderForValue) {
@@ -26584,12 +27345,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public Builder addSubDestinations(com.google.maps.places.v1.Place.SubDestination value) {
       if (subDestinationsBuilder_ == null) {
@@ -26608,12 +27367,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public Builder addSubDestinations(
         int index, com.google.maps.places.v1.Place.SubDestination value) {
@@ -26633,12 +27390,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public Builder addSubDestinations(
         com.google.maps.places.v1.Place.SubDestination.Builder builderForValue) {
@@ -26655,12 +27410,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public Builder addSubDestinations(
         int index, com.google.maps.places.v1.Place.SubDestination.Builder builderForValue) {
@@ -26677,12 +27430,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public Builder addAllSubDestinations(
         java.lang.Iterable<? extends com.google.maps.places.v1.Place.SubDestination> values) {
@@ -26699,17 +27450,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public Builder clearSubDestinations() {
       if (subDestinationsBuilder_ == null) {
         subDestinations_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00400000);
+        bitField1_ = (bitField1_ & ~0x02000000);
         onChanged();
       } else {
         subDestinationsBuilder_.clear();
@@ -26720,12 +27469,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public Builder removeSubDestinations(int index) {
       if (subDestinationsBuilder_ == null) {
@@ -26741,12 +27488,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public com.google.maps.places.v1.Place.SubDestination.Builder getSubDestinationsBuilder(
         int index) {
@@ -26756,12 +27501,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public com.google.maps.places.v1.Place.SubDestinationOrBuilder getSubDestinationsOrBuilder(
         int index) {
@@ -26775,12 +27518,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public java.util.List<? extends com.google.maps.places.v1.Place.SubDestinationOrBuilder>
         getSubDestinationsOrBuilderList() {
@@ -26794,12 +27535,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public com.google.maps.places.v1.Place.SubDestination.Builder addSubDestinationsBuilder() {
       return getSubDestinationsFieldBuilder()
@@ -26809,12 +27548,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public com.google.maps.places.v1.Place.SubDestination.Builder addSubDestinationsBuilder(
         int index) {
@@ -26825,12 +27562,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of sub destinations related to the place.
+     * A list of sub destinations related to the place.
      * </pre>
      *
-     * <code>
-     * repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
      */
     public java.util.List<com.google.maps.places.v1.Place.SubDestination.Builder>
         getSubDestinationsBuilderList() {
@@ -26849,7 +27584,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.places.v1.Place.SubDestination.Builder,
                 com.google.maps.places.v1.Place.SubDestinationOrBuilder>(
                 subDestinations_,
-                ((bitField1_ & 0x00400000) != 0),
+                ((bitField1_ & 0x02000000) != 0),
                 getParentForChildren(),
                 isClean());
         subDestinations_ = null;
@@ -26867,27 +27602,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the accessibility options a place offers.
+     * Information about the accessibility options a place offers.
      * </pre>
      *
-     * <code>
-     * optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72;
      * </code>
      *
      * @return Whether the accessibilityOptions field is set.
      */
     public boolean hasAccessibilityOptions() {
-      return ((bitField1_ & 0x00800000) != 0);
+      return ((bitField1_ & 0x04000000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Information about the accessibility options a place offers.
+     * Information about the accessibility options a place offers.
      * </pre>
      *
-     * <code>
-     * optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72;
      * </code>
      *
      * @return The accessibilityOptions.
@@ -26905,11 +27638,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the accessibility options a place offers.
+     * Information about the accessibility options a place offers.
      * </pre>
      *
-     * <code>
-     * optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72;
      * </code>
      */
     public Builder setAccessibilityOptions(
@@ -26922,7 +27654,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         accessibilityOptionsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00800000;
+      bitField1_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -26930,11 +27662,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the accessibility options a place offers.
+     * Information about the accessibility options a place offers.
      * </pre>
      *
-     * <code>
-     * optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72;
      * </code>
      */
     public Builder setAccessibilityOptions(
@@ -26944,7 +27675,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         accessibilityOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00800000;
+      bitField1_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -26952,17 +27683,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the accessibility options a place offers.
+     * Information about the accessibility options a place offers.
      * </pre>
      *
-     * <code>
-     * optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72;
      * </code>
      */
     public Builder mergeAccessibilityOptions(
         com.google.maps.places.v1.Place.AccessibilityOptions value) {
       if (accessibilityOptionsBuilder_ == null) {
-        if (((bitField1_ & 0x00800000) != 0)
+        if (((bitField1_ & 0x04000000) != 0)
             && accessibilityOptions_ != null
             && accessibilityOptions_
                 != com.google.maps.places.v1.Place.AccessibilityOptions.getDefaultInstance()) {
@@ -26973,7 +27703,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         accessibilityOptionsBuilder_.mergeFrom(value);
       }
-      bitField1_ |= 0x00800000;
+      bitField1_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -26981,15 +27711,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the accessibility options a place offers.
+     * Information about the accessibility options a place offers.
      * </pre>
      *
-     * <code>
-     * optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72;
      * </code>
      */
     public Builder clearAccessibilityOptions() {
-      bitField1_ = (bitField1_ & ~0x00800000);
+      bitField1_ = (bitField1_ & ~0x04000000);
       accessibilityOptions_ = null;
       if (accessibilityOptionsBuilder_ != null) {
         accessibilityOptionsBuilder_.dispose();
@@ -27002,16 +27731,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the accessibility options a place offers.
+     * Information about the accessibility options a place offers.
      * </pre>
      *
-     * <code>
-     * optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72;
      * </code>
      */
     public com.google.maps.places.v1.Place.AccessibilityOptions.Builder
         getAccessibilityOptionsBuilder() {
-      bitField1_ |= 0x00800000;
+      bitField1_ |= 0x04000000;
       onChanged();
       return getAccessibilityOptionsFieldBuilder().getBuilder();
     }
@@ -27019,11 +27747,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the accessibility options a place offers.
+     * Information about the accessibility options a place offers.
      * </pre>
      *
-     * <code>
-     * optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72;
      * </code>
      */
     public com.google.maps.places.v1.Place.AccessibilityOptionsOrBuilder
@@ -27040,11 +27767,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the accessibility options a place offers.
+     * Information about the accessibility options a place offers.
      * </pre>
      *
-     * <code>
-     * optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>optional .google.maps.places.v1.Place.AccessibilityOptions accessibility_options = 72;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -27074,30 +27800,26 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most recent information about fuel options in a gas
-     * station. This information is updated regularly.
+     * The most recent information about fuel options in a gas station. This
+     * information is updated regularly.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.FuelOptions fuel_options = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.FuelOptions fuel_options = 78;</code>
      *
      * @return Whether the fuelOptions field is set.
      */
     public boolean hasFuelOptions() {
-      return ((bitField1_ & 0x01000000) != 0);
+      return ((bitField1_ & 0x08000000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. The most recent information about fuel options in a gas
-     * station. This information is updated regularly.
+     * The most recent information about fuel options in a gas station. This
+     * information is updated regularly.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.FuelOptions fuel_options = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.FuelOptions fuel_options = 78;</code>
      *
      * @return The fuelOptions.
      */
@@ -27114,13 +27836,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most recent information about fuel options in a gas
-     * station. This information is updated regularly.
+     * The most recent information about fuel options in a gas station. This
+     * information is updated regularly.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.FuelOptions fuel_options = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.FuelOptions fuel_options = 78;</code>
      */
     public Builder setFuelOptions(com.google.maps.places.v1.FuelOptions value) {
       if (fuelOptionsBuilder_ == null) {
@@ -27131,7 +27851,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         fuelOptionsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x01000000;
+      bitField1_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -27139,13 +27859,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most recent information about fuel options in a gas
-     * station. This information is updated regularly.
+     * The most recent information about fuel options in a gas station. This
+     * information is updated regularly.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.FuelOptions fuel_options = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.FuelOptions fuel_options = 78;</code>
      */
     public Builder setFuelOptions(com.google.maps.places.v1.FuelOptions.Builder builderForValue) {
       if (fuelOptionsBuilder_ == null) {
@@ -27153,7 +27871,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         fuelOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x01000000;
+      bitField1_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -27161,17 +27879,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most recent information about fuel options in a gas
-     * station. This information is updated regularly.
+     * The most recent information about fuel options in a gas station. This
+     * information is updated regularly.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.FuelOptions fuel_options = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.FuelOptions fuel_options = 78;</code>
      */
     public Builder mergeFuelOptions(com.google.maps.places.v1.FuelOptions value) {
       if (fuelOptionsBuilder_ == null) {
-        if (((bitField1_ & 0x01000000) != 0)
+        if (((bitField1_ & 0x08000000) != 0)
             && fuelOptions_ != null
             && fuelOptions_ != com.google.maps.places.v1.FuelOptions.getDefaultInstance()) {
           getFuelOptionsBuilder().mergeFrom(value);
@@ -27181,7 +27897,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         fuelOptionsBuilder_.mergeFrom(value);
       }
-      bitField1_ |= 0x01000000;
+      bitField1_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -27189,16 +27905,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most recent information about fuel options in a gas
-     * station. This information is updated regularly.
+     * The most recent information about fuel options in a gas station. This
+     * information is updated regularly.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.FuelOptions fuel_options = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.FuelOptions fuel_options = 78;</code>
      */
     public Builder clearFuelOptions() {
-      bitField1_ = (bitField1_ & ~0x01000000);
+      bitField1_ = (bitField1_ & ~0x08000000);
       fuelOptions_ = null;
       if (fuelOptionsBuilder_ != null) {
         fuelOptionsBuilder_.dispose();
@@ -27211,16 +27925,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most recent information about fuel options in a gas
-     * station. This information is updated regularly.
+     * The most recent information about fuel options in a gas station. This
+     * information is updated regularly.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.FuelOptions fuel_options = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.FuelOptions fuel_options = 78;</code>
      */
     public com.google.maps.places.v1.FuelOptions.Builder getFuelOptionsBuilder() {
-      bitField1_ |= 0x01000000;
+      bitField1_ |= 0x08000000;
       onChanged();
       return getFuelOptionsFieldBuilder().getBuilder();
     }
@@ -27228,13 +27940,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most recent information about fuel options in a gas
-     * station. This information is updated regularly.
+     * The most recent information about fuel options in a gas station. This
+     * information is updated regularly.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.FuelOptions fuel_options = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.FuelOptions fuel_options = 78;</code>
      */
     public com.google.maps.places.v1.FuelOptionsOrBuilder getFuelOptionsOrBuilder() {
       if (fuelOptionsBuilder_ != null) {
@@ -27249,13 +27959,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most recent information about fuel options in a gas
-     * station. This information is updated regularly.
+     * The most recent information about fuel options in a gas station. This
+     * information is updated regularly.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.FuelOptions fuel_options = 78 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.FuelOptions fuel_options = 78;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.maps.places.v1.FuelOptions,
@@ -27284,28 +27992,24 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information of ev charging options.
+     * Information of ev charging options.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.EVChargeOptions ev_charge_options = 79 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.EVChargeOptions ev_charge_options = 79;</code>
      *
      * @return Whether the evChargeOptions field is set.
      */
     public boolean hasEvChargeOptions() {
-      return ((bitField1_ & 0x02000000) != 0);
+      return ((bitField1_ & 0x10000000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Information of ev charging options.
+     * Information of ev charging options.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.EVChargeOptions ev_charge_options = 79 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.EVChargeOptions ev_charge_options = 79;</code>
      *
      * @return The evChargeOptions.
      */
@@ -27322,12 +28026,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information of ev charging options.
+     * Information of ev charging options.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.EVChargeOptions ev_charge_options = 79 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.EVChargeOptions ev_charge_options = 79;</code>
      */
     public Builder setEvChargeOptions(com.google.maps.places.v1.EVChargeOptions value) {
       if (evChargeOptionsBuilder_ == null) {
@@ -27338,7 +28040,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         evChargeOptionsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x02000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -27346,12 +28048,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information of ev charging options.
+     * Information of ev charging options.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.EVChargeOptions ev_charge_options = 79 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.EVChargeOptions ev_charge_options = 79;</code>
      */
     public Builder setEvChargeOptions(
         com.google.maps.places.v1.EVChargeOptions.Builder builderForValue) {
@@ -27360,7 +28060,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         evChargeOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x02000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -27368,16 +28068,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information of ev charging options.
+     * Information of ev charging options.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.EVChargeOptions ev_charge_options = 79 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.EVChargeOptions ev_charge_options = 79;</code>
      */
     public Builder mergeEvChargeOptions(com.google.maps.places.v1.EVChargeOptions value) {
       if (evChargeOptionsBuilder_ == null) {
-        if (((bitField1_ & 0x02000000) != 0)
+        if (((bitField1_ & 0x10000000) != 0)
             && evChargeOptions_ != null
             && evChargeOptions_ != com.google.maps.places.v1.EVChargeOptions.getDefaultInstance()) {
           getEvChargeOptionsBuilder().mergeFrom(value);
@@ -27387,7 +28085,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       } else {
         evChargeOptionsBuilder_.mergeFrom(value);
       }
-      bitField1_ |= 0x02000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -27395,15 +28093,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information of ev charging options.
+     * Information of ev charging options.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.EVChargeOptions ev_charge_options = 79 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.EVChargeOptions ev_charge_options = 79;</code>
      */
     public Builder clearEvChargeOptions() {
-      bitField1_ = (bitField1_ & ~0x02000000);
+      bitField1_ = (bitField1_ & ~0x10000000);
       evChargeOptions_ = null;
       if (evChargeOptionsBuilder_ != null) {
         evChargeOptionsBuilder_.dispose();
@@ -27416,15 +28112,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information of ev charging options.
+     * Information of ev charging options.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.EVChargeOptions ev_charge_options = 79 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.EVChargeOptions ev_charge_options = 79;</code>
      */
     public com.google.maps.places.v1.EVChargeOptions.Builder getEvChargeOptionsBuilder() {
-      bitField1_ |= 0x02000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return getEvChargeOptionsFieldBuilder().getBuilder();
     }
@@ -27432,12 +28126,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information of ev charging options.
+     * Information of ev charging options.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.EVChargeOptions ev_charge_options = 79 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.EVChargeOptions ev_charge_options = 79;</code>
      */
     public com.google.maps.places.v1.EVChargeOptionsOrBuilder getEvChargeOptionsOrBuilder() {
       if (evChargeOptionsBuilder_ != null) {
@@ -27452,12 +28144,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information of ev charging options.
+     * Information of ev charging options.
      * </pre>
      *
-     * <code>
-     * .google.maps.places.v1.EVChargeOptions ev_charge_options = 79 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.maps.places.v1.EVChargeOptions ev_charge_options = 79;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.maps.places.v1.EVChargeOptions,

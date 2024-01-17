@@ -72,7 +72,7 @@ public final class MarkRecommendationDismissedRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Name of the recommendation.
+   * Required. Name of the recommendation.
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public final class MarkRecommendationDismissedRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Name of the recommendation.
+   * Required. Name of the recommendation.
    * </pre>
    *
    * <code>
@@ -550,7 +550,7 @@ public final class MarkRecommendationDismissedRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Name of the recommendation.
+     * Required. Name of the recommendation.
      * </pre>
      *
      * <code>
@@ -574,7 +574,7 @@ public final class MarkRecommendationDismissedRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Name of the recommendation.
+     * Required. Name of the recommendation.
      * </pre>
      *
      * <code>
@@ -598,7 +598,7 @@ public final class MarkRecommendationDismissedRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Name of the recommendation.
+     * Required. Name of the recommendation.
      * </pre>
      *
      * <code>
@@ -621,7 +621,7 @@ public final class MarkRecommendationDismissedRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Name of the recommendation.
+     * Required. Name of the recommendation.
      * </pre>
      *
      * <code>
@@ -640,7 +640,7 @@ public final class MarkRecommendationDismissedRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Name of the recommendation.
+     * Required. Name of the recommendation.
      * </pre>
      *
      * <code>

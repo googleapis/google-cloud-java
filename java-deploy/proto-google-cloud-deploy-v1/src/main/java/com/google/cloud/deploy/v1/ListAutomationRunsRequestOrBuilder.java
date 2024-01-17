@@ -27,8 +27,8 @@ public interface ListAutomationRunsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of automationRuns. Format
-   * must be
+   * Required. The parent `Delivery Pipeline`, which owns this collection of
+   * automationRuns. Format must be
    * `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}`.
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface ListAutomationRunsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of automationRuns. Format
-   * must be
+   * Required. The parent `Delivery Pipeline`, which owns this collection of
+   * automationRuns. Format must be
    * `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}`.
    * </pre>
    *

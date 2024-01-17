@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.44.0 (2024-01-10)
+
+### Features
+
+* Fix formatting due to unclosed backtick ([#10209](https://github.com/googleapis/google-cloud-java/issues/10209)) ([12a328f](https://github.com/googleapis/google-cloud-java/commit/12a328f470335542fcd18312ffff728c3c38ddf9))
+
+
+
 ## 0.43.0 (2023-12-12)
 
 * No change

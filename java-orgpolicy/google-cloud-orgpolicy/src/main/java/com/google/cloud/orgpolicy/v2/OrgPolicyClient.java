@@ -37,21 +37,20 @@ import javax.annotation.Generated;
 /**
  * Service Description: An interface for managing organization policies.
  *
- * <p>The Cloud Org Policy service provides a simple mechanism for organizations to restrict the
- * allowed configurations across their entire Cloud Resource hierarchy.
+ * <p>The Organization Policy Service provides a simple mechanism for organizations to restrict the
+ * allowed configurations across their entire resource hierarchy.
  *
- * <p>You can use a `policy` to configure restrictions in Cloud resources. For example, you can
- * enforce a `policy` that restricts which Google Cloud Platform APIs can be activated in a certain
- * part of your resource hierarchy, or prevents serial port access to VM instances in a particular
- * folder.
+ * <p>You can use a policy to configure restrictions on resources. For example, you can enforce a
+ * policy that restricts which Google Cloud APIs can be activated in a certain part of your resource
+ * hierarchy, or prevents serial port access to VM instances in a particular folder.
  *
- * <p>`Policies` are inherited down through the resource hierarchy. A `policy` applied to a parent
- * resource automatically applies to all its child resources unless overridden with a `policy` lower
+ * <p>Policies are inherited down through the resource hierarchy. A policy applied to a parent
+ * resource automatically applies to all its child resources unless overridden with a policy lower
  * in the hierarchy.
  *
- * <p>A `constraint` defines an aspect of a resource's configuration that can be controlled by an
- * organization's policy administrator. `Policies` are a collection of `constraints` that defines
- * their allowable configuration on a particular resource and its child resources.
+ * <p>A constraint defines an aspect of a resource's configuration that can be controlled by an
+ * organization's policy administrator. Policies are a collection of constraints that defines their
+ * allowable configuration on a particular resource and its child resources.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -71,19 +70,258 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the OrgPolicyClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    <tr>
+ *      <td>ListConstraints</td>
+ *      <td><p> Lists constraints that could be applied on the specified resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listConstraints(ListConstraintsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listConstraints(FolderName parent)
+ *           <li>listConstraints(OrganizationName parent)
+ *           <li>listConstraints(ProjectName parent)
+ *           <li>listConstraints(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listConstraintsPagedCallable()
+ *           <li>listConstraintsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListPolicies</td>
+ *      <td><p> Retrieves all of the policies that exist on a particular resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listPolicies(ListPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listPolicies(FolderName parent)
+ *           <li>listPolicies(OrganizationName parent)
+ *           <li>listPolicies(ProjectName parent)
+ *           <li>listPolicies(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listPoliciesPagedCallable()
+ *           <li>listPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetPolicy</td>
+ *      <td><p> Gets a policy on a resource.
+ * <p>  If no policy is set on the resource, `NOT_FOUND` is returned. The `etag` value can be used with `UpdatePolicy()` to update a policy during read-modify-write.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getPolicy(GetPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getPolicy(PolicyName name)
+ *           <li>getPolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetEffectivePolicy</td>
+ *      <td><p> Gets the effective policy on a resource. This is the result of merging policies in the resource hierarchy and evaluating conditions. The returned policy will not have an `etag` or `condition` set because it is an evaluated policy across multiple resources. Subtrees of Resource Manager resource hierarchy with 'under:' prefix will not be expanded.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getEffectivePolicy(GetEffectivePolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getEffectivePolicy(PolicyName name)
+ *           <li>getEffectivePolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getEffectivePolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreatePolicy</td>
+ *      <td><p> Creates a policy.
+ * <p>  Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the policy already exists on the given Google Cloud resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createPolicy(CreatePolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>createPolicy(FolderName parent, Policy policy)
+ *           <li>createPolicy(OrganizationName parent, Policy policy)
+ *           <li>createPolicy(ProjectName parent, Policy policy)
+ *           <li>createPolicy(String parent, Policy policy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdatePolicy</td>
+ *      <td><p> Updates a policy.
+ * <p>  Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or the policy do not exist. Returns a `google.rpc.Status` with `google.rpc.Code.ABORTED` if the etag supplied in the request does not match the persisted etag of the policy
+ * <p>  Note: the supplied policy will perform a full overwrite of all fields.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updatePolicy(UpdatePolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>updatePolicy(Policy policy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updatePolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeletePolicy</td>
+ *      <td><p> Deletes a policy.
+ * <p>  Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or organization policy does not exist.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deletePolicy(DeletePolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>deletePolicy(PolicyName name)
+ *           <li>deletePolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deletePolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateCustomConstraint</td>
+ *      <td><p> Creates a custom constraint.
+ * <p>  Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the organization does not exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the constraint already exists on the given organization.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createCustomConstraint(CreateCustomConstraintRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>createCustomConstraint(OrganizationName parent, CustomConstraint customConstraint)
+ *           <li>createCustomConstraint(String parent, CustomConstraint customConstraint)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createCustomConstraintCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateCustomConstraint</td>
+ *      <td><p> Updates a custom constraint.
+ * <p>  Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not exist.
+ * <p>  Note: the supplied policy will perform a full overwrite of all fields.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateCustomConstraint(UpdateCustomConstraintRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>updateCustomConstraint(CustomConstraint customConstraint)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateCustomConstraintCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetCustomConstraint</td>
+ *      <td><p> Gets a custom constraint.
+ * <p>  Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom constraint does not exist.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getCustomConstraint(GetCustomConstraintRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getCustomConstraint(CustomConstraintName name)
+ *           <li>getCustomConstraint(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getCustomConstraintCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListCustomConstraints</td>
+ *      <td><p> Retrieves all of the custom constraints that exist on a particular organization resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listCustomConstraints(ListCustomConstraintsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listCustomConstraints(OrganizationName parent)
+ *           <li>listCustomConstraints(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listCustomConstraintsPagedCallable()
+ *           <li>listCustomConstraintsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteCustomConstraint</td>
+ *      <td><p> Deletes a custom constraint.
+ * <p>  Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not exist.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteCustomConstraint(DeleteCustomConstraintRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>deleteCustomConstraint(CustomConstraintName name)
+ *           <li>deleteCustomConstraint(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteCustomConstraintCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -187,7 +425,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists `Constraints` that could be applied on the specified resource.
+   * Lists constraints that could be applied on the specified resource.
    *
    * <p>Sample code:
    *
@@ -205,8 +443,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The Cloud resource that parents the constraint. Must be in one of the
-   *     following forms:
+   * @param parent Required. The Google Cloud resource that parents the constraint. Must be in one
+   *     of the following forms:
    *     <ul>
    *       <li>`projects/{project_number}`
    *       <li>`projects/{project_id}`
@@ -226,7 +464,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists `Constraints` that could be applied on the specified resource.
+   * Lists constraints that could be applied on the specified resource.
    *
    * <p>Sample code:
    *
@@ -244,8 +482,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The Cloud resource that parents the constraint. Must be in one of the
-   *     following forms:
+   * @param parent Required. The Google Cloud resource that parents the constraint. Must be in one
+   *     of the following forms:
    *     <ul>
    *       <li>`projects/{project_number}`
    *       <li>`projects/{project_id}`
@@ -265,7 +503,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists `Constraints` that could be applied on the specified resource.
+   * Lists constraints that could be applied on the specified resource.
    *
    * <p>Sample code:
    *
@@ -283,8 +521,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The Cloud resource that parents the constraint. Must be in one of the
-   *     following forms:
+   * @param parent Required. The Google Cloud resource that parents the constraint. Must be in one
+   *     of the following forms:
    *     <ul>
    *       <li>`projects/{project_number}`
    *       <li>`projects/{project_id}`
@@ -304,7 +542,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists `Constraints` that could be applied on the specified resource.
+   * Lists constraints that could be applied on the specified resource.
    *
    * <p>Sample code:
    *
@@ -322,8 +560,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The Cloud resource that parents the constraint. Must be in one of the
-   *     following forms:
+   * @param parent Required. The Google Cloud resource that parents the constraint. Must be in one
+   *     of the following forms:
    *     <ul>
    *       <li>`projects/{project_number}`
    *       <li>`projects/{project_id}`
@@ -340,7 +578,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists `Constraints` that could be applied on the specified resource.
+   * Lists constraints that could be applied on the specified resource.
    *
    * <p>Sample code:
    *
@@ -372,7 +610,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists `Constraints` that could be applied on the specified resource.
+   * Lists constraints that could be applied on the specified resource.
    *
    * <p>Sample code:
    *
@@ -405,7 +643,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists `Constraints` that could be applied on the specified resource.
+   * Lists constraints that could be applied on the specified resource.
    *
    * <p>Sample code:
    *
@@ -444,7 +682,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves all of the `Policies` that exist on a particular resource.
+   * Retrieves all of the policies that exist on a particular resource.
    *
    * <p>Sample code:
    *
@@ -462,8 +700,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The target Cloud resource that parents the set of constraints and
-   *     policies that will be returned from this call. Must be in one of the following forms:
+   * @param parent Required. The target Google Cloud resource that parents the set of constraints
+   *     and policies that will be returned from this call. Must be in one of the following forms:
    *     <ul>
    *       <li>`projects/{project_number}`
    *       <li>`projects/{project_id}`
@@ -483,7 +721,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves all of the `Policies` that exist on a particular resource.
+   * Retrieves all of the policies that exist on a particular resource.
    *
    * <p>Sample code:
    *
@@ -501,8 +739,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The target Cloud resource that parents the set of constraints and
-   *     policies that will be returned from this call. Must be in one of the following forms:
+   * @param parent Required. The target Google Cloud resource that parents the set of constraints
+   *     and policies that will be returned from this call. Must be in one of the following forms:
    *     <ul>
    *       <li>`projects/{project_number}`
    *       <li>`projects/{project_id}`
@@ -522,7 +760,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves all of the `Policies` that exist on a particular resource.
+   * Retrieves all of the policies that exist on a particular resource.
    *
    * <p>Sample code:
    *
@@ -540,8 +778,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The target Cloud resource that parents the set of constraints and
-   *     policies that will be returned from this call. Must be in one of the following forms:
+   * @param parent Required. The target Google Cloud resource that parents the set of constraints
+   *     and policies that will be returned from this call. Must be in one of the following forms:
    *     <ul>
    *       <li>`projects/{project_number}`
    *       <li>`projects/{project_id}`
@@ -561,7 +799,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves all of the `Policies` that exist on a particular resource.
+   * Retrieves all of the policies that exist on a particular resource.
    *
    * <p>Sample code:
    *
@@ -579,8 +817,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The target Cloud resource that parents the set of constraints and
-   *     policies that will be returned from this call. Must be in one of the following forms:
+   * @param parent Required. The target Google Cloud resource that parents the set of constraints
+   *     and policies that will be returned from this call. Must be in one of the following forms:
    *     <ul>
    *       <li>`projects/{project_number}`
    *       <li>`projects/{project_id}`
@@ -597,7 +835,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves all of the `Policies` that exist on a particular resource.
+   * Retrieves all of the policies that exist on a particular resource.
    *
    * <p>Sample code:
    *
@@ -629,7 +867,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves all of the `Policies` that exist on a particular resource.
+   * Retrieves all of the policies that exist on a particular resource.
    *
    * <p>Sample code:
    *
@@ -661,7 +899,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves all of the `Policies` that exist on a particular resource.
+   * Retrieves all of the policies that exist on a particular resource.
    *
    * <p>Sample code:
    *
@@ -699,10 +937,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a `Policy` on a resource.
+   * Gets a policy on a resource.
    *
-   * <p>If no `Policy` is set on the resource, NOT_FOUND is returned. The `etag` value can be used
-   * with `UpdatePolicy()` to update a `Policy` during read-modify-write.
+   * <p>If no policy is set on the resource, `NOT_FOUND` is returned. The `etag` value can be used
+   * with `UpdatePolicy()` to update a policy during read-modify-write.
    *
    * <p>Sample code:
    *
@@ -718,7 +956,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the policy. See `Policy` for naming requirements.
+   * @param name Required. Resource name of the policy. See
+   *     [Policy][google.cloud.orgpolicy.v2.Policy] for naming requirements.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getPolicy(PolicyName name) {
@@ -729,10 +968,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a `Policy` on a resource.
+   * Gets a policy on a resource.
    *
-   * <p>If no `Policy` is set on the resource, NOT_FOUND is returned. The `etag` value can be used
-   * with `UpdatePolicy()` to update a `Policy` during read-modify-write.
+   * <p>If no policy is set on the resource, `NOT_FOUND` is returned. The `etag` value can be used
+   * with `UpdatePolicy()` to update a policy during read-modify-write.
    *
    * <p>Sample code:
    *
@@ -748,7 +987,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the policy. See `Policy` for naming requirements.
+   * @param name Required. Resource name of the policy. See
+   *     [Policy][google.cloud.orgpolicy.v2.Policy] for naming requirements.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getPolicy(String name) {
@@ -758,10 +998,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a `Policy` on a resource.
+   * Gets a policy on a resource.
    *
-   * <p>If no `Policy` is set on the resource, NOT_FOUND is returned. The `etag` value can be used
-   * with `UpdatePolicy()` to update a `Policy` during read-modify-write.
+   * <p>If no policy is set on the resource, `NOT_FOUND` is returned. The `etag` value can be used
+   * with `UpdatePolicy()` to update a policy during read-modify-write.
    *
    * <p>Sample code:
    *
@@ -789,10 +1029,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a `Policy` on a resource.
+   * Gets a policy on a resource.
    *
-   * <p>If no `Policy` is set on the resource, NOT_FOUND is returned. The `etag` value can be used
-   * with `UpdatePolicy()` to update a `Policy` during read-modify-write.
+   * <p>If no policy is set on the resource, `NOT_FOUND` is returned. The `etag` value can be used
+   * with `UpdatePolicy()` to update a policy during read-modify-write.
    *
    * <p>Sample code:
    *
@@ -819,10 +1059,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the effective `Policy` on a resource. This is the result of merging `Policies` in the
-   * resource hierarchy and evaluating conditions. The returned `Policy` will not have an `etag` or
-   * `condition` set because it is a computed `Policy` across multiple resources. Subtrees of
-   * Resource Manager resource hierarchy with 'under:' prefix will not be expanded.
+   * Gets the effective policy on a resource. This is the result of merging policies in the resource
+   * hierarchy and evaluating conditions. The returned policy will not have an `etag` or `condition`
+   * set because it is an evaluated policy across multiple resources. Subtrees of Resource Manager
+   * resource hierarchy with 'under:' prefix will not be expanded.
    *
    * <p>Sample code:
    *
@@ -838,7 +1078,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The effective policy to compute. See `Policy` for naming rules.
+   * @param name Required. The effective policy to compute. See
+   *     [Policy][google.cloud.orgpolicy.v2.Policy] for naming requirements.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getEffectivePolicy(PolicyName name) {
@@ -851,10 +1092,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the effective `Policy` on a resource. This is the result of merging `Policies` in the
-   * resource hierarchy and evaluating conditions. The returned `Policy` will not have an `etag` or
-   * `condition` set because it is a computed `Policy` across multiple resources. Subtrees of
-   * Resource Manager resource hierarchy with 'under:' prefix will not be expanded.
+   * Gets the effective policy on a resource. This is the result of merging policies in the resource
+   * hierarchy and evaluating conditions. The returned policy will not have an `etag` or `condition`
+   * set because it is an evaluated policy across multiple resources. Subtrees of Resource Manager
+   * resource hierarchy with 'under:' prefix will not be expanded.
    *
    * <p>Sample code:
    *
@@ -870,7 +1111,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The effective policy to compute. See `Policy` for naming rules.
+   * @param name Required. The effective policy to compute. See
+   *     [Policy][google.cloud.orgpolicy.v2.Policy] for naming requirements.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getEffectivePolicy(String name) {
@@ -881,10 +1123,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the effective `Policy` on a resource. This is the result of merging `Policies` in the
-   * resource hierarchy and evaluating conditions. The returned `Policy` will not have an `etag` or
-   * `condition` set because it is a computed `Policy` across multiple resources. Subtrees of
-   * Resource Manager resource hierarchy with 'under:' prefix will not be expanded.
+   * Gets the effective policy on a resource. This is the result of merging policies in the resource
+   * hierarchy and evaluating conditions. The returned policy will not have an `etag` or `condition`
+   * set because it is an evaluated policy across multiple resources. Subtrees of Resource Manager
+   * resource hierarchy with 'under:' prefix will not be expanded.
    *
    * <p>Sample code:
    *
@@ -912,10 +1154,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the effective `Policy` on a resource. This is the result of merging `Policies` in the
-   * resource hierarchy and evaluating conditions. The returned `Policy` will not have an `etag` or
-   * `condition` set because it is a computed `Policy` across multiple resources. Subtrees of
-   * Resource Manager resource hierarchy with 'under:' prefix will not be expanded.
+   * Gets the effective policy on a resource. This is the result of merging policies in the resource
+   * hierarchy and evaluating conditions. The returned policy will not have an `etag` or `condition`
+   * set because it is an evaluated policy across multiple resources. Subtrees of Resource Manager
+   * resource hierarchy with 'under:' prefix will not be expanded.
    *
    * <p>Sample code:
    *
@@ -942,11 +1184,11 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Policy.
+   * Creates a policy.
    *
    * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not
    * exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the policy
-   * already exists on the given Cloud resource.
+   * already exists on the given Google Cloud resource.
    *
    * <p>Sample code:
    *
@@ -963,8 +1205,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The Cloud resource that will parent the new Policy. Must be in one of
-   *     the following forms:
+   * @param parent Required. The Google Cloud resource that will parent the new policy. Must be in
+   *     one of the following forms:
    *     <ul>
    *       <li>`projects/{project_number}`
    *       <li>`projects/{project_id}`
@@ -972,7 +1214,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *       <li>`organizations/{organization_id}`
    *     </ul>
    *
-   * @param policy Required. `Policy` to create.
+   * @param policy Required. Policy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy createPolicy(FolderName parent, Policy policy) {
@@ -986,11 +1228,11 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Policy.
+   * Creates a policy.
    *
    * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not
    * exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the policy
-   * already exists on the given Cloud resource.
+   * already exists on the given Google Cloud resource.
    *
    * <p>Sample code:
    *
@@ -1007,8 +1249,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The Cloud resource that will parent the new Policy. Must be in one of
-   *     the following forms:
+   * @param parent Required. The Google Cloud resource that will parent the new policy. Must be in
+   *     one of the following forms:
    *     <ul>
    *       <li>`projects/{project_number}`
    *       <li>`projects/{project_id}`
@@ -1016,7 +1258,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *       <li>`organizations/{organization_id}`
    *     </ul>
    *
-   * @param policy Required. `Policy` to create.
+   * @param policy Required. Policy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy createPolicy(OrganizationName parent, Policy policy) {
@@ -1030,11 +1272,11 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Policy.
+   * Creates a policy.
    *
    * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not
    * exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the policy
-   * already exists on the given Cloud resource.
+   * already exists on the given Google Cloud resource.
    *
    * <p>Sample code:
    *
@@ -1051,8 +1293,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The Cloud resource that will parent the new Policy. Must be in one of
-   *     the following forms:
+   * @param parent Required. The Google Cloud resource that will parent the new policy. Must be in
+   *     one of the following forms:
    *     <ul>
    *       <li>`projects/{project_number}`
    *       <li>`projects/{project_id}`
@@ -1060,7 +1302,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *       <li>`organizations/{organization_id}`
    *     </ul>
    *
-   * @param policy Required. `Policy` to create.
+   * @param policy Required. Policy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy createPolicy(ProjectName parent, Policy policy) {
@@ -1074,11 +1316,11 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Policy.
+   * Creates a policy.
    *
    * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not
    * exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the policy
-   * already exists on the given Cloud resource.
+   * already exists on the given Google Cloud resource.
    *
    * <p>Sample code:
    *
@@ -1095,8 +1337,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The Cloud resource that will parent the new Policy. Must be in one of
-   *     the following forms:
+   * @param parent Required. The Google Cloud resource that will parent the new policy. Must be in
+   *     one of the following forms:
    *     <ul>
    *       <li>`projects/{project_number}`
    *       <li>`projects/{project_id}`
@@ -1104,7 +1346,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *       <li>`organizations/{organization_id}`
    *     </ul>
    *
-   * @param policy Required. `Policy` to create.
+   * @param policy Required. Policy to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy createPolicy(String parent, Policy policy) {
@@ -1115,11 +1357,11 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Policy.
+   * Creates a policy.
    *
    * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not
    * exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the policy
-   * already exists on the given Cloud resource.
+   * already exists on the given Google Cloud resource.
    *
    * <p>Sample code:
    *
@@ -1148,11 +1390,11 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Policy.
+   * Creates a policy.
    *
    * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not
    * exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the policy
-   * already exists on the given Cloud resource.
+   * already exists on the given Google Cloud resource.
    *
    * <p>Sample code:
    *
@@ -1180,7 +1422,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a Policy.
+   * Updates a policy.
    *
    * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or the
    * policy do not exist. Returns a `google.rpc.Status` with `google.rpc.Code.ABORTED` if the etag
@@ -1202,7 +1444,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param policy Required. `Policy` to update.
+   * @param policy Required. Policy to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy updatePolicy(Policy policy) {
@@ -1212,7 +1454,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a Policy.
+   * Updates a policy.
    *
    * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or the
    * policy do not exist. Returns a `google.rpc.Status` with `google.rpc.Code.ABORTED` if the etag
@@ -1247,7 +1489,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a Policy.
+   * Updates a policy.
    *
    * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or the
    * policy do not exist. Returns a `google.rpc.Status` with `google.rpc.Code.ABORTED` if the etag
@@ -1281,10 +1523,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Policy.
+   * Deletes a policy.
    *
-   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or Org
-   * Policy does not exist.
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or
+   * organization policy does not exist.
    *
    * <p>Sample code:
    *
@@ -1300,7 +1542,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the policy to delete. See `Policy` for naming rules.
+   * @param name Required. Name of the policy to delete. See the policy entry for naming rules.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePolicy(PolicyName name) {
@@ -1311,10 +1553,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Policy.
+   * Deletes a policy.
    *
-   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or Org
-   * Policy does not exist.
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or
+   * organization policy does not exist.
    *
    * <p>Sample code:
    *
@@ -1330,7 +1572,7 @@ public class OrgPolicyClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the policy to delete. See `Policy` for naming rules.
+   * @param name Required. Name of the policy to delete. See the policy entry for naming rules.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePolicy(String name) {
@@ -1340,10 +1582,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Policy.
+   * Deletes a policy.
    *
-   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or Org
-   * Policy does not exist.
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or
+   * organization policy does not exist.
    *
    * <p>Sample code:
    *
@@ -1357,6 +1599,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *   DeletePolicyRequest request =
    *       DeletePolicyRequest.newBuilder()
    *           .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
+   *           .setEtag("etag3123477")
    *           .build();
    *   orgPolicyClient.deletePolicy(request);
    * }
@@ -1371,10 +1614,10 @@ public class OrgPolicyClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Policy.
+   * Deletes a policy.
    *
-   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or Org
-   * Policy does not exist.
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or
+   * organization policy does not exist.
    *
    * <p>Sample code:
    *
@@ -1388,6 +1631,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *   DeletePolicyRequest request =
    *       DeletePolicyRequest.newBuilder()
    *           .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
+   *           .setEtag("etag3123477")
    *           .build();
    *   ApiFuture<Empty> future = orgPolicyClient.deletePolicyCallable().futureCall(request);
    *   // Do something.
@@ -1397,6 +1641,684 @@ public class OrgPolicyClient implements BackgroundResource {
    */
   public final UnaryCallable<DeletePolicyRequest, Empty> deletePolicyCallable() {
     return stub.deletePolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a custom constraint.
+   *
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the organization does not
+   * exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the constraint
+   * already exists on the given organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   CustomConstraint customConstraint = CustomConstraint.newBuilder().build();
+   *   CustomConstraint response = orgPolicyClient.createCustomConstraint(parent, customConstraint);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Must be in the following form:
+   *     <ul>
+   *       <li>`organizations/{organization_id}`
+   *     </ul>
+   *
+   * @param customConstraint Required. Custom constraint to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomConstraint createCustomConstraint(
+      OrganizationName parent, CustomConstraint customConstraint) {
+    CreateCustomConstraintRequest request =
+        CreateCustomConstraintRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCustomConstraint(customConstraint)
+            .build();
+    return createCustomConstraint(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a custom constraint.
+   *
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the organization does not
+   * exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the constraint
+   * already exists on the given organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
+   *   CustomConstraint customConstraint = CustomConstraint.newBuilder().build();
+   *   CustomConstraint response = orgPolicyClient.createCustomConstraint(parent, customConstraint);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Must be in the following form:
+   *     <ul>
+   *       <li>`organizations/{organization_id}`
+   *     </ul>
+   *
+   * @param customConstraint Required. Custom constraint to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomConstraint createCustomConstraint(
+      String parent, CustomConstraint customConstraint) {
+    CreateCustomConstraintRequest request =
+        CreateCustomConstraintRequest.newBuilder()
+            .setParent(parent)
+            .setCustomConstraint(customConstraint)
+            .build();
+    return createCustomConstraint(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a custom constraint.
+   *
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the organization does not
+   * exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the constraint
+   * already exists on the given organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   CreateCustomConstraintRequest request =
+   *       CreateCustomConstraintRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setCustomConstraint(CustomConstraint.newBuilder().build())
+   *           .build();
+   *   CustomConstraint response = orgPolicyClient.createCustomConstraint(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomConstraint createCustomConstraint(CreateCustomConstraintRequest request) {
+    return createCustomConstraintCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a custom constraint.
+   *
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the organization does not
+   * exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the constraint
+   * already exists on the given organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   CreateCustomConstraintRequest request =
+   *       CreateCustomConstraintRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setCustomConstraint(CustomConstraint.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CustomConstraint> future =
+   *       orgPolicyClient.createCustomConstraintCallable().futureCall(request);
+   *   // Do something.
+   *   CustomConstraint response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCustomConstraintRequest, CustomConstraint>
+      createCustomConstraintCallable() {
+    return stub.createCustomConstraintCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a custom constraint.
+   *
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not
+   * exist.
+   *
+   * <p>Note: the supplied policy will perform a full overwrite of all fields.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   CustomConstraint customConstraint = CustomConstraint.newBuilder().build();
+   *   CustomConstraint response = orgPolicyClient.updateCustomConstraint(customConstraint);
+   * }
+   * }</pre>
+   *
+   * @param customConstraint Required. `CustomConstraint` to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomConstraint updateCustomConstraint(CustomConstraint customConstraint) {
+    UpdateCustomConstraintRequest request =
+        UpdateCustomConstraintRequest.newBuilder().setCustomConstraint(customConstraint).build();
+    return updateCustomConstraint(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a custom constraint.
+   *
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not
+   * exist.
+   *
+   * <p>Note: the supplied policy will perform a full overwrite of all fields.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   UpdateCustomConstraintRequest request =
+   *       UpdateCustomConstraintRequest.newBuilder()
+   *           .setCustomConstraint(CustomConstraint.newBuilder().build())
+   *           .build();
+   *   CustomConstraint response = orgPolicyClient.updateCustomConstraint(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomConstraint updateCustomConstraint(UpdateCustomConstraintRequest request) {
+    return updateCustomConstraintCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a custom constraint.
+   *
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not
+   * exist.
+   *
+   * <p>Note: the supplied policy will perform a full overwrite of all fields.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   UpdateCustomConstraintRequest request =
+   *       UpdateCustomConstraintRequest.newBuilder()
+   *           .setCustomConstraint(CustomConstraint.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CustomConstraint> future =
+   *       orgPolicyClient.updateCustomConstraintCallable().futureCall(request);
+   *   // Do something.
+   *   CustomConstraint response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCustomConstraintRequest, CustomConstraint>
+      updateCustomConstraintCallable() {
+    return stub.updateCustomConstraintCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a custom constraint.
+   *
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom constraint does
+   * not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   CustomConstraintName name = CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]");
+   *   CustomConstraint response = orgPolicyClient.getCustomConstraint(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the custom constraint. See the custom constraint entry
+   *     for naming requirements.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomConstraint getCustomConstraint(CustomConstraintName name) {
+    GetCustomConstraintRequest request =
+        GetCustomConstraintRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getCustomConstraint(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a custom constraint.
+   *
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom constraint does
+   * not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   String name = CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString();
+   *   CustomConstraint response = orgPolicyClient.getCustomConstraint(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the custom constraint. See the custom constraint entry
+   *     for naming requirements.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomConstraint getCustomConstraint(String name) {
+    GetCustomConstraintRequest request =
+        GetCustomConstraintRequest.newBuilder().setName(name).build();
+    return getCustomConstraint(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a custom constraint.
+   *
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom constraint does
+   * not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   GetCustomConstraintRequest request =
+   *       GetCustomConstraintRequest.newBuilder()
+   *           .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+   *           .build();
+   *   CustomConstraint response = orgPolicyClient.getCustomConstraint(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomConstraint getCustomConstraint(GetCustomConstraintRequest request) {
+    return getCustomConstraintCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a custom constraint.
+   *
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom constraint does
+   * not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   GetCustomConstraintRequest request =
+   *       GetCustomConstraintRequest.newBuilder()
+   *           .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+   *           .build();
+   *   ApiFuture<CustomConstraint> future =
+   *       orgPolicyClient.getCustomConstraintCallable().futureCall(request);
+   *   // Do something.
+   *   CustomConstraint response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetCustomConstraintRequest, CustomConstraint>
+      getCustomConstraintCallable() {
+    return stub.getCustomConstraintCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves all of the custom constraints that exist on a particular organization resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   for (CustomConstraint element : orgPolicyClient.listCustomConstraints(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The target Google Cloud resource that parents the set of custom
+   *     constraints that will be returned from this call. Must be in one of the following forms:
+   *     <ul>
+   *       <li>`organizations/{organization_id}`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomConstraintsPagedResponse listCustomConstraints(OrganizationName parent) {
+    ListCustomConstraintsRequest request =
+        ListCustomConstraintsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCustomConstraints(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves all of the custom constraints that exist on a particular organization resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
+   *   for (CustomConstraint element : orgPolicyClient.listCustomConstraints(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The target Google Cloud resource that parents the set of custom
+   *     constraints that will be returned from this call. Must be in one of the following forms:
+   *     <ul>
+   *       <li>`organizations/{organization_id}`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomConstraintsPagedResponse listCustomConstraints(String parent) {
+    ListCustomConstraintsRequest request =
+        ListCustomConstraintsRequest.newBuilder().setParent(parent).build();
+    return listCustomConstraints(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves all of the custom constraints that exist on a particular organization resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   ListCustomConstraintsRequest request =
+   *       ListCustomConstraintsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (CustomConstraint element : orgPolicyClient.listCustomConstraints(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomConstraintsPagedResponse listCustomConstraints(
+      ListCustomConstraintsRequest request) {
+    return listCustomConstraintsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves all of the custom constraints that exist on a particular organization resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   ListCustomConstraintsRequest request =
+   *       ListCustomConstraintsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<CustomConstraint> future =
+   *       orgPolicyClient.listCustomConstraintsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (CustomConstraint element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCustomConstraintsRequest, ListCustomConstraintsPagedResponse>
+      listCustomConstraintsPagedCallable() {
+    return stub.listCustomConstraintsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves all of the custom constraints that exist on a particular organization resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   ListCustomConstraintsRequest request =
+   *       ListCustomConstraintsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListCustomConstraintsResponse response =
+   *         orgPolicyClient.listCustomConstraintsCallable().call(request);
+   *     for (CustomConstraint element : response.getCustomConstraintsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCustomConstraintsRequest, ListCustomConstraintsResponse>
+      listCustomConstraintsCallable() {
+    return stub.listCustomConstraintsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a custom constraint.
+   *
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not
+   * exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   CustomConstraintName name = CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]");
+   *   orgPolicyClient.deleteCustomConstraint(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the custom constraint to delete. See the custom constraint entry
+   *     for naming rules.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCustomConstraint(CustomConstraintName name) {
+    DeleteCustomConstraintRequest request =
+        DeleteCustomConstraintRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteCustomConstraint(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a custom constraint.
+   *
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not
+   * exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   String name = CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString();
+   *   orgPolicyClient.deleteCustomConstraint(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the custom constraint to delete. See the custom constraint entry
+   *     for naming rules.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCustomConstraint(String name) {
+    DeleteCustomConstraintRequest request =
+        DeleteCustomConstraintRequest.newBuilder().setName(name).build();
+    deleteCustomConstraint(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a custom constraint.
+   *
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not
+   * exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   DeleteCustomConstraintRequest request =
+   *       DeleteCustomConstraintRequest.newBuilder()
+   *           .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+   *           .build();
+   *   orgPolicyClient.deleteCustomConstraint(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCustomConstraint(DeleteCustomConstraintRequest request) {
+    deleteCustomConstraintCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a custom constraint.
+   *
+   * <p>Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not
+   * exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
+   *   DeleteCustomConstraintRequest request =
+   *       DeleteCustomConstraintRequest.newBuilder()
+   *           .setName(CustomConstraintName.of("[ORGANIZATION]", "[CUSTOM_CONSTRAINT]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       orgPolicyClient.deleteCustomConstraintCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteCustomConstraintRequest, Empty>
+      deleteCustomConstraintCallable() {
+    return stub.deleteCustomConstraintCallable();
   }
 
   @Override
@@ -1578,6 +2500,90 @@ public class OrgPolicyClient implements BackgroundResource {
     protected ListPoliciesFixedSizeCollection createCollection(
         List<ListPoliciesPage> pages, int collectionSize) {
       return new ListPoliciesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListCustomConstraintsPagedResponse
+      extends AbstractPagedListResponse<
+          ListCustomConstraintsRequest,
+          ListCustomConstraintsResponse,
+          CustomConstraint,
+          ListCustomConstraintsPage,
+          ListCustomConstraintsFixedSizeCollection> {
+
+    public static ApiFuture<ListCustomConstraintsPagedResponse> createAsync(
+        PageContext<ListCustomConstraintsRequest, ListCustomConstraintsResponse, CustomConstraint>
+            context,
+        ApiFuture<ListCustomConstraintsResponse> futureResponse) {
+      ApiFuture<ListCustomConstraintsPage> futurePage =
+          ListCustomConstraintsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListCustomConstraintsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListCustomConstraintsPagedResponse(ListCustomConstraintsPage page) {
+      super(page, ListCustomConstraintsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListCustomConstraintsPage
+      extends AbstractPage<
+          ListCustomConstraintsRequest,
+          ListCustomConstraintsResponse,
+          CustomConstraint,
+          ListCustomConstraintsPage> {
+
+    private ListCustomConstraintsPage(
+        PageContext<ListCustomConstraintsRequest, ListCustomConstraintsResponse, CustomConstraint>
+            context,
+        ListCustomConstraintsResponse response) {
+      super(context, response);
+    }
+
+    private static ListCustomConstraintsPage createEmptyPage() {
+      return new ListCustomConstraintsPage(null, null);
+    }
+
+    @Override
+    protected ListCustomConstraintsPage createPage(
+        PageContext<ListCustomConstraintsRequest, ListCustomConstraintsResponse, CustomConstraint>
+            context,
+        ListCustomConstraintsResponse response) {
+      return new ListCustomConstraintsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListCustomConstraintsPage> createPageAsync(
+        PageContext<ListCustomConstraintsRequest, ListCustomConstraintsResponse, CustomConstraint>
+            context,
+        ApiFuture<ListCustomConstraintsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListCustomConstraintsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListCustomConstraintsRequest,
+          ListCustomConstraintsResponse,
+          CustomConstraint,
+          ListCustomConstraintsPage,
+          ListCustomConstraintsFixedSizeCollection> {
+
+    private ListCustomConstraintsFixedSizeCollection(
+        List<ListCustomConstraintsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListCustomConstraintsFixedSizeCollection createEmptyCollection() {
+      return new ListCustomConstraintsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListCustomConstraintsFixedSizeCollection createCollection(
+        List<ListCustomConstraintsPage> pages, int collectionSize) {
+      return new ListCustomConstraintsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

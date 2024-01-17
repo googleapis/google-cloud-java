@@ -18,7 +18,15 @@
 
 package com.google.cloud.netapp.v1;
 
-/** Protobuf enum {@code google.cloud.netapp.v1.Protocols} */
+/**
+ *
+ *
+ * <pre>
+ * Protocols is an enum of all the supported network protocols for a volume.
+ * </pre>
+ *
+ * Protobuf enum {@code google.cloud.netapp.v1.Protocols}
+ */
 public enum Protocols implements com.google.protobuf.ProtocolMessageEnum {
   /**
    *

@@ -66,5 +66,48 @@ public interface RestoreParametersOrBuilder
    */
   com.google.protobuf.ByteString getSourceSnapshotBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Full name of the backup resource.
+   * Format:
+   * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+   * </pre>
+   *
+   * <code>string source_backup = 2;</code>
+   *
+   * @return Whether the sourceBackup field is set.
+   */
+  boolean hasSourceBackup();
+  /**
+   *
+   *
+   * <pre>
+   * Full name of the backup resource.
+   * Format:
+   * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+   * </pre>
+   *
+   * <code>string source_backup = 2;</code>
+   *
+   * @return The sourceBackup.
+   */
+  java.lang.String getSourceBackup();
+  /**
+   *
+   *
+   * <pre>
+   * Full name of the backup resource.
+   * Format:
+   * projects/{project}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}
+   * </pre>
+   *
+   * <code>string source_backup = 2;</code>
+   *
+   * @return The bytes for sourceBackup.
+   */
+  com.google.protobuf.ByteString getSourceBackupBytes();
+
   com.google.cloud.netapp.v1.RestoreParameters.SourceCase getSourceCase();
 }

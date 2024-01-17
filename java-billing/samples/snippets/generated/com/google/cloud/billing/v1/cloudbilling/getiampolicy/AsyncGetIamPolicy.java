@@ -39,7 +39,7 @@ public class AsyncGetIamPolicy {
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+              .setResource(BillingAccountName.ofBillingAccountName("[BILLING_ACCOUNT]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       ApiFuture<Policy> future = cloudBillingClient.getIamPolicyCallable().futureCall(request);

@@ -35,6 +35,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListPublicDelegatedPrefixesRequest;
+import com.google.cloud.compute.v1.AnnouncePublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.DeletePublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.GetPublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.InsertPublicDelegatedPrefixeRequest;
@@ -45,6 +46,7 @@ import com.google.cloud.compute.v1.PatchPublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.PublicDelegatedPrefix;
 import com.google.cloud.compute.v1.PublicDelegatedPrefixAggregatedList;
 import com.google.cloud.compute.v1.PublicDelegatedPrefixList;
+import com.google.cloud.compute.v1.WithdrawPublicDelegatedPrefixeRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -115,6 +117,12 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                                   "returnPartialSuccess",
                                   request.getReturnPartialSuccess());
                             }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -124,6 +132,60 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                       .setDefaultInstance(PublicDelegatedPrefixAggregatedList.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<AnnouncePublicDelegatedPrefixeRequest, Operation>
+      announceMethodDescriptor =
+          ApiMethodDescriptor.<AnnouncePublicDelegatedPrefixeRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.PublicDelegatedPrefixes/Announce")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AnnouncePublicDelegatedPrefixeRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/publicDelegatedPrefixes/{publicDelegatedPrefix}/announce",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AnnouncePublicDelegatedPrefixeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields,
+                                "publicDelegatedPrefix",
+                                request.getPublicDelegatedPrefix());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AnnouncePublicDelegatedPrefixeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (AnnouncePublicDelegatedPrefixeRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<DeletePublicDelegatedPrefixeRequest, Operation>
@@ -389,12 +451,69 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                   })
               .build();
 
+  private static final ApiMethodDescriptor<WithdrawPublicDelegatedPrefixeRequest, Operation>
+      withdrawMethodDescriptor =
+          ApiMethodDescriptor.<WithdrawPublicDelegatedPrefixeRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.PublicDelegatedPrefixes/Withdraw")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<WithdrawPublicDelegatedPrefixeRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/publicDelegatedPrefixes/{publicDelegatedPrefix}/withdraw",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<WithdrawPublicDelegatedPrefixeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields,
+                                "publicDelegatedPrefix",
+                                request.getPublicDelegatedPrefix());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<WithdrawPublicDelegatedPrefixeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (WithdrawPublicDelegatedPrefixeRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<
           AggregatedListPublicDelegatedPrefixesRequest, PublicDelegatedPrefixAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<
           AggregatedListPublicDelegatedPrefixesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable;
+  private final UnaryCallable<AnnouncePublicDelegatedPrefixeRequest, Operation> announceCallable;
+  private final OperationCallable<AnnouncePublicDelegatedPrefixeRequest, Operation, Operation>
+      announceOperationCallable;
   private final UnaryCallable<DeletePublicDelegatedPrefixeRequest, Operation> deleteCallable;
   private final OperationCallable<DeletePublicDelegatedPrefixeRequest, Operation, Operation>
       deleteOperationCallable;
@@ -409,6 +528,9 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
   private final UnaryCallable<PatchPublicDelegatedPrefixeRequest, Operation> patchCallable;
   private final OperationCallable<PatchPublicDelegatedPrefixeRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<WithdrawPublicDelegatedPrefixeRequest, Operation> withdrawCallable;
+  private final OperationCallable<WithdrawPublicDelegatedPrefixeRequest, Operation, Operation>
+      withdrawOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
@@ -468,6 +590,22 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<AnnouncePublicDelegatedPrefixeRequest, Operation>
+        announceTransportSettings =
+            HttpJsonCallSettings.<AnnouncePublicDelegatedPrefixeRequest, Operation>newBuilder()
+                .setMethodDescriptor(announceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add(
+                          "public_delegated_prefix",
+                          String.valueOf(request.getPublicDelegatedPrefix()));
+                      builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
                 .build();
@@ -544,6 +682,22 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<WithdrawPublicDelegatedPrefixeRequest, Operation>
+        withdrawTransportSettings =
+            HttpJsonCallSettings.<WithdrawPublicDelegatedPrefixeRequest, Operation>newBuilder()
+                .setMethodDescriptor(withdrawMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add(
+                          "public_delegated_prefix",
+                          String.valueOf(request.getPublicDelegatedPrefix()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
+                .build();
 
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
@@ -551,6 +705,15 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
     this.aggregatedListPagedCallable =
         callableFactory.createPagedCallable(
             aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
+    this.announceCallable =
+        callableFactory.createUnaryCallable(
+            announceTransportSettings, settings.announceSettings(), clientContext);
+    this.announceOperationCallable =
+        callableFactory.createOperationCallable(
+            announceTransportSettings,
+            settings.announceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
@@ -587,6 +750,15 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.withdrawCallable =
+        callableFactory.createUnaryCallable(
+            withdrawTransportSettings, settings.withdrawSettings(), clientContext);
+    this.withdrawOperationCallable =
+        callableFactory.createOperationCallable(
+            withdrawTransportSettings,
+            settings.withdrawOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -596,11 +768,13 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(aggregatedListMethodDescriptor);
+    methodDescriptors.add(announceMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(withdrawMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -615,6 +789,17 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
   public UnaryCallable<AggregatedListPublicDelegatedPrefixesRequest, AggregatedListPagedResponse>
       aggregatedListPagedCallable() {
     return aggregatedListPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<AnnouncePublicDelegatedPrefixeRequest, Operation> announceCallable() {
+    return announceCallable;
+  }
+
+  @Override
+  public OperationCallable<AnnouncePublicDelegatedPrefixeRequest, Operation, Operation>
+      announceOperationCallable() {
+    return announceOperationCallable;
   }
 
   @Override
@@ -664,6 +849,17 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
   public OperationCallable<PatchPublicDelegatedPrefixeRequest, Operation, Operation>
       patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<WithdrawPublicDelegatedPrefixeRequest, Operation> withdrawCallable() {
+    return withdrawCallable;
+  }
+
+  @Override
+  public OperationCallable<WithdrawPublicDelegatedPrefixeRequest, Operation, Operation>
+      withdrawOperationCallable() {
+    return withdrawOperationCallable;
   }
 
   @Override

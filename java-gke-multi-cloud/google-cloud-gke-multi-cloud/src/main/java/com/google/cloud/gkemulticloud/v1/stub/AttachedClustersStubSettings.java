@@ -51,6 +51,8 @@ import com.google.cloud.gkemulticloud.v1.AttachedCluster;
 import com.google.cloud.gkemulticloud.v1.AttachedServerConfig;
 import com.google.cloud.gkemulticloud.v1.CreateAttachedClusterRequest;
 import com.google.cloud.gkemulticloud.v1.DeleteAttachedClusterRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse;
 import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestResponse;
 import com.google.cloud.gkemulticloud.v1.GetAttachedClusterRequest;
@@ -146,6 +148,9 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
           GenerateAttachedClusterInstallManifestRequest,
           GenerateAttachedClusterInstallManifestResponse>
       generateAttachedClusterInstallManifestSettings;
+  private final UnaryCallSettings<
+          GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+      generateAttachedClusterAgentTokenSettings;
 
   private static final PagedListDescriptor<
           ListAttachedClustersRequest, ListAttachedClustersResponse, AttachedCluster>
@@ -291,6 +296,13 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
     return generateAttachedClusterInstallManifestSettings;
   }
 
+  /** Returns the object with the settings used for calls to generateAttachedClusterAgentToken. */
+  public UnaryCallSettings<
+          GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+      generateAttachedClusterAgentTokenSettings() {
+    return generateAttachedClusterAgentTokenSettings;
+  }
+
   public AttachedClustersStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -305,6 +317,12 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "gkemulticloud";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -414,6 +432,8 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
     getAttachedServerConfigSettings = settingsBuilder.getAttachedServerConfigSettings().build();
     generateAttachedClusterInstallManifestSettings =
         settingsBuilder.generateAttachedClusterInstallManifestSettings().build();
+    generateAttachedClusterAgentTokenSettings =
+        settingsBuilder.generateAttachedClusterAgentTokenSettings().build();
   }
 
   /** Builder for AttachedClustersStubSettings. */
@@ -452,6 +472,9 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
             GenerateAttachedClusterInstallManifestRequest,
             GenerateAttachedClusterInstallManifestResponse>
         generateAttachedClusterInstallManifestSettings;
+    private final UnaryCallSettings.Builder<
+            GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+        generateAttachedClusterAgentTokenSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -514,6 +537,7 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
       getAttachedServerConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateAttachedClusterInstallManifestSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
+      generateAttachedClusterAgentTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -524,7 +548,8 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
               listAttachedClustersSettings,
               deleteAttachedClusterSettings,
               getAttachedServerConfigSettings,
-              generateAttachedClusterInstallManifestSettings);
+              generateAttachedClusterInstallManifestSettings,
+              generateAttachedClusterAgentTokenSettings);
       initDefaults(this);
     }
 
@@ -548,6 +573,8 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
       getAttachedServerConfigSettings = settings.getAttachedServerConfigSettings.toBuilder();
       generateAttachedClusterInstallManifestSettings =
           settings.generateAttachedClusterInstallManifestSettings.toBuilder();
+      generateAttachedClusterAgentTokenSettings =
+          settings.generateAttachedClusterAgentTokenSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -558,7 +585,8 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
               listAttachedClustersSettings,
               deleteAttachedClusterSettings,
               getAttachedServerConfigSettings,
-              generateAttachedClusterInstallManifestSettings);
+              generateAttachedClusterInstallManifestSettings,
+              generateAttachedClusterAgentTokenSettings);
     }
 
     private static Builder createDefault() {
@@ -625,6 +653,11 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
 
       builder
           .generateAttachedClusterInstallManifestSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .generateAttachedClusterAgentTokenSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -831,6 +864,13 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
             GenerateAttachedClusterInstallManifestResponse>
         generateAttachedClusterInstallManifestSettings() {
       return generateAttachedClusterInstallManifestSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to generateAttachedClusterAgentToken. */
+    public UnaryCallSettings.Builder<
+            GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+        generateAttachedClusterAgentTokenSettings() {
+      return generateAttachedClusterAgentTokenSettings;
     }
 
     @Override

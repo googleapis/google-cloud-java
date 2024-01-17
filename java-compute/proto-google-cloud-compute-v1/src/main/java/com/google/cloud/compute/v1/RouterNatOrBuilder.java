@@ -27,7 +27,7 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+   * The network tier to use when automatically reserving NAT IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, then the current project-level default tier is used.
    * Check the AutoNetworkTier enum for the list of possible values.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+   * The network tier to use when automatically reserving NAT IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, then the current project-level default tier is used.
    * Check the AutoNetworkTier enum for the list of possible values.
    * </pre>
    *
@@ -53,7 +53,7 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * The network tier to use when automatically reserving IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, PREMIUM tier will be used.
+   * The network tier to use when automatically reserving NAT IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, then the current project-level default tier is used.
    * Check the AutoNetworkTier enum for the list of possible values.
    * </pre>
    *
@@ -668,6 +668,46 @@ public interface RouterNatOrBuilder
    * @return The tcpTransitoryIdleTimeoutSec.
    */
   int getTcpTransitoryIdleTimeoutSec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether this NAT is used for public or private IP translation. If unspecified, it defaults to PUBLIC.
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether this NAT is used for public or private IP translation. If unspecified, it defaults to PUBLIC.
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return The type.
+   */
+  java.lang.String getType();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether this NAT is used for public or private IP translation. If unspecified, it defaults to PUBLIC.
+   * Check the Type enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string type = 3575610;</code>
+   *
+   * @return The bytes for type.
+   */
+  com.google.protobuf.ByteString getTypeBytes();
 
   /**
    *

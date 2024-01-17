@@ -38,6 +38,7 @@ public class SyncDeletePolicy {
       DeletePolicyRequest request =
           DeletePolicyRequest.newBuilder()
               .setName(PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString())
+              .setEtag("etag3123477")
               .build();
       orgPolicyClient.deletePolicy(request);
     }

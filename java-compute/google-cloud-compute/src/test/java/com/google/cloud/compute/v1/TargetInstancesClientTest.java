@@ -146,6 +146,8 @@ public class TargetInstancesClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -153,6 +155,8 @@ public class TargetInstancesClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -215,6 +219,7 @@ public class TargetInstancesClientTest {
             .setName("name3373707")
             .setNatPolicy("natPolicy-1730208333")
             .setNetwork("network1843485230")
+            .setSecurityPolicy("securityPolicy-788621166")
             .setSelfLink("selfLink1191800166")
             .setZone("zone3744684")
             .build();
@@ -273,6 +278,8 @@ public class TargetInstancesClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -280,6 +287,8 @@ public class TargetInstancesClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -379,6 +388,89 @@ public class TargetInstancesClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void setSecurityPolicyTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String targetInstance = "targetInstance-7356";
+    SecurityPolicyReference securityPolicyReferenceResource =
+        SecurityPolicyReference.newBuilder().build();
+
+    Operation actualResponse =
+        client
+            .setSecurityPolicyAsync(project, zone, targetInstance, securityPolicyReferenceResource)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setSecurityPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String targetInstance = "targetInstance-7356";
+      SecurityPolicyReference securityPolicyReferenceResource =
+          SecurityPolicyReference.newBuilder().build();
+      client
+          .setSecurityPolicyAsync(project, zone, targetInstance, securityPolicyReferenceResource)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 }

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.22.0 (2024-01-10)
+
+### Features
+
+* adding project level methods to advisorynotifications.googleapis.com ([#10123](https://github.com/googleapis/google-cloud-java/issues/10123)) ([1b5a49d](https://github.com/googleapis/google-cloud-java/commit/1b5a49dd2691f47b9a8d4bc8001d863008be78de))
+
+
+
 ## 0.21.0 (2023-12-12)
 
 * No change

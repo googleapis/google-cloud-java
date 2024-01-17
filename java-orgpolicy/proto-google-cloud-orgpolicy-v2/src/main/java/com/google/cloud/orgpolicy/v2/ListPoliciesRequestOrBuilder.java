@@ -27,9 +27,10 @@ public interface ListPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The target Cloud resource that parents the set of constraints and
-   * policies that will be returned from this call. Must be in one of the
-   * following forms:
+   * Required. The target Google Cloud resource that parents the set of
+   * constraints and policies that will be returned from this call. Must be in
+   * one of the following forms:
+   *
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`
@@ -47,9 +48,10 @@ public interface ListPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The target Cloud resource that parents the set of constraints and
-   * policies that will be returned from this call. Must be in one of the
-   * following forms:
+   * Required. The target Google Cloud resource that parents the set of
+   * constraints and policies that will be returned from this call. Must be in
+   * one of the following forms:
+   *
    * * `projects/{project_number}`
    * * `projects/{project_id}`
    * * `folders/{folder_id}`

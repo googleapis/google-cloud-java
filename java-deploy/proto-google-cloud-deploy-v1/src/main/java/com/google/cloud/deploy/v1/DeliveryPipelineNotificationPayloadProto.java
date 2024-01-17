@@ -43,13 +43,14 @@ public final class DeliveryPipelineNotificationPayloadProto {
       "\nBgoogle/cloud/deploy/v1/deliverypipelin"
           + "e_notification_payload.proto\022\026google.clo"
           + "ud.deploy.v1\032&google/cloud/deploy/v1/log"
-          + "_enums.proto\"{\n!DeliveryPipelineNotifica"
-          + "tionEvent\022\017\n\007message\030\001 \001(\t\022\031\n\021delivery_p"
-          + "ipeline\030\002 \001(\t\022*\n\004type\030\003 \001(\0162\034.google.clo"
-          + "ud.deploy.v1.TypeB|\n\032com.google.cloud.de"
-          + "ploy.v1B(DeliveryPipelineNotificationPay"
-          + "loadProtoP\001Z2cloud.google.com/go/deploy/"
-          + "apiv1/deploypb;deploypbb\006proto3"
+          + "_enums.proto\"\221\001\n!DeliveryPipelineNotific"
+          + "ationEvent\022\017\n\007message\030\001 \001(\t\022\024\n\014pipeline_"
+          + "uid\030\004 \001(\t\022\031\n\021delivery_pipeline\030\002 \001(\t\022*\n\004"
+          + "type\030\003 \001(\0162\034.google.cloud.deploy.v1.Type"
+          + "B|\n\032com.google.cloud.deploy.v1B(Delivery"
+          + "PipelineNotificationPayloadProtoP\001Z2clou"
+          + "d.google.com/go/deploy/apiv1/deploypb;de"
+          + "ploypbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -63,7 +64,7 @@ public final class DeliveryPipelineNotificationPayloadProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_DeliveryPipelineNotificationEvent_descriptor,
             new java.lang.String[] {
-              "Message", "DeliveryPipeline", "Type",
+              "Message", "PipelineUid", "DeliveryPipeline", "Type",
             });
     com.google.cloud.deploy.v1.LogEnumsProto.getDescriptor();
   }

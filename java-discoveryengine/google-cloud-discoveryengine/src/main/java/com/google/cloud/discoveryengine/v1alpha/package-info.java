@@ -212,6 +212,7 @@
  *           .setPageToken("pageToken873572522")
  *           .setOffset(-1019779949)
  *           .setFilter("filter-1274492040")
+ *           .setCanonicalFilter("canonicalFilter-722283124")
  *           .setOrderBy("orderBy-1207110587")
  *           .setUserInfo(UserInfo.newBuilder().build())
  *           .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
@@ -232,6 +233,33 @@
  * }
  * }</pre>
  *
+ * <p>======================= SearchTuningServiceClient =======================
+ *
+ * <p>Service Description: Service for search tuning.
+ *
+ * <p>Sample for SearchTuningServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SearchTuningServiceClient searchTuningServiceClient = SearchTuningServiceClient.create()) {
+ *   TrainCustomModelRequest request =
+ *       TrainCustomModelRequest.newBuilder()
+ *           .setDataStore(
+ *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+ *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+ *                   .toString())
+ *           .setModelType("modelType-2010627581")
+ *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
+ *           .build();
+ *   TrainCustomModelResponse response =
+ *       searchTuningServiceClient.trainCustomModelAsync(request).get();
+ * }
+ * }</pre>
+ *
  * <p>======================= SiteSearchEngineServiceClient =======================
  *
  * <p>Service Description: Service for managing site search related resources.
@@ -246,15 +274,10 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
  *     SiteSearchEngineServiceClient.create()) {
- *   RecrawlUrisRequest request =
- *       RecrawlUrisRequest.newBuilder()
- *           .setSiteSearchEngine(
- *               SiteSearchEngineName.ofProjectLocationDataStoreName(
- *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
- *                   .toString())
- *           .addAllUris(new ArrayList<String>())
- *           .build();
- *   RecrawlUrisResponse response = siteSearchEngineServiceClient.recrawlUrisAsync(request).get();
+ *   SiteSearchEngineName name =
+ *       SiteSearchEngineName.ofProjectLocationDataStoreName(
+ *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+ *   SiteSearchEngine response = siteSearchEngineServiceClient.getSiteSearchEngine(name);
  * }
  * }</pre>
  *

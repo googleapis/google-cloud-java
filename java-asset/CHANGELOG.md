@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.37.0 (2024-01-10)
+
+### Features
+
+* added new resource references to fields in AnalyzeMoveRequest ([#10138](https://github.com/googleapis/google-cloud-java/issues/10138)) ([66f99c3](https://github.com/googleapis/google-cloud-java/commit/66f99c324e85cea549f008a2a22cc3e137dcabf0))
+
+
+
 ## 3.36.0 (2023-12-12)
 
 * No change

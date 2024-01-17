@@ -578,7 +578,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Required. The Kubernetes distribution of the underlying attached cluster.
    *
-   * Supported values: ["eks", "aks"].
+   * Supported values: ["eks", "aks", "generic"].
    * </pre>
    *
    * <code>string distribution = 16 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -603,7 +603,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Required. The Kubernetes distribution of the underlying attached cluster.
    *
-   * Supported values: ["eks", "aks"].
+   * Supported values: ["eks", "aks", "generic"].
    * </pre>
    *
    * <code>string distribution = 16 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1495,6 +1495,119 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         : monitoringConfig_;
   }
 
+  public static final int PROXY_CONFIG_FIELD_NUMBER = 24;
+  private com.google.cloud.gkemulticloud.v1.AttachedProxyConfig proxyConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Proxy configuration for outbound HTTP(S) traffic.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the proxyConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasProxyConfig() {
+    return proxyConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Proxy configuration for outbound HTTP(S) traffic.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The proxyConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AttachedProxyConfig getProxyConfig() {
+    return proxyConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.getDefaultInstance()
+        : proxyConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Proxy configuration for outbound HTTP(S) traffic.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AttachedProxyConfigOrBuilder getProxyConfigOrBuilder() {
+    return proxyConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.getDefaultInstance()
+        : proxyConfig_;
+  }
+
+  public static final int BINARY_AUTHORIZATION_FIELD_NUMBER = 25;
+  private com.google.cloud.gkemulticloud.v1.BinaryAuthorization binaryAuthorization_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binary Authorization configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the binaryAuthorization field is set.
+   */
+  @java.lang.Override
+  public boolean hasBinaryAuthorization() {
+    return binaryAuthorization_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binary Authorization configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The binaryAuthorization.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.BinaryAuthorization getBinaryAuthorization() {
+    return binaryAuthorization_ == null
+        ? com.google.cloud.gkemulticloud.v1.BinaryAuthorization.getDefaultInstance()
+        : binaryAuthorization_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binary Authorization configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.BinaryAuthorizationOrBuilder
+      getBinaryAuthorizationOrBuilder() {
+    return binaryAuthorization_ == null
+        ? com.google.cloud.gkemulticloud.v1.BinaryAuthorization.getDefaultInstance()
+        : binaryAuthorization_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1568,6 +1681,12 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     }
     if (monitoringConfig_ != null) {
       output.writeMessage(23, getMonitoringConfig());
+    }
+    if (proxyConfig_ != null) {
+      output.writeMessage(24, getProxyConfig());
+    }
+    if (binaryAuthorization_ != null) {
+      output.writeMessage(25, getBinaryAuthorization());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1647,6 +1766,13 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     if (monitoringConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getMonitoringConfig());
     }
+    if (proxyConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getProxyConfig());
+    }
+    if (binaryAuthorization_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(25, getBinaryAuthorization());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1706,6 +1832,14 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     if (hasMonitoringConfig() != other.hasMonitoringConfig()) return false;
     if (hasMonitoringConfig()) {
       if (!getMonitoringConfig().equals(other.getMonitoringConfig())) return false;
+    }
+    if (hasProxyConfig() != other.hasProxyConfig()) return false;
+    if (hasProxyConfig()) {
+      if (!getProxyConfig().equals(other.getProxyConfig())) return false;
+    }
+    if (hasBinaryAuthorization() != other.hasBinaryAuthorization()) return false;
+    if (hasBinaryAuthorization()) {
+      if (!getBinaryAuthorization().equals(other.getBinaryAuthorization())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1777,6 +1911,14 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     if (hasMonitoringConfig()) {
       hash = (37 * hash) + MONITORING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getMonitoringConfig().hashCode();
+    }
+    if (hasProxyConfig()) {
+      hash = (37 * hash) + PROXY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getProxyConfig().hashCode();
+    }
+    if (hasBinaryAuthorization()) {
+      hash = (37 * hash) + BINARY_AUTHORIZATION_FIELD_NUMBER;
+      hash = (53 * hash) + getBinaryAuthorization().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1995,6 +2137,16 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         monitoringConfigBuilder_.dispose();
         monitoringConfigBuilder_ = null;
       }
+      proxyConfig_ = null;
+      if (proxyConfigBuilder_ != null) {
+        proxyConfigBuilder_.dispose();
+        proxyConfigBuilder_ = null;
+      }
+      binaryAuthorization_ = null;
+      if (binaryAuthorizationBuilder_ != null) {
+        binaryAuthorizationBuilder_.dispose();
+        binaryAuthorizationBuilder_ = null;
+      }
       return this;
     }
 
@@ -2108,6 +2260,16 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.monitoringConfig_ =
             monitoringConfigBuilder_ == null ? monitoringConfig_ : monitoringConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.proxyConfig_ =
+            proxyConfigBuilder_ == null ? proxyConfig_ : proxyConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.binaryAuthorization_ =
+            binaryAuthorizationBuilder_ == null
+                ? binaryAuthorization_
+                : binaryAuthorizationBuilder_.build();
       }
     }
 
@@ -2255,6 +2417,12 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasMonitoringConfig()) {
         mergeMonitoringConfig(other.getMonitoringConfig());
+      }
+      if (other.hasProxyConfig()) {
+        mergeProxyConfig(other.getProxyConfig());
+      }
+      if (other.hasBinaryAuthorization()) {
+        mergeBinaryAuthorization(other.getBinaryAuthorization());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2418,6 +2586,19 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00080000;
                 break;
               } // case 186
+            case 194:
+              {
+                input.readMessage(getProxyConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 194
+            case 202:
+              {
+                input.readMessage(
+                    getBinaryAuthorizationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3020,7 +3201,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Required. The Kubernetes distribution of the underlying attached cluster.
      *
-     * Supported values: ["eks", "aks"].
+     * Supported values: ["eks", "aks", "generic"].
      * </pre>
      *
      * <code>string distribution = 16 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3044,7 +3225,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Required. The Kubernetes distribution of the underlying attached cluster.
      *
-     * Supported values: ["eks", "aks"].
+     * Supported values: ["eks", "aks", "generic"].
      * </pre>
      *
      * <code>string distribution = 16 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3068,7 +3249,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Required. The Kubernetes distribution of the underlying attached cluster.
      *
-     * Supported values: ["eks", "aks"].
+     * Supported values: ["eks", "aks", "generic"].
      * </pre>
      *
      * <code>string distribution = 16 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3091,7 +3272,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Required. The Kubernetes distribution of the underlying attached cluster.
      *
-     * Supported values: ["eks", "aks"].
+     * Supported values: ["eks", "aks", "generic"].
      * </pre>
      *
      * <code>string distribution = 16 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3110,7 +3291,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Required. The Kubernetes distribution of the underlying attached cluster.
      *
-     * Supported values: ["eks", "aks"].
+     * Supported values: ["eks", "aks", "generic"].
      * </pre>
      *
      * <code>string distribution = 16 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5790,6 +5971,417 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         monitoringConfig_ = null;
       }
       return monitoringConfigBuilder_;
+    }
+
+    private com.google.cloud.gkemulticloud.v1.AttachedProxyConfig proxyConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AttachedProxyConfig,
+            com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.AttachedProxyConfigOrBuilder>
+        proxyConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the proxyConfig field is set.
+     */
+    public boolean hasProxyConfig() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The proxyConfig.
+     */
+    public com.google.cloud.gkemulticloud.v1.AttachedProxyConfig getProxyConfig() {
+      if (proxyConfigBuilder_ == null) {
+        return proxyConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.getDefaultInstance()
+            : proxyConfig_;
+      } else {
+        return proxyConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProxyConfig(com.google.cloud.gkemulticloud.v1.AttachedProxyConfig value) {
+      if (proxyConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        proxyConfig_ = value;
+      } else {
+        proxyConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProxyConfig(
+        com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.Builder builderForValue) {
+      if (proxyConfigBuilder_ == null) {
+        proxyConfig_ = builderForValue.build();
+      } else {
+        proxyConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeProxyConfig(com.google.cloud.gkemulticloud.v1.AttachedProxyConfig value) {
+      if (proxyConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && proxyConfig_ != null
+            && proxyConfig_
+                != com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.getDefaultInstance()) {
+          getProxyConfigBuilder().mergeFrom(value);
+        } else {
+          proxyConfig_ = value;
+        }
+      } else {
+        proxyConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearProxyConfig() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      proxyConfig_ = null;
+      if (proxyConfigBuilder_ != null) {
+        proxyConfigBuilder_.dispose();
+        proxyConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.Builder getProxyConfigBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getProxyConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AttachedProxyConfigOrBuilder
+        getProxyConfigOrBuilder() {
+      if (proxyConfigBuilder_ != null) {
+        return proxyConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return proxyConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.getDefaultInstance()
+            : proxyConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Proxy configuration for outbound HTTP(S) traffic.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AttachedProxyConfig,
+            com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.AttachedProxyConfigOrBuilder>
+        getProxyConfigFieldBuilder() {
+      if (proxyConfigBuilder_ == null) {
+        proxyConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.AttachedProxyConfig,
+                com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.Builder,
+                com.google.cloud.gkemulticloud.v1.AttachedProxyConfigOrBuilder>(
+                getProxyConfig(), getParentForChildren(), isClean());
+        proxyConfig_ = null;
+      }
+      return proxyConfigBuilder_;
+    }
+
+    private com.google.cloud.gkemulticloud.v1.BinaryAuthorization binaryAuthorization_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.BinaryAuthorization,
+            com.google.cloud.gkemulticloud.v1.BinaryAuthorization.Builder,
+            com.google.cloud.gkemulticloud.v1.BinaryAuthorizationOrBuilder>
+        binaryAuthorizationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the binaryAuthorization field is set.
+     */
+    public boolean hasBinaryAuthorization() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The binaryAuthorization.
+     */
+    public com.google.cloud.gkemulticloud.v1.BinaryAuthorization getBinaryAuthorization() {
+      if (binaryAuthorizationBuilder_ == null) {
+        return binaryAuthorization_ == null
+            ? com.google.cloud.gkemulticloud.v1.BinaryAuthorization.getDefaultInstance()
+            : binaryAuthorization_;
+      } else {
+        return binaryAuthorizationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBinaryAuthorization(
+        com.google.cloud.gkemulticloud.v1.BinaryAuthorization value) {
+      if (binaryAuthorizationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        binaryAuthorization_ = value;
+      } else {
+        binaryAuthorizationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBinaryAuthorization(
+        com.google.cloud.gkemulticloud.v1.BinaryAuthorization.Builder builderForValue) {
+      if (binaryAuthorizationBuilder_ == null) {
+        binaryAuthorization_ = builderForValue.build();
+      } else {
+        binaryAuthorizationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBinaryAuthorization(
+        com.google.cloud.gkemulticloud.v1.BinaryAuthorization value) {
+      if (binaryAuthorizationBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && binaryAuthorization_ != null
+            && binaryAuthorization_
+                != com.google.cloud.gkemulticloud.v1.BinaryAuthorization.getDefaultInstance()) {
+          getBinaryAuthorizationBuilder().mergeFrom(value);
+        } else {
+          binaryAuthorization_ = value;
+        }
+      } else {
+        binaryAuthorizationBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBinaryAuthorization() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      binaryAuthorization_ = null;
+      if (binaryAuthorizationBuilder_ != null) {
+        binaryAuthorizationBuilder_.dispose();
+        binaryAuthorizationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.BinaryAuthorization.Builder
+        getBinaryAuthorizationBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return getBinaryAuthorizationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.BinaryAuthorizationOrBuilder
+        getBinaryAuthorizationOrBuilder() {
+      if (binaryAuthorizationBuilder_ != null) {
+        return binaryAuthorizationBuilder_.getMessageOrBuilder();
+      } else {
+        return binaryAuthorization_ == null
+            ? com.google.cloud.gkemulticloud.v1.BinaryAuthorization.getDefaultInstance()
+            : binaryAuthorization_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binary Authorization configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.BinaryAuthorization,
+            com.google.cloud.gkemulticloud.v1.BinaryAuthorization.Builder,
+            com.google.cloud.gkemulticloud.v1.BinaryAuthorizationOrBuilder>
+        getBinaryAuthorizationFieldBuilder() {
+      if (binaryAuthorizationBuilder_ == null) {
+        binaryAuthorizationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.BinaryAuthorization,
+                com.google.cloud.gkemulticloud.v1.BinaryAuthorization.Builder,
+                com.google.cloud.gkemulticloud.v1.BinaryAuthorizationOrBuilder>(
+                getBinaryAuthorization(), getParentForChildren(), isClean());
+        binaryAuthorization_ = null;
+      }
+      return binaryAuthorizationBuilder_;
     }
 
     @java.lang.Override

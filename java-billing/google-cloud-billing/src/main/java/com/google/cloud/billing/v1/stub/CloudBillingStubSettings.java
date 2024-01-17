@@ -52,6 +52,7 @@ import com.google.cloud.billing.v1.ListBillingAccountsRequest;
 import com.google.cloud.billing.v1.ListBillingAccountsResponse;
 import com.google.cloud.billing.v1.ListProjectBillingInfoRequest;
 import com.google.cloud.billing.v1.ListProjectBillingInfoResponse;
+import com.google.cloud.billing.v1.MoveBillingAccountRequest;
 import com.google.cloud.billing.v1.ProjectBillingInfo;
 import com.google.cloud.billing.v1.UpdateBillingAccountRequest;
 import com.google.cloud.billing.v1.UpdateProjectBillingInfoRequest;
@@ -138,6 +139,8 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<MoveBillingAccountRequest, BillingAccount>
+      moveBillingAccountSettings;
 
   private static final PagedListDescriptor<
           ListBillingAccountsRequest, ListBillingAccountsResponse, BillingAccount>
@@ -331,6 +334,11 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
     return testIamPermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to moveBillingAccount. */
+  public UnaryCallSettings<MoveBillingAccountRequest, BillingAccount> moveBillingAccountSettings() {
+    return moveBillingAccountSettings;
+  }
+
   public CloudBillingStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -345,6 +353,12 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "cloudbilling";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -447,6 +461,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    moveBillingAccountSettings = settingsBuilder.moveBillingAccountSettings().build();
   }
 
   /** Builder for CloudBillingStubSettings. */
@@ -476,6 +491,8 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<MoveBillingAccountRequest, BillingAccount>
+        moveBillingAccountSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -489,6 +506,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -516,6 +534,8 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -538,6 +558,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      moveBillingAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -550,7 +571,8 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
               updateProjectBillingInfoSettings,
               getIamPolicySettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              moveBillingAccountSettings);
       initDefaults(this);
     }
 
@@ -567,6 +589,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      moveBillingAccountSettings = settings.moveBillingAccountSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -579,7 +602,8 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
               updateProjectBillingInfoSettings,
               getIamPolicySettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              moveBillingAccountSettings);
     }
 
     private static Builder createDefault() {
@@ -658,6 +682,11 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .moveBillingAccountSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       return builder;
     }
@@ -739,6 +768,12 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to moveBillingAccount. */
+    public UnaryCallSettings.Builder<MoveBillingAccountRequest, BillingAccount>
+        moveBillingAccountSettings() {
+      return moveBillingAccountSettings;
     }
 
     @Override

@@ -10,14 +10,26 @@
         "grpc": {
           "libraryClient": "TranslationServiceClient",
           "rpcs": {
+            "AdaptiveMtTranslate": {
+              "methods": ["adaptiveMtTranslate", "adaptiveMtTranslate", "adaptiveMtTranslate", "adaptiveMtTranslateCallable"]
+            },
             "BatchTranslateDocument": {
               "methods": ["batchTranslateDocumentAsync", "batchTranslateDocumentAsync", "batchTranslateDocumentAsync", "batchTranslateDocumentOperationCallable", "batchTranslateDocumentCallable"]
             },
             "BatchTranslateText": {
               "methods": ["batchTranslateTextAsync", "batchTranslateTextOperationCallable", "batchTranslateTextCallable"]
             },
+            "CreateAdaptiveMtDataset": {
+              "methods": ["createAdaptiveMtDataset", "createAdaptiveMtDataset", "createAdaptiveMtDataset", "createAdaptiveMtDatasetCallable"]
+            },
             "CreateGlossary": {
               "methods": ["createGlossaryAsync", "createGlossaryAsync", "createGlossaryAsync", "createGlossaryOperationCallable", "createGlossaryCallable"]
+            },
+            "DeleteAdaptiveMtDataset": {
+              "methods": ["deleteAdaptiveMtDataset", "deleteAdaptiveMtDataset", "deleteAdaptiveMtDataset", "deleteAdaptiveMtDatasetCallable"]
+            },
+            "DeleteAdaptiveMtFile": {
+              "methods": ["deleteAdaptiveMtFile", "deleteAdaptiveMtFile", "deleteAdaptiveMtFile", "deleteAdaptiveMtFileCallable"]
             },
             "DeleteGlossary": {
               "methods": ["deleteGlossaryAsync", "deleteGlossaryAsync", "deleteGlossaryAsync", "deleteGlossaryOperationCallable", "deleteGlossaryCallable"]
@@ -25,11 +37,29 @@
             "DetectLanguage": {
               "methods": ["detectLanguage", "detectLanguage", "detectLanguage", "detectLanguageCallable"]
             },
+            "GetAdaptiveMtDataset": {
+              "methods": ["getAdaptiveMtDataset", "getAdaptiveMtDataset", "getAdaptiveMtDataset", "getAdaptiveMtDatasetCallable"]
+            },
+            "GetAdaptiveMtFile": {
+              "methods": ["getAdaptiveMtFile", "getAdaptiveMtFile", "getAdaptiveMtFile", "getAdaptiveMtFileCallable"]
+            },
             "GetGlossary": {
               "methods": ["getGlossary", "getGlossary", "getGlossary", "getGlossaryCallable"]
             },
             "GetSupportedLanguages": {
               "methods": ["getSupportedLanguages", "getSupportedLanguages", "getSupportedLanguages", "getSupportedLanguagesCallable"]
+            },
+            "ImportAdaptiveMtFile": {
+              "methods": ["importAdaptiveMtFile", "importAdaptiveMtFile", "importAdaptiveMtFile", "importAdaptiveMtFileCallable"]
+            },
+            "ListAdaptiveMtDatasets": {
+              "methods": ["listAdaptiveMtDatasets", "listAdaptiveMtDatasets", "listAdaptiveMtDatasets", "listAdaptiveMtDatasetsPagedCallable", "listAdaptiveMtDatasetsCallable"]
+            },
+            "ListAdaptiveMtFiles": {
+              "methods": ["listAdaptiveMtFiles", "listAdaptiveMtFiles", "listAdaptiveMtFiles", "listAdaptiveMtFilesPagedCallable", "listAdaptiveMtFilesCallable"]
+            },
+            "ListAdaptiveMtSentences": {
+              "methods": ["listAdaptiveMtSentences", "listAdaptiveMtSentences", "listAdaptiveMtSentences", "listAdaptiveMtSentencesPagedCallable", "listAdaptiveMtSentencesCallable"]
             },
             "ListGlossaries": {
               "methods": ["listGlossaries", "listGlossaries", "listGlossaries", "listGlossariesPagedCallable", "listGlossariesCallable"]

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.12.0 (2024-01-10)
+
+### Features
+
+* Enable Backup, Backup Vault, and Backup Policy ([#10173](https://github.com/googleapis/google-cloud-java/issues/10173)) ([1e65292](https://github.com/googleapis/google-cloud-java/commit/1e65292a5e4009ac58a261dcabe234d077bd3fee))
+
+
+
 ## 0.11.0 (2023-12-12)
 
 * No change

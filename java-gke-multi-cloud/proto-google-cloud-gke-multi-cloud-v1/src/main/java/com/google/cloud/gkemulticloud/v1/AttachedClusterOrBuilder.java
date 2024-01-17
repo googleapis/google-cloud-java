@@ -167,7 +167,7 @@ public interface AttachedClusterOrBuilder
    * <pre>
    * Required. The Kubernetes distribution of the underlying attached cluster.
    *
-   * Supported values: ["eks", "aks"].
+   * Supported values: ["eks", "aks", "generic"].
    * </pre>
    *
    * <code>string distribution = 16 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -181,7 +181,7 @@ public interface AttachedClusterOrBuilder
    * <pre>
    * Required. The Kubernetes distribution of the underlying attached cluster.
    *
-   * Supported values: ["eks", "aks"].
+   * Supported values: ["eks", "aks", "generic"].
    * </pre>
    *
    * <code>string distribution = 16 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -790,4 +790,86 @@ public interface AttachedClusterOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.MonitoringConfigOrBuilder getMonitoringConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Proxy configuration for outbound HTTP(S) traffic.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the proxyConfig field is set.
+   */
+  boolean hasProxyConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Proxy configuration for outbound HTTP(S) traffic.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The proxyConfig.
+   */
+  com.google.cloud.gkemulticloud.v1.AttachedProxyConfig getProxyConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Proxy configuration for outbound HTTP(S) traffic.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AttachedProxyConfig proxy_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.AttachedProxyConfigOrBuilder getProxyConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binary Authorization configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the binaryAuthorization field is set.
+   */
+  boolean hasBinaryAuthorization();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binary Authorization configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The binaryAuthorization.
+   */
+  com.google.cloud.gkemulticloud.v1.BinaryAuthorization getBinaryAuthorization();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binary Authorization configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.BinaryAuthorization binary_authorization = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.BinaryAuthorizationOrBuilder getBinaryAuthorizationOrBuilder();
 }

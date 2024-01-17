@@ -113,6 +113,148 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int ENABLED_FIELD_NUMBER = 3;
+  private boolean enabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. True if the version is available for cluster creation. If a
+   * version is enabled for creation, it can be used to create new clusters.
+   * Otherwise, cluster creation will fail. However, cluster upgrade operations
+   * may succeed, even if the version is not enabled.
+   * </pre>
+   *
+   * <code>bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enabled.
+   */
+  @java.lang.Override
+  public boolean getEnabled() {
+    return enabled_;
+  }
+
+  public static final int END_OF_LIFE_FIELD_NUMBER = 4;
+  private boolean endOfLife_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. True if this cluster version belongs to a minor version that has
+   * reached its end of life and is no longer in scope to receive security and
+   * bug fixes.
+   * </pre>
+   *
+   * <code>bool end_of_life = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The endOfLife.
+   */
+  @java.lang.Override
+  public boolean getEndOfLife() {
+    return endOfLife_;
+  }
+
+  public static final int END_OF_LIFE_DATE_FIELD_NUMBER = 5;
+  private com.google.type.Date endOfLifeDate_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The estimated date (in Pacific Time) when this cluster version
+   * will reach its end of life. Or if this version is no longer supported (the
+   * `end_of_life` field is true), this is the actual date (in Pacific time)
+   * when the version reached its end of life.
+   * </pre>
+   *
+   * <code>.google.type.Date end_of_life_date = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the endOfLifeDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndOfLifeDate() {
+    return endOfLifeDate_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The estimated date (in Pacific Time) when this cluster version
+   * will reach its end of life. Or if this version is no longer supported (the
+   * `end_of_life` field is true), this is the actual date (in Pacific time)
+   * when the version reached its end of life.
+   * </pre>
+   *
+   * <code>.google.type.Date end_of_life_date = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The endOfLifeDate.
+   */
+  @java.lang.Override
+  public com.google.type.Date getEndOfLifeDate() {
+    return endOfLifeDate_ == null ? com.google.type.Date.getDefaultInstance() : endOfLifeDate_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The estimated date (in Pacific Time) when this cluster version
+   * will reach its end of life. Or if this version is no longer supported (the
+   * `end_of_life` field is true), this is the actual date (in Pacific time)
+   * when the version reached its end of life.
+   * </pre>
+   *
+   * <code>.google.type.Date end_of_life_date = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.type.DateOrBuilder getEndOfLifeDateOrBuilder() {
+    return endOfLifeDate_ == null ? com.google.type.Date.getDefaultInstance() : endOfLifeDate_;
+  }
+
+  public static final int RELEASE_DATE_FIELD_NUMBER = 6;
+  private com.google.type.Date releaseDate_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The date (in Pacific Time) when the cluster version was released.
+   * </pre>
+   *
+   * <code>.google.type.Date release_date = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the releaseDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasReleaseDate() {
+    return releaseDate_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The date (in Pacific Time) when the cluster version was released.
+   * </pre>
+   *
+   * <code>.google.type.Date release_date = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The releaseDate.
+   */
+  @java.lang.Override
+  public com.google.type.Date getReleaseDate() {
+    return releaseDate_ == null ? com.google.type.Date.getDefaultInstance() : releaseDate_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The date (in Pacific Time) when the cluster version was released.
+   * </pre>
+   *
+   * <code>.google.type.Date release_date = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.type.DateOrBuilder getReleaseDateOrBuilder() {
+    return releaseDate_ == null ? com.google.type.Date.getDefaultInstance() : releaseDate_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -130,6 +272,18 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, version_);
     }
+    if (enabled_ != false) {
+      output.writeBool(3, enabled_);
+    }
+    if (endOfLife_ != false) {
+      output.writeBool(4, endOfLife_);
+    }
+    if (endOfLifeDate_ != null) {
+      output.writeMessage(5, getEndOfLifeDate());
+    }
+    if (releaseDate_ != null) {
+      output.writeMessage(6, getReleaseDate());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -141,6 +295,18 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, version_);
+    }
+    if (enabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, enabled_);
+    }
+    if (endOfLife_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, endOfLife_);
+    }
+    if (endOfLifeDate_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEndOfLifeDate());
+    }
+    if (releaseDate_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getReleaseDate());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -159,6 +325,16 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
         (com.google.cloud.gkemulticloud.v1.AwsK8sVersionInfo) obj;
 
     if (!getVersion().equals(other.getVersion())) return false;
+    if (getEnabled() != other.getEnabled()) return false;
+    if (getEndOfLife() != other.getEndOfLife()) return false;
+    if (hasEndOfLifeDate() != other.hasEndOfLifeDate()) return false;
+    if (hasEndOfLifeDate()) {
+      if (!getEndOfLifeDate().equals(other.getEndOfLifeDate())) return false;
+    }
+    if (hasReleaseDate() != other.hasReleaseDate()) return false;
+    if (hasReleaseDate()) {
+      if (!getReleaseDate().equals(other.getReleaseDate())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -172,6 +348,18 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getVersion().hashCode();
+    hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+    hash = (37 * hash) + END_OF_LIFE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEndOfLife());
+    if (hasEndOfLifeDate()) {
+      hash = (37 * hash) + END_OF_LIFE_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getEndOfLifeDate().hashCode();
+    }
+    if (hasReleaseDate()) {
+      hash = (37 * hash) + RELEASE_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getReleaseDate().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -312,6 +500,18 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       super.clear();
       bitField0_ = 0;
       version_ = "";
+      enabled_ = false;
+      endOfLife_ = false;
+      endOfLifeDate_ = null;
+      if (endOfLifeDateBuilder_ != null) {
+        endOfLifeDateBuilder_.dispose();
+        endOfLifeDateBuilder_ = null;
+      }
+      releaseDate_ = null;
+      if (releaseDateBuilder_ != null) {
+        releaseDateBuilder_.dispose();
+        releaseDateBuilder_ = null;
+      }
       return this;
     }
 
@@ -350,6 +550,20 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enabled_ = enabled_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.endOfLife_ = endOfLife_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.endOfLifeDate_ =
+            endOfLifeDateBuilder_ == null ? endOfLifeDate_ : endOfLifeDateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.releaseDate_ =
+            releaseDateBuilder_ == null ? releaseDate_ : releaseDateBuilder_.build();
       }
     }
 
@@ -404,6 +618,18 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.getEnabled() != false) {
+        setEnabled(other.getEnabled());
+      }
+      if (other.getEndOfLife() != false) {
+        setEndOfLife(other.getEndOfLife());
+      }
+      if (other.hasEndOfLifeDate()) {
+        mergeEndOfLifeDate(other.getEndOfLifeDate());
+      }
+      if (other.hasReleaseDate()) {
+        mergeReleaseDate(other.getReleaseDate());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -436,6 +662,30 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 24:
+              {
+                enabled_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+            case 32:
+              {
+                endOfLife_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+            case 42:
+              {
+                input.readMessage(getEndOfLifeDateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getReleaseDateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -559,6 +809,509 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private boolean enabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if the version is available for cluster creation. If a
+     * version is enabled for creation, it can be used to create new clusters.
+     * Otherwise, cluster creation will fail. However, cluster upgrade operations
+     * may succeed, even if the version is not enabled.
+     * </pre>
+     *
+     * <code>bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if the version is available for cluster creation. If a
+     * version is enabled for creation, it can be used to create new clusters.
+     * Otherwise, cluster creation will fail. However, cluster upgrade operations
+     * may succeed, even if the version is not enabled.
+     * </pre>
+     *
+     * <code>bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnabled(boolean value) {
+
+      enabled_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if the version is available for cluster creation. If a
+     * version is enabled for creation, it can be used to create new clusters.
+     * Otherwise, cluster creation will fail. However, cluster upgrade operations
+     * may succeed, even if the version is not enabled.
+     * </pre>
+     *
+     * <code>bool enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      enabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean endOfLife_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if this cluster version belongs to a minor version that has
+     * reached its end of life and is no longer in scope to receive security and
+     * bug fixes.
+     * </pre>
+     *
+     * <code>bool end_of_life = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The endOfLife.
+     */
+    @java.lang.Override
+    public boolean getEndOfLife() {
+      return endOfLife_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if this cluster version belongs to a minor version that has
+     * reached its end of life and is no longer in scope to receive security and
+     * bug fixes.
+     * </pre>
+     *
+     * <code>bool end_of_life = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The endOfLife to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndOfLife(boolean value) {
+
+      endOfLife_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if this cluster version belongs to a minor version that has
+     * reached its end of life and is no longer in scope to receive security and
+     * bug fixes.
+     * </pre>
+     *
+     * <code>bool end_of_life = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEndOfLife() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      endOfLife_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.type.Date endOfLifeDate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        endOfLifeDateBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The estimated date (in Pacific Time) when this cluster version
+     * will reach its end of life. Or if this version is no longer supported (the
+     * `end_of_life` field is true), this is the actual date (in Pacific time)
+     * when the version reached its end of life.
+     * </pre>
+     *
+     * <code>.google.type.Date end_of_life_date = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the endOfLifeDate field is set.
+     */
+    public boolean hasEndOfLifeDate() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The estimated date (in Pacific Time) when this cluster version
+     * will reach its end of life. Or if this version is no longer supported (the
+     * `end_of_life` field is true), this is the actual date (in Pacific time)
+     * when the version reached its end of life.
+     * </pre>
+     *
+     * <code>.google.type.Date end_of_life_date = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The endOfLifeDate.
+     */
+    public com.google.type.Date getEndOfLifeDate() {
+      if (endOfLifeDateBuilder_ == null) {
+        return endOfLifeDate_ == null ? com.google.type.Date.getDefaultInstance() : endOfLifeDate_;
+      } else {
+        return endOfLifeDateBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The estimated date (in Pacific Time) when this cluster version
+     * will reach its end of life. Or if this version is no longer supported (the
+     * `end_of_life` field is true), this is the actual date (in Pacific time)
+     * when the version reached its end of life.
+     * </pre>
+     *
+     * <code>.google.type.Date end_of_life_date = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEndOfLifeDate(com.google.type.Date value) {
+      if (endOfLifeDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endOfLifeDate_ = value;
+      } else {
+        endOfLifeDateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The estimated date (in Pacific Time) when this cluster version
+     * will reach its end of life. Or if this version is no longer supported (the
+     * `end_of_life` field is true), this is the actual date (in Pacific time)
+     * when the version reached its end of life.
+     * </pre>
+     *
+     * <code>.google.type.Date end_of_life_date = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEndOfLifeDate(com.google.type.Date.Builder builderForValue) {
+      if (endOfLifeDateBuilder_ == null) {
+        endOfLifeDate_ = builderForValue.build();
+      } else {
+        endOfLifeDateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The estimated date (in Pacific Time) when this cluster version
+     * will reach its end of life. Or if this version is no longer supported (the
+     * `end_of_life` field is true), this is the actual date (in Pacific time)
+     * when the version reached its end of life.
+     * </pre>
+     *
+     * <code>.google.type.Date end_of_life_date = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEndOfLifeDate(com.google.type.Date value) {
+      if (endOfLifeDateBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && endOfLifeDate_ != null
+            && endOfLifeDate_ != com.google.type.Date.getDefaultInstance()) {
+          getEndOfLifeDateBuilder().mergeFrom(value);
+        } else {
+          endOfLifeDate_ = value;
+        }
+      } else {
+        endOfLifeDateBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The estimated date (in Pacific Time) when this cluster version
+     * will reach its end of life. Or if this version is no longer supported (the
+     * `end_of_life` field is true), this is the actual date (in Pacific time)
+     * when the version reached its end of life.
+     * </pre>
+     *
+     * <code>.google.type.Date end_of_life_date = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEndOfLifeDate() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      endOfLifeDate_ = null;
+      if (endOfLifeDateBuilder_ != null) {
+        endOfLifeDateBuilder_.dispose();
+        endOfLifeDateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The estimated date (in Pacific Time) when this cluster version
+     * will reach its end of life. Or if this version is no longer supported (the
+     * `end_of_life` field is true), this is the actual date (in Pacific time)
+     * when the version reached its end of life.
+     * </pre>
+     *
+     * <code>.google.type.Date end_of_life_date = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.type.Date.Builder getEndOfLifeDateBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getEndOfLifeDateFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The estimated date (in Pacific Time) when this cluster version
+     * will reach its end of life. Or if this version is no longer supported (the
+     * `end_of_life` field is true), this is the actual date (in Pacific time)
+     * when the version reached its end of life.
+     * </pre>
+     *
+     * <code>.google.type.Date end_of_life_date = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.type.DateOrBuilder getEndOfLifeDateOrBuilder() {
+      if (endOfLifeDateBuilder_ != null) {
+        return endOfLifeDateBuilder_.getMessageOrBuilder();
+      } else {
+        return endOfLifeDate_ == null ? com.google.type.Date.getDefaultInstance() : endOfLifeDate_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The estimated date (in Pacific Time) when this cluster version
+     * will reach its end of life. Or if this version is no longer supported (the
+     * `end_of_life` field is true), this is the actual date (in Pacific time)
+     * when the version reached its end of life.
+     * </pre>
+     *
+     * <code>.google.type.Date end_of_life_date = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        getEndOfLifeDateFieldBuilder() {
+      if (endOfLifeDateBuilder_ == null) {
+        endOfLifeDateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                getEndOfLifeDate(), getParentForChildren(), isClean());
+        endOfLifeDate_ = null;
+      }
+      return endOfLifeDateBuilder_;
+    }
+
+    private com.google.type.Date releaseDate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        releaseDateBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date (in Pacific Time) when the cluster version was released.
+     * </pre>
+     *
+     * <code>.google.type.Date release_date = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the releaseDate field is set.
+     */
+    public boolean hasReleaseDate() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date (in Pacific Time) when the cluster version was released.
+     * </pre>
+     *
+     * <code>.google.type.Date release_date = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The releaseDate.
+     */
+    public com.google.type.Date getReleaseDate() {
+      if (releaseDateBuilder_ == null) {
+        return releaseDate_ == null ? com.google.type.Date.getDefaultInstance() : releaseDate_;
+      } else {
+        return releaseDateBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date (in Pacific Time) when the cluster version was released.
+     * </pre>
+     *
+     * <code>.google.type.Date release_date = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setReleaseDate(com.google.type.Date value) {
+      if (releaseDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        releaseDate_ = value;
+      } else {
+        releaseDateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date (in Pacific Time) when the cluster version was released.
+     * </pre>
+     *
+     * <code>.google.type.Date release_date = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setReleaseDate(com.google.type.Date.Builder builderForValue) {
+      if (releaseDateBuilder_ == null) {
+        releaseDate_ = builderForValue.build();
+      } else {
+        releaseDateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date (in Pacific Time) when the cluster version was released.
+     * </pre>
+     *
+     * <code>.google.type.Date release_date = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeReleaseDate(com.google.type.Date value) {
+      if (releaseDateBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && releaseDate_ != null
+            && releaseDate_ != com.google.type.Date.getDefaultInstance()) {
+          getReleaseDateBuilder().mergeFrom(value);
+        } else {
+          releaseDate_ = value;
+        }
+      } else {
+        releaseDateBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date (in Pacific Time) when the cluster version was released.
+     * </pre>
+     *
+     * <code>.google.type.Date release_date = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearReleaseDate() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      releaseDate_ = null;
+      if (releaseDateBuilder_ != null) {
+        releaseDateBuilder_.dispose();
+        releaseDateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date (in Pacific Time) when the cluster version was released.
+     * </pre>
+     *
+     * <code>.google.type.Date release_date = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.type.Date.Builder getReleaseDateBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getReleaseDateFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date (in Pacific Time) when the cluster version was released.
+     * </pre>
+     *
+     * <code>.google.type.Date release_date = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.type.DateOrBuilder getReleaseDateOrBuilder() {
+      if (releaseDateBuilder_ != null) {
+        return releaseDateBuilder_.getMessageOrBuilder();
+      } else {
+        return releaseDate_ == null ? com.google.type.Date.getDefaultInstance() : releaseDate_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date (in Pacific Time) when the cluster version was released.
+     * </pre>
+     *
+     * <code>.google.type.Date release_date = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        getReleaseDateFieldBuilder() {
+      if (releaseDateBuilder_ == null) {
+        releaseDateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                getReleaseDate(), getParentForChildren(), isClean());
+        releaseDate_ = null;
+      }
+      return releaseDateBuilder_;
     }
 
     @java.lang.Override

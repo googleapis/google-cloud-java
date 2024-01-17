@@ -68,19 +68,61 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the RoutesClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    <tr>
+ *      <td>ComputeRoutes</td>
+ *      <td><p> Returns the primary route along with optional alternate routes, given a set of terminal and intermediate waypoints.
+ * <p>  &#42;&#42;NOTE:&#42;&#42; This method requires that you specify a response field mask in the input. You can provide the response field mask by using URL parameter `$fields` or `fields`, or by using an HTTP/gRPC header `X-Goog-FieldMask` (see the [available URL parameters and headers](https://cloud.google.com/apis/docs/system-parameters). The value is a comma separated list of field paths. See detailed documentation about [how to construct the field paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
+ * <p>  For example, in this method:
+ * <ul>
+ * <li>  Field mask of all available fields (for manual inspection):   `X-Goog-FieldMask: &#42;`
+ * <li>  Field mask of Route-level duration, distance, and polyline (an example production setup):   `X-Goog-FieldMask:   routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline`
+ * </ul>
+ * <p>  Google discourage the use of the wildcard (`&#42;`) response field mask, or specifying the field mask at the top level (`routes`), because:
+ * <ul>
+ * <li>  Selecting only the fields that you need helps our server save computation cycles, allowing us to return the result to you with a lower latency.
+ * <li>  Selecting only the fields that you need in your production job ensures stable latency performance. We might add more response fields in the future, and those new fields might require extra computation time. If you select all fields, or if you select all fields at the top level, then you might experience performance degradation because any new field we add will be automatically included in the response.
+ * <li>  Selecting only the fields that you need results in a smaller response size, and thus higher network throughput.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>computeRoutes(ComputeRoutesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>computeRoutesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ComputeRouteMatrix</td>
+ *      <td><p> Takes in a list of origins and destinations and returns a stream containing route information for each combination of origin and destination.
+ * <p>  &#42;&#42;NOTE:&#42;&#42; This method requires that you specify a response field mask in the input. You can provide the response field mask by using the URL parameter `$fields` or `fields`, or by using the HTTP/gRPC header `X-Goog-FieldMask` (see the [available URL parameters and headers](https://cloud.google.com/apis/docs/system-parameters). The value is a comma separated list of field paths. See this detailed documentation about [how to construct the field paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
+ * <p>  For example, in this method:
+ * <ul>
+ * <li>  Field mask of all available fields (for manual inspection):   `X-Goog-FieldMask: &#42;`
+ * <li>  Field mask of route durations, distances, element status, condition, and   element indices (an example production setup):   `X-Goog-FieldMask:   originIndex,destinationIndex,status,condition,distanceMeters,duration`
+ * </ul>
+ * <p>  It is critical that you include `status` in your field mask as otherwise all messages will appear to be OK. Google discourages the use of the wildcard (`&#42;`) response field mask, because:
+ * <ul>
+ * <li>  Selecting only the fields that you need helps our server save computation cycles, allowing us to return the result to you with a lower latency.
+ * <li>  Selecting only the fields that you need in your production job ensures stable latency performance. We might add more response fields in the future, and those new fields might require extra computation time. If you select all fields, or if you select all fields at the top level, then you might experience performance degradation because any new field we add will be automatically included in the response.
+ * <li>  Selecting only the fields that you need results in a smaller response size, and thus higher network throughput.
+ * </ul></td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>computeRouteMatrixCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *

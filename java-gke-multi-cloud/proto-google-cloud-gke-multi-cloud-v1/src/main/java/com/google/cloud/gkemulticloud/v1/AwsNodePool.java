@@ -1166,6 +1166,118 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
     return errors_.get(index);
   }
 
+  public static final int MANAGEMENT_FIELD_NUMBER = 30;
+  private com.google.cloud.gkemulticloud.v1.AwsNodeManagement management_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Management configuration for this node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AwsNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the management field is set.
+   */
+  @java.lang.Override
+  public boolean hasManagement() {
+    return management_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Management configuration for this node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AwsNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The management.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AwsNodeManagement getManagement() {
+    return management_ == null
+        ? com.google.cloud.gkemulticloud.v1.AwsNodeManagement.getDefaultInstance()
+        : management_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Management configuration for this node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AwsNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AwsNodeManagementOrBuilder getManagementOrBuilder() {
+    return management_ == null
+        ? com.google.cloud.gkemulticloud.v1.AwsNodeManagement.getDefaultInstance()
+        : management_;
+  }
+
+  public static final int UPDATE_SETTINGS_FIELD_NUMBER = 32;
+  private com.google.cloud.gkemulticloud.v1.UpdateSettings updateSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Update settings control the speed and disruption of the update.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.UpdateSettings update_settings = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the updateSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateSettings() {
+    return updateSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Update settings control the speed and disruption of the update.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.UpdateSettings update_settings = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The updateSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.UpdateSettings getUpdateSettings() {
+    return updateSettings_ == null
+        ? com.google.cloud.gkemulticloud.v1.UpdateSettings.getDefaultInstance()
+        : updateSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Update settings control the speed and disruption of the update.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.UpdateSettings update_settings = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.UpdateSettingsOrBuilder getUpdateSettingsOrBuilder() {
+    return updateSettings_ == null
+        ? com.google.cloud.gkemulticloud.v1.UpdateSettings.getDefaultInstance()
+        : updateSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1221,6 +1333,12 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < errors_.size(); i++) {
       output.writeMessage(29, errors_.get(i));
+    }
+    if (management_ != null) {
+      output.writeMessage(30, getManagement());
+    }
+    if (updateSettings_ != null) {
+      output.writeMessage(32, getUpdateSettings());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1281,6 +1399,12 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < errors_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, errors_.get(i));
     }
+    if (management_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, getManagement());
+    }
+    if (updateSettings_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, getUpdateSettings());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1326,6 +1450,14 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
       if (!getMaxPodsConstraint().equals(other.getMaxPodsConstraint())) return false;
     }
     if (!getErrorsList().equals(other.getErrorsList())) return false;
+    if (hasManagement() != other.hasManagement()) return false;
+    if (hasManagement()) {
+      if (!getManagement().equals(other.getManagement())) return false;
+    }
+    if (hasUpdateSettings() != other.hasUpdateSettings()) return false;
+    if (hasUpdateSettings()) {
+      if (!getUpdateSettings().equals(other.getUpdateSettings())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1378,6 +1510,14 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
     if (getErrorsCount() > 0) {
       hash = (37 * hash) + ERRORS_FIELD_NUMBER;
       hash = (53 * hash) + getErrorsList().hashCode();
+    }
+    if (hasManagement()) {
+      hash = (37 * hash) + MANAGEMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getManagement().hashCode();
+    }
+    if (hasUpdateSettings()) {
+      hash = (37 * hash) + UPDATE_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1578,6 +1718,16 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
         errorsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00002000);
+      management_ = null;
+      if (managementBuilder_ != null) {
+        managementBuilder_.dispose();
+        managementBuilder_ = null;
+      }
+      updateSettings_ = null;
+      if (updateSettingsBuilder_ != null) {
+        updateSettingsBuilder_.dispose();
+        updateSettingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1670,6 +1820,13 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
             maxPodsConstraintBuilder_ == null
                 ? maxPodsConstraint_
                 : maxPodsConstraintBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.management_ = managementBuilder_ == null ? management_ : managementBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.updateSettings_ =
+            updateSettingsBuilder_ == null ? updateSettings_ : updateSettingsBuilder_.build();
       }
     }
 
@@ -1792,6 +1949,12 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
             errorsBuilder_.addAllMessages(other.errors_);
           }
         }
+      }
+      if (other.hasManagement()) {
+        mergeManagement(other.getManagement());
+      }
+      if (other.hasUpdateSettings()) {
+        mergeUpdateSettings(other.getUpdateSettings());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1918,6 +2081,18 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 234
+            case 242:
+              {
+                input.readMessage(getManagementFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 242
+            case 258:
+              {
+                input.readMessage(getUpdateSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 258
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4341,6 +4516,412 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
         errors_ = null;
       }
       return errorsBuilder_;
+    }
+
+    private com.google.cloud.gkemulticloud.v1.AwsNodeManagement management_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AwsNodeManagement,
+            com.google.cloud.gkemulticloud.v1.AwsNodeManagement.Builder,
+            com.google.cloud.gkemulticloud.v1.AwsNodeManagementOrBuilder>
+        managementBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the management field is set.
+     */
+    public boolean hasManagement() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The management.
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsNodeManagement getManagement() {
+      if (managementBuilder_ == null) {
+        return management_ == null
+            ? com.google.cloud.gkemulticloud.v1.AwsNodeManagement.getDefaultInstance()
+            : management_;
+      } else {
+        return managementBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setManagement(com.google.cloud.gkemulticloud.v1.AwsNodeManagement value) {
+      if (managementBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        management_ = value;
+      } else {
+        managementBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setManagement(
+        com.google.cloud.gkemulticloud.v1.AwsNodeManagement.Builder builderForValue) {
+      if (managementBuilder_ == null) {
+        management_ = builderForValue.build();
+      } else {
+        managementBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeManagement(com.google.cloud.gkemulticloud.v1.AwsNodeManagement value) {
+      if (managementBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && management_ != null
+            && management_
+                != com.google.cloud.gkemulticloud.v1.AwsNodeManagement.getDefaultInstance()) {
+          getManagementBuilder().mergeFrom(value);
+        } else {
+          management_ = value;
+        }
+      } else {
+        managementBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearManagement() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      management_ = null;
+      if (managementBuilder_ != null) {
+        managementBuilder_.dispose();
+        managementBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsNodeManagement.Builder getManagementBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getManagementFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsNodeManagementOrBuilder getManagementOrBuilder() {
+      if (managementBuilder_ != null) {
+        return managementBuilder_.getMessageOrBuilder();
+      } else {
+        return management_ == null
+            ? com.google.cloud.gkemulticloud.v1.AwsNodeManagement.getDefaultInstance()
+            : management_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Management configuration for this node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsNodeManagement management = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AwsNodeManagement,
+            com.google.cloud.gkemulticloud.v1.AwsNodeManagement.Builder,
+            com.google.cloud.gkemulticloud.v1.AwsNodeManagementOrBuilder>
+        getManagementFieldBuilder() {
+      if (managementBuilder_ == null) {
+        managementBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.AwsNodeManagement,
+                com.google.cloud.gkemulticloud.v1.AwsNodeManagement.Builder,
+                com.google.cloud.gkemulticloud.v1.AwsNodeManagementOrBuilder>(
+                getManagement(), getParentForChildren(), isClean());
+        management_ = null;
+      }
+      return managementBuilder_;
+    }
+
+    private com.google.cloud.gkemulticloud.v1.UpdateSettings updateSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.UpdateSettings,
+            com.google.cloud.gkemulticloud.v1.UpdateSettings.Builder,
+            com.google.cloud.gkemulticloud.v1.UpdateSettingsOrBuilder>
+        updateSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Update settings control the speed and disruption of the update.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.UpdateSettings update_settings = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the updateSettings field is set.
+     */
+    public boolean hasUpdateSettings() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Update settings control the speed and disruption of the update.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.UpdateSettings update_settings = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The updateSettings.
+     */
+    public com.google.cloud.gkemulticloud.v1.UpdateSettings getUpdateSettings() {
+      if (updateSettingsBuilder_ == null) {
+        return updateSettings_ == null
+            ? com.google.cloud.gkemulticloud.v1.UpdateSettings.getDefaultInstance()
+            : updateSettings_;
+      } else {
+        return updateSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Update settings control the speed and disruption of the update.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.UpdateSettings update_settings = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setUpdateSettings(com.google.cloud.gkemulticloud.v1.UpdateSettings value) {
+      if (updateSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateSettings_ = value;
+      } else {
+        updateSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Update settings control the speed and disruption of the update.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.UpdateSettings update_settings = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setUpdateSettings(
+        com.google.cloud.gkemulticloud.v1.UpdateSettings.Builder builderForValue) {
+      if (updateSettingsBuilder_ == null) {
+        updateSettings_ = builderForValue.build();
+      } else {
+        updateSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Update settings control the speed and disruption of the update.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.UpdateSettings update_settings = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeUpdateSettings(com.google.cloud.gkemulticloud.v1.UpdateSettings value) {
+      if (updateSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && updateSettings_ != null
+            && updateSettings_
+                != com.google.cloud.gkemulticloud.v1.UpdateSettings.getDefaultInstance()) {
+          getUpdateSettingsBuilder().mergeFrom(value);
+        } else {
+          updateSettings_ = value;
+        }
+      } else {
+        updateSettingsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Update settings control the speed and disruption of the update.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.UpdateSettings update_settings = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearUpdateSettings() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      updateSettings_ = null;
+      if (updateSettingsBuilder_ != null) {
+        updateSettingsBuilder_.dispose();
+        updateSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Update settings control the speed and disruption of the update.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.UpdateSettings update_settings = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.UpdateSettings.Builder getUpdateSettingsBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getUpdateSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Update settings control the speed and disruption of the update.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.UpdateSettings update_settings = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.UpdateSettingsOrBuilder getUpdateSettingsOrBuilder() {
+      if (updateSettingsBuilder_ != null) {
+        return updateSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return updateSettings_ == null
+            ? com.google.cloud.gkemulticloud.v1.UpdateSettings.getDefaultInstance()
+            : updateSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Update settings control the speed and disruption of the update.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.UpdateSettings update_settings = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.UpdateSettings,
+            com.google.cloud.gkemulticloud.v1.UpdateSettings.Builder,
+            com.google.cloud.gkemulticloud.v1.UpdateSettingsOrBuilder>
+        getUpdateSettingsFieldBuilder() {
+      if (updateSettingsBuilder_ == null) {
+        updateSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.UpdateSettings,
+                com.google.cloud.gkemulticloud.v1.UpdateSettings.Builder,
+                com.google.cloud.gkemulticloud.v1.UpdateSettingsOrBuilder>(
+                getUpdateSettings(), getParentForChildren(), isClean());
+        updateSettings_ = null;
+      }
+      return updateSettingsBuilder_;
     }
 
     @java.lang.Override

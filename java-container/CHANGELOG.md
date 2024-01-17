@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.36.0 (2024-01-10)
+
+### Features
+
+* Add autoscaled node pool upgrade strategy ([#10167](https://github.com/googleapis/google-cloud-java/issues/10167)) ([041bc40](https://github.com/googleapis/google-cloud-java/commit/041bc40b6a8ebf409024b0fd12a483e8c17262bc))
+
+
+
 ## 2.35.0 (2023-12-12)
 
 * No change

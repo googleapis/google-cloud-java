@@ -13,6 +13,15 @@
             "CreateActiveDirectory": {
               "methods": ["createActiveDirectoryAsync", "createActiveDirectoryAsync", "createActiveDirectoryAsync", "createActiveDirectoryOperationCallable", "createActiveDirectoryCallable"]
             },
+            "CreateBackup": {
+              "methods": ["createBackupAsync", "createBackupAsync", "createBackupAsync", "createBackupOperationCallable", "createBackupCallable"]
+            },
+            "CreateBackupPolicy": {
+              "methods": ["createBackupPolicyAsync", "createBackupPolicyAsync", "createBackupPolicyAsync", "createBackupPolicyOperationCallable", "createBackupPolicyCallable"]
+            },
+            "CreateBackupVault": {
+              "methods": ["createBackupVaultAsync", "createBackupVaultAsync", "createBackupVaultAsync", "createBackupVaultOperationCallable", "createBackupVaultCallable"]
+            },
             "CreateKmsConfig": {
               "methods": ["createKmsConfigAsync", "createKmsConfigAsync", "createKmsConfigAsync", "createKmsConfigOperationCallable", "createKmsConfigCallable"]
             },
@@ -30,6 +39,15 @@
             },
             "DeleteActiveDirectory": {
               "methods": ["deleteActiveDirectoryAsync", "deleteActiveDirectoryAsync", "deleteActiveDirectoryAsync", "deleteActiveDirectoryOperationCallable", "deleteActiveDirectoryCallable"]
+            },
+            "DeleteBackup": {
+              "methods": ["deleteBackupAsync", "deleteBackupAsync", "deleteBackupAsync", "deleteBackupOperationCallable", "deleteBackupCallable"]
+            },
+            "DeleteBackupPolicy": {
+              "methods": ["deleteBackupPolicyAsync", "deleteBackupPolicyAsync", "deleteBackupPolicyAsync", "deleteBackupPolicyOperationCallable", "deleteBackupPolicyCallable"]
+            },
+            "DeleteBackupVault": {
+              "methods": ["deleteBackupVaultAsync", "deleteBackupVaultAsync", "deleteBackupVaultAsync", "deleteBackupVaultOperationCallable", "deleteBackupVaultCallable"]
             },
             "DeleteKmsConfig": {
               "methods": ["deleteKmsConfigAsync", "deleteKmsConfigAsync", "deleteKmsConfigAsync", "deleteKmsConfigOperationCallable", "deleteKmsConfigCallable"]
@@ -52,6 +70,15 @@
             "GetActiveDirectory": {
               "methods": ["getActiveDirectory", "getActiveDirectory", "getActiveDirectory", "getActiveDirectoryCallable"]
             },
+            "GetBackup": {
+              "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
+            },
+            "GetBackupPolicy": {
+              "methods": ["getBackupPolicy", "getBackupPolicy", "getBackupPolicy", "getBackupPolicyCallable"]
+            },
+            "GetBackupVault": {
+              "methods": ["getBackupVault", "getBackupVault", "getBackupVault", "getBackupVaultCallable"]
+            },
             "GetKmsConfig": {
               "methods": ["getKmsConfig", "getKmsConfig", "getKmsConfig", "getKmsConfigCallable"]
             },
@@ -72,6 +99,15 @@
             },
             "ListActiveDirectories": {
               "methods": ["listActiveDirectories", "listActiveDirectories", "listActiveDirectories", "listActiveDirectoriesPagedCallable", "listActiveDirectoriesCallable"]
+            },
+            "ListBackupPolicies": {
+              "methods": ["listBackupPolicies", "listBackupPolicies", "listBackupPolicies", "listBackupPoliciesPagedCallable", "listBackupPoliciesCallable"]
+            },
+            "ListBackupVaults": {
+              "methods": ["listBackupVaults", "listBackupVaults", "listBackupVaults", "listBackupVaultsPagedCallable", "listBackupVaultsCallable"]
+            },
+            "ListBackups": {
+              "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
             },
             "ListKmsConfigs": {
               "methods": ["listKmsConfigs", "listKmsConfigs", "listKmsConfigs", "listKmsConfigsPagedCallable", "listKmsConfigsCallable"]
@@ -105,6 +141,15 @@
             },
             "UpdateActiveDirectory": {
               "methods": ["updateActiveDirectoryAsync", "updateActiveDirectoryAsync", "updateActiveDirectoryOperationCallable", "updateActiveDirectoryCallable"]
+            },
+            "UpdateBackup": {
+              "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]
+            },
+            "UpdateBackupPolicy": {
+              "methods": ["updateBackupPolicyAsync", "updateBackupPolicyAsync", "updateBackupPolicyOperationCallable", "updateBackupPolicyCallable"]
+            },
+            "UpdateBackupVault": {
+              "methods": ["updateBackupVaultAsync", "updateBackupVaultAsync", "updateBackupVaultOperationCallable", "updateBackupVaultCallable"]
             },
             "UpdateKmsConfig": {
               "methods": ["updateKmsConfigAsync", "updateKmsConfigAsync", "updateKmsConfigOperationCallable", "updateKmsConfigCallable"]

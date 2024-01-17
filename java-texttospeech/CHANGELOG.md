@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.34.0 (2024-01-10)
+
+### Features
+
+* correct long audio synthesis HTTP binding ([#10185](https://github.com/googleapis/google-cloud-java/issues/10185)) ([cb5168c](https://github.com/googleapis/google-cloud-java/commit/cb5168c3a46184b41ef153849541d57106f65ca2))
+
+
+
 ## 2.33.0 (2023-12-12)
 
 * No change

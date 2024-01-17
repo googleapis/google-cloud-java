@@ -40,6 +40,7 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
   private ImportSshPublicKeyRequest() {
     parent_ = "";
     projectId_ = "";
+    regions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -226,6 +227,78 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
     }
   }
 
+  public static final int REGIONS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList regions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The regions to which to assert that the key was written.
+   * If unspecified, defaults to all regions.
+   * Regions are listed at https://cloud.google.com/about/locations#region.
+   * </pre>
+   *
+   * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the regions.
+   */
+  public com.google.protobuf.ProtocolStringList getRegionsList() {
+    return regions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The regions to which to assert that the key was written.
+   * If unspecified, defaults to all regions.
+   * Regions are listed at https://cloud.google.com/about/locations#region.
+   * </pre>
+   *
+   * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of regions.
+   */
+  public int getRegionsCount() {
+    return regions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The regions to which to assert that the key was written.
+   * If unspecified, defaults to all regions.
+   * Regions are listed at https://cloud.google.com/about/locations#region.
+   * </pre>
+   *
+   * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The regions at the given index.
+   */
+  public java.lang.String getRegions(int index) {
+    return regions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The regions to which to assert that the key was written.
+   * If unspecified, defaults to all regions.
+   * Regions are listed at https://cloud.google.com/about/locations#region.
+   * </pre>
+   *
+   * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the regions at the given index.
+   */
+  public com.google.protobuf.ByteString getRegionsBytes(int index) {
+    return regions_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -249,6 +322,9 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, projectId_);
     }
+    for (int i = 0; i < regions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, regions_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -266,6 +342,14 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, projectId_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < regions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(regions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getRegionsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -289,6 +373,7 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       if (!getSshPublicKey().equals(other.getSshPublicKey())) return false;
     }
     if (!getProjectId().equals(other.getProjectId())) return false;
+    if (!getRegionsList().equals(other.getRegionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -308,6 +393,10 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
     }
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId().hashCode();
+    if (getRegionsCount() > 0) {
+      hash = (37 * hash) + REGIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getRegionsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -455,6 +544,7 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
         sshPublicKeyBuilder_ = null;
       }
       projectId_ = "";
+      regions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -500,6 +590,10 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        regions_.makeImmutable();
+        result.regions_ = regions_;
       }
     }
 
@@ -562,6 +656,16 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.regions_.isEmpty()) {
+        if (regions_.isEmpty()) {
+          regions_ = other.regions_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureRegionsIsMutable();
+          regions_.addAll(other.regions_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -606,6 +710,13 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureRegionsIsMutable();
+                regions_.add(s);
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1050,6 +1161,198 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       projectId_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList regions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureRegionsIsMutable() {
+      if (!regions_.isModifiable()) {
+        regions_ = new com.google.protobuf.LazyStringArrayList(regions_);
+      }
+      bitField0_ |= 0x00000008;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The regions to which to assert that the key was written.
+     * If unspecified, defaults to all regions.
+     * Regions are listed at https://cloud.google.com/about/locations#region.
+     * </pre>
+     *
+     * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the regions.
+     */
+    public com.google.protobuf.ProtocolStringList getRegionsList() {
+      regions_.makeImmutable();
+      return regions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The regions to which to assert that the key was written.
+     * If unspecified, defaults to all regions.
+     * Regions are listed at https://cloud.google.com/about/locations#region.
+     * </pre>
+     *
+     * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of regions.
+     */
+    public int getRegionsCount() {
+      return regions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The regions to which to assert that the key was written.
+     * If unspecified, defaults to all regions.
+     * Regions are listed at https://cloud.google.com/about/locations#region.
+     * </pre>
+     *
+     * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The regions at the given index.
+     */
+    public java.lang.String getRegions(int index) {
+      return regions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The regions to which to assert that the key was written.
+     * If unspecified, defaults to all regions.
+     * Regions are listed at https://cloud.google.com/about/locations#region.
+     * </pre>
+     *
+     * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the regions at the given index.
+     */
+    public com.google.protobuf.ByteString getRegionsBytes(int index) {
+      return regions_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The regions to which to assert that the key was written.
+     * If unspecified, defaults to all regions.
+     * Regions are listed at https://cloud.google.com/about/locations#region.
+     * </pre>
+     *
+     * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The regions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegions(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRegionsIsMutable();
+      regions_.set(index, value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The regions to which to assert that the key was written.
+     * If unspecified, defaults to all regions.
+     * Regions are listed at https://cloud.google.com/about/locations#region.
+     * </pre>
+     *
+     * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The regions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRegions(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRegionsIsMutable();
+      regions_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The regions to which to assert that the key was written.
+     * If unspecified, defaults to all regions.
+     * Regions are listed at https://cloud.google.com/about/locations#region.
+     * </pre>
+     *
+     * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The regions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRegions(java.lang.Iterable<java.lang.String> values) {
+      ensureRegionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, regions_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The regions to which to assert that the key was written.
+     * If unspecified, defaults to all regions.
+     * Regions are listed at https://cloud.google.com/about/locations#region.
+     * </pre>
+     *
+     * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegions() {
+      regions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The regions to which to assert that the key was written.
+     * If unspecified, defaults to all regions.
+     * Regions are listed at https://cloud.google.com/about/locations#region.
+     * </pre>
+     *
+     * <code>repeated string regions = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the regions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRegionsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureRegionsIsMutable();
+      regions_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

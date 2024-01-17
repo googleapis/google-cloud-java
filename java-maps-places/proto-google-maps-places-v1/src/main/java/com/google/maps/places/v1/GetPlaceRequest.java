@@ -72,8 +72,9 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. A place_id returned in a Place (with "places/" prefix), or
-   * equivalently the name in the same Place. Format: places/&lt;place_id&gt;.
+   * Required. A place ID returned in a Place (with "places/" prefix), or
+   * equivalently the name in the same Place. Format:
+   * `places/{place_id}`.
    * </pre>
    *
    * <code>
@@ -98,8 +99,9 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. A place_id returned in a Place (with "places/" prefix), or
-   * equivalently the name in the same Place. Format: places/&lt;place_id&gt;.
+   * Required. A place ID returned in a Place (with "places/" prefix), or
+   * equivalently the name in the same Place. Format:
+   * `places/{place_id}`.
    * </pre>
    *
    * <code>
@@ -193,7 +195,7 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
    * details, like region-specific place name, if available. The parameter can
    * affect results based on applicable law.
    * For more information, see
-   * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+   * https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html.
    *
    *
    * Note that 3-digit region codes are not currently supported.
@@ -224,7 +226,7 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
    * details, like region-specific place name, if available. The parameter can
    * affect results based on applicable law.
    * For more information, see
-   * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+   * https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html.
    *
    *
    * Note that 3-digit region codes are not currently supported.
@@ -641,8 +643,9 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. A place_id returned in a Place (with "places/" prefix), or
-     * equivalently the name in the same Place. Format: places/&lt;place_id&gt;.
+     * Required. A place ID returned in a Place (with "places/" prefix), or
+     * equivalently the name in the same Place. Format:
+     * `places/{place_id}`.
      * </pre>
      *
      * <code>
@@ -666,8 +669,9 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. A place_id returned in a Place (with "places/" prefix), or
-     * equivalently the name in the same Place. Format: places/&lt;place_id&gt;.
+     * Required. A place ID returned in a Place (with "places/" prefix), or
+     * equivalently the name in the same Place. Format:
+     * `places/{place_id}`.
      * </pre>
      *
      * <code>
@@ -691,8 +695,9 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. A place_id returned in a Place (with "places/" prefix), or
-     * equivalently the name in the same Place. Format: places/&lt;place_id&gt;.
+     * Required. A place ID returned in a Place (with "places/" prefix), or
+     * equivalently the name in the same Place. Format:
+     * `places/{place_id}`.
      * </pre>
      *
      * <code>
@@ -715,8 +720,9 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. A place_id returned in a Place (with "places/" prefix), or
-     * equivalently the name in the same Place. Format: places/&lt;place_id&gt;.
+     * Required. A place ID returned in a Place (with "places/" prefix), or
+     * equivalently the name in the same Place. Format:
+     * `places/{place_id}`.
      * </pre>
      *
      * <code>
@@ -735,8 +741,9 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. A place_id returned in a Place (with "places/" prefix), or
-     * equivalently the name in the same Place. Format: places/&lt;place_id&gt;.
+     * Required. A place ID returned in a Place (with "places/" prefix), or
+     * equivalently the name in the same Place. Format:
+     * `places/{place_id}`.
      * </pre>
      *
      * <code>
@@ -893,7 +900,7 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
      * details, like region-specific place name, if available. The parameter can
      * affect results based on applicable law.
      * For more information, see
-     * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+     * https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html.
      *
      *
      * Note that 3-digit region codes are not currently supported.
@@ -923,7 +930,7 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
      * details, like region-specific place name, if available. The parameter can
      * affect results based on applicable law.
      * For more information, see
-     * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+     * https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html.
      *
      *
      * Note that 3-digit region codes are not currently supported.
@@ -953,7 +960,7 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
      * details, like region-specific place name, if available. The parameter can
      * affect results based on applicable law.
      * For more information, see
-     * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+     * https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html.
      *
      *
      * Note that 3-digit region codes are not currently supported.
@@ -982,7 +989,7 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
      * details, like region-specific place name, if available. The parameter can
      * affect results based on applicable law.
      * For more information, see
-     * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+     * https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html.
      *
      *
      * Note that 3-digit region codes are not currently supported.
@@ -1007,7 +1014,7 @@ public final class GetPlaceRequest extends com.google.protobuf.GeneratedMessageV
      * details, like region-specific place name, if available. The parameter can
      * affect results based on applicable law.
      * For more information, see
-     * http://www.unicode.org/reports/tr35/#unicode_region_subtag.
+     * https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html.
      *
      *
      * Note that 3-digit region codes are not currently supported.

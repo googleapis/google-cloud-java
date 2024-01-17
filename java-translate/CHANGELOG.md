@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.33.0 (2024-01-10)
+
+### Features
+
+* Add Adaptive MT API ([#10157](https://github.com/googleapis/google-cloud-java/issues/10157)) ([b1f9213](https://github.com/googleapis/google-cloud-java/commit/b1f9213cbeded32e2086b3fb5c933bebb0ed0819))
+
+
+
 ## 2.32.0 (2023-12-12)
 
 * No change

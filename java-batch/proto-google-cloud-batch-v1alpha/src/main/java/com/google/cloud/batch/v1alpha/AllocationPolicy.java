@@ -43,6 +43,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     instanceTemplates_ = com.google.protobuf.LazyStringArrayList.emptyList();
     provisioningModels_ = java.util.Collections.emptyList();
     serviceAccountEmail_ = "";
+    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -14331,6 +14332,86 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         : placement_;
   }
 
+  public static final int TAGS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList tags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tags applied to the VM instances.
+   *
+   * The tags identify valid sources or targets for network firewalls.
+   * Each tag must be 1-63 characters long, and comply with
+   * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * </pre>
+   *
+   * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the tags.
+   */
+  public com.google.protobuf.ProtocolStringList getTagsList() {
+    return tags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tags applied to the VM instances.
+   *
+   * The tags identify valid sources or targets for network firewalls.
+   * Each tag must be 1-63 characters long, and comply with
+   * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * </pre>
+   *
+   * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of tags.
+   */
+  public int getTagsCount() {
+    return tags_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tags applied to the VM instances.
+   *
+   * The tags identify valid sources or targets for network firewalls.
+   * Each tag must be 1-63 characters long, and comply with
+   * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * </pre>
+   *
+   * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
+   */
+  public java.lang.String getTags(int index) {
+    return tags_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tags applied to the VM instances.
+   *
+   * The tags identify valid sources or targets for network firewalls.
+   * Each tag must be 1-63 characters long, and comply with
+   * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * </pre>
+   *
+   * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
+   */
+  public com.google.protobuf.ByteString getTagsBytes(int index) {
+    return tags_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -14378,6 +14459,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
     if (placement_ != null) {
       output.writeMessage(10, getPlacement());
+    }
+    for (int i = 0; i < tags_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, tags_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -14440,6 +14524,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     if (placement_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getPlacement());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < tags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getTagsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -14481,6 +14573,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     if (hasPlacement()) {
       if (!getPlacement().equals(other.getPlacement())) return false;
     }
+    if (!getTagsList().equals(other.getTagsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -14529,6 +14622,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     if (hasPlacement()) {
       hash = (37 * hash) + PLACEMENT_FIELD_NUMBER;
       hash = (53 * hash) + getPlacement().hashCode();
+    }
+    if (getTagsCount() > 0) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getTagsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -14727,6 +14824,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         placementBuilder_.dispose();
         placementBuilder_ = null;
       }
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -14808,6 +14906,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.placement_ = placementBuilder_ == null ? placement_ : placementBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        tags_.makeImmutable();
+        result.tags_ = tags_;
       }
     }
 
@@ -14926,6 +15028,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (other.hasPlacement()) {
         mergePlacement(other.getPlacement());
       }
+      if (!other.tags_.isEmpty()) {
+        if (tags_.isEmpty()) {
+          tags_ = other.tags_;
+          bitField0_ |= 0x00000400;
+        } else {
+          ensureTagsIsMutable();
+          tags_.addAll(other.tags_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -15041,6 +15153,13 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 82
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTagsIsMutable();
+                tags_.add(s);
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -17314,6 +17433,216 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         placement_ = null;
       }
       return placementBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureTagsIsMutable() {
+      if (!tags_.isModifiable()) {
+        tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+      }
+      bitField0_ |= 0x00000400;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tags applied to the VM instances.
+     *
+     * The tags identify valid sources or targets for network firewalls.
+     * Each tag must be 1-63 characters long, and comply with
+     * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * </pre>
+     *
+     * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList getTagsList() {
+      tags_.makeImmutable();
+      return tags_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tags applied to the VM instances.
+     *
+     * The tags identify valid sources or targets for network firewalls.
+     * Each tag must be 1-63 characters long, and comply with
+     * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * </pre>
+     *
+     * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tags applied to the VM instances.
+     *
+     * The tags identify valid sources or targets for network firewalls.
+     * Each tag must be 1-63 characters long, and comply with
+     * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * </pre>
+     *
+     * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tags applied to the VM instances.
+     *
+     * The tags identify valid sources or targets for network firewalls.
+     * Each tag must be 1-63 characters long, and comply with
+     * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * </pre>
+     *
+     * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tags applied to the VM instances.
+     *
+     * The tags identify valid sources or targets for network firewalls.
+     * Each tag must be 1-63 characters long, and comply with
+     * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * </pre>
+     *
+     * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The tags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTags(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTagsIsMutable();
+      tags_.set(index, value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tags applied to the VM instances.
+     *
+     * The tags identify valid sources or targets for network firewalls.
+     * Each tag must be 1-63 characters long, and comply with
+     * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * </pre>
+     *
+     * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The tags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTags(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTagsIsMutable();
+      tags_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tags applied to the VM instances.
+     *
+     * The tags identify valid sources or targets for network firewalls.
+     * Each tag must be 1-63 characters long, and comply with
+     * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * </pre>
+     *
+     * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The tags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
+      ensureTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tags applied to the VM instances.
+     *
+     * The tags identify valid sources or targets for network firewalls.
+     * Each tag must be 1-63 characters long, and comply with
+     * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * </pre>
+     *
+     * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTags() {
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tags applied to the VM instances.
+     *
+     * The tags identify valid sources or targets for network firewalls.
+     * Each tag must be 1-63 characters long, and comply with
+     * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * </pre>
+     *
+     * <code>repeated string tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the tags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTagsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureTagsIsMutable();
+      tags_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

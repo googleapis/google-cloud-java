@@ -69,19 +69,435 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the AssetServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    <tr>
+ *      <td>ExportAssets</td>
+ *      <td><p> Exports assets with time and resource types to a given Cloud Storage location/BigQuery table. For Cloud Storage location destinations, the output format is newline-delimited JSON. Each line represents a [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for BigQuery table destinations, the output table stores the fields in asset Protobuf as columns. This API implements the [google.longrunning.Operation][google.longrunning.Operation] API, which allows you to keep track of the export. We recommend intervals of at least 2 seconds with exponential retry to poll the export operation result. For regular-size resource parent, the export operation usually finishes within 5 minutes.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>exportAssetsAsync(ExportAssetsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>exportAssetsOperationCallable()
+ *           <li>exportAssetsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListAssets</td>
+ *      <td><p> Lists assets with time and resource types and returns paged results in response.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listAssets(ListAssetsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listAssets(ResourceName parent)
+ *           <li>listAssets(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listAssetsPagedCallable()
+ *           <li>listAssetsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>BatchGetAssetsHistory</td>
+ *      <td><p> Batch gets the update history of assets that overlap a time window. For IAM_POLICY content, this API outputs history when the asset and its attached IAM POLICY both exist. This can create gaps in the output history. Otherwise, this API outputs history with asset in both non-delete or deleted status. If a specified asset does not exist, this API returns an INVALID_ARGUMENT error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>batchGetAssetsHistory(BatchGetAssetsHistoryRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>batchGetAssetsHistoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateFeed</td>
+ *      <td><p> Creates a feed in a parent project/folder/organization to listen to its asset updates.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createFeed(CreateFeedRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>createFeed(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createFeedCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetFeed</td>
+ *      <td><p> Gets details about an asset feed.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getFeed(GetFeedRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getFeed(FeedName name)
+ *           <li>getFeed(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getFeedCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListFeeds</td>
+ *      <td><p> Lists all asset feeds in a parent project/folder/organization.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listFeeds(ListFeedsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listFeeds(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listFeedsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateFeed</td>
+ *      <td><p> Updates an asset feed configuration.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateFeed(UpdateFeedRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>updateFeed(Feed feed)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateFeedCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteFeed</td>
+ *      <td><p> Deletes an asset feed.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteFeed(DeleteFeedRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>deleteFeed(FeedName name)
+ *           <li>deleteFeed(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteFeedCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>SearchAllResources</td>
+ *      <td><p> Searches all Google Cloud resources within the specified scope, such as a project, folder, or organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission on the desired scope, otherwise the request will be rejected.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>searchAllResources(SearchAllResourcesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>searchAllResources(String scope, String query, List<String> assetTypes)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>searchAllResourcesPagedCallable()
+ *           <li>searchAllResourcesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>SearchAllIamPolicies</td>
+ *      <td><p> Searches all IAM policies within the specified scope, such as a project, folder, or organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies` permission on the desired scope, otherwise the request will be rejected.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>searchAllIamPolicies(SearchAllIamPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>searchAllIamPolicies(String scope, String query)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>searchAllIamPoliciesPagedCallable()
+ *           <li>searchAllIamPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>AnalyzeIamPolicy</td>
+ *      <td><p> Analyzes IAM policies to answer which identities have what accesses on which resources.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>analyzeIamPolicy(AnalyzeIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>analyzeIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>AnalyzeIamPolicyLongrunning</td>
+ *      <td><p> Analyzes IAM policies asynchronously to answer which identities have what accesses on which resources, and writes the analysis results to a Google Cloud Storage or a BigQuery destination. For Cloud Storage destination, the output format is the JSON format that represents a [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation status. We recommend intervals of at least 2 seconds with exponential backoff retry to poll the operation result. The metadata contains the metadata for the long-running operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>analyzeIamPolicyLongrunningAsync(AnalyzeIamPolicyLongrunningRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>analyzeIamPolicyLongrunningOperationCallable()
+ *           <li>analyzeIamPolicyLongrunningCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>AnalyzeMove</td>
+ *      <td><p> Analyze moving a resource to a specified destination without kicking off the actual move. The analysis is best effort depending on the user's permissions of viewing different hierarchical policies and configurations. The policies and configuration are subject to change before the actual resource migration takes place.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>analyzeMove(AnalyzeMoveRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>analyzeMoveCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>QueryAssets</td>
+ *      <td><p> Issue a job that queries assets using a SQL statement compatible with [BigQuery SQL](https://cloud.google.com/bigquery/docs/introduction-sql).
+ * <p>  If the query execution finishes within timeout and there's no pagination, the full query results will be returned in the `QueryAssetsResponse`.
+ * <p>  Otherwise, full query results can be obtained by issuing extra requests with the `job_reference` from the a previous `QueryAssets` call.
+ * <p>  Note, the query result has approximately 10 GB limitation enforced by [BigQuery](https://cloud.google.com/bigquery/docs/best-practices-performance-output). Queries return larger results will result in errors.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>queryAssets(QueryAssetsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>queryAssetsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateSavedQuery</td>
+ *      <td><p> Creates a saved query in a parent project/folder/organization.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createSavedQuery(CreateSavedQueryRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>createSavedQuery(FolderName parent, SavedQuery savedQuery, String savedQueryId)
+ *           <li>createSavedQuery(OrganizationName parent, SavedQuery savedQuery, String savedQueryId)
+ *           <li>createSavedQuery(ProjectName parent, SavedQuery savedQuery, String savedQueryId)
+ *           <li>createSavedQuery(String parent, SavedQuery savedQuery, String savedQueryId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createSavedQueryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetSavedQuery</td>
+ *      <td><p> Gets details about a saved query.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getSavedQuery(GetSavedQueryRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getSavedQuery(SavedQueryName name)
+ *           <li>getSavedQuery(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getSavedQueryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListSavedQueries</td>
+ *      <td><p> Lists all saved queries in a parent project/folder/organization.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listSavedQueries(ListSavedQueriesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listSavedQueries(FolderName parent)
+ *           <li>listSavedQueries(OrganizationName parent)
+ *           <li>listSavedQueries(ProjectName parent)
+ *           <li>listSavedQueries(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listSavedQueriesPagedCallable()
+ *           <li>listSavedQueriesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateSavedQuery</td>
+ *      <td><p> Updates a saved query.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateSavedQuery(UpdateSavedQueryRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>updateSavedQuery(SavedQuery savedQuery, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateSavedQueryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteSavedQuery</td>
+ *      <td><p> Deletes a saved query.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteSavedQuery(DeleteSavedQueryRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>deleteSavedQuery(SavedQueryName name)
+ *           <li>deleteSavedQuery(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteSavedQueryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>BatchGetEffectiveIamPolicies</td>
+ *      <td><p> Gets effective IAM policies for a batch of resources.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>batchGetEffectiveIamPolicies(BatchGetEffectiveIamPoliciesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>batchGetEffectiveIamPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>AnalyzeOrgPolicies</td>
+ *      <td><p> Analyzes organization policies under a scope.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>analyzeOrgPolicies(AnalyzeOrgPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>analyzeOrgPolicies(String scope, String constraint, String filter)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>analyzeOrgPoliciesPagedCallable()
+ *           <li>analyzeOrgPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>AnalyzeOrgPolicyGovernedContainers</td>
+ *      <td><p> Analyzes organization policies governed containers (projects, folders or organization) under a scope.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>analyzeOrgPolicyGovernedContainers(AnalyzeOrgPolicyGovernedContainersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>analyzeOrgPolicyGovernedContainers(String scope, String constraint, String filter)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>analyzeOrgPolicyGovernedContainersPagedCallable()
+ *           <li>analyzeOrgPolicyGovernedContainersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>AnalyzeOrgPolicyGovernedAssets</td>
+ *      <td><p> Analyzes organization policies governed assets (Google Cloud resources or policies) under a scope. This RPC supports custom constraints and the following 10 canned constraints:
+ * <ul>
+ * <li>  storage.uniformBucketLevelAccess
+ * <li>  iam.disableServiceAccountKeyCreation
+ * <li>  iam.allowedPolicyMemberDomains
+ * <li>  compute.vmExternalIpAccess
+ * <li>  appengine.enforceServiceAccountActAsCheck
+ * <li>  gcp.resourceLocations
+ * <li>  compute.trustedImageProjects
+ * <li>  compute.skipDefaultNetworkCreation
+ * <li>  compute.requireOsLogin
+ * <li>  compute.disableNestedVirtualization
+ * </ul>
+ * <p>  This RPC only returns either resources of types supported by [searchable asset types](https://cloud.google.com/asset-inventory/docs/supported-asset-types), or IAM policies.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>analyzeOrgPolicyGovernedAssets(AnalyzeOrgPolicyGovernedAssetsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>analyzeOrgPolicyGovernedAssets(String scope, String constraint, String filter)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>analyzeOrgPolicyGovernedAssetsPagedCallable()
+ *           <li>analyzeOrgPolicyGovernedAssetsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -1114,31 +1530,31 @@ public class AssetServiceClient implements BackgroundResource {
    *       <li>`labels.env:&#42;` to find Google Cloud resources that have a label `env`.
    *       <li>`tagKeys:env` to find Google Cloud resources that have directly attached tags where
    *           the
-   *           [`TagKey`](https://cloud.google.com/resource-manager/reference/rest/v3/tagKeys#resource:-tagkey)
-   *           .`namespacedName` contains `env`.
+   *           [`TagKey.namespacedName`](https://cloud.google.com/resource-manager/reference/rest/v3/tagKeys#resource:-tagkey)
+   *           contains `env`.
    *       <li>`tagValues:prod&#42;` to find Google Cloud resources that have directly attached tags
    *           where the
-   *           [`TagValue`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
-   *           .`namespacedName` contains a word prefixed by `prod`.
+   *           [`TagValue.namespacedName`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
+   *           contains a word prefixed by `prod`.
    *       <li>`tagValueIds=tagValues/123` to find Google Cloud resources that have directly
    *           attached tags where the
-   *           [`TagValue`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
-   *           .`name` is exactly `tagValues/123`.
+   *           [`TagValue.name`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
+   *           is exactly `tagValues/123`.
    *       <li>`effectiveTagKeys:env` to find Google Cloud resources that have directly attached or
    *           inherited tags where the
-   *           [`TagKey`](https://cloud.google.com/resource-manager/reference/rest/v3/tagKeys#resource:-tagkey)
-   *           .`namespacedName` contains `env`.
+   *           [`TagKey.namespacedName`](https://cloud.google.com/resource-manager/reference/rest/v3/tagKeys#resource:-tagkey)
+   *           contains `env`.
    *       <li>`effectiveTagValues:prod&#42;` to find Google Cloud resources that have directly
    *           attached or inherited tags where the
-   *           [`TagValue`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
-   *           .`namespacedName` contains a word prefixed by `prod`.
+   *           [`TagValue.namespacedName`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
+   *           contains a word prefixed by `prod`.
    *       <li>`effectiveTagValueIds=tagValues/123` to find Google Cloud resources that have
    *           directly attached or inherited tags where the
-   *           [`TagValue`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
-   *           .`name` is exactly `tagValues/123`.
+   *           [`TagValue.name`](https://cloud.google.com/resource-manager/reference/rest/v3/tagValues#resource:-tagvalue)
+   *           is exactly `tagValues/123`.
    *       <li>`kmsKey:key` to find Google Cloud resources encrypted with a customer-managed
-   *           encryption key whose name contains `key` as a word. This field is deprecated. Please
-   *           use the `kmsKeys` field to retrieve Cloud KMS key information.
+   *           encryption key whose name contains `key` as a word. This field is deprecated. Use the
+   *           `kmsKeys` field to retrieve Cloud KMS key information.
    *       <li>`kmsKeys:key` to find Google Cloud resources encrypted with customer-managed
    *           encryption keys whose name contains the word `key`.
    *       <li>`relationships:instance-group-1` to find Google Cloud resources that have
@@ -1148,6 +1564,10 @@ public class AssetServiceClient implements BackgroundResource {
    *       <li>`relationships.INSTANCE_TO_INSTANCEGROUP:instance-group-1` to find Compute Engine
    *           instances that have relationships with `instance-group-1` in the Compute Engine
    *           instance group resource name, for relationship type `INSTANCE_TO_INSTANCEGROUP`.
+   *       <li>`sccSecurityMarks.key=value` to find Cloud resources that are attached with security
+   *           marks whose key is `key` and value is `value`.
+   *       <li>`sccSecurityMarks.key:&#42;` to find Cloud resources that are attached with security
+   *           marks whose key is `key`.
    *       <li>`state:ACTIVE` to find Google Cloud resources whose state contains `ACTIVE` as a
    *           word.
    *       <li>`NOT state:ACTIVE` to find Google Cloud resources whose state doesn't contain
@@ -1169,7 +1589,7 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * @param assetTypes Optional. A list of asset types that this request searches for. If empty, it
    *     will search all the [searchable asset
-   *     types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   *     types](https://cloud.google.com/asset-inventory/docs/supported-asset-types).
    *     <p>Regular expressions are also supported. For example:
    *     <ul>
    *       <li>"compute.googleapis.com.&#42;" snapshots resources whose asset type starts with
@@ -1721,8 +2141,8 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   AnalyzeMoveRequest request =
    *       AnalyzeMoveRequest.newBuilder()
-   *           .setResource("resource-341064690")
-   *           .setDestinationParent("destinationParent-1733659048")
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setDestinationParent(FolderName.of("[FOLDER]").toString())
    *           .build();
    *   AnalyzeMoveResponse response = assetServiceClient.analyzeMove(request);
    * }
@@ -1753,8 +2173,8 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   AnalyzeMoveRequest request =
    *       AnalyzeMoveRequest.newBuilder()
-   *           .setResource("resource-341064690")
-   *           .setDestinationParent("destinationParent-1733659048")
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setDestinationParent(FolderName.of("[FOLDER]").toString())
    *           .build();
    *   ApiFuture<AnalyzeMoveResponse> future =
    *       assetServiceClient.analyzeMoveCallable().futureCall(request);
@@ -2764,11 +3184,15 @@ public class AssetServiceClient implements BackgroundResource {
    *     The response only contains analyzed organization policies for the provided constraint.
    * @param filter The expression to filter
    *     [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
-   *     The only supported field is `consolidated_policy.attached_resource`, and the only supported
-   *     operator is `=`.
-   *     <p>Example:
+   *     Filtering is currently available for bare literal values and the following fields:
+   *     <ul>
+   *       <li>consolidated_policy.attached_resource
+   *       <li>consolidated_policy.rules.enforce
+   *     </ul>
+   *     <p>When filtering by a specific field, the only supported operator is `=`. For example,
+   *     filtering by
    *     consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
-   *     will return the org policy results of"folders/001".
+   *     will return all the Organization Policy results attached to "folders/001".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyzeOrgPoliciesPagedResponse analyzeOrgPolicies(
@@ -2931,9 +3355,15 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * @param constraint Required. The name of the constraint to analyze governed containers for. The
    *     analysis only contains organization policies for the provided constraint.
-   * @param filter The expression to filter the governed containers in result. The only supported
-   *     field is `parent`, and the only supported operator is `=`.
-   *     <p>Example: parent="//cloudresourcemanager.googleapis.com/folders/001" will return all
+   * @param filter The expression to filter
+   *     [AnalyzeOrgPolicyGovernedContainersResponse.governed_containers][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.governed_containers].
+   *     Filtering is currently available for bare literal values and the following fields:
+   *     <ul>
+   *       <li>parent
+   *       <li>consolidated_policy.rules.enforce
+   *     </ul>
+   *     <p>When filtering by a specific field, the only supported operator is `=`. For example,
+   *     filtering by parent="//cloudresourcemanager.googleapis.com/folders/001" will return all the
    *     containers under "folders/001".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3088,8 +3518,7 @@ public class AssetServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>This RPC only returns either resources of types supported by [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
-   * or IAM policies.
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types), or IAM policies.
    *
    * <p>Sample code:
    *
@@ -3121,14 +3550,32 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * @param constraint Required. The name of the constraint to analyze governed assets for. The
    *     analysis only contains analyzed organization policies for the provided constraint.
-   * @param filter The expression to filter the governed assets in result. The only supported fields
-   *     for governed resources are `governed_resource.project` and `governed_resource.folders`. The
-   *     only supported fields for governed iam policies are `governed_iam_policy.project` and
-   *     `governed_iam_policy.folders`. The only supported operator is `=`.
-   *     <p>Example 1: governed_resource.project="projects/12345678" filter will return all governed
-   *     resources under projects/12345678 including the project ifself, if applicable.
-   *     <p>Example 2: governed_iam_policy.folders="folders/12345678" filter will return all
-   *     governed iam policies under folders/12345678, if applicable.
+   * @param filter The expression to filter
+   *     [AnalyzeOrgPolicyGovernedAssetsResponse.governed_assets][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.governed_assets].
+   *     <p>For governed resources, filtering is currently available for bare literal values and the
+   *     following fields:
+   *     <ul>
+   *       <li>governed_resource.project
+   *       <li>governed_resource.folders
+   *       <li>consolidated_policy.rules.enforce When filtering by `governed_resource.project` or
+   *           `consolidated_policy.rules.enforce`, the only supported operator is `=`. When
+   *           filtering by `governed_resource.folders`, the supported operators are `=` and `:`.
+   *           For example, filtering by `governed_resource.project="projects/12345678"` will return
+   *           all the governed resources under "projects/12345678", including the project itself if
+   *           applicable.
+   *     </ul>
+   *     <p>For governed IAM policies, filtering is currently available for bare literal values and
+   *     the following fields:
+   *     <ul>
+   *       <li>governed_iam_policy.project
+   *       <li>governed_iam_policy.folders
+   *       <li>consolidated_policy.rules.enforce When filtering by `governed_iam_policy.project` or
+   *           `consolidated_policy.rules.enforce`, the only supported operator is `=`. When
+   *           filtering by `governed_iam_policy.folders`, the supported operators are `=` and `:`.
+   *           For example, filtering by `governed_iam_policy.folders:"folders/12345678"` will
+   *           return all the governed IAM policies under "folders/001".
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyzeOrgPolicyGovernedAssetsPagedResponse analyzeOrgPolicyGovernedAssets(
@@ -3161,8 +3608,7 @@ public class AssetServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>This RPC only returns either resources of types supported by [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
-   * or IAM policies.
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types), or IAM policies.
    *
    * <p>Sample code:
    *
@@ -3215,8 +3661,7 @@ public class AssetServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>This RPC only returns either resources of types supported by [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
-   * or IAM policies.
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types), or IAM policies.
    *
    * <p>Sample code:
    *
@@ -3270,8 +3715,7 @@ public class AssetServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>This RPC only returns either resources of types supported by [searchable asset
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
-   * or IAM policies.
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types), or IAM policies.
    *
    * <p>Sample code:
    *

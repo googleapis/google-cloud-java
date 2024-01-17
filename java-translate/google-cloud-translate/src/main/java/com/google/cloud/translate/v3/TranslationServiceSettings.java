@@ -16,6 +16,9 @@
 
 package com.google.cloud.translate.v3;
 
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtDatasetsPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtFilesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtSentencesPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossariesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -33,6 +36,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.translate.v3.stub.TranslationServiceStubSettings;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -162,6 +166,71 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
           DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationSettings() {
     return ((TranslationServiceStubSettings) getStubSettings()).deleteGlossaryOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAdaptiveMtDataset. */
+  public UnaryCallSettings<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      createAdaptiveMtDatasetSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).createAdaptiveMtDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAdaptiveMtDataset. */
+  public UnaryCallSettings<DeleteAdaptiveMtDatasetRequest, Empty>
+      deleteAdaptiveMtDatasetSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).deleteAdaptiveMtDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAdaptiveMtDataset. */
+  public UnaryCallSettings<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      getAdaptiveMtDatasetSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).getAdaptiveMtDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAdaptiveMtDatasets. */
+  public PagedCallSettings<
+          ListAdaptiveMtDatasetsRequest,
+          ListAdaptiveMtDatasetsResponse,
+          ListAdaptiveMtDatasetsPagedResponse>
+      listAdaptiveMtDatasetsSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).listAdaptiveMtDatasetsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to adaptiveMtTranslate. */
+  public UnaryCallSettings<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+      adaptiveMtTranslateSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).adaptiveMtTranslateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAdaptiveMtFile. */
+  public UnaryCallSettings<GetAdaptiveMtFileRequest, AdaptiveMtFile> getAdaptiveMtFileSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).getAdaptiveMtFileSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAdaptiveMtFile. */
+  public UnaryCallSettings<DeleteAdaptiveMtFileRequest, Empty> deleteAdaptiveMtFileSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).deleteAdaptiveMtFileSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importAdaptiveMtFile. */
+  public UnaryCallSettings<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+      importAdaptiveMtFileSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).importAdaptiveMtFileSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAdaptiveMtFiles. */
+  public PagedCallSettings<
+          ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, ListAdaptiveMtFilesPagedResponse>
+      listAdaptiveMtFilesSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).listAdaptiveMtFilesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAdaptiveMtSentences. */
+  public PagedCallSettings<
+          ListAdaptiveMtSentencesRequest,
+          ListAdaptiveMtSentencesResponse,
+          ListAdaptiveMtSentencesPagedResponse>
+      listAdaptiveMtSentencesSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).listAdaptiveMtSentencesSettings();
   }
 
   public static final TranslationServiceSettings create(TranslationServiceStubSettings stub)
@@ -364,6 +433,75 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
             DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
         deleteGlossaryOperationSettings() {
       return getStubSettingsBuilder().deleteGlossaryOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAdaptiveMtDataset. */
+    public UnaryCallSettings.Builder<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+        createAdaptiveMtDatasetSettings() {
+      return getStubSettingsBuilder().createAdaptiveMtDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAdaptiveMtDataset. */
+    public UnaryCallSettings.Builder<DeleteAdaptiveMtDatasetRequest, Empty>
+        deleteAdaptiveMtDatasetSettings() {
+      return getStubSettingsBuilder().deleteAdaptiveMtDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAdaptiveMtDataset. */
+    public UnaryCallSettings.Builder<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+        getAdaptiveMtDatasetSettings() {
+      return getStubSettingsBuilder().getAdaptiveMtDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAdaptiveMtDatasets. */
+    public PagedCallSettings.Builder<
+            ListAdaptiveMtDatasetsRequest,
+            ListAdaptiveMtDatasetsResponse,
+            ListAdaptiveMtDatasetsPagedResponse>
+        listAdaptiveMtDatasetsSettings() {
+      return getStubSettingsBuilder().listAdaptiveMtDatasetsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to adaptiveMtTranslate. */
+    public UnaryCallSettings.Builder<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+        adaptiveMtTranslateSettings() {
+      return getStubSettingsBuilder().adaptiveMtTranslateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAdaptiveMtFile. */
+    public UnaryCallSettings.Builder<GetAdaptiveMtFileRequest, AdaptiveMtFile>
+        getAdaptiveMtFileSettings() {
+      return getStubSettingsBuilder().getAdaptiveMtFileSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAdaptiveMtFile. */
+    public UnaryCallSettings.Builder<DeleteAdaptiveMtFileRequest, Empty>
+        deleteAdaptiveMtFileSettings() {
+      return getStubSettingsBuilder().deleteAdaptiveMtFileSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importAdaptiveMtFile. */
+    public UnaryCallSettings.Builder<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+        importAdaptiveMtFileSettings() {
+      return getStubSettingsBuilder().importAdaptiveMtFileSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAdaptiveMtFiles. */
+    public PagedCallSettings.Builder<
+            ListAdaptiveMtFilesRequest,
+            ListAdaptiveMtFilesResponse,
+            ListAdaptiveMtFilesPagedResponse>
+        listAdaptiveMtFilesSettings() {
+      return getStubSettingsBuilder().listAdaptiveMtFilesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAdaptiveMtSentences. */
+    public PagedCallSettings.Builder<
+            ListAdaptiveMtSentencesRequest,
+            ListAdaptiveMtSentencesResponse,
+            ListAdaptiveMtSentencesPagedResponse>
+        listAdaptiveMtSentencesSettings() {
+      return getStubSettingsBuilder().listAdaptiveMtSentencesSettings();
     }
 
     @Override

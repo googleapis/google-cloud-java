@@ -18,6 +18,7 @@ package com.google.cloud.deploy.v1.stub;
 
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
@@ -68,17 +69,21 @@ import com.google.cloud.deploy.v1.CancelRolloutRequest;
 import com.google.cloud.deploy.v1.CancelRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
 import com.google.cloud.deploy.v1.CreateAutomationRequest;
+import com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.CreateTargetRequest;
+import com.google.cloud.deploy.v1.CustomTargetType;
 import com.google.cloud.deploy.v1.DeleteAutomationRequest;
+import com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
 import com.google.cloud.deploy.v1.GetAutomationRequest;
 import com.google.cloud.deploy.v1.GetAutomationRunRequest;
 import com.google.cloud.deploy.v1.GetConfigRequest;
+import com.google.cloud.deploy.v1.GetCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
@@ -91,6 +96,8 @@ import com.google.cloud.deploy.v1.ListAutomationRunsRequest;
 import com.google.cloud.deploy.v1.ListAutomationRunsResponse;
 import com.google.cloud.deploy.v1.ListAutomationsRequest;
 import com.google.cloud.deploy.v1.ListAutomationsResponse;
+import com.google.cloud.deploy.v1.ListCustomTargetTypesRequest;
+import com.google.cloud.deploy.v1.ListCustomTargetTypesResponse;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
 import com.google.cloud.deploy.v1.ListJobRunsRequest;
@@ -112,6 +119,7 @@ import com.google.cloud.deploy.v1.Target;
 import com.google.cloud.deploy.v1.TerminateJobRunRequest;
 import com.google.cloud.deploy.v1.TerminateJobRunResponse;
 import com.google.cloud.deploy.v1.UpdateAutomationRequest;
+import com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -212,6 +220,27 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
   private final UnaryCallSettings<DeleteTargetRequest, Operation> deleteTargetSettings;
   private final OperationCallSettings<DeleteTargetRequest, Empty, OperationMetadata>
       deleteTargetOperationSettings;
+  private final PagedCallSettings<
+          ListCustomTargetTypesRequest,
+          ListCustomTargetTypesResponse,
+          ListCustomTargetTypesPagedResponse>
+      listCustomTargetTypesSettings;
+  private final UnaryCallSettings<GetCustomTargetTypeRequest, CustomTargetType>
+      getCustomTargetTypeSettings;
+  private final UnaryCallSettings<CreateCustomTargetTypeRequest, Operation>
+      createCustomTargetTypeSettings;
+  private final OperationCallSettings<
+          CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      createCustomTargetTypeOperationSettings;
+  private final UnaryCallSettings<UpdateCustomTargetTypeRequest, Operation>
+      updateCustomTargetTypeSettings;
+  private final OperationCallSettings<
+          UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      updateCustomTargetTypeOperationSettings;
+  private final UnaryCallSettings<DeleteCustomTargetTypeRequest, Operation>
+      deleteCustomTargetTypeSettings;
+  private final OperationCallSettings<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+      deleteCustomTargetTypeOperationSettings;
   private final PagedCallSettings<
           ListReleasesRequest, ListReleasesResponse, ListReleasesPagedResponse>
       listReleasesSettings;
@@ -344,6 +373,47 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               return payload.getTargetsList() == null
                   ? ImmutableList.<Target>of()
                   : payload.getTargetsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListCustomTargetTypesRequest, ListCustomTargetTypesResponse, CustomTargetType>
+      LIST_CUSTOM_TARGET_TYPES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListCustomTargetTypesRequest, ListCustomTargetTypesResponse, CustomTargetType>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCustomTargetTypesRequest injectToken(
+                ListCustomTargetTypesRequest payload, String token) {
+              return ListCustomTargetTypesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListCustomTargetTypesRequest injectPageSize(
+                ListCustomTargetTypesRequest payload, int pageSize) {
+              return ListCustomTargetTypesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCustomTargetTypesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCustomTargetTypesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CustomTargetType> extractResources(
+                ListCustomTargetTypesResponse payload) {
+              return payload.getCustomTargetTypesList() == null
+                  ? ImmutableList.<CustomTargetType>of()
+                  : payload.getCustomTargetTypesList();
             }
           };
 
@@ -612,6 +682,30 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           };
 
   private static final PagedListResponseFactory<
+          ListCustomTargetTypesRequest,
+          ListCustomTargetTypesResponse,
+          ListCustomTargetTypesPagedResponse>
+      LIST_CUSTOM_TARGET_TYPES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCustomTargetTypesRequest,
+              ListCustomTargetTypesResponse,
+              ListCustomTargetTypesPagedResponse>() {
+            @Override
+            public ApiFuture<ListCustomTargetTypesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse> callable,
+                ListCustomTargetTypesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCustomTargetTypesResponse> futureResponse) {
+              PageContext<
+                      ListCustomTargetTypesRequest, ListCustomTargetTypesResponse, CustomTargetType>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CUSTOM_TARGET_TYPES_PAGE_STR_DESC, request, context);
+              return ListCustomTargetTypesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListReleasesRequest, ListReleasesResponse, ListReleasesPagedResponse>
       LIST_RELEASES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -817,6 +911,57 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     return deleteTargetOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listCustomTargetTypes. */
+  public PagedCallSettings<
+          ListCustomTargetTypesRequest,
+          ListCustomTargetTypesResponse,
+          ListCustomTargetTypesPagedResponse>
+      listCustomTargetTypesSettings() {
+    return listCustomTargetTypesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getCustomTargetType. */
+  public UnaryCallSettings<GetCustomTargetTypeRequest, CustomTargetType>
+      getCustomTargetTypeSettings() {
+    return getCustomTargetTypeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCustomTargetType. */
+  public UnaryCallSettings<CreateCustomTargetTypeRequest, Operation>
+      createCustomTargetTypeSettings() {
+    return createCustomTargetTypeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCustomTargetType. */
+  public OperationCallSettings<CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      createCustomTargetTypeOperationSettings() {
+    return createCustomTargetTypeOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomTargetType. */
+  public UnaryCallSettings<UpdateCustomTargetTypeRequest, Operation>
+      updateCustomTargetTypeSettings() {
+    return updateCustomTargetTypeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomTargetType. */
+  public OperationCallSettings<UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      updateCustomTargetTypeOperationSettings() {
+    return updateCustomTargetTypeOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomTargetType. */
+  public UnaryCallSettings<DeleteCustomTargetTypeRequest, Operation>
+      deleteCustomTargetTypeSettings() {
+    return deleteCustomTargetTypeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomTargetType. */
+  public OperationCallSettings<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+      deleteCustomTargetTypeOperationSettings() {
+    return deleteCustomTargetTypeOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listReleases. */
   public PagedCallSettings<ListReleasesRequest, ListReleasesResponse, ListReleasesPagedResponse>
       listReleasesSettings() {
@@ -1019,6 +1164,12 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "clouddeploy";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
@@ -1129,6 +1280,17 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     updateTargetOperationSettings = settingsBuilder.updateTargetOperationSettings().build();
     deleteTargetSettings = settingsBuilder.deleteTargetSettings().build();
     deleteTargetOperationSettings = settingsBuilder.deleteTargetOperationSettings().build();
+    listCustomTargetTypesSettings = settingsBuilder.listCustomTargetTypesSettings().build();
+    getCustomTargetTypeSettings = settingsBuilder.getCustomTargetTypeSettings().build();
+    createCustomTargetTypeSettings = settingsBuilder.createCustomTargetTypeSettings().build();
+    createCustomTargetTypeOperationSettings =
+        settingsBuilder.createCustomTargetTypeOperationSettings().build();
+    updateCustomTargetTypeSettings = settingsBuilder.updateCustomTargetTypeSettings().build();
+    updateCustomTargetTypeOperationSettings =
+        settingsBuilder.updateCustomTargetTypeOperationSettings().build();
+    deleteCustomTargetTypeSettings = settingsBuilder.deleteCustomTargetTypeSettings().build();
+    deleteCustomTargetTypeOperationSettings =
+        settingsBuilder.deleteCustomTargetTypeOperationSettings().build();
     listReleasesSettings = settingsBuilder.listReleasesSettings().build();
     getReleaseSettings = settingsBuilder.getReleaseSettings().build();
     createReleaseSettings = settingsBuilder.createReleaseSettings().build();
@@ -1205,6 +1367,28 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     private final UnaryCallSettings.Builder<DeleteTargetRequest, Operation> deleteTargetSettings;
     private final OperationCallSettings.Builder<DeleteTargetRequest, Empty, OperationMetadata>
         deleteTargetOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListCustomTargetTypesRequest,
+            ListCustomTargetTypesResponse,
+            ListCustomTargetTypesPagedResponse>
+        listCustomTargetTypesSettings;
+    private final UnaryCallSettings.Builder<GetCustomTargetTypeRequest, CustomTargetType>
+        getCustomTargetTypeSettings;
+    private final UnaryCallSettings.Builder<CreateCustomTargetTypeRequest, Operation>
+        createCustomTargetTypeSettings;
+    private final OperationCallSettings.Builder<
+            CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+        createCustomTargetTypeOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateCustomTargetTypeRequest, Operation>
+        updateCustomTargetTypeSettings;
+    private final OperationCallSettings.Builder<
+            UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+        updateCustomTargetTypeOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteCustomTargetTypeRequest, Operation>
+        deleteCustomTargetTypeSettings;
+    private final OperationCallSettings.Builder<
+            DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+        deleteCustomTargetTypeOperationSettings;
     private final PagedCallSettings.Builder<
             ListReleasesRequest, ListReleasesResponse, ListReleasesPagedResponse>
         listReleasesSettings;
@@ -1338,6 +1522,15 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       updateTargetOperationSettings = OperationCallSettings.newBuilder();
       deleteTargetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTargetOperationSettings = OperationCallSettings.newBuilder();
+      listCustomTargetTypesSettings =
+          PagedCallSettings.newBuilder(LIST_CUSTOM_TARGET_TYPES_PAGE_STR_FACT);
+      getCustomTargetTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createCustomTargetTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createCustomTargetTypeOperationSettings = OperationCallSettings.newBuilder();
+      updateCustomTargetTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCustomTargetTypeOperationSettings = OperationCallSettings.newBuilder();
+      deleteCustomTargetTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteCustomTargetTypeOperationSettings = OperationCallSettings.newBuilder();
       listReleasesSettings = PagedCallSettings.newBuilder(LIST_RELEASES_PAGE_STR_FACT);
       getReleaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createReleaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1386,6 +1579,11 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               createTargetSettings,
               updateTargetSettings,
               deleteTargetSettings,
+              listCustomTargetTypesSettings,
+              getCustomTargetTypeSettings,
+              createCustomTargetTypeSettings,
+              updateCustomTargetTypeSettings,
+              deleteCustomTargetTypeSettings,
               listReleasesSettings,
               getReleaseSettings,
               createReleaseSettings,
@@ -1441,6 +1639,17 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       updateTargetOperationSettings = settings.updateTargetOperationSettings.toBuilder();
       deleteTargetSettings = settings.deleteTargetSettings.toBuilder();
       deleteTargetOperationSettings = settings.deleteTargetOperationSettings.toBuilder();
+      listCustomTargetTypesSettings = settings.listCustomTargetTypesSettings.toBuilder();
+      getCustomTargetTypeSettings = settings.getCustomTargetTypeSettings.toBuilder();
+      createCustomTargetTypeSettings = settings.createCustomTargetTypeSettings.toBuilder();
+      createCustomTargetTypeOperationSettings =
+          settings.createCustomTargetTypeOperationSettings.toBuilder();
+      updateCustomTargetTypeSettings = settings.updateCustomTargetTypeSettings.toBuilder();
+      updateCustomTargetTypeOperationSettings =
+          settings.updateCustomTargetTypeOperationSettings.toBuilder();
+      deleteCustomTargetTypeSettings = settings.deleteCustomTargetTypeSettings.toBuilder();
+      deleteCustomTargetTypeOperationSettings =
+          settings.deleteCustomTargetTypeOperationSettings.toBuilder();
       listReleasesSettings = settings.listReleasesSettings.toBuilder();
       getReleaseSettings = settings.getReleaseSettings.toBuilder();
       createReleaseSettings = settings.createReleaseSettings.toBuilder();
@@ -1489,6 +1698,11 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               createTargetSettings,
               updateTargetSettings,
               deleteTargetSettings,
+              listCustomTargetTypesSettings,
+              getCustomTargetTypeSettings,
+              createCustomTargetTypeSettings,
+              updateCustomTargetTypeSettings,
+              deleteCustomTargetTypeSettings,
               listReleasesSettings,
               getReleaseSettings,
               createReleaseSettings,
@@ -1599,6 +1813,31 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
       builder
           .deleteTargetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listCustomTargetTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getCustomTargetTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createCustomTargetTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateCustomTargetTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteCustomTargetTypeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1892,6 +2131,78 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
                       .build()));
 
       builder
+          .createCustomTargetTypeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateCustomTargetTypeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CustomTargetType.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateCustomTargetTypeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateCustomTargetTypeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CustomTargetType.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteCustomTargetTypeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteCustomTargetTypeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .createReleaseOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -2143,6 +2454,65 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     public OperationCallSettings.Builder<DeleteTargetRequest, Empty, OperationMetadata>
         deleteTargetOperationSettings() {
       return deleteTargetOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomTargetTypes. */
+    public PagedCallSettings.Builder<
+            ListCustomTargetTypesRequest,
+            ListCustomTargetTypesResponse,
+            ListCustomTargetTypesPagedResponse>
+        listCustomTargetTypesSettings() {
+      return listCustomTargetTypesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomTargetType. */
+    public UnaryCallSettings.Builder<GetCustomTargetTypeRequest, CustomTargetType>
+        getCustomTargetTypeSettings() {
+      return getCustomTargetTypeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomTargetType. */
+    public UnaryCallSettings.Builder<CreateCustomTargetTypeRequest, Operation>
+        createCustomTargetTypeSettings() {
+      return createCustomTargetTypeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomTargetType. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+        createCustomTargetTypeOperationSettings() {
+      return createCustomTargetTypeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomTargetType. */
+    public UnaryCallSettings.Builder<UpdateCustomTargetTypeRequest, Operation>
+        updateCustomTargetTypeSettings() {
+      return updateCustomTargetTypeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomTargetType. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+        updateCustomTargetTypeOperationSettings() {
+      return updateCustomTargetTypeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomTargetType. */
+    public UnaryCallSettings.Builder<DeleteCustomTargetTypeRequest, Operation>
+        deleteCustomTargetTypeSettings() {
+      return deleteCustomTargetTypeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomTargetType. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+        deleteCustomTargetTypeOperationSettings() {
+      return deleteCustomTargetTypeOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listReleases. */

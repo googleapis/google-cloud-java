@@ -62,19 +62,309 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the AwsClustersClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    <tr>
+ *      <td>CreateAwsCluster</td>
+ *      <td><p> Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given Google Cloud Platform project and region.
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createAwsClusterAsync(CreateAwsClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createAwsClusterAsync(LocationName parent, AwsCluster awsCluster, String awsClusterId)
+ *           <li>createAwsClusterAsync(String parent, AwsCluster awsCluster, String awsClusterId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createAwsClusterOperationCallable()
+ *           <li>createAwsClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateAwsCluster</td>
+ *      <td><p> Updates an [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateAwsClusterAsync(UpdateAwsClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateAwsClusterAsync(AwsCluster awsCluster, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateAwsClusterOperationCallable()
+ *           <li>updateAwsClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAwsCluster</td>
+ *      <td><p> Describes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAwsCluster(GetAwsClusterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAwsCluster(AwsClusterName name)
+ *           <li>getAwsCluster(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAwsClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListAwsClusters</td>
+ *      <td><p> Lists all [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources on a given Google Cloud project and region.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listAwsClusters(ListAwsClustersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listAwsClusters(LocationName parent)
+ *           <li>listAwsClusters(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listAwsClustersPagedCallable()
+ *           <li>listAwsClustersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteAwsCluster</td>
+ *      <td><p> Deletes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
+ * <p>  Fails if the cluster has one or more associated [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources.
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteAwsClusterAsync(DeleteAwsClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteAwsClusterAsync(AwsClusterName name)
+ *           <li>deleteAwsClusterAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteAwsClusterOperationCallable()
+ *           <li>deleteAwsClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GenerateAwsClusterAgentToken</td>
+ *      <td><p> Generates an access token for a cluster agent.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>generateAwsClusterAgentToken(GenerateAwsClusterAgentTokenRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>generateAwsClusterAgentTokenCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GenerateAwsAccessToken</td>
+ *      <td><p> Generates a short-lived access token to authenticate to a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>generateAwsAccessToken(GenerateAwsAccessTokenRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>generateAwsAccessTokenCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateAwsNodePool</td>
+ *      <td><p> Creates a new [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool], attached to a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createAwsNodePoolAsync(CreateAwsNodePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createAwsNodePoolAsync(AwsClusterName parent, AwsNodePool awsNodePool, String awsNodePoolId)
+ *           <li>createAwsNodePoolAsync(String parent, AwsNodePool awsNodePool, String awsNodePoolId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createAwsNodePoolOperationCallable()
+ *           <li>createAwsNodePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateAwsNodePool</td>
+ *      <td><p> Updates an [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateAwsNodePoolAsync(UpdateAwsNodePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateAwsNodePoolAsync(AwsNodePool awsNodePool, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateAwsNodePoolOperationCallable()
+ *           <li>updateAwsNodePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>RollbackAwsNodePoolUpdate</td>
+ *      <td><p> Rolls back a previously aborted or failed [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] update request. Makes no changes if the last update request successfully finished. If an update request is in progress, you cannot rollback the update. You must first cancel or let it finish unsuccessfully before you can rollback.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>rollbackAwsNodePoolUpdateAsync(RollbackAwsNodePoolUpdateRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>rollbackAwsNodePoolUpdateAsync(AwsNodePoolName name)
+ *           <li>rollbackAwsNodePoolUpdateAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>rollbackAwsNodePoolUpdateOperationCallable()
+ *           <li>rollbackAwsNodePoolUpdateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAwsNodePool</td>
+ *      <td><p> Describes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAwsNodePool(GetAwsNodePoolRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAwsNodePool(AwsNodePoolName name)
+ *           <li>getAwsNodePool(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAwsNodePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListAwsNodePools</td>
+ *      <td><p> Lists all [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources on a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listAwsNodePools(ListAwsNodePoolsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listAwsNodePools(AwsClusterName parent)
+ *           <li>listAwsNodePools(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listAwsNodePoolsPagedCallable()
+ *           <li>listAwsNodePoolsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteAwsNodePool</td>
+ *      <td><p> Deletes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteAwsNodePoolAsync(DeleteAwsNodePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteAwsNodePoolAsync(AwsNodePoolName name)
+ *           <li>deleteAwsNodePoolAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteAwsNodePoolOperationCallable()
+ *           <li>deleteAwsNodePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAwsOpenIdConfig</td>
+ *      <td><p> Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0 specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAwsOpenIdConfig(GetAwsOpenIdConfigRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAwsOpenIdConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAwsJsonWebKeys</td>
+ *      <td><p> Gets the public component of the cluster signing keys in JSON Web Key format.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAwsJsonWebKeys(GetAwsJsonWebKeysRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAwsJsonWebKeysCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAwsServerConfig</td>
+ *      <td><p> Returns information, such as supported AWS regions and Kubernetes versions, on a given Google Cloud location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAwsServerConfig(GetAwsServerConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAwsServerConfig(AwsServerConfigName name)
+ *           <li>getAwsServerConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAwsServerConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -441,17 +731,21 @@ public class AwsClustersClient implements BackgroundResource {
    *     this field. The elements of the repeated paths field can only include these fields from
    *     [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]:
    *     <p>&#42; `description`. &#42; `annotations`. &#42; `control_plane.version`. &#42;
-   *     `authorization.admin_users`. &#42; `control_plane.aws_services_authentication.role_arn`.
-   *     &#42; `control_plane.aws_services_authentication.role_session_name`. &#42;
+   *     `authorization.admin_users`. &#42; `authorization.admin_groups`. &#42;
+   *     `binary_authorization.evaluation_mode`. &#42;
+   *     `control_plane.aws_services_authentication.role_arn`. &#42;
+   *     `control_plane.aws_services_authentication.role_session_name`. &#42;
    *     `control_plane.config_encryption.kms_key_arn`. &#42; `control_plane.instance_type`. &#42;
    *     `control_plane.security_group_ids`. &#42; `control_plane.proxy_config`. &#42;
    *     `control_plane.proxy_config.secret_arn`. &#42; `control_plane.proxy_config.secret_version`.
    *     &#42; `control_plane.root_volume.size_gib`. &#42; `control_plane.root_volume.volume_type`.
-   *     &#42; `control_plane.root_volume.iops`. &#42; `control_plane.root_volume.kms_key_arn`.
-   *     &#42; `control_plane.ssh_config`. &#42; `control_plane.ssh_config.ec2_key_pair`. &#42;
-   *     `control_plane.instance_placement.tenancy`. &#42; `control_plane.iam_instance_profile`.
-   *     &#42; `logging_config.component_config.enable_components`. &#42; `control_plane.tags`.
-   *     &#42; `monitoring_config.managed_prometheus_config.enabled`.
+   *     &#42; `control_plane.root_volume.iops`. &#42; `control_plane.root_volume.throughput`. &#42;
+   *     `control_plane.root_volume.kms_key_arn`. &#42; `control_plane.ssh_config`. &#42;
+   *     `control_plane.ssh_config.ec2_key_pair`. &#42; `control_plane.instance_placement.tenancy`.
+   *     &#42; `control_plane.iam_instance_profile`. &#42;
+   *     `logging_config.component_config.enable_components`. &#42; `control_plane.tags`. &#42;
+   *     `monitoring_config.managed_prometheus_config.enabled`. &#42;
+   *     `networking.per_node_pool_sg_rules_disabled`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AwsCluster, OperationMetadata> updateAwsClusterAsync(
@@ -954,6 +1248,7 @@ public class AwsClustersClient implements BackgroundResource {
    *           .setName(AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
+   *           .setIgnoreErrors(true)
    *           .setEtag("etag3123477")
    *           .build();
    *   awsClustersClient.deleteAwsClusterAsync(request).get();
@@ -993,6 +1288,7 @@ public class AwsClustersClient implements BackgroundResource {
    *           .setName(AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
+   *           .setIgnoreErrors(true)
    *           .setEtag("etag3123477")
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
@@ -1032,6 +1328,7 @@ public class AwsClustersClient implements BackgroundResource {
    *           .setName(AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
+   *           .setIgnoreErrors(true)
    *           .setEtag("etag3123477")
    *           .build();
    *   ApiFuture<Operation> future =
@@ -1043,6 +1340,86 @@ public class AwsClustersClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteAwsClusterRequest, Operation> deleteAwsClusterCallable() {
     return stub.deleteAwsClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates an access token for a cluster agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AwsClustersClient awsClustersClient = AwsClustersClient.create()) {
+   *   GenerateAwsClusterAgentTokenRequest request =
+   *       GenerateAwsClusterAgentTokenRequest.newBuilder()
+   *           .setAwsCluster(
+   *               AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
+   *           .setSubjectToken("subjectToken-1519661011")
+   *           .setSubjectTokenType("subjectTokenType1839592711")
+   *           .setVersion("version351608024")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setGrantType("grantType-1219832202")
+   *           .setAudience("audience975628804")
+   *           .setScope("scope109264468")
+   *           .setRequestedTokenType("requestedTokenType1733106949")
+   *           .setOptions("options-1249474914")
+   *           .build();
+   *   GenerateAwsClusterAgentTokenResponse response =
+   *       awsClustersClient.generateAwsClusterAgentToken(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateAwsClusterAgentTokenResponse generateAwsClusterAgentToken(
+      GenerateAwsClusterAgentTokenRequest request) {
+    return generateAwsClusterAgentTokenCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates an access token for a cluster agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AwsClustersClient awsClustersClient = AwsClustersClient.create()) {
+   *   GenerateAwsClusterAgentTokenRequest request =
+   *       GenerateAwsClusterAgentTokenRequest.newBuilder()
+   *           .setAwsCluster(
+   *               AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
+   *           .setSubjectToken("subjectToken-1519661011")
+   *           .setSubjectTokenType("subjectTokenType1839592711")
+   *           .setVersion("version351608024")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setGrantType("grantType-1219832202")
+   *           .setAudience("audience975628804")
+   *           .setScope("scope109264468")
+   *           .setRequestedTokenType("requestedTokenType1733106949")
+   *           .setOptions("options-1249474914")
+   *           .build();
+   *   ApiFuture<GenerateAwsClusterAgentTokenResponse> future =
+   *       awsClustersClient.generateAwsClusterAgentTokenCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateAwsClusterAgentTokenResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+      generateAwsClusterAgentTokenCallable() {
+    return stub.generateAwsClusterAgentTokenCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1351,14 +1728,18 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>&#42; `annotations`. &#42; `version`. &#42; `autoscaling.min_node_count`. &#42;
    *     `autoscaling.max_node_count`. &#42; `config.config_encryption.kms_key_arn`. &#42;
    *     `config.security_group_ids`. &#42; `config.root_volume.iops`. &#42;
-   *     `config.root_volume.kms_key_arn`. &#42; `config.root_volume.volume_type`. &#42;
-   *     `config.root_volume.size_gib`. &#42; `config.proxy_config`. &#42;
-   *     `config.proxy_config.secret_arn`. &#42; `config.proxy_config.secret_version`. &#42;
-   *     `config.ssh_config`. &#42; `config.ssh_config.ec2_key_pair`. &#42;
-   *     `config.instance_placement.tenancy`. &#42; `config.iam_instance_profile`. &#42;
-   *     `config.labels`. &#42; `config.tags`. &#42; `config.autoscaling_metrics_collection`. &#42;
+   *     `config.root_volume.throughput`. &#42; `config.root_volume.kms_key_arn`. &#42;
+   *     `config.root_volume.volume_type`. &#42; `config.root_volume.size_gib`. &#42;
+   *     `config.proxy_config`. &#42; `config.proxy_config.secret_arn`. &#42;
+   *     `config.proxy_config.secret_version`. &#42; `config.ssh_config`. &#42;
+   *     `config.ssh_config.ec2_key_pair`. &#42; `config.instance_placement.tenancy`. &#42;
+   *     `config.iam_instance_profile`. &#42; `config.labels`. &#42; `config.tags`. &#42;
+   *     `config.autoscaling_metrics_collection`. &#42;
    *     `config.autoscaling_metrics_collection.granularity`. &#42;
-   *     `config.autoscaling_metrics_collection.metrics`.
+   *     `config.autoscaling_metrics_collection.metrics`. &#42; `config.instance_type`. &#42;
+   *     `management.auto_repair`. &#42; `management`. &#42; `update_settings`. &#42;
+   *     `update_settings.surge_settings`. &#42; `update_settings.surge_settings.max_surge`. &#42;
+   *     `update_settings.surge_settings.max_unavailable`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AwsNodePool, OperationMetadata> updateAwsNodePoolAsync(
@@ -1461,6 +1842,193 @@ public class AwsClustersClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateAwsNodePoolRequest, Operation> updateAwsNodePoolCallable() {
     return stub.updateAwsNodePoolCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rolls back a previously aborted or failed
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] update request. Makes no changes if
+   * the last update request successfully finished. If an update request is in progress, you cannot
+   * rollback the update. You must first cancel or let it finish unsuccessfully before you can
+   * rollback.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AwsClustersClient awsClustersClient = AwsClustersClient.create()) {
+   *   AwsNodePoolName name =
+   *       AwsNodePoolName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]", "[AWS_NODE_POOL]");
+   *   AwsNodePool response = awsClustersClient.rollbackAwsNodePoolUpdateAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
+   *     resource to rollback.
+   *     <p>`AwsNodePool` names are formatted as
+   *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+   *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
+   *     details on Google Cloud resource names.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AwsNodePool, OperationMetadata> rollbackAwsNodePoolUpdateAsync(
+      AwsNodePoolName name) {
+    RollbackAwsNodePoolUpdateRequest request =
+        RollbackAwsNodePoolUpdateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return rollbackAwsNodePoolUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rolls back a previously aborted or failed
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] update request. Makes no changes if
+   * the last update request successfully finished. If an update request is in progress, you cannot
+   * rollback the update. You must first cancel or let it finish unsuccessfully before you can
+   * rollback.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AwsClustersClient awsClustersClient = AwsClustersClient.create()) {
+   *   String name =
+   *       AwsNodePoolName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]", "[AWS_NODE_POOL]")
+   *           .toString();
+   *   AwsNodePool response = awsClustersClient.rollbackAwsNodePoolUpdateAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
+   *     resource to rollback.
+   *     <p>`AwsNodePool` names are formatted as
+   *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+   *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
+   *     details on Google Cloud resource names.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AwsNodePool, OperationMetadata> rollbackAwsNodePoolUpdateAsync(
+      String name) {
+    RollbackAwsNodePoolUpdateRequest request =
+        RollbackAwsNodePoolUpdateRequest.newBuilder().setName(name).build();
+    return rollbackAwsNodePoolUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rolls back a previously aborted or failed
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] update request. Makes no changes if
+   * the last update request successfully finished. If an update request is in progress, you cannot
+   * rollback the update. You must first cancel or let it finish unsuccessfully before you can
+   * rollback.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AwsClustersClient awsClustersClient = AwsClustersClient.create()) {
+   *   RollbackAwsNodePoolUpdateRequest request =
+   *       RollbackAwsNodePoolUpdateRequest.newBuilder()
+   *           .setName(
+   *               AwsNodePoolName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]", "[AWS_NODE_POOL]")
+   *                   .toString())
+   *           .setRespectPdb(true)
+   *           .build();
+   *   AwsNodePool response = awsClustersClient.rollbackAwsNodePoolUpdateAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AwsNodePool, OperationMetadata> rollbackAwsNodePoolUpdateAsync(
+      RollbackAwsNodePoolUpdateRequest request) {
+    return rollbackAwsNodePoolUpdateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rolls back a previously aborted or failed
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] update request. Makes no changes if
+   * the last update request successfully finished. If an update request is in progress, you cannot
+   * rollback the update. You must first cancel or let it finish unsuccessfully before you can
+   * rollback.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AwsClustersClient awsClustersClient = AwsClustersClient.create()) {
+   *   RollbackAwsNodePoolUpdateRequest request =
+   *       RollbackAwsNodePoolUpdateRequest.newBuilder()
+   *           .setName(
+   *               AwsNodePoolName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]", "[AWS_NODE_POOL]")
+   *                   .toString())
+   *           .setRespectPdb(true)
+   *           .build();
+   *   OperationFuture<AwsNodePool, OperationMetadata> future =
+   *       awsClustersClient.rollbackAwsNodePoolUpdateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AwsNodePool response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+      rollbackAwsNodePoolUpdateOperationCallable() {
+    return stub.rollbackAwsNodePoolUpdateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rolls back a previously aborted or failed
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] update request. Makes no changes if
+   * the last update request successfully finished. If an update request is in progress, you cannot
+   * rollback the update. You must first cancel or let it finish unsuccessfully before you can
+   * rollback.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AwsClustersClient awsClustersClient = AwsClustersClient.create()) {
+   *   RollbackAwsNodePoolUpdateRequest request =
+   *       RollbackAwsNodePoolUpdateRequest.newBuilder()
+   *           .setName(
+   *               AwsNodePoolName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]", "[AWS_NODE_POOL]")
+   *                   .toString())
+   *           .setRespectPdb(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       awsClustersClient.rollbackAwsNodePoolUpdateCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RollbackAwsNodePoolUpdateRequest, Operation>
+      rollbackAwsNodePoolUpdateCallable() {
+    return stub.rollbackAwsNodePoolUpdateCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1870,6 +2438,7 @@ public class AwsClustersClient implements BackgroundResource {
    *                   .toString())
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
+   *           .setIgnoreErrors(true)
    *           .setEtag("etag3123477")
    *           .build();
    *   awsClustersClient.deleteAwsNodePoolAsync(request).get();
@@ -1908,6 +2477,7 @@ public class AwsClustersClient implements BackgroundResource {
    *                   .toString())
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
+   *           .setIgnoreErrors(true)
    *           .setEtag("etag3123477")
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
@@ -1946,6 +2516,7 @@ public class AwsClustersClient implements BackgroundResource {
    *                   .toString())
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
+   *           .setIgnoreErrors(true)
    *           .setEtag("etag3123477")
    *           .build();
    *   ApiFuture<Operation> future =
@@ -1957,6 +2528,125 @@ public class AwsClustersClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteAwsNodePoolRequest, Operation> deleteAwsNodePoolCallable() {
     return stub.deleteAwsNodePoolCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0
+   * specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AwsClustersClient awsClustersClient = AwsClustersClient.create()) {
+   *   GetAwsOpenIdConfigRequest request =
+   *       GetAwsOpenIdConfigRequest.newBuilder()
+   *           .setAwsCluster(
+   *               AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
+   *           .build();
+   *   AwsOpenIdConfig response = awsClustersClient.getAwsOpenIdConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AwsOpenIdConfig getAwsOpenIdConfig(GetAwsOpenIdConfigRequest request) {
+    return getAwsOpenIdConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0
+   * specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AwsClustersClient awsClustersClient = AwsClustersClient.create()) {
+   *   GetAwsOpenIdConfigRequest request =
+   *       GetAwsOpenIdConfigRequest.newBuilder()
+   *           .setAwsCluster(
+   *               AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
+   *           .build();
+   *   ApiFuture<AwsOpenIdConfig> future =
+   *       awsClustersClient.getAwsOpenIdConfigCallable().futureCall(request);
+   *   // Do something.
+   *   AwsOpenIdConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+      getAwsOpenIdConfigCallable() {
+    return stub.getAwsOpenIdConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the public component of the cluster signing keys in JSON Web Key format.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AwsClustersClient awsClustersClient = AwsClustersClient.create()) {
+   *   GetAwsJsonWebKeysRequest request =
+   *       GetAwsJsonWebKeysRequest.newBuilder()
+   *           .setAwsCluster(
+   *               AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
+   *           .build();
+   *   AwsJsonWebKeys response = awsClustersClient.getAwsJsonWebKeys(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AwsJsonWebKeys getAwsJsonWebKeys(GetAwsJsonWebKeysRequest request) {
+    return getAwsJsonWebKeysCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the public component of the cluster signing keys in JSON Web Key format.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AwsClustersClient awsClustersClient = AwsClustersClient.create()) {
+   *   GetAwsJsonWebKeysRequest request =
+   *       GetAwsJsonWebKeysRequest.newBuilder()
+   *           .setAwsCluster(
+   *               AwsClusterName.of("[PROJECT]", "[LOCATION]", "[AWS_CLUSTER]").toString())
+   *           .build();
+   *   ApiFuture<AwsJsonWebKeys> future =
+   *       awsClustersClient.getAwsJsonWebKeysCallable().futureCall(request);
+   *   // Do something.
+   *   AwsJsonWebKeys response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAwsJsonWebKeysRequest, AwsJsonWebKeys> getAwsJsonWebKeysCallable() {
+    return stub.getAwsJsonWebKeysCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

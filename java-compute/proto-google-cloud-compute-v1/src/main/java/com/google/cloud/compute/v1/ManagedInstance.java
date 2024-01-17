@@ -42,6 +42,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     instance_ = "";
     instanceHealth_ = java.util.Collections.emptyList();
     instanceStatus_ = "";
+    name_ = "";
   }
 
   @java.lang.Override
@@ -1102,6 +1103,72 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         : lastAttempt_;
   }
 
+  public static final int NAME_FIELD_NUMBER = 3373707;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+   * </pre>
+   *
+   * <code>optional string name = 3373707;</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+   * </pre>
+   *
+   * <code>optional string name = 3373707;</code>
+   *
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+   * </pre>
+   *
+   * <code>optional string name = 3373707;</code>
+   *
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PRESERVED_STATE_FROM_CONFIG_FIELD_NUMBER = 98661858;
   private com.google.cloud.compute.v1.PreservedState preservedStateFromConfig_;
   /**
@@ -1118,7 +1185,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasPreservedStateFromConfig() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -1172,7 +1239,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasPreservedStateFromPolicy() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1225,7 +1292,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasVersion() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -1277,10 +1344,13 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeUInt64(3355, id_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(98661858, getPreservedStateFromConfig());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -1289,7 +1359,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178475964, currentAction_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(351608024, getVersion());
     }
     for (int i = 0; i < instanceHealth_.size(); i++) {
@@ -1298,7 +1368,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(434771492, getLastAttempt());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(470783954, getPreservedStateFromPolicy());
     }
     getUnknownFields().writeTo(output);
@@ -1313,10 +1383,13 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               98661858, getPreservedStateFromConfig());
@@ -1327,7 +1400,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(178475964, currentAction_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(351608024, getVersion());
     }
     for (int i = 0; i < instanceHealth_.size(); i++) {
@@ -1338,7 +1411,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(434771492, getLastAttempt());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               470783954, getPreservedStateFromPolicy());
@@ -1379,6 +1452,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     if (hasLastAttempt() != other.hasLastAttempt()) return false;
     if (hasLastAttempt()) {
       if (!getLastAttempt().equals(other.getLastAttempt())) return false;
+    }
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
     }
     if (hasPreservedStateFromConfig() != other.hasPreservedStateFromConfig()) return false;
     if (hasPreservedStateFromConfig()) {
@@ -1426,6 +1503,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     if (hasLastAttempt()) {
       hash = (37 * hash) + LAST_ATTEMPT_FIELD_NUMBER;
       hash = (53 * hash) + getLastAttempt().hashCode();
+    }
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
     }
     if (hasPreservedStateFromConfig()) {
       hash = (37 * hash) + PRESERVED_STATE_FROM_CONFIG_FIELD_NUMBER;
@@ -1607,6 +1688,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         lastAttemptBuilder_.dispose();
         lastAttemptBuilder_ = null;
       }
+      name_ = "";
       preservedStateFromConfig_ = null;
       if (preservedStateFromConfigBuilder_ != null) {
         preservedStateFromConfigBuilder_.dispose();
@@ -1694,22 +1776,26 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.preservedStateFromConfig_ =
             preservedStateFromConfigBuilder_ == null
                 ? preservedStateFromConfig_
                 : preservedStateFromConfigBuilder_.build();
-        to_bitField0_ |= 0x00000020;
+        to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.preservedStateFromPolicy_ =
             preservedStateFromPolicyBuilder_ == null
                 ? preservedStateFromPolicy_
                 : preservedStateFromPolicyBuilder_.build();
-        to_bitField0_ |= 0x00000040;
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1807,6 +1893,11 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       if (other.hasLastAttempt()) {
         mergeLastAttempt(other.getLastAttempt());
       }
+      if (other.hasName()) {
+        name_ = other.name_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       if (other.hasPreservedStateFromConfig()) {
         mergePreservedStateFromConfig(other.getPreservedStateFromConfig());
       }
@@ -1848,6 +1939,12 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000002;
                 break;
               } // case 26840
+            case 26989658:
+              {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 26989658
             case 146056362:
               {
                 instance_ = input.readStringRequireUtf8();
@@ -1858,7 +1955,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
               {
                 input.readMessage(
                     getPreservedStateFromConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 789294866
             case 1396618978:
@@ -1876,7 +1973,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             case -1482103102:
               {
                 input.readMessage(getVersionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -1482103102
             case -1233630670:
@@ -1903,7 +2000,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
               {
                 input.readMessage(
                     getPreservedStateFromPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case -528695662
             default:
@@ -2966,6 +3063,126 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       return lastAttemptBuilder_;
     }
 
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+     * </pre>
+     *
+     * <code>optional string name = 3373707;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+     * </pre>
+     *
+     * <code>optional string name = 3373707;</code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+     * </pre>
+     *
+     * <code>optional string name = 3373707;</code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+     * </pre>
+     *
+     * <code>optional string name = 3373707;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      name_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+     * </pre>
+     *
+     * <code>optional string name = 3373707;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+     * </pre>
+     *
+     * <code>optional string name = 3373707;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      name_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.compute.v1.PreservedState preservedStateFromConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.PreservedState,
@@ -2986,7 +3203,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * @return Whether the preservedStateFromConfig field is set.
      */
     public boolean hasPreservedStateFromConfig() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3030,7 +3247,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         preservedStateFromConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3052,7 +3269,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         preservedStateFromConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3069,7 +3286,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergePreservedStateFromConfig(com.google.cloud.compute.v1.PreservedState value) {
       if (preservedStateFromConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && preservedStateFromConfig_ != null
             && preservedStateFromConfig_
                 != com.google.cloud.compute.v1.PreservedState.getDefaultInstance()) {
@@ -3080,7 +3297,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         preservedStateFromConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3096,7 +3313,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearPreservedStateFromConfig() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       preservedStateFromConfig_ = null;
       if (preservedStateFromConfigBuilder_ != null) {
         preservedStateFromConfigBuilder_.dispose();
@@ -3117,7 +3334,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.cloud.compute.v1.PreservedState.Builder getPreservedStateFromConfigBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getPreservedStateFromConfigFieldBuilder().getBuilder();
     }
@@ -3190,7 +3407,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * @return Whether the preservedStateFromPolicy field is set.
      */
     public boolean hasPreservedStateFromPolicy() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3234,7 +3451,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         preservedStateFromPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3256,7 +3473,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         preservedStateFromPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3273,7 +3490,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergePreservedStateFromPolicy(com.google.cloud.compute.v1.PreservedState value) {
       if (preservedStateFromPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && preservedStateFromPolicy_ != null
             && preservedStateFromPolicy_
                 != com.google.cloud.compute.v1.PreservedState.getDefaultInstance()) {
@@ -3284,7 +3501,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         preservedStateFromPolicyBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3300,7 +3517,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearPreservedStateFromPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       preservedStateFromPolicy_ = null;
       if (preservedStateFromPolicyBuilder_ != null) {
         preservedStateFromPolicyBuilder_.dispose();
@@ -3321,7 +3538,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.cloud.compute.v1.PreservedState.Builder getPreservedStateFromPolicyBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getPreservedStateFromPolicyFieldBuilder().getBuilder();
     }
@@ -3392,7 +3609,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3432,7 +3649,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         versionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3452,7 +3669,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3467,7 +3684,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeVersion(com.google.cloud.compute.v1.ManagedInstanceVersion value) {
       if (versionBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && version_ != null
             && version_
                 != com.google.cloud.compute.v1.ManagedInstanceVersion.getDefaultInstance()) {
@@ -3478,7 +3695,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         versionBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3492,7 +3709,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public Builder clearVersion() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       version_ = null;
       if (versionBuilder_ != null) {
         versionBuilder_.dispose();
@@ -3511,7 +3728,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceVersion.Builder getVersionBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }

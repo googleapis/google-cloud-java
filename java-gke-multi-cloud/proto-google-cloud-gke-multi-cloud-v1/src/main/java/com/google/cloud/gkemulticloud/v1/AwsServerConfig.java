@@ -123,7 +123,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * List of valid Kubernetes versions.
+   * List of all released Kubernetes versions, including ones which are end of
+   * life and can no longer be used.  Filter by the `enabled`
+   * property to limit to currently available versions.
+   * Valid versions supported for both create and update operations
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -137,7 +140,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * List of valid Kubernetes versions.
+   * List of all released Kubernetes versions, including ones which are end of
+   * life and can no longer be used.  Filter by the `enabled`
+   * property to limit to currently available versions.
+   * Valid versions supported for both create and update operations
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -151,7 +157,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * List of valid Kubernetes versions.
+   * List of all released Kubernetes versions, including ones which are end of
+   * life and can no longer be used.  Filter by the `enabled`
+   * property to limit to currently available versions.
+   * Valid versions supported for both create and update operations
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -164,7 +173,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * List of valid Kubernetes versions.
+   * List of all released Kubernetes versions, including ones which are end of
+   * life and can no longer be used.  Filter by the `enabled`
+   * property to limit to currently available versions.
+   * Valid versions supported for both create and update operations
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -177,7 +189,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * List of valid Kubernetes versions.
+   * List of all released Kubernetes versions, including ones which are end of
+   * life and can no longer be used.  Filter by the `enabled`
+   * property to limit to currently available versions.
+   * Valid versions supported for both create and update operations
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -833,7 +848,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -850,7 +868,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -866,7 +887,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -882,7 +906,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -905,7 +932,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -925,7 +955,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -947,7 +980,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -970,7 +1006,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -990,7 +1029,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -1010,7 +1052,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -1030,7 +1075,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -1049,7 +1097,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -1068,7 +1119,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -1081,7 +1135,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -1098,7 +1155,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -1115,7 +1175,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -1128,7 +1191,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>
@@ -1143,7 +1209,10 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of valid Kubernetes versions.
+     * List of all released Kubernetes versions, including ones which are end of
+     * life and can no longer be used.  Filter by the `enabled`
+     * property to limit to currently available versions.
+     * Valid versions supported for both create and update operations
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AwsK8sVersionInfo valid_versions = 2;</code>

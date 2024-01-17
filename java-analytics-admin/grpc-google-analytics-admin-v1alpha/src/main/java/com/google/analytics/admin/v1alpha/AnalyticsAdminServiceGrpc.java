@@ -6457,58 +6457,6 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
-          com.google.protobuf.Empty>
-      getDeleteSubpropertyEventFilterMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteSubpropertyEventFilter",
-      requestType = com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest.class,
-      responseType = com.google.protobuf.Empty.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
-          com.google.protobuf.Empty>
-      getDeleteSubpropertyEventFilterMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
-            com.google.protobuf.Empty>
-        getDeleteSubpropertyEventFilterMethod;
-    if ((getDeleteSubpropertyEventFilterMethod =
-            AnalyticsAdminServiceGrpc.getDeleteSubpropertyEventFilterMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getDeleteSubpropertyEventFilterMethod =
-                AnalyticsAdminServiceGrpc.getDeleteSubpropertyEventFilterMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getDeleteSubpropertyEventFilterMethod =
-              getDeleteSubpropertyEventFilterMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
-                          com.google.protobuf.Empty>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "DeleteSubpropertyEventFilter"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.protobuf.Empty.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier(
-                              "DeleteSubpropertyEventFilter"))
-                      .build();
-        }
-      }
-    }
-    return getDeleteSubpropertyEventFilterMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest,
           com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
       getCreateSubpropertyEventFilterMethod;
@@ -6559,6 +6507,217 @@ public final class AnalyticsAdminServiceGrpc {
       }
     }
     return getCreateSubpropertyEventFilterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest,
+          com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+      getGetSubpropertyEventFilterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSubpropertyEventFilter",
+      requestType = com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SubpropertyEventFilter.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest,
+          com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+      getGetSubpropertyEventFilterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest,
+            com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+        getGetSubpropertyEventFilterMethod;
+    if ((getGetSubpropertyEventFilterMethod =
+            AnalyticsAdminServiceGrpc.getGetSubpropertyEventFilterMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetSubpropertyEventFilterMethod =
+                AnalyticsAdminServiceGrpc.getGetSubpropertyEventFilterMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetSubpropertyEventFilterMethod =
+              getGetSubpropertyEventFilterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest,
+                          com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetSubpropertyEventFilter"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SubpropertyEventFilter
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetSubpropertyEventFilter"))
+                      .build();
+        }
+      }
+    }
+    return getGetSubpropertyEventFilterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest,
+          com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>
+      getListSubpropertyEventFiltersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSubpropertyEventFilters",
+      requestType = com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest,
+          com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>
+      getListSubpropertyEventFiltersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest,
+            com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>
+        getListSubpropertyEventFiltersMethod;
+    if ((getListSubpropertyEventFiltersMethod =
+            AnalyticsAdminServiceGrpc.getListSubpropertyEventFiltersMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListSubpropertyEventFiltersMethod =
+                AnalyticsAdminServiceGrpc.getListSubpropertyEventFiltersMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListSubpropertyEventFiltersMethod =
+              getListSubpropertyEventFiltersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest,
+                          com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListSubpropertyEventFilters"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ListSubpropertyEventFilters"))
+                      .build();
+        }
+      }
+    }
+    return getListSubpropertyEventFiltersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest,
+          com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+      getUpdateSubpropertyEventFilterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSubpropertyEventFilter",
+      requestType = com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SubpropertyEventFilter.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest,
+          com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+      getUpdateSubpropertyEventFilterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest,
+            com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+        getUpdateSubpropertyEventFilterMethod;
+    if ((getUpdateSubpropertyEventFilterMethod =
+            AnalyticsAdminServiceGrpc.getUpdateSubpropertyEventFilterMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateSubpropertyEventFilterMethod =
+                AnalyticsAdminServiceGrpc.getUpdateSubpropertyEventFilterMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateSubpropertyEventFilterMethod =
+              getUpdateSubpropertyEventFilterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest,
+                          com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateSubpropertyEventFilter"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SubpropertyEventFilter
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateSubpropertyEventFilter"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSubpropertyEventFilterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
+          com.google.protobuf.Empty>
+      getDeleteSubpropertyEventFilterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSubpropertyEventFilter",
+      requestType = com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
+          com.google.protobuf.Empty>
+      getDeleteSubpropertyEventFilterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
+            com.google.protobuf.Empty>
+        getDeleteSubpropertyEventFilterMethod;
+    if ((getDeleteSubpropertyEventFilterMethod =
+            AnalyticsAdminServiceGrpc.getDeleteSubpropertyEventFilterMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteSubpropertyEventFilterMethod =
+                AnalyticsAdminServiceGrpc.getDeleteSubpropertyEventFilterMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteSubpropertyEventFilterMethod =
+              getDeleteSubpropertyEventFilterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteSubpropertyEventFilter"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteSubpropertyEventFilter"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSubpropertyEventFilterMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -7852,8 +8011,10 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns a customized report of data access records. The report provides
      * records of each time a user reads Google Analytics reporting data. Access
      * records are retained for up to 2 years.
-     * Data Access Reports can be requested for a property. The property must be
-     * in Google Analytics 360. This method is only available to Administrators.
+     * Data Access Reports can be requested for a property. Reports may be
+     * requested for any property, but dimensions that aren't related to quota can
+     * only be requested on Google Analytics 360 properties. This method is only
+     * available to Administrators.
      * These data access records include GA4 UI Reporting, GA4 UI Explorations,
      * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
@@ -8592,20 +8753,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a subproperty event filter.
-     * </pre>
-     */
-    default void deleteSubpropertyEventFilter(
-        com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getDeleteSubpropertyEventFilterMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a subproperty Event Filter.
      * </pre>
      */
@@ -8615,6 +8762,66 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateSubpropertyEventFilterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single subproperty Event Filter.
+     * </pre>
+     */
+    default void getSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSubpropertyEventFilterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all subproperty Event Filters on a property.
+     * </pre>
+     */
+    default void listSubpropertyEventFilters(
+        com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSubpropertyEventFiltersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a subproperty Event Filter.
+     * </pre>
+     */
+    default void updateSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSubpropertyEventFilterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a subproperty event filter.
+     * </pre>
+     */
+    default void deleteSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSubpropertyEventFilterMethod(), responseObserver);
     }
   }
 
@@ -10057,8 +10264,10 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns a customized report of data access records. The report provides
      * records of each time a user reads Google Analytics reporting data. Access
      * records are retained for up to 2 years.
-     * Data Access Reports can be requested for a property. The property must be
-     * in Google Analytics 360. This method is only available to Administrators.
+     * Data Access Reports can be requested for a property. Reports may be
+     * requested for any property, but dimensions that aren't related to quota can
+     * only be requested on Google Analytics 360 properties. This method is only
+     * available to Administrators.
      * These data access records include GA4 UI Reporting, GA4 UI Explorations,
      * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
@@ -10891,22 +11100,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a subproperty event filter.
-     * </pre>
-     */
-    public void deleteSubpropertyEventFilter(
-        com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteSubpropertyEventFilterMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a subproperty Event Filter.
      * </pre>
      */
@@ -10916,6 +11109,74 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateSubpropertyEventFilterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single subproperty Event Filter.
+     * </pre>
+     */
+    public void getSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSubpropertyEventFilterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all subproperty Event Filters on a property.
+     * </pre>
+     */
+    public void listSubpropertyEventFilters(
+        com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSubpropertyEventFiltersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a subproperty Event Filter.
+     * </pre>
+     */
+    public void updateSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSubpropertyEventFilterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a subproperty event filter.
+     * </pre>
+     */
+    public void deleteSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSubpropertyEventFilterMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -12080,8 +12341,10 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns a customized report of data access records. The report provides
      * records of each time a user reads Google Analytics reporting data. Access
      * records are retained for up to 2 years.
-     * Data Access Reports can be requested for a property. The property must be
-     * in Google Analytics 360. This method is only available to Administrators.
+     * Data Access Reports can be requested for a property. Reports may be
+     * requested for any property, but dimensions that aren't related to quota can
+     * only be requested on Google Analytics 360 properties. This method is only
+     * available to Administrators.
      * These data access records include GA4 UI Reporting, GA4 UI Explorations,
      * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
@@ -12735,19 +12998,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a subproperty event filter.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteSubpropertyEventFilter(
-        com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteSubpropertyEventFilterMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a subproperty Event Filter.
      * </pre>
      */
@@ -12755,6 +13005,59 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateSubpropertyEventFilterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single subproperty Event Filter.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertyEventFilter getSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSubpropertyEventFilterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all subproperty Event Filters on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse
+        listSubpropertyEventFilters(
+            com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSubpropertyEventFiltersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a subproperty Event Filter.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertyEventFilter updateSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSubpropertyEventFilterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a subproperty event filter.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSubpropertyEventFilterMethod(), getCallOptions(), request);
     }
   }
 
@@ -14007,8 +14310,10 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns a customized report of data access records. The report provides
      * records of each time a user reads Google Analytics reporting data. Access
      * records are retained for up to 2 years.
-     * Data Access Reports can be requested for a property. The property must be
-     * in Google Analytics 360. This method is only available to Administrators.
+     * Data Access Reports can be requested for a property. Reports may be
+     * requested for any property, but dimensions that aren't related to quota can
+     * only be requested on Google Analytics 360 properties. This method is only
+     * available to Administrators.
      * These data access records include GA4 UI Reporting, GA4 UI Explorations,
      * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
@@ -14726,20 +15031,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a subproperty event filter.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
-        deleteSubpropertyEventFilter(
-            com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteSubpropertyEventFilterMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a subproperty Event Filter.
      * </pre>
      */
@@ -14749,6 +15040,65 @@ public final class AnalyticsAdminServiceGrpc {
             com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateSubpropertyEventFilterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single subproperty Event Filter.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+        getSubpropertyEventFilter(
+            com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSubpropertyEventFilterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all subproperty Event Filters on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>
+        listSubpropertyEventFilters(
+            com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSubpropertyEventFiltersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a subproperty Event Filter.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+        updateSubpropertyEventFilter(
+            com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSubpropertyEventFilterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a subproperty event filter.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteSubpropertyEventFilter(
+            com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSubpropertyEventFilterMethod(), getCallOptions()), request);
     }
   }
 
@@ -14878,8 +15228,11 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_CREATE_ROLLUP_PROPERTY_SOURCE_LINK = 123;
   private static final int METHODID_DELETE_ROLLUP_PROPERTY_SOURCE_LINK = 124;
   private static final int METHODID_CREATE_SUBPROPERTY = 125;
-  private static final int METHODID_DELETE_SUBPROPERTY_EVENT_FILTER = 126;
-  private static final int METHODID_CREATE_SUBPROPERTY_EVENT_FILTER = 127;
+  private static final int METHODID_CREATE_SUBPROPERTY_EVENT_FILTER = 126;
+  private static final int METHODID_GET_SUBPROPERTY_EVENT_FILTER = 127;
+  private static final int METHODID_LIST_SUBPROPERTY_EVENT_FILTERS = 128;
+  private static final int METHODID_UPDATE_SUBPROPERTY_EVENT_FILTER = 129;
+  private static final int METHODID_DELETE_SUBPROPERTY_EVENT_FILTER = 130;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -15718,17 +16071,38 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.CreateSubpropertyResponse>)
                   responseObserver);
           break;
-        case METHODID_DELETE_SUBPROPERTY_EVENT_FILTER:
-          serviceImpl.deleteSubpropertyEventFilter(
-              (com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
-          break;
         case METHODID_CREATE_SUBPROPERTY_EVENT_FILTER:
           serviceImpl.createSubpropertyEventFilter(
               (com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1alpha.SubpropertyEventFilter>)
                   responseObserver);
+          break;
+        case METHODID_GET_SUBPROPERTY_EVENT_FILTER:
+          serviceImpl.getSubpropertyEventFilter(
+              (com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.SubpropertyEventFilter>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SUBPROPERTY_EVENT_FILTERS:
+          serviceImpl.listSubpropertyEventFilters(
+              (com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_SUBPROPERTY_EVENT_FILTER:
+          serviceImpl.updateSubpropertyEventFilter(
+              (com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.SubpropertyEventFilter>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_SUBPROPERTY_EVENT_FILTER:
+          serviceImpl.deleteSubpropertyEventFilter(
+              (com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -16624,18 +16998,39 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.CreateSubpropertyResponse>(
                     service, METHODID_CREATE_SUBPROPERTY)))
         .addMethod(
-            getDeleteSubpropertyEventFilterMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
-                    com.google.protobuf.Empty>(service, METHODID_DELETE_SUBPROPERTY_EVENT_FILTER)))
-        .addMethod(
             getCreateSubpropertyEventFilterMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest,
                     com.google.analytics.admin.v1alpha.SubpropertyEventFilter>(
                     service, METHODID_CREATE_SUBPROPERTY_EVENT_FILTER)))
+        .addMethod(
+            getGetSubpropertyEventFilterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest,
+                    com.google.analytics.admin.v1alpha.SubpropertyEventFilter>(
+                    service, METHODID_GET_SUBPROPERTY_EVENT_FILTER)))
+        .addMethod(
+            getListSubpropertyEventFiltersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest,
+                    com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>(
+                    service, METHODID_LIST_SUBPROPERTY_EVENT_FILTERS)))
+        .addMethod(
+            getUpdateSubpropertyEventFilterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest,
+                    com.google.analytics.admin.v1alpha.SubpropertyEventFilter>(
+                    service, METHODID_UPDATE_SUBPROPERTY_EVENT_FILTER)))
+        .addMethod(
+            getDeleteSubpropertyEventFilterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SUBPROPERTY_EVENT_FILTER)))
         .build();
   }
 
@@ -16813,8 +17208,11 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getCreateRollupPropertySourceLinkMethod())
                       .addMethod(getDeleteRollupPropertySourceLinkMethod())
                       .addMethod(getCreateSubpropertyMethod())
-                      .addMethod(getDeleteSubpropertyEventFilterMethod())
                       .addMethod(getCreateSubpropertyEventFilterMethod())
+                      .addMethod(getGetSubpropertyEventFilterMethod())
+                      .addMethod(getListSubpropertyEventFiltersMethod())
+                      .addMethod(getUpdateSubpropertyEventFilterMethod())
+                      .addMethod(getDeleteSubpropertyEventFilterMethod())
                       .build();
         }
       }

@@ -46,6 +46,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListPublicDelegatedPrefixesRequest;
+import com.google.cloud.compute.v1.AnnouncePublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.DeletePublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.GetPublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.InsertPublicDelegatedPrefixeRequest;
@@ -56,6 +57,7 @@ import com.google.cloud.compute.v1.PublicDelegatedPrefix;
 import com.google.cloud.compute.v1.PublicDelegatedPrefixAggregatedList;
 import com.google.cloud.compute.v1.PublicDelegatedPrefixList;
 import com.google.cloud.compute.v1.PublicDelegatedPrefixesScopedList;
+import com.google.cloud.compute.v1.WithdrawPublicDelegatedPrefixeRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -120,6 +122,10 @@ public class PublicDelegatedPrefixesStubSettings
           PublicDelegatedPrefixAggregatedList,
           AggregatedListPagedResponse>
       aggregatedListSettings;
+  private final UnaryCallSettings<AnnouncePublicDelegatedPrefixeRequest, Operation>
+      announceSettings;
+  private final OperationCallSettings<AnnouncePublicDelegatedPrefixeRequest, Operation, Operation>
+      announceOperationSettings;
   private final UnaryCallSettings<DeletePublicDelegatedPrefixeRequest, Operation> deleteSettings;
   private final OperationCallSettings<DeletePublicDelegatedPrefixeRequest, Operation, Operation>
       deleteOperationSettings;
@@ -134,6 +140,10 @@ public class PublicDelegatedPrefixesStubSettings
   private final UnaryCallSettings<PatchPublicDelegatedPrefixeRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchPublicDelegatedPrefixeRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<WithdrawPublicDelegatedPrefixeRequest, Operation>
+      withdrawSettings;
+  private final OperationCallSettings<WithdrawPublicDelegatedPrefixeRequest, Operation, Operation>
+      withdrawOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListPublicDelegatedPrefixesRequest,
@@ -289,6 +299,17 @@ public class PublicDelegatedPrefixesStubSettings
     return aggregatedListSettings;
   }
 
+  /** Returns the object with the settings used for calls to announce. */
+  public UnaryCallSettings<AnnouncePublicDelegatedPrefixeRequest, Operation> announceSettings() {
+    return announceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to announce. */
+  public OperationCallSettings<AnnouncePublicDelegatedPrefixeRequest, Operation, Operation>
+      announceOperationSettings() {
+    return announceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeletePublicDelegatedPrefixeRequest, Operation> deleteSettings() {
     return deleteSettings;
@@ -334,6 +355,17 @@ public class PublicDelegatedPrefixesStubSettings
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to withdraw. */
+  public UnaryCallSettings<WithdrawPublicDelegatedPrefixeRequest, Operation> withdrawSettings() {
+    return withdrawSettings;
+  }
+
+  /** Returns the object with the settings used for calls to withdraw. */
+  public OperationCallSettings<WithdrawPublicDelegatedPrefixeRequest, Operation, Operation>
+      withdrawOperationSettings() {
+    return withdrawOperationSettings;
+  }
+
   public PublicDelegatedPrefixesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -343,6 +375,12 @@ public class PublicDelegatedPrefixesStubSettings
     throw new UnsupportedOperationException(
         String.format(
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "compute";
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -411,6 +449,8 @@ public class PublicDelegatedPrefixesStubSettings
     super(settingsBuilder);
 
     aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
+    announceSettings = settingsBuilder.announceSettings().build();
+    announceOperationSettings = settingsBuilder.announceOperationSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
@@ -419,6 +459,8 @@ public class PublicDelegatedPrefixesStubSettings
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    withdrawSettings = settingsBuilder.withdrawSettings().build();
+    withdrawOperationSettings = settingsBuilder.withdrawOperationSettings().build();
   }
 
   /** Builder for PublicDelegatedPrefixesStubSettings. */
@@ -430,6 +472,11 @@ public class PublicDelegatedPrefixesStubSettings
             PublicDelegatedPrefixAggregatedList,
             AggregatedListPagedResponse>
         aggregatedListSettings;
+    private final UnaryCallSettings.Builder<AnnouncePublicDelegatedPrefixeRequest, Operation>
+        announceSettings;
+    private final OperationCallSettings.Builder<
+            AnnouncePublicDelegatedPrefixeRequest, Operation, Operation>
+        announceOperationSettings;
     private final UnaryCallSettings.Builder<DeletePublicDelegatedPrefixeRequest, Operation>
         deleteSettings;
     private final OperationCallSettings.Builder<
@@ -450,6 +497,11 @@ public class PublicDelegatedPrefixesStubSettings
     private final OperationCallSettings.Builder<
             PatchPublicDelegatedPrefixeRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<WithdrawPublicDelegatedPrefixeRequest, Operation>
+        withdrawSettings;
+    private final OperationCallSettings.Builder<
+            WithdrawPublicDelegatedPrefixeRequest, Operation, Operation>
+        withdrawOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -501,6 +553,8 @@ public class PublicDelegatedPrefixesStubSettings
       super(clientContext);
 
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
+      announceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      announceOperationSettings = OperationCallSettings.newBuilder();
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -509,15 +563,19 @@ public class PublicDelegatedPrefixesStubSettings
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      withdrawSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      withdrawOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               aggregatedListSettings,
+              announceSettings,
               deleteSettings,
               getSettings,
               insertSettings,
               listSettings,
-              patchSettings);
+              patchSettings,
+              withdrawSettings);
       initDefaults(this);
     }
 
@@ -525,6 +583,8 @@ public class PublicDelegatedPrefixesStubSettings
       super(settings);
 
       aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
+      announceSettings = settings.announceSettings.toBuilder();
+      announceOperationSettings = settings.announceOperationSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
@@ -533,15 +593,19 @@ public class PublicDelegatedPrefixesStubSettings
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      withdrawSettings = settings.withdrawSettings.toBuilder();
+      withdrawOperationSettings = settings.withdrawOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               aggregatedListSettings,
+              announceSettings,
               deleteSettings,
               getSettings,
               insertSettings,
               listSettings,
-              patchSettings);
+              patchSettings,
+              withdrawSettings);
     }
 
     private static Builder createDefault() {
@@ -562,6 +626,11 @@ public class PublicDelegatedPrefixesStubSettings
           .aggregatedListSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .announceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deleteSettings()
@@ -587,6 +656,36 @@ public class PublicDelegatedPrefixesStubSettings
           .patchSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .withdrawSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .announceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AnnouncePublicDelegatedPrefixeRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
 
       builder
           .deleteOperationSettings()
@@ -663,6 +762,31 @@ public class PublicDelegatedPrefixesStubSettings
                       .setTotalTimeout(Duration.ofMillis(600000L))
                       .build()));
 
+      builder
+          .withdrawOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<WithdrawPublicDelegatedPrefixeRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -688,6 +812,21 @@ public class PublicDelegatedPrefixesStubSettings
             AggregatedListPagedResponse>
         aggregatedListSettings() {
       return aggregatedListSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to announce. */
+    public UnaryCallSettings.Builder<AnnouncePublicDelegatedPrefixeRequest, Operation>
+        announceSettings() {
+      return announceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to announce. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            AnnouncePublicDelegatedPrefixeRequest, Operation, Operation>
+        announceOperationSettings() {
+      return announceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to delete. */
@@ -743,6 +882,21 @@ public class PublicDelegatedPrefixesStubSettings
     public OperationCallSettings.Builder<PatchPublicDelegatedPrefixeRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to withdraw. */
+    public UnaryCallSettings.Builder<WithdrawPublicDelegatedPrefixeRequest, Operation>
+        withdrawSettings() {
+      return withdrawSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to withdraw. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            WithdrawPublicDelegatedPrefixeRequest, Operation, Operation>
+        withdrawOperationSettings() {
+      return withdrawOperationSettings;
     }
 
     @Override

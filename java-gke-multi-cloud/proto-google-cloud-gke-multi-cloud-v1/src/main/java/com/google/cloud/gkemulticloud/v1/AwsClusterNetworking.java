@@ -280,6 +280,29 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
     return serviceAddressCidrBlocks_.getByteString(index);
   }
 
+  public static final int PER_NODE_POOL_SG_RULES_DISABLED_FIELD_NUMBER = 5;
+  private boolean perNodePoolSgRulesDisabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disable the per node pool subnet security group rules on the
+   * control plane security group. When set to true, you must also provide one
+   * or more security groups that ensure node pools are able to send requests to
+   * the control plane on TCP/443 and TCP/8132. Failure to do so may result in
+   * unavailable node pools.
+   * </pre>
+   *
+   * <code>bool per_node_pool_sg_rules_disabled = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The perNodePoolSgRulesDisabled.
+   */
+  @java.lang.Override
+  public boolean getPerNodePoolSgRulesDisabled() {
+    return perNodePoolSgRulesDisabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -304,6 +327,9 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < serviceAddressCidrBlocks_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 3, serviceAddressCidrBlocks_.getRaw(i));
+    }
+    if (perNodePoolSgRulesDisabled_ != false) {
+      output.writeBool(5, perNodePoolSgRulesDisabled_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -333,6 +359,9 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       size += dataSize;
       size += 1 * getServiceAddressCidrBlocksList().size();
     }
+    if (perNodePoolSgRulesDisabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, perNodePoolSgRulesDisabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -353,6 +382,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
     if (!getPodAddressCidrBlocksList().equals(other.getPodAddressCidrBlocksList())) return false;
     if (!getServiceAddressCidrBlocksList().equals(other.getServiceAddressCidrBlocksList()))
       return false;
+    if (getPerNodePoolSgRulesDisabled() != other.getPerNodePoolSgRulesDisabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -374,6 +404,8 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + SERVICE_ADDRESS_CIDR_BLOCKS_FIELD_NUMBER;
       hash = (53 * hash) + getServiceAddressCidrBlocksList().hashCode();
     }
+    hash = (37 * hash) + PER_NODE_POOL_SG_RULES_DISABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPerNodePoolSgRulesDisabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -520,6 +552,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       vpcId_ = "";
       podAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      perNodePoolSgRulesDisabled_ = false;
       return this;
     }
 
@@ -566,6 +599,9 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000004) != 0)) {
         serviceAddressCidrBlocks_.makeImmutable();
         result.serviceAddressCidrBlocks_ = serviceAddressCidrBlocks_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.perNodePoolSgRulesDisabled_ = perNodePoolSgRulesDisabled_;
       }
     }
 
@@ -640,6 +676,9 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
         }
         onChanged();
       }
+      if (other.getPerNodePoolSgRulesDisabled() != false) {
+        setPerNodePoolSgRulesDisabled(other.getPerNodePoolSgRulesDisabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -686,6 +725,12 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
                 serviceAddressCidrBlocks_.add(s);
                 break;
               } // case 26
+            case 40:
+              {
+                perNodePoolSgRulesDisabled_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1234,6 +1279,74 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       ensureServiceAddressCidrBlocksIsMutable();
       serviceAddressCidrBlocks_.add(value);
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private boolean perNodePoolSgRulesDisabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disable the per node pool subnet security group rules on the
+     * control plane security group. When set to true, you must also provide one
+     * or more security groups that ensure node pools are able to send requests to
+     * the control plane on TCP/443 and TCP/8132. Failure to do so may result in
+     * unavailable node pools.
+     * </pre>
+     *
+     * <code>bool per_node_pool_sg_rules_disabled = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The perNodePoolSgRulesDisabled.
+     */
+    @java.lang.Override
+    public boolean getPerNodePoolSgRulesDisabled() {
+      return perNodePoolSgRulesDisabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disable the per node pool subnet security group rules on the
+     * control plane security group. When set to true, you must also provide one
+     * or more security groups that ensure node pools are able to send requests to
+     * the control plane on TCP/443 and TCP/8132. Failure to do so may result in
+     * unavailable node pools.
+     * </pre>
+     *
+     * <code>bool per_node_pool_sg_rules_disabled = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The perNodePoolSgRulesDisabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPerNodePoolSgRulesDisabled(boolean value) {
+
+      perNodePoolSgRulesDisabled_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disable the per node pool subnet security group rules on the
+     * control plane security group. When set to true, you must also provide one
+     * or more security groups that ensure node pools are able to send requests to
+     * the control plane on TCP/443 and TCP/8132. Failure to do so may result in
+     * unavailable node pools.
+     * </pre>
+     *
+     * <code>bool per_node_pool_sg_rules_disabled = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPerNodePoolSgRulesDisabled() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      perNodePoolSgRulesDisabled_ = false;
       onChanged();
       return this;
     }

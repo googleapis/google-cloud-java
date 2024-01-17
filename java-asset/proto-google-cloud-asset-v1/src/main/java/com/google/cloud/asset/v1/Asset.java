@@ -500,7 +500,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Please also refer to the [access policy user
+   * Also refer to the [access policy user
    * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
    * </pre>
    *
@@ -516,7 +516,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Please also refer to the [access policy user
+   * Also refer to the [access policy user
    * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
    * </pre>
    *
@@ -535,7 +535,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Please also refer to the [access policy user
+   * Also refer to the [access policy user
    * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
    * </pre>
    *
@@ -555,7 +555,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Please also refer to the [access level user
+   * Also refer to the [access level user
    * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
    * </pre>
    *
@@ -571,7 +571,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Please also refer to the [access level user
+   * Also refer to the [access level user
    * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
    * </pre>
    *
@@ -590,7 +590,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Please also refer to the [access level user
+   * Also refer to the [access level user
    * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
    * </pre>
    *
@@ -610,7 +610,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Please also refer to the [service perimeter user
+   * Also refer to the [service perimeter user
    * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
    * </pre>
    *
@@ -626,7 +626,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Please also refer to the [service perimeter user
+   * Also refer to the [service perimeter user
    * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
    * </pre>
    *
@@ -645,7 +645,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Please also refer to the [service perimeter user
+   * Also refer to the [service perimeter user
    * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
    * </pre>
    *
@@ -732,7 +732,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=167
+   *     google/cloud/asset/v1/assets.proto;l=166
    * @return Whether the relatedAssets field is set.
    */
   @java.lang.Override
@@ -754,7 +754,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=167
+   *     google/cloud/asset/v1/assets.proto;l=166
    * @return The relatedAssets.
    */
   @java.lang.Override
@@ -3026,7 +3026,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access policy user
+     * Also refer to the [access policy user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
      * </pre>
      *
@@ -3042,7 +3042,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access policy user
+     * Also refer to the [access policy user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
      * </pre>
      *
@@ -3068,7 +3068,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access policy user
+     * Also refer to the [access policy user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
      * </pre>
      *
@@ -3091,7 +3091,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access policy user
+     * Also refer to the [access policy user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
      * </pre>
      *
@@ -3112,7 +3112,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access policy user
+     * Also refer to the [access policy user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
      * </pre>
      *
@@ -3148,7 +3148,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access policy user
+     * Also refer to the [access policy user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
      * </pre>
      *
@@ -3174,7 +3174,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access policy user
+     * Also refer to the [access policy user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
      * </pre>
      *
@@ -3188,7 +3188,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access policy user
+     * Also refer to the [access policy user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
      * </pre>
      *
@@ -3210,7 +3210,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access policy user
+     * Also refer to the [access policy user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
      * </pre>
      *
@@ -3250,7 +3250,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access level user
+     * Also refer to the [access level user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
      * </pre>
      *
@@ -3266,7 +3266,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access level user
+     * Also refer to the [access level user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
      * </pre>
      *
@@ -3292,7 +3292,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access level user
+     * Also refer to the [access level user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
      * </pre>
      *
@@ -3315,7 +3315,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access level user
+     * Also refer to the [access level user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
      * </pre>
      *
@@ -3336,7 +3336,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access level user
+     * Also refer to the [access level user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
      * </pre>
      *
@@ -3371,7 +3371,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access level user
+     * Also refer to the [access level user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
      * </pre>
      *
@@ -3397,7 +3397,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access level user
+     * Also refer to the [access level user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
      * </pre>
      *
@@ -3410,7 +3410,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access level user
+     * Also refer to the [access level user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
      * </pre>
      *
@@ -3432,7 +3432,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [access level user
+     * Also refer to the [access level user
      * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
      * </pre>
      *
@@ -3472,7 +3472,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [service perimeter user
+     * Also refer to the [service perimeter user
      * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
      * </pre>
      *
@@ -3488,7 +3488,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [service perimeter user
+     * Also refer to the [service perimeter user
      * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
      * </pre>
      *
@@ -3515,7 +3515,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [service perimeter user
+     * Also refer to the [service perimeter user
      * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
      * </pre>
      *
@@ -3539,7 +3539,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [service perimeter user
+     * Also refer to the [service perimeter user
      * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
      * </pre>
      *
@@ -3560,7 +3560,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [service perimeter user
+     * Also refer to the [service perimeter user
      * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
      * </pre>
      *
@@ -3597,7 +3597,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [service perimeter user
+     * Also refer to the [service perimeter user
      * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
      * </pre>
      *
@@ -3623,7 +3623,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [service perimeter user
+     * Also refer to the [service perimeter user
      * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
      * </pre>
      *
@@ -3637,7 +3637,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [service perimeter user
+     * Also refer to the [service perimeter user
      * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
      * </pre>
      *
@@ -3660,7 +3660,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Please also refer to the [service perimeter user
+     * Also refer to the [service perimeter user
      * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
      * </pre>
      *
@@ -3912,7 +3912,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=167
+     *     google/cloud/asset/v1/assets.proto;l=166
      * @return Whether the relatedAssets field is set.
      */
     @java.lang.Deprecated
@@ -3933,7 +3933,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=167
+     *     google/cloud/asset/v1/assets.proto;l=166
      * @return The relatedAssets.
      */
     @java.lang.Deprecated

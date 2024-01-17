@@ -60,6 +60,10 @@ public final class AwsServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_UpdateAwsNodePoolRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_RollbackAwsNodePoolUpdateRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_RollbackAwsNodePoolUpdateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkemulticloud_v1_GetAwsNodePoolRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_GetAwsNodePoolRequest_fieldAccessorTable;
@@ -76,6 +80,14 @@ public final class AwsServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_DeleteAwsNodePoolRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_GetAwsOpenIdConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_GetAwsOpenIdConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_GetAwsJsonWebKeysRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_GetAwsJsonWebKeysRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkemulticloud_v1_GetAwsServerConfigRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_GetAwsServerConfigRequest_fieldAccessorTable;
@@ -87,6 +99,14 @@ public final class AwsServiceProto {
       internal_static_google_cloud_gkemulticloud_v1_GenerateAwsAccessTokenResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_GenerateAwsAccessTokenResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_GenerateAwsClusterAgentTokenRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_GenerateAwsClusterAgentTokenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_GenerateAwsClusterAgentTokenResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_GenerateAwsClusterAgentTokenResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -102,41 +122,47 @@ public final class AwsServiceProto {
           + "pi/client.proto\032\037google/api/field_behavi"
           + "or.proto\032\031google/api/resource.proto\0321goo"
           + "gle/cloud/gkemulticloud/v1/aws_resources"
-          + ".proto\032#google/longrunning/operations.pr"
-          + "oto\032 google/protobuf/field_mask.proto\032\037g"
-          + "oogle/protobuf/timestamp.proto\"\326\001\n\027Creat"
-          + "eAwsClusterRequest\022@\n\006parent\030\001 \001(\tB0\342A\001\002"
-          + "\372A)\022\'gkemulticloud.googleapis.com/AwsClu"
-          + "ster\022D\n\013aws_cluster\030\002 \001(\0132).google.cloud"
-          + ".gkemulticloud.v1.AwsClusterB\004\342A\001\002\022\034\n\016aw"
-          + "s_cluster_id\030\003 \001(\tB\004\342A\001\002\022\025\n\rvalidate_onl"
-          + "y\030\004 \001(\010\"\255\001\n\027UpdateAwsClusterRequest\022D\n\013a"
-          + "ws_cluster\030\001 \001(\0132).google.cloud.gkemulti"
-          + "cloud.v1.AwsClusterB\004\342A\001\002\022\025\n\rvalidate_on"
-          + "ly\030\002 \001(\010\0225\n\013update_mask\030\004 \001(\0132\032.google.p"
-          + "rotobuf.FieldMaskB\004\342A\001\002\"V\n\024GetAwsCluster"
-          + "Request\022>\n\004name\030\001 \001(\tB0\342A\001\002\372A)\n\'gkemulti"
-          + "cloud.googleapis.com/AwsCluster\"\201\001\n\026List"
-          + "AwsClustersRequest\022@\n\006parent\030\001 \001(\tB0\342A\001\002"
-          + "\372A)\022\'gkemulticloud.googleapis.com/AwsClu"
-          + "ster\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 "
-          + "\001(\t\"s\n\027ListAwsClustersResponse\022?\n\014aws_cl"
-          + "usters\030\001 \003(\0132).google.cloud.gkemulticlou"
-          + "d.v1.AwsCluster\022\027\n\017next_page_token\030\002 \001(\t"
-          + "\"\225\001\n\027DeleteAwsClusterRequest\022>\n\004name\030\001 \001"
-          + "(\tB0\342A\001\002\372A)\n\'gkemulticloud.googleapis.co"
-          + "m/AwsCluster\022\025\n\rvalidate_only\030\002 \001(\010\022\025\n\ra"
-          + "llow_missing\030\003 \001(\010\022\014\n\004etag\030\004 \001(\t\"\335\001\n\030Cre"
-          + "ateAwsNodePoolRequest\022A\n\006parent\030\001 \001(\tB1\342"
-          + "A\001\002\372A*\022(gkemulticloud.googleapis.com/Aws"
-          + "NodePool\022G\n\raws_node_pool\030\002 \001(\0132*.google"
-          + ".cloud.gkemulticloud.v1.AwsNodePoolB\004\342A\001"
-          + "\002\022\036\n\020aws_node_pool_id\030\003 \001(\tB\004\342A\001\002\022\025\n\rval"
-          + "idate_only\030\004 \001(\010\"\261\001\n\030UpdateAwsNodePoolRe"
-          + "quest\022G\n\raws_node_pool\030\001 \001(\0132*.google.cl"
-          + "oud.gkemulticloud.v1.AwsNodePoolB\004\342A\001\002\022\025"
-          + "\n\rvalidate_only\030\002 \001(\010\0225\n\013update_mask\030\003 \001"
-          + "(\0132\032.google.protobuf.FieldMaskB\004\342A\001\002\"X\n\025"
+          + ".proto\0324google/cloud/gkemulticloud/v1/co"
+          + "mmon_resources.proto\032#google/longrunning"
+          + "/operations.proto\032\033google/protobuf/empty"
+          + ".proto\032 google/protobuf/field_mask.proto"
+          + "\032\037google/protobuf/timestamp.proto\"\326\001\n\027Cr"
+          + "eateAwsClusterRequest\022@\n\006parent\030\001 \001(\tB0\342"
+          + "A\001\002\372A)\022\'gkemulticloud.googleapis.com/Aws"
+          + "Cluster\022D\n\013aws_cluster\030\002 \001(\0132).google.cl"
+          + "oud.gkemulticloud.v1.AwsClusterB\004\342A\001\002\022\034\n"
+          + "\016aws_cluster_id\030\003 \001(\tB\004\342A\001\002\022\025\n\rvalidate_"
+          + "only\030\004 \001(\010\"\255\001\n\027UpdateAwsClusterRequest\022D"
+          + "\n\013aws_cluster\030\001 \001(\0132).google.cloud.gkemu"
+          + "lticloud.v1.AwsClusterB\004\342A\001\002\022\025\n\rvalidate"
+          + "_only\030\002 \001(\010\0225\n\013update_mask\030\004 \001(\0132\032.googl"
+          + "e.protobuf.FieldMaskB\004\342A\001\002\"V\n\024GetAwsClus"
+          + "terRequest\022>\n\004name\030\001 \001(\tB0\342A\001\002\372A)\n\'gkemu"
+          + "lticloud.googleapis.com/AwsCluster\"\201\001\n\026L"
+          + "istAwsClustersRequest\022@\n\006parent\030\001 \001(\tB0\342"
+          + "A\001\002\372A)\022\'gkemulticloud.googleapis.com/Aws"
+          + "Cluster\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token"
+          + "\030\003 \001(\t\"s\n\027ListAwsClustersResponse\022?\n\014aws"
+          + "_clusters\030\001 \003(\0132).google.cloud.gkemultic"
+          + "loud.v1.AwsCluster\022\027\n\017next_page_token\030\002 "
+          + "\001(\t\"\262\001\n\027DeleteAwsClusterRequest\022>\n\004name\030"
+          + "\001 \001(\tB0\342A\001\002\372A)\n\'gkemulticloud.googleapis"
+          + ".com/AwsCluster\022\025\n\rvalidate_only\030\002 \001(\010\022\025"
+          + "\n\rallow_missing\030\003 \001(\010\022\033\n\rignore_errors\030\005"
+          + " \001(\010B\004\342A\001\001\022\014\n\004etag\030\004 \001(\t\"\335\001\n\030CreateAwsNo"
+          + "dePoolRequest\022A\n\006parent\030\001 \001(\tB1\342A\001\002\372A*\022("
+          + "gkemulticloud.googleapis.com/AwsNodePool"
+          + "\022G\n\raws_node_pool\030\002 \001(\0132*.google.cloud.g"
+          + "kemulticloud.v1.AwsNodePoolB\004\342A\001\002\022\036\n\020aws"
+          + "_node_pool_id\030\003 \001(\tB\004\342A\001\002\022\025\n\rvalidate_on"
+          + "ly\030\004 \001(\010\"\261\001\n\030UpdateAwsNodePoolRequest\022G\n"
+          + "\raws_node_pool\030\001 \001(\0132*.google.cloud.gkem"
+          + "ulticloud.v1.AwsNodePoolB\004\342A\001\002\022\025\n\rvalida"
+          + "te_only\030\002 \001(\010\0225\n\013update_mask\030\003 \001(\0132\032.goo"
+          + "gle.protobuf.FieldMaskB\004\342A\001\002\"~\n Rollback"
+          + "AwsNodePoolUpdateRequest\022?\n\004name\030\001 \001(\tB1"
+          + "\342A\001\002\372A*\n(gkemulticloud.googleapis.com/Aw"
+          + "sNodePool\022\031\n\013respect_pdb\030\002 \001(\010B\004\342A\001\001\"X\n\025"
           + "GetAwsNodePoolRequest\022?\n\004name\030\001 \001(\tB1\342A\001"
           + "\002\372A*\n(gkemulticloud.googleapis.com/AwsNo"
           + "dePool\"\203\001\n\027ListAwsNodePoolsRequest\022A\n\006pa"
@@ -145,95 +171,136 @@ public final class AwsServiceProto {
           + "\022\022\n\npage_token\030\003 \001(\t\"w\n\030ListAwsNodePools"
           + "Response\022B\n\016aws_node_pools\030\001 \003(\0132*.googl"
           + "e.cloud.gkemulticloud.v1.AwsNodePool\022\027\n\017"
-          + "next_page_token\030\002 \001(\t\"\227\001\n\030DeleteAwsNodeP"
+          + "next_page_token\030\002 \001(\t\"\264\001\n\030DeleteAwsNodeP"
           + "oolRequest\022?\n\004name\030\001 \001(\tB1\342A\001\002\372A*\n(gkemu"
           + "lticloud.googleapis.com/AwsNodePool\022\025\n\rv"
           + "alidate_only\030\002 \001(\010\022\025\n\rallow_missing\030\003 \001("
-          + "\010\022\014\n\004etag\030\004 \001(\t\"`\n\031GetAwsServerConfigReq"
-          + "uest\022C\n\004name\030\001 \001(\tB5\342A\001\002\372A.\n,gkemulticlo"
-          + "ud.googleapis.com/AwsServerConfig\"f\n\035Gen"
-          + "erateAwsAccessTokenRequest\022E\n\013aws_cluste"
-          + "r\030\001 \001(\tB0\342A\001\002\372A)\n\'gkemulticloud.googleap"
-          + "is.com/AwsCluster\"w\n\036GenerateAwsAccessTo"
-          + "kenResponse\022\032\n\014access_token\030\001 \001(\tB\004\342A\001\003\022"
-          + "9\n\017expiration_time\030\002 \001(\0132\032.google.protob"
-          + "uf.TimestampB\004\342A\001\0032\376\025\n\013AwsClusters\022\366\001\n\020C"
-          + "reateAwsCluster\0226.google.cloud.gkemultic"
-          + "loud.v1.CreateAwsClusterRequest\032\035.google"
-          + ".longrunning.Operation\"\212\001\312A\037\n\nAwsCluster"
-          + "\022\021OperationMetadata\332A!parent,aws_cluster"
-          + ",aws_cluster_id\202\323\344\223\002>\"//v1/{parent=proje"
-          + "cts/*/locations/*}/awsClusters:\013aws_clus"
-          + "ter\022\370\001\n\020UpdateAwsCluster\0226.google.cloud."
-          + "gkemulticloud.v1.UpdateAwsClusterRequest"
-          + "\032\035.google.longrunning.Operation\"\214\001\312A\037\n\nA"
-          + "wsCluster\022\021OperationMetadata\332A\027aws_clust"
-          + "er,update_mask\202\323\344\223\002J2;/v1/{aws_cluster.n"
-          + "ame=projects/*/locations/*/awsClusters/*"
-          + "}:\013aws_cluster\022\257\001\n\rGetAwsCluster\0223.googl"
-          + "e.cloud.gkemulticloud.v1.GetAwsClusterRe"
-          + "quest\032).google.cloud.gkemulticloud.v1.Aw"
-          + "sCluster\">\332A\004name\202\323\344\223\0021\022//v1/{name=proje"
-          + "cts/*/locations/*/awsClusters/*}\022\302\001\n\017Lis"
-          + "tAwsClusters\0225.google.cloud.gkemulticlou"
-          + "d.v1.ListAwsClustersRequest\0326.google.clo"
-          + "ud.gkemulticloud.v1.ListAwsClustersRespo"
-          + "nse\"@\332A\006parent\202\323\344\223\0021\022//v1/{parent=projec"
-          + "ts/*/locations/*}/awsClusters\022\326\001\n\020Delete"
-          + "AwsCluster\0226.google.cloud.gkemulticloud."
-          + "v1.DeleteAwsClusterRequest\032\035.google.long"
-          + "running.Operation\"k\312A*\n\025google.protobuf."
-          + "Empty\022\021OperationMetadata\332A\004name\202\323\344\223\0021*//"
-          + "v1/{name=projects/*/locations/*/awsClust"
-          + "ers/*}\022\354\001\n\026GenerateAwsAccessToken\022<.goog"
-          + "le.cloud.gkemulticloud.v1.GenerateAwsAcc"
-          + "essTokenRequest\032=.google.cloud.gkemultic"
-          + "loud.v1.GenerateAwsAccessTokenResponse\"U"
-          + "\202\323\344\223\002O\022M/v1/{aws_cluster=projects/*/loca"
-          + "tions/*/awsClusters/*}:generateAwsAccess"
-          + "Token\022\216\002\n\021CreateAwsNodePool\0227.google.clo"
-          + "ud.gkemulticloud.v1.CreateAwsNodePoolReq"
-          + "uest\032\035.google.longrunning.Operation\"\240\001\312A"
-          + " \n\013AwsNodePool\022\021OperationMetadata\332A%pare"
-          + "nt,aws_node_pool,aws_node_pool_id\202\323\344\223\002O\""
-          + ">/v1/{parent=projects/*/locations/*/awsC"
-          + "lusters/*}/awsNodePools:\raws_node_pool\022\220"
-          + "\002\n\021UpdateAwsNodePool\0227.google.cloud.gkem"
-          + "ulticloud.v1.UpdateAwsNodePoolRequest\032\035."
-          + "google.longrunning.Operation\"\242\001\312A \n\013AwsN"
-          + "odePool\022\021OperationMetadata\332A\031aws_node_po"
-          + "ol,update_mask\202\323\344\223\002]2L/v1/{aws_node_pool"
-          + ".name=projects/*/locations/*/awsClusters"
-          + "/*/awsNodePools/*}:\raws_node_pool\022\301\001\n\016Ge"
-          + "tAwsNodePool\0224.google.cloud.gkemulticlou"
-          + "d.v1.GetAwsNodePoolRequest\032*.google.clou"
-          + "d.gkemulticloud.v1.AwsNodePool\"M\332A\004name\202"
-          + "\323\344\223\002@\022>/v1/{name=projects/*/locations/*/"
-          + "awsClusters/*/awsNodePools/*}\022\324\001\n\020ListAw"
-          + "sNodePools\0226.google.cloud.gkemulticloud."
-          + "v1.ListAwsNodePoolsRequest\0327.google.clou"
-          + "d.gkemulticloud.v1.ListAwsNodePoolsRespo"
-          + "nse\"O\332A\006parent\202\323\344\223\002@\022>/v1/{parent=projec"
-          + "ts/*/locations/*/awsClusters/*}/awsNodeP"
-          + "ools\022\347\001\n\021DeleteAwsNodePool\0227.google.clou"
-          + "d.gkemulticloud.v1.DeleteAwsNodePoolRequ"
-          + "est\032\035.google.longrunning.Operation\"z\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadat"
-          + "a\332A\004name\202\323\344\223\002@*>/v1/{name=projects/*/loc"
-          + "ations/*/awsClusters/*/awsNodePools/*}\022\300"
-          + "\001\n\022GetAwsServerConfig\0228.google.cloud.gke"
-          + "multicloud.v1.GetAwsServerConfigRequest\032"
-          + "..google.cloud.gkemulticloud.v1.AwsServe"
-          + "rConfig\"@\332A\004name\202\323\344\223\0023\0221/v1/{name=projec"
-          + "ts/*/locations/*/awsServerConfig}\032P\312A\034gk"
-          + "emulticloud.googleapis.com\322A.https://www"
-          + ".googleapis.com/auth/cloud-platformB\342\001\n!"
-          + "com.google.cloud.gkemulticloud.v1B\017AwsSe"
-          + "rviceProtoP\001ZGcloud.google.com/go/gkemul"
-          + "ticloud/apiv1/gkemulticloudpb;gkemulticl"
-          + "oudpb\252\002\035Google.Cloud.GkeMultiCloud.V1\312\002\035"
-          + "Google\\Cloud\\GkeMultiCloud\\V1\352\002 Google::"
-          + "Cloud::GkeMultiCloud::V1b\006proto3"
+          + "\010\022\033\n\rignore_errors\030\005 \001(\010B\004\342A\001\001\022\014\n\004etag\030\004"
+          + " \001(\t\"b\n\031GetAwsOpenIdConfigRequest\022E\n\013aws"
+          + "_cluster\030\001 \001(\tB0\342A\001\002\372A)\n\'gkemulticloud.g"
+          + "oogleapis.com/AwsCluster\"a\n\030GetAwsJsonWe"
+          + "bKeysRequest\022E\n\013aws_cluster\030\001 \001(\tB0\342A\001\002\372"
+          + "A)\n\'gkemulticloud.googleapis.com/AwsClus"
+          + "ter\"`\n\031GetAwsServerConfigRequest\022C\n\004name"
+          + "\030\001 \001(\tB5\342A\001\002\372A.\n,gkemulticloud.googleapi"
+          + "s.com/AwsServerConfig\"f\n\035GenerateAwsAcce"
+          + "ssTokenRequest\022E\n\013aws_cluster\030\001 \001(\tB0\342A\001"
+          + "\002\372A)\n\'gkemulticloud.googleapis.com/AwsCl"
+          + "uster\"w\n\036GenerateAwsAccessTokenResponse\022"
+          + "\032\n\014access_token\030\001 \001(\tB\004\342A\001\003\0229\n\017expiratio"
+          + "n_time\030\002 \001(\0132\032.google.protobuf.Timestamp"
+          + "B\004\342A\001\003\"\340\002\n#GenerateAwsClusterAgentTokenR"
+          + "equest\022E\n\013aws_cluster\030\001 \001(\tB0\342A\001\002\372A)\n\'gk"
+          + "emulticloud.googleapis.com/AwsCluster\022\033\n"
+          + "\rsubject_token\030\002 \001(\tB\004\342A\001\002\022 \n\022subject_to"
+          + "ken_type\030\003 \001(\tB\004\342A\001\002\022\025\n\007version\030\004 \001(\tB\004\342"
+          + "A\001\002\022\032\n\014node_pool_id\030\005 \001(\tB\004\342A\001\001\022\030\n\ngrant"
+          + "_type\030\006 \001(\tB\004\342A\001\001\022\026\n\010audience\030\007 \001(\tB\004\342A\001"
+          + "\001\022\023\n\005scope\030\010 \001(\tB\004\342A\001\001\022\"\n\024requested_toke"
+          + "n_type\030\t \001(\tB\004\342A\001\001\022\025\n\007options\030\n \001(\tB\004\342A\001"
+          + "\001\"d\n$GenerateAwsClusterAgentTokenRespons"
+          + "e\022\024\n\014access_token\030\001 \001(\t\022\022\n\nexpires_in\030\002 "
+          + "\001(\005\022\022\n\ntoken_type\030\003 \001(\t2\251\035\n\013AwsClusters\022"
+          + "\366\001\n\020CreateAwsCluster\0226.google.cloud.gkem"
+          + "ulticloud.v1.CreateAwsClusterRequest\032\035.g"
+          + "oogle.longrunning.Operation\"\212\001\312A\037\n\nAwsCl"
+          + "uster\022\021OperationMetadata\332A!parent,aws_cl"
+          + "uster,aws_cluster_id\202\323\344\223\002>\"//v1/{parent="
+          + "projects/*/locations/*}/awsClusters:\013aws"
+          + "_cluster\022\370\001\n\020UpdateAwsCluster\0226.google.c"
+          + "loud.gkemulticloud.v1.UpdateAwsClusterRe"
+          + "quest\032\035.google.longrunning.Operation\"\214\001\312"
+          + "A\037\n\nAwsCluster\022\021OperationMetadata\332A\027aws_"
+          + "cluster,update_mask\202\323\344\223\002J2;/v1/{aws_clus"
+          + "ter.name=projects/*/locations/*/awsClust"
+          + "ers/*}:\013aws_cluster\022\257\001\n\rGetAwsCluster\0223."
+          + "google.cloud.gkemulticloud.v1.GetAwsClus"
+          + "terRequest\032).google.cloud.gkemulticloud."
+          + "v1.AwsCluster\">\332A\004name\202\323\344\223\0021\022//v1/{name="
+          + "projects/*/locations/*/awsClusters/*}\022\302\001"
+          + "\n\017ListAwsClusters\0225.google.cloud.gkemult"
+          + "icloud.v1.ListAwsClustersRequest\0326.googl"
+          + "e.cloud.gkemulticloud.v1.ListAwsClusters"
+          + "Response\"@\332A\006parent\202\323\344\223\0021\022//v1/{parent=p"
+          + "rojects/*/locations/*}/awsClusters\022\326\001\n\020D"
+          + "eleteAwsCluster\0226.google.cloud.gkemultic"
+          + "loud.v1.DeleteAwsClusterRequest\032\035.google"
+          + ".longrunning.Operation\"k\312A*\n\025google.prot"
+          + "obuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223"
+          + "\0021*//v1/{name=projects/*/locations/*/aws"
+          + "Clusters/*}\022\207\002\n\034GenerateAwsClusterAgentT"
+          + "oken\022B.google.cloud.gkemulticloud.v1.Gen"
+          + "erateAwsClusterAgentTokenRequest\032C.googl"
+          + "e.cloud.gkemulticloud.v1.GenerateAwsClus"
+          + "terAgentTokenResponse\"^\202\323\344\223\002X\"S/v1/{aws_"
+          + "cluster=projects/*/locations/*/awsCluste"
+          + "rs/*}:generateAwsClusterAgentToken:\001*\022\354\001"
+          + "\n\026GenerateAwsAccessToken\022<.google.cloud."
+          + "gkemulticloud.v1.GenerateAwsAccessTokenR"
+          + "equest\032=.google.cloud.gkemulticloud.v1.G"
+          + "enerateAwsAccessTokenResponse\"U\202\323\344\223\002O\022M/"
+          + "v1/{aws_cluster=projects/*/locations/*/a"
+          + "wsClusters/*}:generateAwsAccessToken\022\216\002\n"
+          + "\021CreateAwsNodePool\0227.google.cloud.gkemul"
+          + "ticloud.v1.CreateAwsNodePoolRequest\032\035.go"
+          + "ogle.longrunning.Operation\"\240\001\312A \n\013AwsNod"
+          + "ePool\022\021OperationMetadata\332A%parent,aws_no"
+          + "de_pool,aws_node_pool_id\202\323\344\223\002O\">/v1/{par"
+          + "ent=projects/*/locations/*/awsClusters/*"
+          + "}/awsNodePools:\raws_node_pool\022\220\002\n\021Update"
+          + "AwsNodePool\0227.google.cloud.gkemulticloud"
+          + ".v1.UpdateAwsNodePoolRequest\032\035.google.lo"
+          + "ngrunning.Operation\"\242\001\312A \n\013AwsNodePool\022\021"
+          + "OperationMetadata\332A\031aws_node_pool,update"
+          + "_mask\202\323\344\223\002]2L/v1/{aws_node_pool.name=pro"
+          + "jects/*/locations/*/awsClusters/*/awsNod"
+          + "ePools/*}:\raws_node_pool\022\371\001\n\031RollbackAws"
+          + "NodePoolUpdate\022?.google.cloud.gkemulticl"
+          + "oud.v1.RollbackAwsNodePoolUpdateRequest\032"
+          + "\035.google.longrunning.Operation\"|\312A \n\013Aws"
+          + "NodePool\022\021OperationMetadata\332A\004name\202\323\344\223\002L"
+          + "\"G/v1/{name=projects/*/locations/*/awsCl"
+          + "usters/*/awsNodePools/*}:rollback:\001*\022\301\001\n"
+          + "\016GetAwsNodePool\0224.google.cloud.gkemultic"
+          + "loud.v1.GetAwsNodePoolRequest\032*.google.c"
+          + "loud.gkemulticloud.v1.AwsNodePool\"M\332A\004na"
+          + "me\202\323\344\223\002@\022>/v1/{name=projects/*/locations"
+          + "/*/awsClusters/*/awsNodePools/*}\022\324\001\n\020Lis"
+          + "tAwsNodePools\0226.google.cloud.gkemulticlo"
+          + "ud.v1.ListAwsNodePoolsRequest\0327.google.c"
+          + "loud.gkemulticloud.v1.ListAwsNodePoolsRe"
+          + "sponse\"O\332A\006parent\202\323\344\223\002@\022>/v1/{parent=pro"
+          + "jects/*/locations/*/awsClusters/*}/awsNo"
+          + "dePools\022\347\001\n\021DeleteAwsNodePool\0227.google.c"
+          + "loud.gkemulticloud.v1.DeleteAwsNodePoolR"
+          + "equest\032\035.google.longrunning.Operation\"z\312"
+          + "A*\n\025google.protobuf.Empty\022\021OperationMeta"
+          + "data\332A\004name\202\323\344\223\002@*>/v1/{name=projects/*/"
+          + "locations/*/awsClusters/*/awsNodePools/*"
+          + "}\022\337\001\n\022GetAwsOpenIdConfig\0228.google.cloud."
+          + "gkemulticloud.v1.GetAwsOpenIdConfigReque"
+          + "st\032..google.cloud.gkemulticloud.v1.AwsOp"
+          + "enIdConfig\"_\202\323\344\223\002Y\022W/v1/{aws_cluster=pro"
+          + "jects/*/locations/*/awsClusters/*}/.well"
+          + "-known/openid-configuration\022\300\001\n\021GetAwsJs"
+          + "onWebKeys\0227.google.cloud.gkemulticloud.v"
+          + "1.GetAwsJsonWebKeysRequest\032-.google.clou"
+          + "d.gkemulticloud.v1.AwsJsonWebKeys\"C\202\323\344\223\002"
+          + "=\022;/v1/{aws_cluster=projects/*/locations"
+          + "/*/awsClusters/*}/jwks\022\300\001\n\022GetAwsServerC"
+          + "onfig\0228.google.cloud.gkemulticloud.v1.Ge"
+          + "tAwsServerConfigRequest\032..google.cloud.g"
+          + "kemulticloud.v1.AwsServerConfig\"@\332A\004name"
+          + "\202\323\344\223\0023\0221/v1/{name=projects/*/locations/*"
+          + "/awsServerConfig}\032P\312A\034gkemulticloud.goog"
+          + "leapis.com\322A.https://www.googleapis.com/"
+          + "auth/cloud-platformB\342\001\n!com.google.cloud"
+          + ".gkemulticloud.v1B\017AwsServiceProtoP\001ZGcl"
+          + "oud.google.com/go/gkemulticloud/apiv1/gk"
+          + "emulticloudpb;gkemulticloudpb\252\002\035Google.C"
+          + "loud.GkeMultiCloud.V1\312\002\035Google\\Cloud\\Gke"
+          + "MultiCloud\\V1\352\002 Google::Cloud::GkeMultiC"
+          + "loud::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -244,7 +311,9 @@ public final class AwsServiceProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.gkemulticloud.v1.AwsResourcesProto.getDescriptor(),
+              com.google.cloud.gkemulticloud.v1.CommonResourcesProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -294,7 +363,7 @@ public final class AwsServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_DeleteAwsClusterRequest_descriptor,
             new java.lang.String[] {
-              "Name", "ValidateOnly", "AllowMissing", "Etag",
+              "Name", "ValidateOnly", "AllowMissing", "IgnoreErrors", "Etag",
             });
     internal_static_google_cloud_gkemulticloud_v1_CreateAwsNodePoolRequest_descriptor =
         getDescriptor().getMessageTypes().get(6);
@@ -312,8 +381,16 @@ public final class AwsServiceProto {
             new java.lang.String[] {
               "AwsNodePool", "ValidateOnly", "UpdateMask",
             });
-    internal_static_google_cloud_gkemulticloud_v1_GetAwsNodePoolRequest_descriptor =
+    internal_static_google_cloud_gkemulticloud_v1_RollbackAwsNodePoolUpdateRequest_descriptor =
         getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_gkemulticloud_v1_RollbackAwsNodePoolUpdateRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_RollbackAwsNodePoolUpdateRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RespectPdb",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_GetAwsNodePoolRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_gkemulticloud_v1_GetAwsNodePoolRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_GetAwsNodePoolRequest_descriptor,
@@ -321,7 +398,7 @@ public final class AwsServiceProto {
               "Name",
             });
     internal_static_google_cloud_gkemulticloud_v1_ListAwsNodePoolsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_gkemulticloud_v1_ListAwsNodePoolsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_ListAwsNodePoolsRequest_descriptor,
@@ -329,7 +406,7 @@ public final class AwsServiceProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_gkemulticloud_v1_ListAwsNodePoolsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_gkemulticloud_v1_ListAwsNodePoolsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_ListAwsNodePoolsResponse_descriptor,
@@ -337,15 +414,31 @@ public final class AwsServiceProto {
               "AwsNodePools", "NextPageToken",
             });
     internal_static_google_cloud_gkemulticloud_v1_DeleteAwsNodePoolRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_gkemulticloud_v1_DeleteAwsNodePoolRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_DeleteAwsNodePoolRequest_descriptor,
             new java.lang.String[] {
-              "Name", "ValidateOnly", "AllowMissing", "Etag",
+              "Name", "ValidateOnly", "AllowMissing", "IgnoreErrors", "Etag",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_GetAwsOpenIdConfigRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_gkemulticloud_v1_GetAwsOpenIdConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_GetAwsOpenIdConfigRequest_descriptor,
+            new java.lang.String[] {
+              "AwsCluster",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_GetAwsJsonWebKeysRequest_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_gkemulticloud_v1_GetAwsJsonWebKeysRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_GetAwsJsonWebKeysRequest_descriptor,
+            new java.lang.String[] {
+              "AwsCluster",
             });
     internal_static_google_cloud_gkemulticloud_v1_GetAwsServerConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_gkemulticloud_v1_GetAwsServerConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_GetAwsServerConfigRequest_descriptor,
@@ -353,7 +446,7 @@ public final class AwsServiceProto {
               "Name",
             });
     internal_static_google_cloud_gkemulticloud_v1_GenerateAwsAccessTokenRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_gkemulticloud_v1_GenerateAwsAccessTokenRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_GenerateAwsAccessTokenRequest_descriptor,
@@ -361,12 +454,37 @@ public final class AwsServiceProto {
               "AwsCluster",
             });
     internal_static_google_cloud_gkemulticloud_v1_GenerateAwsAccessTokenResponse_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_gkemulticloud_v1_GenerateAwsAccessTokenResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkemulticloud_v1_GenerateAwsAccessTokenResponse_descriptor,
             new java.lang.String[] {
               "AccessToken", "ExpirationTime",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_GenerateAwsClusterAgentTokenRequest_descriptor =
+        getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_gkemulticloud_v1_GenerateAwsClusterAgentTokenRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_GenerateAwsClusterAgentTokenRequest_descriptor,
+            new java.lang.String[] {
+              "AwsCluster",
+              "SubjectToken",
+              "SubjectTokenType",
+              "Version",
+              "NodePoolId",
+              "GrantType",
+              "Audience",
+              "Scope",
+              "RequestedTokenType",
+              "Options",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_GenerateAwsClusterAgentTokenResponse_descriptor =
+        getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_gkemulticloud_v1_GenerateAwsClusterAgentTokenResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_GenerateAwsClusterAgentTokenResponse_descriptor,
+            new java.lang.String[] {
+              "AccessToken", "ExpiresIn", "TokenType",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -384,7 +502,9 @@ public final class AwsServiceProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.gkemulticloud.v1.AwsResourcesProto.getDescriptor();
+    com.google.cloud.gkemulticloud.v1.CommonResourcesProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

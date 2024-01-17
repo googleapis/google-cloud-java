@@ -71,8 +71,8 @@ public final class PhotoMedia extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of a photo. It is returned in Place's photos.name field.
-   * Format: places/&lt;place_id&gt;/photos/&lt;photo_reference&gt;/media.
+   * The resource name of a photo media in the format:
+   * `places/{place_id}/photos/{photo_reference}/media`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -95,8 +95,8 @@ public final class PhotoMedia extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of a photo. It is returned in Place's photos.name field.
-   * Format: places/&lt;place_id&gt;/photos/&lt;photo_reference&gt;/media.
+   * The resource name of a photo media in the format:
+   * `places/{place_id}/photos/{photo_reference}/media`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -534,8 +534,8 @@ public final class PhotoMedia extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of a photo. It is returned in Place's photos.name field.
-     * Format: places/&lt;place_id&gt;/photos/&lt;photo_reference&gt;/media.
+     * The resource name of a photo media in the format:
+     * `places/{place_id}/photos/{photo_reference}/media`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -557,8 +557,8 @@ public final class PhotoMedia extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of a photo. It is returned in Place's photos.name field.
-     * Format: places/&lt;place_id&gt;/photos/&lt;photo_reference&gt;/media.
+     * The resource name of a photo media in the format:
+     * `places/{place_id}/photos/{photo_reference}/media`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -580,8 +580,8 @@ public final class PhotoMedia extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of a photo. It is returned in Place's photos.name field.
-     * Format: places/&lt;place_id&gt;/photos/&lt;photo_reference&gt;/media.
+     * The resource name of a photo media in the format:
+     * `places/{place_id}/photos/{photo_reference}/media`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -602,8 +602,8 @@ public final class PhotoMedia extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of a photo. It is returned in Place's photos.name field.
-     * Format: places/&lt;place_id&gt;/photos/&lt;photo_reference&gt;/media.
+     * The resource name of a photo media in the format:
+     * `places/{place_id}/photos/{photo_reference}/media`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -620,8 +620,8 @@ public final class PhotoMedia extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of a photo. It is returned in Place's photos.name field.
-     * Format: places/&lt;place_id&gt;/photos/&lt;photo_reference&gt;/media.
+     * The resource name of a photo media in the format:
+     * `places/{place_id}/photos/{photo_reference}/media`.
      * </pre>
      *
      * <code>string name = 1;</code>

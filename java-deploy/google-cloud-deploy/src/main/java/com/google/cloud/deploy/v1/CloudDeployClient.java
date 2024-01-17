@@ -72,19 +72,864 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the CloudDeployClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    <tr>
+ *      <td>ListDeliveryPipelines</td>
+ *      <td><p> Lists DeliveryPipelines in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listDeliveryPipelines(ListDeliveryPipelinesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listDeliveryPipelines(LocationName parent)
+ *           <li>listDeliveryPipelines(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listDeliveryPipelinesPagedCallable()
+ *           <li>listDeliveryPipelinesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetDeliveryPipeline</td>
+ *      <td><p> Gets details of a single DeliveryPipeline.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getDeliveryPipeline(GetDeliveryPipelineRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getDeliveryPipeline(DeliveryPipelineName name)
+ *           <li>getDeliveryPipeline(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getDeliveryPipelineCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateDeliveryPipeline</td>
+ *      <td><p> Creates a new DeliveryPipeline in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createDeliveryPipelineAsync(CreateDeliveryPipelineRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createDeliveryPipelineAsync(LocationName parent, DeliveryPipeline deliveryPipeline, String deliveryPipelineId)
+ *           <li>createDeliveryPipelineAsync(String parent, DeliveryPipeline deliveryPipeline, String deliveryPipelineId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createDeliveryPipelineOperationCallable()
+ *           <li>createDeliveryPipelineCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateDeliveryPipeline</td>
+ *      <td><p> Updates the parameters of a single DeliveryPipeline.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateDeliveryPipelineAsync(UpdateDeliveryPipelineRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateDeliveryPipelineAsync(DeliveryPipeline deliveryPipeline, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateDeliveryPipelineOperationCallable()
+ *           <li>updateDeliveryPipelineCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteDeliveryPipeline</td>
+ *      <td><p> Deletes a single DeliveryPipeline.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteDeliveryPipelineAsync(DeleteDeliveryPipelineRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteDeliveryPipelineAsync(DeliveryPipelineName name)
+ *           <li>deleteDeliveryPipelineAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteDeliveryPipelineOperationCallable()
+ *           <li>deleteDeliveryPipelineCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListTargets</td>
+ *      <td><p> Lists Targets in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listTargets(ListTargetsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listTargets(LocationName parent)
+ *           <li>listTargets(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listTargetsPagedCallable()
+ *           <li>listTargetsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>RollbackTarget</td>
+ *      <td><p> Creates a `Rollout` to roll back the specified target.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>rollbackTarget(RollbackTargetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>rollbackTarget(DeliveryPipelineName name, String targetId, String rolloutId)
+ *           <li>rollbackTarget(String name, String targetId, String rolloutId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>rollbackTargetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetTarget</td>
+ *      <td><p> Gets details of a single Target.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getTarget(GetTargetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getTarget(TargetName name)
+ *           <li>getTarget(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getTargetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateTarget</td>
+ *      <td><p> Creates a new Target in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createTargetAsync(CreateTargetRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createTargetAsync(LocationName parent, Target target, String targetId)
+ *           <li>createTargetAsync(String parent, Target target, String targetId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createTargetOperationCallable()
+ *           <li>createTargetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateTarget</td>
+ *      <td><p> Updates the parameters of a single Target.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateTargetAsync(UpdateTargetRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateTargetAsync(Target target, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateTargetOperationCallable()
+ *           <li>updateTargetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteTarget</td>
+ *      <td><p> Deletes a single Target.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteTargetAsync(DeleteTargetRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteTargetAsync(TargetName name)
+ *           <li>deleteTargetAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteTargetOperationCallable()
+ *           <li>deleteTargetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListCustomTargetTypes</td>
+ *      <td><p> Lists CustomTargetTypes in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listCustomTargetTypes(ListCustomTargetTypesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listCustomTargetTypes(LocationName parent)
+ *           <li>listCustomTargetTypes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listCustomTargetTypesPagedCallable()
+ *           <li>listCustomTargetTypesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetCustomTargetType</td>
+ *      <td><p> Gets details of a single CustomTargetType.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getCustomTargetType(GetCustomTargetTypeRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getCustomTargetType(CustomTargetTypeName name)
+ *           <li>getCustomTargetType(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getCustomTargetTypeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateCustomTargetType</td>
+ *      <td><p> Creates a new CustomTargetType in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createCustomTargetTypeAsync(CreateCustomTargetTypeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createCustomTargetTypeAsync(LocationName parent, CustomTargetType customTargetType, String customTargetTypeId)
+ *           <li>createCustomTargetTypeAsync(String parent, CustomTargetType customTargetType, String customTargetTypeId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createCustomTargetTypeOperationCallable()
+ *           <li>createCustomTargetTypeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateCustomTargetType</td>
+ *      <td><p> Updates a single CustomTargetType.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateCustomTargetTypeAsync(UpdateCustomTargetTypeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateCustomTargetTypeAsync(CustomTargetType customTargetType, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateCustomTargetTypeOperationCallable()
+ *           <li>updateCustomTargetTypeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteCustomTargetType</td>
+ *      <td><p> Deletes a single CustomTargetType.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteCustomTargetTypeAsync(DeleteCustomTargetTypeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteCustomTargetTypeAsync(CustomTargetTypeName name)
+ *           <li>deleteCustomTargetTypeAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteCustomTargetTypeOperationCallable()
+ *           <li>deleteCustomTargetTypeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListReleases</td>
+ *      <td><p> Lists Releases in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listReleases(ListReleasesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listReleases(DeliveryPipelineName parent)
+ *           <li>listReleases(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listReleasesPagedCallable()
+ *           <li>listReleasesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetRelease</td>
+ *      <td><p> Gets details of a single Release.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getRelease(GetReleaseRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getRelease(ReleaseName name)
+ *           <li>getRelease(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getReleaseCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateRelease</td>
+ *      <td><p> Creates a new Release in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createReleaseAsync(CreateReleaseRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createReleaseAsync(DeliveryPipelineName parent, Release release, String releaseId)
+ *           <li>createReleaseAsync(String parent, Release release, String releaseId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createReleaseOperationCallable()
+ *           <li>createReleaseCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>AbandonRelease</td>
+ *      <td><p> Abandons a Release in the Delivery Pipeline.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>abandonRelease(AbandonReleaseRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>abandonRelease(ReleaseName name)
+ *           <li>abandonRelease(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>abandonReleaseCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ApproveRollout</td>
+ *      <td><p> Approves a Rollout.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>approveRollout(ApproveRolloutRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>approveRollout(RolloutName name)
+ *           <li>approveRollout(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>approveRolloutCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>AdvanceRollout</td>
+ *      <td><p> Advances a Rollout in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>advanceRollout(AdvanceRolloutRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>advanceRollout(RolloutName name, String phaseId)
+ *           <li>advanceRollout(String name, String phaseId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>advanceRolloutCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CancelRollout</td>
+ *      <td><p> Cancels a Rollout in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>cancelRollout(CancelRolloutRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>cancelRollout(RolloutName name)
+ *           <li>cancelRollout(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>cancelRolloutCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListRollouts</td>
+ *      <td><p> Lists Rollouts in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listRollouts(ListRolloutsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listRollouts(ReleaseName parent)
+ *           <li>listRollouts(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listRolloutsPagedCallable()
+ *           <li>listRolloutsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetRollout</td>
+ *      <td><p> Gets details of a single Rollout.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getRollout(GetRolloutRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getRollout(RolloutName name)
+ *           <li>getRollout(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getRolloutCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateRollout</td>
+ *      <td><p> Creates a new Rollout in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createRolloutAsync(CreateRolloutRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createRolloutAsync(ReleaseName parent, Rollout rollout, String rolloutId)
+ *           <li>createRolloutAsync(String parent, Rollout rollout, String rolloutId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createRolloutOperationCallable()
+ *           <li>createRolloutCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>IgnoreJob</td>
+ *      <td><p> Ignores the specified Job in a Rollout.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>ignoreJob(IgnoreJobRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>ignoreJob(RolloutName rollout, String phaseId, String jobId)
+ *           <li>ignoreJob(String rollout, String phaseId, String jobId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>ignoreJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>RetryJob</td>
+ *      <td><p> Retries the specified Job in a Rollout.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>retryJob(RetryJobRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>retryJob(RolloutName rollout, String phaseId, String jobId)
+ *           <li>retryJob(String rollout, String phaseId, String jobId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>retryJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListJobRuns</td>
+ *      <td><p> Lists JobRuns in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listJobRuns(ListJobRunsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listJobRuns(RolloutName parent)
+ *           <li>listJobRuns(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listJobRunsPagedCallable()
+ *           <li>listJobRunsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetJobRun</td>
+ *      <td><p> Gets details of a single JobRun.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getJobRun(GetJobRunRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getJobRun(JobRunName name)
+ *           <li>getJobRun(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getJobRunCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>TerminateJobRun</td>
+ *      <td><p> Terminates a Job Run in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>terminateJobRun(TerminateJobRunRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>terminateJobRun(JobRunName name)
+ *           <li>terminateJobRun(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>terminateJobRunCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetConfig</td>
+ *      <td><p> Gets the configuration for a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getConfig(GetConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getConfig(ConfigName name)
+ *           <li>getConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateAutomation</td>
+ *      <td><p> Creates a new Automation in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createAutomationAsync(CreateAutomationRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createAutomationAsync(DeliveryPipelineName parent, Automation automation, String automationId)
+ *           <li>createAutomationAsync(String parent, Automation automation, String automationId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createAutomationOperationCallable()
+ *           <li>createAutomationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateAutomation</td>
+ *      <td><p> Updates the parameters of a single Automation resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateAutomationAsync(UpdateAutomationRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateAutomationAsync(Automation automation, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateAutomationOperationCallable()
+ *           <li>updateAutomationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteAutomation</td>
+ *      <td><p> Deletes a single Automation resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteAutomationAsync(DeleteAutomationRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteAutomationAsync(AutomationName name)
+ *           <li>deleteAutomationAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteAutomationOperationCallable()
+ *           <li>deleteAutomationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAutomation</td>
+ *      <td><p> Gets details of a single Automation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAutomation(GetAutomationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAutomation(AutomationName name)
+ *           <li>getAutomation(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAutomationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListAutomations</td>
+ *      <td><p> Lists Automations in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listAutomations(ListAutomationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listAutomations(DeliveryPipelineName parent)
+ *           <li>listAutomations(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listAutomationsPagedCallable()
+ *           <li>listAutomationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAutomationRun</td>
+ *      <td><p> Gets details of a single AutomationRun.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAutomationRun(GetAutomationRunRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAutomationRun(AutomationRunName name)
+ *           <li>getAutomationRun(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAutomationRunCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListAutomationRuns</td>
+ *      <td><p> Lists AutomationRuns in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listAutomationRuns(ListAutomationRunsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listAutomationRuns(DeliveryPipelineName parent)
+ *           <li>listAutomationRuns(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listAutomationRunsPagedCallable()
+ *           <li>listAutomationRunsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CancelAutomationRun</td>
+ *      <td><p> Cancels an AutomationRun. The `state` of the `AutomationRun` after cancelling is `CANCELLED`. `CancelAutomationRun` can be called on AutomationRun in the state `IN_PROGRESS` and `PENDING`; AutomationRun in a different state returns an `FAILED_PRECONDITION` error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>cancelAutomationRun(CancelAutomationRunRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>cancelAutomationRun(AutomationRunName name)
+ *           <li>cancelAutomationRun(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>cancelAutomationRunCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listLocationsPagedCallable()
+ *           <li>listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
+ * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+ * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -712,8 +1557,8 @@ public class CloudDeployClient implements BackgroundResource {
    * @param deliveryPipeline Required. The `DeliveryPipeline` to update.
    * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
    *     `DeliveryPipeline` resource by the update. The fields specified in the update_mask are
-   *     relative to the resource, not the full request. A field will be overwritten if it is in the
-   *     mask. If the user does not provide a mask then all fields will be overwritten.
+   *     relative to the resource, not the full request. A field will be overwritten if it's in the
+   *     mask. If the user doesn't provide a mask then all fields are overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DeliveryPipeline, OperationMetadata> updateDeliveryPipelineAsync(
@@ -1617,8 +2462,8 @@ public class CloudDeployClient implements BackgroundResource {
    * @param target Required. The `Target` to update.
    * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
    *     Target resource by the update. The fields specified in the update_mask are relative to the
-   *     resource, not the full request. A field will be overwritten if it is in the mask. If the
-   *     user does not provide a mask then all fields will be overwritten.
+   *     resource, not the full request. A field will be overwritten if it's in the mask. If the
+   *     user doesn't provide a mask then all fields are overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Target, OperationMetadata> updateTargetAsync(
@@ -1875,6 +2720,785 @@ public class CloudDeployClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteTargetRequest, Operation> deleteTargetCallable() {
     return stub.deleteTargetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomTargetTypes in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (CustomTargetType element :
+   *       cloudDeployClient.listCustomTargetTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent that owns this collection of custom target types. Format
+   *     must be `projects/{project_id}/locations/{location_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomTargetTypesPagedResponse listCustomTargetTypes(LocationName parent) {
+    ListCustomTargetTypesRequest request =
+        ListCustomTargetTypesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCustomTargetTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomTargetTypes in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (CustomTargetType element :
+   *       cloudDeployClient.listCustomTargetTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent that owns this collection of custom target types. Format
+   *     must be `projects/{project_id}/locations/{location_name}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomTargetTypesPagedResponse listCustomTargetTypes(String parent) {
+    ListCustomTargetTypesRequest request =
+        ListCustomTargetTypesRequest.newBuilder().setParent(parent).build();
+    return listCustomTargetTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomTargetTypes in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   ListCustomTargetTypesRequest request =
+   *       ListCustomTargetTypesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (CustomTargetType element :
+   *       cloudDeployClient.listCustomTargetTypes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomTargetTypesPagedResponse listCustomTargetTypes(
+      ListCustomTargetTypesRequest request) {
+    return listCustomTargetTypesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomTargetTypes in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   ListCustomTargetTypesRequest request =
+   *       ListCustomTargetTypesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<CustomTargetType> future =
+   *       cloudDeployClient.listCustomTargetTypesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (CustomTargetType element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesPagedResponse>
+      listCustomTargetTypesPagedCallable() {
+    return stub.listCustomTargetTypesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CustomTargetTypes in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   ListCustomTargetTypesRequest request =
+   *       ListCustomTargetTypesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListCustomTargetTypesResponse response =
+   *         cloudDeployClient.listCustomTargetTypesCallable().call(request);
+   *     for (CustomTargetType element : response.getCustomTargetTypesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
+      listCustomTargetTypesCallable() {
+    return stub.listCustomTargetTypesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CustomTargetTypeName name =
+   *       CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]");
+   *   CustomTargetType response = cloudDeployClient.getCustomTargetType(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the `CustomTargetType`. Format must be
+   *     `projects/{project_id}/locations/{location_name}/customTargetTypes/{custom_target_type}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomTargetType getCustomTargetType(CustomTargetTypeName name) {
+    GetCustomTargetTypeRequest request =
+        GetCustomTargetTypeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getCustomTargetType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String name =
+   *       CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]").toString();
+   *   CustomTargetType response = cloudDeployClient.getCustomTargetType(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the `CustomTargetType`. Format must be
+   *     `projects/{project_id}/locations/{location_name}/customTargetTypes/{custom_target_type}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomTargetType getCustomTargetType(String name) {
+    GetCustomTargetTypeRequest request =
+        GetCustomTargetTypeRequest.newBuilder().setName(name).build();
+    return getCustomTargetType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   GetCustomTargetTypeRequest request =
+   *       GetCustomTargetTypeRequest.newBuilder()
+   *           .setName(
+   *               CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   CustomTargetType response = cloudDeployClient.getCustomTargetType(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomTargetType getCustomTargetType(GetCustomTargetTypeRequest request) {
+    return getCustomTargetTypeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   GetCustomTargetTypeRequest request =
+   *       GetCustomTargetTypeRequest.newBuilder()
+   *           .setName(
+   *               CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<CustomTargetType> future =
+   *       cloudDeployClient.getCustomTargetTypeCallable().futureCall(request);
+   *   // Do something.
+   *   CustomTargetType response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetCustomTargetTypeRequest, CustomTargetType>
+      getCustomTargetTypeCallable() {
+    return stub.getCustomTargetTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CustomTargetType in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   CustomTargetType customTargetType = CustomTargetType.newBuilder().build();
+   *   String customTargetTypeId = "customTargetTypeId1451302135";
+   *   CustomTargetType response =
+   *       cloudDeployClient
+   *           .createCustomTargetTypeAsync(parent, customTargetType, customTargetTypeId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection in which the `CustomTargetType` should be
+   *     created. Format should be `projects/{project_id}/locations/{location_name}`.
+   * @param customTargetType Required. The `CustomTargetType` to create.
+   * @param customTargetTypeId Required. ID of the `CustomTargetType`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CustomTargetType, OperationMetadata> createCustomTargetTypeAsync(
+      LocationName parent, CustomTargetType customTargetType, String customTargetTypeId) {
+    CreateCustomTargetTypeRequest request =
+        CreateCustomTargetTypeRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCustomTargetType(customTargetType)
+            .setCustomTargetTypeId(customTargetTypeId)
+            .build();
+    return createCustomTargetTypeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CustomTargetType in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   CustomTargetType customTargetType = CustomTargetType.newBuilder().build();
+   *   String customTargetTypeId = "customTargetTypeId1451302135";
+   *   CustomTargetType response =
+   *       cloudDeployClient
+   *           .createCustomTargetTypeAsync(parent, customTargetType, customTargetTypeId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent collection in which the `CustomTargetType` should be
+   *     created. Format should be `projects/{project_id}/locations/{location_name}`.
+   * @param customTargetType Required. The `CustomTargetType` to create.
+   * @param customTargetTypeId Required. ID of the `CustomTargetType`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CustomTargetType, OperationMetadata> createCustomTargetTypeAsync(
+      String parent, CustomTargetType customTargetType, String customTargetTypeId) {
+    CreateCustomTargetTypeRequest request =
+        CreateCustomTargetTypeRequest.newBuilder()
+            .setParent(parent)
+            .setCustomTargetType(customTargetType)
+            .setCustomTargetTypeId(customTargetTypeId)
+            .build();
+    return createCustomTargetTypeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CustomTargetType in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CreateCustomTargetTypeRequest request =
+   *       CreateCustomTargetTypeRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setCustomTargetTypeId("customTargetTypeId1451302135")
+   *           .setCustomTargetType(CustomTargetType.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   CustomTargetType response = cloudDeployClient.createCustomTargetTypeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CustomTargetType, OperationMetadata> createCustomTargetTypeAsync(
+      CreateCustomTargetTypeRequest request) {
+    return createCustomTargetTypeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CustomTargetType in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CreateCustomTargetTypeRequest request =
+   *       CreateCustomTargetTypeRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setCustomTargetTypeId("customTargetTypeId1451302135")
+   *           .setCustomTargetType(CustomTargetType.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<CustomTargetType, OperationMetadata> future =
+   *       cloudDeployClient.createCustomTargetTypeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   CustomTargetType response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      createCustomTargetTypeOperationCallable() {
+    return stub.createCustomTargetTypeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CustomTargetType in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CreateCustomTargetTypeRequest request =
+   *       CreateCustomTargetTypeRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setCustomTargetTypeId("customTargetTypeId1451302135")
+   *           .setCustomTargetType(CustomTargetType.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudDeployClient.createCustomTargetTypeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCustomTargetTypeRequest, Operation>
+      createCustomTargetTypeCallable() {
+    return stub.createCustomTargetTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CustomTargetType customTargetType = CustomTargetType.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CustomTargetType response =
+   *       cloudDeployClient.updateCustomTargetTypeAsync(customTargetType, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param customTargetType Required. The `CustomTargetType` to update.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     `CustomTargetType` resource by the update. The fields specified in the update_mask are
+   *     relative to the resource, not the full request. A field will be overwritten if it's in the
+   *     mask. If the user doesn't provide a mask then all fields are overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CustomTargetType, OperationMetadata> updateCustomTargetTypeAsync(
+      CustomTargetType customTargetType, FieldMask updateMask) {
+    UpdateCustomTargetTypeRequest request =
+        UpdateCustomTargetTypeRequest.newBuilder()
+            .setCustomTargetType(customTargetType)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateCustomTargetTypeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   UpdateCustomTargetTypeRequest request =
+   *       UpdateCustomTargetTypeRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCustomTargetType(CustomTargetType.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   CustomTargetType response = cloudDeployClient.updateCustomTargetTypeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CustomTargetType, OperationMetadata> updateCustomTargetTypeAsync(
+      UpdateCustomTargetTypeRequest request) {
+    return updateCustomTargetTypeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   UpdateCustomTargetTypeRequest request =
+   *       UpdateCustomTargetTypeRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCustomTargetType(CustomTargetType.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<CustomTargetType, OperationMetadata> future =
+   *       cloudDeployClient.updateCustomTargetTypeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   CustomTargetType response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      updateCustomTargetTypeOperationCallable() {
+    return stub.updateCustomTargetTypeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   UpdateCustomTargetTypeRequest request =
+   *       UpdateCustomTargetTypeRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCustomTargetType(CustomTargetType.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudDeployClient.updateCustomTargetTypeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCustomTargetTypeRequest, Operation>
+      updateCustomTargetTypeCallable() {
+    return stub.updateCustomTargetTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CustomTargetTypeName name =
+   *       CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]");
+   *   cloudDeployClient.deleteCustomTargetTypeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `CustomTargetType` to delete. Format must be
+   *     `projects/{project_id}/locations/{location_name}/customTargetTypes/{custom_target_type}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteCustomTargetTypeAsync(
+      CustomTargetTypeName name) {
+    DeleteCustomTargetTypeRequest request =
+        DeleteCustomTargetTypeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteCustomTargetTypeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String name =
+   *       CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]").toString();
+   *   cloudDeployClient.deleteCustomTargetTypeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `CustomTargetType` to delete. Format must be
+   *     `projects/{project_id}/locations/{location_name}/customTargetTypes/{custom_target_type}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteCustomTargetTypeAsync(String name) {
+    DeleteCustomTargetTypeRequest request =
+        DeleteCustomTargetTypeRequest.newBuilder().setName(name).build();
+    return deleteCustomTargetTypeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeleteCustomTargetTypeRequest request =
+   *       DeleteCustomTargetTypeRequest.newBuilder()
+   *           .setName(
+   *               CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   cloudDeployClient.deleteCustomTargetTypeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteCustomTargetTypeAsync(
+      DeleteCustomTargetTypeRequest request) {
+    return deleteCustomTargetTypeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeleteCustomTargetTypeRequest request =
+   *       DeleteCustomTargetTypeRequest.newBuilder()
+   *           .setName(
+   *               CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       cloudDeployClient.deleteCustomTargetTypeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+      deleteCustomTargetTypeOperationCallable() {
+    return stub.deleteCustomTargetTypeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single CustomTargetType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   DeleteCustomTargetTypeRequest request =
+   *       DeleteCustomTargetTypeRequest.newBuilder()
+   *           .setName(
+   *               CustomTargetTypeName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_TARGET_TYPE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setAllowMissing(true)
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudDeployClient.deleteCustomTargetTypeCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteCustomTargetTypeRequest, Operation>
+      deleteCustomTargetTypeCallable() {
+    return stub.deleteCustomTargetTypeCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4444,8 +6068,8 @@ public class CloudDeployClient implements BackgroundResource {
    * @param automation Required. The `Automation` to update.
    * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
    *     `Automation` resource by the update. The fields specified in the update_mask are relative
-   *     to the resource, not the full request. A field will be overwritten if it is in the mask. If
-   *     the user does not provide a mask then all fields will be overwritten.
+   *     to the resource, not the full request. A field will be overwritten if it's in the mask. If
+   *     the user doesn't provide a mask then all fields are overwritten.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Automation, OperationMetadata> updateAutomationAsync(
@@ -4862,7 +6486,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of automations. Format must be
+   * @param parent Required. The parent `Delivery Pipeline`, which owns this collection of
+   *     automations. Format must be
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -4895,7 +6520,8 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of automations. Format must be
+   * @param parent Required. The parent `Delivery Pipeline`, which owns this collection of
+   *     automations. Format must be
    *     `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -5163,8 +6789,9 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of automationRuns. Format must
-   *     be `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}`.
+   * @param parent Required. The parent `Delivery Pipeline`, which owns this collection of
+   *     automationRuns. Format must be
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAutomationRunsPagedResponse listAutomationRuns(DeliveryPipelineName parent) {
@@ -5196,8 +6823,9 @@ public class CloudDeployClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of automationRuns. Format must
-   *     be `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}`.
+   * @param parent Required. The parent `Delivery Pipeline`, which owns this collection of
+   *     automationRuns. Format must be
+   *     `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAutomationRunsPagedResponse listAutomationRuns(String parent) {
@@ -5999,6 +7627,90 @@ public class CloudDeployClient implements BackgroundResource {
     protected ListTargetsFixedSizeCollection createCollection(
         List<ListTargetsPage> pages, int collectionSize) {
       return new ListTargetsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListCustomTargetTypesPagedResponse
+      extends AbstractPagedListResponse<
+          ListCustomTargetTypesRequest,
+          ListCustomTargetTypesResponse,
+          CustomTargetType,
+          ListCustomTargetTypesPage,
+          ListCustomTargetTypesFixedSizeCollection> {
+
+    public static ApiFuture<ListCustomTargetTypesPagedResponse> createAsync(
+        PageContext<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse, CustomTargetType>
+            context,
+        ApiFuture<ListCustomTargetTypesResponse> futureResponse) {
+      ApiFuture<ListCustomTargetTypesPage> futurePage =
+          ListCustomTargetTypesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListCustomTargetTypesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListCustomTargetTypesPagedResponse(ListCustomTargetTypesPage page) {
+      super(page, ListCustomTargetTypesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListCustomTargetTypesPage
+      extends AbstractPage<
+          ListCustomTargetTypesRequest,
+          ListCustomTargetTypesResponse,
+          CustomTargetType,
+          ListCustomTargetTypesPage> {
+
+    private ListCustomTargetTypesPage(
+        PageContext<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse, CustomTargetType>
+            context,
+        ListCustomTargetTypesResponse response) {
+      super(context, response);
+    }
+
+    private static ListCustomTargetTypesPage createEmptyPage() {
+      return new ListCustomTargetTypesPage(null, null);
+    }
+
+    @Override
+    protected ListCustomTargetTypesPage createPage(
+        PageContext<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse, CustomTargetType>
+            context,
+        ListCustomTargetTypesResponse response) {
+      return new ListCustomTargetTypesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListCustomTargetTypesPage> createPageAsync(
+        PageContext<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse, CustomTargetType>
+            context,
+        ApiFuture<ListCustomTargetTypesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListCustomTargetTypesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListCustomTargetTypesRequest,
+          ListCustomTargetTypesResponse,
+          CustomTargetType,
+          ListCustomTargetTypesPage,
+          ListCustomTargetTypesFixedSizeCollection> {
+
+    private ListCustomTargetTypesFixedSizeCollection(
+        List<ListCustomTargetTypesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListCustomTargetTypesFixedSizeCollection createEmptyCollection() {
+      return new ListCustomTargetTypesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListCustomTargetTypesFixedSizeCollection createCollection(
+        List<ListCustomTargetTypesPage> pages, int collectionSize) {
+      return new ListCustomTargetTypesFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -110,4 +110,45 @@ public interface MetadataOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.AutomationRolloutMetadataOrBuilder getAutomationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom metadata provided by user-defined `Rollout` operations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the custom field is set.
+   */
+  boolean hasCustom();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom metadata provided by user-defined `Rollout` operations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The custom.
+   */
+  com.google.cloud.deploy.v1.CustomMetadata getCustom();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Custom metadata provided by user-defined `Rollout` operations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CustomMetadata custom = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.CustomMetadataOrBuilder getCustomOrBuilder();
 }

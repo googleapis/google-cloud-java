@@ -52,6 +52,56 @@ public interface ReleaseNotificationEventOrBuilder
    *
    *
    * <pre>
+   * Unique identifier of the `DeliveryPipeline`.
+   * </pre>
+   *
+   * <code>string pipeline_uid = 4;</code>
+   *
+   * @return The pipelineUid.
+   */
+  java.lang.String getPipelineUid();
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier of the `DeliveryPipeline`.
+   * </pre>
+   *
+   * <code>string pipeline_uid = 4;</code>
+   *
+   * @return The bytes for pipelineUid.
+   */
+  com.google.protobuf.ByteString getPipelineUidBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier of the `Release`.
+   * </pre>
+   *
+   * <code>string release_uid = 5;</code>
+   *
+   * @return The releaseUid.
+   */
+  java.lang.String getReleaseUid();
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier of the `Release`.
+   * </pre>
+   *
+   * <code>string release_uid = 5;</code>
+   *
+   * @return The bytes for releaseUid.
+   */
+  com.google.protobuf.ByteString getReleaseUidBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The name of the `Release`.
    * </pre>
    *

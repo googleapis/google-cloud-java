@@ -27,12 +27,12 @@ public interface ReplicationOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Replication.
+   * Identifier. The resource name of the Replication.
    * Format:
    * `projects/{project_id}/locations/{location}/volumes/{volume_id}/replications/{replication_id}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -41,12 +41,12 @@ public interface ReplicationOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Replication.
+   * Identifier. The resource name of the Replication.
    * Format:
    * `projects/{project_id}/locations/{location}/volumes/{volume_id}/replications/{replication_id}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

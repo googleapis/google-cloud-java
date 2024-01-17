@@ -161,7 +161,7 @@ public interface ImpactOrBuilder
    *
    *
    * <pre>
-   * Use with CategoryType.RELAIBILITY
+   * Use with CategoryType.RELIABILITY
    * </pre>
    *
    * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
@@ -173,7 +173,7 @@ public interface ImpactOrBuilder
    *
    *
    * <pre>
-   * Use with CategoryType.RELAIBILITY
+   * Use with CategoryType.RELIABILITY
    * </pre>
    *
    * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
@@ -185,7 +185,7 @@ public interface ImpactOrBuilder
    *
    *
    * <pre>
-   * Use with CategoryType.RELAIBILITY
+   * Use with CategoryType.RELIABILITY
    * </pre>
    *
    * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>

@@ -27,10 +27,11 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The full name of the asset. For example:
-   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+   * The full name of the asset. Example:
+   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
+   *
    * See [Resource
-   * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
    * </pre>
    *
@@ -43,10 +44,11 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The full name of the asset. For example:
-   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+   * The full name of the asset. Example:
+   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
+   *
    * See [Resource
-   * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
    * </pre>
    *
@@ -60,7 +62,11 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Type of the asset. Example: "compute.googleapis.com/Disk".
+   * The type of the asset. Example: `compute.googleapis.com/Disk`
+   *
+   * See [Supported asset
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+   * for more information.
    * </pre>
    *
    * <code>string asset_type = 2;</code>
@@ -72,7 +78,11 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Type of the asset. Example: "compute.googleapis.com/Disk".
+   * The type of the asset. Example: `compute.googleapis.com/Disk`
+   *
+   * See [Supported asset
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+   * for more information.
    * </pre>
    *
    * <code>string asset_type = 2;</code>
@@ -85,7 +95,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Representation of the resource.
+   * A representation of the resource.
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.Resource resource = 3;</code>
@@ -97,7 +107,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Representation of the resource.
+   * A representation of the resource.
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.Resource resource = 3;</code>
@@ -109,7 +119,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Representation of the resource.
+   * A representation of the resource.
    * </pre>
    *
    * <code>.google.cloud.asset.v1p2beta1.Resource resource = 3;</code>
@@ -120,8 +130,15 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Representation of the actual Cloud IAM policy set on a cloud resource. For
-   * each resource, there must be at most one Cloud IAM policy set on it.
+   * A representation of the IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one IAM policy set on any given resource.
+   * In addition, IAM policies inherit their granted access scope from any
+   * policies set on parent resources in the resource hierarchy. Therefore, the
+   * effectively policy is the union of both the policy set on this resource
+   * and each policy set on all of the resource's ancestry resource levels in
+   * the hierarchy. See
+   * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+   * for more information.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -133,8 +150,15 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Representation of the actual Cloud IAM policy set on a cloud resource. For
-   * each resource, there must be at most one Cloud IAM policy set on it.
+   * A representation of the IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one IAM policy set on any given resource.
+   * In addition, IAM policies inherit their granted access scope from any
+   * policies set on parent resources in the resource hierarchy. Therefore, the
+   * effectively policy is the union of both the policy set on this resource
+   * and each policy set on all of the resource's ancestry resource levels in
+   * the hierarchy. See
+   * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+   * for more information.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -146,8 +170,15 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Representation of the actual Cloud IAM policy set on a cloud resource. For
-   * each resource, there must be at most one Cloud IAM policy set on it.
+   * A representation of the IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one IAM policy set on any given resource.
+   * In addition, IAM policies inherit their granted access scope from any
+   * policies set on parent resources in the resource hierarchy. Therefore, the
+   * effectively policy is the union of both the policy set on this resource
+   * and each policy set on all of the resource's ancestry resource levels in
+   * the hierarchy. See
+   * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+   * for more information.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -158,12 +189,14 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-   * represented as a list of relative resource names. Ancestry path starts with
-   * the closest CRM ancestor and ends at root. If the asset is a CRM
-   * project/folder/organization, this starts from the asset itself.
+   * The ancestry path of an asset in Google Cloud [resource
+   * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+   * represented as a list of relative resource names. An ancestry path starts
+   * with the closest ancestor in the hierarchy and ends at root. If the asset
+   * is a project, folder, or organization, the ancestry path starts from the
+   * asset itself.
    *
-   * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+   * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 6;</code>
@@ -175,12 +208,14 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-   * represented as a list of relative resource names. Ancestry path starts with
-   * the closest CRM ancestor and ends at root. If the asset is a CRM
-   * project/folder/organization, this starts from the asset itself.
+   * The ancestry path of an asset in Google Cloud [resource
+   * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+   * represented as a list of relative resource names. An ancestry path starts
+   * with the closest ancestor in the hierarchy and ends at root. If the asset
+   * is a project, folder, or organization, the ancestry path starts from the
+   * asset itself.
    *
-   * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+   * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 6;</code>
@@ -192,12 +227,14 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-   * represented as a list of relative resource names. Ancestry path starts with
-   * the closest CRM ancestor and ends at root. If the asset is a CRM
-   * project/folder/organization, this starts from the asset itself.
+   * The ancestry path of an asset in Google Cloud [resource
+   * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+   * represented as a list of relative resource names. An ancestry path starts
+   * with the closest ancestor in the hierarchy and ends at root. If the asset
+   * is a project, folder, or organization, the ancestry path starts from the
+   * asset itself.
    *
-   * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+   * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 6;</code>
@@ -210,12 +247,14 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Asset's ancestry path in Cloud Resource Manager (CRM) hierarchy,
-   * represented as a list of relative resource names. Ancestry path starts with
-   * the closest CRM ancestor and ends at root. If the asset is a CRM
-   * project/folder/organization, this starts from the asset itself.
+   * The ancestry path of an asset in Google Cloud [resource
+   * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
+   * represented as a list of relative resource names. An ancestry path starts
+   * with the closest ancestor in the hierarchy and ends at root. If the asset
+   * is a project, folder, or organization, the ancestry path starts from the
+   * asset itself.
    *
-   * Example: ["projects/123456789", "folders/5432", "organizations/1234"]
+   * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 6;</code>
@@ -224,4 +263,188 @@ public interface AssetOrBuilder
    * @return The bytes of the ancestors at the given index.
    */
   com.google.protobuf.ByteString getAncestorsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access policy user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+   * </pre>
+   *
+   * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+   *
+   * @return Whether the accessPolicy field is set.
+   */
+  boolean hasAccessPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access policy user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+   * </pre>
+   *
+   * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+   *
+   * @return The accessPolicy.
+   */
+  com.google.identity.accesscontextmanager.v1.AccessPolicy getAccessPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access policy user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+   * </pre>
+   *
+   * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+   */
+  com.google.identity.accesscontextmanager.v1.AccessPolicyOrBuilder getAccessPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access level user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+   * </pre>
+   *
+   * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+   *
+   * @return Whether the accessLevel field is set.
+   */
+  boolean hasAccessLevel();
+  /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access level user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+   * </pre>
+   *
+   * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+   *
+   * @return The accessLevel.
+   */
+  com.google.identity.accesscontextmanager.v1.AccessLevel getAccessLevel();
+  /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access level user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+   * </pre>
+   *
+   * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+   */
+  com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder getAccessLevelOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [service perimeter user
+   * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+   * </pre>
+   *
+   * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+   *
+   * @return Whether the servicePerimeter field is set.
+   */
+  boolean hasServicePerimeter();
+  /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [service perimeter user
+   * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+   * </pre>
+   *
+   * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+   *
+   * @return The servicePerimeter.
+   */
+  com.google.identity.accesscontextmanager.v1.ServicePerimeter getServicePerimeter();
+  /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [service perimeter user
+   * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+   * </pre>
+   *
+   * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
+   */
+  com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder
+      getServicePerimeterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A representation of an [organization
+   * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+   * There can be more than one organization policy with different constraints
+   * set on a given resource.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 10;</code>
+   */
+  java.util.List<com.google.cloud.orgpolicy.v1.Policy> getOrgPolicyList();
+  /**
+   *
+   *
+   * <pre>
+   * A representation of an [organization
+   * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+   * There can be more than one organization policy with different constraints
+   * set on a given resource.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 10;</code>
+   */
+  com.google.cloud.orgpolicy.v1.Policy getOrgPolicy(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A representation of an [organization
+   * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+   * There can be more than one organization policy with different constraints
+   * set on a given resource.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 10;</code>
+   */
+  int getOrgPolicyCount();
+  /**
+   *
+   *
+   * <pre>
+   * A representation of an [organization
+   * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+   * There can be more than one organization policy with different constraints
+   * set on a given resource.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 10;</code>
+   */
+  java.util.List<? extends com.google.cloud.orgpolicy.v1.PolicyOrBuilder>
+      getOrgPolicyOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A representation of an [organization
+   * policy](https://cloud.google.com/resource-manager/docs/organization-policy/overview#organization_policy).
+   * There can be more than one organization policy with different constraints
+   * set on a given resource.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 10;</code>
+   */
+  com.google.cloud.orgpolicy.v1.PolicyOrBuilder getOrgPolicyOrBuilder(int index);
+
+  com.google.cloud.asset.v1p2beta1.Asset.AccessContextPolicyCase getAccessContextPolicyCase();
 }

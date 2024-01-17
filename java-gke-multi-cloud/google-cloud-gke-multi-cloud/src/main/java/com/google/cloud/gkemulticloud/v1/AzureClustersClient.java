@@ -62,19 +62,382 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the AzureClustersClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    <tr>
+ *      <td>CreateAzureClient</td>
+ *      <td><p> Creates a new [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource on a given Google Cloud project and region.
+ * <p>  `AzureClient` resources hold client authentication information needed by the Anthos Multicloud API to manage Azure resources on your Azure subscription on your behalf.
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createAzureClientAsync(CreateAzureClientRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createAzureClientAsync(LocationName parent, AzureClient azureClient, String azureClientId)
+ *           <li>createAzureClientAsync(String parent, AzureClient azureClient, String azureClientId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createAzureClientOperationCallable()
+ *           <li>createAzureClientCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAzureClient</td>
+ *      <td><p> Describes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAzureClient(GetAzureClientRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAzureClient(AzureClientName name)
+ *           <li>getAzureClient(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAzureClientCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListAzureClients</td>
+ *      <td><p> Lists all [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources on a given Google Cloud project and region.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listAzureClients(ListAzureClientsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listAzureClients(LocationName parent)
+ *           <li>listAzureClients(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listAzureClientsPagedCallable()
+ *           <li>listAzureClientsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteAzureClient</td>
+ *      <td><p> Deletes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
+ * <p>  If the client is used by one or more clusters, deletion will fail and a `FAILED_PRECONDITION` error will be returned.
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteAzureClientAsync(DeleteAzureClientRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteAzureClientAsync(AzureClientName name)
+ *           <li>deleteAzureClientAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteAzureClientOperationCallable()
+ *           <li>deleteAzureClientCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateAzureCluster</td>
+ *      <td><p> Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource on a given Google Cloud Platform project and region.
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createAzureClusterAsync(CreateAzureClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createAzureClusterAsync(LocationName parent, AzureCluster azureCluster, String azureClusterId)
+ *           <li>createAzureClusterAsync(String parent, AzureCluster azureCluster, String azureClusterId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createAzureClusterOperationCallable()
+ *           <li>createAzureClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateAzureCluster</td>
+ *      <td><p> Updates an [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateAzureClusterAsync(UpdateAzureClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateAzureClusterAsync(AzureCluster azureCluster, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateAzureClusterOperationCallable()
+ *           <li>updateAzureClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAzureCluster</td>
+ *      <td><p> Describes a specific [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAzureCluster(GetAzureClusterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAzureCluster(AzureClusterName name)
+ *           <li>getAzureCluster(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAzureClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListAzureClusters</td>
+ *      <td><p> Lists all [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resources on a given Google Cloud project and region.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listAzureClusters(ListAzureClustersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listAzureClusters(LocationName parent)
+ *           <li>listAzureClusters(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listAzureClustersPagedCallable()
+ *           <li>listAzureClustersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteAzureCluster</td>
+ *      <td><p> Deletes a specific [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
+ * <p>  Fails if the cluster has one or more associated [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources.
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteAzureClusterAsync(DeleteAzureClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteAzureClusterAsync(AzureClusterName name)
+ *           <li>deleteAzureClusterAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteAzureClusterOperationCallable()
+ *           <li>deleteAzureClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GenerateAzureClusterAgentToken</td>
+ *      <td><p> Generates an access token for a cluster agent.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>generateAzureClusterAgentToken(GenerateAzureClusterAgentTokenRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>generateAzureClusterAgentTokenCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GenerateAzureAccessToken</td>
+ *      <td><p> Generates a short-lived access token to authenticate to a given [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>generateAzureAccessToken(GenerateAzureAccessTokenRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>generateAzureAccessTokenCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>CreateAzureNodePool</td>
+ *      <td><p> Creates a new [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool], attached to a given [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createAzureNodePoolAsync(CreateAzureNodePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createAzureNodePoolAsync(AzureClusterName parent, AzureNodePool azureNodePool, String azureNodePoolId)
+ *           <li>createAzureNodePoolAsync(String parent, AzureNodePool azureNodePool, String azureNodePoolId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createAzureNodePoolOperationCallable()
+ *           <li>createAzureNodePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>UpdateAzureNodePool</td>
+ *      <td><p> Updates an [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>updateAzureNodePoolAsync(UpdateAzureNodePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>updateAzureNodePoolAsync(AzureNodePool azureNodePool, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>updateAzureNodePoolOperationCallable()
+ *           <li>updateAzureNodePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAzureNodePool</td>
+ *      <td><p> Describes a specific [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAzureNodePool(GetAzureNodePoolRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAzureNodePool(AzureNodePoolName name)
+ *           <li>getAzureNodePool(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAzureNodePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListAzureNodePools</td>
+ *      <td><p> Lists all [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources on a given [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listAzureNodePools(ListAzureNodePoolsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listAzureNodePools(AzureClusterName parent)
+ *           <li>listAzureNodePools(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listAzureNodePoolsPagedCallable()
+ *           <li>listAzureNodePoolsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeleteAzureNodePool</td>
+ *      <td><p> Deletes a specific [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
+ * <p>  If successful, the response contains a newly created [Operation][google.longrunning.Operation] resource that can be described to track the status of the operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deleteAzureNodePoolAsync(DeleteAzureNodePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deleteAzureNodePoolAsync(AzureNodePoolName name)
+ *           <li>deleteAzureNodePoolAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deleteAzureNodePoolOperationCallable()
+ *           <li>deleteAzureNodePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAzureOpenIdConfig</td>
+ *      <td><p> Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0 specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAzureOpenIdConfig(GetAzureOpenIdConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAzureOpenIdConfig(AzureClusterName azureCluster)
+ *           <li>getAzureOpenIdConfig(String azureCluster)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAzureOpenIdConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAzureJsonWebKeys</td>
+ *      <td><p> Gets the public component of the cluster signing keys in JSON Web Key format.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAzureJsonWebKeys(GetAzureJsonWebKeysRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAzureJsonWebKeys(AzureClusterName azureCluster)
+ *           <li>getAzureJsonWebKeys(String azureCluster)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAzureJsonWebKeysCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetAzureServerConfig</td>
+ *      <td><p> Returns information, such as supported Azure regions and Kubernetes versions, on a given Google Cloud location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getAzureServerConfig(GetAzureServerConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getAzureServerConfig(AzureServerConfigName name)
+ *           <li>getAzureServerConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getAzureServerConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -1164,8 +1527,8 @@ public class AzureClustersClient implements BackgroundResource {
    *     [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
    *     <p>&#42; `description`. &#42; `azureClient`. &#42; `control_plane.version`. &#42;
    *     `control_plane.vm_size`. &#42; `annotations`. &#42; `authorization.admin_users`. &#42;
-   *     `control_plane.root_volume.size_gib`. &#42; `azure_services_authentication`. &#42;
-   *     `azure_services_authentication.tenant_id`. &#42;
+   *     `authorization.admin_groups`. &#42; `control_plane.root_volume.size_gib`. &#42;
+   *     `azure_services_authentication`. &#42; `azure_services_authentication.tenant_id`. &#42;
    *     `azure_services_authentication.application_id`. &#42; `control_plane.proxy_config`. &#42;
    *     `control_plane.proxy_config.resource_group_id`. &#42;
    *     `control_plane.proxy_config.secret_id`. &#42; `control_plane.ssh_config.authorized_key`.
@@ -1771,6 +2134,86 @@ public class AzureClustersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Generates an access token for a cluster agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   GenerateAzureClusterAgentTokenRequest request =
+   *       GenerateAzureClusterAgentTokenRequest.newBuilder()
+   *           .setAzureCluster(
+   *               AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString())
+   *           .setSubjectToken("subjectToken-1519661011")
+   *           .setSubjectTokenType("subjectTokenType1839592711")
+   *           .setVersion("version351608024")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setGrantType("grantType-1219832202")
+   *           .setAudience("audience975628804")
+   *           .setScope("scope109264468")
+   *           .setRequestedTokenType("requestedTokenType1733106949")
+   *           .setOptions("options-1249474914")
+   *           .build();
+   *   GenerateAzureClusterAgentTokenResponse response =
+   *       azureClustersClient.generateAzureClusterAgentToken(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateAzureClusterAgentTokenResponse generateAzureClusterAgentToken(
+      GenerateAzureClusterAgentTokenRequest request) {
+    return generateAzureClusterAgentTokenCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates an access token for a cluster agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   GenerateAzureClusterAgentTokenRequest request =
+   *       GenerateAzureClusterAgentTokenRequest.newBuilder()
+   *           .setAzureCluster(
+   *               AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString())
+   *           .setSubjectToken("subjectToken-1519661011")
+   *           .setSubjectTokenType("subjectTokenType1839592711")
+   *           .setVersion("version351608024")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setGrantType("grantType-1219832202")
+   *           .setAudience("audience975628804")
+   *           .setScope("scope109264468")
+   *           .setRequestedTokenType("requestedTokenType1733106949")
+   *           .setOptions("options-1249474914")
+   *           .build();
+   *   ApiFuture<GenerateAzureClusterAgentTokenResponse> future =
+   *       azureClustersClient.generateAzureClusterAgentTokenCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateAzureClusterAgentTokenResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+      generateAzureClusterAgentTokenCallable() {
+    return stub.generateAzureClusterAgentTokenCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Generates a short-lived access token to authenticate to a given
    * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
    *
@@ -1862,7 +2305,8 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param parent Required. The [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource
    *     where this node pool will be created.
-   *     <p>Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *     <p>`AzureCluster` names are formatted as
+   *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @param azureNodePool Required. The specification of the
@@ -1916,7 +2360,8 @@ public class AzureClustersClient implements BackgroundResource {
    *
    * @param parent Required. The [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource
    *     where this node pool will be created.
-   *     <p>Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *     <p>`AzureCluster` names are formatted as
+   *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
    *     <p>See [Resource Names](https://cloud.google.com/apis/design/resource_names) for more
    *     details on Google Cloud resource names.
    * @param azureNodePool Required. The specification of the
@@ -2079,7 +2524,8 @@ public class AzureClustersClient implements BackgroundResource {
    *     this field. The elements of the repeated paths field can only include these fields from
    *     [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
    *     <p>&#42;. `annotations`. &#42; `version`. &#42; `autoscaling.min_node_count`. &#42;
-   *     `autoscaling.max_node_count`. &#42; `config.ssh_config.authorized_key`.
+   *     `autoscaling.max_node_count`. &#42; `config.ssh_config.authorized_key`. &#42;
+   *     `management.auto_repair`. &#42; `management`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AzureNodePool, OperationMetadata> updateAzureNodePoolAsync(
@@ -2688,6 +3134,248 @@ public class AzureClustersClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteAzureNodePoolRequest, Operation> deleteAzureNodePoolCallable() {
     return stub.deleteAzureNodePoolCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0
+   * specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   AzureClusterName azureCluster =
+   *       AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]");
+   *   AzureOpenIdConfig response = azureClustersClient.getAzureOpenIdConfig(azureCluster);
+   * }
+   * }</pre>
+   *
+   * @param azureCluster Required. The AzureCluster, which owns the OIDC discovery document. Format:
+   *     projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AzureOpenIdConfig getAzureOpenIdConfig(AzureClusterName azureCluster) {
+    GetAzureOpenIdConfigRequest request =
+        GetAzureOpenIdConfigRequest.newBuilder()
+            .setAzureCluster(azureCluster == null ? null : azureCluster.toString())
+            .build();
+    return getAzureOpenIdConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0
+   * specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   String azureCluster =
+   *       AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString();
+   *   AzureOpenIdConfig response = azureClustersClient.getAzureOpenIdConfig(azureCluster);
+   * }
+   * }</pre>
+   *
+   * @param azureCluster Required. The AzureCluster, which owns the OIDC discovery document. Format:
+   *     projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AzureOpenIdConfig getAzureOpenIdConfig(String azureCluster) {
+    GetAzureOpenIdConfigRequest request =
+        GetAzureOpenIdConfigRequest.newBuilder().setAzureCluster(azureCluster).build();
+    return getAzureOpenIdConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0
+   * specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   GetAzureOpenIdConfigRequest request =
+   *       GetAzureOpenIdConfigRequest.newBuilder()
+   *           .setAzureCluster(
+   *               AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString())
+   *           .build();
+   *   AzureOpenIdConfig response = azureClustersClient.getAzureOpenIdConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AzureOpenIdConfig getAzureOpenIdConfig(GetAzureOpenIdConfigRequest request) {
+    return getAzureOpenIdConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the OIDC discovery document for the cluster. See the [OpenID Connect Discovery 1.0
+   * specification](https://openid.net/specs/openid-connect-discovery-1_0.html) for details.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   GetAzureOpenIdConfigRequest request =
+   *       GetAzureOpenIdConfigRequest.newBuilder()
+   *           .setAzureCluster(
+   *               AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString())
+   *           .build();
+   *   ApiFuture<AzureOpenIdConfig> future =
+   *       azureClustersClient.getAzureOpenIdConfigCallable().futureCall(request);
+   *   // Do something.
+   *   AzureOpenIdConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+      getAzureOpenIdConfigCallable() {
+    return stub.getAzureOpenIdConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the public component of the cluster signing keys in JSON Web Key format.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   AzureClusterName azureCluster =
+   *       AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]");
+   *   AzureJsonWebKeys response = azureClustersClient.getAzureJsonWebKeys(azureCluster);
+   * }
+   * }</pre>
+   *
+   * @param azureCluster Required. The AzureCluster, which owns the JsonWebKeys. Format:
+   *     projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AzureJsonWebKeys getAzureJsonWebKeys(AzureClusterName azureCluster) {
+    GetAzureJsonWebKeysRequest request =
+        GetAzureJsonWebKeysRequest.newBuilder()
+            .setAzureCluster(azureCluster == null ? null : azureCluster.toString())
+            .build();
+    return getAzureJsonWebKeys(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the public component of the cluster signing keys in JSON Web Key format.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   String azureCluster =
+   *       AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString();
+   *   AzureJsonWebKeys response = azureClustersClient.getAzureJsonWebKeys(azureCluster);
+   * }
+   * }</pre>
+   *
+   * @param azureCluster Required. The AzureCluster, which owns the JsonWebKeys. Format:
+   *     projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AzureJsonWebKeys getAzureJsonWebKeys(String azureCluster) {
+    GetAzureJsonWebKeysRequest request =
+        GetAzureJsonWebKeysRequest.newBuilder().setAzureCluster(azureCluster).build();
+    return getAzureJsonWebKeys(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the public component of the cluster signing keys in JSON Web Key format.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   GetAzureJsonWebKeysRequest request =
+   *       GetAzureJsonWebKeysRequest.newBuilder()
+   *           .setAzureCluster(
+   *               AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString())
+   *           .build();
+   *   AzureJsonWebKeys response = azureClustersClient.getAzureJsonWebKeys(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AzureJsonWebKeys getAzureJsonWebKeys(GetAzureJsonWebKeysRequest request) {
+    return getAzureJsonWebKeysCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the public component of the cluster signing keys in JSON Web Key format.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
+   *   GetAzureJsonWebKeysRequest request =
+   *       GetAzureJsonWebKeysRequest.newBuilder()
+   *           .setAzureCluster(
+   *               AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString())
+   *           .build();
+   *   ApiFuture<AzureJsonWebKeys> future =
+   *       azureClustersClient.getAzureJsonWebKeysCallable().futureCall(request);
+   *   // Do something.
+   *   AzureJsonWebKeys response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
+      getAzureJsonWebKeysCallable() {
+    return stub.getAzureJsonWebKeysCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

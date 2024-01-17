@@ -45,6 +45,7 @@ import com.google.cloud.compute.v1.NetworkAttachmentAggregatedList;
 import com.google.cloud.compute.v1.NetworkAttachmentList;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.PatchNetworkAttachmentRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyNetworkAttachmentRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsNetworkAttachmentRequest;
@@ -117,6 +118,12 @@ public class HttpJsonNetworkAttachmentsStub extends NetworkAttachmentsStub {
                                   fields,
                                   "returnPartialSuccess",
                                   request.getReturnPartialSuccess());
+                            }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
                             }
                             return fields;
                           })
@@ -367,6 +374,64 @@ public class HttpJsonNetworkAttachmentsStub extends NetworkAttachmentsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<PatchNetworkAttachmentRequest, Operation>
+      patchMethodDescriptor =
+          ApiMethodDescriptor.<PatchNetworkAttachmentRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.NetworkAttachments/Patch")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PatchNetworkAttachmentRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/networkAttachments/{networkAttachment}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchNetworkAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "networkAttachment", request.getNetworkAttachment());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchNetworkAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "networkAttachmentResource",
+                                      request.getNetworkAttachmentResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PatchNetworkAttachmentRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<SetIamPolicyNetworkAttachmentRequest, Policy>
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyNetworkAttachmentRequest, Policy>newBuilder()
@@ -467,6 +532,9 @@ public class HttpJsonNetworkAttachmentsStub extends NetworkAttachmentsStub {
       insertOperationCallable;
   private final UnaryCallable<ListNetworkAttachmentsRequest, NetworkAttachmentList> listCallable;
   private final UnaryCallable<ListNetworkAttachmentsRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<PatchNetworkAttachmentRequest, Operation> patchCallable;
+  private final OperationCallable<PatchNetworkAttachmentRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<SetIamPolicyNetworkAttachmentRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsNetworkAttachmentRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
@@ -595,6 +663,19 @@ public class HttpJsonNetworkAttachmentsStub extends NetworkAttachmentsStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<PatchNetworkAttachmentRequest, Operation> patchTransportSettings =
+        HttpJsonCallSettings.<PatchNetworkAttachmentRequest, Operation>newBuilder()
+            .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("network_attachment", String.valueOf(request.getNetworkAttachment()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<SetIamPolicyNetworkAttachmentRequest, Policy>
         setIamPolicyTransportSettings =
             HttpJsonCallSettings.<SetIamPolicyNetworkAttachmentRequest, Policy>newBuilder()
@@ -661,6 +742,15 @@ public class HttpJsonNetworkAttachmentsStub extends NetworkAttachmentsStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.patchCallable =
+        callableFactory.createUnaryCallable(
+            patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -683,6 +773,7 @@ public class HttpJsonNetworkAttachmentsStub extends NetworkAttachmentsStub {
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
@@ -740,6 +831,17 @@ public class HttpJsonNetworkAttachmentsStub extends NetworkAttachmentsStub {
   @Override
   public UnaryCallable<ListNetworkAttachmentsRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<PatchNetworkAttachmentRequest, Operation> patchCallable() {
+    return patchCallable;
+  }
+
+  @Override
+  public OperationCallable<PatchNetworkAttachmentRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
   }
 
   @Override

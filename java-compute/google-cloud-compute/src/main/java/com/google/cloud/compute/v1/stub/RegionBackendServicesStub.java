@@ -17,6 +17,7 @@
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionBackendServicesClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.RegionBackendServicesClient.ListUsablePagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -24,16 +25,21 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.BackendService;
 import com.google.cloud.compute.v1.BackendServiceGroupHealth;
 import com.google.cloud.compute.v1.BackendServiceList;
+import com.google.cloud.compute.v1.BackendServiceListUsable;
 import com.google.cloud.compute.v1.DeleteRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.GetHealthRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.GetIamPolicyRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.GetRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.ListRegionBackendServicesRequest;
+import com.google.cloud.compute.v1.ListUsableRegionBackendServicesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyRegionBackendServiceRequest;
+import com.google.cloud.compute.v1.SetSecurityPolicyRegionBackendServiceRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionBackendServiceRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateRegionBackendServiceRequest;
 import javax.annotation.Generated;
 
@@ -85,6 +91,16 @@ public abstract class RegionBackendServicesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
   }
 
+  public UnaryCallable<ListUsableRegionBackendServicesRequest, ListUsablePagedResponse>
+      listUsablePagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsablePagedCallable()");
+  }
+
+  public UnaryCallable<ListUsableRegionBackendServicesRequest, BackendServiceListUsable>
+      listUsableCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsableCallable()");
+  }
+
   public OperationCallable<PatchRegionBackendServiceRequest, Operation, Operation>
       patchOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
@@ -96,6 +112,22 @@ public abstract class RegionBackendServicesStub implements BackgroundResource {
 
   public UnaryCallable<SetIamPolicyRegionBackendServiceRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public OperationCallable<SetSecurityPolicyRegionBackendServiceRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setSecurityPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<SetSecurityPolicyRegionBackendServiceRequest, Operation>
+      setSecurityPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setSecurityPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRegionBackendServiceRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   public OperationCallable<UpdateRegionBackendServiceRequest, Operation, Operation>
