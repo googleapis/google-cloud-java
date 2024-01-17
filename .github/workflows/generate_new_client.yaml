@@ -100,7 +100,7 @@ jobs:
           echo "::set-output name=new_library_args::${arguments}"
           echo "${arguments} --googleapis-gen-url=\"${GOOGLEAPIS_GEN_URL}\"" | xargs python generation/new_client/new-client.py generate
         env:
-          GOOGLEAPIS_GEN_URL: https://yoshi-approver:${{ secrets.YOSHI_CODE_BOT_TOKEN }}@github.com/googleapis/googleapis-gen.git
+          GOOGLEAPIS_GEN_URL: https://cloud-java-bot:${{ secrets.CLOUD_JAVA_BOT_TOKEN }}@github.com/googleapis/googleapis-gen.git
           API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
           NAME_PRETTY: ${{ github.event.inputs.name_pretty }}
           PROTO_PATH: ${{ github.event.inputs.proto_path }}
@@ -143,5 +143,5 @@ jobs:
           USERNAME: ${{ github.actor }}
           API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
           GENERATION_ARGUMENTS: ${{ steps.generation.outputs.new_library_args }}
-          GH_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
+          GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
 
