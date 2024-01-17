@@ -165,16 +165,12 @@ the values in the generated `pom.xml` files.
 ## Advanced Options
 
 In case the steps above don't show you how to specify the desired options, you can
-run the `new-client.py` script in your local evironment.
+run the `new-client.py` script in your local evironment. The advanced options
+not shown in the section above **cannot be specified in the Github Action**,
+hence the need for a local run (refer to the "Prerequisites
+(for local environment)" section).
 For the explanation of the available parameters, run:
 `python3.9 generation/new_client/new-client.py generate  --help`.
-
-:warning: **Note: The advanced options that don't appear in the previous section
-cannot be specified in the
-[Github Action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml)
-. You will have to run the script locally (refer to the "Prerequisites
-(for local environment)" section below for setup instructions)
-if you need to specify any of these**
 
 ### Special case example: Google Maps
 
@@ -222,12 +218,6 @@ Let's say that after some discussion, `maps-routing-gps` is selected as a suitab
   --distribution-name="com.google.maps:google-maps-routing-gps" \
   --destination-name="maps-routing-gps"
 ```
-
-# Principles
-
-The script should finish creating a pull request even when the newly created
-module fails to compile. This gives the user flexibility to fix things in the
-created pull request.
 
 ## Prerequisites (for local environment)
 
