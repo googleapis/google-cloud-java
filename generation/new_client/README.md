@@ -5,6 +5,7 @@ google-cloud-java monorepo.
 
 **This tool is for repository maintainers only. Not for library users.**
 
+
 ## Run via Github Action
 
 Your can generate a library by using the
@@ -356,6 +357,12 @@ Please create a pull request:
 Create a pull request from the change.
 In the description, record the `python3.9 generation/new_client/new-client.py generate ...`
 command you ran above.
+
+# Principles
+
+The script should finish creating a pull request even when the newly created
+module fails to compile. This gives the user flexibility to fix things in the
+created pull request.
 
 # Common Errors
 
