@@ -7,10 +7,10 @@ google-cloud-java monorepo.
 
 ## Run via Github Action
 
-You can save the time to setup the environment by calling the
-[`generate_new_client.yaml` Github Action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml) directly. You can jump to
-[this section](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#run-client-generation-script)
-to find workflow arguments.
+Your can generate a library by using the
+[`generate_new_client.yaml` Github Action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml).
+This workflow runs `new-client.py` with your input arguments
+and creates a pull request with the generated library.
 
 :warning: **IMPORTANT:**
 Not all the `new-client.py` arguments are available in the Github Action.
@@ -18,7 +18,7 @@ Please refer to
 [this
 section](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#advanced-options)
 for more arguments (it requires to setup a local environment).
-The arguments currently supported by the workflow are:
+The arguments currently supported by the Github Action are:
 - [API short Name (`api_shortname`)](#api-short-name)
 - [Proto path (`proto_path`)](#proto-path)
 - [Name pretty (`name_pretty`)](#name-pretty)
@@ -57,13 +57,13 @@ the repository has "-SNAPSHOT" versions too.
 
 Some languages require a new request when a new version of a service is created, but Java manages all versions of the service as a single package, so the client library will automatically be updated to include new versions.
 
-## Execute the workflow (either locally or via Github Action)
+## Execute the Github Action
 
 You will run new-client.py script or the [Github Action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml) with the following parameters.
 These parameters will be available in the Cloud Drop link (a YAML file) included in the buganizer request.
 The example in this README uses AlloyDB's [Cloud Drop](https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1/alloydb_v1.yaml) file as an example.
 
-### API short name
+### API short name (`api_shortname`)
 
 For convenience of the subsequent commands, define a variable for API short name.
 This value will be used by default to generate the following:
@@ -79,7 +79,7 @@ Example: `alloydb`
 > In the instance that the `api_short_name` is already in use by an existing client library, you will need to determine a unique name.
 > See example under [Advanced Options](#Example with duplicate api_short_name).
 
-### Proto path
+### Proto path (`proto_path`)
 
 The script takes "proto path" parameter. This is the path from the internal `google3/third_party/googleapis/stable` root to the
 directory that contains versions (e.g., "v1" or "v2").
@@ -95,20 +95,20 @@ Therefore, the "proto path" value we supply to the command is `google/cloud/allo
 
 We will publish a single module for a service that includes all versions in this path. Once the service has been published once, any future additional versions will automatically be generated via OwlBot.
 
-### Name pretty
+### Name pretty (`name_pretty`)
 
 The corresponding value in the Cloud Drop page is `title`.
 
 Example: `AlloyDB API`
 
-### Product Docs
+### Product Docs (`product_docs`)
 
 The corresponding value in the Cloud Drop page is `documentation_uri`.
 The value must starts with "https://".
 
 Example: `https://cloud.google.com/alloydb/docs`
 
-### REST Docs
+### REST Docs (`rest_docs`)
 
 The corresponding value in the Cloud Drop page is `rest_reference_documentation_uri`.
 The value must starts with "https://".
@@ -118,7 +118,7 @@ Example: `https://cloud.google.com/alloydb/docs/reference/rest`
 If they exist, add them as a flag to the python command below like:
 `--rest-docs="https://cloud.google.com/alloydb/docs/reference/rest" \`
 
-### RPC Docs
+### RPC Docs (`rpc_docs`)
 
 The corresponding value in the Cloud Drop page is `proto_reference_documentation_uri`.
 The value must starts with "https://".
@@ -128,7 +128,7 @@ Example: `https://cloud.google.com/speech-to-text/docs/reference/rpc`
 If they exist, add them as a flag to the python command below like:
 `--rpc-docs="https://cloud.google.com/speech-to-text/docs/reference/rpc" \`
 
-### API description
+### API description (`api_description`)
 
 The corresponding value in the Cloud Drop page is `documentation.summary` or `documentation.overview`.
 If both of those fields are missing, take the description from the product page above. Use the first sentence to keep it concise.
@@ -140,76 +140,41 @@ Example:
     commercial-grade applications.
  ```
 
+### Transport (`transport`)
+
+This is a label that represents the type of requests the library will make to
+its corresponding service. It can be `grpc` (default), `http` or `both`. In
+practice, it is mainly used to create a `.repo-metadata.json` file
+
+### Destination Name (`destination_name`)
+
+This variable represents the folder name to be created in the root of the
+monorepo. For example, if it is `java-example-library`, then a new folder
+with the generated library will be created in
+`google-cloud-java/java-example/library`
+
+### Distribution Name (`distribution_name`)
+
+This variable determines the Maven coordinates of the generated library. It
+defaults to `com.google.cloud:google-cloud-{api_shortname}`. This mainly affect
+the values in the generated `pom.xml` files.
 
 
 ## Advanced Options
 
+In case the steps above don't show you how to specify the desired options, you can
+run the `new-client.py` script in your local evironment.
 For the explanation of the available parameters, run:
 `python3.9 generation/new_client/new-client.py generate  --help`.
 
-:warning: **Note: The advanced options other than `transport`, `destination-name` and
-`distribution-name` cannot be specified in the [Github Action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml), you will have to run
-the script locally (refer to the Prerequisites (for local environment) section
-below) if you need to specify any of these**
+:warning: **Note: The advanced options that don't appear in the previous section
+cannot be specified in the
+[Github Action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client.yaml)
+. You will have to run the script locally (refer to the "Prerequisites
+(for local environment)" section below for setup instructions)
+if you need to specify any of these**
 
-```
-~/google-cloud-java$ python3.9 generation/new_client/new-client.py generate  --help
-/usr/local/google/home/suztomo/google-cloud-java/generation/new_client
-Usage: new-client.py generate [OPTIONS]
-
-Options:
-  --api_shortname TEXT            Name for the new directory name and
-                                  (default) artifact name  [required]
-  --name-pretty TEXT              The human-friendly name that appears in
-                                  README.md  [required]
-  --product-docs TEXT             Documentation URL that appears in README.md
-                                  [required]
-  --api-description TEXT          Description that appears in README.md
-                                  [required]
-  --release-level [stable|preview]
-                                  A label that appears in repo-metadata.json.
-                                  The first library generation is always
-                                  'preview'.  [default: preview]
-  --transport [grpc|http|both]    A label that appears in repo-metadata.json
-                                  [default: grpc]
-  --language TEXT                 [default: java]
-  --distribution-name TEXT        Maven coordinates of the generated library.
-                                  By default it's com.google.cloud:google-
-                                  cloud-<api_shortname>
-  --api-id TEXT                   The value of the apiid parameter used in
-                                  README.md It has link to https://console.clo
-                                  ud.google.com/flows/enableapi?apiid=<api_id>
-  --requires-billing BOOLEAN      Based on this value, README.md explains
-                                  whether billing setup is needed or not.
-                                  [default: True]
-  --destination-name TEXT         The directory name of the new library. By
-                                  default it's java-<api_shortname>
-  --proto-path TEXT               Path to proto file from the root of the
-                                  googleapis repository to thedirectory that
-                                  contains the proto files (without the
-                                  version).For example, to generate the
-                                  library for 'google/maps/routing/v2', then
-                                  you specify this value as
-                                  'google/maps/routing'  [required]
-  --cloud-api BOOLEAN             If true, the artifact ID of the library is
-                                  'google-cloud-'; otherwise 'google-'
-                                  [default: True]
-  --group-id TEXT                 The group ID of the artifact when
-                                  distribution name is not set  [default:
-                                  com.google.cloud]
-  --owlbot-image TEXT             The owlbot container image used in
-                                  OwlBot.yaml  [default: gcr.io/cloud-devrel-
-                                  public-resources/owlbot-java]
-  --library-type TEXT             A label that appear in repo-metadata.json to
-                                  tell how the library is maintained or
-                                  generated  [default: GAPIC_AUTO]
-  --googleapis-gen-url TEXT       The URL of the repository that has generated
-                                  Java code from proto service definition
-                                  [default:
-                                  https://github.com/googleapis/googleapis-
-                                  gen.git]
-  --help                          Show this message and exit.
-```
+### Special case example: Google Maps
 
 Sometimes, a library generation requires special handling for
 Maven coordinates or API ID, especially when the library is not
