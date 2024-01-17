@@ -19,16 +19,16 @@ Please refer to
 section](https://github.com/googleapis/google-cloud-java/blob/main/generation/new_client/README.md#advanced-options)
 for more arguments (it requires to setup a local environment).
 The arguments currently supported by the Github Action are:
-- [API short Name (`api_shortname`)](#api-short-name)
-- [Proto path (`proto_path`)](#proto-path)
-- [Name pretty (`name_pretty`)](#name-pretty)
-- [Product Docs (`product_docs`)](#product-docs)
-- [REST Docs (`rest_docs`)](#rest-docs)
-- [RPC Docs (`rpc_docs`)](#rpc-docs)
-- [API description (`api_description`)](#api-description)
-- [Transport (`transport`)](#transport)
-- [Destination Name (`destination_name`)](#destination-name)
-- [Distribution Name (`distribution_name`)](#distribution-name)
+- API short Name (`api_shortname`)
+- Proto path (`proto_path`)
+- Name pretty (`name_pretty`)
+- Product Docs (`product_docs`)
+- REST Docs (`rest_docs`)
+- RPC Docs (`rpc_docs`)
+- API description (`api_description`)
+- Transport (`transport`)
+- Destination Name (`destination_name`)
+- Distribution Name (`distribution_name`)
 
 ### Accessing the generated PR
 
