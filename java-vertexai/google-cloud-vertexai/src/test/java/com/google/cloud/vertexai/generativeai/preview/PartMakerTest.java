@@ -54,7 +54,7 @@ public final class PartMakerTest {
   @Test
   public void fromMimeTypeAndData_dataInString() {
     String mimeTypeForURIinString = "image/jpeg";
-    String fileUriInString = "gs://my-bucket/image.jpg";
+    String fileUriInString = "gs://test-bucket/image.jpg";
 
     Part part = PartMaker.fromMimeTypeAndData(mimeTypeForURIinString, fileUriInString);
 
