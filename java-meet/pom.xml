@@ -50,4 +50,5 @@
     <module>proto-google-cloud-meet-v2beta</module>
     <module>google-cloud-meet-bom</module>
   </modules>
-</project>
+
+  </project>
