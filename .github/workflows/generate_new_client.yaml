@@ -137,10 +137,10 @@ jobs:
           \`\`\`
           python generation/new_client/new-client.py generate ${GENERATION_ARGUMENTS}
           \`\`\`"
-          gh pr create --title "${commit_message}" --body "${pr_body}" --head "${branch_name}"
+          gh pr create --title "${commit_message}" --label "owlbot:run" --head "${branch_name}" --body "${pr_body}"
         env:
           USERNAME: ${{ github.actor }}
           API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
           GENERATION_ARGUMENTS: ${{ steps.generation.outputs.new_library_args }}
-          GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
 
