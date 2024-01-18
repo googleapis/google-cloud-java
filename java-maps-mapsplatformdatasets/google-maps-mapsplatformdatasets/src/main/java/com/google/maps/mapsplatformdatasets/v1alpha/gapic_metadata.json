@@ -1,0 +1,39 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.maps.mapsplatformdatasets.v1alpha",
+  "libraryPackage": "com.google.maps.mapsplatformdatasets.v1alpha",
+  "services": {
+    "MapsPlatformDatasetsV1Alpha": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MapsPlatformDatasetsV1AlphaClient",
+          "rpcs": {
+            "CreateDataset": {
+              "methods": ["createDataset", "createDataset", "createDataset", "createDatasetCallable"]
+            },
+            "DeleteDataset": {
+              "methods": ["deleteDataset", "deleteDataset", "deleteDataset", "deleteDatasetCallable"]
+            },
+            "DeleteDatasetVersion": {
+              "methods": ["deleteDatasetVersion", "deleteDatasetVersion", "deleteDatasetVersion", "deleteDatasetVersionCallable"]
+            },
+            "GetDataset": {
+              "methods": ["getDataset", "getDataset", "getDataset", "getDatasetCallable"]
+            },
+            "ListDatasetVersions": {
+              "methods": ["listDatasetVersions", "listDatasetVersions", "listDatasetVersions", "listDatasetVersionsPagedCallable", "listDatasetVersionsCallable"]
+            },
+            "ListDatasets": {
+              "methods": ["listDatasets", "listDatasets", "listDatasets", "listDatasetsPagedCallable", "listDatasetsCallable"]
+            },
+            "UpdateDatasetMetadata": {
+              "methods": ["updateDatasetMetadata", "updateDatasetMetadata", "updateDatasetMetadataCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

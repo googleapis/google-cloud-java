@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/dataproc/v1/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/dataproc/v1/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/dataproc/v1/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dataproc/v1/ClusterConfig</className>
+    <method>* *GkeClusterConfig*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dataproc/v1/ClusterConfig$Builder</className>
+    <method>* GkeClusterConfig*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dataproc/v1/ClusterConfig$Builder</className>
+    <method>* *GkeCluster*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dataproc/v1/ClusterConfigOrBuilder</className>
+    <method>* *GkeCluster*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dataproc/v1/GkeClusterConfig</className>
+    <method>* *GkeDeploymentTarget*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dataproc/v1/GkeClusterConfig$Builder</className>
+    <method>* *NamespacedGkeDeploymentTarget*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/dataproc/v1/GkeClusterConfig$NamespacedGkeDeploymentTarget*</className>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dataproc/v1/GkeClusterConfigOrBuilder</className>
+    <method>* *NamespacedGkeDeploymentTarget*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/dataproc/v1/ClusterConfig</className>
+    <field>GKE_CLUSTER_CONFIG_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/dataproc/v1/GkeClusterConfig</className>
+    <field>NAMESPACED_GKE_DEPLOYMENT_TARGET_FIELD_NUMBER</field>
+  </difference>
+</differences>

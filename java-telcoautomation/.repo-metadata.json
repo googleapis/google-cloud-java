@@ -1,0 +1,16 @@
+{
+  "api_shortname": "telcoautomation",
+  "name_pretty": "Telco Automation API",
+  "product_documentation": "https://cloud.google.com/telecom-network-automation",
+  "api_description": "APIs to automate 5G deployment and management of cloud infrastructure and network functions.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-telcoautomation/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-telcoautomation",
+  "repo_short": "java-telcoautomation",
+  "distribution_name": "com.google.cloud:google-cloud-telcoautomation",
+  "api_id": "telcoautomation.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

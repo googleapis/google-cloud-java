@@ -1,0 +1,16 @@
+{
+  "api_shortname": "monitoring-metricsscope",
+  "name_pretty": "Monitoring Metrics Scopes",
+  "product_documentation": "https://cloud.google.com/monitoring/api/ref_v3/rest/v1/locations.global.metricsScopes",
+  "api_description": "The metrics scope defines the set of Google Cloud projects whose metrics the current Google Cloud project can access.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-monitoring-metricsscope/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-monitoring-metricsscope",
+  "repo_short": "java-monitoring-metricsscope",
+  "distribution_name": "com.google.cloud:google-cloud-monitoring-metricsscope",
+  "api_id": "monitoring.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

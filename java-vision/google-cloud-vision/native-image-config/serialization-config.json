@@ -1,0 +1,11 @@
+{
+  "types":[
+    {
+      "name":"org.junit.runner.Result$SerializedForm"
+    }
+  ],
+  "lambdaCapturingTypes":[
+  ],
+  "proxies":[
+  ]
+}

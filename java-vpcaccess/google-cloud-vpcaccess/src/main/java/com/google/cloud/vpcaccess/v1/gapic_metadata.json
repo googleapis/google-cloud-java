@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.vpcaccess.v1",
+  "libraryPackage": "com.google.cloud.vpcaccess.v1",
+  "services": {
+    "VpcAccessService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VpcAccessServiceClient",
+          "rpcs": {
+            "CreateConnector": {
+              "methods": ["createConnectorAsync", "createConnectorAsync", "createConnectorAsync", "createConnectorOperationCallable", "createConnectorCallable"]
+            },
+            "DeleteConnector": {
+              "methods": ["deleteConnectorAsync", "deleteConnectorAsync", "deleteConnectorAsync", "deleteConnectorOperationCallable", "deleteConnectorCallable"]
+            },
+            "GetConnector": {
+              "methods": ["getConnector", "getConnector", "getConnector", "getConnectorCallable"]
+            },
+            "ListConnectors": {
+              "methods": ["listConnectors", "listConnectors", "listConnectors", "listConnectorsPagedCallable", "listConnectorsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.orgpolicy.v2",
+  "libraryPackage": "com.google.cloud.orgpolicy.v2",
+  "services": {
+    "OrgPolicy": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OrgPolicyClient",
+          "rpcs": {
+            "CreateCustomConstraint": {
+              "methods": ["createCustomConstraint", "createCustomConstraint", "createCustomConstraint", "createCustomConstraintCallable"]
+            },
+            "CreatePolicy": {
+              "methods": ["createPolicy", "createPolicy", "createPolicy", "createPolicy", "createPolicy", "createPolicyCallable"]
+            },
+            "DeleteCustomConstraint": {
+              "methods": ["deleteCustomConstraint", "deleteCustomConstraint", "deleteCustomConstraint", "deleteCustomConstraintCallable"]
+            },
+            "DeletePolicy": {
+              "methods": ["deletePolicy", "deletePolicy", "deletePolicy", "deletePolicyCallable"]
+            },
+            "GetCustomConstraint": {
+              "methods": ["getCustomConstraint", "getCustomConstraint", "getCustomConstraint", "getCustomConstraintCallable"]
+            },
+            "GetEffectivePolicy": {
+              "methods": ["getEffectivePolicy", "getEffectivePolicy", "getEffectivePolicy", "getEffectivePolicyCallable"]
+            },
+            "GetPolicy": {
+              "methods": ["getPolicy", "getPolicy", "getPolicy", "getPolicyCallable"]
+            },
+            "ListConstraints": {
+              "methods": ["listConstraints", "listConstraints", "listConstraints", "listConstraints", "listConstraints", "listConstraintsPagedCallable", "listConstraintsCallable"]
+            },
+            "ListCustomConstraints": {
+              "methods": ["listCustomConstraints", "listCustomConstraints", "listCustomConstraints", "listCustomConstraintsPagedCallable", "listCustomConstraintsCallable"]
+            },
+            "ListPolicies": {
+              "methods": ["listPolicies", "listPolicies", "listPolicies", "listPolicies", "listPolicies", "listPoliciesPagedCallable", "listPoliciesCallable"]
+            },
+            "UpdateCustomConstraint": {
+              "methods": ["updateCustomConstraint", "updateCustomConstraint", "updateCustomConstraintCallable"]
+            },
+            "UpdatePolicy": {
+              "methods": ["updatePolicy", "updatePolicy", "updatePolicyCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

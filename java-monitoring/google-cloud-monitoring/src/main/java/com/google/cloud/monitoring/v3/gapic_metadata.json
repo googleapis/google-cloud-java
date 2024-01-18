@@ -1,0 +1,234 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.monitoring.v3",
+  "libraryPackage": "com.google.cloud.monitoring.v3",
+  "services": {
+    "AlertPolicyService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AlertPolicyServiceClient",
+          "rpcs": {
+            "CreateAlertPolicy": {
+              "methods": ["createAlertPolicy", "createAlertPolicy", "createAlertPolicy", "createAlertPolicy", "createAlertPolicy", "createAlertPolicyCallable"]
+            },
+            "DeleteAlertPolicy": {
+              "methods": ["deleteAlertPolicy", "deleteAlertPolicy", "deleteAlertPolicy", "deleteAlertPolicyCallable"]
+            },
+            "GetAlertPolicy": {
+              "methods": ["getAlertPolicy", "getAlertPolicy", "getAlertPolicy", "getAlertPolicyCallable"]
+            },
+            "ListAlertPolicies": {
+              "methods": ["listAlertPolicies", "listAlertPolicies", "listAlertPolicies", "listAlertPolicies", "listAlertPolicies", "listAlertPoliciesPagedCallable", "listAlertPoliciesCallable"]
+            },
+            "UpdateAlertPolicy": {
+              "methods": ["updateAlertPolicy", "updateAlertPolicy", "updateAlertPolicyCallable"]
+            }
+          }
+        }
+      }
+    },
+    "GroupService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GroupServiceClient",
+          "rpcs": {
+            "CreateGroup": {
+              "methods": ["createGroup", "createGroup", "createGroup", "createGroup", "createGroup", "createGroupCallable"]
+            },
+            "DeleteGroup": {
+              "methods": ["deleteGroup", "deleteGroup", "deleteGroup", "deleteGroupCallable"]
+            },
+            "GetGroup": {
+              "methods": ["getGroup", "getGroup", "getGroup", "getGroupCallable"]
+            },
+            "ListGroupMembers": {
+              "methods": ["listGroupMembers", "listGroupMembers", "listGroupMembers", "listGroupMembersPagedCallable", "listGroupMembersCallable"]
+            },
+            "ListGroups": {
+              "methods": ["listGroups", "listGroups", "listGroups", "listGroups", "listGroups", "listGroupsPagedCallable", "listGroupsCallable"]
+            },
+            "UpdateGroup": {
+              "methods": ["updateGroup", "updateGroup", "updateGroupCallable"]
+            }
+          }
+        }
+      }
+    },
+    "MetricService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MetricServiceClient",
+          "rpcs": {
+            "CreateMetricDescriptor": {
+              "methods": ["createMetricDescriptor", "createMetricDescriptor", "createMetricDescriptor", "createMetricDescriptor", "createMetricDescriptor", "createMetricDescriptorCallable"]
+            },
+            "CreateServiceTimeSeries": {
+              "methods": ["createServiceTimeSeries", "createServiceTimeSeries", "createServiceTimeSeries", "createServiceTimeSeriesCallable"]
+            },
+            "CreateTimeSeries": {
+              "methods": ["createTimeSeries", "createTimeSeries", "createTimeSeries", "createTimeSeriesCallable"]
+            },
+            "DeleteMetricDescriptor": {
+              "methods": ["deleteMetricDescriptor", "deleteMetricDescriptor", "deleteMetricDescriptor", "deleteMetricDescriptorCallable"]
+            },
+            "GetMetricDescriptor": {
+              "methods": ["getMetricDescriptor", "getMetricDescriptor", "getMetricDescriptor", "getMetricDescriptorCallable"]
+            },
+            "GetMonitoredResourceDescriptor": {
+              "methods": ["getMonitoredResourceDescriptor", "getMonitoredResourceDescriptor", "getMonitoredResourceDescriptor", "getMonitoredResourceDescriptorCallable"]
+            },
+            "ListMetricDescriptors": {
+              "methods": ["listMetricDescriptors", "listMetricDescriptors", "listMetricDescriptors", "listMetricDescriptors", "listMetricDescriptors", "listMetricDescriptorsPagedCallable", "listMetricDescriptorsCallable"]
+            },
+            "ListMonitoredResourceDescriptors": {
+              "methods": ["listMonitoredResourceDescriptors", "listMonitoredResourceDescriptors", "listMonitoredResourceDescriptors", "listMonitoredResourceDescriptors", "listMonitoredResourceDescriptors", "listMonitoredResourceDescriptorsPagedCallable", "listMonitoredResourceDescriptorsCallable"]
+            },
+            "ListTimeSeries": {
+              "methods": ["listTimeSeries", "listTimeSeries", "listTimeSeries", "listTimeSeries", "listTimeSeries", "listTimeSeriesPagedCallable", "listTimeSeriesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "NotificationChannelService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NotificationChannelServiceClient",
+          "rpcs": {
+            "CreateNotificationChannel": {
+              "methods": ["createNotificationChannel", "createNotificationChannel", "createNotificationChannel", "createNotificationChannel", "createNotificationChannel", "createNotificationChannelCallable"]
+            },
+            "DeleteNotificationChannel": {
+              "methods": ["deleteNotificationChannel", "deleteNotificationChannel", "deleteNotificationChannel", "deleteNotificationChannelCallable"]
+            },
+            "GetNotificationChannel": {
+              "methods": ["getNotificationChannel", "getNotificationChannel", "getNotificationChannel", "getNotificationChannelCallable"]
+            },
+            "GetNotificationChannelDescriptor": {
+              "methods": ["getNotificationChannelDescriptor", "getNotificationChannelDescriptor", "getNotificationChannelDescriptor", "getNotificationChannelDescriptorCallable"]
+            },
+            "GetNotificationChannelVerificationCode": {
+              "methods": ["getNotificationChannelVerificationCode", "getNotificationChannelVerificationCode", "getNotificationChannelVerificationCode", "getNotificationChannelVerificationCodeCallable"]
+            },
+            "ListNotificationChannelDescriptors": {
+              "methods": ["listNotificationChannelDescriptors", "listNotificationChannelDescriptors", "listNotificationChannelDescriptors", "listNotificationChannelDescriptors", "listNotificationChannelDescriptors", "listNotificationChannelDescriptorsPagedCallable", "listNotificationChannelDescriptorsCallable"]
+            },
+            "ListNotificationChannels": {
+              "methods": ["listNotificationChannels", "listNotificationChannels", "listNotificationChannels", "listNotificationChannels", "listNotificationChannels", "listNotificationChannelsPagedCallable", "listNotificationChannelsCallable"]
+            },
+            "SendNotificationChannelVerificationCode": {
+              "methods": ["sendNotificationChannelVerificationCode", "sendNotificationChannelVerificationCode", "sendNotificationChannelVerificationCode", "sendNotificationChannelVerificationCodeCallable"]
+            },
+            "UpdateNotificationChannel": {
+              "methods": ["updateNotificationChannel", "updateNotificationChannel", "updateNotificationChannelCallable"]
+            },
+            "VerifyNotificationChannel": {
+              "methods": ["verifyNotificationChannel", "verifyNotificationChannel", "verifyNotificationChannel", "verifyNotificationChannelCallable"]
+            }
+          }
+        }
+      }
+    },
+    "QueryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "QueryServiceClient",
+          "rpcs": {
+            "QueryTimeSeries": {
+              "methods": ["queryTimeSeries", "queryTimeSeriesPagedCallable", "queryTimeSeriesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ServiceMonitoringService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ServiceMonitoringServiceClient",
+          "rpcs": {
+            "CreateService": {
+              "methods": ["createService", "createService", "createService", "createService", "createService", "createServiceCallable"]
+            },
+            "CreateServiceLevelObjective": {
+              "methods": ["createServiceLevelObjective", "createServiceLevelObjective", "createServiceLevelObjective", "createServiceLevelObjectiveCallable"]
+            },
+            "DeleteService": {
+              "methods": ["deleteService", "deleteService", "deleteService", "deleteServiceCallable"]
+            },
+            "DeleteServiceLevelObjective": {
+              "methods": ["deleteServiceLevelObjective", "deleteServiceLevelObjective", "deleteServiceLevelObjective", "deleteServiceLevelObjectiveCallable"]
+            },
+            "GetService": {
+              "methods": ["getService", "getService", "getService", "getServiceCallable"]
+            },
+            "GetServiceLevelObjective": {
+              "methods": ["getServiceLevelObjective", "getServiceLevelObjective", "getServiceLevelObjective", "getServiceLevelObjectiveCallable"]
+            },
+            "ListServiceLevelObjectives": {
+              "methods": ["listServiceLevelObjectives", "listServiceLevelObjectives", "listServiceLevelObjectives", "listServiceLevelObjectivesPagedCallable", "listServiceLevelObjectivesCallable"]
+            },
+            "ListServices": {
+              "methods": ["listServices", "listServices", "listServices", "listServices", "listServices", "listServicesPagedCallable", "listServicesCallable"]
+            },
+            "UpdateService": {
+              "methods": ["updateService", "updateService", "updateServiceCallable"]
+            },
+            "UpdateServiceLevelObjective": {
+              "methods": ["updateServiceLevelObjective", "updateServiceLevelObjective", "updateServiceLevelObjectiveCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SnoozeService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SnoozeServiceClient",
+          "rpcs": {
+            "CreateSnooze": {
+              "methods": ["createSnooze", "createSnooze", "createSnooze", "createSnoozeCallable"]
+            },
+            "GetSnooze": {
+              "methods": ["getSnooze", "getSnooze", "getSnooze", "getSnoozeCallable"]
+            },
+            "ListSnoozes": {
+              "methods": ["listSnoozes", "listSnoozes", "listSnoozes", "listSnoozesPagedCallable", "listSnoozesCallable"]
+            },
+            "UpdateSnooze": {
+              "methods": ["updateSnooze", "updateSnooze", "updateSnoozeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "UptimeCheckService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UptimeCheckServiceClient",
+          "rpcs": {
+            "CreateUptimeCheckConfig": {
+              "methods": ["createUptimeCheckConfig", "createUptimeCheckConfig", "createUptimeCheckConfig", "createUptimeCheckConfig", "createUptimeCheckConfig", "createUptimeCheckConfigCallable"]
+            },
+            "DeleteUptimeCheckConfig": {
+              "methods": ["deleteUptimeCheckConfig", "deleteUptimeCheckConfig", "deleteUptimeCheckConfig", "deleteUptimeCheckConfigCallable"]
+            },
+            "GetUptimeCheckConfig": {
+              "methods": ["getUptimeCheckConfig", "getUptimeCheckConfig", "getUptimeCheckConfig", "getUptimeCheckConfigCallable"]
+            },
+            "ListUptimeCheckConfigs": {
+              "methods": ["listUptimeCheckConfigs", "listUptimeCheckConfigs", "listUptimeCheckConfigs", "listUptimeCheckConfigs", "listUptimeCheckConfigs", "listUptimeCheckConfigsPagedCallable", "listUptimeCheckConfigsCallable"]
+            },
+            "ListUptimeCheckIps": {
+              "methods": ["listUptimeCheckIps", "listUptimeCheckIpsPagedCallable", "listUptimeCheckIpsCallable"]
+            },
+            "UpdateUptimeCheckConfig": {
+              "methods": ["updateUptimeCheckConfig", "updateUptimeCheckConfig", "updateUptimeCheckConfigCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.monitoring.metricsscope.v1",
+  "libraryPackage": "com.google.monitoring.metricsscope.v1",
+  "services": {
+    "MetricsScopes": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MetricsScopesClient",
+          "rpcs": {
+            "CreateMonitoredProject": {
+              "methods": ["createMonitoredProjectAsync", "createMonitoredProjectAsync", "createMonitoredProjectAsync", "createMonitoredProjectOperationCallable", "createMonitoredProjectCallable"]
+            },
+            "DeleteMonitoredProject": {
+              "methods": ["deleteMonitoredProjectAsync", "deleteMonitoredProjectAsync", "deleteMonitoredProjectAsync", "deleteMonitoredProjectOperationCallable", "deleteMonitoredProjectCallable"]
+            },
+            "GetMetricsScope": {
+              "methods": ["getMetricsScope", "getMetricsScope", "getMetricsScope", "getMetricsScopeCallable"]
+            },
+            "ListMetricsScopesByMonitoredProject": {
+              "methods": ["listMetricsScopesByMonitoredProject", "listMetricsScopesByMonitoredProjectCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

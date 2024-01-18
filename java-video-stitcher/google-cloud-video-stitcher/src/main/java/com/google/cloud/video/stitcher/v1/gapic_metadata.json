@@ -1,0 +1,90 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.video.stitcher.v1",
+  "libraryPackage": "com.google.cloud.video.stitcher.v1",
+  "services": {
+    "VideoStitcherService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VideoStitcherServiceClient",
+          "rpcs": {
+            "CreateCdnKey": {
+              "methods": ["createCdnKeyAsync", "createCdnKeyAsync", "createCdnKeyAsync", "createCdnKeyOperationCallable", "createCdnKeyCallable"]
+            },
+            "CreateLiveConfig": {
+              "methods": ["createLiveConfigAsync", "createLiveConfigAsync", "createLiveConfigAsync", "createLiveConfigOperationCallable", "createLiveConfigCallable"]
+            },
+            "CreateLiveSession": {
+              "methods": ["createLiveSession", "createLiveSession", "createLiveSession", "createLiveSessionCallable"]
+            },
+            "CreateSlate": {
+              "methods": ["createSlateAsync", "createSlateAsync", "createSlateAsync", "createSlateOperationCallable", "createSlateCallable"]
+            },
+            "CreateVodSession": {
+              "methods": ["createVodSession", "createVodSession", "createVodSession", "createVodSessionCallable"]
+            },
+            "DeleteCdnKey": {
+              "methods": ["deleteCdnKeyAsync", "deleteCdnKeyAsync", "deleteCdnKeyAsync", "deleteCdnKeyOperationCallable", "deleteCdnKeyCallable"]
+            },
+            "DeleteLiveConfig": {
+              "methods": ["deleteLiveConfigAsync", "deleteLiveConfigAsync", "deleteLiveConfigAsync", "deleteLiveConfigOperationCallable", "deleteLiveConfigCallable"]
+            },
+            "DeleteSlate": {
+              "methods": ["deleteSlateAsync", "deleteSlateAsync", "deleteSlateAsync", "deleteSlateOperationCallable", "deleteSlateCallable"]
+            },
+            "GetCdnKey": {
+              "methods": ["getCdnKey", "getCdnKey", "getCdnKey", "getCdnKeyCallable"]
+            },
+            "GetLiveAdTagDetail": {
+              "methods": ["getLiveAdTagDetail", "getLiveAdTagDetail", "getLiveAdTagDetail", "getLiveAdTagDetailCallable"]
+            },
+            "GetLiveConfig": {
+              "methods": ["getLiveConfig", "getLiveConfig", "getLiveConfig", "getLiveConfigCallable"]
+            },
+            "GetLiveSession": {
+              "methods": ["getLiveSession", "getLiveSession", "getLiveSession", "getLiveSessionCallable"]
+            },
+            "GetSlate": {
+              "methods": ["getSlate", "getSlate", "getSlate", "getSlateCallable"]
+            },
+            "GetVodAdTagDetail": {
+              "methods": ["getVodAdTagDetail", "getVodAdTagDetail", "getVodAdTagDetail", "getVodAdTagDetailCallable"]
+            },
+            "GetVodSession": {
+              "methods": ["getVodSession", "getVodSession", "getVodSession", "getVodSessionCallable"]
+            },
+            "GetVodStitchDetail": {
+              "methods": ["getVodStitchDetail", "getVodStitchDetail", "getVodStitchDetail", "getVodStitchDetailCallable"]
+            },
+            "ListCdnKeys": {
+              "methods": ["listCdnKeys", "listCdnKeys", "listCdnKeys", "listCdnKeysPagedCallable", "listCdnKeysCallable"]
+            },
+            "ListLiveAdTagDetails": {
+              "methods": ["listLiveAdTagDetails", "listLiveAdTagDetails", "listLiveAdTagDetails", "listLiveAdTagDetailsPagedCallable", "listLiveAdTagDetailsCallable"]
+            },
+            "ListLiveConfigs": {
+              "methods": ["listLiveConfigs", "listLiveConfigs", "listLiveConfigs", "listLiveConfigsPagedCallable", "listLiveConfigsCallable"]
+            },
+            "ListSlates": {
+              "methods": ["listSlates", "listSlates", "listSlates", "listSlatesPagedCallable", "listSlatesCallable"]
+            },
+            "ListVodAdTagDetails": {
+              "methods": ["listVodAdTagDetails", "listVodAdTagDetails", "listVodAdTagDetails", "listVodAdTagDetailsPagedCallable", "listVodAdTagDetailsCallable"]
+            },
+            "ListVodStitchDetails": {
+              "methods": ["listVodStitchDetails", "listVodStitchDetails", "listVodStitchDetails", "listVodStitchDetailsPagedCallable", "listVodStitchDetailsCallable"]
+            },
+            "UpdateCdnKey": {
+              "methods": ["updateCdnKeyAsync", "updateCdnKeyAsync", "updateCdnKeyOperationCallable", "updateCdnKeyCallable"]
+            },
+            "UpdateSlate": {
+              "methods": ["updateSlateAsync", "updateSlateAsync", "updateSlateOperationCallable", "updateSlateCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

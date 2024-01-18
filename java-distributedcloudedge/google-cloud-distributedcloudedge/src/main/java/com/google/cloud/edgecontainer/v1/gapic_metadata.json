@@ -1,0 +1,69 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.edgecontainer.v1",
+  "libraryPackage": "com.google.cloud.edgecontainer.v1",
+  "services": {
+    "EdgeContainer": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EdgeContainerClient",
+          "rpcs": {
+            "CreateCluster": {
+              "methods": ["createClusterAsync", "createClusterAsync", "createClusterAsync", "createClusterOperationCallable", "createClusterCallable"]
+            },
+            "CreateNodePool": {
+              "methods": ["createNodePoolAsync", "createNodePoolAsync", "createNodePoolAsync", "createNodePoolOperationCallable", "createNodePoolCallable"]
+            },
+            "CreateVpnConnection": {
+              "methods": ["createVpnConnectionAsync", "createVpnConnectionAsync", "createVpnConnectionAsync", "createVpnConnectionOperationCallable", "createVpnConnectionCallable"]
+            },
+            "DeleteCluster": {
+              "methods": ["deleteClusterAsync", "deleteClusterAsync", "deleteClusterAsync", "deleteClusterOperationCallable", "deleteClusterCallable"]
+            },
+            "DeleteNodePool": {
+              "methods": ["deleteNodePoolAsync", "deleteNodePoolAsync", "deleteNodePoolAsync", "deleteNodePoolOperationCallable", "deleteNodePoolCallable"]
+            },
+            "DeleteVpnConnection": {
+              "methods": ["deleteVpnConnectionAsync", "deleteVpnConnectionAsync", "deleteVpnConnectionAsync", "deleteVpnConnectionOperationCallable", "deleteVpnConnectionCallable"]
+            },
+            "GenerateAccessToken": {
+              "methods": ["generateAccessToken", "generateAccessToken", "generateAccessToken", "generateAccessTokenCallable"]
+            },
+            "GetCluster": {
+              "methods": ["getCluster", "getCluster", "getCluster", "getClusterCallable"]
+            },
+            "GetMachine": {
+              "methods": ["getMachine", "getMachine", "getMachine", "getMachineCallable"]
+            },
+            "GetNodePool": {
+              "methods": ["getNodePool", "getNodePool", "getNodePool", "getNodePoolCallable"]
+            },
+            "GetVpnConnection": {
+              "methods": ["getVpnConnection", "getVpnConnection", "getVpnConnection", "getVpnConnectionCallable"]
+            },
+            "ListClusters": {
+              "methods": ["listClusters", "listClusters", "listClusters", "listClustersPagedCallable", "listClustersCallable"]
+            },
+            "ListMachines": {
+              "methods": ["listMachines", "listMachines", "listMachines", "listMachinesPagedCallable", "listMachinesCallable"]
+            },
+            "ListNodePools": {
+              "methods": ["listNodePools", "listNodePools", "listNodePools", "listNodePoolsPagedCallable", "listNodePoolsCallable"]
+            },
+            "ListVpnConnections": {
+              "methods": ["listVpnConnections", "listVpnConnections", "listVpnConnections", "listVpnConnectionsPagedCallable", "listVpnConnectionsCallable"]
+            },
+            "UpdateCluster": {
+              "methods": ["updateClusterAsync", "updateClusterAsync", "updateClusterOperationCallable", "updateClusterCallable"]
+            },
+            "UpdateNodePool": {
+              "methods": ["updateNodePoolAsync", "updateNodePoolAsync", "updateNodePoolOperationCallable", "updateNodePoolCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

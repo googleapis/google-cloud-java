@@ -1,0 +1,60 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.storagetransfer.v1",
+  "libraryPackage": "com.google.storagetransfer.v1.proto",
+  "services": {
+    "StorageTransferService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StorageTransferServiceClient",
+          "rpcs": {
+            "CreateAgentPool": {
+              "methods": ["createAgentPool", "createAgentPool", "createAgentPoolCallable"]
+            },
+            "CreateTransferJob": {
+              "methods": ["createTransferJob", "createTransferJobCallable"]
+            },
+            "DeleteAgentPool": {
+              "methods": ["deleteAgentPool", "deleteAgentPool", "deleteAgentPoolCallable"]
+            },
+            "DeleteTransferJob": {
+              "methods": ["deleteTransferJob", "deleteTransferJobCallable"]
+            },
+            "GetAgentPool": {
+              "methods": ["getAgentPool", "getAgentPool", "getAgentPoolCallable"]
+            },
+            "GetGoogleServiceAccount": {
+              "methods": ["getGoogleServiceAccount", "getGoogleServiceAccountCallable"]
+            },
+            "GetTransferJob": {
+              "methods": ["getTransferJob", "getTransferJobCallable"]
+            },
+            "ListAgentPools": {
+              "methods": ["listAgentPools", "listAgentPools", "listAgentPoolsPagedCallable", "listAgentPoolsCallable"]
+            },
+            "ListTransferJobs": {
+              "methods": ["listTransferJobs", "listTransferJobsPagedCallable", "listTransferJobsCallable"]
+            },
+            "PauseTransferOperation": {
+              "methods": ["pauseTransferOperation", "pauseTransferOperationCallable"]
+            },
+            "ResumeTransferOperation": {
+              "methods": ["resumeTransferOperation", "resumeTransferOperationCallable"]
+            },
+            "RunTransferJob": {
+              "methods": ["runTransferJobAsync", "runTransferJobOperationCallable", "runTransferJobCallable"]
+            },
+            "UpdateAgentPool": {
+              "methods": ["updateAgentPool", "updateAgentPool", "updateAgentPoolCallable"]
+            },
+            "UpdateTransferJob": {
+              "methods": ["updateTransferJob", "updateTransferJobCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

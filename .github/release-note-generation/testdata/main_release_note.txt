@@ -1,0 +1,33 @@
+:robot: I have created a release *beep* *boop*
+---
+
+
+<details><summary>1.13.0</summary>
+
+## [1.13.0](https://github.com/googleapis/google-cloud-java/compare/v1.12.0...v1.13.0) (2023-06-08)
+
+
+### Features
+
+* [aiplatform] add blocking_operation_ids to ImportFeatureValuesOperationMetadata ([#9481](https://github.com/googleapis/google-cloud-java/issues/9481)) ([ba2c590](https://github.com/googleapis/google-cloud-java/commit/ba2c590cc9970be41e5a663004d354b3881a69d9))
+* [maps-mapsplatformdatasets] Add resource_ancestors field to support filtering by folders & organizations ([#9501](https://github.com/googleapis/google-cloud-java/issues/9501)) ([0c3b677](https://github.com/googleapis/google-cloud-java/commit/0c3b6772868828a429f5f5010483567afe58db54))
+* [clouddeploy] Add support for disabling Pod overprovisioning in the progressive deployment strategy configuration for a Kubernetes Target ([#9499](https://github.com/googleapis/google-cloud-java/issues/9499)) ([b7890c5](https://github.com/googleapis/google-cloud-java/commit/b7890c57859116d1f6033af9f485598d84428f44))
+* [analyticsadmin] Add the resource definition of a STT recognizer ([#9492](https://github.com/googleapis/google-cloud-java/issues/9492)) ([f2baa92](https://github.com/googleapis/google-cloud-java/commit/f2baa928c4f4d9959591ea905d7c9042320dbc71))
+* [maps-mapsplatformdatasets] new module for migrationcenter ([#9514](https://github.com/googleapis/google-cloud-java/issues/9514)) ([a268c80](https://github.com/googleapis/google-cloud-java/commit/a268c8016262a7a5a13be6a9983294f83d1ecc3f))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.123.13 ([#9478](https://github.com/googleapis/google-cloud-java/issues/9478)) ([47778ff](https://github.com/googleapis/google-cloud-java/commit/47778ff0b2eb98b6354f237ee84df0dafc567bec))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.5.6 ([#9494](https://github.com/googleapis/google-cloud-java/issues/9494)) ([739763f](https://github.com/googleapis/google-cloud-java/commit/739763f15ffa2434d7fa089899165f1e8fa5f870))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.11.0 ([#9505](https://github.com/googleapis/google-cloud-java/issues/9505)) ([30bc6f0](https://github.com/googleapis/google-cloud-java/commit/30bc6f0aef5b95549230dbd5b5246f2a8dab4ba4))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.22.3 ([#9477](https://github.com/googleapis/google-cloud-java/issues/9477)) ([ce1ce33](https://github.com/googleapis/google-cloud-java/commit/ce1ce333f6e3e11a9382c8f29196b53c7afa21c2))
+
+
+### Documentation
+
+* update discoveryengine v1 docs link ([#9512](https://github.com/googleapis/google-cloud-java/issues/9512)) ([f172c7e](https://github.com/googleapis/google-cloud-java/commit/f172c7e692c7991b878968256b3fe7c538de7c00))
+</details>
+
+---
+This PR was generated with [Release Please](https://github.com/googleapis/release-please). See [documentation](https://github.com/googleapis/release-please#release-please).

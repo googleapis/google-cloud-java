@@ -1,0 +1,4 @@
+ignoreFiles:
+- owl-bot-postprocessor/synthtool/gcp/snippets.py
+- owl-bot-postprocessor/synthtool/gcp/templates/java_library/samples/install-without-bom/pom.xml
+

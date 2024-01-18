@@ -1,0 +1,93 @@
+// Copyright 2018 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//    https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package yoshi.synth.metadata;
+
+import "google/protobuf/timestamp.proto";
+
+
+message Metadata {
+    google.protobuf.Timestamp update_time = 1 [deprecated=true];
+
+    repeated Source sources = 2;
+    repeated Destination destinations = 3;
+    repeated NewFile new_files = 4 [deprecated=true];
+    repeated string generated_files = 5;
+}
+
+message Source {
+    oneof source {
+        GitSource git = 1;
+        GeneratorSource generator = 2;
+        TemplateSource template = 3;
+    }
+}
+
+message GitSource {
+    string name = 1;
+    string remote = 2;
+    string sha = 3;
+
+    // If this Git is a mirror of an internal repository, such as google3 or
+    // Git-on-Borg, you can include an internal ref to it here.
+    string internal_ref = 4;
+
+    // When the git repo has been cloned locally, record its path.
+    string local_path = 5;
+
+    // Changes since the last generation.
+    string log = 6;
+}
+
+message GeneratorSource {
+    string name = 1;
+    string version = 2;
+    string docker_image = 3;
+}
+
+message TemplateSource {
+    string name = 1;
+    string origin = 2;
+    string version = 3;
+}
+
+message Destination {
+    oneof Destination {
+        ClientDestination client = 1;
+        FileSetDestination fileset = 2;
+    }
+}
+
+message NewFile {
+    string path = 1;
+}
+
+message ClientDestination {
+    string source = 1;
+    string api_name = 2;
+    string api_version = 3;
+    string language = 4;
+    string generator = 5;
+    string config = 6;
+}
+
+// Currently unused as storing all file destination options will likely cause
+// the metadata file to be too large and may cause autosynth trashing. We'll
+// investigate using this in the future.
+message FileSetDestination {
+    string source = 1;
+    repeated string files = 2;
+}

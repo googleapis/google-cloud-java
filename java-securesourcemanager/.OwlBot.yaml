@@ -1,0 +1,36 @@
+# Copyright 2022 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+deep-remove-regex:
+- "/java-securesourcemanager/grpc-google-.*/src"
+- "/java-securesourcemanager/proto-google-.*/src"
+- "/java-securesourcemanager/google-.*/src"
+- "/java-securesourcemanager/samples/snippets/generated"
+
+deep-preserve-regex:
+- "/java-securesourcemanager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
+deep-copy-regex:
+- source: "/google/cloud/securesourcemanager/(v.*)/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-securesourcemanager/$1/proto-google-cloud-securesourcemanager-$1/src"
+- source: "/google/cloud/securesourcemanager/(v.*)/.*-java/grpc-google-.*/src"
+  dest: "/owl-bot-staging/java-securesourcemanager/$1/grpc-google-cloud-securesourcemanager-$1/src"
+- source: "/google/cloud/securesourcemanager/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-securesourcemanager/$1/google-cloud-securesourcemanager/src"
+- source: "/google/cloud/securesourcemanager/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-securesourcemanager/$1/samples/snippets/generated"
+
+
+api-name: securesourcemanager

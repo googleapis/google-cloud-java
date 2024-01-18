@@ -1,0 +1,77 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-gsuite-addons.git",
+        "sha": "33dfd81a0306c4397b09534390a8999e9cc53ba3"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "d2977af9e9f1fc0c9dc8368352daa032471f3c63",
+        "internalRef": "403132955"
+      }
+    }
+  ],
+  "generatedFiles": [
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/AddOnWidgetSet.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/AddOnWidgetSetOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/AddOnWidgetSetProto.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/CommonAddOnManifest.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/CommonAddOnManifestOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/ExtensionPoint.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/HomepageExtensionPoint.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/HomepageExtensionPointOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/HttpAuthorizationHeader.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/HttpOptions.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/HttpOptionsOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/LayoutProperties.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/LayoutPropertiesOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/MenuItemExtensionPoint.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/MenuItemExtensionPointOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/ScriptManifest.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/UniversalActionExtensionPoint.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/UniversalActionExtensionPointOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/calendar/CalendarAddOnManifest.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/calendar/CalendarAddOnManifestOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/calendar/CalendarAddOnManifestProto.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/calendar/CalendarExtensionPoint.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/calendar/CalendarExtensionPointOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/calendar/ConferenceSolution.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/calendar/ConferenceSolutionOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/docs/DocsAddOnManifest.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/docs/DocsAddOnManifestOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/docs/DocsAddOnManifestProto.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/docs/DocsExtensionPoint.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/docs/DocsExtensionPointOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/drive/DriveAddOnManifest.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/drive/DriveAddOnManifestOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/drive/DriveAddOnManifestProto.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/drive/DriveExtensionPoint.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/drive/DriveExtensionPointOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/gmail/ComposeTrigger.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/gmail/ComposeTriggerOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/gmail/ContextualTrigger.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/gmail/ContextualTriggerOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/gmail/GmailAddOnManifest.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/gmail/GmailAddOnManifestOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/gmail/GmailAddOnManifestProto.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/gmail/UnconditionalTrigger.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/gmail/UnconditionalTriggerOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/gmail/UniversalAction.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/gmail/UniversalActionOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/sheets/SheetsAddOnManifest.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/sheets/SheetsAddOnManifestOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/sheets/SheetsAddOnManifestProto.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/sheets/SheetsExtensionPoint.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/sheets/SheetsExtensionPointOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/slides/SlidesAddOnManifest.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/slides/SlidesAddOnManifestOrBuilder.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/slides/SlidesAddOnManifestProto.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/slides/SlidesExtensionPoint.java",
+    "proto-google-apps-script-type-protos/src/main/java/com/google/apps/script/type/slides/SlidesExtensionPointOrBuilder.java"
+  ]
+}

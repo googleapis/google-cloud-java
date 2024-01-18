@@ -1,0 +1,13 @@
+primaryBranch: main
+releaseType: java-yoshi
+manifest: true
+handleGHRelease: true
+branches:
+  - branch: 1.0.x
+    releaseType: java-backport
+    bumpMinorPreMajor: true
+    handleGHRelease: true
+  - branch: 1.13.x
+    releaseType: java-backport
+    manifest: true
+    handleGHRelease: true

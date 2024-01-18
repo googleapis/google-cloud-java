@@ -1,0 +1,26 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "git@github.com:googleapis/java-resourcemanager.git",
+        "sha": "3fd447e9149529a915fd982630056e74b0ad6216"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis-gen",
+        "remote": "https://github.com/googleapis/googleapis-gen.git",
+        "sha": "32337a2c2ec4d35de81519661e279ada7e3bfcf2",
+        "internalRef": "369574301"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "5a6f30b8bb7672cf237c4f75d5aa96bfba170e7f"
+      }
+    }
+  ]
+}

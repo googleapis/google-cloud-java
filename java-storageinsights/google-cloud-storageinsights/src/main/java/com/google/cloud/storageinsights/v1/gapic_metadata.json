@@ -1,0 +1,45 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.storageinsights.v1",
+  "libraryPackage": "com.google.cloud.storageinsights.v1",
+  "services": {
+    "StorageInsights": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StorageInsightsClient",
+          "rpcs": {
+            "CreateReportConfig": {
+              "methods": ["createReportConfig", "createReportConfig", "createReportConfig", "createReportConfigCallable"]
+            },
+            "DeleteReportConfig": {
+              "methods": ["deleteReportConfig", "deleteReportConfig", "deleteReportConfig", "deleteReportConfigCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetReportConfig": {
+              "methods": ["getReportConfig", "getReportConfig", "getReportConfig", "getReportConfigCallable"]
+            },
+            "GetReportDetail": {
+              "methods": ["getReportDetail", "getReportDetail", "getReportDetail", "getReportDetailCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListReportConfigs": {
+              "methods": ["listReportConfigs", "listReportConfigs", "listReportConfigs", "listReportConfigsPagedCallable", "listReportConfigsCallable"]
+            },
+            "ListReportDetails": {
+              "methods": ["listReportDetails", "listReportDetails", "listReportDetails", "listReportDetailsPagedCallable", "listReportDetailsCallable"]
+            },
+            "UpdateReportConfig": {
+              "methods": ["updateReportConfig", "updateReportConfig", "updateReportConfigCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.lifesciences.v2beta",
+  "libraryPackage": "com.google.cloud.lifesciences.v2beta",
+  "services": {
+    "WorkflowsServiceV2Beta": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "WorkflowsServiceV2BetaClient",
+          "rpcs": {
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RunPipeline": {
+              "methods": ["runPipelineAsync", "runPipelineOperationCallable", "runPipelineCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

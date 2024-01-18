@@ -1,0 +1,51 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.beyondcorp.appconnections.v1",
+  "libraryPackage": "com.google.cloud.beyondcorp.appconnections.v1",
+  "services": {
+    "AppConnectionsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AppConnectionsServiceClient",
+          "rpcs": {
+            "CreateAppConnection": {
+              "methods": ["createAppConnectionAsync", "createAppConnectionAsync", "createAppConnectionAsync", "createAppConnectionOperationCallable", "createAppConnectionCallable"]
+            },
+            "DeleteAppConnection": {
+              "methods": ["deleteAppConnectionAsync", "deleteAppConnectionAsync", "deleteAppConnectionAsync", "deleteAppConnectionOperationCallable", "deleteAppConnectionCallable"]
+            },
+            "GetAppConnection": {
+              "methods": ["getAppConnection", "getAppConnection", "getAppConnection", "getAppConnectionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListAppConnections": {
+              "methods": ["listAppConnections", "listAppConnections", "listAppConnections", "listAppConnectionsPagedCallable", "listAppConnectionsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ResolveAppConnections": {
+              "methods": ["resolveAppConnections", "resolveAppConnections", "resolveAppConnections", "resolveAppConnectionsPagedCallable", "resolveAppConnectionsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateAppConnection": {
+              "methods": ["updateAppConnectionAsync", "updateAppConnectionAsync", "updateAppConnectionOperationCallable", "updateAppConnectionCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

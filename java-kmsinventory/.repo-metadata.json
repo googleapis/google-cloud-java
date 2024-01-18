@@ -1,0 +1,18 @@
+{
+  "api_shortname": "kmsinventory",
+  "name_pretty": "KMS Inventory API",
+  "product_documentation": "https://cloud.google.com/kms/docs/",
+  "api_description": "KMS Inventory API.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-kmsinventory/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-kmsinventory",
+  "repo_short": "java-kmsinventory",
+  "distribution_name": "com.google.cloud:google-cloud-kmsinventory",
+  "api_id": "kmsinventory.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true,
+  "rest_documentation": "https://cloud.google.com/kms/docs/reference/rest",
+  "rpc_documentation": "https://cloud.google.com/kms/docs/reference/rpc"
+}

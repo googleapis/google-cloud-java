@@ -1,0 +1,51 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.gkehub.v1",
+  "libraryPackage": "com.google.cloud.gkehub.v1",
+  "services": {
+    "GkeHub": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GkeHubClient",
+          "rpcs": {
+            "CreateFeature": {
+              "methods": ["createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureOperationCallable", "createFeatureCallable"]
+            },
+            "CreateMembership": {
+              "methods": ["createMembershipAsync", "createMembershipAsync", "createMembershipAsync", "createMembershipOperationCallable", "createMembershipCallable"]
+            },
+            "DeleteFeature": {
+              "methods": ["deleteFeatureAsync", "deleteFeatureAsync", "deleteFeatureAsync", "deleteFeatureOperationCallable", "deleteFeatureCallable"]
+            },
+            "DeleteMembership": {
+              "methods": ["deleteMembershipAsync", "deleteMembershipAsync", "deleteMembershipAsync", "deleteMembershipOperationCallable", "deleteMembershipCallable"]
+            },
+            "GenerateConnectManifest": {
+              "methods": ["generateConnectManifest", "generateConnectManifestCallable"]
+            },
+            "GetFeature": {
+              "methods": ["getFeature", "getFeature", "getFeature", "getFeatureCallable"]
+            },
+            "GetMembership": {
+              "methods": ["getMembership", "getMembership", "getMembership", "getMembershipCallable"]
+            },
+            "ListFeatures": {
+              "methods": ["listFeatures", "listFeatures", "listFeatures", "listFeaturesPagedCallable", "listFeaturesCallable"]
+            },
+            "ListMemberships": {
+              "methods": ["listMemberships", "listMemberships", "listMemberships", "listMembershipsPagedCallable", "listMembershipsCallable"]
+            },
+            "UpdateFeature": {
+              "methods": ["updateFeatureAsync", "updateFeatureAsync", "updateFeatureAsync", "updateFeatureOperationCallable", "updateFeatureCallable"]
+            },
+            "UpdateMembership": {
+              "methods": ["updateMembershipAsync", "updateMembershipAsync", "updateMembershipAsync", "updateMembershipOperationCallable", "updateMembershipCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

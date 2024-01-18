@@ -1,0 +1,66 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.speech.v1",
+  "libraryPackage": "com.google.cloud.speech.v1",
+  "services": {
+    "Speech": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SpeechClient",
+          "rpcs": {
+            "LongRunningRecognize": {
+              "methods": ["longRunningRecognizeAsync", "longRunningRecognizeAsync", "longRunningRecognizeOperationCallable", "longRunningRecognizeCallable"]
+            },
+            "Recognize": {
+              "methods": ["recognize", "recognize", "recognizeCallable"]
+            },
+            "StreamingRecognize": {
+              "methods": ["streamingRecognizeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Adaptation": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdaptationClient",
+          "rpcs": {
+            "CreateCustomClass": {
+              "methods": ["createCustomClass", "createCustomClass", "createCustomClass", "createCustomClassCallable"]
+            },
+            "CreatePhraseSet": {
+              "methods": ["createPhraseSet", "createPhraseSet", "createPhraseSet", "createPhraseSetCallable"]
+            },
+            "DeleteCustomClass": {
+              "methods": ["deleteCustomClass", "deleteCustomClass", "deleteCustomClass", "deleteCustomClassCallable"]
+            },
+            "DeletePhraseSet": {
+              "methods": ["deletePhraseSet", "deletePhraseSet", "deletePhraseSet", "deletePhraseSetCallable"]
+            },
+            "GetCustomClass": {
+              "methods": ["getCustomClass", "getCustomClass", "getCustomClass", "getCustomClassCallable"]
+            },
+            "GetPhraseSet": {
+              "methods": ["getPhraseSet", "getPhraseSet", "getPhraseSet", "getPhraseSetCallable"]
+            },
+            "ListCustomClasses": {
+              "methods": ["listCustomClasses", "listCustomClasses", "listCustomClasses", "listCustomClassesPagedCallable", "listCustomClassesCallable"]
+            },
+            "ListPhraseSet": {
+              "methods": ["listPhraseSet", "listPhraseSet", "listPhraseSet", "listPhraseSetPagedCallable", "listPhraseSetCallable"]
+            },
+            "UpdateCustomClass": {
+              "methods": ["updateCustomClass", "updateCustomClass", "updateCustomClassCallable"]
+            },
+            "UpdatePhraseSet": {
+              "methods": ["updatePhraseSet", "updatePhraseSet", "updatePhraseSetCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

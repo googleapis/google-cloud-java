@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1/schema/predict/instance/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1/schema/predict/instance/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1/schema/predict/instance/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1/schema/predict/params/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1/schema/predict/params/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1/schema/predict/params/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1/schema/predict/prediction/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1/schema/predict/prediction/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1/schema/predict/prediction/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1/schema/trainingjob/definition/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1/schema/trainingjob/definition/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/aiplatform/v1/schema/trainingjob/definition/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>
+</differences>

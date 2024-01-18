@@ -1,0 +1,56 @@
+rebaseMergeAllowed: false
+squashMergeAllowed: true
+mergeCommitAllowed: false
+branchProtectionRules:
+  - pattern: main
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - enforcer
+      - lint
+      - OwlBot Post Processor
+      - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: Java GraalVM Native Image'
+      - 'Kokoro - Test: Java 17 GraalVM Native Image'
+      - header-check
+  - pattern: 1.0.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - enforcer
+      - lint
+      - OwlBot Post Processor
+      - 'Kokoro - Test: Integration'
+  - pattern: 1.13.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - enforcer
+      - lint
+      - OwlBot Post Processor
+      - 'Kokoro - Test: Integration'
+permissionRules:
+  - team: yoshi-admins
+    permission: admin
+  - team: yoshi-java-admins
+    permission: admin
+  - team: yoshi-java
+    permission: push

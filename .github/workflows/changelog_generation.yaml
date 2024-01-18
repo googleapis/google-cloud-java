@@ -1,0 +1,47 @@
+on:
+  pull_request:
+    types:
+      - synchronize
+
+name: CHANGELOG.md generation upon Release Please pull requests
+
+jobs:
+  print-github-context:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          EVENT_CONTEXT: ${{ toJSON(github.event) }}
+        run: |
+          echo "$EVENT_CONTEXT" | jq .
+
+  changelog-generation:
+    runs-on: ubuntu-latest
+    if: |
+      github.event.sender.login == 'release-please[bot]' && github.head_ref == 'release-please--branches--main' &&
+      contains(github.event.pull_request.labels.*.name, 'autorelease: pending')
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: ${{ github.head_ref }}
+    - name: Show status of the branch checked out
+      run: |
+        git status
+    - name: Fetching pull request body
+      env:
+        GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
+      run: |
+        echo "Running the changelog generation script. Fetching PR body..."
+        gh pr view --json body --jq '.body' > pr_body.txt
+        echo "PR body fetched. First 10 lines:"
+        head pr_body.txt
+    - name: Split the main changelog into CHANGELOG.md files in modules
+      run: |
+        python3 .github/release-note-generation/split_release_note.py pr_body.txt .
+    - name: Commit the change and push to the pull request branch
+      run: |
+        git config user.email "yoshi-code-bot@users.noreply.github.com"
+        git config user.name "yoshi-code-bot"
+        git remote set-url origin https://x-access-token:${{ secrets.YOSHI_CODE_BOT_TOKEN }}@github.com/${{ github.repository }}
+        git add ./*/CHANGELOG.md
+        git commit -m 'chore: update CHANGELOG.md in modules'
+        git push

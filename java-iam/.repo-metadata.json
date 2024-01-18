@@ -1,0 +1,17 @@
+{
+  "api_shortname": "iam",
+  "name_pretty": "IAM",
+  "product_documentation": "n/a",
+  "api_description": "n/a",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/history",
+  "release_level": "stable",
+  "transport": "grpc",
+  "requires_billing": true,
+  "language": "java",
+  "repo": "googleapis/java-iam",
+  "repo_short": "java-iam",
+  "library_type": "OTHER",
+  "distribution_name": "com.google.cloud:google-iam-policy",
+  "excluded_poms": "proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1",
+  "excluded_dependencies": "google-iam-policy"
+}

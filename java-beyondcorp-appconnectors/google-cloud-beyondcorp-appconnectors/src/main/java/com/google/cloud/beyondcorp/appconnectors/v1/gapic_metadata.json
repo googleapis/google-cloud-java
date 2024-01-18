@@ -1,0 +1,51 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.beyondcorp.appconnectors.v1",
+  "libraryPackage": "com.google.cloud.beyondcorp.appconnectors.v1",
+  "services": {
+    "AppConnectorsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AppConnectorsServiceClient",
+          "rpcs": {
+            "CreateAppConnector": {
+              "methods": ["createAppConnectorAsync", "createAppConnectorAsync", "createAppConnectorAsync", "createAppConnectorOperationCallable", "createAppConnectorCallable"]
+            },
+            "DeleteAppConnector": {
+              "methods": ["deleteAppConnectorAsync", "deleteAppConnectorAsync", "deleteAppConnectorAsync", "deleteAppConnectorOperationCallable", "deleteAppConnectorCallable"]
+            },
+            "GetAppConnector": {
+              "methods": ["getAppConnector", "getAppConnector", "getAppConnector", "getAppConnectorCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListAppConnectors": {
+              "methods": ["listAppConnectors", "listAppConnectors", "listAppConnectors", "listAppConnectorsPagedCallable", "listAppConnectorsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ReportStatus": {
+              "methods": ["reportStatusAsync", "reportStatusAsync", "reportStatusAsync", "reportStatusOperationCallable", "reportStatusCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateAppConnector": {
+              "methods": ["updateAppConnectorAsync", "updateAppConnectorAsync", "updateAppConnectorOperationCallable", "updateAppConnectorCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

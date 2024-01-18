@@ -1,0 +1,144 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.discoveryengine.v1beta",
+  "libraryPackage": "com.google.cloud.discoveryengine.v1beta",
+  "services": {
+    "CompletionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CompletionServiceClient",
+          "rpcs": {
+            "CompleteQuery": {
+              "methods": ["completeQuery", "completeQueryCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ConversationalSearchService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversationalSearchServiceClient",
+          "rpcs": {
+            "ConverseConversation": {
+              "methods": ["converseConversation", "converseConversation", "converseConversation", "converseConversationCallable"]
+            },
+            "CreateConversation": {
+              "methods": ["createConversation", "createConversation", "createConversation", "createConversationCallable"]
+            },
+            "DeleteConversation": {
+              "methods": ["deleteConversation", "deleteConversation", "deleteConversation", "deleteConversationCallable"]
+            },
+            "GetConversation": {
+              "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
+            },
+            "ListConversations": {
+              "methods": ["listConversations", "listConversations", "listConversations", "listConversationsPagedCallable", "listConversationsCallable"]
+            },
+            "UpdateConversation": {
+              "methods": ["updateConversation", "updateConversation", "updateConversationCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DocumentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DocumentServiceClient",
+          "rpcs": {
+            "CreateDocument": {
+              "methods": ["createDocument", "createDocument", "createDocument", "createDocumentCallable"]
+            },
+            "DeleteDocument": {
+              "methods": ["deleteDocument", "deleteDocument", "deleteDocument", "deleteDocumentCallable"]
+            },
+            "GetDocument": {
+              "methods": ["getDocument", "getDocument", "getDocument", "getDocumentCallable"]
+            },
+            "ImportDocuments": {
+              "methods": ["importDocumentsAsync", "importDocumentsOperationCallable", "importDocumentsCallable"]
+            },
+            "ListDocuments": {
+              "methods": ["listDocuments", "listDocuments", "listDocuments", "listDocumentsPagedCallable", "listDocumentsCallable"]
+            },
+            "PurgeDocuments": {
+              "methods": ["purgeDocumentsAsync", "purgeDocumentsOperationCallable", "purgeDocumentsCallable"]
+            },
+            "UpdateDocument": {
+              "methods": ["updateDocument", "updateDocumentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RecommendationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RecommendationServiceClient",
+          "rpcs": {
+            "Recommend": {
+              "methods": ["recommend", "recommendCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SchemaService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SchemaServiceClient",
+          "rpcs": {
+            "CreateSchema": {
+              "methods": ["createSchemaAsync", "createSchemaAsync", "createSchemaAsync", "createSchemaOperationCallable", "createSchemaCallable"]
+            },
+            "DeleteSchema": {
+              "methods": ["deleteSchemaAsync", "deleteSchemaAsync", "deleteSchemaAsync", "deleteSchemaOperationCallable", "deleteSchemaCallable"]
+            },
+            "GetSchema": {
+              "methods": ["getSchema", "getSchema", "getSchema", "getSchemaCallable"]
+            },
+            "ListSchemas": {
+              "methods": ["listSchemas", "listSchemas", "listSchemas", "listSchemasPagedCallable", "listSchemasCallable"]
+            },
+            "UpdateSchema": {
+              "methods": ["updateSchemaAsync", "updateSchemaOperationCallable", "updateSchemaCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SearchService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SearchServiceClient",
+          "rpcs": {
+            "Search": {
+              "methods": ["search", "searchPagedCallable", "searchCallable"]
+            }
+          }
+        }
+      }
+    },
+    "UserEventService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UserEventServiceClient",
+          "rpcs": {
+            "CollectUserEvent": {
+              "methods": ["collectUserEvent", "collectUserEventCallable"]
+            },
+            "ImportUserEvents": {
+              "methods": ["importUserEventsAsync", "importUserEventsOperationCallable", "importUserEventsCallable"]
+            },
+            "WriteUserEvent": {
+              "methods": ["writeUserEvent", "writeUserEventCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

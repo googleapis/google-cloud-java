@@ -1,0 +1,17 @@
+{
+  "api_shortname": "alloydb",
+  "name_pretty": "AlloyDB",
+  "product_documentation": "https://cloud.google.com/alloydb/",
+  "api_description": "AlloyDB is a fully managed, PostgreSQL-compatible database service with industry-leading performance, availability, and scale.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-alloydb/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-alloydb",
+  "repo_short": "java-alloydb",
+  "distribution_name": "com.google.cloud:google-cloud-alloydb",
+  "api_id": "alloydb.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true,
+  "rest_documentation": "https://cloud.google.com/alloydb/docs/reference/rest"
+}

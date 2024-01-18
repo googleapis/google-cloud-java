@@ -1,0 +1,69 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.datacatalog.lineage.v1",
+  "libraryPackage": "com.google.cloud.datacatalog.lineage.v1",
+  "services": {
+    "Lineage": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LineageClient",
+          "rpcs": {
+            "BatchSearchLinkProcesses": {
+              "methods": ["batchSearchLinkProcesses", "batchSearchLinkProcessesPagedCallable", "batchSearchLinkProcessesCallable"]
+            },
+            "CreateLineageEvent": {
+              "methods": ["createLineageEvent", "createLineageEvent", "createLineageEvent", "createLineageEventCallable"]
+            },
+            "CreateProcess": {
+              "methods": ["createProcess", "createProcess", "createProcess", "createProcessCallable"]
+            },
+            "CreateRun": {
+              "methods": ["createRun", "createRun", "createRun", "createRunCallable"]
+            },
+            "DeleteLineageEvent": {
+              "methods": ["deleteLineageEvent", "deleteLineageEvent", "deleteLineageEvent", "deleteLineageEventCallable"]
+            },
+            "DeleteProcess": {
+              "methods": ["deleteProcessAsync", "deleteProcessAsync", "deleteProcessAsync", "deleteProcessOperationCallable", "deleteProcessCallable"]
+            },
+            "DeleteRun": {
+              "methods": ["deleteRunAsync", "deleteRunAsync", "deleteRunAsync", "deleteRunOperationCallable", "deleteRunCallable"]
+            },
+            "GetLineageEvent": {
+              "methods": ["getLineageEvent", "getLineageEvent", "getLineageEvent", "getLineageEventCallable"]
+            },
+            "GetProcess": {
+              "methods": ["getProcess", "getProcess", "getProcess", "getProcessCallable"]
+            },
+            "GetRun": {
+              "methods": ["getRun", "getRun", "getRun", "getRunCallable"]
+            },
+            "ListLineageEvents": {
+              "methods": ["listLineageEvents", "listLineageEvents", "listLineageEvents", "listLineageEventsPagedCallable", "listLineageEventsCallable"]
+            },
+            "ListProcesses": {
+              "methods": ["listProcesses", "listProcesses", "listProcesses", "listProcessesPagedCallable", "listProcessesCallable"]
+            },
+            "ListRuns": {
+              "methods": ["listRuns", "listRuns", "listRuns", "listRunsPagedCallable", "listRunsCallable"]
+            },
+            "ProcessOpenLineageRunEvent": {
+              "methods": ["processOpenLineageRunEvent", "processOpenLineageRunEvent", "processOpenLineageRunEventCallable"]
+            },
+            "SearchLinks": {
+              "methods": ["searchLinks", "searchLinksPagedCallable", "searchLinksCallable"]
+            },
+            "UpdateProcess": {
+              "methods": ["updateProcess", "updateProcess", "updateProcessCallable"]
+            },
+            "UpdateRun": {
+              "methods": ["updateRun", "updateRun", "updateRunCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
