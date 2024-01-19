@@ -195,11 +195,6 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
     return ((CloudTasksStubSettings) getStubSettings()).runTaskSettings();
   }
 
-  /** Returns the object with the settings used for calls to bufferTask. */
-  public UnaryCallSettings<BufferTaskRequest, BufferTaskResponse> bufferTaskSettings() {
-    return ((CloudTasksStubSettings) getStubSettings()).bufferTaskSettings();
-  }
-
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -431,11 +426,6 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
     /** Returns the builder for the settings used for calls to runTask. */
     public UnaryCallSettings.Builder<RunTaskRequest, Task> runTaskSettings() {
       return getStubSettingsBuilder().runTaskSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to bufferTask. */
-    public UnaryCallSettings.Builder<BufferTaskRequest, BufferTaskResponse> bufferTaskSettings() {
-      return getStubSettingsBuilder().bufferTaskSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

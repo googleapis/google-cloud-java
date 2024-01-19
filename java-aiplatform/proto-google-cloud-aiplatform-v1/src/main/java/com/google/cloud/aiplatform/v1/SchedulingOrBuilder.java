@@ -87,4 +87,48 @@ public interface SchedulingOrBuilder
    * @return The disableRetries.
    */
   boolean getDisableRetries();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This is the maximum time a user will wait in the QRM queue for
+   * resources. Default is 1 day
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maxWaitDuration field is set.
+   */
+  boolean hasMaxWaitDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This is the maximum time a user will wait in the QRM queue for
+   * resources. Default is 1 day
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maxWaitDuration.
+   */
+  com.google.protobuf.Duration getMaxWaitDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This is the maximum time a user will wait in the QRM queue for
+   * resources. Default is 1 day
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getMaxWaitDurationOrBuilder();
 }

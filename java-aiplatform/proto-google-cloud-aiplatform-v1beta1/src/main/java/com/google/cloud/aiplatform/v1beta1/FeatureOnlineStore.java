@@ -2298,8 +2298,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Private service connect config.
-     * If
+     * Optional. Private service connect config. The private service connection
+     * is available only for Optimized storage type, not for embedding
+     * management now. If
      * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
      * set to true, customers will use private service connection to send
      * request. Otherwise, the connection will set to public endpoint.
@@ -2316,8 +2317,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Private service connect config.
-     * If
+     * Optional. Private service connect config. The private service connection
+     * is available only for Optimized storage type, not for embedding
+     * management now. If
      * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
      * set to true, customers will use private service connection to send
      * request. Otherwise, the connection will set to public endpoint.
@@ -2335,8 +2337,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Private service connect config.
-     * If
+     * Optional. Private service connect config. The private service connection
+     * is available only for Optimized storage type, not for embedding
+     * management now. If
      * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
      * set to true, customers will use private service connection to send
      * request. Otherwise, the connection will set to public endpoint.
@@ -2382,7 +2385,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The dedicated serving endpoint for this FeatureOnlineStore. Only need to
    * set when you choose Optimized storage type or enable EmbeddingManagement.
-   * Will use public endpoint by default.
+   * Will use public endpoint by default. Note, for EmbeddingManagement use
+   * case, only [DedicatedServingEndpoint.public_endpoint_domain_name] is
+   * available now.
    * </pre>
    *
    * Protobuf type {@code
@@ -2487,8 +2492,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Private service connect config.
-     * If
+     * Optional. Private service connect config. The private service connection
+     * is available only for Optimized storage type, not for embedding
+     * management now. If
      * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
      * set to true, customers will use private service connection to send
      * request. Otherwise, the connection will set to public endpoint.
@@ -2508,8 +2514,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Private service connect config.
-     * If
+     * Optional. Private service connect config. The private service connection
+     * is available only for Optimized storage type, not for embedding
+     * management now. If
      * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
      * set to true, customers will use private service connection to send
      * request. Otherwise, the connection will set to public endpoint.
@@ -2532,8 +2539,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Private service connect config.
-     * If
+     * Optional. Private service connect config. The private service connection
+     * is available only for Optimized storage type, not for embedding
+     * management now. If
      * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
      * set to true, customers will use private service connection to send
      * request. Otherwise, the connection will set to public endpoint.
@@ -2806,7 +2814,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The dedicated serving endpoint for this FeatureOnlineStore. Only need to
      * set when you choose Optimized storage type or enable EmbeddingManagement.
-     * Will use public endpoint by default.
+     * Will use public endpoint by default. Note, for EmbeddingManagement use
+     * case, only [DedicatedServingEndpoint.public_endpoint_domain_name] is
+     * available now.
      * </pre>
      *
      * Protobuf type {@code
@@ -3168,8 +3178,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. Private service connect config.
-       * If
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
        * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
        * set to true, customers will use private service connection to send
        * request. Otherwise, the connection will set to public endpoint.
@@ -3188,8 +3199,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. Private service connect config.
-       * If
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
        * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
        * set to true, customers will use private service connection to send
        * request. Otherwise, the connection will set to public endpoint.
@@ -3215,8 +3227,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. Private service connect config.
-       * If
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
        * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
        * set to true, customers will use private service connection to send
        * request. Otherwise, the connection will set to public endpoint.
@@ -3244,8 +3257,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. Private service connect config.
-       * If
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
        * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
        * set to true, customers will use private service connection to send
        * request. Otherwise, the connection will set to public endpoint.
@@ -3270,8 +3284,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. Private service connect config.
-       * If
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
        * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
        * set to true, customers will use private service connection to send
        * request. Otherwise, the connection will set to public endpoint.
@@ -3304,8 +3319,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. Private service connect config.
-       * If
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
        * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
        * set to true, customers will use private service connection to send
        * request. Otherwise, the connection will set to public endpoint.
@@ -3329,8 +3345,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. Private service connect config.
-       * If
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
        * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
        * set to true, customers will use private service connection to send
        * request. Otherwise, the connection will set to public endpoint.
@@ -3350,8 +3367,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. Private service connect config.
-       * If
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
        * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
        * set to true, customers will use private service connection to send
        * request. Otherwise, the connection will set to public endpoint.
@@ -3375,8 +3393,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. Private service connect config.
-       * If
+       * Optional. Private service connect config. The private service connection
+       * is available only for Optimized storage type, not for embedding
+       * management now. If
        * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
        * set to true, customers will use private service connection to send
        * request. Otherwise, the connection will set to public endpoint.

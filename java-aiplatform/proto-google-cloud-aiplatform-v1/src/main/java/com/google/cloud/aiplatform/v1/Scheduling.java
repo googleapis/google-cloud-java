@@ -146,6 +146,65 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     return disableRetries_;
   }
 
+  public static final int MAX_WAIT_DURATION_FIELD_NUMBER = 6;
+  private com.google.protobuf.Duration maxWaitDuration_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This is the maximum time a user will wait in the QRM queue for
+   * resources. Default is 1 day
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maxWaitDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxWaitDuration() {
+    return maxWaitDuration_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This is the maximum time a user will wait in the QRM queue for
+   * resources. Default is 1 day
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maxWaitDuration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getMaxWaitDuration() {
+    return maxWaitDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : maxWaitDuration_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This is the maximum time a user will wait in the QRM queue for
+   * resources. Default is 1 day
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getMaxWaitDurationOrBuilder() {
+    return maxWaitDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : maxWaitDuration_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -169,6 +228,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (disableRetries_ != false) {
       output.writeBool(5, disableRetries_);
     }
+    if (maxWaitDuration_ != null) {
+      output.writeMessage(6, getMaxWaitDuration());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -186,6 +248,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
     if (disableRetries_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, disableRetries_);
+    }
+    if (maxWaitDuration_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getMaxWaitDuration());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -209,6 +274,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
     if (getRestartJobOnWorkerRestart() != other.getRestartJobOnWorkerRestart()) return false;
     if (getDisableRetries() != other.getDisableRetries()) return false;
+    if (hasMaxWaitDuration() != other.hasMaxWaitDuration()) return false;
+    if (hasMaxWaitDuration()) {
+      if (!getMaxWaitDuration().equals(other.getMaxWaitDuration())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -228,6 +297,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRestartJobOnWorkerRestart());
     hash = (37 * hash) + DISABLE_RETRIES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableRetries());
+    if (hasMaxWaitDuration()) {
+      hash = (37 * hash) + MAX_WAIT_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxWaitDuration().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -374,6 +447,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       restartJobOnWorkerRestart_ = false;
       disableRetries_ = false;
+      maxWaitDuration_ = null;
+      if (maxWaitDurationBuilder_ != null) {
+        maxWaitDurationBuilder_.dispose();
+        maxWaitDurationBuilder_ = null;
+      }
       return this;
     }
 
@@ -418,6 +496,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.disableRetries_ = disableRetries_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.maxWaitDuration_ =
+            maxWaitDurationBuilder_ == null ? maxWaitDuration_ : maxWaitDurationBuilder_.build();
       }
     }
 
@@ -475,6 +557,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       if (other.getDisableRetries() != false) {
         setDisableRetries(other.getDisableRetries());
       }
+      if (other.hasMaxWaitDuration()) {
+        mergeMaxWaitDuration(other.getMaxWaitDuration());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -519,6 +604,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 40
+            case 50:
+              {
+                input.readMessage(getMaxWaitDurationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -833,6 +924,216 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       disableRetries_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Duration maxWaitDuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        maxWaitDurationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is the maximum time a user will wait in the QRM queue for
+     * resources. Default is 1 day
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the maxWaitDuration field is set.
+     */
+    public boolean hasMaxWaitDuration() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is the maximum time a user will wait in the QRM queue for
+     * resources. Default is 1 day
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maxWaitDuration.
+     */
+    public com.google.protobuf.Duration getMaxWaitDuration() {
+      if (maxWaitDurationBuilder_ == null) {
+        return maxWaitDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maxWaitDuration_;
+      } else {
+        return maxWaitDurationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is the maximum time a user will wait in the QRM queue for
+     * resources. Default is 1 day
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaxWaitDuration(com.google.protobuf.Duration value) {
+      if (maxWaitDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maxWaitDuration_ = value;
+      } else {
+        maxWaitDurationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is the maximum time a user will wait in the QRM queue for
+     * resources. Default is 1 day
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaxWaitDuration(com.google.protobuf.Duration.Builder builderForValue) {
+      if (maxWaitDurationBuilder_ == null) {
+        maxWaitDuration_ = builderForValue.build();
+      } else {
+        maxWaitDurationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is the maximum time a user will wait in the QRM queue for
+     * resources. Default is 1 day
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMaxWaitDuration(com.google.protobuf.Duration value) {
+      if (maxWaitDurationBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && maxWaitDuration_ != null
+            && maxWaitDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getMaxWaitDurationBuilder().mergeFrom(value);
+        } else {
+          maxWaitDuration_ = value;
+        }
+      } else {
+        maxWaitDurationBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is the maximum time a user will wait in the QRM queue for
+     * resources. Default is 1 day
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMaxWaitDuration() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      maxWaitDuration_ = null;
+      if (maxWaitDurationBuilder_ != null) {
+        maxWaitDurationBuilder_.dispose();
+        maxWaitDurationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is the maximum time a user will wait in the QRM queue for
+     * resources. Default is 1 day
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getMaxWaitDurationBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getMaxWaitDurationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is the maximum time a user will wait in the QRM queue for
+     * resources. Default is 1 day
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getMaxWaitDurationOrBuilder() {
+      if (maxWaitDurationBuilder_ != null) {
+        return maxWaitDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return maxWaitDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maxWaitDuration_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is the maximum time a user will wait in the QRM queue for
+     * resources. Default is 1 day
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration max_wait_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getMaxWaitDurationFieldBuilder() {
+      if (maxWaitDurationBuilder_ == null) {
+        maxWaitDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getMaxWaitDuration(), getParentForChildren(), isClean());
+        maxWaitDuration_ = null;
+      }
+      return maxWaitDurationBuilder_;
     }
 
     @java.lang.Override

@@ -64,8 +64,8 @@ public interface BillingAccountOrBuilder
    * <pre>
    * Output only. True if the billing account is open, and will therefore be
    * charged for any usage on associated projects. False if the billing account
-   * is closed, and therefore projects associated with it will be unable to use
-   * paid services.
+   * is closed, and therefore projects associated with it are unable to use paid
+   * services.
    * </pre>
    *
    * <code>bool open = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

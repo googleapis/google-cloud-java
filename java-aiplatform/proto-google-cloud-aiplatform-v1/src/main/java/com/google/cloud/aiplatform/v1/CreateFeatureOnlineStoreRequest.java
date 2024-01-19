@@ -75,7 +75,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
    * <pre>
    * Required. The resource name of the Location to create FeatureOnlineStores.
    * Format:
-   * `projects/{project}/locations/{location}'`
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -102,7 +102,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
    * <pre>
    * Required. The resource name of the Location to create FeatureOnlineStores.
    * Format:
-   * `projects/{project}/locations/{location}'`
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -657,7 +657,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
      * <pre>
      * Required. The resource name of the Location to create FeatureOnlineStores.
      * Format:
-     * `projects/{project}/locations/{location}'`
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -683,7 +683,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
      * <pre>
      * Required. The resource name of the Location to create FeatureOnlineStores.
      * Format:
-     * `projects/{project}/locations/{location}'`
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -709,7 +709,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
      * <pre>
      * Required. The resource name of the Location to create FeatureOnlineStores.
      * Format:
-     * `projects/{project}/locations/{location}'`
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -734,7 +734,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
      * <pre>
      * Required. The resource name of the Location to create FeatureOnlineStores.
      * Format:
-     * `projects/{project}/locations/{location}'`
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -755,7 +755,7 @@ public final class CreateFeatureOnlineStoreRequest extends com.google.protobuf.G
      * <pre>
      * Required. The resource name of the Location to create FeatureOnlineStores.
      * Format:
-     * `projects/{project}/locations/{location}'`
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>

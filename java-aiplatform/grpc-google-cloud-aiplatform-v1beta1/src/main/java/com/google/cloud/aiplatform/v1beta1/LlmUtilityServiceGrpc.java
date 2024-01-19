@@ -37,6 +37,53 @@ public final class LlmUtilityServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CountTokensRequest,
+          com.google.cloud.aiplatform.v1beta1.CountTokensResponse>
+      getCountTokensMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CountTokens",
+      requestType = com.google.cloud.aiplatform.v1beta1.CountTokensRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.CountTokensResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CountTokensRequest,
+          com.google.cloud.aiplatform.v1beta1.CountTokensResponse>
+      getCountTokensMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.CountTokensRequest,
+            com.google.cloud.aiplatform.v1beta1.CountTokensResponse>
+        getCountTokensMethod;
+    if ((getCountTokensMethod = LlmUtilityServiceGrpc.getCountTokensMethod) == null) {
+      synchronized (LlmUtilityServiceGrpc.class) {
+        if ((getCountTokensMethod = LlmUtilityServiceGrpc.getCountTokensMethod) == null) {
+          LlmUtilityServiceGrpc.getCountTokensMethod =
+              getCountTokensMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.CountTokensRequest,
+                          com.google.cloud.aiplatform.v1beta1.CountTokensResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CountTokens"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.CountTokensRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.CountTokensResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LlmUtilityServiceMethodDescriptorSupplier("CountTokens"))
+                      .build();
+        }
+      }
+    }
+    return getCountTokensMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.ComputeTokensRequest,
           com.google.cloud.aiplatform.v1beta1.ComputeTokensResponse>
       getComputeTokensMethod;
@@ -137,6 +184,21 @@ public final class LlmUtilityServiceGrpc {
      *
      *
      * <pre>
+     * Perform a token counting.
+     * </pre>
+     */
+    default void countTokens(
+        com.google.cloud.aiplatform.v1beta1.CountTokensRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.CountTokensResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCountTokensMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Return a list of tokens based on the input text.
      * </pre>
      */
@@ -188,6 +250,23 @@ public final class LlmUtilityServiceGrpc {
      *
      *
      * <pre>
+     * Perform a token counting.
+     * </pre>
+     */
+    public void countTokens(
+        com.google.cloud.aiplatform.v1beta1.CountTokensRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.CountTokensResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCountTokensMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Return a list of tokens based on the input text.
      * </pre>
      */
@@ -220,6 +299,19 @@ public final class LlmUtilityServiceGrpc {
     protected LlmUtilityServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new LlmUtilityServiceBlockingStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Perform a token counting.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CountTokensResponse countTokens(
+        com.google.cloud.aiplatform.v1beta1.CountTokensRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCountTokensMethod(), getCallOptions(), request);
     }
 
     /**
@@ -259,6 +351,20 @@ public final class LlmUtilityServiceGrpc {
      *
      *
      * <pre>
+     * Perform a token counting.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.CountTokensResponse>
+        countTokens(com.google.cloud.aiplatform.v1beta1.CountTokensRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCountTokensMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Return a list of tokens based on the input text.
      * </pre>
      */
@@ -270,7 +376,8 @@ public final class LlmUtilityServiceGrpc {
     }
   }
 
-  private static final int METHODID_COMPUTE_TOKENS = 0;
+  private static final int METHODID_COUNT_TOKENS = 0;
+  private static final int METHODID_COMPUTE_TOKENS = 1;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -289,6 +396,12 @@ public final class LlmUtilityServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_COUNT_TOKENS:
+          serviceImpl.countTokens(
+              (com.google.cloud.aiplatform.v1beta1.CountTokensRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.CountTokensResponse>)
+                  responseObserver);
+          break;
         case METHODID_COMPUTE_TOKENS:
           serviceImpl.computeTokens(
               (com.google.cloud.aiplatform.v1beta1.ComputeTokensRequest) request,
@@ -314,6 +427,13 @@ public final class LlmUtilityServiceGrpc {
 
   public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCountTokensMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CountTokensRequest,
+                    com.google.cloud.aiplatform.v1beta1.CountTokensResponse>(
+                    service, METHODID_COUNT_TOKENS)))
         .addMethod(
             getComputeTokensMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -372,6 +492,7 @@ public final class LlmUtilityServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new LlmUtilityServiceFileDescriptorSupplier())
+                      .addMethod(getCountTokensMethod())
                       .addMethod(getComputeTokensMethod())
                       .build();
         }

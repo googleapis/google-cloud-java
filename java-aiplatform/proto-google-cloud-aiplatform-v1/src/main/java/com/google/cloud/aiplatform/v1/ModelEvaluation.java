@@ -1715,7 +1715,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * The metadata of the ModelEvaluation.
    * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
    * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
-   * "evaluation_dataset_path".
+   * "evaluation_dataset_path", "row_based_metrics_path".
    * </pre>
    *
    * <code>.google.protobuf.Value metadata = 11;</code>
@@ -1733,7 +1733,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * The metadata of the ModelEvaluation.
    * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
    * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
-   * "evaluation_dataset_path".
+   * "evaluation_dataset_path", "row_based_metrics_path".
    * </pre>
    *
    * <code>.google.protobuf.Value metadata = 11;</code>
@@ -1751,7 +1751,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * The metadata of the ModelEvaluation.
    * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
    * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
-   * "evaluation_dataset_path".
+   * "evaluation_dataset_path", "row_based_metrics_path".
    * </pre>
    *
    * <code>.google.protobuf.Value metadata = 11;</code>
@@ -4341,7 +4341,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * The metadata of the ModelEvaluation.
      * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
      * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
-     * "evaluation_dataset_path".
+     * "evaluation_dataset_path", "row_based_metrics_path".
      * </pre>
      *
      * <code>.google.protobuf.Value metadata = 11;</code>
@@ -4358,7 +4358,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * The metadata of the ModelEvaluation.
      * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
      * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
-     * "evaluation_dataset_path".
+     * "evaluation_dataset_path", "row_based_metrics_path".
      * </pre>
      *
      * <code>.google.protobuf.Value metadata = 11;</code>
@@ -4379,7 +4379,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * The metadata of the ModelEvaluation.
      * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
      * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
-     * "evaluation_dataset_path".
+     * "evaluation_dataset_path", "row_based_metrics_path".
      * </pre>
      *
      * <code>.google.protobuf.Value metadata = 11;</code>
@@ -4404,7 +4404,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * The metadata of the ModelEvaluation.
      * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
      * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
-     * "evaluation_dataset_path".
+     * "evaluation_dataset_path", "row_based_metrics_path".
      * </pre>
      *
      * <code>.google.protobuf.Value metadata = 11;</code>
@@ -4426,7 +4426,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * The metadata of the ModelEvaluation.
      * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
      * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
-     * "evaluation_dataset_path".
+     * "evaluation_dataset_path", "row_based_metrics_path".
      * </pre>
      *
      * <code>.google.protobuf.Value metadata = 11;</code>
@@ -4454,7 +4454,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * The metadata of the ModelEvaluation.
      * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
      * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
-     * "evaluation_dataset_path".
+     * "evaluation_dataset_path", "row_based_metrics_path".
      * </pre>
      *
      * <code>.google.protobuf.Value metadata = 11;</code>
@@ -4476,7 +4476,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * The metadata of the ModelEvaluation.
      * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
      * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
-     * "evaluation_dataset_path".
+     * "evaluation_dataset_path", "row_based_metrics_path".
      * </pre>
      *
      * <code>.google.protobuf.Value metadata = 11;</code>
@@ -4493,7 +4493,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * The metadata of the ModelEvaluation.
      * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
      * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
-     * "evaluation_dataset_path".
+     * "evaluation_dataset_path", "row_based_metrics_path".
      * </pre>
      *
      * <code>.google.protobuf.Value metadata = 11;</code>
@@ -4512,7 +4512,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * The metadata of the ModelEvaluation.
      * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
      * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
-     * "evaluation_dataset_path".
+     * "evaluation_dataset_path", "row_based_metrics_path".
      * </pre>
      *
      * <code>.google.protobuf.Value metadata = 11;</code>

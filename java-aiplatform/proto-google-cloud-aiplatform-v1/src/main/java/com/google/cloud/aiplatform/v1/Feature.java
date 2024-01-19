@@ -2137,7 +2137,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Only applicable for Vertex AI Feature Store.
-   * The name of the BigQuery Table/View columnn hosting data for this version.
+   * The name of the BigQuery Table/View column hosting data for this version.
    * If no value is provided, will use feature_id.
    * </pre>
    *
@@ -2162,7 +2162,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Only applicable for Vertex AI Feature Store.
-   * The name of the BigQuery Table/View columnn hosting data for this version.
+   * The name of the BigQuery Table/View column hosting data for this version.
    * If no value is provided, will use feature_id.
    * </pre>
    *
@@ -4467,7 +4467,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Only applicable for Vertex AI Feature Store.
-     * The name of the BigQuery Table/View columnn hosting data for this version.
+     * The name of the BigQuery Table/View column hosting data for this version.
      * If no value is provided, will use feature_id.
      * </pre>
      *
@@ -4491,7 +4491,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Only applicable for Vertex AI Feature Store.
-     * The name of the BigQuery Table/View columnn hosting data for this version.
+     * The name of the BigQuery Table/View column hosting data for this version.
      * If no value is provided, will use feature_id.
      * </pre>
      *
@@ -4515,7 +4515,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Only applicable for Vertex AI Feature Store.
-     * The name of the BigQuery Table/View columnn hosting data for this version.
+     * The name of the BigQuery Table/View column hosting data for this version.
      * If no value is provided, will use feature_id.
      * </pre>
      *
@@ -4538,7 +4538,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Only applicable for Vertex AI Feature Store.
-     * The name of the BigQuery Table/View columnn hosting data for this version.
+     * The name of the BigQuery Table/View column hosting data for this version.
      * If no value is provided, will use feature_id.
      * </pre>
      *
@@ -4557,7 +4557,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Only applicable for Vertex AI Feature Store.
-     * The name of the BigQuery Table/View columnn hosting data for this version.
+     * The name of the BigQuery Table/View column hosting data for this version.
      * If no value is provided, will use feature_id.
      * </pre>
      *

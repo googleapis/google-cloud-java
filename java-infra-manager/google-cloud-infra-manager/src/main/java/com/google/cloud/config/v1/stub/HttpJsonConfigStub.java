@@ -18,6 +18,7 @@ package com.google.cloud.config.v1.stub;
 
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
 
@@ -39,18 +40,25 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.config.v1.CreateDeploymentRequest;
+import com.google.cloud.config.v1.CreatePreviewRequest;
 import com.google.cloud.config.v1.DeleteDeploymentRequest;
+import com.google.cloud.config.v1.DeletePreviewRequest;
 import com.google.cloud.config.v1.DeleteStatefileRequest;
 import com.google.cloud.config.v1.Deployment;
 import com.google.cloud.config.v1.ExportDeploymentStatefileRequest;
 import com.google.cloud.config.v1.ExportLockInfoRequest;
+import com.google.cloud.config.v1.ExportPreviewResultRequest;
+import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
+import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
 import com.google.cloud.config.v1.ImportStatefileRequest;
 import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
+import com.google.cloud.config.v1.ListPreviewsRequest;
+import com.google.cloud.config.v1.ListPreviewsResponse;
 import com.google.cloud.config.v1.ListResourcesRequest;
 import com.google.cloud.config.v1.ListResourcesResponse;
 import com.google.cloud.config.v1.ListRevisionsRequest;
@@ -58,6 +66,7 @@ import com.google.cloud.config.v1.ListRevisionsResponse;
 import com.google.cloud.config.v1.LockDeploymentRequest;
 import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
+import com.google.cloud.config.v1.Preview;
 import com.google.cloud.config.v1.Resource;
 import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
@@ -97,6 +106,7 @@ public class HttpJsonConfigStub extends ConfigStub {
       TypeRegistry.newBuilder()
           .add(Deployment.getDescriptor())
           .add(OperationMetadata.getDescriptor())
+          .add(Preview.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<ListDeploymentsRequest, ListDeploymentsResponse>
@@ -704,6 +714,194 @@ public class HttpJsonConfigStub extends ConfigStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreatePreviewRequest, Operation>
+      createPreviewMethodDescriptor =
+          ApiMethodDescriptor.<CreatePreviewRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/CreatePreview")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreatePreviewRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/previews",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreatePreviewRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreatePreviewRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "previewId", request.getPreviewId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("preview", request.getPreview(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreatePreviewRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetPreviewRequest, Preview> getPreviewMethodDescriptor =
+      ApiMethodDescriptor.<GetPreviewRequest, Preview>newBuilder()
+          .setFullMethodName("google.cloud.config.v1.Config/GetPreview")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetPreviewRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/previews/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetPreviewRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetPreviewRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Preview>newBuilder()
+                  .setDefaultInstance(Preview.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<ListPreviewsRequest, ListPreviewsResponse>
+      listPreviewsMethodDescriptor =
+          ApiMethodDescriptor.<ListPreviewsRequest, ListPreviewsResponse>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/ListPreviews")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListPreviewsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/previews",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListPreviewsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListPreviewsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListPreviewsResponse>newBuilder()
+                      .setDefaultInstance(ListPreviewsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeletePreviewRequest, Operation>
+      deletePreviewMethodDescriptor =
+          ApiMethodDescriptor.<DeletePreviewRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/DeletePreview")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeletePreviewRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/previews/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeletePreviewRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeletePreviewRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeletePreviewRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ExportPreviewResultRequest, ExportPreviewResultResponse>
+      exportPreviewResultMethodDescriptor =
+          ApiMethodDescriptor.<ExportPreviewResultRequest, ExportPreviewResultResponse>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/ExportPreviewResult")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExportPreviewResultRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/previews/*}:export",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportPreviewResultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportPreviewResultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ExportPreviewResultResponse>newBuilder()
+                      .setDefaultInstance(ExportPreviewResultResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -915,6 +1113,18 @@ public class HttpJsonConfigStub extends ConfigStub {
   private final OperationCallable<UnlockDeploymentRequest, Deployment, OperationMetadata>
       unlockDeploymentOperationCallable;
   private final UnaryCallable<ExportLockInfoRequest, LockInfo> exportLockInfoCallable;
+  private final UnaryCallable<CreatePreviewRequest, Operation> createPreviewCallable;
+  private final OperationCallable<CreatePreviewRequest, Preview, OperationMetadata>
+      createPreviewOperationCallable;
+  private final UnaryCallable<GetPreviewRequest, Preview> getPreviewCallable;
+  private final UnaryCallable<ListPreviewsRequest, ListPreviewsResponse> listPreviewsCallable;
+  private final UnaryCallable<ListPreviewsRequest, ListPreviewsPagedResponse>
+      listPreviewsPagedCallable;
+  private final UnaryCallable<DeletePreviewRequest, Operation> deletePreviewCallable;
+  private final OperationCallable<DeletePreviewRequest, Preview, OperationMetadata>
+      deletePreviewOperationCallable;
+  private final UnaryCallable<ExportPreviewResultRequest, ExportPreviewResultResponse>
+      exportPreviewResultCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1172,6 +1382,63 @@ public class HttpJsonConfigStub extends ConfigStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CreatePreviewRequest, Operation> createPreviewTransportSettings =
+        HttpJsonCallSettings.<CreatePreviewRequest, Operation>newBuilder()
+            .setMethodDescriptor(createPreviewMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetPreviewRequest, Preview> getPreviewTransportSettings =
+        HttpJsonCallSettings.<GetPreviewRequest, Preview>newBuilder()
+            .setMethodDescriptor(getPreviewMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListPreviewsRequest, ListPreviewsResponse> listPreviewsTransportSettings =
+        HttpJsonCallSettings.<ListPreviewsRequest, ListPreviewsResponse>newBuilder()
+            .setMethodDescriptor(listPreviewsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeletePreviewRequest, Operation> deletePreviewTransportSettings =
+        HttpJsonCallSettings.<DeletePreviewRequest, Operation>newBuilder()
+            .setMethodDescriptor(deletePreviewMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ExportPreviewResultRequest, ExportPreviewResultResponse>
+        exportPreviewResultTransportSettings =
+            HttpJsonCallSettings
+                .<ExportPreviewResultRequest, ExportPreviewResultResponse>newBuilder()
+                .setMethodDescriptor(exportPreviewResultMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1321,6 +1588,38 @@ public class HttpJsonConfigStub extends ConfigStub {
     this.exportLockInfoCallable =
         callableFactory.createUnaryCallable(
             exportLockInfoTransportSettings, settings.exportLockInfoSettings(), clientContext);
+    this.createPreviewCallable =
+        callableFactory.createUnaryCallable(
+            createPreviewTransportSettings, settings.createPreviewSettings(), clientContext);
+    this.createPreviewOperationCallable =
+        callableFactory.createOperationCallable(
+            createPreviewTransportSettings,
+            settings.createPreviewOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getPreviewCallable =
+        callableFactory.createUnaryCallable(
+            getPreviewTransportSettings, settings.getPreviewSettings(), clientContext);
+    this.listPreviewsCallable =
+        callableFactory.createUnaryCallable(
+            listPreviewsTransportSettings, settings.listPreviewsSettings(), clientContext);
+    this.listPreviewsPagedCallable =
+        callableFactory.createPagedCallable(
+            listPreviewsTransportSettings, settings.listPreviewsSettings(), clientContext);
+    this.deletePreviewCallable =
+        callableFactory.createUnaryCallable(
+            deletePreviewTransportSettings, settings.deletePreviewSettings(), clientContext);
+    this.deletePreviewOperationCallable =
+        callableFactory.createOperationCallable(
+            deletePreviewTransportSettings,
+            settings.deletePreviewOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.exportPreviewResultCallable =
+        callableFactory.createUnaryCallable(
+            exportPreviewResultTransportSettings,
+            settings.exportPreviewResultSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1365,6 +1664,11 @@ public class HttpJsonConfigStub extends ConfigStub {
     methodDescriptors.add(lockDeploymentMethodDescriptor);
     methodDescriptors.add(unlockDeploymentMethodDescriptor);
     methodDescriptors.add(exportLockInfoMethodDescriptor);
+    methodDescriptors.add(createPreviewMethodDescriptor);
+    methodDescriptors.add(getPreviewMethodDescriptor);
+    methodDescriptors.add(listPreviewsMethodDescriptor);
+    methodDescriptors.add(deletePreviewMethodDescriptor);
+    methodDescriptors.add(exportPreviewResultMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -1505,6 +1809,49 @@ public class HttpJsonConfigStub extends ConfigStub {
   @Override
   public UnaryCallable<ExportLockInfoRequest, LockInfo> exportLockInfoCallable() {
     return exportLockInfoCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreatePreviewRequest, Operation> createPreviewCallable() {
+    return createPreviewCallable;
+  }
+
+  @Override
+  public OperationCallable<CreatePreviewRequest, Preview, OperationMetadata>
+      createPreviewOperationCallable() {
+    return createPreviewOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPreviewRequest, Preview> getPreviewCallable() {
+    return getPreviewCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPreviewsRequest, ListPreviewsResponse> listPreviewsCallable() {
+    return listPreviewsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPreviewsRequest, ListPreviewsPagedResponse> listPreviewsPagedCallable() {
+    return listPreviewsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeletePreviewRequest, Operation> deletePreviewCallable() {
+    return deletePreviewCallable;
+  }
+
+  @Override
+  public OperationCallable<DeletePreviewRequest, Preview, OperationMetadata>
+      deletePreviewOperationCallable() {
+    return deletePreviewOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportPreviewResultRequest, ExportPreviewResultResponse>
+      exportPreviewResultCallable() {
+    return exportPreviewResultCallable;
   }
 
   @Override

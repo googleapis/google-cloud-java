@@ -38,8 +38,6 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest;
-import com.google.cloud.tasks.v2beta2.BufferTaskRequest;
-import com.google.cloud.tasks.v2beta2.BufferTaskResponse;
 import com.google.cloud.tasks.v2beta2.CancelLeaseRequest;
 import com.google.cloud.tasks.v2beta2.CreateQueueRequest;
 import com.google.cloud.tasks.v2beta2.CreateTaskRequest;
@@ -807,47 +805,6 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   .build())
           .build();
 
-  private static final ApiMethodDescriptor<BufferTaskRequest, BufferTaskResponse>
-      bufferTaskMethodDescriptor =
-          ApiMethodDescriptor.<BufferTaskRequest, BufferTaskResponse>newBuilder()
-              .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/BufferTask")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<BufferTaskRequest>newBuilder()
-                      .setPath(
-                          "/v2beta2/{queue=projects/*/locations/*/queues/*}/tasks/{taskId}:buffer",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<BufferTaskRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "queue", request.getQueue());
-                            serializer.putPathParam(fields, "taskId", request.getTaskId());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<BufferTaskRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody(
-                                      "*",
-                                      request.toBuilder().clearQueue().clearTaskId().build(),
-                                      true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<BufferTaskResponse>newBuilder()
-                      .setDefaultInstance(BufferTaskResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -939,7 +896,6 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
   private final UnaryCallable<RenewLeaseRequest, Task> renewLeaseCallable;
   private final UnaryCallable<CancelLeaseRequest, Task> cancelLeaseCallable;
   private final UnaryCallable<RunTaskRequest, Task> runTaskCallable;
-  private final UnaryCallable<BufferTaskRequest, BufferTaskResponse> bufferTaskCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1208,18 +1164,6 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   return builder.build();
                 })
             .build();
-    HttpJsonCallSettings<BufferTaskRequest, BufferTaskResponse> bufferTaskTransportSettings =
-        HttpJsonCallSettings.<BufferTaskRequest, BufferTaskResponse>newBuilder()
-            .setMethodDescriptor(bufferTaskMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("queue", String.valueOf(request.getQueue()));
-                  builder.add("task_id", String.valueOf(request.getTaskId()));
-                  return builder.build();
-                })
-            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1312,9 +1256,6 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
     this.runTaskCallable =
         callableFactory.createUnaryCallable(
             runTaskTransportSettings, settings.runTaskSettings(), clientContext);
-    this.bufferTaskCallable =
-        callableFactory.createUnaryCallable(
-            bufferTaskTransportSettings, settings.bufferTaskSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1352,7 +1293,6 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
     methodDescriptors.add(renewLeaseMethodDescriptor);
     methodDescriptors.add(cancelLeaseMethodDescriptor);
     methodDescriptors.add(runTaskMethodDescriptor);
-    methodDescriptors.add(bufferTaskMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1467,11 +1407,6 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
   @Override
   public UnaryCallable<RunTaskRequest, Task> runTaskCallable() {
     return runTaskCallable;
-  }
-
-  @Override
-  public UnaryCallable<BufferTaskRequest, BufferTaskResponse> bufferTaskCallable() {
-    return bufferTaskCallable;
   }
 
   @Override

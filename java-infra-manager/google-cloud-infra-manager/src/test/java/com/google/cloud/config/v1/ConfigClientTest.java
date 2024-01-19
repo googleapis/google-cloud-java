@@ -18,6 +18,7 @@ package com.google.cloud.config.v1;
 
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
 
@@ -49,6 +50,7 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1542,6 +1544,476 @@ public class ConfigClientTest {
     try {
       String name = "name3373707";
       client.exportLockInfo(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createPreviewTest() throws Exception {
+    Preview expectedResponse =
+        Preview.newBuilder()
+            .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDeployment(DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
+            .setArtifactsGcsBucket("artifactsGcsBucket-1978454016")
+            .setWorkerPool("workerPool-384405318")
+            .setErrorStatus(Status.newBuilder().build())
+            .setBuild("build94094958")
+            .addAllTfErrors(new ArrayList<TerraformError>())
+            .setErrorLogs("errorLogs329304023")
+            .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
+            .setLogs("logs3327407")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createPreviewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfig.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Preview preview = Preview.newBuilder().build();
+
+    Preview actualResponse = client.createPreviewAsync(parent, preview).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreatePreviewRequest actualRequest = ((CreatePreviewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(preview, actualRequest.getPreview());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createPreviewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Preview preview = Preview.newBuilder().build();
+      client.createPreviewAsync(parent, preview).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createPreviewTest2() throws Exception {
+    Preview expectedResponse =
+        Preview.newBuilder()
+            .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDeployment(DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
+            .setArtifactsGcsBucket("artifactsGcsBucket-1978454016")
+            .setWorkerPool("workerPool-384405318")
+            .setErrorStatus(Status.newBuilder().build())
+            .setBuild("build94094958")
+            .addAllTfErrors(new ArrayList<TerraformError>())
+            .setErrorLogs("errorLogs329304023")
+            .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
+            .setLogs("logs3327407")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createPreviewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfig.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Preview preview = Preview.newBuilder().build();
+
+    Preview actualResponse = client.createPreviewAsync(parent, preview).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreatePreviewRequest actualRequest = ((CreatePreviewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(preview, actualRequest.getPreview());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createPreviewExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Preview preview = Preview.newBuilder().build();
+      client.createPreviewAsync(parent, preview).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getPreviewTest() throws Exception {
+    Preview expectedResponse =
+        Preview.newBuilder()
+            .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDeployment(DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
+            .setArtifactsGcsBucket("artifactsGcsBucket-1978454016")
+            .setWorkerPool("workerPool-384405318")
+            .setErrorStatus(Status.newBuilder().build())
+            .setBuild("build94094958")
+            .addAllTfErrors(new ArrayList<TerraformError>())
+            .setErrorLogs("errorLogs329304023")
+            .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
+            .setLogs("logs3327407")
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    PreviewName name = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+
+    Preview actualResponse = client.getPreview(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPreviewRequest actualRequest = ((GetPreviewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPreviewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      PreviewName name = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+      client.getPreview(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPreviewTest2() throws Exception {
+    Preview expectedResponse =
+        Preview.newBuilder()
+            .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDeployment(DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
+            .setArtifactsGcsBucket("artifactsGcsBucket-1978454016")
+            .setWorkerPool("workerPool-384405318")
+            .setErrorStatus(Status.newBuilder().build())
+            .setBuild("build94094958")
+            .addAllTfErrors(new ArrayList<TerraformError>())
+            .setErrorLogs("errorLogs329304023")
+            .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
+            .setLogs("logs3327407")
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Preview actualResponse = client.getPreview(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPreviewRequest actualRequest = ((GetPreviewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPreviewExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getPreview(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPreviewsTest() throws Exception {
+    Preview responsesElement = Preview.newBuilder().build();
+    ListPreviewsResponse expectedResponse =
+        ListPreviewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPreviews(Arrays.asList(responsesElement))
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListPreviewsPagedResponse pagedListResponse = client.listPreviews(parent);
+
+    List<Preview> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPreviewsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListPreviewsRequest actualRequest = ((ListPreviewsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listPreviewsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listPreviews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPreviewsTest2() throws Exception {
+    Preview responsesElement = Preview.newBuilder().build();
+    ListPreviewsResponse expectedResponse =
+        ListPreviewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPreviews(Arrays.asList(responsesElement))
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListPreviewsPagedResponse pagedListResponse = client.listPreviews(parent);
+
+    List<Preview> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPreviewsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListPreviewsRequest actualRequest = ((ListPreviewsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listPreviewsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listPreviews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deletePreviewTest() throws Exception {
+    Preview expectedResponse =
+        Preview.newBuilder()
+            .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDeployment(DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
+            .setArtifactsGcsBucket("artifactsGcsBucket-1978454016")
+            .setWorkerPool("workerPool-384405318")
+            .setErrorStatus(Status.newBuilder().build())
+            .setBuild("build94094958")
+            .addAllTfErrors(new ArrayList<TerraformError>())
+            .setErrorLogs("errorLogs329304023")
+            .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
+            .setLogs("logs3327407")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deletePreviewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfig.addResponse(resultOperation);
+
+    PreviewName name = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+
+    Preview actualResponse = client.deletePreviewAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeletePreviewRequest actualRequest = ((DeletePreviewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deletePreviewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      PreviewName name = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+      client.deletePreviewAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deletePreviewTest2() throws Exception {
+    Preview expectedResponse =
+        Preview.newBuilder()
+            .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDeployment(DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
+            .setArtifactsGcsBucket("artifactsGcsBucket-1978454016")
+            .setWorkerPool("workerPool-384405318")
+            .setErrorStatus(Status.newBuilder().build())
+            .setBuild("build94094958")
+            .addAllTfErrors(new ArrayList<TerraformError>())
+            .setErrorLogs("errorLogs329304023")
+            .setPreviewArtifacts(PreviewArtifacts.newBuilder().build())
+            .setLogs("logs3327407")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deletePreviewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfig.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    Preview actualResponse = client.deletePreviewAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeletePreviewRequest actualRequest = ((DeletePreviewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deletePreviewExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deletePreviewAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void exportPreviewResultTest() throws Exception {
+    ExportPreviewResultResponse expectedResponse =
+        ExportPreviewResultResponse.newBuilder()
+            .setResult(PreviewResult.newBuilder().build())
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    ExportPreviewResultRequest request =
+        ExportPreviewResultRequest.newBuilder()
+            .setParent(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+            .build();
+
+    ExportPreviewResultResponse actualResponse = client.exportPreviewResult(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportPreviewResultRequest actualRequest = ((ExportPreviewResultRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportPreviewResultExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      ExportPreviewResultRequest request =
+          ExportPreviewResultRequest.newBuilder()
+              .setParent(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+              .build();
+      client.exportPreviewResult(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

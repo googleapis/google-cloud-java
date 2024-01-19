@@ -18,6 +18,7 @@ package com.google.cloud.config.v1.stub;
 
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
 
@@ -51,18 +52,25 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.config.v1.CreateDeploymentRequest;
+import com.google.cloud.config.v1.CreatePreviewRequest;
 import com.google.cloud.config.v1.DeleteDeploymentRequest;
+import com.google.cloud.config.v1.DeletePreviewRequest;
 import com.google.cloud.config.v1.DeleteStatefileRequest;
 import com.google.cloud.config.v1.Deployment;
 import com.google.cloud.config.v1.ExportDeploymentStatefileRequest;
 import com.google.cloud.config.v1.ExportLockInfoRequest;
+import com.google.cloud.config.v1.ExportPreviewResultRequest;
+import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
+import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
 import com.google.cloud.config.v1.ImportStatefileRequest;
 import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
+import com.google.cloud.config.v1.ListPreviewsRequest;
+import com.google.cloud.config.v1.ListPreviewsResponse;
 import com.google.cloud.config.v1.ListResourcesRequest;
 import com.google.cloud.config.v1.ListResourcesResponse;
 import com.google.cloud.config.v1.ListRevisionsRequest;
@@ -70,6 +78,7 @@ import com.google.cloud.config.v1.ListRevisionsResponse;
 import com.google.cloud.config.v1.LockDeploymentRequest;
 import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
+import com.google.cloud.config.v1.Preview;
 import com.google.cloud.config.v1.Resource;
 import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
@@ -171,6 +180,18 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
   private final OperationCallSettings<UnlockDeploymentRequest, Deployment, OperationMetadata>
       unlockDeploymentOperationSettings;
   private final UnaryCallSettings<ExportLockInfoRequest, LockInfo> exportLockInfoSettings;
+  private final UnaryCallSettings<CreatePreviewRequest, Operation> createPreviewSettings;
+  private final OperationCallSettings<CreatePreviewRequest, Preview, OperationMetadata>
+      createPreviewOperationSettings;
+  private final UnaryCallSettings<GetPreviewRequest, Preview> getPreviewSettings;
+  private final PagedCallSettings<
+          ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>
+      listPreviewsSettings;
+  private final UnaryCallSettings<DeletePreviewRequest, Operation> deletePreviewSettings;
+  private final OperationCallSettings<DeletePreviewRequest, Preview, OperationMetadata>
+      deletePreviewOperationSettings;
+  private final UnaryCallSettings<ExportPreviewResultRequest, ExportPreviewResultResponse>
+      exportPreviewResultSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -291,6 +312,42 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListPreviewsRequest, ListPreviewsResponse, Preview>
+      LIST_PREVIEWS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListPreviewsRequest, ListPreviewsResponse, Preview>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPreviewsRequest injectToken(ListPreviewsRequest payload, String token) {
+              return ListPreviewsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListPreviewsRequest injectPageSize(ListPreviewsRequest payload, int pageSize) {
+              return ListPreviewsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPreviewsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPreviewsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Preview> extractResources(ListPreviewsResponse payload) {
+              return payload.getPreviewsList() == null
+                  ? ImmutableList.<Preview>of()
+                  : payload.getPreviewsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -375,6 +432,23 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
               PageContext<ListResourcesRequest, ListResourcesResponse, Resource> pageContext =
                   PageContext.create(callable, LIST_RESOURCES_PAGE_STR_DESC, request, context);
               return ListResourcesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>
+      LIST_PREVIEWS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>() {
+            @Override
+            public ApiFuture<ListPreviewsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPreviewsRequest, ListPreviewsResponse> callable,
+                ListPreviewsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPreviewsResponse> futureResponse) {
+              PageContext<ListPreviewsRequest, ListPreviewsResponse, Preview> pageContext =
+                  PageContext.create(callable, LIST_PREVIEWS_PAGE_STR_DESC, request, context);
+              return ListPreviewsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -509,6 +583,45 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
   /** Returns the object with the settings used for calls to exportLockInfo. */
   public UnaryCallSettings<ExportLockInfoRequest, LockInfo> exportLockInfoSettings() {
     return exportLockInfoSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createPreview. */
+  public UnaryCallSettings<CreatePreviewRequest, Operation> createPreviewSettings() {
+    return createPreviewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createPreview. */
+  public OperationCallSettings<CreatePreviewRequest, Preview, OperationMetadata>
+      createPreviewOperationSettings() {
+    return createPreviewOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getPreview. */
+  public UnaryCallSettings<GetPreviewRequest, Preview> getPreviewSettings() {
+    return getPreviewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listPreviews. */
+  public PagedCallSettings<ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>
+      listPreviewsSettings() {
+    return listPreviewsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deletePreview. */
+  public UnaryCallSettings<DeletePreviewRequest, Operation> deletePreviewSettings() {
+    return deletePreviewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deletePreview. */
+  public OperationCallSettings<DeletePreviewRequest, Preview, OperationMetadata>
+      deletePreviewOperationSettings() {
+    return deletePreviewOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportPreviewResult. */
+  public UnaryCallSettings<ExportPreviewResultRequest, ExportPreviewResultResponse>
+      exportPreviewResultSettings() {
+    return exportPreviewResultSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -669,6 +782,13 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     unlockDeploymentSettings = settingsBuilder.unlockDeploymentSettings().build();
     unlockDeploymentOperationSettings = settingsBuilder.unlockDeploymentOperationSettings().build();
     exportLockInfoSettings = settingsBuilder.exportLockInfoSettings().build();
+    createPreviewSettings = settingsBuilder.createPreviewSettings().build();
+    createPreviewOperationSettings = settingsBuilder.createPreviewOperationSettings().build();
+    getPreviewSettings = settingsBuilder.getPreviewSettings().build();
+    listPreviewsSettings = settingsBuilder.listPreviewsSettings().build();
+    deletePreviewSettings = settingsBuilder.deletePreviewSettings().build();
+    deletePreviewOperationSettings = settingsBuilder.deletePreviewOperationSettings().build();
+    exportPreviewResultSettings = settingsBuilder.exportPreviewResultSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -724,6 +844,18 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
             UnlockDeploymentRequest, Deployment, OperationMetadata>
         unlockDeploymentOperationSettings;
     private final UnaryCallSettings.Builder<ExportLockInfoRequest, LockInfo> exportLockInfoSettings;
+    private final UnaryCallSettings.Builder<CreatePreviewRequest, Operation> createPreviewSettings;
+    private final OperationCallSettings.Builder<CreatePreviewRequest, Preview, OperationMetadata>
+        createPreviewOperationSettings;
+    private final UnaryCallSettings.Builder<GetPreviewRequest, Preview> getPreviewSettings;
+    private final PagedCallSettings.Builder<
+            ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>
+        listPreviewsSettings;
+    private final UnaryCallSettings.Builder<DeletePreviewRequest, Operation> deletePreviewSettings;
+    private final OperationCallSettings.Builder<DeletePreviewRequest, Preview, OperationMetadata>
+        deletePreviewOperationSettings;
+    private final UnaryCallSettings.Builder<ExportPreviewResultRequest, ExportPreviewResultResponse>
+        exportPreviewResultSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -780,6 +912,13 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       unlockDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       unlockDeploymentOperationSettings = OperationCallSettings.newBuilder();
       exportLockInfoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createPreviewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createPreviewOperationSettings = OperationCallSettings.newBuilder();
+      getPreviewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listPreviewsSettings = PagedCallSettings.newBuilder(LIST_PREVIEWS_PAGE_STR_FACT);
+      deletePreviewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deletePreviewOperationSettings = OperationCallSettings.newBuilder();
+      exportPreviewResultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -804,6 +943,11 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
               lockDeploymentSettings,
               unlockDeploymentSettings,
               exportLockInfoSettings,
+              createPreviewSettings,
+              getPreviewSettings,
+              listPreviewsSettings,
+              deletePreviewSettings,
+              exportPreviewResultSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -836,6 +980,13 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       unlockDeploymentSettings = settings.unlockDeploymentSettings.toBuilder();
       unlockDeploymentOperationSettings = settings.unlockDeploymentOperationSettings.toBuilder();
       exportLockInfoSettings = settings.exportLockInfoSettings.toBuilder();
+      createPreviewSettings = settings.createPreviewSettings.toBuilder();
+      createPreviewOperationSettings = settings.createPreviewOperationSettings.toBuilder();
+      getPreviewSettings = settings.getPreviewSettings.toBuilder();
+      listPreviewsSettings = settings.listPreviewsSettings.toBuilder();
+      deletePreviewSettings = settings.deletePreviewSettings.toBuilder();
+      deletePreviewOperationSettings = settings.deletePreviewOperationSettings.toBuilder();
+      exportPreviewResultSettings = settings.exportPreviewResultSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -860,6 +1011,11 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
               lockDeploymentSettings,
               unlockDeploymentSettings,
               exportLockInfoSettings,
+              createPreviewSettings,
+              getPreviewSettings,
+              listPreviewsSettings,
+              deletePreviewSettings,
+              exportPreviewResultSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -971,6 +1127,31 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
 
       builder
           .exportLockInfoSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createPreviewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getPreviewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listPreviewsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deletePreviewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .exportPreviewResultSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1117,6 +1298,54 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeout(Duration.ZERO)
                       .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createPreviewOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreatePreviewRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Preview.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(300000L))
+                      .setRetryDelayMultiplier(1.3)
+                      .setMaxRetryDelay(Duration.ofMillis(3600000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(43200000L))
+                      .build()));
+
+      builder
+          .deletePreviewOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeletePreviewRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Preview.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(300000L))
+                      .setRetryDelayMultiplier(1.3)
+                      .setMaxRetryDelay(Duration.ofMillis(3600000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(43200000L))
                       .build()));
 
       return builder;
@@ -1267,6 +1496,50 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     /** Returns the builder for the settings used for calls to exportLockInfo. */
     public UnaryCallSettings.Builder<ExportLockInfoRequest, LockInfo> exportLockInfoSettings() {
       return exportLockInfoSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createPreview. */
+    public UnaryCallSettings.Builder<CreatePreviewRequest, Operation> createPreviewSettings() {
+      return createPreviewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createPreview. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreatePreviewRequest, Preview, OperationMetadata>
+        createPreviewOperationSettings() {
+      return createPreviewOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getPreview. */
+    public UnaryCallSettings.Builder<GetPreviewRequest, Preview> getPreviewSettings() {
+      return getPreviewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listPreviews. */
+    public PagedCallSettings.Builder<
+            ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>
+        listPreviewsSettings() {
+      return listPreviewsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deletePreview. */
+    public UnaryCallSettings.Builder<DeletePreviewRequest, Operation> deletePreviewSettings() {
+      return deletePreviewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deletePreview. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeletePreviewRequest, Preview, OperationMetadata>
+        deletePreviewOperationSettings() {
+      return deletePreviewOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportPreviewResult. */
+    public UnaryCallSettings.Builder<ExportPreviewResultRequest, ExportPreviewResultResponse>
+        exportPreviewResultSettings() {
+      return exportPreviewResultSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

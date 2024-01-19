@@ -58,7 +58,7 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of computeTokens to 30 seconds:
+ * <p>For example, to set the total timeout of countTokens to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -69,10 +69,10 @@ import javax.annotation.Generated;
  * LlmUtilityServiceSettings.Builder llmUtilityServiceSettingsBuilder =
  *     LlmUtilityServiceSettings.newBuilder();
  * llmUtilityServiceSettingsBuilder
- *     .computeTokensSettings()
+ *     .countTokensSettings()
  *     .setRetrySettings(
  *         llmUtilityServiceSettingsBuilder
- *             .computeTokensSettings()
+ *             .countTokensSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -83,6 +83,11 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class LlmUtilityServiceSettings extends ClientSettings<LlmUtilityServiceSettings> {
+
+  /** Returns the object with the settings used for calls to countTokens. */
+  public UnaryCallSettings<CountTokensRequest, CountTokensResponse> countTokensSettings() {
+    return ((LlmUtilityServiceStubSettings) getStubSettings()).countTokensSettings();
+  }
 
   /** Returns the object with the settings used for calls to computeTokens. */
   public UnaryCallSettings<ComputeTokensRequest, ComputeTokensResponse> computeTokensSettings() {
@@ -211,6 +216,12 @@ public class LlmUtilityServiceSettings extends ClientSettings<LlmUtilityServiceS
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to countTokens. */
+    public UnaryCallSettings.Builder<CountTokensRequest, CountTokensResponse>
+        countTokensSettings() {
+      return getStubSettingsBuilder().countTokensSettings();
     }
 
     /** Returns the builder for the settings used for calls to computeTokens. */

@@ -102,7 +102,7 @@ public final class CustomJobProto {
           + "isEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:"
           + "i\352Af\n#aiplatform.googleapis.com/CustomJo"
           + "b\022?projects/{project}/locations/{locatio"
-          + "n}/customJobs/{custom_job}\"\367\005\n\rCustomJob"
+          + "n}/customJobs/{custom_job}\"\261\006\n\rCustomJob"
           + "Spec\022U\n\026persistent_resource_id\030\016 \001(\tB5\342A"
           + "\001\001\372A.\n,aiplatform.googleapis.com/Persist"
           + "entResource\022P\n\021worker_pool_specs\030\001 \003(\0132/"
@@ -121,35 +121,38 @@ public final class CustomJobProto {
           + "cess\030\020 \001(\010B\004\342A\001\001\022>\n\nexperiment\030\021 \001(\tB*\342A"
           + "\001\001\372A#\n!aiplatform.googleapis.com/Context"
           + "\022B\n\016experiment_run\030\022 \001(\tB*\342A\001\001\372A#\n!aipla"
-          + "tform.googleapis.com/Context\"\240\003\n\016WorkerP"
-          + "oolSpec\022H\n\016container_spec\030\006 \001(\0132..google"
-          + ".cloud.aiplatform.v1beta1.ContainerSpecH"
-          + "\000\022Q\n\023python_package_spec\030\007 \001(\01322.google."
-          + "cloud.aiplatform.v1beta1.PythonPackageSp"
-          + "ecH\000\022I\n\014machine_spec\030\001 \001(\0132,.google.clou"
-          + "d.aiplatform.v1beta1.MachineSpecB\005\342A\002\001\005\022"
-          + "\033\n\rreplica_count\030\002 \001(\003B\004\342A\001\001\022C\n\nnfs_moun"
-          + "ts\030\004 \003(\0132).google.cloud.aiplatform.v1bet"
-          + "a1.NfsMountB\004\342A\001\001\022<\n\tdisk_spec\030\005 \001(\0132).g"
-          + "oogle.cloud.aiplatform.v1beta1.DiskSpecB"
-          + "\006\n\004task\"}\n\rContainerSpec\022\027\n\timage_uri\030\001 "
-          + "\001(\tB\004\342A\001\002\022\017\n\007command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t"
-          + "\0224\n\003env\030\004 \003(\0132\'.google.cloud.aiplatform."
-          + "v1beta1.EnvVar\"\262\001\n\021PythonPackageSpec\022 \n\022"
-          + "executor_image_uri\030\001 \001(\tB\004\342A\001\002\022\032\n\014packag"
-          + "e_uris\030\002 \003(\tB\004\342A\001\002\022\033\n\rpython_module\030\003 \001("
-          + "\tB\004\342A\001\002\022\014\n\004args\030\004 \003(\t\0224\n\003env\030\005 \003(\0132\'.goo"
-          + "gle.cloud.aiplatform.v1beta1.EnvVar\"~\n\nS"
-          + "cheduling\022*\n\007timeout\030\001 \001(\0132\031.google.prot"
-          + "obuf.Duration\022%\n\035restart_job_on_worker_r"
-          + "estart\030\003 \001(\010\022\035\n\017disable_retries\030\005 \001(\010B\004\342"
-          + "A\001\001B\345\001\n#com.google.cloud.aiplatform.v1be"
-          + "ta1B\016CustomJobProtoP\001ZCcloud.google.com/"
-          + "go/aiplatform/apiv1beta1/aiplatformpb;ai"
-          + "platformpb\252\002\037Google.Cloud.AIPlatform.V1B"
-          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
-          + "\"Google::Cloud::AIPlatform::V1beta1b\006pro"
-          + "to3"
+          + "tform.googleapis.com/Context\0228\n\006models\030\024"
+          + " \003(\tB(\342A\001\001\372A!\n\037aiplatform.googleapis.com"
+          + "/Model\"\240\003\n\016WorkerPoolSpec\022H\n\016container_s"
+          + "pec\030\006 \001(\0132..google.cloud.aiplatform.v1be"
+          + "ta1.ContainerSpecH\000\022Q\n\023python_package_sp"
+          + "ec\030\007 \001(\01322.google.cloud.aiplatform.v1bet"
+          + "a1.PythonPackageSpecH\000\022I\n\014machine_spec\030\001"
+          + " \001(\0132,.google.cloud.aiplatform.v1beta1.M"
+          + "achineSpecB\005\342A\002\001\005\022\033\n\rreplica_count\030\002 \001(\003"
+          + "B\004\342A\001\001\022C\n\nnfs_mounts\030\004 \003(\0132).google.clou"
+          + "d.aiplatform.v1beta1.NfsMountB\004\342A\001\001\022<\n\td"
+          + "isk_spec\030\005 \001(\0132).google.cloud.aiplatform"
+          + ".v1beta1.DiskSpecB\006\n\004task\"}\n\rContainerSp"
+          + "ec\022\027\n\timage_uri\030\001 \001(\tB\004\342A\001\002\022\017\n\007command\030\002"
+          + " \003(\t\022\014\n\004args\030\003 \003(\t\0224\n\003env\030\004 \003(\0132\'.google"
+          + ".cloud.aiplatform.v1beta1.EnvVar\"\262\001\n\021Pyt"
+          + "honPackageSpec\022 \n\022executor_image_uri\030\001 \001"
+          + "(\tB\004\342A\001\002\022\032\n\014package_uris\030\002 \003(\tB\004\342A\001\002\022\033\n\r"
+          + "python_module\030\003 \001(\tB\004\342A\001\002\022\014\n\004args\030\004 \003(\t\022"
+          + "4\n\003env\030\005 \003(\0132\'.google.cloud.aiplatform.v"
+          + "1beta1.EnvVar\"\272\001\n\nScheduling\022*\n\007timeout\030"
+          + "\001 \001(\0132\031.google.protobuf.Duration\022%\n\035rest"
+          + "art_job_on_worker_restart\030\003 \001(\010\022\035\n\017disab"
+          + "le_retries\030\005 \001(\010B\004\342A\001\001\022:\n\021max_wait_durat"
+          + "ion\030\006 \001(\0132\031.google.protobuf.DurationB\004\342A"
+          + "\001\001B\345\001\n#com.google.cloud.aiplatform.v1bet"
+          + "a1B\016CustomJobProtoP\001ZCcloud.google.com/g"
+          + "o/aiplatform/apiv1beta1/aiplatformpb;aip"
+          + "latformpb\252\002\037Google.Cloud.AIPlatform.V1Be"
+          + "ta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\""
+          + "Google::Cloud::AIPlatform::V1beta1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -224,6 +227,7 @@ public final class CustomJobProto {
               "EnableDashboardAccess",
               "Experiment",
               "ExperimentRun",
+              "Models",
             });
     internal_static_google_cloud_aiplatform_v1beta1_WorkerPoolSpec_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -261,7 +265,7 @@ public final class CustomJobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_Scheduling_descriptor,
             new java.lang.String[] {
-              "Timeout", "RestartJobOnWorkerRestart", "DisableRetries",
+              "Timeout", "RestartJobOnWorkerRestart", "DisableRetries", "MaxWaitDuration",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

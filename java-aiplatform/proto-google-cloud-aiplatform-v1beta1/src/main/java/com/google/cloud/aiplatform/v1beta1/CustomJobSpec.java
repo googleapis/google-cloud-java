@@ -47,6 +47,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     tensorboard_ = "";
     experiment_ = "";
     experimentRun_ = "";
+    models_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -912,6 +913,126 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int MODELS_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList models_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the Model resources for which to generate a mapping
+   * to artifact URIs. Applicable only to some of the Google-provided custom
+   * jobs. Format: `projects/{project}/locations/{location}/models/{model}`
+   *
+   * In order to retrieve a specific version of the model, also provide
+   * the version ID or version alias.
+   *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+   *              or
+   *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+   * If no version ID or alias is specified, the "default" version will be
+   * returned. The "default" version alias is created for the first version of
+   * the model, and can be moved to other versions later on. There will be
+   * exactly one default version.
+   * </pre>
+   *
+   * <code>
+   * repeated string models = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the models.
+   */
+  public com.google.protobuf.ProtocolStringList getModelsList() {
+    return models_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the Model resources for which to generate a mapping
+   * to artifact URIs. Applicable only to some of the Google-provided custom
+   * jobs. Format: `projects/{project}/locations/{location}/models/{model}`
+   *
+   * In order to retrieve a specific version of the model, also provide
+   * the version ID or version alias.
+   *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+   *              or
+   *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+   * If no version ID or alias is specified, the "default" version will be
+   * returned. The "default" version alias is created for the first version of
+   * the model, and can be moved to other versions later on. There will be
+   * exactly one default version.
+   * </pre>
+   *
+   * <code>
+   * repeated string models = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of models.
+   */
+  public int getModelsCount() {
+    return models_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the Model resources for which to generate a mapping
+   * to artifact URIs. Applicable only to some of the Google-provided custom
+   * jobs. Format: `projects/{project}/locations/{location}/models/{model}`
+   *
+   * In order to retrieve a specific version of the model, also provide
+   * the version ID or version alias.
+   *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+   *              or
+   *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+   * If no version ID or alias is specified, the "default" version will be
+   * returned. The "default" version alias is created for the first version of
+   * the model, and can be moved to other versions later on. There will be
+   * exactly one default version.
+   * </pre>
+   *
+   * <code>
+   * repeated string models = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The models at the given index.
+   */
+  public java.lang.String getModels(int index) {
+    return models_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the Model resources for which to generate a mapping
+   * to artifact URIs. Applicable only to some of the Google-provided custom
+   * jobs. Format: `projects/{project}/locations/{location}/models/{model}`
+   *
+   * In order to retrieve a specific version of the model, also provide
+   * the version ID or version alias.
+   *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+   *              or
+   *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+   * If no version ID or alias is specified, the "default" version will be
+   * returned. The "default" version alias is created for the first version of
+   * the model, and can be moved to other versions later on. There will be
+   * exactly one default version.
+   * </pre>
+   *
+   * <code>
+   * repeated string models = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the models at the given index.
+   */
+  public com.google.protobuf.ByteString getModelsBytes(int index) {
+    return models_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -964,6 +1085,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(protectedArtifactLocationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, protectedArtifactLocationId_);
+    }
+    for (int i = 0; i < models_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, models_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1020,6 +1144,14 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               19, protectedArtifactLocationId_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < models_.size(); i++) {
+        dataSize += computeStringSizeNoTag(models_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getModelsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1056,6 +1188,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     if (getEnableDashboardAccess() != other.getEnableDashboardAccess()) return false;
     if (!getExperiment().equals(other.getExperiment())) return false;
     if (!getExperimentRun().equals(other.getExperimentRun())) return false;
+    if (!getModelsList().equals(other.getModelsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1101,6 +1234,10 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getExperiment().hashCode();
     hash = (37 * hash) + EXPERIMENT_RUN_FIELD_NUMBER;
     hash = (53 * hash) + getExperimentRun().hashCode();
+    if (getModelsCount() > 0) {
+      hash = (37 * hash) + MODELS_FIELD_NUMBER;
+      hash = (53 * hash) + getModelsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1267,6 +1404,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       enableDashboardAccess_ = false;
       experiment_ = "";
       experimentRun_ = "";
+      models_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1356,6 +1494,10 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.experimentRun_ = experimentRun_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        models_.makeImmutable();
+        result.models_ = models_;
       }
     }
 
@@ -1489,6 +1631,16 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00001000;
         onChanged();
       }
+      if (!other.models_.isEmpty()) {
+        if (models_.isEmpty()) {
+          models_ = other.models_;
+          bitField0_ |= 0x00002000;
+        } else {
+          ensureModelsIsMutable();
+          models_.addAll(other.models_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1603,6 +1755,13 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 154
+            case 162:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureModelsIsMutable();
+                models_.add(s);
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3966,6 +4125,306 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       experimentRun_ = value;
       bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList models_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureModelsIsMutable() {
+      if (!models_.isModifiable()) {
+        models_ = new com.google.protobuf.LazyStringArrayList(models_);
+      }
+      bitField0_ |= 0x00002000;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Model resources for which to generate a mapping
+     * to artifact URIs. Applicable only to some of the Google-provided custom
+     * jobs. Format: `projects/{project}/locations/{location}/models/{model}`
+     *
+     * In order to retrieve a specific version of the model, also provide
+     * the version ID or version alias.
+     *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * If no version ID or alias is specified, the "default" version will be
+     * returned. The "default" version alias is created for the first version of
+     * the model, and can be moved to other versions later on. There will be
+     * exactly one default version.
+     * </pre>
+     *
+     * <code>
+     * repeated string models = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the models.
+     */
+    public com.google.protobuf.ProtocolStringList getModelsList() {
+      models_.makeImmutable();
+      return models_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Model resources for which to generate a mapping
+     * to artifact URIs. Applicable only to some of the Google-provided custom
+     * jobs. Format: `projects/{project}/locations/{location}/models/{model}`
+     *
+     * In order to retrieve a specific version of the model, also provide
+     * the version ID or version alias.
+     *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * If no version ID or alias is specified, the "default" version will be
+     * returned. The "default" version alias is created for the first version of
+     * the model, and can be moved to other versions later on. There will be
+     * exactly one default version.
+     * </pre>
+     *
+     * <code>
+     * repeated string models = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of models.
+     */
+    public int getModelsCount() {
+      return models_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Model resources for which to generate a mapping
+     * to artifact URIs. Applicable only to some of the Google-provided custom
+     * jobs. Format: `projects/{project}/locations/{location}/models/{model}`
+     *
+     * In order to retrieve a specific version of the model, also provide
+     * the version ID or version alias.
+     *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * If no version ID or alias is specified, the "default" version will be
+     * returned. The "default" version alias is created for the first version of
+     * the model, and can be moved to other versions later on. There will be
+     * exactly one default version.
+     * </pre>
+     *
+     * <code>
+     * repeated string models = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The models at the given index.
+     */
+    public java.lang.String getModels(int index) {
+      return models_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Model resources for which to generate a mapping
+     * to artifact URIs. Applicable only to some of the Google-provided custom
+     * jobs. Format: `projects/{project}/locations/{location}/models/{model}`
+     *
+     * In order to retrieve a specific version of the model, also provide
+     * the version ID or version alias.
+     *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * If no version ID or alias is specified, the "default" version will be
+     * returned. The "default" version alias is created for the first version of
+     * the model, and can be moved to other versions later on. There will be
+     * exactly one default version.
+     * </pre>
+     *
+     * <code>
+     * repeated string models = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the models at the given index.
+     */
+    public com.google.protobuf.ByteString getModelsBytes(int index) {
+      return models_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Model resources for which to generate a mapping
+     * to artifact URIs. Applicable only to some of the Google-provided custom
+     * jobs. Format: `projects/{project}/locations/{location}/models/{model}`
+     *
+     * In order to retrieve a specific version of the model, also provide
+     * the version ID or version alias.
+     *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * If no version ID or alias is specified, the "default" version will be
+     * returned. The "default" version alias is created for the first version of
+     * the model, and can be moved to other versions later on. There will be
+     * exactly one default version.
+     * </pre>
+     *
+     * <code>
+     * repeated string models = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The models to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModels(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureModelsIsMutable();
+      models_.set(index, value);
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Model resources for which to generate a mapping
+     * to artifact URIs. Applicable only to some of the Google-provided custom
+     * jobs. Format: `projects/{project}/locations/{location}/models/{model}`
+     *
+     * In order to retrieve a specific version of the model, also provide
+     * the version ID or version alias.
+     *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * If no version ID or alias is specified, the "default" version will be
+     * returned. The "default" version alias is created for the first version of
+     * the model, and can be moved to other versions later on. There will be
+     * exactly one default version.
+     * </pre>
+     *
+     * <code>
+     * repeated string models = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The models to add.
+     * @return This builder for chaining.
+     */
+    public Builder addModels(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureModelsIsMutable();
+      models_.add(value);
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Model resources for which to generate a mapping
+     * to artifact URIs. Applicable only to some of the Google-provided custom
+     * jobs. Format: `projects/{project}/locations/{location}/models/{model}`
+     *
+     * In order to retrieve a specific version of the model, also provide
+     * the version ID or version alias.
+     *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * If no version ID or alias is specified, the "default" version will be
+     * returned. The "default" version alias is created for the first version of
+     * the model, and can be moved to other versions later on. There will be
+     * exactly one default version.
+     * </pre>
+     *
+     * <code>
+     * repeated string models = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The models to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllModels(java.lang.Iterable<java.lang.String> values) {
+      ensureModelsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, models_);
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Model resources for which to generate a mapping
+     * to artifact URIs. Applicable only to some of the Google-provided custom
+     * jobs. Format: `projects/{project}/locations/{location}/models/{model}`
+     *
+     * In order to retrieve a specific version of the model, also provide
+     * the version ID or version alias.
+     *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * If no version ID or alias is specified, the "default" version will be
+     * returned. The "default" version alias is created for the first version of
+     * the model, and can be moved to other versions later on. There will be
+     * exactly one default version.
+     * </pre>
+     *
+     * <code>
+     * repeated string models = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModels() {
+      models_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Model resources for which to generate a mapping
+     * to artifact URIs. Applicable only to some of the Google-provided custom
+     * jobs. Format: `projects/{project}/locations/{location}/models/{model}`
+     *
+     * In order to retrieve a specific version of the model, also provide
+     * the version ID or version alias.
+     *   Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
+     *              or
+     *            `projects/{project}/locations/{location}/models/{model}&#64;golden`
+     * If no version ID or alias is specified, the "default" version will be
+     * returned. The "default" version alias is created for the first version of
+     * the model, and can be moved to other versions later on. There will be
+     * exactly one default version.
+     * </pre>
+     *
+     * <code>
+     * repeated string models = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the models to add.
+     * @return This builder for chaining.
+     */
+    public Builder addModelsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureModelsIsMutable();
+      models_.add(value);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

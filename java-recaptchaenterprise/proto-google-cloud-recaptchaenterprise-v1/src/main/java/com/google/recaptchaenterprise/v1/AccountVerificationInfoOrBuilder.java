@@ -147,7 +147,7 @@ public interface AccountVerificationInfoOrBuilder
    *
    * <pre>
    * Username of the account that is being verified. Deprecated. Customers
-   * should now provide the hashed account ID field in Event.
+   * should now provide the `account_id` field in `event.user_info`.
    * </pre>
    *
    * <code>string username = 2 [deprecated = true];</code>
@@ -163,7 +163,7 @@ public interface AccountVerificationInfoOrBuilder
    *
    * <pre>
    * Username of the account that is being verified. Deprecated. Customers
-   * should now provide the hashed account ID field in Event.
+   * should now provide the `account_id` field in `event.user_info`.
    * </pre>
    *
    * <code>string username = 2 [deprecated = true];</code>
