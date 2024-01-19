@@ -50,4 +50,5 @@
     <module>proto-google-cloud-servicehealth-v1</module>
     <module>google-cloud-servicehealth-bom</module>
   </modules>
-</project>
+
+  </project>
