@@ -586,7 +586,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    *
    * <pre>
    * Username of the account that is being verified. Deprecated. Customers
-   * should now provide the hashed account ID field in Event.
+   * should now provide the `account_id` field in `event.user_info`.
    * </pre>
    *
    * <code>string username = 2 [deprecated = true];</code>
@@ -613,7 +613,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    *
    * <pre>
    * Username of the account that is being verified. Deprecated. Customers
-   * should now provide the hashed account ID field in Event.
+   * should now provide the `account_id` field in `event.user_info`.
    * </pre>
    *
    * <code>string username = 2 [deprecated = true];</code>
@@ -1726,7 +1726,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      * <pre>
      * Username of the account that is being verified. Deprecated. Customers
-     * should now provide the hashed account ID field in Event.
+     * should now provide the `account_id` field in `event.user_info`.
      * </pre>
      *
      * <code>string username = 2 [deprecated = true];</code>
@@ -1752,7 +1752,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      * <pre>
      * Username of the account that is being verified. Deprecated. Customers
-     * should now provide the hashed account ID field in Event.
+     * should now provide the `account_id` field in `event.user_info`.
      * </pre>
      *
      * <code>string username = 2 [deprecated = true];</code>
@@ -1778,7 +1778,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      * <pre>
      * Username of the account that is being verified. Deprecated. Customers
-     * should now provide the hashed account ID field in Event.
+     * should now provide the `account_id` field in `event.user_info`.
      * </pre>
      *
      * <code>string username = 2 [deprecated = true];</code>
@@ -1803,7 +1803,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      * <pre>
      * Username of the account that is being verified. Deprecated. Customers
-     * should now provide the hashed account ID field in Event.
+     * should now provide the `account_id` field in `event.user_info`.
      * </pre>
      *
      * <code>string username = 2 [deprecated = true];</code>
@@ -1824,7 +1824,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      *
      * <pre>
      * Username of the account that is being verified. Deprecated. Customers
-     * should now provide the hashed account ID field in Event.
+     * should now provide the `account_id` field in `event.user_info`.
      * </pre>
      *
      * <code>string username = 2 [deprecated = true];</code>
