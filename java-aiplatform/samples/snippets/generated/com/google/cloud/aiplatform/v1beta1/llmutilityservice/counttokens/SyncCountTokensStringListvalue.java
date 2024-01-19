@@ -14,37 +14,35 @@
  * limitations under the License.
  */
 
-package com.google.cloud.aiplatform.v1beta1.stub.samples;
+package com.google.cloud.aiplatform.v1beta1.samples;
 
-// [START aiplatform_v1beta1_generated_LlmUtilityServiceStubSettings_ComputeTokens_sync]
-import com.google.cloud.aiplatform.v1beta1.stub.LlmUtilityServiceStubSettings;
-import java.time.Duration;
+// [START aiplatform_v1beta1_generated_LlmUtilityService_CountTokens_StringListvalue_sync]
+import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
+import com.google.cloud.aiplatform.v1beta1.EndpointName;
+import com.google.cloud.aiplatform.v1beta1.LlmUtilityServiceClient;
+import com.google.protobuf.Value;
+import java.util.ArrayList;
+import java.util.List;
 
-public class SyncComputeTokens {
+public class SyncCountTokensStringListvalue {
 
   public static void main(String[] args) throws Exception {
-    syncComputeTokens();
+    syncCountTokensStringListvalue();
   }
 
-  public static void syncComputeTokens() throws Exception {
+  public static void syncCountTokensStringListvalue() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    LlmUtilityServiceStubSettings.Builder llmUtilityServiceSettingsBuilder =
-        LlmUtilityServiceStubSettings.newBuilder();
-    llmUtilityServiceSettingsBuilder
-        .computeTokensSettings()
-        .setRetrySettings(
-            llmUtilityServiceSettingsBuilder
-                .computeTokensSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    LlmUtilityServiceStubSettings llmUtilityServiceSettings =
-        llmUtilityServiceSettingsBuilder.build();
+    try (LlmUtilityServiceClient llmUtilityServiceClient = LlmUtilityServiceClient.create()) {
+      String endpoint =
+          EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+              .toString();
+      List<Value> instances = new ArrayList<>();
+      CountTokensResponse response = llmUtilityServiceClient.countTokens(endpoint, instances);
+    }
   }
 }
-// [END aiplatform_v1beta1_generated_LlmUtilityServiceStubSettings_ComputeTokens_sync]
+// [END aiplatform_v1beta1_generated_LlmUtilityService_CountTokens_StringListvalue_sync]

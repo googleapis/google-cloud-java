@@ -28,8 +28,9 @@ public interface ExportDataResponseOrBuilder
    *
    * <pre>
    * All of the files that are exported in this export operation. For custom
-   * code training export, only three (training, validation and test) GCS paths
-   * in wildcard format are populated (e.g., gs://.../training-*).
+   * code training export, only three (training, validation and test)
+   * Cloud Storage paths in wildcard format are populated
+   * (for example, gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>
@@ -42,8 +43,9 @@ public interface ExportDataResponseOrBuilder
    *
    * <pre>
    * All of the files that are exported in this export operation. For custom
-   * code training export, only three (training, validation and test) GCS paths
-   * in wildcard format are populated (e.g., gs://.../training-*).
+   * code training export, only three (training, validation and test)
+   * Cloud Storage paths in wildcard format are populated
+   * (for example, gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>
@@ -56,8 +58,9 @@ public interface ExportDataResponseOrBuilder
    *
    * <pre>
    * All of the files that are exported in this export operation. For custom
-   * code training export, only three (training, validation and test) GCS paths
-   * in wildcard format are populated (e.g., gs://.../training-*).
+   * code training export, only three (training, validation and test)
+   * Cloud Storage paths in wildcard format are populated
+   * (for example, gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>
@@ -71,8 +74,9 @@ public interface ExportDataResponseOrBuilder
    *
    * <pre>
    * All of the files that are exported in this export operation. For custom
-   * code training export, only three (training, validation and test) GCS paths
-   * in wildcard format are populated (e.g., gs://.../training-*).
+   * code training export, only three (training, validation and test)
+   * Cloud Storage paths in wildcard format are populated
+   * (for example, gs://.../training-*).
    * </pre>
    *
    * <code>repeated string exported_files = 1;</code>

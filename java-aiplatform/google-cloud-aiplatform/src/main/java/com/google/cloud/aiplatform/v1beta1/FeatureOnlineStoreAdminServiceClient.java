@@ -542,7 +542,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    * }</pre>
    *
    * @param parent Required. The resource name of the Location to create FeatureOnlineStores.
-   *     Format: `projects/{project}/locations/{location}'`
+   *     Format: `projects/{project}/locations/{location}`
    * @param featureOnlineStore Required. The FeatureOnlineStore to create.
    * @param featureOnlineStoreId Required. The ID to use for this FeatureOnlineStore, which will
    *     become the final component of the FeatureOnlineStore's resource name.
@@ -588,7 +588,7 @@ public class FeatureOnlineStoreAdminServiceClient implements BackgroundResource 
    * }</pre>
    *
    * @param parent Required. The resource name of the Location to create FeatureOnlineStores.
-   *     Format: `projects/{project}/locations/{location}'`
+   *     Format: `projects/{project}/locations/{location}`
    * @param featureOnlineStore Required. The FeatureOnlineStore to create.
    * @param featureOnlineStoreId Required. The ID to use for this FeatureOnlineStore, which will
    *     become the final component of the FeatureOnlineStore's resource name.

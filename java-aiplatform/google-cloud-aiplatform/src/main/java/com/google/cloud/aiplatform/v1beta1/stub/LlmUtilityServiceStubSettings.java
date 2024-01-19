@@ -42,6 +42,8 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.ComputeTokensRequest;
 import com.google.cloud.aiplatform.v1beta1.ComputeTokensResponse;
+import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
+import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -74,7 +76,7 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of computeTokens to 30 seconds:
+ * <p>For example, to set the total timeout of countTokens to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -85,10 +87,10 @@ import javax.annotation.Generated;
  * LlmUtilityServiceStubSettings.Builder llmUtilityServiceSettingsBuilder =
  *     LlmUtilityServiceStubSettings.newBuilder();
  * llmUtilityServiceSettingsBuilder
- *     .computeTokensSettings()
+ *     .countTokensSettings()
  *     .setRetrySettings(
  *         llmUtilityServiceSettingsBuilder
- *             .computeTokensSettings()
+ *             .countTokensSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -104,6 +106,7 @@ public class LlmUtilityServiceStubSettings extends StubSettings<LlmUtilityServic
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
+  private final UnaryCallSettings<CountTokensRequest, CountTokensResponse> countTokensSettings;
   private final UnaryCallSettings<ComputeTokensRequest, ComputeTokensResponse>
       computeTokensSettings;
   private final PagedCallSettings<
@@ -167,6 +170,11 @@ public class LlmUtilityServiceStubSettings extends StubSettings<LlmUtilityServic
               return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
+
+  /** Returns the object with the settings used for calls to countTokens. */
+  public UnaryCallSettings<CountTokensRequest, CountTokensResponse> countTokensSettings() {
+    return countTokensSettings;
+  }
 
   /** Returns the object with the settings used for calls to computeTokens. */
   public UnaryCallSettings<ComputeTokensRequest, ComputeTokensResponse> computeTokensSettings() {
@@ -281,6 +289,7 @@ public class LlmUtilityServiceStubSettings extends StubSettings<LlmUtilityServic
   protected LlmUtilityServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    countTokensSettings = settingsBuilder.countTokensSettings().build();
     computeTokensSettings = settingsBuilder.computeTokensSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
@@ -292,6 +301,8 @@ public class LlmUtilityServiceStubSettings extends StubSettings<LlmUtilityServic
   /** Builder for LlmUtilityServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<LlmUtilityServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final UnaryCallSettings.Builder<CountTokensRequest, CountTokensResponse>
+        countTokensSettings;
     private final UnaryCallSettings.Builder<ComputeTokensRequest, ComputeTokensResponse>
         computeTokensSettings;
     private final PagedCallSettings.Builder<
@@ -329,6 +340,7 @@ public class LlmUtilityServiceStubSettings extends StubSettings<LlmUtilityServic
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      countTokensSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       computeTokensSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -338,6 +350,7 @@ public class LlmUtilityServiceStubSettings extends StubSettings<LlmUtilityServic
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              countTokensSettings,
               computeTokensSettings,
               listLocationsSettings,
               getLocationSettings,
@@ -350,6 +363,7 @@ public class LlmUtilityServiceStubSettings extends StubSettings<LlmUtilityServic
     protected Builder(LlmUtilityServiceStubSettings settings) {
       super(settings);
 
+      countTokensSettings = settings.countTokensSettings.toBuilder();
       computeTokensSettings = settings.computeTokensSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
@@ -359,6 +373,7 @@ public class LlmUtilityServiceStubSettings extends StubSettings<LlmUtilityServic
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              countTokensSettings,
               computeTokensSettings,
               listLocationsSettings,
               getLocationSettings,
@@ -381,6 +396,11 @@ public class LlmUtilityServiceStubSettings extends StubSettings<LlmUtilityServic
     }
 
     private static Builder initDefaults(Builder builder) {
+      builder
+          .countTokensSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       builder
           .computeTokensSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
@@ -427,6 +447,12 @@ public class LlmUtilityServiceStubSettings extends StubSettings<LlmUtilityServic
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to countTokens. */
+    public UnaryCallSettings.Builder<CountTokensRequest, CountTokensResponse>
+        countTokensSettings() {
+      return countTokensSettings;
     }
 
     /** Returns the builder for the settings used for calls to computeTokens. */

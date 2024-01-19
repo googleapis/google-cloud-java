@@ -102,6 +102,92 @@ public class LlmUtilityServiceClientTest {
   }
 
   @Test
+  public void countTokensTest() throws Exception {
+    CountTokensResponse expectedResponse =
+        CountTokensResponse.newBuilder()
+            .setTotalTokens(730673909)
+            .setTotalBillableCharacters(1242495501)
+            .build();
+    mockLlmUtilityService.addResponse(expectedResponse);
+
+    EndpointName endpoint =
+        EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+    List<Value> instances = new ArrayList<>();
+
+    CountTokensResponse actualResponse = client.countTokens(endpoint, instances);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLlmUtilityService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CountTokensRequest actualRequest = ((CountTokensRequest) actualRequests.get(0));
+
+    Assert.assertEquals(endpoint.toString(), actualRequest.getEndpoint());
+    Assert.assertEquals(instances, actualRequest.getInstancesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void countTokensExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLlmUtilityService.addException(exception);
+
+    try {
+      EndpointName endpoint =
+          EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+      List<Value> instances = new ArrayList<>();
+      client.countTokens(endpoint, instances);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void countTokensTest2() throws Exception {
+    CountTokensResponse expectedResponse =
+        CountTokensResponse.newBuilder()
+            .setTotalTokens(730673909)
+            .setTotalBillableCharacters(1242495501)
+            .build();
+    mockLlmUtilityService.addResponse(expectedResponse);
+
+    String endpoint = "endpoint1741102485";
+    List<Value> instances = new ArrayList<>();
+
+    CountTokensResponse actualResponse = client.countTokens(endpoint, instances);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLlmUtilityService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CountTokensRequest actualRequest = ((CountTokensRequest) actualRequests.get(0));
+
+    Assert.assertEquals(endpoint, actualRequest.getEndpoint());
+    Assert.assertEquals(instances, actualRequest.getInstancesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void countTokensExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLlmUtilityService.addException(exception);
+
+    try {
+      String endpoint = "endpoint1741102485";
+      List<Value> instances = new ArrayList<>();
+      client.countTokens(endpoint, instances);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void computeTokensTest() throws Exception {
     ComputeTokensResponse expectedResponse =
         ComputeTokensResponse.newBuilder().addAllTokensInfo(new ArrayList<TokensInfo>()).build();

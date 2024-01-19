@@ -29,7 +29,7 @@ public interface CreateFeatureOnlineStoreRequestOrBuilder
    * <pre>
    * Required. The resource name of the Location to create FeatureOnlineStores.
    * Format:
-   * `projects/{project}/locations/{location}'`
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface CreateFeatureOnlineStoreRequestOrBuilder
    * <pre>
    * Required. The resource name of the Location to create FeatureOnlineStores.
    * Format:
-   * `projects/{project}/locations/{location}'`
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>

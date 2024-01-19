@@ -28,6 +28,8 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.ComputeTokensRequest;
 import com.google.cloud.aiplatform.v1beta1.ComputeTokensResponse;
+import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
+import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -53,6 +55,16 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcLlmUtilityServiceStub extends LlmUtilityServiceStub {
+  private static final MethodDescriptor<CountTokensRequest, CountTokensResponse>
+      countTokensMethodDescriptor =
+          MethodDescriptor.<CountTokensRequest, CountTokensResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.LlmUtilityService/CountTokens")
+              .setRequestMarshaller(ProtoUtils.marshaller(CountTokensRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CountTokensResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ComputeTokensRequest, ComputeTokensResponse>
       computeTokensMethodDescriptor =
           MethodDescriptor.<ComputeTokensRequest, ComputeTokensResponse>newBuilder()
@@ -110,6 +122,7 @@ public class GrpcLlmUtilityServiceStub extends LlmUtilityServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
 
+  private final UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable;
   private final UnaryCallable<ComputeTokensRequest, ComputeTokensResponse> computeTokensCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
@@ -164,6 +177,16 @@ public class GrpcLlmUtilityServiceStub extends LlmUtilityServiceStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<CountTokensRequest, CountTokensResponse> countTokensTransportSettings =
+        GrpcCallSettings.<CountTokensRequest, CountTokensResponse>newBuilder()
+            .setMethodDescriptor(countTokensMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("endpoint", String.valueOf(request.getEndpoint()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ComputeTokensRequest, ComputeTokensResponse> computeTokensTransportSettings =
         GrpcCallSettings.<ComputeTokensRequest, ComputeTokensResponse>newBuilder()
             .setMethodDescriptor(computeTokensMethodDescriptor)
@@ -226,6 +249,9 @@ public class GrpcLlmUtilityServiceStub extends LlmUtilityServiceStub {
                     })
                 .build();
 
+    this.countTokensCallable =
+        callableFactory.createUnaryCallable(
+            countTokensTransportSettings, settings.countTokensSettings(), clientContext);
     this.computeTokensCallable =
         callableFactory.createUnaryCallable(
             computeTokensTransportSettings, settings.computeTokensSettings(), clientContext);
@@ -256,6 +282,11 @@ public class GrpcLlmUtilityServiceStub extends LlmUtilityServiceStub {
 
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable() {
+    return countTokensCallable;
   }
 
   @Override

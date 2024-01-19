@@ -23,6 +23,8 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.ComputeTokensRequest;
 import com.google.cloud.aiplatform.v1beta1.ComputeTokensResponse;
+import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
+import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -43,6 +45,10 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class LlmUtilityServiceStub implements BackgroundResource {
+
+  public UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable() {
+    throw new UnsupportedOperationException("Not implemented: countTokensCallable()");
+  }
 
   public UnaryCallable<ComputeTokensRequest, ComputeTokensResponse> computeTokensCallable() {
     throw new UnsupportedOperationException("Not implemented: computeTokensCallable()");

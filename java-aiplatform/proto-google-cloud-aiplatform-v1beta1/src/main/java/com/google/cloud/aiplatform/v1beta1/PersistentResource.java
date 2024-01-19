@@ -116,7 +116,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The RUNNING state indicates the persistent resources is healthy and fully
+     * The RUNNING state indicates the persistent resource is healthy and fully
      * usable.
      * </pre>
      *
@@ -127,7 +127,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The STOPPING state indicates the persistent resources is being deleted.
+     * The STOPPING state indicates the persistent resource is being deleted.
      * </pre>
      *
      * <code>STOPPING = 4;</code>
@@ -137,7 +137,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The ERROR state indicates the persistent resources may be unusable.
+     * The ERROR state indicates the persistent resource may be unusable.
      * Details can be found in the `error` field.
      * </pre>
      *
@@ -172,7 +172,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The RUNNING state indicates the persistent resources is healthy and fully
+     * The RUNNING state indicates the persistent resource is healthy and fully
      * usable.
      * </pre>
      *
@@ -183,7 +183,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The STOPPING state indicates the persistent resources is being deleted.
+     * The STOPPING state indicates the persistent resource is being deleted.
      * </pre>
      *
      * <code>STOPPING = 4;</code>
@@ -193,7 +193,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The ERROR state indicates the persistent resources may be unusable.
+     * The ERROR state indicates the persistent resource may be unusable.
      * Details can be found in the `error` field.
      * </pre>
      *

@@ -667,6 +667,9 @@
             "ComputeTokens": {
               "methods": ["computeTokens", "computeTokens", "computeTokens", "computeTokensCallable"]
             },
+            "CountTokens": {
+              "methods": ["countTokens", "countTokens", "countTokens", "countTokensCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },

@@ -16,17 +16,17 @@
 
 package com.google.cloud.aiplatform.v1beta1.samples;
 
-// [START aiplatform_v1beta1_generated_LlmUtilityServiceSettings_ComputeTokens_sync]
+// [START aiplatform_v1beta1_generated_LlmUtilityServiceSettings_CountTokens_sync]
 import com.google.cloud.aiplatform.v1beta1.LlmUtilityServiceSettings;
 import java.time.Duration;
 
-public class SyncComputeTokens {
+public class SyncCountTokens {
 
   public static void main(String[] args) throws Exception {
-    syncComputeTokens();
+    syncCountTokens();
   }
 
-  public static void syncComputeTokens() throws Exception {
+  public static void syncCountTokens() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
@@ -35,10 +35,10 @@ public class SyncComputeTokens {
     LlmUtilityServiceSettings.Builder llmUtilityServiceSettingsBuilder =
         LlmUtilityServiceSettings.newBuilder();
     llmUtilityServiceSettingsBuilder
-        .computeTokensSettings()
+        .countTokensSettings()
         .setRetrySettings(
             llmUtilityServiceSettingsBuilder
-                .computeTokensSettings()
+                .countTokensSettings()
                 .getRetrySettings()
                 .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
@@ -46,4 +46,4 @@ public class SyncComputeTokens {
     LlmUtilityServiceSettings llmUtilityServiceSettings = llmUtilityServiceSettingsBuilder.build();
   }
 }
-// [END aiplatform_v1beta1_generated_LlmUtilityServiceSettings_ComputeTokens_sync]
+// [END aiplatform_v1beta1_generated_LlmUtilityServiceSettings_CountTokens_sync]
