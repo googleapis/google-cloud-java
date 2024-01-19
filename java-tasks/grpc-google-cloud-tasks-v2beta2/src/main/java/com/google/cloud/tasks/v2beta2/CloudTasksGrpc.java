@@ -920,52 +920,6 @@ public final class CloudTasksGrpc {
     return getRunTaskMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta2.BufferTaskRequest,
-          com.google.cloud.tasks.v2beta2.BufferTaskResponse>
-      getBufferTaskMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "BufferTask",
-      requestType = com.google.cloud.tasks.v2beta2.BufferTaskRequest.class,
-      responseType = com.google.cloud.tasks.v2beta2.BufferTaskResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta2.BufferTaskRequest,
-          com.google.cloud.tasks.v2beta2.BufferTaskResponse>
-      getBufferTaskMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.tasks.v2beta2.BufferTaskRequest,
-            com.google.cloud.tasks.v2beta2.BufferTaskResponse>
-        getBufferTaskMethod;
-    if ((getBufferTaskMethod = CloudTasksGrpc.getBufferTaskMethod) == null) {
-      synchronized (CloudTasksGrpc.class) {
-        if ((getBufferTaskMethod = CloudTasksGrpc.getBufferTaskMethod) == null) {
-          CloudTasksGrpc.getBufferTaskMethod =
-              getBufferTaskMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.tasks.v2beta2.BufferTaskRequest,
-                          com.google.cloud.tasks.v2beta2.BufferTaskResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BufferTask"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.tasks.v2beta2.BufferTaskRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.tasks.v2beta2.BufferTaskResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(new CloudTasksMethodDescriptorSupplier("BufferTask"))
-                      .build();
-        }
-      }
-    }
-    return getBufferTaskMethod;
-  }
-
   /** Creates a new async stub that supports all call types for the service */
   public static CloudTasksStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudTasksStub> factory =
@@ -1450,30 +1404,6 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta2.RunTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunTaskMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates and buffers a new task without the need to explicitly define a Task
-     * message. The queue must have [HTTP
-     * target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
-     * custom ID, use the following format and set TASK_ID to your desired ID:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer
-     * To create the task with an automatically generated ID, use the following
-     * format:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer.
-     * Note: This feature is in its experimental stage. You must request access to
-     * the API through the [Cloud Tasks BufferTask Experiment Signup
-     * form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
-     * </pre>
-     */
-    default void bufferTask(
-        com.google.cloud.tasks.v2beta2.BufferTaskRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.BufferTaskResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBufferTaskMethod(), responseObserver);
     }
   }
 
@@ -1977,31 +1907,6 @@ public final class CloudTasksGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunTaskMethod(), getCallOptions()), request, responseObserver);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates and buffers a new task without the need to explicitly define a Task
-     * message. The queue must have [HTTP
-     * target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
-     * custom ID, use the following format and set TASK_ID to your desired ID:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer
-     * To create the task with an automatically generated ID, use the following
-     * format:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer.
-     * Note: This feature is in its experimental stage. You must request access to
-     * the API through the [Cloud Tasks BufferTask Experiment Signup
-     * form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
-     * </pre>
-     */
-    public void bufferTask(
-        com.google.cloud.tasks.v2beta2.BufferTaskRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.BufferTaskResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getBufferTaskMethod(), getCallOptions()), request, responseObserver);
-    }
   }
 
   /**
@@ -2442,29 +2347,6 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta2.RunTaskRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRunTaskMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates and buffers a new task without the need to explicitly define a Task
-     * message. The queue must have [HTTP
-     * target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
-     * custom ID, use the following format and set TASK_ID to your desired ID:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer
-     * To create the task with an automatically generated ID, use the following
-     * format:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer.
-     * Note: This feature is in its experimental stage. You must request access to
-     * the API through the [Cloud Tasks BufferTask Experiment Signup
-     * form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
-     * </pre>
-     */
-    public com.google.cloud.tasks.v2beta2.BufferTaskResponse bufferTask(
-        com.google.cloud.tasks.v2beta2.BufferTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getBufferTaskMethod(), getCallOptions(), request);
     }
   }
 
@@ -2912,30 +2794,6 @@ public final class CloudTasksGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunTaskMethod(), getCallOptions()), request);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates and buffers a new task without the need to explicitly define a Task
-     * message. The queue must have [HTTP
-     * target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
-     * custom ID, use the following format and set TASK_ID to your desired ID:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer
-     * To create the task with an automatically generated ID, use the following
-     * format:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer.
-     * Note: This feature is in its experimental stage. You must request access to
-     * the API through the [Cloud Tasks BufferTask Experiment Signup
-     * form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.tasks.v2beta2.BufferTaskResponse>
-        bufferTask(com.google.cloud.tasks.v2beta2.BufferTaskRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getBufferTaskMethod(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_LIST_QUEUES = 0;
@@ -2959,7 +2817,6 @@ public final class CloudTasksGrpc {
   private static final int METHODID_RENEW_LEASE = 18;
   private static final int METHODID_CANCEL_LEASE = 19;
   private static final int METHODID_RUN_TASK = 20;
-  private static final int METHODID_BUFFER_TASK = 21;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3086,12 +2943,6 @@ public final class CloudTasksGrpc {
           serviceImpl.runTask(
               (com.google.cloud.tasks.v2beta2.RunTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task>) responseObserver);
-          break;
-        case METHODID_BUFFER_TASK:
-          serviceImpl.bufferTask(
-              (com.google.cloud.tasks.v2beta2.BufferTaskRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.BufferTaskResponse>)
-                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -3239,13 +3090,6 @@ public final class CloudTasksGrpc {
                 new MethodHandlers<
                     com.google.cloud.tasks.v2beta2.RunTaskRequest,
                     com.google.cloud.tasks.v2beta2.Task>(service, METHODID_RUN_TASK)))
-        .addMethod(
-            getBufferTaskMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.tasks.v2beta2.BufferTaskRequest,
-                    com.google.cloud.tasks.v2beta2.BufferTaskResponse>(
-                    service, METHODID_BUFFER_TASK)))
         .build();
   }
 
@@ -3318,7 +3162,6 @@ public final class CloudTasksGrpc {
                       .addMethod(getRenewLeaseMethod())
                       .addMethod(getCancelLeaseMethod())
                       .addMethod(getRunTaskMethod())
-                      .addMethod(getBufferTaskMethod())
                       .build();
         }
       }

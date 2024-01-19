@@ -49,8 +49,6 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.cloud.tasks.v2beta3.BufferTaskRequest;
-import com.google.cloud.tasks.v2beta3.BufferTaskResponse;
 import com.google.cloud.tasks.v2beta3.CreateQueueRequest;
 import com.google.cloud.tasks.v2beta3.CreateTaskRequest;
 import com.google.cloud.tasks.v2beta3.DeleteQueueRequest;
@@ -145,7 +143,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
   private final UnaryCallSettings<CreateTaskRequest, Task> createTaskSettings;
   private final UnaryCallSettings<DeleteTaskRequest, Empty> deleteTaskSettings;
   private final UnaryCallSettings<RunTaskRequest, Task> runTaskSettings;
-  private final UnaryCallSettings<BufferTaskRequest, BufferTaskResponse> bufferTaskSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -393,11 +390,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     return runTaskSettings;
   }
 
-  /** Returns the object with the settings used for calls to bufferTask. */
-  public UnaryCallSettings<BufferTaskRequest, BufferTaskResponse> bufferTaskSettings() {
-    return bufferTaskSettings;
-  }
-
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -537,7 +529,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     createTaskSettings = settingsBuilder.createTaskSettings().build();
     deleteTaskSettings = settingsBuilder.deleteTaskSettings().build();
     runTaskSettings = settingsBuilder.runTaskSettings().build();
-    bufferTaskSettings = settingsBuilder.bufferTaskSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -566,8 +557,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     private final UnaryCallSettings.Builder<CreateTaskRequest, Task> createTaskSettings;
     private final UnaryCallSettings.Builder<DeleteTaskRequest, Empty> deleteTaskSettings;
     private final UnaryCallSettings.Builder<RunTaskRequest, Task> runTaskSettings;
-    private final UnaryCallSettings.Builder<BufferTaskRequest, BufferTaskResponse>
-        bufferTaskSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -641,7 +630,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
       createTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      bufferTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -663,7 +651,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
               createTaskSettings,
               deleteTaskSettings,
               runTaskSettings,
-              bufferTaskSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -688,7 +675,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
       createTaskSettings = settings.createTaskSettings.toBuilder();
       deleteTaskSettings = settings.deleteTaskSettings.toBuilder();
       runTaskSettings = settings.runTaskSettings.toBuilder();
-      bufferTaskSettings = settings.bufferTaskSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -710,7 +696,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
               createTaskSettings,
               deleteTaskSettings,
               runTaskSettings,
-              bufferTaskSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -823,11 +808,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
-          .bufferTaskSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -936,11 +916,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     /** Returns the builder for the settings used for calls to runTask. */
     public UnaryCallSettings.Builder<RunTaskRequest, Task> runTaskSettings() {
       return runTaskSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to bufferTask. */
-    public UnaryCallSettings.Builder<BufferTaskRequest, BufferTaskResponse> bufferTaskSettings() {
-      return bufferTaskSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

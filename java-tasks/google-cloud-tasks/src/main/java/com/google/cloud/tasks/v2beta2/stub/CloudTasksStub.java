@@ -28,8 +28,6 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest;
-import com.google.cloud.tasks.v2beta2.BufferTaskRequest;
-import com.google.cloud.tasks.v2beta2.BufferTaskResponse;
 import com.google.cloud.tasks.v2beta2.CancelLeaseRequest;
 import com.google.cloud.tasks.v2beta2.CreateQueueRequest;
 import com.google.cloud.tasks.v2beta2.CreateTaskRequest;
@@ -161,10 +159,6 @@ public abstract class CloudTasksStub implements BackgroundResource {
 
   public UnaryCallable<RunTaskRequest, Task> runTaskCallable() {
     throw new UnsupportedOperationException("Not implemented: runTaskCallable()");
-  }
-
-  public UnaryCallable<BufferTaskRequest, BufferTaskResponse> bufferTaskCallable() {
-    throw new UnsupportedOperationException("Not implemented: bufferTaskCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

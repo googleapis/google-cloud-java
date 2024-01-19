@@ -16,7 +16,6 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-import com.google.api.HttpBody;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -514,25 +513,6 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li>runTaskCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td>BufferTask</td>
- *      <td><p> Creates and buffers a new task without the need to explicitly define a Task message. The queue must have [HTTP target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a custom ID, use the following format and set TASK_ID to your desired ID: projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer To create the task with an automatically generated ID, use the following format: projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer. Note: This feature is in its experimental stage. You must request access to the API through the [Cloud Tasks BufferTask Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8).</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li>bufferTask(BufferTaskRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li>bufferTask(QueueName queue, String taskId, HttpBody body)
- *           <li>bufferTask(String queue, String taskId, HttpBody body)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li>bufferTaskCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -3879,170 +3859,6 @@ public class CloudTasksClient implements BackgroundResource {
    */
   public final UnaryCallable<RunTaskRequest, Task> runTaskCallable() {
     return stub.runTaskCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates and buffers a new task without the need to explicitly define a Task message. The queue
-   * must have [HTTP target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
-   * custom ID, use the following format and set TASK_ID to your desired ID:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer To create the
-   * task with an automatically generated ID, use the following format:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer. Note: This feature is
-   * in its experimental stage. You must request access to the API through the [Cloud Tasks
-   * BufferTask Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   QueueName queue = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
-   *   String taskId = "taskId-880873088";
-   *   HttpBody body = HttpBody.newBuilder().build();
-   *   BufferTaskResponse response = cloudTasksClient.bufferTask(queue, taskId, body);
-   * }
-   * }</pre>
-   *
-   * @param queue Required. The parent queue name. For example:
-   *     projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
-   *     <p>The queue must already exist.
-   * @param taskId Optional. Task ID for the task being created. If not provided, a random task ID
-   *     is assigned to the task.
-   * @param body Optional. Body of the HTTP request.
-   *     <p>The body can take any generic value. The value is written to the [HttpRequest][payload]
-   *     of the [Task].
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BufferTaskResponse bufferTask(QueueName queue, String taskId, HttpBody body) {
-    BufferTaskRequest request =
-        BufferTaskRequest.newBuilder()
-            .setQueue(queue == null ? null : queue.toString())
-            .setTaskId(taskId)
-            .setBody(body)
-            .build();
-    return bufferTask(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates and buffers a new task without the need to explicitly define a Task message. The queue
-   * must have [HTTP target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
-   * custom ID, use the following format and set TASK_ID to your desired ID:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer To create the
-   * task with an automatically generated ID, use the following format:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer. Note: This feature is
-   * in its experimental stage. You must request access to the API through the [Cloud Tasks
-   * BufferTask Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   String queue = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
-   *   String taskId = "taskId-880873088";
-   *   HttpBody body = HttpBody.newBuilder().build();
-   *   BufferTaskResponse response = cloudTasksClient.bufferTask(queue, taskId, body);
-   * }
-   * }</pre>
-   *
-   * @param queue Required. The parent queue name. For example:
-   *     projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
-   *     <p>The queue must already exist.
-   * @param taskId Optional. Task ID for the task being created. If not provided, a random task ID
-   *     is assigned to the task.
-   * @param body Optional. Body of the HTTP request.
-   *     <p>The body can take any generic value. The value is written to the [HttpRequest][payload]
-   *     of the [Task].
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BufferTaskResponse bufferTask(String queue, String taskId, HttpBody body) {
-    BufferTaskRequest request =
-        BufferTaskRequest.newBuilder().setQueue(queue).setTaskId(taskId).setBody(body).build();
-    return bufferTask(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates and buffers a new task without the need to explicitly define a Task message. The queue
-   * must have [HTTP target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
-   * custom ID, use the following format and set TASK_ID to your desired ID:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer To create the
-   * task with an automatically generated ID, use the following format:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer. Note: This feature is
-   * in its experimental stage. You must request access to the API through the [Cloud Tasks
-   * BufferTask Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   BufferTaskRequest request =
-   *       BufferTaskRequest.newBuilder()
-   *           .setQueue(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
-   *           .setTaskId("taskId-880873088")
-   *           .setBody(HttpBody.newBuilder().build())
-   *           .build();
-   *   BufferTaskResponse response = cloudTasksClient.bufferTask(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BufferTaskResponse bufferTask(BufferTaskRequest request) {
-    return bufferTaskCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates and buffers a new task without the need to explicitly define a Task message. The queue
-   * must have [HTTP target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
-   * custom ID, use the following format and set TASK_ID to your desired ID:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer To create the
-   * task with an automatically generated ID, use the following format:
-   * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer. Note: This feature is
-   * in its experimental stage. You must request access to the API through the [Cloud Tasks
-   * BufferTask Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   BufferTaskRequest request =
-   *       BufferTaskRequest.newBuilder()
-   *           .setQueue(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
-   *           .setTaskId("taskId-880873088")
-   *           .setBody(HttpBody.newBuilder().build())
-   *           .build();
-   *   ApiFuture<BufferTaskResponse> future =
-   *       cloudTasksClient.bufferTaskCallable().futureCall(request);
-   *   // Do something.
-   *   BufferTaskResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<BufferTaskRequest, BufferTaskResponse> bufferTaskCallable() {
-    return stub.bufferTaskCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
