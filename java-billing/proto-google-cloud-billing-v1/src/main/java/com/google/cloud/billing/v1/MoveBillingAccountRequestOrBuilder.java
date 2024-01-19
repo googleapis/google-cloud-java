@@ -62,7 +62,7 @@ public interface MoveBillingAccountRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Organization to reparent
+   * Required. The resource name of the Organization to move
    * the billing account under.
    * Must be of the form `organizations/{organization_id}`.
    * </pre>
@@ -78,7 +78,7 @@ public interface MoveBillingAccountRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Organization to reparent
+   * Required. The resource name of the Organization to move
    * the billing account under.
    * Must be of the form `organizations/{organization_id}`.
    * </pre>
