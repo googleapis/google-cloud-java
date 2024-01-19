@@ -378,6 +378,99 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td>CreatePreview</td>
+ *      <td><p> Creates a [Preview][google.cloud.config.v1.Preview].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>createPreviewAsync(CreatePreviewRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>createPreviewAsync(LocationName parent, Preview preview)
+ *           <li>createPreviewAsync(String parent, Preview preview)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>createPreviewOperationCallable()
+ *           <li>createPreviewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>GetPreview</td>
+ *      <td><p> Gets details about a [Preview][google.cloud.config.v1.Preview].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>getPreview(GetPreviewRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>getPreview(PreviewName name)
+ *           <li>getPreview(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>getPreviewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ListPreviews</td>
+ *      <td><p> Lists [Preview][google.cloud.config.v1.Preview]s in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>listPreviews(ListPreviewsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li>listPreviews(LocationName parent)
+ *           <li>listPreviews(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>listPreviewsPagedCallable()
+ *           <li>listPreviewsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>DeletePreview</td>
+ *      <td><p> Deletes a [Preview][google.cloud.config.v1.Preview].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>deletePreviewAsync(DeletePreviewRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li>deletePreviewAsync(PreviewName name)
+ *           <li>deletePreviewAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>deletePreviewOperationCallable()
+ *           <li>deletePreviewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td>ExportPreviewResult</td>
+ *      <td><p> Export [Preview][google.cloud.config.v1.Preview] results.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li>exportPreviewResult(ExportPreviewResultRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li>exportPreviewResultCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td>ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -2655,6 +2748,644 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a [Preview][google.cloud.config.v1.Preview].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Preview preview = Preview.newBuilder().build();
+   *   Preview response = configClient.createPreviewAsync(parent, preview).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent in whose context the Preview is created. The parent value is
+   *     in the format: 'projects/{project_id}/locations/{location}'.
+   * @param preview Required. [Preview][google.cloud.config.v1.Preview] resource to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Preview, OperationMetadata> createPreviewAsync(
+      LocationName parent, Preview preview) {
+    CreatePreviewRequest request =
+        CreatePreviewRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setPreview(preview)
+            .build();
+    return createPreviewAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [Preview][google.cloud.config.v1.Preview].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Preview preview = Preview.newBuilder().build();
+   *   Preview response = configClient.createPreviewAsync(parent, preview).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent in whose context the Preview is created. The parent value is
+   *     in the format: 'projects/{project_id}/locations/{location}'.
+   * @param preview Required. [Preview][google.cloud.config.v1.Preview] resource to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Preview, OperationMetadata> createPreviewAsync(
+      String parent, Preview preview) {
+    CreatePreviewRequest request =
+        CreatePreviewRequest.newBuilder().setParent(parent).setPreview(preview).build();
+    return createPreviewAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [Preview][google.cloud.config.v1.Preview].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   CreatePreviewRequest request =
+   *       CreatePreviewRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPreviewId("previewId-832627965")
+   *           .setPreview(Preview.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Preview response = configClient.createPreviewAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Preview, OperationMetadata> createPreviewAsync(
+      CreatePreviewRequest request) {
+    return createPreviewOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [Preview][google.cloud.config.v1.Preview].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   CreatePreviewRequest request =
+   *       CreatePreviewRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPreviewId("previewId-832627965")
+   *           .setPreview(Preview.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Preview, OperationMetadata> future =
+   *       configClient.createPreviewOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Preview response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreatePreviewRequest, Preview, OperationMetadata>
+      createPreviewOperationCallable() {
+    return stub.createPreviewOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [Preview][google.cloud.config.v1.Preview].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   CreatePreviewRequest request =
+   *       CreatePreviewRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPreviewId("previewId-832627965")
+   *           .setPreview(Preview.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = configClient.createPreviewCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreatePreviewRequest, Operation> createPreviewCallable() {
+    return stub.createPreviewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a [Preview][google.cloud.config.v1.Preview].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   PreviewName name = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+   *   Preview response = configClient.getPreview(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the preview. Format:
+   *     'projects/{project_id}/locations/{location}/previews/{preview}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Preview getPreview(PreviewName name) {
+    GetPreviewRequest request =
+        GetPreviewRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getPreview(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a [Preview][google.cloud.config.v1.Preview].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String name = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString();
+   *   Preview response = configClient.getPreview(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the preview. Format:
+   *     'projects/{project_id}/locations/{location}/previews/{preview}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Preview getPreview(String name) {
+    GetPreviewRequest request = GetPreviewRequest.newBuilder().setName(name).build();
+    return getPreview(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a [Preview][google.cloud.config.v1.Preview].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetPreviewRequest request =
+   *       GetPreviewRequest.newBuilder()
+   *           .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+   *           .build();
+   *   Preview response = configClient.getPreview(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Preview getPreview(GetPreviewRequest request) {
+    return getPreviewCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a [Preview][google.cloud.config.v1.Preview].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetPreviewRequest request =
+   *       GetPreviewRequest.newBuilder()
+   *           .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+   *           .build();
+   *   ApiFuture<Preview> future = configClient.getPreviewCallable().futureCall(request);
+   *   // Do something.
+   *   Preview response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetPreviewRequest, Preview> getPreviewCallable() {
+    return stub.getPreviewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [Preview][google.cloud.config.v1.Preview]s in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Preview element : configClient.listPreviews(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent in whose context the Previews are listed. The parent value
+   *     is in the format: 'projects/{project_id}/locations/{location}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPreviewsPagedResponse listPreviews(LocationName parent) {
+    ListPreviewsRequest request =
+        ListPreviewsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listPreviews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [Preview][google.cloud.config.v1.Preview]s in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Preview element : configClient.listPreviews(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent in whose context the Previews are listed. The parent value
+   *     is in the format: 'projects/{project_id}/locations/{location}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPreviewsPagedResponse listPreviews(String parent) {
+    ListPreviewsRequest request = ListPreviewsRequest.newBuilder().setParent(parent).build();
+    return listPreviews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [Preview][google.cloud.config.v1.Preview]s in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListPreviewsRequest request =
+   *       ListPreviewsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Preview element : configClient.listPreviews(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPreviewsPagedResponse listPreviews(ListPreviewsRequest request) {
+    return listPreviewsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [Preview][google.cloud.config.v1.Preview]s in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListPreviewsRequest request =
+   *       ListPreviewsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Preview> future = configClient.listPreviewsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Preview element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPreviewsRequest, ListPreviewsPagedResponse>
+      listPreviewsPagedCallable() {
+    return stub.listPreviewsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [Preview][google.cloud.config.v1.Preview]s in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListPreviewsRequest request =
+   *       ListPreviewsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListPreviewsResponse response = configClient.listPreviewsCallable().call(request);
+   *     for (Preview element : response.getPreviewsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPreviewsRequest, ListPreviewsResponse> listPreviewsCallable() {
+    return stub.listPreviewsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [Preview][google.cloud.config.v1.Preview].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   PreviewName name = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]");
+   *   Preview response = configClient.deletePreviewAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Preview in the format:
+   *     'projects/{project_id}/locations/{location}/previews/{preview}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Preview, OperationMetadata> deletePreviewAsync(PreviewName name) {
+    DeletePreviewRequest request =
+        DeletePreviewRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deletePreviewAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [Preview][google.cloud.config.v1.Preview].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String name = PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString();
+   *   Preview response = configClient.deletePreviewAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Preview in the format:
+   *     'projects/{project_id}/locations/{location}/previews/{preview}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Preview, OperationMetadata> deletePreviewAsync(String name) {
+    DeletePreviewRequest request = DeletePreviewRequest.newBuilder().setName(name).build();
+    return deletePreviewAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [Preview][google.cloud.config.v1.Preview].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeletePreviewRequest request =
+   *       DeletePreviewRequest.newBuilder()
+   *           .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Preview response = configClient.deletePreviewAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Preview, OperationMetadata> deletePreviewAsync(
+      DeletePreviewRequest request) {
+    return deletePreviewOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [Preview][google.cloud.config.v1.Preview].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeletePreviewRequest request =
+   *       DeletePreviewRequest.newBuilder()
+   *           .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Preview, OperationMetadata> future =
+   *       configClient.deletePreviewOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Preview response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeletePreviewRequest, Preview, OperationMetadata>
+      deletePreviewOperationCallable() {
+    return stub.deletePreviewOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [Preview][google.cloud.config.v1.Preview].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeletePreviewRequest request =
+   *       DeletePreviewRequest.newBuilder()
+   *           .setName(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = configClient.deletePreviewCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeletePreviewRequest, Operation> deletePreviewCallable() {
+    return stub.deletePreviewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Export [Preview][google.cloud.config.v1.Preview] results.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ExportPreviewResultRequest request =
+   *       ExportPreviewResultRequest.newBuilder()
+   *           .setParent(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+   *           .build();
+   *   ExportPreviewResultResponse response = configClient.exportPreviewResult(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExportPreviewResultResponse exportPreviewResult(ExportPreviewResultRequest request) {
+    return exportPreviewResultCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Export [Preview][google.cloud.config.v1.Preview] results.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ExportPreviewResultRequest request =
+   *       ExportPreviewResultRequest.newBuilder()
+   *           .setParent(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
+   *           .build();
+   *   ApiFuture<ExportPreviewResultResponse> future =
+   *       configClient.exportPreviewResultCallable().futureCall(request);
+   *   // Do something.
+   *   ExportPreviewResultResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportPreviewResultRequest, ExportPreviewResultResponse>
+      exportPreviewResultCallable() {
+    return stub.exportPreviewResultCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -3254,6 +3985,81 @@ public class ConfigClient implements BackgroundResource {
     protected ListResourcesFixedSizeCollection createCollection(
         List<ListResourcesPage> pages, int collectionSize) {
       return new ListResourcesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListPreviewsPagedResponse
+      extends AbstractPagedListResponse<
+          ListPreviewsRequest,
+          ListPreviewsResponse,
+          Preview,
+          ListPreviewsPage,
+          ListPreviewsFixedSizeCollection> {
+
+    public static ApiFuture<ListPreviewsPagedResponse> createAsync(
+        PageContext<ListPreviewsRequest, ListPreviewsResponse, Preview> context,
+        ApiFuture<ListPreviewsResponse> futureResponse) {
+      ApiFuture<ListPreviewsPage> futurePage =
+          ListPreviewsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListPreviewsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListPreviewsPagedResponse(ListPreviewsPage page) {
+      super(page, ListPreviewsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListPreviewsPage
+      extends AbstractPage<ListPreviewsRequest, ListPreviewsResponse, Preview, ListPreviewsPage> {
+
+    private ListPreviewsPage(
+        PageContext<ListPreviewsRequest, ListPreviewsResponse, Preview> context,
+        ListPreviewsResponse response) {
+      super(context, response);
+    }
+
+    private static ListPreviewsPage createEmptyPage() {
+      return new ListPreviewsPage(null, null);
+    }
+
+    @Override
+    protected ListPreviewsPage createPage(
+        PageContext<ListPreviewsRequest, ListPreviewsResponse, Preview> context,
+        ListPreviewsResponse response) {
+      return new ListPreviewsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListPreviewsPage> createPageAsync(
+        PageContext<ListPreviewsRequest, ListPreviewsResponse, Preview> context,
+        ApiFuture<ListPreviewsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListPreviewsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListPreviewsRequest,
+          ListPreviewsResponse,
+          Preview,
+          ListPreviewsPage,
+          ListPreviewsFixedSizeCollection> {
+
+    private ListPreviewsFixedSizeCollection(List<ListPreviewsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListPreviewsFixedSizeCollection createEmptyCollection() {
+      return new ListPreviewsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListPreviewsFixedSizeCollection createCollection(
+        List<ListPreviewsPage> pages, int collectionSize) {
+      return new ListPreviewsFixedSizeCollection(pages, collectionSize);
     }
   }
 

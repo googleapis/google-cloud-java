@@ -68,6 +68,47 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
+   * Output only. Metadata about the preview operation state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.PreviewOperationMetadata preview_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the previewMetadata field is set.
+   */
+  boolean hasPreviewMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about the preview operation state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.PreviewOperationMetadata preview_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The previewMetadata.
+   */
+  com.google.cloud.config.v1.PreviewOperationMetadata getPreviewMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about the preview operation state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.PreviewOperationMetadata preview_metadata = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.config.v1.PreviewOperationMetadataOrBuilder getPreviewMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Time when the operation was created.
    * </pre>
    *

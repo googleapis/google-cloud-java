@@ -18,6 +18,7 @@ package com.google.cloud.config.v1.stub;
 
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
 
@@ -30,18 +31,25 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.config.v1.CreateDeploymentRequest;
+import com.google.cloud.config.v1.CreatePreviewRequest;
 import com.google.cloud.config.v1.DeleteDeploymentRequest;
+import com.google.cloud.config.v1.DeletePreviewRequest;
 import com.google.cloud.config.v1.DeleteStatefileRequest;
 import com.google.cloud.config.v1.Deployment;
 import com.google.cloud.config.v1.ExportDeploymentStatefileRequest;
 import com.google.cloud.config.v1.ExportLockInfoRequest;
+import com.google.cloud.config.v1.ExportPreviewResultRequest;
+import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
+import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
 import com.google.cloud.config.v1.ImportStatefileRequest;
 import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
+import com.google.cloud.config.v1.ListPreviewsRequest;
+import com.google.cloud.config.v1.ListPreviewsResponse;
 import com.google.cloud.config.v1.ListResourcesRequest;
 import com.google.cloud.config.v1.ListResourcesResponse;
 import com.google.cloud.config.v1.ListRevisionsRequest;
@@ -49,6 +57,7 @@ import com.google.cloud.config.v1.ListRevisionsResponse;
 import com.google.cloud.config.v1.LockDeploymentRequest;
 import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
+import com.google.cloud.config.v1.Preview;
 import com.google.cloud.config.v1.Resource;
 import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
@@ -239,6 +248,55 @@ public class GrpcConfigStub extends ConfigStub {
               .setResponseMarshaller(ProtoUtils.marshaller(LockInfo.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreatePreviewRequest, Operation>
+      createPreviewMethodDescriptor =
+          MethodDescriptor.<CreatePreviewRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/CreatePreview")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreatePreviewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetPreviewRequest, Preview> getPreviewMethodDescriptor =
+      MethodDescriptor.<GetPreviewRequest, Preview>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.config.v1.Config/GetPreview")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetPreviewRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Preview.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ListPreviewsRequest, ListPreviewsResponse>
+      listPreviewsMethodDescriptor =
+          MethodDescriptor.<ListPreviewsRequest, ListPreviewsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/ListPreviews")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListPreviewsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListPreviewsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeletePreviewRequest, Operation>
+      deletePreviewMethodDescriptor =
+          MethodDescriptor.<DeletePreviewRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/DeletePreview")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeletePreviewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ExportPreviewResultRequest, ExportPreviewResultResponse>
+      exportPreviewResultMethodDescriptor =
+          MethodDescriptor.<ExportPreviewResultRequest, ExportPreviewResultResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/ExportPreviewResult")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportPreviewResultRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExportPreviewResultResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -320,6 +378,18 @@ public class GrpcConfigStub extends ConfigStub {
   private final OperationCallable<UnlockDeploymentRequest, Deployment, OperationMetadata>
       unlockDeploymentOperationCallable;
   private final UnaryCallable<ExportLockInfoRequest, LockInfo> exportLockInfoCallable;
+  private final UnaryCallable<CreatePreviewRequest, Operation> createPreviewCallable;
+  private final OperationCallable<CreatePreviewRequest, Preview, OperationMetadata>
+      createPreviewOperationCallable;
+  private final UnaryCallable<GetPreviewRequest, Preview> getPreviewCallable;
+  private final UnaryCallable<ListPreviewsRequest, ListPreviewsResponse> listPreviewsCallable;
+  private final UnaryCallable<ListPreviewsRequest, ListPreviewsPagedResponse>
+      listPreviewsPagedCallable;
+  private final UnaryCallable<DeletePreviewRequest, Operation> deletePreviewCallable;
+  private final OperationCallable<DeletePreviewRequest, Preview, OperationMetadata>
+      deletePreviewOperationCallable;
+  private final UnaryCallable<ExportPreviewResultRequest, ExportPreviewResultResponse>
+      exportPreviewResultCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -531,6 +601,57 @@ public class GrpcConfigStub extends ConfigStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreatePreviewRequest, Operation> createPreviewTransportSettings =
+        GrpcCallSettings.<CreatePreviewRequest, Operation>newBuilder()
+            .setMethodDescriptor(createPreviewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetPreviewRequest, Preview> getPreviewTransportSettings =
+        GrpcCallSettings.<GetPreviewRequest, Preview>newBuilder()
+            .setMethodDescriptor(getPreviewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListPreviewsRequest, ListPreviewsResponse> listPreviewsTransportSettings =
+        GrpcCallSettings.<ListPreviewsRequest, ListPreviewsResponse>newBuilder()
+            .setMethodDescriptor(listPreviewsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeletePreviewRequest, Operation> deletePreviewTransportSettings =
+        GrpcCallSettings.<DeletePreviewRequest, Operation>newBuilder()
+            .setMethodDescriptor(deletePreviewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ExportPreviewResultRequest, ExportPreviewResultResponse>
+        exportPreviewResultTransportSettings =
+            GrpcCallSettings.<ExportPreviewResultRequest, ExportPreviewResultResponse>newBuilder()
+                .setMethodDescriptor(exportPreviewResultMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -674,6 +795,38 @@ public class GrpcConfigStub extends ConfigStub {
     this.exportLockInfoCallable =
         callableFactory.createUnaryCallable(
             exportLockInfoTransportSettings, settings.exportLockInfoSettings(), clientContext);
+    this.createPreviewCallable =
+        callableFactory.createUnaryCallable(
+            createPreviewTransportSettings, settings.createPreviewSettings(), clientContext);
+    this.createPreviewOperationCallable =
+        callableFactory.createOperationCallable(
+            createPreviewTransportSettings,
+            settings.createPreviewOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getPreviewCallable =
+        callableFactory.createUnaryCallable(
+            getPreviewTransportSettings, settings.getPreviewSettings(), clientContext);
+    this.listPreviewsCallable =
+        callableFactory.createUnaryCallable(
+            listPreviewsTransportSettings, settings.listPreviewsSettings(), clientContext);
+    this.listPreviewsPagedCallable =
+        callableFactory.createPagedCallable(
+            listPreviewsTransportSettings, settings.listPreviewsSettings(), clientContext);
+    this.deletePreviewCallable =
+        callableFactory.createUnaryCallable(
+            deletePreviewTransportSettings, settings.deletePreviewSettings(), clientContext);
+    this.deletePreviewOperationCallable =
+        callableFactory.createOperationCallable(
+            deletePreviewTransportSettings,
+            settings.deletePreviewOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportPreviewResultCallable =
+        callableFactory.createUnaryCallable(
+            exportPreviewResultTransportSettings,
+            settings.exportPreviewResultSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -831,6 +984,49 @@ public class GrpcConfigStub extends ConfigStub {
   @Override
   public UnaryCallable<ExportLockInfoRequest, LockInfo> exportLockInfoCallable() {
     return exportLockInfoCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreatePreviewRequest, Operation> createPreviewCallable() {
+    return createPreviewCallable;
+  }
+
+  @Override
+  public OperationCallable<CreatePreviewRequest, Preview, OperationMetadata>
+      createPreviewOperationCallable() {
+    return createPreviewOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPreviewRequest, Preview> getPreviewCallable() {
+    return getPreviewCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPreviewsRequest, ListPreviewsResponse> listPreviewsCallable() {
+    return listPreviewsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPreviewsRequest, ListPreviewsPagedResponse> listPreviewsPagedCallable() {
+    return listPreviewsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeletePreviewRequest, Operation> deletePreviewCallable() {
+    return deletePreviewCallable;
+  }
+
+  @Override
+  public OperationCallable<DeletePreviewRequest, Preview, OperationMetadata>
+      deletePreviewOperationCallable() {
+    return deletePreviewOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportPreviewResultRequest, ExportPreviewResultResponse>
+      exportPreviewResultCallable() {
+    return exportPreviewResultCallable;
   }
 
   @Override
